@@ -68,7 +68,9 @@ public final class AuthorizationCode extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CODE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object code_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object code_ = "";
   /**
    *
    *
@@ -315,8 +317,8 @@ public final class AuthorizationCode extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       code_ = "";
-
       return this;
     }
 
@@ -344,9 +346,18 @@ public final class AuthorizationCode extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.domains.v1alpha2.AuthorizationCode buildPartial() {
       com.google.cloud.domains.v1alpha2.AuthorizationCode result =
           new com.google.cloud.domains.v1alpha2.AuthorizationCode(this);
-      result.code_ = code_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.domains.v1alpha2.AuthorizationCode result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.code_ = code_;
+      }
     }
 
     @java.lang.Override
@@ -397,6 +408,7 @@ public final class AuthorizationCode extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getCode().isEmpty()) {
         code_ = other.code_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -428,7 +440,7 @@ public final class AuthorizationCode extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 code_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -447,6 +459,8 @@ public final class AuthorizationCode extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object code_ = "";
     /**
@@ -512,8 +526,8 @@ public final class AuthorizationCode extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       code_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -530,8 +544,8 @@ public final class AuthorizationCode extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearCode() {
-
       code_ = getDefaultInstance().getCode();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -553,8 +567,8 @@ public final class AuthorizationCode extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       code_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

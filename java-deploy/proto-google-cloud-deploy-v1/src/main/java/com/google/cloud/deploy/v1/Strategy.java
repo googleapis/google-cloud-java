@@ -373,6 +373,7 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (standardBuilder_ != null) {
         standardBuilder_.clear();
       }
@@ -404,16 +405,24 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.deploy.v1.Strategy buildPartial() {
       com.google.cloud.deploy.v1.Strategy result = new com.google.cloud.deploy.v1.Strategy(this);
-      if (deploymentStrategyCase_ == 1) {
-        if (standardBuilder_ == null) {
-          result.deploymentStrategy_ = deploymentStrategy_;
-        } else {
-          result.deploymentStrategy_ = standardBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.deploymentStrategyCase_ = deploymentStrategyCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.Strategy result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.deploy.v1.Strategy result) {
+      result.deploymentStrategyCase_ = deploymentStrategyCase_;
+      result.deploymentStrategy_ = this.deploymentStrategy_;
+      if (deploymentStrategyCase_ == 1 && standardBuilder_ != null) {
+        result.deploymentStrategy_ = standardBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -534,6 +543,8 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.deploy.v1.Standard,
@@ -749,7 +760,6 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
       }
       deploymentStrategyCase_ = 1;
       onChanged();
-      ;
       return standardBuilder_;
     }
 

@@ -208,7 +208,9 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int MIN_VALUE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object minValue_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object minValue_ = "";
     /**
      *
      *
@@ -259,7 +261,9 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int MAX_VALUE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object maxValue_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object maxValue_ = "";
     /**
      *
      *
@@ -310,7 +314,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int STRICT_MIN_ENABLED_FIELD_NUMBER = 3;
-    private boolean strictMinEnabled_;
+    private boolean strictMinEnabled_ = false;
     /**
      *
      *
@@ -330,7 +334,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int STRICT_MAX_ENABLED_FIELD_NUMBER = 4;
-    private boolean strictMaxEnabled_;
+    private boolean strictMaxEnabled_ = false;
     /**
      *
      *
@@ -576,14 +580,11 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         minValue_ = "";
-
         maxValue_ = "";
-
         strictMinEnabled_ = false;
-
         strictMaxEnabled_ = false;
-
         return this;
       }
 
@@ -612,12 +613,28 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       public com.google.cloud.dataplex.v1.DataQualityRule.RangeExpectation buildPartial() {
         com.google.cloud.dataplex.v1.DataQualityRule.RangeExpectation result =
             new com.google.cloud.dataplex.v1.DataQualityRule.RangeExpectation(this);
-        result.minValue_ = minValue_;
-        result.maxValue_ = maxValue_;
-        result.strictMinEnabled_ = strictMinEnabled_;
-        result.strictMaxEnabled_ = strictMaxEnabled_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataplex.v1.DataQualityRule.RangeExpectation result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.minValue_ = minValue_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.maxValue_ = maxValue_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.strictMinEnabled_ = strictMinEnabled_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.strictMaxEnabled_ = strictMaxEnabled_;
+        }
       }
 
       @java.lang.Override
@@ -672,10 +689,12 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
           return this;
         if (!other.getMinValue().isEmpty()) {
           minValue_ = other.minValue_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getMaxValue().isEmpty()) {
           maxValue_ = other.maxValue_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.getStrictMinEnabled() != false) {
@@ -713,25 +732,25 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
               case 10:
                 {
                   minValue_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   maxValue_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 24:
                 {
                   strictMinEnabled_ = input.readBool();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 32:
                 {
                   strictMaxEnabled_ = input.readBool();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               default:
@@ -750,6 +769,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object minValue_ = "";
       /**
@@ -815,8 +836,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         if (value == null) {
           throw new NullPointerException();
         }
-
         minValue_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -833,8 +854,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearMinValue() {
-
         minValue_ = getDefaultInstance().getMinValue();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -856,8 +877,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         minValue_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -926,8 +947,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         if (value == null) {
           throw new NullPointerException();
         }
-
         maxValue_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -944,8 +965,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearMaxValue() {
-
         maxValue_ = getDefaultInstance().getMaxValue();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -967,8 +988,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         maxValue_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1008,6 +1029,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       public Builder setStrictMinEnabled(boolean value) {
 
         strictMinEnabled_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1025,7 +1047,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearStrictMinEnabled() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         strictMinEnabled_ = false;
         onChanged();
         return this;
@@ -1066,6 +1088,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       public Builder setStrictMaxEnabled(boolean value) {
 
         strictMaxEnabled_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1083,7 +1106,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearStrictMaxEnabled() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         strictMaxEnabled_ = false;
         onChanged();
         return this;
@@ -1674,6 +1697,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int VALUES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList values_;
     /**
      * <code>repeated string values = 1;</code>
@@ -1917,6 +1942,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -1947,14 +1973,26 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       public com.google.cloud.dataplex.v1.DataQualityRule.SetExpectation buildPartial() {
         com.google.cloud.dataplex.v1.DataQualityRule.SetExpectation result =
             new com.google.cloud.dataplex.v1.DataQualityRule.SetExpectation(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dataplex.v1.DataQualityRule.SetExpectation result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           values_ = values_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.values_ = values_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataplex.v1.DataQualityRule.SetExpectation result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -2315,7 +2353,9 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int REGEX_FIELD_NUMBER = 1;
-    private volatile java.lang.Object regex_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object regex_ = "";
     /**
      * <code>string regex = 1;</code>
      *
@@ -2551,8 +2591,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         regex_ = "";
-
         return this;
       }
 
@@ -2581,9 +2621,19 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       public com.google.cloud.dataplex.v1.DataQualityRule.RegexExpectation buildPartial() {
         com.google.cloud.dataplex.v1.DataQualityRule.RegexExpectation result =
             new com.google.cloud.dataplex.v1.DataQualityRule.RegexExpectation(this);
-        result.regex_ = regex_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataplex.v1.DataQualityRule.RegexExpectation result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.regex_ = regex_;
+        }
       }
 
       @java.lang.Override
@@ -2638,6 +2688,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
           return this;
         if (!other.getRegex().isEmpty()) {
           regex_ = other.regex_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -2669,7 +2720,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
               case 10:
                 {
                   regex_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -2688,6 +2739,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object regex_ = "";
       /**
@@ -2732,8 +2785,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         if (value == null) {
           throw new NullPointerException();
         }
-
         regex_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2743,8 +2796,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearRegex() {
-
         regex_ = getDefaultInstance().getRegex();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2759,8 +2812,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         regex_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3614,7 +3667,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int STATISTIC_FIELD_NUMBER = 1;
-    private int statistic_;
+    private int statistic_ = 0;
     /**
      * <code>
      * .google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation.ColumnStatistic statistic = 1;
@@ -3636,11 +3689,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public com.google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation.ColumnStatistic
         getStatistic() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation.ColumnStatistic
           result =
               com.google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation.ColumnStatistic
-                  .valueOf(statistic_);
+                  .forNumber(statistic_);
       return result == null
           ? com.google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation.ColumnStatistic
               .UNRECOGNIZED
@@ -3648,7 +3700,9 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int MIN_VALUE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object minValue_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object minValue_ = "";
     /**
      *
      *
@@ -3701,7 +3755,9 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int MAX_VALUE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object maxValue_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object maxValue_ = "";
     /**
      *
      *
@@ -3754,7 +3810,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int STRICT_MIN_ENABLED_FIELD_NUMBER = 4;
-    private boolean strictMinEnabled_;
+    private boolean strictMinEnabled_ = false;
     /**
      *
      *
@@ -3774,7 +3830,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int STRICT_MAX_ENABLED_FIELD_NUMBER = 5;
-    private boolean strictMaxEnabled_;
+    private boolean strictMaxEnabled_ = false;
     /**
      *
      *
@@ -4040,16 +4096,12 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         statistic_ = 0;
-
         minValue_ = "";
-
         maxValue_ = "";
-
         strictMinEnabled_ = false;
-
         strictMaxEnabled_ = false;
-
         return this;
       }
 
@@ -4080,13 +4132,31 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       public com.google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation buildPartial() {
         com.google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation result =
             new com.google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation(this);
-        result.statistic_ = statistic_;
-        result.minValue_ = minValue_;
-        result.maxValue_ = maxValue_;
-        result.strictMinEnabled_ = strictMinEnabled_;
-        result.strictMaxEnabled_ = strictMaxEnabled_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.statistic_ = statistic_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.minValue_ = minValue_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.maxValue_ = maxValue_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.strictMinEnabled_ = strictMinEnabled_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.strictMaxEnabled_ = strictMaxEnabled_;
+        }
       }
 
       @java.lang.Override
@@ -4146,10 +4216,12 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         }
         if (!other.getMinValue().isEmpty()) {
           minValue_ = other.minValue_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getMaxValue().isEmpty()) {
           maxValue_ = other.maxValue_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (other.getStrictMinEnabled() != false) {
@@ -4187,31 +4259,31 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
               case 8:
                 {
                   statistic_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 18:
                 {
                   minValue_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   maxValue_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 32:
                 {
                   strictMinEnabled_ = input.readBool();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               case 40:
                 {
                   strictMaxEnabled_ = input.readBool();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 40
               default:
@@ -4230,6 +4302,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int statistic_ = 0;
       /**
@@ -4252,8 +4326,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder setStatisticValue(int value) {
-
         statistic_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4267,11 +4341,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public com.google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation.ColumnStatistic
           getStatistic() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation.ColumnStatistic
             result =
                 com.google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation
-                    .ColumnStatistic.valueOf(statistic_);
+                    .ColumnStatistic.forNumber(statistic_);
         return result == null
             ? com.google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation.ColumnStatistic
                 .UNRECOGNIZED
@@ -4291,7 +4364,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         statistic_ = value.getNumber();
         onChanged();
         return this;
@@ -4304,7 +4377,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearStatistic() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         statistic_ = 0;
         onChanged();
         return this;
@@ -4377,8 +4450,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         if (value == null) {
           throw new NullPointerException();
         }
-
         minValue_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -4396,8 +4469,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearMinValue() {
-
         minValue_ = getDefaultInstance().getMinValue();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -4420,8 +4493,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         minValue_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -4493,8 +4566,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         if (value == null) {
           throw new NullPointerException();
         }
-
         maxValue_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -4512,8 +4585,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearMaxValue() {
-
         maxValue_ = getDefaultInstance().getMaxValue();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -4536,8 +4609,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         maxValue_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -4577,6 +4650,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       public Builder setStrictMinEnabled(boolean value) {
 
         strictMinEnabled_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -4594,7 +4668,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearStrictMinEnabled() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         strictMinEnabled_ = false;
         onChanged();
         return this;
@@ -4635,6 +4709,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       public Builder setStrictMaxEnabled(boolean value) {
 
         strictMaxEnabled_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -4652,7 +4727,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearStrictMaxEnabled() {
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         strictMaxEnabled_ = false;
         onChanged();
         return this;
@@ -4797,7 +4872,9 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int SQL_EXPRESSION_FIELD_NUMBER = 1;
-    private volatile java.lang.Object sqlExpression_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sqlExpression_ = "";
     /**
      * <code>string sql_expression = 1;</code>
      *
@@ -5038,8 +5115,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         sqlExpression_ = "";
-
         return this;
       }
 
@@ -5070,9 +5147,19 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       public com.google.cloud.dataplex.v1.DataQualityRule.RowConditionExpectation buildPartial() {
         com.google.cloud.dataplex.v1.DataQualityRule.RowConditionExpectation result =
             new com.google.cloud.dataplex.v1.DataQualityRule.RowConditionExpectation(this);
-        result.sqlExpression_ = sqlExpression_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataplex.v1.DataQualityRule.RowConditionExpectation result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.sqlExpression_ = sqlExpression_;
+        }
       }
 
       @java.lang.Override
@@ -5128,6 +5215,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
                 .getDefaultInstance()) return this;
         if (!other.getSqlExpression().isEmpty()) {
           sqlExpression_ = other.sqlExpression_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -5159,7 +5247,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
               case 10:
                 {
                   sqlExpression_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -5178,6 +5266,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object sqlExpression_ = "";
       /**
@@ -5222,8 +5312,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         if (value == null) {
           throw new NullPointerException();
         }
-
         sqlExpression_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -5233,8 +5323,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearSqlExpression() {
-
         sqlExpression_ = getDefaultInstance().getSqlExpression();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -5249,8 +5339,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         sqlExpression_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -5393,7 +5483,9 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int SQL_EXPRESSION_FIELD_NUMBER = 1;
-    private volatile java.lang.Object sqlExpression_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sqlExpression_ = "";
     /**
      * <code>string sql_expression = 1;</code>
      *
@@ -5636,8 +5728,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         sqlExpression_ = "";
-
         return this;
       }
 
@@ -5668,9 +5760,19 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       public com.google.cloud.dataplex.v1.DataQualityRule.TableConditionExpectation buildPartial() {
         com.google.cloud.dataplex.v1.DataQualityRule.TableConditionExpectation result =
             new com.google.cloud.dataplex.v1.DataQualityRule.TableConditionExpectation(this);
-        result.sqlExpression_ = sqlExpression_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataplex.v1.DataQualityRule.TableConditionExpectation result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.sqlExpression_ = sqlExpression_;
+        }
       }
 
       @java.lang.Override
@@ -5727,6 +5829,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
                 .getDefaultInstance()) return this;
         if (!other.getSqlExpression().isEmpty()) {
           sqlExpression_ = other.sqlExpression_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -5758,7 +5861,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
               case 10:
                 {
                   sqlExpression_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -5777,6 +5880,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object sqlExpression_ = "";
       /**
@@ -5821,8 +5926,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         if (value == null) {
           throw new NullPointerException();
         }
-
         sqlExpression_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -5832,8 +5937,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearSqlExpression() {
-
         sqlExpression_ = getDefaultInstance().getSqlExpression();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -5848,8 +5953,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         sqlExpression_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -6456,7 +6561,9 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int COLUMN_FIELD_NUMBER = 500;
-  private volatile java.lang.Object column_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object column_ = "";
   /**
    *
    *
@@ -6505,7 +6612,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int IGNORE_NULL_FIELD_NUMBER = 501;
-  private boolean ignoreNull_;
+  private boolean ignoreNull_ = false;
   /**
    *
    *
@@ -6525,7 +6632,9 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DIMENSION_FIELD_NUMBER = 502;
-  private volatile java.lang.Object dimension_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dimension_ = "";
   /**
    *
    *
@@ -6578,7 +6687,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int THRESHOLD_FIELD_NUMBER = 503;
-  private double threshold_;
+  private double threshold_ = 0D;
   /**
    *
    *
@@ -6967,6 +7076,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (rangeExpectationBuilder_ != null) {
         rangeExpectationBuilder_.clear();
       }
@@ -6992,13 +7102,9 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         tableConditionExpectationBuilder_.clear();
       }
       column_ = "";
-
       ignoreNull_ = false;
-
       dimension_ = "";
-
       threshold_ = 0D;
-
       ruleTypeCase_ = 0;
       ruleType_ = null;
       return this;
@@ -7028,69 +7134,57 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.dataplex.v1.DataQualityRule buildPartial() {
       com.google.cloud.dataplex.v1.DataQualityRule result =
           new com.google.cloud.dataplex.v1.DataQualityRule(this);
-      if (ruleTypeCase_ == 1) {
-        if (rangeExpectationBuilder_ == null) {
-          result.ruleType_ = ruleType_;
-        } else {
-          result.ruleType_ = rangeExpectationBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (ruleTypeCase_ == 2) {
-        if (nonNullExpectationBuilder_ == null) {
-          result.ruleType_ = ruleType_;
-        } else {
-          result.ruleType_ = nonNullExpectationBuilder_.build();
-        }
-      }
-      if (ruleTypeCase_ == 3) {
-        if (setExpectationBuilder_ == null) {
-          result.ruleType_ = ruleType_;
-        } else {
-          result.ruleType_ = setExpectationBuilder_.build();
-        }
-      }
-      if (ruleTypeCase_ == 4) {
-        if (regexExpectationBuilder_ == null) {
-          result.ruleType_ = ruleType_;
-        } else {
-          result.ruleType_ = regexExpectationBuilder_.build();
-        }
-      }
-      if (ruleTypeCase_ == 100) {
-        if (uniquenessExpectationBuilder_ == null) {
-          result.ruleType_ = ruleType_;
-        } else {
-          result.ruleType_ = uniquenessExpectationBuilder_.build();
-        }
-      }
-      if (ruleTypeCase_ == 101) {
-        if (statisticRangeExpectationBuilder_ == null) {
-          result.ruleType_ = ruleType_;
-        } else {
-          result.ruleType_ = statisticRangeExpectationBuilder_.build();
-        }
-      }
-      if (ruleTypeCase_ == 200) {
-        if (rowConditionExpectationBuilder_ == null) {
-          result.ruleType_ = ruleType_;
-        } else {
-          result.ruleType_ = rowConditionExpectationBuilder_.build();
-        }
-      }
-      if (ruleTypeCase_ == 201) {
-        if (tableConditionExpectationBuilder_ == null) {
-          result.ruleType_ = ruleType_;
-        } else {
-          result.ruleType_ = tableConditionExpectationBuilder_.build();
-        }
-      }
-      result.column_ = column_;
-      result.ignoreNull_ = ignoreNull_;
-      result.dimension_ = dimension_;
-      result.threshold_ = threshold_;
-      result.ruleTypeCase_ = ruleTypeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataplex.v1.DataQualityRule result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.column_ = column_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.ignoreNull_ = ignoreNull_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.dimension_ = dimension_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.threshold_ = threshold_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dataplex.v1.DataQualityRule result) {
+      result.ruleTypeCase_ = ruleTypeCase_;
+      result.ruleType_ = this.ruleType_;
+      if (ruleTypeCase_ == 1 && rangeExpectationBuilder_ != null) {
+        result.ruleType_ = rangeExpectationBuilder_.build();
+      }
+      if (ruleTypeCase_ == 2 && nonNullExpectationBuilder_ != null) {
+        result.ruleType_ = nonNullExpectationBuilder_.build();
+      }
+      if (ruleTypeCase_ == 3 && setExpectationBuilder_ != null) {
+        result.ruleType_ = setExpectationBuilder_.build();
+      }
+      if (ruleTypeCase_ == 4 && regexExpectationBuilder_ != null) {
+        result.ruleType_ = regexExpectationBuilder_.build();
+      }
+      if (ruleTypeCase_ == 100 && uniquenessExpectationBuilder_ != null) {
+        result.ruleType_ = uniquenessExpectationBuilder_.build();
+      }
+      if (ruleTypeCase_ == 101 && statisticRangeExpectationBuilder_ != null) {
+        result.ruleType_ = statisticRangeExpectationBuilder_.build();
+      }
+      if (ruleTypeCase_ == 200 && rowConditionExpectationBuilder_ != null) {
+        result.ruleType_ = rowConditionExpectationBuilder_.build();
+      }
+      if (ruleTypeCase_ == 201 && tableConditionExpectationBuilder_ != null) {
+        result.ruleType_ = tableConditionExpectationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -7140,6 +7234,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.cloud.dataplex.v1.DataQualityRule.getDefaultInstance()) return this;
       if (!other.getColumn().isEmpty()) {
         column_ = other.column_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.getIgnoreNull() != false) {
@@ -7147,6 +7242,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getDimension().isEmpty()) {
         dimension_ = other.dimension_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.getThreshold() != 0D) {
@@ -7282,25 +7378,25 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
             case 4002:
               {
                 column_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 4002
             case 4008:
               {
                 ignoreNull_ = input.readBool();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 4008
             case 4018:
               {
                 dimension_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 4018
             case 4025:
               {
                 threshold_ = input.readDouble();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 4025
             default:
@@ -7333,6 +7429,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataplex.v1.DataQualityRule.RangeExpectation,
@@ -7565,7 +7663,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
       ruleTypeCase_ = 1;
       onChanged();
-      ;
       return rangeExpectationBuilder_;
     }
 
@@ -7791,7 +7888,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
       ruleTypeCase_ = 2;
       onChanged();
-      ;
       return nonNullExpectationBuilder_;
     }
 
@@ -8017,7 +8113,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
       ruleTypeCase_ = 3;
       onChanged();
-      ;
       return setExpectationBuilder_;
     }
 
@@ -8252,7 +8347,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
       ruleTypeCase_ = 4;
       onChanged();
-      ;
       return regexExpectationBuilder_;
     }
 
@@ -8494,7 +8588,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
       ruleTypeCase_ = 100;
       onChanged();
-      ;
       return uniquenessExpectationBuilder_;
     }
 
@@ -8745,7 +8838,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
       ruleTypeCase_ = 101;
       onChanged();
-      ;
       return statisticRangeExpectationBuilder_;
     }
 
@@ -8996,7 +9088,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
       ruleTypeCase_ = 200;
       onChanged();
-      ;
       return rowConditionExpectationBuilder_;
     }
 
@@ -9238,7 +9329,6 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       }
       ruleTypeCase_ = 201;
       onChanged();
-      ;
       return tableConditionExpectationBuilder_;
     }
 
@@ -9303,8 +9393,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       column_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -9320,8 +9410,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearColumn() {
-
       column_ = getDefaultInstance().getColumn();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -9342,8 +9432,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       column_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -9383,6 +9473,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     public Builder setIgnoreNull(boolean value) {
 
       ignoreNull_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -9400,7 +9491,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearIgnoreNull() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       ignoreNull_ = false;
       onChanged();
       return this;
@@ -9473,8 +9564,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       dimension_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -9492,8 +9583,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDimension() {
-
       dimension_ = getDefaultInstance().getDimension();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -9516,8 +9607,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dimension_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -9557,6 +9648,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
     public Builder setThreshold(double value) {
 
       threshold_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -9574,7 +9666,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearThreshold() {
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       threshold_ = 0D;
       onChanged();
       return this;

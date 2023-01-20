@@ -443,6 +443,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (storageSourceBuilder_ != null) {
         storageSourceBuilder_.clear();
       }
@@ -478,23 +479,27 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.functions.v2beta.Source buildPartial() {
       com.google.cloud.functions.v2beta.Source result =
           new com.google.cloud.functions.v2beta.Source(this);
-      if (sourceCase_ == 1) {
-        if (storageSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = storageSourceBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (sourceCase_ == 2) {
-        if (repoSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = repoSourceBuilder_.build();
-        }
-      }
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.functions.v2beta.Source result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.functions.v2beta.Source result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 1 && storageSourceBuilder_ != null) {
+        result.source_ = storageSourceBuilder_.build();
+      }
+      if (sourceCase_ == 2 && repoSourceBuilder_ != null) {
+        result.source_ = repoSourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -626,6 +631,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.functions.v2beta.StorageSource,
@@ -833,7 +840,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       }
       sourceCase_ = 1;
       onChanged();
-      ;
       return storageSourceBuilder_;
     }
 
@@ -1052,7 +1058,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       }
       sourceCase_ = 2;
       onChanged();
-      ;
       return repoSourceBuilder_;
     }
 

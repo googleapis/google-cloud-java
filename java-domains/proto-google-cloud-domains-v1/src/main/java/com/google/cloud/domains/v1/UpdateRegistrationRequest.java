@@ -110,7 +110,9 @@ public final class UpdateRegistrationRequest extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.domains.v1.RegistrationOrBuilder getRegistrationOrBuilder() {
-    return getRegistration();
+    return registration_ == null
+        ? com.google.cloud.domains.v1.Registration.getDefaultInstance()
+        : registration_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -165,7 +167,7 @@ public final class UpdateRegistrationRequest extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -385,16 +387,15 @@ public final class UpdateRegistrationRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (registrationBuilder_ == null) {
-        registration_ = null;
-      } else {
-        registration_ = null;
+      bitField0_ = 0;
+      registration_ = null;
+      if (registrationBuilder_ != null) {
+        registrationBuilder_.dispose();
         registrationBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -424,18 +425,22 @@ public final class UpdateRegistrationRequest extends com.google.protobuf.Generat
     public com.google.cloud.domains.v1.UpdateRegistrationRequest buildPartial() {
       com.google.cloud.domains.v1.UpdateRegistrationRequest result =
           new com.google.cloud.domains.v1.UpdateRegistrationRequest(this);
-      if (registrationBuilder_ == null) {
-        result.registration_ = registration_;
-      } else {
-        result.registration_ = registrationBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.domains.v1.UpdateRegistrationRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.registration_ =
+            registrationBuilder_ == null ? registration_ : registrationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -519,13 +524,13 @@ public final class UpdateRegistrationRequest extends com.google.protobuf.Generat
             case 10:
               {
                 input.readMessage(getRegistrationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -545,6 +550,8 @@ public final class UpdateRegistrationRequest extends com.google.protobuf.Generat
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.domains.v1.Registration registration_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.domains.v1.Registration,
@@ -563,7 +570,7 @@ public final class UpdateRegistrationRequest extends com.google.protobuf.Generat
      * @return Whether the registration field is set.
      */
     public boolean hasRegistration() {
-      return registrationBuilder_ != null || registration_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -600,11 +607,11 @@ public final class UpdateRegistrationRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         registration_ = value;
-        onChanged();
       } else {
         registrationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -620,11 +627,11 @@ public final class UpdateRegistrationRequest extends com.google.protobuf.Generat
         com.google.cloud.domains.v1.Registration.Builder builderForValue) {
       if (registrationBuilder_ == null) {
         registration_ = builderForValue.build();
-        onChanged();
       } else {
         registrationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -638,19 +645,18 @@ public final class UpdateRegistrationRequest extends com.google.protobuf.Generat
      */
     public Builder mergeRegistration(com.google.cloud.domains.v1.Registration value) {
       if (registrationBuilder_ == null) {
-        if (registration_ != null) {
-          registration_ =
-              com.google.cloud.domains.v1.Registration.newBuilder(registration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && registration_ != null
+            && registration_ != com.google.cloud.domains.v1.Registration.getDefaultInstance()) {
+          getRegistrationBuilder().mergeFrom(value);
         } else {
           registration_ = value;
         }
-        onChanged();
       } else {
         registrationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -663,14 +669,13 @@ public final class UpdateRegistrationRequest extends com.google.protobuf.Generat
      * <code>.google.cloud.domains.v1.Registration registration = 1;</code>
      */
     public Builder clearRegistration() {
-      if (registrationBuilder_ == null) {
-        registration_ = null;
-        onChanged();
-      } else {
-        registration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      registration_ = null;
+      if (registrationBuilder_ != null) {
+        registrationBuilder_.dispose();
         registrationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -683,7 +688,7 @@ public final class UpdateRegistrationRequest extends com.google.protobuf.Generat
      * <code>.google.cloud.domains.v1.Registration registration = 1;</code>
      */
     public com.google.cloud.domains.v1.Registration.Builder getRegistrationBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getRegistrationFieldBuilder().getBuilder();
     }
@@ -752,7 +757,7 @@ public final class UpdateRegistrationRequest extends com.google.protobuf.Generat
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -795,11 +800,11 @@ public final class UpdateRegistrationRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -817,11 +822,11 @@ public final class UpdateRegistrationRequest extends com.google.protobuf.Generat
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -838,17 +843,18 @@ public final class UpdateRegistrationRequest extends com.google.protobuf.Generat
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -864,14 +870,13 @@ public final class UpdateRegistrationRequest extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -887,7 +892,7 @@ public final class UpdateRegistrationRequest extends com.google.protobuf.Generat
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

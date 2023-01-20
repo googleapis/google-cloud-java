@@ -116,7 +116,9 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.CloudRunMetadataOrBuilder getCloudRunOrBuilder() {
-    return getCloudRun();
+    return cloudRun_ == null
+        ? com.google.cloud.deploy.v1.CloudRunMetadata.getDefaultInstance()
+        : cloudRun_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -319,10 +321,10 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (cloudRunBuilder_ == null) {
-        cloudRun_ = null;
-      } else {
-        cloudRun_ = null;
+      bitField0_ = 0;
+      cloudRun_ = null;
+      if (cloudRunBuilder_ != null) {
+        cloudRunBuilder_.dispose();
         cloudRunBuilder_ = null;
       }
       return this;
@@ -351,13 +353,18 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.deploy.v1.Metadata buildPartial() {
       com.google.cloud.deploy.v1.Metadata result = new com.google.cloud.deploy.v1.Metadata(this);
-      if (cloudRunBuilder_ == null) {
-        result.cloudRun_ = cloudRun_;
-      } else {
-        result.cloudRun_ = cloudRunBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.Metadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.cloudRun_ = cloudRunBuilder_ == null ? cloudRun_ : cloudRunBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -437,7 +444,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getCloudRunFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -456,6 +463,8 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.deploy.v1.CloudRunMetadata cloudRun_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -477,7 +486,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the cloudRun field is set.
      */
     public boolean hasCloudRun() {
-      return cloudRunBuilder_ != null || cloudRun_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -518,11 +527,11 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         cloudRun_ = value;
-        onChanged();
       } else {
         cloudRunBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -540,11 +549,11 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.deploy.v1.CloudRunMetadata.Builder builderForValue) {
       if (cloudRunBuilder_ == null) {
         cloudRun_ = builderForValue.build();
-        onChanged();
       } else {
         cloudRunBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -560,19 +569,18 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCloudRun(com.google.cloud.deploy.v1.CloudRunMetadata value) {
       if (cloudRunBuilder_ == null) {
-        if (cloudRun_ != null) {
-          cloudRun_ =
-              com.google.cloud.deploy.v1.CloudRunMetadata.newBuilder(cloudRun_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && cloudRun_ != null
+            && cloudRun_ != com.google.cloud.deploy.v1.CloudRunMetadata.getDefaultInstance()) {
+          getCloudRunBuilder().mergeFrom(value);
         } else {
           cloudRun_ = value;
         }
-        onChanged();
       } else {
         cloudRunBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -587,14 +595,13 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCloudRun() {
-      if (cloudRunBuilder_ == null) {
-        cloudRun_ = null;
-        onChanged();
-      } else {
-        cloudRun_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      cloudRun_ = null;
+      if (cloudRunBuilder_ != null) {
+        cloudRunBuilder_.dispose();
         cloudRunBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -609,7 +616,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.deploy.v1.CloudRunMetadata.Builder getCloudRunBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCloudRunFieldBuilder().getBuilder();
     }

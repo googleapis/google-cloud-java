@@ -69,7 +69,9 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int SNAPSHOT_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object snapshotId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object snapshotId_ = "";
   /**
    *
    *
@@ -229,7 +233,9 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.filestore.v1beta1.SnapshotOrBuilder getSnapshotOrBuilder() {
-    return getSnapshot();
+    return snapshot_ == null
+        ? com.google.cloud.filestore.v1beta1.Snapshot.getDefaultInstance()
+        : snapshot_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -453,14 +459,12 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       snapshotId_ = "";
-
-      if (snapshotBuilder_ == null) {
-        snapshot_ = null;
-      } else {
-        snapshot_ = null;
+      snapshot_ = null;
+      if (snapshotBuilder_ != null) {
+        snapshotBuilder_.dispose();
         snapshotBuilder_ = null;
       }
       return this;
@@ -490,15 +494,24 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.filestore.v1beta1.CreateSnapshotRequest buildPartial() {
       com.google.cloud.filestore.v1beta1.CreateSnapshotRequest result =
           new com.google.cloud.filestore.v1beta1.CreateSnapshotRequest(this);
-      result.parent_ = parent_;
-      result.snapshotId_ = snapshotId_;
-      if (snapshotBuilder_ == null) {
-        result.snapshot_ = snapshot_;
-      } else {
-        result.snapshot_ = snapshotBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.filestore.v1beta1.CreateSnapshotRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.snapshotId_ = snapshotId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.snapshot_ = snapshotBuilder_ == null ? snapshot_ : snapshotBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -549,10 +562,12 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSnapshotId().isEmpty()) {
         snapshotId_ = other.snapshotId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasSnapshot()) {
@@ -587,19 +602,19 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 snapshotId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getSnapshotFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -618,6 +633,8 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -689,8 +706,8 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -709,8 +726,8 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -734,8 +751,8 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -810,8 +827,8 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       snapshotId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -830,8 +847,8 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearSnapshotId() {
-
       snapshotId_ = getDefaultInstance().getSnapshotId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -855,8 +872,8 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       snapshotId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -881,7 +898,7 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the snapshot field is set.
      */
     public boolean hasSnapshot() {
-      return snapshotBuilder_ != null || snapshot_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -922,11 +939,11 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         snapshot_ = value;
-        onChanged();
       } else {
         snapshotBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -944,11 +961,11 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
         com.google.cloud.filestore.v1beta1.Snapshot.Builder builderForValue) {
       if (snapshotBuilder_ == null) {
         snapshot_ = builderForValue.build();
-        onChanged();
       } else {
         snapshotBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -964,19 +981,18 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeSnapshot(com.google.cloud.filestore.v1beta1.Snapshot value) {
       if (snapshotBuilder_ == null) {
-        if (snapshot_ != null) {
-          snapshot_ =
-              com.google.cloud.filestore.v1beta1.Snapshot.newBuilder(snapshot_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && snapshot_ != null
+            && snapshot_ != com.google.cloud.filestore.v1beta1.Snapshot.getDefaultInstance()) {
+          getSnapshotBuilder().mergeFrom(value);
         } else {
           snapshot_ = value;
         }
-        onChanged();
       } else {
         snapshotBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -991,14 +1007,13 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearSnapshot() {
-      if (snapshotBuilder_ == null) {
-        snapshot_ = null;
-        onChanged();
-      } else {
-        snapshot_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      snapshot_ = null;
+      if (snapshotBuilder_ != null) {
+        snapshotBuilder_.dispose();
         snapshotBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1013,7 +1028,7 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.filestore.v1beta1.Snapshot.Builder getSnapshotBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSnapshotFieldBuilder().getBuilder();
     }

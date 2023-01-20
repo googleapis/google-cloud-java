@@ -72,7 +72,9 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FILE_PATH_FIELD_NUMBER = 1;
-  private volatile java.lang.Object filePath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filePath_ = "";
   /**
    *
    *
@@ -123,7 +125,7 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LINE_NUMBER_FIELD_NUMBER = 2;
-  private int lineNumber_;
+  private int lineNumber_ = 0;
   /**
    *
    *
@@ -141,7 +143,9 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FUNCTION_NAME_FIELD_NUMBER = 4;
-  private volatile java.lang.Object functionName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object functionName_ = "";
   /**
    *
    *
@@ -412,12 +416,10 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       filePath_ = "";
-
       lineNumber_ = 0;
-
       functionName_ = "";
-
       return this;
     }
 
@@ -446,11 +448,25 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.clouderrorreporting.v1beta1.SourceLocation buildPartial() {
       com.google.devtools.clouderrorreporting.v1beta1.SourceLocation result =
           new com.google.devtools.clouderrorreporting.v1beta1.SourceLocation(this);
-      result.filePath_ = filePath_;
-      result.lineNumber_ = lineNumber_;
-      result.functionName_ = functionName_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.devtools.clouderrorreporting.v1beta1.SourceLocation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.filePath_ = filePath_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.lineNumber_ = lineNumber_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.functionName_ = functionName_;
+      }
     }
 
     @java.lang.Override
@@ -502,6 +518,7 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getFilePath().isEmpty()) {
         filePath_ = other.filePath_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getLineNumber() != 0) {
@@ -509,6 +526,7 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getFunctionName().isEmpty()) {
         functionName_ = other.functionName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -540,19 +558,19 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 filePath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 lineNumber_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 34:
               {
                 functionName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             default:
@@ -571,6 +589,8 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object filePath_ = "";
     /**
@@ -636,8 +656,8 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       filePath_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -654,8 +674,8 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFilePath() {
-
       filePath_ = getDefaultInstance().getFilePath();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -677,8 +697,8 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       filePath_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -714,6 +734,7 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
     public Builder setLineNumber(int value) {
 
       lineNumber_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -729,7 +750,7 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLineNumber() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       lineNumber_ = 0;
       onChanged();
       return this;
@@ -802,8 +823,8 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       functionName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -821,8 +842,8 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFunctionName() {
-
       functionName_ = getDefaultInstance().getFunctionName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -845,8 +866,8 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       functionName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

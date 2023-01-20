@@ -69,7 +69,9 @@ public final class SpecSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GAME_SERVER_CONFIG_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object gameServerConfigName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object gameServerConfigName_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class SpecSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -374,10 +378,9 @@ public final class SpecSource extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       gameServerConfigName_ = "";
-
       name_ = "";
-
       return this;
     }
 
@@ -405,10 +408,21 @@ public final class SpecSource extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gaming.v1.SpecSource buildPartial() {
       com.google.cloud.gaming.v1.SpecSource result =
           new com.google.cloud.gaming.v1.SpecSource(this);
-      result.gameServerConfigName_ = gameServerConfigName_;
-      result.name_ = name_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gaming.v1.SpecSource result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.gameServerConfigName_ = gameServerConfigName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.name_ = name_;
+      }
     }
 
     @java.lang.Override
@@ -458,10 +472,12 @@ public final class SpecSource extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.gaming.v1.SpecSource.getDefaultInstance()) return this;
       if (!other.getGameServerConfigName().isEmpty()) {
         gameServerConfigName_ = other.gameServerConfigName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -493,13 +509,13 @@ public final class SpecSource extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 gameServerConfigName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -518,6 +534,8 @@ public final class SpecSource extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object gameServerConfigName_ = "";
     /**
@@ -583,8 +601,8 @@ public final class SpecSource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       gameServerConfigName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -601,8 +619,8 @@ public final class SpecSource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGameServerConfigName() {
-
       gameServerConfigName_ = getDefaultInstance().getGameServerConfigName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -624,8 +642,8 @@ public final class SpecSource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       gameServerConfigName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -694,8 +712,8 @@ public final class SpecSource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -712,8 +730,8 @@ public final class SpecSource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -735,8 +753,8 @@ public final class SpecSource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -297,11 +297,15 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.type.PostalAddressOrBuilder getPostalAddressOrBuilder() {
-      return getPostalAddress();
+      return postalAddress_ == null
+          ? com.google.type.PostalAddress.getDefaultInstance()
+          : postalAddress_;
     }
 
     public static final int EMAIL_FIELD_NUMBER = 2;
-    private volatile java.lang.Object email_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object email_ = "";
     /**
      *
      *
@@ -350,7 +354,9 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int PHONE_NUMBER_FIELD_NUMBER = 3;
-    private volatile java.lang.Object phoneNumber_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object phoneNumber_ = "";
     /**
      *
      *
@@ -401,7 +407,9 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int FAX_NUMBER_FIELD_NUMBER = 4;
-    private volatile java.lang.Object faxNumber_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object faxNumber_ = "";
     /**
      *
      *
@@ -683,18 +691,15 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (postalAddressBuilder_ == null) {
-          postalAddress_ = null;
-        } else {
-          postalAddress_ = null;
+        bitField0_ = 0;
+        postalAddress_ = null;
+        if (postalAddressBuilder_ != null) {
+          postalAddressBuilder_.dispose();
           postalAddressBuilder_ = null;
         }
         email_ = "";
-
         phoneNumber_ = "";
-
         faxNumber_ = "";
-
         return this;
       }
 
@@ -722,16 +727,28 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
       public com.google.cloud.domains.v1.ContactSettings.Contact buildPartial() {
         com.google.cloud.domains.v1.ContactSettings.Contact result =
             new com.google.cloud.domains.v1.ContactSettings.Contact(this);
-        if (postalAddressBuilder_ == null) {
-          result.postalAddress_ = postalAddress_;
-        } else {
-          result.postalAddress_ = postalAddressBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.email_ = email_;
-        result.phoneNumber_ = phoneNumber_;
-        result.faxNumber_ = faxNumber_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.domains.v1.ContactSettings.Contact result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.postalAddress_ =
+              postalAddressBuilder_ == null ? postalAddress_ : postalAddressBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.email_ = email_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.phoneNumber_ = phoneNumber_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.faxNumber_ = faxNumber_;
+        }
       }
 
       @java.lang.Override
@@ -787,14 +804,17 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
         }
         if (!other.getEmail().isEmpty()) {
           email_ = other.email_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getPhoneNumber().isEmpty()) {
           phoneNumber_ = other.phoneNumber_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.getFaxNumber().isEmpty()) {
           faxNumber_ = other.faxNumber_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -826,25 +846,25 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
               case 10:
                 {
                   input.readMessage(getPostalAddressFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   email_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   phoneNumber_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
                 {
                   faxNumber_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               default:
@@ -863,6 +883,8 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.type.PostalAddress postalAddress_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -884,7 +906,7 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
        * @return Whether the postalAddress field is set.
        */
       public boolean hasPostalAddress() {
-        return postalAddressBuilder_ != null || postalAddress_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -925,11 +947,11 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
             throw new NullPointerException();
           }
           postalAddress_ = value;
-          onChanged();
         } else {
           postalAddressBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -946,11 +968,11 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
       public Builder setPostalAddress(com.google.type.PostalAddress.Builder builderForValue) {
         if (postalAddressBuilder_ == null) {
           postalAddress_ = builderForValue.build();
-          onChanged();
         } else {
           postalAddressBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -966,19 +988,18 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
        */
       public Builder mergePostalAddress(com.google.type.PostalAddress value) {
         if (postalAddressBuilder_ == null) {
-          if (postalAddress_ != null) {
-            postalAddress_ =
-                com.google.type.PostalAddress.newBuilder(postalAddress_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && postalAddress_ != null
+              && postalAddress_ != com.google.type.PostalAddress.getDefaultInstance()) {
+            getPostalAddressBuilder().mergeFrom(value);
           } else {
             postalAddress_ = value;
           }
-          onChanged();
         } else {
           postalAddressBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -993,14 +1014,13 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
        * </code>
        */
       public Builder clearPostalAddress() {
-        if (postalAddressBuilder_ == null) {
-          postalAddress_ = null;
-          onChanged();
-        } else {
-          postalAddress_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        postalAddress_ = null;
+        if (postalAddressBuilder_ != null) {
+          postalAddressBuilder_.dispose();
           postalAddressBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1015,7 +1035,7 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
        * </code>
        */
       public com.google.type.PostalAddress.Builder getPostalAddressBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getPostalAddressFieldBuilder().getBuilder();
       }
@@ -1128,8 +1148,8 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
         if (value == null) {
           throw new NullPointerException();
         }
-
         email_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1145,8 +1165,8 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearEmail() {
-
         email_ = getDefaultInstance().getEmail();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1167,8 +1187,8 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         email_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1237,8 +1257,8 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
         if (value == null) {
           throw new NullPointerException();
         }
-
         phoneNumber_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1255,8 +1275,8 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearPhoneNumber() {
-
         phoneNumber_ = getDefaultInstance().getPhoneNumber();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1278,8 +1298,8 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         phoneNumber_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1348,8 +1368,8 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
         if (value == null) {
           throw new NullPointerException();
         }
-
         faxNumber_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1366,8 +1386,8 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearFaxNumber() {
-
         faxNumber_ = getDefaultInstance().getFaxNumber();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1389,8 +1409,8 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         faxNumber_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1460,7 +1480,7 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PRIVACY_FIELD_NUMBER = 1;
-  private int privacy_;
+  private int privacy_ = 0;
   /**
    *
    *
@@ -1493,9 +1513,8 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.domains.v1.ContactPrivacy getPrivacy() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.domains.v1.ContactPrivacy result =
-        com.google.cloud.domains.v1.ContactPrivacy.valueOf(privacy_);
+        com.google.cloud.domains.v1.ContactPrivacy.forNumber(privacy_);
     return result == null ? com.google.cloud.domains.v1.ContactPrivacy.UNRECOGNIZED : result;
   }
 
@@ -1566,7 +1585,9 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public com.google.cloud.domains.v1.ContactSettings.ContactOrBuilder
       getRegistrantContactOrBuilder() {
-    return getRegistrantContact();
+    return registrantContact_ == null
+        ? com.google.cloud.domains.v1.ContactSettings.Contact.getDefaultInstance()
+        : registrantContact_;
   }
 
   public static final int ADMIN_CONTACT_FIELD_NUMBER = 3;
@@ -1620,7 +1641,9 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.domains.v1.ContactSettings.ContactOrBuilder getAdminContactOrBuilder() {
-    return getAdminContact();
+    return adminContact_ == null
+        ? com.google.cloud.domains.v1.ContactSettings.Contact.getDefaultInstance()
+        : adminContact_;
   }
 
   public static final int TECHNICAL_CONTACT_FIELD_NUMBER = 4;
@@ -1675,7 +1698,9 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public com.google.cloud.domains.v1.ContactSettings.ContactOrBuilder
       getTechnicalContactOrBuilder() {
-    return getTechnicalContact();
+    return technicalContact_ == null
+        ? com.google.cloud.domains.v1.ContactSettings.Contact.getDefaultInstance()
+        : technicalContact_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1922,24 +1947,21 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       privacy_ = 0;
-
-      if (registrantContactBuilder_ == null) {
-        registrantContact_ = null;
-      } else {
-        registrantContact_ = null;
+      registrantContact_ = null;
+      if (registrantContactBuilder_ != null) {
+        registrantContactBuilder_.dispose();
         registrantContactBuilder_ = null;
       }
-      if (adminContactBuilder_ == null) {
-        adminContact_ = null;
-      } else {
-        adminContact_ = null;
+      adminContact_ = null;
+      if (adminContactBuilder_ != null) {
+        adminContactBuilder_.dispose();
         adminContactBuilder_ = null;
       }
-      if (technicalContactBuilder_ == null) {
-        technicalContact_ = null;
-      } else {
-        technicalContact_ = null;
+      technicalContact_ = null;
+      if (technicalContactBuilder_ != null) {
+        technicalContactBuilder_.dispose();
         technicalContactBuilder_ = null;
       }
       return this;
@@ -1969,24 +1991,32 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.domains.v1.ContactSettings buildPartial() {
       com.google.cloud.domains.v1.ContactSettings result =
           new com.google.cloud.domains.v1.ContactSettings(this);
-      result.privacy_ = privacy_;
-      if (registrantContactBuilder_ == null) {
-        result.registrantContact_ = registrantContact_;
-      } else {
-        result.registrantContact_ = registrantContactBuilder_.build();
-      }
-      if (adminContactBuilder_ == null) {
-        result.adminContact_ = adminContact_;
-      } else {
-        result.adminContact_ = adminContactBuilder_.build();
-      }
-      if (technicalContactBuilder_ == null) {
-        result.technicalContact_ = technicalContact_;
-      } else {
-        result.technicalContact_ = technicalContactBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.domains.v1.ContactSettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.privacy_ = privacy_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.registrantContact_ =
+            registrantContactBuilder_ == null
+                ? registrantContact_
+                : registrantContactBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.adminContact_ =
+            adminContactBuilder_ == null ? adminContact_ : adminContactBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.technicalContact_ =
+            technicalContactBuilder_ == null ? technicalContact_ : technicalContactBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2075,27 +2105,27 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
             case 8:
               {
                 privacy_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(
                     getRegistrantContactFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getAdminContactFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     getTechnicalContactFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -2114,6 +2144,8 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int privacy_ = 0;
     /**
@@ -2148,8 +2180,8 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setPrivacyValue(int value) {
-
       privacy_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2168,9 +2200,8 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.cloud.domains.v1.ContactPrivacy getPrivacy() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.domains.v1.ContactPrivacy result =
-          com.google.cloud.domains.v1.ContactPrivacy.valueOf(privacy_);
+          com.google.cloud.domains.v1.ContactPrivacy.forNumber(privacy_);
       return result == null ? com.google.cloud.domains.v1.ContactPrivacy.UNRECOGNIZED : result;
     }
     /**
@@ -2191,7 +2222,7 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       privacy_ = value.getNumber();
       onChanged();
       return this;
@@ -2210,7 +2241,7 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPrivacy() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       privacy_ = 0;
       onChanged();
       return this;
@@ -2241,7 +2272,7 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
      * @return Whether the registrantContact field is set.
      */
     public boolean hasRegistrantContact() {
-      return registrantContactBuilder_ != null || registrantContact_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2292,11 +2323,11 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         registrantContact_ = value;
-        onChanged();
       } else {
         registrantContactBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2319,11 +2350,11 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.domains.v1.ContactSettings.Contact.Builder builderForValue) {
       if (registrantContactBuilder_ == null) {
         registrantContact_ = builderForValue.build();
-        onChanged();
       } else {
         registrantContactBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2345,19 +2376,19 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
     public Builder mergeRegistrantContact(
         com.google.cloud.domains.v1.ContactSettings.Contact value) {
       if (registrantContactBuilder_ == null) {
-        if (registrantContact_ != null) {
-          registrantContact_ =
-              com.google.cloud.domains.v1.ContactSettings.Contact.newBuilder(registrantContact_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && registrantContact_ != null
+            && registrantContact_
+                != com.google.cloud.domains.v1.ContactSettings.Contact.getDefaultInstance()) {
+          getRegistrantContactBuilder().mergeFrom(value);
         } else {
           registrantContact_ = value;
         }
-        onChanged();
       } else {
         registrantContactBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2377,14 +2408,13 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearRegistrantContact() {
-      if (registrantContactBuilder_ == null) {
-        registrantContact_ = null;
-        onChanged();
-      } else {
-        registrantContact_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      registrantContact_ = null;
+      if (registrantContactBuilder_ != null) {
+        registrantContactBuilder_.dispose();
         registrantContactBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2405,7 +2435,7 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
      */
     public com.google.cloud.domains.v1.ContactSettings.Contact.Builder
         getRegistrantContactBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getRegistrantContactFieldBuilder().getBuilder();
     }
@@ -2488,7 +2518,7 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
      * @return Whether the adminContact field is set.
      */
     public boolean hasAdminContact() {
-      return adminContactBuilder_ != null || adminContact_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2529,11 +2559,11 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         adminContact_ = value;
-        onChanged();
       } else {
         adminContactBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2551,11 +2581,11 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.domains.v1.ContactSettings.Contact.Builder builderForValue) {
       if (adminContactBuilder_ == null) {
         adminContact_ = builderForValue.build();
-        onChanged();
       } else {
         adminContactBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2571,19 +2601,19 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeAdminContact(com.google.cloud.domains.v1.ContactSettings.Contact value) {
       if (adminContactBuilder_ == null) {
-        if (adminContact_ != null) {
-          adminContact_ =
-              com.google.cloud.domains.v1.ContactSettings.Contact.newBuilder(adminContact_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && adminContact_ != null
+            && adminContact_
+                != com.google.cloud.domains.v1.ContactSettings.Contact.getDefaultInstance()) {
+          getAdminContactBuilder().mergeFrom(value);
         } else {
           adminContact_ = value;
         }
-        onChanged();
       } else {
         adminContactBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2598,14 +2628,13 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearAdminContact() {
-      if (adminContactBuilder_ == null) {
-        adminContact_ = null;
-        onChanged();
-      } else {
-        adminContact_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      adminContact_ = null;
+      if (adminContactBuilder_ != null) {
+        adminContactBuilder_.dispose();
         adminContactBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2620,7 +2649,7 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public com.google.cloud.domains.v1.ContactSettings.Contact.Builder getAdminContactBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getAdminContactFieldBuilder().getBuilder();
     }
@@ -2692,7 +2721,7 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
      * @return Whether the technicalContact field is set.
      */
     public boolean hasTechnicalContact() {
-      return technicalContactBuilder_ != null || technicalContact_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2733,11 +2762,11 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         technicalContact_ = value;
-        onChanged();
       } else {
         technicalContactBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2755,11 +2784,11 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.domains.v1.ContactSettings.Contact.Builder builderForValue) {
       if (technicalContactBuilder_ == null) {
         technicalContact_ = builderForValue.build();
-        onChanged();
       } else {
         technicalContactBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2776,19 +2805,19 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
     public Builder mergeTechnicalContact(
         com.google.cloud.domains.v1.ContactSettings.Contact value) {
       if (technicalContactBuilder_ == null) {
-        if (technicalContact_ != null) {
-          technicalContact_ =
-              com.google.cloud.domains.v1.ContactSettings.Contact.newBuilder(technicalContact_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && technicalContact_ != null
+            && technicalContact_
+                != com.google.cloud.domains.v1.ContactSettings.Contact.getDefaultInstance()) {
+          getTechnicalContactBuilder().mergeFrom(value);
         } else {
           technicalContact_ = value;
         }
-        onChanged();
       } else {
         technicalContactBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2803,14 +2832,13 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearTechnicalContact() {
-      if (technicalContactBuilder_ == null) {
-        technicalContact_ = null;
-        onChanged();
-      } else {
-        technicalContact_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      technicalContact_ = null;
+      if (technicalContactBuilder_ != null) {
+        technicalContactBuilder_.dispose();
         technicalContactBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2826,7 +2854,7 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
      */
     public com.google.cloud.domains.v1.ContactSettings.Contact.Builder
         getTechnicalContactBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getTechnicalContactFieldBuilder().getBuilder();
     }

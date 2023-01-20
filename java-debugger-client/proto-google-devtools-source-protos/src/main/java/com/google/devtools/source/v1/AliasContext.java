@@ -252,7 +252,7 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KIND_FIELD_NUMBER = 1;
-  private int kind_;
+  private int kind_ = 0;
   /**
    *
    *
@@ -281,14 +281,15 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.devtools.source.v1.AliasContext.Kind getKind() {
-    @SuppressWarnings("deprecation")
     com.google.devtools.source.v1.AliasContext.Kind result =
-        com.google.devtools.source.v1.AliasContext.Kind.valueOf(kind_);
+        com.google.devtools.source.v1.AliasContext.Kind.forNumber(kind_);
     return result == null ? com.google.devtools.source.v1.AliasContext.Kind.UNRECOGNIZED : result;
   }
 
   public static final int NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -542,10 +543,9 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       kind_ = 0;
-
       name_ = "";
-
       return this;
     }
 
@@ -573,10 +573,21 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.source.v1.AliasContext buildPartial() {
       com.google.devtools.source.v1.AliasContext result =
           new com.google.devtools.source.v1.AliasContext(this);
-      result.kind_ = kind_;
-      result.name_ = name_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.devtools.source.v1.AliasContext result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.kind_ = kind_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.name_ = name_;
+      }
     }
 
     @java.lang.Override
@@ -629,6 +640,7 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -660,13 +672,13 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 kind_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -685,6 +697,8 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int kind_ = 0;
     /**
@@ -715,8 +729,8 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setKindValue(int value) {
-
       kind_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -733,9 +747,8 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.devtools.source.v1.AliasContext.Kind getKind() {
-      @SuppressWarnings("deprecation")
       com.google.devtools.source.v1.AliasContext.Kind result =
-          com.google.devtools.source.v1.AliasContext.Kind.valueOf(kind_);
+          com.google.devtools.source.v1.AliasContext.Kind.forNumber(kind_);
       return result == null ? com.google.devtools.source.v1.AliasContext.Kind.UNRECOGNIZED : result;
     }
     /**
@@ -754,7 +767,7 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       kind_ = value.getNumber();
       onChanged();
       return this;
@@ -771,7 +784,7 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       kind_ = 0;
       onChanged();
       return this;
@@ -838,8 +851,8 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -855,8 +868,8 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -877,8 +890,8 @@ public final class AliasContext extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

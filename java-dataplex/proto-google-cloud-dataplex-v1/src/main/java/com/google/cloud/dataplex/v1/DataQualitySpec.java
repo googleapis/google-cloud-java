@@ -68,6 +68,8 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int RULES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataplex.v1.DataQualityRule> rules_;
   /**
    *
@@ -340,6 +342,7 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
       } else {
@@ -374,7 +377,15 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.dataplex.v1.DataQualitySpec buildPartial() {
       com.google.cloud.dataplex.v1.DataQualitySpec result =
           new com.google.cloud.dataplex.v1.DataQualitySpec(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dataplex.v1.DataQualitySpec result) {
       if (rulesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           rules_ = java.util.Collections.unmodifiableList(rules_);
@@ -384,8 +395,10 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
       } else {
         result.rules_ = rulesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataplex.v1.DataQualitySpec result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

@@ -386,6 +386,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (recurrencePeriodDurationBuilder_ != null) {
         recurrencePeriodDurationBuilder_.clear();
       }
@@ -417,16 +418,24 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.privacy.dlp.v2.Schedule buildPartial() {
       com.google.privacy.dlp.v2.Schedule result = new com.google.privacy.dlp.v2.Schedule(this);
-      if (optionCase_ == 1) {
-        if (recurrencePeriodDurationBuilder_ == null) {
-          result.option_ = option_;
-        } else {
-          result.option_ = recurrencePeriodDurationBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.optionCase_ = optionCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.Schedule result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.Schedule result) {
+      result.optionCase_ = optionCase_;
+      result.option_ = this.option_;
+      if (optionCase_ == 1 && recurrencePeriodDurationBuilder_ != null) {
+        result.option_ = recurrencePeriodDurationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -548,6 +557,8 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
@@ -796,7 +807,6 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       }
       optionCase_ = 1;
       onChanged();
-      ;
       return recurrencePeriodDurationBuilder_;
     }
 

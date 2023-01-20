@@ -70,7 +70,9 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -125,7 +127,9 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -194,7 +198,7 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 3;
-  private boolean allowMissing_;
+  private boolean allowMissing_ = false;
   /**
    *
    *
@@ -213,7 +217,7 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -232,7 +236,9 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ETAG_FIELD_NUMBER = 5;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -517,16 +523,12 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       requestId_ = "";
-
       allowMissing_ = false;
-
       validateOnly_ = false;
-
       etag_ = "";
-
       return this;
     }
 
@@ -554,13 +556,30 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.deploy.v1.DeleteTargetRequest buildPartial() {
       com.google.cloud.deploy.v1.DeleteTargetRequest result =
           new com.google.cloud.deploy.v1.DeleteTargetRequest(this);
-      result.name_ = name_;
-      result.requestId_ = requestId_;
-      result.allowMissing_ = allowMissing_;
-      result.validateOnly_ = validateOnly_;
-      result.etag_ = etag_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.DeleteTargetRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.requestId_ = requestId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.allowMissing_ = allowMissing_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.etag_ = etag_;
+      }
     }
 
     @java.lang.Override
@@ -610,10 +629,12 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
       if (other == com.google.cloud.deploy.v1.DeleteTargetRequest.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getAllowMissing() != false) {
@@ -624,6 +645,7 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -655,31 +677,31 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 allowMissing_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -698,6 +720,8 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -769,8 +793,8 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -789,8 +813,8 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -814,8 +838,8 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -911,8 +935,8 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -938,8 +962,8 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -970,8 +994,8 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1009,6 +1033,7 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
     public Builder setAllowMissing(boolean value) {
 
       allowMissing_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1025,7 +1050,7 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearAllowMissing() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       allowMissing_ = false;
       onChanged();
       return this;
@@ -1064,6 +1089,7 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1080,7 +1106,7 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       validateOnly_ = false;
       onChanged();
       return this;
@@ -1153,8 +1179,8 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1172,8 +1198,8 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1196,8 +1222,8 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

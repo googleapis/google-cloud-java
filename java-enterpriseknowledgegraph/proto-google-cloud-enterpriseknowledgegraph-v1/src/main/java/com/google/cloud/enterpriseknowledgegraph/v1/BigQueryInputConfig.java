@@ -69,7 +69,9 @@ public final class BigQueryInputConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int BIGQUERY_TABLE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object bigqueryTable_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object bigqueryTable_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class BigQueryInputConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int GCS_URI_FIELD_NUMBER = 2;
-  private volatile java.lang.Object gcsUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object gcsUri_ = "";
   /**
    *
    *
@@ -377,10 +381,9 @@ public final class BigQueryInputConfig extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       bigqueryTable_ = "";
-
       gcsUri_ = "";
-
       return this;
     }
 
@@ -409,10 +412,22 @@ public final class BigQueryInputConfig extends com.google.protobuf.GeneratedMess
     public com.google.cloud.enterpriseknowledgegraph.v1.BigQueryInputConfig buildPartial() {
       com.google.cloud.enterpriseknowledgegraph.v1.BigQueryInputConfig result =
           new com.google.cloud.enterpriseknowledgegraph.v1.BigQueryInputConfig(this);
-      result.bigqueryTable_ = bigqueryTable_;
-      result.gcsUri_ = gcsUri_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.enterpriseknowledgegraph.v1.BigQueryInputConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.bigqueryTable_ = bigqueryTable_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.gcsUri_ = gcsUri_;
+      }
     }
 
     @java.lang.Override
@@ -465,10 +480,12 @@ public final class BigQueryInputConfig extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getBigqueryTable().isEmpty()) {
         bigqueryTable_ = other.bigqueryTable_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getGcsUri().isEmpty()) {
         gcsUri_ = other.gcsUri_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -500,13 +517,13 @@ public final class BigQueryInputConfig extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 bigqueryTable_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 gcsUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -525,6 +542,8 @@ public final class BigQueryInputConfig extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object bigqueryTable_ = "";
     /**
@@ -593,8 +612,8 @@ public final class BigQueryInputConfig extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       bigqueryTable_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -612,8 +631,8 @@ public final class BigQueryInputConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearBigqueryTable() {
-
       bigqueryTable_ = getDefaultInstance().getBigqueryTable();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -636,8 +655,8 @@ public final class BigQueryInputConfig extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       bigqueryTable_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -703,8 +722,8 @@ public final class BigQueryInputConfig extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       gcsUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -720,8 +739,8 @@ public final class BigQueryInputConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearGcsUri() {
-
       gcsUri_ = getDefaultInstance().getGcsUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -742,8 +761,8 @@ public final class BigQueryInputConfig extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       gcsUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

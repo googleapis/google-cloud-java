@@ -240,7 +240,9 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int MESSAGE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object message_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object message_ = "";
   /**
    *
    *
@@ -289,7 +291,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int LEVEL_FIELD_NUMBER = 2;
-  private int level_;
+  private int level_ = 0;
   /**
    *
    *
@@ -318,9 +320,8 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.datastream.v1alpha1.ValidationMessage.Level getLevel() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.datastream.v1alpha1.ValidationMessage.Level result =
-        com.google.cloud.datastream.v1alpha1.ValidationMessage.Level.valueOf(level_);
+        com.google.cloud.datastream.v1alpha1.ValidationMessage.Level.forNumber(level_);
     return result == null
         ? com.google.cloud.datastream.v1alpha1.ValidationMessage.Level.UNRECOGNIZED
         : result;
@@ -339,6 +340,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadata_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadata() {
@@ -396,8 +398,10 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   @java.lang.Override
-  public java.lang.String getMetadataOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -426,7 +430,9 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CODE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object code_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object code_ = "";
   /**
    *
    *
@@ -731,13 +737,11 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       message_ = "";
-
       level_ = 0;
-
       internalGetMutableMetadata().clear();
       code_ = "";
-
       return this;
     }
 
@@ -765,14 +769,28 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.datastream.v1alpha1.ValidationMessage buildPartial() {
       com.google.cloud.datastream.v1alpha1.ValidationMessage result =
           new com.google.cloud.datastream.v1alpha1.ValidationMessage(this);
-      int from_bitField0_ = bitField0_;
-      result.message_ = message_;
-      result.level_ = level_;
-      result.metadata_ = internalGetMetadata();
-      result.metadata_.makeImmutable();
-      result.code_ = code_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1alpha1.ValidationMessage result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.message_ = message_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.level_ = level_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.metadata_ = internalGetMetadata();
+        result.metadata_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.code_ = code_;
+      }
     }
 
     @java.lang.Override
@@ -823,14 +841,17 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.level_ != 0) {
         setLevelValue(other.getLevelValue());
       }
       internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
+      bitField0_ |= 0x00000004;
       if (!other.getCode().isEmpty()) {
         code_ = other.code_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -862,13 +883,13 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 message_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 level_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
@@ -880,12 +901,13 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
                 internalGetMutableMetadata()
                     .getMutableMap()
                     .put(metadata__.getKey(), metadata__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 code_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -968,8 +990,8 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       message_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -985,8 +1007,8 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
-
       message_ = getDefaultInstance().getMessage();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1007,8 +1029,8 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       message_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1042,8 +1064,8 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setLevelValue(int value) {
-
       level_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1060,9 +1082,8 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.cloud.datastream.v1alpha1.ValidationMessage.Level getLevel() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.datastream.v1alpha1.ValidationMessage.Level result =
-          com.google.cloud.datastream.v1alpha1.ValidationMessage.Level.valueOf(level_);
+          com.google.cloud.datastream.v1alpha1.ValidationMessage.Level.forNumber(level_);
       return result == null
           ? com.google.cloud.datastream.v1alpha1.ValidationMessage.Level.UNRECOGNIZED
           : result;
@@ -1083,7 +1104,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       level_ = value.getNumber();
       onChanged();
       return this;
@@ -1100,7 +1121,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearLevel() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       level_ = 0;
       onChanged();
       return this;
@@ -1117,8 +1138,6 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableMetadata() {
-      onChanged();
-      ;
       if (metadata_ == null) {
         metadata_ =
             com.google.protobuf.MapField.newMapField(MetadataDefaultEntryHolder.defaultEntry);
@@ -1126,6 +1145,8 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
       if (!metadata_.isMutable()) {
         metadata_ = metadata_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return metadata_;
     }
 
@@ -1177,8 +1198,10 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>map&lt;string, string&gt; metadata = 3;</code>
      */
     @java.lang.Override
-    public java.lang.String getMetadataOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1207,6 +1230,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
     }
 
     public Builder clearMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
@@ -1229,6 +1253,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableMetadata().getMutableMap();
     }
     /**
@@ -1247,8 +1272,8 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableMetadata().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1262,6 +1287,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      */
     public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadata().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 
@@ -1326,8 +1352,8 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       code_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1343,8 +1369,8 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearCode() {
-
       code_ = getDefaultInstance().getCode();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1365,8 +1391,8 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       code_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -70,7 +70,9 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -188,7 +190,9 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.InspectConfigOrBuilder getInspectConfigOrBuilder() {
-    return getInspectConfig();
+    return inspectConfig_ == null
+        ? com.google.privacy.dlp.v2.InspectConfig.getDefaultInstance()
+        : inspectConfig_;
   }
 
   public static final int ITEM_FIELD_NUMBER = 3;
@@ -234,11 +238,13 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.ContentItemOrBuilder getItemOrBuilder() {
-    return getItem();
+    return item_ == null ? com.google.privacy.dlp.v2.ContentItem.getDefaultInstance() : item_;
   }
 
   public static final int INSPECT_TEMPLATE_NAME_FIELD_NUMBER = 4;
-  private volatile java.lang.Object inspectTemplateName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object inspectTemplateName_ = "";
   /**
    *
    *
@@ -295,7 +301,9 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int LOCATION_ID_FIELD_NUMBER = 5;
-  private volatile java.lang.Object locationId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object locationId_ = "";
   /**
    *
    *
@@ -586,24 +594,20 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (inspectConfigBuilder_ == null) {
-        inspectConfig_ = null;
-      } else {
-        inspectConfig_ = null;
+      inspectConfig_ = null;
+      if (inspectConfigBuilder_ != null) {
+        inspectConfigBuilder_.dispose();
         inspectConfigBuilder_ = null;
       }
-      if (itemBuilder_ == null) {
-        item_ = null;
-      } else {
-        item_ = null;
+      item_ = null;
+      if (itemBuilder_ != null) {
+        itemBuilder_.dispose();
         itemBuilder_ = null;
       }
       inspectTemplateName_ = "";
-
       locationId_ = "";
-
       return this;
     }
 
@@ -631,21 +635,31 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
     public com.google.privacy.dlp.v2.InspectContentRequest buildPartial() {
       com.google.privacy.dlp.v2.InspectContentRequest result =
           new com.google.privacy.dlp.v2.InspectContentRequest(this);
-      result.parent_ = parent_;
-      if (inspectConfigBuilder_ == null) {
-        result.inspectConfig_ = inspectConfig_;
-      } else {
-        result.inspectConfig_ = inspectConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (itemBuilder_ == null) {
-        result.item_ = item_;
-      } else {
-        result.item_ = itemBuilder_.build();
-      }
-      result.inspectTemplateName_ = inspectTemplateName_;
-      result.locationId_ = locationId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.InspectContentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.inspectConfig_ =
+            inspectConfigBuilder_ == null ? inspectConfig_ : inspectConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.item_ = itemBuilder_ == null ? item_ : itemBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.inspectTemplateName_ = inspectTemplateName_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.locationId_ = locationId_;
+      }
     }
 
     @java.lang.Override
@@ -696,6 +710,7 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasInspectConfig()) {
@@ -706,10 +721,12 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getInspectTemplateName().isEmpty()) {
         inspectTemplateName_ = other.inspectTemplateName_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getLocationId().isEmpty()) {
         locationId_ = other.locationId_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -741,31 +758,31 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getInspectConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getItemFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 inspectTemplateName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 locationId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -784,6 +801,8 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -879,8 +898,8 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -907,8 +926,8 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -940,8 +959,8 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -965,7 +984,7 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the inspectConfig field is set.
      */
     public boolean hasInspectConfig() {
-      return inspectConfigBuilder_ != null || inspectConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1004,11 +1023,11 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         inspectConfig_ = value;
-        onChanged();
       } else {
         inspectConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1025,11 +1044,11 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
         com.google.privacy.dlp.v2.InspectConfig.Builder builderForValue) {
       if (inspectConfigBuilder_ == null) {
         inspectConfig_ = builderForValue.build();
-        onChanged();
       } else {
         inspectConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1044,19 +1063,18 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeInspectConfig(com.google.privacy.dlp.v2.InspectConfig value) {
       if (inspectConfigBuilder_ == null) {
-        if (inspectConfig_ != null) {
-          inspectConfig_ =
-              com.google.privacy.dlp.v2.InspectConfig.newBuilder(inspectConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && inspectConfig_ != null
+            && inspectConfig_ != com.google.privacy.dlp.v2.InspectConfig.getDefaultInstance()) {
+          getInspectConfigBuilder().mergeFrom(value);
         } else {
           inspectConfig_ = value;
         }
-        onChanged();
       } else {
         inspectConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1070,14 +1088,13 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
      */
     public Builder clearInspectConfig() {
-      if (inspectConfigBuilder_ == null) {
-        inspectConfig_ = null;
-        onChanged();
-      } else {
-        inspectConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      inspectConfig_ = null;
+      if (inspectConfigBuilder_ != null) {
+        inspectConfigBuilder_.dispose();
         inspectConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1091,7 +1108,7 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
      */
     public com.google.privacy.dlp.v2.InspectConfig.Builder getInspectConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getInspectConfigFieldBuilder().getBuilder();
     }
@@ -1159,7 +1176,7 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the item field is set.
      */
     public boolean hasItem() {
-      return itemBuilder_ != null || item_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1194,11 +1211,11 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         item_ = value;
-        onChanged();
       } else {
         itemBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1213,11 +1230,11 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
     public Builder setItem(com.google.privacy.dlp.v2.ContentItem.Builder builderForValue) {
       if (itemBuilder_ == null) {
         item_ = builderForValue.build();
-        onChanged();
       } else {
         itemBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1231,19 +1248,18 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeItem(com.google.privacy.dlp.v2.ContentItem value) {
       if (itemBuilder_ == null) {
-        if (item_ != null) {
-          item_ =
-              com.google.privacy.dlp.v2.ContentItem.newBuilder(item_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && item_ != null
+            && item_ != com.google.privacy.dlp.v2.ContentItem.getDefaultInstance()) {
+          getItemBuilder().mergeFrom(value);
         } else {
           item_ = value;
         }
-        onChanged();
       } else {
         itemBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1256,14 +1272,13 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.privacy.dlp.v2.ContentItem item = 3;</code>
      */
     public Builder clearItem() {
-      if (itemBuilder_ == null) {
-        item_ = null;
-        onChanged();
-      } else {
-        item_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      item_ = null;
+      if (itemBuilder_ != null) {
+        itemBuilder_.dispose();
         itemBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1276,7 +1291,7 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.privacy.dlp.v2.ContentItem item = 3;</code>
      */
     public com.google.privacy.dlp.v2.ContentItem.Builder getItemBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getItemFieldBuilder().getBuilder();
     }
@@ -1395,8 +1410,8 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       inspectTemplateName_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1416,8 +1431,8 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearInspectTemplateName() {
-
       inspectTemplateName_ = getDefaultInstance().getInspectTemplateName();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1442,8 +1457,8 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       inspectTemplateName_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1509,8 +1524,8 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       locationId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1526,8 +1541,8 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearLocationId() {
-
       locationId_ = getDefaultInstance().getLocationId();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1548,8 +1563,8 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       locationId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

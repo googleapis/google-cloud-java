@@ -68,7 +68,9 @@ public final class AnthosCluster extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MEMBERSHIP_FIELD_NUMBER = 1;
-  private volatile java.lang.Object membership_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object membership_ = "";
   /**
    *
    *
@@ -316,8 +318,8 @@ public final class AnthosCluster extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       membership_ = "";
-
       return this;
     }
 
@@ -345,9 +347,18 @@ public final class AnthosCluster extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.deploy.v1.AnthosCluster buildPartial() {
       com.google.cloud.deploy.v1.AnthosCluster result =
           new com.google.cloud.deploy.v1.AnthosCluster(this);
-      result.membership_ = membership_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.AnthosCluster result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.membership_ = membership_;
+      }
     }
 
     @java.lang.Override
@@ -397,6 +408,7 @@ public final class AnthosCluster extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.deploy.v1.AnthosCluster.getDefaultInstance()) return this;
       if (!other.getMembership().isEmpty()) {
         membership_ = other.membership_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -428,7 +440,7 @@ public final class AnthosCluster extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 membership_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -447,6 +459,8 @@ public final class AnthosCluster extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object membership_ = "";
     /**
@@ -515,8 +529,8 @@ public final class AnthosCluster extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       membership_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -534,8 +548,8 @@ public final class AnthosCluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMembership() {
-
       membership_ = getDefaultInstance().getMembership();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -558,8 +572,8 @@ public final class AnthosCluster extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       membership_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

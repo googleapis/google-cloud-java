@@ -72,7 +72,9 @@ public final class CreateEntityReconciliationJobRequest
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -182,7 +184,9 @@ public final class CreateEntityReconciliationJobRequest
   @java.lang.Override
   public com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJobOrBuilder
       getEntityReconciliationJobOrBuilder() {
-    return getEntityReconciliationJob();
+    return entityReconciliationJob_ == null
+        ? com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob.getDefaultInstance()
+        : entityReconciliationJob_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -410,12 +414,11 @@ public final class CreateEntityReconciliationJobRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (entityReconciliationJobBuilder_ == null) {
-        entityReconciliationJob_ = null;
-      } else {
-        entityReconciliationJob_ = null;
+      entityReconciliationJob_ = null;
+      if (entityReconciliationJobBuilder_ != null) {
+        entityReconciliationJobBuilder_.dispose();
         entityReconciliationJobBuilder_ = null;
       }
       return this;
@@ -451,14 +454,25 @@ public final class CreateEntityReconciliationJobRequest
       com.google.cloud.enterpriseknowledgegraph.v1.CreateEntityReconciliationJobRequest result =
           new com.google.cloud.enterpriseknowledgegraph.v1.CreateEntityReconciliationJobRequest(
               this);
-      result.parent_ = parent_;
-      if (entityReconciliationJobBuilder_ == null) {
-        result.entityReconciliationJob_ = entityReconciliationJob_;
-      } else {
-        result.entityReconciliationJob_ = entityReconciliationJobBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.enterpriseknowledgegraph.v1.CreateEntityReconciliationJobRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.entityReconciliationJob_ =
+            entityReconciliationJobBuilder_ == null
+                ? entityReconciliationJob_
+                : entityReconciliationJobBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -515,6 +529,7 @@ public final class CreateEntityReconciliationJobRequest
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasEntityReconciliationJob()) {
@@ -549,14 +564,14 @@ public final class CreateEntityReconciliationJobRequest
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getEntityReconciliationJobFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -575,6 +590,8 @@ public final class CreateEntityReconciliationJobRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -649,8 +666,8 @@ public final class CreateEntityReconciliationJobRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -670,8 +687,8 @@ public final class CreateEntityReconciliationJobRequest
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -696,8 +713,8 @@ public final class CreateEntityReconciliationJobRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -723,7 +740,7 @@ public final class CreateEntityReconciliationJobRequest
      * @return Whether the entityReconciliationJob field is set.
      */
     public boolean hasEntityReconciliationJob() {
-      return entityReconciliationJobBuilder_ != null || entityReconciliationJob_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -767,11 +784,11 @@ public final class CreateEntityReconciliationJobRequest
           throw new NullPointerException();
         }
         entityReconciliationJob_ = value;
-        onChanged();
       } else {
         entityReconciliationJobBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -790,11 +807,11 @@ public final class CreateEntityReconciliationJobRequest
             builderForValue) {
       if (entityReconciliationJobBuilder_ == null) {
         entityReconciliationJob_ = builderForValue.build();
-        onChanged();
       } else {
         entityReconciliationJobBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -811,20 +828,20 @@ public final class CreateEntityReconciliationJobRequest
     public Builder mergeEntityReconciliationJob(
         com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob value) {
       if (entityReconciliationJobBuilder_ == null) {
-        if (entityReconciliationJob_ != null) {
-          entityReconciliationJob_ =
-              com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob.newBuilder(
-                      entityReconciliationJob_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && entityReconciliationJob_ != null
+            && entityReconciliationJob_
+                != com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob
+                    .getDefaultInstance()) {
+          getEntityReconciliationJobBuilder().mergeFrom(value);
         } else {
           entityReconciliationJob_ = value;
         }
-        onChanged();
       } else {
         entityReconciliationJobBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -839,14 +856,13 @@ public final class CreateEntityReconciliationJobRequest
      * </code>
      */
     public Builder clearEntityReconciliationJob() {
-      if (entityReconciliationJobBuilder_ == null) {
-        entityReconciliationJob_ = null;
-        onChanged();
-      } else {
-        entityReconciliationJob_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      entityReconciliationJob_ = null;
+      if (entityReconciliationJobBuilder_ != null) {
+        entityReconciliationJobBuilder_.dispose();
         entityReconciliationJobBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -862,7 +878,7 @@ public final class CreateEntityReconciliationJobRequest
      */
     public com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob.Builder
         getEntityReconciliationJobBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getEntityReconciliationJobFieldBuilder().getBuilder();
     }

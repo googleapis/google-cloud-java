@@ -236,7 +236,9 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRIGGER_FIELD_NUMBER = 1;
-  private volatile java.lang.Object trigger_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object trigger_ = "";
   /**
    *
    *
@@ -291,7 +293,9 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRIGGER_REGION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object triggerRegion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object triggerRegion_ = "";
   /**
    *
    *
@@ -346,7 +350,9 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EVENT_TYPE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object eventType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object eventType_ = "";
   /**
    *
    *
@@ -399,6 +405,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EVENT_FILTERS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.functions.v2alpha.EventFilter> eventFilters_;
   /**
    *
@@ -469,7 +477,9 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PUBSUB_TOPIC_FIELD_NUMBER = 5;
-  private volatile java.lang.Object pubsubTopic_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pubsubTopic_ = "";
   /**
    *
    *
@@ -532,7 +542,9 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_ACCOUNT_EMAIL_FIELD_NUMBER = 6;
-  private volatile java.lang.Object serviceAccountEmail_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccountEmail_ = "";
   /**
    *
    *
@@ -589,7 +601,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RETRY_POLICY_FIELD_NUMBER = 7;
-  private int retryPolicy_;
+  private int retryPolicy_ = 0;
   /**
    *
    *
@@ -622,16 +634,17 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.functions.v2alpha.EventTrigger.RetryPolicy getRetryPolicy() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.functions.v2alpha.EventTrigger.RetryPolicy result =
-        com.google.cloud.functions.v2alpha.EventTrigger.RetryPolicy.valueOf(retryPolicy_);
+        com.google.cloud.functions.v2alpha.EventTrigger.RetryPolicy.forNumber(retryPolicy_);
     return result == null
         ? com.google.cloud.functions.v2alpha.EventTrigger.RetryPolicy.UNRECOGNIZED
         : result;
   }
 
   public static final int CHANNEL_FIELD_NUMBER = 8;
-  private volatile java.lang.Object channel_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object channel_ = "";
   /**
    *
    *
@@ -954,27 +967,21 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       trigger_ = "";
-
       triggerRegion_ = "";
-
       eventType_ = "";
-
       if (eventFiltersBuilder_ == null) {
         eventFilters_ = java.util.Collections.emptyList();
       } else {
         eventFilters_ = null;
         eventFiltersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       pubsubTopic_ = "";
-
       serviceAccountEmail_ = "";
-
       retryPolicy_ = 0;
-
       channel_ = "";
-
       return this;
     }
 
@@ -1002,25 +1009,50 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.functions.v2alpha.EventTrigger buildPartial() {
       com.google.cloud.functions.v2alpha.EventTrigger result =
           new com.google.cloud.functions.v2alpha.EventTrigger(this);
-      int from_bitField0_ = bitField0_;
-      result.trigger_ = trigger_;
-      result.triggerRegion_ = triggerRegion_;
-      result.eventType_ = eventType_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.functions.v2alpha.EventTrigger result) {
       if (eventFiltersBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           eventFilters_ = java.util.Collections.unmodifiableList(eventFilters_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.eventFilters_ = eventFilters_;
       } else {
         result.eventFilters_ = eventFiltersBuilder_.build();
       }
-      result.pubsubTopic_ = pubsubTopic_;
-      result.serviceAccountEmail_ = serviceAccountEmail_;
-      result.retryPolicy_ = retryPolicy_;
-      result.channel_ = channel_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.functions.v2alpha.EventTrigger result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.trigger_ = trigger_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.triggerRegion_ = triggerRegion_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.eventType_ = eventType_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.pubsubTopic_ = pubsubTopic_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.serviceAccountEmail_ = serviceAccountEmail_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.retryPolicy_ = retryPolicy_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.channel_ = channel_;
+      }
     }
 
     @java.lang.Override
@@ -1071,21 +1103,24 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getTrigger().isEmpty()) {
         trigger_ = other.trigger_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTriggerRegion().isEmpty()) {
         triggerRegion_ = other.triggerRegion_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getEventType().isEmpty()) {
         eventType_ = other.eventType_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (eventFiltersBuilder_ == null) {
         if (!other.eventFilters_.isEmpty()) {
           if (eventFilters_.isEmpty()) {
             eventFilters_ = other.eventFilters_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureEventFiltersIsMutable();
             eventFilters_.addAll(other.eventFilters_);
@@ -1098,7 +1133,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
             eventFiltersBuilder_.dispose();
             eventFiltersBuilder_ = null;
             eventFilters_ = other.eventFilters_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             eventFiltersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEventFiltersFieldBuilder()
@@ -1110,10 +1145,12 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getPubsubTopic().isEmpty()) {
         pubsubTopic_ = other.pubsubTopic_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getServiceAccountEmail().isEmpty()) {
         serviceAccountEmail_ = other.serviceAccountEmail_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.retryPolicy_ != 0) {
@@ -1121,6 +1158,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getChannel().isEmpty()) {
         channel_ = other.channel_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1152,19 +1190,19 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 trigger_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 triggerRegion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 eventType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -1183,25 +1221,25 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 pubsubTopic_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 serviceAccountEmail_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 56:
               {
                 retryPolicy_ = input.readEnum();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             case 66:
               {
                 channel_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             default:
@@ -1293,8 +1331,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       trigger_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1313,8 +1351,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTrigger() {
-
       trigger_ = getDefaultInstance().getTrigger();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1338,8 +1376,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       trigger_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1414,8 +1452,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       triggerRegion_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1434,8 +1472,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTriggerRegion() {
-
       triggerRegion_ = getDefaultInstance().getTriggerRegion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1459,8 +1497,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       triggerRegion_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1532,8 +1570,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       eventType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1551,8 +1589,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEventType() {
-
       eventType_ = getDefaultInstance().getEventType();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1575,8 +1613,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       eventType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1585,10 +1623,10 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureEventFiltersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         eventFilters_ =
             new java.util.ArrayList<com.google.cloud.functions.v2alpha.EventFilter>(eventFilters_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1806,7 +1844,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEventFilters() {
       if (eventFiltersBuilder_ == null) {
         eventFilters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         eventFiltersBuilder_.clear();
@@ -1931,7 +1969,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.functions.v2alpha.EventFilter,
                 com.google.cloud.functions.v2alpha.EventFilter.Builder,
                 com.google.cloud.functions.v2alpha.EventFilterOrBuilder>(
-                eventFilters_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                eventFilters_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         eventFilters_ = null;
       }
       return eventFiltersBuilder_;
@@ -2019,8 +2057,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       pubsubTopic_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2043,8 +2081,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPubsubTopic() {
-
       pubsubTopic_ = getDefaultInstance().getPubsubTopic();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2072,8 +2110,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pubsubTopic_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2151,8 +2189,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceAccountEmail_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2172,8 +2210,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceAccountEmail() {
-
       serviceAccountEmail_ = getDefaultInstance().getServiceAccountEmail();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2198,8 +2236,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceAccountEmail_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2237,8 +2275,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setRetryPolicyValue(int value) {
-
       retryPolicy_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2257,9 +2295,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.functions.v2alpha.EventTrigger.RetryPolicy getRetryPolicy() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.functions.v2alpha.EventTrigger.RetryPolicy result =
-          com.google.cloud.functions.v2alpha.EventTrigger.RetryPolicy.valueOf(retryPolicy_);
+          com.google.cloud.functions.v2alpha.EventTrigger.RetryPolicy.forNumber(retryPolicy_);
       return result == null
           ? com.google.cloud.functions.v2alpha.EventTrigger.RetryPolicy.UNRECOGNIZED
           : result;
@@ -2283,7 +2320,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       retryPolicy_ = value.getNumber();
       onChanged();
       return this;
@@ -2302,7 +2339,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRetryPolicy() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       retryPolicy_ = 0;
       onChanged();
       return this;
@@ -2381,8 +2418,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       channel_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2402,8 +2439,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearChannel() {
-
       channel_ = getDefaultInstance().getChannel();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2428,8 +2465,8 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       channel_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

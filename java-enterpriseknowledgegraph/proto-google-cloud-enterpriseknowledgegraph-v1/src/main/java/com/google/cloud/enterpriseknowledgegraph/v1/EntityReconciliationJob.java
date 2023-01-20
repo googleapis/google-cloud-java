@@ -69,7 +69,9 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -169,7 +171,9 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
   @java.lang.Override
   public com.google.cloud.enterpriseknowledgegraph.v1.InputConfigOrBuilder
       getInputConfigOrBuilder() {
-    return getInputConfig();
+    return inputConfig_ == null
+        ? com.google.cloud.enterpriseknowledgegraph.v1.InputConfig.getDefaultInstance()
+        : inputConfig_;
   }
 
   public static final int OUTPUT_CONFIG_FIELD_NUMBER = 3;
@@ -224,11 +228,13 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
   @java.lang.Override
   public com.google.cloud.enterpriseknowledgegraph.v1.OutputConfigOrBuilder
       getOutputConfigOrBuilder() {
-    return getOutputConfig();
+    return outputConfig_ == null
+        ? com.google.cloud.enterpriseknowledgegraph.v1.OutputConfig.getDefaultInstance()
+        : outputConfig_;
   }
 
   public static final int STATE_FIELD_NUMBER = 4;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -261,9 +267,8 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.enterpriseknowledgegraph.v1.JobState getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.enterpriseknowledgegraph.v1.JobState result =
-        com.google.cloud.enterpriseknowledgegraph.v1.JobState.valueOf(state_);
+        com.google.cloud.enterpriseknowledgegraph.v1.JobState.forNumber(state_);
     return result == null
         ? com.google.cloud.enterpriseknowledgegraph.v1.JobState.UNRECOGNIZED
         : result;
@@ -315,7 +320,7 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
-    return getError();
+    return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
 
   public static final int CREATE_TIME_FIELD_NUMBER = 6;
@@ -364,7 +369,7 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int END_TIME_FIELD_NUMBER = 7;
@@ -419,7 +424,7 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-    return getEndTime();
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 8;
@@ -471,7 +476,7 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int RECON_CONFIG_FIELD_NUMBER = 9;
@@ -526,7 +531,9 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
   @java.lang.Override
   public com.google.cloud.enterpriseknowledgegraph.v1.ReconConfigOrBuilder
       getReconConfigOrBuilder() {
-    return getReconConfig();
+    return reconConfig_ == null
+        ? com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.getDefaultInstance()
+        : reconConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -840,50 +847,42 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (inputConfigBuilder_ == null) {
-        inputConfig_ = null;
-      } else {
-        inputConfig_ = null;
+      inputConfig_ = null;
+      if (inputConfigBuilder_ != null) {
+        inputConfigBuilder_.dispose();
         inputConfigBuilder_ = null;
       }
-      if (outputConfigBuilder_ == null) {
-        outputConfig_ = null;
-      } else {
-        outputConfig_ = null;
+      outputConfig_ = null;
+      if (outputConfigBuilder_ != null) {
+        outputConfigBuilder_.dispose();
         outputConfigBuilder_ = null;
       }
       state_ = 0;
-
-      if (errorBuilder_ == null) {
-        error_ = null;
-      } else {
-        error_ = null;
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-      } else {
-        endTime_ = null;
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-      if (reconConfigBuilder_ == null) {
-        reconConfig_ = null;
-      } else {
-        reconConfig_ = null;
+      reconConfig_ = null;
+      if (reconConfigBuilder_ != null) {
+        reconConfigBuilder_.dispose();
         reconConfigBuilder_ = null;
       }
       return this;
@@ -915,45 +914,46 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
     public com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob buildPartial() {
       com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob result =
           new com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob(this);
-      result.name_ = name_;
-      if (inputConfigBuilder_ == null) {
-        result.inputConfig_ = inputConfig_;
-      } else {
-        result.inputConfig_ = inputConfigBuilder_.build();
-      }
-      if (outputConfigBuilder_ == null) {
-        result.outputConfig_ = outputConfig_;
-      } else {
-        result.outputConfig_ = outputConfigBuilder_.build();
-      }
-      result.state_ = state_;
-      if (errorBuilder_ == null) {
-        result.error_ = error_;
-      } else {
-        result.error_ = errorBuilder_.build();
-      }
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (endTimeBuilder_ == null) {
-        result.endTime_ = endTime_;
-      } else {
-        result.endTime_ = endTimeBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      if (reconConfigBuilder_ == null) {
-        result.reconConfig_ = reconConfig_;
-      } else {
-        result.reconConfig_ = reconConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.inputConfig_ =
+            inputConfigBuilder_ == null ? inputConfig_ : inputConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.outputConfig_ =
+            outputConfigBuilder_ == null ? outputConfig_ : outputConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.reconConfig_ =
+            reconConfigBuilder_ == null ? reconConfig_ : reconConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1007,6 +1007,7 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
               .getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasInputConfig()) {
@@ -1062,55 +1063,55 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getInputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getOutputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getReconConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             default:
@@ -1129,6 +1130,8 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1191,8 +1194,8 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1208,8 +1211,8 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1230,8 +1233,8 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1256,7 +1259,7 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
      * @return Whether the inputConfig field is set.
      */
     public boolean hasInputConfig() {
-      return inputConfigBuilder_ != null || inputConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1297,11 +1300,11 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         inputConfig_ = value;
-        onChanged();
       } else {
         inputConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1319,11 +1322,11 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
         com.google.cloud.enterpriseknowledgegraph.v1.InputConfig.Builder builderForValue) {
       if (inputConfigBuilder_ == null) {
         inputConfig_ = builderForValue.build();
-        onChanged();
       } else {
         inputConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1340,19 +1343,19 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
     public Builder mergeInputConfig(
         com.google.cloud.enterpriseknowledgegraph.v1.InputConfig value) {
       if (inputConfigBuilder_ == null) {
-        if (inputConfig_ != null) {
-          inputConfig_ =
-              com.google.cloud.enterpriseknowledgegraph.v1.InputConfig.newBuilder(inputConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && inputConfig_ != null
+            && inputConfig_
+                != com.google.cloud.enterpriseknowledgegraph.v1.InputConfig.getDefaultInstance()) {
+          getInputConfigBuilder().mergeFrom(value);
         } else {
           inputConfig_ = value;
         }
-        onChanged();
       } else {
         inputConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1367,14 +1370,13 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearInputConfig() {
-      if (inputConfigBuilder_ == null) {
-        inputConfig_ = null;
-        onChanged();
-      } else {
-        inputConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      inputConfig_ = null;
+      if (inputConfigBuilder_ != null) {
+        inputConfigBuilder_.dispose();
         inputConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1390,7 +1392,7 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
      */
     public com.google.cloud.enterpriseknowledgegraph.v1.InputConfig.Builder
         getInputConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getInputConfigFieldBuilder().getBuilder();
     }
@@ -1463,7 +1465,7 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
      * @return Whether the outputConfig field is set.
      */
     public boolean hasOutputConfig() {
-      return outputConfigBuilder_ != null || outputConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1505,11 +1507,11 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         outputConfig_ = value;
-        onChanged();
       } else {
         outputConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1527,11 +1529,11 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
         com.google.cloud.enterpriseknowledgegraph.v1.OutputConfig.Builder builderForValue) {
       if (outputConfigBuilder_ == null) {
         outputConfig_ = builderForValue.build();
-        onChanged();
       } else {
         outputConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1548,19 +1550,19 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
     public Builder mergeOutputConfig(
         com.google.cloud.enterpriseknowledgegraph.v1.OutputConfig value) {
       if (outputConfigBuilder_ == null) {
-        if (outputConfig_ != null) {
-          outputConfig_ =
-              com.google.cloud.enterpriseknowledgegraph.v1.OutputConfig.newBuilder(outputConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && outputConfig_ != null
+            && outputConfig_
+                != com.google.cloud.enterpriseknowledgegraph.v1.OutputConfig.getDefaultInstance()) {
+          getOutputConfigBuilder().mergeFrom(value);
         } else {
           outputConfig_ = value;
         }
-        onChanged();
       } else {
         outputConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1575,14 +1577,13 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearOutputConfig() {
-      if (outputConfigBuilder_ == null) {
-        outputConfig_ = null;
-        onChanged();
-      } else {
-        outputConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      outputConfig_ = null;
+      if (outputConfigBuilder_ != null) {
+        outputConfigBuilder_.dispose();
         outputConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1598,7 +1599,7 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
      */
     public com.google.cloud.enterpriseknowledgegraph.v1.OutputConfig.Builder
         getOutputConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getOutputConfigFieldBuilder().getBuilder();
     }
@@ -1684,8 +1685,8 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1704,9 +1705,8 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
      */
     @java.lang.Override
     public com.google.cloud.enterpriseknowledgegraph.v1.JobState getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.enterpriseknowledgegraph.v1.JobState result =
-          com.google.cloud.enterpriseknowledgegraph.v1.JobState.valueOf(state_);
+          com.google.cloud.enterpriseknowledgegraph.v1.JobState.forNumber(state_);
       return result == null
           ? com.google.cloud.enterpriseknowledgegraph.v1.JobState.UNRECOGNIZED
           : result;
@@ -1729,7 +1729,7 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1748,7 +1748,7 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       state_ = 0;
       onChanged();
       return this;
@@ -1771,7 +1771,7 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
      * @return Whether the error field is set.
      */
     public boolean hasError() {
-      return errorBuilder_ != null || error_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1808,11 +1808,11 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         error_ = value;
-        onChanged();
       } else {
         errorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1828,11 +1828,11 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
     public Builder setError(com.google.rpc.Status.Builder builderForValue) {
       if (errorBuilder_ == null) {
         error_ = builderForValue.build();
-        onChanged();
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1847,16 +1847,18 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
-        if (error_ != null) {
-          error_ = com.google.rpc.Status.newBuilder(error_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && error_ != null
+            && error_ != com.google.rpc.Status.getDefaultInstance()) {
+          getErrorBuilder().mergeFrom(value);
         } else {
           error_ = value;
         }
-        onChanged();
       } else {
         errorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1870,14 +1872,13 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
      * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearError() {
-      if (errorBuilder_ == null) {
-        error_ = null;
-        onChanged();
-      } else {
-        error_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1891,7 +1892,7 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
      * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
@@ -1956,7 +1957,7 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1997,11 +1998,11 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2018,11 +2019,11 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2038,17 +2039,18 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2063,14 +2065,13 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2085,7 +2086,7 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2158,7 +2159,7 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return endTimeBuilder_ != null || endTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2199,11 +2200,11 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         endTime_ = value;
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2221,11 +2222,11 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2242,17 +2243,18 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (endTime_ != null) {
-          endTime_ =
-              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && endTime_ != null
+            && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEndTimeBuilder().mergeFrom(value);
         } else {
           endTime_ = value;
         }
-        onChanged();
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2268,14 +2270,13 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearEndTime() {
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-        onChanged();
-      } else {
-        endTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2291,7 +2292,7 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
@@ -2364,7 +2365,7 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2407,11 +2408,11 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2429,11 +2430,11 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2450,17 +2451,18 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2476,14 +2478,13 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2499,7 +2500,7 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2573,7 +2574,7 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
      * @return Whether the reconConfig field is set.
      */
     public boolean hasReconConfig() {
-      return reconConfigBuilder_ != null || reconConfig_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2614,11 +2615,11 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         reconConfig_ = value;
-        onChanged();
       } else {
         reconConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2636,11 +2637,11 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
         com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.Builder builderForValue) {
       if (reconConfigBuilder_ == null) {
         reconConfig_ = builderForValue.build();
-        onChanged();
       } else {
         reconConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2657,19 +2658,19 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
     public Builder mergeReconConfig(
         com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig value) {
       if (reconConfigBuilder_ == null) {
-        if (reconConfig_ != null) {
-          reconConfig_ =
-              com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.newBuilder(reconConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && reconConfig_ != null
+            && reconConfig_
+                != com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.getDefaultInstance()) {
+          getReconConfigBuilder().mergeFrom(value);
         } else {
           reconConfig_ = value;
         }
-        onChanged();
       } else {
         reconConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2684,14 +2685,13 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearReconConfig() {
-      if (reconConfigBuilder_ == null) {
-        reconConfig_ = null;
-        onChanged();
-      } else {
-        reconConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      reconConfig_ = null;
+      if (reconConfigBuilder_ != null) {
+        reconConfigBuilder_.dispose();
         reconConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2707,7 +2707,7 @@ public final class EntityReconciliationJob extends com.google.protobuf.Generated
      */
     public com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.Builder
         getReconConfigBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getReconConfigFieldBuilder().getBuilder();
     }

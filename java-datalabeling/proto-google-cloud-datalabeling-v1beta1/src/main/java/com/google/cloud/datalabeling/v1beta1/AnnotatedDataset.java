@@ -75,7 +75,9 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -128,7 +130,9 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -181,7 +185,9 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 9;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -234,7 +240,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ANNOTATION_SOURCE_FIELD_NUMBER = 3;
-  private int annotationSource_;
+  private int annotationSource_ = 0;
   /**
    *
    *
@@ -263,16 +269,15 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationSource getAnnotationSource() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.datalabeling.v1beta1.AnnotationSource result =
-        com.google.cloud.datalabeling.v1beta1.AnnotationSource.valueOf(annotationSource_);
+        com.google.cloud.datalabeling.v1beta1.AnnotationSource.forNumber(annotationSource_);
     return result == null
         ? com.google.cloud.datalabeling.v1beta1.AnnotationSource.UNRECOGNIZED
         : result;
   }
 
   public static final int ANNOTATION_TYPE_FIELD_NUMBER = 8;
-  private int annotationType_;
+  private int annotationType_ = 0;
   /**
    *
    *
@@ -303,16 +308,15 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationType getAnnotationType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.datalabeling.v1beta1.AnnotationType result =
-        com.google.cloud.datalabeling.v1beta1.AnnotationType.valueOf(annotationType_);
+        com.google.cloud.datalabeling.v1beta1.AnnotationType.forNumber(annotationType_);
     return result == null
         ? com.google.cloud.datalabeling.v1beta1.AnnotationType.UNRECOGNIZED
         : result;
   }
 
   public static final int EXAMPLE_COUNT_FIELD_NUMBER = 4;
-  private long exampleCount_;
+  private long exampleCount_ = 0L;
   /**
    *
    *
@@ -330,7 +334,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int COMPLETED_EXAMPLE_COUNT_FIELD_NUMBER = 5;
-  private long completedExampleCount_;
+  private long completedExampleCount_ = 0L;
   /**
    *
    *
@@ -393,7 +397,9 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelStatsOrBuilder getLabelStatsOrBuilder() {
-    return getLabelStats();
+    return labelStats_ == null
+        ? com.google.cloud.datalabeling.v1beta1.LabelStats.getDefaultInstance()
+        : labelStats_;
   }
 
   public static final int CREATE_TIME_FIELD_NUMBER = 7;
@@ -439,7 +445,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int METADATA_FIELD_NUMBER = 10;
@@ -488,10 +494,14 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadataOrBuilder
       getMetadataOrBuilder() {
-    return getMetadata();
+    return metadata_ == null
+        ? com.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadata.getDefaultInstance()
+        : metadata_;
   }
 
   public static final int BLOCKING_RESOURCES_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList blockingResources_;
   /**
    *
@@ -876,40 +886,31 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       description_ = "";
-
       annotationSource_ = 0;
-
       annotationType_ = 0;
-
       exampleCount_ = 0L;
-
       completedExampleCount_ = 0L;
-
-      if (labelStatsBuilder_ == null) {
-        labelStats_ = null;
-      } else {
-        labelStats_ = null;
+      labelStats_ = null;
+      if (labelStatsBuilder_ != null) {
+        labelStatsBuilder_.dispose();
         labelStatsBuilder_ = null;
       }
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-      } else {
-        metadata_ = null;
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
       blockingResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000400);
       return this;
     }
 
@@ -937,36 +938,55 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.datalabeling.v1beta1.AnnotatedDataset buildPartial() {
       com.google.cloud.datalabeling.v1beta1.AnnotatedDataset result =
           new com.google.cloud.datalabeling.v1beta1.AnnotatedDataset(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.description_ = description_;
-      result.annotationSource_ = annotationSource_;
-      result.annotationType_ = annotationType_;
-      result.exampleCount_ = exampleCount_;
-      result.completedExampleCount_ = completedExampleCount_;
-      if (labelStatsBuilder_ == null) {
-        result.labelStats_ = labelStats_;
-      } else {
-        result.labelStats_ = labelStatsBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (metadataBuilder_ == null) {
-        result.metadata_ = metadata_;
-      } else {
-        result.metadata_ = metadataBuilder_.build();
-      }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        blockingResources_ = blockingResources_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.blockingResources_ = blockingResources_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.datalabeling.v1beta1.AnnotatedDataset result) {
+      if (((bitField0_ & 0x00000400) != 0)) {
+        blockingResources_ = blockingResources_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000400);
+      }
+      result.blockingResources_ = blockingResources_;
+    }
+
+    private void buildPartial0(com.google.cloud.datalabeling.v1beta1.AnnotatedDataset result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.annotationSource_ = annotationSource_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.annotationType_ = annotationType_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.exampleCount_ = exampleCount_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.completedExampleCount_ = completedExampleCount_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.labelStats_ = labelStatsBuilder_ == null ? labelStats_ : labelStatsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1017,14 +1037,17 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.annotationSource_ != 0) {
@@ -1051,7 +1074,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
       if (!other.blockingResources_.isEmpty()) {
         if (blockingResources_.isEmpty()) {
           blockingResources_ = other.blockingResources_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000400);
         } else {
           ensureBlockingResourcesIsMutable();
           blockingResources_.addAll(other.blockingResources_);
@@ -1087,61 +1110,61 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 annotationSource_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 24
             case 32:
               {
                 exampleCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 32
             case 40:
               {
                 completedExampleCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 40
             case 50:
               {
                 input.readMessage(getLabelStatsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 58
             case 64:
               {
                 annotationType_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 64
             case 74:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 90:
@@ -1237,8 +1260,8 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1256,8 +1279,8 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1280,8 +1303,8 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1353,8 +1376,8 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1372,8 +1395,8 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1396,8 +1419,8 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1469,8 +1492,8 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1488,8 +1511,8 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1512,8 +1535,8 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1547,8 +1570,8 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setAnnotationSourceValue(int value) {
-
       annotationSource_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1565,9 +1588,8 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.AnnotationSource getAnnotationSource() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.datalabeling.v1beta1.AnnotationSource result =
-          com.google.cloud.datalabeling.v1beta1.AnnotationSource.valueOf(annotationSource_);
+          com.google.cloud.datalabeling.v1beta1.AnnotationSource.forNumber(annotationSource_);
       return result == null
           ? com.google.cloud.datalabeling.v1beta1.AnnotationSource.UNRECOGNIZED
           : result;
@@ -1589,7 +1611,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       annotationSource_ = value.getNumber();
       onChanged();
       return this;
@@ -1606,7 +1628,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAnnotationSource() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       annotationSource_ = 0;
       onChanged();
       return this;
@@ -1643,8 +1665,8 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setAnnotationTypeValue(int value) {
-
       annotationType_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1662,9 +1684,8 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.AnnotationType getAnnotationType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.datalabeling.v1beta1.AnnotationType result =
-          com.google.cloud.datalabeling.v1beta1.AnnotationType.valueOf(annotationType_);
+          com.google.cloud.datalabeling.v1beta1.AnnotationType.forNumber(annotationType_);
       return result == null
           ? com.google.cloud.datalabeling.v1beta1.AnnotationType.UNRECOGNIZED
           : result;
@@ -1686,7 +1707,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       annotationType_ = value.getNumber();
       onChanged();
       return this;
@@ -1704,7 +1725,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAnnotationType() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       annotationType_ = 0;
       onChanged();
       return this;
@@ -1741,6 +1762,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
     public Builder setExampleCount(long value) {
 
       exampleCount_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1756,7 +1778,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearExampleCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       exampleCount_ = 0L;
       onChanged();
       return this;
@@ -1795,6 +1817,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
     public Builder setCompletedExampleCount(long value) {
 
       completedExampleCount_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1811,7 +1834,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearCompletedExampleCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       completedExampleCount_ = 0L;
       onChanged();
       return this;
@@ -1835,7 +1858,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      * @return Whether the labelStats field is set.
      */
     public boolean hasLabelStats() {
-      return labelStatsBuilder_ != null || labelStats_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -1872,11 +1895,11 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         labelStats_ = value;
-        onChanged();
       } else {
         labelStatsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -1892,11 +1915,11 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
         com.google.cloud.datalabeling.v1beta1.LabelStats.Builder builderForValue) {
       if (labelStatsBuilder_ == null) {
         labelStats_ = builderForValue.build();
-        onChanged();
       } else {
         labelStatsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -1910,19 +1933,19 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeLabelStats(com.google.cloud.datalabeling.v1beta1.LabelStats value) {
       if (labelStatsBuilder_ == null) {
-        if (labelStats_ != null) {
-          labelStats_ =
-              com.google.cloud.datalabeling.v1beta1.LabelStats.newBuilder(labelStats_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && labelStats_ != null
+            && labelStats_
+                != com.google.cloud.datalabeling.v1beta1.LabelStats.getDefaultInstance()) {
+          getLabelStatsBuilder().mergeFrom(value);
         } else {
           labelStats_ = value;
         }
-        onChanged();
       } else {
         labelStatsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -1935,14 +1958,13 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.datalabeling.v1beta1.LabelStats label_stats = 6;</code>
      */
     public Builder clearLabelStats() {
-      if (labelStatsBuilder_ == null) {
-        labelStats_ = null;
-        onChanged();
-      } else {
-        labelStats_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      labelStats_ = null;
+      if (labelStatsBuilder_ != null) {
+        labelStatsBuilder_.dispose();
         labelStatsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1955,7 +1977,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.datalabeling.v1beta1.LabelStats label_stats = 6;</code>
      */
     public com.google.cloud.datalabeling.v1beta1.LabelStats.Builder getLabelStatsBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getLabelStatsFieldBuilder().getBuilder();
     }
@@ -2021,7 +2043,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2058,11 +2080,11 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2077,11 +2099,11 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2095,17 +2117,18 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2118,14 +2141,13 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2138,7 +2160,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2204,7 +2226,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
-      return metadataBuilder_ != null || metadata_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -2242,11 +2264,11 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         metadata_ = value;
-        onChanged();
       } else {
         metadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -2262,11 +2284,11 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
         com.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadata.Builder builderForValue) {
       if (metadataBuilder_ == null) {
         metadata_ = builderForValue.build();
-        onChanged();
       } else {
         metadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -2281,19 +2303,20 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
     public Builder mergeMetadata(
         com.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadata value) {
       if (metadataBuilder_ == null) {
-        if (metadata_ != null) {
-          metadata_ =
-              com.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadata.newBuilder(metadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && metadata_ != null
+            && metadata_
+                != com.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadata
+                    .getDefaultInstance()) {
+          getMetadataBuilder().mergeFrom(value);
         } else {
           metadata_ = value;
         }
-        onChanged();
       } else {
         metadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -2306,14 +2329,13 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadata metadata = 10;</code>
      */
     public Builder clearMetadata() {
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-        onChanged();
-      } else {
-        metadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2327,7 +2349,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadata.Builder
         getMetadataBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
@@ -2380,9 +2402,9 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureBlockingResourcesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         blockingResources_ = new com.google.protobuf.LazyStringArrayList(blockingResources_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000400;
       }
     }
     /**
@@ -2525,7 +2547,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearBlockingResources() {
       blockingResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }

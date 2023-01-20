@@ -68,7 +68,9 @@ public final class TrackingIssue extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int URL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object url_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object url_ = "";
   /**
    *
    *
@@ -316,8 +318,8 @@ public final class TrackingIssue extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       url_ = "";
-
       return this;
     }
 
@@ -346,9 +348,19 @@ public final class TrackingIssue extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue buildPartial() {
       com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue result =
           new com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue(this);
-      result.url_ = url_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.url_ = url_;
+      }
     }
 
     @java.lang.Override
@@ -400,6 +412,7 @@ public final class TrackingIssue extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getUrl().isEmpty()) {
         url_ = other.url_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -431,7 +444,7 @@ public final class TrackingIssue extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 url_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -450,6 +463,8 @@ public final class TrackingIssue extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object url_ = "";
     /**
@@ -515,8 +530,8 @@ public final class TrackingIssue extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       url_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -533,8 +548,8 @@ public final class TrackingIssue extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUrl() {
-
       url_ = getDefaultInstance().getUrl();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -556,8 +571,8 @@ public final class TrackingIssue extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       url_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

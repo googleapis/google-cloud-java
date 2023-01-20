@@ -110,7 +110,9 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.RecordKeyOrBuilder getRecordKeyOrBuilder() {
-    return getRecordKey();
+    return recordKey_ == null
+        ? com.google.privacy.dlp.v2.RecordKey.getDefaultInstance()
+        : recordKey_;
   }
 
   public static final int FIELD_ID_FIELD_NUMBER = 2;
@@ -156,7 +158,7 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldIdOrBuilder() {
-    return getFieldId();
+    return fieldId_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : fieldId_;
   }
 
   public static final int TABLE_LOCATION_FIELD_NUMBER = 3;
@@ -204,7 +206,9 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.TableLocationOrBuilder getTableLocationOrBuilder() {
-    return getTableLocation();
+    return tableLocation_ == null
+        ? com.google.privacy.dlp.v2.TableLocation.getDefaultInstance()
+        : tableLocation_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -436,22 +440,20 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (recordKeyBuilder_ == null) {
-        recordKey_ = null;
-      } else {
-        recordKey_ = null;
+      bitField0_ = 0;
+      recordKey_ = null;
+      if (recordKeyBuilder_ != null) {
+        recordKeyBuilder_.dispose();
         recordKeyBuilder_ = null;
       }
-      if (fieldIdBuilder_ == null) {
-        fieldId_ = null;
-      } else {
-        fieldId_ = null;
+      fieldId_ = null;
+      if (fieldIdBuilder_ != null) {
+        fieldIdBuilder_.dispose();
         fieldIdBuilder_ = null;
       }
-      if (tableLocationBuilder_ == null) {
-        tableLocation_ = null;
-      } else {
-        tableLocation_ = null;
+      tableLocation_ = null;
+      if (tableLocationBuilder_ != null) {
+        tableLocationBuilder_.dispose();
         tableLocationBuilder_ = null;
       }
       return this;
@@ -481,23 +483,25 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.RecordLocation buildPartial() {
       com.google.privacy.dlp.v2.RecordLocation result =
           new com.google.privacy.dlp.v2.RecordLocation(this);
-      if (recordKeyBuilder_ == null) {
-        result.recordKey_ = recordKey_;
-      } else {
-        result.recordKey_ = recordKeyBuilder_.build();
-      }
-      if (fieldIdBuilder_ == null) {
-        result.fieldId_ = fieldId_;
-      } else {
-        result.fieldId_ = fieldIdBuilder_.build();
-      }
-      if (tableLocationBuilder_ == null) {
-        result.tableLocation_ = tableLocation_;
-      } else {
-        result.tableLocation_ = tableLocationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.RecordLocation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.recordKey_ = recordKeyBuilder_ == null ? recordKey_ : recordKeyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.fieldId_ = fieldIdBuilder_ == null ? fieldId_ : fieldIdBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.tableLocation_ =
+            tableLocationBuilder_ == null ? tableLocation_ : tableLocationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -583,19 +587,19 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getRecordKeyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getFieldIdFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getTableLocationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -615,6 +619,8 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.privacy.dlp.v2.RecordKey recordKey_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.RecordKey,
@@ -633,7 +639,7 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the recordKey field is set.
      */
     public boolean hasRecordKey() {
-      return recordKeyBuilder_ != null || recordKey_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -670,11 +676,11 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         recordKey_ = value;
-        onChanged();
       } else {
         recordKeyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -689,11 +695,11 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
     public Builder setRecordKey(com.google.privacy.dlp.v2.RecordKey.Builder builderForValue) {
       if (recordKeyBuilder_ == null) {
         recordKey_ = builderForValue.build();
-        onChanged();
       } else {
         recordKeyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -707,19 +713,18 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRecordKey(com.google.privacy.dlp.v2.RecordKey value) {
       if (recordKeyBuilder_ == null) {
-        if (recordKey_ != null) {
-          recordKey_ =
-              com.google.privacy.dlp.v2.RecordKey.newBuilder(recordKey_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && recordKey_ != null
+            && recordKey_ != com.google.privacy.dlp.v2.RecordKey.getDefaultInstance()) {
+          getRecordKeyBuilder().mergeFrom(value);
         } else {
           recordKey_ = value;
         }
-        onChanged();
       } else {
         recordKeyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -732,14 +737,13 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.RecordKey record_key = 1;</code>
      */
     public Builder clearRecordKey() {
-      if (recordKeyBuilder_ == null) {
-        recordKey_ = null;
-        onChanged();
-      } else {
-        recordKey_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      recordKey_ = null;
+      if (recordKeyBuilder_ != null) {
+        recordKeyBuilder_.dispose();
         recordKeyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -752,7 +756,7 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.RecordKey record_key = 1;</code>
      */
     public com.google.privacy.dlp.v2.RecordKey.Builder getRecordKeyBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getRecordKeyFieldBuilder().getBuilder();
     }
@@ -818,7 +822,7 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the fieldId field is set.
      */
     public boolean hasFieldId() {
-      return fieldIdBuilder_ != null || fieldId_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -853,11 +857,11 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         fieldId_ = value;
-        onChanged();
       } else {
         fieldIdBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -872,11 +876,11 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
     public Builder setFieldId(com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
       if (fieldIdBuilder_ == null) {
         fieldId_ = builderForValue.build();
-        onChanged();
       } else {
         fieldIdBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -890,19 +894,18 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeFieldId(com.google.privacy.dlp.v2.FieldId value) {
       if (fieldIdBuilder_ == null) {
-        if (fieldId_ != null) {
-          fieldId_ =
-              com.google.privacy.dlp.v2.FieldId.newBuilder(fieldId_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && fieldId_ != null
+            && fieldId_ != com.google.privacy.dlp.v2.FieldId.getDefaultInstance()) {
+          getFieldIdBuilder().mergeFrom(value);
         } else {
           fieldId_ = value;
         }
-        onChanged();
       } else {
         fieldIdBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -915,14 +918,13 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.FieldId field_id = 2;</code>
      */
     public Builder clearFieldId() {
-      if (fieldIdBuilder_ == null) {
-        fieldId_ = null;
-        onChanged();
-      } else {
-        fieldId_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      fieldId_ = null;
+      if (fieldIdBuilder_ != null) {
+        fieldIdBuilder_.dispose();
         fieldIdBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -935,7 +937,7 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.FieldId field_id = 2;</code>
      */
     public com.google.privacy.dlp.v2.FieldId.Builder getFieldIdBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getFieldIdFieldBuilder().getBuilder();
     }
@@ -999,7 +1001,7 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the tableLocation field is set.
      */
     public boolean hasTableLocation() {
-      return tableLocationBuilder_ != null || tableLocation_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1036,11 +1038,11 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         tableLocation_ = value;
-        onChanged();
       } else {
         tableLocationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1056,11 +1058,11 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
         com.google.privacy.dlp.v2.TableLocation.Builder builderForValue) {
       if (tableLocationBuilder_ == null) {
         tableLocation_ = builderForValue.build();
-        onChanged();
       } else {
         tableLocationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1074,19 +1076,18 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTableLocation(com.google.privacy.dlp.v2.TableLocation value) {
       if (tableLocationBuilder_ == null) {
-        if (tableLocation_ != null) {
-          tableLocation_ =
-              com.google.privacy.dlp.v2.TableLocation.newBuilder(tableLocation_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && tableLocation_ != null
+            && tableLocation_ != com.google.privacy.dlp.v2.TableLocation.getDefaultInstance()) {
+          getTableLocationBuilder().mergeFrom(value);
         } else {
           tableLocation_ = value;
         }
-        onChanged();
       } else {
         tableLocationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1099,14 +1100,13 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.TableLocation table_location = 3;</code>
      */
     public Builder clearTableLocation() {
-      if (tableLocationBuilder_ == null) {
-        tableLocation_ = null;
-        onChanged();
-      } else {
-        tableLocation_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      tableLocation_ = null;
+      if (tableLocationBuilder_ != null) {
+        tableLocationBuilder_.dispose();
         tableLocationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1119,7 +1119,7 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.TableLocation table_location = 3;</code>
      */
     public com.google.privacy.dlp.v2.TableLocation.Builder getTableLocationBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getTableLocationFieldBuilder().getBuilder();
     }

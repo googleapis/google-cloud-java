@@ -69,7 +69,9 @@ public final class SearchDomainsRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int QUERY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object query_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object query_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class SearchDomainsRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int LOCATION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object location_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object location_ = "";
   /**
    *
    *
@@ -377,10 +381,9 @@ public final class SearchDomainsRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       query_ = "";
-
       location_ = "";
-
       return this;
     }
 
@@ -408,10 +411,21 @@ public final class SearchDomainsRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.domains.v1alpha2.SearchDomainsRequest buildPartial() {
       com.google.cloud.domains.v1alpha2.SearchDomainsRequest result =
           new com.google.cloud.domains.v1alpha2.SearchDomainsRequest(this);
-      result.query_ = query_;
-      result.location_ = location_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.domains.v1alpha2.SearchDomainsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.query_ = query_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.location_ = location_;
+      }
     }
 
     @java.lang.Override
@@ -462,10 +476,12 @@ public final class SearchDomainsRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getQuery().isEmpty()) {
         query_ = other.query_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getLocation().isEmpty()) {
         location_ = other.location_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -497,13 +513,13 @@ public final class SearchDomainsRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 query_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 location_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -522,6 +538,8 @@ public final class SearchDomainsRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object query_ = "";
     /**
@@ -584,8 +602,8 @@ public final class SearchDomainsRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       query_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -601,8 +619,8 @@ public final class SearchDomainsRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearQuery() {
-
       query_ = getDefaultInstance().getQuery();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -623,8 +641,8 @@ public final class SearchDomainsRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       query_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -696,8 +714,8 @@ public final class SearchDomainsRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       location_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -715,8 +733,8 @@ public final class SearchDomainsRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearLocation() {
-
       location_ = getDefaultInstance().getLocation();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -739,8 +757,8 @@ public final class SearchDomainsRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       location_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

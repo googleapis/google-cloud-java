@@ -349,7 +349,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ENDPOINT_URI_FIELD_NUMBER = 3;
-    private volatile java.lang.Object endpointUri_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object endpointUri_ = "";
     /**
      *
      *
@@ -619,8 +621,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         endpointUri_ = "";
-
         vpcResourceCase_ = 0;
         vpcResource_ = null;
         return this;
@@ -650,13 +652,24 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.metastore.v1.NetworkConfig.Consumer buildPartial() {
         com.google.cloud.metastore.v1.NetworkConfig.Consumer result =
             new com.google.cloud.metastore.v1.NetworkConfig.Consumer(this);
-        if (vpcResourceCase_ == 1) {
-          result.vpcResource_ = vpcResource_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.endpointUri_ = endpointUri_;
-        result.vpcResourceCase_ = vpcResourceCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.metastore.v1.NetworkConfig.Consumer result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.endpointUri_ = endpointUri_;
+        }
+      }
+
+      private void buildPartialOneofs(com.google.cloud.metastore.v1.NetworkConfig.Consumer result) {
+        result.vpcResourceCase_ = vpcResourceCase_;
+        result.vpcResource_ = this.vpcResource_;
       }
 
       @java.lang.Override
@@ -709,6 +722,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getEndpointUri().isEmpty()) {
           endpointUri_ = other.endpointUri_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         switch (other.getVpcResourceCase()) {
@@ -760,7 +774,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
               case 26:
                 {
                   endpointUri_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 26
               default:
@@ -793,6 +807,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       /**
        *
@@ -1037,8 +1053,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         endpointUri_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1054,8 +1070,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearEndpointUri() {
-
         endpointUri_ = getDefaultInstance().getEndpointUri();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1076,8 +1092,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         endpointUri_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1147,6 +1163,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONSUMERS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.metastore.v1.NetworkConfig.Consumer> consumers_;
   /**
    *
@@ -1430,6 +1448,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (consumersBuilder_ == null) {
         consumers_ = java.util.Collections.emptyList();
       } else {
@@ -1464,7 +1483,15 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.metastore.v1.NetworkConfig buildPartial() {
       com.google.cloud.metastore.v1.NetworkConfig result =
           new com.google.cloud.metastore.v1.NetworkConfig(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.metastore.v1.NetworkConfig result) {
       if (consumersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           consumers_ = java.util.Collections.unmodifiableList(consumers_);
@@ -1474,8 +1501,10 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.consumers_ = consumersBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.metastore.v1.NetworkConfig result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

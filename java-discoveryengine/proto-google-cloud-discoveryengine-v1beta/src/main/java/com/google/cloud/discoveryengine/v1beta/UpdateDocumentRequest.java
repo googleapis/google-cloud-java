@@ -139,11 +139,13 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.discoveryengine.v1beta.DocumentOrBuilder getDocumentOrBuilder() {
-    return getDocument();
+    return document_ == null
+        ? com.google.cloud.discoveryengine.v1beta.Document.getDefaultInstance()
+        : document_;
   }
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 2;
-  private boolean allowMissing_;
+  private boolean allowMissing_ = false;
   /**
    *
    *
@@ -377,14 +379,13 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (documentBuilder_ == null) {
-        document_ = null;
-      } else {
-        document_ = null;
+      bitField0_ = 0;
+      document_ = null;
+      if (documentBuilder_ != null) {
+        documentBuilder_.dispose();
         documentBuilder_ = null;
       }
       allowMissing_ = false;
-
       return this;
     }
 
@@ -413,14 +414,22 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.discoveryengine.v1beta.UpdateDocumentRequest buildPartial() {
       com.google.cloud.discoveryengine.v1beta.UpdateDocumentRequest result =
           new com.google.cloud.discoveryengine.v1beta.UpdateDocumentRequest(this);
-      if (documentBuilder_ == null) {
-        result.document_ = document_;
-      } else {
-        result.document_ = documentBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.allowMissing_ = allowMissing_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.discoveryengine.v1beta.UpdateDocumentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.document_ = documentBuilder_ == null ? document_ : documentBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.allowMissing_ = allowMissing_;
+      }
     }
 
     @java.lang.Override
@@ -505,13 +514,13 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 input.readMessage(getDocumentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 allowMissing_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -530,6 +539,8 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.discoveryengine.v1beta.Document document_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -558,7 +569,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the document field is set.
      */
     public boolean hasDocument() {
-      return documentBuilder_ != null || document_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -613,11 +624,11 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         document_ = value;
-        onChanged();
       } else {
         documentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -642,11 +653,11 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
         com.google.cloud.discoveryengine.v1beta.Document.Builder builderForValue) {
       if (documentBuilder_ == null) {
         document_ = builderForValue.build();
-        onChanged();
       } else {
         documentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -669,19 +680,18 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeDocument(com.google.cloud.discoveryengine.v1beta.Document value) {
       if (documentBuilder_ == null) {
-        if (document_ != null) {
-          document_ =
-              com.google.cloud.discoveryengine.v1beta.Document.newBuilder(document_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && document_ != null
+            && document_ != com.google.cloud.discoveryengine.v1beta.Document.getDefaultInstance()) {
+          getDocumentBuilder().mergeFrom(value);
         } else {
           document_ = value;
         }
-        onChanged();
       } else {
         documentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -703,14 +713,13 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearDocument() {
-      if (documentBuilder_ == null) {
-        document_ = null;
-        onChanged();
-      } else {
-        document_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      document_ = null;
+      if (documentBuilder_ != null) {
+        documentBuilder_.dispose();
         documentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -732,7 +741,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.discoveryengine.v1beta.Document.Builder getDocumentBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDocumentFieldBuilder().getBuilder();
     }
@@ -835,6 +844,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
     public Builder setAllowMissing(boolean value) {
 
       allowMissing_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -853,7 +863,7 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearAllowMissing() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       allowMissing_ = false;
       onChanged();
       return this;

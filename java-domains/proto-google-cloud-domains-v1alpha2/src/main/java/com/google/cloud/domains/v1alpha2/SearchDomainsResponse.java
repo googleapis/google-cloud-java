@@ -68,6 +68,8 @@ public final class SearchDomainsResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int REGISTER_PARAMETERS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.domains.v1alpha2.RegisterParameters> registerParameters_;
   /**
    *
@@ -344,6 +346,7 @@ public final class SearchDomainsResponse extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (registerParametersBuilder_ == null) {
         registerParameters_ = java.util.Collections.emptyList();
       } else {
@@ -378,7 +381,16 @@ public final class SearchDomainsResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.domains.v1alpha2.SearchDomainsResponse buildPartial() {
       com.google.cloud.domains.v1alpha2.SearchDomainsResponse result =
           new com.google.cloud.domains.v1alpha2.SearchDomainsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.domains.v1alpha2.SearchDomainsResponse result) {
       if (registerParametersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           registerParameters_ = java.util.Collections.unmodifiableList(registerParameters_);
@@ -388,8 +400,10 @@ public final class SearchDomainsResponse extends com.google.protobuf.GeneratedMe
       } else {
         result.registerParameters_ = registerParametersBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.domains.v1alpha2.SearchDomainsResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

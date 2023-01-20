@@ -115,7 +115,9 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PATH_FIELD_NUMBER = 1;
-  private volatile java.lang.Object path_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object path_ = "";
   /**
    *
    *
@@ -164,7 +166,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int FILE_ROTATION_MB_FIELD_NUMBER = 2;
-  private int fileRotationMb_;
+  private int fileRotationMb_ = 0;
   /**
    *
    *
@@ -229,7 +231,9 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getFileRotationIntervalOrBuilder() {
-    return getFileRotationInterval();
+    return fileRotationInterval_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : fileRotationInterval_;
   }
 
   public static final int AVRO_FILE_FORMAT_FIELD_NUMBER = 100;
@@ -594,14 +598,12 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       path_ = "";
-
       fileRotationMb_ = 0;
-
-      if (fileRotationIntervalBuilder_ == null) {
-        fileRotationInterval_ = null;
-      } else {
-        fileRotationInterval_ = null;
+      fileRotationInterval_ = null;
+      if (fileRotationIntervalBuilder_ != null) {
+        fileRotationIntervalBuilder_.dispose();
         fileRotationIntervalBuilder_ = null;
       }
       if (avroFileFormatBuilder_ != null) {
@@ -639,30 +641,39 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.datastream.v1.GcsDestinationConfig buildPartial() {
       com.google.cloud.datastream.v1.GcsDestinationConfig result =
           new com.google.cloud.datastream.v1.GcsDestinationConfig(this);
-      result.path_ = path_;
-      result.fileRotationMb_ = fileRotationMb_;
-      if (fileRotationIntervalBuilder_ == null) {
-        result.fileRotationInterval_ = fileRotationInterval_;
-      } else {
-        result.fileRotationInterval_ = fileRotationIntervalBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (fileFormatCase_ == 100) {
-        if (avroFileFormatBuilder_ == null) {
-          result.fileFormat_ = fileFormat_;
-        } else {
-          result.fileFormat_ = avroFileFormatBuilder_.build();
-        }
-      }
-      if (fileFormatCase_ == 101) {
-        if (jsonFileFormatBuilder_ == null) {
-          result.fileFormat_ = fileFormat_;
-        } else {
-          result.fileFormat_ = jsonFileFormatBuilder_.build();
-        }
-      }
-      result.fileFormatCase_ = fileFormatCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1.GcsDestinationConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.path_ = path_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.fileRotationMb_ = fileRotationMb_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.fileRotationInterval_ =
+            fileRotationIntervalBuilder_ == null
+                ? fileRotationInterval_
+                : fileRotationIntervalBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.datastream.v1.GcsDestinationConfig result) {
+      result.fileFormatCase_ = fileFormatCase_;
+      result.fileFormat_ = this.fileFormat_;
+      if (fileFormatCase_ == 100 && avroFileFormatBuilder_ != null) {
+        result.fileFormat_ = avroFileFormatBuilder_.build();
+      }
+      if (fileFormatCase_ == 101 && jsonFileFormatBuilder_ != null) {
+        result.fileFormat_ = jsonFileFormatBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -713,6 +724,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getPath().isEmpty()) {
         path_ = other.path_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getFileRotationMb() != 0) {
@@ -766,20 +778,20 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 path_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 fileRotationMb_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(
                     getFileRotationIntervalFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 802:
@@ -824,6 +836,8 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object path_ = "";
     /**
@@ -886,8 +900,8 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       path_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -903,8 +917,8 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearPath() {
-
       path_ = getDefaultInstance().getPath();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -925,8 +939,8 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       path_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -962,6 +976,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
     public Builder setFileRotationMb(int value) {
 
       fileRotationMb_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -977,7 +992,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearFileRotationMb() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       fileRotationMb_ = 0;
       onChanged();
       return this;
@@ -1002,7 +1017,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
      * @return Whether the fileRotationInterval field is set.
      */
     public boolean hasFileRotationInterval() {
-      return fileRotationIntervalBuilder_ != null || fileRotationInterval_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1041,11 +1056,11 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         fileRotationInterval_ = value;
-        onChanged();
       } else {
         fileRotationIntervalBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1061,11 +1076,11 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
     public Builder setFileRotationInterval(com.google.protobuf.Duration.Builder builderForValue) {
       if (fileRotationIntervalBuilder_ == null) {
         fileRotationInterval_ = builderForValue.build();
-        onChanged();
       } else {
         fileRotationIntervalBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1080,19 +1095,18 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeFileRotationInterval(com.google.protobuf.Duration value) {
       if (fileRotationIntervalBuilder_ == null) {
-        if (fileRotationInterval_ != null) {
-          fileRotationInterval_ =
-              com.google.protobuf.Duration.newBuilder(fileRotationInterval_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && fileRotationInterval_ != null
+            && fileRotationInterval_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getFileRotationIntervalBuilder().mergeFrom(value);
         } else {
           fileRotationInterval_ = value;
         }
-        onChanged();
       } else {
         fileRotationIntervalBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1106,14 +1120,13 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Duration file_rotation_interval = 3;</code>
      */
     public Builder clearFileRotationInterval() {
-      if (fileRotationIntervalBuilder_ == null) {
-        fileRotationInterval_ = null;
-        onChanged();
-      } else {
-        fileRotationInterval_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      fileRotationInterval_ = null;
+      if (fileRotationIntervalBuilder_ != null) {
+        fileRotationIntervalBuilder_.dispose();
         fileRotationIntervalBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1127,7 +1140,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Duration file_rotation_interval = 3;</code>
      */
     public com.google.protobuf.Duration.Builder getFileRotationIntervalBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getFileRotationIntervalFieldBuilder().getBuilder();
     }
@@ -1383,7 +1396,6 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
       }
       fileFormatCase_ = 100;
       onChanged();
-      ;
       return avroFileFormatBuilder_;
     }
 
@@ -1593,7 +1605,6 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
       }
       fileFormatCase_ = 101;
       onChanged();
-      ;
       return jsonFileFormatBuilder_;
     }
 

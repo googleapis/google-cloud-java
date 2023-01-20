@@ -68,7 +68,9 @@ public final class CloudStorageFileSet extends com.google.protobuf.GeneratedMess
   }
 
   public static final int URL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object url_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object url_ = "";
   /**
    *
    *
@@ -315,8 +317,8 @@ public final class CloudStorageFileSet extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       url_ = "";
-
       return this;
     }
 
@@ -344,9 +346,18 @@ public final class CloudStorageFileSet extends com.google.protobuf.GeneratedMess
     public com.google.privacy.dlp.v2.CloudStorageFileSet buildPartial() {
       com.google.privacy.dlp.v2.CloudStorageFileSet result =
           new com.google.privacy.dlp.v2.CloudStorageFileSet(this);
-      result.url_ = url_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.CloudStorageFileSet result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.url_ = url_;
+      }
     }
 
     @java.lang.Override
@@ -396,6 +407,7 @@ public final class CloudStorageFileSet extends com.google.protobuf.GeneratedMess
       if (other == com.google.privacy.dlp.v2.CloudStorageFileSet.getDefaultInstance()) return this;
       if (!other.getUrl().isEmpty()) {
         url_ = other.url_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -427,7 +439,7 @@ public final class CloudStorageFileSet extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 url_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -446,6 +458,8 @@ public final class CloudStorageFileSet extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object url_ = "";
     /**
@@ -511,8 +525,8 @@ public final class CloudStorageFileSet extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       url_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -529,8 +543,8 @@ public final class CloudStorageFileSet extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearUrl() {
-
       url_ = getDefaultInstance().getUrl();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -552,8 +566,8 @@ public final class CloudStorageFileSet extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       url_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

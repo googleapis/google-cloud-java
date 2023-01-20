@@ -89,6 +89,7 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
             0L);
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.Long> exampleCount_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.Long> internalGetExampleCount() {
@@ -416,6 +417,7 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableExampleCount().clear();
       return this;
     }
@@ -444,11 +446,19 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datalabeling.v1beta1.LabelStats buildPartial() {
       com.google.cloud.datalabeling.v1beta1.LabelStats result =
           new com.google.cloud.datalabeling.v1beta1.LabelStats(this);
-      int from_bitField0_ = bitField0_;
-      result.exampleCount_ = internalGetExampleCount();
-      result.exampleCount_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datalabeling.v1beta1.LabelStats result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.exampleCount_ = internalGetExampleCount();
+        result.exampleCount_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -498,6 +508,7 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.datalabeling.v1beta1.LabelStats.getDefaultInstance())
         return this;
       internalGetMutableExampleCount().mergeFrom(other.internalGetExampleCount());
+      bitField0_ |= 0x00000001;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -533,6 +544,7 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableExampleCount()
                     .getMutableMap()
                     .put(exampleCount__.getKey(), exampleCount__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -567,8 +579,6 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
         internalGetMutableExampleCount() {
-      onChanged();
-      ;
       if (exampleCount_ == null) {
         exampleCount_ =
             com.google.protobuf.MapField.newMapField(ExampleCountDefaultEntryHolder.defaultEntry);
@@ -576,6 +586,8 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
       if (!exampleCount_.isMutable()) {
         exampleCount_ = exampleCount_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return exampleCount_;
     }
 
@@ -672,6 +684,7 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearExampleCount() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableExampleCount().getMutableMap().clear();
       return this;
     }
@@ -698,6 +711,7 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Long> getMutableExampleCount() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableExampleCount().getMutableMap();
     }
     /**
@@ -719,6 +733,7 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
       }
 
       internalGetMutableExampleCount().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -736,6 +751,7 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllExampleCount(java.util.Map<java.lang.String, java.lang.Long> values) {
       internalGetMutableExampleCount().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 

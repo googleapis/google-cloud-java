@@ -545,7 +545,6 @@ public interface CloudFunctionOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 15;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,
@@ -604,7 +603,6 @@ public interface CloudFunctionOrBuilder
    *
    * <code>map&lt;string, string&gt; environment_variables = 17;</code>
    */
-
   /* nullable */
   java.lang.String getEnvironmentVariablesOrDefault(
       java.lang.String key,
@@ -663,7 +661,6 @@ public interface CloudFunctionOrBuilder
    *
    * <code>map&lt;string, string&gt; build_environment_variables = 28;</code>
    */
-
   /* nullable */
   java.lang.String getBuildEnvironmentVariablesOrDefault(
       java.lang.String key,

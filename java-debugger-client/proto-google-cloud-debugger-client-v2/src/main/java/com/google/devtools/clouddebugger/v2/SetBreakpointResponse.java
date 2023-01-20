@@ -113,7 +113,9 @@ public final class SetBreakpointResponse extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.devtools.clouddebugger.v2.BreakpointOrBuilder getBreakpointOrBuilder() {
-    return getBreakpoint();
+    return breakpoint_ == null
+        ? com.google.devtools.clouddebugger.v2.Breakpoint.getDefaultInstance()
+        : breakpoint_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -319,10 +321,10 @@ public final class SetBreakpointResponse extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (breakpointBuilder_ == null) {
-        breakpoint_ = null;
-      } else {
-        breakpoint_ = null;
+      bitField0_ = 0;
+      breakpoint_ = null;
+      if (breakpointBuilder_ != null) {
+        breakpointBuilder_.dispose();
         breakpointBuilder_ = null;
       }
       return this;
@@ -352,13 +354,18 @@ public final class SetBreakpointResponse extends com.google.protobuf.GeneratedMe
     public com.google.devtools.clouddebugger.v2.SetBreakpointResponse buildPartial() {
       com.google.devtools.clouddebugger.v2.SetBreakpointResponse result =
           new com.google.devtools.clouddebugger.v2.SetBreakpointResponse(this);
-      if (breakpointBuilder_ == null) {
-        result.breakpoint_ = breakpoint_;
-      } else {
-        result.breakpoint_ = breakpointBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.devtools.clouddebugger.v2.SetBreakpointResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.breakpoint_ = breakpointBuilder_ == null ? breakpoint_ : breakpointBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -439,7 +446,7 @@ public final class SetBreakpointResponse extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 input.readMessage(getBreakpointFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -458,6 +465,8 @@ public final class SetBreakpointResponse extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.devtools.clouddebugger.v2.Breakpoint breakpoint_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -478,7 +487,7 @@ public final class SetBreakpointResponse extends com.google.protobuf.GeneratedMe
      * @return Whether the breakpoint field is set.
      */
     public boolean hasBreakpoint() {
-      return breakpointBuilder_ != null || breakpoint_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -517,11 +526,11 @@ public final class SetBreakpointResponse extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         breakpoint_ = value;
-        onChanged();
       } else {
         breakpointBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -538,11 +547,11 @@ public final class SetBreakpointResponse extends com.google.protobuf.GeneratedMe
         com.google.devtools.clouddebugger.v2.Breakpoint.Builder builderForValue) {
       if (breakpointBuilder_ == null) {
         breakpoint_ = builderForValue.build();
-        onChanged();
       } else {
         breakpointBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -557,19 +566,19 @@ public final class SetBreakpointResponse extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeBreakpoint(com.google.devtools.clouddebugger.v2.Breakpoint value) {
       if (breakpointBuilder_ == null) {
-        if (breakpoint_ != null) {
-          breakpoint_ =
-              com.google.devtools.clouddebugger.v2.Breakpoint.newBuilder(breakpoint_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && breakpoint_ != null
+            && breakpoint_
+                != com.google.devtools.clouddebugger.v2.Breakpoint.getDefaultInstance()) {
+          getBreakpointBuilder().mergeFrom(value);
         } else {
           breakpoint_ = value;
         }
-        onChanged();
       } else {
         breakpointBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -583,14 +592,13 @@ public final class SetBreakpointResponse extends com.google.protobuf.GeneratedMe
      * <code>.google.devtools.clouddebugger.v2.Breakpoint breakpoint = 1;</code>
      */
     public Builder clearBreakpoint() {
-      if (breakpointBuilder_ == null) {
-        breakpoint_ = null;
-        onChanged();
-      } else {
-        breakpoint_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      breakpoint_ = null;
+      if (breakpointBuilder_ != null) {
+        breakpointBuilder_.dispose();
         breakpointBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -604,7 +612,7 @@ public final class SetBreakpointResponse extends com.google.protobuf.GeneratedMe
      * <code>.google.devtools.clouddebugger.v2.Breakpoint breakpoint = 1;</code>
      */
     public com.google.devtools.clouddebugger.v2.Breakpoint.Builder getBreakpointBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getBreakpointFieldBuilder().getBuilder();
     }

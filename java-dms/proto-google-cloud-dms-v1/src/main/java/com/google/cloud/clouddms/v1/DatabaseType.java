@@ -69,7 +69,7 @@ public final class DatabaseType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROVIDER_FIELD_NUMBER = 1;
-  private int provider_;
+  private int provider_ = 0;
   /**
    *
    *
@@ -98,14 +98,13 @@ public final class DatabaseType extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.clouddms.v1.DatabaseProvider getProvider() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.clouddms.v1.DatabaseProvider result =
-        com.google.cloud.clouddms.v1.DatabaseProvider.valueOf(provider_);
+        com.google.cloud.clouddms.v1.DatabaseProvider.forNumber(provider_);
     return result == null ? com.google.cloud.clouddms.v1.DatabaseProvider.UNRECOGNIZED : result;
   }
 
   public static final int ENGINE_FIELD_NUMBER = 2;
-  private int engine_;
+  private int engine_ = 0;
   /**
    *
    *
@@ -134,9 +133,8 @@ public final class DatabaseType extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.clouddms.v1.DatabaseEngine getEngine() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.clouddms.v1.DatabaseEngine result =
-        com.google.cloud.clouddms.v1.DatabaseEngine.valueOf(engine_);
+        com.google.cloud.clouddms.v1.DatabaseEngine.forNumber(engine_);
     return result == null ? com.google.cloud.clouddms.v1.DatabaseEngine.UNRECOGNIZED : result;
   }
 
@@ -352,10 +350,9 @@ public final class DatabaseType extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       provider_ = 0;
-
       engine_ = 0;
-
       return this;
     }
 
@@ -383,10 +380,21 @@ public final class DatabaseType extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.clouddms.v1.DatabaseType buildPartial() {
       com.google.cloud.clouddms.v1.DatabaseType result =
           new com.google.cloud.clouddms.v1.DatabaseType(this);
-      result.provider_ = provider_;
-      result.engine_ = engine_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.clouddms.v1.DatabaseType result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.provider_ = provider_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.engine_ = engine_;
+      }
     }
 
     @java.lang.Override
@@ -469,13 +477,13 @@ public final class DatabaseType extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 provider_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 engine_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -494,6 +502,8 @@ public final class DatabaseType extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int provider_ = 0;
     /**
@@ -524,8 +534,8 @@ public final class DatabaseType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setProviderValue(int value) {
-
       provider_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -542,9 +552,8 @@ public final class DatabaseType extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.clouddms.v1.DatabaseProvider getProvider() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.clouddms.v1.DatabaseProvider result =
-          com.google.cloud.clouddms.v1.DatabaseProvider.valueOf(provider_);
+          com.google.cloud.clouddms.v1.DatabaseProvider.forNumber(provider_);
       return result == null ? com.google.cloud.clouddms.v1.DatabaseProvider.UNRECOGNIZED : result;
     }
     /**
@@ -563,7 +572,7 @@ public final class DatabaseType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       provider_ = value.getNumber();
       onChanged();
       return this;
@@ -580,7 +589,7 @@ public final class DatabaseType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProvider() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       provider_ = 0;
       onChanged();
       return this;
@@ -615,8 +624,8 @@ public final class DatabaseType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setEngineValue(int value) {
-
       engine_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -633,9 +642,8 @@ public final class DatabaseType extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.clouddms.v1.DatabaseEngine getEngine() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.clouddms.v1.DatabaseEngine result =
-          com.google.cloud.clouddms.v1.DatabaseEngine.valueOf(engine_);
+          com.google.cloud.clouddms.v1.DatabaseEngine.forNumber(engine_);
       return result == null ? com.google.cloud.clouddms.v1.DatabaseEngine.UNRECOGNIZED : result;
     }
     /**
@@ -654,7 +662,7 @@ public final class DatabaseType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       engine_ = value.getNumber();
       onChanged();
       return this;
@@ -671,7 +679,7 @@ public final class DatabaseType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEngine() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       engine_ = 0;
       onChanged();
       return this;

@@ -70,7 +70,9 @@ public final class QueryMetadataRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int SERVICE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object service_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object service_ = "";
   /**
    *
    *
@@ -127,7 +129,9 @@ public final class QueryMetadataRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int QUERY_FIELD_NUMBER = 2;
-  private volatile java.lang.Object query_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object query_ = "";
   /**
    *
    *
@@ -385,10 +389,9 @@ public final class QueryMetadataRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       service_ = "";
-
       query_ = "";
-
       return this;
     }
 
@@ -416,10 +419,21 @@ public final class QueryMetadataRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.metastore.v1alpha.QueryMetadataRequest buildPartial() {
       com.google.cloud.metastore.v1alpha.QueryMetadataRequest result =
           new com.google.cloud.metastore.v1alpha.QueryMetadataRequest(this);
-      result.service_ = service_;
-      result.query_ = query_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.metastore.v1alpha.QueryMetadataRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.service_ = service_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.query_ = query_;
+      }
     }
 
     @java.lang.Override
@@ -470,10 +484,12 @@ public final class QueryMetadataRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getService().isEmpty()) {
         service_ = other.service_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getQuery().isEmpty()) {
         query_ = other.query_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -505,13 +521,13 @@ public final class QueryMetadataRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 service_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 query_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -530,6 +546,8 @@ public final class QueryMetadataRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object service_ = "";
     /**
@@ -604,8 +622,8 @@ public final class QueryMetadataRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       service_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -625,8 +643,8 @@ public final class QueryMetadataRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearService() {
-
       service_ = getDefaultInstance().getService();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -651,8 +669,8 @@ public final class QueryMetadataRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       service_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -721,8 +739,8 @@ public final class QueryMetadataRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       query_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -739,8 +757,8 @@ public final class QueryMetadataRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearQuery() {
-
       query_ = getDefaultInstance().getQuery();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -762,8 +780,8 @@ public final class QueryMetadataRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       query_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

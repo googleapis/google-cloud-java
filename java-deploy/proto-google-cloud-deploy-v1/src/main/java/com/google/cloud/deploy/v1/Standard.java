@@ -66,7 +66,7 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VERIFY_FIELD_NUMBER = 1;
-  private boolean verify_;
+  private boolean verify_ = false;
   /**
    *
    *
@@ -278,8 +278,8 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       verify_ = false;
-
       return this;
     }
 
@@ -306,9 +306,18 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.deploy.v1.Standard buildPartial() {
       com.google.cloud.deploy.v1.Standard result = new com.google.cloud.deploy.v1.Standard(this);
-      result.verify_ = verify_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.Standard result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.verify_ = verify_;
+      }
     }
 
     @java.lang.Override
@@ -388,7 +397,7 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 verify_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -407,6 +416,8 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean verify_;
     /**
@@ -439,6 +450,7 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
     public Builder setVerify(boolean value) {
 
       verify_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -454,7 +466,7 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVerify() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       verify_ = false;
       onChanged();
       return this;

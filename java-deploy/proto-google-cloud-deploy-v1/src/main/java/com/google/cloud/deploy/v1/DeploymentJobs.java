@@ -111,7 +111,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.JobOrBuilder getDeployJobOrBuilder() {
-    return getDeployJob();
+    return deployJob_ == null ? com.google.cloud.deploy.v1.Job.getDefaultInstance() : deployJob_;
   }
 
   public static final int VERIFY_JOB_FIELD_NUMBER = 2;
@@ -160,7 +160,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.JobOrBuilder getVerifyJobOrBuilder() {
-    return getVerifyJob();
+    return verifyJob_ == null ? com.google.cloud.deploy.v1.Job.getDefaultInstance() : verifyJob_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -379,16 +379,15 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (deployJobBuilder_ == null) {
-        deployJob_ = null;
-      } else {
-        deployJob_ = null;
+      bitField0_ = 0;
+      deployJob_ = null;
+      if (deployJobBuilder_ != null) {
+        deployJobBuilder_.dispose();
         deployJobBuilder_ = null;
       }
-      if (verifyJobBuilder_ == null) {
-        verifyJob_ = null;
-      } else {
-        verifyJob_ = null;
+      verifyJob_ = null;
+      if (verifyJobBuilder_ != null) {
+        verifyJobBuilder_.dispose();
         verifyJobBuilder_ = null;
       }
       return this;
@@ -418,18 +417,21 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.deploy.v1.DeploymentJobs buildPartial() {
       com.google.cloud.deploy.v1.DeploymentJobs result =
           new com.google.cloud.deploy.v1.DeploymentJobs(this);
-      if (deployJobBuilder_ == null) {
-        result.deployJob_ = deployJob_;
-      } else {
-        result.deployJob_ = deployJobBuilder_.build();
-      }
-      if (verifyJobBuilder_ == null) {
-        result.verifyJob_ = verifyJob_;
-      } else {
-        result.verifyJob_ = verifyJobBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.DeploymentJobs result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.deployJob_ = deployJobBuilder_ == null ? deployJob_ : deployJobBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.verifyJob_ = verifyJobBuilder_ == null ? verifyJob_ : verifyJobBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -512,13 +514,13 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getDeployJobFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getVerifyJobFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -537,6 +539,8 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.deploy.v1.Job deployJob_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -558,7 +562,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the deployJob field is set.
      */
     public boolean hasDeployJob() {
-      return deployJobBuilder_ != null || deployJob_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -599,11 +603,11 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         deployJob_ = value;
-        onChanged();
       } else {
         deployJobBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -620,11 +624,11 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
     public Builder setDeployJob(com.google.cloud.deploy.v1.Job.Builder builderForValue) {
       if (deployJobBuilder_ == null) {
         deployJob_ = builderForValue.build();
-        onChanged();
       } else {
         deployJobBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -640,17 +644,18 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDeployJob(com.google.cloud.deploy.v1.Job value) {
       if (deployJobBuilder_ == null) {
-        if (deployJob_ != null) {
-          deployJob_ =
-              com.google.cloud.deploy.v1.Job.newBuilder(deployJob_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && deployJob_ != null
+            && deployJob_ != com.google.cloud.deploy.v1.Job.getDefaultInstance()) {
+          getDeployJobBuilder().mergeFrom(value);
         } else {
           deployJob_ = value;
         }
-        onChanged();
       } else {
         deployJobBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -665,14 +670,13 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDeployJob() {
-      if (deployJobBuilder_ == null) {
-        deployJob_ = null;
-        onChanged();
-      } else {
-        deployJob_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      deployJob_ = null;
+      if (deployJobBuilder_ != null) {
+        deployJobBuilder_.dispose();
         deployJobBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -687,7 +691,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.deploy.v1.Job.Builder getDeployJobBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDeployJobFieldBuilder().getBuilder();
     }
@@ -759,7 +763,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the verifyJob field is set.
      */
     public boolean hasVerifyJob() {
-      return verifyJobBuilder_ != null || verifyJob_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -800,11 +804,11 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         verifyJob_ = value;
-        onChanged();
       } else {
         verifyJobBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -821,11 +825,11 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
     public Builder setVerifyJob(com.google.cloud.deploy.v1.Job.Builder builderForValue) {
       if (verifyJobBuilder_ == null) {
         verifyJob_ = builderForValue.build();
-        onChanged();
       } else {
         verifyJobBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -841,17 +845,18 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeVerifyJob(com.google.cloud.deploy.v1.Job value) {
       if (verifyJobBuilder_ == null) {
-        if (verifyJob_ != null) {
-          verifyJob_ =
-              com.google.cloud.deploy.v1.Job.newBuilder(verifyJob_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && verifyJob_ != null
+            && verifyJob_ != com.google.cloud.deploy.v1.Job.getDefaultInstance()) {
+          getVerifyJobBuilder().mergeFrom(value);
         } else {
           verifyJob_ = value;
         }
-        onChanged();
       } else {
         verifyJobBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -866,14 +871,13 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearVerifyJob() {
-      if (verifyJobBuilder_ == null) {
-        verifyJob_ = null;
-        onChanged();
-      } else {
-        verifyJob_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      verifyJob_ = null;
+      if (verifyJobBuilder_ != null) {
+        verifyJobBuilder_.dispose();
         verifyJobBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -888,7 +892,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.deploy.v1.Job.Builder getVerifyJobBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getVerifyJobFieldBuilder().getBuilder();
     }

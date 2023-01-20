@@ -66,7 +66,7 @@ public final class SentimentConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ENABLE_LABEL_SENTIMENT_SELECTION_FIELD_NUMBER = 1;
-  private boolean enableLabelSentimentSelection_;
+  private boolean enableLabelSentimentSelection_ = false;
   /**
    *
    *
@@ -286,8 +286,8 @@ public final class SentimentConfig extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enableLabelSentimentSelection_ = false;
-
       return this;
     }
 
@@ -315,9 +315,18 @@ public final class SentimentConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.datalabeling.v1beta1.SentimentConfig buildPartial() {
       com.google.cloud.datalabeling.v1beta1.SentimentConfig result =
           new com.google.cloud.datalabeling.v1beta1.SentimentConfig(this);
-      result.enableLabelSentimentSelection_ = enableLabelSentimentSelection_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datalabeling.v1beta1.SentimentConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enableLabelSentimentSelection_ = enableLabelSentimentSelection_;
+      }
     }
 
     @java.lang.Override
@@ -398,7 +407,7 @@ public final class SentimentConfig extends com.google.protobuf.GeneratedMessageV
             case 8:
               {
                 enableLabelSentimentSelection_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -417,6 +426,8 @@ public final class SentimentConfig extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean enableLabelSentimentSelection_;
     /**
@@ -453,6 +464,7 @@ public final class SentimentConfig extends com.google.protobuf.GeneratedMessageV
     public Builder setEnableLabelSentimentSelection(boolean value) {
 
       enableLabelSentimentSelection_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -470,7 +482,7 @@ public final class SentimentConfig extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearEnableLabelSentimentSelection() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enableLabelSentimentSelection_ = false;
       onChanged();
       return this;

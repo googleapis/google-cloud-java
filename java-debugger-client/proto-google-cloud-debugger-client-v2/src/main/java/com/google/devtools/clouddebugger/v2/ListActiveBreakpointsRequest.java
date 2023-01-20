@@ -69,7 +69,9 @@ public final class ListActiveBreakpointsRequest extends com.google.protobuf.Gene
   }
 
   public static final int DEBUGGEE_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object debuggeeId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object debuggeeId_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class ListActiveBreakpointsRequest extends com.google.protobuf.Gene
   }
 
   public static final int WAIT_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object waitToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object waitToken_ = "";
   /**
    *
    *
@@ -173,7 +177,7 @@ public final class ListActiveBreakpointsRequest extends com.google.protobuf.Gene
   }
 
   public static final int SUCCESS_ON_TIMEOUT_FIELD_NUMBER = 3;
-  private boolean successOnTimeout_;
+  private boolean successOnTimeout_ = false;
   /**
    *
    *
@@ -412,12 +416,10 @@ public final class ListActiveBreakpointsRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       debuggeeId_ = "";
-
       waitToken_ = "";
-
       successOnTimeout_ = false;
-
       return this;
     }
 
@@ -446,11 +448,25 @@ public final class ListActiveBreakpointsRequest extends com.google.protobuf.Gene
     public com.google.devtools.clouddebugger.v2.ListActiveBreakpointsRequest buildPartial() {
       com.google.devtools.clouddebugger.v2.ListActiveBreakpointsRequest result =
           new com.google.devtools.clouddebugger.v2.ListActiveBreakpointsRequest(this);
-      result.debuggeeId_ = debuggeeId_;
-      result.waitToken_ = waitToken_;
-      result.successOnTimeout_ = successOnTimeout_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.devtools.clouddebugger.v2.ListActiveBreakpointsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.debuggeeId_ = debuggeeId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.waitToken_ = waitToken_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.successOnTimeout_ = successOnTimeout_;
+      }
     }
 
     @java.lang.Override
@@ -503,10 +519,12 @@ public final class ListActiveBreakpointsRequest extends com.google.protobuf.Gene
         return this;
       if (!other.getDebuggeeId().isEmpty()) {
         debuggeeId_ = other.debuggeeId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getWaitToken().isEmpty()) {
         waitToken_ = other.waitToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getSuccessOnTimeout() != false) {
@@ -541,19 +559,19 @@ public final class ListActiveBreakpointsRequest extends com.google.protobuf.Gene
             case 10:
               {
                 debuggeeId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 waitToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 successOnTimeout_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -572,6 +590,8 @@ public final class ListActiveBreakpointsRequest extends com.google.protobuf.Gene
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object debuggeeId_ = "";
     /**
@@ -634,8 +654,8 @@ public final class ListActiveBreakpointsRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       debuggeeId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -651,8 +671,8 @@ public final class ListActiveBreakpointsRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearDebuggeeId() {
-
       debuggeeId_ = getDefaultInstance().getDebuggeeId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -673,8 +693,8 @@ public final class ListActiveBreakpointsRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       debuggeeId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -749,8 +769,8 @@ public final class ListActiveBreakpointsRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       waitToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -769,8 +789,8 @@ public final class ListActiveBreakpointsRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearWaitToken() {
-
       waitToken_ = getDefaultInstance().getWaitToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -794,8 +814,8 @@ public final class ListActiveBreakpointsRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       waitToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -839,6 +859,7 @@ public final class ListActiveBreakpointsRequest extends com.google.protobuf.Gene
     public Builder setSuccessOnTimeout(boolean value) {
 
       successOnTimeout_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -858,7 +879,7 @@ public final class ListActiveBreakpointsRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearSuccessOnTimeout() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       successOnTimeout_ = false;
       onChanged();
       return this;

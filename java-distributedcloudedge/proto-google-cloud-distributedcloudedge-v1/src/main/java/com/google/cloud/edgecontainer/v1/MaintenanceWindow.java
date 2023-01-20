@@ -111,7 +111,9 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public com.google.cloud.edgecontainer.v1.RecurringTimeWindowOrBuilder
       getRecurringWindowOrBuilder() {
-    return getRecurringWindow();
+    return recurringWindow_ == null
+        ? com.google.cloud.edgecontainer.v1.RecurringTimeWindow.getDefaultInstance()
+        : recurringWindow_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -316,10 +318,10 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (recurringWindowBuilder_ == null) {
-        recurringWindow_ = null;
-      } else {
-        recurringWindow_ = null;
+      bitField0_ = 0;
+      recurringWindow_ = null;
+      if (recurringWindowBuilder_ != null) {
+        recurringWindowBuilder_.dispose();
         recurringWindowBuilder_ = null;
       }
       return this;
@@ -349,13 +351,19 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.edgecontainer.v1.MaintenanceWindow buildPartial() {
       com.google.cloud.edgecontainer.v1.MaintenanceWindow result =
           new com.google.cloud.edgecontainer.v1.MaintenanceWindow(this);
-      if (recurringWindowBuilder_ == null) {
-        result.recurringWindow_ = recurringWindow_;
-      } else {
-        result.recurringWindow_ = recurringWindowBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.edgecontainer.v1.MaintenanceWindow result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.recurringWindow_ =
+            recurringWindowBuilder_ == null ? recurringWindow_ : recurringWindowBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -436,7 +444,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 input.readMessage(getRecurringWindowFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -456,6 +464,8 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.edgecontainer.v1.RecurringTimeWindow recurringWindow_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.edgecontainer.v1.RecurringTimeWindow,
@@ -474,7 +484,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      * @return Whether the recurringWindow field is set.
      */
     public boolean hasRecurringWindow() {
-      return recurringWindowBuilder_ != null || recurringWindow_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -511,11 +521,11 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         recurringWindow_ = value;
-        onChanged();
       } else {
         recurringWindowBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -531,11 +541,11 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
         com.google.cloud.edgecontainer.v1.RecurringTimeWindow.Builder builderForValue) {
       if (recurringWindowBuilder_ == null) {
         recurringWindow_ = builderForValue.build();
-        onChanged();
       } else {
         recurringWindowBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -550,19 +560,19 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public Builder mergeRecurringWindow(
         com.google.cloud.edgecontainer.v1.RecurringTimeWindow value) {
       if (recurringWindowBuilder_ == null) {
-        if (recurringWindow_ != null) {
-          recurringWindow_ =
-              com.google.cloud.edgecontainer.v1.RecurringTimeWindow.newBuilder(recurringWindow_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && recurringWindow_ != null
+            && recurringWindow_
+                != com.google.cloud.edgecontainer.v1.RecurringTimeWindow.getDefaultInstance()) {
+          getRecurringWindowBuilder().mergeFrom(value);
         } else {
           recurringWindow_ = value;
         }
-        onChanged();
       } else {
         recurringWindowBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -575,14 +585,13 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.edgecontainer.v1.RecurringTimeWindow recurring_window = 1;</code>
      */
     public Builder clearRecurringWindow() {
-      if (recurringWindowBuilder_ == null) {
-        recurringWindow_ = null;
-        onChanged();
-      } else {
-        recurringWindow_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      recurringWindow_ = null;
+      if (recurringWindowBuilder_ != null) {
+        recurringWindowBuilder_.dispose();
         recurringWindowBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -596,7 +605,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      */
     public com.google.cloud.edgecontainer.v1.RecurringTimeWindow.Builder
         getRecurringWindowBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getRecurringWindowFieldBuilder().getBuilder();
     }

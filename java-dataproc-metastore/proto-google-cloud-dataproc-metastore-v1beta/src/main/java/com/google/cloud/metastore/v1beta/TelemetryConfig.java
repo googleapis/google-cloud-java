@@ -219,7 +219,7 @@ public final class TelemetryConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int LOG_FORMAT_FIELD_NUMBER = 1;
-  private int logFormat_;
+  private int logFormat_ = 0;
   /**
    *
    *
@@ -248,9 +248,8 @@ public final class TelemetryConfig extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.metastore.v1beta.TelemetryConfig.LogFormat getLogFormat() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.metastore.v1beta.TelemetryConfig.LogFormat result =
-        com.google.cloud.metastore.v1beta.TelemetryConfig.LogFormat.valueOf(logFormat_);
+        com.google.cloud.metastore.v1beta.TelemetryConfig.LogFormat.forNumber(logFormat_);
     return result == null
         ? com.google.cloud.metastore.v1beta.TelemetryConfig.LogFormat.UNRECOGNIZED
         : result;
@@ -457,8 +456,8 @@ public final class TelemetryConfig extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       logFormat_ = 0;
-
       return this;
     }
 
@@ -486,9 +485,18 @@ public final class TelemetryConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.metastore.v1beta.TelemetryConfig buildPartial() {
       com.google.cloud.metastore.v1beta.TelemetryConfig result =
           new com.google.cloud.metastore.v1beta.TelemetryConfig(this);
-      result.logFormat_ = logFormat_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.metastore.v1beta.TelemetryConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.logFormat_ = logFormat_;
+      }
     }
 
     @java.lang.Override
@@ -569,7 +577,7 @@ public final class TelemetryConfig extends com.google.protobuf.GeneratedMessageV
             case 8:
               {
                 logFormat_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -588,6 +596,8 @@ public final class TelemetryConfig extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int logFormat_ = 0;
     /**
@@ -618,8 +628,8 @@ public final class TelemetryConfig extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setLogFormatValue(int value) {
-
       logFormat_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -636,9 +646,8 @@ public final class TelemetryConfig extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.cloud.metastore.v1beta.TelemetryConfig.LogFormat getLogFormat() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.metastore.v1beta.TelemetryConfig.LogFormat result =
-          com.google.cloud.metastore.v1beta.TelemetryConfig.LogFormat.valueOf(logFormat_);
+          com.google.cloud.metastore.v1beta.TelemetryConfig.LogFormat.forNumber(logFormat_);
       return result == null
           ? com.google.cloud.metastore.v1beta.TelemetryConfig.LogFormat.UNRECOGNIZED
           : result;
@@ -659,7 +668,7 @@ public final class TelemetryConfig extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       logFormat_ = value.getNumber();
       onChanged();
       return this;
@@ -676,7 +685,7 @@ public final class TelemetryConfig extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearLogFormat() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       logFormat_ = 0;
       onChanged();
       return this;

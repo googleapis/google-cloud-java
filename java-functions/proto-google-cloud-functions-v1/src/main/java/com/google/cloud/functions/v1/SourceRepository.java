@@ -70,7 +70,9 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int URL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object url_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object url_ = "";
   /**
    *
    *
@@ -139,7 +141,9 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DEPLOYED_URL_FIELD_NUMBER = 2;
-  private volatile java.lang.Object deployedUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object deployedUrl_ = "";
   /**
    *
    *
@@ -398,10 +402,9 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       url_ = "";
-
       deployedUrl_ = "";
-
       return this;
     }
 
@@ -429,10 +432,21 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.functions.v1.SourceRepository buildPartial() {
       com.google.cloud.functions.v1.SourceRepository result =
           new com.google.cloud.functions.v1.SourceRepository(this);
-      result.url_ = url_;
-      result.deployedUrl_ = deployedUrl_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.functions.v1.SourceRepository result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.url_ = url_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.deployedUrl_ = deployedUrl_;
+      }
     }
 
     @java.lang.Override
@@ -482,10 +496,12 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.functions.v1.SourceRepository.getDefaultInstance()) return this;
       if (!other.getUrl().isEmpty()) {
         url_ = other.url_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDeployedUrl().isEmpty()) {
         deployedUrl_ = other.deployedUrl_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -517,13 +533,13 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 url_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 deployedUrl_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -542,6 +558,8 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object url_ = "";
     /**
@@ -634,8 +652,8 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       url_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -661,8 +679,8 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearUrl() {
-
       url_ = getDefaultInstance().getUrl();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -693,8 +711,8 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       url_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -766,8 +784,8 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       deployedUrl_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -785,8 +803,8 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDeployedUrl() {
-
       deployedUrl_ = getDefaultInstance().getDeployedUrl();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -809,8 +827,8 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       deployedUrl_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

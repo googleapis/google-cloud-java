@@ -69,7 +69,7 @@ public final class UnwrappedCryptoKey extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int KEY_FIELD_NUMBER = 1;
-  private com.google.protobuf.ByteString key_;
+  private com.google.protobuf.ByteString key_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -284,8 +284,8 @@ public final class UnwrappedCryptoKey extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       key_ = com.google.protobuf.ByteString.EMPTY;
-
       return this;
     }
 
@@ -313,9 +313,18 @@ public final class UnwrappedCryptoKey extends com.google.protobuf.GeneratedMessa
     public com.google.privacy.dlp.v2.UnwrappedCryptoKey buildPartial() {
       com.google.privacy.dlp.v2.UnwrappedCryptoKey result =
           new com.google.privacy.dlp.v2.UnwrappedCryptoKey(this);
-      result.key_ = key_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.UnwrappedCryptoKey result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.key_ = key_;
+      }
     }
 
     @java.lang.Override
@@ -395,7 +404,7 @@ public final class UnwrappedCryptoKey extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 key_ = input.readBytes();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -414,6 +423,8 @@ public final class UnwrappedCryptoKey extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.ByteString key_ = com.google.protobuf.ByteString.EMPTY;
     /**
@@ -447,8 +458,8 @@ public final class UnwrappedCryptoKey extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       key_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -464,7 +475,7 @@ public final class UnwrappedCryptoKey extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearKey() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       key_ = getDefaultInstance().getKey();
       onChanged();
       return this;

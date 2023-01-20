@@ -69,7 +69,9 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
   }
 
   public static final int DATASET_FIELD_NUMBER = 1;
-  private volatile java.lang.Object dataset_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dataset_ = "";
   /**
    *
    *
@@ -120,6 +122,8 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
   }
 
   public static final int PARTIAL_FAILURES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> partialFailures_;
   /**
    *
@@ -241,7 +245,7 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -469,19 +473,18 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       dataset_ = "";
-
       if (partialFailuresBuilder_ == null) {
         partialFailures_ = java.util.Collections.emptyList();
       } else {
         partialFailures_ = null;
         partialFailuresBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
       return this;
@@ -512,24 +515,36 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
     public com.google.cloud.datalabeling.v1beta1.ImportDataOperationMetadata buildPartial() {
       com.google.cloud.datalabeling.v1beta1.ImportDataOperationMetadata result =
           new com.google.cloud.datalabeling.v1beta1.ImportDataOperationMetadata(this);
-      int from_bitField0_ = bitField0_;
-      result.dataset_ = dataset_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.datalabeling.v1beta1.ImportDataOperationMetadata result) {
       if (partialFailuresBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           partialFailures_ = java.util.Collections.unmodifiableList(partialFailures_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.partialFailures_ = partialFailures_;
       } else {
         result.partialFailures_ = partialFailuresBuilder_.build();
       }
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datalabeling.v1beta1.ImportDataOperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.dataset_ = dataset_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -582,13 +597,14 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
         return this;
       if (!other.getDataset().isEmpty()) {
         dataset_ = other.dataset_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (partialFailuresBuilder_ == null) {
         if (!other.partialFailures_.isEmpty()) {
           if (partialFailures_.isEmpty()) {
             partialFailures_ = other.partialFailures_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensurePartialFailuresIsMutable();
             partialFailures_.addAll(other.partialFailures_);
@@ -601,7 +617,7 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
             partialFailuresBuilder_.dispose();
             partialFailuresBuilder_ = null;
             partialFailures_ = other.partialFailures_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             partialFailuresBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPartialFailuresFieldBuilder()
@@ -643,7 +659,7 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
             case 10:
               {
                 dataset_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -661,7 +677,7 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
             case 26:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -747,8 +763,8 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       dataset_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -765,8 +781,8 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearDataset() {
-
       dataset_ = getDefaultInstance().getDataset();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -788,8 +804,8 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dataset_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -798,9 +814,9 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
         java.util.Collections.emptyList();
 
     private void ensurePartialFailuresIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         partialFailures_ = new java.util.ArrayList<com.google.rpc.Status>(partialFailures_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1033,7 +1049,7 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
     public Builder clearPartialFailures() {
       if (partialFailuresBuilder_ == null) {
         partialFailures_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         partialFailuresBuilder_.clear();
@@ -1167,7 +1183,7 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
                 com.google.rpc.Status.Builder,
                 com.google.rpc.StatusOrBuilder>(
                 partialFailures_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         partialFailures_ = null;
@@ -1193,7 +1209,7 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1230,11 +1246,11 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1249,11 +1265,11 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1267,17 +1283,18 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1290,14 +1307,13 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1310,7 +1326,7 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }

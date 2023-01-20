@@ -122,7 +122,9 @@ public final class UpdateGameServerDeploymentRolloutRequest
    */
   @java.lang.Override
   public com.google.cloud.gaming.v1.GameServerDeploymentRolloutOrBuilder getRolloutOrBuilder() {
-    return getRollout();
+    return rollout_ == null
+        ? com.google.cloud.gaming.v1.GameServerDeploymentRollout.getDefaultInstance()
+        : rollout_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -177,7 +179,7 @@ public final class UpdateGameServerDeploymentRolloutRequest
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -400,16 +402,15 @@ public final class UpdateGameServerDeploymentRolloutRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (rolloutBuilder_ == null) {
-        rollout_ = null;
-      } else {
-        rollout_ = null;
+      bitField0_ = 0;
+      rollout_ = null;
+      if (rolloutBuilder_ != null) {
+        rolloutBuilder_.dispose();
         rolloutBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -441,18 +442,22 @@ public final class UpdateGameServerDeploymentRolloutRequest
     public com.google.cloud.gaming.v1.UpdateGameServerDeploymentRolloutRequest buildPartial() {
       com.google.cloud.gaming.v1.UpdateGameServerDeploymentRolloutRequest result =
           new com.google.cloud.gaming.v1.UpdateGameServerDeploymentRolloutRequest(this);
-      if (rolloutBuilder_ == null) {
-        result.rollout_ = rollout_;
-      } else {
-        result.rollout_ = rolloutBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gaming.v1.UpdateGameServerDeploymentRolloutRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.rollout_ = rolloutBuilder_ == null ? rollout_ : rolloutBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -539,13 +544,13 @@ public final class UpdateGameServerDeploymentRolloutRequest
             case 10:
               {
                 input.readMessage(getRolloutFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -564,6 +569,8 @@ public final class UpdateGameServerDeploymentRolloutRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.gaming.v1.GameServerDeploymentRollout rollout_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -586,7 +593,7 @@ public final class UpdateGameServerDeploymentRolloutRequest
      * @return Whether the rollout field is set.
      */
     public boolean hasRollout() {
-      return rolloutBuilder_ != null || rollout_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -629,11 +636,11 @@ public final class UpdateGameServerDeploymentRolloutRequest
           throw new NullPointerException();
         }
         rollout_ = value;
-        onChanged();
       } else {
         rolloutBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -652,11 +659,11 @@ public final class UpdateGameServerDeploymentRolloutRequest
         com.google.cloud.gaming.v1.GameServerDeploymentRollout.Builder builderForValue) {
       if (rolloutBuilder_ == null) {
         rollout_ = builderForValue.build();
-        onChanged();
       } else {
         rolloutBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -673,19 +680,19 @@ public final class UpdateGameServerDeploymentRolloutRequest
      */
     public Builder mergeRollout(com.google.cloud.gaming.v1.GameServerDeploymentRollout value) {
       if (rolloutBuilder_ == null) {
-        if (rollout_ != null) {
-          rollout_ =
-              com.google.cloud.gaming.v1.GameServerDeploymentRollout.newBuilder(rollout_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && rollout_ != null
+            && rollout_
+                != com.google.cloud.gaming.v1.GameServerDeploymentRollout.getDefaultInstance()) {
+          getRolloutBuilder().mergeFrom(value);
         } else {
           rollout_ = value;
         }
-        onChanged();
       } else {
         rolloutBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -701,14 +708,13 @@ public final class UpdateGameServerDeploymentRolloutRequest
      * </code>
      */
     public Builder clearRollout() {
-      if (rolloutBuilder_ == null) {
-        rollout_ = null;
-        onChanged();
-      } else {
-        rollout_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      rollout_ = null;
+      if (rolloutBuilder_ != null) {
+        rolloutBuilder_.dispose();
         rolloutBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -724,7 +730,7 @@ public final class UpdateGameServerDeploymentRolloutRequest
      * </code>
      */
     public com.google.cloud.gaming.v1.GameServerDeploymentRollout.Builder getRolloutBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getRolloutFieldBuilder().getBuilder();
     }
@@ -799,7 +805,7 @@ public final class UpdateGameServerDeploymentRolloutRequest
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -842,11 +848,11 @@ public final class UpdateGameServerDeploymentRolloutRequest
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -864,11 +870,11 @@ public final class UpdateGameServerDeploymentRolloutRequest
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -885,17 +891,18 @@ public final class UpdateGameServerDeploymentRolloutRequest
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -911,14 +918,13 @@ public final class UpdateGameServerDeploymentRolloutRequest
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -934,7 +940,7 @@ public final class UpdateGameServerDeploymentRolloutRequest
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

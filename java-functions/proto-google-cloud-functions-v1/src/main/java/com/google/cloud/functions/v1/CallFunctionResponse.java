@@ -70,7 +70,9 @@ public final class CallFunctionResponse extends com.google.protobuf.GeneratedMes
   }
 
   public static final int EXECUTION_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object executionId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object executionId_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class CallFunctionResponse extends com.google.protobuf.GeneratedMes
   }
 
   public static final int RESULT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object result_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object result_ = "";
   /**
    *
    *
@@ -170,7 +174,9 @@ public final class CallFunctionResponse extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ERROR_FIELD_NUMBER = 3;
-  private volatile java.lang.Object error_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object error_ = "";
   /**
    *
    *
@@ -435,12 +441,10 @@ public final class CallFunctionResponse extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       executionId_ = "";
-
       result_ = "";
-
       error_ = "";
-
       return this;
     }
 
@@ -468,11 +472,24 @@ public final class CallFunctionResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.functions.v1.CallFunctionResponse buildPartial() {
       com.google.cloud.functions.v1.CallFunctionResponse result =
           new com.google.cloud.functions.v1.CallFunctionResponse(this);
-      result.executionId_ = executionId_;
-      result.result_ = result_;
-      result.error_ = error_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.functions.v1.CallFunctionResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.executionId_ = executionId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.result_ = result_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.error_ = error_;
+      }
     }
 
     @java.lang.Override
@@ -523,14 +540,17 @@ public final class CallFunctionResponse extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getExecutionId().isEmpty()) {
         executionId_ = other.executionId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getResult().isEmpty()) {
         result_ = other.result_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getError().isEmpty()) {
         error_ = other.error_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -562,19 +582,19 @@ public final class CallFunctionResponse extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 executionId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 result_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 error_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -593,6 +613,8 @@ public final class CallFunctionResponse extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object executionId_ = "";
     /**
@@ -655,8 +677,8 @@ public final class CallFunctionResponse extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       executionId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -672,8 +694,8 @@ public final class CallFunctionResponse extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearExecutionId() {
-
       executionId_ = getDefaultInstance().getExecutionId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -694,8 +716,8 @@ public final class CallFunctionResponse extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       executionId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -764,8 +786,8 @@ public final class CallFunctionResponse extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       result_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -782,8 +804,8 @@ public final class CallFunctionResponse extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearResult() {
-
       result_ = getDefaultInstance().getResult();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -805,8 +827,8 @@ public final class CallFunctionResponse extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       result_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -875,8 +897,8 @@ public final class CallFunctionResponse extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       error_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -893,8 +915,8 @@ public final class CallFunctionResponse extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearError() {
-
       error_ = getDefaultInstance().getError();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -916,8 +938,8 @@ public final class CallFunctionResponse extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       error_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -344,6 +344,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BIGQUERY_INPUT_CONFIGS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.enterpriseknowledgegraph.v1.BigQueryInputConfig>
       bigqueryInputConfigs_;
   /**
@@ -428,7 +430,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENTITY_TYPE_FIELD_NUMBER = 2;
-  private int entityType_;
+  private int entityType_ = 0;
   /**
    *
    *
@@ -457,16 +459,17 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.enterpriseknowledgegraph.v1.InputConfig.EntityType getEntityType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.enterpriseknowledgegraph.v1.InputConfig.EntityType result =
-        com.google.cloud.enterpriseknowledgegraph.v1.InputConfig.EntityType.valueOf(entityType_);
+        com.google.cloud.enterpriseknowledgegraph.v1.InputConfig.EntityType.forNumber(entityType_);
     return result == null
         ? com.google.cloud.enterpriseknowledgegraph.v1.InputConfig.EntityType.UNRECOGNIZED
         : result;
   }
 
   public static final int PREVIOUS_RESULT_BIGQUERY_TABLE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object previousResultBigqueryTable_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object previousResultBigqueryTable_ = "";
   /**
    *
    *
@@ -749,6 +752,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (bigqueryInputConfigsBuilder_ == null) {
         bigqueryInputConfigs_ = java.util.Collections.emptyList();
       } else {
@@ -757,9 +761,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       entityType_ = 0;
-
       previousResultBigqueryTable_ = "";
-
       return this;
     }
 
@@ -787,7 +789,16 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.enterpriseknowledgegraph.v1.InputConfig buildPartial() {
       com.google.cloud.enterpriseknowledgegraph.v1.InputConfig result =
           new com.google.cloud.enterpriseknowledgegraph.v1.InputConfig(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.enterpriseknowledgegraph.v1.InputConfig result) {
       if (bigqueryInputConfigsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           bigqueryInputConfigs_ = java.util.Collections.unmodifiableList(bigqueryInputConfigs_);
@@ -797,10 +808,16 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.bigqueryInputConfigs_ = bigqueryInputConfigsBuilder_.build();
       }
-      result.entityType_ = entityType_;
-      result.previousResultBigqueryTable_ = previousResultBigqueryTable_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.enterpriseknowledgegraph.v1.InputConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.entityType_ = entityType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.previousResultBigqueryTable_ = previousResultBigqueryTable_;
+      }
     }
 
     @java.lang.Override
@@ -881,6 +898,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getPreviousResultBigqueryTable().isEmpty()) {
         previousResultBigqueryTable_ = other.previousResultBigqueryTable_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -926,13 +944,13 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
             case 16:
               {
                 entityType_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 previousResultBigqueryTable_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -1396,8 +1414,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setEntityTypeValue(int value) {
-
       entityType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1415,9 +1433,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.enterpriseknowledgegraph.v1.InputConfig.EntityType getEntityType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.enterpriseknowledgegraph.v1.InputConfig.EntityType result =
-          com.google.cloud.enterpriseknowledgegraph.v1.InputConfig.EntityType.valueOf(entityType_);
+          com.google.cloud.enterpriseknowledgegraph.v1.InputConfig.EntityType.forNumber(
+              entityType_);
       return result == null
           ? com.google.cloud.enterpriseknowledgegraph.v1.InputConfig.EntityType.UNRECOGNIZED
           : result;
@@ -1440,7 +1458,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       entityType_ = value.getNumber();
       onChanged();
       return this;
@@ -1458,7 +1476,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEntityType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       entityType_ = 0;
       onChanged();
       return this;
@@ -1537,8 +1555,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       previousResultBigqueryTable_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1558,8 +1576,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPreviousResultBigqueryTable() {
-
       previousResultBigqueryTable_ = getDefaultInstance().getPreviousResultBigqueryTable();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1584,8 +1602,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       previousResultBigqueryTable_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

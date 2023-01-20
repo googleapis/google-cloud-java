@@ -70,6 +70,8 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
   }
 
   public static final int LINEAGE_EVENTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datacatalog.lineage.v1.LineageEvent> lineageEvents_;
   /**
    *
@@ -141,7 +143,9 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -403,6 +407,7 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (lineageEventsBuilder_ == null) {
         lineageEvents_ = java.util.Collections.emptyList();
       } else {
@@ -411,7 +416,6 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
-
       return this;
     }
 
@@ -440,7 +444,16 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
     public com.google.cloud.datacatalog.lineage.v1.ListLineageEventsResponse buildPartial() {
       com.google.cloud.datacatalog.lineage.v1.ListLineageEventsResponse result =
           new com.google.cloud.datacatalog.lineage.v1.ListLineageEventsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.datacatalog.lineage.v1.ListLineageEventsResponse result) {
       if (lineageEventsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           lineageEvents_ = java.util.Collections.unmodifiableList(lineageEvents_);
@@ -450,9 +463,14 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
       } else {
         result.lineageEvents_ = lineageEventsBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datacatalog.lineage.v1.ListLineageEventsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
     }
 
     @java.lang.Override
@@ -532,6 +550,7 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -577,7 +596,7 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
             case 18:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -1025,8 +1044,8 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1043,8 +1062,8 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1066,8 +1085,8 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

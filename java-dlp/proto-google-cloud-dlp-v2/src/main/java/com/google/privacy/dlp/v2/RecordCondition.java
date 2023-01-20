@@ -284,11 +284,11 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
-      return getField();
+      return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
     }
 
     public static final int OPERATOR_FIELD_NUMBER = 3;
-    private int operator_;
+    private int operator_ = 0;
     /**
      *
      *
@@ -321,9 +321,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.RelationalOperator getOperator() {
-      @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.RelationalOperator result =
-          com.google.privacy.dlp.v2.RelationalOperator.valueOf(operator_);
+          com.google.privacy.dlp.v2.RelationalOperator.forNumber(operator_);
       return result == null ? com.google.privacy.dlp.v2.RelationalOperator.UNRECOGNIZED : result;
     }
 
@@ -370,7 +369,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.ValueOrBuilder getValueOrBuilder() {
-      return getValue();
+      return value_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : value_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -621,18 +620,16 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (fieldBuilder_ == null) {
-          field_ = null;
-        } else {
-          field_ = null;
+        bitField0_ = 0;
+        field_ = null;
+        if (fieldBuilder_ != null) {
+          fieldBuilder_.dispose();
           fieldBuilder_ = null;
         }
         operator_ = 0;
-
-        if (valueBuilder_ == null) {
-          value_ = null;
-        } else {
-          value_ = null;
+        value_ = null;
+        if (valueBuilder_ != null) {
+          valueBuilder_.dispose();
           valueBuilder_ = null;
         }
         return this;
@@ -662,19 +659,24 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
       public com.google.privacy.dlp.v2.RecordCondition.Condition buildPartial() {
         com.google.privacy.dlp.v2.RecordCondition.Condition result =
             new com.google.privacy.dlp.v2.RecordCondition.Condition(this);
-        if (fieldBuilder_ == null) {
-          result.field_ = field_;
-        } else {
-          result.field_ = fieldBuilder_.build();
-        }
-        result.operator_ = operator_;
-        if (valueBuilder_ == null) {
-          result.value_ = value_;
-        } else {
-          result.value_ = valueBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.privacy.dlp.v2.RecordCondition.Condition result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.field_ = fieldBuilder_ == null ? field_ : fieldBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.operator_ = operator_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.value_ = valueBuilder_ == null ? value_ : valueBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -763,19 +765,19 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
               case 10:
                 {
                   input.readMessage(getFieldFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 24:
                 {
                   operator_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 24
               case 34:
                 {
                   input.readMessage(getValueFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 34
               default:
@@ -794,6 +796,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.privacy.dlp.v2.FieldId field_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -814,7 +818,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        * @return Whether the field field is set.
        */
       public boolean hasField() {
-        return fieldBuilder_ != null || field_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -851,11 +855,11 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
             throw new NullPointerException();
           }
           field_ = value;
-          onChanged();
         } else {
           fieldBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -871,11 +875,11 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
       public Builder setField(com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
         if (fieldBuilder_ == null) {
           field_ = builderForValue.build();
-          onChanged();
         } else {
           fieldBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -890,19 +894,18 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        */
       public Builder mergeField(com.google.privacy.dlp.v2.FieldId value) {
         if (fieldBuilder_ == null) {
-          if (field_ != null) {
-            field_ =
-                com.google.privacy.dlp.v2.FieldId.newBuilder(field_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && field_ != null
+              && field_ != com.google.privacy.dlp.v2.FieldId.getDefaultInstance()) {
+            getFieldBuilder().mergeFrom(value);
           } else {
             field_ = value;
           }
-          onChanged();
         } else {
           fieldBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -916,14 +919,13 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        * </code>
        */
       public Builder clearField() {
-        if (fieldBuilder_ == null) {
-          field_ = null;
-          onChanged();
-        } else {
-          field_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        field_ = null;
+        if (fieldBuilder_ != null) {
+          fieldBuilder_.dispose();
           fieldBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -937,7 +939,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        * </code>
        */
       public com.google.privacy.dlp.v2.FieldId.Builder getFieldBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getFieldFieldBuilder().getBuilder();
       }
@@ -1018,8 +1020,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder setOperatorValue(int value) {
-
         operator_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1038,9 +1040,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        */
       @java.lang.Override
       public com.google.privacy.dlp.v2.RelationalOperator getOperator() {
-        @SuppressWarnings("deprecation")
         com.google.privacy.dlp.v2.RelationalOperator result =
-            com.google.privacy.dlp.v2.RelationalOperator.valueOf(operator_);
+            com.google.privacy.dlp.v2.RelationalOperator.forNumber(operator_);
         return result == null ? com.google.privacy.dlp.v2.RelationalOperator.UNRECOGNIZED : result;
       }
       /**
@@ -1061,7 +1062,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         operator_ = value.getNumber();
         onChanged();
         return this;
@@ -1080,7 +1081,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearOperator() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         operator_ = 0;
         onChanged();
         return this;
@@ -1104,7 +1105,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        * @return Whether the value field is set.
        */
       public boolean hasValue() {
-        return valueBuilder_ != null || value_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -1139,11 +1140,11 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
             throw new NullPointerException();
           }
           value_ = value;
-          onChanged();
         } else {
           valueBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1158,11 +1159,11 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
       public Builder setValue(com.google.privacy.dlp.v2.Value.Builder builderForValue) {
         if (valueBuilder_ == null) {
           value_ = builderForValue.build();
-          onChanged();
         } else {
           valueBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1176,17 +1177,18 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        */
       public Builder mergeValue(com.google.privacy.dlp.v2.Value value) {
         if (valueBuilder_ == null) {
-          if (value_ != null) {
-            value_ =
-                com.google.privacy.dlp.v2.Value.newBuilder(value_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && value_ != null
+              && value_ != com.google.privacy.dlp.v2.Value.getDefaultInstance()) {
+            getValueBuilder().mergeFrom(value);
           } else {
             value_ = value;
           }
-          onChanged();
         } else {
           valueBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1199,14 +1201,13 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        * <code>.google.privacy.dlp.v2.Value value = 4;</code>
        */
       public Builder clearValue() {
-        if (valueBuilder_ == null) {
-          value_ = null;
-          onChanged();
-        } else {
-          value_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        value_ = null;
+        if (valueBuilder_ != null) {
+          valueBuilder_.dispose();
           valueBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1219,7 +1220,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        * <code>.google.privacy.dlp.v2.Value value = 4;</code>
        */
       public com.google.privacy.dlp.v2.Value.Builder getValueBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getValueFieldBuilder().getBuilder();
       }
@@ -1436,6 +1437,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int CONDITIONS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.privacy.dlp.v2.RecordCondition.Condition> conditions_;
     /**
      *
@@ -1707,6 +1710,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (conditionsBuilder_ == null) {
           conditions_ = java.util.Collections.emptyList();
         } else {
@@ -1741,7 +1745,16 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
       public com.google.privacy.dlp.v2.RecordCondition.Conditions buildPartial() {
         com.google.privacy.dlp.v2.RecordCondition.Conditions result =
             new com.google.privacy.dlp.v2.RecordCondition.Conditions(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.privacy.dlp.v2.RecordCondition.Conditions result) {
         if (conditionsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             conditions_ = java.util.Collections.unmodifiableList(conditions_);
@@ -1751,8 +1764,10 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
         } else {
           result.conditions_ = conditionsBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.privacy.dlp.v2.RecordCondition.Conditions result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -2620,7 +2635,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int LOGICAL_OPERATOR_FIELD_NUMBER = 1;
-    private int logicalOperator_;
+    private int logicalOperator_ = 0;
     /**
      *
      *
@@ -2656,9 +2671,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public com.google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator
         getLogicalOperator() {
-      @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator result =
-          com.google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator.valueOf(
+          com.google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator.forNumber(
               logicalOperator_);
       return result == null
           ? com.google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator.UNRECOGNIZED
@@ -2946,8 +2960,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         logicalOperator_ = 0;
-
         if (conditionsBuilder_ != null) {
           conditionsBuilder_.clear();
         }
@@ -2980,17 +2994,28 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
       public com.google.privacy.dlp.v2.RecordCondition.Expressions buildPartial() {
         com.google.privacy.dlp.v2.RecordCondition.Expressions result =
             new com.google.privacy.dlp.v2.RecordCondition.Expressions(this);
-        result.logicalOperator_ = logicalOperator_;
-        if (typeCase_ == 3) {
-          if (conditionsBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = conditionsBuilder_.build();
-          }
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.typeCase_ = typeCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.privacy.dlp.v2.RecordCondition.Expressions result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.logicalOperator_ = logicalOperator_;
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.privacy.dlp.v2.RecordCondition.Expressions result) {
+        result.typeCase_ = typeCase_;
+        result.type_ = this.type_;
+        if (typeCase_ == 3 && conditionsBuilder_ != null) {
+          result.type_ = conditionsBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -3084,7 +3109,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
               case 8:
                 {
                   logicalOperator_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 26:
@@ -3124,6 +3149,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
         return this;
       }
 
+      private int bitField0_;
+
       private int logicalOperator_ = 0;
       /**
        *
@@ -3159,8 +3186,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder setLogicalOperatorValue(int value) {
-
         logicalOperator_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3181,9 +3208,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public com.google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator
           getLogicalOperator() {
-        @SuppressWarnings("deprecation")
         com.google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator result =
-            com.google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator.valueOf(
+            com.google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator.forNumber(
                 logicalOperator_);
         return result == null
             ? com.google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator.UNRECOGNIZED
@@ -3209,7 +3235,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         logicalOperator_ = value.getNumber();
         onChanged();
         return this;
@@ -3229,7 +3255,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearLogicalOperator() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         logicalOperator_ = 0;
         onChanged();
         return this;
@@ -3443,7 +3469,6 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
         }
         typeCase_ = 3;
         onChanged();
-        ;
         return conditionsBuilder_;
       }
 
@@ -3556,7 +3581,9 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.RecordCondition.ExpressionsOrBuilder getExpressionsOrBuilder() {
-    return getExpressions();
+    return expressions_ == null
+        ? com.google.privacy.dlp.v2.RecordCondition.Expressions.getDefaultInstance()
+        : expressions_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3762,10 +3789,10 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (expressionsBuilder_ == null) {
-        expressions_ = null;
-      } else {
-        expressions_ = null;
+      bitField0_ = 0;
+      expressions_ = null;
+      if (expressionsBuilder_ != null) {
+        expressionsBuilder_.dispose();
         expressionsBuilder_ = null;
       }
       return this;
@@ -3795,13 +3822,19 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
     public com.google.privacy.dlp.v2.RecordCondition buildPartial() {
       com.google.privacy.dlp.v2.RecordCondition result =
           new com.google.privacy.dlp.v2.RecordCondition(this);
-      if (expressionsBuilder_ == null) {
-        result.expressions_ = expressions_;
-      } else {
-        result.expressions_ = expressionsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.RecordCondition result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.expressions_ =
+            expressionsBuilder_ == null ? expressions_ : expressionsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3881,7 +3914,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
             case 26:
               {
                 input.readMessage(getExpressionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 26
             default:
@@ -3901,6 +3934,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.privacy.dlp.v2.RecordCondition.Expressions expressions_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.RecordCondition.Expressions,
@@ -3919,7 +3954,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      * @return Whether the expressions field is set.
      */
     public boolean hasExpressions() {
-      return expressionsBuilder_ != null || expressions_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -3956,11 +3991,11 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         expressions_ = value;
-        onChanged();
       } else {
         expressionsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -3976,11 +4011,11 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
         com.google.privacy.dlp.v2.RecordCondition.Expressions.Builder builderForValue) {
       if (expressionsBuilder_ == null) {
         expressions_ = builderForValue.build();
-        onChanged();
       } else {
         expressionsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -3994,19 +4029,19 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeExpressions(com.google.privacy.dlp.v2.RecordCondition.Expressions value) {
       if (expressionsBuilder_ == null) {
-        if (expressions_ != null) {
-          expressions_ =
-              com.google.privacy.dlp.v2.RecordCondition.Expressions.newBuilder(expressions_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && expressions_ != null
+            && expressions_
+                != com.google.privacy.dlp.v2.RecordCondition.Expressions.getDefaultInstance()) {
+          getExpressionsBuilder().mergeFrom(value);
         } else {
           expressions_ = value;
         }
-        onChanged();
       } else {
         expressionsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -4019,14 +4054,13 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      * <code>.google.privacy.dlp.v2.RecordCondition.Expressions expressions = 3;</code>
      */
     public Builder clearExpressions() {
-      if (expressionsBuilder_ == null) {
-        expressions_ = null;
-        onChanged();
-      } else {
-        expressions_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      expressions_ = null;
+      if (expressionsBuilder_ != null) {
+        expressionsBuilder_.dispose();
         expressionsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4039,7 +4073,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      * <code>.google.privacy.dlp.v2.RecordCondition.Expressions expressions = 3;</code>
      */
     public com.google.privacy.dlp.v2.RecordCondition.Expressions.Builder getExpressionsBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getExpressionsFieldBuilder().getBuilder();
     }

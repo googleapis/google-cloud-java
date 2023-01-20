@@ -379,6 +379,7 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (wordListBuilder_ != null) {
         wordListBuilder_.clear();
       }
@@ -411,16 +412,24 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
     public com.google.privacy.dlp.v2.ReplaceDictionaryConfig buildPartial() {
       com.google.privacy.dlp.v2.ReplaceDictionaryConfig result =
           new com.google.privacy.dlp.v2.ReplaceDictionaryConfig(this);
-      if (typeCase_ == 1) {
-        if (wordListBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = wordListBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.typeCase_ = typeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.ReplaceDictionaryConfig result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.ReplaceDictionaryConfig result) {
+      result.typeCase_ = typeCase_;
+      result.type_ = this.type_;
+      if (typeCase_ == 1 && wordListBuilder_ != null) {
+        result.type_ = wordListBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -542,6 +551,8 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList,
@@ -772,7 +783,6 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
       }
       typeCase_ = 1;
       onChanged();
-      ;
       return wordListBuilder_;
     }
 

@@ -69,7 +69,9 @@ public final class DeleteLineageEventRequest extends com.google.protobuf.Generat
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -122,7 +124,7 @@ public final class DeleteLineageEventRequest extends com.google.protobuf.Generat
   }
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 2;
-  private boolean allowMissing_;
+  private boolean allowMissing_ = false;
   /**
    *
    *
@@ -350,10 +352,9 @@ public final class DeleteLineageEventRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       allowMissing_ = false;
-
       return this;
     }
 
@@ -382,10 +383,22 @@ public final class DeleteLineageEventRequest extends com.google.protobuf.Generat
     public com.google.cloud.datacatalog.lineage.v1.DeleteLineageEventRequest buildPartial() {
       com.google.cloud.datacatalog.lineage.v1.DeleteLineageEventRequest result =
           new com.google.cloud.datacatalog.lineage.v1.DeleteLineageEventRequest(this);
-      result.name_ = name_;
-      result.allowMissing_ = allowMissing_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datacatalog.lineage.v1.DeleteLineageEventRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.allowMissing_ = allowMissing_;
+      }
     }
 
     @java.lang.Override
@@ -438,6 +451,7 @@ public final class DeleteLineageEventRequest extends com.google.protobuf.Generat
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getAllowMissing() != false) {
@@ -472,13 +486,13 @@ public final class DeleteLineageEventRequest extends com.google.protobuf.Generat
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 allowMissing_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -497,6 +511,8 @@ public final class DeleteLineageEventRequest extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -565,8 +581,8 @@ public final class DeleteLineageEventRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -584,8 +600,8 @@ public final class DeleteLineageEventRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -608,8 +624,8 @@ public final class DeleteLineageEventRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -647,6 +663,7 @@ public final class DeleteLineageEventRequest extends com.google.protobuf.Generat
     public Builder setAllowMissing(boolean value) {
 
       allowMissing_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -663,7 +680,7 @@ public final class DeleteLineageEventRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearAllowMissing() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       allowMissing_ = false;
       onChanged();
       return this;

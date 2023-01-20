@@ -190,7 +190,9 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VERSION_FIELD_NUMBER = 1;
-    private volatile java.lang.Object version_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object version_ = "";
     /**
      *
      *
@@ -243,7 +245,9 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PATH_FIELD_NUMBER = 2;
-    private volatile java.lang.Object path_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object path_ = "";
     /**
      *
      *
@@ -506,10 +510,9 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         version_ = "";
-
         path_ = "";
-
         return this;
       }
 
@@ -537,10 +540,21 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.functions.v1.SecretVolume.SecretVersion buildPartial() {
         com.google.cloud.functions.v1.SecretVolume.SecretVersion result =
             new com.google.cloud.functions.v1.SecretVolume.SecretVersion(this);
-        result.version_ = version_;
-        result.path_ = path_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.functions.v1.SecretVolume.SecretVersion result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.version_ = version_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.path_ = path_;
+        }
       }
 
       @java.lang.Override
@@ -593,10 +607,12 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getVersion().isEmpty()) {
           version_ = other.version_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getPath().isEmpty()) {
           path_ = other.path_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -628,13 +644,13 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   version_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   path_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -653,6 +669,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object version_ = "";
       /**
@@ -721,8 +739,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         version_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -740,8 +758,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearVersion() {
-
         version_ = getDefaultInstance().getVersion();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -764,8 +782,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         version_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -840,8 +858,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         path_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -860,8 +878,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPath() {
-
         path_ = getDefaultInstance().getPath();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -885,8 +903,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         path_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -956,7 +974,9 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MOUNT_PATH_FIELD_NUMBER = 1;
-  private volatile java.lang.Object mountPath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mountPath_ = "";
   /**
    *
    *
@@ -1015,7 +1035,9 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -1070,7 +1092,9 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SECRET_FIELD_NUMBER = 3;
-  private volatile java.lang.Object secret_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object secret_ = "";
   /**
    *
    *
@@ -1119,6 +1143,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VERSIONS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.functions.v1.SecretVolume.SecretVersion> versions_;
   /**
    *
@@ -1429,19 +1455,17 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       mountPath_ = "";
-
       projectId_ = "";
-
       secret_ = "";
-
       if (versionsBuilder_ == null) {
         versions_ = java.util.Collections.emptyList();
       } else {
         versions_ = null;
         versionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -1469,21 +1493,37 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.functions.v1.SecretVolume buildPartial() {
       com.google.cloud.functions.v1.SecretVolume result =
           new com.google.cloud.functions.v1.SecretVolume(this);
-      int from_bitField0_ = bitField0_;
-      result.mountPath_ = mountPath_;
-      result.projectId_ = projectId_;
-      result.secret_ = secret_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.functions.v1.SecretVolume result) {
       if (versionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           versions_ = java.util.Collections.unmodifiableList(versions_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.versions_ = versions_;
       } else {
         result.versions_ = versionsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.functions.v1.SecretVolume result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.mountPath_ = mountPath_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.secret_ = secret_;
+      }
     }
 
     @java.lang.Override
@@ -1533,21 +1573,24 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.functions.v1.SecretVolume.getDefaultInstance()) return this;
       if (!other.getMountPath().isEmpty()) {
         mountPath_ = other.mountPath_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getSecret().isEmpty()) {
         secret_ = other.secret_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (versionsBuilder_ == null) {
         if (!other.versions_.isEmpty()) {
           if (versions_.isEmpty()) {
             versions_ = other.versions_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureVersionsIsMutable();
             versions_.addAll(other.versions_);
@@ -1560,7 +1603,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
             versionsBuilder_.dispose();
             versionsBuilder_ = null;
             versions_ = other.versions_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             versionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getVersionsFieldBuilder()
@@ -1599,19 +1642,19 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 mountPath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 secret_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -1723,8 +1766,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       mountPath_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1745,8 +1788,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMountPath() {
-
       mountPath_ = getDefaultInstance().getMountPath();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1772,8 +1815,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       mountPath_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1848,8 +1891,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1868,8 +1911,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1893,8 +1936,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1960,8 +2003,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       secret_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1977,8 +2020,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSecret() {
-
       secret_ = getDefaultInstance().getSecret();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1999,8 +2042,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       secret_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2009,11 +2052,11 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureVersionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         versions_ =
             new java.util.ArrayList<com.google.cloud.functions.v1.SecretVolume.SecretVersion>(
                 versions_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -2257,7 +2300,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
     public Builder clearVersions() {
       if (versionsBuilder_ == null) {
         versions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         versionsBuilder_.clear();
@@ -2399,7 +2442,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.functions.v1.SecretVolume.SecretVersion,
                 com.google.cloud.functions.v1.SecretVolume.SecretVersion.Builder,
                 com.google.cloud.functions.v1.SecretVolume.SecretVersionOrBuilder>(
-                versions_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                versions_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         versions_ = null;
       }
       return versionsBuilder_;

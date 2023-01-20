@@ -71,7 +71,9 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
   }
 
   public static final int CLOUD_SQL_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object cloudSqlId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cloudSqlId_ = "";
   /**
    *
    *
@@ -170,11 +172,15 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.clouddms.v1.CloudSqlSettingsOrBuilder getSettingsOrBuilder() {
-    return getSettings();
+    return settings_ == null
+        ? com.google.cloud.clouddms.v1.CloudSqlSettings.getDefaultInstance()
+        : settings_;
   }
 
   public static final int PRIVATE_IP_FIELD_NUMBER = 3;
-  private volatile java.lang.Object privateIp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object privateIp_ = "";
   /**
    *
    *
@@ -223,7 +229,9 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
   }
 
   public static final int PUBLIC_IP_FIELD_NUMBER = 4;
-  private volatile java.lang.Object publicIp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object publicIp_ = "";
   /**
    *
    *
@@ -502,18 +510,15 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       cloudSqlId_ = "";
-
-      if (settingsBuilder_ == null) {
-        settings_ = null;
-      } else {
-        settings_ = null;
+      settings_ = null;
+      if (settingsBuilder_ != null) {
+        settingsBuilder_.dispose();
         settingsBuilder_ = null;
       }
       privateIp_ = "";
-
       publicIp_ = "";
-
       return this;
     }
 
@@ -541,16 +546,27 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
     public com.google.cloud.clouddms.v1.CloudSqlConnectionProfile buildPartial() {
       com.google.cloud.clouddms.v1.CloudSqlConnectionProfile result =
           new com.google.cloud.clouddms.v1.CloudSqlConnectionProfile(this);
-      result.cloudSqlId_ = cloudSqlId_;
-      if (settingsBuilder_ == null) {
-        result.settings_ = settings_;
-      } else {
-        result.settings_ = settingsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.privateIp_ = privateIp_;
-      result.publicIp_ = publicIp_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.clouddms.v1.CloudSqlConnectionProfile result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.cloudSqlId_ = cloudSqlId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.settings_ = settingsBuilder_ == null ? settings_ : settingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.privateIp_ = privateIp_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.publicIp_ = publicIp_;
+      }
     }
 
     @java.lang.Override
@@ -601,6 +617,7 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
         return this;
       if (!other.getCloudSqlId().isEmpty()) {
         cloudSqlId_ = other.cloudSqlId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasSettings()) {
@@ -608,10 +625,12 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
       }
       if (!other.getPrivateIp().isEmpty()) {
         privateIp_ = other.privateIp_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getPublicIp().isEmpty()) {
         publicIp_ = other.publicIp_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -643,25 +662,25 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
             case 10:
               {
                 cloudSqlId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 privateIp_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 publicIp_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -680,6 +699,8 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object cloudSqlId_ = "";
     /**
@@ -742,8 +763,8 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       cloudSqlId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -759,8 +780,8 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearCloudSqlId() {
-
       cloudSqlId_ = getDefaultInstance().getCloudSqlId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -781,8 +802,8 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cloudSqlId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -807,7 +828,7 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
      * @return Whether the settings field is set.
      */
     public boolean hasSettings() {
-      return settingsBuilder_ != null || settings_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -848,11 +869,11 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         settings_ = value;
-        onChanged();
       } else {
         settingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -870,11 +891,11 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
         com.google.cloud.clouddms.v1.CloudSqlSettings.Builder builderForValue) {
       if (settingsBuilder_ == null) {
         settings_ = builderForValue.build();
-        onChanged();
       } else {
         settingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -890,19 +911,18 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
      */
     public Builder mergeSettings(com.google.cloud.clouddms.v1.CloudSqlSettings value) {
       if (settingsBuilder_ == null) {
-        if (settings_ != null) {
-          settings_ =
-              com.google.cloud.clouddms.v1.CloudSqlSettings.newBuilder(settings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && settings_ != null
+            && settings_ != com.google.cloud.clouddms.v1.CloudSqlSettings.getDefaultInstance()) {
+          getSettingsBuilder().mergeFrom(value);
         } else {
           settings_ = value;
         }
-        onChanged();
       } else {
         settingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -917,14 +937,13 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearSettings() {
-      if (settingsBuilder_ == null) {
-        settings_ = null;
-        onChanged();
-      } else {
-        settings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      settings_ = null;
+      if (settingsBuilder_ != null) {
+        settingsBuilder_.dispose();
         settingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -939,7 +958,7 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
      * </code>
      */
     public com.google.cloud.clouddms.v1.CloudSqlSettings.Builder getSettingsBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSettingsFieldBuilder().getBuilder();
     }
@@ -1052,8 +1071,8 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       privateIp_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1069,8 +1088,8 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearPrivateIp() {
-
       privateIp_ = getDefaultInstance().getPrivateIp();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1091,8 +1110,8 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       privateIp_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1158,8 +1177,8 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       publicIp_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1175,8 +1194,8 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearPublicIp() {
-
       publicIp_ = getDefaultInstance().getPublicIp();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1197,8 +1216,8 @@ public final class CloudSqlConnectionProfile extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       publicIp_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -292,7 +292,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_TYPE_FIELD_NUMBER = 1;
-  private int sourceType_;
+  private int sourceType_ = 0;
   /**
    *
    *
@@ -321,16 +321,17 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.lineage.v1.Origin.SourceType getSourceType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.datacatalog.lineage.v1.Origin.SourceType result =
-        com.google.cloud.datacatalog.lineage.v1.Origin.SourceType.valueOf(sourceType_);
+        com.google.cloud.datacatalog.lineage.v1.Origin.SourceType.forNumber(sourceType_);
     return result == null
         ? com.google.cloud.datacatalog.lineage.v1.Origin.SourceType.UNRECOGNIZED
         : result;
   }
 
   public static final int NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -602,10 +603,9 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       sourceType_ = 0;
-
       name_ = "";
-
       return this;
     }
 
@@ -633,10 +633,21 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.lineage.v1.Origin buildPartial() {
       com.google.cloud.datacatalog.lineage.v1.Origin result =
           new com.google.cloud.datacatalog.lineage.v1.Origin(this);
-      result.sourceType_ = sourceType_;
-      result.name_ = name_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.lineage.v1.Origin result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.sourceType_ = sourceType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.name_ = name_;
+      }
     }
 
     @java.lang.Override
@@ -689,6 +700,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -720,13 +732,13 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 sourceType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -745,6 +757,8 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int sourceType_ = 0;
     /**
@@ -775,8 +789,8 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSourceTypeValue(int value) {
-
       sourceType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -793,9 +807,8 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.datacatalog.lineage.v1.Origin.SourceType getSourceType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.datacatalog.lineage.v1.Origin.SourceType result =
-          com.google.cloud.datacatalog.lineage.v1.Origin.SourceType.valueOf(sourceType_);
+          com.google.cloud.datacatalog.lineage.v1.Origin.SourceType.forNumber(sourceType_);
       return result == null
           ? com.google.cloud.datacatalog.lineage.v1.Origin.SourceType.UNRECOGNIZED
           : result;
@@ -816,7 +829,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       sourceType_ = value.getNumber();
       onChanged();
       return this;
@@ -833,7 +846,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSourceType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       sourceType_ = 0;
       onChanged();
       return this;
@@ -921,8 +934,8 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -945,8 +958,8 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -974,8 +987,8 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

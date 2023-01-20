@@ -67,7 +67,7 @@ public final class DataCatalogConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ENABLED_FIELD_NUMBER = 2;
-  private boolean enabled_;
+  private boolean enabled_ = false;
   /**
    *
    *
@@ -283,8 +283,8 @@ public final class DataCatalogConfig extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enabled_ = false;
-
       return this;
     }
 
@@ -312,9 +312,18 @@ public final class DataCatalogConfig extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.metastore.v1alpha.DataCatalogConfig buildPartial() {
       com.google.cloud.metastore.v1alpha.DataCatalogConfig result =
           new com.google.cloud.metastore.v1alpha.DataCatalogConfig(this);
-      result.enabled_ = enabled_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.metastore.v1alpha.DataCatalogConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enabled_ = enabled_;
+      }
     }
 
     @java.lang.Override
@@ -395,7 +404,7 @@ public final class DataCatalogConfig extends com.google.protobuf.GeneratedMessag
             case 16:
               {
                 enabled_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 16
             default:
@@ -414,6 +423,8 @@ public final class DataCatalogConfig extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean enabled_;
     /**
@@ -448,6 +459,7 @@ public final class DataCatalogConfig extends com.google.protobuf.GeneratedMessag
     public Builder setEnabled(boolean value) {
 
       enabled_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -464,7 +476,7 @@ public final class DataCatalogConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enabled_ = false;
       onChanged();
       return this;

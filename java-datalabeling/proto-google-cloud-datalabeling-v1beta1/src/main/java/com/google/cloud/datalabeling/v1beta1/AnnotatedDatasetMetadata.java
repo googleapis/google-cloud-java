@@ -749,7 +749,9 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder
       getHumanAnnotationConfigOrBuilder() {
-    return getHumanAnnotationConfig();
+    return humanAnnotationConfig_ == null
+        ? com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.getDefaultInstance()
+        : humanAnnotationConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1153,6 +1155,7 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (imageClassificationConfigBuilder_ != null) {
         imageClassificationConfigBuilder_.clear();
       }
@@ -1183,10 +1186,9 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
       if (textEntityExtractionConfigBuilder_ != null) {
         textEntityExtractionConfigBuilder_.clear();
       }
-      if (humanAnnotationConfigBuilder_ == null) {
-        humanAnnotationConfig_ = null;
-      } else {
-        humanAnnotationConfig_ = null;
+      humanAnnotationConfig_ = null;
+      if (humanAnnotationConfigBuilder_ != null) {
+        humanAnnotationConfigBuilder_.dispose();
         humanAnnotationConfigBuilder_ = null;
       }
       annotationRequestConfigCase_ = 0;
@@ -1219,84 +1221,59 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
     public com.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadata buildPartial() {
       com.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadata result =
           new com.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadata(this);
-      if (annotationRequestConfigCase_ == 2) {
-        if (imageClassificationConfigBuilder_ == null) {
-          result.annotationRequestConfig_ = annotationRequestConfig_;
-        } else {
-          result.annotationRequestConfig_ = imageClassificationConfigBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (annotationRequestConfigCase_ == 3) {
-        if (boundingPolyConfigBuilder_ == null) {
-          result.annotationRequestConfig_ = annotationRequestConfig_;
-        } else {
-          result.annotationRequestConfig_ = boundingPolyConfigBuilder_.build();
-        }
-      }
-      if (annotationRequestConfigCase_ == 4) {
-        if (polylineConfigBuilder_ == null) {
-          result.annotationRequestConfig_ = annotationRequestConfig_;
-        } else {
-          result.annotationRequestConfig_ = polylineConfigBuilder_.build();
-        }
-      }
-      if (annotationRequestConfigCase_ == 5) {
-        if (segmentationConfigBuilder_ == null) {
-          result.annotationRequestConfig_ = annotationRequestConfig_;
-        } else {
-          result.annotationRequestConfig_ = segmentationConfigBuilder_.build();
-        }
-      }
-      if (annotationRequestConfigCase_ == 6) {
-        if (videoClassificationConfigBuilder_ == null) {
-          result.annotationRequestConfig_ = annotationRequestConfig_;
-        } else {
-          result.annotationRequestConfig_ = videoClassificationConfigBuilder_.build();
-        }
-      }
-      if (annotationRequestConfigCase_ == 7) {
-        if (objectDetectionConfigBuilder_ == null) {
-          result.annotationRequestConfig_ = annotationRequestConfig_;
-        } else {
-          result.annotationRequestConfig_ = objectDetectionConfigBuilder_.build();
-        }
-      }
-      if (annotationRequestConfigCase_ == 8) {
-        if (objectTrackingConfigBuilder_ == null) {
-          result.annotationRequestConfig_ = annotationRequestConfig_;
-        } else {
-          result.annotationRequestConfig_ = objectTrackingConfigBuilder_.build();
-        }
-      }
-      if (annotationRequestConfigCase_ == 9) {
-        if (eventConfigBuilder_ == null) {
-          result.annotationRequestConfig_ = annotationRequestConfig_;
-        } else {
-          result.annotationRequestConfig_ = eventConfigBuilder_.build();
-        }
-      }
-      if (annotationRequestConfigCase_ == 10) {
-        if (textClassificationConfigBuilder_ == null) {
-          result.annotationRequestConfig_ = annotationRequestConfig_;
-        } else {
-          result.annotationRequestConfig_ = textClassificationConfigBuilder_.build();
-        }
-      }
-      if (annotationRequestConfigCase_ == 11) {
-        if (textEntityExtractionConfigBuilder_ == null) {
-          result.annotationRequestConfig_ = annotationRequestConfig_;
-        } else {
-          result.annotationRequestConfig_ = textEntityExtractionConfigBuilder_.build();
-        }
-      }
-      if (humanAnnotationConfigBuilder_ == null) {
-        result.humanAnnotationConfig_ = humanAnnotationConfig_;
-      } else {
-        result.humanAnnotationConfig_ = humanAnnotationConfigBuilder_.build();
-      }
-      result.annotationRequestConfigCase_ = annotationRequestConfigCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.humanAnnotationConfig_ =
+            humanAnnotationConfigBuilder_ == null
+                ? humanAnnotationConfig_
+                : humanAnnotationConfigBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadata result) {
+      result.annotationRequestConfigCase_ = annotationRequestConfigCase_;
+      result.annotationRequestConfig_ = this.annotationRequestConfig_;
+      if (annotationRequestConfigCase_ == 2 && imageClassificationConfigBuilder_ != null) {
+        result.annotationRequestConfig_ = imageClassificationConfigBuilder_.build();
+      }
+      if (annotationRequestConfigCase_ == 3 && boundingPolyConfigBuilder_ != null) {
+        result.annotationRequestConfig_ = boundingPolyConfigBuilder_.build();
+      }
+      if (annotationRequestConfigCase_ == 4 && polylineConfigBuilder_ != null) {
+        result.annotationRequestConfig_ = polylineConfigBuilder_.build();
+      }
+      if (annotationRequestConfigCase_ == 5 && segmentationConfigBuilder_ != null) {
+        result.annotationRequestConfig_ = segmentationConfigBuilder_.build();
+      }
+      if (annotationRequestConfigCase_ == 6 && videoClassificationConfigBuilder_ != null) {
+        result.annotationRequestConfig_ = videoClassificationConfigBuilder_.build();
+      }
+      if (annotationRequestConfigCase_ == 7 && objectDetectionConfigBuilder_ != null) {
+        result.annotationRequestConfig_ = objectDetectionConfigBuilder_.build();
+      }
+      if (annotationRequestConfigCase_ == 8 && objectTrackingConfigBuilder_ != null) {
+        result.annotationRequestConfig_ = objectTrackingConfigBuilder_.build();
+      }
+      if (annotationRequestConfigCase_ == 9 && eventConfigBuilder_ != null) {
+        result.annotationRequestConfig_ = eventConfigBuilder_.build();
+      }
+      if (annotationRequestConfigCase_ == 10 && textClassificationConfigBuilder_ != null) {
+        result.annotationRequestConfig_ = textClassificationConfigBuilder_.build();
+      }
+      if (annotationRequestConfigCase_ == 11 && textEntityExtractionConfigBuilder_ != null) {
+        result.annotationRequestConfig_ = textEntityExtractionConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1435,7 +1412,7 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
               {
                 input.readMessage(
                     getHumanAnnotationConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 10
             case 18:
@@ -1536,6 +1513,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.ImageClassificationConfig,
@@ -1773,7 +1752,6 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
       }
       annotationRequestConfigCase_ = 2;
       onChanged();
-      ;
       return imageClassificationConfigBuilder_;
     }
 
@@ -1992,7 +1970,6 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
       }
       annotationRequestConfigCase_ = 3;
       onChanged();
-      ;
       return boundingPolyConfigBuilder_;
     }
 
@@ -2206,7 +2183,6 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
       }
       annotationRequestConfigCase_ = 4;
       onChanged();
-      ;
       return polylineConfigBuilder_;
     }
 
@@ -2425,7 +2401,6 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
       }
       annotationRequestConfigCase_ = 5;
       onChanged();
-      ;
       return segmentationConfigBuilder_;
     }
 
@@ -2665,7 +2640,6 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
       }
       annotationRequestConfigCase_ = 6;
       onChanged();
-      ;
       return videoClassificationConfigBuilder_;
     }
 
@@ -2895,7 +2869,6 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
       }
       annotationRequestConfigCase_ = 7;
       onChanged();
-      ;
       return objectDetectionConfigBuilder_;
     }
 
@@ -3125,7 +3098,6 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
       }
       annotationRequestConfigCase_ = 8;
       onChanged();
-      ;
       return objectTrackingConfigBuilder_;
     }
 
@@ -3337,7 +3309,6 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
       }
       annotationRequestConfigCase_ = 9;
       onChanged();
-      ;
       return eventConfigBuilder_;
     }
 
@@ -3577,7 +3548,6 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
       }
       annotationRequestConfigCase_ = 10;
       onChanged();
-      ;
       return textClassificationConfigBuilder_;
     }
 
@@ -3820,7 +3790,6 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
       }
       annotationRequestConfigCase_ = 11;
       onChanged();
-      ;
       return textEntityExtractionConfigBuilder_;
     }
 
@@ -3844,7 +3813,7 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
      * @return Whether the humanAnnotationConfig field is set.
      */
     public boolean hasHumanAnnotationConfig() {
-      return humanAnnotationConfigBuilder_ != null || humanAnnotationConfig_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3886,11 +3855,11 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         humanAnnotationConfig_ = value;
-        onChanged();
       } else {
         humanAnnotationConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3908,11 +3877,11 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
         com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder builderForValue) {
       if (humanAnnotationConfigBuilder_ == null) {
         humanAnnotationConfig_ = builderForValue.build();
-        onChanged();
       } else {
         humanAnnotationConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3929,20 +3898,20 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
     public Builder mergeHumanAnnotationConfig(
         com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig value) {
       if (humanAnnotationConfigBuilder_ == null) {
-        if (humanAnnotationConfig_ != null) {
-          humanAnnotationConfig_ =
-              com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.newBuilder(
-                      humanAnnotationConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && humanAnnotationConfig_ != null
+            && humanAnnotationConfig_
+                != com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig
+                    .getDefaultInstance()) {
+          getHumanAnnotationConfigBuilder().mergeFrom(value);
         } else {
           humanAnnotationConfig_ = value;
         }
-        onChanged();
       } else {
         humanAnnotationConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3957,14 +3926,13 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearHumanAnnotationConfig() {
-      if (humanAnnotationConfigBuilder_ == null) {
-        humanAnnotationConfig_ = null;
-        onChanged();
-      } else {
-        humanAnnotationConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      humanAnnotationConfig_ = null;
+      if (humanAnnotationConfigBuilder_ != null) {
+        humanAnnotationConfigBuilder_.dispose();
         humanAnnotationConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3980,7 +3948,7 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
      */
     public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder
         getHumanAnnotationConfigBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getHumanAnnotationConfigFieldBuilder().getBuilder();
     }

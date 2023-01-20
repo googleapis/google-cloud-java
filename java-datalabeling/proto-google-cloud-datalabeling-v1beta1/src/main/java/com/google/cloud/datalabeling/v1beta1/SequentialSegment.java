@@ -66,7 +66,7 @@ public final class SequentialSegment extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int START_FIELD_NUMBER = 1;
-  private int start_;
+  private int start_ = 0;
   /**
    *
    *
@@ -84,7 +84,7 @@ public final class SequentialSegment extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int END_FIELD_NUMBER = 2;
-  private int end_;
+  private int end_ = 0;
   /**
    *
    *
@@ -308,10 +308,9 @@ public final class SequentialSegment extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       start_ = 0;
-
       end_ = 0;
-
       return this;
     }
 
@@ -339,10 +338,21 @@ public final class SequentialSegment extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.datalabeling.v1beta1.SequentialSegment buildPartial() {
       com.google.cloud.datalabeling.v1beta1.SequentialSegment result =
           new com.google.cloud.datalabeling.v1beta1.SequentialSegment(this);
-      result.start_ = start_;
-      result.end_ = end_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datalabeling.v1beta1.SequentialSegment result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.start_ = start_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.end_ = end_;
+      }
     }
 
     @java.lang.Override
@@ -426,13 +436,13 @@ public final class SequentialSegment extends com.google.protobuf.GeneratedMessag
             case 8:
               {
                 start_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 end_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -451,6 +461,8 @@ public final class SequentialSegment extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int start_;
     /**
@@ -483,6 +495,7 @@ public final class SequentialSegment extends com.google.protobuf.GeneratedMessag
     public Builder setStart(int value) {
 
       start_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -498,7 +511,7 @@ public final class SequentialSegment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearStart() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       start_ = 0;
       onChanged();
       return this;
@@ -535,6 +548,7 @@ public final class SequentialSegment extends com.google.protobuf.GeneratedMessag
     public Builder setEnd(int value) {
 
       end_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -550,7 +564,7 @@ public final class SequentialSegment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearEnd() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       end_ = 0;
       onChanged();
       return this;

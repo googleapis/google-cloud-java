@@ -69,7 +69,9 @@ public final class CreateLakeRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class CreateLakeRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int LAKE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object lakeId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object lakeId_ = "";
   /**
    *
    *
@@ -231,11 +235,11 @@ public final class CreateLakeRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.LakeOrBuilder getLakeOrBuilder() {
-    return getLake();
+    return lake_ == null ? com.google.cloud.dataplex.v1.Lake.getDefaultInstance() : lake_;
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -482,18 +486,15 @@ public final class CreateLakeRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       lakeId_ = "";
-
-      if (lakeBuilder_ == null) {
-        lake_ = null;
-      } else {
-        lake_ = null;
+      lake_ = null;
+      if (lakeBuilder_ != null) {
+        lakeBuilder_.dispose();
         lakeBuilder_ = null;
       }
       validateOnly_ = false;
-
       return this;
     }
 
@@ -521,16 +522,27 @@ public final class CreateLakeRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dataplex.v1.CreateLakeRequest buildPartial() {
       com.google.cloud.dataplex.v1.CreateLakeRequest result =
           new com.google.cloud.dataplex.v1.CreateLakeRequest(this);
-      result.parent_ = parent_;
-      result.lakeId_ = lakeId_;
-      if (lakeBuilder_ == null) {
-        result.lake_ = lake_;
-      } else {
-        result.lake_ = lakeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataplex.v1.CreateLakeRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.lakeId_ = lakeId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.lake_ = lakeBuilder_ == null ? lake_ : lakeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -580,10 +592,12 @@ public final class CreateLakeRequest extends com.google.protobuf.GeneratedMessag
       if (other == com.google.cloud.dataplex.v1.CreateLakeRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getLakeId().isEmpty()) {
         lakeId_ = other.lakeId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasLake()) {
@@ -621,25 +635,25 @@ public final class CreateLakeRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 lakeId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getLakeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -658,6 +672,8 @@ public final class CreateLakeRequest extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -732,8 +748,8 @@ public final class CreateLakeRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -753,8 +769,8 @@ public final class CreateLakeRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -779,8 +795,8 @@ public final class CreateLakeRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -867,8 +883,8 @@ public final class CreateLakeRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       lakeId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -891,8 +907,8 @@ public final class CreateLakeRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearLakeId() {
-
       lakeId_ = getDefaultInstance().getLakeId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -920,8 +936,8 @@ public final class CreateLakeRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       lakeId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -945,7 +961,7 @@ public final class CreateLakeRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the lake field is set.
      */
     public boolean hasLake() {
-      return lakeBuilder_ != null || lake_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -982,11 +998,11 @@ public final class CreateLakeRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         lake_ = value;
-        onChanged();
       } else {
         lakeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1002,11 +1018,11 @@ public final class CreateLakeRequest extends com.google.protobuf.GeneratedMessag
     public Builder setLake(com.google.cloud.dataplex.v1.Lake.Builder builderForValue) {
       if (lakeBuilder_ == null) {
         lake_ = builderForValue.build();
-        onChanged();
       } else {
         lakeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1021,17 +1037,18 @@ public final class CreateLakeRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeLake(com.google.cloud.dataplex.v1.Lake value) {
       if (lakeBuilder_ == null) {
-        if (lake_ != null) {
-          lake_ =
-              com.google.cloud.dataplex.v1.Lake.newBuilder(lake_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && lake_ != null
+            && lake_ != com.google.cloud.dataplex.v1.Lake.getDefaultInstance()) {
+          getLakeBuilder().mergeFrom(value);
         } else {
           lake_ = value;
         }
-        onChanged();
       } else {
         lakeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1045,14 +1062,13 @@ public final class CreateLakeRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearLake() {
-      if (lakeBuilder_ == null) {
-        lake_ = null;
-        onChanged();
-      } else {
-        lake_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      lake_ = null;
+      if (lakeBuilder_ != null) {
+        lakeBuilder_.dispose();
         lakeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1066,7 +1082,7 @@ public final class CreateLakeRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.cloud.dataplex.v1.Lake.Builder getLakeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getLakeFieldBuilder().getBuilder();
     }
@@ -1147,6 +1163,7 @@ public final class CreateLakeRequest extends com.google.protobuf.GeneratedMessag
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1163,7 +1180,7 @@ public final class CreateLakeRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       validateOnly_ = false;
       onChanged();
       return this;

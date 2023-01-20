@@ -68,7 +68,7 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
   }
 
   public static final int ALLOW_MULTI_LABEL_FIELD_NUMBER = 1;
-  private boolean allowMultiLabel_;
+  private boolean allowMultiLabel_ = false;
   /**
    *
    *
@@ -87,7 +87,9 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
   }
 
   public static final int ANNOTATION_SPEC_SET_FIELD_NUMBER = 2;
-  private volatile java.lang.Object annotationSpecSet_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object annotationSpecSet_ = "";
   /**
    *
    *
@@ -187,7 +189,9 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.SentimentConfigOrBuilder
       getSentimentConfigOrBuilder() {
-    return getSentimentConfig();
+    return sentimentConfig_ == null
+        ? com.google.cloud.datalabeling.v1beta1.SentimentConfig.getDefaultInstance()
+        : sentimentConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -411,14 +415,12 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       allowMultiLabel_ = false;
-
       annotationSpecSet_ = "";
-
-      if (sentimentConfigBuilder_ == null) {
-        sentimentConfig_ = null;
-      } else {
-        sentimentConfig_ = null;
+      sentimentConfig_ = null;
+      if (sentimentConfigBuilder_ != null) {
+        sentimentConfigBuilder_.dispose();
         sentimentConfigBuilder_ = null;
       }
       return this;
@@ -449,15 +451,26 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
     public com.google.cloud.datalabeling.v1beta1.TextClassificationConfig buildPartial() {
       com.google.cloud.datalabeling.v1beta1.TextClassificationConfig result =
           new com.google.cloud.datalabeling.v1beta1.TextClassificationConfig(this);
-      result.allowMultiLabel_ = allowMultiLabel_;
-      result.annotationSpecSet_ = annotationSpecSet_;
-      if (sentimentConfigBuilder_ == null) {
-        result.sentimentConfig_ = sentimentConfig_;
-      } else {
-        result.sentimentConfig_ = sentimentConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datalabeling.v1beta1.TextClassificationConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.allowMultiLabel_ = allowMultiLabel_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.annotationSpecSet_ = annotationSpecSet_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.sentimentConfig_ =
+            sentimentConfigBuilder_ == null ? sentimentConfig_ : sentimentConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -512,6 +525,7 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
       }
       if (!other.getAnnotationSpecSet().isEmpty()) {
         annotationSpecSet_ = other.annotationSpecSet_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasSentimentConfig()) {
@@ -546,19 +560,19 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
             case 8:
               {
                 allowMultiLabel_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 annotationSpecSet_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getSentimentConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -577,6 +591,8 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean allowMultiLabel_;
     /**
@@ -611,6 +627,7 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
     public Builder setAllowMultiLabel(boolean value) {
 
       allowMultiLabel_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -627,7 +644,7 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearAllowMultiLabel() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       allowMultiLabel_ = false;
       onChanged();
       return this;
@@ -694,8 +711,8 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       annotationSpecSet_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -711,8 +728,8 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearAnnotationSpecSet() {
-
       annotationSpecSet_ = getDefaultInstance().getAnnotationSpecSet();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -733,8 +750,8 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       annotationSpecSet_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -759,7 +776,7 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * @return Whether the sentimentConfig field is set.
      */
     public boolean hasSentimentConfig() {
-      return sentimentConfigBuilder_ != null || sentimentConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -800,11 +817,11 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         sentimentConfig_ = value;
-        onChanged();
       } else {
         sentimentConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -822,11 +839,11 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
         com.google.cloud.datalabeling.v1beta1.SentimentConfig.Builder builderForValue) {
       if (sentimentConfigBuilder_ == null) {
         sentimentConfig_ = builderForValue.build();
-        onChanged();
       } else {
         sentimentConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -843,19 +860,19 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
     public Builder mergeSentimentConfig(
         com.google.cloud.datalabeling.v1beta1.SentimentConfig value) {
       if (sentimentConfigBuilder_ == null) {
-        if (sentimentConfig_ != null) {
-          sentimentConfig_ =
-              com.google.cloud.datalabeling.v1beta1.SentimentConfig.newBuilder(sentimentConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && sentimentConfig_ != null
+            && sentimentConfig_
+                != com.google.cloud.datalabeling.v1beta1.SentimentConfig.getDefaultInstance()) {
+          getSentimentConfigBuilder().mergeFrom(value);
         } else {
           sentimentConfig_ = value;
         }
-        onChanged();
       } else {
         sentimentConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -870,14 +887,13 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearSentimentConfig() {
-      if (sentimentConfigBuilder_ == null) {
-        sentimentConfig_ = null;
-        onChanged();
-      } else {
-        sentimentConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      sentimentConfig_ = null;
+      if (sentimentConfigBuilder_ != null) {
+        sentimentConfigBuilder_.dispose();
         sentimentConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -893,7 +909,7 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      */
     public com.google.cloud.datalabeling.v1beta1.SentimentConfig.Builder
         getSentimentConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSentimentConfigFieldBuilder().getBuilder();
     }

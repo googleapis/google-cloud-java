@@ -329,7 +329,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MATCHING_TYPE_FIELD_NUMBER = 4;
-  private int matchingType_;
+  private int matchingType_ = 0;
   /**
    *
    *
@@ -358,9 +358,8 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.MatchingType getMatchingType() {
-    @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.MatchingType result =
-        com.google.privacy.dlp.v2.MatchingType.valueOf(matchingType_);
+        com.google.privacy.dlp.v2.MatchingType.forNumber(matchingType_);
     return result == null ? com.google.privacy.dlp.v2.MatchingType.UNRECOGNIZED : result;
   }
 
@@ -632,6 +631,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (dictionaryBuilder_ != null) {
         dictionaryBuilder_.clear();
       }
@@ -645,7 +645,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
         excludeByHotwordBuilder_.clear();
       }
       matchingType_ = 0;
-
       typeCase_ = 0;
       type_ = null;
       return this;
@@ -675,38 +674,36 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.ExclusionRule buildPartial() {
       com.google.privacy.dlp.v2.ExclusionRule result =
           new com.google.privacy.dlp.v2.ExclusionRule(this);
-      if (typeCase_ == 1) {
-        if (dictionaryBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = dictionaryBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (typeCase_ == 2) {
-        if (regexBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = regexBuilder_.build();
-        }
-      }
-      if (typeCase_ == 3) {
-        if (excludeInfoTypesBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = excludeInfoTypesBuilder_.build();
-        }
-      }
-      if (typeCase_ == 5) {
-        if (excludeByHotwordBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = excludeByHotwordBuilder_.build();
-        }
-      }
-      result.matchingType_ = matchingType_;
-      result.typeCase_ = typeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.ExclusionRule result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.matchingType_ = matchingType_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.ExclusionRule result) {
+      result.typeCase_ = typeCase_;
+      result.type_ = this.type_;
+      if (typeCase_ == 1 && dictionaryBuilder_ != null) {
+        result.type_ = dictionaryBuilder_.build();
+      }
+      if (typeCase_ == 2 && regexBuilder_ != null) {
+        result.type_ = regexBuilder_.build();
+      }
+      if (typeCase_ == 3 && excludeInfoTypesBuilder_ != null) {
+        result.type_ = excludeInfoTypesBuilder_.build();
+      }
+      if (typeCase_ == 5 && excludeByHotwordBuilder_ != null) {
+        result.type_ = excludeByHotwordBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -831,7 +828,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
             case 32:
               {
                 matchingType_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 32
             case 42:
@@ -871,6 +868,8 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.CustomInfoType.Dictionary,
@@ -1078,7 +1077,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
       }
       typeCase_ = 1;
       onChanged();
-      ;
       return dictionaryBuilder_;
     }
 
@@ -1288,7 +1286,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
       }
       typeCase_ = 2;
       onChanged();
-      ;
       return regexBuilder_;
     }
 
@@ -1498,7 +1495,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
       }
       typeCase_ = 3;
       onChanged();
-      ;
       return excludeInfoTypesBuilder_;
     }
 
@@ -1717,7 +1713,6 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
       }
       typeCase_ = 5;
       onChanged();
-      ;
       return excludeByHotwordBuilder_;
     }
 
@@ -1750,8 +1745,8 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMatchingTypeValue(int value) {
-
       matchingType_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1768,9 +1763,8 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.MatchingType getMatchingType() {
-      @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.MatchingType result =
-          com.google.privacy.dlp.v2.MatchingType.valueOf(matchingType_);
+          com.google.privacy.dlp.v2.MatchingType.forNumber(matchingType_);
       return result == null ? com.google.privacy.dlp.v2.MatchingType.UNRECOGNIZED : result;
     }
     /**
@@ -1789,7 +1783,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       matchingType_ = value.getNumber();
       onChanged();
       return this;
@@ -1806,7 +1800,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMatchingType() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       matchingType_ = 0;
       onChanged();
       return this;

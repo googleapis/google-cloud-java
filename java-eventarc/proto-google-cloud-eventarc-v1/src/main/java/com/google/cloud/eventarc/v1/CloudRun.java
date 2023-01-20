@@ -70,7 +70,9 @@ public final class CloudRun extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object service_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object service_ = "";
   /**
    *
    *
@@ -129,7 +131,9 @@ public final class CloudRun extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PATH_FIELD_NUMBER = 2;
-  private volatile java.lang.Object path_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object path_ = "";
   /**
    *
    *
@@ -182,7 +186,9 @@ public final class CloudRun extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REGION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -443,12 +449,10 @@ public final class CloudRun extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       service_ = "";
-
       path_ = "";
-
       region_ = "";
-
       return this;
     }
 
@@ -476,11 +480,24 @@ public final class CloudRun extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.eventarc.v1.CloudRun buildPartial() {
       com.google.cloud.eventarc.v1.CloudRun result =
           new com.google.cloud.eventarc.v1.CloudRun(this);
-      result.service_ = service_;
-      result.path_ = path_;
-      result.region_ = region_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.eventarc.v1.CloudRun result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.service_ = service_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.path_ = path_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.region_ = region_;
+      }
     }
 
     @java.lang.Override
@@ -530,14 +547,17 @@ public final class CloudRun extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.eventarc.v1.CloudRun.getDefaultInstance()) return this;
       if (!other.getService().isEmpty()) {
         service_ = other.service_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getPath().isEmpty()) {
         path_ = other.path_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -569,19 +589,19 @@ public final class CloudRun extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 service_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 path_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -600,6 +620,8 @@ public final class CloudRun extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object service_ = "";
     /**
@@ -677,8 +699,8 @@ public final class CloudRun extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       service_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -699,8 +721,8 @@ public final class CloudRun extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearService() {
-
       service_ = getDefaultInstance().getService();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -726,8 +748,8 @@ public final class CloudRun extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       service_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -799,8 +821,8 @@ public final class CloudRun extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       path_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -818,8 +840,8 @@ public final class CloudRun extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPath() {
-
       path_ = getDefaultInstance().getPath();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -842,8 +864,8 @@ public final class CloudRun extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       path_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -909,8 +931,8 @@ public final class CloudRun extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -926,8 +948,8 @@ public final class CloudRun extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -948,8 +970,8 @@ public final class CloudRun extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

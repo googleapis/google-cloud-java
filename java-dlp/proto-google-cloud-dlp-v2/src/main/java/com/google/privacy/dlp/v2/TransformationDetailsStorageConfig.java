@@ -389,6 +389,7 @@ public final class TransformationDetailsStorageConfig extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (tableBuilder_ != null) {
         tableBuilder_.clear();
       }
@@ -422,16 +423,26 @@ public final class TransformationDetailsStorageConfig extends com.google.protobu
     public com.google.privacy.dlp.v2.TransformationDetailsStorageConfig buildPartial() {
       com.google.privacy.dlp.v2.TransformationDetailsStorageConfig result =
           new com.google.privacy.dlp.v2.TransformationDetailsStorageConfig(this);
-      if (typeCase_ == 1) {
-        if (tableBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = tableBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.typeCase_ = typeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.privacy.dlp.v2.TransformationDetailsStorageConfig result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.privacy.dlp.v2.TransformationDetailsStorageConfig result) {
+      result.typeCase_ = typeCase_;
+      result.type_ = this.type_;
+      if (typeCase_ == 1 && tableBuilder_ != null) {
+        result.type_ = tableBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -554,6 +565,8 @@ public final class TransformationDetailsStorageConfig extends com.google.protobu
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.BigQueryTable,
@@ -803,7 +816,6 @@ public final class TransformationDetailsStorageConfig extends com.google.protobu
       }
       typeCase_ = 1;
       onChanged();
-      ;
       return tableBuilder_;
     }
 

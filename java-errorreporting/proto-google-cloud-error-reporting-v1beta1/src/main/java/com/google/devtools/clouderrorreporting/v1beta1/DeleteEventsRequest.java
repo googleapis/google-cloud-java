@@ -68,7 +68,9 @@ public final class DeleteEventsRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PROJECT_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object projectName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectName_ = "";
   /**
    *
    *
@@ -328,8 +330,8 @@ public final class DeleteEventsRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       projectName_ = "";
-
       return this;
     }
 
@@ -359,9 +361,19 @@ public final class DeleteEventsRequest extends com.google.protobuf.GeneratedMess
     public com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest buildPartial() {
       com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest result =
           new com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest(this);
-      result.projectName_ = projectName_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.projectName_ = projectName_;
+      }
     }
 
     @java.lang.Override
@@ -415,6 +427,7 @@ public final class DeleteEventsRequest extends com.google.protobuf.GeneratedMess
               .getDefaultInstance()) return this;
       if (!other.getProjectName().isEmpty()) {
         projectName_ = other.projectName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -446,7 +459,7 @@ public final class DeleteEventsRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 projectName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -465,6 +478,8 @@ public final class DeleteEventsRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object projectName_ = "";
     /**
@@ -545,8 +560,8 @@ public final class DeleteEventsRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -568,8 +583,8 @@ public final class DeleteEventsRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearProjectName() {
-
       projectName_ = getDefaultInstance().getProjectName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -596,8 +611,8 @@ public final class DeleteEventsRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

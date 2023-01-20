@@ -120,7 +120,9 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.lineage.v1.ProcessOrBuilder getProcessOrBuilder() {
-    return getProcess();
+    return process_ == null
+        ? com.google.cloud.datacatalog.lineage.v1.Process.getDefaultInstance()
+        : process_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -169,11 +171,11 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 3;
-  private boolean allowMissing_;
+  private boolean allowMissing_ = false;
   /**
    *
    *
@@ -417,20 +419,18 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (processBuilder_ == null) {
-        process_ = null;
-      } else {
-        process_ = null;
+      bitField0_ = 0;
+      process_ = null;
+      if (processBuilder_ != null) {
+        processBuilder_.dispose();
         processBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       allowMissing_ = false;
-
       return this;
     }
 
@@ -459,19 +459,25 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.datacatalog.lineage.v1.UpdateProcessRequest buildPartial() {
       com.google.cloud.datacatalog.lineage.v1.UpdateProcessRequest result =
           new com.google.cloud.datacatalog.lineage.v1.UpdateProcessRequest(this);
-      if (processBuilder_ == null) {
-        result.process_ = process_;
-      } else {
-        result.process_ = processBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
-      }
-      result.allowMissing_ = allowMissing_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datacatalog.lineage.v1.UpdateProcessRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.process_ = processBuilder_ == null ? process_ : processBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.allowMissing_ = allowMissing_;
+      }
     }
 
     @java.lang.Override
@@ -559,19 +565,19 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 input.readMessage(getProcessFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 allowMissing_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -590,6 +596,8 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.datacatalog.lineage.v1.Process process_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -612,7 +620,7 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the process field is set.
      */
     public boolean hasProcess() {
-      return processBuilder_ != null || process_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -655,11 +663,11 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         process_ = value;
-        onChanged();
       } else {
         processBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -678,11 +686,11 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
         com.google.cloud.datacatalog.lineage.v1.Process.Builder builderForValue) {
       if (processBuilder_ == null) {
         process_ = builderForValue.build();
-        onChanged();
       } else {
         processBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -699,19 +707,18 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeProcess(com.google.cloud.datacatalog.lineage.v1.Process value) {
       if (processBuilder_ == null) {
-        if (process_ != null) {
-          process_ =
-              com.google.cloud.datacatalog.lineage.v1.Process.newBuilder(process_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && process_ != null
+            && process_ != com.google.cloud.datacatalog.lineage.v1.Process.getDefaultInstance()) {
+          getProcessBuilder().mergeFrom(value);
         } else {
           process_ = value;
         }
-        onChanged();
       } else {
         processBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -727,14 +734,13 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearProcess() {
-      if (processBuilder_ == null) {
-        process_ = null;
-        onChanged();
-      } else {
-        process_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      process_ = null;
+      if (processBuilder_ != null) {
+        processBuilder_.dispose();
         processBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -750,7 +756,7 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.datacatalog.lineage.v1.Process.Builder getProcessBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getProcessFieldBuilder().getBuilder();
     }
@@ -823,7 +829,7 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -862,11 +868,11 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -882,11 +888,11 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -901,17 +907,18 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -925,14 +932,13 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -946,7 +952,7 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -1027,6 +1033,7 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
     public Builder setAllowMissing(boolean value) {
 
       allowMissing_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1042,7 +1049,7 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearAllowMissing() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       allowMissing_ = false;
       onChanged();
       return this;

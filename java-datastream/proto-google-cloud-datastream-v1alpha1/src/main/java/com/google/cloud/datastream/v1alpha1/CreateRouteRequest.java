@@ -70,7 +70,9 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ROUTE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object routeId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object routeId_ = "";
   /**
    *
    *
@@ -222,11 +226,15 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.datastream.v1alpha1.RouteOrBuilder getRouteOrBuilder() {
-    return getRoute();
+    return route_ == null
+        ? com.google.cloud.datastream.v1alpha1.Route.getDefaultInstance()
+        : route_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -524,18 +532,15 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       routeId_ = "";
-
-      if (routeBuilder_ == null) {
-        route_ = null;
-      } else {
-        route_ = null;
+      route_ = null;
+      if (routeBuilder_ != null) {
+        routeBuilder_.dispose();
         routeBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -563,16 +568,27 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.datastream.v1alpha1.CreateRouteRequest buildPartial() {
       com.google.cloud.datastream.v1alpha1.CreateRouteRequest result =
           new com.google.cloud.datastream.v1alpha1.CreateRouteRequest(this);
-      result.parent_ = parent_;
-      result.routeId_ = routeId_;
-      if (routeBuilder_ == null) {
-        result.route_ = route_;
-      } else {
-        result.route_ = routeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1alpha1.CreateRouteRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.routeId_ = routeId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.route_ = routeBuilder_ == null ? route_ : routeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -623,10 +639,12 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRouteId().isEmpty()) {
         routeId_ = other.routeId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRoute()) {
@@ -634,6 +652,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -665,25 +684,25 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 routeId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getRouteFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -702,6 +721,8 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -770,8 +791,8 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -789,8 +810,8 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -813,8 +834,8 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -880,8 +901,8 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       routeId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -897,8 +918,8 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearRouteId() {
-
       routeId_ = getDefaultInstance().getRouteId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -919,8 +940,8 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       routeId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -945,7 +966,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the route field is set.
      */
     public boolean hasRoute() {
-      return routeBuilder_ != null || route_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -986,11 +1007,11 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         route_ = value;
-        onChanged();
       } else {
         routeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1007,11 +1028,11 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
     public Builder setRoute(com.google.cloud.datastream.v1alpha1.Route.Builder builderForValue) {
       if (routeBuilder_ == null) {
         route_ = builderForValue.build();
-        onChanged();
       } else {
         routeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1027,19 +1048,18 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeRoute(com.google.cloud.datastream.v1alpha1.Route value) {
       if (routeBuilder_ == null) {
-        if (route_ != null) {
-          route_ =
-              com.google.cloud.datastream.v1alpha1.Route.newBuilder(route_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && route_ != null
+            && route_ != com.google.cloud.datastream.v1alpha1.Route.getDefaultInstance()) {
+          getRouteBuilder().mergeFrom(value);
         } else {
           route_ = value;
         }
-        onChanged();
       } else {
         routeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1054,14 +1074,13 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearRoute() {
-      if (routeBuilder_ == null) {
-        route_ = null;
-        onChanged();
-      } else {
-        route_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      route_ = null;
+      if (routeBuilder_ != null) {
+        routeBuilder_.dispose();
         routeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1076,7 +1095,7 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.datastream.v1alpha1.Route.Builder getRouteBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getRouteFieldBuilder().getBuilder();
     }
@@ -1219,8 +1238,8 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1246,8 +1265,8 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1278,8 +1297,8 @@ public final class CreateRouteRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

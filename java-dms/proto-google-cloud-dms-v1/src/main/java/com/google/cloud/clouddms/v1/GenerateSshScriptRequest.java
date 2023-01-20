@@ -116,7 +116,9 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
   }
 
   public static final int MIGRATION_JOB_FIELD_NUMBER = 1;
-  private volatile java.lang.Object migrationJob_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object migrationJob_ = "";
   /**
    *
    *
@@ -165,7 +167,9 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
   }
 
   public static final int VM_FIELD_NUMBER = 2;
-  private volatile java.lang.Object vm_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vm_ = "";
   /**
    *
    *
@@ -316,7 +320,7 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
   }
 
   public static final int VM_PORT_FIELD_NUMBER = 3;
-  private int vmPort_;
+  private int vmPort_ = 0;
   /**
    *
    *
@@ -588,10 +592,9 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       migrationJob_ = "";
-
       vm_ = "";
-
       if (vmCreationConfigBuilder_ != null) {
         vmCreationConfigBuilder_.clear();
       }
@@ -599,7 +602,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
         vmSelectionConfigBuilder_.clear();
       }
       vmPort_ = 0;
-
       vmConfigCase_ = 0;
       vmConfig_ = null;
       return this;
@@ -629,26 +631,36 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
     public com.google.cloud.clouddms.v1.GenerateSshScriptRequest buildPartial() {
       com.google.cloud.clouddms.v1.GenerateSshScriptRequest result =
           new com.google.cloud.clouddms.v1.GenerateSshScriptRequest(this);
-      result.migrationJob_ = migrationJob_;
-      result.vm_ = vm_;
-      if (vmConfigCase_ == 100) {
-        if (vmCreationConfigBuilder_ == null) {
-          result.vmConfig_ = vmConfig_;
-        } else {
-          result.vmConfig_ = vmCreationConfigBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (vmConfigCase_ == 101) {
-        if (vmSelectionConfigBuilder_ == null) {
-          result.vmConfig_ = vmConfig_;
-        } else {
-          result.vmConfig_ = vmSelectionConfigBuilder_.build();
-        }
-      }
-      result.vmPort_ = vmPort_;
-      result.vmConfigCase_ = vmConfigCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.clouddms.v1.GenerateSshScriptRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.migrationJob_ = migrationJob_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.vm_ = vm_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.vmPort_ = vmPort_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.clouddms.v1.GenerateSshScriptRequest result) {
+      result.vmConfigCase_ = vmConfigCase_;
+      result.vmConfig_ = this.vmConfig_;
+      if (vmConfigCase_ == 100 && vmCreationConfigBuilder_ != null) {
+        result.vmConfig_ = vmCreationConfigBuilder_.build();
+      }
+      if (vmConfigCase_ == 101 && vmSelectionConfigBuilder_ != null) {
+        result.vmConfig_ = vmSelectionConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -699,10 +711,12 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getMigrationJob().isEmpty()) {
         migrationJob_ = other.migrationJob_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getVm().isEmpty()) {
         vm_ = other.vm_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getVmPort() != 0) {
@@ -753,19 +767,19 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
             case 10:
               {
                 migrationJob_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 vm_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 vmPort_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 24
             case 802:
@@ -812,6 +826,8 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object migrationJob_ = "";
     /**
@@ -874,8 +890,8 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       migrationJob_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -891,8 +907,8 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearMigrationJob() {
-
       migrationJob_ = getDefaultInstance().getMigrationJob();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -913,8 +929,8 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       migrationJob_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -980,8 +996,8 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       vm_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -997,8 +1013,8 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearVm() {
-
       vm_ = getDefaultInstance().getVm();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1019,8 +1035,8 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vm_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1231,7 +1247,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
       }
       vmConfigCase_ = 100;
       onChanged();
-      ;
       return vmCreationConfigBuilder_;
     }
 
@@ -1441,7 +1456,6 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
       }
       vmConfigCase_ = 101;
       onChanged();
-      ;
       return vmSelectionConfigBuilder_;
     }
 
@@ -1476,6 +1490,7 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
     public Builder setVmPort(int value) {
 
       vmPort_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1491,7 +1506,7 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearVmPort() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       vmPort_ = 0;
       onChanged();
       return this;

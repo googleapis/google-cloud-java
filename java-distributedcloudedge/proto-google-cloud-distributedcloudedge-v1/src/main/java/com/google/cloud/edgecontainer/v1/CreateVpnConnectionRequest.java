@@ -70,7 +70,9 @@ public final class CreateVpnConnectionRequest extends com.google.protobuf.Genera
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class CreateVpnConnectionRequest extends com.google.protobuf.Genera
   }
 
   public static final int VPN_CONNECTION_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object vpnConnectionId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vpnConnectionId_ = "";
   /**
    *
    *
@@ -222,11 +226,15 @@ public final class CreateVpnConnectionRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.cloud.edgecontainer.v1.VpnConnectionOrBuilder getVpnConnectionOrBuilder() {
-    return getVpnConnection();
+    return vpnConnection_ == null
+        ? com.google.cloud.edgecontainer.v1.VpnConnection.getDefaultInstance()
+        : vpnConnection_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -508,18 +516,15 @@ public final class CreateVpnConnectionRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       vpnConnectionId_ = "";
-
-      if (vpnConnectionBuilder_ == null) {
-        vpnConnection_ = null;
-      } else {
-        vpnConnection_ = null;
+      vpnConnection_ = null;
+      if (vpnConnectionBuilder_ != null) {
+        vpnConnectionBuilder_.dispose();
         vpnConnectionBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -548,16 +553,29 @@ public final class CreateVpnConnectionRequest extends com.google.protobuf.Genera
     public com.google.cloud.edgecontainer.v1.CreateVpnConnectionRequest buildPartial() {
       com.google.cloud.edgecontainer.v1.CreateVpnConnectionRequest result =
           new com.google.cloud.edgecontainer.v1.CreateVpnConnectionRequest(this);
-      result.parent_ = parent_;
-      result.vpnConnectionId_ = vpnConnectionId_;
-      if (vpnConnectionBuilder_ == null) {
-        result.vpnConnection_ = vpnConnection_;
-      } else {
-        result.vpnConnection_ = vpnConnectionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.edgecontainer.v1.CreateVpnConnectionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.vpnConnectionId_ = vpnConnectionId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.vpnConnection_ =
+            vpnConnectionBuilder_ == null ? vpnConnection_ : vpnConnectionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -609,10 +627,12 @@ public final class CreateVpnConnectionRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getVpnConnectionId().isEmpty()) {
         vpnConnectionId_ = other.vpnConnectionId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasVpnConnection()) {
@@ -620,6 +640,7 @@ public final class CreateVpnConnectionRequest extends com.google.protobuf.Genera
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -651,25 +672,25 @@ public final class CreateVpnConnectionRequest extends com.google.protobuf.Genera
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 vpnConnectionId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getVpnConnectionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -688,6 +709,8 @@ public final class CreateVpnConnectionRequest extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -756,8 +779,8 @@ public final class CreateVpnConnectionRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -775,8 +798,8 @@ public final class CreateVpnConnectionRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -799,8 +822,8 @@ public final class CreateVpnConnectionRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -866,8 +889,8 @@ public final class CreateVpnConnectionRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       vpnConnectionId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -883,8 +906,8 @@ public final class CreateVpnConnectionRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearVpnConnectionId() {
-
       vpnConnectionId_ = getDefaultInstance().getVpnConnectionId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -905,8 +928,8 @@ public final class CreateVpnConnectionRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vpnConnectionId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -931,7 +954,7 @@ public final class CreateVpnConnectionRequest extends com.google.protobuf.Genera
      * @return Whether the vpnConnection field is set.
      */
     public boolean hasVpnConnection() {
-      return vpnConnectionBuilder_ != null || vpnConnection_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -972,11 +995,11 @@ public final class CreateVpnConnectionRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         vpnConnection_ = value;
-        onChanged();
       } else {
         vpnConnectionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -994,11 +1017,11 @@ public final class CreateVpnConnectionRequest extends com.google.protobuf.Genera
         com.google.cloud.edgecontainer.v1.VpnConnection.Builder builderForValue) {
       if (vpnConnectionBuilder_ == null) {
         vpnConnection_ = builderForValue.build();
-        onChanged();
       } else {
         vpnConnectionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1014,19 +1037,19 @@ public final class CreateVpnConnectionRequest extends com.google.protobuf.Genera
      */
     public Builder mergeVpnConnection(com.google.cloud.edgecontainer.v1.VpnConnection value) {
       if (vpnConnectionBuilder_ == null) {
-        if (vpnConnection_ != null) {
-          vpnConnection_ =
-              com.google.cloud.edgecontainer.v1.VpnConnection.newBuilder(vpnConnection_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && vpnConnection_ != null
+            && vpnConnection_
+                != com.google.cloud.edgecontainer.v1.VpnConnection.getDefaultInstance()) {
+          getVpnConnectionBuilder().mergeFrom(value);
         } else {
           vpnConnection_ = value;
         }
-        onChanged();
       } else {
         vpnConnectionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1041,14 +1064,13 @@ public final class CreateVpnConnectionRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearVpnConnection() {
-      if (vpnConnectionBuilder_ == null) {
-        vpnConnection_ = null;
-        onChanged();
-      } else {
-        vpnConnection_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      vpnConnection_ = null;
+      if (vpnConnectionBuilder_ != null) {
+        vpnConnectionBuilder_.dispose();
         vpnConnectionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1063,7 +1085,7 @@ public final class CreateVpnConnectionRequest extends com.google.protobuf.Genera
      * </code>
      */
     public com.google.cloud.edgecontainer.v1.VpnConnection.Builder getVpnConnectionBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getVpnConnectionFieldBuilder().getBuilder();
     }
@@ -1182,8 +1204,8 @@ public final class CreateVpnConnectionRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1201,8 +1223,8 @@ public final class CreateVpnConnectionRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1225,8 +1247,8 @@ public final class CreateVpnConnectionRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

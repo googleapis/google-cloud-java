@@ -69,7 +69,9 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
   }
 
   public static final int ANNOTATION_SPEC_SET_FIELD_NUMBER = 1;
-  private volatile java.lang.Object annotationSpecSet_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object annotationSpecSet_ = "";
   /**
    *
    *
@@ -118,7 +120,7 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
   }
 
   public static final int ALLOW_MULTI_LABEL_FIELD_NUMBER = 2;
-  private boolean allowMultiLabel_;
+  private boolean allowMultiLabel_ = false;
   /**
    *
    *
@@ -137,7 +139,7 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
   }
 
   public static final int ANSWER_AGGREGATION_TYPE_FIELD_NUMBER = 3;
-  private int answerAggregationType_;
+  private int answerAggregationType_ = 0;
   /**
    *
    *
@@ -170,9 +172,9 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.StringAggregationType getAnswerAggregationType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.datalabeling.v1beta1.StringAggregationType result =
-        com.google.cloud.datalabeling.v1beta1.StringAggregationType.valueOf(answerAggregationType_);
+        com.google.cloud.datalabeling.v1beta1.StringAggregationType.forNumber(
+            answerAggregationType_);
     return result == null
         ? com.google.cloud.datalabeling.v1beta1.StringAggregationType.UNRECOGNIZED
         : result;
@@ -400,12 +402,10 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       annotationSpecSet_ = "";
-
       allowMultiLabel_ = false;
-
       answerAggregationType_ = 0;
-
       return this;
     }
 
@@ -434,11 +434,25 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
     public com.google.cloud.datalabeling.v1beta1.ImageClassificationConfig buildPartial() {
       com.google.cloud.datalabeling.v1beta1.ImageClassificationConfig result =
           new com.google.cloud.datalabeling.v1beta1.ImageClassificationConfig(this);
-      result.annotationSpecSet_ = annotationSpecSet_;
-      result.allowMultiLabel_ = allowMultiLabel_;
-      result.answerAggregationType_ = answerAggregationType_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datalabeling.v1beta1.ImageClassificationConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.annotationSpecSet_ = annotationSpecSet_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.allowMultiLabel_ = allowMultiLabel_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.answerAggregationType_ = answerAggregationType_;
+      }
     }
 
     @java.lang.Override
@@ -491,6 +505,7 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
         return this;
       if (!other.getAnnotationSpecSet().isEmpty()) {
         annotationSpecSet_ = other.annotationSpecSet_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getAllowMultiLabel() != false) {
@@ -528,19 +543,19 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
             case 10:
               {
                 annotationSpecSet_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 allowMultiLabel_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 answerAggregationType_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -559,6 +574,8 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object annotationSpecSet_ = "";
     /**
@@ -621,8 +638,8 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       annotationSpecSet_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -638,8 +655,8 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearAnnotationSpecSet() {
-
       annotationSpecSet_ = getDefaultInstance().getAnnotationSpecSet();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -660,8 +677,8 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       annotationSpecSet_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -699,6 +716,7 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
     public Builder setAllowMultiLabel(boolean value) {
 
       allowMultiLabel_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -715,7 +733,7 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearAllowMultiLabel() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       allowMultiLabel_ = false;
       onChanged();
       return this;
@@ -754,8 +772,8 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setAnswerAggregationTypeValue(int value) {
-
       answerAggregationType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -774,9 +792,8 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.StringAggregationType getAnswerAggregationType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.datalabeling.v1beta1.StringAggregationType result =
-          com.google.cloud.datalabeling.v1beta1.StringAggregationType.valueOf(
+          com.google.cloud.datalabeling.v1beta1.StringAggregationType.forNumber(
               answerAggregationType_);
       return result == null
           ? com.google.cloud.datalabeling.v1beta1.StringAggregationType.UNRECOGNIZED
@@ -801,7 +818,7 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       answerAggregationType_ = value.getNumber();
       onChanged();
       return this;
@@ -820,7 +837,7 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearAnswerAggregationType() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       answerAggregationType_ = 0;
       onChanged();
       return this;

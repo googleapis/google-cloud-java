@@ -70,7 +70,9 @@ public final class VpcPeeringConnectivity extends com.google.protobuf.GeneratedM
   }
 
   public static final int VPC_FIELD_NUMBER = 1;
-  private volatile java.lang.Object vpc_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vpc_ = "";
   /**
    *
    *
@@ -317,8 +319,8 @@ public final class VpcPeeringConnectivity extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       vpc_ = "";
-
       return this;
     }
 
@@ -346,9 +348,18 @@ public final class VpcPeeringConnectivity extends com.google.protobuf.GeneratedM
     public com.google.cloud.clouddms.v1.VpcPeeringConnectivity buildPartial() {
       com.google.cloud.clouddms.v1.VpcPeeringConnectivity result =
           new com.google.cloud.clouddms.v1.VpcPeeringConnectivity(this);
-      result.vpc_ = vpc_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.clouddms.v1.VpcPeeringConnectivity result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.vpc_ = vpc_;
+      }
     }
 
     @java.lang.Override
@@ -399,6 +410,7 @@ public final class VpcPeeringConnectivity extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getVpc().isEmpty()) {
         vpc_ = other.vpc_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -430,7 +442,7 @@ public final class VpcPeeringConnectivity extends com.google.protobuf.GeneratedM
             case 10:
               {
                 vpc_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -449,6 +461,8 @@ public final class VpcPeeringConnectivity extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object vpc_ = "";
     /**
@@ -511,8 +525,8 @@ public final class VpcPeeringConnectivity extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       vpc_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -528,8 +542,8 @@ public final class VpcPeeringConnectivity extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearVpc() {
-
       vpc_ = getDefaultInstance().getVpc();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -550,8 +564,8 @@ public final class VpcPeeringConnectivity extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vpc_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

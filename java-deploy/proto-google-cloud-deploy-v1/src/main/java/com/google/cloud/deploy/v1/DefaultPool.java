@@ -69,7 +69,9 @@ public final class DefaultPool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object serviceAccount_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccount_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class DefaultPool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ARTIFACT_STORAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object artifactStorage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object artifactStorage_ = "";
   /**
    *
    *
@@ -381,10 +385,9 @@ public final class DefaultPool extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       serviceAccount_ = "";
-
       artifactStorage_ = "";
-
       return this;
     }
 
@@ -412,10 +415,21 @@ public final class DefaultPool extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.deploy.v1.DefaultPool buildPartial() {
       com.google.cloud.deploy.v1.DefaultPool result =
           new com.google.cloud.deploy.v1.DefaultPool(this);
-      result.serviceAccount_ = serviceAccount_;
-      result.artifactStorage_ = artifactStorage_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.DefaultPool result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.serviceAccount_ = serviceAccount_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.artifactStorage_ = artifactStorage_;
+      }
     }
 
     @java.lang.Override
@@ -465,10 +479,12 @@ public final class DefaultPool extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.deploy.v1.DefaultPool.getDefaultInstance()) return this;
       if (!other.getServiceAccount().isEmpty()) {
         serviceAccount_ = other.serviceAccount_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getArtifactStorage().isEmpty()) {
         artifactStorage_ = other.artifactStorage_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -500,13 +516,13 @@ public final class DefaultPool extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 serviceAccount_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 artifactStorage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -525,6 +541,8 @@ public final class DefaultPool extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object serviceAccount_ = "";
     /**
@@ -593,8 +611,8 @@ public final class DefaultPool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceAccount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -612,8 +630,8 @@ public final class DefaultPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceAccount() {
-
       serviceAccount_ = getDefaultInstance().getServiceAccount();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -636,8 +654,8 @@ public final class DefaultPool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceAccount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -712,8 +730,8 @@ public final class DefaultPool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       artifactStorage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -732,8 +750,8 @@ public final class DefaultPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearArtifactStorage() {
-
       artifactStorage_ = getDefaultInstance().getArtifactStorage();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -757,8 +775,8 @@ public final class DefaultPool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       artifactStorage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

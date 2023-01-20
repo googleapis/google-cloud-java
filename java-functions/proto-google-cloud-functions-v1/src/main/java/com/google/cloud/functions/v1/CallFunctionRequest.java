@@ -69,7 +69,9 @@ public final class CallFunctionRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class CallFunctionRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int DATA_FIELD_NUMBER = 2;
-  private volatile java.lang.Object data_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object data_ = "";
   /**
    *
    *
@@ -376,10 +380,9 @@ public final class CallFunctionRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       data_ = "";
-
       return this;
     }
 
@@ -407,10 +410,21 @@ public final class CallFunctionRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.functions.v1.CallFunctionRequest buildPartial() {
       com.google.cloud.functions.v1.CallFunctionRequest result =
           new com.google.cloud.functions.v1.CallFunctionRequest(this);
-      result.name_ = name_;
-      result.data_ = data_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.functions.v1.CallFunctionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.data_ = data_;
+      }
     }
 
     @java.lang.Override
@@ -461,10 +475,12 @@ public final class CallFunctionRequest extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getData().isEmpty()) {
         data_ = other.data_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -496,13 +512,13 @@ public final class CallFunctionRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 data_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -521,6 +537,8 @@ public final class CallFunctionRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -589,8 +607,8 @@ public final class CallFunctionRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -608,8 +626,8 @@ public final class CallFunctionRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -632,8 +650,8 @@ public final class CallFunctionRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -699,8 +717,8 @@ public final class CallFunctionRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       data_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -716,8 +734,8 @@ public final class CallFunctionRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearData() {
-
       data_ = getDefaultInstance().getData();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -738,8 +756,8 @@ public final class CallFunctionRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       data_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

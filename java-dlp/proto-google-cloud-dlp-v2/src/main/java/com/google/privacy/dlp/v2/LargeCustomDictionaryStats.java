@@ -66,7 +66,7 @@ public final class LargeCustomDictionaryStats extends com.google.protobuf.Genera
   }
 
   public static final int APPROX_NUM_PHRASES_FIELD_NUMBER = 1;
-  private long approxNumPhrases_;
+  private long approxNumPhrases_ = 0L;
   /**
    *
    *
@@ -280,8 +280,8 @@ public final class LargeCustomDictionaryStats extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       approxNumPhrases_ = 0L;
-
       return this;
     }
 
@@ -309,9 +309,18 @@ public final class LargeCustomDictionaryStats extends com.google.protobuf.Genera
     public com.google.privacy.dlp.v2.LargeCustomDictionaryStats buildPartial() {
       com.google.privacy.dlp.v2.LargeCustomDictionaryStats result =
           new com.google.privacy.dlp.v2.LargeCustomDictionaryStats(this);
-      result.approxNumPhrases_ = approxNumPhrases_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.LargeCustomDictionaryStats result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.approxNumPhrases_ = approxNumPhrases_;
+      }
     }
 
     @java.lang.Override
@@ -392,7 +401,7 @@ public final class LargeCustomDictionaryStats extends com.google.protobuf.Genera
             case 8:
               {
                 approxNumPhrases_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -411,6 +420,8 @@ public final class LargeCustomDictionaryStats extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private long approxNumPhrases_;
     /**
@@ -443,6 +454,7 @@ public final class LargeCustomDictionaryStats extends com.google.protobuf.Genera
     public Builder setApproxNumPhrases(long value) {
 
       approxNumPhrases_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -458,7 +470,7 @@ public final class LargeCustomDictionaryStats extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearApproxNumPhrases() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       approxNumPhrases_ = 0L;
       onChanged();
       return this;

@@ -69,6 +69,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ERROR_EVENTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent> errorEvents_;
   /**
    *
@@ -141,7 +143,9 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -238,7 +242,9 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getTimeRangeBeginOrBuilder() {
-    return getTimeRangeBegin();
+    return timeRangeBegin_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : timeRangeBegin_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -466,6 +472,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (errorEventsBuilder_ == null) {
         errorEvents_ = java.util.Collections.emptyList();
       } else {
@@ -474,11 +481,9 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
-
-      if (timeRangeBeginBuilder_ == null) {
-        timeRangeBegin_ = null;
-      } else {
-        timeRangeBegin_ = null;
+      timeRangeBegin_ = null;
+      if (timeRangeBeginBuilder_ != null) {
+        timeRangeBeginBuilder_.dispose();
         timeRangeBeginBuilder_ = null;
       }
       return this;
@@ -510,7 +515,16 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
     public com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse buildPartial() {
       com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse result =
           new com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse result) {
       if (errorEventsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           errorEvents_ = java.util.Collections.unmodifiableList(errorEvents_);
@@ -520,14 +534,18 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       } else {
         result.errorEvents_ = errorEventsBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
-      if (timeRangeBeginBuilder_ == null) {
-        result.timeRangeBegin_ = timeRangeBegin_;
-      } else {
-        result.timeRangeBegin_ = timeRangeBeginBuilder_.build();
+    }
+
+    private void buildPartial0(
+        com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.timeRangeBegin_ =
+            timeRangeBeginBuilder_ == null ? timeRangeBegin_ : timeRangeBeginBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -608,6 +626,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasTimeRangeBegin()) {
@@ -656,13 +675,13 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
             case 18:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 34:
               {
                 input.readMessage(getTimeRangeBeginFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             default:
@@ -1136,8 +1155,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1155,8 +1174,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1179,8 +1198,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1203,7 +1222,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      * @return Whether the timeRangeBegin field is set.
      */
     public boolean hasTimeRangeBegin() {
-      return timeRangeBeginBuilder_ != null || timeRangeBegin_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1240,11 +1259,11 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         timeRangeBegin_ = value;
-        onChanged();
       } else {
         timeRangeBeginBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1259,11 +1278,11 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
     public Builder setTimeRangeBegin(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (timeRangeBeginBuilder_ == null) {
         timeRangeBegin_ = builderForValue.build();
-        onChanged();
       } else {
         timeRangeBeginBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1277,19 +1296,18 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeTimeRangeBegin(com.google.protobuf.Timestamp value) {
       if (timeRangeBeginBuilder_ == null) {
-        if (timeRangeBegin_ != null) {
-          timeRangeBegin_ =
-              com.google.protobuf.Timestamp.newBuilder(timeRangeBegin_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && timeRangeBegin_ != null
+            && timeRangeBegin_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getTimeRangeBeginBuilder().mergeFrom(value);
         } else {
           timeRangeBegin_ = value;
         }
-        onChanged();
       } else {
         timeRangeBeginBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1302,14 +1320,13 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      * <code>.google.protobuf.Timestamp time_range_begin = 4;</code>
      */
     public Builder clearTimeRangeBegin() {
-      if (timeRangeBeginBuilder_ == null) {
-        timeRangeBegin_ = null;
-        onChanged();
-      } else {
-        timeRangeBegin_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      timeRangeBegin_ = null;
+      if (timeRangeBeginBuilder_ != null) {
+        timeRangeBeginBuilder_.dispose();
         timeRangeBeginBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1322,7 +1339,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      * <code>.google.protobuf.Timestamp time_range_begin = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getTimeRangeBeginBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getTimeRangeBeginFieldBuilder().getBuilder();
     }

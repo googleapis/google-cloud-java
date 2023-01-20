@@ -71,7 +71,9 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GROUP_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object groupId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object groupId_ = "";
   /**
    *
    *
@@ -173,6 +177,8 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRACKING_ISSUES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue>
       trackingIssues_;
   /**
@@ -252,7 +258,7 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESOLUTION_STATUS_FIELD_NUMBER = 5;
-  private int resolutionStatus_;
+  private int resolutionStatus_ = 0;
   /**
    *
    *
@@ -285,9 +291,9 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus getResolutionStatus() {
-    @SuppressWarnings("deprecation")
     com.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus result =
-        com.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus.valueOf(resolutionStatus_);
+        com.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus.forNumber(
+            resolutionStatus_);
     return result == null
         ? com.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus.UNRECOGNIZED
         : result;
@@ -526,19 +532,17 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       groupId_ = "";
-
       if (trackingIssuesBuilder_ == null) {
         trackingIssues_ = java.util.Collections.emptyList();
       } else {
         trackingIssues_ = null;
         trackingIssuesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       resolutionStatus_ = 0;
-
       return this;
     }
 
@@ -566,21 +570,38 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup buildPartial() {
       com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup result =
           new com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.groupId_ = groupId_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup result) {
       if (trackingIssuesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           trackingIssues_ = java.util.Collections.unmodifiableList(trackingIssues_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.trackingIssues_ = trackingIssues_;
       } else {
         result.trackingIssues_ = trackingIssuesBuilder_.build();
       }
-      result.resolutionStatus_ = resolutionStatus_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.groupId_ = groupId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.resolutionStatus_ = resolutionStatus_;
+      }
     }
 
     @java.lang.Override
@@ -631,17 +652,19 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getGroupId().isEmpty()) {
         groupId_ = other.groupId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (trackingIssuesBuilder_ == null) {
         if (!other.trackingIssues_.isEmpty()) {
           if (trackingIssues_.isEmpty()) {
             trackingIssues_ = other.trackingIssues_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureTrackingIssuesIsMutable();
             trackingIssues_.addAll(other.trackingIssues_);
@@ -654,7 +677,7 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
             trackingIssuesBuilder_.dispose();
             trackingIssuesBuilder_ = null;
             trackingIssues_ = other.trackingIssues_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             trackingIssuesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTrackingIssuesFieldBuilder()
@@ -696,13 +719,13 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 groupId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -722,7 +745,7 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
             case 40:
               {
                 resolutionStatus_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 40
             default:
@@ -808,8 +831,8 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -826,8 +849,8 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -849,8 +872,8 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -919,8 +942,8 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       groupId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -937,8 +960,8 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGroupId() {
-
       groupId_ = getDefaultInstance().getGroupId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -960,8 +983,8 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       groupId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -970,11 +993,11 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
         trackingIssues_ = java.util.Collections.emptyList();
 
     private void ensureTrackingIssuesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         trackingIssues_ =
             new java.util.ArrayList<com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue>(
                 trackingIssues_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1220,7 +1243,7 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTrackingIssues() {
       if (trackingIssuesBuilder_ == null) {
         trackingIssues_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         trackingIssuesBuilder_.clear();
@@ -1365,7 +1388,7 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
                 com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.Builder,
                 com.google.devtools.clouderrorreporting.v1beta1.TrackingIssueOrBuilder>(
                 trackingIssues_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         trackingIssues_ = null;
@@ -1406,8 +1429,8 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setResolutionStatusValue(int value) {
-
       resolutionStatus_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1426,9 +1449,8 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus getResolutionStatus() {
-      @SuppressWarnings("deprecation")
       com.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus result =
-          com.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus.valueOf(
+          com.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus.forNumber(
               resolutionStatus_);
       return result == null
           ? com.google.devtools.clouderrorreporting.v1beta1.ResolutionStatus.UNRECOGNIZED
@@ -1453,7 +1475,7 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       resolutionStatus_ = value.getNumber();
       onChanged();
       return this;
@@ -1472,7 +1494,7 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResolutionStatus() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       resolutionStatus_ = 0;
       onChanged();
       return this;

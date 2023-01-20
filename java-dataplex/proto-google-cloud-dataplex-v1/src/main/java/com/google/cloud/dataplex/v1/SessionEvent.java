@@ -626,7 +626,9 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int QUERY_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object queryId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object queryId_ = "";
     /**
      *
      *
@@ -675,7 +677,9 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int QUERY_TEXT_FIELD_NUMBER = 2;
-    private volatile java.lang.Object queryText_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object queryText_ = "";
     /**
      *
      *
@@ -724,7 +728,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ENGINE_FIELD_NUMBER = 3;
-    private int engine_;
+    private int engine_ = 0;
     /**
      *
      *
@@ -753,9 +757,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.dataplex.v1.SessionEvent.QueryDetail.Engine getEngine() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dataplex.v1.SessionEvent.QueryDetail.Engine result =
-          com.google.cloud.dataplex.v1.SessionEvent.QueryDetail.Engine.valueOf(engine_);
+          com.google.cloud.dataplex.v1.SessionEvent.QueryDetail.Engine.forNumber(engine_);
       return result == null
           ? com.google.cloud.dataplex.v1.SessionEvent.QueryDetail.Engine.UNRECOGNIZED
           : result;
@@ -804,11 +807,11 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
-      return getDuration();
+      return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
     }
 
     public static final int RESULT_SIZE_BYTES_FIELD_NUMBER = 5;
-    private long resultSizeBytes_;
+    private long resultSizeBytes_ = 0L;
     /**
      *
      *
@@ -826,7 +829,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DATA_PROCESSED_BYTES_FIELD_NUMBER = 6;
-    private long dataProcessedBytes_;
+    private long dataProcessedBytes_ = 0L;
     /**
      *
      *
@@ -1097,22 +1100,17 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         queryId_ = "";
-
         queryText_ = "";
-
         engine_ = 0;
-
-        if (durationBuilder_ == null) {
-          duration_ = null;
-        } else {
-          duration_ = null;
+        duration_ = null;
+        if (durationBuilder_ != null) {
+          durationBuilder_.dispose();
           durationBuilder_ = null;
         }
         resultSizeBytes_ = 0L;
-
         dataProcessedBytes_ = 0L;
-
         return this;
       }
 
@@ -1140,18 +1138,33 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dataplex.v1.SessionEvent.QueryDetail buildPartial() {
         com.google.cloud.dataplex.v1.SessionEvent.QueryDetail result =
             new com.google.cloud.dataplex.v1.SessionEvent.QueryDetail(this);
-        result.queryId_ = queryId_;
-        result.queryText_ = queryText_;
-        result.engine_ = engine_;
-        if (durationBuilder_ == null) {
-          result.duration_ = duration_;
-        } else {
-          result.duration_ = durationBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.resultSizeBytes_ = resultSizeBytes_;
-        result.dataProcessedBytes_ = dataProcessedBytes_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.dataplex.v1.SessionEvent.QueryDetail result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.queryId_ = queryId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.queryText_ = queryText_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.engine_ = engine_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.duration_ = durationBuilder_ == null ? duration_ : durationBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.resultSizeBytes_ = resultSizeBytes_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.dataProcessedBytes_ = dataProcessedBytes_;
+        }
       }
 
       @java.lang.Override
@@ -1204,10 +1217,12 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getQueryId().isEmpty()) {
           queryId_ = other.queryId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getQueryText().isEmpty()) {
           queryText_ = other.queryText_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.engine_ != 0) {
@@ -1251,37 +1266,37 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   queryId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   queryText_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 24:
                 {
                   engine_ = input.readEnum();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 34:
                 {
                   input.readMessage(getDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               case 40:
                 {
                   resultSizeBytes_ = input.readInt64();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 40
               case 48:
                 {
                   dataProcessedBytes_ = input.readInt64();
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 48
               default:
@@ -1300,6 +1315,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object queryId_ = "";
       /**
@@ -1362,8 +1379,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         queryId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1379,8 +1396,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearQueryId() {
-
         queryId_ = getDefaultInstance().getQueryId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1401,8 +1418,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         queryId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1468,8 +1485,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         queryText_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1485,8 +1502,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearQueryText() {
-
         queryText_ = getDefaultInstance().getQueryText();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1507,8 +1524,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         queryText_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1542,8 +1559,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setEngineValue(int value) {
-
         engine_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1560,9 +1577,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.cloud.dataplex.v1.SessionEvent.QueryDetail.Engine getEngine() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.dataplex.v1.SessionEvent.QueryDetail.Engine result =
-            com.google.cloud.dataplex.v1.SessionEvent.QueryDetail.Engine.valueOf(engine_);
+            com.google.cloud.dataplex.v1.SessionEvent.QueryDetail.Engine.forNumber(engine_);
         return result == null
             ? com.google.cloud.dataplex.v1.SessionEvent.QueryDetail.Engine.UNRECOGNIZED
             : result;
@@ -1583,7 +1599,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000004;
         engine_ = value.getNumber();
         onChanged();
         return this;
@@ -1600,7 +1616,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearEngine() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         engine_ = 0;
         onChanged();
         return this;
@@ -1624,7 +1640,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the duration field is set.
        */
       public boolean hasDuration() {
-        return durationBuilder_ != null || duration_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        *
@@ -1659,11 +1675,11 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           duration_ = value;
-          onChanged();
         } else {
           durationBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1678,11 +1694,11 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
       public Builder setDuration(com.google.protobuf.Duration.Builder builderForValue) {
         if (durationBuilder_ == null) {
           duration_ = builderForValue.build();
-          onChanged();
         } else {
           durationBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1696,17 +1712,18 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeDuration(com.google.protobuf.Duration value) {
         if (durationBuilder_ == null) {
-          if (duration_ != null) {
-            duration_ =
-                com.google.protobuf.Duration.newBuilder(duration_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000008) != 0)
+              && duration_ != null
+              && duration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getDurationBuilder().mergeFrom(value);
           } else {
             duration_ = value;
           }
-          onChanged();
         } else {
           durationBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1719,14 +1736,13 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Duration duration = 4;</code>
        */
       public Builder clearDuration() {
-        if (durationBuilder_ == null) {
-          duration_ = null;
-          onChanged();
-        } else {
-          duration_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        duration_ = null;
+        if (durationBuilder_ != null) {
+          durationBuilder_.dispose();
           durationBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1739,7 +1755,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Duration duration = 4;</code>
        */
       public com.google.protobuf.Duration.Builder getDurationBuilder() {
-
+        bitField0_ |= 0x00000008;
         onChanged();
         return getDurationFieldBuilder().getBuilder();
       }
@@ -1816,6 +1832,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
       public Builder setResultSizeBytes(long value) {
 
         resultSizeBytes_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1831,7 +1848,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearResultSizeBytes() {
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         resultSizeBytes_ = 0L;
         onChanged();
         return this;
@@ -1868,6 +1885,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
       public Builder setDataProcessedBytes(long value) {
 
         dataProcessedBytes_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1883,7 +1901,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDataProcessedBytes() {
-
+        bitField0_ = (bitField0_ & ~0x00000020);
         dataProcessedBytes_ = 0L;
         onChanged();
         return this;
@@ -1998,7 +2016,9 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MESSAGE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object message_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object message_ = "";
   /**
    *
    *
@@ -2047,7 +2067,9 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int USER_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object userId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object userId_ = "";
   /**
    *
    *
@@ -2098,7 +2120,9 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SESSION_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object sessionId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sessionId_ = "";
   /**
    *
    *
@@ -2147,7 +2171,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 4;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -2176,9 +2200,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.SessionEvent.EventType getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dataplex.v1.SessionEvent.EventType result =
-        com.google.cloud.dataplex.v1.SessionEvent.EventType.valueOf(type_);
+        com.google.cloud.dataplex.v1.SessionEvent.EventType.forNumber(type_);
     return result == null
         ? com.google.cloud.dataplex.v1.SessionEvent.EventType.UNRECOGNIZED
         : result;
@@ -2236,7 +2259,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EVENT_SUCCEEDED_FIELD_NUMBER = 6;
-  private boolean eventSucceeded_;
+  private boolean eventSucceeded_ = false;
   /**
    *
    *
@@ -2254,7 +2277,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FAST_STARTUP_ENABLED_FIELD_NUMBER = 7;
-  private boolean fastStartupEnabled_;
+  private boolean fastStartupEnabled_ = false;
   /**
    *
    *
@@ -2317,7 +2340,9 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getUnassignedDurationOrBuilder() {
-    return getUnassignedDuration();
+    return unassignedDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : unassignedDuration_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2603,25 +2628,19 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       message_ = "";
-
       userId_ = "";
-
       sessionId_ = "";
-
       type_ = 0;
-
       if (queryBuilder_ != null) {
         queryBuilder_.clear();
       }
       eventSucceeded_ = false;
-
       fastStartupEnabled_ = false;
-
-      if (unassignedDurationBuilder_ == null) {
-        unassignedDuration_ = null;
-      } else {
-        unassignedDuration_ = null;
+      unassignedDuration_ = null;
+      if (unassignedDurationBuilder_ != null) {
+        unassignedDurationBuilder_.dispose();
         unassignedDurationBuilder_ = null;
       }
       detailCase_ = 0;
@@ -2653,27 +2672,48 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataplex.v1.SessionEvent buildPartial() {
       com.google.cloud.dataplex.v1.SessionEvent result =
           new com.google.cloud.dataplex.v1.SessionEvent(this);
-      result.message_ = message_;
-      result.userId_ = userId_;
-      result.sessionId_ = sessionId_;
-      result.type_ = type_;
-      if (detailCase_ == 5) {
-        if (queryBuilder_ == null) {
-          result.detail_ = detail_;
-        } else {
-          result.detail_ = queryBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.eventSucceeded_ = eventSucceeded_;
-      result.fastStartupEnabled_ = fastStartupEnabled_;
-      if (unassignedDurationBuilder_ == null) {
-        result.unassignedDuration_ = unassignedDuration_;
-      } else {
-        result.unassignedDuration_ = unassignedDurationBuilder_.build();
-      }
-      result.detailCase_ = detailCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataplex.v1.SessionEvent result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.message_ = message_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.userId_ = userId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.sessionId_ = sessionId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.eventSucceeded_ = eventSucceeded_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.fastStartupEnabled_ = fastStartupEnabled_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.unassignedDuration_ =
+            unassignedDurationBuilder_ == null
+                ? unassignedDuration_
+                : unassignedDurationBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dataplex.v1.SessionEvent result) {
+      result.detailCase_ = detailCase_;
+      result.detail_ = this.detail_;
+      if (detailCase_ == 5 && queryBuilder_ != null) {
+        result.detail_ = queryBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2723,14 +2763,17 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dataplex.v1.SessionEvent.getDefaultInstance()) return this;
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getUserId().isEmpty()) {
         userId_ = other.userId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getSessionId().isEmpty()) {
         sessionId_ = other.sessionId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.type_ != 0) {
@@ -2785,25 +2828,25 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 message_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 userId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 sessionId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
@@ -2815,20 +2858,20 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
             case 48:
               {
                 eventSucceeded_ = input.readBool();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 56:
               {
                 fastStartupEnabled_ = input.readBool();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             case 66:
               {
                 input.readMessage(
                     getUnassignedDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             default:
@@ -2861,6 +2904,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object message_ = "";
     /**
@@ -2923,8 +2968,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       message_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2940,8 +2985,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
-
       message_ = getDefaultInstance().getMessage();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2962,8 +3007,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       message_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3032,8 +3077,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       userId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3050,8 +3095,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUserId() {
-
       userId_ = getDefaultInstance().getUserId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -3073,8 +3118,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       userId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3140,8 +3185,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       sessionId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3157,8 +3202,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSessionId() {
-
       sessionId_ = getDefaultInstance().getSessionId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -3179,8 +3224,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sessionId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3214,8 +3259,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3232,9 +3277,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.dataplex.v1.SessionEvent.EventType getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dataplex.v1.SessionEvent.EventType result =
-          com.google.cloud.dataplex.v1.SessionEvent.EventType.valueOf(type_);
+          com.google.cloud.dataplex.v1.SessionEvent.EventType.forNumber(type_);
       return result == null
           ? com.google.cloud.dataplex.v1.SessionEvent.EventType.UNRECOGNIZED
           : result;
@@ -3255,7 +3299,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -3272,7 +3316,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       type_ = 0;
       onChanged();
       return this;
@@ -3485,7 +3529,6 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
       }
       detailCase_ = 5;
       onChanged();
-      ;
       return queryBuilder_;
     }
 
@@ -3520,6 +3563,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
     public Builder setEventSucceeded(boolean value) {
 
       eventSucceeded_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3535,7 +3579,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEventSucceeded() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       eventSucceeded_ = false;
       onChanged();
       return this;
@@ -3574,6 +3618,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
     public Builder setFastStartupEnabled(boolean value) {
 
       fastStartupEnabled_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3590,7 +3635,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFastStartupEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       fastStartupEnabled_ = false;
       onChanged();
       return this;
@@ -3614,7 +3659,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the unassignedDuration field is set.
      */
     public boolean hasUnassignedDuration() {
-      return unassignedDurationBuilder_ != null || unassignedDuration_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3651,11 +3696,11 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         unassignedDuration_ = value;
-        onChanged();
       } else {
         unassignedDurationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3670,11 +3715,11 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
     public Builder setUnassignedDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (unassignedDurationBuilder_ == null) {
         unassignedDuration_ = builderForValue.build();
-        onChanged();
       } else {
         unassignedDurationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3688,19 +3733,18 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUnassignedDuration(com.google.protobuf.Duration value) {
       if (unassignedDurationBuilder_ == null) {
-        if (unassignedDuration_ != null) {
-          unassignedDuration_ =
-              com.google.protobuf.Duration.newBuilder(unassignedDuration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && unassignedDuration_ != null
+            && unassignedDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getUnassignedDurationBuilder().mergeFrom(value);
         } else {
           unassignedDuration_ = value;
         }
-        onChanged();
       } else {
         unassignedDurationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3713,14 +3757,13 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration unassigned_duration = 8;</code>
      */
     public Builder clearUnassignedDuration() {
-      if (unassignedDurationBuilder_ == null) {
-        unassignedDuration_ = null;
-        onChanged();
-      } else {
-        unassignedDuration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      unassignedDuration_ = null;
+      if (unassignedDurationBuilder_ != null) {
+        unassignedDurationBuilder_.dispose();
         unassignedDurationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3733,7 +3776,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration unassigned_duration = 8;</code>
      */
     public com.google.protobuf.Duration.Builder getUnassignedDurationBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getUnassignedDurationFieldBuilder().getBuilder();
     }

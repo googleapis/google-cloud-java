@@ -69,7 +69,9 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int COLUMN_FIELD_NUMBER = 1;
-  private volatile java.lang.Object column_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object column_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DATA_TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object dataType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dataType_ = "";
   /**
    *
    *
@@ -167,7 +171,7 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int LENGTH_FIELD_NUMBER = 3;
-  private int length_;
+  private int length_ = 0;
   /**
    *
    *
@@ -185,7 +189,7 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PRECISION_FIELD_NUMBER = 4;
-  private int precision_;
+  private int precision_ = 0;
   /**
    *
    *
@@ -203,7 +207,7 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SCALE_FIELD_NUMBER = 5;
-  private int scale_;
+  private int scale_ = 0;
   /**
    *
    *
@@ -221,7 +225,7 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PRIMARY_KEY_FIELD_NUMBER = 7;
-  private boolean primaryKey_;
+  private boolean primaryKey_ = false;
   /**
    *
    *
@@ -239,7 +243,7 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int NULLABLE_FIELD_NUMBER = 8;
-  private boolean nullable_;
+  private boolean nullable_ = false;
   /**
    *
    *
@@ -257,7 +261,7 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ORDINAL_POSITION_FIELD_NUMBER = 9;
-  private int ordinalPosition_;
+  private int ordinalPosition_ = 0;
   /**
    *
    *
@@ -534,22 +538,15 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       column_ = "";
-
       dataType_ = "";
-
       length_ = 0;
-
       precision_ = 0;
-
       scale_ = 0;
-
       primaryKey_ = false;
-
       nullable_ = false;
-
       ordinalPosition_ = 0;
-
       return this;
     }
 
@@ -577,16 +574,39 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.datastream.v1.PostgresqlColumn buildPartial() {
       com.google.cloud.datastream.v1.PostgresqlColumn result =
           new com.google.cloud.datastream.v1.PostgresqlColumn(this);
-      result.column_ = column_;
-      result.dataType_ = dataType_;
-      result.length_ = length_;
-      result.precision_ = precision_;
-      result.scale_ = scale_;
-      result.primaryKey_ = primaryKey_;
-      result.nullable_ = nullable_;
-      result.ordinalPosition_ = ordinalPosition_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1.PostgresqlColumn result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.column_ = column_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dataType_ = dataType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.length_ = length_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.precision_ = precision_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.scale_ = scale_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.primaryKey_ = primaryKey_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.nullable_ = nullable_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.ordinalPosition_ = ordinalPosition_;
+      }
     }
 
     @java.lang.Override
@@ -637,10 +657,12 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getColumn().isEmpty()) {
         column_ = other.column_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDataType().isEmpty()) {
         dataType_ = other.dataType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getLength() != 0) {
@@ -690,49 +712,49 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 column_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 dataType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 length_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 precision_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 scale_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 56:
               {
                 primaryKey_ = input.readBool();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 56
             case 64:
               {
                 nullable_ = input.readBool();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 64
             case 72:
               {
                 ordinalPosition_ = input.readInt32();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 72
             default:
@@ -751,6 +773,8 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object column_ = "";
     /**
@@ -813,8 +837,8 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       column_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -830,8 +854,8 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearColumn() {
-
       column_ = getDefaultInstance().getColumn();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -852,8 +876,8 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       column_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -919,8 +943,8 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       dataType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -936,8 +960,8 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDataType() {
-
       dataType_ = getDefaultInstance().getDataType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -958,8 +982,8 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dataType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -995,6 +1019,7 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
     public Builder setLength(int value) {
 
       length_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1010,7 +1035,7 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearLength() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       length_ = 0;
       onChanged();
       return this;
@@ -1047,6 +1072,7 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
     public Builder setPrecision(int value) {
 
       precision_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1062,7 +1088,7 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPrecision() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       precision_ = 0;
       onChanged();
       return this;
@@ -1099,6 +1125,7 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
     public Builder setScale(int value) {
 
       scale_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1114,7 +1141,7 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearScale() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       scale_ = 0;
       onChanged();
       return this;
@@ -1151,6 +1178,7 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
     public Builder setPrimaryKey(boolean value) {
 
       primaryKey_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1166,7 +1194,7 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPrimaryKey() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       primaryKey_ = false;
       onChanged();
       return this;
@@ -1203,6 +1231,7 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
     public Builder setNullable(boolean value) {
 
       nullable_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1218,7 +1247,7 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearNullable() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       nullable_ = false;
       onChanged();
       return this;
@@ -1255,6 +1284,7 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
     public Builder setOrdinalPosition(int value) {
 
       ordinalPosition_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1270,7 +1300,7 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearOrdinalPosition() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       ordinalPosition_ = 0;
       onChanged();
       return this;

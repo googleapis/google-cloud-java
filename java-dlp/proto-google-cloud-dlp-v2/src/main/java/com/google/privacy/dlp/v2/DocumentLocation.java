@@ -66,7 +66,7 @@ public final class DocumentLocation extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int FILE_OFFSET_FIELD_NUMBER = 1;
-  private long fileOffset_;
+  private long fileOffset_ = 0L;
   /**
    *
    *
@@ -281,8 +281,8 @@ public final class DocumentLocation extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       fileOffset_ = 0L;
-
       return this;
     }
 
@@ -310,9 +310,18 @@ public final class DocumentLocation extends com.google.protobuf.GeneratedMessage
     public com.google.privacy.dlp.v2.DocumentLocation buildPartial() {
       com.google.privacy.dlp.v2.DocumentLocation result =
           new com.google.privacy.dlp.v2.DocumentLocation(this);
-      result.fileOffset_ = fileOffset_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.DocumentLocation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.fileOffset_ = fileOffset_;
+      }
     }
 
     @java.lang.Override
@@ -392,7 +401,7 @@ public final class DocumentLocation extends com.google.protobuf.GeneratedMessage
             case 8:
               {
                 fileOffset_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -411,6 +420,8 @@ public final class DocumentLocation extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private long fileOffset_;
     /**
@@ -445,6 +456,7 @@ public final class DocumentLocation extends com.google.protobuf.GeneratedMessage
     public Builder setFileOffset(long value) {
 
       fileOffset_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -461,7 +473,7 @@ public final class DocumentLocation extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearFileOffset() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       fileOffset_ = 0L;
       onChanged();
       return this;

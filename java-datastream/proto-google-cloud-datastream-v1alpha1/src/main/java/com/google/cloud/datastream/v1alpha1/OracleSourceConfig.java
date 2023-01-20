@@ -110,7 +110,9 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.datastream.v1alpha1.OracleRdbmsOrBuilder getAllowlistOrBuilder() {
-    return getAllowlist();
+    return allowlist_ == null
+        ? com.google.cloud.datastream.v1alpha1.OracleRdbms.getDefaultInstance()
+        : allowlist_;
   }
 
   public static final int REJECTLIST_FIELD_NUMBER = 2;
@@ -158,7 +160,9 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.datastream.v1alpha1.OracleRdbmsOrBuilder getRejectlistOrBuilder() {
-    return getRejectlist();
+    return rejectlist_ == null
+        ? com.google.cloud.datastream.v1alpha1.OracleRdbms.getDefaultInstance()
+        : rejectlist_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -378,16 +382,15 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (allowlistBuilder_ == null) {
-        allowlist_ = null;
-      } else {
-        allowlist_ = null;
+      bitField0_ = 0;
+      allowlist_ = null;
+      if (allowlistBuilder_ != null) {
+        allowlistBuilder_.dispose();
         allowlistBuilder_ = null;
       }
-      if (rejectlistBuilder_ == null) {
-        rejectlist_ = null;
-      } else {
-        rejectlist_ = null;
+      rejectlist_ = null;
+      if (rejectlistBuilder_ != null) {
+        rejectlistBuilder_.dispose();
         rejectlistBuilder_ = null;
       }
       return this;
@@ -417,18 +420,21 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.datastream.v1alpha1.OracleSourceConfig buildPartial() {
       com.google.cloud.datastream.v1alpha1.OracleSourceConfig result =
           new com.google.cloud.datastream.v1alpha1.OracleSourceConfig(this);
-      if (allowlistBuilder_ == null) {
-        result.allowlist_ = allowlist_;
-      } else {
-        result.allowlist_ = allowlistBuilder_.build();
-      }
-      if (rejectlistBuilder_ == null) {
-        result.rejectlist_ = rejectlist_;
-      } else {
-        result.rejectlist_ = rejectlistBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1alpha1.OracleSourceConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.allowlist_ = allowlistBuilder_ == null ? allowlist_ : allowlistBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.rejectlist_ = rejectlistBuilder_ == null ? rejectlist_ : rejectlistBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -512,13 +518,13 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 input.readMessage(getAllowlistFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getRejectlistFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -538,6 +544,8 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.datastream.v1alpha1.OracleRdbms allowlist_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datastream.v1alpha1.OracleRdbms,
@@ -556,7 +564,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      * @return Whether the allowlist field is set.
      */
     public boolean hasAllowlist() {
-      return allowlistBuilder_ != null || allowlist_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -593,11 +601,11 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         allowlist_ = value;
-        onChanged();
       } else {
         allowlistBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -613,11 +621,11 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         com.google.cloud.datastream.v1alpha1.OracleRdbms.Builder builderForValue) {
       if (allowlistBuilder_ == null) {
         allowlist_ = builderForValue.build();
-        onChanged();
       } else {
         allowlistBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -631,19 +639,19 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeAllowlist(com.google.cloud.datastream.v1alpha1.OracleRdbms value) {
       if (allowlistBuilder_ == null) {
-        if (allowlist_ != null) {
-          allowlist_ =
-              com.google.cloud.datastream.v1alpha1.OracleRdbms.newBuilder(allowlist_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && allowlist_ != null
+            && allowlist_
+                != com.google.cloud.datastream.v1alpha1.OracleRdbms.getDefaultInstance()) {
+          getAllowlistBuilder().mergeFrom(value);
         } else {
           allowlist_ = value;
         }
-        onChanged();
       } else {
         allowlistBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -656,14 +664,13 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      * <code>.google.cloud.datastream.v1alpha1.OracleRdbms allowlist = 1;</code>
      */
     public Builder clearAllowlist() {
-      if (allowlistBuilder_ == null) {
-        allowlist_ = null;
-        onChanged();
-      } else {
-        allowlist_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      allowlist_ = null;
+      if (allowlistBuilder_ != null) {
+        allowlistBuilder_.dispose();
         allowlistBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -676,7 +683,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      * <code>.google.cloud.datastream.v1alpha1.OracleRdbms allowlist = 1;</code>
      */
     public com.google.cloud.datastream.v1alpha1.OracleRdbms.Builder getAllowlistBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getAllowlistFieldBuilder().getBuilder();
     }
@@ -742,7 +749,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      * @return Whether the rejectlist field is set.
      */
     public boolean hasRejectlist() {
-      return rejectlistBuilder_ != null || rejectlist_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -779,11 +786,11 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         rejectlist_ = value;
-        onChanged();
       } else {
         rejectlistBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -799,11 +806,11 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         com.google.cloud.datastream.v1alpha1.OracleRdbms.Builder builderForValue) {
       if (rejectlistBuilder_ == null) {
         rejectlist_ = builderForValue.build();
-        onChanged();
       } else {
         rejectlistBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -817,19 +824,19 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeRejectlist(com.google.cloud.datastream.v1alpha1.OracleRdbms value) {
       if (rejectlistBuilder_ == null) {
-        if (rejectlist_ != null) {
-          rejectlist_ =
-              com.google.cloud.datastream.v1alpha1.OracleRdbms.newBuilder(rejectlist_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && rejectlist_ != null
+            && rejectlist_
+                != com.google.cloud.datastream.v1alpha1.OracleRdbms.getDefaultInstance()) {
+          getRejectlistBuilder().mergeFrom(value);
         } else {
           rejectlist_ = value;
         }
-        onChanged();
       } else {
         rejectlistBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -842,14 +849,13 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      * <code>.google.cloud.datastream.v1alpha1.OracleRdbms rejectlist = 2;</code>
      */
     public Builder clearRejectlist() {
-      if (rejectlistBuilder_ == null) {
-        rejectlist_ = null;
-        onChanged();
-      } else {
-        rejectlist_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      rejectlist_ = null;
+      if (rejectlistBuilder_ != null) {
+        rejectlistBuilder_.dispose();
         rejectlistBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -862,7 +868,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      * <code>.google.cloud.datastream.v1alpha1.OracleRdbms rejectlist = 2;</code>
      */
     public com.google.cloud.datastream.v1alpha1.OracleRdbms.Builder getRejectlistBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getRejectlistFieldBuilder().getBuilder();
     }

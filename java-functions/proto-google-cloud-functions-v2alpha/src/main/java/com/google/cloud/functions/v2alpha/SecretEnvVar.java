@@ -73,7 +73,9 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KEY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object key_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object key_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -175,7 +179,9 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SECRET_FIELD_NUMBER = 3;
-  private volatile java.lang.Object secret_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object secret_ = "";
   /**
    *
    *
@@ -224,7 +230,9 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VERSION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object version_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    *
    *
@@ -504,14 +512,11 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       key_ = "";
-
       projectId_ = "";
-
       secret_ = "";
-
       version_ = "";
-
       return this;
     }
 
@@ -539,12 +544,27 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.functions.v2alpha.SecretEnvVar buildPartial() {
       com.google.cloud.functions.v2alpha.SecretEnvVar result =
           new com.google.cloud.functions.v2alpha.SecretEnvVar(this);
-      result.key_ = key_;
-      result.projectId_ = projectId_;
-      result.secret_ = secret_;
-      result.version_ = version_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.functions.v2alpha.SecretEnvVar result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.key_ = key_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.secret_ = secret_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.version_ = version_;
+      }
     }
 
     @java.lang.Override
@@ -595,18 +615,22 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getKey().isEmpty()) {
         key_ = other.key_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getSecret().isEmpty()) {
         secret_ = other.secret_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -638,25 +662,25 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 key_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 secret_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 version_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -675,6 +699,8 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object key_ = "";
     /**
@@ -737,8 +763,8 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       key_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -754,8 +780,8 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKey() {
-
       key_ = getDefaultInstance().getKey();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -776,8 +802,8 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       key_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -849,8 +875,8 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -868,8 +894,8 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -892,8 +918,8 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -959,8 +985,8 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       secret_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -976,8 +1002,8 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSecret() {
-
       secret_ = getDefaultInstance().getSecret();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -998,8 +1024,8 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       secret_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1074,8 +1100,8 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       version_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1094,8 +1120,8 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1119,8 +1145,8 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       version_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

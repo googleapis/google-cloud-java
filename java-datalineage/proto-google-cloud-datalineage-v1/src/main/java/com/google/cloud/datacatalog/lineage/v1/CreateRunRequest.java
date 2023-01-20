@@ -70,7 +70,9 @@ public final class CreateRunRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -171,11 +173,13 @@ public final class CreateRunRequest extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.lineage.v1.RunOrBuilder getRunOrBuilder() {
-    return getRun();
+    return run_ == null ? com.google.cloud.datacatalog.lineage.v1.Run.getDefaultInstance() : run_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -449,16 +453,14 @@ public final class CreateRunRequest extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (runBuilder_ == null) {
-        run_ = null;
-      } else {
-        run_ = null;
+      run_ = null;
+      if (runBuilder_ != null) {
+        runBuilder_.dispose();
         runBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -486,15 +488,24 @@ public final class CreateRunRequest extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.datacatalog.lineage.v1.CreateRunRequest buildPartial() {
       com.google.cloud.datacatalog.lineage.v1.CreateRunRequest result =
           new com.google.cloud.datacatalog.lineage.v1.CreateRunRequest(this);
-      result.parent_ = parent_;
-      if (runBuilder_ == null) {
-        result.run_ = run_;
-      } else {
-        result.run_ = runBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.lineage.v1.CreateRunRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.run_ = runBuilder_ == null ? run_ : runBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -545,6 +556,7 @@ public final class CreateRunRequest extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasRun()) {
@@ -552,6 +564,7 @@ public final class CreateRunRequest extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -583,19 +596,19 @@ public final class CreateRunRequest extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getRunFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -614,6 +627,8 @@ public final class CreateRunRequest extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -682,8 +697,8 @@ public final class CreateRunRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -701,8 +716,8 @@ public final class CreateRunRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -725,8 +740,8 @@ public final class CreateRunRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -751,7 +766,7 @@ public final class CreateRunRequest extends com.google.protobuf.GeneratedMessage
      * @return Whether the run field is set.
      */
     public boolean hasRun() {
-      return runBuilder_ != null || run_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -792,11 +807,11 @@ public final class CreateRunRequest extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         run_ = value;
-        onChanged();
       } else {
         runBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -813,11 +828,11 @@ public final class CreateRunRequest extends com.google.protobuf.GeneratedMessage
     public Builder setRun(com.google.cloud.datacatalog.lineage.v1.Run.Builder builderForValue) {
       if (runBuilder_ == null) {
         run_ = builderForValue.build();
-        onChanged();
       } else {
         runBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -833,19 +848,18 @@ public final class CreateRunRequest extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeRun(com.google.cloud.datacatalog.lineage.v1.Run value) {
       if (runBuilder_ == null) {
-        if (run_ != null) {
-          run_ =
-              com.google.cloud.datacatalog.lineage.v1.Run.newBuilder(run_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && run_ != null
+            && run_ != com.google.cloud.datacatalog.lineage.v1.Run.getDefaultInstance()) {
+          getRunBuilder().mergeFrom(value);
         } else {
           run_ = value;
         }
-        onChanged();
       } else {
         runBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -860,14 +874,13 @@ public final class CreateRunRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearRun() {
-      if (runBuilder_ == null) {
-        run_ = null;
-        onChanged();
-      } else {
-        run_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      run_ = null;
+      if (runBuilder_ != null) {
+        runBuilder_.dispose();
         runBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -882,7 +895,7 @@ public final class CreateRunRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.datacatalog.lineage.v1.Run.Builder getRunBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getRunFieldBuilder().getBuilder();
     }
@@ -1001,8 +1014,8 @@ public final class CreateRunRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1020,8 +1033,8 @@ public final class CreateRunRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1044,8 +1057,8 @@ public final class CreateRunRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

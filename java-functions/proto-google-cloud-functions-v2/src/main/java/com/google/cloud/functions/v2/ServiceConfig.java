@@ -436,7 +436,9 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object service_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object service_ = "";
   /**
    *
    *
@@ -493,7 +495,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TIMEOUT_SECONDS_FIELD_NUMBER = 2;
-  private int timeoutSeconds_;
+  private int timeoutSeconds_ = 0;
   /**
    *
    *
@@ -513,7 +515,9 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AVAILABLE_MEMORY_FIELD_NUMBER = 13;
-  private volatile java.lang.Object availableMemory_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object availableMemory_ = "";
   /**
    *
    *
@@ -584,6 +588,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> environmentVariables_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -643,8 +648,10 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; environment_variables = 4;</code>
    */
   @java.lang.Override
-  public java.lang.String getEnvironmentVariablesOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getEnvironmentVariablesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -675,7 +682,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAX_INSTANCE_COUNT_FIELD_NUMBER = 5;
-  private int maxInstanceCount_;
+  private int maxInstanceCount_ = 0;
   /**
    *
    *
@@ -702,7 +709,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MIN_INSTANCE_COUNT_FIELD_NUMBER = 12;
-  private int minInstanceCount_;
+  private int minInstanceCount_ = 0;
   /**
    *
    *
@@ -727,7 +734,9 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VPC_CONNECTOR_FIELD_NUMBER = 6;
-  private volatile java.lang.Object vpcConnector_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vpcConnector_ = "";
   /**
    *
    *
@@ -778,7 +787,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VPC_CONNECTOR_EGRESS_SETTINGS_FIELD_NUMBER = 7;
-  private int vpcConnectorEgressSettings_;
+  private int vpcConnectorEgressSettings_ = 0;
   /**
    *
    *
@@ -814,9 +823,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.functions.v2.ServiceConfig.VpcConnectorEgressSettings
       getVpcConnectorEgressSettings() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.functions.v2.ServiceConfig.VpcConnectorEgressSettings result =
-        com.google.cloud.functions.v2.ServiceConfig.VpcConnectorEgressSettings.valueOf(
+        com.google.cloud.functions.v2.ServiceConfig.VpcConnectorEgressSettings.forNumber(
             vpcConnectorEgressSettings_);
     return result == null
         ? com.google.cloud.functions.v2.ServiceConfig.VpcConnectorEgressSettings.UNRECOGNIZED
@@ -824,7 +832,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INGRESS_SETTINGS_FIELD_NUMBER = 8;
-  private int ingressSettings_;
+  private int ingressSettings_ = 0;
   /**
    *
    *
@@ -855,16 +863,17 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.functions.v2.ServiceConfig.IngressSettings getIngressSettings() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.functions.v2.ServiceConfig.IngressSettings result =
-        com.google.cloud.functions.v2.ServiceConfig.IngressSettings.valueOf(ingressSettings_);
+        com.google.cloud.functions.v2.ServiceConfig.IngressSettings.forNumber(ingressSettings_);
     return result == null
         ? com.google.cloud.functions.v2.ServiceConfig.IngressSettings.UNRECOGNIZED
         : result;
   }
 
   public static final int URI_FIELD_NUMBER = 9;
-  private volatile java.lang.Object uri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uri_ = "";
   /**
    *
    *
@@ -913,7 +922,9 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_ACCOUNT_EMAIL_FIELD_NUMBER = 10;
-  private volatile java.lang.Object serviceAccountEmail_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccountEmail_ = "";
   /**
    *
    *
@@ -964,7 +975,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ALL_TRAFFIC_ON_LATEST_REVISION_FIELD_NUMBER = 16;
-  private boolean allTrafficOnLatestRevision_;
+  private boolean allTrafficOnLatestRevision_ = false;
   /**
    *
    *
@@ -986,6 +997,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SECRET_ENVIRONMENT_VARIABLES_FIELD_NUMBER = 17;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.functions.v2.SecretEnvVar> secretEnvironmentVariables_;
   /**
    *
@@ -1062,6 +1075,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SECRET_VOLUMES_FIELD_NUMBER = 19;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.functions.v2.SecretVolume> secretVolumes_;
   /**
    *
@@ -1131,7 +1146,9 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REVISION_FIELD_NUMBER = 18;
-  private volatile java.lang.Object revision_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object revision_ = "";
   /**
    *
    *
@@ -1553,45 +1570,34 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       service_ = "";
-
       timeoutSeconds_ = 0;
-
       availableMemory_ = "";
-
       internalGetMutableEnvironmentVariables().clear();
       maxInstanceCount_ = 0;
-
       minInstanceCount_ = 0;
-
       vpcConnector_ = "";
-
       vpcConnectorEgressSettings_ = 0;
-
       ingressSettings_ = 0;
-
       uri_ = "";
-
       serviceAccountEmail_ = "";
-
       allTrafficOnLatestRevision_ = false;
-
       if (secretEnvironmentVariablesBuilder_ == null) {
         secretEnvironmentVariables_ = java.util.Collections.emptyList();
       } else {
         secretEnvironmentVariables_ = null;
         secretEnvironmentVariablesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00001000);
       if (secretVolumesBuilder_ == null) {
         secretVolumes_ = java.util.Collections.emptyList();
       } else {
         secretVolumes_ = null;
         secretVolumesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00002000);
       revision_ = "";
-
       return this;
     }
 
@@ -1619,42 +1625,78 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.functions.v2.ServiceConfig buildPartial() {
       com.google.cloud.functions.v2.ServiceConfig result =
           new com.google.cloud.functions.v2.ServiceConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.service_ = service_;
-      result.timeoutSeconds_ = timeoutSeconds_;
-      result.availableMemory_ = availableMemory_;
-      result.environmentVariables_ = internalGetEnvironmentVariables();
-      result.environmentVariables_.makeImmutable();
-      result.maxInstanceCount_ = maxInstanceCount_;
-      result.minInstanceCount_ = minInstanceCount_;
-      result.vpcConnector_ = vpcConnector_;
-      result.vpcConnectorEgressSettings_ = vpcConnectorEgressSettings_;
-      result.ingressSettings_ = ingressSettings_;
-      result.uri_ = uri_;
-      result.serviceAccountEmail_ = serviceAccountEmail_;
-      result.allTrafficOnLatestRevision_ = allTrafficOnLatestRevision_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.functions.v2.ServiceConfig result) {
       if (secretEnvironmentVariablesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00001000) != 0)) {
           secretEnvironmentVariables_ =
               java.util.Collections.unmodifiableList(secretEnvironmentVariables_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.secretEnvironmentVariables_ = secretEnvironmentVariables_;
       } else {
         result.secretEnvironmentVariables_ = secretEnvironmentVariablesBuilder_.build();
       }
       if (secretVolumesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           secretVolumes_ = java.util.Collections.unmodifiableList(secretVolumes_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.secretVolumes_ = secretVolumes_;
       } else {
         result.secretVolumes_ = secretVolumesBuilder_.build();
       }
-      result.revision_ = revision_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.functions.v2.ServiceConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.service_ = service_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.timeoutSeconds_ = timeoutSeconds_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.availableMemory_ = availableMemory_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.environmentVariables_ = internalGetEnvironmentVariables();
+        result.environmentVariables_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.maxInstanceCount_ = maxInstanceCount_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.minInstanceCount_ = minInstanceCount_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.vpcConnector_ = vpcConnector_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.vpcConnectorEgressSettings_ = vpcConnectorEgressSettings_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.ingressSettings_ = ingressSettings_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.uri_ = uri_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.serviceAccountEmail_ = serviceAccountEmail_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.allTrafficOnLatestRevision_ = allTrafficOnLatestRevision_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.revision_ = revision_;
+      }
     }
 
     @java.lang.Override
@@ -1704,6 +1746,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.functions.v2.ServiceConfig.getDefaultInstance()) return this;
       if (!other.getService().isEmpty()) {
         service_ = other.service_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getTimeoutSeconds() != 0) {
@@ -1711,9 +1754,11 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getAvailableMemory().isEmpty()) {
         availableMemory_ = other.availableMemory_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       internalGetMutableEnvironmentVariables().mergeFrom(other.internalGetEnvironmentVariables());
+      bitField0_ |= 0x00000008;
       if (other.getMaxInstanceCount() != 0) {
         setMaxInstanceCount(other.getMaxInstanceCount());
       }
@@ -1722,6 +1767,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getVpcConnector().isEmpty()) {
         vpcConnector_ = other.vpcConnector_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.vpcConnectorEgressSettings_ != 0) {
@@ -1732,10 +1778,12 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getUri().isEmpty()) {
         uri_ = other.uri_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (!other.getServiceAccountEmail().isEmpty()) {
         serviceAccountEmail_ = other.serviceAccountEmail_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.getAllTrafficOnLatestRevision() != false) {
@@ -1745,7 +1793,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
         if (!other.secretEnvironmentVariables_.isEmpty()) {
           if (secretEnvironmentVariables_.isEmpty()) {
             secretEnvironmentVariables_ = other.secretEnvironmentVariables_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensureSecretEnvironmentVariablesIsMutable();
             secretEnvironmentVariables_.addAll(other.secretEnvironmentVariables_);
@@ -1758,7 +1806,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
             secretEnvironmentVariablesBuilder_.dispose();
             secretEnvironmentVariablesBuilder_ = null;
             secretEnvironmentVariables_ = other.secretEnvironmentVariables_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00001000);
             secretEnvironmentVariablesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSecretEnvironmentVariablesFieldBuilder()
@@ -1772,7 +1820,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
         if (!other.secretVolumes_.isEmpty()) {
           if (secretVolumes_.isEmpty()) {
             secretVolumes_ = other.secretVolumes_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensureSecretVolumesIsMutable();
             secretVolumes_.addAll(other.secretVolumes_);
@@ -1785,7 +1833,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
             secretVolumesBuilder_.dispose();
             secretVolumesBuilder_ = null;
             secretVolumes_ = other.secretVolumes_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00002000);
             secretVolumesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSecretVolumesFieldBuilder()
@@ -1797,6 +1845,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getRevision().isEmpty()) {
         revision_ = other.revision_;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1828,13 +1877,13 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 service_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 timeoutSeconds_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 34:
@@ -1847,60 +1896,61 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableEnvironmentVariables()
                     .getMutableMap()
                     .put(environmentVariables__.getKey(), environmentVariables__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 maxInstanceCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 50:
               {
                 vpcConnector_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 56:
               {
                 vpcConnectorEgressSettings_ = input.readEnum();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 56
             case 64:
               {
                 ingressSettings_ = input.readEnum();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 64
             case 74:
               {
                 uri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 74
             case 82:
               {
                 serviceAccountEmail_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 82
             case 96:
               {
                 minInstanceCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 96
             case 106:
               {
                 availableMemory_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 106
             case 128:
               {
                 allTrafficOnLatestRevision_ = input.readBool();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 128
             case 138:
@@ -1919,7 +1969,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
             case 146:
               {
                 revision_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00004000;
                 break;
               } // case 146
             case 154:
@@ -2027,8 +2077,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       service_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2048,8 +2098,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearService() {
-
       service_ = getDefaultInstance().getService();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2074,8 +2124,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       service_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2115,6 +2165,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setTimeoutSeconds(int value) {
 
       timeoutSeconds_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2132,7 +2183,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTimeoutSeconds() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       timeoutSeconds_ = 0;
       onChanged();
       return this;
@@ -2214,8 +2265,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       availableMemory_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2236,8 +2287,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAvailableMemory() {
-
       availableMemory_ = getDefaultInstance().getAvailableMemory();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2263,8 +2314,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       availableMemory_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2282,8 +2333,6 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableEnvironmentVariables() {
-      onChanged();
-      ;
       if (environmentVariables_ == null) {
         environmentVariables_ =
             com.google.protobuf.MapField.newMapField(
@@ -2292,6 +2341,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       if (!environmentVariables_.isMutable()) {
         environmentVariables_ = environmentVariables_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return environmentVariables_;
     }
 
@@ -2343,8 +2394,10 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; environment_variables = 4;</code>
      */
     @java.lang.Override
-    public java.lang.String getEnvironmentVariablesOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getEnvironmentVariablesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2375,6 +2428,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearEnvironmentVariables() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableEnvironmentVariables().getMutableMap().clear();
       return this;
     }
@@ -2397,6 +2451,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableEnvironmentVariables() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableEnvironmentVariables().getMutableMap();
     }
     /**
@@ -2415,8 +2470,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableEnvironmentVariables().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -2431,6 +2486,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllEnvironmentVariables(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableEnvironmentVariables().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -2483,6 +2539,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxInstanceCount(int value) {
 
       maxInstanceCount_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2507,7 +2564,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxInstanceCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       maxInstanceCount_ = 0;
       onChanged();
       return this;
@@ -2558,6 +2615,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setMinInstanceCount(int value) {
 
       minInstanceCount_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2580,7 +2638,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMinInstanceCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       minInstanceCount_ = 0;
       onChanged();
       return this;
@@ -2650,8 +2708,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       vpcConnector_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2668,8 +2726,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVpcConnector() {
-
       vpcConnector_ = getDefaultInstance().getVpcConnector();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2691,8 +2749,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vpcConnector_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2732,8 +2790,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setVpcConnectorEgressSettingsValue(int value) {
-
       vpcConnectorEgressSettings_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2754,9 +2812,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.functions.v2.ServiceConfig.VpcConnectorEgressSettings
         getVpcConnectorEgressSettings() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.functions.v2.ServiceConfig.VpcConnectorEgressSettings result =
-          com.google.cloud.functions.v2.ServiceConfig.VpcConnectorEgressSettings.valueOf(
+          com.google.cloud.functions.v2.ServiceConfig.VpcConnectorEgressSettings.forNumber(
               vpcConnectorEgressSettings_);
       return result == null
           ? com.google.cloud.functions.v2.ServiceConfig.VpcConnectorEgressSettings.UNRECOGNIZED
@@ -2782,7 +2839,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       vpcConnectorEgressSettings_ = value.getNumber();
       onChanged();
       return this;
@@ -2802,7 +2859,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVpcConnectorEgressSettings() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       vpcConnectorEgressSettings_ = 0;
       onChanged();
       return this;
@@ -2839,8 +2896,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setIngressSettingsValue(int value) {
-
       ingressSettings_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2858,9 +2915,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.functions.v2.ServiceConfig.IngressSettings getIngressSettings() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.functions.v2.ServiceConfig.IngressSettings result =
-          com.google.cloud.functions.v2.ServiceConfig.IngressSettings.valueOf(ingressSettings_);
+          com.google.cloud.functions.v2.ServiceConfig.IngressSettings.forNumber(ingressSettings_);
       return result == null
           ? com.google.cloud.functions.v2.ServiceConfig.IngressSettings.UNRECOGNIZED
           : result;
@@ -2883,7 +2939,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       ingressSettings_ = value.getNumber();
       onChanged();
       return this;
@@ -2901,7 +2957,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIngressSettings() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       ingressSettings_ = 0;
       onChanged();
       return this;
@@ -2968,8 +3024,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       uri_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2985,8 +3041,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUri() {
-
       uri_ = getDefaultInstance().getUri();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3007,8 +3063,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uri_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3077,8 +3133,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceAccountEmail_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3095,8 +3151,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceAccountEmail() {
-
       serviceAccountEmail_ = getDefaultInstance().getServiceAccountEmail();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3118,8 +3174,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceAccountEmail_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3163,6 +3219,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setAllTrafficOnLatestRevision(boolean value) {
 
       allTrafficOnLatestRevision_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3182,7 +3239,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAllTrafficOnLatestRevision() {
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       allTrafficOnLatestRevision_ = false;
       onChanged();
       return this;
@@ -3192,11 +3249,11 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSecretEnvironmentVariablesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         secretEnvironmentVariables_ =
             new java.util.ArrayList<com.google.cloud.functions.v2.SecretEnvVar>(
                 secretEnvironmentVariables_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00001000;
       }
     }
 
@@ -3426,7 +3483,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSecretEnvironmentVariables() {
       if (secretEnvironmentVariablesBuilder_ == null) {
         secretEnvironmentVariables_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         secretEnvironmentVariablesBuilder_.clear();
@@ -3560,7 +3617,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.functions.v2.SecretEnvVar.Builder,
                 com.google.cloud.functions.v2.SecretEnvVarOrBuilder>(
                 secretEnvironmentVariables_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00001000) != 0),
                 getParentForChildren(),
                 isClean());
         secretEnvironmentVariables_ = null;
@@ -3572,10 +3629,10 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSecretVolumesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         secretVolumes_ =
             new java.util.ArrayList<com.google.cloud.functions.v2.SecretVolume>(secretVolumes_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00002000;
       }
     }
 
@@ -3791,7 +3848,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSecretVolumes() {
       if (secretVolumesBuilder_ == null) {
         secretVolumes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         secretVolumesBuilder_.clear();
@@ -3915,7 +3972,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.functions.v2.SecretVolume.Builder,
                 com.google.cloud.functions.v2.SecretVolumeOrBuilder>(
                 secretVolumes_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00002000) != 0),
                 getParentForChildren(),
                 isClean());
         secretVolumes_ = null;
@@ -3984,8 +4041,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       revision_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4001,8 +4058,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRevision() {
-
       revision_ = getDefaultInstance().getRevision();
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -4023,8 +4080,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       revision_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }

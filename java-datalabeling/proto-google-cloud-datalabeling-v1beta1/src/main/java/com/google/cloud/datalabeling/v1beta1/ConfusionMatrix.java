@@ -211,11 +211,13 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.AnnotationSpecOrBuilder
         getAnnotationSpecOrBuilder() {
-      return getAnnotationSpec();
+      return annotationSpec_ == null
+          ? com.google.cloud.datalabeling.v1beta1.AnnotationSpec.getDefaultInstance()
+          : annotationSpec_;
     }
 
     public static final int ITEM_COUNT_FIELD_NUMBER = 2;
-    private int itemCount_;
+    private int itemCount_ = 0;
     /**
      *
      *
@@ -450,14 +452,13 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (annotationSpecBuilder_ == null) {
-          annotationSpec_ = null;
-        } else {
-          annotationSpec_ = null;
+        bitField0_ = 0;
+        annotationSpec_ = null;
+        if (annotationSpecBuilder_ != null) {
+          annotationSpecBuilder_.dispose();
           annotationSpecBuilder_ = null;
         }
         itemCount_ = 0;
-
         return this;
       }
 
@@ -489,14 +490,23 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
           buildPartial() {
         com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.ConfusionMatrixEntry result =
             new com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.ConfusionMatrixEntry(this);
-        if (annotationSpecBuilder_ == null) {
-          result.annotationSpec_ = annotationSpec_;
-        } else {
-          result.annotationSpec_ = annotationSpecBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.itemCount_ = itemCount_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.ConfusionMatrixEntry result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.annotationSpec_ =
+              annotationSpecBuilder_ == null ? annotationSpec_ : annotationSpecBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.itemCount_ = itemCount_;
+        }
       }
 
       @java.lang.Override
@@ -587,13 +597,13 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
                 {
                   input.readMessage(
                       getAnnotationSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   itemCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -613,6 +623,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
         return this;
       }
 
+      private int bitField0_;
+
       private com.google.cloud.datalabeling.v1beta1.AnnotationSpec annotationSpec_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.datalabeling.v1beta1.AnnotationSpec,
@@ -631,7 +643,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        * @return Whether the annotationSpec field is set.
        */
       public boolean hasAnnotationSpec() {
-        return annotationSpecBuilder_ != null || annotationSpec_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -668,11 +680,11 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
             throw new NullPointerException();
           }
           annotationSpec_ = value;
-          onChanged();
         } else {
           annotationSpecBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -688,11 +700,11 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
           com.google.cloud.datalabeling.v1beta1.AnnotationSpec.Builder builderForValue) {
         if (annotationSpecBuilder_ == null) {
           annotationSpec_ = builderForValue.build();
-          onChanged();
         } else {
           annotationSpecBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -707,19 +719,19 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
       public Builder mergeAnnotationSpec(
           com.google.cloud.datalabeling.v1beta1.AnnotationSpec value) {
         if (annotationSpecBuilder_ == null) {
-          if (annotationSpec_ != null) {
-            annotationSpec_ =
-                com.google.cloud.datalabeling.v1beta1.AnnotationSpec.newBuilder(annotationSpec_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && annotationSpec_ != null
+              && annotationSpec_
+                  != com.google.cloud.datalabeling.v1beta1.AnnotationSpec.getDefaultInstance()) {
+            getAnnotationSpecBuilder().mergeFrom(value);
           } else {
             annotationSpec_ = value;
           }
-          onChanged();
         } else {
           annotationSpecBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -732,14 +744,13 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
        */
       public Builder clearAnnotationSpec() {
-        if (annotationSpecBuilder_ == null) {
-          annotationSpec_ = null;
-          onChanged();
-        } else {
-          annotationSpec_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        annotationSpec_ = null;
+        if (annotationSpecBuilder_ != null) {
+          annotationSpecBuilder_.dispose();
           annotationSpecBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -753,7 +764,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        */
       public com.google.cloud.datalabeling.v1beta1.AnnotationSpec.Builder
           getAnnotationSpecBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getAnnotationSpecFieldBuilder().getBuilder();
       }
@@ -835,6 +846,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
       public Builder setItemCount(int value) {
 
         itemCount_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -851,7 +863,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearItemCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         itemCount_ = 0;
         onChanged();
         return this;
@@ -1133,10 +1145,14 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.AnnotationSpecOrBuilder
         getAnnotationSpecOrBuilder() {
-      return getAnnotationSpec();
+      return annotationSpec_ == null
+          ? com.google.cloud.datalabeling.v1beta1.AnnotationSpec.getDefaultInstance()
+          : annotationSpec_;
     }
 
     public static final int ENTRIES_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private java.util.List<
             com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.ConfusionMatrixEntry>
         entries_;
@@ -1445,10 +1461,10 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (annotationSpecBuilder_ == null) {
-          annotationSpec_ = null;
-        } else {
-          annotationSpec_ = null;
+        bitField0_ = 0;
+        annotationSpec_ = null;
+        if (annotationSpecBuilder_ != null) {
+          annotationSpecBuilder_.dispose();
           annotationSpecBuilder_ = null;
         }
         if (entriesBuilder_ == null) {
@@ -1457,7 +1473,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
           entries_ = null;
           entriesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -1485,23 +1501,33 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
       public com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.Row buildPartial() {
         com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.Row result =
             new com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.Row(this);
-        int from_bitField0_ = bitField0_;
-        if (annotationSpecBuilder_ == null) {
-          result.annotationSpec_ = annotationSpec_;
-        } else {
-          result.annotationSpec_ = annotationSpecBuilder_.build();
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.Row result) {
         if (entriesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             entries_ = java.util.Collections.unmodifiableList(entries_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.entries_ = entries_;
         } else {
           result.entries_ = entriesBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.Row result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.annotationSpec_ =
+              annotationSpecBuilder_ == null ? annotationSpec_ : annotationSpecBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1559,7 +1585,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
           if (!other.entries_.isEmpty()) {
             if (entries_.isEmpty()) {
               entries_ = other.entries_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureEntriesIsMutable();
               entries_.addAll(other.entries_);
@@ -1572,7 +1598,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
               entriesBuilder_.dispose();
               entriesBuilder_ = null;
               entries_ = other.entries_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               entriesBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getEntriesFieldBuilder()
@@ -1612,7 +1638,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
                 {
                   input.readMessage(
                       getAnnotationSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -1667,7 +1693,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        * @return Whether the annotationSpec field is set.
        */
       public boolean hasAnnotationSpec() {
-        return annotationSpecBuilder_ != null || annotationSpec_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -1704,11 +1730,11 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
             throw new NullPointerException();
           }
           annotationSpec_ = value;
-          onChanged();
         } else {
           annotationSpecBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1724,11 +1750,11 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
           com.google.cloud.datalabeling.v1beta1.AnnotationSpec.Builder builderForValue) {
         if (annotationSpecBuilder_ == null) {
           annotationSpec_ = builderForValue.build();
-          onChanged();
         } else {
           annotationSpecBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1743,19 +1769,19 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
       public Builder mergeAnnotationSpec(
           com.google.cloud.datalabeling.v1beta1.AnnotationSpec value) {
         if (annotationSpecBuilder_ == null) {
-          if (annotationSpec_ != null) {
-            annotationSpec_ =
-                com.google.cloud.datalabeling.v1beta1.AnnotationSpec.newBuilder(annotationSpec_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && annotationSpec_ != null
+              && annotationSpec_
+                  != com.google.cloud.datalabeling.v1beta1.AnnotationSpec.getDefaultInstance()) {
+            getAnnotationSpecBuilder().mergeFrom(value);
           } else {
             annotationSpec_ = value;
           }
-          onChanged();
         } else {
           annotationSpecBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1768,14 +1794,13 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
        */
       public Builder clearAnnotationSpec() {
-        if (annotationSpecBuilder_ == null) {
-          annotationSpec_ = null;
-          onChanged();
-        } else {
-          annotationSpec_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        annotationSpec_ = null;
+        if (annotationSpecBuilder_ != null) {
+          annotationSpecBuilder_.dispose();
           annotationSpecBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1789,7 +1814,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        */
       public com.google.cloud.datalabeling.v1beta1.AnnotationSpec.Builder
           getAnnotationSpecBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getAnnotationSpecFieldBuilder().getBuilder();
       }
@@ -1843,12 +1868,12 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
           entries_ = java.util.Collections.emptyList();
 
       private void ensureEntriesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           entries_ =
               new java.util.ArrayList<
                   com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.ConfusionMatrixEntry>(
                   entries_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
 
@@ -2113,7 +2138,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
       public Builder clearEntries() {
         if (entriesBuilder_ == null) {
           entries_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           entriesBuilder_.clear();
@@ -2271,7 +2296,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
                       .Builder,
                   com.google.cloud.datalabeling.v1beta1.ConfusionMatrix
                       .ConfusionMatrixEntryOrBuilder>(
-                  entries_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                  entries_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
           entries_ = null;
         }
         return entriesBuilder_;
@@ -2342,6 +2367,8 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ROW_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.Row> row_;
   /** <code>repeated .google.cloud.datalabeling.v1beta1.ConfusionMatrix.Row row = 1;</code> */
   @java.lang.Override
@@ -2574,6 +2601,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (rowBuilder_ == null) {
         row_ = java.util.Collections.emptyList();
       } else {
@@ -2608,7 +2636,16 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.datalabeling.v1beta1.ConfusionMatrix buildPartial() {
       com.google.cloud.datalabeling.v1beta1.ConfusionMatrix result =
           new com.google.cloud.datalabeling.v1beta1.ConfusionMatrix(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.datalabeling.v1beta1.ConfusionMatrix result) {
       if (rowBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           row_ = java.util.Collections.unmodifiableList(row_);
@@ -2618,8 +2655,10 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
       } else {
         result.row_ = rowBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datalabeling.v1beta1.ConfusionMatrix result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

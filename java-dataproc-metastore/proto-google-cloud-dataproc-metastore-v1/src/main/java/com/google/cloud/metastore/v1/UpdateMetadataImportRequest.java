@@ -122,7 +122,7 @@ public final class UpdateMetadataImportRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int METADATA_IMPORT_FIELD_NUMBER = 2;
@@ -185,11 +185,15 @@ public final class UpdateMetadataImportRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.cloud.metastore.v1.MetadataImportOrBuilder getMetadataImportOrBuilder() {
-    return getMetadataImport();
+    return metadataImport_ == null
+        ? com.google.cloud.metastore.v1.MetadataImport.getDefaultInstance()
+        : metadataImport_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -481,20 +485,18 @@ public final class UpdateMetadataImportRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      bitField0_ = 0;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-      if (metadataImportBuilder_ == null) {
-        metadataImport_ = null;
-      } else {
-        metadataImport_ = null;
+      metadataImport_ = null;
+      if (metadataImportBuilder_ != null) {
+        metadataImportBuilder_.dispose();
         metadataImportBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -522,19 +524,25 @@ public final class UpdateMetadataImportRequest extends com.google.protobuf.Gener
     public com.google.cloud.metastore.v1.UpdateMetadataImportRequest buildPartial() {
       com.google.cloud.metastore.v1.UpdateMetadataImportRequest result =
           new com.google.cloud.metastore.v1.UpdateMetadataImportRequest(this);
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (metadataImportBuilder_ == null) {
-        result.metadataImport_ = metadataImport_;
-      } else {
-        result.metadataImport_ = metadataImportBuilder_.build();
-      }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.metastore.v1.UpdateMetadataImportRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.metadataImport_ =
+            metadataImportBuilder_ == null ? metadataImport_ : metadataImportBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -591,6 +599,7 @@ public final class UpdateMetadataImportRequest extends com.google.protobuf.Gener
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -622,19 +631,19 @@ public final class UpdateMetadataImportRequest extends com.google.protobuf.Gener
             case 10:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getMetadataImportFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -653,6 +662,8 @@ public final class UpdateMetadataImportRequest extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.FieldMask updateMask_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -676,7 +687,7 @@ public final class UpdateMetadataImportRequest extends com.google.protobuf.Gener
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -721,11 +732,11 @@ public final class UpdateMetadataImportRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -744,11 +755,11 @@ public final class UpdateMetadataImportRequest extends com.google.protobuf.Gener
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -766,17 +777,18 @@ public final class UpdateMetadataImportRequest extends com.google.protobuf.Gener
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -793,14 +805,13 @@ public final class UpdateMetadataImportRequest extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -817,7 +828,7 @@ public final class UpdateMetadataImportRequest extends com.google.protobuf.Gener
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -896,7 +907,7 @@ public final class UpdateMetadataImportRequest extends com.google.protobuf.Gener
      * @return Whether the metadataImport field is set.
      */
     public boolean hasMetadataImport() {
-      return metadataImportBuilder_ != null || metadataImport_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -943,11 +954,11 @@ public final class UpdateMetadataImportRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         metadataImport_ = value;
-        onChanged();
       } else {
         metadataImportBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -968,11 +979,11 @@ public final class UpdateMetadataImportRequest extends com.google.protobuf.Gener
         com.google.cloud.metastore.v1.MetadataImport.Builder builderForValue) {
       if (metadataImportBuilder_ == null) {
         metadataImport_ = builderForValue.build();
-        onChanged();
       } else {
         metadataImportBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -991,19 +1002,19 @@ public final class UpdateMetadataImportRequest extends com.google.protobuf.Gener
      */
     public Builder mergeMetadataImport(com.google.cloud.metastore.v1.MetadataImport value) {
       if (metadataImportBuilder_ == null) {
-        if (metadataImport_ != null) {
-          metadataImport_ =
-              com.google.cloud.metastore.v1.MetadataImport.newBuilder(metadataImport_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && metadataImport_ != null
+            && metadataImport_
+                != com.google.cloud.metastore.v1.MetadataImport.getDefaultInstance()) {
+          getMetadataImportBuilder().mergeFrom(value);
         } else {
           metadataImport_ = value;
         }
-        onChanged();
       } else {
         metadataImportBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1021,14 +1032,13 @@ public final class UpdateMetadataImportRequest extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearMetadataImport() {
-      if (metadataImportBuilder_ == null) {
-        metadataImport_ = null;
-        onChanged();
-      } else {
-        metadataImport_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      metadataImport_ = null;
+      if (metadataImportBuilder_ != null) {
+        metadataImportBuilder_.dispose();
         metadataImportBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1046,7 +1056,7 @@ public final class UpdateMetadataImportRequest extends com.google.protobuf.Gener
      * </code>
      */
     public com.google.cloud.metastore.v1.MetadataImport.Builder getMetadataImportBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getMetadataImportFieldBuilder().getBuilder();
     }
@@ -1192,8 +1202,8 @@ public final class UpdateMetadataImportRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1218,8 +1228,8 @@ public final class UpdateMetadataImportRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1249,8 +1259,8 @@ public final class UpdateMetadataImportRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

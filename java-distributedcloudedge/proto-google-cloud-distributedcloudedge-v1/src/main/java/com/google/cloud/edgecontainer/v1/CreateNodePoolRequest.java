@@ -70,7 +70,9 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NODE_POOL_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nodePoolId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nodePoolId_ = "";
   /**
    *
    *
@@ -222,11 +226,15 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.edgecontainer.v1.NodePoolOrBuilder getNodePoolOrBuilder() {
-    return getNodePool();
+    return nodePool_ == null
+        ? com.google.cloud.edgecontainer.v1.NodePool.getDefaultInstance()
+        : nodePool_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -508,18 +516,15 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       nodePoolId_ = "";
-
-      if (nodePoolBuilder_ == null) {
-        nodePool_ = null;
-      } else {
-        nodePool_ = null;
+      nodePool_ = null;
+      if (nodePoolBuilder_ != null) {
+        nodePoolBuilder_.dispose();
         nodePoolBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -547,16 +552,27 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.edgecontainer.v1.CreateNodePoolRequest buildPartial() {
       com.google.cloud.edgecontainer.v1.CreateNodePoolRequest result =
           new com.google.cloud.edgecontainer.v1.CreateNodePoolRequest(this);
-      result.parent_ = parent_;
-      result.nodePoolId_ = nodePoolId_;
-      if (nodePoolBuilder_ == null) {
-        result.nodePool_ = nodePool_;
-      } else {
-        result.nodePool_ = nodePoolBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.edgecontainer.v1.CreateNodePoolRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nodePoolId_ = nodePoolId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.nodePool_ = nodePoolBuilder_ == null ? nodePool_ : nodePoolBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -607,10 +623,12 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getNodePoolId().isEmpty()) {
         nodePoolId_ = other.nodePoolId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasNodePool()) {
@@ -618,6 +636,7 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -649,25 +668,25 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 nodePoolId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getNodePoolFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -686,6 +705,8 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -754,8 +775,8 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -773,8 +794,8 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -797,8 +818,8 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -864,8 +885,8 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       nodePoolId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -881,8 +902,8 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearNodePoolId() {
-
       nodePoolId_ = getDefaultInstance().getNodePoolId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -903,8 +924,8 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nodePoolId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -929,7 +950,7 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the nodePool field is set.
      */
     public boolean hasNodePool() {
-      return nodePoolBuilder_ != null || nodePool_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -970,11 +991,11 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         nodePool_ = value;
-        onChanged();
       } else {
         nodePoolBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -991,11 +1012,11 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
     public Builder setNodePool(com.google.cloud.edgecontainer.v1.NodePool.Builder builderForValue) {
       if (nodePoolBuilder_ == null) {
         nodePool_ = builderForValue.build();
-        onChanged();
       } else {
         nodePoolBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1011,19 +1032,18 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeNodePool(com.google.cloud.edgecontainer.v1.NodePool value) {
       if (nodePoolBuilder_ == null) {
-        if (nodePool_ != null) {
-          nodePool_ =
-              com.google.cloud.edgecontainer.v1.NodePool.newBuilder(nodePool_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && nodePool_ != null
+            && nodePool_ != com.google.cloud.edgecontainer.v1.NodePool.getDefaultInstance()) {
+          getNodePoolBuilder().mergeFrom(value);
         } else {
           nodePool_ = value;
         }
-        onChanged();
       } else {
         nodePoolBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1038,14 +1058,13 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearNodePool() {
-      if (nodePoolBuilder_ == null) {
-        nodePool_ = null;
-        onChanged();
-      } else {
-        nodePool_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      nodePool_ = null;
+      if (nodePoolBuilder_ != null) {
+        nodePoolBuilder_.dispose();
         nodePoolBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1060,7 +1079,7 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.edgecontainer.v1.NodePool.Builder getNodePoolBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getNodePoolFieldBuilder().getBuilder();
     }
@@ -1179,8 +1198,8 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1198,8 +1217,8 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1222,8 +1241,8 @@ public final class CreateNodePoolRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

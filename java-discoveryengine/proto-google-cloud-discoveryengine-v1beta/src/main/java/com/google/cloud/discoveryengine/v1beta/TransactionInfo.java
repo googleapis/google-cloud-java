@@ -70,7 +70,7 @@ public final class TransactionInfo extends com.google.protobuf.GeneratedMessageV
 
   private int bitField0_;
   public static final int VALUE_FIELD_NUMBER = 1;
-  private float value_;
+  private float value_ = 0F;
   /**
    *
    *
@@ -107,7 +107,9 @@ public final class TransactionInfo extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int CURRENCY_FIELD_NUMBER = 2;
-  private volatile java.lang.Object currency_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object currency_ = "";
   /**
    *
    *
@@ -156,7 +158,9 @@ public final class TransactionInfo extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int TRANSACTION_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object transactionId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object transactionId_ = "";
   /**
    *
    *
@@ -205,7 +209,7 @@ public final class TransactionInfo extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int TAX_FIELD_NUMBER = 4;
-  private float tax_;
+  private float tax_ = 0F;
   /**
    *
    *
@@ -238,7 +242,7 @@ public final class TransactionInfo extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int COST_FIELD_NUMBER = 5;
-  private float cost_;
+  private float cost_ = 0F;
   /**
    *
    *
@@ -283,7 +287,7 @@ public final class TransactionInfo extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DISCOUNT_VALUE_FIELD_NUMBER = 6;
-  private float discountValue_;
+  private float discountValue_ = 0F;
   /**
    *
    *
@@ -616,18 +620,13 @@ public final class TransactionInfo extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       value_ = 0F;
-      bitField0_ = (bitField0_ & ~0x00000001);
       currency_ = "";
-
       transactionId_ = "";
-
       tax_ = 0F;
-      bitField0_ = (bitField0_ & ~0x00000002);
       cost_ = 0F;
-      bitField0_ = (bitField0_ & ~0x00000004);
       discountValue_ = 0F;
-      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -655,29 +654,39 @@ public final class TransactionInfo extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.discoveryengine.v1beta.TransactionInfo buildPartial() {
       com.google.cloud.discoveryengine.v1beta.TransactionInfo result =
           new com.google.cloud.discoveryengine.v1beta.TransactionInfo(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.discoveryengine.v1beta.TransactionInfo result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.value_ = value_;
         to_bitField0_ |= 0x00000001;
       }
-      result.currency_ = currency_;
-      result.transactionId_ = transactionId_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.currency_ = currency_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.transactionId_ = transactionId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.tax_ = tax_;
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.cost_ = cost_;
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.discountValue_ = discountValue_;
         to_bitField0_ |= 0x00000008;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -731,10 +740,12 @@ public final class TransactionInfo extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getCurrency().isEmpty()) {
         currency_ = other.currency_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getTransactionId().isEmpty()) {
         transactionId_ = other.transactionId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasTax()) {
@@ -781,31 +792,31 @@ public final class TransactionInfo extends com.google.protobuf.GeneratedMessageV
             case 18:
               {
                 currency_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 transactionId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 37:
               {
                 tax_ = input.readFloat();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 37
             case 45:
               {
                 cost_ = input.readFloat();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 45
             case 53:
               {
                 discountValue_ = input.readFloat();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 53
             default:
@@ -877,8 +888,9 @@ public final class TransactionInfo extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setValue(float value) {
-      bitField0_ |= 0x00000001;
+
       value_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -963,8 +975,8 @@ public final class TransactionInfo extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       currency_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -980,8 +992,8 @@ public final class TransactionInfo extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearCurrency() {
-
       currency_ = getDefaultInstance().getCurrency();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1002,8 +1014,8 @@ public final class TransactionInfo extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       currency_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1069,8 +1081,8 @@ public final class TransactionInfo extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       transactionId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1086,8 +1098,8 @@ public final class TransactionInfo extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearTransactionId() {
-
       transactionId_ = getDefaultInstance().getTransactionId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1108,8 +1120,8 @@ public final class TransactionInfo extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       transactionId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1128,7 +1140,7 @@ public final class TransactionInfo extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public boolean hasTax() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1158,8 +1170,9 @@ public final class TransactionInfo extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setTax(float value) {
-      bitField0_ |= 0x00000002;
+
       tax_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1175,7 +1188,7 @@ public final class TransactionInfo extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearTax() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       tax_ = 0F;
       onChanged();
       return this;
@@ -1201,7 +1214,7 @@ public final class TransactionInfo extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public boolean hasCost() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1243,8 +1256,9 @@ public final class TransactionInfo extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setCost(float value) {
-      bitField0_ |= 0x00000004;
+
       cost_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1266,7 +1280,7 @@ public final class TransactionInfo extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearCost() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       cost_ = 0F;
       onChanged();
       return this;
@@ -1303,7 +1317,7 @@ public final class TransactionInfo extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public boolean hasDiscountValue() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1367,8 +1381,9 @@ public final class TransactionInfo extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setDiscountValue(float value) {
-      bitField0_ |= 0x00000008;
+
       discountValue_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1401,7 +1416,7 @@ public final class TransactionInfo extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDiscountValue() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       discountValue_ = 0F;
       onChanged();
       return this;

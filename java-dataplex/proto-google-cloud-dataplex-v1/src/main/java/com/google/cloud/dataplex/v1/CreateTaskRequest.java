@@ -69,7 +69,9 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int TASK_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object taskId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object taskId_ = "";
   /**
    *
    *
@@ -215,11 +219,11 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.TaskOrBuilder getTaskOrBuilder() {
-    return getTask();
+    return task_ == null ? com.google.cloud.dataplex.v1.Task.getDefaultInstance() : task_;
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -466,18 +470,15 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       taskId_ = "";
-
-      if (taskBuilder_ == null) {
-        task_ = null;
-      } else {
-        task_ = null;
+      task_ = null;
+      if (taskBuilder_ != null) {
+        taskBuilder_.dispose();
         taskBuilder_ = null;
       }
       validateOnly_ = false;
-
       return this;
     }
 
@@ -505,16 +506,27 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dataplex.v1.CreateTaskRequest buildPartial() {
       com.google.cloud.dataplex.v1.CreateTaskRequest result =
           new com.google.cloud.dataplex.v1.CreateTaskRequest(this);
-      result.parent_ = parent_;
-      result.taskId_ = taskId_;
-      if (taskBuilder_ == null) {
-        result.task_ = task_;
-      } else {
-        result.task_ = taskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataplex.v1.CreateTaskRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.taskId_ = taskId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.task_ = taskBuilder_ == null ? task_ : taskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -564,10 +576,12 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
       if (other == com.google.cloud.dataplex.v1.CreateTaskRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTaskId().isEmpty()) {
         taskId_ = other.taskId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasTask()) {
@@ -605,25 +619,25 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 taskId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getTaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -642,6 +656,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -713,8 +729,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -733,8 +749,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -758,8 +774,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -825,8 +841,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       taskId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -842,8 +858,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearTaskId() {
-
       taskId_ = getDefaultInstance().getTaskId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -864,8 +880,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       taskId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -889,7 +905,7 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the task field is set.
      */
     public boolean hasTask() {
-      return taskBuilder_ != null || task_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -926,11 +942,11 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         task_ = value;
-        onChanged();
       } else {
         taskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -946,11 +962,11 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
     public Builder setTask(com.google.cloud.dataplex.v1.Task.Builder builderForValue) {
       if (taskBuilder_ == null) {
         task_ = builderForValue.build();
-        onChanged();
       } else {
         taskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -965,17 +981,18 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeTask(com.google.cloud.dataplex.v1.Task value) {
       if (taskBuilder_ == null) {
-        if (task_ != null) {
-          task_ =
-              com.google.cloud.dataplex.v1.Task.newBuilder(task_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && task_ != null
+            && task_ != com.google.cloud.dataplex.v1.Task.getDefaultInstance()) {
+          getTaskBuilder().mergeFrom(value);
         } else {
           task_ = value;
         }
-        onChanged();
       } else {
         taskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -989,14 +1006,13 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearTask() {
-      if (taskBuilder_ == null) {
-        task_ = null;
-        onChanged();
-      } else {
-        task_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      task_ = null;
+      if (taskBuilder_ != null) {
+        taskBuilder_.dispose();
         taskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1010,7 +1026,7 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.cloud.dataplex.v1.Task.Builder getTaskBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getTaskFieldBuilder().getBuilder();
     }
@@ -1091,6 +1107,7 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1107,7 +1124,7 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       validateOnly_ = false;
       onChanged();
       return this;

@@ -112,7 +112,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.ValueOrBuilder getContextOrBuilder() {
-    return getContext();
+    return context_ == null ? com.google.protobuf.Value.getDefaultInstance() : context_;
   }
 
   public static final int TYPE_FIELD_NUMBER = 2;
@@ -158,7 +158,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.ValueOrBuilder getTypeOrBuilder() {
-    return getType();
+    return type_ == null ? com.google.protobuf.Value.getDefaultInstance() : type_;
   }
 
   public static final int ITEM_LIST_ELEMENT_FIELD_NUMBER = 3;
@@ -206,7 +206,9 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.ListValueOrBuilder getItemListElementOrBuilder() {
-    return getItemListElement();
+    return itemListElement_ == null
+        ? com.google.protobuf.ListValue.getDefaultInstance()
+        : itemListElement_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -441,22 +443,20 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (contextBuilder_ == null) {
-        context_ = null;
-      } else {
-        context_ = null;
+      bitField0_ = 0;
+      context_ = null;
+      if (contextBuilder_ != null) {
+        contextBuilder_.dispose();
         contextBuilder_ = null;
       }
-      if (typeBuilder_ == null) {
-        type_ = null;
-      } else {
-        type_ = null;
+      type_ = null;
+      if (typeBuilder_ != null) {
+        typeBuilder_.dispose();
         typeBuilder_ = null;
       }
-      if (itemListElementBuilder_ == null) {
-        itemListElement_ = null;
-      } else {
-        itemListElement_ = null;
+      itemListElement_ = null;
+      if (itemListElementBuilder_ != null) {
+        itemListElementBuilder_.dispose();
         itemListElementBuilder_ = null;
       }
       return this;
@@ -486,23 +486,25 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.enterpriseknowledgegraph.v1.LookupResponse buildPartial() {
       com.google.cloud.enterpriseknowledgegraph.v1.LookupResponse result =
           new com.google.cloud.enterpriseknowledgegraph.v1.LookupResponse(this);
-      if (contextBuilder_ == null) {
-        result.context_ = context_;
-      } else {
-        result.context_ = contextBuilder_.build();
-      }
-      if (typeBuilder_ == null) {
-        result.type_ = type_;
-      } else {
-        result.type_ = typeBuilder_.build();
-      }
-      if (itemListElementBuilder_ == null) {
-        result.itemListElement_ = itemListElement_;
-      } else {
-        result.itemListElement_ = itemListElementBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.enterpriseknowledgegraph.v1.LookupResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.context_ = contextBuilder_ == null ? context_ : contextBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.type_ = typeBuilder_ == null ? type_ : typeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.itemListElement_ =
+            itemListElementBuilder_ == null ? itemListElement_ : itemListElementBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -589,19 +591,19 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getContextFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getTypeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getItemListElementFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -620,6 +622,8 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.Value context_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -640,7 +644,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the context field is set.
      */
     public boolean hasContext() {
-      return contextBuilder_ != null || context_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -677,11 +681,11 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         context_ = value;
-        onChanged();
       } else {
         contextBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -697,11 +701,11 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
     public Builder setContext(com.google.protobuf.Value.Builder builderForValue) {
       if (contextBuilder_ == null) {
         context_ = builderForValue.build();
-        onChanged();
       } else {
         contextBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -716,16 +720,18 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeContext(com.google.protobuf.Value value) {
       if (contextBuilder_ == null) {
-        if (context_ != null) {
-          context_ = com.google.protobuf.Value.newBuilder(context_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && context_ != null
+            && context_ != com.google.protobuf.Value.getDefaultInstance()) {
+          getContextBuilder().mergeFrom(value);
         } else {
           context_ = value;
         }
-        onChanged();
       } else {
         contextBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -739,14 +745,13 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Value context = 1;</code>
      */
     public Builder clearContext() {
-      if (contextBuilder_ == null) {
-        context_ = null;
-        onChanged();
-      } else {
-        context_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      context_ = null;
+      if (contextBuilder_ != null) {
+        contextBuilder_.dispose();
         contextBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -760,7 +765,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Value context = 1;</code>
      */
     public com.google.protobuf.Value.Builder getContextBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getContextFieldBuilder().getBuilder();
     }
@@ -826,7 +831,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the type field is set.
      */
     public boolean hasType() {
-      return typeBuilder_ != null || type_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -861,11 +866,11 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         type_ = value;
-        onChanged();
       } else {
         typeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -880,11 +885,11 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
     public Builder setType(com.google.protobuf.Value.Builder builderForValue) {
       if (typeBuilder_ == null) {
         type_ = builderForValue.build();
-        onChanged();
       } else {
         typeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -898,16 +903,18 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeType(com.google.protobuf.Value value) {
       if (typeBuilder_ == null) {
-        if (type_ != null) {
-          type_ = com.google.protobuf.Value.newBuilder(type_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && type_ != null
+            && type_ != com.google.protobuf.Value.getDefaultInstance()) {
+          getTypeBuilder().mergeFrom(value);
         } else {
           type_ = value;
         }
-        onChanged();
       } else {
         typeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -920,14 +927,13 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Value type = 2;</code>
      */
     public Builder clearType() {
-      if (typeBuilder_ == null) {
-        type_ = null;
-        onChanged();
-      } else {
-        type_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      type_ = null;
+      if (typeBuilder_ != null) {
+        typeBuilder_.dispose();
         typeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -940,7 +946,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Value type = 2;</code>
      */
     public com.google.protobuf.Value.Builder getTypeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTypeFieldBuilder().getBuilder();
     }
@@ -1003,7 +1009,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the itemListElement field is set.
      */
     public boolean hasItemListElement() {
-      return itemListElementBuilder_ != null || itemListElement_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1040,11 +1046,11 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         itemListElement_ = value;
-        onChanged();
       } else {
         itemListElementBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1059,11 +1065,11 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
     public Builder setItemListElement(com.google.protobuf.ListValue.Builder builderForValue) {
       if (itemListElementBuilder_ == null) {
         itemListElement_ = builderForValue.build();
-        onChanged();
       } else {
         itemListElementBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1077,19 +1083,18 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeItemListElement(com.google.protobuf.ListValue value) {
       if (itemListElementBuilder_ == null) {
-        if (itemListElement_ != null) {
-          itemListElement_ =
-              com.google.protobuf.ListValue.newBuilder(itemListElement_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && itemListElement_ != null
+            && itemListElement_ != com.google.protobuf.ListValue.getDefaultInstance()) {
+          getItemListElementBuilder().mergeFrom(value);
         } else {
           itemListElement_ = value;
         }
-        onChanged();
       } else {
         itemListElementBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1102,14 +1107,13 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.ListValue item_list_element = 3;</code>
      */
     public Builder clearItemListElement() {
-      if (itemListElementBuilder_ == null) {
-        itemListElement_ = null;
-        onChanged();
-      } else {
-        itemListElement_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      itemListElement_ = null;
+      if (itemListElementBuilder_ != null) {
+        itemListElementBuilder_.dispose();
         itemListElementBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1122,7 +1126,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.ListValue item_list_element = 3;</code>
      */
     public com.google.protobuf.ListValue.Builder getItemListElementBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getItemListElementFieldBuilder().getBuilder();
     }

@@ -185,6 +185,8 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
     }
 
     public static final int USER_EVENTS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.discoveryengine.v1beta.UserEvent> userEvents_;
     /**
      *
@@ -477,6 +479,7 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (userEventsBuilder_ == null) {
           userEvents_ = java.util.Collections.emptyList();
         } else {
@@ -515,7 +518,16 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
           buildPartial() {
         com.google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource result =
             new com.google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource result) {
         if (userEventsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             userEvents_ = java.util.Collections.unmodifiableList(userEvents_);
@@ -525,8 +537,11 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
         } else {
           result.userEvents_ = userEventsBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -1358,7 +1373,9 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -1461,7 +1478,9 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
   @java.lang.Override
   public com.google.cloud.discoveryengine.v1beta.ImportErrorConfigOrBuilder
       getErrorConfigOrBuilder() {
-    return getErrorConfig();
+    return errorConfig_ == null
+        ? com.google.cloud.discoveryengine.v1beta.ImportErrorConfig.getDefaultInstance()
+        : errorConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1734,6 +1753,7 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (inlineSourceBuilder_ != null) {
         inlineSourceBuilder_.clear();
       }
@@ -1744,11 +1764,9 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
         bigquerySourceBuilder_.clear();
       }
       parent_ = "";
-
-      if (errorConfigBuilder_ == null) {
-        errorConfig_ = null;
-      } else {
-        errorConfig_ = null;
+      errorConfig_ = null;
+      if (errorConfigBuilder_ != null) {
+        errorConfigBuilder_.dispose();
         errorConfigBuilder_ = null;
       }
       sourceCase_ = 0;
@@ -1781,36 +1799,39 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
     public com.google.cloud.discoveryengine.v1beta.ImportUserEventsRequest buildPartial() {
       com.google.cloud.discoveryengine.v1beta.ImportUserEventsRequest result =
           new com.google.cloud.discoveryengine.v1beta.ImportUserEventsRequest(this);
-      if (sourceCase_ == 2) {
-        if (inlineSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = inlineSourceBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (sourceCase_ == 3) {
-        if (gcsSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = gcsSourceBuilder_.build();
-        }
-      }
-      if (sourceCase_ == 4) {
-        if (bigquerySourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = bigquerySourceBuilder_.build();
-        }
-      }
-      result.parent_ = parent_;
-      if (errorConfigBuilder_ == null) {
-        result.errorConfig_ = errorConfig_;
-      } else {
-        result.errorConfig_ = errorConfigBuilder_.build();
-      }
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.discoveryengine.v1beta.ImportUserEventsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.errorConfig_ =
+            errorConfigBuilder_ == null ? errorConfig_ : errorConfigBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.discoveryengine.v1beta.ImportUserEventsRequest result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 2 && inlineSourceBuilder_ != null) {
+        result.source_ = inlineSourceBuilder_.build();
+      }
+      if (sourceCase_ == 3 && gcsSourceBuilder_ != null) {
+        result.source_ = gcsSourceBuilder_.build();
+      }
+      if (sourceCase_ == 4 && bigquerySourceBuilder_ != null) {
+        result.source_ = bigquerySourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1863,6 +1884,7 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasErrorConfig()) {
@@ -1918,7 +1940,7 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 10
             case 18:
@@ -1942,7 +1964,7 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
             case 42:
               {
                 input.readMessage(getErrorConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -1975,6 +1997,8 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.InlineSource,
@@ -2220,7 +2244,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
       }
       sourceCase_ = 2;
       onChanged();
-      ;
       return inlineSourceBuilder_;
     }
 
@@ -2448,7 +2471,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
       }
       sourceCase_ = 3;
       onChanged();
-      ;
       return gcsSourceBuilder_;
     }
 
@@ -2680,7 +2702,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
       }
       sourceCase_ = 4;
       onChanged();
-      ;
       return bigquerySourceBuilder_;
     }
 
@@ -2754,8 +2775,8 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2774,8 +2795,8 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2799,8 +2820,8 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2824,7 +2845,7 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      * @return Whether the errorConfig field is set.
      */
     public boolean hasErrorConfig() {
-      return errorConfigBuilder_ != null || errorConfig_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2863,11 +2884,11 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         errorConfig_ = value;
-        onChanged();
       } else {
         errorConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2884,11 +2905,11 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
         com.google.cloud.discoveryengine.v1beta.ImportErrorConfig.Builder builderForValue) {
       if (errorConfigBuilder_ == null) {
         errorConfig_ = builderForValue.build();
-        onChanged();
       } else {
         errorConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2904,19 +2925,19 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
     public Builder mergeErrorConfig(
         com.google.cloud.discoveryengine.v1beta.ImportErrorConfig value) {
       if (errorConfigBuilder_ == null) {
-        if (errorConfig_ != null) {
-          errorConfig_ =
-              com.google.cloud.discoveryengine.v1beta.ImportErrorConfig.newBuilder(errorConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && errorConfig_ != null
+            && errorConfig_
+                != com.google.cloud.discoveryengine.v1beta.ImportErrorConfig.getDefaultInstance()) {
+          getErrorConfigBuilder().mergeFrom(value);
         } else {
           errorConfig_ = value;
         }
-        onChanged();
       } else {
         errorConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2930,14 +2951,13 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      * <code>.google.cloud.discoveryengine.v1beta.ImportErrorConfig error_config = 5;</code>
      */
     public Builder clearErrorConfig() {
-      if (errorConfigBuilder_ == null) {
-        errorConfig_ = null;
-        onChanged();
-      } else {
-        errorConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      errorConfig_ = null;
+      if (errorConfigBuilder_ != null) {
+        errorConfigBuilder_.dispose();
         errorConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2952,7 +2972,7 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      */
     public com.google.cloud.discoveryengine.v1beta.ImportErrorConfig.Builder
         getErrorConfigBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getErrorConfigFieldBuilder().getBuilder();
     }

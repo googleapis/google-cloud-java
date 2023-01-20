@@ -70,7 +70,9 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -127,7 +129,9 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int BACKUP_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object backupId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object backupId_ = "";
   /**
    *
    *
@@ -232,11 +236,13 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.metastore.v1.BackupOrBuilder getBackupOrBuilder() {
-    return getBackup();
+    return backup_ == null ? com.google.cloud.metastore.v1.Backup.getDefaultInstance() : backup_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -531,18 +537,15 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       backupId_ = "";
-
-      if (backupBuilder_ == null) {
-        backup_ = null;
-      } else {
-        backup_ = null;
+      backup_ = null;
+      if (backupBuilder_ != null) {
+        backupBuilder_.dispose();
         backupBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -570,16 +573,27 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.metastore.v1.CreateBackupRequest buildPartial() {
       com.google.cloud.metastore.v1.CreateBackupRequest result =
           new com.google.cloud.metastore.v1.CreateBackupRequest(this);
-      result.parent_ = parent_;
-      result.backupId_ = backupId_;
-      if (backupBuilder_ == null) {
-        result.backup_ = backup_;
-      } else {
-        result.backup_ = backupBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.metastore.v1.CreateBackupRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.backupId_ = backupId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.backup_ = backupBuilder_ == null ? backup_ : backupBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -630,10 +644,12 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getBackupId().isEmpty()) {
         backupId_ = other.backupId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasBackup()) {
@@ -641,6 +657,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -672,25 +689,25 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 backupId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getBackupFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -709,6 +726,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -783,8 +802,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -804,8 +823,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -830,8 +849,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -909,8 +928,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       backupId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -930,8 +949,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearBackupId() {
-
       backupId_ = getDefaultInstance().getBackupId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -956,8 +975,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       backupId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -982,7 +1001,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the backup field is set.
      */
     public boolean hasBackup() {
-      return backupBuilder_ != null || backup_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1023,11 +1042,11 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         backup_ = value;
-        onChanged();
       } else {
         backupBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1044,11 +1063,11 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
     public Builder setBackup(com.google.cloud.metastore.v1.Backup.Builder builderForValue) {
       if (backupBuilder_ == null) {
         backup_ = builderForValue.build();
-        onChanged();
       } else {
         backupBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1064,19 +1083,18 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeBackup(com.google.cloud.metastore.v1.Backup value) {
       if (backupBuilder_ == null) {
-        if (backup_ != null) {
-          backup_ =
-              com.google.cloud.metastore.v1.Backup.newBuilder(backup_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && backup_ != null
+            && backup_ != com.google.cloud.metastore.v1.Backup.getDefaultInstance()) {
+          getBackupBuilder().mergeFrom(value);
         } else {
           backup_ = value;
         }
-        onChanged();
       } else {
         backupBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1091,14 +1109,13 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearBackup() {
-      if (backupBuilder_ == null) {
-        backup_ = null;
-        onChanged();
-      } else {
-        backup_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      backup_ = null;
+      if (backupBuilder_ != null) {
+        backupBuilder_.dispose();
         backupBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1113,7 +1130,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.metastore.v1.Backup.Builder getBackupBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getBackupFieldBuilder().getBuilder();
     }
@@ -1253,8 +1270,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1279,8 +1296,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1310,8 +1327,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

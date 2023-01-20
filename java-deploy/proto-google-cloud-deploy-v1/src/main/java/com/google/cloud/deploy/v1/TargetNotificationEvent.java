@@ -72,7 +72,9 @@ public final class TargetNotificationEvent extends com.google.protobuf.Generated
   }
 
   public static final int MESSAGE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object message_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object message_ = "";
   /**
    *
    *
@@ -121,7 +123,9 @@ public final class TargetNotificationEvent extends com.google.protobuf.Generated
   }
 
   public static final int TARGET_FIELD_NUMBER = 2;
-  private volatile java.lang.Object target_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object target_ = "";
   /**
    *
    *
@@ -170,7 +174,7 @@ public final class TargetNotificationEvent extends com.google.protobuf.Generated
   }
 
   public static final int TYPE_FIELD_NUMBER = 3;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -199,8 +203,7 @@ public final class TargetNotificationEvent extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.Type getType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.deploy.v1.Type result = com.google.cloud.deploy.v1.Type.valueOf(type_);
+    com.google.cloud.deploy.v1.Type result = com.google.cloud.deploy.v1.Type.forNumber(type_);
     return result == null ? com.google.cloud.deploy.v1.Type.UNRECOGNIZED : result;
   }
 
@@ -421,12 +424,10 @@ public final class TargetNotificationEvent extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       message_ = "";
-
       target_ = "";
-
       type_ = 0;
-
       return this;
     }
 
@@ -454,11 +455,24 @@ public final class TargetNotificationEvent extends com.google.protobuf.Generated
     public com.google.cloud.deploy.v1.TargetNotificationEvent buildPartial() {
       com.google.cloud.deploy.v1.TargetNotificationEvent result =
           new com.google.cloud.deploy.v1.TargetNotificationEvent(this);
-      result.message_ = message_;
-      result.target_ = target_;
-      result.type_ = type_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.TargetNotificationEvent result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.message_ = message_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.target_ = target_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.type_ = type_;
+      }
     }
 
     @java.lang.Override
@@ -509,10 +523,12 @@ public final class TargetNotificationEvent extends com.google.protobuf.Generated
         return this;
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTarget().isEmpty()) {
         target_ = other.target_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.type_ != 0) {
@@ -547,19 +563,19 @@ public final class TargetNotificationEvent extends com.google.protobuf.Generated
             case 10:
               {
                 message_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 target_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -578,6 +594,8 @@ public final class TargetNotificationEvent extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object message_ = "";
     /**
@@ -640,8 +658,8 @@ public final class TargetNotificationEvent extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       message_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -657,8 +675,8 @@ public final class TargetNotificationEvent extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
-
       message_ = getDefaultInstance().getMessage();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -679,8 +697,8 @@ public final class TargetNotificationEvent extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       message_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -746,8 +764,8 @@ public final class TargetNotificationEvent extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       target_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -763,8 +781,8 @@ public final class TargetNotificationEvent extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearTarget() {
-
       target_ = getDefaultInstance().getTarget();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -785,8 +803,8 @@ public final class TargetNotificationEvent extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       target_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -820,8 +838,8 @@ public final class TargetNotificationEvent extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -838,8 +856,7 @@ public final class TargetNotificationEvent extends com.google.protobuf.Generated
      */
     @java.lang.Override
     public com.google.cloud.deploy.v1.Type getType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.deploy.v1.Type result = com.google.cloud.deploy.v1.Type.valueOf(type_);
+      com.google.cloud.deploy.v1.Type result = com.google.cloud.deploy.v1.Type.forNumber(type_);
       return result == null ? com.google.cloud.deploy.v1.Type.UNRECOGNIZED : result;
     }
     /**
@@ -858,7 +875,7 @@ public final class TargetNotificationEvent extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -875,7 +892,7 @@ public final class TargetNotificationEvent extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       type_ = 0;
       onChanged();
       return this;

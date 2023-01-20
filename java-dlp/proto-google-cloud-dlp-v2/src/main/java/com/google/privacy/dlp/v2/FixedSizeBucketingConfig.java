@@ -128,7 +128,7 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.ValueOrBuilder getLowerBoundOrBuilder() {
-    return getLowerBound();
+    return lowerBound_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : lowerBound_;
   }
 
   public static final int UPPER_BOUND_FIELD_NUMBER = 2;
@@ -183,11 +183,11 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.ValueOrBuilder getUpperBoundOrBuilder() {
-    return getUpperBound();
+    return upperBound_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : upperBound_;
   }
 
   public static final int BUCKET_SIZE_FIELD_NUMBER = 3;
-  private double bucketSize_;
+  private double bucketSize_ = 0D;
   /**
    *
    *
@@ -447,20 +447,18 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (lowerBoundBuilder_ == null) {
-        lowerBound_ = null;
-      } else {
-        lowerBound_ = null;
+      bitField0_ = 0;
+      lowerBound_ = null;
+      if (lowerBoundBuilder_ != null) {
+        lowerBoundBuilder_.dispose();
         lowerBoundBuilder_ = null;
       }
-      if (upperBoundBuilder_ == null) {
-        upperBound_ = null;
-      } else {
-        upperBound_ = null;
+      upperBound_ = null;
+      if (upperBoundBuilder_ != null) {
+        upperBoundBuilder_.dispose();
         upperBoundBuilder_ = null;
       }
       bucketSize_ = 0D;
-
       return this;
     }
 
@@ -488,19 +486,24 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
     public com.google.privacy.dlp.v2.FixedSizeBucketingConfig buildPartial() {
       com.google.privacy.dlp.v2.FixedSizeBucketingConfig result =
           new com.google.privacy.dlp.v2.FixedSizeBucketingConfig(this);
-      if (lowerBoundBuilder_ == null) {
-        result.lowerBound_ = lowerBound_;
-      } else {
-        result.lowerBound_ = lowerBoundBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (upperBoundBuilder_ == null) {
-        result.upperBound_ = upperBound_;
-      } else {
-        result.upperBound_ = upperBoundBuilder_.build();
-      }
-      result.bucketSize_ = bucketSize_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.FixedSizeBucketingConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.lowerBound_ = lowerBoundBuilder_ == null ? lowerBound_ : lowerBoundBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.upperBound_ = upperBoundBuilder_ == null ? upperBound_ : upperBoundBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.bucketSize_ = bucketSize_;
+      }
     }
 
     @java.lang.Override
@@ -587,19 +590,19 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
             case 10:
               {
                 input.readMessage(getLowerBoundFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpperBoundFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 25:
               {
                 bucketSize_ = input.readDouble();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 25
             default:
@@ -618,6 +621,8 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.privacy.dlp.v2.Value lowerBound_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -640,7 +645,7 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
      * @return Whether the lowerBound field is set.
      */
     public boolean hasLowerBound() {
-      return lowerBoundBuilder_ != null || lowerBound_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -683,11 +688,11 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         lowerBound_ = value;
-        onChanged();
       } else {
         lowerBoundBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -705,11 +710,11 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
     public Builder setLowerBound(com.google.privacy.dlp.v2.Value.Builder builderForValue) {
       if (lowerBoundBuilder_ == null) {
         lowerBound_ = builderForValue.build();
-        onChanged();
       } else {
         lowerBoundBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -726,19 +731,18 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
      */
     public Builder mergeLowerBound(com.google.privacy.dlp.v2.Value value) {
       if (lowerBoundBuilder_ == null) {
-        if (lowerBound_ != null) {
-          lowerBound_ =
-              com.google.privacy.dlp.v2.Value.newBuilder(lowerBound_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && lowerBound_ != null
+            && lowerBound_ != com.google.privacy.dlp.v2.Value.getDefaultInstance()) {
+          getLowerBoundBuilder().mergeFrom(value);
         } else {
           lowerBound_ = value;
         }
-        onChanged();
       } else {
         lowerBoundBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -754,14 +758,13 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearLowerBound() {
-      if (lowerBoundBuilder_ == null) {
-        lowerBound_ = null;
-        onChanged();
-      } else {
-        lowerBound_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      lowerBound_ = null;
+      if (lowerBoundBuilder_ != null) {
+        lowerBoundBuilder_.dispose();
         lowerBoundBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -777,7 +780,7 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.privacy.dlp.v2.Value.Builder getLowerBoundBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getLowerBoundFieldBuilder().getBuilder();
     }
@@ -852,7 +855,7 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
      * @return Whether the upperBound field is set.
      */
     public boolean hasUpperBound() {
-      return upperBoundBuilder_ != null || upperBound_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -895,11 +898,11 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         upperBound_ = value;
-        onChanged();
       } else {
         upperBoundBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -917,11 +920,11 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
     public Builder setUpperBound(com.google.privacy.dlp.v2.Value.Builder builderForValue) {
       if (upperBoundBuilder_ == null) {
         upperBound_ = builderForValue.build();
-        onChanged();
       } else {
         upperBoundBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -938,19 +941,18 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
      */
     public Builder mergeUpperBound(com.google.privacy.dlp.v2.Value value) {
       if (upperBoundBuilder_ == null) {
-        if (upperBound_ != null) {
-          upperBound_ =
-              com.google.privacy.dlp.v2.Value.newBuilder(upperBound_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && upperBound_ != null
+            && upperBound_ != com.google.privacy.dlp.v2.Value.getDefaultInstance()) {
+          getUpperBoundBuilder().mergeFrom(value);
         } else {
           upperBound_ = value;
         }
-        onChanged();
       } else {
         upperBoundBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -966,14 +968,13 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearUpperBound() {
-      if (upperBoundBuilder_ == null) {
-        upperBound_ = null;
-        onChanged();
-      } else {
-        upperBound_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      upperBound_ = null;
+      if (upperBoundBuilder_ != null) {
+        upperBoundBuilder_.dispose();
         upperBoundBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -989,7 +990,7 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.privacy.dlp.v2.Value.Builder getUpperBoundBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpperBoundFieldBuilder().getBuilder();
     }
@@ -1080,6 +1081,7 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
     public Builder setBucketSize(double value) {
 
       bucketSize_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1098,7 +1100,7 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearBucketSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       bucketSize_ = 0D;
       onChanged();
       return this;

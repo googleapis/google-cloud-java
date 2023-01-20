@@ -108,11 +108,11 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypeOrBuilder() {
-    return getInfoType();
+    return infoType_ == null ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance() : infoType_;
   }
 
   public static final int COUNT_FIELD_NUMBER = 2;
-  private long count_;
+  private long count_ = 0L;
   /**
    *
    *
@@ -339,14 +339,13 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (infoTypeBuilder_ == null) {
-        infoType_ = null;
-      } else {
-        infoType_ = null;
+      bitField0_ = 0;
+      infoType_ = null;
+      if (infoTypeBuilder_ != null) {
+        infoTypeBuilder_.dispose();
         infoTypeBuilder_ = null;
       }
       count_ = 0L;
-
       return this;
     }
 
@@ -374,14 +373,21 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.InfoTypeStats buildPartial() {
       com.google.privacy.dlp.v2.InfoTypeStats result =
           new com.google.privacy.dlp.v2.InfoTypeStats(this);
-      if (infoTypeBuilder_ == null) {
-        result.infoType_ = infoType_;
-      } else {
-        result.infoType_ = infoTypeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.count_ = count_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.InfoTypeStats result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.infoType_ = infoTypeBuilder_ == null ? infoType_ : infoTypeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.count_ = count_;
+      }
     }
 
     @java.lang.Override
@@ -464,13 +470,13 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getInfoTypeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 count_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -490,6 +496,8 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.privacy.dlp.v2.InfoType infoType_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.InfoType,
@@ -508,7 +516,7 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the infoType field is set.
      */
     public boolean hasInfoType() {
-      return infoTypeBuilder_ != null || infoType_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -545,11 +553,11 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         infoType_ = value;
-        onChanged();
       } else {
         infoTypeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -564,11 +572,11 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
     public Builder setInfoType(com.google.privacy.dlp.v2.InfoType.Builder builderForValue) {
       if (infoTypeBuilder_ == null) {
         infoType_ = builderForValue.build();
-        onChanged();
       } else {
         infoTypeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -582,19 +590,18 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeInfoType(com.google.privacy.dlp.v2.InfoType value) {
       if (infoTypeBuilder_ == null) {
-        if (infoType_ != null) {
-          infoType_ =
-              com.google.privacy.dlp.v2.InfoType.newBuilder(infoType_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && infoType_ != null
+            && infoType_ != com.google.privacy.dlp.v2.InfoType.getDefaultInstance()) {
+          getInfoTypeBuilder().mergeFrom(value);
         } else {
           infoType_ = value;
         }
-        onChanged();
       } else {
         infoTypeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -607,14 +614,13 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
      */
     public Builder clearInfoType() {
-      if (infoTypeBuilder_ == null) {
-        infoType_ = null;
-        onChanged();
-      } else {
-        infoType_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      infoType_ = null;
+      if (infoTypeBuilder_ != null) {
+        infoTypeBuilder_.dispose();
         infoTypeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -627,7 +633,7 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
      */
     public com.google.privacy.dlp.v2.InfoType.Builder getInfoTypeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getInfoTypeFieldBuilder().getBuilder();
     }
@@ -706,6 +712,7 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
     public Builder setCount(long value) {
 
       count_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -721,7 +728,7 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       count_ = 0L;
       onChanged();
       return this;

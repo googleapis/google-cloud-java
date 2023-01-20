@@ -115,7 +115,9 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.cloud.functions.v2alpha.StorageSourceOrBuilder
       getResolvedStorageSourceOrBuilder() {
-    return getResolvedStorageSource();
+    return resolvedStorageSource_ == null
+        ? com.google.cloud.functions.v2alpha.StorageSource.getDefaultInstance()
+        : resolvedStorageSource_;
   }
 
   public static final int RESOLVED_REPO_SOURCE_FIELD_NUMBER = 2;
@@ -166,7 +168,9 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.functions.v2alpha.RepoSourceOrBuilder getResolvedRepoSourceOrBuilder() {
-    return getResolvedRepoSource();
+    return resolvedRepoSource_ == null
+        ? com.google.cloud.functions.v2alpha.RepoSource.getDefaultInstance()
+        : resolvedRepoSource_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -387,16 +391,15 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (resolvedStorageSourceBuilder_ == null) {
-        resolvedStorageSource_ = null;
-      } else {
-        resolvedStorageSource_ = null;
+      bitField0_ = 0;
+      resolvedStorageSource_ = null;
+      if (resolvedStorageSourceBuilder_ != null) {
+        resolvedStorageSourceBuilder_.dispose();
         resolvedStorageSourceBuilder_ = null;
       }
-      if (resolvedRepoSourceBuilder_ == null) {
-        resolvedRepoSource_ = null;
-      } else {
-        resolvedRepoSource_ = null;
+      resolvedRepoSource_ = null;
+      if (resolvedRepoSourceBuilder_ != null) {
+        resolvedRepoSourceBuilder_.dispose();
         resolvedRepoSourceBuilder_ = null;
       }
       return this;
@@ -426,18 +429,27 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.functions.v2alpha.SourceProvenance buildPartial() {
       com.google.cloud.functions.v2alpha.SourceProvenance result =
           new com.google.cloud.functions.v2alpha.SourceProvenance(this);
-      if (resolvedStorageSourceBuilder_ == null) {
-        result.resolvedStorageSource_ = resolvedStorageSource_;
-      } else {
-        result.resolvedStorageSource_ = resolvedStorageSourceBuilder_.build();
-      }
-      if (resolvedRepoSourceBuilder_ == null) {
-        result.resolvedRepoSource_ = resolvedRepoSource_;
-      } else {
-        result.resolvedRepoSource_ = resolvedRepoSourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.functions.v2alpha.SourceProvenance result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.resolvedStorageSource_ =
+            resolvedStorageSourceBuilder_ == null
+                ? resolvedStorageSource_
+                : resolvedStorageSourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.resolvedRepoSource_ =
+            resolvedRepoSourceBuilder_ == null
+                ? resolvedRepoSource_
+                : resolvedRepoSourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -522,14 +534,14 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     getResolvedStorageSourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getResolvedRepoSourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -548,6 +560,8 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.functions.v2alpha.StorageSource resolvedStorageSource_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -568,7 +582,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      * @return Whether the resolvedStorageSource field is set.
      */
     public boolean hasResolvedStorageSource() {
-      return resolvedStorageSourceBuilder_ != null || resolvedStorageSource_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -608,11 +622,11 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         resolvedStorageSource_ = value;
-        onChanged();
       } else {
         resolvedStorageSourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -629,11 +643,11 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
         com.google.cloud.functions.v2alpha.StorageSource.Builder builderForValue) {
       if (resolvedStorageSourceBuilder_ == null) {
         resolvedStorageSource_ = builderForValue.build();
-        onChanged();
       } else {
         resolvedStorageSourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -649,19 +663,19 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
     public Builder mergeResolvedStorageSource(
         com.google.cloud.functions.v2alpha.StorageSource value) {
       if (resolvedStorageSourceBuilder_ == null) {
-        if (resolvedStorageSource_ != null) {
-          resolvedStorageSource_ =
-              com.google.cloud.functions.v2alpha.StorageSource.newBuilder(resolvedStorageSource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && resolvedStorageSource_ != null
+            && resolvedStorageSource_
+                != com.google.cloud.functions.v2alpha.StorageSource.getDefaultInstance()) {
+          getResolvedStorageSourceBuilder().mergeFrom(value);
         } else {
           resolvedStorageSource_ = value;
         }
-        onChanged();
       } else {
         resolvedStorageSourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -675,14 +689,13 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.functions.v2alpha.StorageSource resolved_storage_source = 1;</code>
      */
     public Builder clearResolvedStorageSource() {
-      if (resolvedStorageSourceBuilder_ == null) {
-        resolvedStorageSource_ = null;
-        onChanged();
-      } else {
-        resolvedStorageSource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      resolvedStorageSource_ = null;
+      if (resolvedStorageSourceBuilder_ != null) {
+        resolvedStorageSourceBuilder_.dispose();
         resolvedStorageSourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -697,7 +710,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.functions.v2alpha.StorageSource.Builder
         getResolvedStorageSourceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getResolvedStorageSourceFieldBuilder().getBuilder();
     }
@@ -767,7 +780,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      * @return Whether the resolvedRepoSource field is set.
      */
     public boolean hasResolvedRepoSource() {
-      return resolvedRepoSourceBuilder_ != null || resolvedRepoSource_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -806,11 +819,11 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         resolvedRepoSource_ = value;
-        onChanged();
       } else {
         resolvedRepoSourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -827,11 +840,11 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
         com.google.cloud.functions.v2alpha.RepoSource.Builder builderForValue) {
       if (resolvedRepoSourceBuilder_ == null) {
         resolvedRepoSource_ = builderForValue.build();
-        onChanged();
       } else {
         resolvedRepoSourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -846,19 +859,19 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeResolvedRepoSource(com.google.cloud.functions.v2alpha.RepoSource value) {
       if (resolvedRepoSourceBuilder_ == null) {
-        if (resolvedRepoSource_ != null) {
-          resolvedRepoSource_ =
-              com.google.cloud.functions.v2alpha.RepoSource.newBuilder(resolvedRepoSource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && resolvedRepoSource_ != null
+            && resolvedRepoSource_
+                != com.google.cloud.functions.v2alpha.RepoSource.getDefaultInstance()) {
+          getResolvedRepoSourceBuilder().mergeFrom(value);
         } else {
           resolvedRepoSource_ = value;
         }
-        onChanged();
       } else {
         resolvedRepoSourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -872,14 +885,13 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.functions.v2alpha.RepoSource resolved_repo_source = 2;</code>
      */
     public Builder clearResolvedRepoSource() {
-      if (resolvedRepoSourceBuilder_ == null) {
-        resolvedRepoSource_ = null;
-        onChanged();
-      } else {
-        resolvedRepoSource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      resolvedRepoSource_ = null;
+      if (resolvedRepoSourceBuilder_ != null) {
+        resolvedRepoSourceBuilder_.dispose();
         resolvedRepoSourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -893,7 +905,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.functions.v2alpha.RepoSource resolved_repo_source = 2;</code>
      */
     public com.google.cloud.functions.v2alpha.RepoSource.Builder getResolvedRepoSourceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getResolvedRepoSourceFieldBuilder().getBuilder();
     }

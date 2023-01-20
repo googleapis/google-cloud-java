@@ -93,6 +93,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
                         com.google.cloud.edgecontainer.v1.ZoneMetadata.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.edgecontainer.v1.ZoneMetadata>
       availableZones_;
@@ -163,8 +164,10 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.edgecontainer.v1.ZoneMetadata getAvailableZonesOrDefault(
-      java.lang.String key, com.google.cloud.edgecontainer.v1.ZoneMetadata defaultValue) {
+  public /* nullable */ com.google.cloud.edgecontainer.v1.ZoneMetadata getAvailableZonesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.edgecontainer.v1.ZoneMetadata defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -423,6 +426,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableAvailableZones().clear();
       return this;
     }
@@ -451,11 +455,19 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.edgecontainer.v1.LocationMetadata buildPartial() {
       com.google.cloud.edgecontainer.v1.LocationMetadata result =
           new com.google.cloud.edgecontainer.v1.LocationMetadata(this);
-      int from_bitField0_ = bitField0_;
-      result.availableZones_ = internalGetAvailableZones();
-      result.availableZones_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.edgecontainer.v1.LocationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.availableZones_ = internalGetAvailableZones();
+        result.availableZones_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -505,6 +517,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.edgecontainer.v1.LocationMetadata.getDefaultInstance())
         return this;
       internalGetMutableAvailableZones().mergeFrom(other.internalGetAvailableZones());
+      bitField0_ |= 0x00000001;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -542,6 +555,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
                 internalGetMutableAvailableZones()
                     .getMutableMap()
                     .put(availableZones__.getKey(), availableZones__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -580,8 +594,6 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.edgecontainer.v1.ZoneMetadata>
         internalGetMutableAvailableZones() {
-      onChanged();
-      ;
       if (availableZones_ == null) {
         availableZones_ =
             com.google.protobuf.MapField.newMapField(AvailableZonesDefaultEntryHolder.defaultEntry);
@@ -589,6 +601,8 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       if (!availableZones_.isMutable()) {
         availableZones_ = availableZones_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return availableZones_;
     }
 
@@ -648,8 +662,10 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.edgecontainer.v1.ZoneMetadata getAvailableZonesOrDefault(
-        java.lang.String key, com.google.cloud.edgecontainer.v1.ZoneMetadata defaultValue) {
+    public /* nullable */ com.google.cloud.edgecontainer.v1.ZoneMetadata getAvailableZonesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.edgecontainer.v1.ZoneMetadata defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -683,6 +699,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearAvailableZones() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableAvailableZones().getMutableMap().clear();
       return this;
     }
@@ -708,6 +725,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.edgecontainer.v1.ZoneMetadata>
         getMutableAvailableZones() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableAvailableZones().getMutableMap();
     }
     /**
@@ -729,8 +747,8 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableAvailableZones().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -747,6 +765,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     public Builder putAllAvailableZones(
         java.util.Map<java.lang.String, com.google.cloud.edgecontainer.v1.ZoneMetadata> values) {
       internalGetMutableAvailableZones().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 

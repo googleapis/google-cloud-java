@@ -70,6 +70,8 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int TEXT_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList text_;
   /**
    *
@@ -159,6 +161,8 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int NUMBERS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.Internal.DoubleList numbers_;
   /**
    *
@@ -451,10 +455,10 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       text_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       numbers_ = emptyDoubleList();
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -482,7 +486,16 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.discoveryengine.v1beta.CustomAttribute buildPartial() {
       com.google.cloud.discoveryengine.v1beta.CustomAttribute result =
           new com.google.cloud.discoveryengine.v1beta.CustomAttribute(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.discoveryengine.v1beta.CustomAttribute result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         text_ = text_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -493,8 +506,10 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.numbers_ = numbers_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.discoveryengine.v1beta.CustomAttribute result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override
@@ -951,6 +966,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setNumbers(int index, double value) {
+
       ensureNumbersIsMutable();
       numbers_.setDouble(index, value);
       onChanged();
@@ -974,6 +990,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder addNumbers(double value) {
+
       ensureNumbersIsMutable();
       numbers_.addDouble(value);
       onChanged();

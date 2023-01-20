@@ -71,7 +71,9 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -179,11 +181,15 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.discoveryengine.v1beta.DocumentOrBuilder getDocumentOrBuilder() {
-    return getDocument();
+    return document_ == null
+        ? com.google.cloud.discoveryengine.v1beta.Document.getDefaultInstance()
+        : document_;
   }
 
   public static final int DOCUMENT_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object documentId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object documentId_ = "";
   /**
    *
    *
@@ -480,16 +486,14 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (documentBuilder_ == null) {
-        document_ = null;
-      } else {
-        document_ = null;
+      document_ = null;
+      if (documentBuilder_ != null) {
+        documentBuilder_.dispose();
         documentBuilder_ = null;
       }
       documentId_ = "";
-
       return this;
     }
 
@@ -518,15 +522,25 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.discoveryengine.v1beta.CreateDocumentRequest buildPartial() {
       com.google.cloud.discoveryengine.v1beta.CreateDocumentRequest result =
           new com.google.cloud.discoveryengine.v1beta.CreateDocumentRequest(this);
-      result.parent_ = parent_;
-      if (documentBuilder_ == null) {
-        result.document_ = document_;
-      } else {
-        result.document_ = documentBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.documentId_ = documentId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.discoveryengine.v1beta.CreateDocumentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.document_ = documentBuilder_ == null ? document_ : documentBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.documentId_ = documentId_;
+      }
     }
 
     @java.lang.Override
@@ -578,6 +592,7 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasDocument()) {
@@ -585,6 +600,7 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getDocumentId().isEmpty()) {
         documentId_ = other.documentId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -616,19 +632,19 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getDocumentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 documentId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -647,6 +663,8 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -718,8 +736,8 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -738,8 +756,8 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -763,8 +781,8 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -790,7 +808,7 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the document field is set.
      */
     public boolean hasDocument() {
-      return documentBuilder_ != null || document_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -833,11 +851,11 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         document_ = value;
-        onChanged();
       } else {
         documentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -856,11 +874,11 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
         com.google.cloud.discoveryengine.v1beta.Document.Builder builderForValue) {
       if (documentBuilder_ == null) {
         document_ = builderForValue.build();
-        onChanged();
       } else {
         documentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -877,19 +895,18 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeDocument(com.google.cloud.discoveryengine.v1beta.Document value) {
       if (documentBuilder_ == null) {
-        if (document_ != null) {
-          document_ =
-              com.google.cloud.discoveryengine.v1beta.Document.newBuilder(document_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && document_ != null
+            && document_ != com.google.cloud.discoveryengine.v1beta.Document.getDefaultInstance()) {
+          getDocumentBuilder().mergeFrom(value);
         } else {
           document_ = value;
         }
-        onChanged();
       } else {
         documentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -905,14 +922,13 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearDocument() {
-      if (documentBuilder_ == null) {
-        document_ = null;
-        onChanged();
-      } else {
-        document_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      document_ = null;
+      if (documentBuilder_ != null) {
+        documentBuilder_.dispose();
         documentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -928,7 +944,7 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.discoveryengine.v1beta.Document.Builder getDocumentBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDocumentFieldBuilder().getBuilder();
     }
@@ -1082,8 +1098,8 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       documentId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1112,8 +1128,8 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearDocumentId() {
-
       documentId_ = getDefaultInstance().getDocumentId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1147,8 +1163,8 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       documentId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

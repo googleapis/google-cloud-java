@@ -115,7 +115,9 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_CONNECTION_PROFILE_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object sourceConnectionProfileName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceConnectionProfileName_ = "";
   /**
    *
    *
@@ -509,8 +511,8 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       sourceConnectionProfileName_ = "";
-
       if (oracleSourceConfigBuilder_ != null) {
         oracleSourceConfigBuilder_.clear();
       }
@@ -546,24 +548,30 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datastream.v1alpha1.SourceConfig buildPartial() {
       com.google.cloud.datastream.v1alpha1.SourceConfig result =
           new com.google.cloud.datastream.v1alpha1.SourceConfig(this);
-      result.sourceConnectionProfileName_ = sourceConnectionProfileName_;
-      if (sourceStreamConfigCase_ == 100) {
-        if (oracleSourceConfigBuilder_ == null) {
-          result.sourceStreamConfig_ = sourceStreamConfig_;
-        } else {
-          result.sourceStreamConfig_ = oracleSourceConfigBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (sourceStreamConfigCase_ == 101) {
-        if (mysqlSourceConfigBuilder_ == null) {
-          result.sourceStreamConfig_ = sourceStreamConfig_;
-        } else {
-          result.sourceStreamConfig_ = mysqlSourceConfigBuilder_.build();
-        }
-      }
-      result.sourceStreamConfigCase_ = sourceStreamConfigCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1alpha1.SourceConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.sourceConnectionProfileName_ = sourceConnectionProfileName_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.datastream.v1alpha1.SourceConfig result) {
+      result.sourceStreamConfigCase_ = sourceStreamConfigCase_;
+      result.sourceStreamConfig_ = this.sourceStreamConfig_;
+      if (sourceStreamConfigCase_ == 100 && oracleSourceConfigBuilder_ != null) {
+        result.sourceStreamConfig_ = oracleSourceConfigBuilder_.build();
+      }
+      if (sourceStreamConfigCase_ == 101 && mysqlSourceConfigBuilder_ != null) {
+        result.sourceStreamConfig_ = mysqlSourceConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -614,6 +622,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getSourceConnectionProfileName().isEmpty()) {
         sourceConnectionProfileName_ = other.sourceConnectionProfileName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       switch (other.getSourceStreamConfigCase()) {
@@ -661,7 +670,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 sourceConnectionProfileName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 802:
@@ -708,6 +717,8 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object sourceConnectionProfileName_ = "";
     /**
@@ -773,8 +784,8 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       sourceConnectionProfileName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -791,8 +802,8 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSourceConnectionProfileName() {
-
       sourceConnectionProfileName_ = getDefaultInstance().getSourceConnectionProfileName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -814,8 +825,8 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sourceConnectionProfileName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1032,7 +1043,6 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       }
       sourceStreamConfigCase_ = 100;
       onChanged();
-      ;
       return oracleSourceConfigBuilder_;
     }
 
@@ -1248,7 +1258,6 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       }
       sourceStreamConfigCase_ = 101;
       onChanged();
-      ;
       return mysqlSourceConfigBuilder_;
     }
 

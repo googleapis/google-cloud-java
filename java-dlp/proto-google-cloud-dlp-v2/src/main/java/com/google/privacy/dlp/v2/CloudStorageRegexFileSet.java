@@ -95,7 +95,9 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
   }
 
   public static final int BUCKET_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object bucketName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object bucketName_ = "";
   /**
    *
    *
@@ -144,6 +146,8 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
   }
 
   public static final int INCLUDE_REGEX_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList includeRegex_;
   /**
    *
@@ -233,6 +237,8 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
   }
 
   public static final int EXCLUDE_REGEX_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList excludeRegex_;
   /**
    *
@@ -567,12 +573,12 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       bucketName_ = "";
-
       includeRegex_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      excludeRegex_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
+      excludeRegex_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -600,20 +606,33 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
     public com.google.privacy.dlp.v2.CloudStorageRegexFileSet buildPartial() {
       com.google.privacy.dlp.v2.CloudStorageRegexFileSet result =
           new com.google.privacy.dlp.v2.CloudStorageRegexFileSet(this);
-      int from_bitField0_ = bitField0_;
-      result.bucketName_ = bucketName_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        includeRegex_ = includeRegex_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.includeRegex_ = includeRegex_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        excludeRegex_ = excludeRegex_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.excludeRegex_ = excludeRegex_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.privacy.dlp.v2.CloudStorageRegexFileSet result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        includeRegex_ = includeRegex_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.includeRegex_ = includeRegex_;
+      if (((bitField0_ & 0x00000004) != 0)) {
+        excludeRegex_ = excludeRegex_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.excludeRegex_ = excludeRegex_;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.CloudStorageRegexFileSet result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.bucketName_ = bucketName_;
+      }
     }
 
     @java.lang.Override
@@ -664,12 +683,13 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
         return this;
       if (!other.getBucketName().isEmpty()) {
         bucketName_ = other.bucketName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.includeRegex_.isEmpty()) {
         if (includeRegex_.isEmpty()) {
           includeRegex_ = other.includeRegex_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureIncludeRegexIsMutable();
           includeRegex_.addAll(other.includeRegex_);
@@ -679,7 +699,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       if (!other.excludeRegex_.isEmpty()) {
         if (excludeRegex_.isEmpty()) {
           excludeRegex_ = other.excludeRegex_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureExcludeRegexIsMutable();
           excludeRegex_.addAll(other.excludeRegex_);
@@ -715,7 +735,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
             case 10:
               {
                 bucketName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -812,8 +832,8 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       bucketName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -829,8 +849,8 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearBucketName() {
-
       bucketName_ = getDefaultInstance().getBucketName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -851,8 +871,8 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       bucketName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -861,9 +881,9 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureIncludeRegexIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         includeRegex_ = new com.google.protobuf.LazyStringArrayList(includeRegex_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1054,7 +1074,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      */
     public Builder clearIncludeRegex() {
       includeRegex_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1092,9 +1112,9 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureExcludeRegexIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         excludeRegex_ = new com.google.protobuf.LazyStringArrayList(excludeRegex_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1269,7 +1289,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
      */
     public Builder clearExcludeRegex() {
       excludeRegex_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }

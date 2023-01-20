@@ -110,10 +110,12 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getDetailsOrBuilder() {
-    return getDetails();
+    return details_ == null ? com.google.rpc.Status.getDefaultInstance() : details_;
   }
 
   public static final int TIMESTAMPS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.protobuf.Timestamp> timestamps_;
   /**
    *
@@ -393,10 +395,10 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (detailsBuilder_ == null) {
-        details_ = null;
-      } else {
-        details_ = null;
+      bitField0_ = 0;
+      details_ = null;
+      if (detailsBuilder_ != null) {
+        detailsBuilder_.dispose();
         detailsBuilder_ = null;
       }
       if (timestampsBuilder_ == null) {
@@ -405,7 +407,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         timestamps_ = null;
         timestampsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -432,23 +434,31 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.privacy.dlp.v2.Error buildPartial() {
       com.google.privacy.dlp.v2.Error result = new com.google.privacy.dlp.v2.Error(this);
-      int from_bitField0_ = bitField0_;
-      if (detailsBuilder_ == null) {
-        result.details_ = details_;
-      } else {
-        result.details_ = detailsBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.privacy.dlp.v2.Error result) {
       if (timestampsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           timestamps_ = java.util.Collections.unmodifiableList(timestamps_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.timestamps_ = timestamps_;
       } else {
         result.timestamps_ = timestampsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.Error result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.details_ = detailsBuilder_ == null ? details_ : detailsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -503,7 +513,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         if (!other.timestamps_.isEmpty()) {
           if (timestamps_.isEmpty()) {
             timestamps_ = other.timestamps_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureTimestampsIsMutable();
             timestamps_.addAll(other.timestamps_);
@@ -516,7 +526,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
             timestampsBuilder_.dispose();
             timestampsBuilder_ = null;
             timestamps_ = other.timestamps_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             timestampsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTimestampsFieldBuilder()
@@ -555,7 +565,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getDetailsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -605,7 +615,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the details field is set.
      */
     public boolean hasDetails() {
-      return detailsBuilder_ != null || details_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -640,11 +650,11 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         details_ = value;
-        onChanged();
       } else {
         detailsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -659,11 +669,11 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     public Builder setDetails(com.google.rpc.Status.Builder builderForValue) {
       if (detailsBuilder_ == null) {
         details_ = builderForValue.build();
-        onChanged();
       } else {
         detailsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -677,16 +687,18 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDetails(com.google.rpc.Status value) {
       if (detailsBuilder_ == null) {
-        if (details_ != null) {
-          details_ = com.google.rpc.Status.newBuilder(details_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && details_ != null
+            && details_ != com.google.rpc.Status.getDefaultInstance()) {
+          getDetailsBuilder().mergeFrom(value);
         } else {
           details_ = value;
         }
-        onChanged();
       } else {
         detailsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -699,14 +711,13 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status details = 1;</code>
      */
     public Builder clearDetails() {
-      if (detailsBuilder_ == null) {
-        details_ = null;
-        onChanged();
-      } else {
-        details_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      details_ = null;
+      if (detailsBuilder_ != null) {
+        detailsBuilder_.dispose();
         detailsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -719,7 +730,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status details = 1;</code>
      */
     public com.google.rpc.Status.Builder getDetailsBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDetailsFieldBuilder().getBuilder();
     }
@@ -766,9 +777,9 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureTimestampsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         timestamps_ = new java.util.ArrayList<com.google.protobuf.Timestamp>(timestamps_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -981,7 +992,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTimestamps() {
       if (timestampsBuilder_ == null) {
         timestamps_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         timestampsBuilder_.clear();
@@ -1102,7 +1113,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.Timestamp,
                 com.google.protobuf.Timestamp.Builder,
                 com.google.protobuf.TimestampOrBuilder>(
-                timestamps_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                timestamps_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         timestamps_ = null;
       }
       return timestampsBuilder_;

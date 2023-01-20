@@ -116,7 +116,9 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrBuilder getGroupOrBuilder() {
-    return getGroup();
+    return group_ == null
+        ? com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.getDefaultInstance()
+        : group_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -324,10 +326,10 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (groupBuilder_ == null) {
-        group_ = null;
-      } else {
-        group_ = null;
+      bitField0_ = 0;
+      group_ = null;
+      if (groupBuilder_ != null) {
+        groupBuilder_.dispose();
         groupBuilder_ = null;
       }
       return this;
@@ -359,13 +361,19 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
     public com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest buildPartial() {
       com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest result =
           new com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest(this);
-      if (groupBuilder_ == null) {
-        result.group_ = group_;
-      } else {
-        result.group_ = groupBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.group_ = groupBuilder_ == null ? group_ : groupBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -449,7 +457,7 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 input.readMessage(getGroupFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -468,6 +476,8 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup group_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -489,7 +499,7 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the group field is set.
      */
     public boolean hasGroup() {
-      return groupBuilder_ != null || group_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -530,11 +540,11 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         group_ = value;
-        onChanged();
       } else {
         groupBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -552,11 +562,11 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
         com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.Builder builderForValue) {
       if (groupBuilder_ == null) {
         group_ = builderForValue.build();
-        onChanged();
       } else {
         groupBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -572,19 +582,20 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeGroup(com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup value) {
       if (groupBuilder_ == null) {
-        if (group_ != null) {
-          group_ =
-              com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.newBuilder(group_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && group_ != null
+            && group_
+                != com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup
+                    .getDefaultInstance()) {
+          getGroupBuilder().mergeFrom(value);
         } else {
           group_ = value;
         }
-        onChanged();
       } else {
         groupBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -599,14 +610,13 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearGroup() {
-      if (groupBuilder_ == null) {
-        group_ = null;
-        onChanged();
-      } else {
-        group_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      group_ = null;
+      if (groupBuilder_ != null) {
+        groupBuilder_.dispose();
         groupBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -621,7 +631,7 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.Builder getGroupBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getGroupFieldBuilder().getBuilder();
     }

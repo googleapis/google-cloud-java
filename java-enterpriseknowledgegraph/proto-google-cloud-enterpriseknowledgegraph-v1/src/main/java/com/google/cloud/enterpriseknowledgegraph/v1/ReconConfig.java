@@ -136,7 +136,7 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ENABLE_GEOCODING_SEPARATION_FIELD_NUMBER = 100;
-    private boolean enableGeocodingSeparation_;
+    private boolean enableGeocodingSeparation_ = false;
     /**
      *
      *
@@ -361,8 +361,8 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         enableGeocodingSeparation_ = false;
-
         return this;
       }
 
@@ -392,9 +392,19 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.Options buildPartial() {
         com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.Options result =
             new com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.Options(this);
-        result.enableGeocodingSeparation_ = enableGeocodingSeparation_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.Options result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enableGeocodingSeparation_ = enableGeocodingSeparation_;
+        }
       }
 
       @java.lang.Override
@@ -480,7 +490,7 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
               case 800:
                 {
                   enableGeocodingSeparation_ = input.readBool();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 800
               default:
@@ -499,6 +509,8 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private boolean enableGeocodingSeparation_;
       /**
@@ -541,6 +553,7 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       public Builder setEnableGeocodingSeparation(boolean value) {
 
         enableGeocodingSeparation_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -561,7 +574,7 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearEnableGeocodingSeparation() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         enableGeocodingSeparation_ = false;
         onChanged();
         return this;
@@ -744,7 +757,9 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int MODEL_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object modelName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object modelName_ = "";
     /**
      *
      *
@@ -795,7 +810,9 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VERSION_TAG_FIELD_NUMBER = 2;
-    private volatile java.lang.Object versionTag_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object versionTag_ = "";
     /**
      *
      *
@@ -1056,10 +1073,9 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         modelName_ = "";
-
         versionTag_ = "";
-
         return this;
       }
 
@@ -1090,10 +1106,22 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.ModelConfig buildPartial() {
         com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.ModelConfig result =
             new com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.ModelConfig(this);
-        result.modelName_ = modelName_;
-        result.versionTag_ = versionTag_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.ModelConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.modelName_ = modelName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.versionTag_ = versionTag_;
+        }
       }
 
       @java.lang.Override
@@ -1149,10 +1177,12 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance()) return this;
         if (!other.getModelName().isEmpty()) {
           modelName_ = other.modelName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getVersionTag().isEmpty()) {
           versionTag_ = other.versionTag_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1184,13 +1214,13 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   modelName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   versionTag_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -1209,6 +1239,8 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object modelName_ = "";
       /**
@@ -1274,8 +1306,8 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         modelName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1292,8 +1324,8 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearModelName() {
-
         modelName_ = getDefaultInstance().getModelName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1315,8 +1347,8 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         modelName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1385,8 +1417,8 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         versionTag_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1403,8 +1435,8 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearVersionTag() {
-
         versionTag_ = getDefaultInstance().getVersionTag();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1426,8 +1458,8 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         versionTag_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1718,7 +1750,9 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.OptionsOrBuilder
       getOptionsOrBuilder() {
-    return getOptions();
+    return options_ == null
+        ? com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.Options.getDefaultInstance()
+        : options_;
   }
 
   public static final int MODEL_CONFIG_FIELD_NUMBER = 4;
@@ -1770,7 +1804,9 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.ModelConfigOrBuilder
       getModelConfigOrBuilder() {
-    return getModelConfig();
+    return modelConfig_ == null
+        ? com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.ModelConfig.getDefaultInstance()
+        : modelConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2041,22 +2077,21 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (connectedComponentsConfigBuilder_ != null) {
         connectedComponentsConfigBuilder_.clear();
       }
       if (affinityClusteringConfigBuilder_ != null) {
         affinityClusteringConfigBuilder_.clear();
       }
-      if (optionsBuilder_ == null) {
-        options_ = null;
-      } else {
-        options_ = null;
+      options_ = null;
+      if (optionsBuilder_ != null) {
+        optionsBuilder_.dispose();
         optionsBuilder_ = null;
       }
-      if (modelConfigBuilder_ == null) {
-        modelConfig_ = null;
-      } else {
-        modelConfig_ = null;
+      modelConfig_ = null;
+      if (modelConfigBuilder_ != null) {
+        modelConfigBuilder_.dispose();
         modelConfigBuilder_ = null;
       }
       clusteringConfigCase_ = 0;
@@ -2088,33 +2123,35 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig buildPartial() {
       com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig result =
           new com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig(this);
-      if (clusteringConfigCase_ == 1) {
-        if (connectedComponentsConfigBuilder_ == null) {
-          result.clusteringConfig_ = clusteringConfig_;
-        } else {
-          result.clusteringConfig_ = connectedComponentsConfigBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (clusteringConfigCase_ == 2) {
-        if (affinityClusteringConfigBuilder_ == null) {
-          result.clusteringConfig_ = clusteringConfig_;
-        } else {
-          result.clusteringConfig_ = affinityClusteringConfigBuilder_.build();
-        }
-      }
-      if (optionsBuilder_ == null) {
-        result.options_ = options_;
-      } else {
-        result.options_ = optionsBuilder_.build();
-      }
-      if (modelConfigBuilder_ == null) {
-        result.modelConfig_ = modelConfig_;
-      } else {
-        result.modelConfig_ = modelConfigBuilder_.build();
-      }
-      result.clusteringConfigCase_ = clusteringConfigCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.options_ = optionsBuilder_ == null ? options_ : optionsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.modelConfig_ =
+            modelConfigBuilder_ == null ? modelConfig_ : modelConfigBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig result) {
+      result.clusteringConfigCase_ = clusteringConfigCase_;
+      result.clusteringConfig_ = this.clusteringConfig_;
+      if (clusteringConfigCase_ == 1 && connectedComponentsConfigBuilder_ != null) {
+        result.clusteringConfig_ = connectedComponentsConfigBuilder_.build();
+      }
+      if (clusteringConfigCase_ == 2 && affinityClusteringConfigBuilder_ != null) {
+        result.clusteringConfig_ = affinityClusteringConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2228,13 +2265,13 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
             case 26:
               {
                 input.readMessage(getOptionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getModelConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -2267,6 +2304,8 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.enterpriseknowledgegraph.v1.ConnectedComponentsConfig,
@@ -2509,7 +2548,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       }
       clusteringConfigCase_ = 1;
       onChanged();
-      ;
       return connectedComponentsConfigBuilder_;
     }
 
@@ -2754,7 +2792,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       }
       clusteringConfigCase_ = 2;
       onChanged();
-      ;
       return affinityClusteringConfigBuilder_;
     }
 
@@ -2776,7 +2813,7 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the options field is set.
      */
     public boolean hasOptions() {
-      return optionsBuilder_ != null || options_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2814,11 +2851,11 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         options_ = value;
-        onChanged();
       } else {
         optionsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2834,11 +2871,11 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.Options.Builder builderForValue) {
       if (optionsBuilder_ == null) {
         options_ = builderForValue.build();
-        onChanged();
       } else {
         optionsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2853,19 +2890,20 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeOptions(
         com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.Options value) {
       if (optionsBuilder_ == null) {
-        if (options_ != null) {
-          options_ =
-              com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.Options.newBuilder(options_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && options_ != null
+            && options_
+                != com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.Options
+                    .getDefaultInstance()) {
+          getOptionsBuilder().mergeFrom(value);
         } else {
           options_ = value;
         }
-        onChanged();
       } else {
         optionsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2878,14 +2916,13 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.Options options = 3;</code>
      */
     public Builder clearOptions() {
-      if (optionsBuilder_ == null) {
-        options_ = null;
-        onChanged();
-      } else {
-        options_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      options_ = null;
+      if (optionsBuilder_ != null) {
+        optionsBuilder_.dispose();
         optionsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2899,7 +2936,7 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.Options.Builder
         getOptionsBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getOptionsFieldBuilder().getBuilder();
     }
@@ -2967,7 +3004,7 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the modelConfig field is set.
      */
     public boolean hasModelConfig() {
-      return modelConfigBuilder_ != null || modelConfig_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -3008,11 +3045,11 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         modelConfig_ = value;
-        onChanged();
       } else {
         modelConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3030,11 +3067,11 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (modelConfigBuilder_ == null) {
         modelConfig_ = builderForValue.build();
-        onChanged();
       } else {
         modelConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3050,20 +3087,20 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeModelConfig(
         com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.ModelConfig value) {
       if (modelConfigBuilder_ == null) {
-        if (modelConfig_ != null) {
-          modelConfig_ =
-              com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.ModelConfig.newBuilder(
-                      modelConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && modelConfig_ != null
+            && modelConfig_
+                != com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.ModelConfig
+                    .getDefaultInstance()) {
+          getModelConfigBuilder().mergeFrom(value);
         } else {
           modelConfig_ = value;
         }
-        onChanged();
       } else {
         modelConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3077,14 +3114,13 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearModelConfig() {
-      if (modelConfigBuilder_ == null) {
-        modelConfig_ = null;
-        onChanged();
-      } else {
-        modelConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      modelConfig_ = null;
+      if (modelConfigBuilder_ != null) {
+        modelConfigBuilder_.dispose();
         modelConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3099,7 +3135,7 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.ModelConfig.Builder
         getModelConfigBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getModelConfigFieldBuilder().getBuilder();
     }

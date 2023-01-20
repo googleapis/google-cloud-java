@@ -72,7 +72,9 @@ public final class MoveTableToDatabaseRequest extends com.google.protobuf.Genera
   }
 
   public static final int SERVICE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object service_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object service_ = "";
   /**
    *
    *
@@ -129,7 +131,9 @@ public final class MoveTableToDatabaseRequest extends com.google.protobuf.Genera
   }
 
   public static final int TABLE_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object tableName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tableName_ = "";
   /**
    *
    *
@@ -178,7 +182,9 @@ public final class MoveTableToDatabaseRequest extends com.google.protobuf.Genera
   }
 
   public static final int DB_NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object dbName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dbName_ = "";
   /**
    *
    *
@@ -227,7 +233,9 @@ public final class MoveTableToDatabaseRequest extends com.google.protobuf.Genera
   }
 
   public static final int DESTINATION_DB_NAME_FIELD_NUMBER = 4;
-  private volatile java.lang.Object destinationDbName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object destinationDbName_ = "";
   /**
    *
    *
@@ -501,14 +509,11 @@ public final class MoveTableToDatabaseRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       service_ = "";
-
       tableName_ = "";
-
       dbName_ = "";
-
       destinationDbName_ = "";
-
       return this;
     }
 
@@ -537,12 +542,28 @@ public final class MoveTableToDatabaseRequest extends com.google.protobuf.Genera
     public com.google.cloud.metastore.v1alpha.MoveTableToDatabaseRequest buildPartial() {
       com.google.cloud.metastore.v1alpha.MoveTableToDatabaseRequest result =
           new com.google.cloud.metastore.v1alpha.MoveTableToDatabaseRequest(this);
-      result.service_ = service_;
-      result.tableName_ = tableName_;
-      result.dbName_ = dbName_;
-      result.destinationDbName_ = destinationDbName_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.metastore.v1alpha.MoveTableToDatabaseRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.service_ = service_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.tableName_ = tableName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.dbName_ = dbName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.destinationDbName_ = destinationDbName_;
+      }
     }
 
     @java.lang.Override
@@ -594,18 +615,22 @@ public final class MoveTableToDatabaseRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getService().isEmpty()) {
         service_ = other.service_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTableName().isEmpty()) {
         tableName_ = other.tableName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDbName().isEmpty()) {
         dbName_ = other.dbName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getDestinationDbName().isEmpty()) {
         destinationDbName_ = other.destinationDbName_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -637,25 +662,25 @@ public final class MoveTableToDatabaseRequest extends com.google.protobuf.Genera
             case 10:
               {
                 service_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 tableName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 dbName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 destinationDbName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -674,6 +699,8 @@ public final class MoveTableToDatabaseRequest extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object service_ = "";
     /**
@@ -748,8 +775,8 @@ public final class MoveTableToDatabaseRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       service_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -769,8 +796,8 @@ public final class MoveTableToDatabaseRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearService() {
-
       service_ = getDefaultInstance().getService();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -795,8 +822,8 @@ public final class MoveTableToDatabaseRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       service_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -862,8 +889,8 @@ public final class MoveTableToDatabaseRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       tableName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -879,8 +906,8 @@ public final class MoveTableToDatabaseRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearTableName() {
-
       tableName_ = getDefaultInstance().getTableName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -901,8 +928,8 @@ public final class MoveTableToDatabaseRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       tableName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -968,8 +995,8 @@ public final class MoveTableToDatabaseRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       dbName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -985,8 +1012,8 @@ public final class MoveTableToDatabaseRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearDbName() {
-
       dbName_ = getDefaultInstance().getDbName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1007,8 +1034,8 @@ public final class MoveTableToDatabaseRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dbName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1074,8 +1101,8 @@ public final class MoveTableToDatabaseRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       destinationDbName_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1091,8 +1118,8 @@ public final class MoveTableToDatabaseRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearDestinationDbName() {
-
       destinationDbName_ = getDefaultInstance().getDestinationDbName();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1113,8 +1140,8 @@ public final class MoveTableToDatabaseRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       destinationDbName_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

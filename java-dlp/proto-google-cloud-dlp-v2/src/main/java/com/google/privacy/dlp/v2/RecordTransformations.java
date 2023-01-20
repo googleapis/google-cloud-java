@@ -70,6 +70,8 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
   }
 
   public static final int FIELD_TRANSFORMATIONS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.FieldTransformation> fieldTransformations_;
   /**
    *
@@ -141,6 +143,8 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
   }
 
   public static final int RECORD_SUPPRESSIONS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.RecordSuppression> recordSuppressions_;
   /**
    *
@@ -428,6 +432,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (fieldTransformationsBuilder_ == null) {
         fieldTransformations_ = java.util.Collections.emptyList();
       } else {
@@ -469,7 +474,16 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
     public com.google.privacy.dlp.v2.RecordTransformations buildPartial() {
       com.google.privacy.dlp.v2.RecordTransformations result =
           new com.google.privacy.dlp.v2.RecordTransformations(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.privacy.dlp.v2.RecordTransformations result) {
       if (fieldTransformationsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           fieldTransformations_ = java.util.Collections.unmodifiableList(fieldTransformations_);
@@ -488,8 +502,10 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
       } else {
         result.recordSuppressions_ = recordSuppressionsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.RecordTransformations result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

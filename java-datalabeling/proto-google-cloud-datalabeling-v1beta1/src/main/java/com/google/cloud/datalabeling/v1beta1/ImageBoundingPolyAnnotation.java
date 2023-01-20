@@ -227,7 +227,9 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpecOrBuilder
       getAnnotationSpecOrBuilder() {
-    return getAnnotationSpec();
+    return annotationSpec_ == null
+        ? com.google.cloud.datalabeling.v1beta1.AnnotationSpec.getDefaultInstance()
+        : annotationSpec_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -476,16 +478,16 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (boundingPolyBuilder_ != null) {
         boundingPolyBuilder_.clear();
       }
       if (normalizedBoundingPolyBuilder_ != null) {
         normalizedBoundingPolyBuilder_.clear();
       }
-      if (annotationSpecBuilder_ == null) {
-        annotationSpec_ = null;
-      } else {
-        annotationSpec_ = null;
+      annotationSpec_ = null;
+      if (annotationSpecBuilder_ != null) {
+        annotationSpecBuilder_.dispose();
         annotationSpecBuilder_ = null;
       }
       boundedAreaCase_ = 0;
@@ -518,28 +520,33 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
     public com.google.cloud.datalabeling.v1beta1.ImageBoundingPolyAnnotation buildPartial() {
       com.google.cloud.datalabeling.v1beta1.ImageBoundingPolyAnnotation result =
           new com.google.cloud.datalabeling.v1beta1.ImageBoundingPolyAnnotation(this);
-      if (boundedAreaCase_ == 2) {
-        if (boundingPolyBuilder_ == null) {
-          result.boundedArea_ = boundedArea_;
-        } else {
-          result.boundedArea_ = boundingPolyBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (boundedAreaCase_ == 3) {
-        if (normalizedBoundingPolyBuilder_ == null) {
-          result.boundedArea_ = boundedArea_;
-        } else {
-          result.boundedArea_ = normalizedBoundingPolyBuilder_.build();
-        }
-      }
-      if (annotationSpecBuilder_ == null) {
-        result.annotationSpec_ = annotationSpec_;
-      } else {
-        result.annotationSpec_ = annotationSpecBuilder_.build();
-      }
-      result.boundedAreaCase_ = boundedAreaCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datalabeling.v1beta1.ImageBoundingPolyAnnotation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.annotationSpec_ =
+            annotationSpecBuilder_ == null ? annotationSpec_ : annotationSpecBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.datalabeling.v1beta1.ImageBoundingPolyAnnotation result) {
+      result.boundedAreaCase_ = boundedAreaCase_;
+      result.boundedArea_ = this.boundedArea_;
+      if (boundedAreaCase_ == 2 && boundingPolyBuilder_ != null) {
+        result.boundedArea_ = boundingPolyBuilder_.build();
+      }
+      if (boundedAreaCase_ == 3 && normalizedBoundingPolyBuilder_ != null) {
+        result.boundedArea_ = normalizedBoundingPolyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -638,7 +645,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
             case 10:
               {
                 input.readMessage(getAnnotationSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
@@ -684,6 +691,8 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.BoundingPoly,
@@ -824,7 +833,6 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
       }
       boundedAreaCase_ = 2;
       onChanged();
-      ;
       return boundingPolyBuilder_;
     }
 
@@ -997,7 +1005,6 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
       }
       boundedAreaCase_ = 3;
       onChanged();
-      ;
       return normalizedBoundingPolyBuilder_;
     }
 
@@ -1019,7 +1026,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
      * @return Whether the annotationSpec field is set.
      */
     public boolean hasAnnotationSpec() {
-      return annotationSpecBuilder_ != null || annotationSpec_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1056,11 +1063,11 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         annotationSpec_ = value;
-        onChanged();
       } else {
         annotationSpecBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1076,11 +1083,11 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
         com.google.cloud.datalabeling.v1beta1.AnnotationSpec.Builder builderForValue) {
       if (annotationSpecBuilder_ == null) {
         annotationSpec_ = builderForValue.build();
-        onChanged();
       } else {
         annotationSpecBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1094,19 +1101,19 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
      */
     public Builder mergeAnnotationSpec(com.google.cloud.datalabeling.v1beta1.AnnotationSpec value) {
       if (annotationSpecBuilder_ == null) {
-        if (annotationSpec_ != null) {
-          annotationSpec_ =
-              com.google.cloud.datalabeling.v1beta1.AnnotationSpec.newBuilder(annotationSpec_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && annotationSpec_ != null
+            && annotationSpec_
+                != com.google.cloud.datalabeling.v1beta1.AnnotationSpec.getDefaultInstance()) {
+          getAnnotationSpecBuilder().mergeFrom(value);
         } else {
           annotationSpec_ = value;
         }
-        onChanged();
       } else {
         annotationSpecBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1119,14 +1126,13 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
      */
     public Builder clearAnnotationSpec() {
-      if (annotationSpecBuilder_ == null) {
-        annotationSpec_ = null;
-        onChanged();
-      } else {
-        annotationSpec_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      annotationSpec_ = null;
+      if (annotationSpecBuilder_ != null) {
+        annotationSpecBuilder_.dispose();
         annotationSpecBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1139,7 +1145,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
      */
     public com.google.cloud.datalabeling.v1beta1.AnnotationSpec.Builder getAnnotationSpecBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getAnnotationSpecFieldBuilder().getBuilder();
     }

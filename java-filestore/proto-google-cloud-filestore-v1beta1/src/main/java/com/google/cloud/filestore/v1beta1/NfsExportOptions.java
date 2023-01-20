@@ -388,6 +388,8 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int IP_RANGES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList ipRanges_;
   /**
    *
@@ -477,7 +479,7 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ACCESS_MODE_FIELD_NUMBER = 2;
-  private int accessMode_;
+  private int accessMode_ = 0;
   /**
    *
    *
@@ -510,16 +512,15 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.filestore.v1beta1.NfsExportOptions.AccessMode getAccessMode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.filestore.v1beta1.NfsExportOptions.AccessMode result =
-        com.google.cloud.filestore.v1beta1.NfsExportOptions.AccessMode.valueOf(accessMode_);
+        com.google.cloud.filestore.v1beta1.NfsExportOptions.AccessMode.forNumber(accessMode_);
     return result == null
         ? com.google.cloud.filestore.v1beta1.NfsExportOptions.AccessMode.UNRECOGNIZED
         : result;
   }
 
   public static final int SQUASH_MODE_FIELD_NUMBER = 3;
-  private int squashMode_;
+  private int squashMode_ = 0;
   /**
    *
    *
@@ -552,16 +553,15 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.filestore.v1beta1.NfsExportOptions.SquashMode getSquashMode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.filestore.v1beta1.NfsExportOptions.SquashMode result =
-        com.google.cloud.filestore.v1beta1.NfsExportOptions.SquashMode.valueOf(squashMode_);
+        com.google.cloud.filestore.v1beta1.NfsExportOptions.SquashMode.forNumber(squashMode_);
     return result == null
         ? com.google.cloud.filestore.v1beta1.NfsExportOptions.SquashMode.UNRECOGNIZED
         : result;
   }
 
   public static final int ANON_UID_FIELD_NUMBER = 4;
-  private long anonUid_;
+  private long anonUid_ = 0L;
   /**
    *
    *
@@ -582,7 +582,7 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ANON_GID_FIELD_NUMBER = 5;
-  private long anonGid_;
+  private long anonGid_ = 0L;
   /**
    *
    *
@@ -850,16 +850,13 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       ipRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       accessMode_ = 0;
-
       squashMode_ = 0;
-
       anonUid_ = 0L;
-
       anonGid_ = 0L;
-
       return this;
     }
 
@@ -887,18 +884,37 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.filestore.v1beta1.NfsExportOptions buildPartial() {
       com.google.cloud.filestore.v1beta1.NfsExportOptions result =
           new com.google.cloud.filestore.v1beta1.NfsExportOptions(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.filestore.v1beta1.NfsExportOptions result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         ipRanges_ = ipRanges_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.ipRanges_ = ipRanges_;
-      result.accessMode_ = accessMode_;
-      result.squashMode_ = squashMode_;
-      result.anonUid_ = anonUid_;
-      result.anonGid_ = anonGid_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.filestore.v1beta1.NfsExportOptions result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.accessMode_ = accessMode_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.squashMode_ = squashMode_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.anonUid_ = anonUid_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.anonGid_ = anonGid_;
+      }
     }
 
     @java.lang.Override
@@ -1005,25 +1021,25 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
             case 16:
               {
                 accessMode_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 squashMode_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 anonUid_ = input.readInt64();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 anonGid_ = input.readInt64();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -1309,8 +1325,8 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setAccessModeValue(int value) {
-
       accessMode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1329,9 +1345,8 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.cloud.filestore.v1beta1.NfsExportOptions.AccessMode getAccessMode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.filestore.v1beta1.NfsExportOptions.AccessMode result =
-          com.google.cloud.filestore.v1beta1.NfsExportOptions.AccessMode.valueOf(accessMode_);
+          com.google.cloud.filestore.v1beta1.NfsExportOptions.AccessMode.forNumber(accessMode_);
       return result == null
           ? com.google.cloud.filestore.v1beta1.NfsExportOptions.AccessMode.UNRECOGNIZED
           : result;
@@ -1355,7 +1370,7 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       accessMode_ = value.getNumber();
       onChanged();
       return this;
@@ -1374,7 +1389,7 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAccessMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       accessMode_ = 0;
       onChanged();
       return this;
@@ -1413,8 +1428,8 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setSquashModeValue(int value) {
-
       squashMode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1433,9 +1448,8 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.cloud.filestore.v1beta1.NfsExportOptions.SquashMode getSquashMode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.filestore.v1beta1.NfsExportOptions.SquashMode result =
-          com.google.cloud.filestore.v1beta1.NfsExportOptions.SquashMode.valueOf(squashMode_);
+          com.google.cloud.filestore.v1beta1.NfsExportOptions.SquashMode.forNumber(squashMode_);
       return result == null
           ? com.google.cloud.filestore.v1beta1.NfsExportOptions.SquashMode.UNRECOGNIZED
           : result;
@@ -1459,7 +1473,7 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       squashMode_ = value.getNumber();
       onChanged();
       return this;
@@ -1478,7 +1492,7 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSquashMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       squashMode_ = 0;
       onChanged();
       return this;
@@ -1521,6 +1535,7 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
     public Builder setAnonUid(long value) {
 
       anonUid_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1539,7 +1554,7 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAnonUid() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       anonUid_ = 0L;
       onChanged();
       return this;
@@ -1582,6 +1597,7 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
     public Builder setAnonGid(long value) {
 
       anonGid_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1600,7 +1616,7 @@ public final class NfsExportOptions extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAnonGid() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       anonGid_ = 0L;
       onChanged();
       return this;

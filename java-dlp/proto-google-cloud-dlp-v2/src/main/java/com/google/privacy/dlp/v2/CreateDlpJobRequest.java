@@ -119,7 +119,9 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -299,7 +301,9 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int JOB_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object jobId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object jobId_ = "";
   /**
    *
    *
@@ -354,7 +358,9 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int LOCATION_ID_FIELD_NUMBER = 5;
-  private volatile java.lang.Object locationId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object locationId_ = "";
   /**
    *
    *
@@ -658,8 +664,8 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       if (inspectJobBuilder_ != null) {
         inspectJobBuilder_.clear();
       }
@@ -667,9 +673,7 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
         riskJobBuilder_.clear();
       }
       jobId_ = "";
-
       locationId_ = "";
-
       jobCase_ = 0;
       job_ = null;
       return this;
@@ -699,26 +703,36 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
     public com.google.privacy.dlp.v2.CreateDlpJobRequest buildPartial() {
       com.google.privacy.dlp.v2.CreateDlpJobRequest result =
           new com.google.privacy.dlp.v2.CreateDlpJobRequest(this);
-      result.parent_ = parent_;
-      if (jobCase_ == 2) {
-        if (inspectJobBuilder_ == null) {
-          result.job_ = job_;
-        } else {
-          result.job_ = inspectJobBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (jobCase_ == 3) {
-        if (riskJobBuilder_ == null) {
-          result.job_ = job_;
-        } else {
-          result.job_ = riskJobBuilder_.build();
-        }
-      }
-      result.jobId_ = jobId_;
-      result.locationId_ = locationId_;
-      result.jobCase_ = jobCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.CreateDlpJobRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.jobId_ = jobId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.locationId_ = locationId_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.CreateDlpJobRequest result) {
+      result.jobCase_ = jobCase_;
+      result.job_ = this.job_;
+      if (jobCase_ == 2 && inspectJobBuilder_ != null) {
+        result.job_ = inspectJobBuilder_.build();
+      }
+      if (jobCase_ == 3 && riskJobBuilder_ != null) {
+        result.job_ = riskJobBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -768,14 +782,17 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
       if (other == com.google.privacy.dlp.v2.CreateDlpJobRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getJobId().isEmpty()) {
         jobId_ = other.jobId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getLocationId().isEmpty()) {
         locationId_ = other.locationId_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       switch (other.getJobCase()) {
@@ -823,7 +840,7 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -841,13 +858,13 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
             case 34:
               {
                 jobId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 locationId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -880,6 +897,8 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -981,8 +1000,8 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1011,8 +1030,8 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1046,8 +1065,8 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1258,7 +1277,6 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
       }
       jobCase_ = 2;
       onChanged();
-      ;
       return inspectJobBuilder_;
     }
 
@@ -1477,7 +1495,6 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
       }
       jobCase_ = 3;
       onChanged();
-      ;
       return riskJobBuilder_;
     }
 
@@ -1551,8 +1568,8 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       jobId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1571,8 +1588,8 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearJobId() {
-
       jobId_ = getDefaultInstance().getJobId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1596,8 +1613,8 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       jobId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1663,8 +1680,8 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       locationId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1680,8 +1697,8 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearLocationId() {
-
       locationId_ = getDefaultInstance().getLocationId();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1702,8 +1719,8 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       locationId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

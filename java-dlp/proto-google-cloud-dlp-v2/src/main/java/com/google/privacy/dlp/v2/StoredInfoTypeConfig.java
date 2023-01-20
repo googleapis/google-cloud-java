@@ -121,7 +121,9 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -170,7 +172,9 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -634,10 +638,9 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       displayName_ = "";
-
       description_ = "";
-
       if (largeCustomDictionaryBuilder_ != null) {
         largeCustomDictionaryBuilder_.clear();
       }
@@ -676,32 +679,36 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
     public com.google.privacy.dlp.v2.StoredInfoTypeConfig buildPartial() {
       com.google.privacy.dlp.v2.StoredInfoTypeConfig result =
           new com.google.privacy.dlp.v2.StoredInfoTypeConfig(this);
-      result.displayName_ = displayName_;
-      result.description_ = description_;
-      if (typeCase_ == 3) {
-        if (largeCustomDictionaryBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = largeCustomDictionaryBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (typeCase_ == 4) {
-        if (dictionaryBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = dictionaryBuilder_.build();
-        }
-      }
-      if (typeCase_ == 5) {
-        if (regexBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = regexBuilder_.build();
-        }
-      }
-      result.typeCase_ = typeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.StoredInfoTypeConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.StoredInfoTypeConfig result) {
+      result.typeCase_ = typeCase_;
+      result.type_ = this.type_;
+      if (typeCase_ == 3 && largeCustomDictionaryBuilder_ != null) {
+        result.type_ = largeCustomDictionaryBuilder_.build();
+      }
+      if (typeCase_ == 4 && dictionaryBuilder_ != null) {
+        result.type_ = dictionaryBuilder_.build();
+      }
+      if (typeCase_ == 5 && regexBuilder_ != null) {
+        result.type_ = regexBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -751,10 +758,12 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       if (other == com.google.privacy.dlp.v2.StoredInfoTypeConfig.getDefaultInstance()) return this;
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       switch (other.getTypeCase()) {
@@ -807,13 +816,13 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -865,6 +874,8 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object displayName_ = "";
     /**
@@ -927,8 +938,8 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -944,8 +955,8 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -966,8 +977,8 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1033,8 +1044,8 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1050,8 +1061,8 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1072,8 +1083,8 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1289,7 +1300,6 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       }
       typeCase_ = 3;
       onChanged();
-      ;
       return largeCustomDictionaryBuilder_;
     }
 
@@ -1499,7 +1509,6 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       }
       typeCase_ = 4;
       onChanged();
-      ;
       return dictionaryBuilder_;
     }
 
@@ -1709,7 +1718,6 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       }
       typeCase_ = 5;
       onChanged();
-      ;
       return regexBuilder_;
     }
 

@@ -423,7 +423,9 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.BigQueryTableOrBuilder getProfileTableOrBuilder() {
-      return getProfileTable();
+      return profileTable_ == null
+          ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()
+          : profileTable_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -631,10 +633,10 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (profileTableBuilder_ == null) {
-          profileTable_ = null;
-        } else {
-          profileTable_ = null;
+        bitField0_ = 0;
+        profileTable_ = null;
+        if (profileTableBuilder_ != null) {
+          profileTableBuilder_.dispose();
           profileTableBuilder_ = null;
         }
         return this;
@@ -664,13 +666,19 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       public com.google.privacy.dlp.v2.DataProfileAction.Export buildPartial() {
         com.google.privacy.dlp.v2.DataProfileAction.Export result =
             new com.google.privacy.dlp.v2.DataProfileAction.Export(this);
-        if (profileTableBuilder_ == null) {
-          result.profileTable_ = profileTable_;
-        } else {
-          result.profileTable_ = profileTableBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.privacy.dlp.v2.DataProfileAction.Export result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.profileTable_ =
+              profileTableBuilder_ == null ? profileTable_ : profileTableBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -753,7 +761,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
               case 10:
                 {
                   input.readMessage(getProfileTableFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -772,6 +780,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.privacy.dlp.v2.BigQueryTable profileTable_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -793,7 +803,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * @return Whether the profileTable field is set.
        */
       public boolean hasProfileTable() {
-        return profileTableBuilder_ != null || profileTable_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -834,11 +844,11 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
             throw new NullPointerException();
           }
           profileTable_ = value;
-          onChanged();
         } else {
           profileTableBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -856,11 +866,11 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           com.google.privacy.dlp.v2.BigQueryTable.Builder builderForValue) {
         if (profileTableBuilder_ == null) {
           profileTable_ = builderForValue.build();
-          onChanged();
         } else {
           profileTableBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -876,19 +886,18 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        */
       public Builder mergeProfileTable(com.google.privacy.dlp.v2.BigQueryTable value) {
         if (profileTableBuilder_ == null) {
-          if (profileTable_ != null) {
-            profileTable_ =
-                com.google.privacy.dlp.v2.BigQueryTable.newBuilder(profileTable_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && profileTable_ != null
+              && profileTable_ != com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()) {
+            getProfileTableBuilder().mergeFrom(value);
           } else {
             profileTable_ = value;
           }
-          onChanged();
         } else {
           profileTableBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -903,14 +912,13 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
        */
       public Builder clearProfileTable() {
-        if (profileTableBuilder_ == null) {
-          profileTable_ = null;
-          onChanged();
-        } else {
-          profileTable_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        profileTable_ = null;
+        if (profileTableBuilder_ != null) {
+          profileTableBuilder_.dispose();
           profileTableBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -925,7 +933,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
        */
       public com.google.privacy.dlp.v2.BigQueryTable.Builder getProfileTableBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getProfileTableFieldBuilder().getBuilder();
       }
@@ -1384,7 +1392,9 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int TOPIC_FIELD_NUMBER = 1;
-    private volatile java.lang.Object topic_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object topic_ = "";
     /**
      *
      *
@@ -1435,7 +1445,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int EVENT_FIELD_NUMBER = 2;
-    private int event_;
+    private int event_ = 0;
     /**
      *
      *
@@ -1466,9 +1476,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.DataProfileAction.EventType getEvent() {
-      @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.DataProfileAction.EventType result =
-          com.google.privacy.dlp.v2.DataProfileAction.EventType.valueOf(event_);
+          com.google.privacy.dlp.v2.DataProfileAction.EventType.forNumber(event_);
       return result == null
           ? com.google.privacy.dlp.v2.DataProfileAction.EventType.UNRECOGNIZED
           : result;
@@ -1523,11 +1532,13 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public com.google.privacy.dlp.v2.DataProfilePubSubConditionOrBuilder
         getPubsubConditionOrBuilder() {
-      return getPubsubCondition();
+      return pubsubCondition_ == null
+          ? com.google.privacy.dlp.v2.DataProfilePubSubCondition.getDefaultInstance()
+          : pubsubCondition_;
     }
 
     public static final int DETAIL_OF_MESSAGE_FIELD_NUMBER = 4;
-    private int detailOfMessage_;
+    private int detailOfMessage_ = 0;
     /**
      *
      *
@@ -1565,9 +1576,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public com.google.privacy.dlp.v2.DataProfileAction.PubSubNotification.DetailLevel
         getDetailOfMessage() {
-      @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.DataProfileAction.PubSubNotification.DetailLevel result =
-          com.google.privacy.dlp.v2.DataProfileAction.PubSubNotification.DetailLevel.valueOf(
+          com.google.privacy.dlp.v2.DataProfileAction.PubSubNotification.DetailLevel.forNumber(
               detailOfMessage_);
       return result == null
           ? com.google.privacy.dlp.v2.DataProfileAction.PubSubNotification.DetailLevel.UNRECOGNIZED
@@ -1818,18 +1828,15 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         topic_ = "";
-
         event_ = 0;
-
-        if (pubsubConditionBuilder_ == null) {
-          pubsubCondition_ = null;
-        } else {
-          pubsubCondition_ = null;
+        pubsubCondition_ = null;
+        if (pubsubConditionBuilder_ != null) {
+          pubsubConditionBuilder_.dispose();
           pubsubConditionBuilder_ = null;
         }
         detailOfMessage_ = 0;
-
         return this;
       }
 
@@ -1858,16 +1865,29 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       public com.google.privacy.dlp.v2.DataProfileAction.PubSubNotification buildPartial() {
         com.google.privacy.dlp.v2.DataProfileAction.PubSubNotification result =
             new com.google.privacy.dlp.v2.DataProfileAction.PubSubNotification(this);
-        result.topic_ = topic_;
-        result.event_ = event_;
-        if (pubsubConditionBuilder_ == null) {
-          result.pubsubCondition_ = pubsubCondition_;
-        } else {
-          result.pubsubCondition_ = pubsubConditionBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.detailOfMessage_ = detailOfMessage_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.privacy.dlp.v2.DataProfileAction.PubSubNotification result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.topic_ = topic_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.event_ = event_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.pubsubCondition_ =
+              pubsubConditionBuilder_ == null ? pubsubCondition_ : pubsubConditionBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.detailOfMessage_ = detailOfMessage_;
+        }
       }
 
       @java.lang.Override
@@ -1922,6 +1942,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           return this;
         if (!other.getTopic().isEmpty()) {
           topic_ = other.topic_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.event_ != 0) {
@@ -1962,26 +1983,26 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
               case 10:
                 {
                   topic_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   event_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 26:
                 {
                   input.readMessage(
                       getPubsubConditionFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 32:
                 {
                   detailOfMessage_ = input.readEnum();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               default:
@@ -2000,6 +2021,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object topic_ = "";
       /**
@@ -2065,8 +2088,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         if (value == null) {
           throw new NullPointerException();
         }
-
         topic_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2083,8 +2106,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearTopic() {
-
         topic_ = getDefaultInstance().getTopic();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2106,8 +2129,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         topic_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2143,8 +2166,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder setEventValue(int value) {
-
         event_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2162,9 +2185,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        */
       @java.lang.Override
       public com.google.privacy.dlp.v2.DataProfileAction.EventType getEvent() {
-        @SuppressWarnings("deprecation")
         com.google.privacy.dlp.v2.DataProfileAction.EventType result =
-            com.google.privacy.dlp.v2.DataProfileAction.EventType.valueOf(event_);
+            com.google.privacy.dlp.v2.DataProfileAction.EventType.forNumber(event_);
         return result == null
             ? com.google.privacy.dlp.v2.DataProfileAction.EventType.UNRECOGNIZED
             : result;
@@ -2186,7 +2208,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         event_ = value.getNumber();
         onChanged();
         return this;
@@ -2204,7 +2226,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearEvent() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         event_ = 0;
         onChanged();
         return this;
@@ -2229,7 +2251,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * @return Whether the pubsubCondition field is set.
        */
       public boolean hasPubsubCondition() {
-        return pubsubConditionBuilder_ != null || pubsubCondition_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -2269,11 +2291,11 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
             throw new NullPointerException();
           }
           pubsubCondition_ = value;
-          onChanged();
         } else {
           pubsubConditionBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2290,11 +2312,11 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           com.google.privacy.dlp.v2.DataProfilePubSubCondition.Builder builderForValue) {
         if (pubsubConditionBuilder_ == null) {
           pubsubCondition_ = builderForValue.build();
-          onChanged();
         } else {
           pubsubConditionBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2310,19 +2332,19 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       public Builder mergePubsubCondition(
           com.google.privacy.dlp.v2.DataProfilePubSubCondition value) {
         if (pubsubConditionBuilder_ == null) {
-          if (pubsubCondition_ != null) {
-            pubsubCondition_ =
-                com.google.privacy.dlp.v2.DataProfilePubSubCondition.newBuilder(pubsubCondition_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && pubsubCondition_ != null
+              && pubsubCondition_
+                  != com.google.privacy.dlp.v2.DataProfilePubSubCondition.getDefaultInstance()) {
+            getPubsubConditionBuilder().mergeFrom(value);
           } else {
             pubsubCondition_ = value;
           }
-          onChanged();
         } else {
           pubsubConditionBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2336,14 +2358,13 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * <code>.google.privacy.dlp.v2.DataProfilePubSubCondition pubsub_condition = 3;</code>
        */
       public Builder clearPubsubCondition() {
-        if (pubsubConditionBuilder_ == null) {
-          pubsubCondition_ = null;
-          onChanged();
-        } else {
-          pubsubCondition_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        pubsubCondition_ = null;
+        if (pubsubConditionBuilder_ != null) {
+          pubsubConditionBuilder_.dispose();
           pubsubConditionBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2358,7 +2379,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        */
       public com.google.privacy.dlp.v2.DataProfilePubSubCondition.Builder
           getPubsubConditionBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getPubsubConditionFieldBuilder().getBuilder();
       }
@@ -2446,8 +2467,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder setDetailOfMessageValue(int value) {
-
         detailOfMessage_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2469,9 +2490,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public com.google.privacy.dlp.v2.DataProfileAction.PubSubNotification.DetailLevel
           getDetailOfMessage() {
-        @SuppressWarnings("deprecation")
         com.google.privacy.dlp.v2.DataProfileAction.PubSubNotification.DetailLevel result =
-            com.google.privacy.dlp.v2.DataProfileAction.PubSubNotification.DetailLevel.valueOf(
+            com.google.privacy.dlp.v2.DataProfileAction.PubSubNotification.DetailLevel.forNumber(
                 detailOfMessage_);
         return result == null
             ? com.google.privacy.dlp.v2.DataProfileAction.PubSubNotification.DetailLevel
@@ -2499,7 +2519,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000008;
         detailOfMessage_ = value.getNumber();
         onChanged();
         return this;
@@ -2520,7 +2540,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearDetailOfMessage() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         detailOfMessage_ = 0;
         onChanged();
         return this;
@@ -2974,6 +2994,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (exportDataBuilder_ != null) {
         exportDataBuilder_.clear();
       }
@@ -3009,23 +3030,27 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     public com.google.privacy.dlp.v2.DataProfileAction buildPartial() {
       com.google.privacy.dlp.v2.DataProfileAction result =
           new com.google.privacy.dlp.v2.DataProfileAction(this);
-      if (actionCase_ == 1) {
-        if (exportDataBuilder_ == null) {
-          result.action_ = action_;
-        } else {
-          result.action_ = exportDataBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (actionCase_ == 2) {
-        if (pubSubNotificationBuilder_ == null) {
-          result.action_ = action_;
-        } else {
-          result.action_ = pubSubNotificationBuilder_.build();
-        }
-      }
-      result.actionCase_ = actionCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.DataProfileAction result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.DataProfileAction result) {
+      result.actionCase_ = actionCase_;
+      result.action_ = this.action_;
+      if (actionCase_ == 1 && exportDataBuilder_ != null) {
+        result.action_ = exportDataBuilder_.build();
+      }
+      if (actionCase_ == 2 && pubSubNotificationBuilder_ != null) {
+        result.action_ = pubSubNotificationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3158,6 +3183,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.DataProfileAction.Export,
@@ -3365,7 +3392,6 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       }
       actionCase_ = 1;
       onChanged();
-      ;
       return exportDataBuilder_;
     }
 
@@ -3591,7 +3617,6 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       }
       actionCase_ = 2;
       onChanged();
-      ;
       return pubSubNotificationBuilder_;
     }
 

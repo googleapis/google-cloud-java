@@ -187,7 +187,9 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -281,7 +283,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
@@ -330,7 +332,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 4;
@@ -346,6 +348,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -403,7 +406,10 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -432,7 +438,9 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 5;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -1314,23 +1322,20 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
       displayName_ = "";
-
       if (oracleProfileBuilder_ != null) {
         oracleProfileBuilder_.clear();
       }
@@ -1386,81 +1391,63 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.datastream.v1.ConnectionProfile buildPartial() {
       com.google.cloud.datastream.v1.ConnectionProfile result =
           new com.google.cloud.datastream.v1.ConnectionProfile(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.displayName_ = displayName_;
-      if (profileCase_ == 100) {
-        if (oracleProfileBuilder_ == null) {
-          result.profile_ = profile_;
-        } else {
-          result.profile_ = oracleProfileBuilder_.build();
-        }
-      }
-      if (profileCase_ == 101) {
-        if (gcsProfileBuilder_ == null) {
-          result.profile_ = profile_;
-        } else {
-          result.profile_ = gcsProfileBuilder_.build();
-        }
-      }
-      if (profileCase_ == 102) {
-        if (mysqlProfileBuilder_ == null) {
-          result.profile_ = profile_;
-        } else {
-          result.profile_ = mysqlProfileBuilder_.build();
-        }
-      }
-      if (profileCase_ == 103) {
-        if (bigqueryProfileBuilder_ == null) {
-          result.profile_ = profile_;
-        } else {
-          result.profile_ = bigqueryProfileBuilder_.build();
-        }
-      }
-      if (profileCase_ == 104) {
-        if (postgresqlProfileBuilder_ == null) {
-          result.profile_ = profile_;
-        } else {
-          result.profile_ = postgresqlProfileBuilder_.build();
-        }
-      }
-      if (connectivityCase_ == 200) {
-        if (staticServiceIpConnectivityBuilder_ == null) {
-          result.connectivity_ = connectivity_;
-        } else {
-          result.connectivity_ = staticServiceIpConnectivityBuilder_.build();
-        }
-      }
-      if (connectivityCase_ == 201) {
-        if (forwardSshConnectivityBuilder_ == null) {
-          result.connectivity_ = connectivity_;
-        } else {
-          result.connectivity_ = forwardSshConnectivityBuilder_.build();
-        }
-      }
-      if (connectivityCase_ == 202) {
-        if (privateConnectivityBuilder_ == null) {
-          result.connectivity_ = connectivity_;
-        } else {
-          result.connectivity_ = privateConnectivityBuilder_.build();
-        }
-      }
-      result.profileCase_ = profileCase_;
-      result.connectivityCase_ = connectivityCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1.ConnectionProfile result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.displayName_ = displayName_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.datastream.v1.ConnectionProfile result) {
+      result.profileCase_ = profileCase_;
+      result.profile_ = this.profile_;
+      if (profileCase_ == 100 && oracleProfileBuilder_ != null) {
+        result.profile_ = oracleProfileBuilder_.build();
+      }
+      if (profileCase_ == 101 && gcsProfileBuilder_ != null) {
+        result.profile_ = gcsProfileBuilder_.build();
+      }
+      if (profileCase_ == 102 && mysqlProfileBuilder_ != null) {
+        result.profile_ = mysqlProfileBuilder_.build();
+      }
+      if (profileCase_ == 103 && bigqueryProfileBuilder_ != null) {
+        result.profile_ = bigqueryProfileBuilder_.build();
+      }
+      if (profileCase_ == 104 && postgresqlProfileBuilder_ != null) {
+        result.profile_ = postgresqlProfileBuilder_.build();
+      }
+      result.connectivityCase_ = connectivityCase_;
+      result.connectivity_ = this.connectivity_;
+      if (connectivityCase_ == 200 && staticServiceIpConnectivityBuilder_ != null) {
+        result.connectivity_ = staticServiceIpConnectivityBuilder_.build();
+      }
+      if (connectivityCase_ == 201 && forwardSshConnectivityBuilder_ != null) {
+        result.connectivity_ = forwardSshConnectivityBuilder_.build();
+      }
+      if (connectivityCase_ == 202 && privateConnectivityBuilder_ != null) {
+        result.connectivity_ = privateConnectivityBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1511,6 +1498,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1520,8 +1508,10 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         mergeUpdateTime(other.getUpdateTime());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000008;
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       switch (other.getProfileCase()) {
@@ -1605,19 +1595,19 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -1629,12 +1619,13 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 802:
@@ -1797,8 +1788,8 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1814,8 +1805,8 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1836,8 +1827,8 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1862,7 +1853,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1903,11 +1894,11 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1924,11 +1915,11 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1944,17 +1935,18 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1969,14 +1961,13 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1991,7 +1982,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2063,7 +2054,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2104,11 +2095,11 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2125,11 +2116,11 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2145,17 +2136,18 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2170,14 +2162,13 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2192,7 +2183,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2255,14 +2246,14 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return labels_;
     }
 
@@ -2314,8 +2305,10 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2344,6 +2337,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2366,6 +2360,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -2384,8 +2379,8 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -2399,6 +2394,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -2463,8 +2459,8 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2480,8 +2476,8 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2502,8 +2498,8 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2714,7 +2710,6 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       }
       profileCase_ = 100;
       onChanged();
-      ;
       return oracleProfileBuilder_;
     }
 
@@ -2924,7 +2919,6 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       }
       profileCase_ = 101;
       onChanged();
-      ;
       return gcsProfileBuilder_;
     }
 
@@ -3134,7 +3128,6 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       }
       profileCase_ = 102;
       onChanged();
-      ;
       return mysqlProfileBuilder_;
     }
 
@@ -3344,7 +3337,6 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       }
       profileCase_ = 103;
       onChanged();
-      ;
       return bigqueryProfileBuilder_;
     }
 
@@ -3555,7 +3547,6 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       }
       profileCase_ = 104;
       onChanged();
-      ;
       return postgresqlProfileBuilder_;
     }
 
@@ -3791,7 +3782,6 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       }
       connectivityCase_ = 200;
       onChanged();
-      ;
       return staticServiceIpConnectivityBuilder_;
     }
 
@@ -4026,7 +4016,6 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       }
       connectivityCase_ = 201;
       onChanged();
-      ;
       return forwardSshConnectivityBuilder_;
     }
 
@@ -4241,7 +4230,6 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       }
       connectivityCase_ = 202;
       onChanged();
-      ;
       return privateConnectivityBuilder_;
     }
 

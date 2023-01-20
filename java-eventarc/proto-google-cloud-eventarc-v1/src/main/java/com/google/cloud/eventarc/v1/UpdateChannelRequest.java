@@ -108,7 +108,7 @@ public final class UpdateChannelRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.eventarc.v1.ChannelOrBuilder getChannelOrBuilder() {
-    return getChannel();
+    return channel_ == null ? com.google.cloud.eventarc.v1.Channel.getDefaultInstance() : channel_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -160,11 +160,11 @@ public final class UpdateChannelRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -407,20 +407,18 @@ public final class UpdateChannelRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (channelBuilder_ == null) {
-        channel_ = null;
-      } else {
-        channel_ = null;
+      bitField0_ = 0;
+      channel_ = null;
+      if (channelBuilder_ != null) {
+        channelBuilder_.dispose();
         channelBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       validateOnly_ = false;
-
       return this;
     }
 
@@ -448,19 +446,24 @@ public final class UpdateChannelRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.eventarc.v1.UpdateChannelRequest buildPartial() {
       com.google.cloud.eventarc.v1.UpdateChannelRequest result =
           new com.google.cloud.eventarc.v1.UpdateChannelRequest(this);
-      if (channelBuilder_ == null) {
-        result.channel_ = channel_;
-      } else {
-        result.channel_ = channelBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
-      }
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.eventarc.v1.UpdateChannelRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.channel_ = channelBuilder_ == null ? channel_ : channelBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -547,19 +550,19 @@ public final class UpdateChannelRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 input.readMessage(getChannelFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -579,6 +582,8 @@ public final class UpdateChannelRequest extends com.google.protobuf.GeneratedMes
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.eventarc.v1.Channel channel_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.eventarc.v1.Channel,
@@ -597,7 +602,7 @@ public final class UpdateChannelRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the channel field is set.
      */
     public boolean hasChannel() {
-      return channelBuilder_ != null || channel_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -634,11 +639,11 @@ public final class UpdateChannelRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         channel_ = value;
-        onChanged();
       } else {
         channelBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -653,11 +658,11 @@ public final class UpdateChannelRequest extends com.google.protobuf.GeneratedMes
     public Builder setChannel(com.google.cloud.eventarc.v1.Channel.Builder builderForValue) {
       if (channelBuilder_ == null) {
         channel_ = builderForValue.build();
-        onChanged();
       } else {
         channelBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -671,19 +676,18 @@ public final class UpdateChannelRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeChannel(com.google.cloud.eventarc.v1.Channel value) {
       if (channelBuilder_ == null) {
-        if (channel_ != null) {
-          channel_ =
-              com.google.cloud.eventarc.v1.Channel.newBuilder(channel_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && channel_ != null
+            && channel_ != com.google.cloud.eventarc.v1.Channel.getDefaultInstance()) {
+          getChannelBuilder().mergeFrom(value);
         } else {
           channel_ = value;
         }
-        onChanged();
       } else {
         channelBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -696,14 +700,13 @@ public final class UpdateChannelRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.eventarc.v1.Channel channel = 1;</code>
      */
     public Builder clearChannel() {
-      if (channelBuilder_ == null) {
-        channel_ = null;
-        onChanged();
-      } else {
-        channel_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      channel_ = null;
+      if (channelBuilder_ != null) {
+        channelBuilder_.dispose();
         channelBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -716,7 +719,7 @@ public final class UpdateChannelRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.eventarc.v1.Channel channel = 1;</code>
      */
     public com.google.cloud.eventarc.v1.Channel.Builder getChannelBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getChannelFieldBuilder().getBuilder();
     }
@@ -784,7 +787,7 @@ public final class UpdateChannelRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -825,11 +828,11 @@ public final class UpdateChannelRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -846,11 +849,11 @@ public final class UpdateChannelRequest extends com.google.protobuf.GeneratedMes
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -866,17 +869,18 @@ public final class UpdateChannelRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -891,14 +895,13 @@ public final class UpdateChannelRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -913,7 +916,7 @@ public final class UpdateChannelRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -998,6 +1001,7 @@ public final class UpdateChannelRequest extends com.google.protobuf.GeneratedMes
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1014,7 +1018,7 @@ public final class UpdateChannelRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       validateOnly_ = false;
       onChanged();
       return this;

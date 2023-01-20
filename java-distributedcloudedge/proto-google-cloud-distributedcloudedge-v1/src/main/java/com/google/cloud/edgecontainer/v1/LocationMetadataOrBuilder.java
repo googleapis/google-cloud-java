@@ -75,7 +75,6 @@ public interface LocationMetadataOrBuilder
    * <code>map&lt;string, .google.cloud.edgecontainer.v1.ZoneMetadata&gt; available_zones = 1;
    * </code>
    */
-
   /* nullable */
   com.google.cloud.edgecontainer.v1.ZoneMetadata getAvailableZonesOrDefault(
       java.lang.String key,

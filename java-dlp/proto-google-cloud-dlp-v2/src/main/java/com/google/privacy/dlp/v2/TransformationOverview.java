@@ -68,7 +68,7 @@ public final class TransformationOverview extends com.google.protobuf.GeneratedM
   }
 
   public static final int TRANSFORMED_BYTES_FIELD_NUMBER = 2;
-  private long transformedBytes_;
+  private long transformedBytes_ = 0L;
   /**
    *
    *
@@ -86,6 +86,8 @@ public final class TransformationOverview extends com.google.protobuf.GeneratedM
   }
 
   public static final int TRANSFORMATION_SUMMARIES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.TransformationSummary> transformationSummaries_;
   /**
    *
@@ -372,15 +374,15 @@ public final class TransformationOverview extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       transformedBytes_ = 0L;
-
       if (transformationSummariesBuilder_ == null) {
         transformationSummaries_ = java.util.Collections.emptyList();
       } else {
         transformationSummaries_ = null;
         transformationSummariesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -408,20 +410,33 @@ public final class TransformationOverview extends com.google.protobuf.GeneratedM
     public com.google.privacy.dlp.v2.TransformationOverview buildPartial() {
       com.google.privacy.dlp.v2.TransformationOverview result =
           new com.google.privacy.dlp.v2.TransformationOverview(this);
-      int from_bitField0_ = bitField0_;
-      result.transformedBytes_ = transformedBytes_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.privacy.dlp.v2.TransformationOverview result) {
       if (transformationSummariesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           transformationSummaries_ =
               java.util.Collections.unmodifiableList(transformationSummaries_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.transformationSummaries_ = transformationSummaries_;
       } else {
         result.transformationSummaries_ = transformationSummariesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.TransformationOverview result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.transformedBytes_ = transformedBytes_;
+      }
     }
 
     @java.lang.Override
@@ -477,7 +492,7 @@ public final class TransformationOverview extends com.google.protobuf.GeneratedM
         if (!other.transformationSummaries_.isEmpty()) {
           if (transformationSummaries_.isEmpty()) {
             transformationSummaries_ = other.transformationSummaries_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureTransformationSummariesIsMutable();
             transformationSummaries_.addAll(other.transformationSummaries_);
@@ -490,7 +505,7 @@ public final class TransformationOverview extends com.google.protobuf.GeneratedM
             transformationSummariesBuilder_.dispose();
             transformationSummariesBuilder_ = null;
             transformationSummaries_ = other.transformationSummaries_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             transformationSummariesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTransformationSummariesFieldBuilder()
@@ -529,7 +544,7 @@ public final class TransformationOverview extends com.google.protobuf.GeneratedM
             case 16:
               {
                 transformedBytes_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 16
             case 26:
@@ -596,6 +611,7 @@ public final class TransformationOverview extends com.google.protobuf.GeneratedM
     public Builder setTransformedBytes(long value) {
 
       transformedBytes_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -611,7 +627,7 @@ public final class TransformationOverview extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearTransformedBytes() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       transformedBytes_ = 0L;
       onChanged();
       return this;
@@ -621,11 +637,11 @@ public final class TransformationOverview extends com.google.protobuf.GeneratedM
         transformationSummaries_ = java.util.Collections.emptyList();
 
     private void ensureTransformationSummariesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         transformationSummaries_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.TransformationSummary>(
                 transformationSummaries_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -856,7 +872,7 @@ public final class TransformationOverview extends com.google.protobuf.GeneratedM
     public Builder clearTransformationSummaries() {
       if (transformationSummariesBuilder_ == null) {
         transformationSummaries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         transformationSummariesBuilder_.clear();
@@ -990,7 +1006,7 @@ public final class TransformationOverview extends com.google.protobuf.GeneratedM
                 com.google.privacy.dlp.v2.TransformationSummary.Builder,
                 com.google.privacy.dlp.v2.TransformationSummaryOrBuilder>(
                 transformationSummaries_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         transformationSummaries_ = null;

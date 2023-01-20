@@ -120,11 +120,13 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getMediaProgressDurationOrBuilder() {
-    return getMediaProgressDuration();
+    return mediaProgressDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : mediaProgressDuration_;
   }
 
   public static final int MEDIA_PROGRESS_PERCENTAGE_FIELD_NUMBER = 2;
-  private float mediaProgressPercentage_;
+  private float mediaProgressPercentage_ = 0F;
   /**
    *
    *
@@ -382,14 +384,13 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (mediaProgressDurationBuilder_ == null) {
-        mediaProgressDuration_ = null;
-      } else {
-        mediaProgressDuration_ = null;
+      bitField0_ = 0;
+      mediaProgressDuration_ = null;
+      if (mediaProgressDurationBuilder_ != null) {
+        mediaProgressDurationBuilder_.dispose();
         mediaProgressDurationBuilder_ = null;
       }
       mediaProgressPercentage_ = 0F;
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -417,20 +418,27 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.discoveryengine.v1beta.MediaInfo buildPartial() {
       com.google.cloud.discoveryengine.v1beta.MediaInfo result =
           new com.google.cloud.discoveryengine.v1beta.MediaInfo(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (mediaProgressDurationBuilder_ == null) {
-        result.mediaProgressDuration_ = mediaProgressDuration_;
-      } else {
-        result.mediaProgressDuration_ = mediaProgressDurationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.discoveryengine.v1beta.MediaInfo result) {
+      int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.mediaProgressDuration_ =
+            mediaProgressDurationBuilder_ == null
+                ? mediaProgressDuration_
+                : mediaProgressDurationBuilder_.build();
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.mediaProgressPercentage_ = mediaProgressPercentage_;
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -515,13 +523,13 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getMediaProgressDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 21:
               {
                 mediaProgressPercentage_ = input.readFloat();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 21
             default:
@@ -564,7 +572,7 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the mediaProgressDuration field is set.
      */
     public boolean hasMediaProgressDuration() {
-      return mediaProgressDurationBuilder_ != null || mediaProgressDuration_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -607,11 +615,11 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         mediaProgressDuration_ = value;
-        onChanged();
       } else {
         mediaProgressDurationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -629,11 +637,11 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder setMediaProgressDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (mediaProgressDurationBuilder_ == null) {
         mediaProgressDuration_ = builderForValue.build();
-        onChanged();
       } else {
         mediaProgressDurationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -650,19 +658,18 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeMediaProgressDuration(com.google.protobuf.Duration value) {
       if (mediaProgressDurationBuilder_ == null) {
-        if (mediaProgressDuration_ != null) {
-          mediaProgressDuration_ =
-              com.google.protobuf.Duration.newBuilder(mediaProgressDuration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && mediaProgressDuration_ != null
+            && mediaProgressDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getMediaProgressDurationBuilder().mergeFrom(value);
         } else {
           mediaProgressDuration_ = value;
         }
-        onChanged();
       } else {
         mediaProgressDurationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -678,14 +685,13 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration media_progress_duration = 1;</code>
      */
     public Builder clearMediaProgressDuration() {
-      if (mediaProgressDurationBuilder_ == null) {
-        mediaProgressDuration_ = null;
-        onChanged();
-      } else {
-        mediaProgressDuration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      mediaProgressDuration_ = null;
+      if (mediaProgressDurationBuilder_ != null) {
+        mediaProgressDurationBuilder_.dispose();
         mediaProgressDurationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -701,7 +707,7 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration media_progress_duration = 1;</code>
      */
     public com.google.protobuf.Duration.Builder getMediaProgressDurationBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getMediaProgressDurationFieldBuilder().getBuilder();
     }
@@ -773,7 +779,7 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasMediaProgressPercentage() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -811,8 +817,9 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMediaProgressPercentage(float value) {
-      bitField0_ |= 0x00000001;
+
       mediaProgressPercentage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -832,7 +839,7 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMediaProgressPercentage() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       mediaProgressPercentage_ = 0F;
       onChanged();
       return this;

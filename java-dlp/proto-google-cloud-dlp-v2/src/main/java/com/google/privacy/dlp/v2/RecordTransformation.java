@@ -102,7 +102,7 @@ public final class RecordTransformation extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldIdOrBuilder() {
-    return getFieldId();
+    return fieldId_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : fieldId_;
   }
 
   public static final int CONTAINER_TIMESTAMP_FIELD_NUMBER = 2;
@@ -150,11 +150,15 @@ public final class RecordTransformation extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getContainerTimestampOrBuilder() {
-    return getContainerTimestamp();
+    return containerTimestamp_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : containerTimestamp_;
   }
 
   public static final int CONTAINER_VERSION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object containerVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object containerVersion_ = "";
   /**
    *
    *
@@ -419,20 +423,18 @@ public final class RecordTransformation extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (fieldIdBuilder_ == null) {
-        fieldId_ = null;
-      } else {
-        fieldId_ = null;
+      bitField0_ = 0;
+      fieldId_ = null;
+      if (fieldIdBuilder_ != null) {
+        fieldIdBuilder_.dispose();
         fieldIdBuilder_ = null;
       }
-      if (containerTimestampBuilder_ == null) {
-        containerTimestamp_ = null;
-      } else {
-        containerTimestamp_ = null;
+      containerTimestamp_ = null;
+      if (containerTimestampBuilder_ != null) {
+        containerTimestampBuilder_.dispose();
         containerTimestampBuilder_ = null;
       }
       containerVersion_ = "";
-
       return this;
     }
 
@@ -460,19 +462,27 @@ public final class RecordTransformation extends com.google.protobuf.GeneratedMes
     public com.google.privacy.dlp.v2.RecordTransformation buildPartial() {
       com.google.privacy.dlp.v2.RecordTransformation result =
           new com.google.privacy.dlp.v2.RecordTransformation(this);
-      if (fieldIdBuilder_ == null) {
-        result.fieldId_ = fieldId_;
-      } else {
-        result.fieldId_ = fieldIdBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (containerTimestampBuilder_ == null) {
-        result.containerTimestamp_ = containerTimestamp_;
-      } else {
-        result.containerTimestamp_ = containerTimestampBuilder_.build();
-      }
-      result.containerVersion_ = containerVersion_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.RecordTransformation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.fieldId_ = fieldIdBuilder_ == null ? fieldId_ : fieldIdBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.containerTimestamp_ =
+            containerTimestampBuilder_ == null
+                ? containerTimestamp_
+                : containerTimestampBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.containerVersion_ = containerVersion_;
+      }
     }
 
     @java.lang.Override
@@ -528,6 +538,7 @@ public final class RecordTransformation extends com.google.protobuf.GeneratedMes
       }
       if (!other.getContainerVersion().isEmpty()) {
         containerVersion_ = other.containerVersion_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -559,20 +570,20 @@ public final class RecordTransformation extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 input.readMessage(getFieldIdFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getContainerTimestampFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 containerVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -592,6 +603,8 @@ public final class RecordTransformation extends com.google.protobuf.GeneratedMes
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.privacy.dlp.v2.FieldId fieldId_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.FieldId,
@@ -610,7 +623,7 @@ public final class RecordTransformation extends com.google.protobuf.GeneratedMes
      * @return Whether the fieldId field is set.
      */
     public boolean hasFieldId() {
-      return fieldIdBuilder_ != null || fieldId_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -645,11 +658,11 @@ public final class RecordTransformation extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         fieldId_ = value;
-        onChanged();
       } else {
         fieldIdBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -664,11 +677,11 @@ public final class RecordTransformation extends com.google.protobuf.GeneratedMes
     public Builder setFieldId(com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
       if (fieldIdBuilder_ == null) {
         fieldId_ = builderForValue.build();
-        onChanged();
       } else {
         fieldIdBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -682,19 +695,18 @@ public final class RecordTransformation extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeFieldId(com.google.privacy.dlp.v2.FieldId value) {
       if (fieldIdBuilder_ == null) {
-        if (fieldId_ != null) {
-          fieldId_ =
-              com.google.privacy.dlp.v2.FieldId.newBuilder(fieldId_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && fieldId_ != null
+            && fieldId_ != com.google.privacy.dlp.v2.FieldId.getDefaultInstance()) {
+          getFieldIdBuilder().mergeFrom(value);
         } else {
           fieldId_ = value;
         }
-        onChanged();
       } else {
         fieldIdBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -707,14 +719,13 @@ public final class RecordTransformation extends com.google.protobuf.GeneratedMes
      * <code>.google.privacy.dlp.v2.FieldId field_id = 1;</code>
      */
     public Builder clearFieldId() {
-      if (fieldIdBuilder_ == null) {
-        fieldId_ = null;
-        onChanged();
-      } else {
-        fieldId_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      fieldId_ = null;
+      if (fieldIdBuilder_ != null) {
+        fieldIdBuilder_.dispose();
         fieldIdBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -727,7 +738,7 @@ public final class RecordTransformation extends com.google.protobuf.GeneratedMes
      * <code>.google.privacy.dlp.v2.FieldId field_id = 1;</code>
      */
     public com.google.privacy.dlp.v2.FieldId.Builder getFieldIdBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getFieldIdFieldBuilder().getBuilder();
     }
@@ -791,7 +802,7 @@ public final class RecordTransformation extends com.google.protobuf.GeneratedMes
      * @return Whether the containerTimestamp field is set.
      */
     public boolean hasContainerTimestamp() {
-      return containerTimestampBuilder_ != null || containerTimestamp_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -828,11 +839,11 @@ public final class RecordTransformation extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         containerTimestamp_ = value;
-        onChanged();
       } else {
         containerTimestampBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -847,11 +858,11 @@ public final class RecordTransformation extends com.google.protobuf.GeneratedMes
     public Builder setContainerTimestamp(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (containerTimestampBuilder_ == null) {
         containerTimestamp_ = builderForValue.build();
-        onChanged();
       } else {
         containerTimestampBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -865,19 +876,18 @@ public final class RecordTransformation extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeContainerTimestamp(com.google.protobuf.Timestamp value) {
       if (containerTimestampBuilder_ == null) {
-        if (containerTimestamp_ != null) {
-          containerTimestamp_ =
-              com.google.protobuf.Timestamp.newBuilder(containerTimestamp_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && containerTimestamp_ != null
+            && containerTimestamp_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getContainerTimestampBuilder().mergeFrom(value);
         } else {
           containerTimestamp_ = value;
         }
-        onChanged();
       } else {
         containerTimestampBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -890,14 +900,13 @@ public final class RecordTransformation extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Timestamp container_timestamp = 2;</code>
      */
     public Builder clearContainerTimestamp() {
-      if (containerTimestampBuilder_ == null) {
-        containerTimestamp_ = null;
-        onChanged();
-      } else {
-        containerTimestamp_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      containerTimestamp_ = null;
+      if (containerTimestampBuilder_ != null) {
+        containerTimestampBuilder_.dispose();
         containerTimestampBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -910,7 +919,7 @@ public final class RecordTransformation extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Timestamp container_timestamp = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getContainerTimestampBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getContainerTimestampFieldBuilder().getBuilder();
     }
@@ -1019,8 +1028,8 @@ public final class RecordTransformation extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       containerVersion_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1036,8 +1045,8 @@ public final class RecordTransformation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearContainerVersion() {
-
       containerVersion_ = getDefaultInstance().getContainerVersion();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1058,8 +1067,8 @@ public final class RecordTransformation extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       containerVersion_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

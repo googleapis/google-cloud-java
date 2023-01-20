@@ -71,7 +71,9 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLUSTER_FIELD_NUMBER = 1;
-  private volatile java.lang.Object cluster_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cluster_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOCATION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object location_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object location_ = "";
   /**
    *
    *
@@ -175,7 +179,9 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAMESPACE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object namespace_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object namespace_ = "";
   /**
    *
    *
@@ -224,7 +230,9 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object service_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object service_ = "";
   /**
    *
    *
@@ -273,7 +281,9 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PATH_FIELD_NUMBER = 5;
-  private volatile java.lang.Object path_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object path_ = "";
   /**
    *
    *
@@ -556,16 +566,12 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       cluster_ = "";
-
       location_ = "";
-
       namespace_ = "";
-
       service_ = "";
-
       path_ = "";
-
       return this;
     }
 
@@ -592,13 +598,30 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.eventarc.v1.GKE buildPartial() {
       com.google.cloud.eventarc.v1.GKE result = new com.google.cloud.eventarc.v1.GKE(this);
-      result.cluster_ = cluster_;
-      result.location_ = location_;
-      result.namespace_ = namespace_;
-      result.service_ = service_;
-      result.path_ = path_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.eventarc.v1.GKE result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.cluster_ = cluster_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.location_ = location_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.namespace_ = namespace_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.service_ = service_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.path_ = path_;
+      }
     }
 
     @java.lang.Override
@@ -648,22 +671,27 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.eventarc.v1.GKE.getDefaultInstance()) return this;
       if (!other.getCluster().isEmpty()) {
         cluster_ = other.cluster_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getLocation().isEmpty()) {
         location_ = other.location_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getNamespace().isEmpty()) {
         namespace_ = other.namespace_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getService().isEmpty()) {
         service_ = other.service_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getPath().isEmpty()) {
         path_ = other.path_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -695,31 +723,31 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 cluster_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 location_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 namespace_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 service_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 path_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -738,6 +766,8 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object cluster_ = "";
     /**
@@ -803,8 +833,8 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       cluster_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -821,8 +851,8 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCluster() {
-
       cluster_ = getDefaultInstance().getCluster();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -844,8 +874,8 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cluster_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -917,8 +947,8 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       location_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -936,8 +966,8 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLocation() {
-
       location_ = getDefaultInstance().getLocation();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -960,8 +990,8 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       location_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1027,8 +1057,8 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       namespace_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1044,8 +1074,8 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNamespace() {
-
       namespace_ = getDefaultInstance().getNamespace();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1066,8 +1096,8 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       namespace_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1133,8 +1163,8 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       service_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1150,8 +1180,8 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearService() {
-
       service_ = getDefaultInstance().getService();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1172,8 +1202,8 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       service_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1245,8 +1275,8 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       path_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1264,8 +1294,8 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPath() {
-
       path_ = getDefaultInstance().getPath();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1288,8 +1318,8 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       path_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

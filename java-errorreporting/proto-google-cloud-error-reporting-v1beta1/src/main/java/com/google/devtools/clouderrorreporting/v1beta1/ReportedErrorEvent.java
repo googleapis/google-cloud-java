@@ -119,7 +119,7 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEventTimeOrBuilder() {
-    return getEventTime();
+    return eventTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : eventTime_;
   }
 
   public static final int SERVICE_CONTEXT_FIELD_NUMBER = 2;
@@ -174,11 +174,15 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.ServiceContextOrBuilder
       getServiceContextOrBuilder() {
-    return getServiceContext();
+    return serviceContext_ == null
+        ? com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.getDefaultInstance()
+        : serviceContext_;
   }
 
   public static final int MESSAGE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object message_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object message_ = "";
   /**
    *
    *
@@ -322,7 +326,9 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.ErrorContextOrBuilder
       getContextOrBuilder() {
-    return getContext();
+    return context_ == null
+        ? com.google.devtools.clouderrorreporting.v1beta1.ErrorContext.getDefaultInstance()
+        : context_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -567,24 +573,21 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (eventTimeBuilder_ == null) {
-        eventTime_ = null;
-      } else {
-        eventTime_ = null;
+      bitField0_ = 0;
+      eventTime_ = null;
+      if (eventTimeBuilder_ != null) {
+        eventTimeBuilder_.dispose();
         eventTimeBuilder_ = null;
       }
-      if (serviceContextBuilder_ == null) {
-        serviceContext_ = null;
-      } else {
-        serviceContext_ = null;
+      serviceContext_ = null;
+      if (serviceContextBuilder_ != null) {
+        serviceContextBuilder_.dispose();
         serviceContextBuilder_ = null;
       }
       message_ = "";
-
-      if (contextBuilder_ == null) {
-        context_ = null;
-      } else {
-        context_ = null;
+      context_ = null;
+      if (contextBuilder_ != null) {
+        contextBuilder_.dispose();
         contextBuilder_ = null;
       }
       return this;
@@ -616,24 +619,29 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
     public com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent buildPartial() {
       com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent result =
           new com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent(this);
-      if (eventTimeBuilder_ == null) {
-        result.eventTime_ = eventTime_;
-      } else {
-        result.eventTime_ = eventTimeBuilder_.build();
-      }
-      if (serviceContextBuilder_ == null) {
-        result.serviceContext_ = serviceContext_;
-      } else {
-        result.serviceContext_ = serviceContextBuilder_.build();
-      }
-      result.message_ = message_;
-      if (contextBuilder_ == null) {
-        result.context_ = context_;
-      } else {
-        result.context_ = contextBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.eventTime_ = eventTimeBuilder_ == null ? eventTime_ : eventTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.serviceContext_ =
+            serviceContextBuilder_ == null ? serviceContext_ : serviceContextBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.message_ = message_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.context_ = contextBuilder_ == null ? context_ : contextBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -693,6 +701,7 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasContext()) {
@@ -727,25 +736,25 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 input.readMessage(getEventTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getServiceContextFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 message_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getContextFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -764,6 +773,8 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.Timestamp eventTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -786,7 +797,7 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
      * @return Whether the eventTime field is set.
      */
     public boolean hasEventTime() {
-      return eventTimeBuilder_ != null || eventTime_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -827,11 +838,11 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         eventTime_ = value;
-        onChanged();
       } else {
         eventTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -849,11 +860,11 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
     public Builder setEventTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (eventTimeBuilder_ == null) {
         eventTime_ = builderForValue.build();
-        onChanged();
       } else {
         eventTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -870,17 +881,18 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeEventTime(com.google.protobuf.Timestamp value) {
       if (eventTimeBuilder_ == null) {
-        if (eventTime_ != null) {
-          eventTime_ =
-              com.google.protobuf.Timestamp.newBuilder(eventTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && eventTime_ != null
+            && eventTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEventTimeBuilder().mergeFrom(value);
         } else {
           eventTime_ = value;
         }
-        onChanged();
       } else {
         eventTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -896,14 +908,13 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearEventTime() {
-      if (eventTimeBuilder_ == null) {
-        eventTime_ = null;
-        onChanged();
-      } else {
-        eventTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      eventTime_ = null;
+      if (eventTimeBuilder_ != null) {
+        eventTimeBuilder_.dispose();
         eventTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -919,7 +930,7 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEventTimeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getEventTimeFieldBuilder().getBuilder();
     }
@@ -991,7 +1002,7 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
      * @return Whether the serviceContext field is set.
      */
     public boolean hasServiceContext() {
-      return serviceContextBuilder_ != null || serviceContext_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1033,11 +1044,11 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         serviceContext_ = value;
-        onChanged();
       } else {
         serviceContextBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1055,11 +1066,11 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
         com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.Builder builderForValue) {
       if (serviceContextBuilder_ == null) {
         serviceContext_ = builderForValue.build();
-        onChanged();
       } else {
         serviceContextBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1076,20 +1087,20 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
     public Builder mergeServiceContext(
         com.google.devtools.clouderrorreporting.v1beta1.ServiceContext value) {
       if (serviceContextBuilder_ == null) {
-        if (serviceContext_ != null) {
-          serviceContext_ =
-              com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.newBuilder(
-                      serviceContext_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && serviceContext_ != null
+            && serviceContext_
+                != com.google.devtools.clouderrorreporting.v1beta1.ServiceContext
+                    .getDefaultInstance()) {
+          getServiceContextBuilder().mergeFrom(value);
         } else {
           serviceContext_ = value;
         }
-        onChanged();
       } else {
         serviceContextBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1104,14 +1115,13 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearServiceContext() {
-      if (serviceContextBuilder_ == null) {
-        serviceContext_ = null;
-        onChanged();
-      } else {
-        serviceContext_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      serviceContext_ = null;
+      if (serviceContextBuilder_ != null) {
+        serviceContextBuilder_.dispose();
         serviceContextBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1127,7 +1137,7 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.Builder
         getServiceContextBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getServiceContextFieldBuilder().getBuilder();
     }
@@ -1307,8 +1317,8 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       message_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1346,8 +1356,8 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
-
       message_ = getDefaultInstance().getMessage();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1390,8 +1400,8 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       message_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1416,7 +1426,7 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
      * @return Whether the context field is set.
      */
     public boolean hasContext() {
-      return contextBuilder_ != null || context_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1457,11 +1467,11 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         context_ = value;
-        onChanged();
       } else {
         contextBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1479,11 +1489,11 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
         com.google.devtools.clouderrorreporting.v1beta1.ErrorContext.Builder builderForValue) {
       if (contextBuilder_ == null) {
         context_ = builderForValue.build();
-        onChanged();
       } else {
         contextBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1500,19 +1510,20 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
     public Builder mergeContext(
         com.google.devtools.clouderrorreporting.v1beta1.ErrorContext value) {
       if (contextBuilder_ == null) {
-        if (context_ != null) {
-          context_ =
-              com.google.devtools.clouderrorreporting.v1beta1.ErrorContext.newBuilder(context_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && context_ != null
+            && context_
+                != com.google.devtools.clouderrorreporting.v1beta1.ErrorContext
+                    .getDefaultInstance()) {
+          getContextBuilder().mergeFrom(value);
         } else {
           context_ = value;
         }
-        onChanged();
       } else {
         contextBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1527,14 +1538,13 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearContext() {
-      if (contextBuilder_ == null) {
-        context_ = null;
-        onChanged();
-      } else {
-        context_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      context_ = null;
+      if (contextBuilder_ != null) {
+        contextBuilder_.dispose();
         contextBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1550,7 +1560,7 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ErrorContext.Builder
         getContextBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getContextFieldBuilder().getBuilder();
     }

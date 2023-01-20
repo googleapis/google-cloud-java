@@ -110,11 +110,13 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.BigQueryTableOrBuilder getTableReferenceOrBuilder() {
-    return getTableReference();
+    return tableReference_ == null
+        ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()
+        : tableReference_;
   }
 
   public static final int ROW_NUMBER_FIELD_NUMBER = 2;
-  private long rowNumber_;
+  private long rowNumber_ = 0L;
   /**
    *
    *
@@ -344,14 +346,13 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (tableReferenceBuilder_ == null) {
-        tableReference_ = null;
-      } else {
-        tableReference_ = null;
+      bitField0_ = 0;
+      tableReference_ = null;
+      if (tableReferenceBuilder_ != null) {
+        tableReferenceBuilder_.dispose();
         tableReferenceBuilder_ = null;
       }
       rowNumber_ = 0L;
-
       return this;
     }
 
@@ -379,14 +380,22 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.BigQueryKey buildPartial() {
       com.google.privacy.dlp.v2.BigQueryKey result =
           new com.google.privacy.dlp.v2.BigQueryKey(this);
-      if (tableReferenceBuilder_ == null) {
-        result.tableReference_ = tableReference_;
-      } else {
-        result.tableReference_ = tableReferenceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.rowNumber_ = rowNumber_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.BigQueryKey result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.tableReference_ =
+            tableReferenceBuilder_ == null ? tableReference_ : tableReferenceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.rowNumber_ = rowNumber_;
+      }
     }
 
     @java.lang.Override
@@ -469,13 +478,13 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getTableReferenceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 rowNumber_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -495,6 +504,8 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.privacy.dlp.v2.BigQueryTable tableReference_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.BigQueryTable,
@@ -513,7 +524,7 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the tableReference field is set.
      */
     public boolean hasTableReference() {
-      return tableReferenceBuilder_ != null || tableReference_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -550,11 +561,11 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         tableReference_ = value;
-        onChanged();
       } else {
         tableReferenceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -570,11 +581,11 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
         com.google.privacy.dlp.v2.BigQueryTable.Builder builderForValue) {
       if (tableReferenceBuilder_ == null) {
         tableReference_ = builderForValue.build();
-        onChanged();
       } else {
         tableReferenceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -588,19 +599,18 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTableReference(com.google.privacy.dlp.v2.BigQueryTable value) {
       if (tableReferenceBuilder_ == null) {
-        if (tableReference_ != null) {
-          tableReference_ =
-              com.google.privacy.dlp.v2.BigQueryTable.newBuilder(tableReference_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && tableReference_ != null
+            && tableReference_ != com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()) {
+          getTableReferenceBuilder().mergeFrom(value);
         } else {
           tableReference_ = value;
         }
-        onChanged();
       } else {
         tableReferenceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -613,14 +623,13 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.BigQueryTable table_reference = 1;</code>
      */
     public Builder clearTableReference() {
-      if (tableReferenceBuilder_ == null) {
-        tableReference_ = null;
-        onChanged();
-      } else {
-        tableReference_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      tableReference_ = null;
+      if (tableReferenceBuilder_ != null) {
+        tableReferenceBuilder_.dispose();
         tableReferenceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -633,7 +642,7 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.BigQueryTable table_reference = 1;</code>
      */
     public com.google.privacy.dlp.v2.BigQueryTable.Builder getTableReferenceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTableReferenceFieldBuilder().getBuilder();
     }
@@ -720,6 +729,7 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
     public Builder setRowNumber(long value) {
 
       rowNumber_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -739,7 +749,7 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRowNumber() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       rowNumber_ = 0L;
       onChanged();
       return this;

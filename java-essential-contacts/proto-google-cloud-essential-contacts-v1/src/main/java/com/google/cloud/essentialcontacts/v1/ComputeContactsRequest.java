@@ -70,7 +70,9 @@ public final class ComputeContactsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -127,7 +129,10 @@ public final class ComputeContactsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int NOTIFICATION_CATEGORIES_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> notificationCategories_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.essentialcontacts.v1.NotificationCategory>
       notificationCategories_converter_ =
@@ -135,9 +140,8 @@ public final class ComputeContactsRequest extends com.google.protobuf.GeneratedM
               java.lang.Integer, com.google.cloud.essentialcontacts.v1.NotificationCategory>() {
             public com.google.cloud.essentialcontacts.v1.NotificationCategory convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.essentialcontacts.v1.NotificationCategory result =
-                  com.google.cloud.essentialcontacts.v1.NotificationCategory.valueOf(from);
+                  com.google.cloud.essentialcontacts.v1.NotificationCategory.forNumber(from);
               return result == null
                   ? com.google.cloud.essentialcontacts.v1.NotificationCategory.UNRECOGNIZED
                   : result;
@@ -248,7 +252,7 @@ public final class ComputeContactsRequest extends com.google.protobuf.GeneratedM
   private int notificationCategoriesMemoizedSerializedSize;
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 3;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
@@ -269,7 +273,9 @@ public final class ComputeContactsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 4;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -566,14 +572,12 @@ public final class ComputeContactsRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       notificationCategories_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       pageSize_ = 0;
-
       pageToken_ = "";
-
       return this;
     }
 
@@ -602,17 +606,35 @@ public final class ComputeContactsRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.essentialcontacts.v1.ComputeContactsRequest buildPartial() {
       com.google.cloud.essentialcontacts.v1.ComputeContactsRequest result =
           new com.google.cloud.essentialcontacts.v1.ComputeContactsRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        notificationCategories_ = java.util.Collections.unmodifiableList(notificationCategories_);
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.notificationCategories_ = notificationCategories_;
-      result.pageSize_ = pageSize_;
-      result.pageToken_ = pageToken_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.essentialcontacts.v1.ComputeContactsRequest result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        notificationCategories_ = java.util.Collections.unmodifiableList(notificationCategories_);
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.notificationCategories_ = notificationCategories_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.essentialcontacts.v1.ComputeContactsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
     }
 
     @java.lang.Override
@@ -664,12 +686,13 @@ public final class ComputeContactsRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.notificationCategories_.isEmpty()) {
         if (notificationCategories_.isEmpty()) {
           notificationCategories_ = other.notificationCategories_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureNotificationCategoriesIsMutable();
           notificationCategories_.addAll(other.notificationCategories_);
@@ -681,6 +704,7 @@ public final class ComputeContactsRequest extends com.google.protobuf.GeneratedM
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -712,19 +736,19 @@ public final class ComputeContactsRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 24:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 pageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 48:
@@ -838,8 +862,8 @@ public final class ComputeContactsRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -859,8 +883,8 @@ public final class ComputeContactsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -885,8 +909,8 @@ public final class ComputeContactsRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -895,10 +919,10 @@ public final class ComputeContactsRequest extends com.google.protobuf.GeneratedM
         java.util.Collections.emptyList();
 
     private void ensureNotificationCategoriesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         notificationCategories_ =
             new java.util.ArrayList<java.lang.Integer>(notificationCategories_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1056,7 +1080,7 @@ public final class ComputeContactsRequest extends com.google.protobuf.GeneratedM
      */
     public Builder clearNotificationCategories() {
       notificationCategories_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1204,6 +1228,7 @@ public final class ComputeContactsRequest extends com.google.protobuf.GeneratedM
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1222,7 +1247,7 @@ public final class ComputeContactsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -1298,8 +1323,8 @@ public final class ComputeContactsRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageToken_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1318,8 +1343,8 @@ public final class ComputeContactsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1343,8 +1368,8 @@ public final class ComputeContactsRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageToken_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

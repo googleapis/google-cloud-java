@@ -609,7 +609,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
   }
 
   public static final int ERROR_CODE_FIELD_NUMBER = 1;
-  private int errorCode_;
+  private int errorCode_ = 0;
   /**
    *
    *
@@ -642,16 +642,17 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.cloud.clouddms.v1.MigrationJobVerificationError.ErrorCode getErrorCode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.clouddms.v1.MigrationJobVerificationError.ErrorCode result =
-        com.google.cloud.clouddms.v1.MigrationJobVerificationError.ErrorCode.valueOf(errorCode_);
+        com.google.cloud.clouddms.v1.MigrationJobVerificationError.ErrorCode.forNumber(errorCode_);
     return result == null
         ? com.google.cloud.clouddms.v1.MigrationJobVerificationError.ErrorCode.UNRECOGNIZED
         : result;
   }
 
   public static final int ERROR_MESSAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object errorMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object errorMessage_ = "";
   /**
    *
    *
@@ -700,7 +701,9 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
   }
 
   public static final int ERROR_DETAIL_MESSAGE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object errorDetailMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object errorDetailMessage_ = "";
   /**
    *
    *
@@ -970,12 +973,10 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       errorCode_ = 0;
-
       errorMessage_ = "";
-
       errorDetailMessage_ = "";
-
       return this;
     }
 
@@ -1003,11 +1004,24 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
     public com.google.cloud.clouddms.v1.MigrationJobVerificationError buildPartial() {
       com.google.cloud.clouddms.v1.MigrationJobVerificationError result =
           new com.google.cloud.clouddms.v1.MigrationJobVerificationError(this);
-      result.errorCode_ = errorCode_;
-      result.errorMessage_ = errorMessage_;
-      result.errorDetailMessage_ = errorDetailMessage_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.clouddms.v1.MigrationJobVerificationError result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.errorCode_ = errorCode_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.errorMessage_ = errorMessage_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.errorDetailMessage_ = errorDetailMessage_;
+      }
     }
 
     @java.lang.Override
@@ -1061,10 +1075,12 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
       }
       if (!other.getErrorMessage().isEmpty()) {
         errorMessage_ = other.errorMessage_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getErrorDetailMessage().isEmpty()) {
         errorDetailMessage_ = other.errorDetailMessage_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1096,19 +1112,19 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
             case 8:
               {
                 errorCode_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 errorMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 errorDetailMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -1127,6 +1143,8 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int errorCode_ = 0;
     /**
@@ -1161,8 +1179,8 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder setErrorCodeValue(int value) {
-
       errorCode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1181,9 +1199,9 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      */
     @java.lang.Override
     public com.google.cloud.clouddms.v1.MigrationJobVerificationError.ErrorCode getErrorCode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.clouddms.v1.MigrationJobVerificationError.ErrorCode result =
-          com.google.cloud.clouddms.v1.MigrationJobVerificationError.ErrorCode.valueOf(errorCode_);
+          com.google.cloud.clouddms.v1.MigrationJobVerificationError.ErrorCode.forNumber(
+              errorCode_);
       return result == null
           ? com.google.cloud.clouddms.v1.MigrationJobVerificationError.ErrorCode.UNRECOGNIZED
           : result;
@@ -1207,7 +1225,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       errorCode_ = value.getNumber();
       onChanged();
       return this;
@@ -1226,7 +1244,7 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearErrorCode() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       errorCode_ = 0;
       onChanged();
       return this;
@@ -1293,8 +1311,8 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       errorMessage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1310,8 +1328,8 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearErrorMessage() {
-
       errorMessage_ = getDefaultInstance().getErrorMessage();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1332,8 +1350,8 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       errorMessage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1399,8 +1417,8 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       errorDetailMessage_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1416,8 +1434,8 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearErrorDetailMessage() {
-
       errorDetailMessage_ = getDefaultInstance().getErrorDetailMessage();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1438,8 +1456,8 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       errorDetailMessage_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -116,7 +116,9 @@ public final class ForwardSshTunnelConnectivity extends com.google.protobuf.Gene
   }
 
   public static final int HOSTNAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object hostname_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object hostname_ = "";
   /**
    *
    *
@@ -165,7 +167,9 @@ public final class ForwardSshTunnelConnectivity extends com.google.protobuf.Gene
   }
 
   public static final int USERNAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object username_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object username_ = "";
   /**
    *
    *
@@ -214,7 +218,7 @@ public final class ForwardSshTunnelConnectivity extends com.google.protobuf.Gene
   }
 
   public static final int PORT_FIELD_NUMBER = 3;
-  private int port_;
+  private int port_ = 0;
   /**
    *
    *
@@ -622,12 +626,10 @@ public final class ForwardSshTunnelConnectivity extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       hostname_ = "";
-
       username_ = "";
-
       port_ = 0;
-
       authenticationMethodCase_ = 0;
       authenticationMethod_ = null;
       return this;
@@ -657,18 +659,31 @@ public final class ForwardSshTunnelConnectivity extends com.google.protobuf.Gene
     public com.google.cloud.datastream.v1.ForwardSshTunnelConnectivity buildPartial() {
       com.google.cloud.datastream.v1.ForwardSshTunnelConnectivity result =
           new com.google.cloud.datastream.v1.ForwardSshTunnelConnectivity(this);
-      result.hostname_ = hostname_;
-      result.username_ = username_;
-      result.port_ = port_;
-      if (authenticationMethodCase_ == 100) {
-        result.authenticationMethod_ = authenticationMethod_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (authenticationMethodCase_ == 101) {
-        result.authenticationMethod_ = authenticationMethod_;
-      }
-      result.authenticationMethodCase_ = authenticationMethodCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1.ForwardSshTunnelConnectivity result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.hostname_ = hostname_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.username_ = username_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.port_ = port_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.datastream.v1.ForwardSshTunnelConnectivity result) {
+      result.authenticationMethodCase_ = authenticationMethodCase_;
+      result.authenticationMethod_ = this.authenticationMethod_;
     }
 
     @java.lang.Override
@@ -719,10 +734,12 @@ public final class ForwardSshTunnelConnectivity extends com.google.protobuf.Gene
         return this;
       if (!other.getHostname().isEmpty()) {
         hostname_ = other.hostname_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getUsername().isEmpty()) {
         username_ = other.username_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getPort() != 0) {
@@ -777,19 +794,19 @@ public final class ForwardSshTunnelConnectivity extends com.google.protobuf.Gene
             case 10:
               {
                 hostname_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 username_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 port_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 802:
@@ -836,6 +853,8 @@ public final class ForwardSshTunnelConnectivity extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object hostname_ = "";
     /**
@@ -898,8 +917,8 @@ public final class ForwardSshTunnelConnectivity extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       hostname_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -915,8 +934,8 @@ public final class ForwardSshTunnelConnectivity extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearHostname() {
-
       hostname_ = getDefaultInstance().getHostname();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -937,8 +956,8 @@ public final class ForwardSshTunnelConnectivity extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       hostname_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1004,8 +1023,8 @@ public final class ForwardSshTunnelConnectivity extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       username_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1021,8 +1040,8 @@ public final class ForwardSshTunnelConnectivity extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearUsername() {
-
       username_ = getDefaultInstance().getUsername();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1043,8 +1062,8 @@ public final class ForwardSshTunnelConnectivity extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       username_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1080,6 +1099,7 @@ public final class ForwardSshTunnelConnectivity extends com.google.protobuf.Gene
     public Builder setPort(int value) {
 
       port_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1095,7 +1115,7 @@ public final class ForwardSshTunnelConnectivity extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearPort() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       port_ = 0;
       onChanged();
       return this;

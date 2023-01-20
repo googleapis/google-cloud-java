@@ -72,7 +72,9 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DOMAIN_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object domainName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object domainName_ = "";
   /**
    *
    *
@@ -121,7 +123,9 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int CURRENT_REGISTRAR_FIELD_NUMBER = 2;
-  private volatile java.lang.Object currentRegistrar_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object currentRegistrar_ = "";
   /**
    *
    *
@@ -170,6 +174,8 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NAME_SERVERS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList nameServers_;
   /**
    *
@@ -231,7 +237,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TRANSFER_LOCK_STATE_FIELD_NUMBER = 4;
-  private int transferLockState_;
+  private int transferLockState_ = 0;
   /**
    *
    *
@@ -264,16 +270,18 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.domains.v1alpha2.TransferLockState getTransferLockState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.domains.v1alpha2.TransferLockState result =
-        com.google.cloud.domains.v1alpha2.TransferLockState.valueOf(transferLockState_);
+        com.google.cloud.domains.v1alpha2.TransferLockState.forNumber(transferLockState_);
     return result == null
         ? com.google.cloud.domains.v1alpha2.TransferLockState.UNRECOGNIZED
         : result;
   }
 
   public static final int SUPPORTED_PRIVACY_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> supportedPrivacy_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.domains.v1alpha2.ContactPrivacy>
       supportedPrivacy_converter_ =
@@ -281,9 +289,8 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
               java.lang.Integer, com.google.cloud.domains.v1alpha2.ContactPrivacy>() {
             public com.google.cloud.domains.v1alpha2.ContactPrivacy convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.domains.v1alpha2.ContactPrivacy result =
-                  com.google.cloud.domains.v1alpha2.ContactPrivacy.valueOf(from);
+                  com.google.cloud.domains.v1alpha2.ContactPrivacy.forNumber(from);
               return result == null
                   ? com.google.cloud.domains.v1alpha2.ContactPrivacy.UNRECOGNIZED
                   : result;
@@ -415,7 +422,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.type.MoneyOrBuilder getYearlyPriceOrBuilder() {
-    return getYearlyPrice();
+    return yearlyPrice_ == null ? com.google.type.Money.getDefaultInstance() : yearlyPrice_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -693,20 +700,17 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       domainName_ = "";
-
       currentRegistrar_ = "";
-
       nameServers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       transferLockState_ = 0;
-
       supportedPrivacy_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (yearlyPriceBuilder_ == null) {
-        yearlyPrice_ = null;
-      } else {
-        yearlyPrice_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      yearlyPrice_ = null;
+      if (yearlyPriceBuilder_ != null) {
+        yearlyPriceBuilder_.dispose();
         yearlyPriceBuilder_ = null;
       }
       return this;
@@ -736,27 +740,43 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.domains.v1alpha2.TransferParameters buildPartial() {
       com.google.cloud.domains.v1alpha2.TransferParameters result =
           new com.google.cloud.domains.v1alpha2.TransferParameters(this);
-      int from_bitField0_ = bitField0_;
-      result.domainName_ = domainName_;
-      result.currentRegistrar_ = currentRegistrar_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        nameServers_ = nameServers_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.nameServers_ = nameServers_;
-      result.transferLockState_ = transferLockState_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        supportedPrivacy_ = java.util.Collections.unmodifiableList(supportedPrivacy_);
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.supportedPrivacy_ = supportedPrivacy_;
-      if (yearlyPriceBuilder_ == null) {
-        result.yearlyPrice_ = yearlyPrice_;
-      } else {
-        result.yearlyPrice_ = yearlyPriceBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.domains.v1alpha2.TransferParameters result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        nameServers_ = nameServers_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.nameServers_ = nameServers_;
+      if (((bitField0_ & 0x00000010) != 0)) {
+        supportedPrivacy_ = java.util.Collections.unmodifiableList(supportedPrivacy_);
+        bitField0_ = (bitField0_ & ~0x00000010);
+      }
+      result.supportedPrivacy_ = supportedPrivacy_;
+    }
+
+    private void buildPartial0(com.google.cloud.domains.v1alpha2.TransferParameters result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.domainName_ = domainName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.currentRegistrar_ = currentRegistrar_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.transferLockState_ = transferLockState_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.yearlyPrice_ =
+            yearlyPriceBuilder_ == null ? yearlyPrice_ : yearlyPriceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -807,16 +827,18 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getDomainName().isEmpty()) {
         domainName_ = other.domainName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getCurrentRegistrar().isEmpty()) {
         currentRegistrar_ = other.currentRegistrar_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.nameServers_.isEmpty()) {
         if (nameServers_.isEmpty()) {
           nameServers_ = other.nameServers_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureNameServersIsMutable();
           nameServers_.addAll(other.nameServers_);
@@ -829,7 +851,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       if (!other.supportedPrivacy_.isEmpty()) {
         if (supportedPrivacy_.isEmpty()) {
           supportedPrivacy_ = other.supportedPrivacy_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureSupportedPrivacyIsMutable();
           supportedPrivacy_.addAll(other.supportedPrivacy_);
@@ -868,13 +890,13 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 domainName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 currentRegistrar_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -887,7 +909,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
             case 32:
               {
                 transferLockState_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
@@ -912,7 +934,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
             case 50:
               {
                 input.readMessage(getYearlyPriceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -995,8 +1017,8 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       domainName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1012,8 +1034,8 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDomainName() {
-
       domainName_ = getDefaultInstance().getDomainName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1034,8 +1056,8 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       domainName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1101,8 +1123,8 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       currentRegistrar_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1118,8 +1140,8 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearCurrentRegistrar() {
-
       currentRegistrar_ = getDefaultInstance().getCurrentRegistrar();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1140,8 +1162,8 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       currentRegistrar_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1150,9 +1172,9 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureNameServersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         nameServers_ = new com.google.protobuf.LazyStringArrayList(nameServers_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1287,7 +1309,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearNameServers() {
       nameServers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1347,8 +1369,8 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setTransferLockStateValue(int value) {
-
       transferLockState_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1367,9 +1389,8 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.cloud.domains.v1alpha2.TransferLockState getTransferLockState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.domains.v1alpha2.TransferLockState result =
-          com.google.cloud.domains.v1alpha2.TransferLockState.valueOf(transferLockState_);
+          com.google.cloud.domains.v1alpha2.TransferLockState.forNumber(transferLockState_);
       return result == null
           ? com.google.cloud.domains.v1alpha2.TransferLockState.UNRECOGNIZED
           : result;
@@ -1392,7 +1413,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       transferLockState_ = value.getNumber();
       onChanged();
       return this;
@@ -1411,7 +1432,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearTransferLockState() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       transferLockState_ = 0;
       onChanged();
       return this;
@@ -1420,9 +1441,9 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
     private java.util.List<java.lang.Integer> supportedPrivacy_ = java.util.Collections.emptyList();
 
     private void ensureSupportedPrivacyIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         supportedPrivacy_ = new java.util.ArrayList<java.lang.Integer>(supportedPrivacy_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -1549,7 +1570,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearSupportedPrivacy() {
       supportedPrivacy_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1656,7 +1677,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
      * @return Whether the yearlyPrice field is set.
      */
     public boolean hasYearlyPrice() {
-      return yearlyPriceBuilder_ != null || yearlyPrice_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1691,11 +1712,11 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         yearlyPrice_ = value;
-        onChanged();
       } else {
         yearlyPriceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1710,11 +1731,11 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
     public Builder setYearlyPrice(com.google.type.Money.Builder builderForValue) {
       if (yearlyPriceBuilder_ == null) {
         yearlyPrice_ = builderForValue.build();
-        onChanged();
       } else {
         yearlyPriceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1728,17 +1749,18 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeYearlyPrice(com.google.type.Money value) {
       if (yearlyPriceBuilder_ == null) {
-        if (yearlyPrice_ != null) {
-          yearlyPrice_ =
-              com.google.type.Money.newBuilder(yearlyPrice_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && yearlyPrice_ != null
+            && yearlyPrice_ != com.google.type.Money.getDefaultInstance()) {
+          getYearlyPriceBuilder().mergeFrom(value);
         } else {
           yearlyPrice_ = value;
         }
-        onChanged();
       } else {
         yearlyPriceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1751,14 +1773,13 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
      * <code>.google.type.Money yearly_price = 6;</code>
      */
     public Builder clearYearlyPrice() {
-      if (yearlyPriceBuilder_ == null) {
-        yearlyPrice_ = null;
-        onChanged();
-      } else {
-        yearlyPrice_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      yearlyPrice_ = null;
+      if (yearlyPriceBuilder_ != null) {
+        yearlyPriceBuilder_.dispose();
         yearlyPriceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1771,7 +1792,7 @@ public final class TransferParameters extends com.google.protobuf.GeneratedMessa
      * <code>.google.type.Money yearly_price = 6;</code>
      */
     public com.google.type.Money.Builder getYearlyPriceBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getYearlyPriceFieldBuilder().getBuilder();
     }

@@ -69,7 +69,9 @@ public final class CreateTriggerRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -167,11 +169,13 @@ public final class CreateTriggerRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.eventarc.v1.TriggerOrBuilder getTriggerOrBuilder() {
-    return getTrigger();
+    return trigger_ == null ? com.google.cloud.eventarc.v1.Trigger.getDefaultInstance() : trigger_;
   }
 
   public static final int TRIGGER_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object triggerId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object triggerId_ = "";
   /**
    *
    *
@@ -220,7 +224,7 @@ public final class CreateTriggerRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -467,18 +471,15 @@ public final class CreateTriggerRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (triggerBuilder_ == null) {
-        trigger_ = null;
-      } else {
-        trigger_ = null;
+      trigger_ = null;
+      if (triggerBuilder_ != null) {
+        triggerBuilder_.dispose();
         triggerBuilder_ = null;
       }
       triggerId_ = "";
-
       validateOnly_ = false;
-
       return this;
     }
 
@@ -506,16 +507,27 @@ public final class CreateTriggerRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.eventarc.v1.CreateTriggerRequest buildPartial() {
       com.google.cloud.eventarc.v1.CreateTriggerRequest result =
           new com.google.cloud.eventarc.v1.CreateTriggerRequest(this);
-      result.parent_ = parent_;
-      if (triggerBuilder_ == null) {
-        result.trigger_ = trigger_;
-      } else {
-        result.trigger_ = triggerBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.triggerId_ = triggerId_;
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.eventarc.v1.CreateTriggerRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.trigger_ = triggerBuilder_ == null ? trigger_ : triggerBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.triggerId_ = triggerId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -566,6 +578,7 @@ public final class CreateTriggerRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasTrigger()) {
@@ -573,6 +586,7 @@ public final class CreateTriggerRequest extends com.google.protobuf.GeneratedMes
       }
       if (!other.getTriggerId().isEmpty()) {
         triggerId_ = other.triggerId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getValidateOnly() != false) {
@@ -607,25 +621,25 @@ public final class CreateTriggerRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getTriggerFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 triggerId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -644,6 +658,8 @@ public final class CreateTriggerRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -712,8 +728,8 @@ public final class CreateTriggerRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -731,8 +747,8 @@ public final class CreateTriggerRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -755,8 +771,8 @@ public final class CreateTriggerRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -781,7 +797,7 @@ public final class CreateTriggerRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the trigger field is set.
      */
     public boolean hasTrigger() {
-      return triggerBuilder_ != null || trigger_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -822,11 +838,11 @@ public final class CreateTriggerRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         trigger_ = value;
-        onChanged();
       } else {
         triggerBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -843,11 +859,11 @@ public final class CreateTriggerRequest extends com.google.protobuf.GeneratedMes
     public Builder setTrigger(com.google.cloud.eventarc.v1.Trigger.Builder builderForValue) {
       if (triggerBuilder_ == null) {
         trigger_ = builderForValue.build();
-        onChanged();
       } else {
         triggerBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -863,19 +879,18 @@ public final class CreateTriggerRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeTrigger(com.google.cloud.eventarc.v1.Trigger value) {
       if (triggerBuilder_ == null) {
-        if (trigger_ != null) {
-          trigger_ =
-              com.google.cloud.eventarc.v1.Trigger.newBuilder(trigger_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && trigger_ != null
+            && trigger_ != com.google.cloud.eventarc.v1.Trigger.getDefaultInstance()) {
+          getTriggerBuilder().mergeFrom(value);
         } else {
           trigger_ = value;
         }
-        onChanged();
       } else {
         triggerBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -890,14 +905,13 @@ public final class CreateTriggerRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearTrigger() {
-      if (triggerBuilder_ == null) {
-        trigger_ = null;
-        onChanged();
-      } else {
-        trigger_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      trigger_ = null;
+      if (triggerBuilder_ != null) {
+        triggerBuilder_.dispose();
         triggerBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -912,7 +926,7 @@ public final class CreateTriggerRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.eventarc.v1.Trigger.Builder getTriggerBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTriggerFieldBuilder().getBuilder();
     }
@@ -1025,8 +1039,8 @@ public final class CreateTriggerRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       triggerId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1042,8 +1056,8 @@ public final class CreateTriggerRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearTriggerId() {
-
       triggerId_ = getDefaultInstance().getTriggerId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1064,8 +1078,8 @@ public final class CreateTriggerRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       triggerId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1103,6 +1117,7 @@ public final class CreateTriggerRequest extends com.google.protobuf.GeneratedMes
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1119,7 +1134,7 @@ public final class CreateTriggerRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       validateOnly_ = false;
       onChanged();
       return this;

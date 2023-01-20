@@ -409,6 +409,7 @@ public final class DataProfileLocation extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       locationCase_ = 0;
       location_ = null;
       return this;
@@ -438,15 +439,21 @@ public final class DataProfileLocation extends com.google.protobuf.GeneratedMess
     public com.google.privacy.dlp.v2.DataProfileLocation buildPartial() {
       com.google.privacy.dlp.v2.DataProfileLocation result =
           new com.google.privacy.dlp.v2.DataProfileLocation(this);
-      if (locationCase_ == 1) {
-        result.location_ = location_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (locationCase_ == 2) {
-        result.location_ = location_;
-      }
-      result.locationCase_ = locationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.DataProfileLocation result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.DataProfileLocation result) {
+      result.locationCase_ = locationCase_;
+      result.location_ = this.location_;
     }
 
     @java.lang.Override
@@ -579,6 +586,8 @@ public final class DataProfileLocation extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    private int bitField0_;
+
     /**
      *
      *
@@ -623,6 +632,7 @@ public final class DataProfileLocation extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setOrganizationId(long value) {
+
       locationCase_ = 1;
       location_ = value;
       onChanged();
@@ -692,6 +702,7 @@ public final class DataProfileLocation extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setFolderId(long value) {
+
       locationCase_ = 2;
       location_ = value;
       onChanged();

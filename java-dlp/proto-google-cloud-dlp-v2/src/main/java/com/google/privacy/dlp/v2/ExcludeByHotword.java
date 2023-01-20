@@ -112,7 +112,9 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder getHotwordRegexOrBuilder() {
-    return getHotwordRegex();
+    return hotwordRegex_ == null
+        ? com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance()
+        : hotwordRegex_;
   }
 
   public static final int PROXIMITY_FIELD_NUMBER = 2;
@@ -170,7 +172,9 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.ProximityOrBuilder
       getProximityOrBuilder() {
-    return getProximity();
+    return proximity_ == null
+        ? com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.getDefaultInstance()
+        : proximity_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -391,16 +395,15 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (hotwordRegexBuilder_ == null) {
-        hotwordRegex_ = null;
-      } else {
-        hotwordRegex_ = null;
+      bitField0_ = 0;
+      hotwordRegex_ = null;
+      if (hotwordRegexBuilder_ != null) {
+        hotwordRegexBuilder_.dispose();
         hotwordRegexBuilder_ = null;
       }
-      if (proximityBuilder_ == null) {
-        proximity_ = null;
-      } else {
-        proximity_ = null;
+      proximity_ = null;
+      if (proximityBuilder_ != null) {
+        proximityBuilder_.dispose();
         proximityBuilder_ = null;
       }
       return this;
@@ -430,18 +433,22 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
     public com.google.privacy.dlp.v2.ExcludeByHotword buildPartial() {
       com.google.privacy.dlp.v2.ExcludeByHotword result =
           new com.google.privacy.dlp.v2.ExcludeByHotword(this);
-      if (hotwordRegexBuilder_ == null) {
-        result.hotwordRegex_ = hotwordRegex_;
-      } else {
-        result.hotwordRegex_ = hotwordRegexBuilder_.build();
-      }
-      if (proximityBuilder_ == null) {
-        result.proximity_ = proximity_;
-      } else {
-        result.proximity_ = proximityBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.ExcludeByHotword result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.hotwordRegex_ =
+            hotwordRegexBuilder_ == null ? hotwordRegex_ : hotwordRegexBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.proximity_ = proximityBuilder_ == null ? proximity_ : proximityBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -524,13 +531,13 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 input.readMessage(getHotwordRegexFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getProximityFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -550,6 +557,8 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.privacy.dlp.v2.CustomInfoType.Regex hotwordRegex_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.CustomInfoType.Regex,
@@ -568,7 +577,7 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
      * @return Whether the hotwordRegex field is set.
      */
     public boolean hasHotwordRegex() {
-      return hotwordRegexBuilder_ != null || hotwordRegex_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -605,11 +614,11 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         hotwordRegex_ = value;
-        onChanged();
       } else {
         hotwordRegexBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -625,11 +634,11 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
         com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder builderForValue) {
       if (hotwordRegexBuilder_ == null) {
         hotwordRegex_ = builderForValue.build();
-        onChanged();
       } else {
         hotwordRegexBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -643,19 +652,19 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeHotwordRegex(com.google.privacy.dlp.v2.CustomInfoType.Regex value) {
       if (hotwordRegexBuilder_ == null) {
-        if (hotwordRegex_ != null) {
-          hotwordRegex_ =
-              com.google.privacy.dlp.v2.CustomInfoType.Regex.newBuilder(hotwordRegex_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && hotwordRegex_ != null
+            && hotwordRegex_
+                != com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance()) {
+          getHotwordRegexBuilder().mergeFrom(value);
         } else {
           hotwordRegex_ = value;
         }
-        onChanged();
       } else {
         hotwordRegexBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -668,14 +677,13 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
      * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
      */
     public Builder clearHotwordRegex() {
-      if (hotwordRegexBuilder_ == null) {
-        hotwordRegex_ = null;
-        onChanged();
-      } else {
-        hotwordRegex_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      hotwordRegex_ = null;
+      if (hotwordRegexBuilder_ != null) {
+        hotwordRegexBuilder_.dispose();
         hotwordRegexBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -688,7 +696,7 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
      * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
      */
     public com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder getHotwordRegexBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getHotwordRegexFieldBuilder().getBuilder();
     }
@@ -757,7 +765,7 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
      * @return Whether the proximity field is set.
      */
     public boolean hasProximity() {
-      return proximityBuilder_ != null || proximity_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -801,11 +809,11 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         proximity_ = value;
-        onChanged();
       } else {
         proximityBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -824,11 +832,11 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
         com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.Builder builderForValue) {
       if (proximityBuilder_ == null) {
         proximity_ = builderForValue.build();
-        onChanged();
       } else {
         proximityBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -846,20 +854,20 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
     public Builder mergeProximity(
         com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity value) {
       if (proximityBuilder_ == null) {
-        if (proximity_ != null) {
-          proximity_ =
-              com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.newBuilder(
-                      proximity_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && proximity_ != null
+            && proximity_
+                != com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity
+                    .getDefaultInstance()) {
+          getProximityBuilder().mergeFrom(value);
         } else {
           proximity_ = value;
         }
-        onChanged();
       } else {
         proximityBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -875,14 +883,13 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
      * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
      */
     public Builder clearProximity() {
-      if (proximityBuilder_ == null) {
-        proximity_ = null;
-        onChanged();
-      } else {
-        proximity_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      proximity_ = null;
+      if (proximityBuilder_ != null) {
+        proximityBuilder_.dispose();
         proximityBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -899,7 +906,7 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
      */
     public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.Builder
         getProximityBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getProximityFieldBuilder().getBuilder();
     }

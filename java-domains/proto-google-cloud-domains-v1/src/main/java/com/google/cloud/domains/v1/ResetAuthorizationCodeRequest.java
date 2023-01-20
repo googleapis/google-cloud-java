@@ -68,7 +68,9 @@ public final class ResetAuthorizationCodeRequest extends com.google.protobuf.Gen
   }
 
   public static final int REGISTRATION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object registration_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object registration_ = "";
   /**
    *
    *
@@ -320,8 +322,8 @@ public final class ResetAuthorizationCodeRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       registration_ = "";
-
       return this;
     }
 
@@ -349,9 +351,18 @@ public final class ResetAuthorizationCodeRequest extends com.google.protobuf.Gen
     public com.google.cloud.domains.v1.ResetAuthorizationCodeRequest buildPartial() {
       com.google.cloud.domains.v1.ResetAuthorizationCodeRequest result =
           new com.google.cloud.domains.v1.ResetAuthorizationCodeRequest(this);
-      result.registration_ = registration_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.domains.v1.ResetAuthorizationCodeRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.registration_ = registration_;
+      }
     }
 
     @java.lang.Override
@@ -402,6 +413,7 @@ public final class ResetAuthorizationCodeRequest extends com.google.protobuf.Gen
         return this;
       if (!other.getRegistration().isEmpty()) {
         registration_ = other.registration_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -433,7 +445,7 @@ public final class ResetAuthorizationCodeRequest extends com.google.protobuf.Gen
             case 10:
               {
                 registration_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -452,6 +464,8 @@ public final class ResetAuthorizationCodeRequest extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object registration_ = "";
     /**
@@ -523,8 +537,8 @@ public final class ResetAuthorizationCodeRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       registration_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -543,8 +557,8 @@ public final class ResetAuthorizationCodeRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearRegistration() {
-
       registration_ = getDefaultInstance().getRegistration();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -568,8 +582,8 @@ public final class ResetAuthorizationCodeRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       registration_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

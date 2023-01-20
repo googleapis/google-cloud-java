@@ -68,6 +68,8 @@ public final class PostgresqlRdbms extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int POSTGRESQL_SCHEMAS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datastream.v1.PostgresqlSchema> postgresqlSchemas_;
   /**
    *
@@ -338,6 +340,7 @@ public final class PostgresqlRdbms extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (postgresqlSchemasBuilder_ == null) {
         postgresqlSchemas_ = java.util.Collections.emptyList();
       } else {
@@ -372,7 +375,15 @@ public final class PostgresqlRdbms extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.datastream.v1.PostgresqlRdbms buildPartial() {
       com.google.cloud.datastream.v1.PostgresqlRdbms result =
           new com.google.cloud.datastream.v1.PostgresqlRdbms(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.datastream.v1.PostgresqlRdbms result) {
       if (postgresqlSchemasBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           postgresqlSchemas_ = java.util.Collections.unmodifiableList(postgresqlSchemas_);
@@ -382,8 +393,10 @@ public final class PostgresqlRdbms extends com.google.protobuf.GeneratedMessageV
       } else {
         result.postgresqlSchemas_ = postgresqlSchemasBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1.PostgresqlRdbms result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

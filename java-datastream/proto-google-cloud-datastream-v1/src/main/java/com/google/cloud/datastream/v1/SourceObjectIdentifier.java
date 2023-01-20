@@ -172,7 +172,9 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     }
 
     public static final int SCHEMA_FIELD_NUMBER = 1;
-    private volatile java.lang.Object schema_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object schema_ = "";
     /**
      *
      *
@@ -221,7 +223,9 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     }
 
     public static final int TABLE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object table_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object table_ = "";
     /**
      *
      *
@@ -489,10 +493,9 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         schema_ = "";
-
         table_ = "";
-
         return this;
       }
 
@@ -524,10 +527,22 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           buildPartial() {
         com.google.cloud.datastream.v1.SourceObjectIdentifier.OracleObjectIdentifier result =
             new com.google.cloud.datastream.v1.SourceObjectIdentifier.OracleObjectIdentifier(this);
-        result.schema_ = schema_;
-        result.table_ = table_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.datastream.v1.SourceObjectIdentifier.OracleObjectIdentifier result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.schema_ = schema_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.table_ = table_;
+        }
       }
 
       @java.lang.Override
@@ -585,10 +600,12 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
                 .getDefaultInstance()) return this;
         if (!other.getSchema().isEmpty()) {
           schema_ = other.schema_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getTable().isEmpty()) {
           table_ = other.table_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -620,13 +637,13 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
               case 10:
                 {
                   schema_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   table_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -645,6 +662,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object schema_ = "";
       /**
@@ -707,8 +726,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         if (value == null) {
           throw new NullPointerException();
         }
-
         schema_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -724,8 +743,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearSchema() {
-
         schema_ = getDefaultInstance().getSchema();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -746,8 +765,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         schema_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -813,8 +832,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         if (value == null) {
           throw new NullPointerException();
         }
-
         table_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -830,8 +849,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearTable() {
-
         table_ = getDefaultInstance().getTable();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -852,8 +871,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         table_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1037,7 +1056,9 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     }
 
     public static final int SCHEMA_FIELD_NUMBER = 1;
-    private volatile java.lang.Object schema_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object schema_ = "";
     /**
      *
      *
@@ -1086,7 +1107,9 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     }
 
     public static final int TABLE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object table_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object table_ = "";
     /**
      *
      *
@@ -1356,10 +1379,9 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         schema_ = "";
-
         table_ = "";
-
         return this;
       }
 
@@ -1393,10 +1415,22 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier result =
             new com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier(
                 this);
-        result.schema_ = schema_;
-        result.table_ = table_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.schema_ = schema_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.table_ = table_;
+        }
       }
 
       @java.lang.Override
@@ -1455,10 +1489,12 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
                 .getDefaultInstance()) return this;
         if (!other.getSchema().isEmpty()) {
           schema_ = other.schema_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getTable().isEmpty()) {
           table_ = other.table_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1490,13 +1526,13 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
               case 10:
                 {
                   schema_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   table_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -1515,6 +1551,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object schema_ = "";
       /**
@@ -1577,8 +1615,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         if (value == null) {
           throw new NullPointerException();
         }
-
         schema_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1594,8 +1632,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearSchema() {
-
         schema_ = getDefaultInstance().getSchema();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1616,8 +1654,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         schema_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1683,8 +1721,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         if (value == null) {
           throw new NullPointerException();
         }
-
         table_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1700,8 +1738,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearTable() {
-
         table_ = getDefaultInstance().getTable();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1722,8 +1760,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         table_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1904,7 +1942,9 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     }
 
     public static final int DATABASE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object database_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object database_ = "";
     /**
      *
      *
@@ -1953,7 +1993,9 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     }
 
     public static final int TABLE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object table_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object table_ = "";
     /**
      *
      *
@@ -2219,10 +2261,9 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         database_ = "";
-
         table_ = "";
-
         return this;
       }
 
@@ -2254,10 +2295,22 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           buildPartial() {
         com.google.cloud.datastream.v1.SourceObjectIdentifier.MysqlObjectIdentifier result =
             new com.google.cloud.datastream.v1.SourceObjectIdentifier.MysqlObjectIdentifier(this);
-        result.database_ = database_;
-        result.table_ = table_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.datastream.v1.SourceObjectIdentifier.MysqlObjectIdentifier result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.database_ = database_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.table_ = table_;
+        }
       }
 
       @java.lang.Override
@@ -2315,10 +2368,12 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
                 .getDefaultInstance()) return this;
         if (!other.getDatabase().isEmpty()) {
           database_ = other.database_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getTable().isEmpty()) {
           table_ = other.table_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -2350,13 +2405,13 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
               case 10:
                 {
                   database_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   table_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -2375,6 +2430,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object database_ = "";
       /**
@@ -2437,8 +2494,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         if (value == null) {
           throw new NullPointerException();
         }
-
         database_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2454,8 +2511,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearDatabase() {
-
         database_ = getDefaultInstance().getDatabase();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2476,8 +2533,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         database_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2543,8 +2600,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         if (value == null) {
           throw new NullPointerException();
         }
-
         table_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2560,8 +2617,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearTable() {
-
         table_ = getDefaultInstance().getTable();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -2582,8 +2639,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         table_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -3153,6 +3210,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (oracleIdentifierBuilder_ != null) {
         oracleIdentifierBuilder_.clear();
       }
@@ -3191,30 +3249,30 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     public com.google.cloud.datastream.v1.SourceObjectIdentifier buildPartial() {
       com.google.cloud.datastream.v1.SourceObjectIdentifier result =
           new com.google.cloud.datastream.v1.SourceObjectIdentifier(this);
-      if (sourceIdentifierCase_ == 1) {
-        if (oracleIdentifierBuilder_ == null) {
-          result.sourceIdentifier_ = sourceIdentifier_;
-        } else {
-          result.sourceIdentifier_ = oracleIdentifierBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (sourceIdentifierCase_ == 2) {
-        if (mysqlIdentifierBuilder_ == null) {
-          result.sourceIdentifier_ = sourceIdentifier_;
-        } else {
-          result.sourceIdentifier_ = mysqlIdentifierBuilder_.build();
-        }
-      }
-      if (sourceIdentifierCase_ == 3) {
-        if (postgresqlIdentifierBuilder_ == null) {
-          result.sourceIdentifier_ = sourceIdentifier_;
-        } else {
-          result.sourceIdentifier_ = postgresqlIdentifierBuilder_.build();
-        }
-      }
-      result.sourceIdentifierCase_ = sourceIdentifierCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1.SourceObjectIdentifier result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.datastream.v1.SourceObjectIdentifier result) {
+      result.sourceIdentifierCase_ = sourceIdentifierCase_;
+      result.sourceIdentifier_ = this.sourceIdentifier_;
+      if (sourceIdentifierCase_ == 1 && oracleIdentifierBuilder_ != null) {
+        result.sourceIdentifier_ = oracleIdentifierBuilder_.build();
+      }
+      if (sourceIdentifierCase_ == 2 && mysqlIdentifierBuilder_ != null) {
+        result.sourceIdentifier_ = mysqlIdentifierBuilder_.build();
+      }
+      if (sourceIdentifierCase_ == 3 && postgresqlIdentifierBuilder_ != null) {
+        result.sourceIdentifier_ = postgresqlIdentifierBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3360,6 +3418,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datastream.v1.SourceObjectIdentifier.OracleObjectIdentifier,
@@ -3605,7 +3665,6 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       }
       sourceIdentifierCase_ = 1;
       onChanged();
-      ;
       return oracleIdentifierBuilder_;
     }
 
@@ -3852,7 +3911,6 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       }
       sourceIdentifierCase_ = 2;
       onChanged();
-      ;
       return mysqlIdentifierBuilder_;
     }
 
@@ -4105,7 +4163,6 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       }
       sourceIdentifierCase_ = 3;
       onChanged();
-      ;
       return postgresqlIdentifierBuilder_;
     }
 

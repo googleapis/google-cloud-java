@@ -71,7 +71,9 @@ public final class RestoreServiceRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int SERVICE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object service_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object service_ = "";
   /**
    *
    *
@@ -128,7 +130,9 @@ public final class RestoreServiceRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int BACKUP_FIELD_NUMBER = 2;
-  private volatile java.lang.Object backup_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object backup_ = "";
   /**
    *
    *
@@ -185,7 +189,7 @@ public final class RestoreServiceRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int RESTORE_TYPE_FIELD_NUMBER = 3;
-  private int restoreType_;
+  private int restoreType_ = 0;
   /**
    *
    *
@@ -218,14 +222,15 @@ public final class RestoreServiceRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.metastore.v1.Restore.RestoreType getRestoreType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.metastore.v1.Restore.RestoreType result =
-        com.google.cloud.metastore.v1.Restore.RestoreType.valueOf(restoreType_);
+        com.google.cloud.metastore.v1.Restore.RestoreType.forNumber(restoreType_);
     return result == null ? com.google.cloud.metastore.v1.Restore.RestoreType.UNRECOGNIZED : result;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -517,14 +522,11 @@ public final class RestoreServiceRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       service_ = "";
-
       backup_ = "";
-
       restoreType_ = 0;
-
       requestId_ = "";
-
       return this;
     }
 
@@ -552,12 +554,27 @@ public final class RestoreServiceRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.metastore.v1.RestoreServiceRequest buildPartial() {
       com.google.cloud.metastore.v1.RestoreServiceRequest result =
           new com.google.cloud.metastore.v1.RestoreServiceRequest(this);
-      result.service_ = service_;
-      result.backup_ = backup_;
-      result.restoreType_ = restoreType_;
-      result.requestId_ = requestId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.metastore.v1.RestoreServiceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.service_ = service_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.backup_ = backup_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.restoreType_ = restoreType_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -608,10 +625,12 @@ public final class RestoreServiceRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getService().isEmpty()) {
         service_ = other.service_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getBackup().isEmpty()) {
         backup_ = other.backup_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.restoreType_ != 0) {
@@ -619,6 +638,7 @@ public final class RestoreServiceRequest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -650,25 +670,25 @@ public final class RestoreServiceRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 service_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 backup_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 restoreType_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -687,6 +707,8 @@ public final class RestoreServiceRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object service_ = "";
     /**
@@ -761,8 +783,8 @@ public final class RestoreServiceRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       service_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -782,8 +804,8 @@ public final class RestoreServiceRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearService() {
-
       service_ = getDefaultInstance().getService();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -808,8 +830,8 @@ public final class RestoreServiceRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       service_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -887,8 +909,8 @@ public final class RestoreServiceRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       backup_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -908,8 +930,8 @@ public final class RestoreServiceRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearBackup() {
-
       backup_ = getDefaultInstance().getBackup();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -934,8 +956,8 @@ public final class RestoreServiceRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       backup_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -973,8 +995,8 @@ public final class RestoreServiceRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setRestoreTypeValue(int value) {
-
       restoreType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -993,9 +1015,8 @@ public final class RestoreServiceRequest extends com.google.protobuf.GeneratedMe
      */
     @java.lang.Override
     public com.google.cloud.metastore.v1.Restore.RestoreType getRestoreType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.metastore.v1.Restore.RestoreType result =
-          com.google.cloud.metastore.v1.Restore.RestoreType.valueOf(restoreType_);
+          com.google.cloud.metastore.v1.Restore.RestoreType.forNumber(restoreType_);
       return result == null
           ? com.google.cloud.metastore.v1.Restore.RestoreType.UNRECOGNIZED
           : result;
@@ -1018,7 +1039,7 @@ public final class RestoreServiceRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       restoreType_ = value.getNumber();
       onChanged();
       return this;
@@ -1037,7 +1058,7 @@ public final class RestoreServiceRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearRestoreType() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       restoreType_ = 0;
       onChanged();
       return this;
@@ -1131,8 +1152,8 @@ public final class RestoreServiceRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1157,8 +1178,8 @@ public final class RestoreServiceRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1188,8 +1209,8 @@ public final class RestoreServiceRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

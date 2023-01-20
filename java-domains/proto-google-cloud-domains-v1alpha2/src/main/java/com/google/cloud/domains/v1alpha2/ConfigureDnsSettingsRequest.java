@@ -68,7 +68,9 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
   }
 
   public static final int REGISTRATION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object registration_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object registration_ = "";
   /**
    *
    *
@@ -167,7 +169,9 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.cloud.domains.v1alpha2.DnsSettingsOrBuilder getDnsSettingsOrBuilder() {
-    return getDnsSettings();
+    return dnsSettings_ == null
+        ? com.google.cloud.domains.v1alpha2.DnsSettings.getDefaultInstance()
+        : dnsSettings_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
@@ -237,11 +241,11 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -493,22 +497,19 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       registration_ = "";
-
-      if (dnsSettingsBuilder_ == null) {
-        dnsSettings_ = null;
-      } else {
-        dnsSettings_ = null;
+      dnsSettings_ = null;
+      if (dnsSettingsBuilder_ != null) {
+        dnsSettingsBuilder_.dispose();
         dnsSettingsBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       validateOnly_ = false;
-
       return this;
     }
 
@@ -537,20 +538,29 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
     public com.google.cloud.domains.v1alpha2.ConfigureDnsSettingsRequest buildPartial() {
       com.google.cloud.domains.v1alpha2.ConfigureDnsSettingsRequest result =
           new com.google.cloud.domains.v1alpha2.ConfigureDnsSettingsRequest(this);
-      result.registration_ = registration_;
-      if (dnsSettingsBuilder_ == null) {
-        result.dnsSettings_ = dnsSettings_;
-      } else {
-        result.dnsSettings_ = dnsSettingsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
-      }
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.domains.v1alpha2.ConfigureDnsSettingsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.registration_ = registration_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dnsSettings_ =
+            dnsSettingsBuilder_ == null ? dnsSettings_ : dnsSettingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -602,6 +612,7 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
         return this;
       if (!other.getRegistration().isEmpty()) {
         registration_ = other.registration_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasDnsSettings()) {
@@ -642,25 +653,25 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
             case 10:
               {
                 registration_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getDnsSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -679,6 +690,8 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object registration_ = "";
     /**
@@ -750,8 +763,8 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       registration_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -770,8 +783,8 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearRegistration() {
-
       registration_ = getDefaultInstance().getRegistration();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -795,8 +808,8 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       registration_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -819,7 +832,7 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
      * @return Whether the dnsSettings field is set.
      */
     public boolean hasDnsSettings() {
-      return dnsSettingsBuilder_ != null || dnsSettings_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -856,11 +869,11 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         dnsSettings_ = value;
-        onChanged();
       } else {
         dnsSettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -876,11 +889,11 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
         com.google.cloud.domains.v1alpha2.DnsSettings.Builder builderForValue) {
       if (dnsSettingsBuilder_ == null) {
         dnsSettings_ = builderForValue.build();
-        onChanged();
       } else {
         dnsSettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -894,19 +907,18 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
      */
     public Builder mergeDnsSettings(com.google.cloud.domains.v1alpha2.DnsSettings value) {
       if (dnsSettingsBuilder_ == null) {
-        if (dnsSettings_ != null) {
-          dnsSettings_ =
-              com.google.cloud.domains.v1alpha2.DnsSettings.newBuilder(dnsSettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && dnsSettings_ != null
+            && dnsSettings_ != com.google.cloud.domains.v1alpha2.DnsSettings.getDefaultInstance()) {
+          getDnsSettingsBuilder().mergeFrom(value);
         } else {
           dnsSettings_ = value;
         }
-        onChanged();
       } else {
         dnsSettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -919,14 +931,13 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
      * <code>.google.cloud.domains.v1alpha2.DnsSettings dns_settings = 2;</code>
      */
     public Builder clearDnsSettings() {
-      if (dnsSettingsBuilder_ == null) {
-        dnsSettings_ = null;
-        onChanged();
-      } else {
-        dnsSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      dnsSettings_ = null;
+      if (dnsSettingsBuilder_ != null) {
+        dnsSettingsBuilder_.dispose();
         dnsSettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -939,7 +950,7 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
      * <code>.google.cloud.domains.v1alpha2.DnsSettings dns_settings = 2;</code>
      */
     public com.google.cloud.domains.v1alpha2.DnsSettings.Builder getDnsSettingsBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDnsSettingsFieldBuilder().getBuilder();
     }
@@ -1013,7 +1024,7 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1066,11 +1077,11 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1093,11 +1104,11 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1119,17 +1130,18 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1150,14 +1162,13 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1178,7 +1189,7 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -1273,6 +1284,7 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1288,7 +1300,7 @@ public final class ConfigureDnsSettingsRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       validateOnly_ = false;
       onChanged();
       return this;

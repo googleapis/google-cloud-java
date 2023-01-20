@@ -114,7 +114,9 @@ public final class RecordSuppression extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.RecordConditionOrBuilder getConditionOrBuilder() {
-    return getCondition();
+    return condition_ == null
+        ? com.google.privacy.dlp.v2.RecordCondition.getDefaultInstance()
+        : condition_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -320,10 +322,10 @@ public final class RecordSuppression extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (conditionBuilder_ == null) {
-        condition_ = null;
-      } else {
-        condition_ = null;
+      bitField0_ = 0;
+      condition_ = null;
+      if (conditionBuilder_ != null) {
+        conditionBuilder_.dispose();
         conditionBuilder_ = null;
       }
       return this;
@@ -353,13 +355,18 @@ public final class RecordSuppression extends com.google.protobuf.GeneratedMessag
     public com.google.privacy.dlp.v2.RecordSuppression buildPartial() {
       com.google.privacy.dlp.v2.RecordSuppression result =
           new com.google.privacy.dlp.v2.RecordSuppression(this);
-      if (conditionBuilder_ == null) {
-        result.condition_ = condition_;
-      } else {
-        result.condition_ = conditionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.RecordSuppression result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.condition_ = conditionBuilder_ == null ? condition_ : conditionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -439,7 +446,7 @@ public final class RecordSuppression extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 input.readMessage(getConditionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -458,6 +465,8 @@ public final class RecordSuppression extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.privacy.dlp.v2.RecordCondition condition_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -478,7 +487,7 @@ public final class RecordSuppression extends com.google.protobuf.GeneratedMessag
      * @return Whether the condition field is set.
      */
     public boolean hasCondition() {
-      return conditionBuilder_ != null || condition_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -517,11 +526,11 @@ public final class RecordSuppression extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         condition_ = value;
-        onChanged();
       } else {
         conditionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -537,11 +546,11 @@ public final class RecordSuppression extends com.google.protobuf.GeneratedMessag
     public Builder setCondition(com.google.privacy.dlp.v2.RecordCondition.Builder builderForValue) {
       if (conditionBuilder_ == null) {
         condition_ = builderForValue.build();
-        onChanged();
       } else {
         conditionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -556,19 +565,18 @@ public final class RecordSuppression extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeCondition(com.google.privacy.dlp.v2.RecordCondition value) {
       if (conditionBuilder_ == null) {
-        if (condition_ != null) {
-          condition_ =
-              com.google.privacy.dlp.v2.RecordCondition.newBuilder(condition_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && condition_ != null
+            && condition_ != com.google.privacy.dlp.v2.RecordCondition.getDefaultInstance()) {
+          getConditionBuilder().mergeFrom(value);
         } else {
           condition_ = value;
         }
-        onChanged();
       } else {
         conditionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -582,14 +590,13 @@ public final class RecordSuppression extends com.google.protobuf.GeneratedMessag
      * <code>.google.privacy.dlp.v2.RecordCondition condition = 1;</code>
      */
     public Builder clearCondition() {
-      if (conditionBuilder_ == null) {
-        condition_ = null;
-        onChanged();
-      } else {
-        condition_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      condition_ = null;
+      if (conditionBuilder_ != null) {
+        conditionBuilder_.dispose();
         conditionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -603,7 +610,7 @@ public final class RecordSuppression extends com.google.protobuf.GeneratedMessag
      * <code>.google.privacy.dlp.v2.RecordCondition condition = 1;</code>
      */
     public com.google.privacy.dlp.v2.RecordCondition.Builder getConditionBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getConditionFieldBuilder().getBuilder();
     }

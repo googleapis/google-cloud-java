@@ -113,7 +113,9 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.PartitionIdOrBuilder getPartitionIdOrBuilder() {
-    return getPartitionId();
+    return partitionId_ == null
+        ? com.google.privacy.dlp.v2.PartitionId.getDefaultInstance()
+        : partitionId_;
   }
 
   public static final int KIND_FIELD_NUMBER = 2;
@@ -159,7 +161,7 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.KindExpressionOrBuilder getKindOrBuilder() {
-    return getKind();
+    return kind_ == null ? com.google.privacy.dlp.v2.KindExpression.getDefaultInstance() : kind_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -378,16 +380,15 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (partitionIdBuilder_ == null) {
-        partitionId_ = null;
-      } else {
-        partitionId_ = null;
+      bitField0_ = 0;
+      partitionId_ = null;
+      if (partitionIdBuilder_ != null) {
+        partitionIdBuilder_.dispose();
         partitionIdBuilder_ = null;
       }
-      if (kindBuilder_ == null) {
-        kind_ = null;
-      } else {
-        kind_ = null;
+      kind_ = null;
+      if (kindBuilder_ != null) {
+        kindBuilder_.dispose();
         kindBuilder_ = null;
       }
       return this;
@@ -417,18 +418,22 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
     public com.google.privacy.dlp.v2.DatastoreOptions buildPartial() {
       com.google.privacy.dlp.v2.DatastoreOptions result =
           new com.google.privacy.dlp.v2.DatastoreOptions(this);
-      if (partitionIdBuilder_ == null) {
-        result.partitionId_ = partitionId_;
-      } else {
-        result.partitionId_ = partitionIdBuilder_.build();
-      }
-      if (kindBuilder_ == null) {
-        result.kind_ = kind_;
-      } else {
-        result.kind_ = kindBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.DatastoreOptions result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.partitionId_ =
+            partitionIdBuilder_ == null ? partitionId_ : partitionIdBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.kind_ = kindBuilder_ == null ? kind_ : kindBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -511,13 +516,13 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 input.readMessage(getPartitionIdFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getKindFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -536,6 +541,8 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.privacy.dlp.v2.PartitionId partitionId_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -556,7 +563,7 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
      * @return Whether the partitionId field is set.
      */
     public boolean hasPartitionId() {
-      return partitionIdBuilder_ != null || partitionId_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -595,11 +602,11 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         partitionId_ = value;
-        onChanged();
       } else {
         partitionIdBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -615,11 +622,11 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
     public Builder setPartitionId(com.google.privacy.dlp.v2.PartitionId.Builder builderForValue) {
       if (partitionIdBuilder_ == null) {
         partitionId_ = builderForValue.build();
-        onChanged();
       } else {
         partitionIdBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -634,19 +641,18 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergePartitionId(com.google.privacy.dlp.v2.PartitionId value) {
       if (partitionIdBuilder_ == null) {
-        if (partitionId_ != null) {
-          partitionId_ =
-              com.google.privacy.dlp.v2.PartitionId.newBuilder(partitionId_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && partitionId_ != null
+            && partitionId_ != com.google.privacy.dlp.v2.PartitionId.getDefaultInstance()) {
+          getPartitionIdBuilder().mergeFrom(value);
         } else {
           partitionId_ = value;
         }
-        onChanged();
       } else {
         partitionIdBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -660,14 +666,13 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
      * <code>.google.privacy.dlp.v2.PartitionId partition_id = 1;</code>
      */
     public Builder clearPartitionId() {
-      if (partitionIdBuilder_ == null) {
-        partitionId_ = null;
-        onChanged();
-      } else {
-        partitionId_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      partitionId_ = null;
+      if (partitionIdBuilder_ != null) {
+        partitionIdBuilder_.dispose();
         partitionIdBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -681,7 +686,7 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
      * <code>.google.privacy.dlp.v2.PartitionId partition_id = 1;</code>
      */
     public com.google.privacy.dlp.v2.PartitionId.Builder getPartitionIdBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getPartitionIdFieldBuilder().getBuilder();
     }
@@ -749,7 +754,7 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return kindBuilder_ != null || kind_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -786,11 +791,11 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         kind_ = value;
-        onChanged();
       } else {
         kindBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -805,11 +810,11 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
     public Builder setKind(com.google.privacy.dlp.v2.KindExpression.Builder builderForValue) {
       if (kindBuilder_ == null) {
         kind_ = builderForValue.build();
-        onChanged();
       } else {
         kindBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -823,19 +828,18 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeKind(com.google.privacy.dlp.v2.KindExpression value) {
       if (kindBuilder_ == null) {
-        if (kind_ != null) {
-          kind_ =
-              com.google.privacy.dlp.v2.KindExpression.newBuilder(kind_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && kind_ != null
+            && kind_ != com.google.privacy.dlp.v2.KindExpression.getDefaultInstance()) {
+          getKindBuilder().mergeFrom(value);
         } else {
           kind_ = value;
         }
-        onChanged();
       } else {
         kindBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -848,14 +852,13 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
      * <code>.google.privacy.dlp.v2.KindExpression kind = 2;</code>
      */
     public Builder clearKind() {
-      if (kindBuilder_ == null) {
-        kind_ = null;
-        onChanged();
-      } else {
-        kind_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      kind_ = null;
+      if (kindBuilder_ != null) {
+        kindBuilder_.dispose();
         kindBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -868,7 +871,7 @@ public final class DatastoreOptions extends com.google.protobuf.GeneratedMessage
      * <code>.google.privacy.dlp.v2.KindExpression kind = 2;</code>
      */
     public com.google.privacy.dlp.v2.KindExpression.Builder getKindBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getKindFieldBuilder().getBuilder();
     }

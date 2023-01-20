@@ -82,7 +82,9 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -182,7 +184,7 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
@@ -231,7 +233,7 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 4;
@@ -247,6 +249,7 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -307,7 +310,10 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -337,6 +343,8 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int FLEET_CONFIGS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gaming.v1beta.FleetConfig> fleetConfigs_;
   /**
    *
@@ -411,6 +419,8 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SCALING_CONFIGS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gaming.v1beta.ScalingConfig> scalingConfigs_;
   /**
    *
@@ -481,7 +491,9 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 7;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -822,18 +834,16 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
@@ -843,16 +853,15 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
         fleetConfigs_ = null;
         fleetConfigsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       if (scalingConfigsBuilder_ == null) {
         scalingConfigs_ = java.util.Collections.emptyList();
       } else {
         scalingConfigs_ = null;
         scalingConfigsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000020);
       description_ = "";
-
       return this;
     }
 
@@ -880,41 +889,54 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.gaming.v1beta.GameServerConfig buildPartial() {
       com.google.cloud.gaming.v1beta.GameServerConfig result =
           new com.google.cloud.gaming.v1beta.GameServerConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.gaming.v1beta.GameServerConfig result) {
       if (fleetConfigsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           fleetConfigs_ = java.util.Collections.unmodifiableList(fleetConfigs_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.fleetConfigs_ = fleetConfigs_;
       } else {
         result.fleetConfigs_ = fleetConfigsBuilder_.build();
       }
       if (scalingConfigsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           scalingConfigs_ = java.util.Collections.unmodifiableList(scalingConfigs_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.scalingConfigs_ = scalingConfigs_;
       } else {
         result.scalingConfigs_ = scalingConfigsBuilder_.build();
       }
-      result.description_ = description_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gaming.v1beta.GameServerConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.description_ = description_;
+      }
     }
 
     @java.lang.Override
@@ -965,6 +987,7 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -974,11 +997,12 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
         mergeUpdateTime(other.getUpdateTime());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000008;
       if (fleetConfigsBuilder_ == null) {
         if (!other.fleetConfigs_.isEmpty()) {
           if (fleetConfigs_.isEmpty()) {
             fleetConfigs_ = other.fleetConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureFleetConfigsIsMutable();
             fleetConfigs_.addAll(other.fleetConfigs_);
@@ -991,7 +1015,7 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
             fleetConfigsBuilder_.dispose();
             fleetConfigsBuilder_ = null;
             fleetConfigs_ = other.fleetConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
             fleetConfigsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFleetConfigsFieldBuilder()
@@ -1005,7 +1029,7 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
         if (!other.scalingConfigs_.isEmpty()) {
           if (scalingConfigs_.isEmpty()) {
             scalingConfigs_ = other.scalingConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureScalingConfigsIsMutable();
             scalingConfigs_.addAll(other.scalingConfigs_);
@@ -1018,7 +1042,7 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
             scalingConfigsBuilder_.dispose();
             scalingConfigsBuilder_ = null;
             scalingConfigs_ = other.scalingConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000020);
             scalingConfigsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getScalingConfigsFieldBuilder()
@@ -1030,6 +1054,7 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1061,19 +1086,19 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -1085,6 +1110,7 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -1116,7 +1142,7 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
             case 58:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -1208,8 +1234,8 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1228,8 +1254,8 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1253,8 +1279,8 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1279,7 +1305,7 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1320,11 +1346,11 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1341,11 +1367,11 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1361,17 +1387,18 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1386,14 +1413,13 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1408,7 +1434,7 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -1480,7 +1506,7 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1521,11 +1547,11 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1542,11 +1568,11 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1562,17 +1588,18 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1587,14 +1614,13 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1609,7 +1635,7 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -1672,14 +1698,14 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return labels_;
     }
 
@@ -1734,8 +1760,10 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1765,6 +1793,7 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -1788,6 +1817,7 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -1807,8 +1837,8 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1823,6 +1853,7 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -1830,10 +1861,10 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureFleetConfigsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         fleetConfigs_ =
             new java.util.ArrayList<com.google.cloud.gaming.v1beta.FleetConfig>(fleetConfigs_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -2060,7 +2091,7 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
     public Builder clearFleetConfigs() {
       if (fleetConfigsBuilder_ == null) {
         fleetConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         fleetConfigsBuilder_.clear();
@@ -2189,7 +2220,7 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.gaming.v1beta.FleetConfig,
                 com.google.cloud.gaming.v1beta.FleetConfig.Builder,
                 com.google.cloud.gaming.v1beta.FleetConfigOrBuilder>(
-                fleetConfigs_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                fleetConfigs_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         fleetConfigs_ = null;
       }
       return fleetConfigsBuilder_;
@@ -2199,10 +2230,10 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureScalingConfigsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         scalingConfigs_ =
             new java.util.ArrayList<com.google.cloud.gaming.v1beta.ScalingConfig>(scalingConfigs_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -2420,7 +2451,7 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
     public Builder clearScalingConfigs() {
       if (scalingConfigsBuilder_ == null) {
         scalingConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         scalingConfigsBuilder_.clear();
@@ -2546,7 +2577,7 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.gaming.v1beta.ScalingConfig.Builder,
                 com.google.cloud.gaming.v1beta.ScalingConfigOrBuilder>(
                 scalingConfigs_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         scalingConfigs_ = null;
@@ -2615,8 +2646,8 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2632,8 +2663,8 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2654,8 +2685,8 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

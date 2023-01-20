@@ -68,7 +68,9 @@ public final class HybridInspectDlpJobRequest extends com.google.protobuf.Genera
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -167,7 +169,9 @@ public final class HybridInspectDlpJobRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.HybridContentItemOrBuilder getHybridItemOrBuilder() {
-    return getHybridItem();
+    return hybridItem_ == null
+        ? com.google.privacy.dlp.v2.HybridContentItem.getDefaultInstance()
+        : hybridItem_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -381,12 +385,11 @@ public final class HybridInspectDlpJobRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (hybridItemBuilder_ == null) {
-        hybridItem_ = null;
-      } else {
-        hybridItem_ = null;
+      hybridItem_ = null;
+      if (hybridItemBuilder_ != null) {
+        hybridItemBuilder_.dispose();
         hybridItemBuilder_ = null;
       }
       return this;
@@ -416,14 +419,21 @@ public final class HybridInspectDlpJobRequest extends com.google.protobuf.Genera
     public com.google.privacy.dlp.v2.HybridInspectDlpJobRequest buildPartial() {
       com.google.privacy.dlp.v2.HybridInspectDlpJobRequest result =
           new com.google.privacy.dlp.v2.HybridInspectDlpJobRequest(this);
-      result.name_ = name_;
-      if (hybridItemBuilder_ == null) {
-        result.hybridItem_ = hybridItem_;
-      } else {
-        result.hybridItem_ = hybridItemBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.HybridInspectDlpJobRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.hybridItem_ = hybridItemBuilder_ == null ? hybridItem_ : hybridItemBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -474,6 +484,7 @@ public final class HybridInspectDlpJobRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasHybridItem()) {
@@ -508,13 +519,13 @@ public final class HybridInspectDlpJobRequest extends com.google.protobuf.Genera
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 input.readMessage(getHybridItemFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -533,6 +544,8 @@ public final class HybridInspectDlpJobRequest extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -604,8 +617,8 @@ public final class HybridInspectDlpJobRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -624,8 +637,8 @@ public final class HybridInspectDlpJobRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -649,8 +662,8 @@ public final class HybridInspectDlpJobRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -673,7 +686,7 @@ public final class HybridInspectDlpJobRequest extends com.google.protobuf.Genera
      * @return Whether the hybridItem field is set.
      */
     public boolean hasHybridItem() {
-      return hybridItemBuilder_ != null || hybridItem_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -710,11 +723,11 @@ public final class HybridInspectDlpJobRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         hybridItem_ = value;
-        onChanged();
       } else {
         hybridItemBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -730,11 +743,11 @@ public final class HybridInspectDlpJobRequest extends com.google.protobuf.Genera
         com.google.privacy.dlp.v2.HybridContentItem.Builder builderForValue) {
       if (hybridItemBuilder_ == null) {
         hybridItem_ = builderForValue.build();
-        onChanged();
       } else {
         hybridItemBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -748,19 +761,18 @@ public final class HybridInspectDlpJobRequest extends com.google.protobuf.Genera
      */
     public Builder mergeHybridItem(com.google.privacy.dlp.v2.HybridContentItem value) {
       if (hybridItemBuilder_ == null) {
-        if (hybridItem_ != null) {
-          hybridItem_ =
-              com.google.privacy.dlp.v2.HybridContentItem.newBuilder(hybridItem_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && hybridItem_ != null
+            && hybridItem_ != com.google.privacy.dlp.v2.HybridContentItem.getDefaultInstance()) {
+          getHybridItemBuilder().mergeFrom(value);
         } else {
           hybridItem_ = value;
         }
-        onChanged();
       } else {
         hybridItemBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -773,14 +785,13 @@ public final class HybridInspectDlpJobRequest extends com.google.protobuf.Genera
      * <code>.google.privacy.dlp.v2.HybridContentItem hybrid_item = 3;</code>
      */
     public Builder clearHybridItem() {
-      if (hybridItemBuilder_ == null) {
-        hybridItem_ = null;
-        onChanged();
-      } else {
-        hybridItem_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      hybridItem_ = null;
+      if (hybridItemBuilder_ != null) {
+        hybridItemBuilder_.dispose();
         hybridItemBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -793,7 +804,7 @@ public final class HybridInspectDlpJobRequest extends com.google.protobuf.Genera
      * <code>.google.privacy.dlp.v2.HybridContentItem hybrid_item = 3;</code>
      */
     public com.google.privacy.dlp.v2.HybridContentItem.Builder getHybridItemBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getHybridItemFieldBuilder().getBuilder();
     }

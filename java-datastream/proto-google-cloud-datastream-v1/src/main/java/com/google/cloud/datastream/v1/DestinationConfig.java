@@ -115,7 +115,9 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DESTINATION_CONNECTION_PROFILE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object destinationConnectionProfile_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object destinationConnectionProfile_ = "";
   /**
    *
    *
@@ -520,8 +522,8 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       destinationConnectionProfile_ = "";
-
       if (gcsDestinationConfigBuilder_ != null) {
         gcsDestinationConfigBuilder_.clear();
       }
@@ -557,24 +559,30 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.datastream.v1.DestinationConfig buildPartial() {
       com.google.cloud.datastream.v1.DestinationConfig result =
           new com.google.cloud.datastream.v1.DestinationConfig(this);
-      result.destinationConnectionProfile_ = destinationConnectionProfile_;
-      if (destinationStreamConfigCase_ == 100) {
-        if (gcsDestinationConfigBuilder_ == null) {
-          result.destinationStreamConfig_ = destinationStreamConfig_;
-        } else {
-          result.destinationStreamConfig_ = gcsDestinationConfigBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (destinationStreamConfigCase_ == 101) {
-        if (bigqueryDestinationConfigBuilder_ == null) {
-          result.destinationStreamConfig_ = destinationStreamConfig_;
-        } else {
-          result.destinationStreamConfig_ = bigqueryDestinationConfigBuilder_.build();
-        }
-      }
-      result.destinationStreamConfigCase_ = destinationStreamConfigCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1.DestinationConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.destinationConnectionProfile_ = destinationConnectionProfile_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.datastream.v1.DestinationConfig result) {
+      result.destinationStreamConfigCase_ = destinationStreamConfigCase_;
+      result.destinationStreamConfig_ = this.destinationStreamConfig_;
+      if (destinationStreamConfigCase_ == 100 && gcsDestinationConfigBuilder_ != null) {
+        result.destinationStreamConfig_ = gcsDestinationConfigBuilder_.build();
+      }
+      if (destinationStreamConfigCase_ == 101 && bigqueryDestinationConfigBuilder_ != null) {
+        result.destinationStreamConfig_ = bigqueryDestinationConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -625,6 +633,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getDestinationConnectionProfile().isEmpty()) {
         destinationConnectionProfile_ = other.destinationConnectionProfile_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       switch (other.getDestinationStreamConfigCase()) {
@@ -672,7 +681,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 destinationConnectionProfile_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 802:
@@ -719,6 +728,8 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object destinationConnectionProfile_ = "";
     /**
@@ -790,8 +801,8 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       destinationConnectionProfile_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -810,8 +821,8 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDestinationConnectionProfile() {
-
       destinationConnectionProfile_ = getDefaultInstance().getDestinationConnectionProfile();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -835,8 +846,8 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       destinationConnectionProfile_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1054,7 +1065,6 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       }
       destinationStreamConfigCase_ = 100;
       onChanged();
-      ;
       return gcsDestinationConfigBuilder_;
     }
 
@@ -1291,7 +1301,6 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       }
       destinationStreamConfigCase_ = 101;
       onChanged();
-      ;
       return bigqueryDestinationConfigBuilder_;
     }
 

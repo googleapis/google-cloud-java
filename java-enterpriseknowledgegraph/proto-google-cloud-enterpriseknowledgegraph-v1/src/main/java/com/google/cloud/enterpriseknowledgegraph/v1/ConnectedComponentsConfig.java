@@ -66,7 +66,7 @@ public final class ConnectedComponentsConfig extends com.google.protobuf.Generat
   }
 
   public static final int WEIGHT_THRESHOLD_FIELD_NUMBER = 1;
-  private float weightThreshold_;
+  private float weightThreshold_ = 0F;
   /**
    *
    *
@@ -284,8 +284,8 @@ public final class ConnectedComponentsConfig extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       weightThreshold_ = 0F;
-
       return this;
     }
 
@@ -316,9 +316,19 @@ public final class ConnectedComponentsConfig extends com.google.protobuf.Generat
     public com.google.cloud.enterpriseknowledgegraph.v1.ConnectedComponentsConfig buildPartial() {
       com.google.cloud.enterpriseknowledgegraph.v1.ConnectedComponentsConfig result =
           new com.google.cloud.enterpriseknowledgegraph.v1.ConnectedComponentsConfig(this);
-      result.weightThreshold_ = weightThreshold_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.enterpriseknowledgegraph.v1.ConnectedComponentsConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.weightThreshold_ = weightThreshold_;
+      }
     }
 
     @java.lang.Override
@@ -402,7 +412,7 @@ public final class ConnectedComponentsConfig extends com.google.protobuf.Generat
             case 13:
               {
                 weightThreshold_ = input.readFloat();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 13
             default:
@@ -421,6 +431,8 @@ public final class ConnectedComponentsConfig extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private float weightThreshold_;
     /**
@@ -453,6 +465,7 @@ public final class ConnectedComponentsConfig extends com.google.protobuf.Generat
     public Builder setWeightThreshold(float value) {
 
       weightThreshold_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -468,7 +481,7 @@ public final class ConnectedComponentsConfig extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearWeightThreshold() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       weightThreshold_ = 0F;
       onChanged();
       return this;

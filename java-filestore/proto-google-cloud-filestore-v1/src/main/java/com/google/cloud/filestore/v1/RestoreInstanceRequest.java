@@ -114,7 +114,9 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -169,7 +171,9 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int FILE_SHARE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object fileShare_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fileShare_ = "";
   /**
    *
    *
@@ -521,10 +525,9 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       fileShare_ = "";
-
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -554,14 +557,27 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.filestore.v1.RestoreInstanceRequest buildPartial() {
       com.google.cloud.filestore.v1.RestoreInstanceRequest result =
           new com.google.cloud.filestore.v1.RestoreInstanceRequest(this);
-      result.name_ = name_;
-      result.fileShare_ = fileShare_;
-      if (sourceCase_ == 3) {
-        result.source_ = source_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.filestore.v1.RestoreInstanceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.fileShare_ = fileShare_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.filestore.v1.RestoreInstanceRequest result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
     }
 
     @java.lang.Override
@@ -612,10 +628,12 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getFileShare().isEmpty()) {
         fileShare_ = other.fileShare_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       switch (other.getSourceCase()) {
@@ -660,13 +678,13 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 fileShare_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -706,6 +724,8 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -777,8 +797,8 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -797,8 +817,8 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -822,8 +842,8 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -892,8 +912,8 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       fileShare_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -910,8 +930,8 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearFileShare() {
-
       fileShare_ = getDefaultInstance().getFileShare();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -933,8 +953,8 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       fileShare_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

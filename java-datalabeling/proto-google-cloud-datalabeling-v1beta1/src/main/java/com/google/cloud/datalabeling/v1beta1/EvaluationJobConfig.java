@@ -408,7 +408,9 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.InputConfigOrBuilder getInputConfigOrBuilder() {
-    return getInputConfig();
+    return inputConfig_ == null
+        ? com.google.cloud.datalabeling.v1beta1.InputConfig.getDefaultInstance()
+        : inputConfig_;
   }
 
   public static final int EVALUATION_CONFIG_FIELD_NUMBER = 2;
@@ -469,7 +471,9 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.EvaluationConfigOrBuilder
       getEvaluationConfigOrBuilder() {
-    return getEvaluationConfig();
+    return evaluationConfig_ == null
+        ? com.google.cloud.datalabeling.v1beta1.EvaluationConfig.getDefaultInstance()
+        : evaluationConfig_;
   }
 
   public static final int HUMAN_ANNOTATION_CONFIG_FIELD_NUMBER = 3;
@@ -539,7 +543,9 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder
       getHumanAnnotationConfigOrBuilder() {
-    return getHumanAnnotationConfig();
+    return humanAnnotationConfig_ == null
+        ? com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.getDefaultInstance()
+        : humanAnnotationConfig_;
   }
 
   public static final int BIGQUERY_IMPORT_KEYS_FIELD_NUMBER = 9;
@@ -555,6 +561,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> bigqueryImportKeys_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -659,8 +666,10 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    * <code>map&lt;string, string&gt; bigquery_import_keys = 9;</code>
    */
   @java.lang.Override
-  public java.lang.String getBigqueryImportKeysOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getBigqueryImportKeysOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -706,7 +715,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int EXAMPLE_COUNT_FIELD_NUMBER = 10;
-  private int exampleCount_;
+  private int exampleCount_ = 0;
   /**
    *
    *
@@ -728,7 +737,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int EXAMPLE_SAMPLE_PERCENTAGE_FIELD_NUMBER = 11;
-  private double exampleSamplePercentage_;
+  private double exampleSamplePercentage_ = 0D;
   /**
    *
    *
@@ -806,7 +815,9 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfigOrBuilder
       getEvaluationJobAlertConfigOrBuilder() {
-    return getEvaluationJobAlertConfig();
+    return evaluationJobAlertConfig_ == null
+        ? com.google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfig.getDefaultInstance()
+        : evaluationJobAlertConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1192,6 +1203,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (imageClassificationConfigBuilder_ != null) {
         imageClassificationConfigBuilder_.clear();
       }
@@ -1201,33 +1213,27 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       if (textClassificationConfigBuilder_ != null) {
         textClassificationConfigBuilder_.clear();
       }
-      if (inputConfigBuilder_ == null) {
-        inputConfig_ = null;
-      } else {
-        inputConfig_ = null;
+      inputConfig_ = null;
+      if (inputConfigBuilder_ != null) {
+        inputConfigBuilder_.dispose();
         inputConfigBuilder_ = null;
       }
-      if (evaluationConfigBuilder_ == null) {
-        evaluationConfig_ = null;
-      } else {
-        evaluationConfig_ = null;
+      evaluationConfig_ = null;
+      if (evaluationConfigBuilder_ != null) {
+        evaluationConfigBuilder_.dispose();
         evaluationConfigBuilder_ = null;
       }
-      if (humanAnnotationConfigBuilder_ == null) {
-        humanAnnotationConfig_ = null;
-      } else {
-        humanAnnotationConfig_ = null;
+      humanAnnotationConfig_ = null;
+      if (humanAnnotationConfigBuilder_ != null) {
+        humanAnnotationConfigBuilder_.dispose();
         humanAnnotationConfigBuilder_ = null;
       }
       internalGetMutableBigqueryImportKeys().clear();
       exampleCount_ = 0;
-
       exampleSamplePercentage_ = 0D;
-
-      if (evaluationJobAlertConfigBuilder_ == null) {
-        evaluationJobAlertConfig_ = null;
-      } else {
-        evaluationJobAlertConfig_ = null;
+      evaluationJobAlertConfig_ = null;
+      if (evaluationJobAlertConfigBuilder_ != null) {
+        evaluationJobAlertConfigBuilder_.dispose();
         evaluationJobAlertConfigBuilder_ = null;
       }
       humanAnnotationRequestConfigCase_ = 0;
@@ -1259,55 +1265,61 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     public com.google.cloud.datalabeling.v1beta1.EvaluationJobConfig buildPartial() {
       com.google.cloud.datalabeling.v1beta1.EvaluationJobConfig result =
           new com.google.cloud.datalabeling.v1beta1.EvaluationJobConfig(this);
-      int from_bitField0_ = bitField0_;
-      if (humanAnnotationRequestConfigCase_ == 4) {
-        if (imageClassificationConfigBuilder_ == null) {
-          result.humanAnnotationRequestConfig_ = humanAnnotationRequestConfig_;
-        } else {
-          result.humanAnnotationRequestConfig_ = imageClassificationConfigBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (humanAnnotationRequestConfigCase_ == 5) {
-        if (boundingPolyConfigBuilder_ == null) {
-          result.humanAnnotationRequestConfig_ = humanAnnotationRequestConfig_;
-        } else {
-          result.humanAnnotationRequestConfig_ = boundingPolyConfigBuilder_.build();
-        }
-      }
-      if (humanAnnotationRequestConfigCase_ == 8) {
-        if (textClassificationConfigBuilder_ == null) {
-          result.humanAnnotationRequestConfig_ = humanAnnotationRequestConfig_;
-        } else {
-          result.humanAnnotationRequestConfig_ = textClassificationConfigBuilder_.build();
-        }
-      }
-      if (inputConfigBuilder_ == null) {
-        result.inputConfig_ = inputConfig_;
-      } else {
-        result.inputConfig_ = inputConfigBuilder_.build();
-      }
-      if (evaluationConfigBuilder_ == null) {
-        result.evaluationConfig_ = evaluationConfig_;
-      } else {
-        result.evaluationConfig_ = evaluationConfigBuilder_.build();
-      }
-      if (humanAnnotationConfigBuilder_ == null) {
-        result.humanAnnotationConfig_ = humanAnnotationConfig_;
-      } else {
-        result.humanAnnotationConfig_ = humanAnnotationConfigBuilder_.build();
-      }
-      result.bigqueryImportKeys_ = internalGetBigqueryImportKeys();
-      result.bigqueryImportKeys_.makeImmutable();
-      result.exampleCount_ = exampleCount_;
-      result.exampleSamplePercentage_ = exampleSamplePercentage_;
-      if (evaluationJobAlertConfigBuilder_ == null) {
-        result.evaluationJobAlertConfig_ = evaluationJobAlertConfig_;
-      } else {
-        result.evaluationJobAlertConfig_ = evaluationJobAlertConfigBuilder_.build();
-      }
-      result.humanAnnotationRequestConfigCase_ = humanAnnotationRequestConfigCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datalabeling.v1beta1.EvaluationJobConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.inputConfig_ =
+            inputConfigBuilder_ == null ? inputConfig_ : inputConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.evaluationConfig_ =
+            evaluationConfigBuilder_ == null ? evaluationConfig_ : evaluationConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.humanAnnotationConfig_ =
+            humanAnnotationConfigBuilder_ == null
+                ? humanAnnotationConfig_
+                : humanAnnotationConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.bigqueryImportKeys_ = internalGetBigqueryImportKeys();
+        result.bigqueryImportKeys_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.exampleCount_ = exampleCount_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.exampleSamplePercentage_ = exampleSamplePercentage_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.evaluationJobAlertConfig_ =
+            evaluationJobAlertConfigBuilder_ == null
+                ? evaluationJobAlertConfig_
+                : evaluationJobAlertConfigBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.datalabeling.v1beta1.EvaluationJobConfig result) {
+      result.humanAnnotationRequestConfigCase_ = humanAnnotationRequestConfigCase_;
+      result.humanAnnotationRequestConfig_ = this.humanAnnotationRequestConfig_;
+      if (humanAnnotationRequestConfigCase_ == 4 && imageClassificationConfigBuilder_ != null) {
+        result.humanAnnotationRequestConfig_ = imageClassificationConfigBuilder_.build();
+      }
+      if (humanAnnotationRequestConfigCase_ == 5 && boundingPolyConfigBuilder_ != null) {
+        result.humanAnnotationRequestConfig_ = boundingPolyConfigBuilder_.build();
+      }
+      if (humanAnnotationRequestConfigCase_ == 8 && textClassificationConfigBuilder_ != null) {
+        result.humanAnnotationRequestConfig_ = textClassificationConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1366,6 +1378,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
         mergeHumanAnnotationConfig(other.getHumanAnnotationConfig());
       }
       internalGetMutableBigqueryImportKeys().mergeFrom(other.internalGetBigqueryImportKeys());
+      bitField0_ |= 0x00000040;
       if (other.getExampleCount() != 0) {
         setExampleCount(other.getExampleCount());
       }
@@ -1425,21 +1438,21 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 input.readMessage(getInputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getEvaluationConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getHumanAnnotationConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 26
             case 34:
@@ -1473,25 +1486,26 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
                 internalGetMutableBigqueryImportKeys()
                     .getMutableMap()
                     .put(bigqueryImportKeys__.getKey(), bigqueryImportKeys__.getValue());
+                bitField0_ |= 0x00000040;
                 break;
               } // case 74
             case 80:
               {
                 exampleCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 80
             case 89:
               {
                 exampleSamplePercentage_ = input.readDouble();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 89
             case 106:
               {
                 input.readMessage(
                     getEvaluationJobAlertConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 106
             default:
@@ -1808,7 +1822,6 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       }
       humanAnnotationRequestConfigCase_ = 4;
       onChanged();
-      ;
       return imageClassificationConfigBuilder_;
     }
 
@@ -2055,7 +2068,6 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       }
       humanAnnotationRequestConfigCase_ = 5;
       onChanged();
-      ;
       return boundingPolyConfigBuilder_;
     }
 
@@ -2331,7 +2343,6 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       }
       humanAnnotationRequestConfigCase_ = 8;
       onChanged();
-      ;
       return textClassificationConfigBuilder_;
     }
 
@@ -2361,7 +2372,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * @return Whether the inputConfig field is set.
      */
     public boolean hasInputConfig() {
-      return inputConfigBuilder_ != null || inputConfig_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2414,11 +2425,11 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         inputConfig_ = value;
-        onChanged();
       } else {
         inputConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2442,11 +2453,11 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
         com.google.cloud.datalabeling.v1beta1.InputConfig.Builder builderForValue) {
       if (inputConfigBuilder_ == null) {
         inputConfig_ = builderForValue.build();
-        onChanged();
       } else {
         inputConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2468,19 +2479,19 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeInputConfig(com.google.cloud.datalabeling.v1beta1.InputConfig value) {
       if (inputConfigBuilder_ == null) {
-        if (inputConfig_ != null) {
-          inputConfig_ =
-              com.google.cloud.datalabeling.v1beta1.InputConfig.newBuilder(inputConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && inputConfig_ != null
+            && inputConfig_
+                != com.google.cloud.datalabeling.v1beta1.InputConfig.getDefaultInstance()) {
+          getInputConfigBuilder().mergeFrom(value);
         } else {
           inputConfig_ = value;
         }
-        onChanged();
       } else {
         inputConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2501,14 +2512,13 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 1;</code>
      */
     public Builder clearInputConfig() {
-      if (inputConfigBuilder_ == null) {
-        inputConfig_ = null;
-        onChanged();
-      } else {
-        inputConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      inputConfig_ = null;
+      if (inputConfigBuilder_ != null) {
+        inputConfigBuilder_.dispose();
         inputConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2529,7 +2539,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 1;</code>
      */
     public com.google.cloud.datalabeling.v1beta1.InputConfig.Builder getInputConfigBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getInputConfigFieldBuilder().getBuilder();
     }
@@ -2615,7 +2625,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * @return Whether the evaluationConfig field is set.
      */
     public boolean hasEvaluationConfig() {
-      return evaluationConfigBuilder_ != null || evaluationConfig_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2661,11 +2671,11 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         evaluationConfig_ = value;
-        onChanged();
       } else {
         evaluationConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2685,11 +2695,11 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
         com.google.cloud.datalabeling.v1beta1.EvaluationConfig.Builder builderForValue) {
       if (evaluationConfigBuilder_ == null) {
         evaluationConfig_ = builderForValue.build();
-        onChanged();
       } else {
         evaluationConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2708,19 +2718,19 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     public Builder mergeEvaluationConfig(
         com.google.cloud.datalabeling.v1beta1.EvaluationConfig value) {
       if (evaluationConfigBuilder_ == null) {
-        if (evaluationConfig_ != null) {
-          evaluationConfig_ =
-              com.google.cloud.datalabeling.v1beta1.EvaluationConfig.newBuilder(evaluationConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && evaluationConfig_ != null
+            && evaluationConfig_
+                != com.google.cloud.datalabeling.v1beta1.EvaluationConfig.getDefaultInstance()) {
+          getEvaluationConfigBuilder().mergeFrom(value);
         } else {
           evaluationConfig_ = value;
         }
-        onChanged();
       } else {
         evaluationConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2737,14 +2747,13 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig evaluation_config = 2;</code>
      */
     public Builder clearEvaluationConfig() {
-      if (evaluationConfigBuilder_ == null) {
-        evaluationConfig_ = null;
-        onChanged();
-      } else {
-        evaluationConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      evaluationConfig_ = null;
+      if (evaluationConfigBuilder_ != null) {
+        evaluationConfigBuilder_.dispose();
         evaluationConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2762,7 +2771,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.datalabeling.v1beta1.EvaluationConfig.Builder
         getEvaluationConfigBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getEvaluationConfigFieldBuilder().getBuilder();
     }
@@ -2844,7 +2853,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * @return Whether the humanAnnotationConfig field is set.
      */
     public boolean hasHumanAnnotationConfig() {
-      return humanAnnotationConfigBuilder_ != null || humanAnnotationConfig_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2896,11 +2905,11 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         humanAnnotationConfig_ = value;
-        onChanged();
       } else {
         humanAnnotationConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2923,11 +2932,11 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
         com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder builderForValue) {
       if (humanAnnotationConfigBuilder_ == null) {
         humanAnnotationConfig_ = builderForValue.build();
-        onChanged();
       } else {
         humanAnnotationConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2949,20 +2958,20 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     public Builder mergeHumanAnnotationConfig(
         com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig value) {
       if (humanAnnotationConfigBuilder_ == null) {
-        if (humanAnnotationConfig_ != null) {
-          humanAnnotationConfig_ =
-              com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.newBuilder(
-                      humanAnnotationConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && humanAnnotationConfig_ != null
+            && humanAnnotationConfig_
+                != com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig
+                    .getDefaultInstance()) {
+          getHumanAnnotationConfigBuilder().mergeFrom(value);
         } else {
           humanAnnotationConfig_ = value;
         }
-        onChanged();
       } else {
         humanAnnotationConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2982,14 +2991,13 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearHumanAnnotationConfig() {
-      if (humanAnnotationConfigBuilder_ == null) {
-        humanAnnotationConfig_ = null;
-        onChanged();
-      } else {
-        humanAnnotationConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      humanAnnotationConfig_ = null;
+      if (humanAnnotationConfigBuilder_ != null) {
+        humanAnnotationConfigBuilder_.dispose();
         humanAnnotationConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3010,7 +3018,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder
         getHumanAnnotationConfigBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getHumanAnnotationConfigFieldBuilder().getBuilder();
     }
@@ -3086,8 +3094,6 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableBigqueryImportKeys() {
-      onChanged();
-      ;
       if (bigqueryImportKeys_ == null) {
         bigqueryImportKeys_ =
             com.google.protobuf.MapField.newMapField(
@@ -3096,6 +3102,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       if (!bigqueryImportKeys_.isMutable()) {
         bigqueryImportKeys_ = bigqueryImportKeys_.copy();
       }
+      bitField0_ |= 0x00000040;
+      onChanged();
       return bigqueryImportKeys_;
     }
 
@@ -3192,8 +3200,10 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * <code>map&lt;string, string&gt; bigquery_import_keys = 9;</code>
      */
     @java.lang.Override
-    public java.lang.String getBigqueryImportKeysOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getBigqueryImportKeysOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -3239,6 +3249,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     }
 
     public Builder clearBigqueryImportKeys() {
+      bitField0_ = (bitField0_ & ~0x00000040);
       internalGetMutableBigqueryImportKeys().getMutableMap().clear();
       return this;
     }
@@ -3276,6 +3287,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableBigqueryImportKeys() {
+      bitField0_ |= 0x00000040;
       return internalGetMutableBigqueryImportKeys().getMutableMap();
     }
     /**
@@ -3309,8 +3321,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableBigqueryImportKeys().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -3340,6 +3352,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     public Builder putAllBigqueryImportKeys(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableBigqueryImportKeys().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000040;
       return this;
     }
 
@@ -3382,6 +3395,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     public Builder setExampleCount(int value) {
 
       exampleCount_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3401,7 +3415,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearExampleCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       exampleCount_ = 0;
       onChanged();
       return this;
@@ -3442,6 +3456,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     public Builder setExampleSamplePercentage(double value) {
 
       exampleSamplePercentage_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3459,7 +3474,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearExampleSamplePercentage() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       exampleSamplePercentage_ = 0D;
       onChanged();
       return this;
@@ -3488,7 +3503,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * @return Whether the evaluationJobAlertConfig field is set.
      */
     public boolean hasEvaluationJobAlertConfig() {
-      return evaluationJobAlertConfigBuilder_ != null || evaluationJobAlertConfig_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3535,11 +3550,11 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         evaluationJobAlertConfig_ = value;
-        onChanged();
       } else {
         evaluationJobAlertConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3559,11 +3574,11 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
         com.google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfig.Builder builderForValue) {
       if (evaluationJobAlertConfigBuilder_ == null) {
         evaluationJobAlertConfig_ = builderForValue.build();
-        onChanged();
       } else {
         evaluationJobAlertConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3582,20 +3597,20 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     public Builder mergeEvaluationJobAlertConfig(
         com.google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfig value) {
       if (evaluationJobAlertConfigBuilder_ == null) {
-        if (evaluationJobAlertConfig_ != null) {
-          evaluationJobAlertConfig_ =
-              com.google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfig.newBuilder(
-                      evaluationJobAlertConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && evaluationJobAlertConfig_ != null
+            && evaluationJobAlertConfig_
+                != com.google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfig
+                    .getDefaultInstance()) {
+          getEvaluationJobAlertConfigBuilder().mergeFrom(value);
         } else {
           evaluationJobAlertConfig_ = value;
         }
-        onChanged();
       } else {
         evaluationJobAlertConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3612,14 +3627,13 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearEvaluationJobAlertConfig() {
-      if (evaluationJobAlertConfigBuilder_ == null) {
-        evaluationJobAlertConfig_ = null;
-        onChanged();
-      } else {
-        evaluationJobAlertConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      evaluationJobAlertConfig_ = null;
+      if (evaluationJobAlertConfigBuilder_ != null) {
+        evaluationJobAlertConfigBuilder_.dispose();
         evaluationJobAlertConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3637,7 +3651,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfig.Builder
         getEvaluationJobAlertConfigBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getEvaluationJobAlertConfigFieldBuilder().getBuilder();
     }

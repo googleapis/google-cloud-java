@@ -111,7 +111,7 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.gaming.v1.RealmOrBuilder getRealmOrBuilder() {
-    return getRealm();
+    return realm_ == null ? com.google.cloud.gaming.v1.Realm.getDefaultInstance() : realm_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -166,7 +166,7 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -385,16 +385,15 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (realmBuilder_ == null) {
-        realm_ = null;
-      } else {
-        realm_ = null;
+      bitField0_ = 0;
+      realm_ = null;
+      if (realmBuilder_ != null) {
+        realmBuilder_.dispose();
         realmBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -424,18 +423,21 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.gaming.v1.UpdateRealmRequest buildPartial() {
       com.google.cloud.gaming.v1.UpdateRealmRequest result =
           new com.google.cloud.gaming.v1.UpdateRealmRequest(this);
-      if (realmBuilder_ == null) {
-        result.realm_ = realm_;
-      } else {
-        result.realm_ = realmBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gaming.v1.UpdateRealmRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.realm_ = realmBuilder_ == null ? realm_ : realmBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -518,13 +520,13 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 input.readMessage(getRealmFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -543,6 +545,8 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.gaming.v1.Realm realm_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -564,7 +568,7 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the realm field is set.
      */
     public boolean hasRealm() {
-      return realmBuilder_ != null || realm_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -603,11 +607,11 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         realm_ = value;
-        onChanged();
       } else {
         realmBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -624,11 +628,11 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
     public Builder setRealm(com.google.cloud.gaming.v1.Realm.Builder builderForValue) {
       if (realmBuilder_ == null) {
         realm_ = builderForValue.build();
-        onChanged();
       } else {
         realmBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -644,17 +648,18 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeRealm(com.google.cloud.gaming.v1.Realm value) {
       if (realmBuilder_ == null) {
-        if (realm_ != null) {
-          realm_ =
-              com.google.cloud.gaming.v1.Realm.newBuilder(realm_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && realm_ != null
+            && realm_ != com.google.cloud.gaming.v1.Realm.getDefaultInstance()) {
+          getRealmBuilder().mergeFrom(value);
         } else {
           realm_ = value;
         }
-        onChanged();
       } else {
         realmBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -669,14 +674,13 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearRealm() {
-      if (realmBuilder_ == null) {
-        realm_ = null;
-        onChanged();
-      } else {
-        realm_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      realm_ = null;
+      if (realmBuilder_ != null) {
+        realmBuilder_.dispose();
         realmBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -691,7 +695,7 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.gaming.v1.Realm.Builder getRealmBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getRealmFieldBuilder().getBuilder();
     }
@@ -762,7 +766,7 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -805,11 +809,11 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -827,11 +831,11 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -848,17 +852,18 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -874,14 +879,13 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -897,7 +901,7 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

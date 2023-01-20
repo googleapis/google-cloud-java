@@ -70,6 +70,8 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int CONTACTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList contacts_;
   /**
    *
@@ -151,7 +153,9 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int RESOURCE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object resource_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resource_ = "";
   /**
    *
    *
@@ -212,7 +216,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int NOTIFICATION_CATEGORY_FIELD_NUMBER = 3;
-  private int notificationCategory_;
+  private int notificationCategory_ = 0;
   /**
    *
    *
@@ -247,9 +251,8 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.essentialcontacts.v1.NotificationCategory getNotificationCategory() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.essentialcontacts.v1.NotificationCategory result =
-        com.google.cloud.essentialcontacts.v1.NotificationCategory.valueOf(notificationCategory_);
+        com.google.cloud.essentialcontacts.v1.NotificationCategory.forNumber(notificationCategory_);
     return result == null
         ? com.google.cloud.essentialcontacts.v1.NotificationCategory.UNRECOGNIZED
         : result;
@@ -484,12 +487,11 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       contacts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       resource_ = "";
-
       notificationCategory_ = 0;
-
       return this;
     }
 
@@ -518,16 +520,32 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.essentialcontacts.v1.SendTestMessageRequest buildPartial() {
       com.google.cloud.essentialcontacts.v1.SendTestMessageRequest result =
           new com.google.cloud.essentialcontacts.v1.SendTestMessageRequest(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.essentialcontacts.v1.SendTestMessageRequest result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         contacts_ = contacts_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.contacts_ = contacts_;
-      result.resource_ = resource_;
-      result.notificationCategory_ = notificationCategory_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.essentialcontacts.v1.SendTestMessageRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.resource_ = resource_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.notificationCategory_ = notificationCategory_;
+      }
     }
 
     @java.lang.Override
@@ -589,6 +607,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
       }
       if (!other.getResource().isEmpty()) {
         resource_ = other.resource_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.notificationCategory_ != 0) {
@@ -630,13 +649,13 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
             case 18:
               {
                 resource_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 notificationCategory_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -950,8 +969,8 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       resource_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -973,8 +992,8 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearResource() {
-
       resource_ = getDefaultInstance().getResource();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1001,8 +1020,8 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resource_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1042,8 +1061,8 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setNotificationCategoryValue(int value) {
-
       notificationCategory_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1063,9 +1082,9 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public com.google.cloud.essentialcontacts.v1.NotificationCategory getNotificationCategory() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.essentialcontacts.v1.NotificationCategory result =
-          com.google.cloud.essentialcontacts.v1.NotificationCategory.valueOf(notificationCategory_);
+          com.google.cloud.essentialcontacts.v1.NotificationCategory.forNumber(
+              notificationCategory_);
       return result == null
           ? com.google.cloud.essentialcontacts.v1.NotificationCategory.UNRECOGNIZED
           : result;
@@ -1090,7 +1109,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       notificationCategory_ = value.getNumber();
       onChanged();
       return this;
@@ -1110,7 +1129,7 @@ public final class SendTestMessageRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearNotificationCategory() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       notificationCategory_ = 0;
       onChanged();
       return this;

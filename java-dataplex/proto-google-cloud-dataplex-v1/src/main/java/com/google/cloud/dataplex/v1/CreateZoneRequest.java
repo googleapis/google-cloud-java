@@ -69,7 +69,9 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ZONE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object zoneId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zoneId_ = "";
   /**
    *
    *
@@ -231,11 +235,11 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.ZoneOrBuilder getZoneOrBuilder() {
-    return getZone();
+    return zone_ == null ? com.google.cloud.dataplex.v1.Zone.getDefaultInstance() : zone_;
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -482,18 +486,15 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       zoneId_ = "";
-
-      if (zoneBuilder_ == null) {
-        zone_ = null;
-      } else {
-        zone_ = null;
+      zone_ = null;
+      if (zoneBuilder_ != null) {
+        zoneBuilder_.dispose();
         zoneBuilder_ = null;
       }
       validateOnly_ = false;
-
       return this;
     }
 
@@ -521,16 +522,27 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dataplex.v1.CreateZoneRequest buildPartial() {
       com.google.cloud.dataplex.v1.CreateZoneRequest result =
           new com.google.cloud.dataplex.v1.CreateZoneRequest(this);
-      result.parent_ = parent_;
-      result.zoneId_ = zoneId_;
-      if (zoneBuilder_ == null) {
-        result.zone_ = zone_;
-      } else {
-        result.zone_ = zoneBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataplex.v1.CreateZoneRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.zoneId_ = zoneId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.zone_ = zoneBuilder_ == null ? zone_ : zoneBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -580,10 +592,12 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
       if (other == com.google.cloud.dataplex.v1.CreateZoneRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getZoneId().isEmpty()) {
         zoneId_ = other.zoneId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasZone()) {
@@ -621,25 +635,25 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 zoneId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getZoneFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -658,6 +672,8 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -729,8 +745,8 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -749,8 +765,8 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -774,8 +790,8 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -865,8 +881,8 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       zoneId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -890,8 +906,8 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearZoneId() {
-
       zoneId_ = getDefaultInstance().getZoneId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -920,8 +936,8 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zoneId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -945,7 +961,7 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the zone field is set.
      */
     public boolean hasZone() {
-      return zoneBuilder_ != null || zone_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -982,11 +998,11 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         zone_ = value;
-        onChanged();
       } else {
         zoneBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1002,11 +1018,11 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
     public Builder setZone(com.google.cloud.dataplex.v1.Zone.Builder builderForValue) {
       if (zoneBuilder_ == null) {
         zone_ = builderForValue.build();
-        onChanged();
       } else {
         zoneBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1021,17 +1037,18 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeZone(com.google.cloud.dataplex.v1.Zone value) {
       if (zoneBuilder_ == null) {
-        if (zone_ != null) {
-          zone_ =
-              com.google.cloud.dataplex.v1.Zone.newBuilder(zone_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && zone_ != null
+            && zone_ != com.google.cloud.dataplex.v1.Zone.getDefaultInstance()) {
+          getZoneBuilder().mergeFrom(value);
         } else {
           zone_ = value;
         }
-        onChanged();
       } else {
         zoneBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1045,14 +1062,13 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearZone() {
-      if (zoneBuilder_ == null) {
-        zone_ = null;
-        onChanged();
-      } else {
-        zone_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      zone_ = null;
+      if (zoneBuilder_ != null) {
+        zoneBuilder_.dispose();
         zoneBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1066,7 +1082,7 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.cloud.dataplex.v1.Zone.Builder getZoneBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getZoneFieldBuilder().getBuilder();
     }
@@ -1147,6 +1163,7 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1163,7 +1180,7 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       validateOnly_ = false;
       onChanged();
       return this;

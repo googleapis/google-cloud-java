@@ -119,11 +119,15 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.HttpRequestContextOrBuilder
       getHttpRequestOrBuilder() {
-    return getHttpRequest();
+    return httpRequest_ == null
+        ? com.google.devtools.clouderrorreporting.v1beta1.HttpRequestContext.getDefaultInstance()
+        : httpRequest_;
   }
 
   public static final int USER_FIELD_NUMBER = 2;
-  private volatile java.lang.Object user_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object user_ = "";
   /**
    *
    *
@@ -243,7 +247,9 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.SourceLocationOrBuilder
       getReportLocationOrBuilder() {
-    return getReportLocation();
+    return reportLocation_ == null
+        ? com.google.devtools.clouderrorreporting.v1beta1.SourceLocation.getDefaultInstance()
+        : reportLocation_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -475,18 +481,16 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (httpRequestBuilder_ == null) {
-        httpRequest_ = null;
-      } else {
-        httpRequest_ = null;
+      bitField0_ = 0;
+      httpRequest_ = null;
+      if (httpRequestBuilder_ != null) {
+        httpRequestBuilder_.dispose();
         httpRequestBuilder_ = null;
       }
       user_ = "";
-
-      if (reportLocationBuilder_ == null) {
-        reportLocation_ = null;
-      } else {
-        reportLocation_ = null;
+      reportLocation_ = null;
+      if (reportLocationBuilder_ != null) {
+        reportLocationBuilder_.dispose();
         reportLocationBuilder_ = null;
       }
       return this;
@@ -517,19 +521,27 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.clouderrorreporting.v1beta1.ErrorContext buildPartial() {
       com.google.devtools.clouderrorreporting.v1beta1.ErrorContext result =
           new com.google.devtools.clouderrorreporting.v1beta1.ErrorContext(this);
-      if (httpRequestBuilder_ == null) {
-        result.httpRequest_ = httpRequest_;
-      } else {
-        result.httpRequest_ = httpRequestBuilder_.build();
-      }
-      result.user_ = user_;
-      if (reportLocationBuilder_ == null) {
-        result.reportLocation_ = reportLocation_;
-      } else {
-        result.reportLocation_ = reportLocationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.devtools.clouderrorreporting.v1beta1.ErrorContext result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.httpRequest_ =
+            httpRequestBuilder_ == null ? httpRequest_ : httpRequestBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.user_ = user_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.reportLocation_ =
+            reportLocationBuilder_ == null ? reportLocation_ : reportLocationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -584,6 +596,7 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getUser().isEmpty()) {
         user_ = other.user_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasReportLocation()) {
@@ -618,19 +631,19 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getHttpRequestFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 user_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getReportLocationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -649,6 +662,8 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.devtools.clouderrorreporting.v1beta1.HttpRequestContext httpRequest_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -670,7 +685,7 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the httpRequest field is set.
      */
     public boolean hasHttpRequest() {
-      return httpRequestBuilder_ != null || httpRequest_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -713,11 +728,11 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         httpRequest_ = value;
-        onChanged();
       } else {
         httpRequestBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -736,11 +751,11 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (httpRequestBuilder_ == null) {
         httpRequest_ = builderForValue.build();
-        onChanged();
       } else {
         httpRequestBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -757,20 +772,20 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeHttpRequest(
         com.google.devtools.clouderrorreporting.v1beta1.HttpRequestContext value) {
       if (httpRequestBuilder_ == null) {
-        if (httpRequest_ != null) {
-          httpRequest_ =
-              com.google.devtools.clouderrorreporting.v1beta1.HttpRequestContext.newBuilder(
-                      httpRequest_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && httpRequest_ != null
+            && httpRequest_
+                != com.google.devtools.clouderrorreporting.v1beta1.HttpRequestContext
+                    .getDefaultInstance()) {
+          getHttpRequestBuilder().mergeFrom(value);
         } else {
           httpRequest_ = value;
         }
-        onChanged();
       } else {
         httpRequestBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -785,14 +800,13 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearHttpRequest() {
-      if (httpRequestBuilder_ == null) {
-        httpRequest_ = null;
-        onChanged();
-      } else {
-        httpRequest_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      httpRequest_ = null;
+      if (httpRequestBuilder_ != null) {
+        httpRequestBuilder_.dispose();
         httpRequestBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -808,7 +822,7 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.devtools.clouderrorreporting.v1beta1.HttpRequestContext.Builder
         getHttpRequestBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getHttpRequestFieldBuilder().getBuilder();
     }
@@ -944,8 +958,8 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       user_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -968,8 +982,8 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUser() {
-
       user_ = getDefaultInstance().getUser();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -997,8 +1011,8 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       user_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1025,7 +1039,7 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the reportLocation field is set.
      */
     public boolean hasReportLocation() {
-      return reportLocationBuilder_ != null || reportLocation_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1071,11 +1085,11 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         reportLocation_ = value;
-        onChanged();
       } else {
         reportLocationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1095,11 +1109,11 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
         com.google.devtools.clouderrorreporting.v1beta1.SourceLocation.Builder builderForValue) {
       if (reportLocationBuilder_ == null) {
         reportLocation_ = builderForValue.build();
-        onChanged();
       } else {
         reportLocationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1118,20 +1132,20 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeReportLocation(
         com.google.devtools.clouderrorreporting.v1beta1.SourceLocation value) {
       if (reportLocationBuilder_ == null) {
-        if (reportLocation_ != null) {
-          reportLocation_ =
-              com.google.devtools.clouderrorreporting.v1beta1.SourceLocation.newBuilder(
-                      reportLocation_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && reportLocation_ != null
+            && reportLocation_
+                != com.google.devtools.clouderrorreporting.v1beta1.SourceLocation
+                    .getDefaultInstance()) {
+          getReportLocationBuilder().mergeFrom(value);
         } else {
           reportLocation_ = value;
         }
-        onChanged();
       } else {
         reportLocationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1148,14 +1162,13 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.devtools.clouderrorreporting.v1beta1.SourceLocation report_location = 3;</code>
      */
     public Builder clearReportLocation() {
-      if (reportLocationBuilder_ == null) {
-        reportLocation_ = null;
-        onChanged();
-      } else {
-        reportLocation_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      reportLocation_ = null;
+      if (reportLocationBuilder_ != null) {
+        reportLocationBuilder_.dispose();
         reportLocationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1173,7 +1186,7 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.devtools.clouderrorreporting.v1beta1.SourceLocation.Builder
         getReportLocationBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getReportLocationFieldBuilder().getBuilder();
     }

@@ -70,7 +70,9 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
   }
 
   public static final int REGISTRATION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object registration_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object registration_ = "";
   /**
    *
    *
@@ -169,7 +171,9 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
    */
   @java.lang.Override
   public com.google.cloud.domains.v1beta1.ContactSettingsOrBuilder getContactSettingsOrBuilder() {
-    return getContactSettings();
+    return contactSettings_ == null
+        ? com.google.cloud.domains.v1beta1.ContactSettings.getDefaultInstance()
+        : contactSettings_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
@@ -224,20 +228,22 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int CONTACT_NOTICES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> contactNotices_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.domains.v1beta1.ContactNotice>
       contactNotices_converter_ =
           new com.google.protobuf.Internal.ListAdapter.Converter<
               java.lang.Integer, com.google.cloud.domains.v1beta1.ContactNotice>() {
             public com.google.cloud.domains.v1beta1.ContactNotice convert(java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.domains.v1beta1.ContactNotice result =
-                  com.google.cloud.domains.v1beta1.ContactNotice.valueOf(from);
+                  com.google.cloud.domains.v1beta1.ContactNotice.forNumber(from);
               return result == null
                   ? com.google.cloud.domains.v1beta1.ContactNotice.UNRECOGNIZED
                   : result;
@@ -331,7 +337,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
   private int contactNoticesMemoizedSerializedSize;
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 5;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -609,24 +615,21 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       registration_ = "";
-
-      if (contactSettingsBuilder_ == null) {
-        contactSettings_ = null;
-      } else {
-        contactSettings_ = null;
+      contactSettings_ = null;
+      if (contactSettingsBuilder_ != null) {
+        contactSettingsBuilder_.dispose();
         contactSettingsBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       contactNotices_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       validateOnly_ = false;
-
       return this;
     }
 
@@ -655,26 +658,39 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
     public com.google.cloud.domains.v1beta1.ConfigureContactSettingsRequest buildPartial() {
       com.google.cloud.domains.v1beta1.ConfigureContactSettingsRequest result =
           new com.google.cloud.domains.v1beta1.ConfigureContactSettingsRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.registration_ = registration_;
-      if (contactSettingsBuilder_ == null) {
-        result.contactSettings_ = contactSettings_;
-      } else {
-        result.contactSettings_ = contactSettingsBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
-      }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        contactNotices_ = java.util.Collections.unmodifiableList(contactNotices_);
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.contactNotices_ = contactNotices_;
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.domains.v1beta1.ConfigureContactSettingsRequest result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        contactNotices_ = java.util.Collections.unmodifiableList(contactNotices_);
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.contactNotices_ = contactNotices_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.domains.v1beta1.ConfigureContactSettingsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.registration_ = registration_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.contactSettings_ =
+            contactSettingsBuilder_ == null ? contactSettings_ : contactSettingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -727,6 +743,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
         return this;
       if (!other.getRegistration().isEmpty()) {
         registration_ = other.registration_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasContactSettings()) {
@@ -738,7 +755,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
       if (!other.contactNotices_.isEmpty()) {
         if (contactNotices_.isEmpty()) {
           contactNotices_ = other.contactNotices_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureContactNoticesIsMutable();
           contactNotices_.addAll(other.contactNotices_);
@@ -777,19 +794,19 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
             case 10:
               {
                 registration_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getContactSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
@@ -814,7 +831,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
             case 40:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -906,8 +923,8 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       registration_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -926,8 +943,8 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearRegistration() {
-
       registration_ = getDefaultInstance().getRegistration();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -951,8 +968,8 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       registration_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -975,7 +992,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
      * @return Whether the contactSettings field is set.
      */
     public boolean hasContactSettings() {
-      return contactSettingsBuilder_ != null || contactSettings_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1012,11 +1029,11 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
           throw new NullPointerException();
         }
         contactSettings_ = value;
-        onChanged();
       } else {
         contactSettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1032,11 +1049,11 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
         com.google.cloud.domains.v1beta1.ContactSettings.Builder builderForValue) {
       if (contactSettingsBuilder_ == null) {
         contactSettings_ = builderForValue.build();
-        onChanged();
       } else {
         contactSettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1050,19 +1067,19 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
      */
     public Builder mergeContactSettings(com.google.cloud.domains.v1beta1.ContactSettings value) {
       if (contactSettingsBuilder_ == null) {
-        if (contactSettings_ != null) {
-          contactSettings_ =
-              com.google.cloud.domains.v1beta1.ContactSettings.newBuilder(contactSettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && contactSettings_ != null
+            && contactSettings_
+                != com.google.cloud.domains.v1beta1.ContactSettings.getDefaultInstance()) {
+          getContactSettingsBuilder().mergeFrom(value);
         } else {
           contactSettings_ = value;
         }
-        onChanged();
       } else {
         contactSettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1075,14 +1092,13 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
      * <code>.google.cloud.domains.v1beta1.ContactSettings contact_settings = 2;</code>
      */
     public Builder clearContactSettings() {
-      if (contactSettingsBuilder_ == null) {
-        contactSettings_ = null;
-        onChanged();
-      } else {
-        contactSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      contactSettings_ = null;
+      if (contactSettingsBuilder_ != null) {
+        contactSettingsBuilder_.dispose();
         contactSettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1095,7 +1111,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
      * <code>.google.cloud.domains.v1beta1.ContactSettings contact_settings = 2;</code>
      */
     public com.google.cloud.domains.v1beta1.ContactSettings.Builder getContactSettingsBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getContactSettingsFieldBuilder().getBuilder();
     }
@@ -1164,7 +1180,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1207,11 +1223,11 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1229,11 +1245,11 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1250,17 +1266,18 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1276,14 +1293,13 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1299,7 +1315,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -1356,9 +1372,9 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
     private java.util.List<java.lang.Integer> contactNotices_ = java.util.Collections.emptyList();
 
     private void ensureContactNoticesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         contactNotices_ = new java.util.ArrayList<java.lang.Integer>(contactNotices_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1491,7 +1507,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
      */
     public Builder clearContactNotices() {
       contactNotices_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1618,6 +1634,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1633,7 +1650,7 @@ public final class ConfigureContactSettingsRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       validateOnly_ = false;
       onChanged();
       return this;

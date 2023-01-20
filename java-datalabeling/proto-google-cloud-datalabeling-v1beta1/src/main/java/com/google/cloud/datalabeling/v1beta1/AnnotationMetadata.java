@@ -111,7 +111,9 @@ public final class AnnotationMetadata extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.OperatorMetadataOrBuilder
       getOperatorMetadataOrBuilder() {
-    return getOperatorMetadata();
+    return operatorMetadata_ == null
+        ? com.google.cloud.datalabeling.v1beta1.OperatorMetadata.getDefaultInstance()
+        : operatorMetadata_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -317,10 +319,10 @@ public final class AnnotationMetadata extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (operatorMetadataBuilder_ == null) {
-        operatorMetadata_ = null;
-      } else {
-        operatorMetadata_ = null;
+      bitField0_ = 0;
+      operatorMetadata_ = null;
+      if (operatorMetadataBuilder_ != null) {
+        operatorMetadataBuilder_.dispose();
         operatorMetadataBuilder_ = null;
       }
       return this;
@@ -350,13 +352,19 @@ public final class AnnotationMetadata extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.datalabeling.v1beta1.AnnotationMetadata buildPartial() {
       com.google.cloud.datalabeling.v1beta1.AnnotationMetadata result =
           new com.google.cloud.datalabeling.v1beta1.AnnotationMetadata(this);
-      if (operatorMetadataBuilder_ == null) {
-        result.operatorMetadata_ = operatorMetadata_;
-      } else {
-        result.operatorMetadata_ = operatorMetadataBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datalabeling.v1beta1.AnnotationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.operatorMetadata_ =
+            operatorMetadataBuilder_ == null ? operatorMetadata_ : operatorMetadataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -438,7 +446,7 @@ public final class AnnotationMetadata extends com.google.protobuf.GeneratedMessa
               {
                 input.readMessage(
                     getOperatorMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             default:
@@ -458,6 +466,8 @@ public final class AnnotationMetadata extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.datalabeling.v1beta1.OperatorMetadata operatorMetadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.OperatorMetadata,
@@ -476,7 +486,7 @@ public final class AnnotationMetadata extends com.google.protobuf.GeneratedMessa
      * @return Whether the operatorMetadata field is set.
      */
     public boolean hasOperatorMetadata() {
-      return operatorMetadataBuilder_ != null || operatorMetadata_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -514,11 +524,11 @@ public final class AnnotationMetadata extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         operatorMetadata_ = value;
-        onChanged();
       } else {
         operatorMetadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -534,11 +544,11 @@ public final class AnnotationMetadata extends com.google.protobuf.GeneratedMessa
         com.google.cloud.datalabeling.v1beta1.OperatorMetadata.Builder builderForValue) {
       if (operatorMetadataBuilder_ == null) {
         operatorMetadata_ = builderForValue.build();
-        onChanged();
       } else {
         operatorMetadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -553,19 +563,19 @@ public final class AnnotationMetadata extends com.google.protobuf.GeneratedMessa
     public Builder mergeOperatorMetadata(
         com.google.cloud.datalabeling.v1beta1.OperatorMetadata value) {
       if (operatorMetadataBuilder_ == null) {
-        if (operatorMetadata_ != null) {
-          operatorMetadata_ =
-              com.google.cloud.datalabeling.v1beta1.OperatorMetadata.newBuilder(operatorMetadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && operatorMetadata_ != null
+            && operatorMetadata_
+                != com.google.cloud.datalabeling.v1beta1.OperatorMetadata.getDefaultInstance()) {
+          getOperatorMetadataBuilder().mergeFrom(value);
         } else {
           operatorMetadata_ = value;
         }
-        onChanged();
       } else {
         operatorMetadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -578,14 +588,13 @@ public final class AnnotationMetadata extends com.google.protobuf.GeneratedMessa
      * <code>.google.cloud.datalabeling.v1beta1.OperatorMetadata operator_metadata = 2;</code>
      */
     public Builder clearOperatorMetadata() {
-      if (operatorMetadataBuilder_ == null) {
-        operatorMetadata_ = null;
-        onChanged();
-      } else {
-        operatorMetadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      operatorMetadata_ = null;
+      if (operatorMetadataBuilder_ != null) {
+        operatorMetadataBuilder_.dispose();
         operatorMetadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -599,7 +608,7 @@ public final class AnnotationMetadata extends com.google.protobuf.GeneratedMessa
      */
     public com.google.cloud.datalabeling.v1beta1.OperatorMetadata.Builder
         getOperatorMetadataBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getOperatorMetadataFieldBuilder().getBuilder();
     }

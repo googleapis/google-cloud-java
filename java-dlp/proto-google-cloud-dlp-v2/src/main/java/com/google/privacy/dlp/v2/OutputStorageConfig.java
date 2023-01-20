@@ -422,7 +422,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int OUTPUT_SCHEMA_FIELD_NUMBER = 3;
-  private int outputSchema_;
+  private int outputSchema_ = 0;
   /**
    *
    *
@@ -467,9 +467,8 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema getOutputSchema() {
-    @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema result =
-        com.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema.valueOf(outputSchema_);
+        com.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema.forNumber(outputSchema_);
     return result == null
         ? com.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema.UNRECOGNIZED
         : result;
@@ -700,11 +699,11 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (tableBuilder_ != null) {
         tableBuilder_.clear();
       }
       outputSchema_ = 0;
-
       typeCase_ = 0;
       type_ = null;
       return this;
@@ -734,17 +733,27 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
     public com.google.privacy.dlp.v2.OutputStorageConfig buildPartial() {
       com.google.privacy.dlp.v2.OutputStorageConfig result =
           new com.google.privacy.dlp.v2.OutputStorageConfig(this);
-      if (typeCase_ == 1) {
-        if (tableBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = tableBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.outputSchema_ = outputSchema_;
-      result.typeCase_ = typeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.OutputStorageConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.outputSchema_ = outputSchema_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.OutputStorageConfig result) {
+      result.typeCase_ = typeCase_;
+      result.type_ = this.type_;
+      if (typeCase_ == 1 && tableBuilder_ != null) {
+        result.type_ = tableBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -841,7 +850,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
             case 24:
               {
                 outputSchema_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 24
             default:
@@ -874,6 +883,8 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.BigQueryTable,
@@ -1177,7 +1188,6 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
       }
       typeCase_ = 1;
       onChanged();
-      ;
       return tableBuilder_;
     }
 
@@ -1226,8 +1236,8 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setOutputSchemaValue(int value) {
-
       outputSchema_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1252,9 +1262,8 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema getOutputSchema() {
-      @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema result =
-          com.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema.valueOf(outputSchema_);
+          com.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema.forNumber(outputSchema_);
       return result == null
           ? com.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema.UNRECOGNIZED
           : result;
@@ -1284,7 +1293,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       outputSchema_ = value.getNumber();
       onChanged();
       return this;
@@ -1309,7 +1318,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearOutputSchema() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       outputSchema_ = 0;
       onChanged();
       return this;

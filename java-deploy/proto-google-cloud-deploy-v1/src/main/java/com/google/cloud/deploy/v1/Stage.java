@@ -68,7 +68,9 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TARGET_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object targetId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetId_ = "";
   /**
    *
    *
@@ -127,6 +129,8 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROFILES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList profiles_;
   /**
    *
@@ -237,7 +241,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.StrategyOrBuilder getStrategyOrBuilder() {
-    return getStrategy();
+    return strategy_ == null ? com.google.cloud.deploy.v1.Strategy.getDefaultInstance() : strategy_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -465,14 +469,13 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       targetId_ = "";
-
       profiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (strategyBuilder_ == null) {
-        strategy_ = null;
-      } else {
-        strategy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      strategy_ = null;
+      if (strategyBuilder_ != null) {
+        strategyBuilder_.dispose();
         strategyBuilder_ = null;
       }
       return this;
@@ -501,20 +504,30 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.deploy.v1.Stage buildPartial() {
       com.google.cloud.deploy.v1.Stage result = new com.google.cloud.deploy.v1.Stage(this);
-      int from_bitField0_ = bitField0_;
-      result.targetId_ = targetId_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        profiles_ = profiles_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.profiles_ = profiles_;
-      if (strategyBuilder_ == null) {
-        result.strategy_ = strategy_;
-      } else {
-        result.strategy_ = strategyBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.deploy.v1.Stage result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        profiles_ = profiles_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.profiles_ = profiles_;
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.Stage result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.targetId_ = targetId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.strategy_ = strategyBuilder_ == null ? strategy_ : strategyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -564,12 +577,13 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.deploy.v1.Stage.getDefaultInstance()) return this;
       if (!other.getTargetId().isEmpty()) {
         targetId_ = other.targetId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.profiles_.isEmpty()) {
         if (profiles_.isEmpty()) {
           profiles_ = other.profiles_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureProfilesIsMutable();
           profiles_.addAll(other.profiles_);
@@ -608,7 +622,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 targetId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -621,7 +635,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 input.readMessage(getStrategyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 42
             default:
@@ -719,8 +733,8 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -741,8 +755,8 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTargetId() {
-
       targetId_ = getDefaultInstance().getTargetId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -768,8 +782,8 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -778,9 +792,9 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureProfilesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         profiles_ = new com.google.protobuf.LazyStringArrayList(profiles_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -923,7 +937,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearProfiles() {
       profiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -971,7 +985,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the strategy field is set.
      */
     public boolean hasStrategy() {
-      return strategyBuilder_ != null || strategy_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1012,11 +1026,11 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         strategy_ = value;
-        onChanged();
       } else {
         strategyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1033,11 +1047,11 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     public Builder setStrategy(com.google.cloud.deploy.v1.Strategy.Builder builderForValue) {
       if (strategyBuilder_ == null) {
         strategy_ = builderForValue.build();
-        onChanged();
       } else {
         strategyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1053,19 +1067,18 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStrategy(com.google.cloud.deploy.v1.Strategy value) {
       if (strategyBuilder_ == null) {
-        if (strategy_ != null) {
-          strategy_ =
-              com.google.cloud.deploy.v1.Strategy.newBuilder(strategy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && strategy_ != null
+            && strategy_ != com.google.cloud.deploy.v1.Strategy.getDefaultInstance()) {
+          getStrategyBuilder().mergeFrom(value);
         } else {
           strategy_ = value;
         }
-        onChanged();
       } else {
         strategyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1080,14 +1093,13 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearStrategy() {
-      if (strategyBuilder_ == null) {
-        strategy_ = null;
-        onChanged();
-      } else {
-        strategy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      strategy_ = null;
+      if (strategyBuilder_ != null) {
+        strategyBuilder_.dispose();
         strategyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1102,7 +1114,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.deploy.v1.Strategy.Builder getStrategyBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getStrategyFieldBuilder().getBuilder();
     }

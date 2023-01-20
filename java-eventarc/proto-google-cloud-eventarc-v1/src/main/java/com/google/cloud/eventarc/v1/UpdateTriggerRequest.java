@@ -108,7 +108,7 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.eventarc.v1.TriggerOrBuilder getTriggerOrBuilder() {
-    return getTrigger();
+    return trigger_ == null ? com.google.cloud.eventarc.v1.Trigger.getDefaultInstance() : trigger_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -160,11 +160,11 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 3;
-  private boolean allowMissing_;
+  private boolean allowMissing_ = false;
   /**
    *
    *
@@ -183,7 +183,7 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -435,22 +435,19 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (triggerBuilder_ == null) {
-        trigger_ = null;
-      } else {
-        trigger_ = null;
+      bitField0_ = 0;
+      trigger_ = null;
+      if (triggerBuilder_ != null) {
+        triggerBuilder_.dispose();
         triggerBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       allowMissing_ = false;
-
       validateOnly_ = false;
-
       return this;
     }
 
@@ -478,20 +475,27 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.eventarc.v1.UpdateTriggerRequest buildPartial() {
       com.google.cloud.eventarc.v1.UpdateTriggerRequest result =
           new com.google.cloud.eventarc.v1.UpdateTriggerRequest(this);
-      if (triggerBuilder_ == null) {
-        result.trigger_ = trigger_;
-      } else {
-        result.trigger_ = triggerBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
-      }
-      result.allowMissing_ = allowMissing_;
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.eventarc.v1.UpdateTriggerRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.trigger_ = triggerBuilder_ == null ? trigger_ : triggerBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.allowMissing_ = allowMissing_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -581,25 +585,25 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 input.readMessage(getTriggerFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 allowMissing_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -619,6 +623,8 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.eventarc.v1.Trigger trigger_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.eventarc.v1.Trigger,
@@ -637,7 +643,7 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the trigger field is set.
      */
     public boolean hasTrigger() {
-      return triggerBuilder_ != null || trigger_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -674,11 +680,11 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         trigger_ = value;
-        onChanged();
       } else {
         triggerBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -693,11 +699,11 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
     public Builder setTrigger(com.google.cloud.eventarc.v1.Trigger.Builder builderForValue) {
       if (triggerBuilder_ == null) {
         trigger_ = builderForValue.build();
-        onChanged();
       } else {
         triggerBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -711,19 +717,18 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeTrigger(com.google.cloud.eventarc.v1.Trigger value) {
       if (triggerBuilder_ == null) {
-        if (trigger_ != null) {
-          trigger_ =
-              com.google.cloud.eventarc.v1.Trigger.newBuilder(trigger_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && trigger_ != null
+            && trigger_ != com.google.cloud.eventarc.v1.Trigger.getDefaultInstance()) {
+          getTriggerBuilder().mergeFrom(value);
         } else {
           trigger_ = value;
         }
-        onChanged();
       } else {
         triggerBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -736,14 +741,13 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.eventarc.v1.Trigger trigger = 1;</code>
      */
     public Builder clearTrigger() {
-      if (triggerBuilder_ == null) {
-        trigger_ = null;
-        onChanged();
-      } else {
-        trigger_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      trigger_ = null;
+      if (triggerBuilder_ != null) {
+        triggerBuilder_.dispose();
         triggerBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -756,7 +760,7 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.eventarc.v1.Trigger trigger = 1;</code>
      */
     public com.google.cloud.eventarc.v1.Trigger.Builder getTriggerBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTriggerFieldBuilder().getBuilder();
     }
@@ -824,7 +828,7 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -865,11 +869,11 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -886,11 +890,11 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -906,17 +910,18 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -931,14 +936,13 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -953,7 +957,7 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -1038,6 +1042,7 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
     public Builder setAllowMissing(boolean value) {
 
       allowMissing_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1054,7 +1059,7 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearAllowMissing() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       allowMissing_ = false;
       onChanged();
       return this;
@@ -1093,6 +1098,7 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1109,7 +1115,7 @@ public final class UpdateTriggerRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       validateOnly_ = false;
       onChanged();
       return this;

@@ -112,11 +112,15 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.edgecontainer.v1.TimeWindowOrBuilder getWindowOrBuilder() {
-    return getWindow();
+    return window_ == null
+        ? com.google.cloud.edgecontainer.v1.TimeWindow.getDefaultInstance()
+        : window_;
   }
 
   public static final int RECURRENCE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object recurrence_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object recurrence_ = "";
   /**
    *
    *
@@ -380,14 +384,13 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (windowBuilder_ == null) {
-        window_ = null;
-      } else {
-        window_ = null;
+      bitField0_ = 0;
+      window_ = null;
+      if (windowBuilder_ != null) {
+        windowBuilder_.dispose();
         windowBuilder_ = null;
       }
       recurrence_ = "";
-
       return this;
     }
 
@@ -415,14 +418,21 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
     public com.google.cloud.edgecontainer.v1.RecurringTimeWindow buildPartial() {
       com.google.cloud.edgecontainer.v1.RecurringTimeWindow result =
           new com.google.cloud.edgecontainer.v1.RecurringTimeWindow(this);
-      if (windowBuilder_ == null) {
-        result.window_ = window_;
-      } else {
-        result.window_ = windowBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.recurrence_ = recurrence_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.edgecontainer.v1.RecurringTimeWindow result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.window_ = windowBuilder_ == null ? window_ : windowBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.recurrence_ = recurrence_;
+      }
     }
 
     @java.lang.Override
@@ -476,6 +486,7 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
       }
       if (!other.getRecurrence().isEmpty()) {
         recurrence_ = other.recurrence_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -507,13 +518,13 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 input.readMessage(getWindowFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 recurrence_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -533,6 +544,8 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.edgecontainer.v1.TimeWindow window_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.edgecontainer.v1.TimeWindow,
@@ -551,7 +564,7 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
      * @return Whether the window field is set.
      */
     public boolean hasWindow() {
-      return windowBuilder_ != null || window_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -588,11 +601,11 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         window_ = value;
-        onChanged();
       } else {
         windowBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -607,11 +620,11 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
     public Builder setWindow(com.google.cloud.edgecontainer.v1.TimeWindow.Builder builderForValue) {
       if (windowBuilder_ == null) {
         window_ = builderForValue.build();
-        onChanged();
       } else {
         windowBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -625,19 +638,18 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeWindow(com.google.cloud.edgecontainer.v1.TimeWindow value) {
       if (windowBuilder_ == null) {
-        if (window_ != null) {
-          window_ =
-              com.google.cloud.edgecontainer.v1.TimeWindow.newBuilder(window_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && window_ != null
+            && window_ != com.google.cloud.edgecontainer.v1.TimeWindow.getDefaultInstance()) {
+          getWindowBuilder().mergeFrom(value);
         } else {
           window_ = value;
         }
-        onChanged();
       } else {
         windowBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -650,14 +662,13 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.edgecontainer.v1.TimeWindow window = 1;</code>
      */
     public Builder clearWindow() {
-      if (windowBuilder_ == null) {
-        window_ = null;
-        onChanged();
-      } else {
-        window_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      window_ = null;
+      if (windowBuilder_ != null) {
+        windowBuilder_.dispose();
         windowBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -670,7 +681,7 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.edgecontainer.v1.TimeWindow window = 1;</code>
      */
     public com.google.cloud.edgecontainer.v1.TimeWindow.Builder getWindowBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getWindowFieldBuilder().getBuilder();
     }
@@ -785,8 +796,8 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       recurrence_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -804,8 +815,8 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearRecurrence() {
-
       recurrence_ = getDefaultInstance().getRecurrence();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -828,8 +839,8 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       recurrence_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

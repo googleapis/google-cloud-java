@@ -68,7 +68,9 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PATH_FIELD_NUMBER = 1;
-  private volatile java.lang.Object path_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object path_ = "";
   /**
    *
    *
@@ -117,7 +119,7 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LINE_FIELD_NUMBER = 2;
-  private int line_;
+  private int line_ = 0;
   /**
    *
    *
@@ -135,7 +137,7 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COLUMN_FIELD_NUMBER = 3;
-  private int column_;
+  private int column_ = 0;
   /**
    *
    *
@@ -369,12 +371,10 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       path_ = "";
-
       line_ = 0;
-
       column_ = 0;
-
       return this;
     }
 
@@ -402,11 +402,24 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.clouddebugger.v2.SourceLocation buildPartial() {
       com.google.devtools.clouddebugger.v2.SourceLocation result =
           new com.google.devtools.clouddebugger.v2.SourceLocation(this);
-      result.path_ = path_;
-      result.line_ = line_;
-      result.column_ = column_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.devtools.clouddebugger.v2.SourceLocation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.path_ = path_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.line_ = line_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.column_ = column_;
+      }
     }
 
     @java.lang.Override
@@ -457,6 +470,7 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getPath().isEmpty()) {
         path_ = other.path_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getLine() != 0) {
@@ -494,19 +508,19 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 path_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 line_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 column_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -525,6 +539,8 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object path_ = "";
     /**
@@ -587,8 +603,8 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       path_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -604,8 +620,8 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPath() {
-
       path_ = getDefaultInstance().getPath();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -626,8 +642,8 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       path_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -663,6 +679,7 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
     public Builder setLine(int value) {
 
       line_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -678,7 +695,7 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLine() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       line_ = 0;
       onChanged();
       return this;
@@ -719,6 +736,7 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
     public Builder setColumn(int value) {
 
       column_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -736,7 +754,7 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearColumn() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       column_ = 0;
       onChanged();
       return this;

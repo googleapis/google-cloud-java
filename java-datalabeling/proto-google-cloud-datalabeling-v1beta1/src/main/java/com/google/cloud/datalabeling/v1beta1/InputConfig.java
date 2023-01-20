@@ -317,7 +317,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATA_TYPE_FIELD_NUMBER = 1;
-  private int dataType_;
+  private int dataType_ = 0;
   /**
    *
    *
@@ -346,14 +346,13 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.DataType getDataType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.datalabeling.v1beta1.DataType result =
-        com.google.cloud.datalabeling.v1beta1.DataType.valueOf(dataType_);
+        com.google.cloud.datalabeling.v1beta1.DataType.forNumber(dataType_);
     return result == null ? com.google.cloud.datalabeling.v1beta1.DataType.UNRECOGNIZED : result;
   }
 
   public static final int ANNOTATION_TYPE_FIELD_NUMBER = 3;
-  private int annotationType_;
+  private int annotationType_ = 0;
   /**
    *
    *
@@ -386,9 +385,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationType getAnnotationType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.datalabeling.v1beta1.AnnotationType result =
-        com.google.cloud.datalabeling.v1beta1.AnnotationType.valueOf(annotationType_);
+        com.google.cloud.datalabeling.v1beta1.AnnotationType.forNumber(annotationType_);
     return result == null
         ? com.google.cloud.datalabeling.v1beta1.AnnotationType.UNRECOGNIZED
         : result;
@@ -449,7 +447,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.ClassificationMetadataOrBuilder
       getClassificationMetadataOrBuilder() {
-    return getClassificationMetadata();
+    return classificationMetadata_ == null
+        ? com.google.cloud.datalabeling.v1beta1.ClassificationMetadata.getDefaultInstance()
+        : classificationMetadata_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -743,6 +743,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (textMetadataBuilder_ != null) {
         textMetadataBuilder_.clear();
       }
@@ -753,13 +754,10 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         bigquerySourceBuilder_.clear();
       }
       dataType_ = 0;
-
       annotationType_ = 0;
-
-      if (classificationMetadataBuilder_ == null) {
-        classificationMetadata_ = null;
-      } else {
-        classificationMetadata_ = null;
+      classificationMetadata_ = null;
+      if (classificationMetadataBuilder_ != null) {
+        classificationMetadataBuilder_.dispose();
         classificationMetadataBuilder_ = null;
       }
       dataTypeMetadataCase_ = 0;
@@ -793,38 +791,44 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datalabeling.v1beta1.InputConfig buildPartial() {
       com.google.cloud.datalabeling.v1beta1.InputConfig result =
           new com.google.cloud.datalabeling.v1beta1.InputConfig(this);
-      if (dataTypeMetadataCase_ == 6) {
-        if (textMetadataBuilder_ == null) {
-          result.dataTypeMetadata_ = dataTypeMetadata_;
-        } else {
-          result.dataTypeMetadata_ = textMetadataBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (sourceCase_ == 2) {
-        if (gcsSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = gcsSourceBuilder_.build();
-        }
-      }
-      if (sourceCase_ == 5) {
-        if (bigquerySourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = bigquerySourceBuilder_.build();
-        }
-      }
-      result.dataType_ = dataType_;
-      result.annotationType_ = annotationType_;
-      if (classificationMetadataBuilder_ == null) {
-        result.classificationMetadata_ = classificationMetadata_;
-      } else {
-        result.classificationMetadata_ = classificationMetadataBuilder_.build();
-      }
-      result.dataTypeMetadataCase_ = dataTypeMetadataCase_;
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datalabeling.v1beta1.InputConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.dataType_ = dataType_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.annotationType_ = annotationType_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.classificationMetadata_ =
+            classificationMetadataBuilder_ == null
+                ? classificationMetadata_
+                : classificationMetadataBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.datalabeling.v1beta1.InputConfig result) {
+      result.dataTypeMetadataCase_ = dataTypeMetadataCase_;
+      result.dataTypeMetadata_ = this.dataTypeMetadata_;
+      if (dataTypeMetadataCase_ == 6 && textMetadataBuilder_ != null) {
+        result.dataTypeMetadata_ = textMetadataBuilder_.build();
+      }
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 2 && gcsSourceBuilder_ != null) {
+        result.source_ = gcsSourceBuilder_.build();
+      }
+      if (sourceCase_ == 5 && bigquerySourceBuilder_ != null) {
+        result.source_ = bigquerySourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -938,7 +942,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 dataType_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 8
             case 18:
@@ -950,14 +954,14 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
             case 24:
               {
                 annotationType_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 24
             case 34:
               {
                 input.readMessage(
                     getClassificationMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
             case 42:
@@ -1016,6 +1020,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.TextMetadata,
@@ -1225,7 +1231,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       dataTypeMetadataCase_ = 6;
       onChanged();
-      ;
       return textMetadataBuilder_;
     }
 
@@ -1435,7 +1440,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       sourceCase_ = 2;
       onChanged();
-      ;
       return gcsSourceBuilder_;
     }
 
@@ -1656,7 +1660,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       sourceCase_ = 5;
       onChanged();
-      ;
       return bigquerySourceBuilder_;
     }
 
@@ -1689,8 +1692,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDataTypeValue(int value) {
-
       dataType_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1707,9 +1710,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.DataType getDataType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.datalabeling.v1beta1.DataType result =
-          com.google.cloud.datalabeling.v1beta1.DataType.valueOf(dataType_);
+          com.google.cloud.datalabeling.v1beta1.DataType.forNumber(dataType_);
       return result == null ? com.google.cloud.datalabeling.v1beta1.DataType.UNRECOGNIZED : result;
     }
     /**
@@ -1728,7 +1730,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       dataType_ = value.getNumber();
       onChanged();
       return this;
@@ -1745,7 +1747,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDataType() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       dataType_ = 0;
       onChanged();
       return this;
@@ -1784,8 +1786,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAnnotationTypeValue(int value) {
-
       annotationType_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1804,9 +1806,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.AnnotationType getAnnotationType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.datalabeling.v1beta1.AnnotationType result =
-          com.google.cloud.datalabeling.v1beta1.AnnotationType.valueOf(annotationType_);
+          com.google.cloud.datalabeling.v1beta1.AnnotationType.forNumber(annotationType_);
       return result == null
           ? com.google.cloud.datalabeling.v1beta1.AnnotationType.UNRECOGNIZED
           : result;
@@ -1829,7 +1830,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       annotationType_ = value.getNumber();
       onChanged();
       return this;
@@ -1848,7 +1849,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAnnotationType() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       annotationType_ = 0;
       onChanged();
       return this;
@@ -1875,7 +1876,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the classificationMetadata field is set.
      */
     public boolean hasClassificationMetadata() {
-      return classificationMetadataBuilder_ != null || classificationMetadata_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1920,11 +1921,11 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         classificationMetadata_ = value;
-        onChanged();
       } else {
         classificationMetadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1943,11 +1944,11 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.datalabeling.v1beta1.ClassificationMetadata.Builder builderForValue) {
       if (classificationMetadataBuilder_ == null) {
         classificationMetadata_ = builderForValue.build();
-        onChanged();
       } else {
         classificationMetadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1965,20 +1966,20 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeClassificationMetadata(
         com.google.cloud.datalabeling.v1beta1.ClassificationMetadata value) {
       if (classificationMetadataBuilder_ == null) {
-        if (classificationMetadata_ != null) {
-          classificationMetadata_ =
-              com.google.cloud.datalabeling.v1beta1.ClassificationMetadata.newBuilder(
-                      classificationMetadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && classificationMetadata_ != null
+            && classificationMetadata_
+                != com.google.cloud.datalabeling.v1beta1.ClassificationMetadata
+                    .getDefaultInstance()) {
+          getClassificationMetadataBuilder().mergeFrom(value);
         } else {
           classificationMetadata_ = value;
         }
-        onChanged();
       } else {
         classificationMetadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1994,14 +1995,13 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearClassificationMetadata() {
-      if (classificationMetadataBuilder_ == null) {
-        classificationMetadata_ = null;
-        onChanged();
-      } else {
-        classificationMetadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      classificationMetadata_ = null;
+      if (classificationMetadataBuilder_ != null) {
+        classificationMetadataBuilder_.dispose();
         classificationMetadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2018,7 +2018,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.datalabeling.v1beta1.ClassificationMetadata.Builder
         getClassificationMetadataBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getClassificationMetadataFieldBuilder().getBuilder();
     }

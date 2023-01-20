@@ -69,7 +69,9 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BUCKET_FIELD_NUMBER = 1;
-  private volatile java.lang.Object bucket_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object bucket_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OBJECT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object object_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object object_ = "";
   /**
    *
    *
@@ -175,7 +179,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GENERATION_FIELD_NUMBER = 3;
-  private long generation_;
+  private long generation_ = 0L;
   /**
    *
    *
@@ -408,12 +412,10 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       bucket_ = "";
-
       object_ = "";
-
       generation_ = 0L;
-
       return this;
     }
 
@@ -441,11 +443,24 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.functions.v2beta.StorageSource buildPartial() {
       com.google.cloud.functions.v2beta.StorageSource result =
           new com.google.cloud.functions.v2beta.StorageSource(this);
-      result.bucket_ = bucket_;
-      result.object_ = object_;
-      result.generation_ = generation_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.functions.v2beta.StorageSource result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.bucket_ = bucket_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.object_ = object_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.generation_ = generation_;
+      }
     }
 
     @java.lang.Override
@@ -496,10 +511,12 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getBucket().isEmpty()) {
         bucket_ = other.bucket_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getObject().isEmpty()) {
         object_ = other.object_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getGeneration() != 0L) {
@@ -534,19 +551,19 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 bucket_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 object_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 generation_ = input.readInt64();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -565,6 +582,8 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object bucket_ = "";
     /**
@@ -633,8 +652,8 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       bucket_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -652,8 +671,8 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBucket() {
-
       bucket_ = getDefaultInstance().getBucket();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -676,8 +695,8 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       bucket_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -749,8 +768,8 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       object_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -768,8 +787,8 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearObject() {
-
       object_ = getDefaultInstance().getObject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -792,8 +811,8 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       object_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -831,6 +850,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
     public Builder setGeneration(long value) {
 
       generation_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -847,7 +867,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGeneration() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       generation_ = 0L;
       onChanged();
       return this;

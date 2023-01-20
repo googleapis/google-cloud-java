@@ -319,7 +319,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IS_ERROR_FIELD_NUMBER = 1;
-  private boolean isError_;
+  private boolean isError_ = false;
   /**
    *
    *
@@ -337,7 +337,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REFERS_TO_FIELD_NUMBER = 2;
-  private int refersTo_;
+  private int refersTo_ = 0;
   /**
    *
    *
@@ -366,9 +366,8 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.devtools.clouddebugger.v2.StatusMessage.Reference getRefersTo() {
-    @SuppressWarnings("deprecation")
     com.google.devtools.clouddebugger.v2.StatusMessage.Reference result =
-        com.google.devtools.clouddebugger.v2.StatusMessage.Reference.valueOf(refersTo_);
+        com.google.devtools.clouddebugger.v2.StatusMessage.Reference.forNumber(refersTo_);
     return result == null
         ? com.google.devtools.clouddebugger.v2.StatusMessage.Reference.UNRECOGNIZED
         : result;
@@ -419,7 +418,9 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.devtools.clouddebugger.v2.FormatMessageOrBuilder getDescriptionOrBuilder() {
-    return getDescription();
+    return description_ == null
+        ? com.google.devtools.clouddebugger.v2.FormatMessage.getDefaultInstance()
+        : description_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -648,14 +649,12 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       isError_ = false;
-
       refersTo_ = 0;
-
-      if (descriptionBuilder_ == null) {
-        description_ = null;
-      } else {
-        description_ = null;
+      description_ = null;
+      if (descriptionBuilder_ != null) {
+        descriptionBuilder_.dispose();
         descriptionBuilder_ = null;
       }
       return this;
@@ -685,15 +684,25 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.clouddebugger.v2.StatusMessage buildPartial() {
       com.google.devtools.clouddebugger.v2.StatusMessage result =
           new com.google.devtools.clouddebugger.v2.StatusMessage(this);
-      result.isError_ = isError_;
-      result.refersTo_ = refersTo_;
-      if (descriptionBuilder_ == null) {
-        result.description_ = description_;
-      } else {
-        result.description_ = descriptionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.devtools.clouddebugger.v2.StatusMessage result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.isError_ = isError_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.refersTo_ = refersTo_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ =
+            descriptionBuilder_ == null ? description_ : descriptionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -780,19 +789,19 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 isError_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 refersTo_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getDescriptionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -811,6 +820,8 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean isError_;
     /**
@@ -843,6 +854,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
     public Builder setIsError(boolean value) {
 
       isError_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -858,7 +870,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIsError() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       isError_ = false;
       onChanged();
       return this;
@@ -893,8 +905,8 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setRefersToValue(int value) {
-
       refersTo_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -911,9 +923,8 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.devtools.clouddebugger.v2.StatusMessage.Reference getRefersTo() {
-      @SuppressWarnings("deprecation")
       com.google.devtools.clouddebugger.v2.StatusMessage.Reference result =
-          com.google.devtools.clouddebugger.v2.StatusMessage.Reference.valueOf(refersTo_);
+          com.google.devtools.clouddebugger.v2.StatusMessage.Reference.forNumber(refersTo_);
       return result == null
           ? com.google.devtools.clouddebugger.v2.StatusMessage.Reference.UNRECOGNIZED
           : result;
@@ -934,7 +945,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       refersTo_ = value.getNumber();
       onChanged();
       return this;
@@ -951,7 +962,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRefersTo() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       refersTo_ = 0;
       onChanged();
       return this;
@@ -975,7 +986,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the description field is set.
      */
     public boolean hasDescription() {
-      return descriptionBuilder_ != null || description_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1012,11 +1023,11 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         description_ = value;
-        onChanged();
       } else {
         descriptionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1032,11 +1043,11 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
         com.google.devtools.clouddebugger.v2.FormatMessage.Builder builderForValue) {
       if (descriptionBuilder_ == null) {
         description_ = builderForValue.build();
-        onChanged();
       } else {
         descriptionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1050,19 +1061,19 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDescription(com.google.devtools.clouddebugger.v2.FormatMessage value) {
       if (descriptionBuilder_ == null) {
-        if (description_ != null) {
-          description_ =
-              com.google.devtools.clouddebugger.v2.FormatMessage.newBuilder(description_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && description_ != null
+            && description_
+                != com.google.devtools.clouddebugger.v2.FormatMessage.getDefaultInstance()) {
+          getDescriptionBuilder().mergeFrom(value);
         } else {
           description_ = value;
         }
-        onChanged();
       } else {
         descriptionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1075,14 +1086,13 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.devtools.clouddebugger.v2.FormatMessage description = 3;</code>
      */
     public Builder clearDescription() {
-      if (descriptionBuilder_ == null) {
-        description_ = null;
-        onChanged();
-      } else {
-        description_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      description_ = null;
+      if (descriptionBuilder_ != null) {
+        descriptionBuilder_.dispose();
         descriptionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1095,7 +1105,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.devtools.clouddebugger.v2.FormatMessage description = 3;</code>
      */
     public com.google.devtools.clouddebugger.v2.FormatMessage.Builder getDescriptionBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getDescriptionFieldBuilder().getBuilder();
     }

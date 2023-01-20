@@ -189,7 +189,9 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SKAFFOLD_CONFIG_PATH_FIELD_NUMBER = 2;
-  private volatile java.lang.Object skaffoldConfigPath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object skaffoldConfigPath_ = "";
   /**
    *
    *
@@ -238,7 +240,9 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MANIFEST_PATH_FIELD_NUMBER = 3;
-  private volatile java.lang.Object manifestPath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object manifestPath_ = "";
   /**
    *
    *
@@ -514,10 +518,9 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       skaffoldConfigPath_ = "";
-
       manifestPath_ = "";
-
       uriCase_ = 0;
       uri_ = null;
       return this;
@@ -547,14 +550,27 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.deploy.v1.TargetArtifact buildPartial() {
       com.google.cloud.deploy.v1.TargetArtifact result =
           new com.google.cloud.deploy.v1.TargetArtifact(this);
-      if (uriCase_ == 4) {
-        result.uri_ = uri_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.skaffoldConfigPath_ = skaffoldConfigPath_;
-      result.manifestPath_ = manifestPath_;
-      result.uriCase_ = uriCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.TargetArtifact result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.skaffoldConfigPath_ = skaffoldConfigPath_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.manifestPath_ = manifestPath_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.deploy.v1.TargetArtifact result) {
+      result.uriCase_ = uriCase_;
+      result.uri_ = this.uri_;
     }
 
     @java.lang.Override
@@ -604,10 +620,12 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.deploy.v1.TargetArtifact.getDefaultInstance()) return this;
       if (!other.getSkaffoldConfigPath().isEmpty()) {
         skaffoldConfigPath_ = other.skaffoldConfigPath_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getManifestPath().isEmpty()) {
         manifestPath_ = other.manifestPath_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       switch (other.getUriCase()) {
@@ -652,13 +670,13 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 skaffoldConfigPath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 manifestPath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -698,6 +716,8 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *
@@ -906,8 +926,8 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       skaffoldConfigPath_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -923,8 +943,8 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSkaffoldConfigPath() {
-
       skaffoldConfigPath_ = getDefaultInstance().getSkaffoldConfigPath();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -945,8 +965,8 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       skaffoldConfigPath_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1012,8 +1032,8 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       manifestPath_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1029,8 +1049,8 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearManifestPath() {
-
       manifestPath_ = getDefaultInstance().getManifestPath();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1051,8 +1071,8 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       manifestPath_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

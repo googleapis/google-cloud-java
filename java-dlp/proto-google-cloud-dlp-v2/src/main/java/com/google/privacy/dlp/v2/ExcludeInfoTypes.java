@@ -68,6 +68,8 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int INFO_TYPES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.InfoType> infoTypes_;
   /**
    *
@@ -370,6 +372,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (infoTypesBuilder_ == null) {
         infoTypes_ = java.util.Collections.emptyList();
       } else {
@@ -404,7 +407,15 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
     public com.google.privacy.dlp.v2.ExcludeInfoTypes buildPartial() {
       com.google.privacy.dlp.v2.ExcludeInfoTypes result =
           new com.google.privacy.dlp.v2.ExcludeInfoTypes(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.privacy.dlp.v2.ExcludeInfoTypes result) {
       if (infoTypesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           infoTypes_ = java.util.Collections.unmodifiableList(infoTypes_);
@@ -414,8 +425,10 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
       } else {
         result.infoTypes_ = infoTypesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.ExcludeInfoTypes result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

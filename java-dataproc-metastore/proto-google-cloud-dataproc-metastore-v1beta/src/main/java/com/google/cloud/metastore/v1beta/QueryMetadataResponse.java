@@ -69,7 +69,9 @@ public final class QueryMetadataResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int RESULT_MANIFEST_URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object resultManifestUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resultManifestUri_ = "";
   /**
    *
    *
@@ -322,8 +324,8 @@ public final class QueryMetadataResponse extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       resultManifestUri_ = "";
-
       return this;
     }
 
@@ -351,9 +353,18 @@ public final class QueryMetadataResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.metastore.v1beta.QueryMetadataResponse buildPartial() {
       com.google.cloud.metastore.v1beta.QueryMetadataResponse result =
           new com.google.cloud.metastore.v1beta.QueryMetadataResponse(this);
-      result.resultManifestUri_ = resultManifestUri_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.metastore.v1beta.QueryMetadataResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.resultManifestUri_ = resultManifestUri_;
+      }
     }
 
     @java.lang.Override
@@ -404,6 +415,7 @@ public final class QueryMetadataResponse extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getResultManifestUri().isEmpty()) {
         resultManifestUri_ = other.resultManifestUri_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -435,7 +447,7 @@ public final class QueryMetadataResponse extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 resultManifestUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -454,6 +466,8 @@ public final class QueryMetadataResponse extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object resultManifestUri_ = "";
     /**
@@ -525,8 +539,8 @@ public final class QueryMetadataResponse extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       resultManifestUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -545,8 +559,8 @@ public final class QueryMetadataResponse extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearResultManifestUri() {
-
       resultManifestUri_ = getDefaultInstance().getResultManifestUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -570,8 +584,8 @@ public final class QueryMetadataResponse extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resultManifestUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

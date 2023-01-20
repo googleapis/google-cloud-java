@@ -195,7 +195,6 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; metadata = 3;</code>
      */
-
     /* nullable */
     com.google.protobuf.Value getMetadataOrDefault(
         java.lang.String key,
@@ -280,7 +279,9 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object id_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object id_ = "";
     /**
      *
      *
@@ -376,7 +377,9 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.cloud.discoveryengine.v1beta.DocumentOrBuilder getDocumentOrBuilder() {
-      return getDocument();
+      return document_ == null
+          ? com.google.cloud.discoveryengine.v1beta.Document.getDefaultInstance()
+          : document_;
     }
 
     public static final int METADATA_FIELD_NUMBER = 3;
@@ -394,6 +397,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
                       com.google.protobuf.Value.getDefaultInstance());
     }
 
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value> metadata_;
 
     private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
@@ -464,8 +468,10 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
      * <code>map&lt;string, .google.protobuf.Value&gt; metadata = 3;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.Value getMetadataOrDefault(
-        java.lang.String key, com.google.protobuf.Value defaultValue) {
+    public /* nullable */ com.google.protobuf.Value getMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.protobuf.Value defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -763,12 +769,11 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         id_ = "";
-
-        if (documentBuilder_ == null) {
-          document_ = null;
-        } else {
-          document_ = null;
+        document_ = null;
+        if (documentBuilder_ != null) {
+          documentBuilder_.dispose();
           documentBuilder_ = null;
         }
         internalGetMutableMetadata().clear();
@@ -805,17 +810,26 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
         com.google.cloud.discoveryengine.v1beta.RecommendResponse.RecommendationResult result =
             new com.google.cloud.discoveryengine.v1beta.RecommendResponse.RecommendationResult(
                 this);
-        int from_bitField0_ = bitField0_;
-        result.id_ = id_;
-        if (documentBuilder_ == null) {
-          result.document_ = document_;
-        } else {
-          result.document_ = documentBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.metadata_ = internalGetMetadata();
-        result.metadata_.makeImmutable();
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1beta.RecommendResponse.RecommendationResult result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.document_ = documentBuilder_ == null ? document_ : documentBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.metadata_ = internalGetMetadata();
+          result.metadata_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -874,12 +888,14 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
                 .getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasDocument()) {
           mergeDocument(other.getDocument());
         }
         internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
+        bitField0_ |= 0x00000004;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -909,13 +925,13 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
               case 10:
                 {
                   id_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getDocumentFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
@@ -928,6 +944,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
                   internalGetMutableMetadata()
                       .getMutableMap()
                       .put(metadata__.getKey(), metadata__.getValue());
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -1010,8 +1027,8 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
         if (value == null) {
           throw new NullPointerException();
         }
-
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1027,8 +1044,8 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearId() {
-
         id_ = getDefaultInstance().getId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1049,8 +1066,8 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1074,7 +1091,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
        * @return Whether the document field is set.
        */
       public boolean hasDocument() {
-        return documentBuilder_ != null || document_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -1113,11 +1130,11 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
             throw new NullPointerException();
           }
           document_ = value;
-          onChanged();
         } else {
           documentBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1134,11 +1151,11 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
           com.google.cloud.discoveryengine.v1beta.Document.Builder builderForValue) {
         if (documentBuilder_ == null) {
           document_ = builderForValue.build();
-          onChanged();
         } else {
           documentBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1153,19 +1170,19 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
        */
       public Builder mergeDocument(com.google.cloud.discoveryengine.v1beta.Document value) {
         if (documentBuilder_ == null) {
-          if (document_ != null) {
-            document_ =
-                com.google.cloud.discoveryengine.v1beta.Document.newBuilder(document_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && document_ != null
+              && document_
+                  != com.google.cloud.discoveryengine.v1beta.Document.getDefaultInstance()) {
+            getDocumentBuilder().mergeFrom(value);
           } else {
             document_ = value;
           }
-          onChanged();
         } else {
           documentBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1179,14 +1196,13 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
        * <code>.google.cloud.discoveryengine.v1beta.Document document = 2;</code>
        */
       public Builder clearDocument() {
-        if (documentBuilder_ == null) {
-          document_ = null;
-          onChanged();
-        } else {
-          document_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        document_ = null;
+        if (documentBuilder_ != null) {
+          documentBuilder_.dispose();
           documentBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1200,7 +1216,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
        * <code>.google.cloud.discoveryengine.v1beta.Document document = 2;</code>
        */
       public com.google.cloud.discoveryengine.v1beta.Document.Builder getDocumentBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getDocumentFieldBuilder().getBuilder();
       }
@@ -1263,8 +1279,6 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
 
       private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
           internalGetMutableMetadata() {
-        onChanged();
-        ;
         if (metadata_ == null) {
           metadata_ =
               com.google.protobuf.MapField.newMapField(MetadataDefaultEntryHolder.defaultEntry);
@@ -1272,6 +1286,8 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
         if (!metadata_.isMutable()) {
           metadata_ = metadata_.copy();
         }
+        bitField0_ |= 0x00000004;
+        onChanged();
         return metadata_;
       }
 
@@ -1335,8 +1351,10 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
        * <code>map&lt;string, .google.protobuf.Value&gt; metadata = 3;</code>
        */
       @java.lang.Override
-      public com.google.protobuf.Value getMetadataOrDefault(
-          java.lang.String key, com.google.protobuf.Value defaultValue) {
+      public /* nullable */ com.google.protobuf.Value getMetadataOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.protobuf.Value defaultValue) {
         if (key == null) {
           throw new NullPointerException("map key");
         }
@@ -1371,6 +1389,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       }
 
       public Builder clearMetadata() {
+        bitField0_ = (bitField0_ & ~0x00000004);
         internalGetMutableMetadata().getMutableMap().clear();
         return this;
       }
@@ -1397,6 +1416,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, com.google.protobuf.Value> getMutableMetadata() {
+        bitField0_ |= 0x00000004;
         return internalGetMutableMetadata().getMutableMap();
       }
       /**
@@ -1419,8 +1439,8 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
         if (value == null) {
           throw new NullPointerException("map value");
         }
-
         internalGetMutableMetadata().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000004;
         return this;
       }
       /**
@@ -1439,6 +1459,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       public Builder putAllMetadata(
           java.util.Map<java.lang.String, com.google.protobuf.Value> values) {
         internalGetMutableMetadata().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000004;
         return this;
       }
 
@@ -1512,6 +1533,8 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int RESULTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<
           com.google.cloud.discoveryengine.v1beta.RecommendResponse.RecommendationResult>
       results_;
@@ -1605,7 +1628,9 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ATTRIBUTION_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object attributionToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object attributionToken_ = "";
   /**
    *
    *
@@ -1660,6 +1685,8 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int MISSING_IDS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList missingIds_;
   /**
    *
@@ -1725,7 +1752,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -1978,6 +2005,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (resultsBuilder_ == null) {
         results_ = java.util.Collections.emptyList();
       } else {
@@ -1986,11 +2014,9 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       attributionToken_ = "";
-
       missingIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       validateOnly_ = false;
-
       return this;
     }
 
@@ -2018,7 +2044,16 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.discoveryengine.v1beta.RecommendResponse buildPartial() {
       com.google.cloud.discoveryengine.v1beta.RecommendResponse result =
           new com.google.cloud.discoveryengine.v1beta.RecommendResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.discoveryengine.v1beta.RecommendResponse result) {
       if (resultsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           results_ = java.util.Collections.unmodifiableList(results_);
@@ -2028,15 +2063,21 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       } else {
         result.results_ = resultsBuilder_.build();
       }
-      result.attributionToken_ = attributionToken_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         missingIds_ = missingIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.missingIds_ = missingIds_;
-      result.validateOnly_ = validateOnly_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.discoveryengine.v1beta.RecommendResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.attributionToken_ = attributionToken_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -2114,12 +2155,13 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getAttributionToken().isEmpty()) {
         attributionToken_ = other.attributionToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.missingIds_.isEmpty()) {
         if (missingIds_.isEmpty()) {
           missingIds_ = other.missingIds_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureMissingIdsIsMutable();
           missingIds_.addAll(other.missingIds_);
@@ -2173,7 +2215,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
             case 18:
               {
                 attributionToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -2186,7 +2228,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
             case 32:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -2717,8 +2759,8 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       attributionToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2737,8 +2779,8 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearAttributionToken() {
-
       attributionToken_ = getDefaultInstance().getAttributionToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2762,8 +2804,8 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       attributionToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2772,9 +2814,9 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureMissingIdsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         missingIds_ = new com.google.protobuf.LazyStringArrayList(missingIds_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -2917,7 +2959,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearMissingIds() {
       missingIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2980,6 +3022,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2997,7 +3040,7 @@ public final class RecommendResponse extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       validateOnly_ = false;
       onChanged();
       return this;

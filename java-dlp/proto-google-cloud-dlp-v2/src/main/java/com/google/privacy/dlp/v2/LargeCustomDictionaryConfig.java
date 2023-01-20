@@ -171,7 +171,9 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.CloudStoragePathOrBuilder getOutputPathOrBuilder() {
-    return getOutputPath();
+    return outputPath_ == null
+        ? com.google.privacy.dlp.v2.CloudStoragePath.getDefaultInstance()
+        : outputPath_;
   }
 
   public static final int CLOUD_STORAGE_FILE_SET_FIELD_NUMBER = 2;
@@ -523,10 +525,10 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (outputPathBuilder_ == null) {
-        outputPath_ = null;
-      } else {
-        outputPath_ = null;
+      bitField0_ = 0;
+      outputPath_ = null;
+      if (outputPathBuilder_ != null) {
+        outputPathBuilder_.dispose();
         outputPathBuilder_ = null;
       }
       if (cloudStorageFileSetBuilder_ != null) {
@@ -564,28 +566,30 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
     public com.google.privacy.dlp.v2.LargeCustomDictionaryConfig buildPartial() {
       com.google.privacy.dlp.v2.LargeCustomDictionaryConfig result =
           new com.google.privacy.dlp.v2.LargeCustomDictionaryConfig(this);
-      if (outputPathBuilder_ == null) {
-        result.outputPath_ = outputPath_;
-      } else {
-        result.outputPath_ = outputPathBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (sourceCase_ == 2) {
-        if (cloudStorageFileSetBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = cloudStorageFileSetBuilder_.build();
-        }
-      }
-      if (sourceCase_ == 3) {
-        if (bigQueryFieldBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = bigQueryFieldBuilder_.build();
-        }
-      }
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.LargeCustomDictionaryConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.outputPath_ = outputPathBuilder_ == null ? outputPath_ : outputPathBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.LargeCustomDictionaryConfig result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 2 && cloudStorageFileSetBuilder_ != null) {
+        result.source_ = cloudStorageFileSetBuilder_.build();
+      }
+      if (sourceCase_ == 3 && bigQueryFieldBuilder_ != null) {
+        result.source_ = bigQueryFieldBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -682,7 +686,7 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
             case 10:
               {
                 input.readMessage(getOutputPathFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -729,6 +733,8 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.privacy.dlp.v2.CloudStoragePath outputPath_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.CloudStoragePath,
@@ -750,7 +756,7 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
      * @return Whether the outputPath field is set.
      */
     public boolean hasOutputPath() {
-      return outputPathBuilder_ != null || outputPath_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -793,11 +799,11 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         outputPath_ = value;
-        onChanged();
       } else {
         outputPathBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -816,11 +822,11 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
         com.google.privacy.dlp.v2.CloudStoragePath.Builder builderForValue) {
       if (outputPathBuilder_ == null) {
         outputPath_ = builderForValue.build();
-        onChanged();
       } else {
         outputPathBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -837,19 +843,18 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
      */
     public Builder mergeOutputPath(com.google.privacy.dlp.v2.CloudStoragePath value) {
       if (outputPathBuilder_ == null) {
-        if (outputPath_ != null) {
-          outputPath_ =
-              com.google.privacy.dlp.v2.CloudStoragePath.newBuilder(outputPath_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && outputPath_ != null
+            && outputPath_ != com.google.privacy.dlp.v2.CloudStoragePath.getDefaultInstance()) {
+          getOutputPathBuilder().mergeFrom(value);
         } else {
           outputPath_ = value;
         }
-        onChanged();
       } else {
         outputPathBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -865,14 +870,13 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
      * <code>.google.privacy.dlp.v2.CloudStoragePath output_path = 1;</code>
      */
     public Builder clearOutputPath() {
-      if (outputPathBuilder_ == null) {
-        outputPath_ = null;
-        onChanged();
-      } else {
-        outputPath_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      outputPath_ = null;
+      if (outputPathBuilder_ != null) {
+        outputPathBuilder_.dispose();
         outputPathBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -888,7 +892,7 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
      * <code>.google.privacy.dlp.v2.CloudStoragePath output_path = 1;</code>
      */
     public com.google.privacy.dlp.v2.CloudStoragePath.Builder getOutputPathBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getOutputPathFieldBuilder().getBuilder();
     }
@@ -1149,7 +1153,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
       }
       sourceCase_ = 2;
       onChanged();
-      ;
       return cloudStorageFileSetBuilder_;
     }
 
@@ -1359,7 +1362,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
       }
       sourceCase_ = 3;
       onChanged();
-      ;
       return bigQueryFieldBuilder_;
     }
 

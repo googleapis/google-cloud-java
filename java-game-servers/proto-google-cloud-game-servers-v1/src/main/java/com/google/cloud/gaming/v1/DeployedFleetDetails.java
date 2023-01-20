@@ -364,7 +364,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
       }
 
       public static final int READY_REPLICAS_FIELD_NUMBER = 1;
-      private long readyReplicas_;
+      private long readyReplicas_ = 0L;
       /**
        *
        *
@@ -382,7 +382,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
       }
 
       public static final int ALLOCATED_REPLICAS_FIELD_NUMBER = 2;
-      private long allocatedReplicas_;
+      private long allocatedReplicas_ = 0L;
       /**
        *
        *
@@ -400,7 +400,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
       }
 
       public static final int RESERVED_REPLICAS_FIELD_NUMBER = 3;
-      private long reservedReplicas_;
+      private long reservedReplicas_ = 0L;
       /**
        *
        *
@@ -420,7 +420,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
       }
 
       public static final int REPLICAS_FIELD_NUMBER = 4;
-      private long replicas_;
+      private long replicas_ = 0L;
       /**
        *
        *
@@ -693,14 +693,11 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           readyReplicas_ = 0L;
-
           allocatedReplicas_ = 0L;
-
           reservedReplicas_ = 0L;
-
           replicas_ = 0L;
-
           return this;
         }
 
@@ -734,12 +731,29 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
           com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet.DeployedFleetStatus result =
               new com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet.DeployedFleetStatus(
                   this);
-          result.readyReplicas_ = readyReplicas_;
-          result.allocatedReplicas_ = allocatedReplicas_;
-          result.reservedReplicas_ = reservedReplicas_;
-          result.replicas_ = replicas_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet.DeployedFleetStatus
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.readyReplicas_ = readyReplicas_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.allocatedReplicas_ = allocatedReplicas_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.reservedReplicas_ = reservedReplicas_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.replicas_ = replicas_;
+          }
         }
 
         @java.lang.Override
@@ -838,25 +852,25 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
                 case 8:
                   {
                     readyReplicas_ = input.readInt64();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 8
                 case 16:
                   {
                     allocatedReplicas_ = input.readInt64();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 16
                 case 24:
                   {
                     reservedReplicas_ = input.readInt64();
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 24
                 case 32:
                   {
                     replicas_ = input.readInt64();
-
+                    bitField0_ |= 0x00000008;
                     break;
                   } // case 32
                 default:
@@ -875,6 +889,8 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private long readyReplicas_;
         /**
@@ -907,6 +923,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
         public Builder setReadyReplicas(long value) {
 
           readyReplicas_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -922,7 +939,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
          * @return This builder for chaining.
          */
         public Builder clearReadyReplicas() {
-
+          bitField0_ = (bitField0_ & ~0x00000001);
           readyReplicas_ = 0L;
           onChanged();
           return this;
@@ -959,6 +976,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
         public Builder setAllocatedReplicas(long value) {
 
           allocatedReplicas_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -974,7 +992,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
          * @return This builder for chaining.
          */
         public Builder clearAllocatedReplicas() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           allocatedReplicas_ = 0L;
           onChanged();
           return this;
@@ -1015,6 +1033,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
         public Builder setReservedReplicas(long value) {
 
           reservedReplicas_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -1032,7 +1051,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
          * @return This builder for chaining.
          */
         public Builder clearReservedReplicas() {
-
+          bitField0_ = (bitField0_ & ~0x00000004);
           reservedReplicas_ = 0L;
           onChanged();
           return this;
@@ -1069,6 +1088,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
         public Builder setReplicas(long value) {
 
           replicas_ = value;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -1084,7 +1104,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
          * @return This builder for chaining.
          */
         public Builder clearReplicas() {
-
+          bitField0_ = (bitField0_ & ~0x00000008);
           replicas_ = 0L;
           onChanged();
           return this;
@@ -1161,7 +1181,9 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
     }
 
     public static final int FLEET_FIELD_NUMBER = 1;
-    private volatile java.lang.Object fleet_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object fleet_ = "";
     /**
      *
      *
@@ -1210,7 +1232,9 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
     }
 
     public static final int FLEET_SPEC_FIELD_NUMBER = 2;
-    private volatile java.lang.Object fleetSpec_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object fleetSpec_ = "";
     /**
      *
      *
@@ -1306,7 +1330,9 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.cloud.gaming.v1.SpecSourceOrBuilder getSpecSourceOrBuilder() {
-      return getSpecSource();
+      return specSource_ == null
+          ? com.google.cloud.gaming.v1.SpecSource.getDefaultInstance()
+          : specSource_;
     }
 
     public static final int STATUS_FIELD_NUMBER = 5;
@@ -1368,7 +1394,10 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
     public com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet
             .DeployedFleetStatusOrBuilder
         getStatusOrBuilder() {
-      return getStatus();
+      return status_ == null
+          ? com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet.DeployedFleetStatus
+              .getDefaultInstance()
+          : status_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1608,20 +1637,17 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         fleet_ = "";
-
         fleetSpec_ = "";
-
-        if (specSourceBuilder_ == null) {
-          specSource_ = null;
-        } else {
-          specSource_ = null;
+        specSource_ = null;
+        if (specSourceBuilder_ != null) {
+          specSourceBuilder_.dispose();
           specSourceBuilder_ = null;
         }
-        if (statusBuilder_ == null) {
-          status_ = null;
-        } else {
-          status_ = null;
+        status_ = null;
+        if (statusBuilder_ != null) {
+          statusBuilder_.dispose();
           statusBuilder_ = null;
         }
         return this;
@@ -1652,20 +1678,29 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
       public com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet buildPartial() {
         com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet result =
             new com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet(this);
-        result.fleet_ = fleet_;
-        result.fleetSpec_ = fleetSpec_;
-        if (specSourceBuilder_ == null) {
-          result.specSource_ = specSource_;
-        } else {
-          result.specSource_ = specSourceBuilder_.build();
-        }
-        if (statusBuilder_ == null) {
-          result.status_ = status_;
-        } else {
-          result.status_ = statusBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.fleet_ = fleet_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.fleetSpec_ = fleetSpec_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.specSource_ =
+              specSourceBuilder_ == null ? specSource_ : specSourceBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1720,10 +1755,12 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
           return this;
         if (!other.getFleet().isEmpty()) {
           fleet_ = other.fleet_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getFleetSpec().isEmpty()) {
           fleetSpec_ = other.fleetSpec_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.hasSpecSource()) {
@@ -1761,25 +1798,25 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
               case 10:
                 {
                   fleet_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   fleetSpec_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(getSpecSourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 42:
                 {
                   input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 42
               default:
@@ -1798,6 +1835,8 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object fleet_ = "";
       /**
@@ -1860,8 +1899,8 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
         if (value == null) {
           throw new NullPointerException();
         }
-
         fleet_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1877,8 +1916,8 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearFleet() {
-
         fleet_ = getDefaultInstance().getFleet();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1899,8 +1938,8 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         fleet_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1966,8 +2005,8 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
         if (value == null) {
           throw new NullPointerException();
         }
-
         fleetSpec_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1983,8 +2022,8 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearFleetSpec() {
-
         fleetSpec_ = getDefaultInstance().getFleetSpec();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -2005,8 +2044,8 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         fleetSpec_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2030,7 +2069,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
        * @return Whether the specSource field is set.
        */
       public boolean hasSpecSource() {
-        return specSourceBuilder_ != null || specSource_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -2069,11 +2108,11 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
             throw new NullPointerException();
           }
           specSource_ = value;
-          onChanged();
         } else {
           specSourceBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2089,11 +2128,11 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
       public Builder setSpecSource(com.google.cloud.gaming.v1.SpecSource.Builder builderForValue) {
         if (specSourceBuilder_ == null) {
           specSource_ = builderForValue.build();
-          onChanged();
         } else {
           specSourceBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2108,19 +2147,18 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
        */
       public Builder mergeSpecSource(com.google.cloud.gaming.v1.SpecSource value) {
         if (specSourceBuilder_ == null) {
-          if (specSource_ != null) {
-            specSource_ =
-                com.google.cloud.gaming.v1.SpecSource.newBuilder(specSource_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && specSource_ != null
+              && specSource_ != com.google.cloud.gaming.v1.SpecSource.getDefaultInstance()) {
+            getSpecSourceBuilder().mergeFrom(value);
           } else {
             specSource_ = value;
           }
-          onChanged();
         } else {
           specSourceBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2134,14 +2172,13 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
        * <code>.google.cloud.gaming.v1.SpecSource spec_source = 3;</code>
        */
       public Builder clearSpecSource() {
-        if (specSourceBuilder_ == null) {
-          specSource_ = null;
-          onChanged();
-        } else {
-          specSource_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        specSource_ = null;
+        if (specSourceBuilder_ != null) {
+          specSourceBuilder_.dispose();
           specSourceBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2155,7 +2192,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
        * <code>.google.cloud.gaming.v1.SpecSource spec_source = 3;</code>
        */
       public com.google.cloud.gaming.v1.SpecSource.Builder getSpecSourceBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getSpecSourceFieldBuilder().getBuilder();
       }
@@ -2229,7 +2266,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
        * @return Whether the status field is set.
        */
       public boolean hasStatus() {
-        return statusBuilder_ != null || status_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        *
@@ -2275,11 +2312,11 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
             throw new NullPointerException();
           }
           status_ = value;
-          onChanged();
         } else {
           statusBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -2299,11 +2336,11 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
               builderForValue) {
         if (statusBuilder_ == null) {
           status_ = builderForValue.build();
-          onChanged();
         } else {
           statusBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -2321,20 +2358,20 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
       public Builder mergeStatus(
           com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet.DeployedFleetStatus value) {
         if (statusBuilder_ == null) {
-          if (status_ != null) {
-            status_ =
-                com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet.DeployedFleetStatus
-                    .newBuilder(status_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000008) != 0)
+              && status_ != null
+              && status_
+                  != com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet
+                      .DeployedFleetStatus.getDefaultInstance()) {
+            getStatusBuilder().mergeFrom(value);
           } else {
             status_ = value;
           }
-          onChanged();
         } else {
           statusBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -2350,14 +2387,13 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
        * </code>
        */
       public Builder clearStatus() {
-        if (statusBuilder_ == null) {
-          status_ = null;
-          onChanged();
-        } else {
-          status_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        status_ = null;
+        if (statusBuilder_ != null) {
+          statusBuilder_.dispose();
           statusBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2375,7 +2411,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
       public com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet.DeployedFleetStatus
               .Builder
           getStatusBuilder() {
-
+        bitField0_ |= 0x00000008;
         onChanged();
         return getStatusFieldBuilder().getBuilder();
       }
@@ -2648,7 +2684,9 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
     }
 
     public static final int AUTOSCALER_FIELD_NUMBER = 1;
-    private volatile java.lang.Object autoscaler_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object autoscaler_ = "";
     /**
      *
      *
@@ -2744,11 +2782,15 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.cloud.gaming.v1.SpecSourceOrBuilder getSpecSourceOrBuilder() {
-      return getSpecSource();
+      return specSource_ == null
+          ? com.google.cloud.gaming.v1.SpecSource.getDefaultInstance()
+          : specSource_;
     }
 
     public static final int FLEET_AUTOSCALER_SPEC_FIELD_NUMBER = 3;
-    private volatile java.lang.Object fleetAutoscalerSpec_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object fleetAutoscalerSpec_ = "";
     /**
      *
      *
@@ -3023,16 +3065,14 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         autoscaler_ = "";
-
-        if (specSourceBuilder_ == null) {
-          specSource_ = null;
-        } else {
-          specSource_ = null;
+        specSource_ = null;
+        if (specSourceBuilder_ != null) {
+          specSourceBuilder_.dispose();
           specSourceBuilder_ = null;
         }
         fleetAutoscalerSpec_ = "";
-
         return this;
       }
 
@@ -3064,15 +3104,26 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
           buildPartial() {
         com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleetAutoscaler result =
             new com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleetAutoscaler(this);
-        result.autoscaler_ = autoscaler_;
-        if (specSourceBuilder_ == null) {
-          result.specSource_ = specSource_;
-        } else {
-          result.specSource_ = specSourceBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.fleetAutoscalerSpec_ = fleetAutoscalerSpec_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleetAutoscaler result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.autoscaler_ = autoscaler_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.specSource_ =
+              specSourceBuilder_ == null ? specSource_ : specSourceBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.fleetAutoscalerSpec_ = fleetAutoscalerSpec_;
+        }
       }
 
       @java.lang.Override
@@ -3129,6 +3180,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
                 .getDefaultInstance()) return this;
         if (!other.getAutoscaler().isEmpty()) {
           autoscaler_ = other.autoscaler_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasSpecSource()) {
@@ -3136,6 +3188,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
         }
         if (!other.getFleetAutoscalerSpec().isEmpty()) {
           fleetAutoscalerSpec_ = other.fleetAutoscalerSpec_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -3167,19 +3220,19 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
               case 10:
                 {
                   autoscaler_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 26:
                 {
                   fleetAutoscalerSpec_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
                 {
                   input.readMessage(getSpecSourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 34
               default:
@@ -3198,6 +3251,8 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object autoscaler_ = "";
       /**
@@ -3260,8 +3315,8 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
         if (value == null) {
           throw new NullPointerException();
         }
-
         autoscaler_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3277,8 +3332,8 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearAutoscaler() {
-
         autoscaler_ = getDefaultInstance().getAutoscaler();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -3299,8 +3354,8 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         autoscaler_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3324,7 +3379,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
        * @return Whether the specSource field is set.
        */
       public boolean hasSpecSource() {
-        return specSourceBuilder_ != null || specSource_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -3363,11 +3418,11 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
             throw new NullPointerException();
           }
           specSource_ = value;
-          onChanged();
         } else {
           specSourceBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -3383,11 +3438,11 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
       public Builder setSpecSource(com.google.cloud.gaming.v1.SpecSource.Builder builderForValue) {
         if (specSourceBuilder_ == null) {
           specSource_ = builderForValue.build();
-          onChanged();
         } else {
           specSourceBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -3402,19 +3457,18 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
        */
       public Builder mergeSpecSource(com.google.cloud.gaming.v1.SpecSource value) {
         if (specSourceBuilder_ == null) {
-          if (specSource_ != null) {
-            specSource_ =
-                com.google.cloud.gaming.v1.SpecSource.newBuilder(specSource_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && specSource_ != null
+              && specSource_ != com.google.cloud.gaming.v1.SpecSource.getDefaultInstance()) {
+            getSpecSourceBuilder().mergeFrom(value);
           } else {
             specSource_ = value;
           }
-          onChanged();
         } else {
           specSourceBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -3428,14 +3482,13 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
        * <code>.google.cloud.gaming.v1.SpecSource spec_source = 4;</code>
        */
       public Builder clearSpecSource() {
-        if (specSourceBuilder_ == null) {
-          specSource_ = null;
-          onChanged();
-        } else {
-          specSource_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        specSource_ = null;
+        if (specSourceBuilder_ != null) {
+          specSourceBuilder_.dispose();
           specSourceBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -3449,7 +3502,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
        * <code>.google.cloud.gaming.v1.SpecSource spec_source = 4;</code>
        */
       public com.google.cloud.gaming.v1.SpecSource.Builder getSpecSourceBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getSpecSourceFieldBuilder().getBuilder();
       }
@@ -3560,8 +3613,8 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
         if (value == null) {
           throw new NullPointerException();
         }
-
         fleetAutoscalerSpec_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3577,8 +3630,8 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearFleetAutoscalerSpec() {
-
         fleetAutoscalerSpec_ = getDefaultInstance().getFleetAutoscalerSpec();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -3599,8 +3652,8 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         fleetAutoscalerSpec_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3719,7 +3772,9 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleetOrBuilder
       getDeployedFleetOrBuilder() {
-    return getDeployedFleet();
+    return deployedFleet_ == null
+        ? com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet.getDefaultInstance()
+        : deployedFleet_;
   }
 
   public static final int DEPLOYED_AUTOSCALER_FIELD_NUMBER = 2;
@@ -3777,7 +3832,10 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleetAutoscalerOrBuilder
       getDeployedAutoscalerOrBuilder() {
-    return getDeployedAutoscaler();
+    return deployedAutoscaler_ == null
+        ? com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleetAutoscaler
+            .getDefaultInstance()
+        : deployedAutoscaler_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3996,16 +4054,15 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (deployedFleetBuilder_ == null) {
-        deployedFleet_ = null;
-      } else {
-        deployedFleet_ = null;
+      bitField0_ = 0;
+      deployedFleet_ = null;
+      if (deployedFleetBuilder_ != null) {
+        deployedFleetBuilder_.dispose();
         deployedFleetBuilder_ = null;
       }
-      if (deployedAutoscalerBuilder_ == null) {
-        deployedAutoscaler_ = null;
-      } else {
-        deployedAutoscaler_ = null;
+      deployedAutoscaler_ = null;
+      if (deployedAutoscalerBuilder_ != null) {
+        deployedAutoscalerBuilder_.dispose();
         deployedAutoscalerBuilder_ = null;
       }
       return this;
@@ -4035,18 +4092,25 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
     public com.google.cloud.gaming.v1.DeployedFleetDetails buildPartial() {
       com.google.cloud.gaming.v1.DeployedFleetDetails result =
           new com.google.cloud.gaming.v1.DeployedFleetDetails(this);
-      if (deployedFleetBuilder_ == null) {
-        result.deployedFleet_ = deployedFleet_;
-      } else {
-        result.deployedFleet_ = deployedFleetBuilder_.build();
-      }
-      if (deployedAutoscalerBuilder_ == null) {
-        result.deployedAutoscaler_ = deployedAutoscaler_;
-      } else {
-        result.deployedAutoscaler_ = deployedAutoscalerBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gaming.v1.DeployedFleetDetails result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.deployedFleet_ =
+            deployedFleetBuilder_ == null ? deployedFleet_ : deployedFleetBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.deployedAutoscaler_ =
+            deployedAutoscalerBuilder_ == null
+                ? deployedAutoscaler_
+                : deployedAutoscalerBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -4130,14 +4194,14 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 input.readMessage(getDeployedFleetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getDeployedAutoscalerFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -4157,6 +4221,8 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet deployedFleet_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet,
@@ -4175,7 +4241,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
      * @return Whether the deployedFleet field is set.
      */
     public boolean hasDeployedFleet() {
-      return deployedFleetBuilder_ != null || deployedFleet_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -4213,11 +4279,11 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         deployedFleet_ = value;
-        onChanged();
       } else {
         deployedFleetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -4233,11 +4299,11 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
         com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet.Builder builderForValue) {
       if (deployedFleetBuilder_ == null) {
         deployedFleet_ = builderForValue.build();
-        onChanged();
       } else {
         deployedFleetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -4252,20 +4318,20 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
     public Builder mergeDeployedFleet(
         com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet value) {
       if (deployedFleetBuilder_ == null) {
-        if (deployedFleet_ != null) {
-          deployedFleet_ =
-              com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet.newBuilder(
-                      deployedFleet_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && deployedFleet_ != null
+            && deployedFleet_
+                != com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet
+                    .getDefaultInstance()) {
+          getDeployedFleetBuilder().mergeFrom(value);
         } else {
           deployedFleet_ = value;
         }
-        onChanged();
       } else {
         deployedFleetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -4278,14 +4344,13 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet deployed_fleet = 1;</code>
      */
     public Builder clearDeployedFleet() {
-      if (deployedFleetBuilder_ == null) {
-        deployedFleet_ = null;
-        onChanged();
-      } else {
-        deployedFleet_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      deployedFleet_ = null;
+      if (deployedFleetBuilder_ != null) {
+        deployedFleetBuilder_.dispose();
         deployedFleetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4299,7 +4364,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
      */
     public com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet.Builder
         getDeployedFleetBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDeployedFleetFieldBuilder().getBuilder();
     }
@@ -4369,7 +4434,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
      * @return Whether the deployedAutoscaler field is set.
      */
     public boolean hasDeployedAutoscaler() {
-      return deployedAutoscalerBuilder_ != null || deployedAutoscaler_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -4413,11 +4478,11 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         deployedAutoscaler_ = value;
-        onChanged();
       } else {
         deployedAutoscalerBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -4436,11 +4501,11 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
             builderForValue) {
       if (deployedAutoscalerBuilder_ == null) {
         deployedAutoscaler_ = builderForValue.build();
-        onChanged();
       } else {
         deployedAutoscalerBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -4457,20 +4522,20 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
     public Builder mergeDeployedAutoscaler(
         com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleetAutoscaler value) {
       if (deployedAutoscalerBuilder_ == null) {
-        if (deployedAutoscaler_ != null) {
-          deployedAutoscaler_ =
-              com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleetAutoscaler.newBuilder(
-                      deployedAutoscaler_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && deployedAutoscaler_ != null
+            && deployedAutoscaler_
+                != com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleetAutoscaler
+                    .getDefaultInstance()) {
+          getDeployedAutoscalerBuilder().mergeFrom(value);
         } else {
           deployedAutoscaler_ = value;
         }
-        onChanged();
       } else {
         deployedAutoscalerBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -4485,14 +4550,13 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearDeployedAutoscaler() {
-      if (deployedAutoscalerBuilder_ == null) {
-        deployedAutoscaler_ = null;
-        onChanged();
-      } else {
-        deployedAutoscaler_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      deployedAutoscaler_ = null;
+      if (deployedAutoscalerBuilder_ != null) {
+        deployedAutoscalerBuilder_.dispose();
         deployedAutoscalerBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4508,7 +4572,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
      */
     public com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleetAutoscaler.Builder
         getDeployedAutoscalerBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDeployedAutoscalerFieldBuilder().getBuilder();
     }

@@ -69,7 +69,9 @@ public final class GcsProfile extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BUCKET_FIELD_NUMBER = 1;
-  private volatile java.lang.Object bucket_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object bucket_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class GcsProfile extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ROOT_PATH_FIELD_NUMBER = 2;
-  private volatile java.lang.Object rootPath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object rootPath_ = "";
   /**
    *
    *
@@ -372,10 +376,9 @@ public final class GcsProfile extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       bucket_ = "";
-
       rootPath_ = "";
-
       return this;
     }
 
@@ -403,10 +406,21 @@ public final class GcsProfile extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datastream.v1.GcsProfile buildPartial() {
       com.google.cloud.datastream.v1.GcsProfile result =
           new com.google.cloud.datastream.v1.GcsProfile(this);
-      result.bucket_ = bucket_;
-      result.rootPath_ = rootPath_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1.GcsProfile result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.bucket_ = bucket_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.rootPath_ = rootPath_;
+      }
     }
 
     @java.lang.Override
@@ -456,10 +470,12 @@ public final class GcsProfile extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.datastream.v1.GcsProfile.getDefaultInstance()) return this;
       if (!other.getBucket().isEmpty()) {
         bucket_ = other.bucket_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRootPath().isEmpty()) {
         rootPath_ = other.rootPath_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -491,13 +507,13 @@ public final class GcsProfile extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 bucket_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 rootPath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -516,6 +532,8 @@ public final class GcsProfile extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object bucket_ = "";
     /**
@@ -578,8 +596,8 @@ public final class GcsProfile extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       bucket_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -595,8 +613,8 @@ public final class GcsProfile extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBucket() {
-
       bucket_ = getDefaultInstance().getBucket();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -617,8 +635,8 @@ public final class GcsProfile extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       bucket_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -684,8 +702,8 @@ public final class GcsProfile extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       rootPath_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -701,8 +719,8 @@ public final class GcsProfile extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRootPath() {
-
       rootPath_ = getDefaultInstance().getRootPath();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -723,8 +741,8 @@ public final class GcsProfile extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       rootPath_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -314,7 +314,7 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PART_TO_EXTRACT_FIELD_NUMBER = 1;
-  private int partToExtract_;
+  private int partToExtract_ = 0;
   /**
    *
    *
@@ -343,9 +343,8 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.TimePartConfig.TimePart getPartToExtract() {
-    @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.TimePartConfig.TimePart result =
-        com.google.privacy.dlp.v2.TimePartConfig.TimePart.valueOf(partToExtract_);
+        com.google.privacy.dlp.v2.TimePartConfig.TimePart.forNumber(partToExtract_);
     return result == null ? com.google.privacy.dlp.v2.TimePartConfig.TimePart.UNRECOGNIZED : result;
   }
 
@@ -548,8 +547,8 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       partToExtract_ = 0;
-
       return this;
     }
 
@@ -577,9 +576,18 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.TimePartConfig buildPartial() {
       com.google.privacy.dlp.v2.TimePartConfig result =
           new com.google.privacy.dlp.v2.TimePartConfig(this);
-      result.partToExtract_ = partToExtract_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.TimePartConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.partToExtract_ = partToExtract_;
+      }
     }
 
     @java.lang.Override
@@ -659,7 +667,7 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 partToExtract_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -678,6 +686,8 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int partToExtract_ = 0;
     /**
@@ -708,8 +718,8 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPartToExtractValue(int value) {
-
       partToExtract_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -726,9 +736,8 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.TimePartConfig.TimePart getPartToExtract() {
-      @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.TimePartConfig.TimePart result =
-          com.google.privacy.dlp.v2.TimePartConfig.TimePart.valueOf(partToExtract_);
+          com.google.privacy.dlp.v2.TimePartConfig.TimePart.forNumber(partToExtract_);
       return result == null
           ? com.google.privacy.dlp.v2.TimePartConfig.TimePart.UNRECOGNIZED
           : result;
@@ -749,7 +758,7 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       partToExtract_ = value.getNumber();
       onChanged();
       return this;
@@ -766,7 +775,7 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPartToExtract() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       partToExtract_ = 0;
       onChanged();
       return this;

@@ -72,7 +72,9 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
   }
 
   public static final int TARGET_FIELD_NUMBER = 1;
-  private volatile java.lang.Object target_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object target_ = "";
   /**
    *
    *
@@ -123,7 +125,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
   }
 
   public static final int TYPE_FIELD_NUMBER = 2;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -152,9 +154,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.functions.v1.OperationType getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.functions.v1.OperationType result =
-        com.google.cloud.functions.v1.OperationType.valueOf(type_);
+        com.google.cloud.functions.v1.OperationType.forNumber(type_);
     return result == null ? com.google.cloud.functions.v1.OperationType.UNRECOGNIZED : result;
   }
 
@@ -201,11 +202,11 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.AnyOrBuilder getRequestOrBuilder() {
-    return getRequest();
+    return request_ == null ? com.google.protobuf.Any.getDefaultInstance() : request_;
   }
 
   public static final int VERSION_ID_FIELD_NUMBER = 4;
-  private long versionId_;
+  private long versionId_ = 0L;
   /**
    *
    *
@@ -266,11 +267,13 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int BUILD_ID_FIELD_NUMBER = 6;
-  private volatile java.lang.Object buildId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object buildId_ = "";
   /**
    *
    *
@@ -321,7 +324,9 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
   }
 
   public static final int SOURCE_TOKEN_FIELD_NUMBER = 7;
-  private volatile java.lang.Object sourceToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceToken_ = "";
   /**
    *
    *
@@ -372,7 +377,9 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
   }
 
   public static final int BUILD_NAME_FIELD_NUMBER = 8;
-  private volatile java.lang.Object buildName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object buildName_ = "";
   /**
    *
    *
@@ -694,30 +701,23 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       target_ = "";
-
       type_ = 0;
-
-      if (requestBuilder_ == null) {
-        request_ = null;
-      } else {
-        request_ = null;
+      request_ = null;
+      if (requestBuilder_ != null) {
+        requestBuilder_.dispose();
         requestBuilder_ = null;
       }
       versionId_ = 0L;
-
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       buildId_ = "";
-
       sourceToken_ = "";
-
       buildName_ = "";
-
       return this;
     }
 
@@ -745,24 +745,39 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
     public com.google.cloud.functions.v1.OperationMetadataV1 buildPartial() {
       com.google.cloud.functions.v1.OperationMetadataV1 result =
           new com.google.cloud.functions.v1.OperationMetadataV1(this);
-      result.target_ = target_;
-      result.type_ = type_;
-      if (requestBuilder_ == null) {
-        result.request_ = request_;
-      } else {
-        result.request_ = requestBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.versionId_ = versionId_;
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.buildId_ = buildId_;
-      result.sourceToken_ = sourceToken_;
-      result.buildName_ = buildName_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.functions.v1.OperationMetadataV1 result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.target_ = target_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.request_ = requestBuilder_ == null ? request_ : requestBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.versionId_ = versionId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.buildId_ = buildId_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.sourceToken_ = sourceToken_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.buildName_ = buildName_;
+      }
     }
 
     @java.lang.Override
@@ -813,6 +828,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getTarget().isEmpty()) {
         target_ = other.target_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.type_ != 0) {
@@ -829,14 +845,17 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
       }
       if (!other.getBuildId().isEmpty()) {
         buildId_ = other.buildId_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getSourceToken().isEmpty()) {
         sourceToken_ = other.sourceToken_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getBuildName().isEmpty()) {
         buildName_ = other.buildName_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -868,49 +887,49 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 target_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getRequestFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 versionId_ = input.readInt64();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 buildId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 sourceToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 buildName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             default:
@@ -929,6 +948,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object target_ = "";
     /**
@@ -994,8 +1015,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       target_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1012,8 +1033,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearTarget() {
-
       target_ = getDefaultInstance().getTarget();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1035,8 +1056,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       target_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1070,8 +1091,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1088,9 +1109,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.cloud.functions.v1.OperationType getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.functions.v1.OperationType result =
-          com.google.cloud.functions.v1.OperationType.valueOf(type_);
+          com.google.cloud.functions.v1.OperationType.forNumber(type_);
       return result == null ? com.google.cloud.functions.v1.OperationType.UNRECOGNIZED : result;
     }
     /**
@@ -1109,7 +1129,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -1126,7 +1146,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       type_ = 0;
       onChanged();
       return this;
@@ -1150,7 +1170,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * @return Whether the request field is set.
      */
     public boolean hasRequest() {
-      return requestBuilder_ != null || request_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1185,11 +1205,11 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         request_ = value;
-        onChanged();
       } else {
         requestBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1204,11 +1224,11 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
     public Builder setRequest(com.google.protobuf.Any.Builder builderForValue) {
       if (requestBuilder_ == null) {
         request_ = builderForValue.build();
-        onChanged();
       } else {
         requestBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1222,16 +1242,18 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeRequest(com.google.protobuf.Any value) {
       if (requestBuilder_ == null) {
-        if (request_ != null) {
-          request_ = com.google.protobuf.Any.newBuilder(request_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && request_ != null
+            && request_ != com.google.protobuf.Any.getDefaultInstance()) {
+          getRequestBuilder().mergeFrom(value);
         } else {
           request_ = value;
         }
-        onChanged();
       } else {
         requestBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1244,14 +1266,13 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Any request = 3;</code>
      */
     public Builder clearRequest() {
-      if (requestBuilder_ == null) {
-        request_ = null;
-        onChanged();
-      } else {
-        request_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      request_ = null;
+      if (requestBuilder_ != null) {
+        requestBuilder_.dispose();
         requestBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1264,7 +1285,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Any request = 3;</code>
      */
     public com.google.protobuf.Any.Builder getRequestBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getRequestFieldBuilder().getBuilder();
     }
@@ -1342,6 +1363,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
     public Builder setVersionId(long value) {
 
       versionId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1358,7 +1380,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearVersionId() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       versionId_ = 0L;
       onChanged();
       return this;
@@ -1382,7 +1404,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1419,11 +1441,11 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1438,11 +1460,11 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1456,17 +1478,18 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1479,14 +1502,13 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Timestamp update_time = 5;</code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1499,7 +1521,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Timestamp update_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -1611,8 +1633,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       buildId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1629,8 +1651,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearBuildId() {
-
       buildId_ = getDefaultInstance().getBuildId();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1652,8 +1674,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       buildId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1722,8 +1744,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       sourceToken_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1740,8 +1762,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearSourceToken() {
-
       sourceToken_ = getDefaultInstance().getSourceToken();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1763,8 +1785,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sourceToken_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1836,8 +1858,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       buildName_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1855,8 +1877,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearBuildName() {
-
       buildName_ = getDefaultInstance().getBuildName();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -1879,8 +1901,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       buildName_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

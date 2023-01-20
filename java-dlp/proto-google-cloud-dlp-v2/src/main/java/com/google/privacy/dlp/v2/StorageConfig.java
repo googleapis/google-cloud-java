@@ -370,7 +370,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
-      return getStartTime();
+      return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
     }
 
     public static final int END_TIME_FIELD_NUMBER = 2;
@@ -419,7 +419,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-      return getEndTime();
+      return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
     }
 
     public static final int TIMESTAMP_FIELD_FIELD_NUMBER = 3;
@@ -545,11 +545,13 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.FieldIdOrBuilder getTimestampFieldOrBuilder() {
-      return getTimestampField();
+      return timestampField_ == null
+          ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance()
+          : timestampField_;
     }
 
     public static final int ENABLE_AUTO_POPULATION_OF_TIMESPAN_CONFIG_FIELD_NUMBER = 4;
-    private boolean enableAutoPopulationOfTimespanConfig_;
+    private boolean enableAutoPopulationOfTimespanConfig_ = false;
     /**
      *
      *
@@ -818,26 +820,23 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (startTimeBuilder_ == null) {
-          startTime_ = null;
-        } else {
-          startTime_ = null;
+        bitField0_ = 0;
+        startTime_ = null;
+        if (startTimeBuilder_ != null) {
+          startTimeBuilder_.dispose();
           startTimeBuilder_ = null;
         }
-        if (endTimeBuilder_ == null) {
-          endTime_ = null;
-        } else {
-          endTime_ = null;
+        endTime_ = null;
+        if (endTimeBuilder_ != null) {
+          endTimeBuilder_.dispose();
           endTimeBuilder_ = null;
         }
-        if (timestampFieldBuilder_ == null) {
-          timestampField_ = null;
-        } else {
-          timestampField_ = null;
+        timestampField_ = null;
+        if (timestampFieldBuilder_ != null) {
+          timestampFieldBuilder_.dispose();
           timestampFieldBuilder_ = null;
         }
         enableAutoPopulationOfTimespanConfig_ = false;
-
         return this;
       }
 
@@ -865,24 +864,28 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       public com.google.privacy.dlp.v2.StorageConfig.TimespanConfig buildPartial() {
         com.google.privacy.dlp.v2.StorageConfig.TimespanConfig result =
             new com.google.privacy.dlp.v2.StorageConfig.TimespanConfig(this);
-        if (startTimeBuilder_ == null) {
-          result.startTime_ = startTime_;
-        } else {
-          result.startTime_ = startTimeBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (endTimeBuilder_ == null) {
-          result.endTime_ = endTime_;
-        } else {
-          result.endTime_ = endTimeBuilder_.build();
-        }
-        if (timestampFieldBuilder_ == null) {
-          result.timestampField_ = timestampField_;
-        } else {
-          result.timestampField_ = timestampFieldBuilder_.build();
-        }
-        result.enableAutoPopulationOfTimespanConfig_ = enableAutoPopulationOfTimespanConfig_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.privacy.dlp.v2.StorageConfig.TimespanConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.timestampField_ =
+              timestampFieldBuilder_ == null ? timestampField_ : timestampFieldBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.enableAutoPopulationOfTimespanConfig_ = enableAutoPopulationOfTimespanConfig_;
+        }
       }
 
       @java.lang.Override
@@ -974,26 +977,26 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(
                       getTimestampFieldFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 32:
                 {
                   enableAutoPopulationOfTimespanConfig_ = input.readBool();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               default:
@@ -1012,6 +1015,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.Timestamp startTime_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1032,7 +1037,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the startTime field is set.
        */
       public boolean hasStartTime() {
-        return startTimeBuilder_ != null || startTime_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -1071,11 +1076,11 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           startTime_ = value;
-          onChanged();
         } else {
           startTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1091,11 +1096,11 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (startTimeBuilder_ == null) {
           startTime_ = builderForValue.build();
-          onChanged();
         } else {
           startTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1110,19 +1115,18 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
         if (startTimeBuilder_ == null) {
-          if (startTime_ != null) {
-            startTime_ =
-                com.google.protobuf.Timestamp.newBuilder(startTime_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && startTime_ != null
+              && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getStartTimeBuilder().mergeFrom(value);
           } else {
             startTime_ = value;
           }
-          onChanged();
         } else {
           startTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1136,14 +1140,13 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
        */
       public Builder clearStartTime() {
-        if (startTimeBuilder_ == null) {
-          startTime_ = null;
-          onChanged();
-        } else {
-          startTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        startTime_ = null;
+        if (startTimeBuilder_ != null) {
+          startTimeBuilder_.dispose();
           startTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1157,7 +1160,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
        */
       public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getStartTimeFieldBuilder().getBuilder();
       }
@@ -1226,7 +1229,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the endTime field is set.
        */
       public boolean hasEndTime() {
-        return endTimeBuilder_ != null || endTime_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -1263,11 +1266,11 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           endTime_ = value;
-          onChanged();
         } else {
           endTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1283,11 +1286,11 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (endTimeBuilder_ == null) {
           endTime_ = builderForValue.build();
-          onChanged();
         } else {
           endTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1302,17 +1305,18 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
         if (endTimeBuilder_ == null) {
-          if (endTime_ != null) {
-            endTime_ =
-                com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && endTime_ != null
+              && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getEndTimeBuilder().mergeFrom(value);
           } else {
             endTime_ = value;
           }
-          onChanged();
         } else {
           endTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1326,14 +1330,13 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Timestamp end_time = 2;</code>
        */
       public Builder clearEndTime() {
-        if (endTimeBuilder_ == null) {
-          endTime_ = null;
-          onChanged();
-        } else {
-          endTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        endTime_ = null;
+        if (endTimeBuilder_ != null) {
+          endTimeBuilder_.dispose();
           endTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1347,7 +1350,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Timestamp end_time = 2;</code>
        */
       public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getEndTimeFieldBuilder().getBuilder();
       }
@@ -1439,7 +1442,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the timestampField field is set.
        */
       public boolean hasTimestampField() {
-        return timestampFieldBuilder_ != null || timestampField_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -1528,11 +1531,11 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           timestampField_ = value;
-          onChanged();
         } else {
           timestampFieldBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1573,11 +1576,11 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       public Builder setTimestampField(com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
         if (timestampFieldBuilder_ == null) {
           timestampField_ = builderForValue.build();
-          onChanged();
         } else {
           timestampFieldBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1617,19 +1620,18 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeTimestampField(com.google.privacy.dlp.v2.FieldId value) {
         if (timestampFieldBuilder_ == null) {
-          if (timestampField_ != null) {
-            timestampField_ =
-                com.google.privacy.dlp.v2.FieldId.newBuilder(timestampField_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && timestampField_ != null
+              && timestampField_ != com.google.privacy.dlp.v2.FieldId.getDefaultInstance()) {
+            getTimestampFieldBuilder().mergeFrom(value);
           } else {
             timestampField_ = value;
           }
-          onChanged();
         } else {
           timestampFieldBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1668,14 +1670,13 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.privacy.dlp.v2.FieldId timestamp_field = 3;</code>
        */
       public Builder clearTimestampField() {
-        if (timestampFieldBuilder_ == null) {
-          timestampField_ = null;
-          onChanged();
-        } else {
-          timestampField_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        timestampField_ = null;
+        if (timestampFieldBuilder_ != null) {
+          timestampFieldBuilder_.dispose();
           timestampFieldBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1714,7 +1715,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.privacy.dlp.v2.FieldId timestamp_field = 3;</code>
        */
       public com.google.privacy.dlp.v2.FieldId.Builder getTimestampFieldBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getTimestampFieldFieldBuilder().getBuilder();
       }
@@ -1853,6 +1854,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       public Builder setEnableAutoPopulationOfTimespanConfig(boolean value) {
 
         enableAutoPopulationOfTimespanConfig_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1872,7 +1874,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearEnableAutoPopulationOfTimespanConfig() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         enableAutoPopulationOfTimespanConfig_ = false;
         onChanged();
         return this;
@@ -2225,7 +2227,9 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.privacy.dlp.v2.StorageConfig.TimespanConfigOrBuilder
       getTimespanConfigOrBuilder() {
-    return getTimespanConfig();
+    return timespanConfig_ == null
+        ? com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.getDefaultInstance()
+        : timespanConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2498,6 +2502,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (datastoreOptionsBuilder_ != null) {
         datastoreOptionsBuilder_.clear();
       }
@@ -2510,10 +2515,9 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       if (hybridOptionsBuilder_ != null) {
         hybridOptionsBuilder_.clear();
       }
-      if (timespanConfigBuilder_ == null) {
-        timespanConfig_ = null;
-      } else {
-        timespanConfig_ = null;
+      timespanConfig_ = null;
+      if (timespanConfigBuilder_ != null) {
+        timespanConfigBuilder_.dispose();
         timespanConfigBuilder_ = null;
       }
       typeCase_ = 0;
@@ -2545,42 +2549,37 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.StorageConfig buildPartial() {
       com.google.privacy.dlp.v2.StorageConfig result =
           new com.google.privacy.dlp.v2.StorageConfig(this);
-      if (typeCase_ == 2) {
-        if (datastoreOptionsBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = datastoreOptionsBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (typeCase_ == 3) {
-        if (cloudStorageOptionsBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = cloudStorageOptionsBuilder_.build();
-        }
-      }
-      if (typeCase_ == 4) {
-        if (bigQueryOptionsBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = bigQueryOptionsBuilder_.build();
-        }
-      }
-      if (typeCase_ == 9) {
-        if (hybridOptionsBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = hybridOptionsBuilder_.build();
-        }
-      }
-      if (timespanConfigBuilder_ == null) {
-        result.timespanConfig_ = timespanConfig_;
-      } else {
-        result.timespanConfig_ = timespanConfigBuilder_.build();
-      }
-      result.typeCase_ = typeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.StorageConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.timespanConfig_ =
+            timespanConfigBuilder_ == null ? timespanConfig_ : timespanConfigBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.StorageConfig result) {
+      result.typeCase_ = typeCase_;
+      result.type_ = this.type_;
+      if (typeCase_ == 2 && datastoreOptionsBuilder_ != null) {
+        result.type_ = datastoreOptionsBuilder_.build();
+      }
+      if (typeCase_ == 3 && cloudStorageOptionsBuilder_ != null) {
+        result.type_ = cloudStorageOptionsBuilder_.build();
+      }
+      if (typeCase_ == 4 && bigQueryOptionsBuilder_ != null) {
+        result.type_ = bigQueryOptionsBuilder_.build();
+      }
+      if (typeCase_ == 9 && hybridOptionsBuilder_ != null) {
+        result.type_ = hybridOptionsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2706,7 +2705,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
             case 50:
               {
                 input.readMessage(getTimespanConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             case 74:
@@ -2745,6 +2744,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.DatastoreOptions,
@@ -2952,7 +2953,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       }
       typeCase_ = 2;
       onChanged();
-      ;
       return datastoreOptionsBuilder_;
     }
 
@@ -3163,7 +3163,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       }
       typeCase_ = 3;
       onChanged();
-      ;
       return cloudStorageOptionsBuilder_;
     }
 
@@ -3373,7 +3372,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       }
       typeCase_ = 4;
       onChanged();
-      ;
       return bigQueryOptionsBuilder_;
     }
 
@@ -3581,7 +3579,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       }
       typeCase_ = 9;
       onChanged();
-      ;
       return hybridOptionsBuilder_;
     }
 
@@ -3597,7 +3594,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the timespanConfig field is set.
      */
     public boolean hasTimespanConfig() {
-      return timespanConfigBuilder_ != null || timespanConfig_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
@@ -3620,11 +3617,11 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         timespanConfig_ = value;
-        onChanged();
       } else {
         timespanConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
@@ -3632,48 +3629,47 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.Builder builderForValue) {
       if (timespanConfigBuilder_ == null) {
         timespanConfig_ = builderForValue.build();
-        onChanged();
       } else {
         timespanConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
     public Builder mergeTimespanConfig(
         com.google.privacy.dlp.v2.StorageConfig.TimespanConfig value) {
       if (timespanConfigBuilder_ == null) {
-        if (timespanConfig_ != null) {
-          timespanConfig_ =
-              com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.newBuilder(timespanConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && timespanConfig_ != null
+            && timespanConfig_
+                != com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.getDefaultInstance()) {
+          getTimespanConfigBuilder().mergeFrom(value);
         } else {
           timespanConfig_ = value;
         }
-        onChanged();
       } else {
         timespanConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
     public Builder clearTimespanConfig() {
-      if (timespanConfigBuilder_ == null) {
-        timespanConfig_ = null;
-        onChanged();
-      } else {
-        timespanConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      timespanConfig_ = null;
+      if (timespanConfigBuilder_ != null) {
+        timespanConfigBuilder_.dispose();
         timespanConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
     public com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.Builder
         getTimespanConfigBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getTimespanConfigFieldBuilder().getBuilder();
     }

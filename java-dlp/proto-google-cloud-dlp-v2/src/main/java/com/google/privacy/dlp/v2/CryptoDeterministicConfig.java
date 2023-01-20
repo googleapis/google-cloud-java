@@ -118,7 +118,9 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.CryptoKeyOrBuilder getCryptoKeyOrBuilder() {
-    return getCryptoKey();
+    return cryptoKey_ == null
+        ? com.google.privacy.dlp.v2.CryptoKey.getDefaultInstance()
+        : cryptoKey_;
   }
 
   public static final int SURROGATE_INFO_TYPE_FIELD_NUMBER = 2;
@@ -241,7 +243,9 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.InfoTypeOrBuilder getSurrogateInfoTypeOrBuilder() {
-    return getSurrogateInfoType();
+    return surrogateInfoType_ == null
+        ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance()
+        : surrogateInfoType_;
   }
 
   public static final int CONTEXT_FIELD_NUMBER = 3;
@@ -326,7 +330,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.FieldIdOrBuilder getContextOrBuilder() {
-    return getContext();
+    return context_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : context_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -561,22 +565,20 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (cryptoKeyBuilder_ == null) {
-        cryptoKey_ = null;
-      } else {
-        cryptoKey_ = null;
+      bitField0_ = 0;
+      cryptoKey_ = null;
+      if (cryptoKeyBuilder_ != null) {
+        cryptoKeyBuilder_.dispose();
         cryptoKeyBuilder_ = null;
       }
-      if (surrogateInfoTypeBuilder_ == null) {
-        surrogateInfoType_ = null;
-      } else {
-        surrogateInfoType_ = null;
+      surrogateInfoType_ = null;
+      if (surrogateInfoTypeBuilder_ != null) {
+        surrogateInfoTypeBuilder_.dispose();
         surrogateInfoTypeBuilder_ = null;
       }
-      if (contextBuilder_ == null) {
-        context_ = null;
-      } else {
-        context_ = null;
+      context_ = null;
+      if (contextBuilder_ != null) {
+        contextBuilder_.dispose();
         contextBuilder_ = null;
       }
       return this;
@@ -606,23 +608,27 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
     public com.google.privacy.dlp.v2.CryptoDeterministicConfig buildPartial() {
       com.google.privacy.dlp.v2.CryptoDeterministicConfig result =
           new com.google.privacy.dlp.v2.CryptoDeterministicConfig(this);
-      if (cryptoKeyBuilder_ == null) {
-        result.cryptoKey_ = cryptoKey_;
-      } else {
-        result.cryptoKey_ = cryptoKeyBuilder_.build();
-      }
-      if (surrogateInfoTypeBuilder_ == null) {
-        result.surrogateInfoType_ = surrogateInfoType_;
-      } else {
-        result.surrogateInfoType_ = surrogateInfoTypeBuilder_.build();
-      }
-      if (contextBuilder_ == null) {
-        result.context_ = context_;
-      } else {
-        result.context_ = contextBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.CryptoDeterministicConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.cryptoKey_ = cryptoKeyBuilder_ == null ? cryptoKey_ : cryptoKeyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.surrogateInfoType_ =
+            surrogateInfoTypeBuilder_ == null
+                ? surrogateInfoType_
+                : surrogateInfoTypeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.context_ = contextBuilder_ == null ? context_ : contextBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -709,20 +715,20 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
             case 10:
               {
                 input.readMessage(getCryptoKeyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getSurrogateInfoTypeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getContextFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -741,6 +747,8 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.privacy.dlp.v2.CryptoKey cryptoKey_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -762,7 +770,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * @return Whether the cryptoKey field is set.
      */
     public boolean hasCryptoKey() {
-      return cryptoKeyBuilder_ != null || cryptoKey_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -803,11 +811,11 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         cryptoKey_ = value;
-        onChanged();
       } else {
         cryptoKeyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -824,11 +832,11 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
     public Builder setCryptoKey(com.google.privacy.dlp.v2.CryptoKey.Builder builderForValue) {
       if (cryptoKeyBuilder_ == null) {
         cryptoKey_ = builderForValue.build();
-        onChanged();
       } else {
         cryptoKeyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -844,19 +852,18 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      */
     public Builder mergeCryptoKey(com.google.privacy.dlp.v2.CryptoKey value) {
       if (cryptoKeyBuilder_ == null) {
-        if (cryptoKey_ != null) {
-          cryptoKey_ =
-              com.google.privacy.dlp.v2.CryptoKey.newBuilder(cryptoKey_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && cryptoKey_ != null
+            && cryptoKey_ != com.google.privacy.dlp.v2.CryptoKey.getDefaultInstance()) {
+          getCryptoKeyBuilder().mergeFrom(value);
         } else {
           cryptoKey_ = value;
         }
-        onChanged();
       } else {
         cryptoKeyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -871,14 +878,13 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
      */
     public Builder clearCryptoKey() {
-      if (cryptoKeyBuilder_ == null) {
-        cryptoKey_ = null;
-        onChanged();
-      } else {
-        cryptoKey_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      cryptoKey_ = null;
+      if (cryptoKeyBuilder_ != null) {
+        cryptoKeyBuilder_.dispose();
         cryptoKeyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -893,7 +899,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
      */
     public com.google.privacy.dlp.v2.CryptoKey.Builder getCryptoKeyBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCryptoKeyFieldBuilder().getBuilder();
     }
@@ -988,7 +994,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * @return Whether the surrogateInfoType field is set.
      */
     public boolean hasSurrogateInfoType() {
-      return surrogateInfoTypeBuilder_ != null || surrogateInfoType_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1075,11 +1081,11 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         surrogateInfoType_ = value;
-        onChanged();
       } else {
         surrogateInfoTypeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1120,11 +1126,11 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
         com.google.privacy.dlp.v2.InfoType.Builder builderForValue) {
       if (surrogateInfoTypeBuilder_ == null) {
         surrogateInfoType_ = builderForValue.build();
-        onChanged();
       } else {
         surrogateInfoTypeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1163,19 +1169,18 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      */
     public Builder mergeSurrogateInfoType(com.google.privacy.dlp.v2.InfoType value) {
       if (surrogateInfoTypeBuilder_ == null) {
-        if (surrogateInfoType_ != null) {
-          surrogateInfoType_ =
-              com.google.privacy.dlp.v2.InfoType.newBuilder(surrogateInfoType_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && surrogateInfoType_ != null
+            && surrogateInfoType_ != com.google.privacy.dlp.v2.InfoType.getDefaultInstance()) {
+          getSurrogateInfoTypeBuilder().mergeFrom(value);
         } else {
           surrogateInfoType_ = value;
         }
-        onChanged();
       } else {
         surrogateInfoTypeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1213,14 +1218,13 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 2;</code>
      */
     public Builder clearSurrogateInfoType() {
-      if (surrogateInfoTypeBuilder_ == null) {
-        surrogateInfoType_ = null;
-        onChanged();
-      } else {
-        surrogateInfoType_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      surrogateInfoType_ = null;
+      if (surrogateInfoTypeBuilder_ != null) {
+        surrogateInfoTypeBuilder_.dispose();
         surrogateInfoTypeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1258,7 +1262,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 2;</code>
      */
     public com.google.privacy.dlp.v2.InfoType.Builder getSurrogateInfoTypeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSurrogateInfoTypeFieldBuilder().getBuilder();
     }
@@ -1387,7 +1391,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * @return Whether the context field is set.
      */
     public boolean hasContext() {
-      return contextBuilder_ != null || context_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1448,11 +1452,11 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         context_ = value;
-        onChanged();
       } else {
         contextBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1480,11 +1484,11 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
     public Builder setContext(com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
       if (contextBuilder_ == null) {
         context_ = builderForValue.build();
-        onChanged();
       } else {
         contextBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1511,19 +1515,18 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      */
     public Builder mergeContext(com.google.privacy.dlp.v2.FieldId value) {
       if (contextBuilder_ == null) {
-        if (context_ != null) {
-          context_ =
-              com.google.privacy.dlp.v2.FieldId.newBuilder(context_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && context_ != null
+            && context_ != com.google.privacy.dlp.v2.FieldId.getDefaultInstance()) {
+          getContextBuilder().mergeFrom(value);
         } else {
           context_ = value;
         }
-        onChanged();
       } else {
         contextBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1549,14 +1552,13 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * <code>.google.privacy.dlp.v2.FieldId context = 3;</code>
      */
     public Builder clearContext() {
-      if (contextBuilder_ == null) {
-        context_ = null;
-        onChanged();
-      } else {
-        context_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      context_ = null;
+      if (contextBuilder_ != null) {
+        contextBuilder_.dispose();
         contextBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1582,7 +1584,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
      * <code>.google.privacy.dlp.v2.FieldId context = 3;</code>
      */
     public com.google.privacy.dlp.v2.FieldId.Builder getContextBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getContextFieldBuilder().getBuilder();
     }

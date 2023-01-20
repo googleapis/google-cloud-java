@@ -69,6 +69,8 @@ public final class ListActiveBreakpointsResponse extends com.google.protobuf.Gen
   }
 
   public static final int BREAKPOINTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.clouddebugger.v2.Breakpoint> breakpoints_;
   /**
    *
@@ -144,7 +146,9 @@ public final class ListActiveBreakpointsResponse extends com.google.protobuf.Gen
   }
 
   public static final int NEXT_WAIT_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nextWaitToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextWaitToken_ = "";
   /**
    *
    *
@@ -195,7 +199,7 @@ public final class ListActiveBreakpointsResponse extends com.google.protobuf.Gen
   }
 
   public static final int WAIT_EXPIRED_FIELD_NUMBER = 3;
-  private boolean waitExpired_;
+  private boolean waitExpired_ = false;
   /**
    *
    *
@@ -434,6 +438,7 @@ public final class ListActiveBreakpointsResponse extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (breakpointsBuilder_ == null) {
         breakpoints_ = java.util.Collections.emptyList();
       } else {
@@ -442,9 +447,7 @@ public final class ListActiveBreakpointsResponse extends com.google.protobuf.Gen
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextWaitToken_ = "";
-
       waitExpired_ = false;
-
       return this;
     }
 
@@ -474,7 +477,16 @@ public final class ListActiveBreakpointsResponse extends com.google.protobuf.Gen
     public com.google.devtools.clouddebugger.v2.ListActiveBreakpointsResponse buildPartial() {
       com.google.devtools.clouddebugger.v2.ListActiveBreakpointsResponse result =
           new com.google.devtools.clouddebugger.v2.ListActiveBreakpointsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.devtools.clouddebugger.v2.ListActiveBreakpointsResponse result) {
       if (breakpointsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           breakpoints_ = java.util.Collections.unmodifiableList(breakpoints_);
@@ -484,10 +496,17 @@ public final class ListActiveBreakpointsResponse extends com.google.protobuf.Gen
       } else {
         result.breakpoints_ = breakpointsBuilder_.build();
       }
-      result.nextWaitToken_ = nextWaitToken_;
-      result.waitExpired_ = waitExpired_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.devtools.clouddebugger.v2.ListActiveBreakpointsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextWaitToken_ = nextWaitToken_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.waitExpired_ = waitExpired_;
+      }
     }
 
     @java.lang.Override
@@ -568,6 +587,7 @@ public final class ListActiveBreakpointsResponse extends com.google.protobuf.Gen
       }
       if (!other.getNextWaitToken().isEmpty()) {
         nextWaitToken_ = other.nextWaitToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getWaitExpired() != false) {
@@ -616,13 +636,13 @@ public final class ListActiveBreakpointsResponse extends com.google.protobuf.Gen
             case 18:
               {
                 nextWaitToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 waitExpired_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -1082,8 +1102,8 @@ public final class ListActiveBreakpointsResponse extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextWaitToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1100,8 +1120,8 @@ public final class ListActiveBreakpointsResponse extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearNextWaitToken() {
-
       nextWaitToken_ = getDefaultInstance().getNextWaitToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1123,8 +1143,8 @@ public final class ListActiveBreakpointsResponse extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextWaitToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1164,6 +1184,7 @@ public final class ListActiveBreakpointsResponse extends com.google.protobuf.Gen
     public Builder setWaitExpired(boolean value) {
 
       waitExpired_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1181,7 +1202,7 @@ public final class ListActiveBreakpointsResponse extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearWaitExpired() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       waitExpired_ = false;
       onChanged();
       return this;

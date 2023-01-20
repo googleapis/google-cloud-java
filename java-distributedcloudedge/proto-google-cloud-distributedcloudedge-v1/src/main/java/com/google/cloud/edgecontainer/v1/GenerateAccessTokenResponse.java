@@ -68,7 +68,9 @@ public final class GenerateAccessTokenResponse extends com.google.protobuf.Gener
   }
 
   public static final int ACCESS_TOKEN_FIELD_NUMBER = 1;
-  private volatile java.lang.Object accessToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object accessToken_ = "";
   /**
    *
    *
@@ -162,7 +164,7 @@ public final class GenerateAccessTokenResponse extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
-    return getExpireTime();
+    return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -377,12 +379,11 @@ public final class GenerateAccessTokenResponse extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       accessToken_ = "";
-
-      if (expireTimeBuilder_ == null) {
-        expireTime_ = null;
-      } else {
-        expireTime_ = null;
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
         expireTimeBuilder_ = null;
       }
       return this;
@@ -413,14 +414,22 @@ public final class GenerateAccessTokenResponse extends com.google.protobuf.Gener
     public com.google.cloud.edgecontainer.v1.GenerateAccessTokenResponse buildPartial() {
       com.google.cloud.edgecontainer.v1.GenerateAccessTokenResponse result =
           new com.google.cloud.edgecontainer.v1.GenerateAccessTokenResponse(this);
-      result.accessToken_ = accessToken_;
-      if (expireTimeBuilder_ == null) {
-        result.expireTime_ = expireTime_;
-      } else {
-        result.expireTime_ = expireTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.edgecontainer.v1.GenerateAccessTokenResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.accessToken_ = accessToken_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.expireTime_ = expireTimeBuilder_ == null ? expireTime_ : expireTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -472,6 +481,7 @@ public final class GenerateAccessTokenResponse extends com.google.protobuf.Gener
         return this;
       if (!other.getAccessToken().isEmpty()) {
         accessToken_ = other.accessToken_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasExpireTime()) {
@@ -506,13 +516,13 @@ public final class GenerateAccessTokenResponse extends com.google.protobuf.Gener
             case 10:
               {
                 accessToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -531,6 +541,8 @@ public final class GenerateAccessTokenResponse extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object accessToken_ = "";
     /**
@@ -593,8 +605,8 @@ public final class GenerateAccessTokenResponse extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       accessToken_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -610,8 +622,8 @@ public final class GenerateAccessTokenResponse extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearAccessToken() {
-
       accessToken_ = getDefaultInstance().getAccessToken();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -632,8 +644,8 @@ public final class GenerateAccessTokenResponse extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       accessToken_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -658,7 +670,7 @@ public final class GenerateAccessTokenResponse extends com.google.protobuf.Gener
      * @return Whether the expireTime field is set.
      */
     public boolean hasExpireTime() {
-      return expireTimeBuilder_ != null || expireTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -699,11 +711,11 @@ public final class GenerateAccessTokenResponse extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         expireTime_ = value;
-        onChanged();
       } else {
         expireTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -720,11 +732,11 @@ public final class GenerateAccessTokenResponse extends com.google.protobuf.Gener
     public Builder setExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (expireTimeBuilder_ == null) {
         expireTime_ = builderForValue.build();
-        onChanged();
       } else {
         expireTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -740,17 +752,18 @@ public final class GenerateAccessTokenResponse extends com.google.protobuf.Gener
      */
     public Builder mergeExpireTime(com.google.protobuf.Timestamp value) {
       if (expireTimeBuilder_ == null) {
-        if (expireTime_ != null) {
-          expireTime_ =
-              com.google.protobuf.Timestamp.newBuilder(expireTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && expireTime_ != null
+            && expireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getExpireTimeBuilder().mergeFrom(value);
         } else {
           expireTime_ = value;
         }
-        onChanged();
       } else {
         expireTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -765,14 +778,13 @@ public final class GenerateAccessTokenResponse extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearExpireTime() {
-      if (expireTimeBuilder_ == null) {
-        expireTime_ = null;
-        onChanged();
-      } else {
-        expireTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
         expireTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -787,7 +799,7 @@ public final class GenerateAccessTokenResponse extends com.google.protobuf.Gener
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }

@@ -113,7 +113,9 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.PrCurveOrBuilder getPrCurveOrBuilder() {
-    return getPrCurve();
+    return prCurve_ == null
+        ? com.google.cloud.datalabeling.v1beta1.PrCurve.getDefaultInstance()
+        : prCurve_;
   }
 
   public static final int CONFUSION_MATRIX_FIELD_NUMBER = 2;
@@ -162,7 +164,9 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.ConfusionMatrixOrBuilder
       getConfusionMatrixOrBuilder() {
-    return getConfusionMatrix();
+    return confusionMatrix_ == null
+        ? com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.getDefaultInstance()
+        : confusionMatrix_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -382,16 +386,15 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (prCurveBuilder_ == null) {
-        prCurve_ = null;
-      } else {
-        prCurve_ = null;
+      bitField0_ = 0;
+      prCurve_ = null;
+      if (prCurveBuilder_ != null) {
+        prCurveBuilder_.dispose();
         prCurveBuilder_ = null;
       }
-      if (confusionMatrixBuilder_ == null) {
-        confusionMatrix_ = null;
-      } else {
-        confusionMatrix_ = null;
+      confusionMatrix_ = null;
+      if (confusionMatrixBuilder_ != null) {
+        confusionMatrixBuilder_.dispose();
         confusionMatrixBuilder_ = null;
       }
       return this;
@@ -421,18 +424,22 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
     public com.google.cloud.datalabeling.v1beta1.ClassificationMetrics buildPartial() {
       com.google.cloud.datalabeling.v1beta1.ClassificationMetrics result =
           new com.google.cloud.datalabeling.v1beta1.ClassificationMetrics(this);
-      if (prCurveBuilder_ == null) {
-        result.prCurve_ = prCurve_;
-      } else {
-        result.prCurve_ = prCurveBuilder_.build();
-      }
-      if (confusionMatrixBuilder_ == null) {
-        result.confusionMatrix_ = confusionMatrix_;
-      } else {
-        result.confusionMatrix_ = confusionMatrixBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datalabeling.v1beta1.ClassificationMetrics result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.prCurve_ = prCurveBuilder_ == null ? prCurve_ : prCurveBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.confusionMatrix_ =
+            confusionMatrixBuilder_ == null ? confusionMatrix_ : confusionMatrixBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -516,13 +523,13 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 input.readMessage(getPrCurveFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getConfusionMatrixFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -541,6 +548,8 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.datalabeling.v1beta1.PrCurve prCurve_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -561,7 +570,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
      * @return Whether the prCurve field is set.
      */
     public boolean hasPrCurve() {
-      return prCurveBuilder_ != null || prCurve_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -600,11 +609,11 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         prCurve_ = value;
-        onChanged();
       } else {
         prCurveBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -621,11 +630,11 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
         com.google.cloud.datalabeling.v1beta1.PrCurve.Builder builderForValue) {
       if (prCurveBuilder_ == null) {
         prCurve_ = builderForValue.build();
-        onChanged();
       } else {
         prCurveBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -640,19 +649,18 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
      */
     public Builder mergePrCurve(com.google.cloud.datalabeling.v1beta1.PrCurve value) {
       if (prCurveBuilder_ == null) {
-        if (prCurve_ != null) {
-          prCurve_ =
-              com.google.cloud.datalabeling.v1beta1.PrCurve.newBuilder(prCurve_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && prCurve_ != null
+            && prCurve_ != com.google.cloud.datalabeling.v1beta1.PrCurve.getDefaultInstance()) {
+          getPrCurveBuilder().mergeFrom(value);
         } else {
           prCurve_ = value;
         }
-        onChanged();
       } else {
         prCurveBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -666,14 +674,13 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
      */
     public Builder clearPrCurve() {
-      if (prCurveBuilder_ == null) {
-        prCurve_ = null;
-        onChanged();
-      } else {
-        prCurve_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      prCurve_ = null;
+      if (prCurveBuilder_ != null) {
+        prCurveBuilder_.dispose();
         prCurveBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -687,7 +694,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
      */
     public com.google.cloud.datalabeling.v1beta1.PrCurve.Builder getPrCurveBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getPrCurveFieldBuilder().getBuilder();
     }
@@ -755,7 +762,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
      * @return Whether the confusionMatrix field is set.
      */
     public boolean hasConfusionMatrix() {
-      return confusionMatrixBuilder_ != null || confusionMatrix_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -792,11 +799,11 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         confusionMatrix_ = value;
-        onChanged();
       } else {
         confusionMatrixBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -812,11 +819,11 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
         com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.Builder builderForValue) {
       if (confusionMatrixBuilder_ == null) {
         confusionMatrix_ = builderForValue.build();
-        onChanged();
       } else {
         confusionMatrixBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -831,19 +838,19 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
     public Builder mergeConfusionMatrix(
         com.google.cloud.datalabeling.v1beta1.ConfusionMatrix value) {
       if (confusionMatrixBuilder_ == null) {
-        if (confusionMatrix_ != null) {
-          confusionMatrix_ =
-              com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.newBuilder(confusionMatrix_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && confusionMatrix_ != null
+            && confusionMatrix_
+                != com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.getDefaultInstance()) {
+          getConfusionMatrixBuilder().mergeFrom(value);
         } else {
           confusionMatrix_ = value;
         }
-        onChanged();
       } else {
         confusionMatrixBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -856,14 +863,13 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code>
      */
     public Builder clearConfusionMatrix() {
-      if (confusionMatrixBuilder_ == null) {
-        confusionMatrix_ = null;
-        onChanged();
-      } else {
-        confusionMatrix_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      confusionMatrix_ = null;
+      if (confusionMatrixBuilder_ != null) {
+        confusionMatrixBuilder_.dispose();
         confusionMatrixBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -877,7 +883,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
      */
     public com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.Builder
         getConfusionMatrixBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getConfusionMatrixFieldBuilder().getBuilder();
     }

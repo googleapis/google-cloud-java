@@ -70,7 +70,9 @@ public final class CreateFederationRequest extends com.google.protobuf.Generated
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -127,7 +129,9 @@ public final class CreateFederationRequest extends com.google.protobuf.Generated
   }
 
   public static final int FEDERATION_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object federationId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object federationId_ = "";
   /**
    *
    *
@@ -240,11 +244,15 @@ public final class CreateFederationRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.metastore.v1alpha.FederationOrBuilder getFederationOrBuilder() {
-    return getFederation();
+    return federation_ == null
+        ? com.google.cloud.metastore.v1alpha.Federation.getDefaultInstance()
+        : federation_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -540,18 +548,15 @@ public final class CreateFederationRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       federationId_ = "";
-
-      if (federationBuilder_ == null) {
-        federation_ = null;
-      } else {
-        federation_ = null;
+      federation_ = null;
+      if (federationBuilder_ != null) {
+        federationBuilder_.dispose();
         federationBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -579,16 +584,27 @@ public final class CreateFederationRequest extends com.google.protobuf.Generated
     public com.google.cloud.metastore.v1alpha.CreateFederationRequest buildPartial() {
       com.google.cloud.metastore.v1alpha.CreateFederationRequest result =
           new com.google.cloud.metastore.v1alpha.CreateFederationRequest(this);
-      result.parent_ = parent_;
-      result.federationId_ = federationId_;
-      if (federationBuilder_ == null) {
-        result.federation_ = federation_;
-      } else {
-        result.federation_ = federationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.metastore.v1alpha.CreateFederationRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.federationId_ = federationId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.federation_ = federationBuilder_ == null ? federation_ : federationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -639,10 +655,12 @@ public final class CreateFederationRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getFederationId().isEmpty()) {
         federationId_ = other.federationId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasFederation()) {
@@ -650,6 +668,7 @@ public final class CreateFederationRequest extends com.google.protobuf.Generated
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -681,25 +700,25 @@ public final class CreateFederationRequest extends com.google.protobuf.Generated
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 federationId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getFederationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -718,6 +737,8 @@ public final class CreateFederationRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -792,8 +813,8 @@ public final class CreateFederationRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -813,8 +834,8 @@ public final class CreateFederationRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -839,8 +860,8 @@ public final class CreateFederationRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -918,8 +939,8 @@ public final class CreateFederationRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       federationId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -939,8 +960,8 @@ public final class CreateFederationRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearFederationId() {
-
       federationId_ = getDefaultInstance().getFederationId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -965,8 +986,8 @@ public final class CreateFederationRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       federationId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -993,7 +1014,7 @@ public final class CreateFederationRequest extends com.google.protobuf.Generated
      * @return Whether the federation field is set.
      */
     public boolean hasFederation() {
-      return federationBuilder_ != null || federation_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1038,11 +1059,11 @@ public final class CreateFederationRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         federation_ = value;
-        onChanged();
       } else {
         federationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1062,11 +1083,11 @@ public final class CreateFederationRequest extends com.google.protobuf.Generated
         com.google.cloud.metastore.v1alpha.Federation.Builder builderForValue) {
       if (federationBuilder_ == null) {
         federation_ = builderForValue.build();
-        onChanged();
       } else {
         federationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1084,19 +1105,18 @@ public final class CreateFederationRequest extends com.google.protobuf.Generated
      */
     public Builder mergeFederation(com.google.cloud.metastore.v1alpha.Federation value) {
       if (federationBuilder_ == null) {
-        if (federation_ != null) {
-          federation_ =
-              com.google.cloud.metastore.v1alpha.Federation.newBuilder(federation_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && federation_ != null
+            && federation_ != com.google.cloud.metastore.v1alpha.Federation.getDefaultInstance()) {
+          getFederationBuilder().mergeFrom(value);
         } else {
           federation_ = value;
         }
-        onChanged();
       } else {
         federationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1113,14 +1133,13 @@ public final class CreateFederationRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearFederation() {
-      if (federationBuilder_ == null) {
-        federation_ = null;
-        onChanged();
-      } else {
-        federation_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      federation_ = null;
+      if (federationBuilder_ != null) {
+        federationBuilder_.dispose();
         federationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1137,7 +1156,7 @@ public final class CreateFederationRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.metastore.v1alpha.Federation.Builder getFederationBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getFederationFieldBuilder().getBuilder();
     }
@@ -1281,8 +1300,8 @@ public final class CreateFederationRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1307,8 +1326,8 @@ public final class CreateFederationRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1338,8 +1357,8 @@ public final class CreateFederationRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

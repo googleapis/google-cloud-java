@@ -168,7 +168,7 @@ public final class OperationStatus extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DONE_FIELD_NUMBER = 1;
-  private boolean done_;
+  private boolean done_ = false;
   /**
    *
    *
@@ -186,7 +186,7 @@ public final class OperationStatus extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ERROR_CODE_FIELD_NUMBER = 2;
-  private int errorCode_;
+  private int errorCode_ = 0;
   /**
    *
    *
@@ -215,16 +215,17 @@ public final class OperationStatus extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.gaming.v1beta.OperationStatus.ErrorCode getErrorCode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.gaming.v1beta.OperationStatus.ErrorCode result =
-        com.google.cloud.gaming.v1beta.OperationStatus.ErrorCode.valueOf(errorCode_);
+        com.google.cloud.gaming.v1beta.OperationStatus.ErrorCode.forNumber(errorCode_);
     return result == null
         ? com.google.cloud.gaming.v1beta.OperationStatus.ErrorCode.UNRECOGNIZED
         : result;
   }
 
   public static final int ERROR_MESSAGE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object errorMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object errorMessage_ = "";
   /**
    *
    *
@@ -483,12 +484,10 @@ public final class OperationStatus extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       done_ = false;
-
       errorCode_ = 0;
-
       errorMessage_ = "";
-
       return this;
     }
 
@@ -516,11 +515,24 @@ public final class OperationStatus extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.gaming.v1beta.OperationStatus buildPartial() {
       com.google.cloud.gaming.v1beta.OperationStatus result =
           new com.google.cloud.gaming.v1beta.OperationStatus(this);
-      result.done_ = done_;
-      result.errorCode_ = errorCode_;
-      result.errorMessage_ = errorMessage_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gaming.v1beta.OperationStatus result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.done_ = done_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.errorCode_ = errorCode_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.errorMessage_ = errorMessage_;
+      }
     }
 
     @java.lang.Override
@@ -576,6 +588,7 @@ public final class OperationStatus extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getErrorMessage().isEmpty()) {
         errorMessage_ = other.errorMessage_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -607,19 +620,19 @@ public final class OperationStatus extends com.google.protobuf.GeneratedMessageV
             case 8:
               {
                 done_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 errorCode_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 errorMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -638,6 +651,8 @@ public final class OperationStatus extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean done_;
     /**
@@ -670,6 +685,7 @@ public final class OperationStatus extends com.google.protobuf.GeneratedMessageV
     public Builder setDone(boolean value) {
 
       done_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -685,7 +701,7 @@ public final class OperationStatus extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDone() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       done_ = false;
       onChanged();
       return this;
@@ -720,8 +736,8 @@ public final class OperationStatus extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setErrorCodeValue(int value) {
-
       errorCode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -738,9 +754,8 @@ public final class OperationStatus extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.cloud.gaming.v1beta.OperationStatus.ErrorCode getErrorCode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.gaming.v1beta.OperationStatus.ErrorCode result =
-          com.google.cloud.gaming.v1beta.OperationStatus.ErrorCode.valueOf(errorCode_);
+          com.google.cloud.gaming.v1beta.OperationStatus.ErrorCode.forNumber(errorCode_);
       return result == null
           ? com.google.cloud.gaming.v1beta.OperationStatus.ErrorCode.UNRECOGNIZED
           : result;
@@ -761,7 +776,7 @@ public final class OperationStatus extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       errorCode_ = value.getNumber();
       onChanged();
       return this;
@@ -778,7 +793,7 @@ public final class OperationStatus extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearErrorCode() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       errorCode_ = 0;
       onChanged();
       return this;
@@ -845,8 +860,8 @@ public final class OperationStatus extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       errorMessage_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -862,8 +877,8 @@ public final class OperationStatus extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearErrorMessage() {
-
       errorMessage_ = getDefaultInstance().getErrorMessage();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -884,8 +899,8 @@ public final class OperationStatus extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       errorMessage_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

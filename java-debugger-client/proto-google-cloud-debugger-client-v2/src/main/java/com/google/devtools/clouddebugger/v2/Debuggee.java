@@ -89,7 +89,9 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -138,7 +140,9 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROJECT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -189,7 +193,9 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UNIQUIFIER_FIELD_NUMBER = 3;
-  private volatile java.lang.Object uniquifier_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uniquifier_ = "";
   /**
    *
    *
@@ -248,7 +254,9 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -301,7 +309,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IS_INACTIVE_FIELD_NUMBER = 5;
-  private boolean isInactive_;
+  private boolean isInactive_ = false;
   /**
    *
    *
@@ -320,7 +328,9 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AGENT_VERSION_FIELD_NUMBER = 6;
-  private volatile java.lang.Object agentVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object agentVersion_ = "";
   /**
    *
    *
@@ -373,7 +383,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IS_DISABLED_FIELD_NUMBER = 7;
-  private boolean isDisabled_;
+  private boolean isDisabled_ = false;
   /**
    *
    *
@@ -442,10 +452,14 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.devtools.clouddebugger.v2.StatusMessageOrBuilder getStatusOrBuilder() {
-    return getStatus();
+    return status_ == null
+        ? com.google.devtools.clouddebugger.v2.StatusMessage.getDefaultInstance()
+        : status_;
   }
 
   public static final int SOURCE_CONTEXTS_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.source.v1.SourceContext> sourceContexts_;
   /**
    *
@@ -521,6 +535,8 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXT_SOURCE_CONTEXTS_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.source.v1.ExtendedSourceContext> extSourceContexts_;
   /**
    *
@@ -624,6 +640,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -684,7 +701,10 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -1042,24 +1062,17 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       id_ = "";
-
       project_ = "";
-
       uniquifier_ = "";
-
       description_ = "";
-
       isInactive_ = false;
-
       agentVersion_ = "";
-
       isDisabled_ = false;
-
-      if (statusBuilder_ == null) {
-        status_ = null;
-      } else {
-        status_ = null;
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
         statusBuilder_ = null;
       }
       if (sourceContextsBuilder_ == null) {
@@ -1068,14 +1081,14 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         sourceContexts_ = null;
         sourceContextsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000100);
       if (extSourceContextsBuilder_ == null) {
         extSourceContexts_ = java.util.Collections.emptyList();
       } else {
         extSourceContexts_ = null;
         extSourceContextsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000200);
       internalGetMutableLabels().clear();
       return this;
     }
@@ -1104,41 +1117,65 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.clouddebugger.v2.Debuggee buildPartial() {
       com.google.devtools.clouddebugger.v2.Debuggee result =
           new com.google.devtools.clouddebugger.v2.Debuggee(this);
-      int from_bitField0_ = bitField0_;
-      result.id_ = id_;
-      result.project_ = project_;
-      result.uniquifier_ = uniquifier_;
-      result.description_ = description_;
-      result.isInactive_ = isInactive_;
-      result.agentVersion_ = agentVersion_;
-      result.isDisabled_ = isDisabled_;
-      if (statusBuilder_ == null) {
-        result.status_ = status_;
-      } else {
-        result.status_ = statusBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.devtools.clouddebugger.v2.Debuggee result) {
       if (sourceContextsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           sourceContexts_ = java.util.Collections.unmodifiableList(sourceContexts_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.sourceContexts_ = sourceContexts_;
       } else {
         result.sourceContexts_ = sourceContextsBuilder_.build();
       }
       if (extSourceContextsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000200) != 0)) {
           extSourceContexts_ = java.util.Collections.unmodifiableList(extSourceContexts_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.extSourceContexts_ = extSourceContexts_;
       } else {
         result.extSourceContexts_ = extSourceContextsBuilder_.build();
       }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.devtools.clouddebugger.v2.Debuggee result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.uniquifier_ = uniquifier_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.isInactive_ = isInactive_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.agentVersion_ = agentVersion_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.isDisabled_ = isDisabled_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -1188,18 +1225,22 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.devtools.clouddebugger.v2.Debuggee.getDefaultInstance()) return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getUniquifier().isEmpty()) {
         uniquifier_ = other.uniquifier_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.getIsInactive() != false) {
@@ -1207,6 +1248,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getAgentVersion().isEmpty()) {
         agentVersion_ = other.agentVersion_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.getIsDisabled() != false) {
@@ -1219,7 +1261,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         if (!other.sourceContexts_.isEmpty()) {
           if (sourceContexts_.isEmpty()) {
             sourceContexts_ = other.sourceContexts_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureSourceContextsIsMutable();
             sourceContexts_.addAll(other.sourceContexts_);
@@ -1232,7 +1274,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
             sourceContextsBuilder_.dispose();
             sourceContextsBuilder_ = null;
             sourceContexts_ = other.sourceContexts_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000100);
             sourceContextsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSourceContextsFieldBuilder()
@@ -1246,7 +1288,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         if (!other.extSourceContexts_.isEmpty()) {
           if (extSourceContexts_.isEmpty()) {
             extSourceContexts_ = other.extSourceContexts_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureExtSourceContextsIsMutable();
             extSourceContexts_.addAll(other.extSourceContexts_);
@@ -1259,7 +1301,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
             extSourceContextsBuilder_.dispose();
             extSourceContextsBuilder_ = null;
             extSourceContexts_ = other.extSourceContexts_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000200);
             extSourceContextsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getExtSourceContextsFieldBuilder()
@@ -1270,6 +1312,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         }
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000400;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1299,49 +1342,49 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 uniquifier_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 isInactive_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 50:
               {
                 agentVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 56:
               {
                 isDisabled_ = input.readBool();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             case 66:
               {
                 input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
@@ -1366,6 +1409,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000400;
                 break;
               } // case 90
             case 106:
@@ -1462,8 +1506,8 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1479,8 +1523,8 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1501,8 +1545,8 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1571,8 +1615,8 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1589,8 +1633,8 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1612,8 +1656,8 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1694,8 +1738,8 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       uniquifier_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1716,8 +1760,8 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUniquifier() {
-
       uniquifier_ = getDefaultInstance().getUniquifier();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1743,8 +1787,8 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uniquifier_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1816,8 +1860,8 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1835,8 +1879,8 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1859,8 +1903,8 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1898,6 +1942,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
     public Builder setIsInactive(boolean value) {
 
       isInactive_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1914,7 +1959,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIsInactive() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       isInactive_ = false;
       onChanged();
       return this;
@@ -1987,8 +2032,8 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       agentVersion_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2006,8 +2051,8 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAgentVersion() {
-
       agentVersion_ = getDefaultInstance().getAgentVersion();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2030,8 +2075,8 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       agentVersion_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2069,6 +2114,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
     public Builder setIsDisabled(boolean value) {
 
       isDisabled_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2085,7 +2131,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIsDisabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       isDisabled_ = false;
       onChanged();
       return this;
@@ -2111,7 +2157,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return statusBuilder_ != null || status_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2152,11 +2198,11 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         status_ = value;
-        onChanged();
       } else {
         statusBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2174,11 +2220,11 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         com.google.devtools.clouddebugger.v2.StatusMessage.Builder builderForValue) {
       if (statusBuilder_ == null) {
         status_ = builderForValue.build();
-        onChanged();
       } else {
         statusBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2194,19 +2240,18 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStatus(com.google.devtools.clouddebugger.v2.StatusMessage value) {
       if (statusBuilder_ == null) {
-        if (status_ != null) {
-          status_ =
-              com.google.devtools.clouddebugger.v2.StatusMessage.newBuilder(status_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && status_ != null
+            && status_ != com.google.devtools.clouddebugger.v2.StatusMessage.getDefaultInstance()) {
+          getStatusBuilder().mergeFrom(value);
         } else {
           status_ = value;
         }
-        onChanged();
       } else {
         statusBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2221,14 +2266,13 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.devtools.clouddebugger.v2.StatusMessage status = 8;</code>
      */
     public Builder clearStatus() {
-      if (statusBuilder_ == null) {
-        status_ = null;
-        onChanged();
-      } else {
-        status_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
         statusBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2243,7 +2287,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.devtools.clouddebugger.v2.StatusMessage status = 8;</code>
      */
     public com.google.devtools.clouddebugger.v2.StatusMessage.Builder getStatusBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
@@ -2299,10 +2343,10 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSourceContextsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         sourceContexts_ =
             new java.util.ArrayList<com.google.devtools.source.v1.SourceContext>(sourceContexts_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000100;
       }
     }
 
@@ -2529,7 +2573,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSourceContexts() {
       if (sourceContextsBuilder_ == null) {
         sourceContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         sourceContextsBuilder_.clear();
@@ -2660,7 +2704,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
                 com.google.devtools.source.v1.SourceContext.Builder,
                 com.google.devtools.source.v1.SourceContextOrBuilder>(
                 sourceContexts_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000100) != 0),
                 getParentForChildren(),
                 isClean());
         sourceContexts_ = null;
@@ -2672,11 +2716,11 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureExtSourceContextsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         extSourceContexts_ =
             new java.util.ArrayList<com.google.devtools.source.v1.ExtendedSourceContext>(
                 extSourceContexts_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000200;
       }
     }
 
@@ -2939,7 +2983,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
     public Builder clearExtSourceContexts() {
       if (extSourceContextsBuilder_ == null) {
         extSourceContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
       } else {
         extSourceContextsBuilder_.clear();
@@ -3095,7 +3139,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
                 com.google.devtools.source.v1.ExtendedSourceContext.Builder,
                 com.google.devtools.source.v1.ExtendedSourceContextOrBuilder>(
                 extSourceContexts_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000200) != 0),
                 getParentForChildren(),
                 isClean());
         extSourceContexts_ = null;
@@ -3114,14 +3158,14 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000400;
+      onChanged();
       return labels_;
     }
 
@@ -3176,8 +3220,10 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 11;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -3207,6 +3253,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000400);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -3230,6 +3277,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000400;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -3249,8 +3297,8 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000400;
       return this;
     }
     /**
@@ -3265,6 +3313,7 @@ public final class Debuggee extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000400;
       return this;
     }
 

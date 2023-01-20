@@ -330,7 +330,6 @@ public interface OperationMetadataOrBuilder
    * map&lt;string, .google.cloud.gaming.v1beta.OperationStatus&gt; operation_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
-
   /* nullable */
   com.google.cloud.gaming.v1beta.OperationStatus getOperationStatusOrDefault(
       java.lang.String key,

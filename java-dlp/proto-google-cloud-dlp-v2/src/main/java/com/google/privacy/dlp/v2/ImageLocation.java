@@ -68,6 +68,8 @@ public final class ImageLocation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BOUNDING_BOXES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.BoundingBox> boundingBoxes_;
   /**
    *
@@ -334,6 +336,7 @@ public final class ImageLocation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (boundingBoxesBuilder_ == null) {
         boundingBoxes_ = java.util.Collections.emptyList();
       } else {
@@ -368,7 +371,15 @@ public final class ImageLocation extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.ImageLocation buildPartial() {
       com.google.privacy.dlp.v2.ImageLocation result =
           new com.google.privacy.dlp.v2.ImageLocation(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.privacy.dlp.v2.ImageLocation result) {
       if (boundingBoxesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           boundingBoxes_ = java.util.Collections.unmodifiableList(boundingBoxes_);
@@ -378,8 +389,10 @@ public final class ImageLocation extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.boundingBoxes_ = boundingBoxesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.ImageLocation result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

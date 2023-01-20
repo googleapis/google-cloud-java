@@ -223,7 +223,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimeOffsetOrBuilder() {
-    return getTimeOffset();
+    return timeOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeOffset_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -469,16 +469,16 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (boundingPolyBuilder_ != null) {
         boundingPolyBuilder_.clear();
       }
       if (normalizedBoundingPolyBuilder_ != null) {
         normalizedBoundingPolyBuilder_.clear();
       }
-      if (timeOffsetBuilder_ == null) {
-        timeOffset_ = null;
-      } else {
-        timeOffset_ = null;
+      timeOffset_ = null;
+      if (timeOffsetBuilder_ != null) {
+        timeOffsetBuilder_.dispose();
         timeOffsetBuilder_ = null;
       }
       boundedAreaCase_ = 0;
@@ -510,28 +510,31 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
     public com.google.cloud.datalabeling.v1beta1.ObjectTrackingFrame buildPartial() {
       com.google.cloud.datalabeling.v1beta1.ObjectTrackingFrame result =
           new com.google.cloud.datalabeling.v1beta1.ObjectTrackingFrame(this);
-      if (boundedAreaCase_ == 1) {
-        if (boundingPolyBuilder_ == null) {
-          result.boundedArea_ = boundedArea_;
-        } else {
-          result.boundedArea_ = boundingPolyBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (boundedAreaCase_ == 2) {
-        if (normalizedBoundingPolyBuilder_ == null) {
-          result.boundedArea_ = boundedArea_;
-        } else {
-          result.boundedArea_ = normalizedBoundingPolyBuilder_.build();
-        }
-      }
-      if (timeOffsetBuilder_ == null) {
-        result.timeOffset_ = timeOffset_;
-      } else {
-        result.timeOffset_ = timeOffsetBuilder_.build();
-      }
-      result.boundedAreaCase_ = boundedAreaCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datalabeling.v1beta1.ObjectTrackingFrame result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.timeOffset_ = timeOffsetBuilder_ == null ? timeOffset_ : timeOffsetBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.datalabeling.v1beta1.ObjectTrackingFrame result) {
+      result.boundedAreaCase_ = boundedAreaCase_;
+      result.boundedArea_ = this.boundedArea_;
+      if (boundedAreaCase_ == 1 && boundingPolyBuilder_ != null) {
+        result.boundedArea_ = boundingPolyBuilder_.build();
+      }
+      if (boundedAreaCase_ == 2 && normalizedBoundingPolyBuilder_ != null) {
+        result.boundedArea_ = normalizedBoundingPolyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -641,7 +644,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
             case 26:
               {
                 input.readMessage(getTimeOffsetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -674,6 +677,8 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.BoundingPoly,
@@ -814,7 +819,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       }
       boundedAreaCase_ = 1;
       onChanged();
-      ;
       return boundingPolyBuilder_;
     }
 
@@ -987,7 +991,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       }
       boundedAreaCase_ = 2;
       onChanged();
-      ;
       return normalizedBoundingPolyBuilder_;
     }
 
@@ -1009,7 +1012,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
      * @return Whether the timeOffset field is set.
      */
     public boolean hasTimeOffset() {
-      return timeOffsetBuilder_ != null || timeOffset_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1046,11 +1049,11 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         timeOffset_ = value;
-        onChanged();
       } else {
         timeOffsetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1065,11 +1068,11 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
     public Builder setTimeOffset(com.google.protobuf.Duration.Builder builderForValue) {
       if (timeOffsetBuilder_ == null) {
         timeOffset_ = builderForValue.build();
-        onChanged();
       } else {
         timeOffsetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1083,17 +1086,18 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeTimeOffset(com.google.protobuf.Duration value) {
       if (timeOffsetBuilder_ == null) {
-        if (timeOffset_ != null) {
-          timeOffset_ =
-              com.google.protobuf.Duration.newBuilder(timeOffset_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && timeOffset_ != null
+            && timeOffset_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTimeOffsetBuilder().mergeFrom(value);
         } else {
           timeOffset_ = value;
         }
-        onChanged();
       } else {
         timeOffsetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1106,14 +1110,13 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Duration time_offset = 3;</code>
      */
     public Builder clearTimeOffset() {
-      if (timeOffsetBuilder_ == null) {
-        timeOffset_ = null;
-        onChanged();
-      } else {
-        timeOffset_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      timeOffset_ = null;
+      if (timeOffsetBuilder_ != null) {
+        timeOffsetBuilder_.dispose();
         timeOffsetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1126,7 +1129,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Duration time_offset = 3;</code>
      */
     public com.google.protobuf.Duration.Builder getTimeOffsetBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getTimeOffsetFieldBuilder().getBuilder();
     }

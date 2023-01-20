@@ -71,7 +71,9 @@ public final class PreviewCreateGameServerClusterResponse
   }
 
   public static final int ETAG_FIELD_NUMBER = 2;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -164,7 +166,9 @@ public final class PreviewCreateGameServerClusterResponse
    */
   @java.lang.Override
   public com.google.cloud.gaming.v1.TargetStateOrBuilder getTargetStateOrBuilder() {
-    return getTargetState();
+    return targetState_ == null
+        ? com.google.cloud.gaming.v1.TargetState.getDefaultInstance()
+        : targetState_;
   }
 
   public static final int CLUSTER_STATE_FIELD_NUMBER = 4;
@@ -221,7 +225,9 @@ public final class PreviewCreateGameServerClusterResponse
    */
   @java.lang.Override
   public com.google.cloud.gaming.v1.KubernetesClusterStateOrBuilder getClusterStateOrBuilder() {
-    return getClusterState();
+    return clusterState_ == null
+        ? com.google.cloud.gaming.v1.KubernetesClusterState.getDefaultInstance()
+        : clusterState_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -453,18 +459,16 @@ public final class PreviewCreateGameServerClusterResponse
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       etag_ = "";
-
-      if (targetStateBuilder_ == null) {
-        targetState_ = null;
-      } else {
-        targetState_ = null;
+      targetState_ = null;
+      if (targetStateBuilder_ != null) {
+        targetStateBuilder_.dispose();
         targetStateBuilder_ = null;
       }
-      if (clusterStateBuilder_ == null) {
-        clusterState_ = null;
-      } else {
-        clusterState_ = null;
+      clusterState_ = null;
+      if (clusterStateBuilder_ != null) {
+        clusterStateBuilder_.dispose();
         clusterStateBuilder_ = null;
       }
       return this;
@@ -495,19 +499,27 @@ public final class PreviewCreateGameServerClusterResponse
     public com.google.cloud.gaming.v1.PreviewCreateGameServerClusterResponse buildPartial() {
       com.google.cloud.gaming.v1.PreviewCreateGameServerClusterResponse result =
           new com.google.cloud.gaming.v1.PreviewCreateGameServerClusterResponse(this);
-      result.etag_ = etag_;
-      if (targetStateBuilder_ == null) {
-        result.targetState_ = targetState_;
-      } else {
-        result.targetState_ = targetStateBuilder_.build();
-      }
-      if (clusterStateBuilder_ == null) {
-        result.clusterState_ = clusterState_;
-      } else {
-        result.clusterState_ = clusterStateBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gaming.v1.PreviewCreateGameServerClusterResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.targetState_ =
+            targetStateBuilder_ == null ? targetState_ : targetStateBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.clusterState_ =
+            clusterStateBuilder_ == null ? clusterState_ : clusterStateBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -560,6 +572,7 @@ public final class PreviewCreateGameServerClusterResponse
         return this;
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasTargetState()) {
@@ -597,19 +610,19 @@ public final class PreviewCreateGameServerClusterResponse
             case 18:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getTargetStateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getClusterStateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             default:
@@ -628,6 +641,8 @@ public final class PreviewCreateGameServerClusterResponse
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object etag_ = "";
     /**
@@ -690,8 +705,8 @@ public final class PreviewCreateGameServerClusterResponse
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -707,8 +722,8 @@ public final class PreviewCreateGameServerClusterResponse
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -729,8 +744,8 @@ public final class PreviewCreateGameServerClusterResponse
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -753,7 +768,7 @@ public final class PreviewCreateGameServerClusterResponse
      * @return Whether the targetState field is set.
      */
     public boolean hasTargetState() {
-      return targetStateBuilder_ != null || targetState_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -790,11 +805,11 @@ public final class PreviewCreateGameServerClusterResponse
           throw new NullPointerException();
         }
         targetState_ = value;
-        onChanged();
       } else {
         targetStateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -809,11 +824,11 @@ public final class PreviewCreateGameServerClusterResponse
     public Builder setTargetState(com.google.cloud.gaming.v1.TargetState.Builder builderForValue) {
       if (targetStateBuilder_ == null) {
         targetState_ = builderForValue.build();
-        onChanged();
       } else {
         targetStateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -827,19 +842,18 @@ public final class PreviewCreateGameServerClusterResponse
      */
     public Builder mergeTargetState(com.google.cloud.gaming.v1.TargetState value) {
       if (targetStateBuilder_ == null) {
-        if (targetState_ != null) {
-          targetState_ =
-              com.google.cloud.gaming.v1.TargetState.newBuilder(targetState_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && targetState_ != null
+            && targetState_ != com.google.cloud.gaming.v1.TargetState.getDefaultInstance()) {
+          getTargetStateBuilder().mergeFrom(value);
         } else {
           targetState_ = value;
         }
-        onChanged();
       } else {
         targetStateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -852,14 +866,13 @@ public final class PreviewCreateGameServerClusterResponse
      * <code>.google.cloud.gaming.v1.TargetState target_state = 3;</code>
      */
     public Builder clearTargetState() {
-      if (targetStateBuilder_ == null) {
-        targetState_ = null;
-        onChanged();
-      } else {
-        targetState_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      targetState_ = null;
+      if (targetStateBuilder_ != null) {
+        targetStateBuilder_.dispose();
         targetStateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -872,7 +885,7 @@ public final class PreviewCreateGameServerClusterResponse
      * <code>.google.cloud.gaming.v1.TargetState target_state = 3;</code>
      */
     public com.google.cloud.gaming.v1.TargetState.Builder getTargetStateBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTargetStateFieldBuilder().getBuilder();
     }
@@ -941,7 +954,7 @@ public final class PreviewCreateGameServerClusterResponse
      * @return Whether the clusterState field is set.
      */
     public boolean hasClusterState() {
-      return clusterStateBuilder_ != null || clusterState_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -984,11 +997,11 @@ public final class PreviewCreateGameServerClusterResponse
           throw new NullPointerException();
         }
         clusterState_ = value;
-        onChanged();
       } else {
         clusterStateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1007,11 +1020,11 @@ public final class PreviewCreateGameServerClusterResponse
         com.google.cloud.gaming.v1.KubernetesClusterState.Builder builderForValue) {
       if (clusterStateBuilder_ == null) {
         clusterState_ = builderForValue.build();
-        onChanged();
       } else {
         clusterStateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1028,19 +1041,19 @@ public final class PreviewCreateGameServerClusterResponse
      */
     public Builder mergeClusterState(com.google.cloud.gaming.v1.KubernetesClusterState value) {
       if (clusterStateBuilder_ == null) {
-        if (clusterState_ != null) {
-          clusterState_ =
-              com.google.cloud.gaming.v1.KubernetesClusterState.newBuilder(clusterState_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && clusterState_ != null
+            && clusterState_
+                != com.google.cloud.gaming.v1.KubernetesClusterState.getDefaultInstance()) {
+          getClusterStateBuilder().mergeFrom(value);
         } else {
           clusterState_ = value;
         }
-        onChanged();
       } else {
         clusterStateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1056,14 +1069,13 @@ public final class PreviewCreateGameServerClusterResponse
      * </code>
      */
     public Builder clearClusterState() {
-      if (clusterStateBuilder_ == null) {
-        clusterState_ = null;
-        onChanged();
-      } else {
-        clusterState_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      clusterState_ = null;
+      if (clusterStateBuilder_ != null) {
+        clusterStateBuilder_.dispose();
         clusterStateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1079,7 +1091,7 @@ public final class PreviewCreateGameServerClusterResponse
      * </code>
      */
     public com.google.cloud.gaming.v1.KubernetesClusterState.Builder getClusterStateBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getClusterStateFieldBuilder().getBuilder();
     }

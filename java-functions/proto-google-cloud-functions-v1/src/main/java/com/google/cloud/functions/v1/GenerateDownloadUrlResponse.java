@@ -68,7 +68,9 @@ public final class GenerateDownloadUrlResponse extends com.google.protobuf.Gener
   }
 
   public static final int DOWNLOAD_URL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object downloadUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object downloadUrl_ = "";
   /**
    *
    *
@@ -316,8 +318,8 @@ public final class GenerateDownloadUrlResponse extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       downloadUrl_ = "";
-
       return this;
     }
 
@@ -345,9 +347,18 @@ public final class GenerateDownloadUrlResponse extends com.google.protobuf.Gener
     public com.google.cloud.functions.v1.GenerateDownloadUrlResponse buildPartial() {
       com.google.cloud.functions.v1.GenerateDownloadUrlResponse result =
           new com.google.cloud.functions.v1.GenerateDownloadUrlResponse(this);
-      result.downloadUrl_ = downloadUrl_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.functions.v1.GenerateDownloadUrlResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.downloadUrl_ = downloadUrl_;
+      }
     }
 
     @java.lang.Override
@@ -398,6 +409,7 @@ public final class GenerateDownloadUrlResponse extends com.google.protobuf.Gener
         return this;
       if (!other.getDownloadUrl().isEmpty()) {
         downloadUrl_ = other.downloadUrl_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -429,7 +441,7 @@ public final class GenerateDownloadUrlResponse extends com.google.protobuf.Gener
             case 10:
               {
                 downloadUrl_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -448,6 +460,8 @@ public final class GenerateDownloadUrlResponse extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object downloadUrl_ = "";
     /**
@@ -513,8 +527,8 @@ public final class GenerateDownloadUrlResponse extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       downloadUrl_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -531,8 +545,8 @@ public final class GenerateDownloadUrlResponse extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearDownloadUrl() {
-
       downloadUrl_ = getDefaultInstance().getDownloadUrl();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -554,8 +568,8 @@ public final class GenerateDownloadUrlResponse extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       downloadUrl_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

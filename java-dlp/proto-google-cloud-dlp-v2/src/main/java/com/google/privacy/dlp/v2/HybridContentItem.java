@@ -109,7 +109,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.ContentItemOrBuilder getItemOrBuilder() {
-    return getItem();
+    return item_ == null ? com.google.privacy.dlp.v2.ContentItem.getDefaultInstance() : item_;
   }
 
   public static final int FINDING_DETAILS_FIELD_NUMBER = 2;
@@ -157,7 +157,9 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.HybridFindingDetailsOrBuilder getFindingDetailsOrBuilder() {
-    return getFindingDetails();
+    return findingDetails_ == null
+        ? com.google.privacy.dlp.v2.HybridFindingDetails.getDefaultInstance()
+        : findingDetails_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -377,16 +379,15 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (itemBuilder_ == null) {
-        item_ = null;
-      } else {
-        item_ = null;
+      bitField0_ = 0;
+      item_ = null;
+      if (itemBuilder_ != null) {
+        itemBuilder_.dispose();
         itemBuilder_ = null;
       }
-      if (findingDetailsBuilder_ == null) {
-        findingDetails_ = null;
-      } else {
-        findingDetails_ = null;
+      findingDetails_ = null;
+      if (findingDetailsBuilder_ != null) {
+        findingDetailsBuilder_.dispose();
         findingDetailsBuilder_ = null;
       }
       return this;
@@ -416,18 +417,22 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
     public com.google.privacy.dlp.v2.HybridContentItem buildPartial() {
       com.google.privacy.dlp.v2.HybridContentItem result =
           new com.google.privacy.dlp.v2.HybridContentItem(this);
-      if (itemBuilder_ == null) {
-        result.item_ = item_;
-      } else {
-        result.item_ = itemBuilder_.build();
-      }
-      if (findingDetailsBuilder_ == null) {
-        result.findingDetails_ = findingDetails_;
-      } else {
-        result.findingDetails_ = findingDetailsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.HybridContentItem result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.item_ = itemBuilder_ == null ? item_ : itemBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.findingDetails_ =
+            findingDetailsBuilder_ == null ? findingDetails_ : findingDetailsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -510,13 +515,13 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 input.readMessage(getItemFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getFindingDetailsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -536,6 +541,8 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.privacy.dlp.v2.ContentItem item_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.ContentItem,
@@ -554,7 +561,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
      * @return Whether the item field is set.
      */
     public boolean hasItem() {
-      return itemBuilder_ != null || item_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -589,11 +596,11 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         item_ = value;
-        onChanged();
       } else {
         itemBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -608,11 +615,11 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
     public Builder setItem(com.google.privacy.dlp.v2.ContentItem.Builder builderForValue) {
       if (itemBuilder_ == null) {
         item_ = builderForValue.build();
-        onChanged();
       } else {
         itemBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -626,19 +633,18 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeItem(com.google.privacy.dlp.v2.ContentItem value) {
       if (itemBuilder_ == null) {
-        if (item_ != null) {
-          item_ =
-              com.google.privacy.dlp.v2.ContentItem.newBuilder(item_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && item_ != null
+            && item_ != com.google.privacy.dlp.v2.ContentItem.getDefaultInstance()) {
+          getItemBuilder().mergeFrom(value);
         } else {
           item_ = value;
         }
-        onChanged();
       } else {
         itemBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -651,14 +657,13 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
      * <code>.google.privacy.dlp.v2.ContentItem item = 1;</code>
      */
     public Builder clearItem() {
-      if (itemBuilder_ == null) {
-        item_ = null;
-        onChanged();
-      } else {
-        item_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      item_ = null;
+      if (itemBuilder_ != null) {
+        itemBuilder_.dispose();
         itemBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -671,7 +676,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
      * <code>.google.privacy.dlp.v2.ContentItem item = 1;</code>
      */
     public com.google.privacy.dlp.v2.ContentItem.Builder getItemBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getItemFieldBuilder().getBuilder();
     }
@@ -735,7 +740,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
      * @return Whether the findingDetails field is set.
      */
     public boolean hasFindingDetails() {
-      return findingDetailsBuilder_ != null || findingDetails_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -772,11 +777,11 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         findingDetails_ = value;
-        onChanged();
       } else {
         findingDetailsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -792,11 +797,11 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
         com.google.privacy.dlp.v2.HybridFindingDetails.Builder builderForValue) {
       if (findingDetailsBuilder_ == null) {
         findingDetails_ = builderForValue.build();
-        onChanged();
       } else {
         findingDetailsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -810,19 +815,19 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeFindingDetails(com.google.privacy.dlp.v2.HybridFindingDetails value) {
       if (findingDetailsBuilder_ == null) {
-        if (findingDetails_ != null) {
-          findingDetails_ =
-              com.google.privacy.dlp.v2.HybridFindingDetails.newBuilder(findingDetails_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && findingDetails_ != null
+            && findingDetails_
+                != com.google.privacy.dlp.v2.HybridFindingDetails.getDefaultInstance()) {
+          getFindingDetailsBuilder().mergeFrom(value);
         } else {
           findingDetails_ = value;
         }
-        onChanged();
       } else {
         findingDetailsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -835,14 +840,13 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
      * <code>.google.privacy.dlp.v2.HybridFindingDetails finding_details = 2;</code>
      */
     public Builder clearFindingDetails() {
-      if (findingDetailsBuilder_ == null) {
-        findingDetails_ = null;
-        onChanged();
-      } else {
-        findingDetails_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      findingDetails_ = null;
+      if (findingDetailsBuilder_ != null) {
+        findingDetailsBuilder_.dispose();
         findingDetailsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -855,7 +859,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
      * <code>.google.privacy.dlp.v2.HybridFindingDetails finding_details = 2;</code>
      */
     public com.google.privacy.dlp.v2.HybridFindingDetails.Builder getFindingDetailsBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getFindingDetailsFieldBuilder().getBuilder();
     }

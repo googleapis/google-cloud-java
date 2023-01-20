@@ -71,7 +71,9 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MIME_TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object mimeType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mimeType_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VIDEO_URI_FIELD_NUMBER = 2;
-  private volatile java.lang.Object videoUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object videoUri_ = "";
   /**
    *
    *
@@ -169,6 +173,8 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VIDEO_THUMBNAILS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datalabeling.v1beta1.VideoThumbnail> videoThumbnails_;
   /**
    *
@@ -240,7 +246,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FRAME_RATE_FIELD_NUMBER = 4;
-  private float frameRate_;
+  private float frameRate_ = 0F;
   /**
    *
    *
@@ -258,7 +264,9 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SIGNED_URI_FIELD_NUMBER = 5;
-  private volatile java.lang.Object signedUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object signedUri_ = "";
   /**
    *
    *
@@ -542,21 +550,18 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       mimeType_ = "";
-
       videoUri_ = "";
-
       if (videoThumbnailsBuilder_ == null) {
         videoThumbnails_ = java.util.Collections.emptyList();
       } else {
         videoThumbnails_ = null;
         videoThumbnailsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       frameRate_ = 0F;
-
       signedUri_ = "";
-
       return this;
     }
 
@@ -584,22 +589,41 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datalabeling.v1beta1.VideoPayload buildPartial() {
       com.google.cloud.datalabeling.v1beta1.VideoPayload result =
           new com.google.cloud.datalabeling.v1beta1.VideoPayload(this);
-      int from_bitField0_ = bitField0_;
-      result.mimeType_ = mimeType_;
-      result.videoUri_ = videoUri_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.datalabeling.v1beta1.VideoPayload result) {
       if (videoThumbnailsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           videoThumbnails_ = java.util.Collections.unmodifiableList(videoThumbnails_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.videoThumbnails_ = videoThumbnails_;
       } else {
         result.videoThumbnails_ = videoThumbnailsBuilder_.build();
       }
-      result.frameRate_ = frameRate_;
-      result.signedUri_ = signedUri_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datalabeling.v1beta1.VideoPayload result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.mimeType_ = mimeType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.videoUri_ = videoUri_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.frameRate_ = frameRate_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.signedUri_ = signedUri_;
+      }
     }
 
     @java.lang.Override
@@ -650,17 +674,19 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getMimeType().isEmpty()) {
         mimeType_ = other.mimeType_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getVideoUri().isEmpty()) {
         videoUri_ = other.videoUri_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (videoThumbnailsBuilder_ == null) {
         if (!other.videoThumbnails_.isEmpty()) {
           if (videoThumbnails_.isEmpty()) {
             videoThumbnails_ = other.videoThumbnails_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureVideoThumbnailsIsMutable();
             videoThumbnails_.addAll(other.videoThumbnails_);
@@ -673,7 +699,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
             videoThumbnailsBuilder_.dispose();
             videoThumbnailsBuilder_ = null;
             videoThumbnails_ = other.videoThumbnails_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             videoThumbnailsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getVideoThumbnailsFieldBuilder()
@@ -688,6 +714,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getSignedUri().isEmpty()) {
         signedUri_ = other.signedUri_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -719,13 +746,13 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 mimeType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 videoUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -745,13 +772,13 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
             case 37:
               {
                 frameRate_ = input.readFloat();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 37
             case 42:
               {
                 signedUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -834,8 +861,8 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       mimeType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -851,8 +878,8 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMimeType() {
-
       mimeType_ = getDefaultInstance().getMimeType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -873,8 +900,8 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       mimeType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -940,8 +967,8 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       videoUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -957,8 +984,8 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVideoUri() {
-
       videoUri_ = getDefaultInstance().getVideoUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -979,8 +1006,8 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       videoUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -989,11 +1016,11 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureVideoThumbnailsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         videoThumbnails_ =
             new java.util.ArrayList<com.google.cloud.datalabeling.v1beta1.VideoThumbnail>(
                 videoThumbnails_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1212,7 +1239,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
     public Builder clearVideoThumbnails() {
       if (videoThumbnailsBuilder_ == null) {
         videoThumbnails_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         videoThumbnailsBuilder_.clear();
@@ -1340,7 +1367,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.datalabeling.v1beta1.VideoThumbnail.Builder,
                 com.google.cloud.datalabeling.v1beta1.VideoThumbnailOrBuilder>(
                 videoThumbnails_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         videoThumbnails_ = null;
@@ -1379,6 +1406,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
     public Builder setFrameRate(float value) {
 
       frameRate_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1394,7 +1422,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFrameRate() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       frameRate_ = 0F;
       onChanged();
       return this;
@@ -1461,8 +1489,8 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       signedUri_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1478,8 +1506,8 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSignedUri() {
-
       signedUri_ = getDefaultInstance().getSignedUri();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1500,8 +1528,8 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       signedUri_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

@@ -497,7 +497,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private int name_;
+  private int name_ = 0;
   /**
    *
    *
@@ -526,14 +526,15 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.functions.v2.Stage.Name getName() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.functions.v2.Stage.Name result =
-        com.google.cloud.functions.v2.Stage.Name.valueOf(name_);
+        com.google.cloud.functions.v2.Stage.Name.forNumber(name_);
     return result == null ? com.google.cloud.functions.v2.Stage.Name.UNRECOGNIZED : result;
   }
 
   public static final int MESSAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object message_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object message_ = "";
   /**
    *
    *
@@ -582,7 +583,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 3;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -611,14 +612,15 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.functions.v2.Stage.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.functions.v2.Stage.State result =
-        com.google.cloud.functions.v2.Stage.State.valueOf(state_);
+        com.google.cloud.functions.v2.Stage.State.forNumber(state_);
     return result == null ? com.google.cloud.functions.v2.Stage.State.UNRECOGNIZED : result;
   }
 
   public static final int RESOURCE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object resource_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resource_ = "";
   /**
    *
    *
@@ -667,7 +669,9 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESOURCE_URI_FIELD_NUMBER = 5;
-  private volatile java.lang.Object resourceUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceUri_ = "";
   /**
    *
    *
@@ -716,6 +720,8 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_MESSAGES_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.functions.v2.StateMessage> stateMessages_;
   /**
    *
@@ -1026,23 +1032,19 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = 0;
-
       message_ = "";
-
       state_ = 0;
-
       resource_ = "";
-
       resourceUri_ = "";
-
       if (stateMessagesBuilder_ == null) {
         stateMessages_ = java.util.Collections.emptyList();
       } else {
         stateMessages_ = null;
         stateMessagesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -1069,23 +1071,43 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.functions.v2.Stage buildPartial() {
       com.google.cloud.functions.v2.Stage result = new com.google.cloud.functions.v2.Stage(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.message_ = message_;
-      result.state_ = state_;
-      result.resource_ = resource_;
-      result.resourceUri_ = resourceUri_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.functions.v2.Stage result) {
       if (stateMessagesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           stateMessages_ = java.util.Collections.unmodifiableList(stateMessages_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.stateMessages_ = stateMessages_;
       } else {
         result.stateMessages_ = stateMessagesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.functions.v2.Stage result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.message_ = message_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.resource_ = resource_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.resourceUri_ = resourceUri_;
+      }
     }
 
     @java.lang.Override
@@ -1138,6 +1160,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -1145,17 +1168,19 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getResource().isEmpty()) {
         resource_ = other.resource_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getResourceUri().isEmpty()) {
         resourceUri_ = other.resourceUri_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (stateMessagesBuilder_ == null) {
         if (!other.stateMessages_.isEmpty()) {
           if (stateMessages_.isEmpty()) {
             stateMessages_ = other.stateMessages_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureStateMessagesIsMutable();
             stateMessages_.addAll(other.stateMessages_);
@@ -1168,7 +1193,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
             stateMessagesBuilder_.dispose();
             stateMessagesBuilder_ = null;
             stateMessages_ = other.stateMessages_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000020);
             stateMessagesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getStateMessagesFieldBuilder()
@@ -1207,31 +1232,31 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 name_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 message_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 resource_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 resourceUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
@@ -1295,8 +1320,8 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setNameValue(int value) {
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1313,9 +1338,8 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.functions.v2.Stage.Name getName() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.functions.v2.Stage.Name result =
-          com.google.cloud.functions.v2.Stage.Name.valueOf(name_);
+          com.google.cloud.functions.v2.Stage.Name.forNumber(name_);
       return result == null ? com.google.cloud.functions.v2.Stage.Name.UNRECOGNIZED : result;
     }
     /**
@@ -1334,7 +1358,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       name_ = value.getNumber();
       onChanged();
       return this;
@@ -1351,7 +1375,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       name_ = 0;
       onChanged();
       return this;
@@ -1418,8 +1442,8 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       message_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1435,8 +1459,8 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
-
       message_ = getDefaultInstance().getMessage();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1457,8 +1481,8 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       message_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1492,8 +1516,8 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1510,9 +1534,8 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.functions.v2.Stage.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.functions.v2.Stage.State result =
-          com.google.cloud.functions.v2.Stage.State.valueOf(state_);
+          com.google.cloud.functions.v2.Stage.State.forNumber(state_);
       return result == null ? com.google.cloud.functions.v2.Stage.State.UNRECOGNIZED : result;
     }
     /**
@@ -1531,7 +1554,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1548,7 +1571,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       state_ = 0;
       onChanged();
       return this;
@@ -1615,8 +1638,8 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       resource_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1632,8 +1655,8 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResource() {
-
       resource_ = getDefaultInstance().getResource();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1654,8 +1677,8 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resource_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1721,8 +1744,8 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       resourceUri_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1738,8 +1761,8 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResourceUri() {
-
       resourceUri_ = getDefaultInstance().getResourceUri();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1760,8 +1783,8 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resourceUri_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1770,10 +1793,10 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureStateMessagesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         stateMessages_ =
             new java.util.ArrayList<com.google.cloud.functions.v2.StateMessage>(stateMessages_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -1989,7 +2012,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     public Builder clearStateMessages() {
       if (stateMessagesBuilder_ == null) {
         stateMessages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         stateMessagesBuilder_.clear();
@@ -2113,7 +2136,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.functions.v2.StateMessage.Builder,
                 com.google.cloud.functions.v2.StateMessageOrBuilder>(
                 stateMessages_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         stateMessages_ = null;

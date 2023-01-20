@@ -122,7 +122,9 @@ public final class Authorization extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.edgecontainer.v1.ClusterUserOrBuilder getAdminUsersOrBuilder() {
-    return getAdminUsers();
+    return adminUsers_ == null
+        ? com.google.cloud.edgecontainer.v1.ClusterUser.getDefaultInstance()
+        : adminUsers_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -327,10 +329,10 @@ public final class Authorization extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (adminUsersBuilder_ == null) {
-        adminUsers_ = null;
-      } else {
-        adminUsers_ = null;
+      bitField0_ = 0;
+      adminUsers_ = null;
+      if (adminUsersBuilder_ != null) {
+        adminUsersBuilder_.dispose();
         adminUsersBuilder_ = null;
       }
       return this;
@@ -360,13 +362,18 @@ public final class Authorization extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.edgecontainer.v1.Authorization buildPartial() {
       com.google.cloud.edgecontainer.v1.Authorization result =
           new com.google.cloud.edgecontainer.v1.Authorization(this);
-      if (adminUsersBuilder_ == null) {
-        result.adminUsers_ = adminUsers_;
-      } else {
-        result.adminUsers_ = adminUsersBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.edgecontainer.v1.Authorization result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.adminUsers_ = adminUsersBuilder_ == null ? adminUsers_ : adminUsersBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -447,7 +454,7 @@ public final class Authorization extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getAdminUsersFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -466,6 +473,8 @@ public final class Authorization extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.edgecontainer.v1.ClusterUser adminUsers_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -489,7 +498,7 @@ public final class Authorization extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the adminUsers field is set.
      */
     public boolean hasAdminUsers() {
-      return adminUsersBuilder_ != null || adminUsers_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -534,11 +543,11 @@ public final class Authorization extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         adminUsers_ = value;
-        onChanged();
       } else {
         adminUsersBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -558,11 +567,11 @@ public final class Authorization extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.edgecontainer.v1.ClusterUser.Builder builderForValue) {
       if (adminUsersBuilder_ == null) {
         adminUsers_ = builderForValue.build();
-        onChanged();
       } else {
         adminUsersBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -580,19 +589,18 @@ public final class Authorization extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeAdminUsers(com.google.cloud.edgecontainer.v1.ClusterUser value) {
       if (adminUsersBuilder_ == null) {
-        if (adminUsers_ != null) {
-          adminUsers_ =
-              com.google.cloud.edgecontainer.v1.ClusterUser.newBuilder(adminUsers_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && adminUsers_ != null
+            && adminUsers_ != com.google.cloud.edgecontainer.v1.ClusterUser.getDefaultInstance()) {
+          getAdminUsersBuilder().mergeFrom(value);
         } else {
           adminUsers_ = value;
         }
-        onChanged();
       } else {
         adminUsersBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -609,14 +617,13 @@ public final class Authorization extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearAdminUsers() {
-      if (adminUsersBuilder_ == null) {
-        adminUsers_ = null;
-        onChanged();
-      } else {
-        adminUsers_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      adminUsers_ = null;
+      if (adminUsersBuilder_ != null) {
+        adminUsersBuilder_.dispose();
         adminUsersBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -633,7 +640,7 @@ public final class Authorization extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.edgecontainer.v1.ClusterUser.Builder getAdminUsersBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getAdminUsersFieldBuilder().getBuilder();
     }

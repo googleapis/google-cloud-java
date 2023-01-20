@@ -346,7 +346,9 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
     }
 
     public static final int URL_FIELD_NUMBER = 1;
-    private volatile java.lang.Object url_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object url_ = "";
     /**
      *
      *
@@ -456,7 +458,9 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.CloudStorageRegexFileSetOrBuilder getRegexFileSetOrBuilder() {
-      return getRegexFileSet();
+      return regexFileSet_ == null
+          ? com.google.privacy.dlp.v2.CloudStorageRegexFileSet.getDefaultInstance()
+          : regexFileSet_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -673,12 +677,11 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         url_ = "";
-
-        if (regexFileSetBuilder_ == null) {
-          regexFileSet_ = null;
-        } else {
-          regexFileSet_ = null;
+        regexFileSet_ = null;
+        if (regexFileSetBuilder_ != null) {
+          regexFileSetBuilder_.dispose();
           regexFileSetBuilder_ = null;
         }
         return this;
@@ -708,14 +711,22 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
       public com.google.privacy.dlp.v2.CloudStorageOptions.FileSet buildPartial() {
         com.google.privacy.dlp.v2.CloudStorageOptions.FileSet result =
             new com.google.privacy.dlp.v2.CloudStorageOptions.FileSet(this);
-        result.url_ = url_;
-        if (regexFileSetBuilder_ == null) {
-          result.regexFileSet_ = regexFileSet_;
-        } else {
-          result.regexFileSet_ = regexFileSetBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.privacy.dlp.v2.CloudStorageOptions.FileSet result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.url_ = url_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.regexFileSet_ =
+              regexFileSetBuilder_ == null ? regexFileSet_ : regexFileSetBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -768,6 +779,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
           return this;
         if (!other.getUrl().isEmpty()) {
           url_ = other.url_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasRegexFileSet()) {
@@ -802,13 +814,13 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
               case 10:
                 {
                   url_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getRegexFileSetFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -827,6 +839,8 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object url_ = "";
       /**
@@ -910,8 +924,8 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
         if (value == null) {
           throw new NullPointerException();
         }
-
         url_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -934,8 +948,8 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearUrl() {
-
         url_ = getDefaultInstance().getUrl();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -963,8 +977,8 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         url_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -988,7 +1002,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
        * @return Whether the regexFileSet field is set.
        */
       public boolean hasRegexFileSet() {
-        return regexFileSetBuilder_ != null || regexFileSet_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -1027,11 +1041,11 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
             throw new NullPointerException();
           }
           regexFileSet_ = value;
-          onChanged();
         } else {
           regexFileSetBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1048,11 +1062,11 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
           com.google.privacy.dlp.v2.CloudStorageRegexFileSet.Builder builderForValue) {
         if (regexFileSetBuilder_ == null) {
           regexFileSet_ = builderForValue.build();
-          onChanged();
         } else {
           regexFileSetBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1067,19 +1081,19 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
        */
       public Builder mergeRegexFileSet(com.google.privacy.dlp.v2.CloudStorageRegexFileSet value) {
         if (regexFileSetBuilder_ == null) {
-          if (regexFileSet_ != null) {
-            regexFileSet_ =
-                com.google.privacy.dlp.v2.CloudStorageRegexFileSet.newBuilder(regexFileSet_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && regexFileSet_ != null
+              && regexFileSet_
+                  != com.google.privacy.dlp.v2.CloudStorageRegexFileSet.getDefaultInstance()) {
+            getRegexFileSetBuilder().mergeFrom(value);
           } else {
             regexFileSet_ = value;
           }
-          onChanged();
         } else {
           regexFileSetBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1093,14 +1107,13 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
        * <code>.google.privacy.dlp.v2.CloudStorageRegexFileSet regex_file_set = 2;</code>
        */
       public Builder clearRegexFileSet() {
-        if (regexFileSetBuilder_ == null) {
-          regexFileSet_ = null;
-          onChanged();
-        } else {
-          regexFileSet_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        regexFileSet_ = null;
+        if (regexFileSetBuilder_ != null) {
+          regexFileSetBuilder_.dispose();
           regexFileSetBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1114,7 +1127,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
        * <code>.google.privacy.dlp.v2.CloudStorageRegexFileSet regex_file_set = 2;</code>
        */
       public com.google.privacy.dlp.v2.CloudStorageRegexFileSet.Builder getRegexFileSetBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getRegexFileSetFieldBuilder().getBuilder();
       }
@@ -1274,11 +1287,13 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.CloudStorageOptions.FileSetOrBuilder getFileSetOrBuilder() {
-    return getFileSet();
+    return fileSet_ == null
+        ? com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.getDefaultInstance()
+        : fileSet_;
   }
 
   public static final int BYTES_LIMIT_PER_FILE_FIELD_NUMBER = 4;
-  private long bytesLimitPerFile_;
+  private long bytesLimitPerFile_ = 0L;
   /**
    *
    *
@@ -1299,7 +1314,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
   }
 
   public static final int BYTES_LIMIT_PER_FILE_PERCENT_FIELD_NUMBER = 8;
-  private int bytesLimitPerFilePercent_;
+  private int bytesLimitPerFilePercent_ = 0;
   /**
    *
    *
@@ -1321,16 +1336,18 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
   }
 
   public static final int FILE_TYPES_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> fileTypes_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.privacy.dlp.v2.FileType>
       fileTypes_converter_ =
           new com.google.protobuf.Internal.ListAdapter.Converter<
               java.lang.Integer, com.google.privacy.dlp.v2.FileType>() {
             public com.google.privacy.dlp.v2.FileType convert(java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.privacy.dlp.v2.FileType result =
-                  com.google.privacy.dlp.v2.FileType.valueOf(from);
+                  com.google.privacy.dlp.v2.FileType.forNumber(from);
               return result == null ? com.google.privacy.dlp.v2.FileType.UNRECOGNIZED : result;
             }
           };
@@ -1446,7 +1463,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
   private int fileTypesMemoizedSerializedSize;
 
   public static final int SAMPLE_METHOD_FIELD_NUMBER = 6;
-  private int sampleMethod_;
+  private int sampleMethod_ = 0;
   /**
    * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
    *
@@ -1463,16 +1480,15 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod getSampleMethod() {
-    @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod result =
-        com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod.valueOf(sampleMethod_);
+        com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod.forNumber(sampleMethod_);
     return result == null
         ? com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod.UNRECOGNIZED
         : result;
   }
 
   public static final int FILES_LIMIT_PERCENT_FIELD_NUMBER = 7;
-  private int filesLimitPercent_;
+  private int filesLimitPercent_ = 0;
   /**
    *
    *
@@ -1759,22 +1775,18 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (fileSetBuilder_ == null) {
-        fileSet_ = null;
-      } else {
-        fileSet_ = null;
+      bitField0_ = 0;
+      fileSet_ = null;
+      if (fileSetBuilder_ != null) {
+        fileSetBuilder_.dispose();
         fileSetBuilder_ = null;
       }
       bytesLimitPerFile_ = 0L;
-
       bytesLimitPerFilePercent_ = 0;
-
       fileTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       sampleMethod_ = 0;
-
       filesLimitPercent_ = 0;
-
       return this;
     }
 
@@ -1802,23 +1814,39 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
     public com.google.privacy.dlp.v2.CloudStorageOptions buildPartial() {
       com.google.privacy.dlp.v2.CloudStorageOptions result =
           new com.google.privacy.dlp.v2.CloudStorageOptions(this);
-      int from_bitField0_ = bitField0_;
-      if (fileSetBuilder_ == null) {
-        result.fileSet_ = fileSet_;
-      } else {
-        result.fileSet_ = fileSetBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.bytesLimitPerFile_ = bytesLimitPerFile_;
-      result.bytesLimitPerFilePercent_ = bytesLimitPerFilePercent_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        fileTypes_ = java.util.Collections.unmodifiableList(fileTypes_);
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.fileTypes_ = fileTypes_;
-      result.sampleMethod_ = sampleMethod_;
-      result.filesLimitPercent_ = filesLimitPercent_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.privacy.dlp.v2.CloudStorageOptions result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        fileTypes_ = java.util.Collections.unmodifiableList(fileTypes_);
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.fileTypes_ = fileTypes_;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.CloudStorageOptions result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.fileSet_ = fileSetBuilder_ == null ? fileSet_ : fileSetBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.bytesLimitPerFile_ = bytesLimitPerFile_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.bytesLimitPerFilePercent_ = bytesLimitPerFilePercent_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.sampleMethod_ = sampleMethod_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.filesLimitPercent_ = filesLimitPercent_;
+      }
     }
 
     @java.lang.Override
@@ -1878,7 +1906,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
       if (!other.fileTypes_.isEmpty()) {
         if (fileTypes_.isEmpty()) {
           fileTypes_ = other.fileTypes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureFileTypesIsMutable();
           fileTypes_.addAll(other.fileTypes_);
@@ -1920,13 +1948,13 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 input.readMessage(getFileSetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 32:
               {
                 bytesLimitPerFile_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 32
             case 40:
@@ -1951,19 +1979,19 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
             case 48:
               {
                 sampleMethod_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 48
             case 56:
               {
                 filesLimitPercent_ = input.readInt32();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 56
             case 64:
               {
                 bytesLimitPerFilePercent_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 64
             default:
@@ -2003,7 +2031,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * @return Whether the fileSet field is set.
      */
     public boolean hasFileSet() {
-      return fileSetBuilder_ != null || fileSet_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -2040,11 +2068,11 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         fileSet_ = value;
-        onChanged();
       } else {
         fileSetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2060,11 +2088,11 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
         com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.Builder builderForValue) {
       if (fileSetBuilder_ == null) {
         fileSet_ = builderForValue.build();
-        onChanged();
       } else {
         fileSetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2078,19 +2106,19 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeFileSet(com.google.privacy.dlp.v2.CloudStorageOptions.FileSet value) {
       if (fileSetBuilder_ == null) {
-        if (fileSet_ != null) {
-          fileSet_ =
-              com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.newBuilder(fileSet_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && fileSet_ != null
+            && fileSet_
+                != com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.getDefaultInstance()) {
+          getFileSetBuilder().mergeFrom(value);
         } else {
           fileSet_ = value;
         }
-        onChanged();
       } else {
         fileSetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2103,14 +2131,13 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
      */
     public Builder clearFileSet() {
-      if (fileSetBuilder_ == null) {
-        fileSet_ = null;
-        onChanged();
-      } else {
-        fileSet_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      fileSet_ = null;
+      if (fileSetBuilder_ != null) {
+        fileSetBuilder_.dispose();
         fileSetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2123,7 +2150,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
      */
     public com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.Builder getFileSetBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getFileSetFieldBuilder().getBuilder();
     }
@@ -2208,6 +2235,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
     public Builder setBytesLimitPerFile(long value) {
 
       bytesLimitPerFile_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2226,7 +2254,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearBytesLimitPerFile() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       bytesLimitPerFile_ = 0L;
       onChanged();
       return this;
@@ -2271,6 +2299,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
     public Builder setBytesLimitPerFilePercent(int value) {
 
       bytesLimitPerFilePercent_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2290,7 +2319,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearBytesLimitPerFilePercent() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       bytesLimitPerFilePercent_ = 0;
       onChanged();
       return this;
@@ -2299,9 +2328,9 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
     private java.util.List<java.lang.Integer> fileTypes_ = java.util.Collections.emptyList();
 
     private void ensureFileTypesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         fileTypes_ = new java.util.ArrayList<java.lang.Integer>(fileTypes_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -2467,7 +2496,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      */
     public Builder clearFileTypes() {
       fileTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2605,8 +2634,8 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setSampleMethodValue(int value) {
-
       sampleMethod_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2617,9 +2646,8 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod getSampleMethod() {
-      @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod result =
-          com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod.valueOf(sampleMethod_);
+          com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod.forNumber(sampleMethod_);
       return result == null
           ? com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod.UNRECOGNIZED
           : result;
@@ -2635,7 +2663,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       sampleMethod_ = value.getNumber();
       onChanged();
       return this;
@@ -2646,7 +2674,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearSampleMethod() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       sampleMethod_ = 0;
       onChanged();
       return this;
@@ -2687,6 +2715,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
     public Builder setFilesLimitPercent(int value) {
 
       filesLimitPercent_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2704,7 +2733,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearFilesLimitPercent() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       filesLimitPercent_ = 0;
       onChanged();
       return this;

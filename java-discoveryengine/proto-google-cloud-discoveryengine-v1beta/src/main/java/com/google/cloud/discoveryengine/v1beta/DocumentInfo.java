@@ -265,7 +265,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int QUANTITY_FIELD_NUMBER = 3;
-  private int quantity_;
+  private int quantity_ = 0;
   /**
    *
    *
@@ -308,6 +308,8 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROMOTION_IDS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList promotionIds_;
   /**
    *
@@ -625,10 +627,10 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       quantity_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       promotionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       documentDescriptorCase_ = 0;
       documentDescriptor_ = null;
       return this;
@@ -658,27 +660,37 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.discoveryengine.v1beta.DocumentInfo buildPartial() {
       com.google.cloud.discoveryengine.v1beta.DocumentInfo result =
           new com.google.cloud.discoveryengine.v1beta.DocumentInfo(this);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.discoveryengine.v1beta.DocumentInfo result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        promotionIds_ = promotionIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.promotionIds_ = promotionIds_;
+    }
+
+    private void buildPartial0(com.google.cloud.discoveryengine.v1beta.DocumentInfo result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (documentDescriptorCase_ == 1) {
-        result.documentDescriptor_ = documentDescriptor_;
-      }
-      if (documentDescriptorCase_ == 2) {
-        result.documentDescriptor_ = documentDescriptor_;
-      }
-      if (((from_bitField0_ & 0x00000001) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.quantity_ = quantity_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        promotionIds_ = promotionIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.promotionIds_ = promotionIds_;
-      result.bitField0_ = to_bitField0_;
+      result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.discoveryengine.v1beta.DocumentInfo result) {
       result.documentDescriptorCase_ = documentDescriptorCase_;
-      onBuilt();
-      return result;
+      result.documentDescriptor_ = this.documentDescriptor_;
     }
 
     @java.lang.Override
@@ -733,7 +745,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       if (!other.promotionIds_.isEmpty()) {
         if (promotionIds_.isEmpty()) {
           promotionIds_ = other.promotionIds_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensurePromotionIdsIsMutable();
           promotionIds_.addAll(other.promotionIds_);
@@ -803,7 +815,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
             case 24:
               {
                 quantity_ = input.readInt32();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
@@ -1151,7 +1163,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasQuantity() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1191,8 +1203,9 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setQuantity(int value) {
-      bitField0_ |= 0x00000001;
+
       quantity_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1213,7 +1226,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearQuantity() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       quantity_ = 0;
       onChanged();
       return this;
@@ -1223,9 +1236,9 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePromotionIdsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         promotionIds_ = new com.google.protobuf.LazyStringArrayList(promotionIds_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1368,7 +1381,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPromotionIds() {
       promotionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }

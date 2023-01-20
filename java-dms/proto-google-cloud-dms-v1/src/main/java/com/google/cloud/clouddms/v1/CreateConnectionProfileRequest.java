@@ -71,7 +71,9 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
   }
 
   public static final int CONNECTION_PROFILE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object connectionProfileId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object connectionProfileId_ = "";
   /**
    *
    *
@@ -223,11 +227,15 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
    */
   @java.lang.Override
   public com.google.cloud.clouddms.v1.ConnectionProfileOrBuilder getConnectionProfileOrBuilder() {
-    return getConnectionProfile();
+    return connectionProfile_ == null
+        ? com.google.cloud.clouddms.v1.ConnectionProfile.getDefaultInstance()
+        : connectionProfile_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -513,18 +521,15 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       connectionProfileId_ = "";
-
-      if (connectionProfileBuilder_ == null) {
-        connectionProfile_ = null;
-      } else {
-        connectionProfile_ = null;
+      connectionProfile_ = null;
+      if (connectionProfileBuilder_ != null) {
+        connectionProfileBuilder_.dispose();
         connectionProfileBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -552,16 +557,30 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
     public com.google.cloud.clouddms.v1.CreateConnectionProfileRequest buildPartial() {
       com.google.cloud.clouddms.v1.CreateConnectionProfileRequest result =
           new com.google.cloud.clouddms.v1.CreateConnectionProfileRequest(this);
-      result.parent_ = parent_;
-      result.connectionProfileId_ = connectionProfileId_;
-      if (connectionProfileBuilder_ == null) {
-        result.connectionProfile_ = connectionProfile_;
-      } else {
-        result.connectionProfile_ = connectionProfileBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.clouddms.v1.CreateConnectionProfileRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.connectionProfileId_ = connectionProfileId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.connectionProfile_ =
+            connectionProfileBuilder_ == null
+                ? connectionProfile_
+                : connectionProfileBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -612,10 +631,12 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getConnectionProfileId().isEmpty()) {
         connectionProfileId_ = other.connectionProfileId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasConnectionProfile()) {
@@ -623,6 +644,7 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -654,26 +676,26 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 connectionProfileId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getConnectionProfileFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -692,6 +714,8 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -760,8 +784,8 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -779,8 +803,8 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -803,8 +827,8 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -870,8 +894,8 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       connectionProfileId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -887,8 +911,8 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearConnectionProfileId() {
-
       connectionProfileId_ = getDefaultInstance().getConnectionProfileId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -909,8 +933,8 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       connectionProfileId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -935,7 +959,7 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
      * @return Whether the connectionProfile field is set.
      */
     public boolean hasConnectionProfile() {
-      return connectionProfileBuilder_ != null || connectionProfile_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -976,11 +1000,11 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         connectionProfile_ = value;
-        onChanged();
       } else {
         connectionProfileBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -998,11 +1022,11 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
         com.google.cloud.clouddms.v1.ConnectionProfile.Builder builderForValue) {
       if (connectionProfileBuilder_ == null) {
         connectionProfile_ = builderForValue.build();
-        onChanged();
       } else {
         connectionProfileBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1018,19 +1042,19 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
      */
     public Builder mergeConnectionProfile(com.google.cloud.clouddms.v1.ConnectionProfile value) {
       if (connectionProfileBuilder_ == null) {
-        if (connectionProfile_ != null) {
-          connectionProfile_ =
-              com.google.cloud.clouddms.v1.ConnectionProfile.newBuilder(connectionProfile_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && connectionProfile_ != null
+            && connectionProfile_
+                != com.google.cloud.clouddms.v1.ConnectionProfile.getDefaultInstance()) {
+          getConnectionProfileBuilder().mergeFrom(value);
         } else {
           connectionProfile_ = value;
         }
-        onChanged();
       } else {
         connectionProfileBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1045,14 +1069,13 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
      * </code>
      */
     public Builder clearConnectionProfile() {
-      if (connectionProfileBuilder_ == null) {
-        connectionProfile_ = null;
-        onChanged();
-      } else {
-        connectionProfile_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      connectionProfile_ = null;
+      if (connectionProfileBuilder_ != null) {
+        connectionProfileBuilder_.dispose();
         connectionProfileBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1067,7 +1090,7 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
      * </code>
      */
     public com.google.cloud.clouddms.v1.ConnectionProfile.Builder getConnectionProfileBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getConnectionProfileFieldBuilder().getBuilder();
     }
@@ -1192,8 +1215,8 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1213,8 +1236,8 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1239,8 +1262,8 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

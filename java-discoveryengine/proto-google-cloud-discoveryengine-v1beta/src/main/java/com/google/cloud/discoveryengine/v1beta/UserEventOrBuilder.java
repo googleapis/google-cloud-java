@@ -907,7 +907,6 @@ public interface UserEventOrBuilder
    * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.CustomAttribute&gt; attributes = 17;
    * </code>
    */
-
   /* nullable */
   com.google.cloud.discoveryengine.v1beta.CustomAttribute getAttributesOrDefault(
       java.lang.String key,

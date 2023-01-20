@@ -66,7 +66,7 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
   }
 
   public static final int PROCESSED_COUNT_FIELD_NUMBER = 1;
-  private long processedCount_;
+  private long processedCount_ = 0L;
   /**
    *
    *
@@ -84,7 +84,7 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
   }
 
   public static final int ABORTED_COUNT_FIELD_NUMBER = 2;
-  private long abortedCount_;
+  private long abortedCount_ = 0L;
   /**
    *
    *
@@ -103,7 +103,7 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
   }
 
   public static final int PENDING_COUNT_FIELD_NUMBER = 3;
-  private long pendingCount_;
+  private long pendingCount_ = 0L;
   /**
    *
    *
@@ -339,12 +339,10 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       processedCount_ = 0L;
-
       abortedCount_ = 0L;
-
       pendingCount_ = 0L;
-
       return this;
     }
 
@@ -372,11 +370,24 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
     public com.google.privacy.dlp.v2.HybridInspectStatistics buildPartial() {
       com.google.privacy.dlp.v2.HybridInspectStatistics result =
           new com.google.privacy.dlp.v2.HybridInspectStatistics(this);
-      result.processedCount_ = processedCount_;
-      result.abortedCount_ = abortedCount_;
-      result.pendingCount_ = pendingCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.HybridInspectStatistics result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.processedCount_ = processedCount_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.abortedCount_ = abortedCount_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pendingCount_ = pendingCount_;
+      }
     }
 
     @java.lang.Override
@@ -463,19 +474,19 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
             case 8:
               {
                 processedCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 abortedCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 pendingCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -494,6 +505,8 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private long processedCount_;
     /**
@@ -526,6 +539,7 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
     public Builder setProcessedCount(long value) {
 
       processedCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -541,7 +555,7 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearProcessedCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       processedCount_ = 0L;
       onChanged();
       return this;
@@ -580,6 +594,7 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
     public Builder setAbortedCount(long value) {
 
       abortedCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -596,7 +611,7 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearAbortedCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       abortedCount_ = 0L;
       onChanged();
       return this;
@@ -641,6 +656,7 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
     public Builder setPendingCount(long value) {
 
       pendingCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -660,7 +676,7 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearPendingCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       pendingCount_ = 0L;
       onChanged();
       return this;

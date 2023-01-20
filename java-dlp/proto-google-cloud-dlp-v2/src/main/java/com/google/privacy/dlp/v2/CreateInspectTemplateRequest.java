@@ -70,7 +70,9 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -203,11 +205,15 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.InspectTemplateOrBuilder getInspectTemplateOrBuilder() {
-    return getInspectTemplate();
+    return inspectTemplate_ == null
+        ? com.google.privacy.dlp.v2.InspectTemplate.getDefaultInstance()
+        : inspectTemplate_;
   }
 
   public static final int TEMPLATE_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object templateId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object templateId_ = "";
   /**
    *
    *
@@ -262,7 +268,9 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
   }
 
   public static final int LOCATION_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object locationId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object locationId_ = "";
   /**
    *
    *
@@ -540,18 +548,15 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (inspectTemplateBuilder_ == null) {
-        inspectTemplate_ = null;
-      } else {
-        inspectTemplate_ = null;
+      inspectTemplate_ = null;
+      if (inspectTemplateBuilder_ != null) {
+        inspectTemplateBuilder_.dispose();
         inspectTemplateBuilder_ = null;
       }
       templateId_ = "";
-
       locationId_ = "";
-
       return this;
     }
 
@@ -579,16 +584,28 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
     public com.google.privacy.dlp.v2.CreateInspectTemplateRequest buildPartial() {
       com.google.privacy.dlp.v2.CreateInspectTemplateRequest result =
           new com.google.privacy.dlp.v2.CreateInspectTemplateRequest(this);
-      result.parent_ = parent_;
-      if (inspectTemplateBuilder_ == null) {
-        result.inspectTemplate_ = inspectTemplate_;
-      } else {
-        result.inspectTemplate_ = inspectTemplateBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.templateId_ = templateId_;
-      result.locationId_ = locationId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.CreateInspectTemplateRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.inspectTemplate_ =
+            inspectTemplateBuilder_ == null ? inspectTemplate_ : inspectTemplateBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.templateId_ = templateId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.locationId_ = locationId_;
+      }
     }
 
     @java.lang.Override
@@ -639,6 +656,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasInspectTemplate()) {
@@ -646,10 +664,12 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
       }
       if (!other.getTemplateId().isEmpty()) {
         templateId_ = other.templateId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getLocationId().isEmpty()) {
         locationId_ = other.locationId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -681,25 +701,25 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getInspectTemplateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 templateId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 locationId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -718,6 +738,8 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -831,8 +853,8 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -865,8 +887,8 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -904,8 +926,8 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -930,7 +952,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
      * @return Whether the inspectTemplate field is set.
      */
     public boolean hasInspectTemplate() {
-      return inspectTemplateBuilder_ != null || inspectTemplate_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -971,11 +993,11 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         inspectTemplate_ = value;
-        onChanged();
       } else {
         inspectTemplateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -993,11 +1015,11 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
         com.google.privacy.dlp.v2.InspectTemplate.Builder builderForValue) {
       if (inspectTemplateBuilder_ == null) {
         inspectTemplate_ = builderForValue.build();
-        onChanged();
       } else {
         inspectTemplateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1013,19 +1035,18 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
      */
     public Builder mergeInspectTemplate(com.google.privacy.dlp.v2.InspectTemplate value) {
       if (inspectTemplateBuilder_ == null) {
-        if (inspectTemplate_ != null) {
-          inspectTemplate_ =
-              com.google.privacy.dlp.v2.InspectTemplate.newBuilder(inspectTemplate_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && inspectTemplate_ != null
+            && inspectTemplate_ != com.google.privacy.dlp.v2.InspectTemplate.getDefaultInstance()) {
+          getInspectTemplateBuilder().mergeFrom(value);
         } else {
           inspectTemplate_ = value;
         }
-        onChanged();
       } else {
         inspectTemplateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1040,14 +1061,13 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearInspectTemplate() {
-      if (inspectTemplateBuilder_ == null) {
-        inspectTemplate_ = null;
-        onChanged();
-      } else {
-        inspectTemplate_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      inspectTemplate_ = null;
+      if (inspectTemplateBuilder_ != null) {
+        inspectTemplateBuilder_.dispose();
         inspectTemplateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1062,7 +1082,7 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
      * </code>
      */
     public com.google.privacy.dlp.v2.InspectTemplate.Builder getInspectTemplateBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getInspectTemplateFieldBuilder().getBuilder();
     }
@@ -1184,8 +1204,8 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       templateId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1204,8 +1224,8 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearTemplateId() {
-
       templateId_ = getDefaultInstance().getTemplateId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1229,8 +1249,8 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       templateId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1296,8 +1316,8 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       locationId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1313,8 +1333,8 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearLocationId() {
-
       locationId_ = getDefaultInstance().getLocationId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1335,8 +1355,8 @@ public final class CreateInspectTemplateRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       locationId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

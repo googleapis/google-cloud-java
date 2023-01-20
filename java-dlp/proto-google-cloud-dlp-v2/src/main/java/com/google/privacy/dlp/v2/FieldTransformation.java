@@ -115,6 +115,8 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
   }
 
   public static final int FIELDS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.FieldId> fields_;
   /**
    *
@@ -271,7 +273,9 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.RecordConditionOrBuilder getConditionOrBuilder() {
-    return getCondition();
+    return condition_ == null
+        ? com.google.privacy.dlp.v2.RecordCondition.getDefaultInstance()
+        : condition_;
   }
 
   public static final int PRIMITIVE_TRANSFORMATION_FIELD_NUMBER = 4;
@@ -633,6 +637,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (fieldsBuilder_ == null) {
         fields_ = java.util.Collections.emptyList();
       } else {
@@ -640,10 +645,9 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
         fieldsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (conditionBuilder_ == null) {
-        condition_ = null;
-      } else {
-        condition_ = null;
+      condition_ = null;
+      if (conditionBuilder_ != null) {
+        conditionBuilder_.dispose();
         conditionBuilder_ = null;
       }
       if (primitiveTransformationBuilder_ != null) {
@@ -681,7 +685,16 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
     public com.google.privacy.dlp.v2.FieldTransformation buildPartial() {
       com.google.privacy.dlp.v2.FieldTransformation result =
           new com.google.privacy.dlp.v2.FieldTransformation(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.privacy.dlp.v2.FieldTransformation result) {
       if (fieldsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           fields_ = java.util.Collections.unmodifiableList(fields_);
@@ -691,28 +704,24 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       } else {
         result.fields_ = fieldsBuilder_.build();
       }
-      if (conditionBuilder_ == null) {
-        result.condition_ = condition_;
-      } else {
-        result.condition_ = conditionBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.FieldTransformation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.condition_ = conditionBuilder_ == null ? condition_ : conditionBuilder_.build();
       }
-      if (transformationCase_ == 4) {
-        if (primitiveTransformationBuilder_ == null) {
-          result.transformation_ = transformation_;
-        } else {
-          result.transformation_ = primitiveTransformationBuilder_.build();
-        }
-      }
-      if (transformationCase_ == 5) {
-        if (infoTypeTransformationsBuilder_ == null) {
-          result.transformation_ = transformation_;
-        } else {
-          result.transformation_ = infoTypeTransformationsBuilder_.build();
-        }
-      }
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.FieldTransformation result) {
       result.transformationCase_ = transformationCase_;
-      onBuilt();
-      return result;
+      result.transformation_ = this.transformation_;
+      if (transformationCase_ == 4 && primitiveTransformationBuilder_ != null) {
+        result.transformation_ = primitiveTransformationBuilder_.build();
+      }
+      if (transformationCase_ == 5 && infoTypeTransformationsBuilder_ != null) {
+        result.transformation_ = infoTypeTransformationsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -848,7 +857,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
             case 26:
               {
                 input.readMessage(getConditionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 34:
@@ -1358,7 +1367,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      * @return Whether the condition field is set.
      */
     public boolean hasCondition() {
-      return conditionBuilder_ != null || condition_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1407,11 +1416,11 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         condition_ = value;
-        onChanged();
       } else {
         conditionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1432,11 +1441,11 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
     public Builder setCondition(com.google.privacy.dlp.v2.RecordCondition.Builder builderForValue) {
       if (conditionBuilder_ == null) {
         condition_ = builderForValue.build();
-        onChanged();
       } else {
         conditionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1456,19 +1465,18 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeCondition(com.google.privacy.dlp.v2.RecordCondition value) {
       if (conditionBuilder_ == null) {
-        if (condition_ != null) {
-          condition_ =
-              com.google.privacy.dlp.v2.RecordCondition.newBuilder(condition_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && condition_ != null
+            && condition_ != com.google.privacy.dlp.v2.RecordCondition.getDefaultInstance()) {
+          getConditionBuilder().mergeFrom(value);
         } else {
           condition_ = value;
         }
-        onChanged();
       } else {
         conditionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1487,14 +1495,13 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      * <code>.google.privacy.dlp.v2.RecordCondition condition = 3;</code>
      */
     public Builder clearCondition() {
-      if (conditionBuilder_ == null) {
-        condition_ = null;
-        onChanged();
-      } else {
-        condition_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      condition_ = null;
+      if (conditionBuilder_ != null) {
+        conditionBuilder_.dispose();
         conditionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1513,7 +1520,7 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      * <code>.google.privacy.dlp.v2.RecordCondition condition = 3;</code>
      */
     public com.google.privacy.dlp.v2.RecordCondition.Builder getConditionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getConditionFieldBuilder().getBuilder();
     }
@@ -1784,7 +1791,6 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       }
       transformationCase_ = 4;
       onChanged();
-      ;
       return primitiveTransformationBuilder_;
     }
 
@@ -2008,7 +2014,6 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       }
       transformationCase_ = 5;
       onChanged();
-      ;
       return infoTypeTransformationsBuilder_;
     }
 

@@ -726,7 +726,6 @@ public interface TableDataProfileOrBuilder
    *
    * <code>map&lt;string, string&gt; resource_labels = 17;</code>
    */
-
   /* nullable */
   java.lang.String getResourceLabelsOrDefault(
       java.lang.String key,

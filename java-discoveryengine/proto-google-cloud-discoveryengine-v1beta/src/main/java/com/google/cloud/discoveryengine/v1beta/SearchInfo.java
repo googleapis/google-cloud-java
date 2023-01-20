@@ -70,7 +70,9 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int SEARCH_QUERY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object searchQuery_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object searchQuery_ = "";
   /**
    *
    *
@@ -139,7 +141,9 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ORDER_BY_FIELD_NUMBER = 2;
-  private volatile java.lang.Object orderBy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object orderBy_ = "";
   /**
    *
    *
@@ -202,7 +206,7 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OFFSET_FIELD_NUMBER = 3;
-  private int offset_;
+  private int offset_ = 0;
   /**
    *
    *
@@ -468,12 +472,10 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       searchQuery_ = "";
-
       orderBy_ = "";
-
       offset_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -501,17 +503,27 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.discoveryengine.v1beta.SearchInfo buildPartial() {
       com.google.cloud.discoveryengine.v1beta.SearchInfo result =
           new com.google.cloud.discoveryengine.v1beta.SearchInfo(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.discoveryengine.v1beta.SearchInfo result) {
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.searchQuery_ = searchQuery_;
-      result.orderBy_ = orderBy_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.searchQuery_ = searchQuery_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.orderBy_ = orderBy_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.offset_ = offset_;
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -562,10 +574,12 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getSearchQuery().isEmpty()) {
         searchQuery_ = other.searchQuery_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getOrderBy().isEmpty()) {
         orderBy_ = other.orderBy_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasOffset()) {
@@ -600,19 +614,19 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 searchQuery_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 orderBy_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 offset_ = input.readInt32();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -725,8 +739,8 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       searchQuery_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -752,8 +766,8 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSearchQuery() {
-
       searchQuery_ = getDefaultInstance().getSearchQuery();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -784,8 +798,8 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       searchQuery_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -872,8 +886,8 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       orderBy_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -896,8 +910,8 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOrderBy() {
-
       orderBy_ = getDefaultInstance().getOrderBy();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -925,8 +939,8 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       orderBy_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -952,7 +966,7 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasOffset() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -996,8 +1010,9 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setOffset(int value) {
-      bitField0_ |= 0x00000001;
+
       offset_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1020,7 +1035,7 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOffset() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       offset_ = 0;
       onChanged();
       return this;

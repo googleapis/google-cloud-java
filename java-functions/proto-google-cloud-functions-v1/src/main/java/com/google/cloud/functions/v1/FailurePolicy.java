@@ -809,6 +809,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (retryBuilder_ != null) {
         retryBuilder_.clear();
       }
@@ -841,16 +842,24 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.functions.v1.FailurePolicy buildPartial() {
       com.google.cloud.functions.v1.FailurePolicy result =
           new com.google.cloud.functions.v1.FailurePolicy(this);
-      if (actionCase_ == 1) {
-        if (retryBuilder_ == null) {
-          result.action_ = action_;
-        } else {
-          result.action_ = retryBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.actionCase_ = actionCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.functions.v1.FailurePolicy result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.functions.v1.FailurePolicy result) {
+      result.actionCase_ = actionCase_;
+      result.action_ = this.action_;
+      if (actionCase_ == 1 && retryBuilder_ != null) {
+        result.action_ = retryBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -971,6 +980,8 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.functions.v1.FailurePolicy.Retry,
@@ -1178,7 +1189,6 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
       }
       actionCase_ = 1;
       onChanged();
-      ;
       return retryBuilder_;
     }
 

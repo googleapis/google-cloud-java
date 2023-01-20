@@ -336,7 +336,9 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -385,7 +387,7 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 3;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -418,9 +420,8 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.Phase.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.deploy.v1.Phase.State result =
-        com.google.cloud.deploy.v1.Phase.State.valueOf(state_);
+        com.google.cloud.deploy.v1.Phase.State.forNumber(state_);
     return result == null ? com.google.cloud.deploy.v1.Phase.State.UNRECOGNIZED : result;
   }
 
@@ -710,10 +711,9 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       id_ = "";
-
       state_ = 0;
-
       if (deploymentJobsBuilder_ != null) {
         deploymentJobsBuilder_.clear();
       }
@@ -745,18 +745,30 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.deploy.v1.Phase buildPartial() {
       com.google.cloud.deploy.v1.Phase result = new com.google.cloud.deploy.v1.Phase(this);
-      result.id_ = id_;
-      result.state_ = state_;
-      if (jobsCase_ == 4) {
-        if (deploymentJobsBuilder_ == null) {
-          result.jobs_ = jobs_;
-        } else {
-          result.jobs_ = deploymentJobsBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.jobsCase_ = jobsCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.Phase result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.state_ = state_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.deploy.v1.Phase result) {
+      result.jobsCase_ = jobsCase_;
+      result.jobs_ = this.jobs_;
+      if (jobsCase_ == 4 && deploymentJobsBuilder_ != null) {
+        result.jobs_ = deploymentJobsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -806,6 +818,7 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.deploy.v1.Phase.getDefaultInstance()) return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -851,13 +864,13 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 24:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 24
             case 34:
@@ -896,6 +909,8 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object id_ = "";
     /**
@@ -958,8 +973,8 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -975,8 +990,8 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -997,8 +1012,8 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1036,8 +1051,8 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1056,9 +1071,8 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.deploy.v1.Phase.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.deploy.v1.Phase.State result =
-          com.google.cloud.deploy.v1.Phase.State.valueOf(state_);
+          com.google.cloud.deploy.v1.Phase.State.forNumber(state_);
       return result == null ? com.google.cloud.deploy.v1.Phase.State.UNRECOGNIZED : result;
     }
     /**
@@ -1079,7 +1093,7 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1098,7 +1112,7 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       state_ = 0;
       onChanged();
       return this;
@@ -1328,7 +1342,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
       }
       jobsCase_ = 4;
       onChanged();
-      ;
       return deploymentJobsBuilder_;
     }
 

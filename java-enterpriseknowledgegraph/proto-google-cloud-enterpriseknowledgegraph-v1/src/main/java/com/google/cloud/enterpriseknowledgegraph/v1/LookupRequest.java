@@ -71,7 +71,9 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -128,6 +130,8 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IDS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList ids_;
   /**
    *
@@ -189,6 +193,8 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LANGUAGES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList languages_;
   /**
    *
@@ -484,12 +490,12 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      languages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
+      languages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -517,20 +523,33 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.enterpriseknowledgegraph.v1.LookupRequest buildPartial() {
       com.google.cloud.enterpriseknowledgegraph.v1.LookupRequest result =
           new com.google.cloud.enterpriseknowledgegraph.v1.LookupRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        ids_ = ids_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.ids_ = ids_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        languages_ = languages_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.languages_ = languages_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.enterpriseknowledgegraph.v1.LookupRequest result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        ids_ = ids_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.ids_ = ids_;
+      if (((bitField0_ & 0x00000004) != 0)) {
+        languages_ = languages_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.languages_ = languages_;
+    }
+
+    private void buildPartial0(com.google.cloud.enterpriseknowledgegraph.v1.LookupRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
     }
 
     @java.lang.Override
@@ -581,12 +600,13 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.ids_.isEmpty()) {
         if (ids_.isEmpty()) {
           ids_ = other.ids_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureIdsIsMutable();
           ids_.addAll(other.ids_);
@@ -596,7 +616,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       if (!other.languages_.isEmpty()) {
         if (languages_.isEmpty()) {
           languages_ = other.languages_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureLanguagesIsMutable();
           languages_.addAll(other.languages_);
@@ -632,7 +652,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -741,8 +761,8 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -762,8 +782,8 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -788,8 +808,8 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -797,9 +817,9 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.LazyStringList ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureIdsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         ids_ = new com.google.protobuf.LazyStringArrayList(ids_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -934,7 +954,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearIds() {
       ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -965,9 +985,9 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureLanguagesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         languages_ = new com.google.protobuf.LazyStringArrayList(languages_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1110,7 +1130,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLanguages() {
       languages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }

@@ -959,7 +959,9 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1061,7 +1063,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
@@ -1116,7 +1118,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 4;
@@ -1132,6 +1134,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -1198,7 +1201,10 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -1230,7 +1236,9 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 5;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -1279,7 +1287,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 6;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -1308,14 +1316,13 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.clouddms.v1.MigrationJob.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.clouddms.v1.MigrationJob.State result =
-        com.google.cloud.clouddms.v1.MigrationJob.State.valueOf(state_);
+        com.google.cloud.clouddms.v1.MigrationJob.State.forNumber(state_);
     return result == null ? com.google.cloud.clouddms.v1.MigrationJob.State.UNRECOGNIZED : result;
   }
 
   public static final int PHASE_FIELD_NUMBER = 7;
-  private int phase_;
+  private int phase_ = 0;
   /**
    *
    *
@@ -1348,14 +1355,13 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.clouddms.v1.MigrationJob.Phase getPhase() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.clouddms.v1.MigrationJob.Phase result =
-        com.google.cloud.clouddms.v1.MigrationJob.Phase.valueOf(phase_);
+        com.google.cloud.clouddms.v1.MigrationJob.Phase.forNumber(phase_);
     return result == null ? com.google.cloud.clouddms.v1.MigrationJob.Phase.UNRECOGNIZED : result;
   }
 
   public static final int TYPE_FIELD_NUMBER = 8;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -1388,14 +1394,15 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.clouddms.v1.MigrationJob.Type getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.clouddms.v1.MigrationJob.Type result =
-        com.google.cloud.clouddms.v1.MigrationJob.Type.valueOf(type_);
+        com.google.cloud.clouddms.v1.MigrationJob.Type.forNumber(type_);
     return result == null ? com.google.cloud.clouddms.v1.MigrationJob.Type.UNRECOGNIZED : result;
   }
 
   public static final int DUMP_PATH_FIELD_NUMBER = 9;
-  private volatile java.lang.Object dumpPath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dumpPath_ = "";
   /**
    *
    *
@@ -1446,7 +1453,9 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_FIELD_NUMBER = 10;
-  private volatile java.lang.Object source_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object source_ = "";
   /**
    *
    *
@@ -1495,7 +1504,9 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESTINATION_FIELD_NUMBER = 11;
-  private volatile java.lang.Object destination_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object destination_ = "";
   /**
    *
    *
@@ -1751,7 +1762,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
-    return getDuration();
+    return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
   }
 
   public static final int ERROR_FIELD_NUMBER = 13;
@@ -1797,7 +1808,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
-    return getError();
+    return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
 
   public static final int SOURCE_DATABASE_FIELD_NUMBER = 14;
@@ -1845,7 +1856,9 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.clouddms.v1.DatabaseTypeOrBuilder getSourceDatabaseOrBuilder() {
-    return getSourceDatabase();
+    return sourceDatabase_ == null
+        ? com.google.cloud.clouddms.v1.DatabaseType.getDefaultInstance()
+        : sourceDatabase_;
   }
 
   public static final int DESTINATION_DATABASE_FIELD_NUMBER = 15;
@@ -1893,7 +1906,9 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.clouddms.v1.DatabaseTypeOrBuilder getDestinationDatabaseOrBuilder() {
-    return getDestinationDatabase();
+    return destinationDatabase_ == null
+        ? com.google.cloud.clouddms.v1.DatabaseType.getDefaultInstance()
+        : destinationDatabase_;
   }
 
   public static final int END_TIME_FIELD_NUMBER = 16;
@@ -1942,7 +1957,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-    return getEndTime();
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2395,35 +2410,26 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
       displayName_ = "";
-
       state_ = 0;
-
       phase_ = 0;
-
       type_ = 0;
-
       dumpPath_ = "";
-
       source_ = "";
-
       destination_ = "";
-
       if (reverseSshConnectivityBuilder_ != null) {
         reverseSshConnectivityBuilder_.clear();
       }
@@ -2433,34 +2439,29 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       if (staticIpConnectivityBuilder_ != null) {
         staticIpConnectivityBuilder_.clear();
       }
-      if (durationBuilder_ == null) {
-        duration_ = null;
-      } else {
-        duration_ = null;
+      duration_ = null;
+      if (durationBuilder_ != null) {
+        durationBuilder_.dispose();
         durationBuilder_ = null;
       }
-      if (errorBuilder_ == null) {
-        error_ = null;
-      } else {
-        error_ = null;
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
-      if (sourceDatabaseBuilder_ == null) {
-        sourceDatabase_ = null;
-      } else {
-        sourceDatabase_ = null;
+      sourceDatabase_ = null;
+      if (sourceDatabaseBuilder_ != null) {
+        sourceDatabaseBuilder_.dispose();
         sourceDatabaseBuilder_ = null;
       }
-      if (destinationDatabaseBuilder_ == null) {
-        destinationDatabase_ = null;
-      } else {
-        destinationDatabase_ = null;
+      destinationDatabase_ = null;
+      if (destinationDatabaseBuilder_ != null) {
+        destinationDatabaseBuilder_.dispose();
         destinationDatabaseBuilder_ = null;
       }
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-      } else {
-        endTime_ = null;
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
       connectivityCase_ = 0;
@@ -2492,76 +2493,83 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.clouddms.v1.MigrationJob buildPartial() {
       com.google.cloud.clouddms.v1.MigrationJob result =
           new com.google.cloud.clouddms.v1.MigrationJob(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.displayName_ = displayName_;
-      result.state_ = state_;
-      result.phase_ = phase_;
-      result.type_ = type_;
-      result.dumpPath_ = dumpPath_;
-      result.source_ = source_;
-      result.destination_ = destination_;
-      if (connectivityCase_ == 101) {
-        if (reverseSshConnectivityBuilder_ == null) {
-          result.connectivity_ = connectivity_;
-        } else {
-          result.connectivity_ = reverseSshConnectivityBuilder_.build();
-        }
-      }
-      if (connectivityCase_ == 102) {
-        if (vpcPeeringConnectivityBuilder_ == null) {
-          result.connectivity_ = connectivity_;
-        } else {
-          result.connectivity_ = vpcPeeringConnectivityBuilder_.build();
-        }
-      }
-      if (connectivityCase_ == 103) {
-        if (staticIpConnectivityBuilder_ == null) {
-          result.connectivity_ = connectivity_;
-        } else {
-          result.connectivity_ = staticIpConnectivityBuilder_.build();
-        }
-      }
-      if (durationBuilder_ == null) {
-        result.duration_ = duration_;
-      } else {
-        result.duration_ = durationBuilder_.build();
-      }
-      if (errorBuilder_ == null) {
-        result.error_ = error_;
-      } else {
-        result.error_ = errorBuilder_.build();
-      }
-      if (sourceDatabaseBuilder_ == null) {
-        result.sourceDatabase_ = sourceDatabase_;
-      } else {
-        result.sourceDatabase_ = sourceDatabaseBuilder_.build();
-      }
-      if (destinationDatabaseBuilder_ == null) {
-        result.destinationDatabase_ = destinationDatabase_;
-      } else {
-        result.destinationDatabase_ = destinationDatabaseBuilder_.build();
-      }
-      if (endTimeBuilder_ == null) {
-        result.endTime_ = endTime_;
-      } else {
-        result.endTime_ = endTimeBuilder_.build();
-      }
-      result.connectivityCase_ = connectivityCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.clouddms.v1.MigrationJob result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.phase_ = phase_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.dumpPath_ = dumpPath_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.source_ = source_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.destination_ = destination_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.duration_ = durationBuilder_ == null ? duration_ : durationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.sourceDatabase_ =
+            sourceDatabaseBuilder_ == null ? sourceDatabase_ : sourceDatabaseBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.destinationDatabase_ =
+            destinationDatabaseBuilder_ == null
+                ? destinationDatabase_
+                : destinationDatabaseBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.clouddms.v1.MigrationJob result) {
+      result.connectivityCase_ = connectivityCase_;
+      result.connectivity_ = this.connectivity_;
+      if (connectivityCase_ == 101 && reverseSshConnectivityBuilder_ != null) {
+        result.connectivity_ = reverseSshConnectivityBuilder_.build();
+      }
+      if (connectivityCase_ == 102 && vpcPeeringConnectivityBuilder_ != null) {
+        result.connectivity_ = vpcPeeringConnectivityBuilder_.build();
+      }
+      if (connectivityCase_ == 103 && staticIpConnectivityBuilder_ != null) {
+        result.connectivity_ = staticIpConnectivityBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2611,6 +2619,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.clouddms.v1.MigrationJob.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -2620,8 +2629,10 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
         mergeUpdateTime(other.getUpdateTime());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000008;
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -2635,14 +2646,17 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDumpPath().isEmpty()) {
         dumpPath_ = other.dumpPath_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (!other.getSource().isEmpty()) {
         source_ = other.source_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (!other.getDestination().isEmpty()) {
         destination_ = other.destination_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasDuration()) {
@@ -2710,19 +2724,19 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -2734,79 +2748,80 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 48:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 56:
               {
                 phase_ = input.readEnum();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             case 64:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 64
             case 74:
               {
                 dumpPath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 82:
               {
                 source_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 90:
               {
                 destination_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(getDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00004000;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00008000;
                 break;
               } // case 106
             case 114:
               {
                 input.readMessage(getSourceDatabaseFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00010000;
                 break;
               } // case 114
             case 122:
               {
                 input.readMessage(
                     getDestinationDatabaseFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00020000;
                 break;
               } // case 122
             case 130:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00040000;
                 break;
               } // case 130
             case 810:
@@ -2927,8 +2942,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2945,8 +2960,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2968,8 +2983,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2996,7 +3011,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -3041,11 +3056,11 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -3064,11 +3079,11 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -3086,17 +3101,18 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -3113,14 +3129,13 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3137,7 +3152,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -3215,7 +3230,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -3260,11 +3275,11 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -3283,11 +3298,11 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -3305,17 +3320,18 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -3332,14 +3348,13 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3356,7 +3371,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -3423,14 +3438,14 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return labels_;
     }
 
@@ -3491,8 +3506,10 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -3524,6 +3541,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -3549,6 +3567,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -3570,8 +3589,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -3588,6 +3607,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -3652,8 +3672,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3669,8 +3689,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -3691,8 +3711,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3726,8 +3746,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3744,9 +3764,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.clouddms.v1.MigrationJob.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.clouddms.v1.MigrationJob.State result =
-          com.google.cloud.clouddms.v1.MigrationJob.State.valueOf(state_);
+          com.google.cloud.clouddms.v1.MigrationJob.State.forNumber(state_);
       return result == null ? com.google.cloud.clouddms.v1.MigrationJob.State.UNRECOGNIZED : result;
     }
     /**
@@ -3765,7 +3784,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -3782,7 +3801,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       state_ = 0;
       onChanged();
       return this;
@@ -3821,8 +3840,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPhaseValue(int value) {
-
       phase_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3841,9 +3860,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.clouddms.v1.MigrationJob.Phase getPhase() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.clouddms.v1.MigrationJob.Phase result =
-          com.google.cloud.clouddms.v1.MigrationJob.Phase.valueOf(phase_);
+          com.google.cloud.clouddms.v1.MigrationJob.Phase.forNumber(phase_);
       return result == null ? com.google.cloud.clouddms.v1.MigrationJob.Phase.UNRECOGNIZED : result;
     }
     /**
@@ -3864,7 +3882,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       phase_ = value.getNumber();
       onChanged();
       return this;
@@ -3883,7 +3901,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPhase() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       phase_ = 0;
       onChanged();
       return this;
@@ -3922,8 +3940,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3942,9 +3960,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.clouddms.v1.MigrationJob.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.clouddms.v1.MigrationJob.Type result =
-          com.google.cloud.clouddms.v1.MigrationJob.Type.valueOf(type_);
+          com.google.cloud.clouddms.v1.MigrationJob.Type.forNumber(type_);
       return result == null ? com.google.cloud.clouddms.v1.MigrationJob.Type.UNRECOGNIZED : result;
     }
     /**
@@ -3965,7 +3982,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -3984,7 +4001,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       type_ = 0;
       onChanged();
       return this;
@@ -4054,8 +4071,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       dumpPath_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4072,8 +4089,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDumpPath() {
-
       dumpPath_ = getDefaultInstance().getDumpPath();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -4095,8 +4112,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dumpPath_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4162,8 +4179,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       source_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4179,8 +4196,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSource() {
-
       source_ = getDefaultInstance().getSource();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -4201,8 +4218,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       source_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4268,8 +4285,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       destination_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4285,8 +4302,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDestination() {
-
       destination_ = getDefaultInstance().getDestination();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -4307,8 +4324,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       destination_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4533,7 +4550,6 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       }
       connectivityCase_ = 101;
       onChanged();
-      ;
       return reverseSshConnectivityBuilder_;
     }
 
@@ -4748,7 +4764,6 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       }
       connectivityCase_ = 102;
       onChanged();
-      ;
       return vpcPeeringConnectivityBuilder_;
     }
 
@@ -4963,7 +4978,6 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       }
       connectivityCase_ = 103;
       onChanged();
-      ;
       return staticIpConnectivityBuilder_;
     }
 
@@ -4987,7 +5001,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the duration field is set.
      */
     public boolean hasDuration() {
-      return durationBuilder_ != null || duration_ != null;
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -5026,11 +5040,11 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         duration_ = value;
-        onChanged();
       } else {
         durationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -5047,11 +5061,11 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
     public Builder setDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (durationBuilder_ == null) {
         duration_ = builderForValue.build();
-        onChanged();
       } else {
         durationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -5067,17 +5081,18 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDuration(com.google.protobuf.Duration value) {
       if (durationBuilder_ == null) {
-        if (duration_ != null) {
-          duration_ =
-              com.google.protobuf.Duration.newBuilder(duration_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00004000) != 0)
+            && duration_ != null
+            && duration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getDurationBuilder().mergeFrom(value);
         } else {
           duration_ = value;
         }
-        onChanged();
       } else {
         durationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -5092,14 +5107,13 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDuration() {
-      if (durationBuilder_ == null) {
-        duration_ = null;
-        onChanged();
-      } else {
-        duration_ = null;
+      bitField0_ = (bitField0_ & ~0x00004000);
+      duration_ = null;
+      if (durationBuilder_ != null) {
+        durationBuilder_.dispose();
         durationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5114,7 +5128,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Duration.Builder getDurationBuilder() {
-
+      bitField0_ |= 0x00004000;
       onChanged();
       return getDurationFieldBuilder().getBuilder();
     }
@@ -5180,7 +5194,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the error field is set.
      */
     public boolean hasError() {
-      return errorBuilder_ != null || error_ != null;
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -5215,11 +5229,11 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         error_ = value;
-        onChanged();
       } else {
         errorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -5234,11 +5248,11 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
     public Builder setError(com.google.rpc.Status.Builder builderForValue) {
       if (errorBuilder_ == null) {
         error_ = builderForValue.build();
-        onChanged();
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -5252,16 +5266,18 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
-        if (error_ != null) {
-          error_ = com.google.rpc.Status.newBuilder(error_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00008000) != 0)
+            && error_ != null
+            && error_ != com.google.rpc.Status.getDefaultInstance()) {
+          getErrorBuilder().mergeFrom(value);
         } else {
           error_ = value;
         }
-        onChanged();
       } else {
         errorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -5274,14 +5290,13 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status error = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearError() {
-      if (errorBuilder_ == null) {
-        error_ = null;
-        onChanged();
-      } else {
-        error_ = null;
+      bitField0_ = (bitField0_ & ~0x00008000);
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5294,7 +5309,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status error = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-
+      bitField0_ |= 0x00008000;
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
@@ -5355,7 +5370,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceDatabase field is set.
      */
     public boolean hasSourceDatabase() {
-      return sourceDatabaseBuilder_ != null || sourceDatabase_ != null;
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -5392,11 +5407,11 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         sourceDatabase_ = value;
-        onChanged();
       } else {
         sourceDatabaseBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00010000;
+      onChanged();
       return this;
     }
     /**
@@ -5412,11 +5427,11 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.clouddms.v1.DatabaseType.Builder builderForValue) {
       if (sourceDatabaseBuilder_ == null) {
         sourceDatabase_ = builderForValue.build();
-        onChanged();
       } else {
         sourceDatabaseBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00010000;
+      onChanged();
       return this;
     }
     /**
@@ -5430,19 +5445,18 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSourceDatabase(com.google.cloud.clouddms.v1.DatabaseType value) {
       if (sourceDatabaseBuilder_ == null) {
-        if (sourceDatabase_ != null) {
-          sourceDatabase_ =
-              com.google.cloud.clouddms.v1.DatabaseType.newBuilder(sourceDatabase_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00010000) != 0)
+            && sourceDatabase_ != null
+            && sourceDatabase_ != com.google.cloud.clouddms.v1.DatabaseType.getDefaultInstance()) {
+          getSourceDatabaseBuilder().mergeFrom(value);
         } else {
           sourceDatabase_ = value;
         }
-        onChanged();
       } else {
         sourceDatabaseBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00010000;
+      onChanged();
       return this;
     }
     /**
@@ -5455,14 +5469,13 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.clouddms.v1.DatabaseType source_database = 14;</code>
      */
     public Builder clearSourceDatabase() {
-      if (sourceDatabaseBuilder_ == null) {
-        sourceDatabase_ = null;
-        onChanged();
-      } else {
-        sourceDatabase_ = null;
+      bitField0_ = (bitField0_ & ~0x00010000);
+      sourceDatabase_ = null;
+      if (sourceDatabaseBuilder_ != null) {
+        sourceDatabaseBuilder_.dispose();
         sourceDatabaseBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5475,7 +5488,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.clouddms.v1.DatabaseType source_database = 14;</code>
      */
     public com.google.cloud.clouddms.v1.DatabaseType.Builder getSourceDatabaseBuilder() {
-
+      bitField0_ |= 0x00010000;
       onChanged();
       return getSourceDatabaseFieldBuilder().getBuilder();
     }
@@ -5541,7 +5554,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the destinationDatabase field is set.
      */
     public boolean hasDestinationDatabase() {
-      return destinationDatabaseBuilder_ != null || destinationDatabase_ != null;
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -5578,11 +5591,11 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         destinationDatabase_ = value;
-        onChanged();
       } else {
         destinationDatabaseBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00020000;
+      onChanged();
       return this;
     }
     /**
@@ -5598,11 +5611,11 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.clouddms.v1.DatabaseType.Builder builderForValue) {
       if (destinationDatabaseBuilder_ == null) {
         destinationDatabase_ = builderForValue.build();
-        onChanged();
       } else {
         destinationDatabaseBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00020000;
+      onChanged();
       return this;
     }
     /**
@@ -5616,19 +5629,19 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDestinationDatabase(com.google.cloud.clouddms.v1.DatabaseType value) {
       if (destinationDatabaseBuilder_ == null) {
-        if (destinationDatabase_ != null) {
-          destinationDatabase_ =
-              com.google.cloud.clouddms.v1.DatabaseType.newBuilder(destinationDatabase_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00020000) != 0)
+            && destinationDatabase_ != null
+            && destinationDatabase_
+                != com.google.cloud.clouddms.v1.DatabaseType.getDefaultInstance()) {
+          getDestinationDatabaseBuilder().mergeFrom(value);
         } else {
           destinationDatabase_ = value;
         }
-        onChanged();
       } else {
         destinationDatabaseBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00020000;
+      onChanged();
       return this;
     }
     /**
@@ -5641,14 +5654,13 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.clouddms.v1.DatabaseType destination_database = 15;</code>
      */
     public Builder clearDestinationDatabase() {
-      if (destinationDatabaseBuilder_ == null) {
-        destinationDatabase_ = null;
-        onChanged();
-      } else {
-        destinationDatabase_ = null;
+      bitField0_ = (bitField0_ & ~0x00020000);
+      destinationDatabase_ = null;
+      if (destinationDatabaseBuilder_ != null) {
+        destinationDatabaseBuilder_.dispose();
         destinationDatabaseBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5661,7 +5673,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.clouddms.v1.DatabaseType destination_database = 15;</code>
      */
     public com.google.cloud.clouddms.v1.DatabaseType.Builder getDestinationDatabaseBuilder() {
-
+      bitField0_ |= 0x00020000;
       onChanged();
       return getDestinationDatabaseFieldBuilder().getBuilder();
     }
@@ -5728,7 +5740,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return endTimeBuilder_ != null || endTime_ != null;
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      *
@@ -5765,11 +5777,11 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         endTime_ = value;
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00040000;
+      onChanged();
       return this;
     }
     /**
@@ -5785,11 +5797,11 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00040000;
+      onChanged();
       return this;
     }
     /**
@@ -5804,17 +5816,18 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (endTime_ != null) {
-          endTime_ =
-              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00040000) != 0)
+            && endTime_ != null
+            && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEndTimeBuilder().mergeFrom(value);
         } else {
           endTime_ = value;
         }
-        onChanged();
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00040000;
+      onChanged();
       return this;
     }
     /**
@@ -5828,14 +5841,13 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearEndTime() {
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-        onChanged();
-      } else {
-        endTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00040000);
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5849,7 +5861,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-
+      bitField0_ |= 0x00040000;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }

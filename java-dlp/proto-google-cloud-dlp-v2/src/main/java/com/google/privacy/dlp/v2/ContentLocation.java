@@ -123,7 +123,9 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int CONTAINER_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object containerName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object containerName_ = "";
   /**
    *
    *
@@ -443,11 +445,15 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getContainerTimestampOrBuilder() {
-    return getContainerTimestamp();
+    return containerTimestamp_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : containerTimestamp_;
   }
 
   public static final int CONTAINER_VERSION_FIELD_NUMBER = 7;
-  private volatile java.lang.Object containerVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object containerVersion_ = "";
   /**
    *
    *
@@ -787,8 +793,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       containerName_ = "";
-
       if (recordLocationBuilder_ != null) {
         recordLocationBuilder_.clear();
       }
@@ -801,14 +807,12 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       if (metadataLocationBuilder_ != null) {
         metadataLocationBuilder_.clear();
       }
-      if (containerTimestampBuilder_ == null) {
-        containerTimestamp_ = null;
-      } else {
-        containerTimestamp_ = null;
+      containerTimestamp_ = null;
+      if (containerTimestampBuilder_ != null) {
+        containerTimestampBuilder_.dispose();
         containerTimestampBuilder_ = null;
       }
       containerVersion_ = "";
-
       locationCase_ = 0;
       location_ = null;
       return this;
@@ -838,44 +842,45 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     public com.google.privacy.dlp.v2.ContentLocation buildPartial() {
       com.google.privacy.dlp.v2.ContentLocation result =
           new com.google.privacy.dlp.v2.ContentLocation(this);
-      result.containerName_ = containerName_;
-      if (locationCase_ == 2) {
-        if (recordLocationBuilder_ == null) {
-          result.location_ = location_;
-        } else {
-          result.location_ = recordLocationBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (locationCase_ == 3) {
-        if (imageLocationBuilder_ == null) {
-          result.location_ = location_;
-        } else {
-          result.location_ = imageLocationBuilder_.build();
-        }
-      }
-      if (locationCase_ == 5) {
-        if (documentLocationBuilder_ == null) {
-          result.location_ = location_;
-        } else {
-          result.location_ = documentLocationBuilder_.build();
-        }
-      }
-      if (locationCase_ == 8) {
-        if (metadataLocationBuilder_ == null) {
-          result.location_ = location_;
-        } else {
-          result.location_ = metadataLocationBuilder_.build();
-        }
-      }
-      if (containerTimestampBuilder_ == null) {
-        result.containerTimestamp_ = containerTimestamp_;
-      } else {
-        result.containerTimestamp_ = containerTimestampBuilder_.build();
-      }
-      result.containerVersion_ = containerVersion_;
-      result.locationCase_ = locationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.ContentLocation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.containerName_ = containerName_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.containerTimestamp_ =
+            containerTimestampBuilder_ == null
+                ? containerTimestamp_
+                : containerTimestampBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.containerVersion_ = containerVersion_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.ContentLocation result) {
+      result.locationCase_ = locationCase_;
+      result.location_ = this.location_;
+      if (locationCase_ == 2 && recordLocationBuilder_ != null) {
+        result.location_ = recordLocationBuilder_.build();
+      }
+      if (locationCase_ == 3 && imageLocationBuilder_ != null) {
+        result.location_ = imageLocationBuilder_.build();
+      }
+      if (locationCase_ == 5 && documentLocationBuilder_ != null) {
+        result.location_ = documentLocationBuilder_.build();
+      }
+      if (locationCase_ == 8 && metadataLocationBuilder_ != null) {
+        result.location_ = metadataLocationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -925,6 +930,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.privacy.dlp.v2.ContentLocation.getDefaultInstance()) return this;
       if (!other.getContainerName().isEmpty()) {
         containerName_ = other.containerName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasContainerTimestamp()) {
@@ -932,6 +938,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getContainerVersion().isEmpty()) {
         containerVersion_ = other.containerVersion_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       switch (other.getLocationCase()) {
@@ -989,7 +996,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 containerName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -1015,13 +1022,13 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
               {
                 input.readMessage(
                     getContainerTimestampFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 containerVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
@@ -1061,6 +1068,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object containerName_ = "";
     /**
@@ -1144,8 +1153,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       containerName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1168,8 +1177,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearContainerName() {
-
       containerName_ = getDefaultInstance().getContainerName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1197,8 +1206,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       containerName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1409,7 +1418,6 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       }
       locationCase_ = 2;
       onChanged();
-      ;
       return recordLocationBuilder_;
     }
 
@@ -1619,7 +1627,6 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       }
       locationCase_ = 3;
       onChanged();
-      ;
       return imageLocationBuilder_;
     }
 
@@ -1829,7 +1836,6 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       }
       locationCase_ = 5;
       onChanged();
-      ;
       return documentLocationBuilder_;
     }
 
@@ -2039,7 +2045,6 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       }
       locationCase_ = 8;
       onChanged();
-      ;
       return metadataLocationBuilder_;
     }
 
@@ -2064,7 +2069,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * @return Whether the containerTimestamp field is set.
      */
     public boolean hasContainerTimestamp() {
-      return containerTimestampBuilder_ != null || containerTimestamp_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2107,11 +2112,11 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         containerTimestamp_ = value;
-        onChanged();
       } else {
         containerTimestampBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2129,11 +2134,11 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     public Builder setContainerTimestamp(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (containerTimestampBuilder_ == null) {
         containerTimestamp_ = builderForValue.build();
-        onChanged();
       } else {
         containerTimestampBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2150,19 +2155,18 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeContainerTimestamp(com.google.protobuf.Timestamp value) {
       if (containerTimestampBuilder_ == null) {
-        if (containerTimestamp_ != null) {
-          containerTimestamp_ =
-              com.google.protobuf.Timestamp.newBuilder(containerTimestamp_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && containerTimestamp_ != null
+            && containerTimestamp_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getContainerTimestampBuilder().mergeFrom(value);
         } else {
           containerTimestamp_ = value;
         }
-        onChanged();
       } else {
         containerTimestampBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2178,14 +2182,13 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
      */
     public Builder clearContainerTimestamp() {
-      if (containerTimestampBuilder_ == null) {
-        containerTimestamp_ = null;
-        onChanged();
-      } else {
-        containerTimestamp_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      containerTimestamp_ = null;
+      if (containerTimestampBuilder_ != null) {
+        containerTimestampBuilder_.dispose();
         containerTimestampBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2201,7 +2204,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
      */
     public com.google.protobuf.Timestamp.Builder getContainerTimestampBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getContainerTimestampFieldBuilder().getBuilder();
     }
@@ -2319,8 +2322,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       containerVersion_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2337,8 +2340,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearContainerVersion() {
-
       containerVersion_ = getDefaultInstance().getContainerVersion();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2360,8 +2363,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       containerVersion_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

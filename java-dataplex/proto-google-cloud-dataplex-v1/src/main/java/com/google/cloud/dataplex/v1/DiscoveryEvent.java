@@ -555,7 +555,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; parameters = 1;</code>
      */
-
     /* nullable */
     java.lang.String getParametersOrDefault(
         java.lang.String key,
@@ -646,6 +645,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
               "");
     }
 
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> parameters_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -714,8 +714,10 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; parameters = 1;</code>
      */
     @java.lang.Override
-    public java.lang.String getParametersOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getParametersOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -974,6 +976,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         internalGetMutableParameters().clear();
         return this;
       }
@@ -1002,11 +1005,19 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dataplex.v1.DiscoveryEvent.ConfigDetails buildPartial() {
         com.google.cloud.dataplex.v1.DiscoveryEvent.ConfigDetails result =
             new com.google.cloud.dataplex.v1.DiscoveryEvent.ConfigDetails(this);
-        int from_bitField0_ = bitField0_;
-        result.parameters_ = internalGetParameters();
-        result.parameters_.makeImmutable();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.dataplex.v1.DiscoveryEvent.ConfigDetails result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.parameters_ = internalGetParameters();
+          result.parameters_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -1058,6 +1069,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         if (other == com.google.cloud.dataplex.v1.DiscoveryEvent.ConfigDetails.getDefaultInstance())
           return this;
         internalGetMutableParameters().mergeFrom(other.internalGetParameters());
+        bitField0_ |= 0x00000001;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1093,6 +1105,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
                   internalGetMutableParameters()
                       .getMutableMap()
                       .put(parameters__.getKey(), parameters__.getValue());
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -1127,8 +1140,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
 
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
           internalGetMutableParameters() {
-        onChanged();
-        ;
         if (parameters_ == null) {
           parameters_ =
               com.google.protobuf.MapField.newMapField(ParametersDefaultEntryHolder.defaultEntry);
@@ -1136,6 +1147,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         if (!parameters_.isMutable()) {
           parameters_ = parameters_.copy();
         }
+        bitField0_ |= 0x00000001;
+        onChanged();
         return parameters_;
       }
 
@@ -1196,8 +1209,10 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
        * <code>map&lt;string, string&gt; parameters = 1;</code>
        */
       @java.lang.Override
-      public java.lang.String getParametersOrDefault(
-          java.lang.String key, java.lang.String defaultValue) {
+      public /* nullable */ java.lang.String getParametersOrDefault(
+          java.lang.String key,
+          /* nullable */
+          java.lang.String defaultValue) {
         if (key == null) {
           throw new NullPointerException("map key");
         }
@@ -1229,6 +1244,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public Builder clearParameters() {
+        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableParameters().getMutableMap().clear();
         return this;
       }
@@ -1254,6 +1270,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getMutableParameters() {
+        bitField0_ |= 0x00000001;
         return internalGetMutableParameters().getMutableMap();
       }
       /**
@@ -1275,8 +1292,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException("map value");
         }
-
         internalGetMutableParameters().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000001;
         return this;
       }
       /**
@@ -1293,6 +1310,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder putAllParameters(java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableParameters().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000001;
         return this;
       }
 
@@ -1468,7 +1486,9 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ENTITY_FIELD_NUMBER = 1;
-    private volatile java.lang.Object entity_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object entity_ = "";
     /**
      *
      *
@@ -1519,7 +1539,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TYPE_FIELD_NUMBER = 2;
-    private int type_;
+    private int type_ = 0;
     /**
      *
      *
@@ -1548,9 +1568,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.dataplex.v1.DiscoveryEvent.EntityType getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dataplex.v1.DiscoveryEvent.EntityType result =
-          com.google.cloud.dataplex.v1.DiscoveryEvent.EntityType.valueOf(type_);
+          com.google.cloud.dataplex.v1.DiscoveryEvent.EntityType.forNumber(type_);
       return result == null
           ? com.google.cloud.dataplex.v1.DiscoveryEvent.EntityType.UNRECOGNIZED
           : result;
@@ -1769,10 +1788,9 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         entity_ = "";
-
         type_ = 0;
-
         return this;
       }
 
@@ -1800,10 +1818,21 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dataplex.v1.DiscoveryEvent.EntityDetails buildPartial() {
         com.google.cloud.dataplex.v1.DiscoveryEvent.EntityDetails result =
             new com.google.cloud.dataplex.v1.DiscoveryEvent.EntityDetails(this);
-        result.entity_ = entity_;
-        result.type_ = type_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.dataplex.v1.DiscoveryEvent.EntityDetails result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.entity_ = entity_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.type_ = type_;
+        }
       }
 
       @java.lang.Override
@@ -1856,6 +1885,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getEntity().isEmpty()) {
           entity_ = other.entity_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.type_ != 0) {
@@ -1890,13 +1920,13 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   entity_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   type_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -1915,6 +1945,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object entity_ = "";
       /**
@@ -1980,8 +2012,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         entity_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1998,8 +2030,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearEntity() {
-
         entity_ = getDefaultInstance().getEntity();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2021,8 +2053,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         entity_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2056,8 +2088,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
-
         type_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2074,9 +2106,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.cloud.dataplex.v1.DiscoveryEvent.EntityType getType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.dataplex.v1.DiscoveryEvent.EntityType result =
-            com.google.cloud.dataplex.v1.DiscoveryEvent.EntityType.valueOf(type_);
+            com.google.cloud.dataplex.v1.DiscoveryEvent.EntityType.forNumber(type_);
         return result == null
             ? com.google.cloud.dataplex.v1.DiscoveryEvent.EntityType.UNRECOGNIZED
             : result;
@@ -2097,7 +2128,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -2114,7 +2145,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearType() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         type_ = 0;
         onChanged();
         return this;
@@ -2376,7 +2407,9 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PARTITION_FIELD_NUMBER = 1;
-    private volatile java.lang.Object partition_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object partition_ = "";
     /**
      *
      *
@@ -2427,7 +2460,9 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ENTITY_FIELD_NUMBER = 2;
-    private volatile java.lang.Object entity_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object entity_ = "";
     /**
      *
      *
@@ -2478,7 +2513,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TYPE_FIELD_NUMBER = 3;
-    private int type_;
+    private int type_ = 0;
     /**
      *
      *
@@ -2507,15 +2542,16 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.dataplex.v1.DiscoveryEvent.EntityType getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dataplex.v1.DiscoveryEvent.EntityType result =
-          com.google.cloud.dataplex.v1.DiscoveryEvent.EntityType.valueOf(type_);
+          com.google.cloud.dataplex.v1.DiscoveryEvent.EntityType.forNumber(type_);
       return result == null
           ? com.google.cloud.dataplex.v1.DiscoveryEvent.EntityType.UNRECOGNIZED
           : result;
     }
 
     public static final int SAMPLED_DATA_LOCATIONS_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList sampledDataLocations_;
     /**
      *
@@ -2819,14 +2855,12 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         partition_ = "";
-
         entity_ = "";
-
         type_ = 0;
-
         sampledDataLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -2855,17 +2889,35 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dataplex.v1.DiscoveryEvent.PartitionDetails buildPartial() {
         com.google.cloud.dataplex.v1.DiscoveryEvent.PartitionDetails result =
             new com.google.cloud.dataplex.v1.DiscoveryEvent.PartitionDetails(this);
-        int from_bitField0_ = bitField0_;
-        result.partition_ = partition_;
-        result.entity_ = entity_;
-        result.type_ = type_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          sampledDataLocations_ = sampledDataLocations_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.sampledDataLocations_ = sampledDataLocations_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dataplex.v1.DiscoveryEvent.PartitionDetails result) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          sampledDataLocations_ = sampledDataLocations_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.sampledDataLocations_ = sampledDataLocations_;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataplex.v1.DiscoveryEvent.PartitionDetails result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.partition_ = partition_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.entity_ = entity_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.type_ = type_;
+        }
       }
 
       @java.lang.Override
@@ -2919,10 +2971,12 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getPartition().isEmpty()) {
           partition_ = other.partition_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getEntity().isEmpty()) {
           entity_ = other.entity_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.type_ != 0) {
@@ -2931,7 +2985,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         if (!other.sampledDataLocations_.isEmpty()) {
           if (sampledDataLocations_.isEmpty()) {
             sampledDataLocations_ = other.sampledDataLocations_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureSampledDataLocationsIsMutable();
             sampledDataLocations_.addAll(other.sampledDataLocations_);
@@ -2967,19 +3021,19 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   partition_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   entity_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 24:
                 {
                   type_ = input.readEnum();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 34:
@@ -3072,8 +3126,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         partition_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3090,8 +3144,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPartition() {
-
         partition_ = getDefaultInstance().getPartition();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -3113,8 +3167,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         partition_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3183,8 +3237,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         entity_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -3201,8 +3255,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearEntity() {
-
         entity_ = getDefaultInstance().getEntity();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -3224,8 +3278,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         entity_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -3259,8 +3313,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
-
         type_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3277,9 +3331,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.cloud.dataplex.v1.DiscoveryEvent.EntityType getType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.dataplex.v1.DiscoveryEvent.EntityType result =
-            com.google.cloud.dataplex.v1.DiscoveryEvent.EntityType.valueOf(type_);
+            com.google.cloud.dataplex.v1.DiscoveryEvent.EntityType.forNumber(type_);
         return result == null
             ? com.google.cloud.dataplex.v1.DiscoveryEvent.EntityType.UNRECOGNIZED
             : result;
@@ -3300,7 +3353,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000004;
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -3317,7 +3370,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearType() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         type_ = 0;
         onChanged();
         return this;
@@ -3327,10 +3380,10 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureSampledDataLocationsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           sampledDataLocations_ =
               new com.google.protobuf.LazyStringArrayList(sampledDataLocations_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000008;
         }
       }
       /**
@@ -3473,7 +3526,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearSampledDataLocations() {
         sampledDataLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -3650,7 +3703,9 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TYPE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object type_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object type_ = "";
     /**
      *
      *
@@ -3900,8 +3955,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         type_ = "";
-
         return this;
       }
 
@@ -3929,9 +3984,18 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dataplex.v1.DiscoveryEvent.ActionDetails buildPartial() {
         com.google.cloud.dataplex.v1.DiscoveryEvent.ActionDetails result =
             new com.google.cloud.dataplex.v1.DiscoveryEvent.ActionDetails(this);
-        result.type_ = type_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.dataplex.v1.DiscoveryEvent.ActionDetails result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.type_ = type_;
+        }
       }
 
       @java.lang.Override
@@ -3984,6 +4048,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getType().isEmpty()) {
           type_ = other.type_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -4015,7 +4080,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   type_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -4034,6 +4099,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object type_ = "";
       /**
@@ -4099,8 +4166,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         type_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4117,8 +4184,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearType() {
-
         type_ = getDefaultInstance().getType();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -4140,8 +4207,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         type_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4264,7 +4331,9 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MESSAGE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object message_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object message_ = "";
   /**
    *
    *
@@ -4313,7 +4382,9 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LAKE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object lakeId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object lakeId_ = "";
   /**
    *
    *
@@ -4362,7 +4433,9 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ZONE_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object zoneId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zoneId_ = "";
   /**
    *
    *
@@ -4411,7 +4484,9 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ASSET_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object assetId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object assetId_ = "";
   /**
    *
    *
@@ -4460,7 +4535,9 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATA_LOCATION_FIELD_NUMBER = 5;
-  private volatile java.lang.Object dataLocation_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dataLocation_ = "";
   /**
    *
    *
@@ -4509,7 +4586,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 10;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -4538,9 +4615,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.DiscoveryEvent.EventType getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dataplex.v1.DiscoveryEvent.EventType result =
-        com.google.cloud.dataplex.v1.DiscoveryEvent.EventType.valueOf(type_);
+        com.google.cloud.dataplex.v1.DiscoveryEvent.EventType.forNumber(type_);
     return result == null
         ? com.google.cloud.dataplex.v1.DiscoveryEvent.EventType.UNRECOGNIZED
         : result;
@@ -5067,18 +5143,13 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       message_ = "";
-
       lakeId_ = "";
-
       zoneId_ = "";
-
       assetId_ = "";
-
       dataLocation_ = "";
-
       type_ = 0;
-
       if (configBuilder_ != null) {
         configBuilder_.clear();
       }
@@ -5120,43 +5191,51 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataplex.v1.DiscoveryEvent buildPartial() {
       com.google.cloud.dataplex.v1.DiscoveryEvent result =
           new com.google.cloud.dataplex.v1.DiscoveryEvent(this);
-      result.message_ = message_;
-      result.lakeId_ = lakeId_;
-      result.zoneId_ = zoneId_;
-      result.assetId_ = assetId_;
-      result.dataLocation_ = dataLocation_;
-      result.type_ = type_;
-      if (detailsCase_ == 20) {
-        if (configBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = configBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (detailsCase_ == 21) {
-        if (entityBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = entityBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 22) {
-        if (partitionBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = partitionBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 23) {
-        if (actionBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = actionBuilder_.build();
-        }
-      }
-      result.detailsCase_ = detailsCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataplex.v1.DiscoveryEvent result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.message_ = message_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.lakeId_ = lakeId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.zoneId_ = zoneId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.assetId_ = assetId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.dataLocation_ = dataLocation_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.type_ = type_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dataplex.v1.DiscoveryEvent result) {
+      result.detailsCase_ = detailsCase_;
+      result.details_ = this.details_;
+      if (detailsCase_ == 20 && configBuilder_ != null) {
+        result.details_ = configBuilder_.build();
+      }
+      if (detailsCase_ == 21 && entityBuilder_ != null) {
+        result.details_ = entityBuilder_.build();
+      }
+      if (detailsCase_ == 22 && partitionBuilder_ != null) {
+        result.details_ = partitionBuilder_.build();
+      }
+      if (detailsCase_ == 23 && actionBuilder_ != null) {
+        result.details_ = actionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -5206,22 +5285,27 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dataplex.v1.DiscoveryEvent.getDefaultInstance()) return this;
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getLakeId().isEmpty()) {
         lakeId_ = other.lakeId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getZoneId().isEmpty()) {
         zoneId_ = other.zoneId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getAssetId().isEmpty()) {
         assetId_ = other.assetId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getDataLocation().isEmpty()) {
         dataLocation_ = other.dataLocation_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.type_ != 0) {
@@ -5282,37 +5366,37 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 message_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 lakeId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 zoneId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 assetId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 dataLocation_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 80:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 80
             case 162:
@@ -5369,6 +5453,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object message_ = "";
     /**
@@ -5431,8 +5517,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       message_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -5448,8 +5534,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
-
       message_ = getDefaultInstance().getMessage();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -5470,8 +5556,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       message_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -5537,8 +5623,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       lakeId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -5554,8 +5640,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLakeId() {
-
       lakeId_ = getDefaultInstance().getLakeId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -5576,8 +5662,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       lakeId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -5643,8 +5729,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       zoneId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -5660,8 +5746,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearZoneId() {
-
       zoneId_ = getDefaultInstance().getZoneId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -5682,8 +5768,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zoneId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -5749,8 +5835,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       assetId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -5766,8 +5852,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAssetId() {
-
       assetId_ = getDefaultInstance().getAssetId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -5788,8 +5874,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       assetId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -5855,8 +5941,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       dataLocation_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -5872,8 +5958,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDataLocation() {
-
       dataLocation_ = getDefaultInstance().getDataLocation();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -5894,8 +5980,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dataLocation_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -5929,8 +6015,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5947,9 +6033,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.dataplex.v1.DiscoveryEvent.EventType getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dataplex.v1.DiscoveryEvent.EventType result =
-          com.google.cloud.dataplex.v1.DiscoveryEvent.EventType.valueOf(type_);
+          com.google.cloud.dataplex.v1.DiscoveryEvent.EventType.forNumber(type_);
       return result == null
           ? com.google.cloud.dataplex.v1.DiscoveryEvent.EventType.UNRECOGNIZED
           : result;
@@ -5970,7 +6055,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -5987,7 +6072,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       type_ = 0;
       onChanged();
       return this;
@@ -6200,7 +6285,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 20;
       onChanged();
-      ;
       return configBuilder_;
     }
 
@@ -6411,7 +6495,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 21;
       onChanged();
-      ;
       return entityBuilder_;
     }
 
@@ -6628,7 +6711,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 22;
       onChanged();
-      ;
       return partitionBuilder_;
     }
 
@@ -6839,7 +6921,6 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 23;
       onChanged();
-      ;
       return actionBuilder_;
     }
 

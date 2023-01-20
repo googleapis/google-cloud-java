@@ -130,7 +130,9 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -181,7 +183,9 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int UID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object uid_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uid_ = "";
   /**
    *
    *
@@ -230,7 +234,9 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -291,6 +297,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> annotations_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -352,8 +359,10 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
    * <code>map&lt;string, string&gt; annotations = 4;</code>
    */
   @java.lang.Override
-  public java.lang.String getAnnotationsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getAnnotationsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -395,6 +404,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -479,7 +489,10 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -562,7 +575,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 7;
@@ -611,7 +624,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int SERIAL_PIPELINE_FIELD_NUMBER = 8;
@@ -719,11 +732,15 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.PipelineConditionOrBuilder getConditionOrBuilder() {
-    return getCondition();
+    return condition_ == null
+        ? com.google.cloud.deploy.v1.PipelineCondition.getDefaultInstance()
+        : condition_;
   }
 
   public static final int ETAG_FIELD_NUMBER = 10;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -776,7 +793,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SUSPENDED_FIELD_NUMBER = 12;
-  private boolean suspended_;
+  private boolean suspended_ = false;
   /**
    *
    *
@@ -1153,39 +1170,32 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       uid_ = "";
-
       description_ = "";
-
       internalGetMutableAnnotations().clear();
       internalGetMutableLabels().clear();
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       if (serialPipelineBuilder_ != null) {
         serialPipelineBuilder_.clear();
       }
-      if (conditionBuilder_ == null) {
-        condition_ = null;
-      } else {
-        condition_ = null;
+      condition_ = null;
+      if (conditionBuilder_ != null) {
+        conditionBuilder_.dispose();
         conditionBuilder_ = null;
       }
       etag_ = "";
-
       suspended_ = false;
-
       pipelineCase_ = 0;
       pipeline_ = null;
       return this;
@@ -1215,41 +1225,56 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.deploy.v1.DeliveryPipeline buildPartial() {
       com.google.cloud.deploy.v1.DeliveryPipeline result =
           new com.google.cloud.deploy.v1.DeliveryPipeline(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.uid_ = uid_;
-      result.description_ = description_;
-      result.annotations_ = internalGetAnnotations();
-      result.annotations_.makeImmutable();
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      if (pipelineCase_ == 8) {
-        if (serialPipelineBuilder_ == null) {
-          result.pipeline_ = pipeline_;
-        } else {
-          result.pipeline_ = serialPipelineBuilder_.build();
-        }
-      }
-      if (conditionBuilder_ == null) {
-        result.condition_ = condition_;
-      } else {
-        result.condition_ = conditionBuilder_.build();
-      }
-      result.etag_ = etag_;
-      result.suspended_ = suspended_;
-      result.pipelineCase_ = pipelineCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.DeliveryPipeline result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.uid_ = uid_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.annotations_ = internalGetAnnotations();
+        result.annotations_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.condition_ = conditionBuilder_ == null ? condition_ : conditionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.suspended_ = suspended_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.deploy.v1.DeliveryPipeline result) {
+      result.pipelineCase_ = pipelineCase_;
+      result.pipeline_ = this.pipeline_;
+      if (pipelineCase_ == 8 && serialPipelineBuilder_ != null) {
+        result.pipeline_ = serialPipelineBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1299,18 +1324,23 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.deploy.v1.DeliveryPipeline.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getUid().isEmpty()) {
         uid_ = other.uid_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
+      bitField0_ |= 0x00000008;
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000010;
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
@@ -1322,6 +1352,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.getSuspended() != false) {
@@ -1367,19 +1398,19 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 uid_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -1391,6 +1422,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
                 internalGetMutableAnnotations()
                     .getMutableMap()
                     .put(annotations__.getKey(), annotations__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -1402,18 +1434,19 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
@@ -1425,19 +1458,19 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
             case 82:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(getConditionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 90
             case 96:
               {
                 suspended_ = input.readBool();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 96
             default:
@@ -1537,8 +1570,8 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1555,8 +1588,8 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1578,8 +1611,8 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1645,8 +1678,8 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       uid_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1662,8 +1695,8 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearUid() {
-
       uid_ = getDefaultInstance().getUid();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1684,8 +1717,8 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uid_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1751,8 +1784,8 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1768,8 +1801,8 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1790,8 +1823,8 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1809,8 +1842,6 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableAnnotations() {
-      onChanged();
-      ;
       if (annotations_ == null) {
         annotations_ =
             com.google.protobuf.MapField.newMapField(AnnotationsDefaultEntryHolder.defaultEntry);
@@ -1818,6 +1849,8 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
       if (!annotations_.isMutable()) {
         annotations_ = annotations_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return annotations_;
     }
 
@@ -1872,8 +1905,10 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      * <code>map&lt;string, string&gt; annotations = 4;</code>
      */
     @java.lang.Override
-    public java.lang.String getAnnotationsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getAnnotationsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1903,6 +1938,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearAnnotations() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
@@ -1926,6 +1962,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableAnnotations().getMutableMap();
     }
     /**
@@ -1945,8 +1982,8 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableAnnotations().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1961,6 +1998,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -1975,14 +2013,14 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000010;
+      onChanged();
       return labels_;
     }
 
@@ -2061,8 +2099,10 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      * <code>map&lt;string, string&gt; labels = 5;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2100,6 +2140,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2131,6 +2172,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000010;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -2158,8 +2200,8 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -2182,6 +2224,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000010;
       return this;
     }
 
@@ -2205,7 +2248,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2246,11 +2289,11 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2267,11 +2310,11 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2287,17 +2330,18 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2312,14 +2356,13 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2334,7 +2377,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2406,7 +2449,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2447,11 +2490,11 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2468,11 +2511,11 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2488,17 +2531,18 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2513,14 +2557,13 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2535,7 +2578,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2802,7 +2845,6 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
       }
       pipelineCase_ = 8;
       onChanged();
-      ;
       return serialPipelineBuilder_;
     }
 
@@ -2826,7 +2868,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      * @return Whether the condition field is set.
      */
     public boolean hasCondition() {
-      return conditionBuilder_ != null || condition_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2867,11 +2909,11 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         condition_ = value;
-        onChanged();
       } else {
         conditionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2889,11 +2931,11 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
         com.google.cloud.deploy.v1.PipelineCondition.Builder builderForValue) {
       if (conditionBuilder_ == null) {
         condition_ = builderForValue.build();
-        onChanged();
       } else {
         conditionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2909,19 +2951,18 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCondition(com.google.cloud.deploy.v1.PipelineCondition value) {
       if (conditionBuilder_ == null) {
-        if (condition_ != null) {
-          condition_ =
-              com.google.cloud.deploy.v1.PipelineCondition.newBuilder(condition_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && condition_ != null
+            && condition_ != com.google.cloud.deploy.v1.PipelineCondition.getDefaultInstance()) {
+          getConditionBuilder().mergeFrom(value);
         } else {
           condition_ = value;
         }
-        onChanged();
       } else {
         conditionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2936,14 +2977,13 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCondition() {
-      if (conditionBuilder_ == null) {
-        condition_ = null;
-        onChanged();
-      } else {
-        condition_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      condition_ = null;
+      if (conditionBuilder_ != null) {
+        conditionBuilder_.dispose();
         conditionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2958,7 +2998,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.deploy.v1.PipelineCondition.Builder getConditionBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getConditionFieldBuilder().getBuilder();
     }
@@ -3077,8 +3117,8 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3096,8 +3136,8 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3120,8 +3160,8 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3159,6 +3199,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
     public Builder setSuspended(boolean value) {
 
       suspended_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3175,7 +3216,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSuspended() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       suspended_ = false;
       onChanged();
       return this;

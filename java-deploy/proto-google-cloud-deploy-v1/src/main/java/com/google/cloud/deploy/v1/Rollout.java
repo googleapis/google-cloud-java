@@ -813,7 +813,9 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -866,7 +868,9 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object uid_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uid_ = "";
   /**
    *
    *
@@ -915,7 +919,9 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -978,6 +984,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> annotations_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -1045,8 +1052,10 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; annotations = 4;</code>
    */
   @java.lang.Override
-  public java.lang.String getAnnotationsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getAnnotationsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -1090,6 +1099,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -1174,7 +1184,10 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -1257,7 +1270,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int APPROVE_TIME_FIELD_NUMBER = 7;
@@ -1306,7 +1319,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getApproveTimeOrBuilder() {
-    return getApproveTime();
+    return approveTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : approveTime_;
   }
 
   public static final int ENQUEUE_TIME_FIELD_NUMBER = 8;
@@ -1355,7 +1368,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEnqueueTimeOrBuilder() {
-    return getEnqueueTime();
+    return enqueueTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : enqueueTime_;
   }
 
   public static final int DEPLOY_START_TIME_FIELD_NUMBER = 9;
@@ -1409,7 +1422,9 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDeployStartTimeOrBuilder() {
-    return getDeployStartTime();
+    return deployStartTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : deployStartTime_;
   }
 
   public static final int DEPLOY_END_TIME_FIELD_NUMBER = 10;
@@ -1463,11 +1478,15 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDeployEndTimeOrBuilder() {
-    return getDeployEndTime();
+    return deployEndTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : deployEndTime_;
   }
 
   public static final int TARGET_ID_FIELD_NUMBER = 18;
-  private volatile java.lang.Object targetId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetId_ = "";
   /**
    *
    *
@@ -1516,7 +1535,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int APPROVAL_STATE_FIELD_NUMBER = 12;
-  private int approvalState_;
+  private int approvalState_ = 0;
   /**
    *
    *
@@ -1549,14 +1568,13 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.Rollout.ApprovalState getApprovalState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.deploy.v1.Rollout.ApprovalState result =
-        com.google.cloud.deploy.v1.Rollout.ApprovalState.valueOf(approvalState_);
+        com.google.cloud.deploy.v1.Rollout.ApprovalState.forNumber(approvalState_);
     return result == null ? com.google.cloud.deploy.v1.Rollout.ApprovalState.UNRECOGNIZED : result;
   }
 
   public static final int STATE_FIELD_NUMBER = 13;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -1589,14 +1607,15 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.Rollout.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.deploy.v1.Rollout.State result =
-        com.google.cloud.deploy.v1.Rollout.State.valueOf(state_);
+        com.google.cloud.deploy.v1.Rollout.State.forNumber(state_);
     return result == null ? com.google.cloud.deploy.v1.Rollout.State.UNRECOGNIZED : result;
   }
 
   public static final int FAILURE_REASON_FIELD_NUMBER = 14;
-  private volatile java.lang.Object failureReason_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object failureReason_ = "";
   /**
    *
    *
@@ -1645,7 +1664,9 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEPLOYING_BUILD_FIELD_NUMBER = 17;
-  private volatile java.lang.Object deployingBuild_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object deployingBuild_ = "";
   /**
    *
    *
@@ -1702,7 +1723,9 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ETAG_FIELD_NUMBER = 16;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -1755,7 +1778,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEPLOY_FAILURE_CAUSE_FIELD_NUMBER = 19;
-  private int deployFailureCause_;
+  private int deployFailureCause_ = 0;
   /**
    *
    *
@@ -1790,13 +1813,14 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.Rollout.FailureCause getDeployFailureCause() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.deploy.v1.Rollout.FailureCause result =
-        com.google.cloud.deploy.v1.Rollout.FailureCause.valueOf(deployFailureCause_);
+        com.google.cloud.deploy.v1.Rollout.FailureCause.forNumber(deployFailureCause_);
     return result == null ? com.google.cloud.deploy.v1.Rollout.FailureCause.UNRECOGNIZED : result;
   }
 
   public static final int PHASES_FIELD_NUMBER = 23;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.deploy.v1.Phase> phases_;
   /**
    *
@@ -1924,7 +1948,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.MetadataOrBuilder getMetadataOrBuilder() {
-    return getMetadata();
+    return metadata_ == null ? com.google.cloud.deploy.v1.Metadata.getDefaultInstance() : metadata_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2363,69 +2387,54 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       uid_ = "";
-
       description_ = "";
-
       internalGetMutableAnnotations().clear();
       internalGetMutableLabels().clear();
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (approveTimeBuilder_ == null) {
-        approveTime_ = null;
-      } else {
-        approveTime_ = null;
+      approveTime_ = null;
+      if (approveTimeBuilder_ != null) {
+        approveTimeBuilder_.dispose();
         approveTimeBuilder_ = null;
       }
-      if (enqueueTimeBuilder_ == null) {
-        enqueueTime_ = null;
-      } else {
-        enqueueTime_ = null;
+      enqueueTime_ = null;
+      if (enqueueTimeBuilder_ != null) {
+        enqueueTimeBuilder_.dispose();
         enqueueTimeBuilder_ = null;
       }
-      if (deployStartTimeBuilder_ == null) {
-        deployStartTime_ = null;
-      } else {
-        deployStartTime_ = null;
+      deployStartTime_ = null;
+      if (deployStartTimeBuilder_ != null) {
+        deployStartTimeBuilder_.dispose();
         deployStartTimeBuilder_ = null;
       }
-      if (deployEndTimeBuilder_ == null) {
-        deployEndTime_ = null;
-      } else {
-        deployEndTime_ = null;
+      deployEndTime_ = null;
+      if (deployEndTimeBuilder_ != null) {
+        deployEndTimeBuilder_.dispose();
         deployEndTimeBuilder_ = null;
       }
       targetId_ = "";
-
       approvalState_ = 0;
-
       state_ = 0;
-
       failureReason_ = "";
-
       deployingBuild_ = "";
-
       etag_ = "";
-
       deployFailureCause_ = 0;
-
       if (phasesBuilder_ == null) {
         phases_ = java.util.Collections.emptyList();
       } else {
         phases_ = null;
         phasesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-      } else {
-        metadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00020000);
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
       return this;
@@ -2454,62 +2463,88 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.deploy.v1.Rollout buildPartial() {
       com.google.cloud.deploy.v1.Rollout result = new com.google.cloud.deploy.v1.Rollout(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.uid_ = uid_;
-      result.description_ = description_;
-      result.annotations_ = internalGetAnnotations();
-      result.annotations_.makeImmutable();
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (approveTimeBuilder_ == null) {
-        result.approveTime_ = approveTime_;
-      } else {
-        result.approveTime_ = approveTimeBuilder_.build();
-      }
-      if (enqueueTimeBuilder_ == null) {
-        result.enqueueTime_ = enqueueTime_;
-      } else {
-        result.enqueueTime_ = enqueueTimeBuilder_.build();
-      }
-      if (deployStartTimeBuilder_ == null) {
-        result.deployStartTime_ = deployStartTime_;
-      } else {
-        result.deployStartTime_ = deployStartTimeBuilder_.build();
-      }
-      if (deployEndTimeBuilder_ == null) {
-        result.deployEndTime_ = deployEndTime_;
-      } else {
-        result.deployEndTime_ = deployEndTimeBuilder_.build();
-      }
-      result.targetId_ = targetId_;
-      result.approvalState_ = approvalState_;
-      result.state_ = state_;
-      result.failureReason_ = failureReason_;
-      result.deployingBuild_ = deployingBuild_;
-      result.etag_ = etag_;
-      result.deployFailureCause_ = deployFailureCause_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.deploy.v1.Rollout result) {
       if (phasesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00020000) != 0)) {
           phases_ = java.util.Collections.unmodifiableList(phases_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00020000);
         }
         result.phases_ = phases_;
       } else {
         result.phases_ = phasesBuilder_.build();
       }
-      if (metadataBuilder_ == null) {
-        result.metadata_ = metadata_;
-      } else {
-        result.metadata_ = metadataBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.Rollout result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.uid_ = uid_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.annotations_ = internalGetAnnotations();
+        result.annotations_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.approveTime_ =
+            approveTimeBuilder_ == null ? approveTime_ : approveTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.enqueueTime_ =
+            enqueueTimeBuilder_ == null ? enqueueTime_ : enqueueTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.deployStartTime_ =
+            deployStartTimeBuilder_ == null ? deployStartTime_ : deployStartTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.deployEndTime_ =
+            deployEndTimeBuilder_ == null ? deployEndTime_ : deployEndTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.targetId_ = targetId_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.approvalState_ = approvalState_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.failureReason_ = failureReason_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.deployingBuild_ = deployingBuild_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.deployFailureCause_ = deployFailureCause_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2559,18 +2594,23 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.deploy.v1.Rollout.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getUid().isEmpty()) {
         uid_ = other.uid_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
+      bitField0_ |= 0x00000008;
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000010;
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
@@ -2588,6 +2628,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getTargetId().isEmpty()) {
         targetId_ = other.targetId_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.approvalState_ != 0) {
@@ -2598,14 +2639,17 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getFailureReason().isEmpty()) {
         failureReason_ = other.failureReason_;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (!other.getDeployingBuild().isEmpty()) {
         deployingBuild_ = other.deployingBuild_;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.deployFailureCause_ != 0) {
@@ -2615,7 +2659,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         if (!other.phases_.isEmpty()) {
           if (phases_.isEmpty()) {
             phases_ = other.phases_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00020000);
           } else {
             ensurePhasesIsMutable();
             phases_.addAll(other.phases_);
@@ -2628,7 +2672,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             phasesBuilder_.dispose();
             phasesBuilder_ = null;
             phases_ = other.phases_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00020000);
             phasesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPhasesFieldBuilder()
@@ -2670,19 +2714,19 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 uid_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -2694,6 +2738,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableAnnotations()
                     .getMutableMap()
                     .put(annotations__.getKey(), annotations__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -2705,78 +2750,79 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getApproveTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getEnqueueTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getDeployStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(getDeployEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 96:
               {
                 approvalState_ = input.readEnum();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 96
             case 104:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 104
             case 114:
               {
                 failureReason_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 114
             case 130:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00008000;
                 break;
               } // case 130
             case 138:
               {
                 deployingBuild_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00004000;
                 break;
               } // case 138
             case 146:
               {
                 targetId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 146
             case 152:
               {
                 deployFailureCause_ = input.readEnum();
-
+                bitField0_ |= 0x00010000;
                 break;
               } // case 152
             case 186:
@@ -2794,7 +2840,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             case 194:
               {
                 input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00040000;
                 break;
               } // case 194
             default:
@@ -2883,8 +2929,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2902,8 +2948,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2926,8 +2972,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2993,8 +3039,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       uid_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3010,8 +3056,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUid() {
-
       uid_ = getDefaultInstance().getUid();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -3032,8 +3078,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uid_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3102,8 +3148,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3120,8 +3166,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -3143,8 +3189,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3162,8 +3208,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableAnnotations() {
-      onChanged();
-      ;
       if (annotations_ == null) {
         annotations_ =
             com.google.protobuf.MapField.newMapField(AnnotationsDefaultEntryHolder.defaultEntry);
@@ -3171,6 +3215,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       if (!annotations_.isMutable()) {
         annotations_ = annotations_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return annotations_;
     }
 
@@ -3231,8 +3277,10 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; annotations = 4;</code>
      */
     @java.lang.Override
-    public java.lang.String getAnnotationsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getAnnotationsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -3264,6 +3312,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearAnnotations() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
@@ -3289,6 +3338,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableAnnotations().getMutableMap();
     }
     /**
@@ -3310,8 +3360,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableAnnotations().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -3328,6 +3378,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -3342,14 +3393,14 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000010;
+      onChanged();
       return labels_;
     }
 
@@ -3428,8 +3479,10 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 5;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -3467,6 +3520,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -3498,6 +3552,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000010;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -3525,8 +3580,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -3549,6 +3604,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000010;
       return this;
     }
 
@@ -3572,7 +3628,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -3613,11 +3669,11 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3634,11 +3690,11 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3654,17 +3710,18 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3679,14 +3736,13 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3701,7 +3757,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -3773,7 +3829,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the approveTime field is set.
      */
     public boolean hasApproveTime() {
-      return approveTimeBuilder_ != null || approveTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -3814,11 +3870,11 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         approveTime_ = value;
-        onChanged();
       } else {
         approveTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3835,11 +3891,11 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public Builder setApproveTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (approveTimeBuilder_ == null) {
         approveTime_ = builderForValue.build();
-        onChanged();
       } else {
         approveTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3855,19 +3911,18 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeApproveTime(com.google.protobuf.Timestamp value) {
       if (approveTimeBuilder_ == null) {
-        if (approveTime_ != null) {
-          approveTime_ =
-              com.google.protobuf.Timestamp.newBuilder(approveTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && approveTime_ != null
+            && approveTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getApproveTimeBuilder().mergeFrom(value);
         } else {
           approveTime_ = value;
         }
-        onChanged();
       } else {
         approveTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3882,14 +3937,13 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearApproveTime() {
-      if (approveTimeBuilder_ == null) {
-        approveTime_ = null;
-        onChanged();
-      } else {
-        approveTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      approveTime_ = null;
+      if (approveTimeBuilder_ != null) {
+        approveTimeBuilder_.dispose();
         approveTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3904,7 +3958,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getApproveTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getApproveTimeFieldBuilder().getBuilder();
     }
@@ -3976,7 +4030,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the enqueueTime field is set.
      */
     public boolean hasEnqueueTime() {
-      return enqueueTimeBuilder_ != null || enqueueTime_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -4017,11 +4071,11 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         enqueueTime_ = value;
-        onChanged();
       } else {
         enqueueTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -4038,11 +4092,11 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnqueueTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (enqueueTimeBuilder_ == null) {
         enqueueTime_ = builderForValue.build();
-        onChanged();
       } else {
         enqueueTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -4058,19 +4112,18 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEnqueueTime(com.google.protobuf.Timestamp value) {
       if (enqueueTimeBuilder_ == null) {
-        if (enqueueTime_ != null) {
-          enqueueTime_ =
-              com.google.protobuf.Timestamp.newBuilder(enqueueTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && enqueueTime_ != null
+            && enqueueTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEnqueueTimeBuilder().mergeFrom(value);
         } else {
           enqueueTime_ = value;
         }
-        onChanged();
       } else {
         enqueueTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -4085,14 +4138,13 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearEnqueueTime() {
-      if (enqueueTimeBuilder_ == null) {
-        enqueueTime_ = null;
-        onChanged();
-      } else {
-        enqueueTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      enqueueTime_ = null;
+      if (enqueueTimeBuilder_ != null) {
+        enqueueTimeBuilder_.dispose();
         enqueueTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4107,7 +4159,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEnqueueTimeBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getEnqueueTimeFieldBuilder().getBuilder();
     }
@@ -4179,7 +4231,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the deployStartTime field is set.
      */
     public boolean hasDeployStartTime() {
-      return deployStartTimeBuilder_ != null || deployStartTime_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -4220,11 +4272,11 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         deployStartTime_ = value;
-        onChanged();
       } else {
         deployStartTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -4241,11 +4293,11 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public Builder setDeployStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (deployStartTimeBuilder_ == null) {
         deployStartTime_ = builderForValue.build();
-        onChanged();
       } else {
         deployStartTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -4261,19 +4313,18 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDeployStartTime(com.google.protobuf.Timestamp value) {
       if (deployStartTimeBuilder_ == null) {
-        if (deployStartTime_ != null) {
-          deployStartTime_ =
-              com.google.protobuf.Timestamp.newBuilder(deployStartTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && deployStartTime_ != null
+            && deployStartTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getDeployStartTimeBuilder().mergeFrom(value);
         } else {
           deployStartTime_ = value;
         }
-        onChanged();
       } else {
         deployStartTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -4288,14 +4339,13 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDeployStartTime() {
-      if (deployStartTimeBuilder_ == null) {
-        deployStartTime_ = null;
-        onChanged();
-      } else {
-        deployStartTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      deployStartTime_ = null;
+      if (deployStartTimeBuilder_ != null) {
+        deployStartTimeBuilder_.dispose();
         deployStartTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4310,7 +4360,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getDeployStartTimeBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getDeployStartTimeFieldBuilder().getBuilder();
     }
@@ -4382,7 +4432,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the deployEndTime field is set.
      */
     public boolean hasDeployEndTime() {
-      return deployEndTimeBuilder_ != null || deployEndTime_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -4423,11 +4473,11 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         deployEndTime_ = value;
-        onChanged();
       } else {
         deployEndTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -4444,11 +4494,11 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public Builder setDeployEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (deployEndTimeBuilder_ == null) {
         deployEndTime_ = builderForValue.build();
-        onChanged();
       } else {
         deployEndTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -4464,19 +4514,18 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDeployEndTime(com.google.protobuf.Timestamp value) {
       if (deployEndTimeBuilder_ == null) {
-        if (deployEndTime_ != null) {
-          deployEndTime_ =
-              com.google.protobuf.Timestamp.newBuilder(deployEndTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && deployEndTime_ != null
+            && deployEndTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getDeployEndTimeBuilder().mergeFrom(value);
         } else {
           deployEndTime_ = value;
         }
-        onChanged();
       } else {
         deployEndTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -4491,14 +4540,13 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDeployEndTime() {
-      if (deployEndTimeBuilder_ == null) {
-        deployEndTime_ = null;
-        onChanged();
-      } else {
-        deployEndTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      deployEndTime_ = null;
+      if (deployEndTimeBuilder_ != null) {
+        deployEndTimeBuilder_.dispose();
         deployEndTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4513,7 +4561,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getDeployEndTimeBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getDeployEndTimeFieldBuilder().getBuilder();
     }
@@ -4626,8 +4674,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetId_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4643,8 +4691,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTargetId() {
-
       targetId_ = getDefaultInstance().getTargetId();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -4665,8 +4713,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetId_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4704,8 +4752,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setApprovalStateValue(int value) {
-
       approvalState_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4724,9 +4772,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.deploy.v1.Rollout.ApprovalState getApprovalState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.deploy.v1.Rollout.ApprovalState result =
-          com.google.cloud.deploy.v1.Rollout.ApprovalState.valueOf(approvalState_);
+          com.google.cloud.deploy.v1.Rollout.ApprovalState.forNumber(approvalState_);
       return result == null
           ? com.google.cloud.deploy.v1.Rollout.ApprovalState.UNRECOGNIZED
           : result;
@@ -4749,7 +4796,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000800;
       approvalState_ = value.getNumber();
       onChanged();
       return this;
@@ -4768,7 +4815,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearApprovalState() {
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       approvalState_ = 0;
       onChanged();
       return this;
@@ -4807,8 +4854,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4827,9 +4874,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.deploy.v1.Rollout.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.deploy.v1.Rollout.State result =
-          com.google.cloud.deploy.v1.Rollout.State.valueOf(state_);
+          com.google.cloud.deploy.v1.Rollout.State.forNumber(state_);
       return result == null ? com.google.cloud.deploy.v1.Rollout.State.UNRECOGNIZED : result;
     }
     /**
@@ -4850,7 +4896,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00001000;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -4869,7 +4915,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       state_ = 0;
       onChanged();
       return this;
@@ -4936,8 +4982,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       failureReason_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4953,8 +4999,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFailureReason() {
-
       failureReason_ = getDefaultInstance().getFailureReason();
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -4975,8 +5021,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       failureReason_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5054,8 +5100,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       deployingBuild_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5075,8 +5121,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDeployingBuild() {
-
       deployingBuild_ = getDefaultInstance().getDeployingBuild();
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -5101,8 +5147,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       deployingBuild_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5174,8 +5220,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5193,8 +5239,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -5217,8 +5263,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5258,8 +5304,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDeployFailureCauseValue(int value) {
-
       deployFailureCause_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5279,9 +5325,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.deploy.v1.Rollout.FailureCause getDeployFailureCause() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.deploy.v1.Rollout.FailureCause result =
-          com.google.cloud.deploy.v1.Rollout.FailureCause.valueOf(deployFailureCause_);
+          com.google.cloud.deploy.v1.Rollout.FailureCause.forNumber(deployFailureCause_);
       return result == null ? com.google.cloud.deploy.v1.Rollout.FailureCause.UNRECOGNIZED : result;
     }
     /**
@@ -5303,7 +5348,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00010000;
       deployFailureCause_ = value.getNumber();
       onChanged();
       return this;
@@ -5323,7 +5368,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDeployFailureCause() {
-
+      bitField0_ = (bitField0_ & ~0x00010000);
       deployFailureCause_ = 0;
       onChanged();
       return this;
@@ -5333,9 +5378,9 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePhasesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00020000) != 0)) {
         phases_ = new java.util.ArrayList<com.google.cloud.deploy.v1.Phase>(phases_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00020000;
       }
     }
 
@@ -5570,7 +5615,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPhases() {
       if (phasesBuilder_ == null) {
         phases_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00020000);
         onChanged();
       } else {
         phasesBuilder_.clear();
@@ -5705,7 +5750,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.deploy.v1.Phase,
                 com.google.cloud.deploy.v1.Phase.Builder,
                 com.google.cloud.deploy.v1.PhaseOrBuilder>(
-                phases_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                phases_, ((bitField0_ & 0x00020000) != 0), getParentForChildren(), isClean());
         phases_ = null;
       }
       return phasesBuilder_;
@@ -5731,7 +5776,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
-      return metadataBuilder_ != null || metadata_ != null;
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      *
@@ -5772,11 +5817,11 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         metadata_ = value;
-        onChanged();
       } else {
         metadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00040000;
+      onChanged();
       return this;
     }
     /**
@@ -5793,11 +5838,11 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public Builder setMetadata(com.google.cloud.deploy.v1.Metadata.Builder builderForValue) {
       if (metadataBuilder_ == null) {
         metadata_ = builderForValue.build();
-        onChanged();
       } else {
         metadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00040000;
+      onChanged();
       return this;
     }
     /**
@@ -5813,19 +5858,18 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeMetadata(com.google.cloud.deploy.v1.Metadata value) {
       if (metadataBuilder_ == null) {
-        if (metadata_ != null) {
-          metadata_ =
-              com.google.cloud.deploy.v1.Metadata.newBuilder(metadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00040000) != 0)
+            && metadata_ != null
+            && metadata_ != com.google.cloud.deploy.v1.Metadata.getDefaultInstance()) {
+          getMetadataBuilder().mergeFrom(value);
         } else {
           metadata_ = value;
         }
-        onChanged();
       } else {
         metadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00040000;
+      onChanged();
       return this;
     }
     /**
@@ -5840,14 +5884,13 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearMetadata() {
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-        onChanged();
-      } else {
-        metadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00040000);
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5862,7 +5905,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.deploy.v1.Metadata.Builder getMetadataBuilder() {
-
+      bitField0_ |= 0x00040000;
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }

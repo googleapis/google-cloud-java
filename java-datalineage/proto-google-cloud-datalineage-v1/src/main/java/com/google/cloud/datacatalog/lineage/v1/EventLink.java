@@ -116,7 +116,9 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.lineage.v1.EntityReferenceOrBuilder getSourceOrBuilder() {
-    return getSource();
+    return source_ == null
+        ? com.google.cloud.datacatalog.lineage.v1.EntityReference.getDefaultInstance()
+        : source_;
   }
 
   public static final int TARGET_FIELD_NUMBER = 2;
@@ -170,7 +172,9 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.lineage.v1.EntityReferenceOrBuilder getTargetOrBuilder() {
-    return getTarget();
+    return target_ == null
+        ? com.google.cloud.datacatalog.lineage.v1.EntityReference.getDefaultInstance()
+        : target_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -389,16 +393,15 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (sourceBuilder_ == null) {
-        source_ = null;
-      } else {
-        source_ = null;
+      bitField0_ = 0;
+      source_ = null;
+      if (sourceBuilder_ != null) {
+        sourceBuilder_.dispose();
         sourceBuilder_ = null;
       }
-      if (targetBuilder_ == null) {
-        target_ = null;
-      } else {
-        target_ = null;
+      target_ = null;
+      if (targetBuilder_ != null) {
+        targetBuilder_.dispose();
         targetBuilder_ = null;
       }
       return this;
@@ -428,18 +431,21 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.lineage.v1.EventLink buildPartial() {
       com.google.cloud.datacatalog.lineage.v1.EventLink result =
           new com.google.cloud.datacatalog.lineage.v1.EventLink(this);
-      if (sourceBuilder_ == null) {
-        result.source_ = source_;
-      } else {
-        result.source_ = sourceBuilder_.build();
-      }
-      if (targetBuilder_ == null) {
-        result.target_ = target_;
-      } else {
-        result.target_ = targetBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datacatalog.lineage.v1.EventLink result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.source_ = sourceBuilder_ == null ? source_ : sourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.target_ = targetBuilder_ == null ? target_ : targetBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -523,13 +529,13 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getSourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getTargetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -548,6 +554,8 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.datacatalog.lineage.v1.EntityReference source_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -569,7 +577,7 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the source field is set.
      */
     public boolean hasSource() {
-      return sourceBuilder_ != null || source_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -610,11 +618,11 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         source_ = value;
-        onChanged();
       } else {
         sourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -632,11 +640,11 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.datacatalog.lineage.v1.EntityReference.Builder builderForValue) {
       if (sourceBuilder_ == null) {
         source_ = builderForValue.build();
-        onChanged();
       } else {
         sourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -652,19 +660,19 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSource(com.google.cloud.datacatalog.lineage.v1.EntityReference value) {
       if (sourceBuilder_ == null) {
-        if (source_ != null) {
-          source_ =
-              com.google.cloud.datacatalog.lineage.v1.EntityReference.newBuilder(source_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && source_ != null
+            && source_
+                != com.google.cloud.datacatalog.lineage.v1.EntityReference.getDefaultInstance()) {
+          getSourceBuilder().mergeFrom(value);
         } else {
           source_ = value;
         }
-        onChanged();
       } else {
         sourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -679,14 +687,13 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSource() {
-      if (sourceBuilder_ == null) {
-        source_ = null;
-        onChanged();
-      } else {
-        source_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      source_ = null;
+      if (sourceBuilder_ != null) {
+        sourceBuilder_.dispose();
         sourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -701,7 +708,7 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.datacatalog.lineage.v1.EntityReference.Builder getSourceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getSourceFieldBuilder().getBuilder();
     }
@@ -773,7 +780,7 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the target field is set.
      */
     public boolean hasTarget() {
-      return targetBuilder_ != null || target_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -814,11 +821,11 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         target_ = value;
-        onChanged();
       } else {
         targetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -836,11 +843,11 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.datacatalog.lineage.v1.EntityReference.Builder builderForValue) {
       if (targetBuilder_ == null) {
         target_ = builderForValue.build();
-        onChanged();
       } else {
         targetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -856,19 +863,19 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTarget(com.google.cloud.datacatalog.lineage.v1.EntityReference value) {
       if (targetBuilder_ == null) {
-        if (target_ != null) {
-          target_ =
-              com.google.cloud.datacatalog.lineage.v1.EntityReference.newBuilder(target_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && target_ != null
+            && target_
+                != com.google.cloud.datacatalog.lineage.v1.EntityReference.getDefaultInstance()) {
+          getTargetBuilder().mergeFrom(value);
         } else {
           target_ = value;
         }
-        onChanged();
       } else {
         targetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -883,14 +890,13 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearTarget() {
-      if (targetBuilder_ == null) {
-        target_ = null;
-        onChanged();
-      } else {
-        target_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      target_ = null;
+      if (targetBuilder_ != null) {
+        targetBuilder_.dispose();
         targetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -905,7 +911,7 @@ public final class EventLink extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.datacatalog.lineage.v1.EntityReference.Builder getTargetBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTargetFieldBuilder().getBuilder();
     }

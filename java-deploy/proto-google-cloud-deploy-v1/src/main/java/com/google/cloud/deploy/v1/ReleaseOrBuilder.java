@@ -156,7 +156,6 @@ public interface ReleaseOrBuilder
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
    */
-
   /* nullable */
   java.lang.String getAnnotationsOrDefault(
       java.lang.String key,
@@ -254,7 +253,6 @@ public interface ReleaseOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,
@@ -762,7 +760,6 @@ public interface ReleaseOrBuilder
    * map&lt;string, .google.cloud.deploy.v1.TargetArtifact&gt; target_artifacts = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
-
   /* nullable */
   com.google.cloud.deploy.v1.TargetArtifact getTargetArtifactsOrDefault(
       java.lang.String key,
@@ -834,7 +831,6 @@ public interface ReleaseOrBuilder
    * map&lt;string, .google.cloud.deploy.v1.Release.TargetRender&gt; target_renders = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
-
   /* nullable */
   com.google.cloud.deploy.v1.Release.TargetRender getTargetRendersOrDefault(
       java.lang.String key,

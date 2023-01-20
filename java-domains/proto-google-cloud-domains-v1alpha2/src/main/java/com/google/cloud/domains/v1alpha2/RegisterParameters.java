@@ -280,7 +280,9 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DOMAIN_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object domainName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object domainName_ = "";
   /**
    *
    *
@@ -329,7 +331,7 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int AVAILABILITY_FIELD_NUMBER = 2;
-  private int availability_;
+  private int availability_ = 0;
   /**
    *
    *
@@ -362,16 +364,18 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.domains.v1alpha2.RegisterParameters.Availability getAvailability() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.domains.v1alpha2.RegisterParameters.Availability result =
-        com.google.cloud.domains.v1alpha2.RegisterParameters.Availability.valueOf(availability_);
+        com.google.cloud.domains.v1alpha2.RegisterParameters.Availability.forNumber(availability_);
     return result == null
         ? com.google.cloud.domains.v1alpha2.RegisterParameters.Availability.UNRECOGNIZED
         : result;
   }
 
   public static final int SUPPORTED_PRIVACY_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> supportedPrivacy_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.domains.v1alpha2.ContactPrivacy>
       supportedPrivacy_converter_ =
@@ -379,9 +383,8 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
               java.lang.Integer, com.google.cloud.domains.v1alpha2.ContactPrivacy>() {
             public com.google.cloud.domains.v1alpha2.ContactPrivacy convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.domains.v1alpha2.ContactPrivacy result =
-                  com.google.cloud.domains.v1alpha2.ContactPrivacy.valueOf(from);
+                  com.google.cloud.domains.v1alpha2.ContactPrivacy.forNumber(from);
               return result == null
                   ? com.google.cloud.domains.v1alpha2.ContactPrivacy.UNRECOGNIZED
                   : result;
@@ -471,16 +474,18 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
   private int supportedPrivacyMemoizedSerializedSize;
 
   public static final int DOMAIN_NOTICES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> domainNotices_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.domains.v1alpha2.DomainNotice>
       domainNotices_converter_ =
           new com.google.protobuf.Internal.ListAdapter.Converter<
               java.lang.Integer, com.google.cloud.domains.v1alpha2.DomainNotice>() {
             public com.google.cloud.domains.v1alpha2.DomainNotice convert(java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.domains.v1alpha2.DomainNotice result =
-                  com.google.cloud.domains.v1alpha2.DomainNotice.valueOf(from);
+                  com.google.cloud.domains.v1alpha2.DomainNotice.forNumber(from);
               return result == null
                   ? com.google.cloud.domains.v1alpha2.DomainNotice.UNRECOGNIZED
                   : result;
@@ -611,7 +616,7 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.type.MoneyOrBuilder getYearlyPriceOrBuilder() {
-    return getYearlyPrice();
+    return yearlyPrice_ == null ? com.google.type.Money.getDefaultInstance() : yearlyPrice_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -891,18 +896,16 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       domainName_ = "";
-
       availability_ = 0;
-
       supportedPrivacy_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       domainNotices_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (yearlyPriceBuilder_ == null) {
-        yearlyPrice_ = null;
-      } else {
-        yearlyPrice_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      yearlyPrice_ = null;
+      if (yearlyPriceBuilder_ != null) {
+        yearlyPriceBuilder_.dispose();
         yearlyPriceBuilder_ = null;
       }
       return this;
@@ -932,26 +935,40 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.domains.v1alpha2.RegisterParameters buildPartial() {
       com.google.cloud.domains.v1alpha2.RegisterParameters result =
           new com.google.cloud.domains.v1alpha2.RegisterParameters(this);
-      int from_bitField0_ = bitField0_;
-      result.domainName_ = domainName_;
-      result.availability_ = availability_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        supportedPrivacy_ = java.util.Collections.unmodifiableList(supportedPrivacy_);
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.supportedPrivacy_ = supportedPrivacy_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        domainNotices_ = java.util.Collections.unmodifiableList(domainNotices_);
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.domainNotices_ = domainNotices_;
-      if (yearlyPriceBuilder_ == null) {
-        result.yearlyPrice_ = yearlyPrice_;
-      } else {
-        result.yearlyPrice_ = yearlyPriceBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.domains.v1alpha2.RegisterParameters result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        supportedPrivacy_ = java.util.Collections.unmodifiableList(supportedPrivacy_);
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.supportedPrivacy_ = supportedPrivacy_;
+      if (((bitField0_ & 0x00000008) != 0)) {
+        domainNotices_ = java.util.Collections.unmodifiableList(domainNotices_);
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.domainNotices_ = domainNotices_;
+    }
+
+    private void buildPartial0(com.google.cloud.domains.v1alpha2.RegisterParameters result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.domainName_ = domainName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.availability_ = availability_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.yearlyPrice_ =
+            yearlyPriceBuilder_ == null ? yearlyPrice_ : yearlyPriceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1002,6 +1019,7 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getDomainName().isEmpty()) {
         domainName_ = other.domainName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.availability_ != 0) {
@@ -1010,7 +1028,7 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
       if (!other.supportedPrivacy_.isEmpty()) {
         if (supportedPrivacy_.isEmpty()) {
           supportedPrivacy_ = other.supportedPrivacy_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureSupportedPrivacyIsMutable();
           supportedPrivacy_.addAll(other.supportedPrivacy_);
@@ -1020,7 +1038,7 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
       if (!other.domainNotices_.isEmpty()) {
         if (domainNotices_.isEmpty()) {
           domainNotices_ = other.domainNotices_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureDomainNoticesIsMutable();
           domainNotices_.addAll(other.domainNotices_);
@@ -1059,13 +1077,13 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 domainName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 availability_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
@@ -1109,7 +1127,7 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
             case 42:
               {
                 input.readMessage(getYearlyPriceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -1192,8 +1210,8 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       domainName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1209,8 +1227,8 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDomainName() {
-
       domainName_ = getDefaultInstance().getDomainName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1231,8 +1249,8 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       domainName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1270,8 +1288,8 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setAvailabilityValue(int value) {
-
       availability_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1290,9 +1308,9 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.cloud.domains.v1alpha2.RegisterParameters.Availability getAvailability() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.domains.v1alpha2.RegisterParameters.Availability result =
-          com.google.cloud.domains.v1alpha2.RegisterParameters.Availability.valueOf(availability_);
+          com.google.cloud.domains.v1alpha2.RegisterParameters.Availability.forNumber(
+              availability_);
       return result == null
           ? com.google.cloud.domains.v1alpha2.RegisterParameters.Availability.UNRECOGNIZED
           : result;
@@ -1316,7 +1334,7 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       availability_ = value.getNumber();
       onChanged();
       return this;
@@ -1335,7 +1353,7 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearAvailability() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       availability_ = 0;
       onChanged();
       return this;
@@ -1344,9 +1362,9 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
     private java.util.List<java.lang.Integer> supportedPrivacy_ = java.util.Collections.emptyList();
 
     private void ensureSupportedPrivacyIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         supportedPrivacy_ = new java.util.ArrayList<java.lang.Integer>(supportedPrivacy_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1473,7 +1491,7 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearSupportedPrivacy() {
       supportedPrivacy_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1567,9 +1585,9 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
     private java.util.List<java.lang.Integer> domainNotices_ = java.util.Collections.emptyList();
 
     private void ensureDomainNoticesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         domainNotices_ = new java.util.ArrayList<java.lang.Integer>(domainNotices_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1695,7 +1713,7 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearDomainNotices() {
       domainNotices_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1802,7 +1820,7 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
      * @return Whether the yearlyPrice field is set.
      */
     public boolean hasYearlyPrice() {
-      return yearlyPriceBuilder_ != null || yearlyPrice_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1837,11 +1855,11 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         yearlyPrice_ = value;
-        onChanged();
       } else {
         yearlyPriceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1856,11 +1874,11 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
     public Builder setYearlyPrice(com.google.type.Money.Builder builderForValue) {
       if (yearlyPriceBuilder_ == null) {
         yearlyPrice_ = builderForValue.build();
-        onChanged();
       } else {
         yearlyPriceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1874,17 +1892,18 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeYearlyPrice(com.google.type.Money value) {
       if (yearlyPriceBuilder_ == null) {
-        if (yearlyPrice_ != null) {
-          yearlyPrice_ =
-              com.google.type.Money.newBuilder(yearlyPrice_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && yearlyPrice_ != null
+            && yearlyPrice_ != com.google.type.Money.getDefaultInstance()) {
+          getYearlyPriceBuilder().mergeFrom(value);
         } else {
           yearlyPrice_ = value;
         }
-        onChanged();
       } else {
         yearlyPriceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1897,14 +1916,13 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
      * <code>.google.type.Money yearly_price = 5;</code>
      */
     public Builder clearYearlyPrice() {
-      if (yearlyPriceBuilder_ == null) {
-        yearlyPrice_ = null;
-        onChanged();
-      } else {
-        yearlyPrice_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      yearlyPrice_ = null;
+      if (yearlyPriceBuilder_ != null) {
+        yearlyPriceBuilder_.dispose();
         yearlyPriceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1917,7 +1935,7 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
      * <code>.google.type.Money yearly_price = 5;</code>
      */
     public com.google.type.Money.Builder getYearlyPriceBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getYearlyPriceFieldBuilder().getBuilder();
     }

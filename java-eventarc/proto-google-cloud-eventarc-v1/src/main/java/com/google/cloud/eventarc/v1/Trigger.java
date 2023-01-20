@@ -86,7 +86,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -139,7 +141,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object uid_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uid_ = "";
   /**
    *
    *
@@ -235,7 +239,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 6;
@@ -284,10 +288,12 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int EVENT_FILTERS_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.eventarc.v1.EventFilter> eventFilters_;
   /**
    *
@@ -372,7 +378,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 9;
-  private volatile java.lang.Object serviceAccount_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccount_ = "";
   /**
    *
    *
@@ -497,7 +505,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.eventarc.v1.DestinationOrBuilder getDestinationOrBuilder() {
-    return getDestination();
+    return destination_ == null
+        ? com.google.cloud.eventarc.v1.Destination.getDefaultInstance()
+        : destination_;
   }
 
   public static final int TRANSPORT_FIELD_NUMBER = 11;
@@ -560,7 +570,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.eventarc.v1.TransportOrBuilder getTransportOrBuilder() {
-    return getTransport();
+    return transport_ == null
+        ? com.google.cloud.eventarc.v1.Transport.getDefaultInstance()
+        : transport_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 12;
@@ -576,6 +588,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -633,7 +646,10 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -662,7 +678,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CHANNEL_FIELD_NUMBER = 13;
-  private volatile java.lang.Object channel_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object channel_ = "";
   /**
    *
    *
@@ -730,6 +748,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.eventarc.v1.StateCondition.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.eventarc.v1.StateCondition>
       conditions_;
@@ -799,8 +818,10 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.eventarc.v1.StateCondition getConditionsOrDefault(
-      java.lang.String key, com.google.cloud.eventarc.v1.StateCondition defaultValue) {
+  public /* nullable */ com.google.cloud.eventarc.v1.StateCondition getConditionsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.eventarc.v1.StateCondition defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -833,7 +854,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ETAG_FIELD_NUMBER = 99;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -1242,20 +1265,17 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       uid_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       if (eventFiltersBuilder_ == null) {
@@ -1264,27 +1284,22 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
         eventFilters_ = null;
         eventFiltersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       serviceAccount_ = "";
-
-      if (destinationBuilder_ == null) {
-        destination_ = null;
-      } else {
-        destination_ = null;
+      destination_ = null;
+      if (destinationBuilder_ != null) {
+        destinationBuilder_.dispose();
         destinationBuilder_ = null;
       }
-      if (transportBuilder_ == null) {
-        transport_ = null;
-      } else {
-        transport_ = null;
+      transport_ = null;
+      if (transportBuilder_ != null) {
+        transportBuilder_.dispose();
         transportBuilder_ = null;
       }
       internalGetMutableLabels().clear();
       channel_ = "";
-
       internalGetMutableConditions().clear();
       etag_ = "";
-
       return this;
     }
 
@@ -1311,47 +1326,64 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.eventarc.v1.Trigger buildPartial() {
       com.google.cloud.eventarc.v1.Trigger result = new com.google.cloud.eventarc.v1.Trigger(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.uid_ = uid_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.eventarc.v1.Trigger result) {
       if (eventFiltersBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           eventFilters_ = java.util.Collections.unmodifiableList(eventFilters_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.eventFilters_ = eventFilters_;
       } else {
         result.eventFilters_ = eventFiltersBuilder_.build();
       }
-      result.serviceAccount_ = serviceAccount_;
-      if (destinationBuilder_ == null) {
-        result.destination_ = destination_;
-      } else {
-        result.destination_ = destinationBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.eventarc.v1.Trigger result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
       }
-      if (transportBuilder_ == null) {
-        result.transport_ = transport_;
-      } else {
-        result.transport_ = transportBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.uid_ = uid_;
       }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.channel_ = channel_;
-      result.conditions_ = internalGetConditions();
-      result.conditions_.makeImmutable();
-      result.etag_ = etag_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.serviceAccount_ = serviceAccount_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.destination_ =
+            destinationBuilder_ == null ? destination_ : destinationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.transport_ = transportBuilder_ == null ? transport_ : transportBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.channel_ = channel_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.conditions_ = internalGetConditions();
+        result.conditions_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.etag_ = etag_;
+      }
     }
 
     @java.lang.Override
@@ -1401,10 +1433,12 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.eventarc.v1.Trigger.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getUid().isEmpty()) {
         uid_ = other.uid_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1417,7 +1451,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
         if (!other.eventFilters_.isEmpty()) {
           if (eventFilters_.isEmpty()) {
             eventFilters_ = other.eventFilters_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureEventFiltersIsMutable();
             eventFilters_.addAll(other.eventFilters_);
@@ -1430,7 +1464,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
             eventFiltersBuilder_.dispose();
             eventFiltersBuilder_ = null;
             eventFilters_ = other.eventFilters_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
             eventFiltersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEventFiltersFieldBuilder()
@@ -1442,6 +1476,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getServiceAccount().isEmpty()) {
         serviceAccount_ = other.serviceAccount_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasDestination()) {
@@ -1451,13 +1486,17 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
         mergeTransport(other.getTransport());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000100;
       if (!other.getChannel().isEmpty()) {
         channel_ = other.channel_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       internalGetMutableConditions().mergeFrom(other.internalGetConditions());
+      bitField0_ |= 0x00000400;
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1489,25 +1528,25 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 uid_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 42:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 50
             case 66:
@@ -1526,19 +1565,19 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
             case 74:
               {
                 serviceAccount_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(getDestinationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(getTransportFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 90
             case 98:
@@ -1550,12 +1589,13 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000100;
                 break;
               } // case 98
             case 106:
               {
                 channel_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 106
             case 122:
@@ -1569,12 +1609,13 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableConditions()
                     .getMutableMap()
                     .put(conditions__.getKey(), conditions__.getValue());
+                bitField0_ |= 0x00000400;
                 break;
               } // case 122
             case 794:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 794
             default:
@@ -1663,8 +1704,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1682,8 +1723,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1706,8 +1747,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1776,8 +1817,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       uid_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1794,8 +1835,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUid() {
-
       uid_ = getDefaultInstance().getUid();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1817,8 +1858,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uid_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1843,7 +1884,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1884,11 +1925,11 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1905,11 +1946,11 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1925,17 +1966,18 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1950,14 +1992,13 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1972,7 +2013,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2044,7 +2085,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2085,11 +2126,11 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2106,11 +2147,11 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2126,17 +2167,18 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2151,14 +2193,13 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2173,7 +2214,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2229,10 +2270,10 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureEventFiltersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         eventFilters_ =
             new java.util.ArrayList<com.google.cloud.eventarc.v1.EventFilter>(eventFilters_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -2481,7 +2522,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEventFilters() {
       if (eventFiltersBuilder_ == null) {
         eventFilters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         eventFiltersBuilder_.clear();
@@ -2624,7 +2665,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.eventarc.v1.EventFilter,
                 com.google.cloud.eventarc.v1.EventFilter.Builder,
                 com.google.cloud.eventarc.v1.EventFilterOrBuilder>(
-                eventFilters_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                eventFilters_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         eventFilters_ = null;
       }
       return eventFiltersBuilder_;
@@ -2730,8 +2771,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceAccount_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2760,8 +2801,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceAccount() {
-
       serviceAccount_ = getDefaultInstance().getServiceAccount();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2795,8 +2836,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceAccount_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2821,7 +2862,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the destination field is set.
      */
     public boolean hasDestination() {
-      return destinationBuilder_ != null || destination_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2862,11 +2903,11 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         destination_ = value;
-        onChanged();
       } else {
         destinationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2884,11 +2925,11 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.eventarc.v1.Destination.Builder builderForValue) {
       if (destinationBuilder_ == null) {
         destination_ = builderForValue.build();
-        onChanged();
       } else {
         destinationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2904,19 +2945,18 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDestination(com.google.cloud.eventarc.v1.Destination value) {
       if (destinationBuilder_ == null) {
-        if (destination_ != null) {
-          destination_ =
-              com.google.cloud.eventarc.v1.Destination.newBuilder(destination_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && destination_ != null
+            && destination_ != com.google.cloud.eventarc.v1.Destination.getDefaultInstance()) {
+          getDestinationBuilder().mergeFrom(value);
         } else {
           destination_ = value;
         }
-        onChanged();
       } else {
         destinationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2931,14 +2971,13 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDestination() {
-      if (destinationBuilder_ == null) {
-        destination_ = null;
-        onChanged();
-      } else {
-        destination_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      destination_ = null;
+      if (destinationBuilder_ != null) {
+        destinationBuilder_.dispose();
         destinationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2953,7 +2992,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.eventarc.v1.Destination.Builder getDestinationBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getDestinationFieldBuilder().getBuilder();
     }
@@ -3028,7 +3067,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the transport field is set.
      */
     public boolean hasTransport() {
-      return transportBuilder_ != null || transport_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3075,11 +3114,11 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         transport_ = value;
-        onChanged();
       } else {
         transportBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3099,11 +3138,11 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     public Builder setTransport(com.google.cloud.eventarc.v1.Transport.Builder builderForValue) {
       if (transportBuilder_ == null) {
         transport_ = builderForValue.build();
-        onChanged();
       } else {
         transportBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3122,19 +3161,18 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTransport(com.google.cloud.eventarc.v1.Transport value) {
       if (transportBuilder_ == null) {
-        if (transport_ != null) {
-          transport_ =
-              com.google.cloud.eventarc.v1.Transport.newBuilder(transport_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && transport_ != null
+            && transport_ != com.google.cloud.eventarc.v1.Transport.getDefaultInstance()) {
+          getTransportBuilder().mergeFrom(value);
         } else {
           transport_ = value;
         }
-        onChanged();
       } else {
         transportBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3152,14 +3190,13 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearTransport() {
-      if (transportBuilder_ == null) {
-        transport_ = null;
-        onChanged();
-      } else {
-        transport_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      transport_ = null;
+      if (transportBuilder_ != null) {
+        transportBuilder_.dispose();
         transportBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3177,7 +3214,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.eventarc.v1.Transport.Builder getTransportBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getTransportFieldBuilder().getBuilder();
     }
@@ -3246,14 +3283,14 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000100;
+      onChanged();
       return labels_;
     }
 
@@ -3305,8 +3342,10 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -3335,6 +3374,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000100);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -3357,6 +3397,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000100;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -3375,8 +3416,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000100;
       return this;
     }
     /**
@@ -3390,6 +3431,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000100;
       return this;
     }
 
@@ -3460,8 +3502,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       channel_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3479,8 +3521,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearChannel() {
-
       channel_ = getDefaultInstance().getChannel();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3503,8 +3545,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       channel_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3526,8 +3568,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.eventarc.v1.StateCondition>
         internalGetMutableConditions() {
-      onChanged();
-      ;
       if (conditions_ == null) {
         conditions_ =
             com.google.protobuf.MapField.newMapField(ConditionsDefaultEntryHolder.defaultEntry);
@@ -3535,6 +3575,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       if (!conditions_.isMutable()) {
         conditions_ = conditions_.copy();
       }
+      bitField0_ |= 0x00000400;
+      onChanged();
       return conditions_;
     }
 
@@ -3594,8 +3636,10 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.eventarc.v1.StateCondition getConditionsOrDefault(
-        java.lang.String key, com.google.cloud.eventarc.v1.StateCondition defaultValue) {
+    public /* nullable */ com.google.cloud.eventarc.v1.StateCondition getConditionsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.eventarc.v1.StateCondition defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -3628,6 +3672,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearConditions() {
+      bitField0_ = (bitField0_ & ~0x00000400);
       internalGetMutableConditions().getMutableMap().clear();
       return this;
     }
@@ -3653,6 +3698,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.eventarc.v1.StateCondition>
         getMutableConditions() {
+      bitField0_ |= 0x00000400;
       return internalGetMutableConditions().getMutableMap();
     }
     /**
@@ -3674,8 +3720,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableConditions().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000400;
       return this;
     }
     /**
@@ -3692,6 +3738,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllConditions(
         java.util.Map<java.lang.String, com.google.cloud.eventarc.v1.StateCondition> values) {
       internalGetMutableConditions().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000400;
       return this;
     }
 
@@ -3762,8 +3809,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3781,8 +3828,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3805,8 +3852,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

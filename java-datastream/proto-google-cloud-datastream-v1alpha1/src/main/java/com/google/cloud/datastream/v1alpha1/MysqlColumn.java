@@ -70,7 +70,9 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COLUMN_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object columnName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object columnName_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATA_TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object dataType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dataType_ = "";
   /**
    *
    *
@@ -170,7 +174,7 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LENGTH_FIELD_NUMBER = 3;
-  private int length_;
+  private int length_ = 0;
   /**
    *
    *
@@ -188,7 +192,9 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COLLATION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object collation_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object collation_ = "";
   /**
    *
    *
@@ -237,7 +243,7 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PRIMARY_KEY_FIELD_NUMBER = 5;
-  private boolean primaryKey_;
+  private boolean primaryKey_ = false;
   /**
    *
    *
@@ -255,7 +261,7 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NULLABLE_FIELD_NUMBER = 6;
-  private boolean nullable_;
+  private boolean nullable_ = false;
   /**
    *
    *
@@ -273,7 +279,7 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ORDINAL_POSITION_FIELD_NUMBER = 7;
-  private int ordinalPosition_;
+  private int ordinalPosition_ = 0;
   /**
    *
    *
@@ -541,20 +547,14 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       columnName_ = "";
-
       dataType_ = "";
-
       length_ = 0;
-
       collation_ = "";
-
       primaryKey_ = false;
-
       nullable_ = false;
-
       ordinalPosition_ = 0;
-
       return this;
     }
 
@@ -582,15 +582,36 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datastream.v1alpha1.MysqlColumn buildPartial() {
       com.google.cloud.datastream.v1alpha1.MysqlColumn result =
           new com.google.cloud.datastream.v1alpha1.MysqlColumn(this);
-      result.columnName_ = columnName_;
-      result.dataType_ = dataType_;
-      result.length_ = length_;
-      result.collation_ = collation_;
-      result.primaryKey_ = primaryKey_;
-      result.nullable_ = nullable_;
-      result.ordinalPosition_ = ordinalPosition_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1alpha1.MysqlColumn result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.columnName_ = columnName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dataType_ = dataType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.length_ = length_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.collation_ = collation_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.primaryKey_ = primaryKey_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.nullable_ = nullable_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.ordinalPosition_ = ordinalPosition_;
+      }
     }
 
     @java.lang.Override
@@ -641,10 +662,12 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getColumnName().isEmpty()) {
         columnName_ = other.columnName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDataType().isEmpty()) {
         dataType_ = other.dataType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getLength() != 0) {
@@ -652,6 +675,7 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getCollation().isEmpty()) {
         collation_ = other.collation_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.getPrimaryKey() != false) {
@@ -692,43 +716,43 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 columnName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 dataType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 length_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 collation_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 primaryKey_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 48:
               {
                 nullable_ = input.readBool();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 56:
               {
                 ordinalPosition_ = input.readInt32();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             default:
@@ -747,6 +771,8 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object columnName_ = "";
     /**
@@ -809,8 +835,8 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       columnName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -826,8 +852,8 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearColumnName() {
-
       columnName_ = getDefaultInstance().getColumnName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -848,8 +874,8 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       columnName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -918,8 +944,8 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       dataType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -936,8 +962,8 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDataType() {
-
       dataType_ = getDefaultInstance().getDataType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -959,8 +985,8 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dataType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -996,6 +1022,7 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
     public Builder setLength(int value) {
 
       length_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1011,7 +1038,7 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLength() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       length_ = 0;
       onChanged();
       return this;
@@ -1078,8 +1105,8 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       collation_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1095,8 +1122,8 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCollation() {
-
       collation_ = getDefaultInstance().getCollation();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1117,8 +1144,8 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       collation_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1154,6 +1181,7 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
     public Builder setPrimaryKey(boolean value) {
 
       primaryKey_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1169,7 +1197,7 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPrimaryKey() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       primaryKey_ = false;
       onChanged();
       return this;
@@ -1206,6 +1234,7 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
     public Builder setNullable(boolean value) {
 
       nullable_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1221,7 +1250,7 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNullable() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       nullable_ = false;
       onChanged();
       return this;
@@ -1258,6 +1287,7 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
     public Builder setOrdinalPosition(int value) {
 
       ordinalPosition_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1273,7 +1303,7 @@ public final class MysqlColumn extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOrdinalPosition() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       ordinalPosition_ = 0;
       onChanged();
       return this;

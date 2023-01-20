@@ -210,7 +210,9 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
     }
 
     public static final int CLUSTER_FIELD_NUMBER = 1;
-    private volatile java.lang.Object cluster_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object cluster_ = "";
     /**
      *
      *
@@ -259,6 +261,8 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
     }
 
     public static final int FLEET_DETAILS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.gaming.v1beta.DeployedFleetDetails> fleetDetails_;
     /**
      *
@@ -558,15 +562,15 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         cluster_ = "";
-
         if (fleetDetailsBuilder_ == null) {
           fleetDetails_ = java.util.Collections.emptyList();
         } else {
           fleetDetails_ = null;
           fleetDetailsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -600,19 +604,33 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
         com.google.cloud.gaming.v1beta.FetchDeploymentStateResponse.DeployedClusterState result =
             new com.google.cloud.gaming.v1beta.FetchDeploymentStateResponse.DeployedClusterState(
                 this);
-        int from_bitField0_ = bitField0_;
-        result.cluster_ = cluster_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.gaming.v1beta.FetchDeploymentStateResponse.DeployedClusterState result) {
         if (fleetDetailsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             fleetDetails_ = java.util.Collections.unmodifiableList(fleetDetails_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.fleetDetails_ = fleetDetails_;
         } else {
           result.fleetDetails_ = fleetDetailsBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.gaming.v1beta.FetchDeploymentStateResponse.DeployedClusterState result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.cluster_ = cluster_;
+        }
       }
 
       @java.lang.Override
@@ -671,13 +689,14 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
                 .getDefaultInstance()) return this;
         if (!other.getCluster().isEmpty()) {
           cluster_ = other.cluster_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (fleetDetailsBuilder_ == null) {
           if (!other.fleetDetails_.isEmpty()) {
             if (fleetDetails_.isEmpty()) {
               fleetDetails_ = other.fleetDetails_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureFleetDetailsIsMutable();
               fleetDetails_.addAll(other.fleetDetails_);
@@ -690,7 +709,7 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
               fleetDetailsBuilder_.dispose();
               fleetDetailsBuilder_ = null;
               fleetDetails_ = other.fleetDetails_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               fleetDetailsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getFleetDetailsFieldBuilder()
@@ -729,7 +748,7 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
               case 10:
                 {
                   cluster_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -826,8 +845,8 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
         if (value == null) {
           throw new NullPointerException();
         }
-
         cluster_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -843,8 +862,8 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
        * @return This builder for chaining.
        */
       public Builder clearCluster() {
-
         cluster_ = getDefaultInstance().getCluster();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -865,8 +884,8 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         cluster_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -875,11 +894,11 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
           java.util.Collections.emptyList();
 
       private void ensureFleetDetailsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           fleetDetails_ =
               new java.util.ArrayList<com.google.cloud.gaming.v1beta.DeployedFleetDetails>(
                   fleetDetails_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
 
@@ -1110,7 +1129,7 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
       public Builder clearFleetDetails() {
         if (fleetDetailsBuilder_ == null) {
           fleetDetails_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           fleetDetailsBuilder_.clear();
@@ -1244,7 +1263,7 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
                   com.google.cloud.gaming.v1beta.DeployedFleetDetails.Builder,
                   com.google.cloud.gaming.v1beta.DeployedFleetDetailsOrBuilder>(
                   fleetDetails_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           fleetDetails_ = null;
@@ -1322,6 +1341,8 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
   }
 
   public static final int CLUSTER_STATE_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<
           com.google.cloud.gaming.v1beta.FetchDeploymentStateResponse.DeployedClusterState>
       clusterState_;
@@ -1410,6 +1431,8 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
   }
 
   public static final int UNAVAILABLE_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList unavailable_;
   /**
    *
@@ -1686,6 +1709,7 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (clusterStateBuilder_ == null) {
         clusterState_ = java.util.Collections.emptyList();
       } else {
@@ -1722,7 +1746,16 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
     public com.google.cloud.gaming.v1beta.FetchDeploymentStateResponse buildPartial() {
       com.google.cloud.gaming.v1beta.FetchDeploymentStateResponse result =
           new com.google.cloud.gaming.v1beta.FetchDeploymentStateResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.gaming.v1beta.FetchDeploymentStateResponse result) {
       if (clusterStateBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           clusterState_ = java.util.Collections.unmodifiableList(clusterState_);
@@ -1737,8 +1770,10 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.unavailable_ = unavailable_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gaming.v1beta.FetchDeploymentStateResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

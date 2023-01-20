@@ -114,11 +114,11 @@ public final class UpdateEntityRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.EntityOrBuilder getEntityOrBuilder() {
-    return getEntity();
+    return entity_ == null ? com.google.cloud.dataplex.v1.Entity.getDefaultInstance() : entity_;
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -350,14 +350,13 @@ public final class UpdateEntityRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (entityBuilder_ == null) {
-        entity_ = null;
-      } else {
-        entity_ = null;
+      bitField0_ = 0;
+      entity_ = null;
+      if (entityBuilder_ != null) {
+        entityBuilder_.dispose();
         entityBuilder_ = null;
       }
       validateOnly_ = false;
-
       return this;
     }
 
@@ -385,14 +384,21 @@ public final class UpdateEntityRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.dataplex.v1.UpdateEntityRequest buildPartial() {
       com.google.cloud.dataplex.v1.UpdateEntityRequest result =
           new com.google.cloud.dataplex.v1.UpdateEntityRequest(this);
-      if (entityBuilder_ == null) {
-        result.entity_ = entity_;
-      } else {
-        result.entity_ = entityBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataplex.v1.UpdateEntityRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.entity_ = entityBuilder_ == null ? entity_ : entityBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -476,13 +482,13 @@ public final class UpdateEntityRequest extends com.google.protobuf.GeneratedMess
             case 18:
               {
                 input.readMessage(getEntityFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             case 24:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 24
             default:
@@ -501,6 +507,8 @@ public final class UpdateEntityRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.dataplex.v1.Entity entity_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -521,7 +529,7 @@ public final class UpdateEntityRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the entity field is set.
      */
     public boolean hasEntity() {
-      return entityBuilder_ != null || entity_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -558,11 +566,11 @@ public final class UpdateEntityRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         entity_ = value;
-        onChanged();
       } else {
         entityBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -578,11 +586,11 @@ public final class UpdateEntityRequest extends com.google.protobuf.GeneratedMess
     public Builder setEntity(com.google.cloud.dataplex.v1.Entity.Builder builderForValue) {
       if (entityBuilder_ == null) {
         entity_ = builderForValue.build();
-        onChanged();
       } else {
         entityBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -597,19 +605,18 @@ public final class UpdateEntityRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeEntity(com.google.cloud.dataplex.v1.Entity value) {
       if (entityBuilder_ == null) {
-        if (entity_ != null) {
-          entity_ =
-              com.google.cloud.dataplex.v1.Entity.newBuilder(entity_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && entity_ != null
+            && entity_ != com.google.cloud.dataplex.v1.Entity.getDefaultInstance()) {
+          getEntityBuilder().mergeFrom(value);
         } else {
           entity_ = value;
         }
-        onChanged();
       } else {
         entityBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -623,14 +630,13 @@ public final class UpdateEntityRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearEntity() {
-      if (entityBuilder_ == null) {
-        entity_ = null;
-        onChanged();
-      } else {
-        entity_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      entity_ = null;
+      if (entityBuilder_ != null) {
+        entityBuilder_.dispose();
         entityBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -644,7 +650,7 @@ public final class UpdateEntityRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.dataplex.v1.Entity.Builder getEntityBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getEntityFieldBuilder().getBuilder();
     }
@@ -725,6 +731,7 @@ public final class UpdateEntityRequest extends com.google.protobuf.GeneratedMess
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -741,7 +748,7 @@ public final class UpdateEntityRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       validateOnly_ = false;
       onChanged();
       return this;

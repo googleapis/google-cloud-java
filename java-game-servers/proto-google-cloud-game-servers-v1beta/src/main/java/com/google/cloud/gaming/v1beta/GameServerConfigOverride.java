@@ -509,6 +509,7 @@ public final class GameServerConfigOverride extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (realmsSelectorBuilder_ != null) {
         realmsSelectorBuilder_.clear();
       }
@@ -543,20 +544,27 @@ public final class GameServerConfigOverride extends com.google.protobuf.Generate
     public com.google.cloud.gaming.v1beta.GameServerConfigOverride buildPartial() {
       com.google.cloud.gaming.v1beta.GameServerConfigOverride result =
           new com.google.cloud.gaming.v1beta.GameServerConfigOverride(this);
-      if (selectorCase_ == 1) {
-        if (realmsSelectorBuilder_ == null) {
-          result.selector_ = selector_;
-        } else {
-          result.selector_ = realmsSelectorBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (changeCase_ == 100) {
-        result.change_ = change_;
-      }
-      result.selectorCase_ = selectorCase_;
-      result.changeCase_ = changeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gaming.v1beta.GameServerConfigOverride result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.gaming.v1beta.GameServerConfigOverride result) {
+      result.selectorCase_ = selectorCase_;
+      result.selector_ = this.selector_;
+      if (selectorCase_ == 1 && realmsSelectorBuilder_ != null) {
+        result.selector_ = realmsSelectorBuilder_.build();
+      }
+      result.changeCase_ = changeCase_;
+      result.change_ = this.change_;
     }
 
     @java.lang.Override
@@ -712,6 +720,8 @@ public final class GameServerConfigOverride extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gaming.v1beta.RealmSelector,
@@ -919,7 +929,6 @@ public final class GameServerConfigOverride extends com.google.protobuf.Generate
       }
       selectorCase_ = 1;
       onChanged();
-      ;
       return realmsSelectorBuilder_;
     }
 

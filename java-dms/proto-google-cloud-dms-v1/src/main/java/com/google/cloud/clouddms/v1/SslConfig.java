@@ -230,7 +230,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -265,14 +265,15 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.clouddms.v1.SslConfig.SslType getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.clouddms.v1.SslConfig.SslType result =
-        com.google.cloud.clouddms.v1.SslConfig.SslType.valueOf(type_);
+        com.google.cloud.clouddms.v1.SslConfig.SslType.forNumber(type_);
     return result == null ? com.google.cloud.clouddms.v1.SslConfig.SslType.UNRECOGNIZED : result;
   }
 
   public static final int CLIENT_KEY_FIELD_NUMBER = 2;
-  private volatile java.lang.Object clientKey_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clientKey_ = "";
   /**
    *
    *
@@ -325,7 +326,9 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLIENT_CERTIFICATE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object clientCertificate_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clientCertificate_ = "";
   /**
    *
    *
@@ -378,7 +381,9 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CA_CERTIFICATE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object caCertificate_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object caCertificate_ = "";
   /**
    *
    *
@@ -657,14 +662,11 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = 0;
-
       clientKey_ = "";
-
       clientCertificate_ = "";
-
       caCertificate_ = "";
-
       return this;
     }
 
@@ -692,12 +694,27 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.clouddms.v1.SslConfig buildPartial() {
       com.google.cloud.clouddms.v1.SslConfig result =
           new com.google.cloud.clouddms.v1.SslConfig(this);
-      result.type_ = type_;
-      result.clientKey_ = clientKey_;
-      result.clientCertificate_ = clientCertificate_;
-      result.caCertificate_ = caCertificate_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.clouddms.v1.SslConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.clientKey_ = clientKey_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.clientCertificate_ = clientCertificate_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.caCertificate_ = caCertificate_;
+      }
     }
 
     @java.lang.Override
@@ -750,14 +767,17 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getClientKey().isEmpty()) {
         clientKey_ = other.clientKey_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getClientCertificate().isEmpty()) {
         clientCertificate_ = other.clientCertificate_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getCaCertificate().isEmpty()) {
         caCertificate_ = other.caCertificate_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -789,25 +809,25 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 clientKey_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 clientCertificate_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 caCertificate_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -826,6 +846,8 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int type_ = 0;
     /**
@@ -862,8 +884,8 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -883,9 +905,8 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.clouddms.v1.SslConfig.SslType getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.clouddms.v1.SslConfig.SslType result =
-          com.google.cloud.clouddms.v1.SslConfig.SslType.valueOf(type_);
+          com.google.cloud.clouddms.v1.SslConfig.SslType.forNumber(type_);
       return result == null ? com.google.cloud.clouddms.v1.SslConfig.SslType.UNRECOGNIZED : result;
     }
     /**
@@ -907,7 +928,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -927,7 +948,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       type_ = 0;
       onChanged();
       return this;
@@ -1000,8 +1021,8 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       clientKey_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1019,8 +1040,8 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearClientKey() {
-
       clientKey_ = getDefaultInstance().getClientKey();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1043,8 +1064,8 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clientKey_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1116,8 +1137,8 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       clientCertificate_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1135,8 +1156,8 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearClientCertificate() {
-
       clientCertificate_ = getDefaultInstance().getClientCertificate();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1159,8 +1180,8 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clientCertificate_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1238,8 +1259,8 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       caCertificate_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1259,8 +1280,8 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCaCertificate() {
-
       caCertificate_ = getDefaultInstance().getCaCertificate();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1285,8 +1306,8 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       caCertificate_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

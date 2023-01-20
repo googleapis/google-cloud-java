@@ -113,11 +113,13 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.DataQualityRuleOrBuilder getRuleOrBuilder() {
-    return getRule();
+    return rule_ == null
+        ? com.google.cloud.dataplex.v1.DataQualityRule.getDefaultInstance()
+        : rule_;
   }
 
   public static final int PASSED_FIELD_NUMBER = 7;
-  private boolean passed_;
+  private boolean passed_ = false;
   /**
    *
    *
@@ -135,7 +137,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
   }
 
   public static final int EVALUATED_COUNT_FIELD_NUMBER = 9;
-  private long evaluatedCount_;
+  private long evaluatedCount_ = 0L;
   /**
    *
    *
@@ -158,7 +160,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PASSED_COUNT_FIELD_NUMBER = 8;
-  private long passedCount_;
+  private long passedCount_ = 0L;
   /**
    *
    *
@@ -177,7 +179,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NULL_COUNT_FIELD_NUMBER = 5;
-  private long nullCount_;
+  private long nullCount_ = 0L;
   /**
    *
    *
@@ -195,7 +197,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PASS_RATIO_FIELD_NUMBER = 6;
-  private double passRatio_;
+  private double passRatio_ = 0D;
   /**
    *
    *
@@ -214,7 +216,9 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
   }
 
   public static final int FAILING_ROWS_QUERY_FIELD_NUMBER = 10;
-  private volatile java.lang.Object failingRowsQuery_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object failingRowsQuery_ = "";
   /**
    *
    *
@@ -525,24 +529,18 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (ruleBuilder_ == null) {
-        rule_ = null;
-      } else {
-        rule_ = null;
+      bitField0_ = 0;
+      rule_ = null;
+      if (ruleBuilder_ != null) {
+        ruleBuilder_.dispose();
         ruleBuilder_ = null;
       }
       passed_ = false;
-
       evaluatedCount_ = 0L;
-
       passedCount_ = 0L;
-
       nullCount_ = 0L;
-
       passRatio_ = 0D;
-
       failingRowsQuery_ = "";
-
       return this;
     }
 
@@ -570,19 +568,36 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
     public com.google.cloud.dataplex.v1.DataQualityRuleResult buildPartial() {
       com.google.cloud.dataplex.v1.DataQualityRuleResult result =
           new com.google.cloud.dataplex.v1.DataQualityRuleResult(this);
-      if (ruleBuilder_ == null) {
-        result.rule_ = rule_;
-      } else {
-        result.rule_ = ruleBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.passed_ = passed_;
-      result.evaluatedCount_ = evaluatedCount_;
-      result.passedCount_ = passedCount_;
-      result.nullCount_ = nullCount_;
-      result.passRatio_ = passRatio_;
-      result.failingRowsQuery_ = failingRowsQuery_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataplex.v1.DataQualityRuleResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.rule_ = ruleBuilder_ == null ? rule_ : ruleBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.passed_ = passed_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.evaluatedCount_ = evaluatedCount_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.passedCount_ = passedCount_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.nullCount_ = nullCount_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.passRatio_ = passRatio_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.failingRowsQuery_ = failingRowsQuery_;
+      }
     }
 
     @java.lang.Override
@@ -651,6 +666,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
       }
       if (!other.getFailingRowsQuery().isEmpty()) {
         failingRowsQuery_ = other.failingRowsQuery_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -682,43 +698,43 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 input.readMessage(getRuleFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 40:
               {
                 nullCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 49:
               {
                 passRatio_ = input.readDouble();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 49
             case 56:
               {
                 passed_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 56
             case 64:
               {
                 passedCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 64
             case 72:
               {
                 evaluatedCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 72
             case 82:
               {
                 failingRowsQuery_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 82
             default:
@@ -738,6 +754,8 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.dataplex.v1.DataQualityRule rule_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataplex.v1.DataQualityRule,
@@ -756,7 +774,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      * @return Whether the rule field is set.
      */
     public boolean hasRule() {
-      return ruleBuilder_ != null || rule_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -793,11 +811,11 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         rule_ = value;
-        onChanged();
       } else {
         ruleBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -812,11 +830,11 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
     public Builder setRule(com.google.cloud.dataplex.v1.DataQualityRule.Builder builderForValue) {
       if (ruleBuilder_ == null) {
         rule_ = builderForValue.build();
-        onChanged();
       } else {
         ruleBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -830,19 +848,18 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeRule(com.google.cloud.dataplex.v1.DataQualityRule value) {
       if (ruleBuilder_ == null) {
-        if (rule_ != null) {
-          rule_ =
-              com.google.cloud.dataplex.v1.DataQualityRule.newBuilder(rule_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && rule_ != null
+            && rule_ != com.google.cloud.dataplex.v1.DataQualityRule.getDefaultInstance()) {
+          getRuleBuilder().mergeFrom(value);
         } else {
           rule_ = value;
         }
-        onChanged();
       } else {
         ruleBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -855,14 +872,13 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.dataplex.v1.DataQualityRule rule = 1;</code>
      */
     public Builder clearRule() {
-      if (ruleBuilder_ == null) {
-        rule_ = null;
-        onChanged();
-      } else {
-        rule_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      rule_ = null;
+      if (ruleBuilder_ != null) {
+        ruleBuilder_.dispose();
         ruleBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -875,7 +891,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.dataplex.v1.DataQualityRule rule = 1;</code>
      */
     public com.google.cloud.dataplex.v1.DataQualityRule.Builder getRuleBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getRuleFieldBuilder().getBuilder();
     }
@@ -954,6 +970,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
     public Builder setPassed(boolean value) {
 
       passed_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -969,7 +986,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearPassed() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       passed_ = false;
       onChanged();
       return this;
@@ -1016,6 +1033,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
     public Builder setEvaluatedCount(long value) {
 
       evaluatedCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1036,7 +1054,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearEvaluatedCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       evaluatedCount_ = 0L;
       onChanged();
       return this;
@@ -1075,6 +1093,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
     public Builder setPassedCount(long value) {
 
       passedCount_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1091,7 +1110,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearPassedCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       passedCount_ = 0L;
       onChanged();
       return this;
@@ -1128,6 +1147,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
     public Builder setNullCount(long value) {
 
       nullCount_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1143,7 +1163,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearNullCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       nullCount_ = 0L;
       onChanged();
       return this;
@@ -1182,6 +1202,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
     public Builder setPassRatio(double value) {
 
       passRatio_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1198,7 +1219,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearPassRatio() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       passRatio_ = 0D;
       onChanged();
       return this;
@@ -1268,8 +1289,8 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       failingRowsQuery_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1286,8 +1307,8 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearFailingRowsQuery() {
-
       failingRowsQuery_ = getDefaultInstance().getFailingRowsQuery();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1309,8 +1330,8 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       failingRowsQuery_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

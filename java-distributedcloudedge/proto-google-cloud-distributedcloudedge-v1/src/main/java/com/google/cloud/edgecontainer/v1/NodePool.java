@@ -280,7 +280,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int KMS_KEY_FIELD_NUMBER = 1;
-    private volatile java.lang.Object kmsKey_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object kmsKey_ = "";
     /**
      *
      *
@@ -339,7 +341,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int KMS_KEY_ACTIVE_VERSION_FIELD_NUMBER = 2;
-    private volatile java.lang.Object kmsKeyActiveVersion_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object kmsKeyActiveVersion_ = "";
     /**
      *
      *
@@ -394,7 +398,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int KMS_KEY_STATE_FIELD_NUMBER = 3;
-    private int kmsKeyState_;
+    private int kmsKeyState_ = 0;
     /**
      *
      *
@@ -433,9 +437,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.edgecontainer.v1.KmsKeyState getKmsKeyState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.edgecontainer.v1.KmsKeyState result =
-          com.google.cloud.edgecontainer.v1.KmsKeyState.valueOf(kmsKeyState_);
+          com.google.cloud.edgecontainer.v1.KmsKeyState.forNumber(kmsKeyState_);
       return result == null ? com.google.cloud.edgecontainer.v1.KmsKeyState.UNRECOGNIZED : result;
     }
 
@@ -488,7 +491,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.rpc.StatusOrBuilder getKmsStatusOrBuilder() {
-      return getKmsStatus();
+      return kmsStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : kmsStatus_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -725,16 +728,13 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         kmsKey_ = "";
-
         kmsKeyActiveVersion_ = "";
-
         kmsKeyState_ = 0;
-
-        if (kmsStatusBuilder_ == null) {
-          kmsStatus_ = null;
-        } else {
-          kmsStatus_ = null;
+        kmsStatus_ = null;
+        if (kmsStatusBuilder_ != null) {
+          kmsStatusBuilder_.dispose();
           kmsStatusBuilder_ = null;
         }
         return this;
@@ -765,16 +765,28 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.edgecontainer.v1.NodePool.LocalDiskEncryption buildPartial() {
         com.google.cloud.edgecontainer.v1.NodePool.LocalDiskEncryption result =
             new com.google.cloud.edgecontainer.v1.NodePool.LocalDiskEncryption(this);
-        result.kmsKey_ = kmsKey_;
-        result.kmsKeyActiveVersion_ = kmsKeyActiveVersion_;
-        result.kmsKeyState_ = kmsKeyState_;
-        if (kmsStatusBuilder_ == null) {
-          result.kmsStatus_ = kmsStatus_;
-        } else {
-          result.kmsStatus_ = kmsStatusBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.edgecontainer.v1.NodePool.LocalDiskEncryption result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.kmsKey_ = kmsKey_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.kmsKeyActiveVersion_ = kmsKeyActiveVersion_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.kmsKeyState_ = kmsKeyState_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.kmsStatus_ = kmsStatusBuilder_ == null ? kmsStatus_ : kmsStatusBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -829,10 +841,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getKmsKey().isEmpty()) {
           kmsKey_ = other.kmsKey_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getKmsKeyActiveVersion().isEmpty()) {
           kmsKeyActiveVersion_ = other.kmsKeyActiveVersion_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.kmsKeyState_ != 0) {
@@ -870,25 +884,25 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   kmsKey_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   kmsKeyActiveVersion_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 24:
                 {
                   kmsKeyState_ = input.readEnum();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 34:
                 {
                   input.readMessage(getKmsStatusFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               default:
@@ -907,6 +921,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object kmsKey_ = "";
       /**
@@ -984,8 +1000,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         kmsKey_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1006,8 +1022,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearKmsKey() {
-
         kmsKey_ = getDefaultInstance().getKmsKey();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1033,8 +1049,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         kmsKey_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1109,8 +1125,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         kmsKeyActiveVersion_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1129,8 +1145,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearKmsKeyActiveVersion() {
-
         kmsKeyActiveVersion_ = getDefaultInstance().getKmsKeyActiveVersion();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1154,8 +1170,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         kmsKeyActiveVersion_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1199,8 +1215,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setKmsKeyStateValue(int value) {
-
         kmsKeyState_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1222,9 +1238,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.cloud.edgecontainer.v1.KmsKeyState getKmsKeyState() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.edgecontainer.v1.KmsKeyState result =
-            com.google.cloud.edgecontainer.v1.KmsKeyState.valueOf(kmsKeyState_);
+            com.google.cloud.edgecontainer.v1.KmsKeyState.forNumber(kmsKeyState_);
         return result == null ? com.google.cloud.edgecontainer.v1.KmsKeyState.UNRECOGNIZED : result;
       }
       /**
@@ -1248,7 +1263,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000004;
         kmsKeyState_ = value.getNumber();
         onChanged();
         return this;
@@ -1270,7 +1285,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearKmsKeyState() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         kmsKeyState_ = 0;
         onChanged();
         return this;
@@ -1295,7 +1310,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the kmsStatus field is set.
        */
       public boolean hasKmsStatus() {
-        return kmsStatusBuilder_ != null || kmsStatus_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        *
@@ -1336,11 +1351,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           kmsStatus_ = value;
-          onChanged();
         } else {
           kmsStatusBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1358,11 +1373,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       public Builder setKmsStatus(com.google.rpc.Status.Builder builderForValue) {
         if (kmsStatusBuilder_ == null) {
           kmsStatus_ = builderForValue.build();
-          onChanged();
         } else {
           kmsStatusBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1379,17 +1394,18 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeKmsStatus(com.google.rpc.Status value) {
         if (kmsStatusBuilder_ == null) {
-          if (kmsStatus_ != null) {
-            kmsStatus_ =
-                com.google.rpc.Status.newBuilder(kmsStatus_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000008) != 0)
+              && kmsStatus_ != null
+              && kmsStatus_ != com.google.rpc.Status.getDefaultInstance()) {
+            getKmsStatusBuilder().mergeFrom(value);
           } else {
             kmsStatus_ = value;
           }
-          onChanged();
         } else {
           kmsStatusBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1405,14 +1421,13 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearKmsStatus() {
-        if (kmsStatusBuilder_ == null) {
-          kmsStatus_ = null;
-          onChanged();
-        } else {
-          kmsStatus_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        kmsStatus_ = null;
+        if (kmsStatusBuilder_ != null) {
+          kmsStatusBuilder_.dispose();
           kmsStatusBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1428,7 +1443,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public com.google.rpc.Status.Builder getKmsStatusBuilder() {
-
+        bitField0_ |= 0x00000008;
         onChanged();
         return getKmsStatusFieldBuilder().getBuilder();
       }
@@ -1546,7 +1561,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1644,7 +1661,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
@@ -1693,7 +1710,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 4;
@@ -1709,6 +1726,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -1766,7 +1784,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -1795,7 +1816,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NODE_LOCATION_FIELD_NUMBER = 8;
-  private volatile java.lang.Object nodeLocation_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nodeLocation_ = "";
   /**
    *
    *
@@ -1846,7 +1869,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NODE_COUNT_FIELD_NUMBER = 6;
-  private int nodeCount_;
+  private int nodeCount_ = 0;
   /**
    *
    *
@@ -1864,7 +1887,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MACHINE_FILTER_FIELD_NUMBER = 7;
-  private volatile java.lang.Object machineFilter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object machineFilter_ = "";
   /**
    *
    *
@@ -1971,7 +1996,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.edgecontainer.v1.NodePool.LocalDiskEncryptionOrBuilder
       getLocalDiskEncryptionOrBuilder() {
-    return getLocalDiskEncryption();
+    return localDiskEncryption_ == null
+        ? com.google.cloud.edgecontainer.v1.NodePool.LocalDiskEncryption.getDefaultInstance()
+        : localDiskEncryption_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2278,31 +2305,25 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
       nodeLocation_ = "";
-
       nodeCount_ = 0;
-
       machineFilter_ = "";
-
-      if (localDiskEncryptionBuilder_ == null) {
-        localDiskEncryption_ = null;
-      } else {
-        localDiskEncryption_ = null;
+      localDiskEncryption_ = null;
+      if (localDiskEncryptionBuilder_ != null) {
+        localDiskEncryptionBuilder_.dispose();
         localDiskEncryptionBuilder_ = null;
       }
       return this;
@@ -2332,30 +2353,43 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.edgecontainer.v1.NodePool buildPartial() {
       com.google.cloud.edgecontainer.v1.NodePool result =
           new com.google.cloud.edgecontainer.v1.NodePool(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.nodeLocation_ = nodeLocation_;
-      result.nodeCount_ = nodeCount_;
-      result.machineFilter_ = machineFilter_;
-      if (localDiskEncryptionBuilder_ == null) {
-        result.localDiskEncryption_ = localDiskEncryption_;
-      } else {
-        result.localDiskEncryption_ = localDiskEncryptionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.edgecontainer.v1.NodePool result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.nodeLocation_ = nodeLocation_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.nodeCount_ = nodeCount_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.machineFilter_ = machineFilter_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.localDiskEncryption_ =
+            localDiskEncryptionBuilder_ == null
+                ? localDiskEncryption_
+                : localDiskEncryptionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2405,6 +2439,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.edgecontainer.v1.NodePool.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -2414,8 +2449,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         mergeUpdateTime(other.getUpdateTime());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000008;
       if (!other.getNodeLocation().isEmpty()) {
         nodeLocation_ = other.nodeLocation_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.getNodeCount() != 0) {
@@ -2423,6 +2460,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getMachineFilter().isEmpty()) {
         machineFilter_ = other.machineFilter_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasLocalDiskEncryption()) {
@@ -2457,19 +2495,19 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -2481,31 +2519,32 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 48:
               {
                 nodeCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 58:
               {
                 machineFilter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 nodeLocation_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(
                     getLocalDiskEncryptionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 74
             default:
@@ -2594,8 +2633,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2613,8 +2652,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2637,8 +2676,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2663,7 +2702,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2704,11 +2743,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2725,11 +2764,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2745,17 +2784,18 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2770,14 +2810,13 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2792,7 +2831,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2864,7 +2903,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2905,11 +2944,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2926,11 +2965,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2946,17 +2985,18 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2971,14 +3011,13 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2993,7 +3032,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -3056,14 +3095,14 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return labels_;
     }
 
@@ -3115,8 +3154,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -3145,6 +3186,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -3167,6 +3209,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -3185,8 +3228,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -3200,6 +3243,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -3267,8 +3311,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       nodeLocation_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3285,8 +3329,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNodeLocation() {
-
       nodeLocation_ = getDefaultInstance().getNodeLocation();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -3308,8 +3352,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nodeLocation_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3345,6 +3389,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     public Builder setNodeCount(int value) {
 
       nodeCount_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3360,7 +3405,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNodeCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       nodeCount_ = 0;
       onChanged();
       return this;
@@ -3433,8 +3478,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       machineFilter_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3452,8 +3497,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMachineFilter() {
-
       machineFilter_ = getDefaultInstance().getMachineFilter();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -3476,8 +3521,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       machineFilter_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3503,7 +3548,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the localDiskEncryption field is set.
      */
     public boolean hasLocalDiskEncryption() {
-      return localDiskEncryptionBuilder_ != null || localDiskEncryption_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3547,11 +3592,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         localDiskEncryption_ = value;
-        onChanged();
       } else {
         localDiskEncryptionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3570,11 +3615,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.edgecontainer.v1.NodePool.LocalDiskEncryption.Builder builderForValue) {
       if (localDiskEncryptionBuilder_ == null) {
         localDiskEncryption_ = builderForValue.build();
-        onChanged();
       } else {
         localDiskEncryptionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3592,20 +3637,20 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeLocalDiskEncryption(
         com.google.cloud.edgecontainer.v1.NodePool.LocalDiskEncryption value) {
       if (localDiskEncryptionBuilder_ == null) {
-        if (localDiskEncryption_ != null) {
-          localDiskEncryption_ =
-              com.google.cloud.edgecontainer.v1.NodePool.LocalDiskEncryption.newBuilder(
-                      localDiskEncryption_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && localDiskEncryption_ != null
+            && localDiskEncryption_
+                != com.google.cloud.edgecontainer.v1.NodePool.LocalDiskEncryption
+                    .getDefaultInstance()) {
+          getLocalDiskEncryptionBuilder().mergeFrom(value);
         } else {
           localDiskEncryption_ = value;
         }
-        onChanged();
       } else {
         localDiskEncryptionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3621,14 +3666,13 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearLocalDiskEncryption() {
-      if (localDiskEncryptionBuilder_ == null) {
-        localDiskEncryption_ = null;
-        onChanged();
-      } else {
-        localDiskEncryption_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      localDiskEncryption_ = null;
+      if (localDiskEncryptionBuilder_ != null) {
+        localDiskEncryptionBuilder_.dispose();
         localDiskEncryptionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3645,7 +3689,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.edgecontainer.v1.NodePool.LocalDiskEncryption.Builder
         getLocalDiskEncryptionBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getLocalDiskEncryptionFieldBuilder().getBuilder();
     }

@@ -113,7 +113,9 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.datastream.v1.PostgresqlRdbmsOrBuilder getIncludeObjectsOrBuilder() {
-    return getIncludeObjects();
+    return includeObjects_ == null
+        ? com.google.cloud.datastream.v1.PostgresqlRdbms.getDefaultInstance()
+        : includeObjects_;
   }
 
   public static final int EXCLUDE_OBJECTS_FIELD_NUMBER = 2;
@@ -161,11 +163,15 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.datastream.v1.PostgresqlRdbmsOrBuilder getExcludeObjectsOrBuilder() {
-    return getExcludeObjects();
+    return excludeObjects_ == null
+        ? com.google.cloud.datastream.v1.PostgresqlRdbms.getDefaultInstance()
+        : excludeObjects_;
   }
 
   public static final int REPLICATION_SLOT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object replicationSlot_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object replicationSlot_ = "";
   /**
    *
    *
@@ -216,7 +222,9 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
   }
 
   public static final int PUBLICATION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object publication_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object publication_ = "";
   /**
    *
    *
@@ -501,22 +509,19 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (includeObjectsBuilder_ == null) {
-        includeObjects_ = null;
-      } else {
-        includeObjects_ = null;
+      bitField0_ = 0;
+      includeObjects_ = null;
+      if (includeObjectsBuilder_ != null) {
+        includeObjectsBuilder_.dispose();
         includeObjectsBuilder_ = null;
       }
-      if (excludeObjectsBuilder_ == null) {
-        excludeObjects_ = null;
-      } else {
-        excludeObjects_ = null;
+      excludeObjects_ = null;
+      if (excludeObjectsBuilder_ != null) {
+        excludeObjectsBuilder_.dispose();
         excludeObjectsBuilder_ = null;
       }
       replicationSlot_ = "";
-
       publication_ = "";
-
       return this;
     }
 
@@ -544,20 +549,29 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
     public com.google.cloud.datastream.v1.PostgresqlSourceConfig buildPartial() {
       com.google.cloud.datastream.v1.PostgresqlSourceConfig result =
           new com.google.cloud.datastream.v1.PostgresqlSourceConfig(this);
-      if (includeObjectsBuilder_ == null) {
-        result.includeObjects_ = includeObjects_;
-      } else {
-        result.includeObjects_ = includeObjectsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (excludeObjectsBuilder_ == null) {
-        result.excludeObjects_ = excludeObjects_;
-      } else {
-        result.excludeObjects_ = excludeObjectsBuilder_.build();
-      }
-      result.replicationSlot_ = replicationSlot_;
-      result.publication_ = publication_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1.PostgresqlSourceConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.includeObjects_ =
+            includeObjectsBuilder_ == null ? includeObjects_ : includeObjectsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.excludeObjects_ =
+            excludeObjectsBuilder_ == null ? excludeObjects_ : excludeObjectsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.replicationSlot_ = replicationSlot_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.publication_ = publication_;
+      }
     }
 
     @java.lang.Override
@@ -614,10 +628,12 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
       }
       if (!other.getReplicationSlot().isEmpty()) {
         replicationSlot_ = other.replicationSlot_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getPublication().isEmpty()) {
         publication_ = other.publication_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -649,25 +665,25 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
             case 10:
               {
                 input.readMessage(getIncludeObjectsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getExcludeObjectsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 replicationSlot_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 publication_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -687,6 +703,8 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.datastream.v1.PostgresqlRdbms includeObjects_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datastream.v1.PostgresqlRdbms,
@@ -705,7 +723,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      * @return Whether the includeObjects field is set.
      */
     public boolean hasIncludeObjects() {
-      return includeObjectsBuilder_ != null || includeObjects_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -742,11 +760,11 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         includeObjects_ = value;
-        onChanged();
       } else {
         includeObjectsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -762,11 +780,11 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
         com.google.cloud.datastream.v1.PostgresqlRdbms.Builder builderForValue) {
       if (includeObjectsBuilder_ == null) {
         includeObjects_ = builderForValue.build();
-        onChanged();
       } else {
         includeObjectsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -780,19 +798,19 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      */
     public Builder mergeIncludeObjects(com.google.cloud.datastream.v1.PostgresqlRdbms value) {
       if (includeObjectsBuilder_ == null) {
-        if (includeObjects_ != null) {
-          includeObjects_ =
-              com.google.cloud.datastream.v1.PostgresqlRdbms.newBuilder(includeObjects_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && includeObjects_ != null
+            && includeObjects_
+                != com.google.cloud.datastream.v1.PostgresqlRdbms.getDefaultInstance()) {
+          getIncludeObjectsBuilder().mergeFrom(value);
         } else {
           includeObjects_ = value;
         }
-        onChanged();
       } else {
         includeObjectsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -805,14 +823,13 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.datastream.v1.PostgresqlRdbms include_objects = 1;</code>
      */
     public Builder clearIncludeObjects() {
-      if (includeObjectsBuilder_ == null) {
-        includeObjects_ = null;
-        onChanged();
-      } else {
-        includeObjects_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      includeObjects_ = null;
+      if (includeObjectsBuilder_ != null) {
+        includeObjectsBuilder_.dispose();
         includeObjectsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -825,7 +842,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.datastream.v1.PostgresqlRdbms include_objects = 1;</code>
      */
     public com.google.cloud.datastream.v1.PostgresqlRdbms.Builder getIncludeObjectsBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getIncludeObjectsFieldBuilder().getBuilder();
     }
@@ -891,7 +908,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      * @return Whether the excludeObjects field is set.
      */
     public boolean hasExcludeObjects() {
-      return excludeObjectsBuilder_ != null || excludeObjects_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -928,11 +945,11 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         excludeObjects_ = value;
-        onChanged();
       } else {
         excludeObjectsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -948,11 +965,11 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
         com.google.cloud.datastream.v1.PostgresqlRdbms.Builder builderForValue) {
       if (excludeObjectsBuilder_ == null) {
         excludeObjects_ = builderForValue.build();
-        onChanged();
       } else {
         excludeObjectsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -966,19 +983,19 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      */
     public Builder mergeExcludeObjects(com.google.cloud.datastream.v1.PostgresqlRdbms value) {
       if (excludeObjectsBuilder_ == null) {
-        if (excludeObjects_ != null) {
-          excludeObjects_ =
-              com.google.cloud.datastream.v1.PostgresqlRdbms.newBuilder(excludeObjects_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && excludeObjects_ != null
+            && excludeObjects_
+                != com.google.cloud.datastream.v1.PostgresqlRdbms.getDefaultInstance()) {
+          getExcludeObjectsBuilder().mergeFrom(value);
         } else {
           excludeObjects_ = value;
         }
-        onChanged();
       } else {
         excludeObjectsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -991,14 +1008,13 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.datastream.v1.PostgresqlRdbms exclude_objects = 2;</code>
      */
     public Builder clearExcludeObjects() {
-      if (excludeObjectsBuilder_ == null) {
-        excludeObjects_ = null;
-        onChanged();
-      } else {
-        excludeObjects_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      excludeObjects_ = null;
+      if (excludeObjectsBuilder_ != null) {
+        excludeObjectsBuilder_.dispose();
         excludeObjectsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1011,7 +1027,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.datastream.v1.PostgresqlRdbms exclude_objects = 2;</code>
      */
     public com.google.cloud.datastream.v1.PostgresqlRdbms.Builder getExcludeObjectsBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getExcludeObjectsFieldBuilder().getBuilder();
     }
@@ -1123,8 +1139,8 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       replicationSlot_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1141,8 +1157,8 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearReplicationSlot() {
-
       replicationSlot_ = getDefaultInstance().getReplicationSlot();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1164,8 +1180,8 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       replicationSlot_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1234,8 +1250,8 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       publication_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1252,8 +1268,8 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearPublication() {
-
       publication_ = getDefaultInstance().getPublication();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1275,8 +1291,8 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       publication_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

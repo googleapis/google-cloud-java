@@ -67,7 +67,7 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
   }
 
   public static final int PASSED_FIELD_NUMBER = 3;
-  private boolean passed_;
+  private boolean passed_ = false;
   /**
    *
    *
@@ -283,8 +283,8 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       passed_ = false;
-
       return this;
     }
 
@@ -312,9 +312,18 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
     public com.google.cloud.dataplex.v1.DataQualityDimensionResult buildPartial() {
       com.google.cloud.dataplex.v1.DataQualityDimensionResult result =
           new com.google.cloud.dataplex.v1.DataQualityDimensionResult(this);
-      result.passed_ = passed_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataplex.v1.DataQualityDimensionResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.passed_ = passed_;
+      }
     }
 
     @java.lang.Override
@@ -395,7 +404,7 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
             case 24:
               {
                 passed_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 24
             default:
@@ -414,6 +423,8 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean passed_;
     /**
@@ -446,6 +457,7 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
     public Builder setPassed(boolean value) {
 
       passed_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -461,7 +473,7 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearPassed() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       passed_ = false;
       onChanged();
       return this;

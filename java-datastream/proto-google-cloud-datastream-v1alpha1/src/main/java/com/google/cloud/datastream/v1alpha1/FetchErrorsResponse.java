@@ -68,6 +68,8 @@ public final class FetchErrorsResponse extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ERRORS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datastream.v1alpha1.Error> errors_;
   /**
    *
@@ -336,6 +338,7 @@ public final class FetchErrorsResponse extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
       } else {
@@ -370,7 +373,16 @@ public final class FetchErrorsResponse extends com.google.protobuf.GeneratedMess
     public com.google.cloud.datastream.v1alpha1.FetchErrorsResponse buildPartial() {
       com.google.cloud.datastream.v1alpha1.FetchErrorsResponse result =
           new com.google.cloud.datastream.v1alpha1.FetchErrorsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.datastream.v1alpha1.FetchErrorsResponse result) {
       if (errorsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           errors_ = java.util.Collections.unmodifiableList(errors_);
@@ -380,8 +392,10 @@ public final class FetchErrorsResponse extends com.google.protobuf.GeneratedMess
       } else {
         result.errors_ = errorsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1alpha1.FetchErrorsResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

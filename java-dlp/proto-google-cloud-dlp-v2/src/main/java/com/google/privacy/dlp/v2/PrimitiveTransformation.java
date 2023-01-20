@@ -1147,6 +1147,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (replaceConfigBuilder_ != null) {
         replaceConfigBuilder_.clear();
       }
@@ -1212,93 +1213,57 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     public com.google.privacy.dlp.v2.PrimitiveTransformation buildPartial() {
       com.google.privacy.dlp.v2.PrimitiveTransformation result =
           new com.google.privacy.dlp.v2.PrimitiveTransformation(this);
-      if (transformationCase_ == 1) {
-        if (replaceConfigBuilder_ == null) {
-          result.transformation_ = transformation_;
-        } else {
-          result.transformation_ = replaceConfigBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (transformationCase_ == 2) {
-        if (redactConfigBuilder_ == null) {
-          result.transformation_ = transformation_;
-        } else {
-          result.transformation_ = redactConfigBuilder_.build();
-        }
-      }
-      if (transformationCase_ == 3) {
-        if (characterMaskConfigBuilder_ == null) {
-          result.transformation_ = transformation_;
-        } else {
-          result.transformation_ = characterMaskConfigBuilder_.build();
-        }
-      }
-      if (transformationCase_ == 4) {
-        if (cryptoReplaceFfxFpeConfigBuilder_ == null) {
-          result.transformation_ = transformation_;
-        } else {
-          result.transformation_ = cryptoReplaceFfxFpeConfigBuilder_.build();
-        }
-      }
-      if (transformationCase_ == 5) {
-        if (fixedSizeBucketingConfigBuilder_ == null) {
-          result.transformation_ = transformation_;
-        } else {
-          result.transformation_ = fixedSizeBucketingConfigBuilder_.build();
-        }
-      }
-      if (transformationCase_ == 6) {
-        if (bucketingConfigBuilder_ == null) {
-          result.transformation_ = transformation_;
-        } else {
-          result.transformation_ = bucketingConfigBuilder_.build();
-        }
-      }
-      if (transformationCase_ == 7) {
-        if (replaceWithInfoTypeConfigBuilder_ == null) {
-          result.transformation_ = transformation_;
-        } else {
-          result.transformation_ = replaceWithInfoTypeConfigBuilder_.build();
-        }
-      }
-      if (transformationCase_ == 8) {
-        if (timePartConfigBuilder_ == null) {
-          result.transformation_ = transformation_;
-        } else {
-          result.transformation_ = timePartConfigBuilder_.build();
-        }
-      }
-      if (transformationCase_ == 9) {
-        if (cryptoHashConfigBuilder_ == null) {
-          result.transformation_ = transformation_;
-        } else {
-          result.transformation_ = cryptoHashConfigBuilder_.build();
-        }
-      }
-      if (transformationCase_ == 11) {
-        if (dateShiftConfigBuilder_ == null) {
-          result.transformation_ = transformation_;
-        } else {
-          result.transformation_ = dateShiftConfigBuilder_.build();
-        }
-      }
-      if (transformationCase_ == 12) {
-        if (cryptoDeterministicConfigBuilder_ == null) {
-          result.transformation_ = transformation_;
-        } else {
-          result.transformation_ = cryptoDeterministicConfigBuilder_.build();
-        }
-      }
-      if (transformationCase_ == 13) {
-        if (replaceDictionaryConfigBuilder_ == null) {
-          result.transformation_ = transformation_;
-        } else {
-          result.transformation_ = replaceDictionaryConfigBuilder_.build();
-        }
-      }
-      result.transformationCase_ = transformationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.PrimitiveTransformation result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.PrimitiveTransformation result) {
+      result.transformationCase_ = transformationCase_;
+      result.transformation_ = this.transformation_;
+      if (transformationCase_ == 1 && replaceConfigBuilder_ != null) {
+        result.transformation_ = replaceConfigBuilder_.build();
+      }
+      if (transformationCase_ == 2 && redactConfigBuilder_ != null) {
+        result.transformation_ = redactConfigBuilder_.build();
+      }
+      if (transformationCase_ == 3 && characterMaskConfigBuilder_ != null) {
+        result.transformation_ = characterMaskConfigBuilder_.build();
+      }
+      if (transformationCase_ == 4 && cryptoReplaceFfxFpeConfigBuilder_ != null) {
+        result.transformation_ = cryptoReplaceFfxFpeConfigBuilder_.build();
+      }
+      if (transformationCase_ == 5 && fixedSizeBucketingConfigBuilder_ != null) {
+        result.transformation_ = fixedSizeBucketingConfigBuilder_.build();
+      }
+      if (transformationCase_ == 6 && bucketingConfigBuilder_ != null) {
+        result.transformation_ = bucketingConfigBuilder_.build();
+      }
+      if (transformationCase_ == 7 && replaceWithInfoTypeConfigBuilder_ != null) {
+        result.transformation_ = replaceWithInfoTypeConfigBuilder_.build();
+      }
+      if (transformationCase_ == 8 && timePartConfigBuilder_ != null) {
+        result.transformation_ = timePartConfigBuilder_.build();
+      }
+      if (transformationCase_ == 9 && cryptoHashConfigBuilder_ != null) {
+        result.transformation_ = cryptoHashConfigBuilder_.build();
+      }
+      if (transformationCase_ == 11 && dateShiftConfigBuilder_ != null) {
+        result.transformation_ = dateShiftConfigBuilder_.build();
+      }
+      if (transformationCase_ == 12 && cryptoDeterministicConfigBuilder_ != null) {
+        result.transformation_ = cryptoDeterministicConfigBuilder_.build();
+      }
+      if (transformationCase_ == 13 && replaceDictionaryConfigBuilder_ != null) {
+        result.transformation_ = replaceDictionaryConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1549,6 +1514,8 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.ReplaceValueConfig,
             com.google.privacy.dlp.v2.ReplaceValueConfig.Builder,
@@ -1756,7 +1723,6 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       transformationCase_ = 1;
       onChanged();
-      ;
       return replaceConfigBuilder_;
     }
 
@@ -1965,7 +1931,6 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       transformationCase_ = 2;
       onChanged();
-      ;
       return redactConfigBuilder_;
     }
 
@@ -2177,7 +2142,6 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       transformationCase_ = 3;
       onChanged();
-      ;
       return characterMaskConfigBuilder_;
     }
 
@@ -2402,7 +2366,6 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       transformationCase_ = 4;
       onChanged();
-      ;
       return cryptoReplaceFfxFpeConfigBuilder_;
     }
 
@@ -2617,7 +2580,6 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       transformationCase_ = 5;
       onChanged();
-      ;
       return fixedSizeBucketingConfigBuilder_;
     }
 
@@ -2827,7 +2789,6 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       transformationCase_ = 6;
       onChanged();
-      ;
       return bucketingConfigBuilder_;
     }
 
@@ -3052,7 +3013,6 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       transformationCase_ = 7;
       onChanged();
-      ;
       return replaceWithInfoTypeConfigBuilder_;
     }
 
@@ -3262,7 +3222,6 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       transformationCase_ = 8;
       onChanged();
-      ;
       return timePartConfigBuilder_;
     }
 
@@ -3472,7 +3431,6 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       transformationCase_ = 9;
       onChanged();
-      ;
       return cryptoHashConfigBuilder_;
     }
 
@@ -3682,7 +3640,6 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       transformationCase_ = 11;
       onChanged();
-      ;
       return dateShiftConfigBuilder_;
     }
 
@@ -3907,7 +3864,6 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       transformationCase_ = 12;
       onChanged();
-      ;
       return cryptoDeterministicConfigBuilder_;
     }
 
@@ -4122,7 +4078,6 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
       transformationCase_ = 13;
       onChanged();
-      ;
       return replaceDictionaryConfigBuilder_;
     }
 

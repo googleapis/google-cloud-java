@@ -68,7 +68,9 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -173,11 +175,13 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.PartitionOrBuilder getPartitionOrBuilder() {
-    return getPartition();
+    return partition_ == null
+        ? com.google.cloud.dataplex.v1.Partition.getDefaultInstance()
+        : partition_;
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -415,16 +419,14 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (partitionBuilder_ == null) {
-        partition_ = null;
-      } else {
-        partition_ = null;
+      partition_ = null;
+      if (partitionBuilder_ != null) {
+        partitionBuilder_.dispose();
         partitionBuilder_ = null;
       }
       validateOnly_ = false;
-
       return this;
     }
 
@@ -452,15 +454,24 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.dataplex.v1.CreatePartitionRequest buildPartial() {
       com.google.cloud.dataplex.v1.CreatePartitionRequest result =
           new com.google.cloud.dataplex.v1.CreatePartitionRequest(this);
-      result.parent_ = parent_;
-      if (partitionBuilder_ == null) {
-        result.partition_ = partition_;
-      } else {
-        result.partition_ = partitionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataplex.v1.CreatePartitionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.partition_ = partitionBuilder_ == null ? partition_ : partitionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -511,6 +522,7 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasPartition()) {
@@ -548,19 +560,19 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 input.readMessage(getPartitionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 32:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 32
             default:
@@ -579,6 +591,8 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -650,8 +664,8 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -670,8 +684,8 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -695,8 +709,8 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -721,7 +735,7 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
      * @return Whether the partition field is set.
      */
     public boolean hasPartition() {
-      return partitionBuilder_ != null || partition_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -762,11 +776,11 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         partition_ = value;
-        onChanged();
       } else {
         partitionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -783,11 +797,11 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
     public Builder setPartition(com.google.cloud.dataplex.v1.Partition.Builder builderForValue) {
       if (partitionBuilder_ == null) {
         partition_ = builderForValue.build();
-        onChanged();
       } else {
         partitionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -803,19 +817,18 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergePartition(com.google.cloud.dataplex.v1.Partition value) {
       if (partitionBuilder_ == null) {
-        if (partition_ != null) {
-          partition_ =
-              com.google.cloud.dataplex.v1.Partition.newBuilder(partition_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && partition_ != null
+            && partition_ != com.google.cloud.dataplex.v1.Partition.getDefaultInstance()) {
+          getPartitionBuilder().mergeFrom(value);
         } else {
           partition_ = value;
         }
-        onChanged();
       } else {
         partitionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -830,14 +843,13 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearPartition() {
-      if (partitionBuilder_ == null) {
-        partition_ = null;
-        onChanged();
-      } else {
-        partition_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      partition_ = null;
+      if (partitionBuilder_ != null) {
+        partitionBuilder_.dispose();
         partitionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -852,7 +864,7 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.cloud.dataplex.v1.Partition.Builder getPartitionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPartitionFieldBuilder().getBuilder();
     }
@@ -937,6 +949,7 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -953,7 +966,7 @@ public final class CreatePartitionRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       validateOnly_ = false;
       onChanged();
       return this;

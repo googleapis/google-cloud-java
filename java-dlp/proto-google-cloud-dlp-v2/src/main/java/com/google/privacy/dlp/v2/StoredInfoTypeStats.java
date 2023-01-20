@@ -373,6 +373,7 @@ public final class StoredInfoTypeStats extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (largeCustomDictionaryBuilder_ != null) {
         largeCustomDictionaryBuilder_.clear();
       }
@@ -405,16 +406,24 @@ public final class StoredInfoTypeStats extends com.google.protobuf.GeneratedMess
     public com.google.privacy.dlp.v2.StoredInfoTypeStats buildPartial() {
       com.google.privacy.dlp.v2.StoredInfoTypeStats result =
           new com.google.privacy.dlp.v2.StoredInfoTypeStats(this);
-      if (typeCase_ == 1) {
-        if (largeCustomDictionaryBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = largeCustomDictionaryBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.typeCase_ = typeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.StoredInfoTypeStats result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.StoredInfoTypeStats result) {
+      result.typeCase_ = typeCase_;
+      result.type_ = this.type_;
+      if (typeCase_ == 1 && largeCustomDictionaryBuilder_ != null) {
+        result.type_ = largeCustomDictionaryBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -536,6 +545,8 @@ public final class StoredInfoTypeStats extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.LargeCustomDictionaryStats,
@@ -747,7 +758,6 @@ public final class StoredInfoTypeStats extends com.google.protobuf.GeneratedMess
       }
       typeCase_ = 1;
       onChanged();
-      ;
       return largeCustomDictionaryBuilder_;
     }
 

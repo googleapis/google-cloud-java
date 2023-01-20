@@ -259,7 +259,7 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SCORE_FIELD_NUMBER = 1;
-  private int score_;
+  private int score_ = 0;
   /**
    *
    *
@@ -288,9 +288,8 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.SensitivityScore.SensitivityScoreLevel getScore() {
-    @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.SensitivityScore.SensitivityScoreLevel result =
-        com.google.privacy.dlp.v2.SensitivityScore.SensitivityScoreLevel.valueOf(score_);
+        com.google.privacy.dlp.v2.SensitivityScore.SensitivityScoreLevel.forNumber(score_);
     return result == null
         ? com.google.privacy.dlp.v2.SensitivityScore.SensitivityScoreLevel.UNRECOGNIZED
         : result;
@@ -500,8 +499,8 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       score_ = 0;
-
       return this;
     }
 
@@ -529,9 +528,18 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
     public com.google.privacy.dlp.v2.SensitivityScore buildPartial() {
       com.google.privacy.dlp.v2.SensitivityScore result =
           new com.google.privacy.dlp.v2.SensitivityScore(this);
-      result.score_ = score_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.SensitivityScore result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.score_ = score_;
+      }
     }
 
     @java.lang.Override
@@ -611,7 +619,7 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
             case 8:
               {
                 score_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -630,6 +638,8 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int score_ = 0;
     /**
@@ -660,8 +670,8 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setScoreValue(int value) {
-
       score_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -678,9 +688,8 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.SensitivityScore.SensitivityScoreLevel getScore() {
-      @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.SensitivityScore.SensitivityScoreLevel result =
-          com.google.privacy.dlp.v2.SensitivityScore.SensitivityScoreLevel.valueOf(score_);
+          com.google.privacy.dlp.v2.SensitivityScore.SensitivityScoreLevel.forNumber(score_);
       return result == null
           ? com.google.privacy.dlp.v2.SensitivityScore.SensitivityScoreLevel.UNRECOGNIZED
           : result;
@@ -702,7 +711,7 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       score_ = value.getNumber();
       onChanged();
       return this;
@@ -719,7 +728,7 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearScore() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       score_ = 0;
       onChanged();
       return this;

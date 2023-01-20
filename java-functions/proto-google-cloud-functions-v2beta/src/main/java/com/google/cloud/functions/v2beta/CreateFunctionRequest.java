@@ -69,7 +69,9 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -174,11 +176,15 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.functions.v2beta.FunctionOrBuilder getFunctionOrBuilder() {
-    return getFunction();
+    return function_ == null
+        ? com.google.cloud.functions.v2beta.Function.getDefaultInstance()
+        : function_;
   }
 
   public static final int FUNCTION_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object functionId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object functionId_ = "";
   /**
    *
    *
@@ -453,16 +459,14 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (functionBuilder_ == null) {
-        function_ = null;
-      } else {
-        function_ = null;
+      function_ = null;
+      if (functionBuilder_ != null) {
+        functionBuilder_.dispose();
         functionBuilder_ = null;
       }
       functionId_ = "";
-
       return this;
     }
 
@@ -490,15 +494,24 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.functions.v2beta.CreateFunctionRequest buildPartial() {
       com.google.cloud.functions.v2beta.CreateFunctionRequest result =
           new com.google.cloud.functions.v2beta.CreateFunctionRequest(this);
-      result.parent_ = parent_;
-      if (functionBuilder_ == null) {
-        result.function_ = function_;
-      } else {
-        result.function_ = functionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.functionId_ = functionId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.functions.v2beta.CreateFunctionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.function_ = functionBuilder_ == null ? function_ : functionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.functionId_ = functionId_;
+      }
     }
 
     @java.lang.Override
@@ -549,6 +562,7 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasFunction()) {
@@ -556,6 +570,7 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getFunctionId().isEmpty()) {
         functionId_ = other.functionId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -587,19 +602,19 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getFunctionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 functionId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -618,6 +633,8 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -689,8 +706,8 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -709,8 +726,8 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -734,8 +751,8 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -760,7 +777,7 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the function field is set.
      */
     public boolean hasFunction() {
-      return functionBuilder_ != null || function_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -801,11 +818,11 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         function_ = value;
-        onChanged();
       } else {
         functionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -822,11 +839,11 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
     public Builder setFunction(com.google.cloud.functions.v2beta.Function.Builder builderForValue) {
       if (functionBuilder_ == null) {
         function_ = builderForValue.build();
-        onChanged();
       } else {
         functionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -842,19 +859,18 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeFunction(com.google.cloud.functions.v2beta.Function value) {
       if (functionBuilder_ == null) {
-        if (function_ != null) {
-          function_ =
-              com.google.cloud.functions.v2beta.Function.newBuilder(function_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && function_ != null
+            && function_ != com.google.cloud.functions.v2beta.Function.getDefaultInstance()) {
+          getFunctionBuilder().mergeFrom(value);
         } else {
           function_ = value;
         }
-        onChanged();
       } else {
         functionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -869,14 +885,13 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearFunction() {
-      if (functionBuilder_ == null) {
-        function_ = null;
-        onChanged();
-      } else {
-        function_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      function_ = null;
+      if (functionBuilder_ != null) {
+        functionBuilder_.dispose();
         functionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -891,7 +906,7 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.functions.v2beta.Function.Builder getFunctionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getFunctionFieldBuilder().getBuilder();
     }
@@ -1013,8 +1028,8 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       functionId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1033,8 +1048,8 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearFunctionId() {
-
       functionId_ = getDefaultInstance().getFunctionId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1058,8 +1073,8 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       functionId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -199,7 +199,9 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int FIELD_FIELD_NUMBER = 1;
-    private volatile java.lang.Object field_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object field_ = "";
     /**
      *
      *
@@ -250,7 +252,9 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int START_FIELD_NUMBER = 2;
-    private volatile java.lang.Object start_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object start_ = "";
     /**
      *
      *
@@ -299,7 +303,9 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int END_FIELD_NUMBER = 3;
-    private volatile java.lang.Object end_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object end_ = "";
     /**
      *
      *
@@ -565,12 +571,10 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         field_ = "";
-
         start_ = "";
-
         end_ = "";
-
         return this;
       }
 
@@ -598,11 +602,24 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dataplex.v1.ScannedData.IncrementalField buildPartial() {
         com.google.cloud.dataplex.v1.ScannedData.IncrementalField result =
             new com.google.cloud.dataplex.v1.ScannedData.IncrementalField(this);
-        result.field_ = field_;
-        result.start_ = start_;
-        result.end_ = end_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.dataplex.v1.ScannedData.IncrementalField result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.field_ = field_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.start_ = start_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.end_ = end_;
+        }
       }
 
       @java.lang.Override
@@ -655,14 +672,17 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getField().isEmpty()) {
           field_ = other.field_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getStart().isEmpty()) {
           start_ = other.start_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getEnd().isEmpty()) {
           end_ = other.end_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -694,19 +714,19 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   field_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   start_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   end_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -725,6 +745,8 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object field_ = "";
       /**
@@ -790,8 +812,8 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         field_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -808,8 +830,8 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearField() {
-
         field_ = getDefaultInstance().getField();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -831,8 +853,8 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         field_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -898,8 +920,8 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         start_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -915,8 +937,8 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearStart() {
-
         start_ = getDefaultInstance().getStart();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -937,8 +959,8 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         start_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1004,8 +1026,8 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         end_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1021,8 +1043,8 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearEnd() {
-
         end_ = getDefaultInstance().getEnd();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1043,8 +1065,8 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         end_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1421,6 +1443,7 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (incrementalFieldBuilder_ != null) {
         incrementalFieldBuilder_.clear();
       }
@@ -1453,16 +1476,24 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataplex.v1.ScannedData buildPartial() {
       com.google.cloud.dataplex.v1.ScannedData result =
           new com.google.cloud.dataplex.v1.ScannedData(this);
-      if (dataRangeCase_ == 1) {
-        if (incrementalFieldBuilder_ == null) {
-          result.dataRange_ = dataRange_;
-        } else {
-          result.dataRange_ = incrementalFieldBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.dataRangeCase_ = dataRangeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataplex.v1.ScannedData result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dataplex.v1.ScannedData result) {
+      result.dataRangeCase_ = dataRangeCase_;
+      result.dataRange_ = this.dataRange_;
+      if (dataRangeCase_ == 1 && incrementalFieldBuilder_ != null) {
+        result.dataRange_ = incrementalFieldBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1584,6 +1615,8 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataplex.v1.ScannedData.IncrementalField,
@@ -1797,7 +1830,6 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
       }
       dataRangeCase_ = 1;
       onChanged();
-      ;
       return incrementalFieldBuilder_;
     }
 

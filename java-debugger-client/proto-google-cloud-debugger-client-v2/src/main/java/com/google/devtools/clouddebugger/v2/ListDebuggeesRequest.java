@@ -69,7 +69,9 @@ public final class ListDebuggeesRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PROJECT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -118,7 +120,7 @@ public final class ListDebuggeesRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int INCLUDE_INACTIVE_FIELD_NUMBER = 3;
-  private boolean includeInactive_;
+  private boolean includeInactive_ = false;
   /**
    *
    *
@@ -137,7 +139,9 @@ public final class ListDebuggeesRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int CLIENT_VERSION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object clientVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clientVersion_ = "";
   /**
    *
    *
@@ -403,12 +407,10 @@ public final class ListDebuggeesRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       project_ = "";
-
       includeInactive_ = false;
-
       clientVersion_ = "";
-
       return this;
     }
 
@@ -436,11 +438,24 @@ public final class ListDebuggeesRequest extends com.google.protobuf.GeneratedMes
     public com.google.devtools.clouddebugger.v2.ListDebuggeesRequest buildPartial() {
       com.google.devtools.clouddebugger.v2.ListDebuggeesRequest result =
           new com.google.devtools.clouddebugger.v2.ListDebuggeesRequest(this);
-      result.project_ = project_;
-      result.includeInactive_ = includeInactive_;
-      result.clientVersion_ = clientVersion_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.devtools.clouddebugger.v2.ListDebuggeesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.includeInactive_ = includeInactive_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.clientVersion_ = clientVersion_;
+      }
     }
 
     @java.lang.Override
@@ -491,6 +506,7 @@ public final class ListDebuggeesRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getIncludeInactive() != false) {
@@ -498,6 +514,7 @@ public final class ListDebuggeesRequest extends com.google.protobuf.GeneratedMes
       }
       if (!other.getClientVersion().isEmpty()) {
         clientVersion_ = other.clientVersion_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -529,19 +546,19 @@ public final class ListDebuggeesRequest extends com.google.protobuf.GeneratedMes
             case 18:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             case 24:
               {
                 includeInactive_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 24
             case 34:
               {
                 clientVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             default:
@@ -560,6 +577,8 @@ public final class ListDebuggeesRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -622,8 +641,8 @@ public final class ListDebuggeesRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -639,8 +658,8 @@ public final class ListDebuggeesRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -661,8 +680,8 @@ public final class ListDebuggeesRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -700,6 +719,7 @@ public final class ListDebuggeesRequest extends com.google.protobuf.GeneratedMes
     public Builder setIncludeInactive(boolean value) {
 
       includeInactive_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -716,7 +736,7 @@ public final class ListDebuggeesRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearIncludeInactive() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       includeInactive_ = false;
       onChanged();
       return this;
@@ -786,8 +806,8 @@ public final class ListDebuggeesRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       clientVersion_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -804,8 +824,8 @@ public final class ListDebuggeesRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearClientVersion() {
-
       clientVersion_ = getDefaultInstance().getClientVersion();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -827,8 +847,8 @@ public final class ListDebuggeesRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clientVersion_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

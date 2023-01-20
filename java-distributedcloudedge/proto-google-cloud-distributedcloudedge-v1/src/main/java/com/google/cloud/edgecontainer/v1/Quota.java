@@ -68,7 +68,9 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int METRIC_FIELD_NUMBER = 1;
-  private volatile java.lang.Object metric_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object metric_ = "";
   /**
    *
    *
@@ -117,7 +119,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LIMIT_FIELD_NUMBER = 2;
-  private double limit_;
+  private double limit_ = 0D;
   /**
    *
    *
@@ -135,7 +137,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int USAGE_FIELD_NUMBER = 3;
-  private double usage_;
+  private double usage_ = 0D;
   /**
    *
    *
@@ -372,12 +374,10 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       metric_ = "";
-
       limit_ = 0D;
-
       usage_ = 0D;
-
       return this;
     }
 
@@ -405,11 +405,24 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.edgecontainer.v1.Quota buildPartial() {
       com.google.cloud.edgecontainer.v1.Quota result =
           new com.google.cloud.edgecontainer.v1.Quota(this);
-      result.metric_ = metric_;
-      result.limit_ = limit_;
-      result.usage_ = usage_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.edgecontainer.v1.Quota result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.metric_ = metric_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.limit_ = limit_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.usage_ = usage_;
+      }
     }
 
     @java.lang.Override
@@ -459,6 +472,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.edgecontainer.v1.Quota.getDefaultInstance()) return this;
       if (!other.getMetric().isEmpty()) {
         metric_ = other.metric_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getLimit() != 0D) {
@@ -496,19 +510,19 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 metric_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 17:
               {
                 limit_ = input.readDouble();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 17
             case 25:
               {
                 usage_ = input.readDouble();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 25
             default:
@@ -527,6 +541,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object metric_ = "";
     /**
@@ -589,8 +605,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       metric_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -606,8 +622,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMetric() {
-
       metric_ = getDefaultInstance().getMetric();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -628,8 +644,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       metric_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -665,6 +681,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public Builder setLimit(double value) {
 
       limit_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -680,7 +697,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLimit() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       limit_ = 0D;
       onChanged();
       return this;
@@ -717,6 +734,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public Builder setUsage(double value) {
 
       usage_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -732,7 +750,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUsage() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       usage_ = 0D;
       onChanged();
       return this;

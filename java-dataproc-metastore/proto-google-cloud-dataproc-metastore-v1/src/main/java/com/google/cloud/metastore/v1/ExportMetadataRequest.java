@@ -190,7 +190,9 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int SERVICE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object service_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object service_ = "";
   /**
    *
    *
@@ -247,7 +249,9 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -314,7 +318,7 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int DATABASE_DUMP_TYPE_FIELD_NUMBER = 4;
-  private int databaseDumpType_;
+  private int databaseDumpType_ = 0;
   /**
    *
    *
@@ -347,9 +351,8 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.metastore.v1.DatabaseDumpSpec.Type getDatabaseDumpType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.metastore.v1.DatabaseDumpSpec.Type result =
-        com.google.cloud.metastore.v1.DatabaseDumpSpec.Type.valueOf(databaseDumpType_);
+        com.google.cloud.metastore.v1.DatabaseDumpSpec.Type.forNumber(databaseDumpType_);
     return result == null
         ? com.google.cloud.metastore.v1.DatabaseDumpSpec.Type.UNRECOGNIZED
         : result;
@@ -594,12 +597,10 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       service_ = "";
-
       requestId_ = "";
-
       databaseDumpType_ = 0;
-
       destinationCase_ = 0;
       destination_ = null;
       return this;
@@ -629,15 +630,30 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.metastore.v1.ExportMetadataRequest buildPartial() {
       com.google.cloud.metastore.v1.ExportMetadataRequest result =
           new com.google.cloud.metastore.v1.ExportMetadataRequest(this);
-      if (destinationCase_ == 2) {
-        result.destination_ = destination_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.service_ = service_;
-      result.requestId_ = requestId_;
-      result.databaseDumpType_ = databaseDumpType_;
-      result.destinationCase_ = destinationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.metastore.v1.ExportMetadataRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.service_ = service_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.databaseDumpType_ = databaseDumpType_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.metastore.v1.ExportMetadataRequest result) {
+      result.destinationCase_ = destinationCase_;
+      result.destination_ = this.destination_;
     }
 
     @java.lang.Override
@@ -688,10 +704,12 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getService().isEmpty()) {
         service_ = other.service_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.databaseDumpType_ != 0) {
@@ -739,7 +757,7 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 service_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
@@ -752,13 +770,13 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
             case 26:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 databaseDumpType_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -791,6 +809,8 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *
@@ -1011,8 +1031,8 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       service_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1032,8 +1052,8 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearService() {
-
       service_ = getDefaultInstance().getService();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1058,8 +1078,8 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       service_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1152,8 +1172,8 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1178,8 +1198,8 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1209,8 +1229,8 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1248,8 +1268,8 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setDatabaseDumpTypeValue(int value) {
-
       databaseDumpType_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1268,9 +1288,8 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
      */
     @java.lang.Override
     public com.google.cloud.metastore.v1.DatabaseDumpSpec.Type getDatabaseDumpType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.metastore.v1.DatabaseDumpSpec.Type result =
-          com.google.cloud.metastore.v1.DatabaseDumpSpec.Type.valueOf(databaseDumpType_);
+          com.google.cloud.metastore.v1.DatabaseDumpSpec.Type.forNumber(databaseDumpType_);
       return result == null
           ? com.google.cloud.metastore.v1.DatabaseDumpSpec.Type.UNRECOGNIZED
           : result;
@@ -1293,7 +1312,7 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       databaseDumpType_ = value.getNumber();
       onChanged();
       return this;
@@ -1312,7 +1331,7 @@ public final class ExportMetadataRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearDatabaseDumpType() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       databaseDumpType_ = 0;
       onChanged();
       return this;

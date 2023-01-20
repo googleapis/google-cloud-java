@@ -125,7 +125,7 @@ public final class UpdateDeliveryPipelineRequest extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int DELIVERY_PIPELINE_FIELD_NUMBER = 2;
@@ -179,11 +179,15 @@ public final class UpdateDeliveryPipelineRequest extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.DeliveryPipelineOrBuilder getDeliveryPipelineOrBuilder() {
-    return getDeliveryPipeline();
+    return deliveryPipeline_ == null
+        ? com.google.cloud.deploy.v1.DeliveryPipeline.getDefaultInstance()
+        : deliveryPipeline_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -252,7 +256,7 @@ public final class UpdateDeliveryPipelineRequest extends com.google.protobuf.Gen
   }
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 4;
-  private boolean allowMissing_;
+  private boolean allowMissing_ = false;
   /**
    *
    *
@@ -271,7 +275,7 @@ public final class UpdateDeliveryPipelineRequest extends com.google.protobuf.Gen
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 5;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -533,24 +537,20 @@ public final class UpdateDeliveryPipelineRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      bitField0_ = 0;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-      if (deliveryPipelineBuilder_ == null) {
-        deliveryPipeline_ = null;
-      } else {
-        deliveryPipeline_ = null;
+      deliveryPipeline_ = null;
+      if (deliveryPipelineBuilder_ != null) {
+        deliveryPipelineBuilder_.dispose();
         deliveryPipelineBuilder_ = null;
       }
       requestId_ = "";
-
       allowMissing_ = false;
-
       validateOnly_ = false;
-
       return this;
     }
 
@@ -578,21 +578,31 @@ public final class UpdateDeliveryPipelineRequest extends com.google.protobuf.Gen
     public com.google.cloud.deploy.v1.UpdateDeliveryPipelineRequest buildPartial() {
       com.google.cloud.deploy.v1.UpdateDeliveryPipelineRequest result =
           new com.google.cloud.deploy.v1.UpdateDeliveryPipelineRequest(this);
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (deliveryPipelineBuilder_ == null) {
-        result.deliveryPipeline_ = deliveryPipeline_;
-      } else {
-        result.deliveryPipeline_ = deliveryPipelineBuilder_.build();
-      }
-      result.requestId_ = requestId_;
-      result.allowMissing_ = allowMissing_;
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.UpdateDeliveryPipelineRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.deliveryPipeline_ =
+            deliveryPipelineBuilder_ == null ? deliveryPipeline_ : deliveryPipelineBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.allowMissing_ = allowMissing_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -649,6 +659,7 @@ public final class UpdateDeliveryPipelineRequest extends com.google.protobuf.Gen
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getAllowMissing() != false) {
@@ -686,32 +697,32 @@ public final class UpdateDeliveryPipelineRequest extends com.google.protobuf.Gen
             case 10:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getDeliveryPipelineFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 allowMissing_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -730,6 +741,8 @@ public final class UpdateDeliveryPipelineRequest extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.FieldMask updateMask_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -754,7 +767,7 @@ public final class UpdateDeliveryPipelineRequest extends com.google.protobuf.Gen
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -801,11 +814,11 @@ public final class UpdateDeliveryPipelineRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -825,11 +838,11 @@ public final class UpdateDeliveryPipelineRequest extends com.google.protobuf.Gen
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -848,17 +861,18 @@ public final class UpdateDeliveryPipelineRequest extends com.google.protobuf.Gen
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -876,14 +890,13 @@ public final class UpdateDeliveryPipelineRequest extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -901,7 +914,7 @@ public final class UpdateDeliveryPipelineRequest extends com.google.protobuf.Gen
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -979,7 +992,7 @@ public final class UpdateDeliveryPipelineRequest extends com.google.protobuf.Gen
      * @return Whether the deliveryPipeline field is set.
      */
     public boolean hasDeliveryPipeline() {
-      return deliveryPipelineBuilder_ != null || deliveryPipeline_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1020,11 +1033,11 @@ public final class UpdateDeliveryPipelineRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         deliveryPipeline_ = value;
-        onChanged();
       } else {
         deliveryPipelineBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1042,11 +1055,11 @@ public final class UpdateDeliveryPipelineRequest extends com.google.protobuf.Gen
         com.google.cloud.deploy.v1.DeliveryPipeline.Builder builderForValue) {
       if (deliveryPipelineBuilder_ == null) {
         deliveryPipeline_ = builderForValue.build();
-        onChanged();
       } else {
         deliveryPipelineBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1062,19 +1075,19 @@ public final class UpdateDeliveryPipelineRequest extends com.google.protobuf.Gen
      */
     public Builder mergeDeliveryPipeline(com.google.cloud.deploy.v1.DeliveryPipeline value) {
       if (deliveryPipelineBuilder_ == null) {
-        if (deliveryPipeline_ != null) {
-          deliveryPipeline_ =
-              com.google.cloud.deploy.v1.DeliveryPipeline.newBuilder(deliveryPipeline_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && deliveryPipeline_ != null
+            && deliveryPipeline_
+                != com.google.cloud.deploy.v1.DeliveryPipeline.getDefaultInstance()) {
+          getDeliveryPipelineBuilder().mergeFrom(value);
         } else {
           deliveryPipeline_ = value;
         }
-        onChanged();
       } else {
         deliveryPipelineBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1089,14 +1102,13 @@ public final class UpdateDeliveryPipelineRequest extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearDeliveryPipeline() {
-      if (deliveryPipelineBuilder_ == null) {
-        deliveryPipeline_ = null;
-        onChanged();
-      } else {
-        deliveryPipeline_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      deliveryPipeline_ = null;
+      if (deliveryPipelineBuilder_ != null) {
+        deliveryPipelineBuilder_.dispose();
         deliveryPipelineBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1111,7 +1123,7 @@ public final class UpdateDeliveryPipelineRequest extends com.google.protobuf.Gen
      * </code>
      */
     public com.google.cloud.deploy.v1.DeliveryPipeline.Builder getDeliveryPipelineBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDeliveryPipelineFieldBuilder().getBuilder();
     }
@@ -1254,8 +1266,8 @@ public final class UpdateDeliveryPipelineRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1281,8 +1293,8 @@ public final class UpdateDeliveryPipelineRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1313,8 +1325,8 @@ public final class UpdateDeliveryPipelineRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1352,6 +1364,7 @@ public final class UpdateDeliveryPipelineRequest extends com.google.protobuf.Gen
     public Builder setAllowMissing(boolean value) {
 
       allowMissing_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1368,7 +1381,7 @@ public final class UpdateDeliveryPipelineRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearAllowMissing() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       allowMissing_ = false;
       onChanged();
       return this;
@@ -1407,6 +1420,7 @@ public final class UpdateDeliveryPipelineRequest extends com.google.protobuf.Gen
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1423,7 +1437,7 @@ public final class UpdateDeliveryPipelineRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       validateOnly_ = false;
       onChanged();
       return this;

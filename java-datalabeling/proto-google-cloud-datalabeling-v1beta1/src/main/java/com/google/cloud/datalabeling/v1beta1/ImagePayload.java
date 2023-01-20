@@ -71,7 +71,9 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MIME_TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object mimeType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mimeType_ = "";
   /**
    *
    *
@@ -120,7 +122,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMAGE_THUMBNAIL_FIELD_NUMBER = 2;
-  private com.google.protobuf.ByteString imageThumbnail_;
+  private com.google.protobuf.ByteString imageThumbnail_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -138,7 +140,9 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMAGE_URI_FIELD_NUMBER = 3;
-  private volatile java.lang.Object imageUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object imageUri_ = "";
   /**
    *
    *
@@ -187,7 +191,9 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SIGNED_URI_FIELD_NUMBER = 4;
-  private volatile java.lang.Object signedUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object signedUri_ = "";
   /**
    *
    *
@@ -459,14 +465,11 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       mimeType_ = "";
-
       imageThumbnail_ = com.google.protobuf.ByteString.EMPTY;
-
       imageUri_ = "";
-
       signedUri_ = "";
-
       return this;
     }
 
@@ -494,12 +497,27 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datalabeling.v1beta1.ImagePayload buildPartial() {
       com.google.cloud.datalabeling.v1beta1.ImagePayload result =
           new com.google.cloud.datalabeling.v1beta1.ImagePayload(this);
-      result.mimeType_ = mimeType_;
-      result.imageThumbnail_ = imageThumbnail_;
-      result.imageUri_ = imageUri_;
-      result.signedUri_ = signedUri_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datalabeling.v1beta1.ImagePayload result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.mimeType_ = mimeType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.imageThumbnail_ = imageThumbnail_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.imageUri_ = imageUri_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.signedUri_ = signedUri_;
+      }
     }
 
     @java.lang.Override
@@ -550,6 +568,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getMimeType().isEmpty()) {
         mimeType_ = other.mimeType_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getImageThumbnail() != com.google.protobuf.ByteString.EMPTY) {
@@ -557,10 +576,12 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getImageUri().isEmpty()) {
         imageUri_ = other.imageUri_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getSignedUri().isEmpty()) {
         signedUri_ = other.signedUri_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -592,25 +613,25 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 mimeType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 imageThumbnail_ = input.readBytes();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 imageUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 signedUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -629,6 +650,8 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object mimeType_ = "";
     /**
@@ -691,8 +714,8 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       mimeType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -708,8 +731,8 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMimeType() {
-
       mimeType_ = getDefaultInstance().getMimeType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -730,8 +753,8 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       mimeType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -768,8 +791,8 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       imageThumbnail_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -785,7 +808,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearImageThumbnail() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       imageThumbnail_ = getDefaultInstance().getImageThumbnail();
       onChanged();
       return this;
@@ -852,8 +875,8 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       imageUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -869,8 +892,8 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearImageUri() {
-
       imageUri_ = getDefaultInstance().getImageUri();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -891,8 +914,8 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       imageUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -958,8 +981,8 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       signedUri_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -975,8 +998,8 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSignedUri() {
-
       signedUri_ = getDefaultInstance().getSignedUri();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -997,8 +1020,8 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       signedUri_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

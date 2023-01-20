@@ -111,11 +111,11 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.Int32ValueOrBuilder getHourOfDayOrBuilder() {
-    return getHourOfDay();
+    return hourOfDay_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : hourOfDay_;
   }
 
   public static final int DAY_OF_WEEK_FIELD_NUMBER = 2;
-  private int dayOfWeek_;
+  private int dayOfWeek_ = 0;
   /**
    *
    *
@@ -144,8 +144,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.type.DayOfWeek getDayOfWeek() {
-    @SuppressWarnings("deprecation")
-    com.google.type.DayOfWeek result = com.google.type.DayOfWeek.valueOf(dayOfWeek_);
+    com.google.type.DayOfWeek result = com.google.type.DayOfWeek.forNumber(dayOfWeek_);
     return result == null ? com.google.type.DayOfWeek.UNRECOGNIZED : result;
   }
 
@@ -361,14 +360,13 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (hourOfDayBuilder_ == null) {
-        hourOfDay_ = null;
-      } else {
-        hourOfDay_ = null;
+      bitField0_ = 0;
+      hourOfDay_ = null;
+      if (hourOfDayBuilder_ != null) {
+        hourOfDayBuilder_.dispose();
         hourOfDayBuilder_ = null;
       }
       dayOfWeek_ = 0;
-
       return this;
     }
 
@@ -396,14 +394,21 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.metastore.v1alpha.MaintenanceWindow buildPartial() {
       com.google.cloud.metastore.v1alpha.MaintenanceWindow result =
           new com.google.cloud.metastore.v1alpha.MaintenanceWindow(this);
-      if (hourOfDayBuilder_ == null) {
-        result.hourOfDay_ = hourOfDay_;
-      } else {
-        result.hourOfDay_ = hourOfDayBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.dayOfWeek_ = dayOfWeek_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.metastore.v1alpha.MaintenanceWindow result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.hourOfDay_ = hourOfDayBuilder_ == null ? hourOfDay_ : hourOfDayBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dayOfWeek_ = dayOfWeek_;
+      }
     }
 
     @java.lang.Override
@@ -487,13 +492,13 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 input.readMessage(getHourOfDayFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 dayOfWeek_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -513,6 +518,8 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.protobuf.Int32Value hourOfDay_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Int32Value,
@@ -531,7 +538,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      * @return Whether the hourOfDay field is set.
      */
     public boolean hasHourOfDay() {
-      return hourOfDayBuilder_ != null || hourOfDay_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -568,11 +575,11 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         hourOfDay_ = value;
-        onChanged();
       } else {
         hourOfDayBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -587,11 +594,11 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public Builder setHourOfDay(com.google.protobuf.Int32Value.Builder builderForValue) {
       if (hourOfDayBuilder_ == null) {
         hourOfDay_ = builderForValue.build();
-        onChanged();
       } else {
         hourOfDayBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -605,17 +612,18 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeHourOfDay(com.google.protobuf.Int32Value value) {
       if (hourOfDayBuilder_ == null) {
-        if (hourOfDay_ != null) {
-          hourOfDay_ =
-              com.google.protobuf.Int32Value.newBuilder(hourOfDay_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && hourOfDay_ != null
+            && hourOfDay_ != com.google.protobuf.Int32Value.getDefaultInstance()) {
+          getHourOfDayBuilder().mergeFrom(value);
         } else {
           hourOfDay_ = value;
         }
-        onChanged();
       } else {
         hourOfDayBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -628,14 +636,13 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Int32Value hour_of_day = 1;</code>
      */
     public Builder clearHourOfDay() {
-      if (hourOfDayBuilder_ == null) {
-        hourOfDay_ = null;
-        onChanged();
-      } else {
-        hourOfDay_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      hourOfDay_ = null;
+      if (hourOfDayBuilder_ != null) {
+        hourOfDayBuilder_.dispose();
         hourOfDayBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -648,7 +655,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Int32Value hour_of_day = 1;</code>
      */
     public com.google.protobuf.Int32Value.Builder getHourOfDayBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getHourOfDayFieldBuilder().getBuilder();
     }
@@ -725,8 +732,8 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setDayOfWeekValue(int value) {
-
       dayOfWeek_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -743,8 +750,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.type.DayOfWeek getDayOfWeek() {
-      @SuppressWarnings("deprecation")
-      com.google.type.DayOfWeek result = com.google.type.DayOfWeek.valueOf(dayOfWeek_);
+      com.google.type.DayOfWeek result = com.google.type.DayOfWeek.forNumber(dayOfWeek_);
       return result == null ? com.google.type.DayOfWeek.UNRECOGNIZED : result;
     }
     /**
@@ -763,7 +769,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       dayOfWeek_ = value.getNumber();
       onChanged();
       return this;
@@ -780,7 +786,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDayOfWeek() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       dayOfWeek_ = 0;
       onChanged();
       return this;

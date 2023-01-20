@@ -70,7 +70,9 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int CHANNEL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object channel_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object channel_ = "";
   /**
    *
    *
@@ -121,6 +123,8 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int EVENTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.protobuf.Any> events_;
   /**
    *
@@ -194,6 +198,8 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int TEXT_EVENTS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList textEvents_;
   /**
    *
@@ -495,17 +501,17 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       channel_ = "";
-
       if (eventsBuilder_ == null) {
         events_ = java.util.Collections.emptyList();
       } else {
         events_ = null;
         eventsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      textEvents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
+      textEvents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -534,24 +540,38 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.eventarc.publishing.v1.PublishEventsRequest buildPartial() {
       com.google.cloud.eventarc.publishing.v1.PublishEventsRequest result =
           new com.google.cloud.eventarc.publishing.v1.PublishEventsRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.channel_ = channel_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.eventarc.publishing.v1.PublishEventsRequest result) {
       if (eventsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           events_ = java.util.Collections.unmodifiableList(events_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.events_ = events_;
       } else {
         result.events_ = eventsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         textEvents_ = textEvents_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.textEvents_ = textEvents_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.eventarc.publishing.v1.PublishEventsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.channel_ = channel_;
+      }
     }
 
     @java.lang.Override
@@ -603,13 +623,14 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getChannel().isEmpty()) {
         channel_ = other.channel_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (eventsBuilder_ == null) {
         if (!other.events_.isEmpty()) {
           if (events_.isEmpty()) {
             events_ = other.events_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureEventsIsMutable();
             events_.addAll(other.events_);
@@ -622,7 +643,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
             eventsBuilder_.dispose();
             eventsBuilder_ = null;
             events_ = other.events_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             eventsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEventsFieldBuilder()
@@ -635,7 +656,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
       if (!other.textEvents_.isEmpty()) {
         if (textEvents_.isEmpty()) {
           textEvents_ = other.textEvents_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureTextEventsIsMutable();
           textEvents_.addAll(other.textEvents_);
@@ -671,7 +692,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 channel_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -776,8 +797,8 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       channel_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -794,8 +815,8 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearChannel() {
-
       channel_ = getDefaultInstance().getChannel();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -817,8 +838,8 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       channel_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -826,9 +847,9 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
     private java.util.List<com.google.protobuf.Any> events_ = java.util.Collections.emptyList();
 
     private void ensureEventsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         events_ = new java.util.ArrayList<com.google.protobuf.Any>(events_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1051,7 +1072,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
     public Builder clearEvents() {
       if (eventsBuilder_ == null) {
         events_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         eventsBuilder_.clear();
@@ -1177,7 +1198,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
                 com.google.protobuf.Any,
                 com.google.protobuf.Any.Builder,
                 com.google.protobuf.AnyOrBuilder>(
-                events_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                events_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         events_ = null;
       }
       return eventsBuilder_;
@@ -1187,9 +1208,9 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTextEventsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         textEvents_ = new com.google.protobuf.LazyStringArrayList(textEvents_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1356,7 +1377,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder clearTextEvents() {
       textEvents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }

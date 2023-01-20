@@ -371,7 +371,9 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -420,7 +422,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 2;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -449,14 +451,13 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.DlpJobType getType() {
-    @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.DlpJobType result =
-        com.google.privacy.dlp.v2.DlpJobType.valueOf(type_);
+        com.google.privacy.dlp.v2.DlpJobType.forNumber(type_);
     return result == null ? com.google.privacy.dlp.v2.DlpJobType.UNRECOGNIZED : result;
   }
 
   public static final int STATE_FIELD_NUMBER = 3;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -485,9 +486,8 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.DlpJob.JobState getState() {
-    @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.DlpJob.JobState result =
-        com.google.privacy.dlp.v2.DlpJob.JobState.valueOf(state_);
+        com.google.privacy.dlp.v2.DlpJob.JobState.forNumber(state_);
     return result == null ? com.google.privacy.dlp.v2.DlpJob.JobState.UNRECOGNIZED : result;
   }
 
@@ -636,7 +636,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int START_TIME_FIELD_NUMBER = 7;
@@ -682,7 +682,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
-    return getStartTime();
+    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
 
   public static final int END_TIME_FIELD_NUMBER = 8;
@@ -728,11 +728,13 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-    return getEndTime();
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
   public static final int JOB_TRIGGER_NAME_FIELD_NUMBER = 10;
-  private volatile java.lang.Object jobTriggerName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object jobTriggerName_ = "";
   /**
    *
    *
@@ -783,6 +785,8 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ERRORS_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.Error> errors_;
   /**
    *
@@ -1165,45 +1169,39 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       type_ = 0;
-
       state_ = 0;
-
       if (riskDetailsBuilder_ != null) {
         riskDetailsBuilder_.clear();
       }
       if (inspectDetailsBuilder_ != null) {
         inspectDetailsBuilder_.clear();
       }
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-      } else {
-        startTime_ = null;
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-      } else {
-        endTime_ = null;
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
       jobTriggerName_ = "";
-
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
       } else {
         errors_ = null;
         errorsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000200);
       detailsCase_ = 0;
       details_ = null;
       return this;
@@ -1232,52 +1230,61 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.privacy.dlp.v2.DlpJob buildPartial() {
       com.google.privacy.dlp.v2.DlpJob result = new com.google.privacy.dlp.v2.DlpJob(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.type_ = type_;
-      result.state_ = state_;
-      if (detailsCase_ == 4) {
-        if (riskDetailsBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = riskDetailsBuilder_.build();
-        }
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (detailsCase_ == 5) {
-        if (inspectDetailsBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = inspectDetailsBuilder_.build();
-        }
-      }
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (startTimeBuilder_ == null) {
-        result.startTime_ = startTime_;
-      } else {
-        result.startTime_ = startTimeBuilder_.build();
-      }
-      if (endTimeBuilder_ == null) {
-        result.endTime_ = endTime_;
-      } else {
-        result.endTime_ = endTimeBuilder_.build();
-      }
-      result.jobTriggerName_ = jobTriggerName_;
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.privacy.dlp.v2.DlpJob result) {
       if (errorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000200) != 0)) {
           errors_ = java.util.Collections.unmodifiableList(errors_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.errors_ = errors_;
       } else {
         result.errors_ = errorsBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.DlpJob result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.jobTriggerName_ = jobTriggerName_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.DlpJob result) {
       result.detailsCase_ = detailsCase_;
-      onBuilt();
-      return result;
+      result.details_ = this.details_;
+      if (detailsCase_ == 4 && riskDetailsBuilder_ != null) {
+        result.details_ = riskDetailsBuilder_.build();
+      }
+      if (detailsCase_ == 5 && inspectDetailsBuilder_ != null) {
+        result.details_ = inspectDetailsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1327,6 +1334,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.privacy.dlp.v2.DlpJob.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.type_ != 0) {
@@ -1346,13 +1354,14 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getJobTriggerName().isEmpty()) {
         jobTriggerName_ = other.jobTriggerName_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (errorsBuilder_ == null) {
         if (!other.errors_.isEmpty()) {
           if (errors_.isEmpty()) {
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureErrorsIsMutable();
             errors_.addAll(other.errors_);
@@ -1365,7 +1374,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
             errorsBuilder_.dispose();
             errorsBuilder_ = null;
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000200);
             errorsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getErrorsFieldBuilder()
@@ -1420,19 +1429,19 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
@@ -1450,25 +1459,25 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
             case 50:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 82:
               {
                 jobTriggerName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 82
             case 90:
@@ -1577,8 +1586,8 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1594,8 +1603,8 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1616,8 +1625,8 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1651,8 +1660,8 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1669,9 +1678,8 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.DlpJobType getType() {
-      @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.DlpJobType result =
-          com.google.privacy.dlp.v2.DlpJobType.valueOf(type_);
+          com.google.privacy.dlp.v2.DlpJobType.forNumber(type_);
       return result == null ? com.google.privacy.dlp.v2.DlpJobType.UNRECOGNIZED : result;
     }
     /**
@@ -1690,7 +1698,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -1707,7 +1715,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       type_ = 0;
       onChanged();
       return this;
@@ -1742,8 +1750,8 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1760,9 +1768,8 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.DlpJob.JobState getState() {
-      @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.DlpJob.JobState result =
-          com.google.privacy.dlp.v2.DlpJob.JobState.valueOf(state_);
+          com.google.privacy.dlp.v2.DlpJob.JobState.forNumber(state_);
       return result == null ? com.google.privacy.dlp.v2.DlpJob.JobState.UNRECOGNIZED : result;
     }
     /**
@@ -1781,7 +1788,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1798,7 +1805,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       state_ = 0;
       onChanged();
       return this;
@@ -2012,7 +2019,6 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 4;
       onChanged();
-      ;
       return riskDetailsBuilder_;
     }
 
@@ -2224,7 +2230,6 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 5;
       onChanged();
-      ;
       return inspectDetailsBuilder_;
     }
 
@@ -2246,7 +2251,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2283,11 +2288,11 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2302,11 +2307,11 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2320,17 +2325,18 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2343,14 +2349,13 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp create_time = 6;</code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2363,7 +2368,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp create_time = 6;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2429,7 +2434,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return startTimeBuilder_ != null || startTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2464,11 +2469,11 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         startTime_ = value;
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2483,11 +2488,11 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
     public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2501,17 +2506,18 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (startTime_ != null) {
-          startTime_ =
-              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && startTime_ != null
+            && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStartTimeBuilder().mergeFrom(value);
         } else {
           startTime_ = value;
         }
-        onChanged();
       } else {
         startTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2524,14 +2530,13 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp start_time = 7;</code>
      */
     public Builder clearStartTime() {
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-        onChanged();
-      } else {
-        startTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2544,7 +2549,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp start_time = 7;</code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
@@ -2608,7 +2613,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return endTimeBuilder_ != null || endTime_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2643,11 +2648,11 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         endTime_ = value;
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2662,11 +2667,11 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2680,17 +2685,18 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (endTime_ != null) {
-          endTime_ =
-              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && endTime_ != null
+            && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEndTimeBuilder().mergeFrom(value);
         } else {
           endTime_ = value;
         }
-        onChanged();
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2703,14 +2709,13 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
      */
     public Builder clearEndTime() {
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-        onChanged();
-      } else {
-        endTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2723,7 +2728,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp end_time = 8;</code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
@@ -2833,8 +2838,8 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       jobTriggerName_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2851,8 +2856,8 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearJobTriggerName() {
-
       jobTriggerName_ = getDefaultInstance().getJobTriggerName();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2874,8 +2879,8 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       jobTriggerName_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2884,9 +2889,9 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureErrorsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         errors_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Error>(errors_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000200;
       }
     }
 
@@ -3099,7 +3104,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
     public Builder clearErrors() {
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
       } else {
         errorsBuilder_.clear();
@@ -3220,7 +3225,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
                 com.google.privacy.dlp.v2.Error,
                 com.google.privacy.dlp.v2.Error.Builder,
                 com.google.privacy.dlp.v2.ErrorOrBuilder>(
-                errors_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                errors_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
         errors_ = null;
       }
       return errorsBuilder_;

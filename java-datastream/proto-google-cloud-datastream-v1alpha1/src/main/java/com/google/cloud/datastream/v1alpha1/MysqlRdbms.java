@@ -68,6 +68,8 @@ public final class MysqlRdbms extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MYSQL_DATABASES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datastream.v1alpha1.MysqlDatabase> mysqlDatabases_;
   /**
    *
@@ -337,6 +339,7 @@ public final class MysqlRdbms extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (mysqlDatabasesBuilder_ == null) {
         mysqlDatabases_ = java.util.Collections.emptyList();
       } else {
@@ -371,7 +374,16 @@ public final class MysqlRdbms extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datastream.v1alpha1.MysqlRdbms buildPartial() {
       com.google.cloud.datastream.v1alpha1.MysqlRdbms result =
           new com.google.cloud.datastream.v1alpha1.MysqlRdbms(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.datastream.v1alpha1.MysqlRdbms result) {
       if (mysqlDatabasesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           mysqlDatabases_ = java.util.Collections.unmodifiableList(mysqlDatabases_);
@@ -381,8 +393,10 @@ public final class MysqlRdbms extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.mysqlDatabases_ = mysqlDatabasesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1alpha1.MysqlRdbms result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

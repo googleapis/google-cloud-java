@@ -70,7 +70,9 @@ public final class PreviewUpdateGameServerClusterResponse
   }
 
   public static final int ETAG_FIELD_NUMBER = 2;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -163,7 +165,9 @@ public final class PreviewUpdateGameServerClusterResponse
    */
   @java.lang.Override
   public com.google.cloud.gaming.v1beta.TargetStateOrBuilder getTargetStateOrBuilder() {
-    return getTargetState();
+    return targetState_ == null
+        ? com.google.cloud.gaming.v1beta.TargetState.getDefaultInstance()
+        : targetState_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -380,12 +384,11 @@ public final class PreviewUpdateGameServerClusterResponse
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       etag_ = "";
-
-      if (targetStateBuilder_ == null) {
-        targetState_ = null;
-      } else {
-        targetState_ = null;
+      targetState_ = null;
+      if (targetStateBuilder_ != null) {
+        targetStateBuilder_.dispose();
         targetStateBuilder_ = null;
       }
       return this;
@@ -417,14 +420,23 @@ public final class PreviewUpdateGameServerClusterResponse
     public com.google.cloud.gaming.v1beta.PreviewUpdateGameServerClusterResponse buildPartial() {
       com.google.cloud.gaming.v1beta.PreviewUpdateGameServerClusterResponse result =
           new com.google.cloud.gaming.v1beta.PreviewUpdateGameServerClusterResponse(this);
-      result.etag_ = etag_;
-      if (targetStateBuilder_ == null) {
-        result.targetState_ = targetState_;
-      } else {
-        result.targetState_ = targetStateBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gaming.v1beta.PreviewUpdateGameServerClusterResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.targetState_ =
+            targetStateBuilder_ == null ? targetState_ : targetStateBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -478,6 +490,7 @@ public final class PreviewUpdateGameServerClusterResponse
               .getDefaultInstance()) return this;
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasTargetState()) {
@@ -512,13 +525,13 @@ public final class PreviewUpdateGameServerClusterResponse
             case 18:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getTargetStateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -537,6 +550,8 @@ public final class PreviewUpdateGameServerClusterResponse
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object etag_ = "";
     /**
@@ -599,8 +614,8 @@ public final class PreviewUpdateGameServerClusterResponse
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -616,8 +631,8 @@ public final class PreviewUpdateGameServerClusterResponse
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -638,8 +653,8 @@ public final class PreviewUpdateGameServerClusterResponse
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -662,7 +677,7 @@ public final class PreviewUpdateGameServerClusterResponse
      * @return Whether the targetState field is set.
      */
     public boolean hasTargetState() {
-      return targetStateBuilder_ != null || targetState_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -699,11 +714,11 @@ public final class PreviewUpdateGameServerClusterResponse
           throw new NullPointerException();
         }
         targetState_ = value;
-        onChanged();
       } else {
         targetStateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -719,11 +734,11 @@ public final class PreviewUpdateGameServerClusterResponse
         com.google.cloud.gaming.v1beta.TargetState.Builder builderForValue) {
       if (targetStateBuilder_ == null) {
         targetState_ = builderForValue.build();
-        onChanged();
       } else {
         targetStateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -737,19 +752,18 @@ public final class PreviewUpdateGameServerClusterResponse
      */
     public Builder mergeTargetState(com.google.cloud.gaming.v1beta.TargetState value) {
       if (targetStateBuilder_ == null) {
-        if (targetState_ != null) {
-          targetState_ =
-              com.google.cloud.gaming.v1beta.TargetState.newBuilder(targetState_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && targetState_ != null
+            && targetState_ != com.google.cloud.gaming.v1beta.TargetState.getDefaultInstance()) {
+          getTargetStateBuilder().mergeFrom(value);
         } else {
           targetState_ = value;
         }
-        onChanged();
       } else {
         targetStateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -762,14 +776,13 @@ public final class PreviewUpdateGameServerClusterResponse
      * <code>.google.cloud.gaming.v1beta.TargetState target_state = 3;</code>
      */
     public Builder clearTargetState() {
-      if (targetStateBuilder_ == null) {
-        targetState_ = null;
-        onChanged();
-      } else {
-        targetState_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      targetState_ = null;
+      if (targetStateBuilder_ != null) {
+        targetStateBuilder_.dispose();
         targetStateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -782,7 +795,7 @@ public final class PreviewUpdateGameServerClusterResponse
      * <code>.google.cloud.gaming.v1beta.TargetState target_state = 3;</code>
      */
     public com.google.cloud.gaming.v1beta.TargetState.Builder getTargetStateBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTargetStateFieldBuilder().getBuilder();
     }

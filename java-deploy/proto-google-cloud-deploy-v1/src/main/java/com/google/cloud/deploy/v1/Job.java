@@ -361,7 +361,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -410,7 +412,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 2;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -441,14 +443,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.Job.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.deploy.v1.Job.State result =
-        com.google.cloud.deploy.v1.Job.State.valueOf(state_);
+        com.google.cloud.deploy.v1.Job.State.forNumber(state_);
     return result == null ? com.google.cloud.deploy.v1.Job.State.UNRECOGNIZED : result;
   }
 
   public static final int JOB_RUN_FIELD_NUMBER = 3;
-  private volatile java.lang.Object jobRun_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object jobRun_ = "";
   /**
    *
    *
@@ -867,12 +870,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       id_ = "";
-
       state_ = 0;
-
       jobRun_ = "";
-
       if (deployJobBuilder_ != null) {
         deployJobBuilder_.clear();
       }
@@ -907,26 +908,36 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.deploy.v1.Job buildPartial() {
       com.google.cloud.deploy.v1.Job result = new com.google.cloud.deploy.v1.Job(this);
-      result.id_ = id_;
-      result.state_ = state_;
-      result.jobRun_ = jobRun_;
-      if (jobTypeCase_ == 4) {
-        if (deployJobBuilder_ == null) {
-          result.jobType_ = jobType_;
-        } else {
-          result.jobType_ = deployJobBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (jobTypeCase_ == 5) {
-        if (verifyJobBuilder_ == null) {
-          result.jobType_ = jobType_;
-        } else {
-          result.jobType_ = verifyJobBuilder_.build();
-        }
-      }
-      result.jobTypeCase_ = jobTypeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.Job result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.jobRun_ = jobRun_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.deploy.v1.Job result) {
+      result.jobTypeCase_ = jobTypeCase_;
+      result.jobType_ = this.jobType_;
+      if (jobTypeCase_ == 4 && deployJobBuilder_ != null) {
+        result.jobType_ = deployJobBuilder_.build();
+      }
+      if (jobTypeCase_ == 5 && verifyJobBuilder_ != null) {
+        result.jobType_ = verifyJobBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -976,6 +987,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.deploy.v1.Job.getDefaultInstance()) return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -983,6 +995,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getJobRun().isEmpty()) {
         jobRun_ = other.jobRun_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       switch (other.getJobTypeCase()) {
@@ -1030,19 +1043,19 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 jobRun_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -1087,6 +1100,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object id_ = "";
     /**
@@ -1149,8 +1164,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1166,8 +1181,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1188,8 +1203,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1227,8 +1242,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1247,9 +1262,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.deploy.v1.Job.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.deploy.v1.Job.State result =
-          com.google.cloud.deploy.v1.Job.State.valueOf(state_);
+          com.google.cloud.deploy.v1.Job.State.forNumber(state_);
       return result == null ? com.google.cloud.deploy.v1.Job.State.UNRECOGNIZED : result;
     }
     /**
@@ -1270,7 +1284,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1289,7 +1303,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       state_ = 0;
       onChanged();
       return this;
@@ -1365,8 +1379,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       jobRun_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1385,8 +1399,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearJobRun() {
-
       jobRun_ = getDefaultInstance().getJobRun();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1410,8 +1424,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       jobRun_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1637,7 +1651,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       jobTypeCase_ = 4;
       onChanged();
-      ;
       return deployJobBuilder_;
     }
 
@@ -1862,7 +1875,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       jobTypeCase_ = 5;
       onChanged();
-      ;
       return verifyJobBuilder_;
     }
 

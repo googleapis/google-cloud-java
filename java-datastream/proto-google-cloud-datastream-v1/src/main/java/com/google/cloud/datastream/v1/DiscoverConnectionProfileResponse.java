@@ -512,6 +512,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (oracleRdbmsBuilder_ != null) {
         oracleRdbmsBuilder_.clear();
       }
@@ -551,30 +552,32 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
     public com.google.cloud.datastream.v1.DiscoverConnectionProfileResponse buildPartial() {
       com.google.cloud.datastream.v1.DiscoverConnectionProfileResponse result =
           new com.google.cloud.datastream.v1.DiscoverConnectionProfileResponse(this);
-      if (dataObjectCase_ == 100) {
-        if (oracleRdbmsBuilder_ == null) {
-          result.dataObject_ = dataObject_;
-        } else {
-          result.dataObject_ = oracleRdbmsBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (dataObjectCase_ == 101) {
-        if (mysqlRdbmsBuilder_ == null) {
-          result.dataObject_ = dataObject_;
-        } else {
-          result.dataObject_ = mysqlRdbmsBuilder_.build();
-        }
-      }
-      if (dataObjectCase_ == 102) {
-        if (postgresqlRdbmsBuilder_ == null) {
-          result.dataObject_ = dataObject_;
-        } else {
-          result.dataObject_ = postgresqlRdbmsBuilder_.build();
-        }
-      }
-      result.dataObjectCase_ = dataObjectCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datastream.v1.DiscoverConnectionProfileResponse result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.datastream.v1.DiscoverConnectionProfileResponse result) {
+      result.dataObjectCase_ = dataObjectCase_;
+      result.dataObject_ = this.dataObject_;
+      if (dataObjectCase_ == 100 && oracleRdbmsBuilder_ != null) {
+        result.dataObject_ = oracleRdbmsBuilder_.build();
+      }
+      if (dataObjectCase_ == 101 && mysqlRdbmsBuilder_ != null) {
+        result.dataObject_ = mysqlRdbmsBuilder_.build();
+      }
+      if (dataObjectCase_ == 102 && postgresqlRdbmsBuilder_ != null) {
+        result.dataObject_ = postgresqlRdbmsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -720,6 +723,8 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datastream.v1.OracleRdbms,
@@ -927,7 +932,6 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
       }
       dataObjectCase_ = 100;
       onChanged();
-      ;
       return oracleRdbmsBuilder_;
     }
 
@@ -1137,7 +1141,6 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
       }
       dataObjectCase_ = 101;
       onChanged();
-      ;
       return mysqlRdbmsBuilder_;
     }
 
@@ -1347,7 +1350,6 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
       }
       dataObjectCase_ = 102;
       onChanged();
-      ;
       return postgresqlRdbmsBuilder_;
     }
 

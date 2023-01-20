@@ -69,7 +69,9 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int REALM_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object realmId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object realmId_ = "";
   /**
    *
    *
@@ -218,7 +222,7 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.gaming.v1beta.RealmOrBuilder getRealmOrBuilder() {
-    return getRealm();
+    return realm_ == null ? com.google.cloud.gaming.v1beta.Realm.getDefaultInstance() : realm_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -441,14 +445,12 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       realmId_ = "";
-
-      if (realmBuilder_ == null) {
-        realm_ = null;
-      } else {
-        realm_ = null;
+      realm_ = null;
+      if (realmBuilder_ != null) {
+        realmBuilder_.dispose();
         realmBuilder_ = null;
       }
       return this;
@@ -478,15 +480,24 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.gaming.v1beta.CreateRealmRequest buildPartial() {
       com.google.cloud.gaming.v1beta.CreateRealmRequest result =
           new com.google.cloud.gaming.v1beta.CreateRealmRequest(this);
-      result.parent_ = parent_;
-      result.realmId_ = realmId_;
-      if (realmBuilder_ == null) {
-        result.realm_ = realm_;
-      } else {
-        result.realm_ = realmBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gaming.v1beta.CreateRealmRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.realmId_ = realmId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.realm_ = realmBuilder_ == null ? realm_ : realmBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -537,10 +548,12 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRealmId().isEmpty()) {
         realmId_ = other.realmId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRealm()) {
@@ -575,19 +588,19 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 realmId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getRealmFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -606,6 +619,8 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -677,8 +692,8 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -697,8 +712,8 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -722,8 +737,8 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -789,8 +804,8 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       realmId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -806,8 +821,8 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearRealmId() {
-
       realmId_ = getDefaultInstance().getRealmId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -828,8 +843,8 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       realmId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -853,7 +868,7 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the realm field is set.
      */
     public boolean hasRealm() {
-      return realmBuilder_ != null || realm_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -890,11 +905,11 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         realm_ = value;
-        onChanged();
       } else {
         realmBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -910,11 +925,11 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
     public Builder setRealm(com.google.cloud.gaming.v1beta.Realm.Builder builderForValue) {
       if (realmBuilder_ == null) {
         realm_ = builderForValue.build();
-        onChanged();
       } else {
         realmBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -929,19 +944,18 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeRealm(com.google.cloud.gaming.v1beta.Realm value) {
       if (realmBuilder_ == null) {
-        if (realm_ != null) {
-          realm_ =
-              com.google.cloud.gaming.v1beta.Realm.newBuilder(realm_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && realm_ != null
+            && realm_ != com.google.cloud.gaming.v1beta.Realm.getDefaultInstance()) {
+          getRealmBuilder().mergeFrom(value);
         } else {
           realm_ = value;
         }
-        onChanged();
       } else {
         realmBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -955,14 +969,13 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearRealm() {
-      if (realmBuilder_ == null) {
-        realm_ = null;
-        onChanged();
-      } else {
-        realm_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      realm_ = null;
+      if (realmBuilder_ != null) {
+        realmBuilder_.dispose();
         realmBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -976,7 +989,7 @@ public final class CreateRealmRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.gaming.v1beta.Realm.Builder getRealmBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getRealmFieldBuilder().getBuilder();
     }

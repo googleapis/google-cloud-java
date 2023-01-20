@@ -387,7 +387,9 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -436,7 +438,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ACTION_FIELD_NUMBER = 13;
-  private int action_;
+  private int action_ = 0;
   /**
    *
    *
@@ -467,9 +469,8 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.devtools.clouddebugger.v2.Breakpoint.Action getAction() {
-    @SuppressWarnings("deprecation")
     com.google.devtools.clouddebugger.v2.Breakpoint.Action result =
-        com.google.devtools.clouddebugger.v2.Breakpoint.Action.valueOf(action_);
+        com.google.devtools.clouddebugger.v2.Breakpoint.Action.forNumber(action_);
     return result == null
         ? com.google.devtools.clouddebugger.v2.Breakpoint.Action.UNRECOGNIZED
         : result;
@@ -520,11 +521,15 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.devtools.clouddebugger.v2.SourceLocationOrBuilder getLocationOrBuilder() {
-    return getLocation();
+    return location_ == null
+        ? com.google.devtools.clouddebugger.v2.SourceLocation.getDefaultInstance()
+        : location_;
   }
 
   public static final int CONDITION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object condition_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object condition_ = "";
   /**
    *
    *
@@ -577,6 +582,8 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXPRESSIONS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList expressions_;
   /**
    *
@@ -650,7 +657,9 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOG_MESSAGE_FORMAT_FIELD_NUMBER = 14;
-  private volatile java.lang.Object logMessageFormat_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object logMessageFormat_ = "";
   /**
    *
    *
@@ -711,7 +720,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOG_LEVEL_FIELD_NUMBER = 15;
-  private int logLevel_;
+  private int logLevel_ = 0;
   /**
    *
    *
@@ -740,16 +749,15 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.devtools.clouddebugger.v2.Breakpoint.LogLevel getLogLevel() {
-    @SuppressWarnings("deprecation")
     com.google.devtools.clouddebugger.v2.Breakpoint.LogLevel result =
-        com.google.devtools.clouddebugger.v2.Breakpoint.LogLevel.valueOf(logLevel_);
+        com.google.devtools.clouddebugger.v2.Breakpoint.LogLevel.forNumber(logLevel_);
     return result == null
         ? com.google.devtools.clouddebugger.v2.Breakpoint.LogLevel.UNRECOGNIZED
         : result;
   }
 
   public static final int IS_FINAL_STATE_FIELD_NUMBER = 5;
-  private boolean isFinalState_;
+  private boolean isFinalState_ = false;
   /**
    *
    *
@@ -810,7 +818,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int FINAL_TIME_FIELD_NUMBER = 12;
@@ -859,11 +867,13 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getFinalTimeOrBuilder() {
-    return getFinalTime();
+    return finalTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : finalTime_;
   }
 
   public static final int USER_EMAIL_FIELD_NUMBER = 16;
-  private volatile java.lang.Object userEmail_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object userEmail_ = "";
   /**
    *
    *
@@ -983,10 +993,14 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.devtools.clouddebugger.v2.StatusMessageOrBuilder getStatusOrBuilder() {
-    return getStatus();
+    return status_ == null
+        ? com.google.devtools.clouddebugger.v2.StatusMessage.getDefaultInstance()
+        : status_;
   }
 
   public static final int STACK_FRAMES_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.clouddebugger.v2.StackFrame> stackFrames_;
   /**
    *
@@ -1062,6 +1076,8 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EVALUATED_EXPRESSIONS_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.clouddebugger.v2.Variable> evaluatedExpressions_;
   /**
    *
@@ -1163,6 +1179,8 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VARIABLE_TABLE_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.clouddebugger.v2.Variable> variableTable_;
   /**
    *
@@ -1295,6 +1313,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -1355,7 +1374,10 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 17;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -1778,44 +1800,34 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       id_ = "";
-
       action_ = 0;
-
-      if (locationBuilder_ == null) {
-        location_ = null;
-      } else {
-        location_ = null;
+      location_ = null;
+      if (locationBuilder_ != null) {
+        locationBuilder_.dispose();
         locationBuilder_ = null;
       }
       condition_ = "";
-
       expressions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       logMessageFormat_ = "";
-
       logLevel_ = 0;
-
       isFinalState_ = false;
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (finalTimeBuilder_ == null) {
-        finalTime_ = null;
-      } else {
-        finalTime_ = null;
+      finalTime_ = null;
+      if (finalTimeBuilder_ != null) {
+        finalTimeBuilder_.dispose();
         finalTimeBuilder_ = null;
       }
       userEmail_ = "";
-
-      if (statusBuilder_ == null) {
-        status_ = null;
-      } else {
-        status_ = null;
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
         statusBuilder_ = null;
       }
       if (stackFramesBuilder_ == null) {
@@ -1824,21 +1836,21 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         stackFrames_ = null;
         stackFramesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00001000);
       if (evaluatedExpressionsBuilder_ == null) {
         evaluatedExpressions_ = java.util.Collections.emptyList();
       } else {
         evaluatedExpressions_ = null;
         evaluatedExpressionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00002000);
       if (variableTableBuilder_ == null) {
         variableTable_ = java.util.Collections.emptyList();
       } else {
         variableTable_ = null;
         variableTableBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00004000);
       internalGetMutableLabels().clear();
       return this;
     }
@@ -1867,70 +1879,89 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.clouddebugger.v2.Breakpoint buildPartial() {
       com.google.devtools.clouddebugger.v2.Breakpoint result =
           new com.google.devtools.clouddebugger.v2.Breakpoint(this);
-      int from_bitField0_ = bitField0_;
-      result.id_ = id_;
-      result.action_ = action_;
-      if (locationBuilder_ == null) {
-        result.location_ = location_;
-      } else {
-        result.location_ = locationBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.condition_ = condition_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.devtools.clouddebugger.v2.Breakpoint result) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         expressions_ = expressions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
       }
       result.expressions_ = expressions_;
-      result.logMessageFormat_ = logMessageFormat_;
-      result.logLevel_ = logLevel_;
-      result.isFinalState_ = isFinalState_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (finalTimeBuilder_ == null) {
-        result.finalTime_ = finalTime_;
-      } else {
-        result.finalTime_ = finalTimeBuilder_.build();
-      }
-      result.userEmail_ = userEmail_;
-      if (statusBuilder_ == null) {
-        result.status_ = status_;
-      } else {
-        result.status_ = statusBuilder_.build();
-      }
       if (stackFramesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00001000) != 0)) {
           stackFrames_ = java.util.Collections.unmodifiableList(stackFrames_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.stackFrames_ = stackFrames_;
       } else {
         result.stackFrames_ = stackFramesBuilder_.build();
       }
       if (evaluatedExpressionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           evaluatedExpressions_ = java.util.Collections.unmodifiableList(evaluatedExpressions_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.evaluatedExpressions_ = evaluatedExpressions_;
       } else {
         result.evaluatedExpressions_ = evaluatedExpressionsBuilder_.build();
       }
       if (variableTableBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00004000) != 0)) {
           variableTable_ = java.util.Collections.unmodifiableList(variableTable_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00004000);
         }
         result.variableTable_ = variableTable_;
       } else {
         result.variableTable_ = variableTableBuilder_.build();
       }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.devtools.clouddebugger.v2.Breakpoint result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.action_ = action_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.location_ = locationBuilder_ == null ? location_ : locationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.condition_ = condition_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.logMessageFormat_ = logMessageFormat_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.logLevel_ = logLevel_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.isFinalState_ = isFinalState_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.finalTime_ = finalTimeBuilder_ == null ? finalTime_ : finalTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.userEmail_ = userEmail_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -1981,6 +2012,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.action_ != 0) {
@@ -1991,12 +2023,13 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getCondition().isEmpty()) {
         condition_ = other.condition_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.expressions_.isEmpty()) {
         if (expressions_.isEmpty()) {
           expressions_ = other.expressions_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureExpressionsIsMutable();
           expressions_.addAll(other.expressions_);
@@ -2005,6 +2038,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getLogMessageFormat().isEmpty()) {
         logMessageFormat_ = other.logMessageFormat_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.logLevel_ != 0) {
@@ -2021,6 +2055,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getUserEmail().isEmpty()) {
         userEmail_ = other.userEmail_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasStatus()) {
@@ -2030,7 +2065,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         if (!other.stackFrames_.isEmpty()) {
           if (stackFrames_.isEmpty()) {
             stackFrames_ = other.stackFrames_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensureStackFramesIsMutable();
             stackFrames_.addAll(other.stackFrames_);
@@ -2043,7 +2078,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
             stackFramesBuilder_.dispose();
             stackFramesBuilder_ = null;
             stackFrames_ = other.stackFrames_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00001000);
             stackFramesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getStackFramesFieldBuilder()
@@ -2057,7 +2092,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         if (!other.evaluatedExpressions_.isEmpty()) {
           if (evaluatedExpressions_.isEmpty()) {
             evaluatedExpressions_ = other.evaluatedExpressions_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensureEvaluatedExpressionsIsMutable();
             evaluatedExpressions_.addAll(other.evaluatedExpressions_);
@@ -2070,7 +2105,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
             evaluatedExpressionsBuilder_.dispose();
             evaluatedExpressionsBuilder_ = null;
             evaluatedExpressions_ = other.evaluatedExpressions_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00002000);
             evaluatedExpressionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEvaluatedExpressionsFieldBuilder()
@@ -2084,7 +2119,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         if (!other.variableTable_.isEmpty()) {
           if (variableTable_.isEmpty()) {
             variableTable_ = other.variableTable_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00004000);
           } else {
             ensureVariableTableIsMutable();
             variableTable_.addAll(other.variableTable_);
@@ -2097,7 +2132,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
             variableTableBuilder_.dispose();
             variableTableBuilder_ = null;
             variableTable_ = other.variableTable_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00004000);
             variableTableBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getVariableTableFieldBuilder()
@@ -2108,6 +2143,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         }
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00008000;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2137,19 +2173,19 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getLocationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 condition_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
@@ -2162,7 +2198,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
             case 40:
               {
                 isFinalState_ = input.readBool();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 40
             case 58:
@@ -2208,43 +2244,43 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
             case 82:
               {
                 input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(getFinalTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 98
             case 104:
               {
                 action_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 104
             case 114:
               {
                 logMessageFormat_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 114
             case 120:
               {
                 logLevel_ = input.readEnum();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 120
             case 130:
               {
                 userEmail_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 130
             case 138:
@@ -2256,6 +2292,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00008000;
                 break;
               } // case 138
             default:
@@ -2338,8 +2375,8 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2355,8 +2392,8 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2377,8 +2414,8 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2414,8 +2451,8 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setActionValue(int value) {
-
       action_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2433,9 +2470,8 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.devtools.clouddebugger.v2.Breakpoint.Action getAction() {
-      @SuppressWarnings("deprecation")
       com.google.devtools.clouddebugger.v2.Breakpoint.Action result =
-          com.google.devtools.clouddebugger.v2.Breakpoint.Action.valueOf(action_);
+          com.google.devtools.clouddebugger.v2.Breakpoint.Action.forNumber(action_);
       return result == null
           ? com.google.devtools.clouddebugger.v2.Breakpoint.Action.UNRECOGNIZED
           : result;
@@ -2457,7 +2493,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       action_ = value.getNumber();
       onChanged();
       return this;
@@ -2475,7 +2511,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAction() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       action_ = 0;
       onChanged();
       return this;
@@ -2499,7 +2535,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the location field is set.
      */
     public boolean hasLocation() {
-      return locationBuilder_ != null || location_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2536,11 +2572,11 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         location_ = value;
-        onChanged();
       } else {
         locationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2556,11 +2592,11 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         com.google.devtools.clouddebugger.v2.SourceLocation.Builder builderForValue) {
       if (locationBuilder_ == null) {
         location_ = builderForValue.build();
-        onChanged();
       } else {
         locationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2574,19 +2610,19 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLocation(com.google.devtools.clouddebugger.v2.SourceLocation value) {
       if (locationBuilder_ == null) {
-        if (location_ != null) {
-          location_ =
-              com.google.devtools.clouddebugger.v2.SourceLocation.newBuilder(location_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && location_ != null
+            && location_
+                != com.google.devtools.clouddebugger.v2.SourceLocation.getDefaultInstance()) {
+          getLocationBuilder().mergeFrom(value);
         } else {
           location_ = value;
         }
-        onChanged();
       } else {
         locationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2599,14 +2635,13 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.devtools.clouddebugger.v2.SourceLocation location = 2;</code>
      */
     public Builder clearLocation() {
-      if (locationBuilder_ == null) {
-        location_ = null;
-        onChanged();
-      } else {
-        location_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      location_ = null;
+      if (locationBuilder_ != null) {
+        locationBuilder_.dispose();
         locationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2619,7 +2654,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.devtools.clouddebugger.v2.SourceLocation location = 2;</code>
      */
     public com.google.devtools.clouddebugger.v2.SourceLocation.Builder getLocationBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getLocationFieldBuilder().getBuilder();
     }
@@ -2734,8 +2769,8 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       condition_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2753,8 +2788,8 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCondition() {
-
       condition_ = getDefaultInstance().getCondition();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2777,8 +2812,8 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       condition_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2787,9 +2822,9 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureExpressionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         expressions_ = new com.google.protobuf.LazyStringArrayList(expressions_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -2948,7 +2983,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearExpressions() {
       expressions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -3057,8 +3092,8 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       logMessageFormat_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3080,8 +3115,8 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLogMessageFormat() {
-
       logMessageFormat_ = getDefaultInstance().getLogMessageFormat();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -3108,8 +3143,8 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       logMessageFormat_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3143,8 +3178,8 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setLogLevelValue(int value) {
-
       logLevel_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3161,9 +3196,8 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.devtools.clouddebugger.v2.Breakpoint.LogLevel getLogLevel() {
-      @SuppressWarnings("deprecation")
       com.google.devtools.clouddebugger.v2.Breakpoint.LogLevel result =
-          com.google.devtools.clouddebugger.v2.Breakpoint.LogLevel.valueOf(logLevel_);
+          com.google.devtools.clouddebugger.v2.Breakpoint.LogLevel.forNumber(logLevel_);
       return result == null
           ? com.google.devtools.clouddebugger.v2.Breakpoint.LogLevel.UNRECOGNIZED
           : result;
@@ -3184,7 +3218,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       logLevel_ = value.getNumber();
       onChanged();
       return this;
@@ -3201,7 +3235,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLogLevel() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       logLevel_ = 0;
       onChanged();
       return this;
@@ -3240,6 +3274,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     public Builder setIsFinalState(boolean value) {
 
       isFinalState_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3256,7 +3291,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIsFinalState() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       isFinalState_ = false;
       onChanged();
       return this;
@@ -3280,7 +3315,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3317,11 +3352,11 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3336,11 +3371,11 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3354,17 +3389,18 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3377,14 +3413,13 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp create_time = 11;</code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3397,7 +3432,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp create_time = 11;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -3464,7 +3499,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the finalTime field is set.
      */
     public boolean hasFinalTime() {
-      return finalTimeBuilder_ != null || finalTime_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3501,11 +3536,11 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         finalTime_ = value;
-        onChanged();
       } else {
         finalTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3521,11 +3556,11 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     public Builder setFinalTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (finalTimeBuilder_ == null) {
         finalTime_ = builderForValue.build();
-        onChanged();
       } else {
         finalTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3540,17 +3575,18 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeFinalTime(com.google.protobuf.Timestamp value) {
       if (finalTimeBuilder_ == null) {
-        if (finalTime_ != null) {
-          finalTime_ =
-              com.google.protobuf.Timestamp.newBuilder(finalTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && finalTime_ != null
+            && finalTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getFinalTimeBuilder().mergeFrom(value);
         } else {
           finalTime_ = value;
         }
-        onChanged();
       } else {
         finalTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3564,14 +3600,13 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp final_time = 12;</code>
      */
     public Builder clearFinalTime() {
-      if (finalTimeBuilder_ == null) {
-        finalTime_ = null;
-        onChanged();
-      } else {
-        finalTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      finalTime_ = null;
+      if (finalTimeBuilder_ != null) {
+        finalTimeBuilder_.dispose();
         finalTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3585,7 +3620,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp final_time = 12;</code>
      */
     public com.google.protobuf.Timestamp.Builder getFinalTimeBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getFinalTimeFieldBuilder().getBuilder();
     }
@@ -3694,8 +3729,8 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       userEmail_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3711,8 +3746,8 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUserEmail() {
-
       userEmail_ = getDefaultInstance().getUserEmail();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3733,8 +3768,8 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       userEmail_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3766,7 +3801,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return statusBuilder_ != null || status_ != null;
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3821,11 +3856,11 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         status_ = value;
-        onChanged();
       } else {
         statusBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3850,11 +3885,11 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         com.google.devtools.clouddebugger.v2.StatusMessage.Builder builderForValue) {
       if (statusBuilder_ == null) {
         status_ = builderForValue.build();
-        onChanged();
       } else {
         statusBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3877,19 +3912,18 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStatus(com.google.devtools.clouddebugger.v2.StatusMessage value) {
       if (statusBuilder_ == null) {
-        if (status_ != null) {
-          status_ =
-              com.google.devtools.clouddebugger.v2.StatusMessage.newBuilder(status_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000800) != 0)
+            && status_ != null
+            && status_ != com.google.devtools.clouddebugger.v2.StatusMessage.getDefaultInstance()) {
+          getStatusBuilder().mergeFrom(value);
         } else {
           status_ = value;
         }
-        onChanged();
       } else {
         statusBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3911,14 +3945,13 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.devtools.clouddebugger.v2.StatusMessage status = 10;</code>
      */
     public Builder clearStatus() {
-      if (statusBuilder_ == null) {
-        status_ = null;
-        onChanged();
-      } else {
-        status_ = null;
+      bitField0_ = (bitField0_ & ~0x00000800);
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
         statusBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3940,7 +3973,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.devtools.clouddebugger.v2.StatusMessage status = 10;</code>
      */
     public com.google.devtools.clouddebugger.v2.StatusMessage.Builder getStatusBuilder() {
-
+      bitField0_ |= 0x00000800;
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
@@ -4010,10 +4043,10 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureStackFramesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         stackFrames_ =
             new java.util.ArrayList<com.google.devtools.clouddebugger.v2.StackFrame>(stackFrames_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00001000;
       }
     }
 
@@ -4242,7 +4275,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     public Builder clearStackFrames() {
       if (stackFramesBuilder_ == null) {
         stackFrames_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         stackFramesBuilder_.clear();
@@ -4374,7 +4407,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
                 com.google.devtools.clouddebugger.v2.StackFrame,
                 com.google.devtools.clouddebugger.v2.StackFrame.Builder,
                 com.google.devtools.clouddebugger.v2.StackFrameOrBuilder>(
-                stackFrames_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                stackFrames_, ((bitField0_ & 0x00001000) != 0), getParentForChildren(), isClean());
         stackFrames_ = null;
       }
       return stackFramesBuilder_;
@@ -4384,11 +4417,11 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureEvaluatedExpressionsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         evaluatedExpressions_ =
             new java.util.ArrayList<com.google.devtools.clouddebugger.v2.Variable>(
                 evaluatedExpressions_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00002000;
       }
     }
 
@@ -4673,7 +4706,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEvaluatedExpressions() {
       if (evaluatedExpressionsBuilder_ == null) {
         evaluatedExpressions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         evaluatedExpressionsBuilder_.clear();
@@ -4841,7 +4874,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
                 com.google.devtools.clouddebugger.v2.Variable.Builder,
                 com.google.devtools.clouddebugger.v2.VariableOrBuilder>(
                 evaluatedExpressions_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00002000) != 0),
                 getParentForChildren(),
                 isClean());
         evaluatedExpressions_ = null;
@@ -4853,10 +4886,10 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureVariableTableIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00004000) != 0)) {
         variableTable_ =
             new java.util.ArrayList<com.google.devtools.clouddebugger.v2.Variable>(variableTable_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00004000;
       }
     }
 
@@ -5184,7 +5217,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     public Builder clearVariableTable() {
       if (variableTableBuilder_ == null) {
         variableTable_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00004000);
         onChanged();
       } else {
         variableTableBuilder_.clear();
@@ -5380,7 +5413,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
                 com.google.devtools.clouddebugger.v2.Variable.Builder,
                 com.google.devtools.clouddebugger.v2.VariableOrBuilder>(
                 variableTable_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00004000) != 0),
                 getParentForChildren(),
                 isClean());
         variableTable_ = null;
@@ -5399,14 +5432,14 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00008000;
+      onChanged();
       return labels_;
     }
 
@@ -5461,8 +5494,10 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 17;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -5492,6 +5527,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00008000);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -5515,6 +5551,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00008000;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -5534,8 +5571,8 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00008000;
       return this;
     }
     /**
@@ -5550,6 +5587,7 @@ public final class Breakpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00008000;
       return this;
     }
 

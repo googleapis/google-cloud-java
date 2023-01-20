@@ -110,7 +110,9 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.PrCurveOrBuilder getPrCurveOrBuilder() {
-    return getPrCurve();
+    return prCurve_ == null
+        ? com.google.cloud.datalabeling.v1beta1.PrCurve.getDefaultInstance()
+        : prCurve_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -316,10 +318,10 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (prCurveBuilder_ == null) {
-        prCurve_ = null;
-      } else {
-        prCurve_ = null;
+      bitField0_ = 0;
+      prCurve_ = null;
+      if (prCurveBuilder_ != null) {
+        prCurveBuilder_.dispose();
         prCurveBuilder_ = null;
       }
       return this;
@@ -350,13 +352,19 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
     public com.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics buildPartial() {
       com.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics result =
           new com.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics(this);
-      if (prCurveBuilder_ == null) {
-        result.prCurve_ = prCurve_;
-      } else {
-        result.prCurve_ = prCurveBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.prCurve_ = prCurveBuilder_ == null ? prCurve_ : prCurveBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -438,7 +446,7 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
             case 10:
               {
                 input.readMessage(getPrCurveFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -458,6 +466,8 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.datalabeling.v1beta1.PrCurve prCurve_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.PrCurve,
@@ -476,7 +486,7 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
      * @return Whether the prCurve field is set.
      */
     public boolean hasPrCurve() {
-      return prCurveBuilder_ != null || prCurve_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -513,11 +523,11 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         prCurve_ = value;
-        onChanged();
       } else {
         prCurveBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -533,11 +543,11 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
         com.google.cloud.datalabeling.v1beta1.PrCurve.Builder builderForValue) {
       if (prCurveBuilder_ == null) {
         prCurve_ = builderForValue.build();
-        onChanged();
       } else {
         prCurveBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -551,19 +561,18 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
      */
     public Builder mergePrCurve(com.google.cloud.datalabeling.v1beta1.PrCurve value) {
       if (prCurveBuilder_ == null) {
-        if (prCurve_ != null) {
-          prCurve_ =
-              com.google.cloud.datalabeling.v1beta1.PrCurve.newBuilder(prCurve_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && prCurve_ != null
+            && prCurve_ != com.google.cloud.datalabeling.v1beta1.PrCurve.getDefaultInstance()) {
+          getPrCurveBuilder().mergeFrom(value);
         } else {
           prCurve_ = value;
         }
-        onChanged();
       } else {
         prCurveBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -576,14 +585,13 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
      */
     public Builder clearPrCurve() {
-      if (prCurveBuilder_ == null) {
-        prCurve_ = null;
-        onChanged();
-      } else {
-        prCurve_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      prCurve_ = null;
+      if (prCurveBuilder_ != null) {
+        prCurveBuilder_.dispose();
         prCurveBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -596,7 +604,7 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
      */
     public com.google.cloud.datalabeling.v1beta1.PrCurve.Builder getPrCurveBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getPrCurveFieldBuilder().getBuilder();
     }

@@ -77,7 +77,7 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
   }
 
   public static final int WRAPPED_KEY_FIELD_NUMBER = 1;
-  private com.google.protobuf.ByteString wrappedKey_;
+  private com.google.protobuf.ByteString wrappedKey_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -95,7 +95,9 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
   }
 
   public static final int CRYPTO_KEY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object cryptoKeyName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cryptoKeyName_ = "";
   /**
    *
    *
@@ -357,10 +359,9 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       wrappedKey_ = com.google.protobuf.ByteString.EMPTY;
-
       cryptoKeyName_ = "";
-
       return this;
     }
 
@@ -388,10 +389,21 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
     public com.google.privacy.dlp.v2.KmsWrappedCryptoKey buildPartial() {
       com.google.privacy.dlp.v2.KmsWrappedCryptoKey result =
           new com.google.privacy.dlp.v2.KmsWrappedCryptoKey(this);
-      result.wrappedKey_ = wrappedKey_;
-      result.cryptoKeyName_ = cryptoKeyName_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.KmsWrappedCryptoKey result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.wrappedKey_ = wrappedKey_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.cryptoKeyName_ = cryptoKeyName_;
+      }
     }
 
     @java.lang.Override
@@ -444,6 +456,7 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
       }
       if (!other.getCryptoKeyName().isEmpty()) {
         cryptoKeyName_ = other.cryptoKeyName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -475,13 +488,13 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 wrappedKey_ = input.readBytes();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 cryptoKeyName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -500,6 +513,8 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.ByteString wrappedKey_ = com.google.protobuf.ByteString.EMPTY;
     /**
@@ -533,8 +548,8 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       wrappedKey_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -550,7 +565,7 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearWrappedKey() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       wrappedKey_ = getDefaultInstance().getWrappedKey();
       onChanged();
       return this;
@@ -617,8 +632,8 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       cryptoKeyName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -634,8 +649,8 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearCryptoKeyName() {
-
       cryptoKeyName_ = getDefaultInstance().getCryptoKeyName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -656,8 +671,8 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cryptoKeyName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

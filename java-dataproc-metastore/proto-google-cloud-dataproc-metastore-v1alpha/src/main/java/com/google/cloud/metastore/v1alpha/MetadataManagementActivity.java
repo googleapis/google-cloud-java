@@ -69,6 +69,8 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
   }
 
   public static final int METADATA_EXPORTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.metastore.v1alpha.MetadataExport> metadataExports_;
   /**
    *
@@ -150,6 +152,8 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
   }
 
   public static final int RESTORES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.metastore.v1alpha.Restore> restores_;
   /**
    *
@@ -439,6 +443,7 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (metadataExportsBuilder_ == null) {
         metadataExports_ = java.util.Collections.emptyList();
       } else {
@@ -481,7 +486,16 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
     public com.google.cloud.metastore.v1alpha.MetadataManagementActivity buildPartial() {
       com.google.cloud.metastore.v1alpha.MetadataManagementActivity result =
           new com.google.cloud.metastore.v1alpha.MetadataManagementActivity(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.metastore.v1alpha.MetadataManagementActivity result) {
       if (metadataExportsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           metadataExports_ = java.util.Collections.unmodifiableList(metadataExports_);
@@ -500,8 +514,11 @@ public final class MetadataManagementActivity extends com.google.protobuf.Genera
       } else {
         result.restores_ = restoresBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.metastore.v1alpha.MetadataManagementActivity result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

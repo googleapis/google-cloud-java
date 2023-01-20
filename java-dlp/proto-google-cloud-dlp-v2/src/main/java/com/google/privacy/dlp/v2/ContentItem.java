@@ -515,6 +515,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (tableBuilder_ != null) {
         tableBuilder_.clear();
       }
@@ -550,26 +551,27 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.ContentItem buildPartial() {
       com.google.privacy.dlp.v2.ContentItem result =
           new com.google.privacy.dlp.v2.ContentItem(this);
-      if (dataItemCase_ == 3) {
-        result.dataItem_ = dataItem_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (dataItemCase_ == 4) {
-        if (tableBuilder_ == null) {
-          result.dataItem_ = dataItem_;
-        } else {
-          result.dataItem_ = tableBuilder_.build();
-        }
-      }
-      if (dataItemCase_ == 5) {
-        if (byteItemBuilder_ == null) {
-          result.dataItem_ = dataItem_;
-        } else {
-          result.dataItem_ = byteItemBuilder_.build();
-        }
-      }
-      result.dataItemCase_ = dataItemCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.ContentItem result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.privacy.dlp.v2.ContentItem result) {
+      result.dataItemCase_ = dataItemCase_;
+      result.dataItem_ = this.dataItem_;
+      if (dataItemCase_ == 4 && tableBuilder_ != null) {
+        result.dataItem_ = tableBuilder_.build();
+      }
+      if (dataItemCase_ == 5 && byteItemBuilder_ != null) {
+        result.dataItem_ = byteItemBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -715,6 +717,8 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *
@@ -1071,7 +1075,6 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
       }
       dataItemCase_ = 4;
       onChanged();
-      ;
       return tableBuilder_;
     }
 
@@ -1280,7 +1283,6 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
       }
       dataItemCase_ = 5;
       onChanged();
-      ;
       return byteItemBuilder_;
     }
 

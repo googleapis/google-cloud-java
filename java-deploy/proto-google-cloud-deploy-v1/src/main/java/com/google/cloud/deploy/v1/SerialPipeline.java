@@ -68,6 +68,8 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STAGES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.deploy.v1.Stage> stages_;
   /**
    *
@@ -340,6 +342,7 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (stagesBuilder_ == null) {
         stages_ = java.util.Collections.emptyList();
       } else {
@@ -374,7 +377,15 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.deploy.v1.SerialPipeline buildPartial() {
       com.google.cloud.deploy.v1.SerialPipeline result =
           new com.google.cloud.deploy.v1.SerialPipeline(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.deploy.v1.SerialPipeline result) {
       if (stagesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           stages_ = java.util.Collections.unmodifiableList(stages_);
@@ -384,8 +395,10 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.stages_ = stagesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.deploy.v1.SerialPipeline result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

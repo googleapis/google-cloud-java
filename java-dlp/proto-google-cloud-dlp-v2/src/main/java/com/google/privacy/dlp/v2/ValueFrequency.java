@@ -108,11 +108,11 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.ValueOrBuilder getValueOrBuilder() {
-    return getValue();
+    return value_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : value_;
   }
 
   public static final int COUNT_FIELD_NUMBER = 2;
-  private long count_;
+  private long count_ = 0L;
   /**
    *
    *
@@ -339,14 +339,13 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (valueBuilder_ == null) {
-        value_ = null;
-      } else {
-        value_ = null;
+      bitField0_ = 0;
+      value_ = null;
+      if (valueBuilder_ != null) {
+        valueBuilder_.dispose();
         valueBuilder_ = null;
       }
       count_ = 0L;
-
       return this;
     }
 
@@ -374,14 +373,21 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.ValueFrequency buildPartial() {
       com.google.privacy.dlp.v2.ValueFrequency result =
           new com.google.privacy.dlp.v2.ValueFrequency(this);
-      if (valueBuilder_ == null) {
-        result.value_ = value_;
-      } else {
-        result.value_ = valueBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.count_ = count_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.ValueFrequency result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.value_ = valueBuilder_ == null ? value_ : valueBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.count_ = count_;
+      }
     }
 
     @java.lang.Override
@@ -464,13 +470,13 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getValueFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 count_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -490,6 +496,8 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.privacy.dlp.v2.Value value_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.Value,
@@ -508,7 +516,7 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the value field is set.
      */
     public boolean hasValue() {
-      return valueBuilder_ != null || value_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -543,11 +551,11 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         value_ = value;
-        onChanged();
       } else {
         valueBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -562,11 +570,11 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
     public Builder setValue(com.google.privacy.dlp.v2.Value.Builder builderForValue) {
       if (valueBuilder_ == null) {
         value_ = builderForValue.build();
-        onChanged();
       } else {
         valueBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -580,17 +588,18 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeValue(com.google.privacy.dlp.v2.Value value) {
       if (valueBuilder_ == null) {
-        if (value_ != null) {
-          value_ =
-              com.google.privacy.dlp.v2.Value.newBuilder(value_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && value_ != null
+            && value_ != com.google.privacy.dlp.v2.Value.getDefaultInstance()) {
+          getValueBuilder().mergeFrom(value);
         } else {
           value_ = value;
         }
-        onChanged();
       } else {
         valueBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -603,14 +612,13 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.Value value = 1;</code>
      */
     public Builder clearValue() {
-      if (valueBuilder_ == null) {
-        value_ = null;
-        onChanged();
-      } else {
-        value_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      value_ = null;
+      if (valueBuilder_ != null) {
+        valueBuilder_.dispose();
         valueBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -623,7 +631,7 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.Value value = 1;</code>
      */
     public com.google.privacy.dlp.v2.Value.Builder getValueBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getValueFieldBuilder().getBuilder();
     }
@@ -700,6 +708,7 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
     public Builder setCount(long value) {
 
       count_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -715,7 +724,7 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       count_ = 0L;
       onChanged();
       return this;

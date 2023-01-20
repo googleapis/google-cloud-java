@@ -68,6 +68,8 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ANNOTATION_SPEC_SETS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList annotationSpecSets_;
   /**
    *
@@ -344,6 +346,7 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       annotationSpecSets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -373,14 +376,25 @@ public final class EventConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datalabeling.v1beta1.EventConfig buildPartial() {
       com.google.cloud.datalabeling.v1beta1.EventConfig result =
           new com.google.cloud.datalabeling.v1beta1.EventConfig(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.datalabeling.v1beta1.EventConfig result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         annotationSpecSets_ = annotationSpecSets_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.annotationSpecSets_ = annotationSpecSets_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datalabeling.v1beta1.EventConfig result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

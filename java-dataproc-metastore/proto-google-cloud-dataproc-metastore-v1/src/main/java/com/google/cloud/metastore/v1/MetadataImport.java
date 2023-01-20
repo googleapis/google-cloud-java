@@ -558,7 +558,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DATABASE_TYPE_FIELD_NUMBER = 1;
-    private int databaseType_;
+    private int databaseType_ = 0;
     /**
      *
      *
@@ -598,9 +598,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public com.google.cloud.metastore.v1.MetadataImport.DatabaseDump.DatabaseType
         getDatabaseType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.metastore.v1.MetadataImport.DatabaseDump.DatabaseType result =
-          com.google.cloud.metastore.v1.MetadataImport.DatabaseDump.DatabaseType.valueOf(
+          com.google.cloud.metastore.v1.MetadataImport.DatabaseDump.DatabaseType.forNumber(
               databaseType_);
       return result == null
           ? com.google.cloud.metastore.v1.MetadataImport.DatabaseDump.DatabaseType.UNRECOGNIZED
@@ -608,7 +607,9 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int GCS_URI_FIELD_NUMBER = 2;
-    private volatile java.lang.Object gcsUri_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object gcsUri_ = "";
     /**
      *
      *
@@ -659,7 +660,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TYPE_FIELD_NUMBER = 4;
-    private int type_;
+    private int type_ = 0;
     /**
      *
      *
@@ -692,9 +693,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.metastore.v1.DatabaseDumpSpec.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.metastore.v1.DatabaseDumpSpec.Type result =
-          com.google.cloud.metastore.v1.DatabaseDumpSpec.Type.valueOf(type_);
+          com.google.cloud.metastore.v1.DatabaseDumpSpec.Type.forNumber(type_);
       return result == null
           ? com.google.cloud.metastore.v1.DatabaseDumpSpec.Type.UNRECOGNIZED
           : result;
@@ -927,12 +927,10 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         databaseType_ = 0;
-
         gcsUri_ = "";
-
         type_ = 0;
-
         return this;
       }
 
@@ -960,11 +958,24 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.metastore.v1.MetadataImport.DatabaseDump buildPartial() {
         com.google.cloud.metastore.v1.MetadataImport.DatabaseDump result =
             new com.google.cloud.metastore.v1.MetadataImport.DatabaseDump(this);
-        result.databaseType_ = databaseType_;
-        result.gcsUri_ = gcsUri_;
-        result.type_ = type_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.metastore.v1.MetadataImport.DatabaseDump result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.databaseType_ = databaseType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.gcsUri_ = gcsUri_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.type_ = type_;
+        }
       }
 
       @java.lang.Override
@@ -1020,6 +1031,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getGcsUri().isEmpty()) {
           gcsUri_ = other.gcsUri_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.type_ != 0) {
@@ -1054,19 +1066,19 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   databaseType_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 18:
                 {
                   gcsUri_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 32:
                 {
                   type_ = input.readEnum();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 32
               default:
@@ -1085,6 +1097,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int databaseType_ = 0;
       /**
@@ -1125,8 +1139,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Deprecated
       public Builder setDatabaseTypeValue(int value) {
-
         databaseType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1149,9 +1163,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Deprecated
       public com.google.cloud.metastore.v1.MetadataImport.DatabaseDump.DatabaseType
           getDatabaseType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.metastore.v1.MetadataImport.DatabaseDump.DatabaseType result =
-            com.google.cloud.metastore.v1.MetadataImport.DatabaseDump.DatabaseType.valueOf(
+            com.google.cloud.metastore.v1.MetadataImport.DatabaseDump.DatabaseType.forNumber(
                 databaseType_);
         return result == null
             ? com.google.cloud.metastore.v1.MetadataImport.DatabaseDump.DatabaseType.UNRECOGNIZED
@@ -1179,7 +1192,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         databaseType_ = value.getNumber();
         onChanged();
         return this;
@@ -1201,7 +1214,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Deprecated
       public Builder clearDatabaseType() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         databaseType_ = 0;
         onChanged();
         return this;
@@ -1271,8 +1284,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         gcsUri_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1289,8 +1302,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearGcsUri() {
-
         gcsUri_ = getDefaultInstance().getGcsUri();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1312,8 +1325,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         gcsUri_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1351,8 +1364,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
-
         type_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1371,9 +1384,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.cloud.metastore.v1.DatabaseDumpSpec.Type getType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.metastore.v1.DatabaseDumpSpec.Type result =
-            com.google.cloud.metastore.v1.DatabaseDumpSpec.Type.valueOf(type_);
+            com.google.cloud.metastore.v1.DatabaseDumpSpec.Type.forNumber(type_);
         return result == null
             ? com.google.cloud.metastore.v1.DatabaseDumpSpec.Type.UNRECOGNIZED
             : result;
@@ -1396,7 +1408,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000004;
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -1415,7 +1427,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearType() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         type_ = 0;
         onChanged();
         return this;
@@ -1588,7 +1600,9 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1639,7 +1653,9 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -1733,7 +1749,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
@@ -1782,7 +1798,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int END_TIME_FIELD_NUMBER = 7;
@@ -1831,11 +1847,11 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-    return getEndTime();
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
   public static final int STATE_FIELD_NUMBER = 5;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -1868,9 +1884,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.metastore.v1.MetadataImport.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.metastore.v1.MetadataImport.State result =
-        com.google.cloud.metastore.v1.MetadataImport.State.valueOf(state_);
+        com.google.cloud.metastore.v1.MetadataImport.State.forNumber(state_);
     return result == null
         ? com.google.cloud.metastore.v1.MetadataImport.State.UNRECOGNIZED
         : result;
@@ -2159,33 +2174,28 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (databaseDumpBuilder_ != null) {
         databaseDumpBuilder_.clear();
       }
       name_ = "";
-
       description_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-      } else {
-        endTime_ = null;
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
       state_ = 0;
-
       metadataCase_ = 0;
       metadata_ = null;
       return this;
@@ -2215,34 +2225,42 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.metastore.v1.MetadataImport buildPartial() {
       com.google.cloud.metastore.v1.MetadataImport result =
           new com.google.cloud.metastore.v1.MetadataImport(this);
-      if (metadataCase_ == 6) {
-        if (databaseDumpBuilder_ == null) {
-          result.metadata_ = metadata_;
-        } else {
-          result.metadata_ = databaseDumpBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.name_ = name_;
-      result.description_ = description_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      if (endTimeBuilder_ == null) {
-        result.endTime_ = endTime_;
-      } else {
-        result.endTime_ = endTimeBuilder_.build();
-      }
-      result.state_ = state_;
-      result.metadataCase_ = metadataCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.metastore.v1.MetadataImport result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.state_ = state_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.metastore.v1.MetadataImport result) {
+      result.metadataCase_ = metadataCase_;
+      result.metadata_ = this.metadata_;
+      if (metadataCase_ == 6 && databaseDumpBuilder_ != null) {
+        result.metadata_ = databaseDumpBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2292,10 +2310,12 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.metastore.v1.MetadataImport.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -2350,31 +2370,31 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 40:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 40
             case 50:
@@ -2386,7 +2406,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
             case 58:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             default:
@@ -2419,6 +2439,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.metastore.v1.MetadataImport.DatabaseDump,
@@ -2650,7 +2672,6 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
       }
       metadataCase_ = 6;
       onChanged();
-      ;
       return databaseDumpBuilder_;
     }
 
@@ -2718,8 +2739,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2736,8 +2757,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2759,8 +2780,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2826,8 +2847,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2843,8 +2864,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2865,8 +2886,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2891,7 +2912,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2932,11 +2953,11 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2953,11 +2974,11 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2973,17 +2994,18 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2998,14 +3020,13 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3020,7 +3041,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -3092,7 +3113,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -3133,11 +3154,11 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -3154,11 +3175,11 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -3174,17 +3195,18 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -3199,14 +3221,13 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3221,7 +3242,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -3292,7 +3313,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return endTimeBuilder_ != null || endTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -3329,11 +3350,11 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         endTime_ = value;
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3349,11 +3370,11 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3368,17 +3389,18 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (endTime_ != null) {
-          endTime_ =
-              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && endTime_ != null
+            && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEndTimeBuilder().mergeFrom(value);
         } else {
           endTime_ = value;
         }
-        onChanged();
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3392,14 +3414,13 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearEndTime() {
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-        onChanged();
-      } else {
-        endTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3413,7 +3434,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
@@ -3494,8 +3515,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3514,9 +3535,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.metastore.v1.MetadataImport.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.metastore.v1.MetadataImport.State result =
-          com.google.cloud.metastore.v1.MetadataImport.State.valueOf(state_);
+          com.google.cloud.metastore.v1.MetadataImport.State.forNumber(state_);
       return result == null
           ? com.google.cloud.metastore.v1.MetadataImport.State.UNRECOGNIZED
           : result;
@@ -3539,7 +3559,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -3558,7 +3578,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       state_ = 0;
       onChanged();
       return this;

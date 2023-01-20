@@ -69,7 +69,9 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -170,7 +172,9 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.DeidentifyTemplateOrBuilder getDeidentifyTemplateOrBuilder() {
-    return getDeidentifyTemplate();
+    return deidentifyTemplate_ == null
+        ? com.google.privacy.dlp.v2.DeidentifyTemplate.getDefaultInstance()
+        : deidentifyTemplate_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
@@ -216,7 +220,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -445,18 +449,16 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (deidentifyTemplateBuilder_ == null) {
-        deidentifyTemplate_ = null;
-      } else {
-        deidentifyTemplate_ = null;
+      deidentifyTemplate_ = null;
+      if (deidentifyTemplateBuilder_ != null) {
+        deidentifyTemplateBuilder_.dispose();
         deidentifyTemplateBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -486,19 +488,27 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
     public com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest buildPartial() {
       com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest result =
           new com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest(this);
-      result.name_ = name_;
-      if (deidentifyTemplateBuilder_ == null) {
-        result.deidentifyTemplate_ = deidentifyTemplate_;
-      } else {
-        result.deidentifyTemplate_ = deidentifyTemplateBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.deidentifyTemplate_ =
+            deidentifyTemplateBuilder_ == null
+                ? deidentifyTemplate_
+                : deidentifyTemplateBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -549,6 +559,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasDeidentifyTemplate()) {
@@ -586,20 +597,20 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getDeidentifyTemplateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -618,6 +629,8 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -692,8 +705,8 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -713,8 +726,8 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -739,8 +752,8 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -763,7 +776,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
      * @return Whether the deidentifyTemplate field is set.
      */
     public boolean hasDeidentifyTemplate() {
-      return deidentifyTemplateBuilder_ != null || deidentifyTemplate_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -800,11 +813,11 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
           throw new NullPointerException();
         }
         deidentifyTemplate_ = value;
-        onChanged();
       } else {
         deidentifyTemplateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -820,11 +833,11 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
         com.google.privacy.dlp.v2.DeidentifyTemplate.Builder builderForValue) {
       if (deidentifyTemplateBuilder_ == null) {
         deidentifyTemplate_ = builderForValue.build();
-        onChanged();
       } else {
         deidentifyTemplateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -838,19 +851,19 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
      */
     public Builder mergeDeidentifyTemplate(com.google.privacy.dlp.v2.DeidentifyTemplate value) {
       if (deidentifyTemplateBuilder_ == null) {
-        if (deidentifyTemplate_ != null) {
-          deidentifyTemplate_ =
-              com.google.privacy.dlp.v2.DeidentifyTemplate.newBuilder(deidentifyTemplate_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && deidentifyTemplate_ != null
+            && deidentifyTemplate_
+                != com.google.privacy.dlp.v2.DeidentifyTemplate.getDefaultInstance()) {
+          getDeidentifyTemplateBuilder().mergeFrom(value);
         } else {
           deidentifyTemplate_ = value;
         }
-        onChanged();
       } else {
         deidentifyTemplateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -863,14 +876,13 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
      * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
      */
     public Builder clearDeidentifyTemplate() {
-      if (deidentifyTemplateBuilder_ == null) {
-        deidentifyTemplate_ = null;
-        onChanged();
-      } else {
-        deidentifyTemplate_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      deidentifyTemplate_ = null;
+      if (deidentifyTemplateBuilder_ != null) {
+        deidentifyTemplateBuilder_.dispose();
         deidentifyTemplateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -883,7 +895,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
      * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
      */
     public com.google.privacy.dlp.v2.DeidentifyTemplate.Builder getDeidentifyTemplateBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDeidentifyTemplateFieldBuilder().getBuilder();
     }
@@ -949,7 +961,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -986,11 +998,11 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1005,11 +1017,11 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1023,17 +1035,18 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1046,14 +1059,13 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1066,7 +1078,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

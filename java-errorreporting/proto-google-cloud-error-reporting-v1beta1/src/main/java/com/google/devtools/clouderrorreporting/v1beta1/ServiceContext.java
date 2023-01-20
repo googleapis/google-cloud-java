@@ -71,7 +71,9 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object service_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object service_ = "";
   /**
    *
    *
@@ -130,7 +132,9 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VERSION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object version_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    *
    *
@@ -185,7 +189,9 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESOURCE_TYPE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object resourceType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceType_ = "";
   /**
    *
    *
@@ -456,12 +462,10 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       service_ = "";
-
       version_ = "";
-
       resourceType_ = "";
-
       return this;
     }
 
@@ -490,11 +494,25 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.clouderrorreporting.v1beta1.ServiceContext buildPartial() {
       com.google.devtools.clouderrorreporting.v1beta1.ServiceContext result =
           new com.google.devtools.clouderrorreporting.v1beta1.ServiceContext(this);
-      result.service_ = service_;
-      result.version_ = version_;
-      result.resourceType_ = resourceType_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.devtools.clouderrorreporting.v1beta1.ServiceContext result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.service_ = service_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.version_ = version_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.resourceType_ = resourceType_;
+      }
     }
 
     @java.lang.Override
@@ -546,14 +564,17 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getService().isEmpty()) {
         service_ = other.service_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getResourceType().isEmpty()) {
         resourceType_ = other.resourceType_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -585,19 +606,19 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 service_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             case 26:
               {
                 version_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 34:
               {
                 resourceType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             default:
@@ -616,6 +637,8 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object service_ = "";
     /**
@@ -693,8 +716,8 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       service_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -715,8 +738,8 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearService() {
-
       service_ = getDefaultInstance().getService();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -742,8 +765,8 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       service_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -818,8 +841,8 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       version_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -838,8 +861,8 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -863,8 +886,8 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       version_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -939,8 +962,8 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       resourceType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -959,8 +982,8 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResourceType() {
-
       resourceType_ = getDefaultInstance().getResourceType();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -984,8 +1007,8 @@ public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resourceType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
