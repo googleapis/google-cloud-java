@@ -30,7 +30,7 @@ import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.json.JsonHttpContent;
 import com.google.api.client.json.JsonFactory;
-import com.google.api.client.json.jackson2.JacksonFactory;
+import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.core.InternalApi;
 import com.google.api.core.InternalExtensionOnly;
 import com.google.api.services.bigquery.Bigquery;
@@ -105,7 +105,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
     this.options = options;
     bigquery =
-        new Bigquery.Builder(transport, new JacksonFactory(), initializer)
+        new Bigquery.Builder(transport, new GsonFactory(), initializer)
             .setRootUrl(options.getHost())
             .setApplicationName(options.getApplicationName())
             .build();
