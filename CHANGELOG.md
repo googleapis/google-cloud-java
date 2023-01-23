@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.13.3](https://github.com/googleapis/java-datastore/compare/v2.13.2...v2.13.3) (2023-01-23)
+
+
+### Bug Fixes
+
+* **java:** Skip fixing poms for special modules ([#1744](https://github.com/googleapis/java-datastore/issues/1744)) ([#964](https://github.com/googleapis/java-datastore/issues/964)) ([c89b27a](https://github.com/googleapis/java-datastore/commit/c89b27ac6a7791312f61558515d89baffde40bdf))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.1.2 ([#966](https://github.com/googleapis/java-datastore/issues/966)) ([78e9e8e](https://github.com/googleapis/java-datastore/commit/78e9e8e74163f4c8bd7e1d42540e609a86a99769))
+
 ## [2.13.2](https://github.com/googleapis/java-datastore/compare/v2.13.1...v2.13.2) (2023-01-10)
 
 
