@@ -1,5 +1,43 @@
 # Changelog
 
+## [1.3.0](https://github.com/googleapis/google-cloud-java/compare/v1.2.0...v1.3.0) (2023-01-23)
+
+
+### Features
+
+* [aiplatform] add enable_dashboard_access in aiplatform v1 and v1beta1 ([ffaad0e](https://github.com/googleapis/google-cloud-java/commit/ffaad0e76a6111a36b7be661277dbe5a3c6ebcfa))
+* [compute] Update Compute Engine API to revision 20221224 ([#760](https://github.com/googleapis/google-cloud-java/issues/760)) ([#9012](https://github.com/googleapis/google-cloud-java/issues/9012)) ([dc5891c](https://github.com/googleapis/google-cloud-java/commit/dc5891c67f13b66d3058dc2fbcbfd518bb85647b))
+* [compute] Update Compute Engine API to revision 20230103 ([#769](https://github.com/googleapis/google-cloud-java/issues/769)) ([#9018](https://github.com/googleapis/google-cloud-java/issues/9018)) ([51340ea](https://github.com/googleapis/google-cloud-java/commit/51340ea2ff90be99804df18612d6f17011bf9b01))
+* [container] Add support for viewing the subnet IPv6 CIDR and services IPv6 CIDR assigned to dual stack clusters ([22983e0](https://github.com/googleapis/google-cloud-java/commit/22983e042e14c2657e298bb7a523b4b24eb59eff))
+* [datalineage] new module for datalineage ([#8996](https://github.com/googleapis/google-cloud-java/issues/8996)) ([ea8d17b](https://github.com/googleapis/google-cloud-java/commit/ea8d17b7f18daefa103965592891cf7d29e9ee60))
+* [dataproc] add SPOT to Preemptibility enum ([ede0030](https://github.com/googleapis/google-cloud-java/commit/ede0030ae81475f801918d4722e45c52c6a65710))
+* [dialogflow-cx] ResponseMessage proto contains channel information ([b0b9eb0](https://github.com/googleapis/google-cloud-java/commit/b0b9eb0113850371ce0e2930d3fda96791d62f55))
+* [dialogflow-cx] Update Compute Engine API to revision 20221224 ([#760](https://github.com/googleapis/google-cloud-java/issues/760)) ([#8985](https://github.com/googleapis/google-cloud-java/issues/8985)) ([b0b9eb0](https://github.com/googleapis/google-cloud-java/commit/b0b9eb0113850371ce0e2930d3fda96791d62f55))
+* [dialogflow] Added SuggestConversationSummary RPC ([97d92e8](https://github.com/googleapis/google-cloud-java/commit/97d92e8845dd1743030add05843341a40128133a))
+* [documentai] exposed GetProcessorType to v1 ([267aa2d](https://github.com/googleapis/google-cloud-java/commit/267aa2d725f7098eb3b0ba3a28d964366ff3c17b))
+* [documentai] exposed GetProcessorType to v1beta3 ([267aa2d](https://github.com/googleapis/google-cloud-java/commit/267aa2d725f7098eb3b0ba3a28d964366ff3c17b))
+* [java-maps-routing] Add ExtraComputations feature to ComputeRoutes and ComputeRouteMatrix ([ba2b787](https://github.com/googleapis/google-cloud-java/commit/ba2b7873ee8619f32c1591dd408db60c9c1eda37))
+* [orgpolicy] support for OrgPolicy dry runs ([bdd19f6](https://github.com/googleapis/google-cloud-java/commit/bdd19f66c2e69eb5938c6bb32065713e328f6131))
+* [run] Adding support for encryption_key_revocation_action and encryption_key_shutdown_duration for RevisionTemplate and ExecutionTemplate ([#9013](https://github.com/googleapis/google-cloud-java/issues/9013)) ([af47cbc](https://github.com/googleapis/google-cloud-java/commit/af47cbc9184a18ddf8775144a11b6813bdbe3db1))
+* Policy Analyzer for Organization Policy is publicly available ([a4eb152](https://github.com/googleapis/google-cloud-java/commit/a4eb15234f7d1a1ff2e08b46c34fc8ae36e2e76e))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.123.1 ([#9019](https://github.com/googleapis/google-cloud-java/issues/9019)) ([e5d3310](https://github.com/googleapis/google-cloud-java/commit/e5d331023cabfc5aa01a6d17355e12e537a2f270))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.1.2 ([#9014](https://github.com/googleapis/google-cloud-java/issues/9014)) ([73ba595](https://github.com/googleapis/google-cloud-java/commit/73ba5953ea876d9d98b69528a80f76c6882b1532))
+* **deps:** update dependency com.google.cloud:google-cloud-storage to v2.17.1 ([#8982](https://github.com/googleapis/google-cloud-java/issues/8982)) ([748057a](https://github.com/googleapis/google-cloud-java/commit/748057a6c028d4ea1fa9ef3cdea229fa8fe39677))
+* update owlbot configs to copy generated samples ([#8790](https://github.com/googleapis/google-cloud-java/issues/8790)) ([5a404a8](https://github.com/googleapis/google-cloud-java/commit/5a404a8a0de9e2123c65e83f3f24fb770387f639))
+
+
+### Documentation
+
+* [cloudasset] Brand and typo fixes ([a4eb152](https://github.com/googleapis/google-cloud-java/commit/a4eb15234f7d1a1ff2e08b46c34fc8ae36e2e76e))
+* [securitycenter] Update documentation for Security Command Center *.assets.list "parent" parameter ([7542a0d](https://github.com/googleapis/google-cloud-java/commit/7542a0d2712cb956d26f092da768e9ca0c861bee))
+* Documentation improvements, including clarification that v1 labels/annotations are rejected in v2 API ([af47cbc](https://github.com/googleapis/google-cloud-java/commit/af47cbc9184a18ddf8775144a11b6813bdbe3db1))
+* updated go library package ([b0b9eb0](https://github.com/googleapis/google-cloud-java/commit/b0b9eb0113850371ce0e2930d3fda96791d62f55))
+* updated go library package ([97d92e8](https://github.com/googleapis/google-cloud-java/commit/97d92e8845dd1743030add05843341a40128133a))
+
 ## [1.2.0](https://github.com/googleapis/google-cloud-java/compare/v1.1.0...v1.2.0) (2023-01-12)
 
 
