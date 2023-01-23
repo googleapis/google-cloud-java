@@ -20,7 +20,6 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.batching.DynamicFlowControlSettings;
-import com.google.api.gax.batching.FlowControlEventStats;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
 import com.google.api.gax.grpc.GrpcCallContext;
@@ -40,6 +39,7 @@ import java.util.Map;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -60,7 +60,6 @@ public class DynamicFlowControlCallableTest {
   private static final int DEADLINE_EXCEEDED_LATENCY = 501;
 
   private FlowController flowController;
-  private FlowControlEventStats flowControlEvents;
   private DynamicFlowControlStats stats;
   private UnaryCallable innerCallable;
   private ApiCallContext context;
@@ -81,7 +80,6 @@ public class DynamicFlowControlCallableTest {
                 .setMinOutstandingRequestBytes(15L)
                 .setLimitExceededBehavior(LimitExceededBehavior.Block)
                 .build());
-    flowControlEvents = flowController.getFlowControlEventStats();
     stats = new DynamicFlowControlStats();
     context = GrpcCallContext.createDefault();
     innerCallable = new MockInnerCallable();
@@ -94,8 +92,18 @@ public class DynamicFlowControlCallableTest {
             innerCallable, flowController, stats, TARGET_LATENCY_MS, ADJUSTING_INTERVAL_MS);
   }
 
+  @After
+  public void cleanup() {
+    // reset last adjustedTimestamp after each test
+    stats.setLastAdjustedTimestampMs(stats.getLastAdjustedTimestampMs(), 0);
+  }
+
   @Test
   public void testLatenciesAreRecorded() throws Exception {
+    DynamicFlowControlStats stats = new DynamicFlowControlStats();
+    DynamicFlowControlCallable callableToTest =
+        new DynamicFlowControlCallable(
+            innerCallable, flowController, stats, TARGET_LATENCY_MS, ADJUSTING_INTERVAL_MS);
     Map<String, List<String>> extraHeaders = new HashMap<>();
     extraHeaders.put(LATENCY_HEADER, Arrays.asList("5"));
     ApiCallContext newContext = context.withExtraHeaders(extraHeaders);

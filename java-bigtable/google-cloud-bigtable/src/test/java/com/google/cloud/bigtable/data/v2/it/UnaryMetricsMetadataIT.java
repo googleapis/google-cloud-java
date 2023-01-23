@@ -28,6 +28,7 @@ import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
@@ -69,7 +70,13 @@ public class UnaryMetricsMetadataIT {
     List<Cluster> clusters = clustersFuture.get(1, TimeUnit.MINUTES);
 
     // give opencensus some time to populate view data
-    Thread.sleep(100);
+    for (int i = 0; i < 10; i++) {
+      if (StatsWrapper.getOperationLatencyViewTagValueStrings()
+          .contains(clusters.get(0).getZone())) {
+        break;
+      }
+      Thread.sleep(100);
+    }
 
     List<String> tagValueStrings = StatsWrapper.getOperationLatencyViewTagValueStrings();
     assertThat(tagValueStrings).contains(clusters.get(0).getZone());
@@ -77,21 +84,35 @@ public class UnaryMetricsMetadataIT {
   }
 
   @Test
-  public void testFailure() throws InterruptedException {
+  public void testFailure() throws Exception {
     String rowKey = UUID.randomUUID().toString();
     String familyId = testEnvRule.env().getFamilyId();
 
+    ApiFuture<Void> future =
+        testEnvRule
+            .env()
+            .getDataClient()
+            .mutateRowCallable()
+            .futureCall(
+                RowMutation.create("non-exist-table", rowKey).setCell(familyId, "q", "myVal"));
+
     try {
-      testEnvRule
-          .env()
-          .getDataClient()
-          .mutateRowCallable()
-          .call(RowMutation.create("non-exist-table", rowKey).setCell(familyId, "q", "myVal"));
-    } catch (NotFoundException e) {
+      future.get(1, TimeUnit.MINUTES);
+    } catch (ExecutionException e) {
+      if (e.getCause() instanceof NotFoundException) {
+        // ignore NotFoundException
+      } else {
+        throw e;
+      }
     }
 
     // give opencensus some time to populate view data
-    Thread.sleep(100);
+    for (int i = 0; i < 10; i++) {
+      if (StatsWrapper.getOperationLatencyViewTagValueStrings().contains("unspecified")) {
+        break;
+      }
+      Thread.sleep(100);
+    }
 
     List<String> tagValueStrings = StatsWrapper.getOperationLatencyViewTagValueStrings();
     assertThat(tagValueStrings).contains("unspecified");
