@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.21.0](https://github.com/googleapis/java-bigquery/compare/v2.20.2...v2.21.0) (2023-01-23)
+
+
+### Features
+
+* Migrate from google-http-client-jackson2 to google-http-client-gson ([#2471](https://github.com/googleapis/java-bigquery/issues/2471)) ([09a8382](https://github.com/googleapis/java-bigquery/commit/09a8382222e1174c46989e797e0941cc36d387f1))
+
+
+### Bug Fixes
+
+* **java:** Skip fixing poms for special modules ([#1744](https://github.com/googleapis/java-bigquery/issues/1744)) ([#2474](https://github.com/googleapis/java-bigquery/issues/2474)) ([4e8bbe0](https://github.com/googleapis/java-bigquery/commit/4e8bbe0808b2aabea889042135e3a388d2f8ecff))
+
+
+### Dependencies
+
+* Update com.google.cloud:google-cloud-bigquerystorage-bom to v2.28.3 ([5a20c32](https://github.com/googleapis/java-bigquery/commit/5a20c327d9b863fbde9a8fb10f61f4c706b446a8))
+* Update com.google.cloud:google-cloud-datacatalog-bom to v1.14.0 ([606fc1e](https://github.com/googleapis/java-bigquery/commit/606fc1e26c7c6f407a1938058b07699d84615bc7))
+* Update com.google.cloud:google-cloud-storage to v2.17.1 ([#2465](https://github.com/googleapis/java-bigquery/issues/2465)) ([606fc1e](https://github.com/googleapis/java-bigquery/commit/606fc1e26c7c6f407a1938058b07699d84615bc7))
+* Update com.google.cloud:google-cloud-storage to v2.17.2 ([#2479](https://github.com/googleapis/java-bigquery/issues/2479)) ([5a20c32](https://github.com/googleapis/java-bigquery/commit/5a20c327d9b863fbde9a8fb10f61f4c706b446a8))
+* Update dependency com.google.api.grpc:proto-google-cloud-bigqueryconnection-v1 to v2.10.0 ([#2463](https://github.com/googleapis/java-bigquery/issues/2463)) ([5bfa7ae](https://github.com/googleapis/java-bigquery/commit/5bfa7aeb8ca48fab438d03b2ba1a19a8673d85a9))
+* Update dependency com.google.apis:google-api-services-bigquery to v2-rev20230114-2.0.0 ([#2477](https://github.com/googleapis/java-bigquery/issues/2477)) ([b6409d5](https://github.com/googleapis/java-bigquery/commit/b6409d52adde116bf073ec71e8968fd68b983e65))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.1.2 ([#2476](https://github.com/googleapis/java-bigquery/issues/2476)) ([688b6a6](https://github.com/googleapis/java-bigquery/commit/688b6a65b890668591451e8f3d01f9f15527c80d))
+
 ## [2.20.2](https://github.com/googleapis/java-bigquery/compare/v2.20.1...v2.20.2) (2023-01-12)
 
 
