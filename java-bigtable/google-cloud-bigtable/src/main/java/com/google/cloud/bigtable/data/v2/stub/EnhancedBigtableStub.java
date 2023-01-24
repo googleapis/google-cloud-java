@@ -168,8 +168,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
     if (settings.isRefreshingChannel()) {
       // Fix the credentials so that they can be shared
       Credentials credentials = null;
-      if (settings.getCredentialsProvider() != null) {
-        credentials = settings.getCredentialsProvider().getCredentials();
+      if (builder.getCredentialsProvider() != null) {
+        credentials = builder.getCredentialsProvider().getCredentials();
       }
       builder.setCredentialsProvider(FixedCredentialsProvider.create(credentials));
 

@@ -120,10 +120,7 @@ class CloudEnv extends AbstractTestEnv {
     this.kmsKeyName = kmsKeyName;
 
     this.dataSettings =
-        BigtableDataSettings.newBuilder()
-            .setProjectId(projectId)
-            .setInstanceId(instanceId)
-            .setRefreshingChannel(false);
+        BigtableDataSettings.newBuilder().setProjectId(projectId).setInstanceId(instanceId);
     if (!Strings.isNullOrEmpty(dataEndpoint)) {
       dataSettings.stubSettings().setEndpoint(dataEndpoint);
     }
