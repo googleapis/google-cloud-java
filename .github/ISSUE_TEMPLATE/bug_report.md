@@ -17,11 +17,11 @@ If you are still having issues, please include as much information as possible:
 
 #### Environment details
 
-1. Specify the API at the beginning of the title. For example, "BigQuery: ...").
+1. Specify the API at the beginning of the title. For example, "[vision]: ...").
    General, Core, and Other are also allowed as types
 2. OS type and version:
 3. Java version:
-4.  version(s):
+4. Version(s):
 
 #### Steps to reproduce
 
