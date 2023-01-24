@@ -1,6 +1,18 @@
 # Changelog
 
 
+## [0.129.1](https://github.com/googleapis/java-logging-logback/compare/v0.129.0...v0.129.1) (2023-01-23)
+
+
+### Bug Fixes
+
+* **java:** Skip fixing poms for special modules ([#1744](https://github.com/googleapis/java-logging-logback/issues/1744)) ([#987](https://github.com/googleapis/java-logging-logback/issues/987)) ([9d5061c](https://github.com/googleapis/java-logging-logback/commit/9d5061cc772694298c8c0b77c7b2c938546b7571))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.1.2 ([#988](https://github.com/googleapis/java-logging-logback/issues/988)) ([b879b0f](https://github.com/googleapis/java-logging-logback/commit/b879b0f16a58d830389610479696ad4d714d2096))
+
 ## [0.129.0](https://github.com/googleapis/java-logging-logback/compare/v0.128.10...v0.129.0) (2023-01-12)
 
 
