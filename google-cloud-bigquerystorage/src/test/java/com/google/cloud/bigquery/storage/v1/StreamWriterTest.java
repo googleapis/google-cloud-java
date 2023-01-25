@@ -20,7 +20,10 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.client.util.Sleeper;
 import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutureCallback;
+import com.google.api.core.ApiFutures;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
@@ -34,6 +37,7 @@ import com.google.cloud.bigquery.storage.v1.ConnectionWorkerPool.Settings;
 import com.google.cloud.bigquery.storage.v1.StorageError.StorageErrorCode;
 import com.google.cloud.bigquery.storage.v1.StreamWriter.SingleConnectionOrConnectionPool.Kind;
 import com.google.common.base.Strings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Any;
 import com.google.protobuf.DescriptorProtos;
 import com.google.protobuf.Descriptors;
@@ -280,6 +284,64 @@ public class StreamWriterTest {
     verifyAppendRequests(appendCount);
 
     writer.close();
+  }
+
+  @Test
+  public void testAppendSuccess_RetryDirectlyInCallback() throws Exception {
+    // Set a relatively small in flight request counts.
+    StreamWriter writer =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setWriterSchema(createProtoSchema())
+            .setTraceId(TEST_TRACE_ID)
+            .setMaxRetryDuration(java.time.Duration.ofSeconds(5))
+            .setMaxInflightRequests(5)
+            .build();
+
+    // Fail the first request, in the request callback of the first request we will insert another
+    // 10 requests. Those requests can't be processed until the previous request callback has
+    // been finished.
+    long appendCount = 20;
+    for (int i = 0; i < appendCount; i++) {
+      if (i == 0) {
+        testBigQueryWrite.addResponse(
+            createAppendResponseWithError(Status.INVALID_ARGUMENT.getCode(), "test message"));
+      }
+      testBigQueryWrite.addResponse(createAppendResponse(i));
+    }
+
+    // We will trigger 10 more requests in the request callback of the following request.
+    ProtoRows protoRows = createProtoRows(new String[] {String.valueOf(-1)});
+    ApiFuture<AppendRowsResponse> future = writer.append(protoRows, -1);
+    ApiFutures.addCallback(
+        future, new AppendCompleteCallback(writer, protoRows), MoreExecutors.directExecutor());
+
+    StatusRuntimeException actualError =
+        assertFutureException(StatusRuntimeException.class, future);
+
+    Sleeper.DEFAULT.sleep(1000);
+    writer.close();
+  }
+
+  static class AppendCompleteCallback implements ApiFutureCallback<AppendRowsResponse> {
+
+    private final StreamWriter mainStreamWriter;
+    private final ProtoRows protoRows;
+    private int retryCount = 0;
+
+    public AppendCompleteCallback(StreamWriter mainStreamWriter, ProtoRows protoRows) {
+      this.mainStreamWriter = mainStreamWriter;
+      this.protoRows = protoRows;
+    }
+
+    public void onSuccess(AppendRowsResponse response) {
+      // Donothing
+    }
+
+    public void onFailure(Throwable throwable) {
+      for (int i = 0; i < 10; i++) {
+        this.mainStreamWriter.append(protoRows);
+      }
+    }
   }
 
   @Test
