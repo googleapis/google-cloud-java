@@ -71,6 +71,8 @@ public final class ListMonitoredResourceDescriptorsResponse
   }
 
   public static final int RESOURCE_DESCRIPTORS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.api.MonitoredResourceDescriptor> resourceDescriptors_;
   /**
    *
@@ -141,7 +143,9 @@ public final class ListMonitoredResourceDescriptorsResponse
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -403,6 +407,7 @@ public final class ListMonitoredResourceDescriptorsResponse
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (resourceDescriptorsBuilder_ == null) {
         resourceDescriptors_ = java.util.Collections.emptyList();
       } else {
@@ -411,7 +416,6 @@ public final class ListMonitoredResourceDescriptorsResponse
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
-
       return this;
     }
 
@@ -440,7 +444,16 @@ public final class ListMonitoredResourceDescriptorsResponse
     public com.google.logging.v2.ListMonitoredResourceDescriptorsResponse buildPartial() {
       com.google.logging.v2.ListMonitoredResourceDescriptorsResponse result =
           new com.google.logging.v2.ListMonitoredResourceDescriptorsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.logging.v2.ListMonitoredResourceDescriptorsResponse result) {
       if (resourceDescriptorsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           resourceDescriptors_ = java.util.Collections.unmodifiableList(resourceDescriptors_);
@@ -450,9 +463,14 @@ public final class ListMonitoredResourceDescriptorsResponse
       } else {
         result.resourceDescriptors_ = resourceDescriptorsBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.logging.v2.ListMonitoredResourceDescriptorsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
     }
 
     @java.lang.Override
@@ -531,6 +549,7 @@ public final class ListMonitoredResourceDescriptorsResponse
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -575,7 +594,7 @@ public final class ListMonitoredResourceDescriptorsResponse
             case 18:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -1024,8 +1043,8 @@ public final class ListMonitoredResourceDescriptorsResponse
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1043,8 +1062,8 @@ public final class ListMonitoredResourceDescriptorsResponse
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1067,8 +1086,8 @@ public final class ListMonitoredResourceDescriptorsResponse
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

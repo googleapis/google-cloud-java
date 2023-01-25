@@ -68,7 +68,9 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int SINK_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object sinkName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sinkName_ = "";
   /**
    *
    *
@@ -180,11 +182,11 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.logging.v2.LogSinkOrBuilder getSinkOrBuilder() {
-    return getSink();
+    return sink_ == null ? com.google.logging.v2.LogSink.getDefaultInstance() : sink_;
   }
 
   public static final int UNIQUE_WRITER_IDENTITY_FIELD_NUMBER = 3;
-  private boolean uniqueWriterIdentity_;
+  private boolean uniqueWriterIdentity_ = false;
   /**
    *
    *
@@ -286,7 +288,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -522,20 +524,17 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       sinkName_ = "";
-
-      if (sinkBuilder_ == null) {
-        sink_ = null;
-      } else {
-        sink_ = null;
+      sink_ = null;
+      if (sinkBuilder_ != null) {
+        sinkBuilder_.dispose();
         sinkBuilder_ = null;
       }
       uniqueWriterIdentity_ = false;
-
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -565,20 +564,27 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
     public com.google.logging.v2.UpdateSinkRequest buildPartial() {
       com.google.logging.v2.UpdateSinkRequest result =
           new com.google.logging.v2.UpdateSinkRequest(this);
-      result.sinkName_ = sinkName_;
-      if (sinkBuilder_ == null) {
-        result.sink_ = sink_;
-      } else {
-        result.sink_ = sinkBuilder_.build();
-      }
-      result.uniqueWriterIdentity_ = uniqueWriterIdentity_;
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.logging.v2.UpdateSinkRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.sinkName_ = sinkName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sink_ = sinkBuilder_ == null ? sink_ : sinkBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.uniqueWriterIdentity_ = uniqueWriterIdentity_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -628,6 +634,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
       if (other == com.google.logging.v2.UpdateSinkRequest.getDefaultInstance()) return this;
       if (!other.getSinkName().isEmpty()) {
         sinkName_ = other.sinkName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasSink()) {
@@ -668,25 +675,25 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 sinkName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getSinkFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 uniqueWriterIdentity_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -705,6 +712,8 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object sinkName_ = "";
     /**
@@ -794,8 +803,8 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       sinkName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -820,8 +829,8 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearSinkName() {
-
       sinkName_ = getDefaultInstance().getSinkName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -851,8 +860,8 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sinkName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -876,7 +885,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the sink field is set.
      */
     public boolean hasSink() {
-      return sinkBuilder_ != null || sink_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -913,11 +922,11 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         sink_ = value;
-        onChanged();
       } else {
         sinkBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -933,11 +942,11 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
     public Builder setSink(com.google.logging.v2.LogSink.Builder builderForValue) {
       if (sinkBuilder_ == null) {
         sink_ = builderForValue.build();
-        onChanged();
       } else {
         sinkBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -952,16 +961,18 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeSink(com.google.logging.v2.LogSink value) {
       if (sinkBuilder_ == null) {
-        if (sink_ != null) {
-          sink_ = com.google.logging.v2.LogSink.newBuilder(sink_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && sink_ != null
+            && sink_ != com.google.logging.v2.LogSink.getDefaultInstance()) {
+          getSinkBuilder().mergeFrom(value);
         } else {
           sink_ = value;
         }
-        onChanged();
       } else {
         sinkBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -975,14 +986,13 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearSink() {
-      if (sinkBuilder_ == null) {
-        sink_ = null;
-        onChanged();
-      } else {
-        sink_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      sink_ = null;
+      if (sinkBuilder_ != null) {
+        sinkBuilder_.dispose();
         sinkBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -996,7 +1006,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.logging.v2.LogSink.Builder getSinkBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSinkFieldBuilder().getBuilder();
     }
@@ -1093,6 +1103,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
     public Builder setUniqueWriterIdentity(boolean value) {
 
       uniqueWriterIdentity_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1117,7 +1128,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearUniqueWriterIdentity() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       uniqueWriterIdentity_ = false;
       onChanged();
       return this;
@@ -1152,7 +1163,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1211,11 +1222,11 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1241,11 +1252,11 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1270,17 +1281,18 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1304,14 +1316,13 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1335,7 +1346,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

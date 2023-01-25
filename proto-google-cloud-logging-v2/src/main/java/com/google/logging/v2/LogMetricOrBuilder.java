@@ -378,7 +378,6 @@ public interface LogMetricOrBuilder
    * <code>map&lt;string, string&gt; label_extractors = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-
   /* nullable */
   java.lang.String getLabelExtractorsOrDefault(
       java.lang.String key,

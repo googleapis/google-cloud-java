@@ -91,6 +91,7 @@ public final class WriteLogEntriesPartialErrors extends com.google.protobuf.Gene
                     com.google.rpc.Status.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.Integer, com.google.rpc.Status> logEntryErrors_;
 
   private com.google.protobuf.MapField<java.lang.Integer, com.google.rpc.Status>
@@ -160,8 +161,10 @@ public final class WriteLogEntriesPartialErrors extends com.google.protobuf.Gene
    * <code>map&lt;int32, .google.rpc.Status&gt; log_entry_errors = 1;</code>
    */
   @java.lang.Override
-  public com.google.rpc.Status getLogEntryErrorsOrDefault(
-      int key, com.google.rpc.Status defaultValue) {
+  public /* nullable */ com.google.rpc.Status getLogEntryErrorsOrDefault(
+      int key,
+      /* nullable */
+      com.google.rpc.Status defaultValue) {
 
     java.util.Map<java.lang.Integer, com.google.rpc.Status> map =
         internalGetLogEntryErrors().getMap();
@@ -416,6 +419,7 @@ public final class WriteLogEntriesPartialErrors extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableLogEntryErrors().clear();
       return this;
     }
@@ -444,11 +448,19 @@ public final class WriteLogEntriesPartialErrors extends com.google.protobuf.Gene
     public com.google.logging.v2.WriteLogEntriesPartialErrors buildPartial() {
       com.google.logging.v2.WriteLogEntriesPartialErrors result =
           new com.google.logging.v2.WriteLogEntriesPartialErrors(this);
-      int from_bitField0_ = bitField0_;
-      result.logEntryErrors_ = internalGetLogEntryErrors();
-      result.logEntryErrors_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.logging.v2.WriteLogEntriesPartialErrors result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.logEntryErrors_ = internalGetLogEntryErrors();
+        result.logEntryErrors_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -498,6 +510,7 @@ public final class WriteLogEntriesPartialErrors extends com.google.protobuf.Gene
       if (other == com.google.logging.v2.WriteLogEntriesPartialErrors.getDefaultInstance())
         return this;
       internalGetMutableLogEntryErrors().mergeFrom(other.internalGetLogEntryErrors());
+      bitField0_ |= 0x00000001;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -534,6 +547,7 @@ public final class WriteLogEntriesPartialErrors extends com.google.protobuf.Gene
                 internalGetMutableLogEntryErrors()
                     .getMutableMap()
                     .put(logEntryErrors__.getKey(), logEntryErrors__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -568,8 +582,6 @@ public final class WriteLogEntriesPartialErrors extends com.google.protobuf.Gene
 
     private com.google.protobuf.MapField<java.lang.Integer, com.google.rpc.Status>
         internalGetMutableLogEntryErrors() {
-      onChanged();
-      ;
       if (logEntryErrors_ == null) {
         logEntryErrors_ =
             com.google.protobuf.MapField.newMapField(LogEntryErrorsDefaultEntryHolder.defaultEntry);
@@ -577,6 +589,8 @@ public final class WriteLogEntriesPartialErrors extends com.google.protobuf.Gene
       if (!logEntryErrors_.isMutable()) {
         logEntryErrors_ = logEntryErrors_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return logEntryErrors_;
     }
 
@@ -638,8 +652,10 @@ public final class WriteLogEntriesPartialErrors extends com.google.protobuf.Gene
      * <code>map&lt;int32, .google.rpc.Status&gt; log_entry_errors = 1;</code>
      */
     @java.lang.Override
-    public com.google.rpc.Status getLogEntryErrorsOrDefault(
-        int key, com.google.rpc.Status defaultValue) {
+    public /* nullable */ com.google.rpc.Status getLogEntryErrorsOrDefault(
+        int key,
+        /* nullable */
+        com.google.rpc.Status defaultValue) {
 
       java.util.Map<java.lang.Integer, com.google.rpc.Status> map =
           internalGetLogEntryErrors().getMap();
@@ -670,6 +686,7 @@ public final class WriteLogEntriesPartialErrors extends com.google.protobuf.Gene
     }
 
     public Builder clearLogEntryErrors() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableLogEntryErrors().getMutableMap().clear();
       return this;
     }
@@ -694,6 +711,7 @@ public final class WriteLogEntriesPartialErrors extends com.google.protobuf.Gene
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.Integer, com.google.rpc.Status> getMutableLogEntryErrors() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableLogEntryErrors().getMutableMap();
     }
     /**
@@ -714,8 +732,8 @@ public final class WriteLogEntriesPartialErrors extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLogEntryErrors().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -734,6 +752,7 @@ public final class WriteLogEntriesPartialErrors extends com.google.protobuf.Gene
     public Builder putAllLogEntryErrors(
         java.util.Map<java.lang.Integer, com.google.rpc.Status> values) {
       internalGetMutableLogEntryErrors().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 

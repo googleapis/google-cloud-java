@@ -66,7 +66,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int USE_PARTITIONED_TABLES_FIELD_NUMBER = 1;
-  private boolean usePartitionedTables_;
+  private boolean usePartitionedTables_ = false;
   /**
    *
    *
@@ -91,7 +91,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int USES_TIMESTAMP_COLUMN_PARTITIONING_FIELD_NUMBER = 3;
-  private boolean usesTimestampColumnPartitioning_;
+  private boolean usesTimestampColumnPartitioning_ = false;
   /**
    *
    *
@@ -323,10 +323,9 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       usePartitionedTables_ = false;
-
       usesTimestampColumnPartitioning_ = false;
-
       return this;
     }
 
@@ -354,10 +353,21 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
     public com.google.logging.v2.BigQueryOptions buildPartial() {
       com.google.logging.v2.BigQueryOptions result =
           new com.google.logging.v2.BigQueryOptions(this);
-      result.usePartitionedTables_ = usePartitionedTables_;
-      result.usesTimestampColumnPartitioning_ = usesTimestampColumnPartitioning_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.logging.v2.BigQueryOptions result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.usePartitionedTables_ = usePartitionedTables_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.usesTimestampColumnPartitioning_ = usesTimestampColumnPartitioning_;
+      }
     }
 
     @java.lang.Override
@@ -440,13 +450,13 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
             case 8:
               {
                 usePartitionedTables_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 24:
               {
                 usesTimestampColumnPartitioning_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 24
             default:
@@ -465,6 +475,8 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean usePartitionedTables_;
     /**
@@ -511,6 +523,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
     public Builder setUsePartitionedTables(boolean value) {
 
       usePartitionedTables_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -533,7 +546,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearUsePartitionedTables() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       usePartitionedTables_ = false;
       onChanged();
       return this;
@@ -584,6 +597,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
     public Builder setUsesTimestampColumnPartitioning(boolean value) {
 
       usesTimestampColumnPartitioning_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -606,7 +620,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearUsesTimestampColumnPartitioning() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       usesTimestampColumnPartitioning_ = false;
       onChanged();
       return this;

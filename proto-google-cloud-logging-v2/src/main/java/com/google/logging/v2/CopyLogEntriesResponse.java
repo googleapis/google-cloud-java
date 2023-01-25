@@ -66,7 +66,7 @@ public final class CopyLogEntriesResponse extends com.google.protobuf.GeneratedM
   }
 
   public static final int LOG_ENTRIES_COPIED_COUNT_FIELD_NUMBER = 1;
-  private long logEntriesCopiedCount_;
+  private long logEntriesCopiedCount_ = 0L;
   /**
    *
    *
@@ -280,8 +280,8 @@ public final class CopyLogEntriesResponse extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       logEntriesCopiedCount_ = 0L;
-
       return this;
     }
 
@@ -309,9 +309,18 @@ public final class CopyLogEntriesResponse extends com.google.protobuf.GeneratedM
     public com.google.logging.v2.CopyLogEntriesResponse buildPartial() {
       com.google.logging.v2.CopyLogEntriesResponse result =
           new com.google.logging.v2.CopyLogEntriesResponse(this);
-      result.logEntriesCopiedCount_ = logEntriesCopiedCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.logging.v2.CopyLogEntriesResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.logEntriesCopiedCount_ = logEntriesCopiedCount_;
+      }
     }
 
     @java.lang.Override
@@ -391,7 +400,7 @@ public final class CopyLogEntriesResponse extends com.google.protobuf.GeneratedM
             case 8:
               {
                 logEntriesCopiedCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -410,6 +419,8 @@ public final class CopyLogEntriesResponse extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private long logEntriesCopiedCount_;
     /**
@@ -442,6 +453,7 @@ public final class CopyLogEntriesResponse extends com.google.protobuf.GeneratedM
     public Builder setLogEntriesCopiedCount(long value) {
 
       logEntriesCopiedCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -457,7 +469,7 @@ public final class CopyLogEntriesResponse extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearLogEntriesCopiedCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       logEntriesCopiedCount_ = 0L;
       onChanged();
       return this;

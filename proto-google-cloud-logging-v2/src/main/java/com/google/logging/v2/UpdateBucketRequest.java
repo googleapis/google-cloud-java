@@ -68,7 +68,9 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -175,7 +177,7 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.logging.v2.LogBucketOrBuilder getBucketOrBuilder() {
-    return getBucket();
+    return bucket_ == null ? com.google.logging.v2.LogBucket.getDefaultInstance() : bucket_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 4;
@@ -239,7 +241,7 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -467,18 +469,16 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (bucketBuilder_ == null) {
-        bucket_ = null;
-      } else {
-        bucket_ = null;
+      bucket_ = null;
+      if (bucketBuilder_ != null) {
+        bucketBuilder_.dispose();
         bucketBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -508,19 +508,24 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
     public com.google.logging.v2.UpdateBucketRequest buildPartial() {
       com.google.logging.v2.UpdateBucketRequest result =
           new com.google.logging.v2.UpdateBucketRequest(this);
-      result.name_ = name_;
-      if (bucketBuilder_ == null) {
-        result.bucket_ = bucket_;
-      } else {
-        result.bucket_ = bucketBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.logging.v2.UpdateBucketRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.bucket_ = bucketBuilder_ == null ? bucket_ : bucketBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -570,6 +575,7 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
       if (other == com.google.logging.v2.UpdateBucketRequest.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasBucket()) {
@@ -607,19 +613,19 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getBucketFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 34:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             default:
@@ -638,6 +644,8 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -724,8 +732,8 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -749,8 +757,8 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -779,8 +787,8 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -804,7 +812,7 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the bucket field is set.
      */
     public boolean hasBucket() {
-      return bucketBuilder_ != null || bucket_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -841,11 +849,11 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         bucket_ = value;
-        onChanged();
       } else {
         bucketBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -861,11 +869,11 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
     public Builder setBucket(com.google.logging.v2.LogBucket.Builder builderForValue) {
       if (bucketBuilder_ == null) {
         bucket_ = builderForValue.build();
-        onChanged();
       } else {
         bucketBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -880,17 +888,18 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeBucket(com.google.logging.v2.LogBucket value) {
       if (bucketBuilder_ == null) {
-        if (bucket_ != null) {
-          bucket_ =
-              com.google.logging.v2.LogBucket.newBuilder(bucket_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && bucket_ != null
+            && bucket_ != com.google.logging.v2.LogBucket.getDefaultInstance()) {
+          getBucketBuilder().mergeFrom(value);
         } else {
           bucket_ = value;
         }
-        onChanged();
       } else {
         bucketBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -904,14 +913,13 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearBucket() {
-      if (bucketBuilder_ == null) {
-        bucket_ = null;
-        onChanged();
-      } else {
-        bucket_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      bucket_ = null;
+      if (bucketBuilder_ != null) {
+        bucketBuilder_.dispose();
         bucketBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -925,7 +933,7 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.logging.v2.LogBucket.Builder getBucketBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getBucketFieldBuilder().getBuilder();
     }
@@ -997,7 +1005,7 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1046,11 +1054,11 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1071,11 +1079,11 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1095,17 +1103,18 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1124,14 +1133,13 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1150,7 +1158,7 @@ public final class UpdateBucketRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

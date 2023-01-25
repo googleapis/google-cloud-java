@@ -68,7 +68,9 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int SINK_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object sinkName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sinkName_ = "";
   /**
    *
    *
@@ -330,8 +332,8 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       sinkName_ = "";
-
       return this;
     }
 
@@ -359,9 +361,18 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
     public com.google.logging.v2.DeleteSinkRequest buildPartial() {
       com.google.logging.v2.DeleteSinkRequest result =
           new com.google.logging.v2.DeleteSinkRequest(this);
-      result.sinkName_ = sinkName_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.logging.v2.DeleteSinkRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.sinkName_ = sinkName_;
+      }
     }
 
     @java.lang.Override
@@ -411,6 +422,7 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
       if (other == com.google.logging.v2.DeleteSinkRequest.getDefaultInstance()) return this;
       if (!other.getSinkName().isEmpty()) {
         sinkName_ = other.sinkName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -442,7 +454,7 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 sinkName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -461,6 +473,8 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object sinkName_ = "";
     /**
@@ -550,8 +564,8 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       sinkName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -576,8 +590,8 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearSinkName() {
-
       sinkName_ = getDefaultInstance().getSinkName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -607,8 +621,8 @@ public final class DeleteSinkRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sinkName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

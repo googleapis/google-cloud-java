@@ -69,6 +69,8 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int RESOURCE_NAMES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList resourceNames_;
   /**
    *
@@ -166,7 +168,9 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int FILTER_FIELD_NUMBER = 2;
-  private volatile java.lang.Object filter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
   /**
    *
    *
@@ -283,7 +287,9 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getBufferWindowOrBuilder() {
-    return getBufferWindow();
+    return bufferWindow_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : bufferWindow_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -513,14 +519,13 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       resourceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       filter_ = "";
-
-      if (bufferWindowBuilder_ == null) {
-        bufferWindow_ = null;
-      } else {
-        bufferWindow_ = null;
+      bufferWindow_ = null;
+      if (bufferWindowBuilder_ != null) {
+        bufferWindowBuilder_.dispose();
         bufferWindowBuilder_ = null;
       }
       return this;
@@ -550,20 +555,31 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
     public com.google.logging.v2.TailLogEntriesRequest buildPartial() {
       com.google.logging.v2.TailLogEntriesRequest result =
           new com.google.logging.v2.TailLogEntriesRequest(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.logging.v2.TailLogEntriesRequest result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         resourceNames_ = resourceNames_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.resourceNames_ = resourceNames_;
-      result.filter_ = filter_;
-      if (bufferWindowBuilder_ == null) {
-        result.bufferWindow_ = bufferWindow_;
-      } else {
-        result.bufferWindow_ = bufferWindowBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.logging.v2.TailLogEntriesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.filter_ = filter_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.bufferWindow_ =
+            bufferWindowBuilder_ == null ? bufferWindow_ : bufferWindowBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -623,6 +639,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasBufferWindow()) {
@@ -664,13 +681,13 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
             case 18:
               {
                 filter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getBufferWindowFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -1020,8 +1037,8 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       filter_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1043,8 +1060,8 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
-
       filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1071,8 +1088,8 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       filter_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1099,7 +1116,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the bufferWindow field is set.
      */
     public boolean hasBufferWindow() {
-      return bufferWindowBuilder_ != null || bufferWindow_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1144,11 +1161,11 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         bufferWindow_ = value;
-        onChanged();
       } else {
         bufferWindowBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1167,11 +1184,11 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
     public Builder setBufferWindow(com.google.protobuf.Duration.Builder builderForValue) {
       if (bufferWindowBuilder_ == null) {
         bufferWindow_ = builderForValue.build();
-        onChanged();
       } else {
         bufferWindowBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1189,19 +1206,18 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeBufferWindow(com.google.protobuf.Duration value) {
       if (bufferWindowBuilder_ == null) {
-        if (bufferWindow_ != null) {
-          bufferWindow_ =
-              com.google.protobuf.Duration.newBuilder(bufferWindow_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && bufferWindow_ != null
+            && bufferWindow_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getBufferWindowBuilder().mergeFrom(value);
         } else {
           bufferWindow_ = value;
         }
-        onChanged();
       } else {
         bufferWindowBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1218,14 +1234,13 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearBufferWindow() {
-      if (bufferWindowBuilder_ == null) {
-        bufferWindow_ = null;
-        onChanged();
-      } else {
-        bufferWindow_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      bufferWindow_ = null;
+      if (bufferWindowBuilder_ != null) {
+        bufferWindowBuilder_.dispose();
         bufferWindowBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1242,7 +1257,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.protobuf.Duration.Builder getBufferWindowBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getBufferWindowFieldBuilder().getBuilder();
     }

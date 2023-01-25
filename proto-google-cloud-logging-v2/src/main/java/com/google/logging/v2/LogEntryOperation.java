@@ -70,7 +70,9 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -121,7 +123,9 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PRODUCER_FIELD_NUMBER = 2;
-  private volatile java.lang.Object producer_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object producer_ = "";
   /**
    *
    *
@@ -174,7 +178,7 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int FIRST_FIELD_NUMBER = 3;
-  private boolean first_;
+  private boolean first_ = false;
   /**
    *
    *
@@ -192,7 +196,7 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int LAST_FIELD_NUMBER = 4;
-  private boolean last_;
+  private boolean last_ = false;
   /**
    *
    *
@@ -433,14 +437,11 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       id_ = "";
-
       producer_ = "";
-
       first_ = false;
-
       last_ = false;
-
       return this;
     }
 
@@ -468,12 +469,27 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
     public com.google.logging.v2.LogEntryOperation buildPartial() {
       com.google.logging.v2.LogEntryOperation result =
           new com.google.logging.v2.LogEntryOperation(this);
-      result.id_ = id_;
-      result.producer_ = producer_;
-      result.first_ = first_;
-      result.last_ = last_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.logging.v2.LogEntryOperation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.producer_ = producer_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.first_ = first_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.last_ = last_;
+      }
     }
 
     @java.lang.Override
@@ -523,10 +539,12 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
       if (other == com.google.logging.v2.LogEntryOperation.getDefaultInstance()) return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProducer().isEmpty()) {
         producer_ = other.producer_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getFirst() != false) {
@@ -564,25 +582,25 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 producer_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 first_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 last_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -601,6 +619,8 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object id_ = "";
     /**
@@ -666,8 +686,8 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -684,8 +704,8 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -707,8 +727,8 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -780,8 +800,8 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       producer_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -799,8 +819,8 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearProducer() {
-
       producer_ = getDefaultInstance().getProducer();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -823,8 +843,8 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       producer_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -860,6 +880,7 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
     public Builder setFirst(boolean value) {
 
       first_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -875,7 +896,7 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearFirst() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       first_ = false;
       onChanged();
       return this;
@@ -912,6 +933,7 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
     public Builder setLast(boolean value) {
 
       last_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -927,7 +949,7 @@ public final class LogEntryOperation extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearLast() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       last_ = false;
       onChanged();
       return this;

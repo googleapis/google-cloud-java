@@ -69,7 +69,9 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object uid_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uid_ = "";
   /**
    *
    *
@@ -122,7 +124,7 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INDEX_FIELD_NUMBER = 2;
-  private int index_;
+  private int index_ = 0;
   /**
    *
    *
@@ -142,7 +144,7 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TOTAL_SPLITS_FIELD_NUMBER = 3;
-  private int totalSplits_;
+  private int totalSplits_ = 0;
   /**
    *
    *
@@ -373,12 +375,10 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       uid_ = "";
-
       index_ = 0;
-
       totalSplits_ = 0;
-
       return this;
     }
 
@@ -405,11 +405,24 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.logging.v2.LogSplit buildPartial() {
       com.google.logging.v2.LogSplit result = new com.google.logging.v2.LogSplit(this);
-      result.uid_ = uid_;
-      result.index_ = index_;
-      result.totalSplits_ = totalSplits_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.logging.v2.LogSplit result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.uid_ = uid_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.index_ = index_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.totalSplits_ = totalSplits_;
+      }
     }
 
     @java.lang.Override
@@ -459,6 +472,7 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.logging.v2.LogSplit.getDefaultInstance()) return this;
       if (!other.getUid().isEmpty()) {
         uid_ = other.uid_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getIndex() != 0) {
@@ -496,19 +510,19 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 uid_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 index_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 totalSplits_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -527,6 +541,8 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object uid_ = "";
     /**
@@ -595,8 +611,8 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       uid_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -614,8 +630,8 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUid() {
-
       uid_ = getDefaultInstance().getUid();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -638,8 +654,8 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uid_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -679,6 +695,7 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
     public Builder setIndex(int value) {
 
       index_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -696,7 +713,7 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIndex() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       index_ = 0;
       onChanged();
       return this;
@@ -733,6 +750,7 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
     public Builder setTotalSplits(int value) {
 
       totalSplits_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -748,7 +766,7 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTotalSplits() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       totalSplits_ = 0;
       onChanged();
       return this;

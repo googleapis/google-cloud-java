@@ -132,7 +132,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOG_NAME_FIELD_NUMBER = 12;
-  private volatile java.lang.Object logName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object logName_ = "";
   /**
    *
    *
@@ -269,7 +271,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.api.MonitoredResourceOrBuilder getResourceOrBuilder() {
-    return getResource();
+    return resource_ == null ? com.google.api.MonitoredResource.getDefaultInstance() : resource_;
   }
 
   public static final int PROTO_PAYLOAD_FIELD_NUMBER = 2;
@@ -535,7 +537,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder() {
-    return getTimestamp();
+    return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
   }
 
   public static final int RECEIVE_TIMESTAMP_FIELD_NUMBER = 24;
@@ -589,11 +591,13 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getReceiveTimestampOrBuilder() {
-    return getReceiveTimestamp();
+    return receiveTimestamp_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : receiveTimestamp_;
   }
 
   public static final int SEVERITY_FIELD_NUMBER = 10;
-  private int severity_;
+  private int severity_ = 0;
   /**
    *
    *
@@ -624,14 +628,15 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.logging.type.LogSeverity getSeverity() {
-    @SuppressWarnings("deprecation")
     com.google.logging.type.LogSeverity result =
-        com.google.logging.type.LogSeverity.valueOf(severity_);
+        com.google.logging.type.LogSeverity.forNumber(severity_);
     return result == null ? com.google.logging.type.LogSeverity.UNRECOGNIZED : result;
   }
 
   public static final int INSERT_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object insertId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object insertId_ = "";
   /**
    *
    *
@@ -749,7 +754,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.logging.type.HttpRequestOrBuilder getHttpRequestOrBuilder() {
-    return getHttpRequest();
+    return httpRequest_ == null
+        ? com.google.logging.type.HttpRequest.getDefaultInstance()
+        : httpRequest_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 11;
@@ -765,6 +772,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -852,7 +860,10 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -944,11 +955,15 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.logging.v2.LogEntryOperationOrBuilder getOperationOrBuilder() {
-    return getOperation();
+    return operation_ == null
+        ? com.google.logging.v2.LogEntryOperation.getDefaultInstance()
+        : operation_;
   }
 
   public static final int TRACE_FIELD_NUMBER = 22;
-  private volatile java.lang.Object trace_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object trace_ = "";
   /**
    *
    *
@@ -1003,7 +1018,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SPAN_ID_FIELD_NUMBER = 27;
-  private volatile java.lang.Object spanId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object spanId_ = "";
   /**
    *
    *
@@ -1058,7 +1075,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRACE_SAMPLED_FIELD_NUMBER = 30;
-  private boolean traceSampled_;
+  private boolean traceSampled_ = false;
   /**
    *
    *
@@ -1131,7 +1148,9 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.logging.v2.LogEntrySourceLocationOrBuilder getSourceLocationOrBuilder() {
-    return getSourceLocation();
+    return sourceLocation_ == null
+        ? com.google.logging.v2.LogEntrySourceLocation.getDefaultInstance()
+        : sourceLocation_;
   }
 
   public static final int SPLIT_FIELD_NUMBER = 35;
@@ -1180,7 +1199,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.logging.v2.LogSplitOrBuilder getSplitOrBuilder() {
-    return getSplit();
+    return split_ == null ? com.google.logging.v2.LogSplit.getDefaultInstance() : split_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1609,12 +1628,11 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       logName_ = "";
-
-      if (resourceBuilder_ == null) {
-        resource_ = null;
-      } else {
-        resource_ = null;
+      resource_ = null;
+      if (resourceBuilder_ != null) {
+        resourceBuilder_.dispose();
         resourceBuilder_ = null;
       }
       if (protoPayloadBuilder_ != null) {
@@ -1623,51 +1641,40 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       if (jsonPayloadBuilder_ != null) {
         jsonPayloadBuilder_.clear();
       }
-      if (timestampBuilder_ == null) {
-        timestamp_ = null;
-      } else {
-        timestamp_ = null;
+      timestamp_ = null;
+      if (timestampBuilder_ != null) {
+        timestampBuilder_.dispose();
         timestampBuilder_ = null;
       }
-      if (receiveTimestampBuilder_ == null) {
-        receiveTimestamp_ = null;
-      } else {
-        receiveTimestamp_ = null;
+      receiveTimestamp_ = null;
+      if (receiveTimestampBuilder_ != null) {
+        receiveTimestampBuilder_.dispose();
         receiveTimestampBuilder_ = null;
       }
       severity_ = 0;
-
       insertId_ = "";
-
-      if (httpRequestBuilder_ == null) {
-        httpRequest_ = null;
-      } else {
-        httpRequest_ = null;
+      httpRequest_ = null;
+      if (httpRequestBuilder_ != null) {
+        httpRequestBuilder_.dispose();
         httpRequestBuilder_ = null;
       }
       internalGetMutableLabels().clear();
-      if (operationBuilder_ == null) {
-        operation_ = null;
-      } else {
-        operation_ = null;
+      operation_ = null;
+      if (operationBuilder_ != null) {
+        operationBuilder_.dispose();
         operationBuilder_ = null;
       }
       trace_ = "";
-
       spanId_ = "";
-
       traceSampled_ = false;
-
-      if (sourceLocationBuilder_ == null) {
-        sourceLocation_ = null;
-      } else {
-        sourceLocation_ = null;
+      sourceLocation_ = null;
+      if (sourceLocationBuilder_ != null) {
+        sourceLocationBuilder_.dispose();
         sourceLocationBuilder_ = null;
       }
-      if (splitBuilder_ == null) {
-        split_ = null;
-      } else {
-        split_ = null;
+      split_ = null;
+      if (splitBuilder_ != null) {
+        splitBuilder_.dispose();
         splitBuilder_ = null;
       }
       payloadCase_ = 0;
@@ -1698,70 +1705,73 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.logging.v2.LogEntry buildPartial() {
       com.google.logging.v2.LogEntry result = new com.google.logging.v2.LogEntry(this);
-      int from_bitField0_ = bitField0_;
-      result.logName_ = logName_;
-      if (resourceBuilder_ == null) {
-        result.resource_ = resource_;
-      } else {
-        result.resource_ = resourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (payloadCase_ == 2) {
-        if (protoPayloadBuilder_ == null) {
-          result.payload_ = payload_;
-        } else {
-          result.payload_ = protoPayloadBuilder_.build();
-        }
-      }
-      if (payloadCase_ == 3) {
-        result.payload_ = payload_;
-      }
-      if (payloadCase_ == 6) {
-        if (jsonPayloadBuilder_ == null) {
-          result.payload_ = payload_;
-        } else {
-          result.payload_ = jsonPayloadBuilder_.build();
-        }
-      }
-      if (timestampBuilder_ == null) {
-        result.timestamp_ = timestamp_;
-      } else {
-        result.timestamp_ = timestampBuilder_.build();
-      }
-      if (receiveTimestampBuilder_ == null) {
-        result.receiveTimestamp_ = receiveTimestamp_;
-      } else {
-        result.receiveTimestamp_ = receiveTimestampBuilder_.build();
-      }
-      result.severity_ = severity_;
-      result.insertId_ = insertId_;
-      if (httpRequestBuilder_ == null) {
-        result.httpRequest_ = httpRequest_;
-      } else {
-        result.httpRequest_ = httpRequestBuilder_.build();
-      }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      if (operationBuilder_ == null) {
-        result.operation_ = operation_;
-      } else {
-        result.operation_ = operationBuilder_.build();
-      }
-      result.trace_ = trace_;
-      result.spanId_ = spanId_;
-      result.traceSampled_ = traceSampled_;
-      if (sourceLocationBuilder_ == null) {
-        result.sourceLocation_ = sourceLocation_;
-      } else {
-        result.sourceLocation_ = sourceLocationBuilder_.build();
-      }
-      if (splitBuilder_ == null) {
-        result.split_ = split_;
-      } else {
-        result.split_ = splitBuilder_.build();
-      }
-      result.payloadCase_ = payloadCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.logging.v2.LogEntry result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.logName_ = logName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.resource_ = resourceBuilder_ == null ? resource_ : resourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.timestamp_ = timestampBuilder_ == null ? timestamp_ : timestampBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.receiveTimestamp_ =
+            receiveTimestampBuilder_ == null ? receiveTimestamp_ : receiveTimestampBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.severity_ = severity_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.insertId_ = insertId_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.httpRequest_ =
+            httpRequestBuilder_ == null ? httpRequest_ : httpRequestBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.operation_ = operationBuilder_ == null ? operation_ : operationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.trace_ = trace_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.spanId_ = spanId_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.traceSampled_ = traceSampled_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.sourceLocation_ =
+            sourceLocationBuilder_ == null ? sourceLocation_ : sourceLocationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.split_ = splitBuilder_ == null ? split_ : splitBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.logging.v2.LogEntry result) {
+      result.payloadCase_ = payloadCase_;
+      result.payload_ = this.payload_;
+      if (payloadCase_ == 2 && protoPayloadBuilder_ != null) {
+        result.payload_ = protoPayloadBuilder_.build();
+      }
+      if (payloadCase_ == 6 && jsonPayloadBuilder_ != null) {
+        result.payload_ = jsonPayloadBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1811,6 +1821,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.logging.v2.LogEntry.getDefaultInstance()) return this;
       if (!other.getLogName().isEmpty()) {
         logName_ = other.logName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasResource()) {
@@ -1827,21 +1838,25 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getInsertId().isEmpty()) {
         insertId_ = other.insertId_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasHttpRequest()) {
         mergeHttpRequest(other.getHttpRequest());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000400;
       if (other.hasOperation()) {
         mergeOperation(other.getOperation());
       }
       if (!other.getTrace().isEmpty()) {
         trace_ = other.trace_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (!other.getSpanId().isEmpty()) {
         spanId_ = other.spanId_;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.getTraceSampled() != false) {
@@ -1918,7 +1933,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 insertId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 34
             case 50:
@@ -1930,25 +1945,25 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
             case 58:
               {
                 input.readMessage(getHttpRequestFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getTimestampFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 74
             case 80:
               {
                 severity_ = input.readEnum();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 80
             case 90:
@@ -1960,55 +1975,56 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000400;
                 break;
               } // case 90
             case 98:
               {
                 logName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 98
             case 122:
               {
                 input.readMessage(getOperationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 122
             case 178:
               {
                 trace_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 178
             case 186:
               {
                 input.readMessage(getSourceLocationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00008000;
                 break;
               } // case 186
             case 194:
               {
                 input.readMessage(
                     getReceiveTimestampFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 194
             case 218:
               {
                 spanId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 218
             case 240:
               {
                 traceSampled_ = input.readBool();
-
+                bitField0_ |= 0x00004000;
                 break;
               } // case 240
             case 282:
               {
                 input.readMessage(getSplitFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00010000;
                 break;
               } // case 282
             default:
@@ -2156,8 +2172,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       logName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2190,8 +2206,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLogName() {
-
       logName_ = getDefaultInstance().getLogName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2229,8 +2245,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       logName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2257,7 +2273,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the resource field is set.
      */
     public boolean hasResource() {
-      return resourceBuilder_ != null || resource_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2302,11 +2318,11 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         resource_ = value;
-        onChanged();
       } else {
         resourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2325,11 +2341,11 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     public Builder setResource(com.google.api.MonitoredResource.Builder builderForValue) {
       if (resourceBuilder_ == null) {
         resource_ = builderForValue.build();
-        onChanged();
       } else {
         resourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2347,19 +2363,18 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeResource(com.google.api.MonitoredResource value) {
       if (resourceBuilder_ == null) {
-        if (resource_ != null) {
-          resource_ =
-              com.google.api.MonitoredResource.newBuilder(resource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && resource_ != null
+            && resource_ != com.google.api.MonitoredResource.getDefaultInstance()) {
+          getResourceBuilder().mergeFrom(value);
         } else {
           resource_ = value;
         }
-        onChanged();
       } else {
         resourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2376,14 +2391,13 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearResource() {
-      if (resourceBuilder_ == null) {
-        resource_ = null;
-        onChanged();
-      } else {
-        resource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      resource_ = null;
+      if (resourceBuilder_ != null) {
+        resourceBuilder_.dispose();
         resourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2400,7 +2414,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.api.MonitoredResource.Builder getResourceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getResourceFieldBuilder().getBuilder();
     }
@@ -2702,7 +2716,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       }
       payloadCase_ = 2;
       onChanged();
-      ;
       return protoPayloadBuilder_;
     }
 
@@ -3050,7 +3063,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       }
       payloadCase_ = 6;
       onChanged();
-      ;
       return jsonPayloadBuilder_;
     }
 
@@ -3082,7 +3094,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the timestamp field is set.
      */
     public boolean hasTimestamp() {
-      return timestampBuilder_ != null || timestamp_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -3137,11 +3149,11 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         timestamp_ = value;
-        onChanged();
       } else {
         timestampBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3166,11 +3178,11 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     public Builder setTimestamp(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (timestampBuilder_ == null) {
         timestamp_ = builderForValue.build();
-        onChanged();
       } else {
         timestampBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3194,17 +3206,18 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTimestamp(com.google.protobuf.Timestamp value) {
       if (timestampBuilder_ == null) {
-        if (timestamp_ != null) {
-          timestamp_ =
-              com.google.protobuf.Timestamp.newBuilder(timestamp_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && timestamp_ != null
+            && timestamp_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getTimestampBuilder().mergeFrom(value);
         } else {
           timestamp_ = value;
         }
-        onChanged();
       } else {
         timestampBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3227,14 +3240,13 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearTimestamp() {
-      if (timestampBuilder_ == null) {
-        timestamp_ = null;
-        onChanged();
-      } else {
-        timestamp_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      timestamp_ = null;
+      if (timestampBuilder_ != null) {
+        timestampBuilder_.dispose();
         timestampBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3257,7 +3269,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getTimestampBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getTimestampFieldBuilder().getBuilder();
     }
@@ -3343,7 +3355,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the receiveTimestamp field is set.
      */
     public boolean hasReceiveTimestamp() {
-      return receiveTimestampBuilder_ != null || receiveTimestamp_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -3384,11 +3396,11 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         receiveTimestamp_ = value;
-        onChanged();
       } else {
         receiveTimestampBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3405,11 +3417,11 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     public Builder setReceiveTimestamp(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (receiveTimestampBuilder_ == null) {
         receiveTimestamp_ = builderForValue.build();
-        onChanged();
       } else {
         receiveTimestampBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3425,19 +3437,18 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeReceiveTimestamp(com.google.protobuf.Timestamp value) {
       if (receiveTimestampBuilder_ == null) {
-        if (receiveTimestamp_ != null) {
-          receiveTimestamp_ =
-              com.google.protobuf.Timestamp.newBuilder(receiveTimestamp_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && receiveTimestamp_ != null
+            && receiveTimestamp_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getReceiveTimestampBuilder().mergeFrom(value);
         } else {
           receiveTimestamp_ = value;
         }
-        onChanged();
       } else {
         receiveTimestampBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3452,14 +3463,13 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearReceiveTimestamp() {
-      if (receiveTimestampBuilder_ == null) {
-        receiveTimestamp_ = null;
-        onChanged();
-      } else {
-        receiveTimestamp_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      receiveTimestamp_ = null;
+      if (receiveTimestampBuilder_ != null) {
+        receiveTimestampBuilder_.dispose();
         receiveTimestampBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3474,7 +3484,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getReceiveTimestampBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getReceiveTimestampFieldBuilder().getBuilder();
     }
@@ -3559,8 +3569,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSeverityValue(int value) {
-
       severity_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3579,9 +3589,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.logging.type.LogSeverity getSeverity() {
-      @SuppressWarnings("deprecation")
       com.google.logging.type.LogSeverity result =
-          com.google.logging.type.LogSeverity.valueOf(severity_);
+          com.google.logging.type.LogSeverity.forNumber(severity_);
       return result == null ? com.google.logging.type.LogSeverity.UNRECOGNIZED : result;
     }
     /**
@@ -3602,7 +3611,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       severity_ = value.getNumber();
       onChanged();
       return this;
@@ -3621,7 +3630,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSeverity() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       severity_ = 0;
       onChanged();
       return this;
@@ -3712,8 +3721,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       insertId_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3737,8 +3746,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInsertId() {
-
       insertId_ = getDefaultInstance().getInsertId();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3767,8 +3776,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       insertId_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3794,7 +3803,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the httpRequest field is set.
      */
     public boolean hasHttpRequest() {
-      return httpRequestBuilder_ != null || httpRequest_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3837,11 +3846,11 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         httpRequest_ = value;
-        onChanged();
       } else {
         httpRequestBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3859,11 +3868,11 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     public Builder setHttpRequest(com.google.logging.type.HttpRequest.Builder builderForValue) {
       if (httpRequestBuilder_ == null) {
         httpRequest_ = builderForValue.build();
-        onChanged();
       } else {
         httpRequestBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3880,19 +3889,18 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeHttpRequest(com.google.logging.type.HttpRequest value) {
       if (httpRequestBuilder_ == null) {
-        if (httpRequest_ != null) {
-          httpRequest_ =
-              com.google.logging.type.HttpRequest.newBuilder(httpRequest_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && httpRequest_ != null
+            && httpRequest_ != com.google.logging.type.HttpRequest.getDefaultInstance()) {
+          getHttpRequestBuilder().mergeFrom(value);
         } else {
           httpRequest_ = value;
         }
-        onChanged();
       } else {
         httpRequestBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3908,14 +3916,13 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearHttpRequest() {
-      if (httpRequestBuilder_ == null) {
-        httpRequest_ = null;
-        onChanged();
-      } else {
-        httpRequest_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      httpRequest_ = null;
+      if (httpRequestBuilder_ != null) {
+        httpRequestBuilder_.dispose();
         httpRequestBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3931,7 +3938,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.logging.type.HttpRequest.Builder getHttpRequestBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getHttpRequestFieldBuilder().getBuilder();
     }
@@ -3996,14 +4003,14 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000400;
+      onChanged();
       return labels_;
     }
 
@@ -4085,8 +4092,10 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -4125,6 +4134,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000400);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -4157,6 +4167,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000400;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -4185,8 +4196,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000400;
       return this;
     }
     /**
@@ -4210,6 +4221,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000400;
       return this;
     }
 
@@ -4234,7 +4246,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the operation field is set.
      */
     public boolean hasOperation() {
-      return operationBuilder_ != null || operation_ != null;
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -4277,11 +4289,11 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         operation_ = value;
-        onChanged();
       } else {
         operationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -4299,11 +4311,11 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     public Builder setOperation(com.google.logging.v2.LogEntryOperation.Builder builderForValue) {
       if (operationBuilder_ == null) {
         operation_ = builderForValue.build();
-        onChanged();
       } else {
         operationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -4320,19 +4332,18 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeOperation(com.google.logging.v2.LogEntryOperation value) {
       if (operationBuilder_ == null) {
-        if (operation_ != null) {
-          operation_ =
-              com.google.logging.v2.LogEntryOperation.newBuilder(operation_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000800) != 0)
+            && operation_ != null
+            && operation_ != com.google.logging.v2.LogEntryOperation.getDefaultInstance()) {
+          getOperationBuilder().mergeFrom(value);
         } else {
           operation_ = value;
         }
-        onChanged();
       } else {
         operationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -4348,14 +4359,13 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearOperation() {
-      if (operationBuilder_ == null) {
-        operation_ = null;
-        onChanged();
-      } else {
-        operation_ = null;
+      bitField0_ = (bitField0_ & ~0x00000800);
+      operation_ = null;
+      if (operationBuilder_ != null) {
+        operationBuilder_.dispose();
         operationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4371,7 +4381,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.logging.v2.LogEntryOperation.Builder getOperationBuilder() {
-
+      bitField0_ |= 0x00000800;
       onChanged();
       return getOperationFieldBuilder().getBuilder();
     }
@@ -4495,8 +4505,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       trace_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4515,8 +4525,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTrace() {
-
       trace_ = getDefaultInstance().getTrace();
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -4540,8 +4550,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       trace_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4616,8 +4626,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       spanId_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4636,8 +4646,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSpanId() {
-
       spanId_ = getDefaultInstance().getSpanId();
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -4661,8 +4671,8 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       spanId_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4708,6 +4718,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     public Builder setTraceSampled(boolean value) {
 
       traceSampled_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4728,7 +4739,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTraceSampled() {
-
+      bitField0_ = (bitField0_ & ~0x00004000);
       traceSampled_ = false;
       onChanged();
       return this;
@@ -4754,7 +4765,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceLocation field is set.
      */
     public boolean hasSourceLocation() {
-      return sourceLocationBuilder_ != null || sourceLocation_ != null;
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -4795,11 +4806,11 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         sourceLocation_ = value;
-        onChanged();
       } else {
         sourceLocationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -4817,11 +4828,11 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         com.google.logging.v2.LogEntrySourceLocation.Builder builderForValue) {
       if (sourceLocationBuilder_ == null) {
         sourceLocation_ = builderForValue.build();
-        onChanged();
       } else {
         sourceLocationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -4837,19 +4848,19 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSourceLocation(com.google.logging.v2.LogEntrySourceLocation value) {
       if (sourceLocationBuilder_ == null) {
-        if (sourceLocation_ != null) {
-          sourceLocation_ =
-              com.google.logging.v2.LogEntrySourceLocation.newBuilder(sourceLocation_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00008000) != 0)
+            && sourceLocation_ != null
+            && sourceLocation_
+                != com.google.logging.v2.LogEntrySourceLocation.getDefaultInstance()) {
+          getSourceLocationBuilder().mergeFrom(value);
         } else {
           sourceLocation_ = value;
         }
-        onChanged();
       } else {
         sourceLocationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -4864,14 +4875,13 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSourceLocation() {
-      if (sourceLocationBuilder_ == null) {
-        sourceLocation_ = null;
-        onChanged();
-      } else {
-        sourceLocation_ = null;
+      bitField0_ = (bitField0_ & ~0x00008000);
+      sourceLocation_ = null;
+      if (sourceLocationBuilder_ != null) {
+        sourceLocationBuilder_.dispose();
         sourceLocationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4886,7 +4896,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.logging.v2.LogEntrySourceLocation.Builder getSourceLocationBuilder() {
-
+      bitField0_ |= 0x00008000;
       onChanged();
       return getSourceLocationFieldBuilder().getBuilder();
     }
@@ -4958,7 +4968,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the split field is set.
      */
     public boolean hasSplit() {
-      return splitBuilder_ != null || split_ != null;
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -4997,11 +5007,11 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         split_ = value;
-        onChanged();
       } else {
         splitBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00010000;
+      onChanged();
       return this;
     }
     /**
@@ -5018,11 +5028,11 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     public Builder setSplit(com.google.logging.v2.LogSplit.Builder builderForValue) {
       if (splitBuilder_ == null) {
         split_ = builderForValue.build();
-        onChanged();
       } else {
         splitBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00010000;
+      onChanged();
       return this;
     }
     /**
@@ -5038,17 +5048,18 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSplit(com.google.logging.v2.LogSplit value) {
       if (splitBuilder_ == null) {
-        if (split_ != null) {
-          split_ =
-              com.google.logging.v2.LogSplit.newBuilder(split_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00010000) != 0)
+            && split_ != null
+            && split_ != com.google.logging.v2.LogSplit.getDefaultInstance()) {
+          getSplitBuilder().mergeFrom(value);
         } else {
           split_ = value;
         }
-        onChanged();
       } else {
         splitBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00010000;
+      onChanged();
       return this;
     }
     /**
@@ -5063,14 +5074,13 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSplit() {
-      if (splitBuilder_ == null) {
-        split_ = null;
-        onChanged();
-      } else {
-        split_ = null;
+      bitField0_ = (bitField0_ & ~0x00010000);
+      split_ = null;
+      if (splitBuilder_ != null) {
+        splitBuilder_.dispose();
         splitBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5085,7 +5095,7 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.logging.v2.LogSplit.Builder getSplitBuilder() {
-
+      bitField0_ |= 0x00010000;
       onChanged();
       return getSplitFieldBuilder().getBuilder();
     }

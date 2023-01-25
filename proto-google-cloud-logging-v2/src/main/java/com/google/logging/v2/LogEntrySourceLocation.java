@@ -70,7 +70,9 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
   }
 
   public static final int FILE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object file_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object file_ = "";
   /**
    *
    *
@@ -121,7 +123,7 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
   }
 
   public static final int LINE_FIELD_NUMBER = 2;
-  private long line_;
+  private long line_ = 0L;
   /**
    *
    *
@@ -140,7 +142,9 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
   }
 
   public static final int FUNCTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object function_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object function_ = "";
   /**
    *
    *
@@ -414,12 +418,10 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       file_ = "";
-
       line_ = 0L;
-
       function_ = "";
-
       return this;
     }
 
@@ -447,11 +449,24 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
     public com.google.logging.v2.LogEntrySourceLocation buildPartial() {
       com.google.logging.v2.LogEntrySourceLocation result =
           new com.google.logging.v2.LogEntrySourceLocation(this);
-      result.file_ = file_;
-      result.line_ = line_;
-      result.function_ = function_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.logging.v2.LogEntrySourceLocation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.file_ = file_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.line_ = line_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.function_ = function_;
+      }
     }
 
     @java.lang.Override
@@ -501,6 +516,7 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
       if (other == com.google.logging.v2.LogEntrySourceLocation.getDefaultInstance()) return this;
       if (!other.getFile().isEmpty()) {
         file_ = other.file_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getLine() != 0L) {
@@ -508,6 +524,7 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
       }
       if (!other.getFunction().isEmpty()) {
         function_ = other.function_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -539,19 +556,19 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
             case 10:
               {
                 file_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 line_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 function_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -570,6 +587,8 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object file_ = "";
     /**
@@ -635,8 +654,8 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       file_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -653,8 +672,8 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearFile() {
-
       file_ = getDefaultInstance().getFile();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -676,8 +695,8 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       file_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -715,6 +734,7 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
     public Builder setLine(long value) {
 
       line_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -731,7 +751,7 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearLine() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       line_ = 0L;
       onChanged();
       return this;
@@ -813,8 +833,8 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       function_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -835,8 +855,8 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearFunction() {
-
       function_ = getDefaultInstance().getFunction();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -862,8 +882,8 @@ public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       function_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

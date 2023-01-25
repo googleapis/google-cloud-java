@@ -72,7 +72,9 @@ public final class UpdateCmekSettingsRequest extends com.google.protobuf.Generat
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -198,7 +200,9 @@ public final class UpdateCmekSettingsRequest extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.logging.v2.CmekSettingsOrBuilder getCmekSettingsOrBuilder() {
-    return getCmekSettings();
+    return cmekSettings_ == null
+        ? com.google.logging.v2.CmekSettings.getDefaultInstance()
+        : cmekSettings_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
@@ -259,7 +263,7 @@ public final class UpdateCmekSettingsRequest extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -491,18 +495,16 @@ public final class UpdateCmekSettingsRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (cmekSettingsBuilder_ == null) {
-        cmekSettings_ = null;
-      } else {
-        cmekSettings_ = null;
+      cmekSettings_ = null;
+      if (cmekSettingsBuilder_ != null) {
+        cmekSettingsBuilder_.dispose();
         cmekSettingsBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -532,19 +534,25 @@ public final class UpdateCmekSettingsRequest extends com.google.protobuf.Generat
     public com.google.logging.v2.UpdateCmekSettingsRequest buildPartial() {
       com.google.logging.v2.UpdateCmekSettingsRequest result =
           new com.google.logging.v2.UpdateCmekSettingsRequest(this);
-      result.name_ = name_;
-      if (cmekSettingsBuilder_ == null) {
-        result.cmekSettings_ = cmekSettings_;
-      } else {
-        result.cmekSettings_ = cmekSettingsBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.logging.v2.UpdateCmekSettingsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.cmekSettings_ =
+            cmekSettingsBuilder_ == null ? cmekSettings_ : cmekSettingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -595,6 +603,7 @@ public final class UpdateCmekSettingsRequest extends com.google.protobuf.Generat
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCmekSettings()) {
@@ -632,19 +641,19 @@ public final class UpdateCmekSettingsRequest extends com.google.protobuf.Generat
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCmekSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -663,6 +672,8 @@ public final class UpdateCmekSettingsRequest extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -752,8 +763,8 @@ public final class UpdateCmekSettingsRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -778,8 +789,8 @@ public final class UpdateCmekSettingsRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -809,8 +820,8 @@ public final class UpdateCmekSettingsRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -838,7 +849,7 @@ public final class UpdateCmekSettingsRequest extends com.google.protobuf.Generat
      * @return Whether the cmekSettings field is set.
      */
     public boolean hasCmekSettings() {
-      return cmekSettingsBuilder_ != null || cmekSettings_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -885,11 +896,11 @@ public final class UpdateCmekSettingsRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         cmekSettings_ = value;
-        onChanged();
       } else {
         cmekSettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -909,11 +920,11 @@ public final class UpdateCmekSettingsRequest extends com.google.protobuf.Generat
     public Builder setCmekSettings(com.google.logging.v2.CmekSettings.Builder builderForValue) {
       if (cmekSettingsBuilder_ == null) {
         cmekSettings_ = builderForValue.build();
-        onChanged();
       } else {
         cmekSettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -932,19 +943,18 @@ public final class UpdateCmekSettingsRequest extends com.google.protobuf.Generat
      */
     public Builder mergeCmekSettings(com.google.logging.v2.CmekSettings value) {
       if (cmekSettingsBuilder_ == null) {
-        if (cmekSettings_ != null) {
-          cmekSettings_ =
-              com.google.logging.v2.CmekSettings.newBuilder(cmekSettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && cmekSettings_ != null
+            && cmekSettings_ != com.google.logging.v2.CmekSettings.getDefaultInstance()) {
+          getCmekSettingsBuilder().mergeFrom(value);
         } else {
           cmekSettings_ = value;
         }
-        onChanged();
       } else {
         cmekSettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -962,14 +972,13 @@ public final class UpdateCmekSettingsRequest extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearCmekSettings() {
-      if (cmekSettingsBuilder_ == null) {
-        cmekSettings_ = null;
-        onChanged();
-      } else {
-        cmekSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      cmekSettings_ = null;
+      if (cmekSettingsBuilder_ != null) {
+        cmekSettingsBuilder_.dispose();
         cmekSettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -987,7 +996,7 @@ public final class UpdateCmekSettingsRequest extends com.google.protobuf.Generat
      * </code>
      */
     public com.google.logging.v2.CmekSettings.Builder getCmekSettingsBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCmekSettingsFieldBuilder().getBuilder();
     }
@@ -1068,7 +1077,7 @@ public final class UpdateCmekSettingsRequest extends com.google.protobuf.Generat
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1115,11 +1124,11 @@ public final class UpdateCmekSettingsRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1139,11 +1148,11 @@ public final class UpdateCmekSettingsRequest extends com.google.protobuf.Generat
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1162,17 +1171,18 @@ public final class UpdateCmekSettingsRequest extends com.google.protobuf.Generat
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1190,14 +1200,13 @@ public final class UpdateCmekSettingsRequest extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1215,7 +1224,7 @@ public final class UpdateCmekSettingsRequest extends com.google.protobuf.Generat
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

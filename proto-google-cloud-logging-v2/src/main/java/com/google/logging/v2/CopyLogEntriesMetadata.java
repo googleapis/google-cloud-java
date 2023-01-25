@@ -111,7 +111,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
-    return getStartTime();
+    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
 
   public static final int END_TIME_FIELD_NUMBER = 2;
@@ -157,11 +157,11 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-    return getEndTime();
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
   public static final int STATE_FIELD_NUMBER = 3;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -190,14 +190,13 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.logging.v2.OperationState getState() {
-    @SuppressWarnings("deprecation")
     com.google.logging.v2.OperationState result =
-        com.google.logging.v2.OperationState.valueOf(state_);
+        com.google.logging.v2.OperationState.forNumber(state_);
     return result == null ? com.google.logging.v2.OperationState.UNRECOGNIZED : result;
   }
 
   public static final int CANCELLATION_REQUESTED_FIELD_NUMBER = 4;
-  private boolean cancellationRequested_;
+  private boolean cancellationRequested_ = false;
   /**
    *
    *
@@ -259,11 +258,13 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.logging.v2.CopyLogEntriesRequestOrBuilder getRequestOrBuilder() {
-    return getRequest();
+    return request_ == null
+        ? com.google.logging.v2.CopyLogEntriesRequest.getDefaultInstance()
+        : request_;
   }
 
   public static final int PROGRESS_FIELD_NUMBER = 6;
-  private int progress_;
+  private int progress_ = 0;
   /**
    *
    *
@@ -281,7 +282,9 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
   }
 
   public static final int WRITER_IDENTITY_FIELD_NUMBER = 7;
-  private volatile java.lang.Object writerIdentity_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object writerIdentity_ = "";
   /**
    *
    *
@@ -603,32 +606,26 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-      } else {
-        startTime_ = null;
+      bitField0_ = 0;
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-      } else {
-        endTime_ = null;
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
       state_ = 0;
-
       cancellationRequested_ = false;
-
-      if (requestBuilder_ == null) {
-        request_ = null;
-      } else {
-        request_ = null;
+      request_ = null;
+      if (requestBuilder_ != null) {
+        requestBuilder_.dispose();
         requestBuilder_ = null;
       }
       progress_ = 0;
-
       writerIdentity_ = "";
-
       return this;
     }
 
@@ -656,27 +653,36 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
     public com.google.logging.v2.CopyLogEntriesMetadata buildPartial() {
       com.google.logging.v2.CopyLogEntriesMetadata result =
           new com.google.logging.v2.CopyLogEntriesMetadata(this);
-      if (startTimeBuilder_ == null) {
-        result.startTime_ = startTime_;
-      } else {
-        result.startTime_ = startTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (endTimeBuilder_ == null) {
-        result.endTime_ = endTime_;
-      } else {
-        result.endTime_ = endTimeBuilder_.build();
-      }
-      result.state_ = state_;
-      result.cancellationRequested_ = cancellationRequested_;
-      if (requestBuilder_ == null) {
-        result.request_ = request_;
-      } else {
-        result.request_ = requestBuilder_.build();
-      }
-      result.progress_ = progress_;
-      result.writerIdentity_ = writerIdentity_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.logging.v2.CopyLogEntriesMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.cancellationRequested_ = cancellationRequested_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.request_ = requestBuilder_ == null ? request_ : requestBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.progress_ = progress_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.writerIdentity_ = writerIdentity_;
+      }
     }
 
     @java.lang.Override
@@ -744,6 +750,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
       }
       if (!other.getWriterIdentity().isEmpty()) {
         writerIdentity_ = other.writerIdentity_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -775,43 +782,43 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
             case 10:
               {
                 input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 cancellationRequested_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(getRequestFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 48:
               {
                 progress_ = input.readInt32();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 58:
               {
                 writerIdentity_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -831,6 +838,8 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.protobuf.Timestamp startTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -849,7 +858,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return startTimeBuilder_ != null || startTime_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -884,11 +893,11 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         startTime_ = value;
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -903,11 +912,11 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
     public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -921,17 +930,18 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (startTime_ != null) {
-          startTime_ =
-              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && startTime_ != null
+            && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStartTimeBuilder().mergeFrom(value);
         } else {
           startTime_ = value;
         }
-        onChanged();
       } else {
         startTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -944,14 +954,13 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
      */
     public Builder clearStartTime() {
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-        onChanged();
-      } else {
-        startTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -964,7 +973,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
@@ -1028,7 +1037,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return endTimeBuilder_ != null || endTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1063,11 +1072,11 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         endTime_ = value;
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1082,11 +1091,11 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1100,17 +1109,18 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (endTime_ != null) {
-          endTime_ =
-              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && endTime_ != null
+            && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEndTimeBuilder().mergeFrom(value);
         } else {
           endTime_ = value;
         }
-        onChanged();
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1123,14 +1133,13 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
      */
     public Builder clearEndTime() {
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-        onChanged();
-      } else {
-        endTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1143,7 +1152,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
@@ -1218,8 +1227,8 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1236,9 +1245,8 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public com.google.logging.v2.OperationState getState() {
-      @SuppressWarnings("deprecation")
       com.google.logging.v2.OperationState result =
-          com.google.logging.v2.OperationState.valueOf(state_);
+          com.google.logging.v2.OperationState.forNumber(state_);
       return result == null ? com.google.logging.v2.OperationState.UNRECOGNIZED : result;
     }
     /**
@@ -1257,7 +1265,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1274,7 +1282,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       state_ = 0;
       onChanged();
       return this;
@@ -1311,6 +1319,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
     public Builder setCancellationRequested(boolean value) {
 
       cancellationRequested_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1326,7 +1335,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearCancellationRequested() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       cancellationRequested_ = false;
       onChanged();
       return this;
@@ -1350,7 +1359,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
      * @return Whether the request field is set.
      */
     public boolean hasRequest() {
-      return requestBuilder_ != null || request_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1387,11 +1396,11 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         request_ = value;
-        onChanged();
       } else {
         requestBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1406,11 +1415,11 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
     public Builder setRequest(com.google.logging.v2.CopyLogEntriesRequest.Builder builderForValue) {
       if (requestBuilder_ == null) {
         request_ = builderForValue.build();
-        onChanged();
       } else {
         requestBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1424,19 +1433,18 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
      */
     public Builder mergeRequest(com.google.logging.v2.CopyLogEntriesRequest value) {
       if (requestBuilder_ == null) {
-        if (request_ != null) {
-          request_ =
-              com.google.logging.v2.CopyLogEntriesRequest.newBuilder(request_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && request_ != null
+            && request_ != com.google.logging.v2.CopyLogEntriesRequest.getDefaultInstance()) {
+          getRequestBuilder().mergeFrom(value);
         } else {
           request_ = value;
         }
-        onChanged();
       } else {
         requestBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1449,14 +1457,13 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.logging.v2.CopyLogEntriesRequest request = 5;</code>
      */
     public Builder clearRequest() {
-      if (requestBuilder_ == null) {
-        request_ = null;
-        onChanged();
-      } else {
-        request_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      request_ = null;
+      if (requestBuilder_ != null) {
+        requestBuilder_.dispose();
         requestBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1469,7 +1476,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.logging.v2.CopyLogEntriesRequest request = 5;</code>
      */
     public com.google.logging.v2.CopyLogEntriesRequest.Builder getRequestBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getRequestFieldBuilder().getBuilder();
     }
@@ -1548,6 +1555,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
     public Builder setProgress(int value) {
 
       progress_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1563,7 +1571,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearProgress() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       progress_ = 0;
       onChanged();
       return this;
@@ -1642,8 +1650,8 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       writerIdentity_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1663,8 +1671,8 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearWriterIdentity() {
-
       writerIdentity_ = getDefaultInstance().getWriterIdentity();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1689,8 +1697,8 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       writerIdentity_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

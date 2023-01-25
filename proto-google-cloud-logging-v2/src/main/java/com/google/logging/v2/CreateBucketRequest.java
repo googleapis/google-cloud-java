@@ -69,7 +69,9 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -128,7 +130,9 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int BUCKET_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object bucketId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object bucketId_ = "";
   /**
    *
    *
@@ -229,7 +233,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.logging.v2.LogBucketOrBuilder getBucketOrBuilder() {
-    return getBucket();
+    return bucket_ == null ? com.google.logging.v2.LogBucket.getDefaultInstance() : bucket_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -452,14 +456,12 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       bucketId_ = "";
-
-      if (bucketBuilder_ == null) {
-        bucket_ = null;
-      } else {
-        bucket_ = null;
+      bucket_ = null;
+      if (bucketBuilder_ != null) {
+        bucketBuilder_.dispose();
         bucketBuilder_ = null;
       }
       return this;
@@ -489,15 +491,24 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
     public com.google.logging.v2.CreateBucketRequest buildPartial() {
       com.google.logging.v2.CreateBucketRequest result =
           new com.google.logging.v2.CreateBucketRequest(this);
-      result.parent_ = parent_;
-      result.bucketId_ = bucketId_;
-      if (bucketBuilder_ == null) {
-        result.bucket_ = bucket_;
-      } else {
-        result.bucket_ = bucketBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.logging.v2.CreateBucketRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.bucketId_ = bucketId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.bucket_ = bucketBuilder_ == null ? bucket_ : bucketBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -547,10 +558,12 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
       if (other == com.google.logging.v2.CreateBucketRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getBucketId().isEmpty()) {
         bucketId_ = other.bucketId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasBucket()) {
@@ -585,19 +598,19 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 bucketId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getBucketFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -616,6 +629,8 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -693,8 +708,8 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -715,8 +730,8 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -742,8 +757,8 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -815,8 +830,8 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       bucketId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -834,8 +849,8 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearBucketId() {
-
       bucketId_ = getDefaultInstance().getBucketId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -858,8 +873,8 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       bucketId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -885,7 +900,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the bucket field is set.
      */
     public boolean hasBucket() {
-      return bucketBuilder_ != null || bucket_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -926,11 +941,11 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         bucket_ = value;
-        onChanged();
       } else {
         bucketBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -948,11 +963,11 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
     public Builder setBucket(com.google.logging.v2.LogBucket.Builder builderForValue) {
       if (bucketBuilder_ == null) {
         bucket_ = builderForValue.build();
-        onChanged();
       } else {
         bucketBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -969,17 +984,18 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeBucket(com.google.logging.v2.LogBucket value) {
       if (bucketBuilder_ == null) {
-        if (bucket_ != null) {
-          bucket_ =
-              com.google.logging.v2.LogBucket.newBuilder(bucket_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && bucket_ != null
+            && bucket_ != com.google.logging.v2.LogBucket.getDefaultInstance()) {
+          getBucketBuilder().mergeFrom(value);
         } else {
           bucket_ = value;
         }
-        onChanged();
       } else {
         bucketBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -995,14 +1011,13 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearBucket() {
-      if (bucketBuilder_ == null) {
-        bucket_ = null;
-        onChanged();
-      } else {
-        bucket_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      bucket_ = null;
+      if (bucketBuilder_ != null) {
+        bucketBuilder_.dispose();
         bucketBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1018,7 +1033,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.logging.v2.LogBucket.Builder getBucketBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getBucketFieldBuilder().getBuilder();
     }

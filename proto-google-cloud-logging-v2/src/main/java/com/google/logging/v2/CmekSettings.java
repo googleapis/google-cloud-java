@@ -77,7 +77,9 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KMS_KEY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object kmsKeyName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKeyName_ = "";
   /**
    *
    *
@@ -209,7 +213,9 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_ACCOUNT_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object serviceAccountId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccountId_ = "";
   /**
    *
    *
@@ -495,12 +501,10 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       kmsKeyName_ = "";
-
       serviceAccountId_ = "";
-
       return this;
     }
 
@@ -527,11 +531,24 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.logging.v2.CmekSettings buildPartial() {
       com.google.logging.v2.CmekSettings result = new com.google.logging.v2.CmekSettings(this);
-      result.name_ = name_;
-      result.kmsKeyName_ = kmsKeyName_;
-      result.serviceAccountId_ = serviceAccountId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.logging.v2.CmekSettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.kmsKeyName_ = kmsKeyName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.serviceAccountId_ = serviceAccountId_;
+      }
     }
 
     @java.lang.Override
@@ -581,14 +598,17 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.logging.v2.CmekSettings.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getKmsKeyName().isEmpty()) {
         kmsKeyName_ = other.kmsKeyName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getServiceAccountId().isEmpty()) {
         serviceAccountId_ = other.serviceAccountId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -620,19 +640,19 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 kmsKeyName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 serviceAccountId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -651,6 +671,8 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -713,8 +735,8 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -730,8 +752,8 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -752,8 +774,8 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -870,8 +892,8 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       kmsKeyName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -904,8 +926,8 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKmsKeyName() {
-
       kmsKeyName_ = getDefaultInstance().getKmsKeyName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -943,8 +965,8 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       kmsKeyName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1037,8 +1059,8 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceAccountId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1063,8 +1085,8 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceAccountId() {
-
       serviceAccountId_ = getDefaultInstance().getServiceAccountId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1094,8 +1116,8 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceAccountId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

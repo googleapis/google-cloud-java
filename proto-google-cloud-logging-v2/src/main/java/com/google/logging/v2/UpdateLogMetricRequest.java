@@ -68,7 +68,9 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int METRIC_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object metricName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object metricName_ = "";
   /**
    *
    *
@@ -171,7 +173,7 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.logging.v2.LogMetricOrBuilder getMetricOrBuilder() {
-    return getMetric();
+    return metric_ == null ? com.google.logging.v2.LogMetric.getDefaultInstance() : metric_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -385,12 +387,11 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       metricName_ = "";
-
-      if (metricBuilder_ == null) {
-        metric_ = null;
-      } else {
-        metric_ = null;
+      metric_ = null;
+      if (metricBuilder_ != null) {
+        metricBuilder_.dispose();
         metricBuilder_ = null;
       }
       return this;
@@ -420,14 +421,21 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
     public com.google.logging.v2.UpdateLogMetricRequest buildPartial() {
       com.google.logging.v2.UpdateLogMetricRequest result =
           new com.google.logging.v2.UpdateLogMetricRequest(this);
-      result.metricName_ = metricName_;
-      if (metricBuilder_ == null) {
-        result.metric_ = metric_;
-      } else {
-        result.metric_ = metricBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.logging.v2.UpdateLogMetricRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.metricName_ = metricName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.metric_ = metricBuilder_ == null ? metric_ : metricBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -477,6 +485,7 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
       if (other == com.google.logging.v2.UpdateLogMetricRequest.getDefaultInstance()) return this;
       if (!other.getMetricName().isEmpty()) {
         metricName_ = other.metricName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasMetric()) {
@@ -511,13 +520,13 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 metricName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getMetricFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -536,6 +545,8 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object metricName_ = "";
     /**
@@ -616,8 +627,8 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       metricName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -639,8 +650,8 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearMetricName() {
-
       metricName_ = getDefaultInstance().getMetricName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -667,8 +678,8 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       metricName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -692,7 +703,7 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
      * @return Whether the metric field is set.
      */
     public boolean hasMetric() {
-      return metricBuilder_ != null || metric_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -729,11 +740,11 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         metric_ = value;
-        onChanged();
       } else {
         metricBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -749,11 +760,11 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
     public Builder setMetric(com.google.logging.v2.LogMetric.Builder builderForValue) {
       if (metricBuilder_ == null) {
         metric_ = builderForValue.build();
-        onChanged();
       } else {
         metricBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -768,17 +779,18 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeMetric(com.google.logging.v2.LogMetric value) {
       if (metricBuilder_ == null) {
-        if (metric_ != null) {
-          metric_ =
-              com.google.logging.v2.LogMetric.newBuilder(metric_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && metric_ != null
+            && metric_ != com.google.logging.v2.LogMetric.getDefaultInstance()) {
+          getMetricBuilder().mergeFrom(value);
         } else {
           metric_ = value;
         }
-        onChanged();
       } else {
         metricBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -792,14 +804,13 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearMetric() {
-      if (metricBuilder_ == null) {
-        metric_ = null;
-        onChanged();
-      } else {
-        metric_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      metric_ = null;
+      if (metricBuilder_ != null) {
+        metricBuilder_.dispose();
         metricBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -813,7 +824,7 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.logging.v2.LogMetric.Builder getMetricBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getMetricFieldBuilder().getBuilder();
     }

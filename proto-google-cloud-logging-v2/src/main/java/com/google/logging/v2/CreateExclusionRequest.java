@@ -68,7 +68,9 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -185,7 +187,9 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.logging.v2.LogExclusionOrBuilder getExclusionOrBuilder() {
-    return getExclusion();
+    return exclusion_ == null
+        ? com.google.logging.v2.LogExclusion.getDefaultInstance()
+        : exclusion_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -399,12 +403,11 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (exclusionBuilder_ == null) {
-        exclusion_ = null;
-      } else {
-        exclusion_ = null;
+      exclusion_ = null;
+      if (exclusionBuilder_ != null) {
+        exclusionBuilder_.dispose();
         exclusionBuilder_ = null;
       }
       return this;
@@ -434,14 +437,21 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
     public com.google.logging.v2.CreateExclusionRequest buildPartial() {
       com.google.logging.v2.CreateExclusionRequest result =
           new com.google.logging.v2.CreateExclusionRequest(this);
-      result.parent_ = parent_;
-      if (exclusionBuilder_ == null) {
-        result.exclusion_ = exclusion_;
-      } else {
-        result.exclusion_ = exclusionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.logging.v2.CreateExclusionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.exclusion_ = exclusionBuilder_ == null ? exclusion_ : exclusionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -491,6 +501,7 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
       if (other == com.google.logging.v2.CreateExclusionRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasExclusion()) {
@@ -525,13 +536,13 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getExclusionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -550,6 +561,8 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -639,8 +652,8 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -665,8 +678,8 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -696,8 +709,8 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -723,7 +736,7 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
      * @return Whether the exclusion field is set.
      */
     public boolean hasExclusion() {
-      return exclusionBuilder_ != null || exclusion_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -766,11 +779,11 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         exclusion_ = value;
-        onChanged();
       } else {
         exclusionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -788,11 +801,11 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
     public Builder setExclusion(com.google.logging.v2.LogExclusion.Builder builderForValue) {
       if (exclusionBuilder_ == null) {
         exclusion_ = builderForValue.build();
-        onChanged();
       } else {
         exclusionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -809,19 +822,18 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeExclusion(com.google.logging.v2.LogExclusion value) {
       if (exclusionBuilder_ == null) {
-        if (exclusion_ != null) {
-          exclusion_ =
-              com.google.logging.v2.LogExclusion.newBuilder(exclusion_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && exclusion_ != null
+            && exclusion_ != com.google.logging.v2.LogExclusion.getDefaultInstance()) {
+          getExclusionBuilder().mergeFrom(value);
         } else {
           exclusion_ = value;
         }
-        onChanged();
       } else {
         exclusionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -837,14 +849,13 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearExclusion() {
-      if (exclusionBuilder_ == null) {
-        exclusion_ = null;
-        onChanged();
-      } else {
-        exclusion_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      exclusion_ = null;
+      if (exclusionBuilder_ != null) {
+        exclusionBuilder_.dispose();
         exclusionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -860,7 +871,7 @@ public final class CreateExclusionRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.logging.v2.LogExclusion.Builder getExclusionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getExclusionFieldBuilder().getBuilder();
     }

@@ -68,7 +68,9 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -183,7 +185,9 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.logging.v2.LogExclusionOrBuilder getExclusionOrBuilder() {
-    return getExclusion();
+    return exclusion_ == null
+        ? com.google.logging.v2.LogExclusion.getDefaultInstance()
+        : exclusion_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
@@ -247,7 +251,7 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -475,18 +479,16 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (exclusionBuilder_ == null) {
-        exclusion_ = null;
-      } else {
-        exclusion_ = null;
+      exclusion_ = null;
+      if (exclusionBuilder_ != null) {
+        exclusionBuilder_.dispose();
         exclusionBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -516,19 +518,24 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
     public com.google.logging.v2.UpdateExclusionRequest buildPartial() {
       com.google.logging.v2.UpdateExclusionRequest result =
           new com.google.logging.v2.UpdateExclusionRequest(this);
-      result.name_ = name_;
-      if (exclusionBuilder_ == null) {
-        result.exclusion_ = exclusion_;
-      } else {
-        result.exclusion_ = exclusionBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.logging.v2.UpdateExclusionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.exclusion_ = exclusionBuilder_ == null ? exclusion_ : exclusionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -578,6 +585,7 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
       if (other == com.google.logging.v2.UpdateExclusionRequest.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasExclusion()) {
@@ -615,19 +623,19 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getExclusionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -646,6 +654,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -732,8 +742,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -757,8 +767,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -787,8 +797,8 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -814,7 +824,7 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * @return Whether the exclusion field is set.
      */
     public boolean hasExclusion() {
-      return exclusionBuilder_ != null || exclusion_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -857,11 +867,11 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         exclusion_ = value;
-        onChanged();
       } else {
         exclusionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -879,11 +889,11 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
     public Builder setExclusion(com.google.logging.v2.LogExclusion.Builder builderForValue) {
       if (exclusionBuilder_ == null) {
         exclusion_ = builderForValue.build();
-        onChanged();
       } else {
         exclusionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -900,19 +910,18 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeExclusion(com.google.logging.v2.LogExclusion value) {
       if (exclusionBuilder_ == null) {
-        if (exclusion_ != null) {
-          exclusion_ =
-              com.google.logging.v2.LogExclusion.newBuilder(exclusion_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && exclusion_ != null
+            && exclusion_ != com.google.logging.v2.LogExclusion.getDefaultInstance()) {
+          getExclusionBuilder().mergeFrom(value);
         } else {
           exclusion_ = value;
         }
-        onChanged();
       } else {
         exclusionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -928,14 +937,13 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearExclusion() {
-      if (exclusionBuilder_ == null) {
-        exclusion_ = null;
-        onChanged();
-      } else {
-        exclusion_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      exclusion_ = null;
+      if (exclusionBuilder_ != null) {
+        exclusionBuilder_.dispose();
         exclusionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -951,7 +959,7 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.logging.v2.LogExclusion.Builder getExclusionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getExclusionFieldBuilder().getBuilder();
     }
@@ -1029,7 +1037,7 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1078,11 +1086,11 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1103,11 +1111,11 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1127,17 +1135,18 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1156,14 +1165,13 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1182,7 +1190,7 @@ public final class UpdateExclusionRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

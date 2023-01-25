@@ -71,7 +71,9 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KMS_KEY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object kmsKeyName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKeyName_ = "";
   /**
    *
    *
@@ -201,7 +205,9 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KMS_SERVICE_ACCOUNT_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object kmsServiceAccountId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsServiceAccountId_ = "";
   /**
    *
    *
@@ -268,7 +274,9 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STORAGE_LOCATION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object storageLocation_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object storageLocation_ = "";
   /**
    *
    *
@@ -321,7 +329,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISABLE_DEFAULT_SINK_FIELD_NUMBER = 5;
-  private boolean disableDefaultSink_;
+  private boolean disableDefaultSink_ = false;
   /**
    *
    *
@@ -572,16 +580,12 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       kmsKeyName_ = "";
-
       kmsServiceAccountId_ = "";
-
       storageLocation_ = "";
-
       disableDefaultSink_ = false;
-
       return this;
     }
 
@@ -608,13 +612,30 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.logging.v2.Settings buildPartial() {
       com.google.logging.v2.Settings result = new com.google.logging.v2.Settings(this);
-      result.name_ = name_;
-      result.kmsKeyName_ = kmsKeyName_;
-      result.kmsServiceAccountId_ = kmsServiceAccountId_;
-      result.storageLocation_ = storageLocation_;
-      result.disableDefaultSink_ = disableDefaultSink_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.logging.v2.Settings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.kmsKeyName_ = kmsKeyName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.kmsServiceAccountId_ = kmsServiceAccountId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.storageLocation_ = storageLocation_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.disableDefaultSink_ = disableDefaultSink_;
+      }
     }
 
     @java.lang.Override
@@ -664,18 +685,22 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.logging.v2.Settings.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getKmsKeyName().isEmpty()) {
         kmsKeyName_ = other.kmsKeyName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getKmsServiceAccountId().isEmpty()) {
         kmsServiceAccountId_ = other.kmsServiceAccountId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getStorageLocation().isEmpty()) {
         storageLocation_ = other.storageLocation_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.getDisableDefaultSink() != false) {
@@ -710,31 +735,31 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 kmsKeyName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 kmsServiceAccountId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 storageLocation_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 disableDefaultSink_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -753,6 +778,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -815,8 +842,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -832,8 +859,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -854,8 +881,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -969,8 +996,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       kmsKeyName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1002,8 +1029,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKmsKeyName() {
-
       kmsKeyName_ = getDefaultInstance().getKmsKeyName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1040,8 +1067,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       kmsKeyName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1134,8 +1161,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       kmsServiceAccountId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1160,8 +1187,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKmsServiceAccountId() {
-
       kmsServiceAccountId_ = getDefaultInstance().getKmsServiceAccountId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1191,8 +1218,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       kmsServiceAccountId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1264,8 +1291,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       storageLocation_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1283,8 +1310,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStorageLocation() {
-
       storageLocation_ = getDefaultInstance().getStorageLocation();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1307,8 +1334,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       storageLocation_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1350,6 +1377,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     public Builder setDisableDefaultSink(boolean value) {
 
       disableDefaultSink_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1368,7 +1396,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisableDefaultSink() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       disableDefaultSink_ = false;
       onChanged();
       return this;

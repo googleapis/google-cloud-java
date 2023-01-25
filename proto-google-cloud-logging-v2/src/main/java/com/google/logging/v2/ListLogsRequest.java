@@ -70,7 +70,9 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -131,7 +133,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
@@ -151,7 +153,9 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 3;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -206,6 +210,8 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int RESOURCE_NAMES_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList resourceNames_;
   /**
    *
@@ -539,14 +545,12 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       pageSize_ = 0;
-
       pageToken_ = "";
-
       resourceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -574,17 +578,33 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
     public com.google.logging.v2.ListLogsRequest buildPartial() {
       com.google.logging.v2.ListLogsRequest result =
           new com.google.logging.v2.ListLogsRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
-      result.pageSize_ = pageSize_;
-      result.pageToken_ = pageToken_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        resourceNames_ = resourceNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.resourceNames_ = resourceNames_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.logging.v2.ListLogsRequest result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        resourceNames_ = resourceNames_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.resourceNames_ = resourceNames_;
+    }
+
+    private void buildPartial0(com.google.logging.v2.ListLogsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
     }
 
     @java.lang.Override
@@ -634,6 +654,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.logging.v2.ListLogsRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getPageSize() != 0) {
@@ -641,12 +662,13 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.resourceNames_.isEmpty()) {
         if (resourceNames_.isEmpty()) {
           resourceNames_ = other.resourceNames_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureResourceNamesIsMutable();
           resourceNames_.addAll(other.resourceNames_);
@@ -682,19 +704,19 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 pageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 66:
@@ -802,8 +824,8 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -825,8 +847,8 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -853,8 +875,8 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -894,6 +916,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -911,7 +934,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -987,8 +1010,8 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1007,8 +1030,8 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1032,8 +1055,8 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1042,9 +1065,9 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureResourceNamesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         resourceNames_ = new com.google.protobuf.LazyStringArrayList(resourceNames_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1267,7 +1290,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearResourceNames() {
       resourceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }

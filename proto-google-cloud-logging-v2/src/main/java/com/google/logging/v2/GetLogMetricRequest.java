@@ -68,7 +68,9 @@ public final class GetLogMetricRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int METRIC_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object metricName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object metricName_ = "";
   /**
    *
    *
@@ -319,8 +321,8 @@ public final class GetLogMetricRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       metricName_ = "";
-
       return this;
     }
 
@@ -348,9 +350,18 @@ public final class GetLogMetricRequest extends com.google.protobuf.GeneratedMess
     public com.google.logging.v2.GetLogMetricRequest buildPartial() {
       com.google.logging.v2.GetLogMetricRequest result =
           new com.google.logging.v2.GetLogMetricRequest(this);
-      result.metricName_ = metricName_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.logging.v2.GetLogMetricRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.metricName_ = metricName_;
+      }
     }
 
     @java.lang.Override
@@ -400,6 +411,7 @@ public final class GetLogMetricRequest extends com.google.protobuf.GeneratedMess
       if (other == com.google.logging.v2.GetLogMetricRequest.getDefaultInstance()) return this;
       if (!other.getMetricName().isEmpty()) {
         metricName_ = other.metricName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -431,7 +443,7 @@ public final class GetLogMetricRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 metricName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -450,6 +462,8 @@ public final class GetLogMetricRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object metricName_ = "";
     /**
@@ -521,8 +535,8 @@ public final class GetLogMetricRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       metricName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -541,8 +555,8 @@ public final class GetLogMetricRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearMetricName() {
-
       metricName_ = getDefaultInstance().getMetricName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -566,8 +580,8 @@ public final class GetLogMetricRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       metricName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

@@ -328,7 +328,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
     }
 
     public static final int REASON_FIELD_NUMBER = 1;
-    private int reason_;
+    private int reason_ = 0;
     /**
      *
      *
@@ -357,16 +357,15 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public com.google.logging.v2.TailLogEntriesResponse.SuppressionInfo.Reason getReason() {
-      @SuppressWarnings("deprecation")
       com.google.logging.v2.TailLogEntriesResponse.SuppressionInfo.Reason result =
-          com.google.logging.v2.TailLogEntriesResponse.SuppressionInfo.Reason.valueOf(reason_);
+          com.google.logging.v2.TailLogEntriesResponse.SuppressionInfo.Reason.forNumber(reason_);
       return result == null
           ? com.google.logging.v2.TailLogEntriesResponse.SuppressionInfo.Reason.UNRECOGNIZED
           : result;
     }
 
     public static final int SUPPRESSED_COUNT_FIELD_NUMBER = 2;
-    private int suppressedCount_;
+    private int suppressedCount_ = 0;
     /**
      *
      *
@@ -596,10 +595,9 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         reason_ = 0;
-
         suppressedCount_ = 0;
-
         return this;
       }
 
@@ -628,10 +626,22 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       public com.google.logging.v2.TailLogEntriesResponse.SuppressionInfo buildPartial() {
         com.google.logging.v2.TailLogEntriesResponse.SuppressionInfo result =
             new com.google.logging.v2.TailLogEntriesResponse.SuppressionInfo(this);
-        result.reason_ = reason_;
-        result.suppressedCount_ = suppressedCount_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.logging.v2.TailLogEntriesResponse.SuppressionInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.reason_ = reason_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.suppressedCount_ = suppressedCount_;
+        }
       }
 
       @java.lang.Override
@@ -718,13 +728,13 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
               case 8:
                 {
                   reason_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   suppressedCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -743,6 +753,8 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int reason_ = 0;
       /**
@@ -773,8 +785,8 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder setReasonValue(int value) {
-
         reason_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -791,9 +803,8 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
        */
       @java.lang.Override
       public com.google.logging.v2.TailLogEntriesResponse.SuppressionInfo.Reason getReason() {
-        @SuppressWarnings("deprecation")
         com.google.logging.v2.TailLogEntriesResponse.SuppressionInfo.Reason result =
-            com.google.logging.v2.TailLogEntriesResponse.SuppressionInfo.Reason.valueOf(reason_);
+            com.google.logging.v2.TailLogEntriesResponse.SuppressionInfo.Reason.forNumber(reason_);
         return result == null
             ? com.google.logging.v2.TailLogEntriesResponse.SuppressionInfo.Reason.UNRECOGNIZED
             : result;
@@ -815,7 +826,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         reason_ = value.getNumber();
         onChanged();
         return this;
@@ -832,7 +843,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearReason() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         reason_ = 0;
         onChanged();
         return this;
@@ -869,6 +880,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       public Builder setSuppressedCount(int value) {
 
         suppressedCount_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -884,7 +896,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearSuppressedCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         suppressedCount_ = 0;
         onChanged();
         return this;
@@ -958,6 +970,8 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
   }
 
   public static final int ENTRIES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.logging.v2.LogEntry> entries_;
   /**
    *
@@ -1037,6 +1051,8 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
   }
 
   public static final int SUPPRESSION_INFO_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.logging.v2.TailLogEntriesResponse.SuppressionInfo>
       suppressionInfo_;
   /**
@@ -1345,6 +1361,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (entriesBuilder_ == null) {
         entries_ = java.util.Collections.emptyList();
       } else {
@@ -1386,7 +1403,15 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
     public com.google.logging.v2.TailLogEntriesResponse buildPartial() {
       com.google.logging.v2.TailLogEntriesResponse result =
           new com.google.logging.v2.TailLogEntriesResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.logging.v2.TailLogEntriesResponse result) {
       if (entriesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           entries_ = java.util.Collections.unmodifiableList(entries_);
@@ -1405,8 +1430,10 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       } else {
         result.suppressionInfo_ = suppressionInfoBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.logging.v2.TailLogEntriesResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

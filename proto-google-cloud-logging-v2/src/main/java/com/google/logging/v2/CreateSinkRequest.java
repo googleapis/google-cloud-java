@@ -68,7 +68,9 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -180,11 +182,11 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.logging.v2.LogSinkOrBuilder getSinkOrBuilder() {
-    return getSink();
+    return sink_ == null ? com.google.logging.v2.LogSink.getDefaultInstance() : sink_;
   }
 
   public static final int UNIQUE_WRITER_IDENTITY_FIELD_NUMBER = 3;
-  private boolean uniqueWriterIdentity_;
+  private boolean uniqueWriterIdentity_ = false;
   /**
    *
    *
@@ -429,16 +431,14 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (sinkBuilder_ == null) {
-        sink_ = null;
-      } else {
-        sink_ = null;
+      sink_ = null;
+      if (sinkBuilder_ != null) {
+        sinkBuilder_.dispose();
         sinkBuilder_ = null;
       }
       uniqueWriterIdentity_ = false;
-
       return this;
     }
 
@@ -466,15 +466,24 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
     public com.google.logging.v2.CreateSinkRequest buildPartial() {
       com.google.logging.v2.CreateSinkRequest result =
           new com.google.logging.v2.CreateSinkRequest(this);
-      result.parent_ = parent_;
-      if (sinkBuilder_ == null) {
-        result.sink_ = sink_;
-      } else {
-        result.sink_ = sinkBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.uniqueWriterIdentity_ = uniqueWriterIdentity_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.logging.v2.CreateSinkRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sink_ = sinkBuilder_ == null ? sink_ : sinkBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.uniqueWriterIdentity_ = uniqueWriterIdentity_;
+      }
     }
 
     @java.lang.Override
@@ -524,6 +533,7 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
       if (other == com.google.logging.v2.CreateSinkRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasSink()) {
@@ -561,19 +571,19 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getSinkFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 uniqueWriterIdentity_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -592,6 +602,8 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -681,8 +693,8 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -707,8 +719,8 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -738,8 +750,8 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -763,7 +775,7 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the sink field is set.
      */
     public boolean hasSink() {
-      return sinkBuilder_ != null || sink_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -800,11 +812,11 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         sink_ = value;
-        onChanged();
       } else {
         sinkBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -820,11 +832,11 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
     public Builder setSink(com.google.logging.v2.LogSink.Builder builderForValue) {
       if (sinkBuilder_ == null) {
         sink_ = builderForValue.build();
-        onChanged();
       } else {
         sinkBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -839,16 +851,18 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeSink(com.google.logging.v2.LogSink value) {
       if (sinkBuilder_ == null) {
-        if (sink_ != null) {
-          sink_ = com.google.logging.v2.LogSink.newBuilder(sink_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && sink_ != null
+            && sink_ != com.google.logging.v2.LogSink.getDefaultInstance()) {
+          getSinkBuilder().mergeFrom(value);
         } else {
           sink_ = value;
         }
-        onChanged();
       } else {
         sinkBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -862,14 +876,13 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
      * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearSink() {
-      if (sinkBuilder_ == null) {
-        sink_ = null;
-        onChanged();
-      } else {
-        sink_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      sink_ = null;
+      if (sinkBuilder_ != null) {
+        sinkBuilder_.dispose();
         sinkBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -883,7 +896,7 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
      * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.logging.v2.LogSink.Builder getSinkBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSinkFieldBuilder().getBuilder();
     }
@@ -980,6 +993,7 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
     public Builder setUniqueWriterIdentity(boolean value) {
 
       uniqueWriterIdentity_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1004,7 +1018,7 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearUniqueWriterIdentity() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       uniqueWriterIdentity_ = false;
       onChanged();
       return this;
