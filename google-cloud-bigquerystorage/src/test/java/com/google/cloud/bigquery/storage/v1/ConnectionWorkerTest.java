@@ -16,6 +16,9 @@
 package com.google.cloud.bigquery.storage.v1;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
+import static org.junit.Assert.assertTrue;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.FlowController;
@@ -28,7 +31,9 @@ import com.google.cloud.bigquery.storage.test.Test.InnerType;
 import com.google.cloud.bigquery.storage.v1.ConnectionWorker.Load;
 import com.google.protobuf.DescriptorProtos;
 import com.google.protobuf.Int64Value;
+import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -52,6 +57,7 @@ public class ConnectionWorkerTest {
   @Before
   public void setUp() throws Exception {
     testBigQueryWrite = new FakeBigQueryWrite();
+    ConnectionWorker.setMaxInflightQueueWaitTime(300000);
     serviceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(testBigQueryWrite));
@@ -278,6 +284,63 @@ public class ConnectionWorkerTest {
 
       assertThat(connectionWorker.getLoad().destinationCount()).isEqualTo(1);
       assertThat(connectionWorker.getLoad().inFlightRequestsBytes()).isEqualTo(0);
+    }
+  }
+
+  @Test
+  public void testAppendButInflightQueueFull() throws Exception {
+    ConnectionWorker connectionWorker =
+        new ConnectionWorker(
+            TEST_STREAM_1,
+            createProtoSchema("foo"),
+            6,
+            100000,
+            Duration.ofSeconds(100),
+            FlowController.LimitExceededBehavior.Block,
+            TEST_TRACE_ID,
+            client.getSettings());
+    testBigQueryWrite.setResponseSleep(org.threeten.bp.Duration.ofSeconds(1));
+    ConnectionWorker.setMaxInflightQueueWaitTime(500);
+    ProtoSchema schema1 = createProtoSchema("foo");
+
+    long appendCount = 6;
+    for (int i = 0; i < appendCount; i++) {
+      testBigQueryWrite.addResponse(createAppendResponse(i));
+    }
+
+    // In total insert 6 requests, since the max queue size is 5 we will stuck at the 6th request.
+    List<ApiFuture<AppendRowsResponse>> futures = new ArrayList<>();
+    for (int i = 0; i < appendCount; i++) {
+      long startTime = System.currentTimeMillis();
+      // At the last request we wait more than 500 millisecond for inflight quota.
+      if (i == 5) {
+        assertThrows(
+            StatusRuntimeException.class,
+            () -> {
+              sendTestMessage(
+                  connectionWorker,
+                  TEST_STREAM_1,
+                  schema1,
+                  createFooProtoRows(new String[] {String.valueOf(5)}),
+                  5);
+            });
+        long timeDiff = System.currentTimeMillis() - startTime;
+        assertEquals(connectionWorker.getLoad().inFlightRequestsCount(), 5);
+        assertTrue(timeDiff > 500);
+      } else {
+        futures.add(
+            sendTestMessage(
+                connectionWorker,
+                TEST_STREAM_1,
+                schema1,
+                createFooProtoRows(new String[] {String.valueOf(i)}),
+                i));
+        assertEquals(connectionWorker.getLoad().inFlightRequestsCount(), i + 1);
+      }
+    }
+
+    for (int i = 0; i < appendCount - 1; i++) {
+      assertEquals(i, futures.get(i).get().getAppendResult().getOffset().getValue());
     }
   }
 

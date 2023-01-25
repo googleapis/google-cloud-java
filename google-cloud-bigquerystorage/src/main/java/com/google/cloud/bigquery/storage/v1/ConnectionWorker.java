@@ -61,6 +61,9 @@ import javax.annotation.concurrent.GuardedBy;
 class ConnectionWorker implements AutoCloseable {
   private static final Logger log = Logger.getLogger(StreamWriter.class.getName());
 
+  // Maximum wait time on inflight quota before error out.
+  private static long INFLIGHT_QUOTA_MAX_WAIT_TIME_MILLI = 300000;
+
   private Lock lock;
   private Condition hasMessageInWaitingQueue;
   private Condition inflightReduced;
@@ -322,7 +325,14 @@ class ConnectionWorker implements AutoCloseable {
       this.inflightBytes += requestWrapper.messageSize;
       waitingRequestQueue.addLast(requestWrapper);
       hasMessageInWaitingQueue.signal();
-      maybeWaitForInflightQuota();
+      try {
+        maybeWaitForInflightQuota();
+      } catch (StatusRuntimeException ex) {
+        --this.inflightRequests;
+        waitingRequestQueue.pollLast();
+        this.inflightBytes -= requestWrapper.messageSize;
+        throw ex;
+      }
       return requestWrapper.appendResult;
     } finally {
       this.lock.unlock();
@@ -346,6 +356,15 @@ class ConnectionWorker implements AutoCloseable {
             Status.fromCode(Code.CANCELLED)
                 .withCause(e)
                 .withDescription("Interrupted while waiting for quota."));
+      }
+      long current_wait_time = System.currentTimeMillis() - start_time;
+      if (current_wait_time > INFLIGHT_QUOTA_MAX_WAIT_TIME_MILLI) {
+        throw new StatusRuntimeException(
+            Status.fromCode(Code.CANCELLED)
+                .withDescription(
+                    String.format(
+                        "Interrupted while waiting for quota due to long waiting time %sms",
+                        current_wait_time)));
       }
     }
     inflightWaitSec.set((System.currentTimeMillis() - start_time) / 1000);
@@ -373,7 +392,6 @@ class ConnectionWorker implements AutoCloseable {
     log.fine("Waiting for append thread to finish. Stream: " + streamName);
     try {
       appendThread.join();
-      log.info("User close complete. Stream: " + streamName);
     } catch (InterruptedException e) {
       // Unexpected. Just swallow the exception with logging.
       log.warning(
@@ -387,6 +405,7 @@ class ConnectionWorker implements AutoCloseable {
     }
 
     try {
+      log.fine("Begin shutting down user callback thread pool for stream " + streamName);
       threadPool.shutdown();
       threadPool.awaitTermination(3, TimeUnit.MINUTES);
     } catch (InterruptedException e) {
@@ -396,7 +415,10 @@ class ConnectionWorker implements AutoCloseable {
               + streamName
               + " is interrupted with exception: "
               + e.toString());
+      throw new IllegalStateException(
+          "Thread pool shutdown is interrupted for stream " + streamName);
     }
+    log.info("User close finishes for stream " + streamName);
   }
 
   /*
@@ -856,6 +878,11 @@ class ConnectionWorker implements AutoCloseable {
     public static void setOverwhelmedCountsThreshold(double newThreshold) {
       overwhelmedInflightCount = newThreshold;
     }
+  }
+
+  @VisibleForTesting
+  static void setMaxInflightQueueWaitTime(long waitTime) {
+    INFLIGHT_QUOTA_MAX_WAIT_TIME_MILLI = waitTime;
   }
 
   @AutoValue

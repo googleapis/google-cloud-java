@@ -105,6 +105,7 @@ public class StreamWriterTest {
   @Before
   public void setUp() throws Exception {
     testBigQueryWrite = new FakeBigQueryWrite();
+    ConnectionWorker.setMaxInflightQueueWaitTime(300000);
     serviceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(testBigQueryWrite));
