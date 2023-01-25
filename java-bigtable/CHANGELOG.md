@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.18.3](https://github.com/googleapis/java-bigtable/compare/v2.18.2...v2.18.3) (2023-01-24)
+
+
+### Bug Fixes
+
+* Make channel priming work with batch endpoint ([#1600](https://github.com/googleapis/java-bigtable/issues/1600)) ([133c7e5](https://github.com/googleapis/java-bigtable/commit/133c7e50a5a84e880f23cfc7ed88ea2250a2994d))
+
 ## [2.18.2](https://github.com/googleapis/java-bigtable/compare/v2.18.1...v2.18.2) (2023-01-24)
 
 
