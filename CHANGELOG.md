@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.28.4](https://github.com/googleapis/java-bigquerystorage/compare/v2.28.3...v2.28.4) (2023-01-25)
+
+
+### Bug Fixes
+
+* Fix one potential root cause of deadlock in connection worker ([#1955](https://github.com/googleapis/java-bigquerystorage/issues/1955)) ([598ce5e](https://github.com/googleapis/java-bigquerystorage/commit/598ce5eb5e8d5efaaa841495794be4d39c6c0fce))
+
 ## [2.28.3](https://github.com/googleapis/java-bigquerystorage/compare/v2.28.2...v2.28.3) (2023-01-20)
 
 
