@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.14.2](https://github.com/googleapis/java-logging/compare/v3.14.1...v3.14.2) (2023-01-24)
+
+
+### Bug Fixes
+
+* **java:** Skip fixing poms for special modules ([#1744](https://github.com/googleapis/java-logging/issues/1744)) ([#1256](https://github.com/googleapis/java-logging/issues/1256)) ([09eeff0](https://github.com/googleapis/java-logging/commit/09eeff0b4608bad1e854252ff73688a867a071f1))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.1.2 ([#1258](https://github.com/googleapis/java-logging/issues/1258)) ([d4bc663](https://github.com/googleapis/java-logging/commit/d4bc663a0a0295594fb6333cf9bf2a6fd7a7b7e8))
+
 ## [3.14.1](https://github.com/googleapis/java-logging/compare/v3.14.0...v3.14.1) (2023-01-10)
 
 
