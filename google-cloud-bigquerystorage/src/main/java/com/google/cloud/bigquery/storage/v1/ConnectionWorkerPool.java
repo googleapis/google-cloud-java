@@ -21,6 +21,7 @@ import com.google.api.gax.batching.FlowController;
 import com.google.auto.value.AutoValue;
 import com.google.cloud.bigquery.storage.v1.ConnectionWorker.Load;
 import com.google.cloud.bigquery.storage.v1.ConnectionWorker.TableSchemaAndTimestamp;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Stopwatch;
 import com.google.common.collect.ImmutableList;
@@ -192,7 +193,7 @@ public class ConnectionWorkerPool {
   /** Static setting for connection pool. */
   private static Settings settings = Settings.builder().build();
 
-  public ConnectionWorkerPool(
+  ConnectionWorkerPool(
       long maxInflightRequests,
       long maxInflightBytes,
       java.time.Duration maxRetryDuration,
@@ -218,13 +219,12 @@ public class ConnectionWorkerPool {
   }
 
   /** Distributes the writing of a message to an underlying connection. */
-  public ApiFuture<AppendRowsResponse> append(StreamWriter streamWriter, ProtoRows rows) {
+  ApiFuture<AppendRowsResponse> append(StreamWriter streamWriter, ProtoRows rows) {
     return append(streamWriter, rows, -1);
   }
 
   /** Distributes the writing of a message to an underlying connection. */
-  public ApiFuture<AppendRowsResponse> append(
-      StreamWriter streamWriter, ProtoRows rows, long offset) {
+  ApiFuture<AppendRowsResponse> append(StreamWriter streamWriter, ProtoRows rows, long offset) {
     // We are in multiplexing mode after entering the following logic.
     ConnectionWorker connectionWorker;
     lock.lock();
@@ -371,7 +371,7 @@ public class ConnectionWorkerPool {
    * <p>The corresponding worker is not closed until there is no stream reference is targeting to
    * that worker.
    */
-  public void close(StreamWriter streamWriter) {
+  void close(StreamWriter streamWriter) {
     lock.lock();
     try {
       streamWriterToConnection.remove(streamWriter);
@@ -403,7 +403,7 @@ public class ConnectionWorkerPool {
   }
 
   /** Fetch the wait seconds from corresponding worker. */
-  public long getInflightWaitSeconds(StreamWriter streamWriter) {
+  long getInflightWaitSeconds(StreamWriter streamWriter) {
     lock.lock();
     try {
       ConnectionWorker connectionWorker = streamWriterToConnection.get(streamWriter);
@@ -422,7 +422,8 @@ public class ConnectionWorkerPool {
   }
 
   /** Enable Test related logic. */
-  public static void enableTestingLogic() {
+  @VisibleForTesting
+  static void enableTestingLogic() {
     enableTesting = true;
   }
 

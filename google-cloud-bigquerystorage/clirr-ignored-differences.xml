@@ -108,4 +108,38 @@
     <className>com/google/cloud/bigquery/storage/v1/ConnectionWorkerPool</className>
     <method>ConnectionWorkerPool(long, long, java.time.Duration, com.google.api.gax.batching.FlowController$LimitExceededBehavior, java.lang.String, com.google.cloud.bigquery.storage.v1.BigQueryWriteClient, boolean)</method>
   </difference>
+  <difference>
+    <differenceType>1001</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ConnectionWorker</className>
+  </difference>
+  <difference>
+    <differenceType>7009</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ConnectionWorkerPool</className>
+    <method>ConnectionWorkerPool(long, long, java.time.Duration, com.google.api.gax.batching.FlowController$LimitExceededBehavior, java.lang.String, com.google.cloud.bigquery.storage.v1.BigQueryWriteClient, boolean)</method>
+  </difference>
+  <difference>
+    <differenceType>7009</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ConnectionWorkerPool</className>
+    <method>com.google.api.core.ApiFuture append(com.google.cloud.bigquery.storage.v1.StreamWriter, com.google.cloud.bigquery.storage.v1.ProtoRows)</method>
+  </difference>
+  <difference>
+    <differenceType>7009</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ConnectionWorkerPool</className>
+    <method>com.google.api.core.ApiFuture append(com.google.cloud.bigquery.storage.v1.StreamWriter, com.google.cloud.bigquery.storage.v1.ProtoRows, long)</method>
+  </difference>
+  <difference>
+    <differenceType>7009</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ConnectionWorkerPool</className>
+    <method>void close(com.google.cloud.bigquery.storage.v1.StreamWriter)</method>
+  </difference>
+  <difference>
+    <differenceType>7009</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ConnectionWorkerPool</className>
+    <method>void enableTestingLogic()</method>
+  </difference>
+  <difference>
+    <differenceType>7009</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/ConnectionWorkerPool</className>
+    <method>long getInflightWaitSeconds(com.google.cloud.bigquery.storage.v1.StreamWriter)</method>
+  </difference>
 </differences>
