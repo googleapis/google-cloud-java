@@ -23,6 +23,19 @@ class GcpMetricsConstants {
   public static String RESULT_DESC = "Outcome.";
   public static String RESULT_SUCCESS = "SUCCESS";
   public static String RESULT_ERROR = "ERROR";
+  public static String ENDPOINT_LABEL = "endpoint";
+  public static String ENDPOINT_LABEL_DESC = "gRPC endpoint (addr:port).";
+  public static String STATUS_LABEL = "status";
+  public static String STATUS_LABEL_DESC = "Endpoint status.";
+  public static String STATUS_AVAILABLE = "AVAILABLE";
+  public static String STATUS_UNAVAILABLE = "UNAVAILABLE";
+  public static String ME_NAME_LABEL = "me_name";
+  public static String ME_NAME_LABEL_DESC = "Multi-endpoint name.";
+  public static String TYPE_LABEL = "type";
+  public static String TYPE_LABEL_DESC = "Switch type (fallback/recover/replace).";
+  public static String TYPE_FALLBACK = "FALLBACK";
+  public static String TYPE_RECOVER = "RECOVER";
+  public static String TYPE_REPLACE = "REPLACE";
 
   // Unit to represent count.
   static final String COUNT = "1";
@@ -54,4 +67,7 @@ class GcpMetricsConstants {
   public static String METRIC_MAX_UNRESPONSIVE_DETECTION_TIME = "max_unresponsive_detection_time";
   public static String METRIC_MIN_UNRESPONSIVE_DROPPED_CALLS = "min_unresponsive_dropped_calls";
   public static String METRIC_MAX_UNRESPONSIVE_DROPPED_CALLS = "max_unresponsive_dropped_calls";
+  public static String METRIC_ENDPOINT_STATE = "endpoint_state";
+  public static String METRIC_ENDPOINT_SWITCH = "endpoint_switch";
+  public static String METRIC_CURRENT_ENDPOINT = "current_endpoint";
 }

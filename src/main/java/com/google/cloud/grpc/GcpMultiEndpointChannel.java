@@ -16,6 +16,23 @@
 
 package com.google.cloud.grpc;
 
+import static com.google.cloud.grpc.GcpMetricsConstants.COUNT;
+import static com.google.cloud.grpc.GcpMetricsConstants.ENDPOINT_LABEL;
+import static com.google.cloud.grpc.GcpMetricsConstants.ENDPOINT_LABEL_DESC;
+import static com.google.cloud.grpc.GcpMetricsConstants.METRIC_CURRENT_ENDPOINT;
+import static com.google.cloud.grpc.GcpMetricsConstants.METRIC_ENDPOINT_STATE;
+import static com.google.cloud.grpc.GcpMetricsConstants.METRIC_ENDPOINT_SWITCH;
+import static com.google.cloud.grpc.GcpMetricsConstants.ME_NAME_LABEL;
+import static com.google.cloud.grpc.GcpMetricsConstants.ME_NAME_LABEL_DESC;
+import static com.google.cloud.grpc.GcpMetricsConstants.STATUS_AVAILABLE;
+import static com.google.cloud.grpc.GcpMetricsConstants.STATUS_LABEL;
+import static com.google.cloud.grpc.GcpMetricsConstants.STATUS_LABEL_DESC;
+import static com.google.cloud.grpc.GcpMetricsConstants.STATUS_UNAVAILABLE;
+import static com.google.cloud.grpc.GcpMetricsConstants.TYPE_FALLBACK;
+import static com.google.cloud.grpc.GcpMetricsConstants.TYPE_LABEL;
+import static com.google.cloud.grpc.GcpMetricsConstants.TYPE_LABEL_DESC;
+import static com.google.cloud.grpc.GcpMetricsConstants.TYPE_RECOVER;
+import static com.google.cloud.grpc.GcpMetricsConstants.TYPE_REPLACE;
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
 import static java.util.concurrent.TimeUnit.NANOSECONDS;
 
@@ -36,14 +53,20 @@ import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
+import io.opencensus.metrics.DerivedLongCumulative;
+import io.opencensus.metrics.DerivedLongGauge;
 import io.opencensus.metrics.LabelKey;
 import io.opencensus.metrics.LabelValue;
+import io.opencensus.metrics.MetricOptions;
+import io.opencensus.metrics.MetricRegistry;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -52,6 +75,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
 
 /**
  * The purpose of GcpMultiEndpointChannel is twofold:
@@ -120,14 +144,20 @@ import java.util.concurrent.TimeUnit;
  */
 public class GcpMultiEndpointChannel extends ManagedChannel {
 
+  private static final Logger logger = Logger.getLogger(GcpMultiEndpointChannel.class.getName());
   public static final CallOptions.Key<String> ME_KEY = CallOptions.Key.create("MultiEndpoint");
   public static final Context.Key<String> ME_CONTEXT_KEY = Context.key("MultiEndpoint");
-  private final LabelKey endpointKey =
-      LabelKey.create("endpoint", "Endpoint address.");
+  private final LabelKey endpointKey = LabelKey.create(ENDPOINT_LABEL, ENDPOINT_LABEL_DESC);
   private final Map<String, MultiEndpoint> multiEndpoints = new ConcurrentHashMap<>();
   private MultiEndpoint defaultMultiEndpoint;
   private final ApiConfig apiConfig;
   private final GcpManagedChannelOptions gcpManagedChannelOptions;
+  private DerivedLongGauge endpointStateMetric;
+  private DerivedLongCumulative endpointSwitchMetric;
+  private DerivedLongGauge currentEndpointMetric;
+
+  private final Map<String, CurrentEndpointWatcher> currentEndpointWatchers =
+      new ConcurrentHashMap<>();
 
   private final Map<String, GcpManagedChannel> pools = new ConcurrentHashMap<>();
 
@@ -149,6 +179,7 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
       GcpManagedChannelOptions gcpManagedChannelOptions) {
     this.apiConfig = apiConfig;
     this.gcpManagedChannelOptions = gcpManagedChannelOptions;
+    createMetrics();
     setMultiEndpoints(meOptions);
   }
 
@@ -156,21 +187,72 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
 
     private final ManagedChannel channel;
     private final String endpoint;
+    private ConnectivityState currentState;
 
     private EndpointStateMonitor(ManagedChannel channel, String endpoint) {
       this.endpoint = endpoint;
       this.channel = channel;
+      setUpMetrics();
       run();
+    }
+
+    private void setUpMetrics() {
+      if (endpointStateMetric == null) {
+        return;
+      }
+
+      endpointStateMetric.createTimeSeries(
+          Arrays.asList(
+              LabelValue.create(endpoint),
+              LabelValue.create(STATUS_AVAILABLE)
+          ),
+          this,
+          EndpointStateMonitor::reportAvailable
+          );
+      endpointStateMetric.createTimeSeries(
+          Arrays.asList(
+              LabelValue.create(endpoint),
+              LabelValue.create(STATUS_UNAVAILABLE)
+          ),
+          this,
+          EndpointStateMonitor::reportUnavailable
+      );
+    }
+
+    private void removeMetrics() {
+      if (endpointStateMetric == null) {
+        return;
+      }
+
+      endpointStateMetric.removeTimeSeries(Arrays.asList(
+          LabelValue.create(endpoint),
+          LabelValue.create(STATUS_AVAILABLE)
+      ));
+      endpointStateMetric.removeTimeSeries(Arrays.asList(
+          LabelValue.create(endpoint),
+          LabelValue.create(STATUS_UNAVAILABLE)
+      ));
+    }
+
+    private long reportAvailable() {
+      return ConnectivityState.READY.equals(currentState) ? 1 : 0;
+    }
+
+    private long reportUnavailable() {
+      return ConnectivityState.READY.equals(currentState) ? 0 : 1;
     }
 
     @Override
     public void run() {
       if (channel == null) {
+        removeMetrics();
         return;
       }
-      ConnectivityState newState = checkPoolState(channel, endpoint);
-      if (newState != ConnectivityState.SHUTDOWN) {
-        channel.notifyWhenStateChanged(newState, this);
+      currentState = checkPoolState(channel, endpoint);
+      if (currentState != ConnectivityState.SHUTDOWN) {
+        channel.notifyWhenStateChanged(currentState, this);
+      } else {
+        removeMetrics();
       }
     }
   }
@@ -236,6 +318,121 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
     return ManagedChannelBuilder.forAddress(serviceAddress, port);
   }
 
+  private static class CurrentEndpointWatcher {
+    private final MultiEndpoint me;
+    private final String endpoint;
+
+    public CurrentEndpointWatcher(MultiEndpoint me, String endpoint) {
+      this.me = me;
+      this.endpoint = endpoint;
+    }
+
+    public long getMetricValue() {
+      return endpoint.equals(me.getCurrentId()) ? 1 : 0;
+    }
+  }
+
+  private void setUpMetricsForMultiEndpoint(GcpMultiEndpointOptions options, MultiEndpoint me) {
+    String name = options.getName();
+    List<String> endpoints = options.getEndpoints();
+    endpointSwitchMetric.createTimeSeries(
+        Arrays.asList(
+            LabelValue.create(name),
+            LabelValue.create(TYPE_FALLBACK)
+        ),
+        me,
+        MultiEndpoint::getFallbackCnt
+    );
+    endpointSwitchMetric.createTimeSeries(
+        Arrays.asList(
+            LabelValue.create(name),
+            LabelValue.create(TYPE_RECOVER)
+        ),
+        me,
+        MultiEndpoint::getRecoverCnt
+    );
+    endpointSwitchMetric.createTimeSeries(
+        Arrays.asList(
+            LabelValue.create(name),
+            LabelValue.create(TYPE_REPLACE)
+        ),
+        me,
+        MultiEndpoint::getReplaceCnt
+    );
+    for (String e : endpoints) {
+      CurrentEndpointWatcher watcher = new CurrentEndpointWatcher(me, e);
+      currentEndpointWatchers.put(name + ":" + e, watcher);
+      currentEndpointMetric.createTimeSeries(
+          Arrays.asList(
+              LabelValue.create(name),
+              LabelValue.create(e)
+          ),
+          watcher,
+          CurrentEndpointWatcher::getMetricValue
+      );
+    }
+  }
+
+  private void updateMetricsForMultiEndpoint(GcpMultiEndpointOptions options, MultiEndpoint me) {
+    Set<String> newEndpoints = new HashSet<>(options.getEndpoints());
+    Set<String> existingEndpoints = new HashSet<>(me.getEndpoints());
+    for (String e : existingEndpoints) {
+      if (!newEndpoints.contains(e)) {
+        currentEndpointMetric.removeTimeSeries(
+            Arrays.asList(
+                LabelValue.create(options.getName()),
+                LabelValue.create(e)
+            )
+        );
+        currentEndpointWatchers.remove(options.getName() + ":" + e);
+      }
+    }
+    for (String e : newEndpoints) {
+      if (!existingEndpoints.contains(e)) {
+        CurrentEndpointWatcher watcher = new CurrentEndpointWatcher(me, e);
+        currentEndpointWatchers.put(options.getName() + ":" + e, watcher);
+        currentEndpointMetric.createTimeSeries(
+            Arrays.asList(
+                LabelValue.create(options.getName()),
+                LabelValue.create(e)
+            ),
+            watcher,
+            CurrentEndpointWatcher::getMetricValue
+        );
+      }
+    }
+  }
+
+  private void removeMetricsForMultiEndpoint(String name, MultiEndpoint me) {
+    endpointSwitchMetric.removeTimeSeries(
+        Arrays.asList(
+            LabelValue.create(name),
+            LabelValue.create(TYPE_FALLBACK)
+        )
+    );
+    endpointSwitchMetric.removeTimeSeries(
+        Arrays.asList(
+            LabelValue.create(name),
+            LabelValue.create(TYPE_RECOVER)
+        )
+    );
+    endpointSwitchMetric.removeTimeSeries(
+        Arrays.asList(
+            LabelValue.create(name),
+            LabelValue.create(TYPE_REPLACE)
+        )
+    );
+    for (String e : me.getEndpoints()) {
+      currentEndpointMetric.removeTimeSeries(
+          Arrays.asList(
+              LabelValue.create(name),
+              LabelValue.create(e)
+          )
+      );
+      currentEndpointWatchers.remove(name + ":" + e);
+    }
+  }
+
   /**
    * Update the list of MultiEndpoint configurations.
    *
@@ -267,14 +464,17 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
     meOptions.forEach(options -> {
       currentMultiEndpoints.add(options.getName());
       // Create or update MultiEndpoint
-      if (multiEndpoints.containsKey(options.getName())) {
-        multiEndpoints.get(options.getName()).setEndpoints(options.getEndpoints());
+      MultiEndpoint existingMe = multiEndpoints.get(options.getName());
+      if (existingMe != null) {
+        updateMetricsForMultiEndpoint(options, existingMe);
+        existingMe.setEndpoints(options.getEndpoints());
       } else {
-        multiEndpoints.put(options.getName(),
-            (new MultiEndpoint.Builder(options.getEndpoints()))
-                .withRecoveryTimeout(options.getRecoveryTimeout())
-                .withSwitchingDelay(options.getSwitchingDelay())
-                .build());
+        MultiEndpoint me = new MultiEndpoint.Builder(options.getEndpoints())
+            .withRecoveryTimeout(options.getRecoveryTimeout())
+            .withSwitchingDelay(options.getSwitchingDelay())
+            .build();
+        setUpMetricsForMultiEndpoint(options, me);
+        multiEndpoints.put(options.getName(), me);
       }
     });
 
@@ -318,7 +518,15 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
     defaultMultiEndpoint = multiEndpoints.get(meOptions.get(0).getName());
 
     // Remove obsolete multiendpoints.
-    multiEndpoints.keySet().removeIf(name -> !currentMultiEndpoints.contains(name));
+    Iterator<String> iter = multiEndpoints.keySet().iterator();
+    while (iter.hasNext()) {
+      String name = iter.next();
+      if (currentMultiEndpoints.contains(name)) {
+        continue;
+      }
+      removeMetricsForMultiEndpoint(name, multiEndpoints.get(name));
+      iter.remove();
+    }
 
     // Shutdown and remove the pools not present in options.
     final Set<String> poolsToRemove = new HashSet<>(pools.keySet());
@@ -348,6 +556,78 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
       pools.get(endpoint).shutdown();
       pools.remove(endpoint);
     }
+  }
+
+  private void createMetrics() {
+    if (gcpManagedChannelOptions.getMetricsOptions() == null) {
+      return;
+    }
+
+    MetricRegistry metricRegistry = gcpManagedChannelOptions.getMetricsOptions().getMetricRegistry();
+    if (metricRegistry == null) {
+      return;
+    }
+
+    if (endpointStateMetric != null) {
+      return;
+    }
+
+    String prefix = gcpManagedChannelOptions.getMetricsOptions().getNamePrefix();
+
+    final List<LabelKey> endpointStateKeys = Arrays.asList(
+        LabelKey.create(ENDPOINT_LABEL, ENDPOINT_LABEL_DESC),
+        LabelKey.create(STATUS_LABEL, STATUS_LABEL_DESC)
+    );
+
+    endpointStateMetric =
+        metricRegistry.addDerivedLongGauge(
+            prefix + METRIC_ENDPOINT_STATE,
+            createMetricOptions(
+                "Reports 1 when endpoint is in the status.",
+                endpointStateKeys,
+                COUNT
+            )
+        );
+
+    final List<LabelKey> endpointSwitchKeys = Arrays.asList(
+        LabelKey.create(ME_NAME_LABEL, ME_NAME_LABEL_DESC),
+        LabelKey.create(TYPE_LABEL, TYPE_LABEL_DESC)
+    );
+
+    endpointSwitchMetric =
+        metricRegistry.addDerivedLongCumulative(
+            prefix + METRIC_ENDPOINT_SWITCH,
+            createMetricOptions(
+                "Reports occurrences of changes of current endpoint for a multi-endpoint with " +
+                    "the name, specifying change type.",
+                endpointSwitchKeys,
+                COUNT
+            )
+        );
+
+    final List<LabelKey> currentEndpointKeys = Arrays.asList(
+        LabelKey.create(ME_NAME_LABEL, ME_NAME_LABEL_DESC),
+        LabelKey.create(ENDPOINT_LABEL, ENDPOINT_LABEL_DESC)
+    );
+
+    currentEndpointMetric =
+        metricRegistry.addDerivedLongGauge(
+            prefix + METRIC_CURRENT_ENDPOINT,
+            createMetricOptions(
+                "Reports 1 when an endpoint is current for multi-endpoint with the name.",
+                currentEndpointKeys,
+                COUNT
+            )
+        );
+  }
+
+  private MetricOptions createMetricOptions(
+      String description, List<LabelKey> labelKeys, String unit) {
+    return MetricOptions.builder()
+        .setDescription(description)
+        .setLabelKeys(labelKeys)
+        .setUnit(unit)
+        .build();
   }
 
   /**

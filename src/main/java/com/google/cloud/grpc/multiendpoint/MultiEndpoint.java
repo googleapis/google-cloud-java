@@ -32,6 +32,7 @@ import java.util.Optional;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.stream.Collectors;
 
 /**
  * MultiEndpoint holds a list of endpoints, tracks their availability and defines the current
@@ -72,6 +73,10 @@ public final class MultiEndpoint {
 
   @GuardedBy("this")
   private volatile String switchTo;
+
+  private long fallbackCnt = 0;
+  private long recoverCnt = 0;
+  private long replaceCnt = 0;
 
   final ScheduledExecutorService executor = new ScheduledThreadPoolExecutor(1);
 
@@ -129,6 +134,27 @@ public final class MultiEndpoint {
   @SuppressWarnings("GuardedBy")
   public String getCurrentId() {
     return currentId;
+  }
+
+  public long getFallbackCnt() {
+    return fallbackCnt;
+  }
+
+  public long getRecoverCnt() {
+    return recoverCnt;
+  }
+
+  public long getReplaceCnt() {
+    return replaceCnt;
+  }
+
+  public List<String> getEndpoints() {
+    return endpointsMap
+        .values()
+        .stream()
+        .sorted(comparingInt(Endpoint::getPriority))
+        .map(Endpoint::getId)
+        .collect(Collectors.toList());
   }
 
   synchronized Map<String, Endpoint> getEndpointsMap() {
@@ -212,11 +238,13 @@ public final class MultiEndpoint {
   private synchronized void updateCurrentEndpoint(Endpoint current, String newCurrentId) {
     // If no current or became unavailable then switch immediately.
     if (current == null || current.getState().equals(EndpointState.UNAVAILABLE)) {
+      registerSwitch(currentId, newCurrentId);
       currentId = newCurrentId;
       return;
     }
 
     if (!isSwitchingDelayed()) {
+      registerSwitch(currentId, newCurrentId);
       currentId = newCurrentId;
       return;
     }
@@ -233,7 +261,32 @@ public final class MultiEndpoint {
   }
 
   private synchronized void switchCurrentEndpoint() {
+    registerSwitch(currentId, switchTo);
     currentId = switchTo;
+  }
+
+  private void registerSwitch(String fromId, String toId) {
+    if (toId.equals(fromId) || fromId == null) {
+      return;
+    }
+
+    int fromIdx = -1;
+    int toIdx = -1;
+    for (Endpoint e :endpointsMap.values()) {
+      if (e.getId().equals(fromId)) {
+        fromIdx = e.getPriority();
+      } else if (e.getId().equals(toId)) {
+        toIdx = e.getPriority();
+      }
+    }
+
+    if (fromIdx == -1) {
+      replaceCnt++;
+    } else if (fromIdx < toIdx) {
+      fallbackCnt++;
+    } else {
+      recoverCnt++;
+    }
   }
 
   // It is okay to read currentId and endpointsMap without obtaining a lock here.

@@ -153,6 +153,9 @@ public final class SpannerIntegrationTest {
   private GcpManagedChannel gcpChannel;
   private GcpManagedChannel gcpChannelBRR;
 
+  final String leaderME = "leader";
+  final String followerME = "follower";
+
   private void sleep(long millis) throws InterruptedException {
     Sleeper.DEFAULT.sleep(millis);
   }
@@ -492,6 +495,61 @@ public final class SpannerIntegrationTest {
     return apiConfigBuilder.build();
   }
 
+  private String getCurrentEndpoint(FakeMetricRegistry fakeRegistry, String meName) {
+    MetricsRecord record = fakeRegistry.pollRecord();
+    List<PointWithFunction<?>> metric =
+        record.getMetrics().get(GcpMetricsConstants.METRIC_CURRENT_ENDPOINT);
+    for (PointWithFunction<?> m : metric) {
+      assertThat(m.keys().get(0).getKey()).isEqualTo(GcpMetricsConstants.ME_NAME_LABEL);
+      assertThat(m.keys().get(1).getKey()).isEqualTo(GcpMetricsConstants.ENDPOINT_LABEL);
+      if (!m.values().get(0).getValue().equals(meName)) {
+        continue;
+      }
+      if (m.value() == 1) {
+        return m.values().get(1).getValue();
+      }
+    }
+    fail("Current endpoint metric not found for multi-endpoint: " + meName);
+    return null;
+  }
+
+  private String getEndpointState(FakeMetricRegistry fakeRegistry, String endpoint) {
+    MetricsRecord record = fakeRegistry.pollRecord();
+    List<PointWithFunction<?>> metric =
+        record.getMetrics().get(GcpMetricsConstants.METRIC_ENDPOINT_STATE);
+    for (PointWithFunction<?> m : metric) {
+      assertThat(m.keys().get(0).getKey()).isEqualTo(GcpMetricsConstants.ENDPOINT_LABEL);
+      assertThat(m.keys().get(1).getKey()).isEqualTo(GcpMetricsConstants.STATUS_LABEL);
+      if (!m.values().get(0).getValue().equals(endpoint)) {
+        continue;
+      }
+      if (m.value() == 1) {
+        return m.values().get(1).getValue();
+      }
+    }
+    fail("Endpoint state metric not found for endpoint: " + endpoint);
+    return null;
+  }
+
+  private long getSwitchCount(FakeMetricRegistry fakeRegistry, String meName, String type) {
+    MetricsRecord record = fakeRegistry.pollRecord();
+    List<PointWithFunction<?>> metric =
+        record.getMetrics().get(GcpMetricsConstants.METRIC_ENDPOINT_SWITCH);
+    for (PointWithFunction<?> m : metric) {
+      assertThat(m.keys().get(0).getKey()).isEqualTo(GcpMetricsConstants.ME_NAME_LABEL);
+      assertThat(m.keys().get(1).getKey()).isEqualTo(GcpMetricsConstants.TYPE_LABEL);
+      if (!m.values().get(0).getValue().equals(meName)) {
+        continue;
+      }
+      if (!m.values().get(1).getValue().equals(type)) {
+        continue;
+      }
+      return m.value();
+    }
+    fail("Switch count metric with type " + type + " not found for multi-endpoint: " + meName);
+    return 0;
+  }
+
   // For this test we'll create a Spanner client with gRPC-GCP MultiEndpoint feature.
   //
   // Imagine we have a multi-region Spanner instance with leader in the us-east4 and follower in the
@@ -532,14 +590,16 @@ public final class SpannerIntegrationTest {
     ApiFunction<ManagedChannelBuilder<?>, ManagedChannelBuilder<?>> configurator =
         input -> input.overrideAuthority(SPANNER_TARGET);
 
+    // Leader-first multi-endpoint.
     GcpMultiEndpointOptions leaderOpts = GcpMultiEndpointOptions.newBuilder(leaderEndpoints)
-        .withName("leader")
+        .withName(leaderME)
         .withChannelConfigurator(configurator)
         .withRecoveryTimeout(Duration.ofSeconds(3))
         .build();
 
+    // Follower-first multi-endpoint.
     GcpMultiEndpointOptions followerOpts = GcpMultiEndpointOptions.newBuilder(followerEndpoints)
-        .withName("follower")
+        .withName(followerME)
         .withChannelConfigurator(configurator)
         .withRecoveryTimeout(Duration.ofSeconds(3))
         .build();
@@ -567,10 +627,8 @@ public final class SpannerIntegrationTest {
 
     // Make sure authorities are overridden by channel configurator.
     assertThat(gcpMultiEndpointChannel.authority()).isEqualTo(SPANNER_TARGET);
-    assertThat(gcpMultiEndpointChannel.authorityFor("leader"))
-        .isEqualTo(SPANNER_TARGET);
-    assertThat(gcpMultiEndpointChannel.authorityFor("follower"))
-        .isEqualTo(SPANNER_TARGET);
+    assertThat(gcpMultiEndpointChannel.authorityFor(leaderME)).isEqualTo(SPANNER_TARGET);
+    assertThat(gcpMultiEndpointChannel.authorityFor(followerME)).isEqualTo(SPANNER_TARGET);
     assertThat(gcpMultiEndpointChannel.authorityFor("no-such-name")).isNull();
 
     sleep(1000);
@@ -630,6 +688,16 @@ public final class SpannerIntegrationTest {
       }
     };
 
+    // Make sure top priority endpoints reported as current.
+    assertThat(getCurrentEndpoint(fakeRegistry, leaderME)).isEqualTo(leaderEndpoint);
+    assertThat(getCurrentEndpoint(fakeRegistry, followerME)).isEqualTo(followerEndpoint);
+
+    // Make sure both endpoints reported as available.
+    assertThat(getEndpointState(fakeRegistry, leaderEndpoint))
+        .isEqualTo(GcpMetricsConstants.STATUS_AVAILABLE);
+    assertThat(getEndpointState(fakeRegistry, followerEndpoint))
+        .isEqualTo(GcpMetricsConstants.STATUS_AVAILABLE);
+
     // Make sure leader endpoint is used by default.
     assertThat(getOkCallsCount(fakeRegistry, leaderEndpoint)).isEqualTo(0);
     readQuery.run();
@@ -675,7 +743,7 @@ public final class SpannerIntegrationTest {
 
     assertThat(getOkCallsCount(fakeRegistry, followerEndpoint)).isEqualTo(0);
     // Use follower, make sure it is used. (multi-endpoint is set in the context)
-    contextFor.apply("follower").run(readQuery);
+    contextFor.apply(followerME).run(readQuery);
     assertThat(getOkCallsCount(fakeRegistry, followerEndpoint)).isEqualTo(1);
 
     // Replace leader endpoints. Try endpoint with default port.
@@ -684,7 +752,7 @@ public final class SpannerIntegrationTest {
     leaderEndpoints.add(newLeaderEndpoint);
     leaderEndpoints.add(followerEndpoint);
     leaderOpts = GcpMultiEndpointOptions.newBuilder(leaderEndpoints)
-        .withName("leader")
+        .withName(leaderME)
         .withChannelConfigurator(configurator)
         .build();
 
@@ -692,9 +760,10 @@ public final class SpannerIntegrationTest {
     followerEndpoints.add(followerEndpoint);
     followerEndpoints.add(newLeaderEndpoint);
 
+    final String newFollowerME = "follower-2";
     // Rename follower MultiEndpoint.
     followerOpts = GcpMultiEndpointOptions.newBuilder(followerEndpoints)
-        .withName("follower-2")
+        .withName(newFollowerME)
         .withChannelConfigurator(configurator)
         .build();
 
@@ -704,6 +773,25 @@ public final class SpannerIntegrationTest {
 
     gcpMultiEndpointChannel.setMultiEndpoints(opts);
 
+    // New leader endpoint should be unavailable first because it is connecting.
+    assertThat(getEndpointState(fakeRegistry, newLeaderEndpoint))
+        .isEqualTo(GcpMetricsConstants.STATUS_UNAVAILABLE);
+    assertThat(getEndpointState(fakeRegistry, followerEndpoint))
+        .isEqualTo(GcpMetricsConstants.STATUS_AVAILABLE);
+
+    // One switch should be reported for the leader-first ME with type REPLACE.
+    // Switched from leader (removed from the endpoints) to fallback endpoint as new leader endpoint
+    // is not yet available.
+    assertThat(getSwitchCount(fakeRegistry, leaderME, GcpMetricsConstants.TYPE_REPLACE))
+        .isEqualTo(1);
+    // No switched should be reported for the follower-first ME as it stays at fallback endpoint.
+    assertThat(getSwitchCount(fakeRegistry, newFollowerME, GcpMetricsConstants.TYPE_REPLACE))
+        .isEqualTo(0);
+    assertThat(getSwitchCount(fakeRegistry, newFollowerME, GcpMetricsConstants.TYPE_FALLBACK))
+        .isEqualTo(0);
+    assertThat(getSwitchCount(fakeRegistry, newFollowerME, GcpMetricsConstants.TYPE_RECOVER))
+        .isEqualTo(0);
+
     // As it takes some time to connect to the new leader endpoint, RPC will fall back to the
     // follower until we connect to leader.
     assertThat(getOkCallsCount(fakeRegistry, followerEndpoint)).isEqualTo(1);
@@ -711,6 +799,16 @@ public final class SpannerIntegrationTest {
     assertThat(getOkCallsCount(fakeRegistry, followerEndpoint)).isEqualTo(2);
 
     sleep(500);
+
+    // Now the new leader endpoint should be available and current for leaderME.
+    assertThat(getEndpointState(fakeRegistry, newLeaderEndpoint))
+        .isEqualTo(GcpMetricsConstants.STATUS_AVAILABLE);
+    assertThat(getCurrentEndpoint(fakeRegistry, leaderME)).isEqualTo(newLeaderEndpoint);
+
+    // And now another switch with type RECOVER should be reported as the leader-first ME should
+    // switch from the fallback endpoint to the new leader endpoint.
+    assertThat(getSwitchCount(fakeRegistry, leaderME, GcpMetricsConstants.TYPE_RECOVER))
+        .isEqualTo(1);
 
     // Make sure the new leader endpoint is used by default after it is connected.
     assertThat(getOkCallsCount(fakeRegistry, newLeaderEndpoint)).isEqualTo(0);
@@ -720,13 +818,13 @@ public final class SpannerIntegrationTest {
     // Make sure that the follower endpoint still works if specified.
     assertThat(getOkCallsCount(fakeRegistry, followerEndpoint)).isEqualTo(2);
     // Use follower, make sure it is used. (multi-endpoint is set in the call options)
-    callContextFor.apply("follower-2").run(readQuery);
+    callContextFor.apply(newFollowerME).run(readQuery);
     assertThat(getOkCallsCount(fakeRegistry, followerEndpoint)).isEqualTo(3);
 
     // Use leader, make sure it is used. (multi-endpoint from the call options overrides context-set
     // multi-endpoint)
-    contextFor.apply("follower-2").run(() ->
-      callContextFor.apply("leader").run(readQuery)
+    contextFor.apply(newFollowerME).run(() ->
+      callContextFor.apply(leaderME).run(readQuery)
     );
     assertThat(getOkCallsCount(fakeRegistry, newLeaderEndpoint)).isEqualTo(2);
 
@@ -760,14 +858,14 @@ public final class SpannerIntegrationTest {
         input -> input.overrideAuthority(SPANNER_TARGET);
 
     GcpMultiEndpointOptions leaderOpts = GcpMultiEndpointOptions.newBuilder(leaderEndpoints)
-        .withName("leader")
+        .withName(leaderME)
         .withChannelConfigurator(configurator)
         .withRecoveryTimeout(Duration.ofSeconds(3))
         .withSwitchingDelay(Duration.ofMillis(switchingDelayMs))
         .build();
 
     GcpMultiEndpointOptions followerOpts = GcpMultiEndpointOptions.newBuilder(followerEndpoints)
-        .withName("follower")
+        .withName(followerME)
         .withChannelConfigurator(configurator)
         .withRecoveryTimeout(Duration.ofSeconds(3))
         .withSwitchingDelay(Duration.ofMillis(switchingDelayMs))
@@ -837,7 +935,7 @@ public final class SpannerIntegrationTest {
 
     // Change the endpoints in the leader endpoint. east4, east1 -> east1, east4.
     leaderOpts = GcpMultiEndpointOptions.newBuilder(followerEndpoints)
-        .withName("leader")
+        .withName(leaderME)
         .withChannelConfigurator(configurator)
         .withRecoveryTimeout(Duration.ofSeconds(3))
         .withSwitchingDelay(Duration.ofMillis(switchingDelayMs))
@@ -864,7 +962,7 @@ public final class SpannerIntegrationTest {
 
     // Remove leader endpoint from the leader multi-endpoint. east1, east4 -> east1.
     leaderOpts = GcpMultiEndpointOptions.newBuilder(Collections.singletonList(followerEndpoint))
-        .withName("leader")
+        .withName(leaderME)
         .withChannelConfigurator(configurator)
         .withRecoveryTimeout(Duration.ofSeconds(3))
         .withSwitchingDelay(Duration.ofMillis(switchingDelayMs))
@@ -878,7 +976,7 @@ public final class SpannerIntegrationTest {
 
     // Bring the leader endpoint back. east1 -> east4, east1.
     leaderOpts = GcpMultiEndpointOptions.newBuilder(leaderEndpoints)
-        .withName("leader")
+        .withName(leaderME)
         .withChannelConfigurator(configurator)
         .withRecoveryTimeout(Duration.ofSeconds(3))
         .withSwitchingDelay(Duration.ofMillis(switchingDelayMs))

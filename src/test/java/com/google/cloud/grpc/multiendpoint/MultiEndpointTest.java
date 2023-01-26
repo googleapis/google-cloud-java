@@ -134,6 +134,10 @@ public final class MultiEndpointTest {
       throws InterruptedException {
     MultiEndpoint multiEndpoint = initWithRecovery(threeEndpoints, RECOVERY_MS);
 
+    assertThat(multiEndpoint.getFallbackCnt()).isEqualTo(0);
+    assertThat(multiEndpoint.getRecoverCnt()).isEqualTo(0);
+    assertThat(multiEndpoint.getReplaceCnt()).isEqualTo(0);
+
     // Returns first after creation.
     assertThat(multiEndpoint.getCurrentId()).isEqualTo(threeEndpoints.get(0));
 
@@ -145,6 +149,11 @@ public final class MultiEndpointTest {
 
     // After recovery timeout has passed.
     sleep(RECOVERY_MS + MARGIN_MS);
+
+    // first -> second is a fallback.
+    assertThat(multiEndpoint.getFallbackCnt()).isEqualTo(1);
+    assertThat(multiEndpoint.getRecoverCnt()).isEqualTo(0);
+    assertThat(multiEndpoint.getReplaceCnt()).isEqualTo(0);
 
     // Second becomes current as an available endpoint with top priority.
     assertThat(multiEndpoint.getCurrentId()).isEqualTo(threeEndpoints.get(1));
@@ -181,11 +190,21 @@ public final class MultiEndpointTest {
     // Changes to an available endpoint -- third.
     assertThat(multiEndpoint.getCurrentId()).isEqualTo(threeEndpoints.get(2));
 
+    // second -> third is a fallback.
+    assertThat(multiEndpoint.getFallbackCnt()).isEqualTo(2);
+    assertThat(multiEndpoint.getRecoverCnt()).isEqualTo(0);
+    assertThat(multiEndpoint.getReplaceCnt()).isEqualTo(0);
+
     // First becomes available.
     multiEndpoint.setEndpointAvailable(threeEndpoints.get(0), true);
 
     // First becomes current immediately.
     assertThat(multiEndpoint.getCurrentId()).isEqualTo(threeEndpoints.get(0));
+
+    // third -> first is a recovery.
+    assertThat(multiEndpoint.getFallbackCnt()).isEqualTo(2);
+    assertThat(multiEndpoint.getRecoverCnt()).isEqualTo(1);
+    assertThat(multiEndpoint.getReplaceCnt()).isEqualTo(0);
 
     // First becomes unavailable.
     multiEndpoint.setEndpointAvailable(threeEndpoints.get(0), false);
@@ -318,11 +337,27 @@ public final class MultiEndpointTest {
     extraEndpoints.add("extra");
     MultiEndpoint multiEndpoint = initPlain(extraEndpoints);
 
+    assertThat(multiEndpoint.getFallbackCnt()).isEqualTo(0);
+    assertThat(multiEndpoint.getRecoverCnt()).isEqualTo(0);
+    assertThat(multiEndpoint.getReplaceCnt()).isEqualTo(0);
+
     // Extra is available.
     multiEndpoint.setEndpointAvailable("extra", true);
 
+    // Switch "first" -> "extra" is a fallback as "extra" has lower priority.
+    assertThat(multiEndpoint.getFallbackCnt()).isEqualTo(1);
+    assertThat(multiEndpoint.getRecoverCnt()).isEqualTo(0);
+    assertThat(multiEndpoint.getReplaceCnt()).isEqualTo(0);
+
     // Extra is removed.
     multiEndpoint.setEndpoints(fourEndpoints);
+
+    // Switch "extra" -> "first" is of "replace" type, because "extra" is no longer in the list of
+    // endpoints.
+    assertThat(multiEndpoint.getFallbackCnt()).isEqualTo(1);
+    assertThat(multiEndpoint.getRecoverCnt()).isEqualTo(0);
+    assertThat(multiEndpoint.getReplaceCnt()).isEqualTo(1);
+
 
     // "fourth" which is under index 0 must become current, because no endpoints available.
     assertThat(multiEndpoint.getCurrentId()).isEqualTo(fourEndpoints.get(0));
