@@ -63,6 +63,7 @@ public final class Field implements Serializable {
   private final Long scale;
   private final Long precision;
   private final String defaultValueExpression;
+  private final String collation;
 
   /**
    * Mode for a BigQuery Table field. {@link Mode#NULLABLE} fields can be set to {@code null},
@@ -87,6 +88,7 @@ public final class Field implements Serializable {
     private Long scale;
     private Long precision;
     private String defaultValueExpression;
+    private String collation;
 
     private Builder() {}
 
@@ -101,6 +103,7 @@ public final class Field implements Serializable {
       this.scale = field.scale;
       this.precision = field.precision;
       this.defaultValueExpression = field.defaultValueExpression;
+      this.collation = field.collation;
     }
 
     /**
@@ -285,6 +288,19 @@ public final class Field implements Serializable {
       return this;
     }
 
+    /**
+     * Optional. Field collation can be set only when the type of field is STRING. The following
+     * values are supported:
+     *
+     * <p>* 'und:ci': undetermined locale, case insensitive. * '': empty string. Default to
+     * case-sensitive behavior. (-- A wrapper is used here because it is possible to set the value
+     * to the empty string. --)
+     */
+    public Builder setCollation(String collation) {
+      this.collation = collation;
+      return this;
+    }
+
     /** Creates a {@code Field} object. */
     public Field build() {
       return new Field(this);
@@ -302,6 +318,7 @@ public final class Field implements Serializable {
     this.scale = builder.scale;
     this.precision = builder.precision;
     this.defaultValueExpression = builder.defaultValueExpression;
+    this.collation = builder.collation;
   }
 
   /** Returns the field name. */
@@ -357,6 +374,10 @@ public final class Field implements Serializable {
     return defaultValueExpression;
   }
 
+  public String getCollation() {
+    return collation;
+  }
+
   /**
    * Returns the list of sub-fields if {@link #getType()} is a {@link LegacySQLTypeName#RECORD}.
    * Returns {@code null} otherwise.
@@ -382,6 +403,7 @@ public final class Field implements Serializable {
         .add("scale", scale)
         .add("precision", precision)
         .add("defaultValueExpression", defaultValueExpression)
+        .add("collation", collation)
         .toString();
   }
 
@@ -468,6 +490,9 @@ public final class Field implements Serializable {
       List<TableFieldSchema> fieldsPb = Lists.transform(getSubFields(), TO_PB_FUNCTION);
       fieldSchemaPb.setFields(fieldsPb);
     }
+    if (collation != null) {
+      fieldSchemaPb.setCollation(collation);
+    }
     return fieldSchemaPb;
   }
 
@@ -500,6 +525,9 @@ public final class Field implements Serializable {
             ? FieldList.of(Lists.transform(fieldSchemaPb.getFields(), FROM_PB_FUNCTION))
             : null;
     fieldBuilder.setType(LegacySQLTypeName.valueOf(fieldSchemaPb.getType()), subFields);
+    if (fieldSchemaPb.getCollation() != null) {
+      fieldBuilder.setCollation(fieldSchemaPb.getCollation());
+    }
     return fieldBuilder.build();
   }
 }

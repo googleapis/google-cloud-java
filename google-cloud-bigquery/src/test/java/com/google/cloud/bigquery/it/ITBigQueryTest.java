@@ -1187,6 +1187,98 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testCreateDatasetWithDefaultCollation() {
+    String collationDataset = "collation_dataset";
+    DatasetInfo info =
+        DatasetInfo.newBuilder(collationDataset)
+            .setDescription(DESCRIPTION)
+            .setDefaultCollation("und:ci")
+            .setLabels(LABELS)
+            .build();
+    bigquery.create(info);
+
+    Dataset dataset = bigquery.getDataset(DatasetId.of(collationDataset));
+    assertEquals("und:ci", dataset.getDefaultCollation());
+
+    RemoteBigQueryHelper.forceDelete(bigquery, collationDataset);
+  }
+
+  @Test
+  public void testCreateTableWithDefaultCollation() {
+    String tableName = "test_create_table_with_default_collation";
+    TableId tableId = TableId.of(DATASET, tableName);
+    Field stringFieldWithoutCollation =
+        Field.newBuilder("stringFieldWithoutDefaultCollation", StandardSQLTypeName.STRING)
+            .setMode(Field.Mode.NULLABLE)
+            .setDescription("String field")
+            .setMaxLength(150L)
+            .build();
+
+    Schema schema = Schema.of(stringFieldWithoutCollation);
+    StandardTableDefinition tableDefinition =
+        StandardTableDefinition.newBuilder().setSchema(schema).build();
+    TableInfo tableInfo =
+        TableInfo.newBuilder(tableId, tableDefinition).setDefaultCollation("und:ci").build();
+
+    // Create table with default collation but fields do not have collation.
+    Table createdTable = bigquery.create(tableInfo);
+    assertNotNull(createdTable);
+
+    // Fetch the created table and its metadata
+    // to verify default collation is assigned to fields
+    Table remoteTable = bigquery.getTable(DATASET, tableName);
+    Schema remoteSchema = remoteTable.<StandardTableDefinition>getDefinition().getSchema();
+    // Schema should not be equal because default collation has been added to the fields.
+    assertNotEquals(schema, remoteSchema);
+    assertEquals("und:ci", remoteTable.getDefaultCollation());
+    FieldList fieldList = remoteSchema.getFields();
+    for (Field field : fieldList) {
+      if (field.getName().equals("stringFieldWithoutDefaultCollation")) {
+        assertEquals("und:ci", field.getCollation());
+      }
+    }
+
+    bigquery.delete(tableId);
+  }
+
+  @Test
+  public void testCreateFieldWithDefaultCollation() {
+    String tableName = "test_create_field_with_default_collation";
+    TableId tableId = TableId.of(DATASET, tableName);
+    Field stringFieldWithCollation =
+        Field.newBuilder("stringFieldWithDefaultCollation", StandardSQLTypeName.STRING)
+            .setMode(Field.Mode.NULLABLE)
+            .setDescription("String field")
+            .setCollation("und:ci")
+            .setMaxLength(150L)
+            .build();
+
+    Schema schema = Schema.of(stringFieldWithCollation);
+    StandardTableDefinition tableDefinition =
+        StandardTableDefinition.newBuilder().setSchema(schema).build();
+    TableInfo tableInfo = TableInfo.newBuilder(tableId, tableDefinition).build();
+
+    // Create table with not default collation and fields that have collation
+    Table createdTable = bigquery.create(tableInfo);
+    assertNotNull(createdTable);
+
+    // Fetch the created table and its metadata
+    // to verify collation is assigned to fields
+    Table remoteTable = bigquery.getTable(DATASET, tableName);
+    Schema remoteSchema = remoteTable.<StandardTableDefinition>getDefinition().getSchema();
+    // Schema should be equal because collation has been added to the fields.
+    assertEquals(schema, remoteSchema);
+    assertEquals(null, remoteTable.getDefaultCollation());
+    FieldList fieldList = remoteSchema.getFields();
+    for (Field field : fieldList) {
+      if (field.getName().equals("stringFieldWithoutDefaultCollation")) {
+        assertEquals("und:ci", field.getCollation());
+      }
+    }
+    bigquery.delete(tableId);
+  }
+
+  @Test
   public void testCreateTableWithDefaultValueExpression() {
     String tableName = "test_create_table_with_default_value_expression";
     TableId tableId = TableId.of(DATASET, tableName);

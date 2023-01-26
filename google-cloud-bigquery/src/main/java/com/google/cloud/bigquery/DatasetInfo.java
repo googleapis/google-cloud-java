@@ -72,6 +72,7 @@ public class DatasetInfo implements Serializable {
   private final Labels labels;
   private final EncryptionConfiguration defaultEncryptionConfiguration;
   private final Long defaultPartitionExpirationMs;
+  private final String defaultCollation;
 
   /** A builder for {@code DatasetInfo} objects. */
   public abstract static class Builder {
@@ -148,6 +149,19 @@ public class DatasetInfo implements Serializable {
      */
     public abstract Builder setDefaultPartitionExpirationMs(Long defaultPartitionExpirationMs);
 
+    /**
+     * Optional. Defines the default collation specification of future tables created in the
+     * dataset. If a table is created in this dataset without table-level default collation, then
+     * the table inherits the dataset default collation, which is applied to the string fields that
+     * do not have explicit collation specified. A change to this field affects only tables created
+     * afterwards, and does not alter the existing tables. The following values are supported:
+     *
+     * <p>* 'und:ci': undetermined locale, case insensitive. * '': empty string. Default to
+     * case-sensitive behavior. (-- A wrapper is used here because it is possible to set the value
+     * to the empty string. --) (-- api-linter: standard-fields=disabled --)
+     */
+    public abstract Builder setDefaultCollation(String defaultCollation);
+
     /** Creates a {@code DatasetInfo} object. */
     public abstract DatasetInfo build();
   }
@@ -168,6 +182,7 @@ public class DatasetInfo implements Serializable {
     private Labels labels = Labels.ZERO;
     private EncryptionConfiguration defaultEncryptionConfiguration;
     private Long defaultPartitionExpirationMs;
+    private String defaultCollation;
 
     BuilderImpl() {}
 
@@ -186,6 +201,7 @@ public class DatasetInfo implements Serializable {
       this.labels = datasetInfo.labels;
       this.defaultEncryptionConfiguration = datasetInfo.defaultEncryptionConfiguration;
       this.defaultPartitionExpirationMs = datasetInfo.defaultPartitionExpirationMs;
+      this.defaultCollation = datasetInfo.defaultCollation;
     }
 
     BuilderImpl(com.google.api.services.bigquery.model.Dataset datasetPb) {
@@ -219,6 +235,7 @@ public class DatasetInfo implements Serializable {
                 .build();
       }
       this.defaultPartitionExpirationMs = datasetPb.getDefaultPartitionExpirationMs();
+      this.defaultCollation = datasetPb.getDefaultCollation();
     }
 
     @Override
@@ -314,6 +331,12 @@ public class DatasetInfo implements Serializable {
     }
 
     @Override
+    public Builder setDefaultCollation(String defaultCollation) {
+      this.defaultCollation = defaultCollation;
+      return this;
+    }
+
+    @Override
     public DatasetInfo build() {
       return new DatasetInfo(this);
     }
@@ -334,6 +357,7 @@ public class DatasetInfo implements Serializable {
     labels = builder.labels;
     defaultEncryptionConfiguration = builder.defaultEncryptionConfiguration;
     defaultPartitionExpirationMs = builder.defaultPartitionExpirationMs;
+    defaultCollation = builder.defaultCollation;
   }
 
   /** Returns the dataset identity. */
@@ -459,6 +483,10 @@ public class DatasetInfo implements Serializable {
     return defaultPartitionExpirationMs;
   }
 
+  public String getDefaultCollation() {
+    return defaultCollation;
+  }
+
   /** Returns a builder for the dataset object. */
   public Builder toBuilder() {
     return new BuilderImpl(this);
@@ -481,6 +509,7 @@ public class DatasetInfo implements Serializable {
         .add("labels", labels)
         .add("defaultEncryptionConfiguration", defaultEncryptionConfiguration)
         .add("defaultPartitionExpirationMs", defaultPartitionExpirationMs)
+        .add("defaultCollation", defaultCollation)
         .toString();
   }
 
@@ -555,6 +584,9 @@ public class DatasetInfo implements Serializable {
     }
     if (defaultPartitionExpirationMs != null) {
       datasetPb.setDefaultPartitionExpirationMs(defaultPartitionExpirationMs);
+    }
+    if (defaultCollation != null) {
+      datasetPb.setDefaultCollation(defaultCollation);
     }
     return datasetPb;
   }
