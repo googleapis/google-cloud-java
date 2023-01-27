@@ -1188,7 +1188,7 @@ public class ITBigQueryTest {
 
   @Test
   public void testCreateDatasetWithDefaultCollation() {
-    String collationDataset = "collation_dataset";
+    String collationDataset = RemoteBigQueryHelper.generateDatasetName();
     DatasetInfo info =
         DatasetInfo.newBuilder(collationDataset)
             .setDescription(DESCRIPTION)
