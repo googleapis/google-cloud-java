@@ -15,17 +15,17 @@ repositories {
     mavenLocal()
 }
 
-version = '1.4.0-SNAPSHOT'
+version = '1.4.0'
 group = 'com.google.cloud'
 description = 'GRPC-GCP-Extension Java'
 sourceCompatibility = '1.8'
 
 def title = 'gRPC extension library for Google Cloud Platform'
-def grpcVersion = '1.36.0'
-def protobufVersion = '3.20.1'
-def protocVersion = '3.20.1'
+def grpcVersion = '1.36.3'
+def protobufVersion = '3.20.3'
+def protocVersion = '3.20.3'
 def spannerVersion = '6.1.0'
-def opencensusVersion = '0.28.0'
+def opencensusVersion = '0.28.3'
 
 dependencies {
     implementation "com.google.protobuf:protobuf-java:${protobufVersion}"
