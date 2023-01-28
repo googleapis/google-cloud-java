@@ -63,7 +63,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -152,6 +152,7 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
   private MultiEndpoint defaultMultiEndpoint;
   private final ApiConfig apiConfig;
   private final GcpManagedChannelOptions gcpManagedChannelOptions;
+  private final GcpMetricsOptions gcpMetricsOptions;
   private DerivedLongGauge endpointStateMetric;
   private DerivedLongCumulative endpointSwitchMetric;
   private DerivedLongGauge currentEndpointMetric;
@@ -179,6 +180,7 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
       GcpManagedChannelOptions gcpManagedChannelOptions) {
     this.apiConfig = apiConfig;
     this.gcpManagedChannelOptions = gcpManagedChannelOptions;
+    this.gcpMetricsOptions = gcpManagedChannelOptions.getMetricsOptions();
     createMetrics();
     setMultiEndpoints(meOptions);
   }
@@ -202,7 +204,7 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
       }
 
       endpointStateMetric.createTimeSeries(
-          Arrays.asList(
+          appendCommonValues(
               LabelValue.create(endpoint),
               LabelValue.create(STATUS_AVAILABLE)
           ),
@@ -210,7 +212,7 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
           EndpointStateMonitor::reportAvailable
           );
       endpointStateMetric.createTimeSeries(
-          Arrays.asList(
+          appendCommonValues(
               LabelValue.create(endpoint),
               LabelValue.create(STATUS_UNAVAILABLE)
           ),
@@ -224,11 +226,11 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
         return;
       }
 
-      endpointStateMetric.removeTimeSeries(Arrays.asList(
+      endpointStateMetric.removeTimeSeries(appendCommonValues(
           LabelValue.create(endpoint),
           LabelValue.create(STATUS_AVAILABLE)
       ));
-      endpointStateMetric.removeTimeSeries(Arrays.asList(
+      endpointStateMetric.removeTimeSeries(appendCommonValues(
           LabelValue.create(endpoint),
           LabelValue.create(STATUS_UNAVAILABLE)
       ));
@@ -336,7 +338,7 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
     String name = options.getName();
     List<String> endpoints = options.getEndpoints();
     endpointSwitchMetric.createTimeSeries(
-        Arrays.asList(
+        appendCommonValues(
             LabelValue.create(name),
             LabelValue.create(TYPE_FALLBACK)
         ),
@@ -344,7 +346,7 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
         MultiEndpoint::getFallbackCnt
     );
     endpointSwitchMetric.createTimeSeries(
-        Arrays.asList(
+        appendCommonValues(
             LabelValue.create(name),
             LabelValue.create(TYPE_RECOVER)
         ),
@@ -352,7 +354,7 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
         MultiEndpoint::getRecoverCnt
     );
     endpointSwitchMetric.createTimeSeries(
-        Arrays.asList(
+        appendCommonValues(
             LabelValue.create(name),
             LabelValue.create(TYPE_REPLACE)
         ),
@@ -363,7 +365,7 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
       CurrentEndpointWatcher watcher = new CurrentEndpointWatcher(me, e);
       currentEndpointWatchers.put(name + ":" + e, watcher);
       currentEndpointMetric.createTimeSeries(
-          Arrays.asList(
+          appendCommonValues(
               LabelValue.create(name),
               LabelValue.create(e)
           ),
@@ -379,7 +381,7 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
     for (String e : existingEndpoints) {
       if (!newEndpoints.contains(e)) {
         currentEndpointMetric.removeTimeSeries(
-            Arrays.asList(
+            appendCommonValues(
                 LabelValue.create(options.getName()),
                 LabelValue.create(e)
             )
@@ -392,7 +394,7 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
         CurrentEndpointWatcher watcher = new CurrentEndpointWatcher(me, e);
         currentEndpointWatchers.put(options.getName() + ":" + e, watcher);
         currentEndpointMetric.createTimeSeries(
-            Arrays.asList(
+            appendCommonValues(
                 LabelValue.create(options.getName()),
                 LabelValue.create(e)
             ),
@@ -405,26 +407,26 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
 
   private void removeMetricsForMultiEndpoint(String name, MultiEndpoint me) {
     endpointSwitchMetric.removeTimeSeries(
-        Arrays.asList(
+        appendCommonValues(
             LabelValue.create(name),
             LabelValue.create(TYPE_FALLBACK)
         )
     );
     endpointSwitchMetric.removeTimeSeries(
-        Arrays.asList(
+        appendCommonValues(
             LabelValue.create(name),
             LabelValue.create(TYPE_RECOVER)
         )
     );
     endpointSwitchMetric.removeTimeSeries(
-        Arrays.asList(
+        appendCommonValues(
             LabelValue.create(name),
             LabelValue.create(TYPE_REPLACE)
         )
     );
     for (String e : me.getEndpoints()) {
       currentEndpointMetric.removeTimeSeries(
-          Arrays.asList(
+          appendCommonValues(
               LabelValue.create(name),
               LabelValue.create(e)
           )
@@ -559,11 +561,11 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
   }
 
   private void createMetrics() {
-    if (gcpManagedChannelOptions.getMetricsOptions() == null) {
+    if (gcpMetricsOptions == null) {
       return;
     }
 
-    MetricRegistry metricRegistry = gcpManagedChannelOptions.getMetricsOptions().getMetricRegistry();
+    MetricRegistry metricRegistry = gcpMetricsOptions.getMetricRegistry();
     if (metricRegistry == null) {
       return;
     }
@@ -572,27 +574,18 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
       return;
     }
 
-    String prefix = gcpManagedChannelOptions.getMetricsOptions().getNamePrefix();
-
-    final List<LabelKey> endpointStateKeys = Arrays.asList(
-        LabelKey.create(ENDPOINT_LABEL, ENDPOINT_LABEL_DESC),
-        LabelKey.create(STATUS_LABEL, STATUS_LABEL_DESC)
-    );
+    String prefix = gcpMetricsOptions.getNamePrefix();
 
     endpointStateMetric =
         metricRegistry.addDerivedLongGauge(
             prefix + METRIC_ENDPOINT_STATE,
             createMetricOptions(
                 "Reports 1 when endpoint is in the status.",
-                endpointStateKeys,
-                COUNT
+                COUNT,
+                LabelKey.create(ENDPOINT_LABEL, ENDPOINT_LABEL_DESC),
+                LabelKey.create(STATUS_LABEL, STATUS_LABEL_DESC)
             )
         );
-
-    final List<LabelKey> endpointSwitchKeys = Arrays.asList(
-        LabelKey.create(ME_NAME_LABEL, ME_NAME_LABEL_DESC),
-        LabelKey.create(SWITCH_TYPE_LABEL, SWITCH_TYPE_LABEL_DESC)
-    );
 
     endpointSwitchMetric =
         metricRegistry.addDerivedLongCumulative(
@@ -600,32 +593,45 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
             createMetricOptions(
                 "Reports occurrences of changes of current endpoint for a multi-endpoint with " +
                     "the name, specifying change type.",
-                endpointSwitchKeys,
-                COUNT
+                COUNT,
+                LabelKey.create(ME_NAME_LABEL, ME_NAME_LABEL_DESC),
+                LabelKey.create(SWITCH_TYPE_LABEL, SWITCH_TYPE_LABEL_DESC)
             )
         );
-
-    final List<LabelKey> currentEndpointKeys = Arrays.asList(
-        LabelKey.create(ME_NAME_LABEL, ME_NAME_LABEL_DESC),
-        LabelKey.create(ENDPOINT_LABEL, ENDPOINT_LABEL_DESC)
-    );
 
     currentEndpointMetric =
         metricRegistry.addDerivedLongGauge(
             prefix + METRIC_CURRENT_ENDPOINT,
             createMetricOptions(
                 "Reports 1 when an endpoint is current for multi-endpoint with the name.",
-                currentEndpointKeys,
-                COUNT
+                COUNT,
+                LabelKey.create(ME_NAME_LABEL, ME_NAME_LABEL_DESC),
+                LabelKey.create(ENDPOINT_LABEL, ENDPOINT_LABEL_DESC)
             )
         );
   }
 
+  private List<LabelValue> appendCommonValues(LabelValue ...labelValues) {
+    final List<LabelValue> values = new ArrayList<>();
+    Collections.addAll(values, labelValues);
+    if (gcpMetricsOptions != null &&
+        gcpMetricsOptions.getLabelValues() != null) {
+      values.addAll(gcpMetricsOptions.getLabelValues());
+    }
+    return values;
+  }
+
   private MetricOptions createMetricOptions(
-      String description, List<LabelKey> labelKeys, String unit) {
+      String description, String unit, LabelKey ...labelKeys) {
+    final List<LabelKey> keys = new ArrayList<>();
+    Collections.addAll(keys, labelKeys);
+    if (gcpMetricsOptions != null &&
+        gcpMetricsOptions.getLabelKeys() != null) {
+      keys.addAll(gcpMetricsOptions.getLabelKeys());
+    }
     return MetricOptions.builder()
         .setDescription(description)
-        .setLabelKeys(labelKeys)
+        .setLabelKeys(keys)
         .setUnit(unit)
         .build();
   }

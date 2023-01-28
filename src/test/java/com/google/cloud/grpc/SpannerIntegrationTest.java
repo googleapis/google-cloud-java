@@ -96,6 +96,7 @@ import io.grpc.MethodDescriptor;
 import io.grpc.StatusRuntimeException;
 import io.grpc.auth.MoreCallCredentials;
 import io.grpc.stub.StreamObserver;
+import io.opencensus.metrics.LabelKey;
 import io.opencensus.metrics.LabelValue;
 import java.io.File;
 import java.io.IOException;
@@ -155,6 +156,9 @@ public final class SpannerIntegrationTest {
 
   final String leaderME = "leader";
   final String followerME = "follower";
+
+  final LabelKey commonKey = LabelKey.create("common_key", "Common key");
+  final LabelValue commonValue = LabelValue.create("common_value");
 
   private void sleep(long millis) throws InterruptedException {
     Sleeper.DEFAULT.sleep(millis);
@@ -469,12 +473,14 @@ public final class SpannerIntegrationTest {
     List<PointWithFunction<?>> metric =
         record.getMetrics().get(GcpMetricsConstants.METRIC_NUM_CALLS_COMPLETED);
     for (PointWithFunction<?> m : metric) {
-      assertThat(m.keys().get(0).getKey()).isEqualTo("result");
-      assertThat(m.keys().get(1).getKey()).isEqualTo("endpoint");
+      assertThat(m.keys().get(0).getKey()).isEqualTo(GcpMetricsConstants.RESULT_LABEL);
+      assertThat(m.keys().get(1).getKey()).isEqualTo(commonKey.getKey());
+      assertThat(m.values().get(1).getValue()).isEqualTo(commonValue.getValue());
+      assertThat(m.keys().get(2).getKey()).isEqualTo(GcpMetricsConstants.ENDPOINT_LABEL);
       if (!m.values().get(0).equals(LabelValue.create(GcpMetricsConstants.RESULT_SUCCESS))) {
         continue;
       }
-      if (!m.values().get(1).equals(LabelValue.create(endpoint))) {
+      if (!m.values().get(2).equals(LabelValue.create(endpoint))) {
         continue;
       }
       return m.value();
@@ -502,6 +508,8 @@ public final class SpannerIntegrationTest {
     for (PointWithFunction<?> m : metric) {
       assertThat(m.keys().get(0).getKey()).isEqualTo(GcpMetricsConstants.ME_NAME_LABEL);
       assertThat(m.keys().get(1).getKey()).isEqualTo(GcpMetricsConstants.ENDPOINT_LABEL);
+      assertThat(m.keys().get(2).getKey()).isEqualTo(commonKey.getKey());
+      assertThat(m.values().get(2).getValue()).isEqualTo(commonValue.getValue());
       if (!m.values().get(0).getValue().equals(meName)) {
         continue;
       }
@@ -520,6 +528,8 @@ public final class SpannerIntegrationTest {
     for (PointWithFunction<?> m : metric) {
       assertThat(m.keys().get(0).getKey()).isEqualTo(GcpMetricsConstants.ENDPOINT_LABEL);
       assertThat(m.keys().get(1).getKey()).isEqualTo(GcpMetricsConstants.STATUS_LABEL);
+      assertThat(m.keys().get(2).getKey()).isEqualTo(commonKey.getKey());
+      assertThat(m.values().get(2).getValue()).isEqualTo(commonValue.getValue());
       if (!m.values().get(0).getValue().equals(endpoint)) {
         continue;
       }
@@ -538,6 +548,8 @@ public final class SpannerIntegrationTest {
     for (PointWithFunction<?> m : metric) {
       assertThat(m.keys().get(0).getKey()).isEqualTo(GcpMetricsConstants.ME_NAME_LABEL);
       assertThat(m.keys().get(1).getKey()).isEqualTo(GcpMetricsConstants.SWITCH_TYPE_LABEL);
+      assertThat(m.keys().get(2).getKey()).isEqualTo(commonKey.getKey());
+      assertThat(m.values().get(2).getValue()).isEqualTo(commonValue.getValue());
       if (!m.values().get(0).getValue().equals(meName)) {
         continue;
       }
@@ -618,7 +630,10 @@ public final class SpannerIntegrationTest {
                 .build())
             .withMetricsOptions(GcpMetricsOptions.newBuilder()
                 .withMetricRegistry(fakeRegistry)
-                .build())
+                .withLabels(
+                    Collections.singletonList(commonKey),
+                    Collections.singletonList(commonValue)
+                ).build())
             .build());
 
     final int currentIndex = GcpManagedChannel.channelPoolIndex.get();
@@ -650,14 +665,16 @@ public final class SpannerIntegrationTest {
     // Make sure endpoint is set as a metric label for each pool.
     assertThat(logRecords.stream().filter(logRecord ->
         logRecord.getMessage().matches(
-            leaderPoolIndex + ": Metrics options: \\{namePrefix: \"\", labels: \\[endpoint: " +
-                "\"" + leaderEndpoint + "\"], metricRegistry: .*"
+            leaderPoolIndex + ": Metrics options: \\{namePrefix: \"\", labels: \\[" +
+                commonKey.getKey() + ": \"" + commonValue.getValue() + "\", endpoint: " +
+                "\"" + leaderEndpoint + "\".*"
         )).count()).isEqualTo(1);
 
     assertThat(logRecords.stream().filter(logRecord ->
         logRecord.getMessage().matches(
-            followerPoolIndex + ": Metrics options: \\{namePrefix: \"\", labels: \\[endpoint: " +
-                "\"" + followerEndpoint + "\"], metricRegistry: .*"
+            followerPoolIndex + ": Metrics options: \\{namePrefix: \"\", labels: \\[" +
+                commonKey.getKey() + ": \"" + commonValue.getValue() + "\", endpoint: " +
+                "\"" + followerEndpoint + "\".*"
         )).count()).isEqualTo(1);
 
     logRecords.clear();
@@ -885,7 +902,10 @@ public final class SpannerIntegrationTest {
                 .build())
             .withMetricsOptions(GcpMetricsOptions.newBuilder()
                 .withMetricRegistry(fakeRegistry)
-                .build())
+                .withLabels(
+                    Collections.singletonList(commonKey),
+                    Collections.singletonList(commonValue)
+                ).build())
             .build());
 
     final int currentIndex = GcpManagedChannel.channelPoolIndex.get();
