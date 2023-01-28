@@ -29,8 +29,8 @@ import static com.google.cloud.grpc.GcpMetricsConstants.STATUS_LABEL;
 import static com.google.cloud.grpc.GcpMetricsConstants.STATUS_LABEL_DESC;
 import static com.google.cloud.grpc.GcpMetricsConstants.STATUS_UNAVAILABLE;
 import static com.google.cloud.grpc.GcpMetricsConstants.TYPE_FALLBACK;
-import static com.google.cloud.grpc.GcpMetricsConstants.TYPE_LABEL;
-import static com.google.cloud.grpc.GcpMetricsConstants.TYPE_LABEL_DESC;
+import static com.google.cloud.grpc.GcpMetricsConstants.SWITCH_TYPE_LABEL;
+import static com.google.cloud.grpc.GcpMetricsConstants.SWITCH_TYPE_LABEL_DESC;
 import static com.google.cloud.grpc.GcpMetricsConstants.TYPE_RECOVER;
 import static com.google.cloud.grpc.GcpMetricsConstants.TYPE_REPLACE;
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
@@ -591,7 +591,7 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
 
     final List<LabelKey> endpointSwitchKeys = Arrays.asList(
         LabelKey.create(ME_NAME_LABEL, ME_NAME_LABEL_DESC),
-        LabelKey.create(TYPE_LABEL, TYPE_LABEL_DESC)
+        LabelKey.create(SWITCH_TYPE_LABEL, SWITCH_TYPE_LABEL_DESC)
     );
 
     endpointSwitchMetric =

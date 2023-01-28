@@ -537,7 +537,7 @@ public final class SpannerIntegrationTest {
         record.getMetrics().get(GcpMetricsConstants.METRIC_ENDPOINT_SWITCH);
     for (PointWithFunction<?> m : metric) {
       assertThat(m.keys().get(0).getKey()).isEqualTo(GcpMetricsConstants.ME_NAME_LABEL);
-      assertThat(m.keys().get(1).getKey()).isEqualTo(GcpMetricsConstants.TYPE_LABEL);
+      assertThat(m.keys().get(1).getKey()).isEqualTo(GcpMetricsConstants.SWITCH_TYPE_LABEL);
       if (!m.values().get(0).getValue().equals(meName)) {
         continue;
       }

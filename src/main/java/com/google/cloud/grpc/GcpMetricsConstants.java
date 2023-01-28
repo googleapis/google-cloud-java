@@ -31,8 +31,8 @@ class GcpMetricsConstants {
   public static String STATUS_UNAVAILABLE = "UNAVAILABLE";
   public static String ME_NAME_LABEL = "me_name";
   public static String ME_NAME_LABEL_DESC = "Multi-endpoint name.";
-  public static String TYPE_LABEL = "type";
-  public static String TYPE_LABEL_DESC = "Switch type (fallback/recover/replace).";
+  public static String SWITCH_TYPE_LABEL = "switch_type";
+  public static String SWITCH_TYPE_LABEL_DESC = "Switch type (fallback/recover/replace).";
   public static String TYPE_FALLBACK = "FALLBACK";
   public static String TYPE_RECOVER = "RECOVER";
   public static String TYPE_REPLACE = "REPLACE";
