@@ -8,7 +8,6 @@
   <packaging>pom</packaging>
   <version>3.1.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
   <name>Google Cloud First-party Shared Dependencies</name>
-  <url>https://github.com/googleapis/java-shared-dependencies</url>
   <description>
     Shared first-party dependencies for Google Cloud Java libraries.
   </description>
@@ -18,22 +17,6 @@
     <artifactId>google-cloud-shared-config</artifactId>
     <version>1.5.5</version>
   </parent>
-
-  <organization>
-    <name>Google LLC</name>
-  </organization>
-
-  <scm>
-    <connection>scm:git:git@github.com:googleapis/java-shared-dependencies.git</connection>
-    <developerConnection>scm:git:git@github.com:googleapis/java-shared-dependencies.git</developerConnection>
-    <url>https://github.com/googleapis/java-shared-dependencies</url>
-    <tag>HEAD</tag>
-  </scm>
-
-  <issueManagement>
-    <url>https://github.com/googleapis/java-shared-dependencies/issues</url>
-    <system>GitHub Issues</system>
-  </issueManagement>
 
   <distributionManagement>
     <snapshotRepository>
@@ -45,13 +28,6 @@
       <url>https://google.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>
   </distributionManagement>
-
-  <licenses>
-    <license>
-      <name>Apache-2.0</name>
-      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
-    </license>
-  </licenses>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <site.installationModule>${project.artifactId}</site.installationModule>

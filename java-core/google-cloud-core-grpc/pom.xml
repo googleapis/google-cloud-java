@@ -6,7 +6,6 @@
   <version>2.9.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-core:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Core gRPC</name>
-  <url>https://github.com/googleapis/java-core</url>
   <description>
     Core gRPC module for the google-cloud.
   </description>

@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>1.7.1-SNAPSHOT</version><!-- {x-version-update:google-iam-policy:current} -->
   <name>Google IAM Policy Parent</name>
-  <url>https://github.com/googleapis/java-iam</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>
@@ -17,31 +16,6 @@
     <version>1.4.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
-
-  <developers>
-    <developer>
-      <id>chingor</id>
-      <name>Jeff Ching</name>
-      <email>chingor@google.com</email>
-      <organization>Google</organization>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-  </developers>
-  <organization>
-    <name>Google LLC</name>
-  </organization>
-  <scm>
-    <connection>scm:git:git@github.com:googleapis/java-iam.git</connection>
-    <developerConnection>scm:git:git@github.com:googleapis/java-iam.git</developerConnection>
-    <url>https://github.com/googleapis/java-iam</url>
-    <tag>HEAD</tag>
-  </scm>
-  <issueManagement>
-    <url>https://github.com/googleapis/java-iam/issues</url>
-    <system>GitHub Issues</system>
-  </issueManagement>
   <distributionManagement>
     <snapshotRepository>
       <id>sonatype-nexus-snapshots</id>
@@ -52,12 +26,6 @@
       <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>
   </distributionManagement>
-  <licenses>
-    <license>
-      <name>Apache-2.0</name>
-      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
-    </license>
-  </licenses>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
