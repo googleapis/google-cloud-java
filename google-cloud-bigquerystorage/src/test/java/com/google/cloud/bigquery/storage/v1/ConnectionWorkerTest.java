@@ -247,10 +247,10 @@ public class ConnectionWorkerTest {
         // We will get the request as the pattern of:
         // (writer_stream: t1, schema: schema1)
         // (writer_stream: _, schema: _)
-        // (writer_stream: _, schema: schema3)
-        // (writer_stream: _, schema: _)
-        // (writer_stream: _, schema: schema1)
-        // (writer_stream: _, schema: _)
+        // (writer_stream: t1, schema: schema3)
+        // (writer_stream: t1, schema: _)
+        // (writer_stream: t1, schema: schema1)
+        // (writer_stream: t1, schema: _)
         switch (i % 4) {
           case 0:
             if (i == 0) {
@@ -261,19 +261,23 @@ public class ConnectionWorkerTest {
                 .isEqualTo("foo");
             break;
           case 1:
-            assertThat(serverRequest.getWriteStream()).isEmpty();
+            if (i == 1) {
+              assertThat(serverRequest.getWriteStream()).isEmpty();
+            } else {
+              assertThat(serverRequest.getWriteStream()).isEqualTo(TEST_STREAM_1);
+            }
             // Schema is empty if not at the first request after table switch.
             assertThat(serverRequest.getProtoRows().hasWriterSchema()).isFalse();
             break;
           case 2:
-            assertThat(serverRequest.getWriteStream()).isEmpty();
+            assertThat(serverRequest.getWriteStream()).isEqualTo(TEST_STREAM_1);
             // Schema is populated after table switch.
             assertThat(
                     serverRequest.getProtoRows().getWriterSchema().getProtoDescriptor().getName())
                 .isEqualTo("bar");
             break;
           case 3:
-            assertThat(serverRequest.getWriteStream()).isEmpty();
+            assertThat(serverRequest.getWriteStream()).isEqualTo(TEST_STREAM_1);
             // Schema is empty if not at the first request after table switch.
             assertThat(serverRequest.getProtoRows().hasWriterSchema()).isFalse();
             break;

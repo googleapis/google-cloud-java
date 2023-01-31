@@ -222,7 +222,6 @@ class ConnectionWorker implements AutoCloseable {
           Status.fromCode(Code.INVALID_ARGUMENT)
               .withDescription("Writer schema must be provided when building this writer."));
     }
-    this.writerSchema = writerSchema;
     this.maxInflightRequests = maxInflightRequests;
     this.maxInflightBytes = maxInflightBytes;
     this.limitExceededBehavior = limitExceededBehavior;
@@ -432,7 +431,7 @@ class ConnectionWorker implements AutoCloseable {
 
     // Indicate whether we are at the first request after switching destination.
     // True means the schema and other metadata are needed.
-    boolean firstRequestForDestinationSwitch = true;
+    boolean firstRequestForTableOrSchemaSwitch = true;
     // Represent whether we have entered multiplexing.
     boolean isMultiplexing = false;
 
@@ -483,25 +482,35 @@ class ConnectionWorker implements AutoCloseable {
         resetConnection();
         // Set firstRequestInConnection to indicate the next request to be sent should include
         // metedata. Reset everytime after reconnection.
-        firstRequestForDestinationSwitch = true;
+        firstRequestForTableOrSchemaSwitch = true;
       }
       while (!localQueue.isEmpty()) {
         AppendRowsRequest originalRequest = localQueue.pollFirst().message;
         AppendRowsRequest.Builder originalRequestBuilder = originalRequest.toBuilder();
-
-        // Consider we enter multiplexing if we met a different non empty stream name.
-        if (!originalRequest.getWriteStream().isEmpty()
-            && !streamName.isEmpty()
-            && !originalRequest.getWriteStream().equals(streamName)) {
+        // Always respect the first writer schema seen by the loop.
+        if (writerSchema == null) {
+          writerSchema = originalRequest.getProtoRows().getWriterSchema();
+        }
+        // Consider we enter multiplexing if we met a different non empty stream name or we meet
+        // a new schema for the same stream name.
+        // For the schema comparision we don't use message differencer to speed up the comparing
+        // process. `equals(...)` can bring us false positive, e.g. two repeated field can be
+        // considered the same but is not considered equals(). However as long as it's never provide
+        // false negative we will always correctly pass writer schema to backend.
+        if ((!originalRequest.getWriteStream().isEmpty()
+                && !streamName.isEmpty()
+                && !originalRequest.getWriteStream().equals(streamName))
+            || (originalRequest.getProtoRows().hasWriterSchema()
+                && !originalRequest.getProtoRows().getWriterSchema().equals(writerSchema))) {
           streamName = originalRequest.getWriteStream();
+          writerSchema = originalRequest.getProtoRows().getWriterSchema();
           isMultiplexing = true;
-          firstRequestForDestinationSwitch = true;
+          firstRequestForTableOrSchemaSwitch = true;
         }
 
-        if (firstRequestForDestinationSwitch) {
+        if (firstRequestForTableOrSchemaSwitch) {
           // If we are at the first request for every table switch, including the first request in
           // the connection, we will attach both stream name and table schema to the request.
-          // We don't support change of schema change during multiplexing for the saeme stream name.
           destinationSet.add(streamName);
           if (this.traceId != null) {
             originalRequestBuilder.setTraceId(this.traceId);
@@ -511,17 +520,11 @@ class ConnectionWorker implements AutoCloseable {
           originalRequestBuilder.clearWriteStream();
         }
 
-        // We don't use message differencer to speed up the comparing process.
-        // `equals(...)` can bring us false positive, e.g. two repeated field can be considered the
-        // same but is not considered equals(). However as long as it's never provide false negative
-        // we will always correctly pass writer schema to backend.
-        if (firstRequestForDestinationSwitch
-            || !originalRequest.getProtoRows().getWriterSchema().equals(writerSchema)) {
-          writerSchema = originalRequest.getProtoRows().getWriterSchema();
-        } else {
+        // During non table/schema switch requests, clear writer schema.
+        if (!firstRequestForTableOrSchemaSwitch) {
           originalRequestBuilder.getProtoRowsBuilder().clearWriterSchema();
         }
-        firstRequestForDestinationSwitch = false;
+        firstRequestForTableOrSchemaSwitch = false;
 
         // Send should only throw an exception if there is a problem with the request. The catch
         // block will handle this case, and return the exception with the result.
