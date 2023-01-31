@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker:
-  image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
   - "/grpc-google-.*/src"
@@ -24,6 +22,8 @@ deep-preserve-regex:
 
 deep-copy-regex:
   - source: "/google/iam/v2beta/google-cloud-iam-v2beta-java/gapic-google-cloud-iam-v2beta-java/src"
-    dest: "/owl-bot-staging/v2beta/google-iam-policy/src"
+    dest: "/owl-bot-staging/java-iam/v2beta/google-iam-policy/src"
   - source: "/google/iam/v2/google-cloud-iam-v2-java/gapic-google-cloud-iam-v2-java/src"
-    dest: "/owl-bot-staging/v2/google-iam-policy/src"
+    dest: "/owl-bot-staging/java-iam/v2/google-iam-policy/src"
+
+api-name: iam
