@@ -1,6 +1,0 @@
-gcp-docuploader
-gcp-releasetool
-wheel
-setuptools
-typing-extensions
-click<8.1.0

@@ -16,12 +16,16 @@
 
 from synthtool.languages import java
 
-java.common_templates(excludes=[
-  'README.md',
-  'samples/*',
-  'renovate.json',
-  # excluding samples ci jobs since there are no samples in this repo
-  '.github/workflows/samples.yaml',
-  '.github/release-please.yml',
-  '.github/workflows/auto-release.yaml',
+java.common_templates(monorepo=True, excludes=[
+    ".github/*",
+    ".kokoro/*",
+    "samples/*",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "SECURITY.md",
+    "java.header",
+    "license-checks.xml",
+    "renovate.json",
+    ".gitignore"
 ])
