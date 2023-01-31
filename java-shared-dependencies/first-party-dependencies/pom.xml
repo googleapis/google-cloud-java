@@ -118,13 +118,13 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-core</artifactId>
-        <version>${google.core.version}</version>
+        <version>2.9.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-core:current} -->
         <type>test-jar</type>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-core</artifactId>
-        <version>${google.core.version}</version>
+        <version>2.9.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-core:current} -->
         <classifier>tests</classifier>
       </dependency>
     </dependencies>
