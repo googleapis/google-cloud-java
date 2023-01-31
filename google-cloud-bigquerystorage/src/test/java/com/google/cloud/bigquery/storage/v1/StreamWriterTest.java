@@ -462,8 +462,16 @@ public class StreamWriterTest {
 
   @Test
   public void testAppendSuccessAndConnectionError() throws Exception {
-    StreamWriter writer = getTestStreamWriter();
+    StreamWriter writer =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setWriterSchema(createProtoSchema())
+            .setTraceId(TEST_TRACE_ID)
+            // Retry expire immediately.
+            .setMaxRetryDuration(java.time.Duration.ofMillis(1L))
+            .build();
     testBigQueryWrite.addResponse(createAppendResponse(0));
+    testBigQueryWrite.addException(Status.INTERNAL.asException());
+    testBigQueryWrite.addException(Status.INTERNAL.asException());
     testBigQueryWrite.addException(Status.INTERNAL.asException());
 
     ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
@@ -582,11 +590,11 @@ public class StreamWriterTest {
   @Test
   public void testAppendAfterServerClose() throws Exception {
     StreamWriter writer = getTestStreamWriter();
-    testBigQueryWrite.addException(Status.INTERNAL.asException());
+    testBigQueryWrite.addException(Status.INVALID_ARGUMENT.asException());
 
     ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
     ApiException error1 = assertFutureException(ApiException.class, appendFuture1);
-    assertEquals(Code.INTERNAL, error1.getStatusCode().getCode());
+    assertEquals(Code.INVALID_ARGUMENT, error1.getStatusCode().getCode());
 
     ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer, new String[] {"B"});
     assertTrue(appendFuture2.isDone());
@@ -638,7 +646,7 @@ public class StreamWriterTest {
     StreamWriter writer = getTestStreamWriter();
     // Server will sleep 2 seconds before closing the connection.
     testBigQueryWrite.setResponseSleep(Duration.ofSeconds(2));
-    testBigQueryWrite.addException(Status.INTERNAL.asException());
+    testBigQueryWrite.addException(Status.INVALID_ARGUMENT.asException());
 
     // Send 10 requests, so that there are 10 inflight requests.
     int appendCount = 10;
@@ -650,7 +658,7 @@ public class StreamWriterTest {
     // Server close should properly handle all inflight requests.
     for (int i = 0; i < appendCount; i++) {
       ApiException actualError = assertFutureException(ApiException.class, futures.get(i));
-      assertEquals(Code.INTERNAL, actualError.getStatusCode().getCode());
+      assertEquals(Code.INVALID_ARGUMENT, actualError.getStatusCode().getCode());
     }
 
     writer.close();
