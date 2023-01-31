@@ -10,7 +10,6 @@
     <module>third-party-dependencies</module>
   </modules>
   <name>Google Cloud Shared Dependencies</name>
-  <url>https://github.com/googleapis/java-shared-dependencies</url>
   <description>
     Shared build configuration for Google Cloud Java libraries.
   </description>
@@ -22,22 +21,6 @@
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
-  <organization>
-    <name>Google LLC</name>
-  </organization>
-
-  <scm>
-    <connection>scm:git:git@github.com:googleapis/java-shared-dependencies.git</connection>
-    <developerConnection>scm:git:git@github.com:googleapis/java-shared-dependencies.git</developerConnection>
-    <url>https://github.com/googleapis/java-shared-dependencies</url>
-    <tag>HEAD</tag>
-  </scm>
-
-  <issueManagement>
-    <url>https://github.com/googleapis/java-shared-dependencies/issues</url>
-    <system>GitHub Issues</system>
-  </issueManagement>
-
   <distributionManagement>
     <snapshotRepository>
       <id>sonatype-nexus-snapshots</id>
@@ -48,13 +31,6 @@
       <url>https://google.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>
   </distributionManagement>
-
-  <licenses>
-    <license>
-      <name>Apache-2.0</name>
-      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
-    </license>
-  </licenses>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
