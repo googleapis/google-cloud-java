@@ -310,6 +310,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-core-bom</artifactId>
+        <version>2.9.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-core:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-datacatalog-bom</artifactId>
         <version>1.16.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
         <type>pom</type>
@@ -1006,8 +1013,18 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-iam-policy-parent</artifactId>
+        <version>1.7.1-SNAPSHOT</version><!-- {x-version-update:google-iam-policy:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-notification</artifactId>
         <version>0.128.0-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-notification:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-shared-dependencies</artifactId>
+        <version>3.1.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
       </dependency>
 
     </dependencies>
