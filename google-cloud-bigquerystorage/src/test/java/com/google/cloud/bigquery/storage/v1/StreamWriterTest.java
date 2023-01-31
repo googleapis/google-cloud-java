@@ -69,6 +69,7 @@ public class StreamWriterTest {
   private static final Logger log = Logger.getLogger(StreamWriterTest.class.getName());
   private static final String TEST_STREAM_1 = "projects/p/datasets/d1/tables/t1/streams/_default";
   private static final String TEST_STREAM_2 = "projects/p/datasets/d2/tables/t2/streams/_default";
+  private static final String TEST_STREAM_3 = "projects/p/datasets/d3/tables/t3/streams/_default";
   private static final String TEST_STREAM_SHORTEN = "projects/p/datasets/d2/tables/t2/_default";
   private static final String EXPLICIT_STEAM = "projects/p/datasets/d1/tables/t1/streams/s1";
   private static final String TEST_TRACE_ID = "DATAFLOW:job_id";
@@ -1088,6 +1089,115 @@ public class StreamWriterTest {
                   "wrong/projects/project1/wrong/datasets/dataset2/tables/something");
             });
     Assert.assertTrue(ex.getMessage().contains("The passed in stream name does not match"));
+  }
+
+  @Test
+  public void testRetryInUnrecoverableStatus_MultiplexingCase() throws Exception {
+    ConnectionWorkerPool.setOptions(
+        Settings.builder().setMinConnectionsPerRegion(1).setMaxConnectionsPerRegion(4).build());
+    ConnectionWorkerPool.enableTestingLogic();
+
+    // Setup: create three stream writers, two of them are writing to the same stream.
+    // Those four stream writers should be assigned to the same connection.
+    // 1. Submit three requests at first to trigger connection retry limitation.
+    // 2. At this point the connection should be entering a unrecoverable state.
+    // 3. Further submit requests to those stream writers would trigger connection reassignment.
+    StreamWriter writer1 = getMultiplexingStreamWriter(TEST_STREAM_1);
+    StreamWriter writer2 = getMultiplexingStreamWriter(TEST_STREAM_2);
+    StreamWriter writer3 = getMultiplexingStreamWriter(TEST_STREAM_3);
+    StreamWriter writer4 = getMultiplexingStreamWriter(TEST_STREAM_3);
+
+    testBigQueryWrite.setCloseForeverAfter(2);
+    testBigQueryWrite.setTimesToClose(1);
+    testBigQueryWrite.addResponse(createAppendResponse(0));
+    testBigQueryWrite.addResponse(createAppendResponse(1));
+
+    // Connection will be failed after triggering the third append.
+    ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer1, new String[] {"A"}, 0);
+    ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer2, new String[] {"B"}, 1);
+    ApiFuture<AppendRowsResponse> appendFuture3 = sendTestMessage(writer3, new String[] {"C"}, 2);
+    TimeUnit.SECONDS.sleep(1);
+    assertEquals(0, appendFuture1.get().getAppendResult().getOffset().getValue());
+    assertEquals(1, appendFuture2.get().getAppendResult().getOffset().getValue());
+    assertThrows(
+        ExecutionException.class,
+        () -> {
+          assertEquals(2, appendFuture3.get().getAppendResult().getOffset().getValue());
+        });
+    assertEquals(writer1.getTestOnlyConnectionWorkerPool().getTotalConnectionCount(), 1);
+    assertEquals(writer1.getTestOnlyConnectionWorkerPool().getCreateConnectionCount(), 1);
+
+    // Insert another request to the writer attached to closed connection would create another
+    // connection.
+
+    testBigQueryWrite.setCloseForeverAfter(0);
+    testBigQueryWrite.addResponse(createAppendResponse(4));
+    testBigQueryWrite.addResponse(createAppendResponse(5));
+    testBigQueryWrite.addResponse(createAppendResponse(6));
+    ApiFuture<AppendRowsResponse> appendFuture4 = sendTestMessage(writer4, new String[] {"A"}, 2);
+    ApiFuture<AppendRowsResponse> appendFuture5 = sendTestMessage(writer1, new String[] {"A"}, 3);
+    ApiFuture<AppendRowsResponse> appendFuture6 = sendTestMessage(writer2, new String[] {"B"}, 4);
+    assertEquals(4, appendFuture4.get().getAppendResult().getOffset().getValue());
+    assertEquals(5, appendFuture5.get().getAppendResult().getOffset().getValue());
+    assertEquals(6, appendFuture6.get().getAppendResult().getOffset().getValue());
+    assertEquals(writer1.getTestOnlyConnectionWorkerPool().getTotalConnectionCount(), 1);
+    assertEquals(writer1.getTestOnlyConnectionWorkerPool().getCreateConnectionCount(), 2);
+
+    writer1.close();
+    writer2.close();
+    writer3.close();
+    writer4.close();
+    assertEquals(writer1.getTestOnlyConnectionWorkerPool().getTotalConnectionCount(), 0);
+  }
+
+  @Test
+  public void testCloseWhileInUnrecoverableState() throws Exception {
+    ConnectionWorkerPool.setOptions(
+        Settings.builder().setMinConnectionsPerRegion(1).setMaxConnectionsPerRegion(4).build());
+    ConnectionWorkerPool.enableTestingLogic();
+
+    // Setup: create three stream writers
+    // 1. Submit three requests at first to trigger connection retry limitation.
+    // 2. Submit request to writer3 to trigger reassignment
+    // 3. Close the previous two writers would be succesful
+    StreamWriter writer1 = getMultiplexingStreamWriter(TEST_STREAM_1);
+    StreamWriter writer2 = getMultiplexingStreamWriter(TEST_STREAM_2);
+    StreamWriter writer3 = getMultiplexingStreamWriter(TEST_STREAM_3);
+
+    testBigQueryWrite.setCloseForeverAfter(2);
+    testBigQueryWrite.setTimesToClose(1);
+    testBigQueryWrite.addResponse(createAppendResponse(0));
+    testBigQueryWrite.addResponse(createAppendResponse(1));
+
+    // Connection will be failed after triggering the third append.
+    ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer1, new String[] {"A"}, 0);
+    ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer2, new String[] {"B"}, 1);
+    ApiFuture<AppendRowsResponse> appendFuture3 = sendTestMessage(writer3, new String[] {"C"}, 2);
+    TimeUnit.SECONDS.sleep(1);
+    assertEquals(0, appendFuture1.get().getAppendResult().getOffset().getValue());
+    assertEquals(1, appendFuture2.get().getAppendResult().getOffset().getValue());
+    assertThrows(
+        ExecutionException.class,
+        () -> {
+          assertEquals(2, appendFuture3.get().getAppendResult().getOffset().getValue());
+        });
+    assertEquals(writer1.getTestOnlyConnectionWorkerPool().getTotalConnectionCount(), 1);
+    assertEquals(writer1.getTestOnlyConnectionWorkerPool().getCreateConnectionCount(), 1);
+
+    writer1.close();
+    writer2.close();
+    // We will still be left with one request
+    assertEquals(writer1.getTestOnlyConnectionWorkerPool().getCreateConnectionCount(), 1);
+  }
+
+  public StreamWriter getMultiplexingStreamWriter(String streamName) throws IOException {
+    return StreamWriter.newBuilder(streamName, client)
+        .setWriterSchema(createProtoSchema())
+        .setEnableConnectionPool(true)
+        .setMaxInflightRequests(10)
+        .setLocation("US")
+        .setMaxRetryDuration(java.time.Duration.ofMillis(100))
+        .build();
   }
 
   // Timeout to ensure close() doesn't wait for done callback timeout.

@@ -31,6 +31,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
@@ -448,6 +449,15 @@ public class StreamWriter implements AutoCloseable {
   static void cleanUp() {
     testOnlyClientCreatedTimes = 0;
     connectionPoolMap.clear();
+  }
+
+  @VisibleForTesting
+  ConnectionWorkerPool getTestOnlyConnectionWorkerPool() {
+    ConnectionWorkerPool connectionWorkerPool = null;
+    for (Entry<ConnectionPoolKey, ConnectionWorkerPool> entry : connectionPoolMap.entrySet()) {
+      connectionWorkerPool = entry.getValue();
+    }
+    return connectionWorkerPool;
   }
 
   /** A builder of {@link StreamWriter}s. */

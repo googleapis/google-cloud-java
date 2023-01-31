@@ -378,6 +378,11 @@ class ConnectionWorker implements AutoCloseable {
     return writerId;
   }
 
+  boolean isConnectionInUnrecoverableState() {
+    // If final status is set, there's no
+    return connectionFinalStatus != null;
+  }
+
   /** Close the stream writer. Shut down all resources. */
   @Override
   public void close() {
