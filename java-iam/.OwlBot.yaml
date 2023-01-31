@@ -14,11 +14,12 @@
 
 
 deep-remove-regex:
-  - "/grpc-google-.*/src"
-  - "/proto-google-.*/src"
+  - "/java-iam/grpc-google-.*/src"
+  - "/java-iam/proto-google-.*/src"
 
 deep-preserve-regex:
-  - "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+  - "/java-iam/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-iam/samples/snippets/generated"
 
 deep-copy-regex:
   - source: "/google/iam/v2beta/google-cloud-iam-v2beta-java/gapic-google-cloud-iam-v2beta-java/src"
