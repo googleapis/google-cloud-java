@@ -86,6 +86,7 @@
 
   <modules>
     <module>google-iam-policy</module>
+    <module>google-iam-policy-bom</module>
   </modules>
 
   <reporting>
