@@ -1,6 +1,20 @@
 #!/bin/bash
 
+# Merging repository to google-cloud-java using git-filter-repo.
 # https://stackoverflow.com/questions/1425892/how-do-you-merge-two-git-repositories
+#
+# Usage:
+#   cd google-cloud-java
+#   # edit the repository to merge.
+#   vim generation/repo.txt
+#   # use your account
+#   export USERNAME=XXX
+#   # Run the script
+#   ./generation/merge_repository.sh
+#   # Create a pull request. Ensure you MERGE the pull request. Not 'squash'.
+#   cd generation/monorepo/google-cloud-java-merged
+#   git checkout -b merge_repositories
+#   gh pr create --title 'chore: merge new repository into google-cloud-java' --body ''
 
 set -xe
 
@@ -33,23 +47,25 @@ do
   git filter-repo --to-subdirectory-filter ${service}
 
   # setup owlbot files correctly to match monorepo configuration
-  cp ${service}/.github/.OwlBot.yaml ${service}/.OwlBot.yaml
-  rm ${service}/.github/.OwlBot.lock.yaml
-  rm ${service}/.github/.OwlBot.yaml
-  sed -i.bak '/docker/d' ${service}/.OwlBot.yaml && rm ${service}/.OwlBot.yaml.bak
-  sed -i.bak '/image/d' ${service}/.OwlBot.yaml && rm ${service}/.OwlBot.yaml.bak
+  if [ -r "${service}/.github/.OwlBot.yaml" ]; then
+    cp ${service}/.github/.OwlBot.yaml ${service}/.OwlBot.yaml
+    rm ${service}/.github/.OwlBot.lock.yaml
+    rm ${service}/.github/.OwlBot.yaml
+    sed -i.bak '/docker/d' ${service}/.OwlBot.yaml && rm ${service}/.OwlBot.yaml.bak
+    sed -i.bak '/image/d' ${service}/.OwlBot.yaml && rm ${service}/.OwlBot.yaml.bak
 
-  # In monorepo, the staging directory structure tells the destination module to
-  # which the OwlBot Java postprocessor copies the files.
-  sed -i.bak "s|owl-bot-staging|owl-bot-staging/${service}|" ${service}/.OwlBot.yaml && rm ${service}/.OwlBot.yaml.bak
+    # In monorepo, the staging directory structure tells the destination module to
+    # which the OwlBot Java postprocessor copies the files.
+    sed -i.bak "s|owl-bot-staging|owl-bot-staging/${service}|" ${service}/.OwlBot.yaml && rm ${service}/.OwlBot.yaml.bak
 
-  text=$(grep '^.*api_shortname.*' ${service}/.repo-metadata.json)
-  text=$(echo "$text" | sed 's/\"//g; s/\,//g; s/^[[:space:]]*//' )
-  text=${text/api_shortname/api-name}
-  echo -e "\n"$text>> ${service}/.OwlBot.yaml
-  git add .
-  git config --add secrets.allowed "dest.*src"
-  git commit -am "chore: setup owlbot configuration"
+    text=$(grep '^.*api_shortname.*' ${service}/.repo-metadata.json)
+    text=$(echo "$text" | sed 's/\"//g; s/\,//g; s/^[[:space:]]*//' )
+    text=${text/api_shortname/api-name}
+    echo -e "\n"$text>> ${service}/.OwlBot.yaml
+    git add .
+    git config --add secrets.allowed "dest.*src"
+    git commit -am "chore: setup owlbot configuration"
+  fi
 
   cd "../${merged_repository}"
   git remote add ${service} ../${service}
@@ -73,6 +89,9 @@ git commit -m 'chore: add template files'
 
 git add pom.xml
 git commit -am 'chore: create aggregator pom' --allow-empty
+
+echo "Not doing something special for java-core, java-shared-dependencies, and java-iam"
+exit 0
 
 # Point modules poms and BOMs to the aggregator pom as parent
 bash ../../set_parent_pom.sh
