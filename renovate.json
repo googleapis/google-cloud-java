@@ -5,7 +5,9 @@
   "includePaths": [
     "pom.xml",
     "google-cloud-pom-parent/pom.xml",
-    "google-cloud-jar-parent/pom.xml"
+    "google-cloud-jar-parent/pom.xml",
+    "java-shared-dependencies/first-party-dependencies/pom.xml",
+    "java-shared-dependencies/third-party-dependencies/pom.xml"
   ],
   "regexManagers": [
     {
