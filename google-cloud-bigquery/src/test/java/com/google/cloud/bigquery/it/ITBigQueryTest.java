@@ -3956,7 +3956,7 @@ public class ITBigQueryTest {
     struct.put("integerField", integerValue);
     struct.put("stringField", stringValue);
     QueryParameterValue recordValue = QueryParameterValue.struct(struct);
-    String query = "SELECT STRUCT(@recordField) AS record";
+    String query = "SELECT @recordField AS record";
     QueryJobConfiguration config =
         QueryJobConfiguration.newBuilder(query)
             .setDefaultDataset(DATASET)
@@ -3967,9 +3967,7 @@ public class ITBigQueryTest {
     assertEquals(1, Iterables.size(result.getValues()));
     for (FieldValueList values : result.iterateAll()) {
       for (FieldValue value : values) {
-        for (FieldValue record : value.getRecordValue()) {
-          assertsFieldValue(record);
-        }
+        assertsFieldValue(value);
       }
     }
   }
@@ -4017,7 +4015,7 @@ public class ITBigQueryTest {
     structValue.put("string", stringValue);
     structValue.put("struct", recordValue);
     QueryParameterValue nestedRecordField = QueryParameterValue.struct(structValue);
-    String query = "SELECT STRUCT(@nestedRecordField) AS record";
+    String query = "SELECT @nestedRecordField AS record";
     QueryJobConfiguration config =
         QueryJobConfiguration.newBuilder(query)
             .setDefaultDataset(DATASET)
@@ -4028,18 +4026,15 @@ public class ITBigQueryTest {
     assertEquals(1, Iterables.size(result.getValues()));
     for (FieldValueList values : result.iterateAll()) {
       for (FieldValue value : values) {
-        assertEquals(FieldValue.Attribute.RECORD, value.getAttribute());
-        for (FieldValue record : value.getRecordValue()) {
-          assertEquals(
-              true, record.getRecordValue().get(0).getRecordValue().get(0).getBooleanValue());
-          assertEquals(10, record.getRecordValue().get(0).getRecordValue().get(1).getLongValue());
-          assertEquals(
-              "test-stringField",
-              record.getRecordValue().get(0).getRecordValue().get(2).getStringValue());
-          assertEquals(true, record.getRecordValue().get(1).getBooleanValue());
-          assertEquals("test-stringField", record.getRecordValue().get(2).getStringValue());
-          assertEquals(10, record.getRecordValue().get(3).getLongValue());
-        }
+        assertEquals(Attribute.RECORD, value.getAttribute());
+        assertEquals(true, value.getRecordValue().get(0).getRecordValue().get(0).getBooleanValue());
+        assertEquals(10, value.getRecordValue().get(0).getRecordValue().get(1).getLongValue());
+        assertEquals(
+            "test-stringField",
+            value.getRecordValue().get(0).getRecordValue().get(2).getStringValue());
+        assertEquals(true, value.getRecordValue().get(1).getBooleanValue());
+        assertEquals("test-stringField", value.getRecordValue().get(2).getStringValue());
+        assertEquals(10, value.getRecordValue().get(3).getLongValue());
       }
     }
   }
