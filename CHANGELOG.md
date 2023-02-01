@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.29.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.28.4...v2.29.0) (2023-02-01)
+
+
+### Features
+
+* Add timeout to inflight queue waiting ([#1957](https://github.com/googleapis/java-bigquerystorage/issues/1957)) ([3159b12](https://github.com/googleapis/java-bigquerystorage/commit/3159b120e5cd388cf9776a1fa928a3e6ae105d9d))
+* Allow java client to handle schema change during same stream name  ([#1964](https://github.com/googleapis/java-bigquerystorage/issues/1964)) ([305f71e](https://github.com/googleapis/java-bigquerystorage/commit/305f71ee4b274df58388fc3000e9f5da9fc908e1))
+
+
+### Bug Fixes
+
+* At connection level, retry for internal errors ([#1965](https://github.com/googleapis/java-bigquerystorage/issues/1965)) ([9c01bc1](https://github.com/googleapis/java-bigquerystorage/commit/9c01bc11b51dc1e3e209e4d6b666b9ddd3212cf5))
+* Reduce visibility of the ConnectionPool and ConnectionWorker, so… ([#1954](https://github.com/googleapis/java-bigquerystorage/issues/1954)) ([dcb234b](https://github.com/googleapis/java-bigquerystorage/commit/dcb234b95d0812d4d91b0c206d0b7e0fb30ab0fa))
+* Remove unrecoverable connection from connection pool during multiplexing  ([#1967](https://github.com/googleapis/java-bigquerystorage/issues/1967)) ([091dddb](https://github.com/googleapis/java-bigquerystorage/commit/091dddb9b2baf1f4b481e8d7961d451b71a8508b))
+
 ## [2.28.4](https://github.com/googleapis/java-bigquerystorage/compare/v2.28.3...v2.28.4) (2023-01-25)
 
 
