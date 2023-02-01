@@ -28,7 +28,10 @@ public interface IntentOrBuilder
    *
    * <pre>
    * Optional. The unique identifier of this intent.
-   * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
+   * Required for
+   * [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent]
+   * and
+   * [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
    * methods.
    * Supported formats:
    * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
@@ -45,7 +48,10 @@ public interface IntentOrBuilder
    *
    * <pre>
    * Optional. The unique identifier of this intent.
-   * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
+   * Required for
+   * [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent]
+   * and
+   * [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
    * methods.
    * Supported formats:
    * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
@@ -164,7 +170,7 @@ public interface IntentOrBuilder
    * <code>bool ml_enabled = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.Intent.ml_enabled is deprecated. See
-   *     google/cloud/dialogflow/v2beta1/intent.proto;l=1142
+   *     google/cloud/dialogflow/v2beta1/intent.proto;l=1154
    * @return The mlEnabled.
    */
   @java.lang.Deprecated
@@ -781,9 +787,10 @@ public interface IntentOrBuilder
    * <pre>
    * Optional. The unique identifier of the parent intent in the
    * chain of followup intents. You can set this field when creating an intent,
-   * for example with [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
-   * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents], in order to make this
-   * intent a followup intent.
+   * for example with
+   * [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
+   * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents],
+   * in order to make this intent a followup intent.
    * It identifies the parent followup intent.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
@@ -799,9 +806,10 @@ public interface IntentOrBuilder
    * <pre>
    * Optional. The unique identifier of the parent intent in the
    * chain of followup intents. You can set this field when creating an intent,
-   * for example with [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
-   * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents], in order to make this
-   * intent a followup intent.
+   * for example with
+   * [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
+   * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents],
+   * in order to make this intent a followup intent.
    * It identifies the parent followup intent.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
@@ -816,8 +824,8 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Output only. Information about all followup intents that have this intent as
-   * a direct or indirect parent. We populate this field only in the output.
+   * Output only. Information about all followup intents that have this intent
+   * as a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
    * <code>
@@ -830,8 +838,8 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Output only. Information about all followup intents that have this intent as
-   * a direct or indirect parent. We populate this field only in the output.
+   * Output only. Information about all followup intents that have this intent
+   * as a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
    * <code>
@@ -843,8 +851,8 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Output only. Information about all followup intents that have this intent as
-   * a direct or indirect parent. We populate this field only in the output.
+   * Output only. Information about all followup intents that have this intent
+   * as a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
    * <code>
@@ -856,8 +864,8 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Output only. Information about all followup intents that have this intent as
-   * a direct or indirect parent. We populate this field only in the output.
+   * Output only. Information about all followup intents that have this intent
+   * as a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
    * <code>
@@ -870,8 +878,8 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Output only. Information about all followup intents that have this intent as
-   * a direct or indirect parent. We populate this field only in the output.
+   * Output only. Information about all followup intents that have this intent
+   * as a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
    * <code>

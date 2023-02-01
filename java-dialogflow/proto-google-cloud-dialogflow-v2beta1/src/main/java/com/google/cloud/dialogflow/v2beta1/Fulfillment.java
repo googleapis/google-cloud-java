@@ -221,8 +221,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicates if generic web service is created through Cloud Functions
-     * integration. Defaults to false.
+     * Optional. Indicates if generic web service is created through Cloud
+     * Functions integration. Defaults to false.
      * is_cloud_function is deprecated. Cloud functions can be configured by
      * its uri as a regular web service now.
      * </pre>
@@ -232,7 +232,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.Fulfillment.GenericWebService.is_cloud_function
-     *     is deprecated. See google/cloud/dialogflow/v2beta1/fulfillment.proto;l=108
+     *     is deprecated. See google/cloud/dialogflow/v2beta1/fulfillment.proto;l=109
      * @return The isCloudFunction.
      */
     @java.lang.Deprecated
@@ -570,8 +570,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicates if generic web service is created through Cloud Functions
-     * integration. Defaults to false.
+     * Optional. Indicates if generic web service is created through Cloud
+     * Functions integration. Defaults to false.
      * is_cloud_function is deprecated. Cloud functions can be configured by
      * its uri as a regular web service now.
      * </pre>
@@ -581,7 +581,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.Fulfillment.GenericWebService.is_cloud_function
-     *     is deprecated. See google/cloud/dialogflow/v2beta1/fulfillment.proto;l=108
+     *     is deprecated. See google/cloud/dialogflow/v2beta1/fulfillment.proto;l=109
      * @return The isCloudFunction.
      */
     @java.lang.Override
@@ -1575,8 +1575,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Indicates if generic web service is created through Cloud Functions
-       * integration. Defaults to false.
+       * Optional. Indicates if generic web service is created through Cloud
+       * Functions integration. Defaults to false.
        * is_cloud_function is deprecated. Cloud functions can be configured by
        * its uri as a regular web service now.
        * </pre>
@@ -1586,7 +1586,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.dialogflow.v2beta1.Fulfillment.GenericWebService.is_cloud_function
-       *     is deprecated. See google/cloud/dialogflow/v2beta1/fulfillment.proto;l=108
+       *     is deprecated. See google/cloud/dialogflow/v2beta1/fulfillment.proto;l=109
        * @return The isCloudFunction.
        */
       @java.lang.Override
@@ -1598,8 +1598,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Indicates if generic web service is created through Cloud Functions
-       * integration. Defaults to false.
+       * Optional. Indicates if generic web service is created through Cloud
+       * Functions integration. Defaults to false.
        * is_cloud_function is deprecated. Cloud functions can be configured by
        * its uri as a regular web service now.
        * </pre>
@@ -1609,7 +1609,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.dialogflow.v2beta1.Fulfillment.GenericWebService.is_cloud_function
-       *     is deprecated. See google/cloud/dialogflow/v2beta1/fulfillment.proto;l=108
+       *     is deprecated. See google/cloud/dialogflow/v2beta1/fulfillment.proto;l=109
        * @param value The isCloudFunction to set.
        * @return This builder for chaining.
        */
@@ -1625,8 +1625,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Indicates if generic web service is created through Cloud Functions
-       * integration. Defaults to false.
+       * Optional. Indicates if generic web service is created through Cloud
+       * Functions integration. Defaults to false.
        * is_cloud_function is deprecated. Cloud functions can be configured by
        * its uri as a regular web service now.
        * </pre>
@@ -1636,7 +1636,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.dialogflow.v2beta1.Fulfillment.GenericWebService.is_cloud_function
-       *     is deprecated. See google/cloud/dialogflow/v2beta1/fulfillment.proto;l=108
+       *     is deprecated. See google/cloud/dialogflow/v2beta1/fulfillment.proto;l=109
        * @return This builder for chaining.
        */
       @java.lang.Deprecated

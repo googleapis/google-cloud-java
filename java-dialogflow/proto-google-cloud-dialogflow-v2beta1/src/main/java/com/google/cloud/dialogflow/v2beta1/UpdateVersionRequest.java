@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [Versions.UpdateVersion][google.cloud.dialogflow.v2beta1.Versions.UpdateVersion].
+ * The request message for
+ * [Versions.UpdateVersion][google.cloud.dialogflow.v2beta1.Versions.UpdateVersion].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.UpdateVersionRequest}
@@ -365,7 +366,8 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The request message for [Versions.UpdateVersion][google.cloud.dialogflow.v2beta1.Versions.UpdateVersion].
+   * The request message for
+   * [Versions.UpdateVersion][google.cloud.dialogflow.v2beta1.Versions.UpdateVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.UpdateVersionRequest}

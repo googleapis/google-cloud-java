@@ -6677,8 +6677,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Required. The name of a dialogflow virtual agent used for end user side intent
-       * detection and suggestion. Format: `projects/&lt;Project Number /
+       * Required. The name of a dialogflow virtual agent used for end user side
+       * intent detection and suggestion. Format: `projects/&lt;Project Number /
        * ID&gt;/locations/&lt;Location ID&gt;/agent`. When multiple agents are allowed in
        * the same Dialogflow project.
        * </pre>
@@ -6694,8 +6694,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Required. The name of a dialogflow virtual agent used for end user side intent
-       * detection and suggestion. Format: `projects/&lt;Project Number /
+       * Required. The name of a dialogflow virtual agent used for end user side
+       * intent detection and suggestion. Format: `projects/&lt;Project Number /
        * ID&gt;/locations/&lt;Location ID&gt;/agent`. When multiple agents are allowed in
        * the same Dialogflow project.
        * </pre>
@@ -6769,8 +6769,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Required. The name of a dialogflow virtual agent used for end user side intent
-       * detection and suggestion. Format: `projects/&lt;Project Number /
+       * Required. The name of a dialogflow virtual agent used for end user side
+       * intent detection and suggestion. Format: `projects/&lt;Project Number /
        * ID&gt;/locations/&lt;Location ID&gt;/agent`. When multiple agents are allowed in
        * the same Dialogflow project.
        * </pre>
@@ -6797,8 +6797,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Required. The name of a dialogflow virtual agent used for end user side intent
-       * detection and suggestion. Format: `projects/&lt;Project Number /
+       * Required. The name of a dialogflow virtual agent used for end user side
+       * intent detection and suggestion. Format: `projects/&lt;Project Number /
        * ID&gt;/locations/&lt;Location ID&gt;/agent`. When multiple agents are allowed in
        * the same Dialogflow project.
        * </pre>
@@ -7234,8 +7234,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
          *
          *
          * <pre>
-         * Required. The name of a dialogflow virtual agent used for end user side intent
-         * detection and suggestion. Format: `projects/&lt;Project Number /
+         * Required. The name of a dialogflow virtual agent used for end user side
+         * intent detection and suggestion. Format: `projects/&lt;Project Number /
          * ID&gt;/locations/&lt;Location ID&gt;/agent`. When multiple agents are allowed in
          * the same Dialogflow project.
          * </pre>
@@ -7261,8 +7261,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
          *
          *
          * <pre>
-         * Required. The name of a dialogflow virtual agent used for end user side intent
-         * detection and suggestion. Format: `projects/&lt;Project Number /
+         * Required. The name of a dialogflow virtual agent used for end user side
+         * intent detection and suggestion. Format: `projects/&lt;Project Number /
          * ID&gt;/locations/&lt;Location ID&gt;/agent`. When multiple agents are allowed in
          * the same Dialogflow project.
          * </pre>
@@ -7288,8 +7288,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
          *
          *
          * <pre>
-         * Required. The name of a dialogflow virtual agent used for end user side intent
-         * detection and suggestion. Format: `projects/&lt;Project Number /
+         * Required. The name of a dialogflow virtual agent used for end user side
+         * intent detection and suggestion. Format: `projects/&lt;Project Number /
          * ID&gt;/locations/&lt;Location ID&gt;/agent`. When multiple agents are allowed in
          * the same Dialogflow project.
          * </pre>
@@ -7314,8 +7314,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
          *
          *
          * <pre>
-         * Required. The name of a dialogflow virtual agent used for end user side intent
-         * detection and suggestion. Format: `projects/&lt;Project Number /
+         * Required. The name of a dialogflow virtual agent used for end user side
+         * intent detection and suggestion. Format: `projects/&lt;Project Number /
          * ID&gt;/locations/&lt;Location ID&gt;/agent`. When multiple agents are allowed in
          * the same Dialogflow project.
          * </pre>
@@ -7336,8 +7336,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
          *
          *
          * <pre>
-         * Required. The name of a dialogflow virtual agent used for end user side intent
-         * detection and suggestion. Format: `projects/&lt;Project Number /
+         * Required. The name of a dialogflow virtual agent used for end user side
+         * intent detection and suggestion. Format: `projects/&lt;Project Number /
          * ID&gt;/locations/&lt;Location ID&gt;/agent`. When multiple agents are allowed in
          * the same Dialogflow project.
          * </pre>
@@ -11875,11 +11875,17 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * and identifies the prevailing subjective opinion, especially to determine
      * a user's attitude as positive, negative, or neutral:
      * https://cloud.google.com/natural-language/docs/basics#sentiment_analysis
-     * For [Participants.StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.StreamingAnalyzeContent] method, result will be in
+     * For
+     * [Participants.StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.StreamingAnalyzeContent]
+     * method, result will be in
      * [StreamingAnalyzeContentResponse.message.SentimentAnalysisResult][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse.message].
-     * For [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent] method, result will be in
+     * For
+     * [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent]
+     * method, result will be in
      * [AnalyzeContentResponse.message.SentimentAnalysisResult][google.cloud.dialogflow.v2beta1.AnalyzeContentResponse.message]
-     * For [Conversations.ListMessages][google.cloud.dialogflow.v2beta1.Conversations.ListMessages] method, result will be in
+     * For
+     * [Conversations.ListMessages][google.cloud.dialogflow.v2beta1.Conversations.ListMessages]
+     * method, result will be in
      * [ListMessagesResponse.messages.SentimentAnalysisResult][google.cloud.dialogflow.v2beta1.ListMessagesResponse.messages]
      * If Pub/Sub notification is configured, result will be in
      * [ConversationEvent.new_message_payload.SentimentAnalysisResult][google.cloud.dialogflow.v2beta1.ConversationEvent.new_message_payload].
@@ -11975,11 +11981,17 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * and identifies the prevailing subjective opinion, especially to determine
      * a user's attitude as positive, negative, or neutral:
      * https://cloud.google.com/natural-language/docs/basics#sentiment_analysis
-     * For [Participants.StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.StreamingAnalyzeContent] method, result will be in
+     * For
+     * [Participants.StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.StreamingAnalyzeContent]
+     * method, result will be in
      * [StreamingAnalyzeContentResponse.message.SentimentAnalysisResult][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse.message].
-     * For [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent] method, result will be in
+     * For
+     * [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent]
+     * method, result will be in
      * [AnalyzeContentResponse.message.SentimentAnalysisResult][google.cloud.dialogflow.v2beta1.AnalyzeContentResponse.message]
-     * For [Conversations.ListMessages][google.cloud.dialogflow.v2beta1.Conversations.ListMessages] method, result will be in
+     * For
+     * [Conversations.ListMessages][google.cloud.dialogflow.v2beta1.Conversations.ListMessages]
+     * method, result will be in
      * [ListMessagesResponse.messages.SentimentAnalysisResult][google.cloud.dialogflow.v2beta1.ListMessagesResponse.messages]
      * If Pub/Sub notification is configured, result will be in
      * [ConversationEvent.new_message_payload.SentimentAnalysisResult][google.cloud.dialogflow.v2beta1.ConversationEvent.new_message_payload].
@@ -12478,11 +12490,17 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * and identifies the prevailing subjective opinion, especially to determine
        * a user's attitude as positive, negative, or neutral:
        * https://cloud.google.com/natural-language/docs/basics#sentiment_analysis
-       * For [Participants.StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.StreamingAnalyzeContent] method, result will be in
+       * For
+       * [Participants.StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.StreamingAnalyzeContent]
+       * method, result will be in
        * [StreamingAnalyzeContentResponse.message.SentimentAnalysisResult][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse.message].
-       * For [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent] method, result will be in
+       * For
+       * [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent]
+       * method, result will be in
        * [AnalyzeContentResponse.message.SentimentAnalysisResult][google.cloud.dialogflow.v2beta1.AnalyzeContentResponse.message]
-       * For [Conversations.ListMessages][google.cloud.dialogflow.v2beta1.Conversations.ListMessages] method, result will be in
+       * For
+       * [Conversations.ListMessages][google.cloud.dialogflow.v2beta1.Conversations.ListMessages]
+       * method, result will be in
        * [ListMessagesResponse.messages.SentimentAnalysisResult][google.cloud.dialogflow.v2beta1.ListMessagesResponse.messages]
        * If Pub/Sub notification is configured, result will be in
        * [ConversationEvent.new_message_payload.SentimentAnalysisResult][google.cloud.dialogflow.v2beta1.ConversationEvent.new_message_payload].
@@ -12506,11 +12524,17 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * and identifies the prevailing subjective opinion, especially to determine
        * a user's attitude as positive, negative, or neutral:
        * https://cloud.google.com/natural-language/docs/basics#sentiment_analysis
-       * For [Participants.StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.StreamingAnalyzeContent] method, result will be in
+       * For
+       * [Participants.StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.StreamingAnalyzeContent]
+       * method, result will be in
        * [StreamingAnalyzeContentResponse.message.SentimentAnalysisResult][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse.message].
-       * For [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent] method, result will be in
+       * For
+       * [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent]
+       * method, result will be in
        * [AnalyzeContentResponse.message.SentimentAnalysisResult][google.cloud.dialogflow.v2beta1.AnalyzeContentResponse.message]
-       * For [Conversations.ListMessages][google.cloud.dialogflow.v2beta1.Conversations.ListMessages] method, result will be in
+       * For
+       * [Conversations.ListMessages][google.cloud.dialogflow.v2beta1.Conversations.ListMessages]
+       * method, result will be in
        * [ListMessagesResponse.messages.SentimentAnalysisResult][google.cloud.dialogflow.v2beta1.ListMessagesResponse.messages]
        * If Pub/Sub notification is configured, result will be in
        * [ConversationEvent.new_message_payload.SentimentAnalysisResult][google.cloud.dialogflow.v2beta1.ConversationEvent.new_message_payload].
@@ -12538,11 +12562,17 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * and identifies the prevailing subjective opinion, especially to determine
        * a user's attitude as positive, negative, or neutral:
        * https://cloud.google.com/natural-language/docs/basics#sentiment_analysis
-       * For [Participants.StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.StreamingAnalyzeContent] method, result will be in
+       * For
+       * [Participants.StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.StreamingAnalyzeContent]
+       * method, result will be in
        * [StreamingAnalyzeContentResponse.message.SentimentAnalysisResult][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse.message].
-       * For [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent] method, result will be in
+       * For
+       * [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent]
+       * method, result will be in
        * [AnalyzeContentResponse.message.SentimentAnalysisResult][google.cloud.dialogflow.v2beta1.AnalyzeContentResponse.message]
-       * For [Conversations.ListMessages][google.cloud.dialogflow.v2beta1.Conversations.ListMessages] method, result will be in
+       * For
+       * [Conversations.ListMessages][google.cloud.dialogflow.v2beta1.Conversations.ListMessages]
+       * method, result will be in
        * [ListMessagesResponse.messages.SentimentAnalysisResult][google.cloud.dialogflow.v2beta1.ListMessagesResponse.messages]
        * If Pub/Sub notification is configured, result will be in
        * [ConversationEvent.new_message_payload.SentimentAnalysisResult][google.cloud.dialogflow.v2beta1.ConversationEvent.new_message_payload].

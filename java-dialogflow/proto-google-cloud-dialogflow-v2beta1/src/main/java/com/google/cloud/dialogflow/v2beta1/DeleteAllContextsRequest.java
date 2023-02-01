@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [Contexts.DeleteAllContexts][google.cloud.dialogflow.v2beta1.Contexts.DeleteAllContexts].
+ * The request message for
+ * [Contexts.DeleteAllContexts][google.cloud.dialogflow.v2beta1.Contexts.DeleteAllContexts].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.DeleteAllContextsRequest}
@@ -75,7 +76,8 @@ public final class DeleteAllContextsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The name of the session to delete all contexts from. Supported formats:
+   * Required. The name of the session to delete all contexts from. Supported
+   * formats:
    * - `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;,
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session
    *   ID&gt;`,
@@ -111,7 +113,8 @@ public final class DeleteAllContextsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The name of the session to delete all contexts from. Supported formats:
+   * Required. The name of the session to delete all contexts from. Supported
+   * formats:
    * - `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;,
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session
    *   ID&gt;`,
@@ -308,7 +311,8 @@ public final class DeleteAllContextsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The request message for [Contexts.DeleteAllContexts][google.cloud.dialogflow.v2beta1.Contexts.DeleteAllContexts].
+   * The request message for
+   * [Contexts.DeleteAllContexts][google.cloud.dialogflow.v2beta1.Contexts.DeleteAllContexts].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.DeleteAllContextsRequest}
@@ -495,7 +499,8 @@ public final class DeleteAllContextsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The name of the session to delete all contexts from. Supported formats:
+     * Required. The name of the session to delete all contexts from. Supported
+     * formats:
      * - `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;,
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session
      *   ID&gt;`,
@@ -530,7 +535,8 @@ public final class DeleteAllContextsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The name of the session to delete all contexts from. Supported formats:
+     * Required. The name of the session to delete all contexts from. Supported
+     * formats:
      * - `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;,
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session
      *   ID&gt;`,
@@ -565,7 +571,8 @@ public final class DeleteAllContextsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The name of the session to delete all contexts from. Supported formats:
+     * Required. The name of the session to delete all contexts from. Supported
+     * formats:
      * - `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;,
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session
      *   ID&gt;`,
@@ -599,7 +606,8 @@ public final class DeleteAllContextsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The name of the session to delete all contexts from. Supported formats:
+     * Required. The name of the session to delete all contexts from. Supported
+     * formats:
      * - `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;,
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session
      *   ID&gt;`,
@@ -629,7 +637,8 @@ public final class DeleteAllContextsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The name of the session to delete all contexts from. Supported formats:
+     * Required. The name of the session to delete all contexts from. Supported
+     * formats:
      * - `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;,
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session
      *   ID&gt;`,

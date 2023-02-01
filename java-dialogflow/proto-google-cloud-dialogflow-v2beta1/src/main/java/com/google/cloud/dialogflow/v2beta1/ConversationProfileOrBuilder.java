@@ -351,7 +351,8 @@ public interface ConversationProfileOrBuilder
    *
    * <pre>
    * Configuration for publishing new message events. Event will be sent in
-   * format of [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
+   * format of
+   * [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
    * </pre>
    *
    * <code>
@@ -366,7 +367,8 @@ public interface ConversationProfileOrBuilder
    *
    * <pre>
    * Configuration for publishing new message events. Event will be sent in
-   * format of [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
+   * format of
+   * [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
    * </pre>
    *
    * <code>
@@ -381,7 +383,8 @@ public interface ConversationProfileOrBuilder
    *
    * <pre>
    * Configuration for publishing new message events. Event will be sent in
-   * format of [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
+   * format of
+   * [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
    * </pre>
    *
    * <code>

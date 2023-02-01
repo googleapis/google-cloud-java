@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [Fulfillments.GetFulfillment][google.cloud.dialogflow.v2beta1.Fulfillments.GetFulfillment].
+ * The request message for
+ * [Fulfillments.GetFulfillment][google.cloud.dialogflow.v2beta1.Fulfillments.GetFulfillment].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.GetFulfillmentRequest}
@@ -292,7 +293,8 @@ public final class GetFulfillmentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The request message for [Fulfillments.GetFulfillment][google.cloud.dialogflow.v2beta1.Fulfillments.GetFulfillment].
+   * The request message for
+   * [Fulfillments.GetFulfillment][google.cloud.dialogflow.v2beta1.Fulfillments.GetFulfillment].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.GetFulfillmentRequest}

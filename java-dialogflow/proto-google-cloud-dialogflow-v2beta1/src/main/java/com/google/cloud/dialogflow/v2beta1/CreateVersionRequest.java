@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [Versions.CreateVersion][google.cloud.dialogflow.v2beta1.Versions.CreateVersion].
+ * The request message for
+ * [Versions.CreateVersion][google.cloud.dialogflow.v2beta1.Versions.CreateVersion].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.CreateVersionRequest}
@@ -362,7 +363,8 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The request message for [Versions.CreateVersion][google.cloud.dialogflow.v2beta1.Versions.CreateVersion].
+   * The request message for
+   * [Versions.CreateVersion][google.cloud.dialogflow.v2beta1.Versions.CreateVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.CreateVersionRequest}

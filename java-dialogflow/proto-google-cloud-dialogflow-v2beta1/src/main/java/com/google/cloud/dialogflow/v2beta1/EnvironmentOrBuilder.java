@@ -124,8 +124,8 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Output only. The state of this environment. This field is read-only, i.e., it cannot be
-   * set by create and update methods.
+   * Output only. The state of this environment. This field is read-only, i.e.,
+   * it cannot be set by create and update methods.
    * </pre>
    *
    * <code>
@@ -139,8 +139,8 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Output only. The state of this environment. This field is read-only, i.e., it cannot be
-   * set by create and update methods.
+   * Output only. The state of this environment. This field is read-only, i.e.,
+   * it cannot be set by create and update methods.
    * </pre>
    *
    * <code>
@@ -155,8 +155,8 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Output only. The last update time of this environment. This field is read-only, i.e., it
-   * cannot be set by create and update methods.
+   * Output only. The last update time of this environment. This field is
+   * read-only, i.e., it cannot be set by create and update methods.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -169,8 +169,8 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Output only. The last update time of this environment. This field is read-only, i.e., it
-   * cannot be set by create and update methods.
+   * Output only. The last update time of this environment. This field is
+   * read-only, i.e., it cannot be set by create and update methods.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -183,8 +183,8 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Output only. The last update time of this environment. This field is read-only, i.e., it
-   * cannot be set by create and update methods.
+   * Output only. The last update time of this environment. This field is
+   * read-only, i.e., it cannot be set by create and update methods.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];

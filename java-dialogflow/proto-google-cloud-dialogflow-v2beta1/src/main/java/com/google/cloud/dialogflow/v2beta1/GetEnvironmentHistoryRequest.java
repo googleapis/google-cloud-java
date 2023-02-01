@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [Environments.GetEnvironmentHistory][google.cloud.dialogflow.v2beta1.Environments.GetEnvironmentHistory].
+ * The request message for
+ * [Environments.GetEnvironmentHistory][google.cloud.dialogflow.v2beta1.Environments.GetEnvironmentHistory].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.GetEnvironmentHistoryRequest}
@@ -137,8 +138,8 @@ public final class GetEnvironmentHistoryRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The maximum number of items to return in a single page. By default 100 and
-   * at most 1000.
+   * Optional. The maximum number of items to return in a single page. By
+   * default 100 and at most 1000.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -383,7 +384,8 @@ public final class GetEnvironmentHistoryRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The request message for [Environments.GetEnvironmentHistory][google.cloud.dialogflow.v2beta1.Environments.GetEnvironmentHistory].
+   * The request message for
+   * [Environments.GetEnvironmentHistory][google.cloud.dialogflow.v2beta1.Environments.GetEnvironmentHistory].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.GetEnvironmentHistoryRequest}
@@ -735,8 +737,8 @@ public final class GetEnvironmentHistoryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The maximum number of items to return in a single page. By default 100 and
-     * at most 1000.
+     * Optional. The maximum number of items to return in a single page. By
+     * default 100 and at most 1000.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -751,8 +753,8 @@ public final class GetEnvironmentHistoryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The maximum number of items to return in a single page. By default 100 and
-     * at most 1000.
+     * Optional. The maximum number of items to return in a single page. By
+     * default 100 and at most 1000.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -771,8 +773,8 @@ public final class GetEnvironmentHistoryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The maximum number of items to return in a single page. By default 100 and
-     * at most 1000.
+     * Optional. The maximum number of items to return in a single page. By
+     * default 100 and at most 1000.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

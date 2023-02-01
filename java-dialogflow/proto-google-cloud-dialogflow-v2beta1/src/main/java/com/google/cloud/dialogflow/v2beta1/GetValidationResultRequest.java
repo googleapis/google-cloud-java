@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [Agents.GetValidationResult][google.cloud.dialogflow.v2beta1.Agents.GetValidationResult].
+ * The request message for
+ * [Agents.GetValidationResult][google.cloud.dialogflow.v2beta1.Agents.GetValidationResult].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.GetValidationResultRequest}
@@ -359,7 +360,8 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The request message for [Agents.GetValidationResult][google.cloud.dialogflow.v2beta1.Agents.GetValidationResult].
+   * The request message for
+   * [Agents.GetValidationResult][google.cloud.dialogflow.v2beta1.Agents.GetValidationResult].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.GetValidationResultRequest}

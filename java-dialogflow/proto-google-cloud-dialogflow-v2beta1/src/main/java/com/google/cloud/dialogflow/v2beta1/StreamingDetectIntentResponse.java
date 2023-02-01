@@ -28,8 +28,9 @@ package com.google.cloud.dialogflow.v2beta1;
  * 1.  If the `StreamingDetectIntentRequest.input_audio` field was
  *     set, the `recognition_result` field is populated for one
  *     or more messages.
- *     See the [StreamingRecognitionResult][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult] message for details
- *     about the result message sequence.
+ *     See the
+ *     [StreamingRecognitionResult][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult]
+ *     message for details about the result message sequence.
  * 2.  The next message contains `response_id`, `query_result`,
  *     `alternative_query_results` and optionally `webhook_status` if a WebHook
  *     was called.
@@ -728,8 +729,9 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    * 1.  If the `StreamingDetectIntentRequest.input_audio` field was
    *     set, the `recognition_result` field is populated for one
    *     or more messages.
-   *     See the [StreamingRecognitionResult][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult] message for details
-   *     about the result message sequence.
+   *     See the
+   *     [StreamingRecognitionResult][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult]
+   *     message for details about the result message sequence.
    * 2.  The next message contains `response_id`, `query_result`,
    *     `alternative_query_results` and optionally `webhook_status` if a WebHook
    *     was called.

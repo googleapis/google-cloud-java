@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [ConversationProfiles.ListConversationProfiles][google.cloud.dialogflow.v2beta1.ConversationProfiles.ListConversationProfiles].
+ * The request message for
+ * [ConversationProfiles.ListConversationProfiles][google.cloud.dialogflow.v2beta1.ConversationProfiles.ListConversationProfiles].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.ListConversationProfilesRequest}
@@ -379,7 +380,8 @@ public final class ListConversationProfilesRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The request message for [ConversationProfiles.ListConversationProfiles][google.cloud.dialogflow.v2beta1.ConversationProfiles.ListConversationProfiles].
+   * The request message for
+   * [ConversationProfiles.ListConversationProfiles][google.cloud.dialogflow.v2beta1.ConversationProfiles.ListConversationProfiles].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.ListConversationProfilesRequest}

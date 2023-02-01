@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [ConversationProfiles.GetConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfiles.GetConversationProfile].
+ * The request message for
+ * [ConversationProfiles.GetConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfiles.GetConversationProfile].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.GetConversationProfileRequest}
@@ -291,7 +292,8 @@ public final class GetConversationProfileRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The request message for [ConversationProfiles.GetConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfiles.GetConversationProfile].
+   * The request message for
+   * [ConversationProfiles.GetConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfiles.GetConversationProfile].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.GetConversationProfileRequest}

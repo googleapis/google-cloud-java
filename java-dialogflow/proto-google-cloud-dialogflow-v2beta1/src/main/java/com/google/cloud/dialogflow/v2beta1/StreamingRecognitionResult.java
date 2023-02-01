@@ -496,7 +496,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * <pre>
    * Word-specific information for the words recognized by Speech in
-   * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+   * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript].
+   * Populated if and only if `message_type` = `TRANSCRIPT` and
    * [InputAudioConfig.enable_word_info] is set.
    * </pre>
    *
@@ -512,7 +513,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * <pre>
    * Word-specific information for the words recognized by Speech in
-   * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+   * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript].
+   * Populated if and only if `message_type` = `TRANSCRIPT` and
    * [InputAudioConfig.enable_word_info] is set.
    * </pre>
    *
@@ -528,7 +530,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * <pre>
    * Word-specific information for the words recognized by Speech in
-   * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+   * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript].
+   * Populated if and only if `message_type` = `TRANSCRIPT` and
    * [InputAudioConfig.enable_word_info] is set.
    * </pre>
    *
@@ -543,7 +546,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * <pre>
    * Word-specific information for the words recognized by Speech in
-   * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+   * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript].
+   * Populated if and only if `message_type` = `TRANSCRIPT` and
    * [InputAudioConfig.enable_word_info] is set.
    * </pre>
    *
@@ -558,7 +562,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * <pre>
    * Word-specific information for the words recognized by Speech in
-   * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+   * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript].
+   * Populated if and only if `message_type` = `TRANSCRIPT` and
    * [InputAudioConfig.enable_word_info] is set.
    * </pre>
    *
@@ -1796,7 +1801,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -1815,7 +1821,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -1833,7 +1840,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -1851,7 +1859,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -1876,7 +1885,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -1898,7 +1908,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -1922,7 +1933,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -1947,7 +1959,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -1969,7 +1982,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -1991,7 +2005,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -2013,7 +2028,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -2034,7 +2050,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -2055,7 +2072,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -2070,7 +2088,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -2089,7 +2108,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -2108,7 +2128,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -2123,7 +2144,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *
@@ -2140,7 +2162,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * <pre>
      * Word-specific information for the words recognized by Speech in
-     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript]. Populated if and only if `message_type` = `TRANSCRIPT` and
+     * [transcript][google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.transcript].
+     * Populated if and only if `message_type` = `TRANSCRIPT` and
      * [InputAudioConfig.enable_word_info] is set.
      * </pre>
      *

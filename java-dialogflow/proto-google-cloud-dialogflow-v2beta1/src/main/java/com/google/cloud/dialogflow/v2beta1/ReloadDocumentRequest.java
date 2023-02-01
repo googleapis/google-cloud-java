@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * Request message for [Documents.ReloadDocument][google.cloud.dialogflow.v2beta1.Documents.ReloadDocument].
+ * Request message for
+ * [Documents.ReloadDocument][google.cloud.dialogflow.v2beta1.Documents.ReloadDocument].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.ReloadDocumentRequest}
@@ -440,7 +441,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request message for [Documents.ReloadDocument][google.cloud.dialogflow.v2beta1.Documents.ReloadDocument].
+   * Request message for
+   * [Documents.ReloadDocument][google.cloud.dialogflow.v2beta1.Documents.ReloadDocument].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.ReloadDocumentRequest}

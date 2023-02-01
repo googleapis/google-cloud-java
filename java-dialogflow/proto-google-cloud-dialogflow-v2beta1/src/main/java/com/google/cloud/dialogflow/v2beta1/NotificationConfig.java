@@ -237,8 +237,10 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Name of the Pub/Sub topic to publish conversation
    * events like
-   * [CONVERSATION_STARTED][google.cloud.dialogflow.v2beta1.ConversationEvent.Type.CONVERSATION_STARTED] as
-   * serialized [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent] protos.
+   * [CONVERSATION_STARTED][google.cloud.dialogflow.v2beta1.ConversationEvent.Type.CONVERSATION_STARTED]
+   * as serialized
+   * [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
+   * protos.
    * For telephony integration to receive notification, make sure either this
    * topic is in the same project as the conversation or you grant
    * `service-&lt;Conversation Project
@@ -271,8 +273,10 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Name of the Pub/Sub topic to publish conversation
    * events like
-   * [CONVERSATION_STARTED][google.cloud.dialogflow.v2beta1.ConversationEvent.Type.CONVERSATION_STARTED] as
-   * serialized [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent] protos.
+   * [CONVERSATION_STARTED][google.cloud.dialogflow.v2beta1.ConversationEvent.Type.CONVERSATION_STARTED]
+   * as serialized
+   * [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
+   * protos.
    * For telephony integration to receive notification, make sure either this
    * topic is in the same project as the conversation or you grant
    * `service-&lt;Conversation Project
@@ -718,8 +722,10 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Name of the Pub/Sub topic to publish conversation
      * events like
-     * [CONVERSATION_STARTED][google.cloud.dialogflow.v2beta1.ConversationEvent.Type.CONVERSATION_STARTED] as
-     * serialized [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent] protos.
+     * [CONVERSATION_STARTED][google.cloud.dialogflow.v2beta1.ConversationEvent.Type.CONVERSATION_STARTED]
+     * as serialized
+     * [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
+     * protos.
      * For telephony integration to receive notification, make sure either this
      * topic is in the same project as the conversation or you grant
      * `service-&lt;Conversation Project
@@ -751,8 +757,10 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Name of the Pub/Sub topic to publish conversation
      * events like
-     * [CONVERSATION_STARTED][google.cloud.dialogflow.v2beta1.ConversationEvent.Type.CONVERSATION_STARTED] as
-     * serialized [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent] protos.
+     * [CONVERSATION_STARTED][google.cloud.dialogflow.v2beta1.ConversationEvent.Type.CONVERSATION_STARTED]
+     * as serialized
+     * [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
+     * protos.
      * For telephony integration to receive notification, make sure either this
      * topic is in the same project as the conversation or you grant
      * `service-&lt;Conversation Project
@@ -784,8 +792,10 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Name of the Pub/Sub topic to publish conversation
      * events like
-     * [CONVERSATION_STARTED][google.cloud.dialogflow.v2beta1.ConversationEvent.Type.CONVERSATION_STARTED] as
-     * serialized [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent] protos.
+     * [CONVERSATION_STARTED][google.cloud.dialogflow.v2beta1.ConversationEvent.Type.CONVERSATION_STARTED]
+     * as serialized
+     * [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
+     * protos.
      * For telephony integration to receive notification, make sure either this
      * topic is in the same project as the conversation or you grant
      * `service-&lt;Conversation Project
@@ -816,8 +826,10 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Name of the Pub/Sub topic to publish conversation
      * events like
-     * [CONVERSATION_STARTED][google.cloud.dialogflow.v2beta1.ConversationEvent.Type.CONVERSATION_STARTED] as
-     * serialized [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent] protos.
+     * [CONVERSATION_STARTED][google.cloud.dialogflow.v2beta1.ConversationEvent.Type.CONVERSATION_STARTED]
+     * as serialized
+     * [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
+     * protos.
      * For telephony integration to receive notification, make sure either this
      * topic is in the same project as the conversation or you grant
      * `service-&lt;Conversation Project
@@ -844,8 +856,10 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Name of the Pub/Sub topic to publish conversation
      * events like
-     * [CONVERSATION_STARTED][google.cloud.dialogflow.v2beta1.ConversationEvent.Type.CONVERSATION_STARTED] as
-     * serialized [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent] protos.
+     * [CONVERSATION_STARTED][google.cloud.dialogflow.v2beta1.ConversationEvent.Type.CONVERSATION_STARTED]
+     * as serialized
+     * [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
+     * protos.
      * For telephony integration to receive notification, make sure either this
      * topic is in the same project as the conversation or you grant
      * `service-&lt;Conversation Project

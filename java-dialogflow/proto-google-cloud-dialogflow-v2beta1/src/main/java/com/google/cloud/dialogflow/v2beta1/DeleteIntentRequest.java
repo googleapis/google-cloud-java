@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [Intents.DeleteIntent][google.cloud.dialogflow.v2beta1.Intents.DeleteIntent].
+ * The request message for
+ * [Intents.DeleteIntent][google.cloud.dialogflow.v2beta1.Intents.DeleteIntent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.DeleteIntentRequest}
@@ -294,7 +295,8 @@ public final class DeleteIntentRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The request message for [Intents.DeleteIntent][google.cloud.dialogflow.v2beta1.Intents.DeleteIntent].
+   * The request message for
+   * [Intents.DeleteIntent][google.cloud.dialogflow.v2beta1.Intents.DeleteIntent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.DeleteIntentRequest}

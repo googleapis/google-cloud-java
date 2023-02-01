@@ -21,7 +21,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Service for managing [EntityTypes][google.cloud.dialogflow.v2beta1.EntityType].
+ * Service for managing
+ * [EntityTypes][google.cloud.dialogflow.v2beta1.EntityType].
  * </pre>
  */
 @javax.annotation.Generated(
@@ -545,7 +546,8 @@ public final class EntityTypesGrpc {
    *
    *
    * <pre>
-   * Service for managing [EntityTypes][google.cloud.dialogflow.v2beta1.EntityType].
+   * Service for managing
+   * [EntityTypes][google.cloud.dialogflow.v2beta1.EntityType].
    * </pre>
    */
   public abstract static class EntityTypesImplBase implements io.grpc.BindableService {
@@ -643,7 +645,8 @@ public final class EntityTypesGrpc {
      * The returned `Operation` type has the following method-specific fields:
      * - `metadata`: An empty [Struct
      *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
-     * - `response`: [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse]
+     * - `response`:
+     * [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse]
      * Note: You should always train an agent prior to sending it queries. See the
      * [training
      * documentation](https://cloud.google.com/dialogflow/es/docs/training).
@@ -829,7 +832,8 @@ public final class EntityTypesGrpc {
    *
    *
    * <pre>
-   * Service for managing [EntityTypes][google.cloud.dialogflow.v2beta1.EntityType].
+   * Service for managing
+   * [EntityTypes][google.cloud.dialogflow.v2beta1.EntityType].
    * </pre>
    */
   public static final class EntityTypesStub
@@ -946,7 +950,8 @@ public final class EntityTypesGrpc {
      * The returned `Operation` type has the following method-specific fields:
      * - `metadata`: An empty [Struct
      *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
-     * - `response`: [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse]
+     * - `response`:
+     * [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse]
      * Note: You should always train an agent prior to sending it queries. See the
      * [training
      * documentation](https://cloud.google.com/dialogflow/es/docs/training).
@@ -1072,7 +1077,8 @@ public final class EntityTypesGrpc {
    *
    *
    * <pre>
-   * Service for managing [EntityTypes][google.cloud.dialogflow.v2beta1.EntityType].
+   * Service for managing
+   * [EntityTypes][google.cloud.dialogflow.v2beta1.EntityType].
    * </pre>
    */
   public static final class EntityTypesBlockingStub
@@ -1171,7 +1177,8 @@ public final class EntityTypesGrpc {
      * The returned `Operation` type has the following method-specific fields:
      * - `metadata`: An empty [Struct
      *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
-     * - `response`: [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse]
+     * - `response`:
+     * [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse]
      * Note: You should always train an agent prior to sending it queries. See the
      * [training
      * documentation](https://cloud.google.com/dialogflow/es/docs/training).
@@ -1282,7 +1289,8 @@ public final class EntityTypesGrpc {
    *
    *
    * <pre>
-   * Service for managing [EntityTypes][google.cloud.dialogflow.v2beta1.EntityType].
+   * Service for managing
+   * [EntityTypes][google.cloud.dialogflow.v2beta1.EntityType].
    * </pre>
    */
   public static final class EntityTypesFutureStub
@@ -1385,7 +1393,8 @@ public final class EntityTypesGrpc {
      * The returned `Operation` type has the following method-specific fields:
      * - `metadata`: An empty [Struct
      *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
-     * - `response`: [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse]
+     * - `response`:
+     * [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse]
      * Note: You should always train an agent prior to sending it queries. See the
      * [training
      * documentation](https://cloud.google.com/dialogflow/es/docs/training).

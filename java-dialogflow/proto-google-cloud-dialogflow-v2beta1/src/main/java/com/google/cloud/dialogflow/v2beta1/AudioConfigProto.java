@@ -132,14 +132,16 @@ public final class AudioConfigProto {
           + "EVEN\020\007\022\016\n\nDTMF_EIGHT\020\010\022\r\n\tDTMF_NINE\020\t\022\r\n"
           + "\tDTMF_ZERO\020\n\022\n\n\006DTMF_A\020\013\022\n\n\006DTMF_B\020\014\022\n\n\006"
           + "DTMF_C\020\r\022\n\n\006DTMF_D\020\016\022\r\n\tDTMF_STAR\020\017\022\016\n\nD"
-          + "TMF_POUND\020\020B\206\002\n#com.google.cloud.dialogf"
+          + "TMF_POUND\020\020B\353\002\n#com.google.cloud.dialogf"
           + "low.v2beta1B\020AudioConfigProtoP\001ZIgoogle."
           + "golang.org/genproto/googleapis/cloud/dia"
           + "logflow/v2beta1;dialogflow\370\001\001\242\002\002DF\252\002\037Goo"
           + "gle.Cloud.Dialogflow.V2beta1\352AU\n\033automl."
           + "googleapis.com/Model\0226projects/{project}"
-          + "/locations/{location}/models/{model}b\006pr"
-          + "oto3"
+          + "/locations/{location}/models/{model}\352Ab\n"
+          + "\037speech.googleapis.com/PhraseSet\022?projec"
+          + "ts/{project}/locations/{location}/phrase"
+          + "Sets/{phrase_set}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

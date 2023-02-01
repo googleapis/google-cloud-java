@@ -111,10 +111,11 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
    * <pre>
    * Key-value filters on the metadata of documents returned by article
    * suggestion. If specified, article suggestion only returns suggested
-   * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2beta1.Document.metadata]. Multiple
-   * values for a metadata key should be concatenated by comma. For example,
-   * filters to match all documents that have 'US' or 'CA' in their market
-   * metadata values and 'agent' in their user metadata values will be
+   * documents that match all filters in their
+   * [Document.metadata][google.cloud.dialogflow.v2beta1.Document.metadata].
+   * Multiple values for a metadata key should be concatenated by comma. For
+   * example, filters to match all documents that have 'US' or 'CA' in their
+   * market metadata values and 'agent' in their user metadata values will be
    * ```
    * documents_metadata_filters {
    *   key: "market"
@@ -148,10 +149,11 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
    * <pre>
    * Key-value filters on the metadata of documents returned by article
    * suggestion. If specified, article suggestion only returns suggested
-   * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2beta1.Document.metadata]. Multiple
-   * values for a metadata key should be concatenated by comma. For example,
-   * filters to match all documents that have 'US' or 'CA' in their market
-   * metadata values and 'agent' in their user metadata values will be
+   * documents that match all filters in their
+   * [Document.metadata][google.cloud.dialogflow.v2beta1.Document.metadata].
+   * Multiple values for a metadata key should be concatenated by comma. For
+   * example, filters to match all documents that have 'US' or 'CA' in their
+   * market metadata values and 'agent' in their user metadata values will be
    * ```
    * documents_metadata_filters {
    *   key: "market"
@@ -176,10 +178,11 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
    * <pre>
    * Key-value filters on the metadata of documents returned by article
    * suggestion. If specified, article suggestion only returns suggested
-   * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2beta1.Document.metadata]. Multiple
-   * values for a metadata key should be concatenated by comma. For example,
-   * filters to match all documents that have 'US' or 'CA' in their market
-   * metadata values and 'agent' in their user metadata values will be
+   * documents that match all filters in their
+   * [Document.metadata][google.cloud.dialogflow.v2beta1.Document.metadata].
+   * Multiple values for a metadata key should be concatenated by comma. For
+   * example, filters to match all documents that have 'US' or 'CA' in their
+   * market metadata values and 'agent' in their user metadata values will be
    * ```
    * documents_metadata_filters {
    *   key: "market"
@@ -212,10 +215,11 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
    * <pre>
    * Key-value filters on the metadata of documents returned by article
    * suggestion. If specified, article suggestion only returns suggested
-   * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2beta1.Document.metadata]. Multiple
-   * values for a metadata key should be concatenated by comma. For example,
-   * filters to match all documents that have 'US' or 'CA' in their market
-   * metadata values and 'agent' in their user metadata values will be
+   * documents that match all filters in their
+   * [Document.metadata][google.cloud.dialogflow.v2beta1.Document.metadata].
+   * Multiple values for a metadata key should be concatenated by comma. For
+   * example, filters to match all documents that have 'US' or 'CA' in their
+   * market metadata values and 'agent' in their user metadata values will be
    * ```
    * documents_metadata_filters {
    *   key: "market"
@@ -663,10 +667,11 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
      * <pre>
      * Key-value filters on the metadata of documents returned by article
      * suggestion. If specified, article suggestion only returns suggested
-     * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2beta1.Document.metadata]. Multiple
-     * values for a metadata key should be concatenated by comma. For example,
-     * filters to match all documents that have 'US' or 'CA' in their market
-     * metadata values and 'agent' in their user metadata values will be
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2beta1.Document.metadata].
+     * Multiple values for a metadata key should be concatenated by comma. For
+     * example, filters to match all documents that have 'US' or 'CA' in their
+     * market metadata values and 'agent' in their user metadata values will be
      * ```
      * documents_metadata_filters {
      *   key: "market"
@@ -700,10 +705,11 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
      * <pre>
      * Key-value filters on the metadata of documents returned by article
      * suggestion. If specified, article suggestion only returns suggested
-     * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2beta1.Document.metadata]. Multiple
-     * values for a metadata key should be concatenated by comma. For example,
-     * filters to match all documents that have 'US' or 'CA' in their market
-     * metadata values and 'agent' in their user metadata values will be
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2beta1.Document.metadata].
+     * Multiple values for a metadata key should be concatenated by comma. For
+     * example, filters to match all documents that have 'US' or 'CA' in their
+     * market metadata values and 'agent' in their user metadata values will be
      * ```
      * documents_metadata_filters {
      *   key: "market"
@@ -728,10 +734,11 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
      * <pre>
      * Key-value filters on the metadata of documents returned by article
      * suggestion. If specified, article suggestion only returns suggested
-     * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2beta1.Document.metadata]. Multiple
-     * values for a metadata key should be concatenated by comma. For example,
-     * filters to match all documents that have 'US' or 'CA' in their market
-     * metadata values and 'agent' in their user metadata values will be
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2beta1.Document.metadata].
+     * Multiple values for a metadata key should be concatenated by comma. For
+     * example, filters to match all documents that have 'US' or 'CA' in their
+     * market metadata values and 'agent' in their user metadata values will be
      * ```
      * documents_metadata_filters {
      *   key: "market"
@@ -764,10 +771,11 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
      * <pre>
      * Key-value filters on the metadata of documents returned by article
      * suggestion. If specified, article suggestion only returns suggested
-     * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2beta1.Document.metadata]. Multiple
-     * values for a metadata key should be concatenated by comma. For example,
-     * filters to match all documents that have 'US' or 'CA' in their market
-     * metadata values and 'agent' in their user metadata values will be
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2beta1.Document.metadata].
+     * Multiple values for a metadata key should be concatenated by comma. For
+     * example, filters to match all documents that have 'US' or 'CA' in their
+     * market metadata values and 'agent' in their user metadata values will be
      * ```
      * documents_metadata_filters {
      *   key: "market"
@@ -806,10 +814,11 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
      * <pre>
      * Key-value filters on the metadata of documents returned by article
      * suggestion. If specified, article suggestion only returns suggested
-     * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2beta1.Document.metadata]. Multiple
-     * values for a metadata key should be concatenated by comma. For example,
-     * filters to match all documents that have 'US' or 'CA' in their market
-     * metadata values and 'agent' in their user metadata values will be
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2beta1.Document.metadata].
+     * Multiple values for a metadata key should be concatenated by comma. For
+     * example, filters to match all documents that have 'US' or 'CA' in their
+     * market metadata values and 'agent' in their user metadata values will be
      * ```
      * documents_metadata_filters {
      *   key: "market"
@@ -843,10 +852,11 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
      * <pre>
      * Key-value filters on the metadata of documents returned by article
      * suggestion. If specified, article suggestion only returns suggested
-     * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2beta1.Document.metadata]. Multiple
-     * values for a metadata key should be concatenated by comma. For example,
-     * filters to match all documents that have 'US' or 'CA' in their market
-     * metadata values and 'agent' in their user metadata values will be
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2beta1.Document.metadata].
+     * Multiple values for a metadata key should be concatenated by comma. For
+     * example, filters to match all documents that have 'US' or 'CA' in their
+     * market metadata values and 'agent' in their user metadata values will be
      * ```
      * documents_metadata_filters {
      *   key: "market"
@@ -878,10 +888,11 @@ public final class AssistQueryParameters extends com.google.protobuf.GeneratedMe
      * <pre>
      * Key-value filters on the metadata of documents returned by article
      * suggestion. If specified, article suggestion only returns suggested
-     * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2beta1.Document.metadata]. Multiple
-     * values for a metadata key should be concatenated by comma. For example,
-     * filters to match all documents that have 'US' or 'CA' in their market
-     * metadata values and 'agent' in their user metadata values will be
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2beta1.Document.metadata].
+     * Multiple values for a metadata key should be concatenated by comma. For
+     * example, filters to match all documents that have 'US' or 'CA' in their
+     * market metadata values and 'agent' in their user metadata values will be
      * ```
      * documents_metadata_filters {
      *   key: "market"

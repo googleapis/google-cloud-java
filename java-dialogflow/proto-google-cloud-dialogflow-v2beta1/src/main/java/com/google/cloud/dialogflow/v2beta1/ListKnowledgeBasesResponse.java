@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * Response message for [KnowledgeBases.ListKnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBases.ListKnowledgeBases].
+ * Response message for
+ * [KnowledgeBases.ListKnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBases.ListKnowledgeBases].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse}
@@ -368,7 +369,8 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Response message for [KnowledgeBases.ListKnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBases.ListKnowledgeBases].
+   * Response message for
+   * [KnowledgeBases.ListKnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBases.ListKnowledgeBases].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse}

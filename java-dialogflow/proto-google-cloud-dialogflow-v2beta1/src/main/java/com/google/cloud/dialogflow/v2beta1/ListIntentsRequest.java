@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [Intents.ListIntents][google.cloud.dialogflow.v2beta1.Intents.ListIntents].
+ * The request message for
+ * [Intents.ListIntents][google.cloud.dialogflow.v2beta1.Intents.ListIntents].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.ListIntentsRequest}
@@ -507,7 +508,8 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The request message for [Intents.ListIntents][google.cloud.dialogflow.v2beta1.Intents.ListIntents].
+   * The request message for
+   * [Intents.ListIntents][google.cloud.dialogflow.v2beta1.Intents.ListIntents].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.ListIntentsRequest}

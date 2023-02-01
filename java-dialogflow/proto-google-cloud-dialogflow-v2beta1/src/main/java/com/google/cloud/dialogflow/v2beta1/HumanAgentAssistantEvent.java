@@ -132,12 +132,13 @@ public final class HumanAgentAssistantEvent extends com.google.protobuf.Generate
    *
    * <pre>
    * The participant that the suggestion is compiled for. And This field is used
-   * to call [Participants.ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] API. Format:
-   * `projects/&lt;Project ID&gt;/conversations/&lt;Conversation
+   * to call
+   * [Participants.ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
+   * API. Format: `projects/&lt;Project ID&gt;/conversations/&lt;Conversation
    * ID&gt;/participants/&lt;Participant ID&gt;`.
    * It will not be set in legacy workflow.
-   * [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name] for more
-   * information.
+   * [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name]
+   * for more information.
    * </pre>
    *
    * <code>string participant = 3;</code>
@@ -161,12 +162,13 @@ public final class HumanAgentAssistantEvent extends com.google.protobuf.Generate
    *
    * <pre>
    * The participant that the suggestion is compiled for. And This field is used
-   * to call [Participants.ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] API. Format:
-   * `projects/&lt;Project ID&gt;/conversations/&lt;Conversation
+   * to call
+   * [Participants.ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
+   * API. Format: `projects/&lt;Project ID&gt;/conversations/&lt;Conversation
    * ID&gt;/participants/&lt;Participant ID&gt;`.
    * It will not be set in legacy workflow.
-   * [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name] for more
-   * information.
+   * [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name]
+   * for more information.
    * </pre>
    *
    * <code>string participant = 3;</code>
@@ -836,12 +838,13 @@ public final class HumanAgentAssistantEvent extends com.google.protobuf.Generate
      *
      * <pre>
      * The participant that the suggestion is compiled for. And This field is used
-     * to call [Participants.ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] API. Format:
-     * `projects/&lt;Project ID&gt;/conversations/&lt;Conversation
+     * to call
+     * [Participants.ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
+     * API. Format: `projects/&lt;Project ID&gt;/conversations/&lt;Conversation
      * ID&gt;/participants/&lt;Participant ID&gt;`.
      * It will not be set in legacy workflow.
-     * [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name] for more
-     * information.
+     * [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name]
+     * for more information.
      * </pre>
      *
      * <code>string participant = 3;</code>
@@ -864,12 +867,13 @@ public final class HumanAgentAssistantEvent extends com.google.protobuf.Generate
      *
      * <pre>
      * The participant that the suggestion is compiled for. And This field is used
-     * to call [Participants.ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] API. Format:
-     * `projects/&lt;Project ID&gt;/conversations/&lt;Conversation
+     * to call
+     * [Participants.ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
+     * API. Format: `projects/&lt;Project ID&gt;/conversations/&lt;Conversation
      * ID&gt;/participants/&lt;Participant ID&gt;`.
      * It will not be set in legacy workflow.
-     * [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name] for more
-     * information.
+     * [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name]
+     * for more information.
      * </pre>
      *
      * <code>string participant = 3;</code>
@@ -892,12 +896,13 @@ public final class HumanAgentAssistantEvent extends com.google.protobuf.Generate
      *
      * <pre>
      * The participant that the suggestion is compiled for. And This field is used
-     * to call [Participants.ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] API. Format:
-     * `projects/&lt;Project ID&gt;/conversations/&lt;Conversation
+     * to call
+     * [Participants.ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
+     * API. Format: `projects/&lt;Project ID&gt;/conversations/&lt;Conversation
      * ID&gt;/participants/&lt;Participant ID&gt;`.
      * It will not be set in legacy workflow.
-     * [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name] for more
-     * information.
+     * [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name]
+     * for more information.
      * </pre>
      *
      * <code>string participant = 3;</code>
@@ -919,12 +924,13 @@ public final class HumanAgentAssistantEvent extends com.google.protobuf.Generate
      *
      * <pre>
      * The participant that the suggestion is compiled for. And This field is used
-     * to call [Participants.ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] API. Format:
-     * `projects/&lt;Project ID&gt;/conversations/&lt;Conversation
+     * to call
+     * [Participants.ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
+     * API. Format: `projects/&lt;Project ID&gt;/conversations/&lt;Conversation
      * ID&gt;/participants/&lt;Participant ID&gt;`.
      * It will not be set in legacy workflow.
-     * [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name] for more
-     * information.
+     * [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name]
+     * for more information.
      * </pre>
      *
      * <code>string participant = 3;</code>
@@ -942,12 +948,13 @@ public final class HumanAgentAssistantEvent extends com.google.protobuf.Generate
      *
      * <pre>
      * The participant that the suggestion is compiled for. And This field is used
-     * to call [Participants.ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] API. Format:
-     * `projects/&lt;Project ID&gt;/conversations/&lt;Conversation
+     * to call
+     * [Participants.ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
+     * API. Format: `projects/&lt;Project ID&gt;/conversations/&lt;Conversation
      * ID&gt;/participants/&lt;Participant ID&gt;`.
      * It will not be set in legacy workflow.
-     * [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name] for more
-     * information.
+     * [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name]
+     * for more information.
      * </pre>
      *
      * <code>string participant = 3;</code>

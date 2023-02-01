@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * Request message for [Documents.CreateDocument][google.cloud.dialogflow.v2beta1.Documents.CreateDocument].
+ * Request message for
+ * [Documents.CreateDocument][google.cloud.dialogflow.v2beta1.Documents.CreateDocument].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.CreateDocumentRequest}
@@ -388,7 +389,8 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request message for [Documents.CreateDocument][google.cloud.dialogflow.v2beta1.Documents.CreateDocument].
+   * Request message for
+   * [Documents.CreateDocument][google.cloud.dialogflow.v2beta1.Documents.CreateDocument].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.CreateDocumentRequest}
