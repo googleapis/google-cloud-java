@@ -90,9 +90,6 @@ git commit -m 'chore: add template files'
 git add pom.xml
 git commit -am 'chore: create aggregator pom' --allow-empty
 
-echo "Not doing something special for java-core, java-shared-dependencies, and java-iam"
-exit 0
-
 # Point modules poms and BOMs to the aggregator pom as parent
 bash ../../set_parent_pom.sh
 
