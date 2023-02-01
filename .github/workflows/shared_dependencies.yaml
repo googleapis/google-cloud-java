@@ -3,14 +3,14 @@ on:
     branches:
     - main
   pull_request:
-#    paths:
-#    - 'java-shared-dependencies/**'
+    paths:
+    - 'java-shared-dependencies/**'
 name: shared-dependencies version check
 jobs:
   upper-bound-check:
     name: Shared Dependencies BOM upper-bound check
     runs-on: ubuntu-latest
-    if: github.repository_owner == 'googleapis' && github.head_ref == 'release-please--branches--main'
+    if: github.repository_owner == 'googleapis'
     steps:
     - uses: actions/checkout@v2
     - uses: stCarolas/setup-maven@v4
