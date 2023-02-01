@@ -20,13 +20,14 @@ jobs:
       with:
         java-version: 11
     - run: java -version
-    - name: Install java-core (part of java-shared-dependencies)
-      run: |
-        mvn -B -V -ntp install -DskipTests --also-make -f java-core
-    - name: Install the BOM to local Maven repository
+    - name: Install Sharee Dependencies BOM locally
       run: |
         mvn -B -V -ntp install --also-make --projects \
           java-shared-dependencies,java-shared-dependencies/first-party-dependencies,java-shared-dependencies/third-party-dependencies
+    - name: Install java-core (part of java-shared-dependencies) locally
+      # Because java-core uses shared dependencies BOM, this comes later
+      run: |
+        mvn -B -V -ntp install -DskipTests --also-make -f java-core
     - name: Check the BOM content satisfies the upper-bound-check test case
       run: mvn -B -V -ntp verify -Dcheckstyle.skip
       working-directory: java-shared-dependencies/upper-bound-check
