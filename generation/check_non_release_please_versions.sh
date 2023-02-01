@@ -4,7 +4,10 @@ set -e
 
 violations=0
 for pomFile in $(find . -mindepth 2 -name pom.xml | sort ); do
-  if [[ "${pomFile}" =~ .*google-cloud-jar-parent.* ]] || [[ "${pomFile}" =~ .*google-cloud-pom-parent.* ]] ||[[ "${pomFile}" =~ .*CoverageAggregator.* ]]; then
+  if [[ "${pomFile}" =~ .*google-cloud-jar-parent.* ]] || \
+      [[ "${pomFile}" =~ .*google-cloud-pom-parent.* ]] || \
+      [[ "${pomFile}" =~ .*CoverageAggregator.* ]] || \
+      [[ "${pomFile}" =~ .*java-shared-dependencies*. ]]; then
     continue
   fi
   if [[ "${pomFile}" =~ .*owl-bot-postprocessor.* ]]; then

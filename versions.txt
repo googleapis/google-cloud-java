@@ -603,3 +603,6 @@ grpc-google-cloud-tpu-v2:2.10.0:2.11.0-SNAPSHOT
 google-cloud-datalineage:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-datalineage-v1:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-datalineage-v1:0.1.0:0.2.0-SNAPSHOT
+google-cloud-shared-dependencies:3.1.2:3.1.3-SNAPSHOT
+google-cloud-core:2.9.4:2.9.5-SNAPSHOT
+google-iam-policy:1.7.0:1.7.1-SNAPSHOT

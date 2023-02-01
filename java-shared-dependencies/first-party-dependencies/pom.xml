@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.cloud</groupId>
+  <artifactId>first-party-dependencies</artifactId>
+  <packaging>pom</packaging>
+  <version>3.1.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
+  <name>Google Cloud First-party Shared Dependencies</name>
+  <description>
+    Shared first-party dependencies for Google Cloud Java libraries.
+  </description>
+
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-shared-config</artifactId>
+    <version>1.5.5</version>
+  </parent>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <site.installationModule>${project.artifactId}</site.installationModule>
+    <gapic-generator-java-bom.version>2.14.0</gapic-generator-java-bom.version>
+    <grpc-gcp.version>1.3.2</grpc-gcp.version>
+    <gson.version>2.10.1</gson.version>
+    <google.http-client.version>1.42.3</google.http-client.version>
+    <google.oauth-client.version>1.34.1</google.oauth-client.version>
+    <google.api-client.version>2.1.2</google.api-client.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+
+      <dependency>
+        <!-- This BOM declares the versions gRPC, Protobuf, Guava, etc. -->
+        <groupId>com.google.api</groupId>
+        <artifactId>gapic-generator-java-bom</artifactId>
+        <version>${gapic-generator-java-bom.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>grpc-gcp</artifactId>
+        <version>${grpc-gcp.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>${gson.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-core-bom</artifactId>
+        <version>2.9.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-core:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.http-client</groupId>
+        <artifactId>google-http-client-bom</artifactId>
+        <version>${google.http-client.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.oauth-client</groupId>
+        <artifactId>google-oauth-client-bom</artifactId>
+        <version>${google.oauth-client.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api-client</groupId>
+        <artifactId>google-api-client-bom</artifactId>
+        <version>${google.api-client.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <!-- Following test deps are kept to keep them consistent with versions above -->
+
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-core</artifactId>
+        <version>2.9.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-core:current} -->
+        <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-core</artifactId>
+        <version>2.9.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-core:current} -->
+        <classifier>tests</classifier>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+</project>

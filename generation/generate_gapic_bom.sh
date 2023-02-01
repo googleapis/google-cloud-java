@@ -7,7 +7,7 @@ set -e
 bom_lines=""
 # For modules that produce BOMs
 for bom_directory in $(find . -maxdepth 3 -name 'google-*-bom' | sort --dictionary-order); do
-  if [[ "${bom_directory}" = *gapic-libraries-bom ]]; then
+  if [[ "${bom_directory}" = *gapic-libraries-bom ]] ||  [[ "${bom_directory}" = *google-cloud-core* ]]; then
     continue
   fi
   repo_metadata="${bom_directory}/../.repo-metadata.json"
