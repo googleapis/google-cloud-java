@@ -1244,7 +1244,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name for a
+     * Immutable. The resource name for a
      * [CertificateIssuanceConfig][google.cloud.certificatemanager.v1.CertificateIssuanceConfig]
      * used to configure private PKI certificates in the format
      * `projects/&#42;&#47;locations/&#42;&#47;certificateIssuanceConfigs/&#42;`.
@@ -1264,7 +1264,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name for a
+     * Immutable. The resource name for a
      * [CertificateIssuanceConfig][google.cloud.certificatemanager.v1.CertificateIssuanceConfig]
      * used to configure private PKI certificates in the format
      * `projects/&#42;&#47;locations/&#42;&#47;certificateIssuanceConfigs/&#42;`.
@@ -1488,10 +1488,24 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     }
 
     /**
+     *
+     *
+     * <pre>
+     * State of the managed certificate resource.
+     * </pre>
+     *
      * Protobuf enum {@code google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.State}
      */
     public enum State implements com.google.protobuf.ProtocolMessageEnum {
-      /** <code>STATE_UNSPECIFIED = 0;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * State is unspecified.
+       * </pre>
+       *
+       * <code>STATE_UNSPECIFIED = 0;</code>
+       */
       STATE_UNSPECIFIED(0),
       /**
        *
@@ -1532,7 +1546,15 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       UNRECOGNIZED(-1),
       ;
 
-      /** <code>STATE_UNSPECIFIED = 0;</code> */
+      /**
+       *
+       *
+       * <pre>
+       * State is unspecified.
+       * </pre>
+       *
+       * <code>STATE_UNSPECIFIED = 0;</code>
+       */
       public static final int STATE_UNSPECIFIED_VALUE = 0;
       /**
        *
@@ -1776,11 +1798,25 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       }
 
       /**
+       *
+       *
+       * <pre>
+       * Reason for provisioning failures.
+       * </pre>
+       *
        * Protobuf enum {@code
        * google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue.Reason}
        */
       public enum Reason implements com.google.protobuf.ProtocolMessageEnum {
-        /** <code>REASON_UNSPECIFIED = 0;</code> */
+        /**
+         *
+         *
+         * <pre>
+         * Reason is unspecified.
+         * </pre>
+         *
+         * <code>REASON_UNSPECIFIED = 0;</code>
+         */
         REASON_UNSPECIFIED(0),
         /**
          *
@@ -1809,7 +1845,15 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         UNRECOGNIZED(-1),
         ;
 
-        /** <code>REASON_UNSPECIFIED = 0;</code> */
+        /**
+         *
+         *
+         * <pre>
+         * Reason is unspecified.
+         * </pre>
+         *
+         * <code>REASON_UNSPECIFIED = 0;</code>
+         */
         public static final int REASON_UNSPECIFIED_VALUE = 0;
         /**
          *
@@ -2932,11 +2976,25 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       }
 
       /**
+       *
+       *
+       * <pre>
+       * State of the domain for managed certificate issuance.
+       * </pre>
+       *
        * Protobuf enum {@code
        * google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.AuthorizationAttemptInfo.State}
        */
       public enum State implements com.google.protobuf.ProtocolMessageEnum {
-        /** <code>STATE_UNSPECIFIED = 0;</code> */
+        /**
+         *
+         *
+         * <pre>
+         * State is unspecified.
+         * </pre>
+         *
+         * <code>STATE_UNSPECIFIED = 0;</code>
+         */
         STATE_UNSPECIFIED(0),
         /**
          *
@@ -2974,7 +3032,15 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         UNRECOGNIZED(-1),
         ;
 
-        /** <code>STATE_UNSPECIFIED = 0;</code> */
+        /**
+         *
+         *
+         * <pre>
+         * State is unspecified.
+         * </pre>
+         *
+         * <code>STATE_UNSPECIFIED = 0;</code>
+         */
         public static final int STATE_UNSPECIFIED_VALUE = 0;
         /**
          *
@@ -3100,11 +3166,25 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       }
 
       /**
+       *
+       *
+       * <pre>
+       * Reason for failure of the authorization attempt for the domain.
+       * </pre>
+       *
        * Protobuf enum {@code
        * google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.AuthorizationAttemptInfo.FailureReason}
        */
       public enum FailureReason implements com.google.protobuf.ProtocolMessageEnum {
-        /** <code>FAILURE_REASON_UNSPECIFIED = 0;</code> */
+        /**
+         *
+         *
+         * <pre>
+         * FailureReason is unspecified.
+         * </pre>
+         *
+         * <code>FAILURE_REASON_UNSPECIFIED = 0;</code>
+         */
         FAILURE_REASON_UNSPECIFIED(0),
         /**
          *
@@ -3142,7 +3222,15 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         UNRECOGNIZED(-1),
         ;
 
-        /** <code>FAILURE_REASON_UNSPECIFIED = 0;</code> */
+        /**
+         *
+         *
+         * <pre>
+         * FailureReason is unspecified.
+         * </pre>
+         *
+         * <code>FAILURE_REASON_UNSPECIFIED = 0;</code>
+         */
         public static final int FAILURE_REASON_UNSPECIFIED_VALUE = 0;
         /**
          *
@@ -4634,7 +4722,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name for a
+     * Immutable. The resource name for a
      * [CertificateIssuanceConfig][google.cloud.certificatemanager.v1.CertificateIssuanceConfig]
      * used to configure private PKI certificates in the format
      * `projects/&#42;&#47;locations/&#42;&#47;certificateIssuanceConfigs/&#42;`.
@@ -4665,7 +4753,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name for a
+     * Immutable. The resource name for a
      * [CertificateIssuanceConfig][google.cloud.certificatemanager.v1.CertificateIssuanceConfig]
      * used to configure private PKI certificates in the format
      * `projects/&#42;&#47;locations/&#42;&#47;certificateIssuanceConfigs/&#42;`.
@@ -5868,7 +5956,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The resource name for a
+       * Immutable. The resource name for a
        * [CertificateIssuanceConfig][google.cloud.certificatemanager.v1.CertificateIssuanceConfig]
        * used to configure private PKI certificates in the format
        * `projects/&#42;&#47;locations/&#42;&#47;certificateIssuanceConfigs/&#42;`.
@@ -5898,7 +5986,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The resource name for a
+       * Immutable. The resource name for a
        * [CertificateIssuanceConfig][google.cloud.certificatemanager.v1.CertificateIssuanceConfig]
        * used to configure private PKI certificates in the format
        * `projects/&#42;&#47;locations/&#42;&#47;certificateIssuanceConfigs/&#42;`.
@@ -5928,7 +6016,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The resource name for a
+       * Immutable. The resource name for a
        * [CertificateIssuanceConfig][google.cloud.certificatemanager.v1.CertificateIssuanceConfig]
        * used to configure private PKI certificates in the format
        * `projects/&#42;&#47;locations/&#42;&#47;certificateIssuanceConfigs/&#42;`.
@@ -5957,7 +6045,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The resource name for a
+       * Immutable. The resource name for a
        * [CertificateIssuanceConfig][google.cloud.certificatemanager.v1.CertificateIssuanceConfig]
        * used to configure private PKI certificates in the format
        * `projects/&#42;&#47;locations/&#42;&#47;certificateIssuanceConfigs/&#42;`.
@@ -5982,7 +6070,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The resource name for a
+       * Immutable. The resource name for a
        * [CertificateIssuanceConfig][google.cloud.certificatemanager.v1.CertificateIssuanceConfig]
        * used to configure private PKI certificates in the format
        * `projects/&#42;&#47;locations/&#42;&#47;certificateIssuanceConfigs/&#42;`.

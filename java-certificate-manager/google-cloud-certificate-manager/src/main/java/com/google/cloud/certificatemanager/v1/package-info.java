@@ -34,16 +34,16 @@
  * <p>The Certificates Manager service exposes the following resources:
  *
  * <ul>
- *   <li>`Certificate` which describes a single TLS certificate.
- *   <li>`CertificateMap` which describes a collection of certificates that can be attached to a
+ *   <li>`Certificate` that describes a single TLS certificate.
+ *   <li>`CertificateMap` that describes a collection of certificates that can be attached to a
  *       target resource.
- *   <li>`CertificateMapEntry` which describes a single configuration entry that consists of a SNI
+ *   <li>`CertificateMapEntry` that describes a single configuration entry that consists of a SNI
  *       and a group of certificates. It's a subresource of CertificateMap.
  * </ul>
  *
- * <p>Certificate, CertificateMap and CertificateMapEntry IDs have to match "^[a-z0-9-]{1,63}$"
- * regexp, which means that - only lower case letters, digits, and hyphen are allowed - length of
- * the resource ID has to be in [1,63] range.
+ * <p>Certificate, CertificateMap and CertificateMapEntry IDs have to fully match the regexp
+ * `[a-z0-9-]{1,63}`. In other words, - only lower case letters, digits, and hyphen are allowed -
+ * length of the resource ID has to be in [1,63] range.
  *
  * <p>Provides methods to manage Cloud Certificate Manager entities.
  *

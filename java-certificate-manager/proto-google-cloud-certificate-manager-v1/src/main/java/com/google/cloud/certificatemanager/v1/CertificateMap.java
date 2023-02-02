@@ -250,7 +250,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Describes a Target Proxy which uses this Certificate Map.
+   * Describes a Target Proxy that uses this Certificate Map.
    * </pre>
    *
    * Protobuf type {@code google.cloud.certificatemanager.v1.CertificateMap.GclbTarget}
@@ -1746,7 +1746,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describes a Target Proxy which uses this Certificate Map.
+     * Describes a Target Proxy that uses this Certificate Map.
      * </pre>
      *
      * Protobuf type {@code google.cloud.certificatemanager.v1.CertificateMap.GclbTarget}
@@ -3152,7 +3152,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A list of GCLB targets which use this Certificate Map.
+   * Output only. A list of GCLB targets that use this Certificate Map.
    * A Target Proxy is only present on this list if it's attached to a
    * Forwarding Rule.
    * </pre>
@@ -3170,7 +3170,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A list of GCLB targets which use this Certificate Map.
+   * Output only. A list of GCLB targets that use this Certificate Map.
    * A Target Proxy is only present on this list if it's attached to a
    * Forwarding Rule.
    * </pre>
@@ -3189,7 +3189,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A list of GCLB targets which use this Certificate Map.
+   * Output only. A list of GCLB targets that use this Certificate Map.
    * A Target Proxy is only present on this list if it's attached to a
    * Forwarding Rule.
    * </pre>
@@ -3206,7 +3206,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A list of GCLB targets which use this Certificate Map.
+   * Output only. A list of GCLB targets that use this Certificate Map.
    * A Target Proxy is only present on this list if it's attached to a
    * Forwarding Rule.
    * </pre>
@@ -3224,7 +3224,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A list of GCLB targets which use this Certificate Map.
+   * Output only. A list of GCLB targets that use this Certificate Map.
    * A Target Proxy is only present on this list if it's attached to a
    * Forwarding Rule.
    * </pre>
@@ -4606,7 +4606,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of GCLB targets which use this Certificate Map.
+     * Output only. A list of GCLB targets that use this Certificate Map.
      * A Target Proxy is only present on this list if it's attached to a
      * Forwarding Rule.
      * </pre>
@@ -4627,7 +4627,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of GCLB targets which use this Certificate Map.
+     * Output only. A list of GCLB targets that use this Certificate Map.
      * A Target Proxy is only present on this list if it's attached to a
      * Forwarding Rule.
      * </pre>
@@ -4647,7 +4647,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of GCLB targets which use this Certificate Map.
+     * Output only. A list of GCLB targets that use this Certificate Map.
      * A Target Proxy is only present on this list if it's attached to a
      * Forwarding Rule.
      * </pre>
@@ -4668,7 +4668,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of GCLB targets which use this Certificate Map.
+     * Output only. A list of GCLB targets that use this Certificate Map.
      * A Target Proxy is only present on this list if it's attached to a
      * Forwarding Rule.
      * </pre>
@@ -4695,7 +4695,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of GCLB targets which use this Certificate Map.
+     * Output only. A list of GCLB targets that use this Certificate Map.
      * A Target Proxy is only present on this list if it's attached to a
      * Forwarding Rule.
      * </pre>
@@ -4720,7 +4720,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of GCLB targets which use this Certificate Map.
+     * Output only. A list of GCLB targets that use this Certificate Map.
      * A Target Proxy is only present on this list if it's attached to a
      * Forwarding Rule.
      * </pre>
@@ -4747,7 +4747,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of GCLB targets which use this Certificate Map.
+     * Output only. A list of GCLB targets that use this Certificate Map.
      * A Target Proxy is only present on this list if it's attached to a
      * Forwarding Rule.
      * </pre>
@@ -4774,7 +4774,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of GCLB targets which use this Certificate Map.
+     * Output only. A list of GCLB targets that use this Certificate Map.
      * A Target Proxy is only present on this list if it's attached to a
      * Forwarding Rule.
      * </pre>
@@ -4798,7 +4798,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of GCLB targets which use this Certificate Map.
+     * Output only. A list of GCLB targets that use this Certificate Map.
      * A Target Proxy is only present on this list if it's attached to a
      * Forwarding Rule.
      * </pre>
@@ -4823,7 +4823,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of GCLB targets which use this Certificate Map.
+     * Output only. A list of GCLB targets that use this Certificate Map.
      * A Target Proxy is only present on this list if it's attached to a
      * Forwarding Rule.
      * </pre>
@@ -4849,7 +4849,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of GCLB targets which use this Certificate Map.
+     * Output only. A list of GCLB targets that use this Certificate Map.
      * A Target Proxy is only present on this list if it's attached to a
      * Forwarding Rule.
      * </pre>
@@ -4872,7 +4872,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of GCLB targets which use this Certificate Map.
+     * Output only. A list of GCLB targets that use this Certificate Map.
      * A Target Proxy is only present on this list if it's attached to a
      * Forwarding Rule.
      * </pre>
@@ -4895,7 +4895,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of GCLB targets which use this Certificate Map.
+     * Output only. A list of GCLB targets that use this Certificate Map.
      * A Target Proxy is only present on this list if it's attached to a
      * Forwarding Rule.
      * </pre>
@@ -4912,7 +4912,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of GCLB targets which use this Certificate Map.
+     * Output only. A list of GCLB targets that use this Certificate Map.
      * A Target Proxy is only present on this list if it's attached to a
      * Forwarding Rule.
      * </pre>
@@ -4933,7 +4933,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of GCLB targets which use this Certificate Map.
+     * Output only. A list of GCLB targets that use this Certificate Map.
      * A Target Proxy is only present on this list if it's attached to a
      * Forwarding Rule.
      * </pre>
@@ -4955,7 +4955,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of GCLB targets which use this Certificate Map.
+     * Output only. A list of GCLB targets that use this Certificate Map.
      * A Target Proxy is only present on this list if it's attached to a
      * Forwarding Rule.
      * </pre>
@@ -4975,7 +4975,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of GCLB targets which use this Certificate Map.
+     * Output only. A list of GCLB targets that use this Certificate Map.
      * A Target Proxy is only present on this list if it's attached to a
      * Forwarding Rule.
      * </pre>
@@ -4996,7 +4996,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of GCLB targets which use this Certificate Map.
+     * Output only. A list of GCLB targets that use this Certificate Map.
      * A Target Proxy is only present on this list if it's attached to a
      * Forwarding Rule.
      * </pre>
