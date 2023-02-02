@@ -134,6 +134,11 @@
         <artifactId>checker-qual</artifactId>
         <version>${checker-qual.version}</version>
       </dependency>
+      <dependency>
+        <groupId>io.perfmark</groupId>
+        <artifactId>perfmark-api</artifactId>
+        <version>${perfmark-api.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 </project>

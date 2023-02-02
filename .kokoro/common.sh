@@ -102,7 +102,8 @@ function generate_modified_modules_list() {
   modified_module_list=()
   # If either parent pom.xml is touched, run ITs on all the modules
   parent_pom_modified=$(echo "${modified_files}" | grep -E '^google-cloud-(pom|jar)-parent/pom.xml$' || true)
-  if [[ (-n $parent_pom_modified) || ("${TEST_ALL_MODULES}" == "true") ]]; then
+  shared_dependencies_modified=$(echo "${modified_files}" | grep -E '^java-shared-dependencies' || true)
+  if [[ (-n $parent_pom_modified) || (-n $shared_dependencies_modified) || ("${TEST_ALL_MODULES}" == "true") ]]; then
     modified_module_list=(${maven_modules[*]})
     echo "Testing the entire monorepo"
   else

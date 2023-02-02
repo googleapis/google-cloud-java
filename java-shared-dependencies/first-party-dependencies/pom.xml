@@ -31,7 +31,6 @@
 
   <dependencyManagement>
     <dependencies>
-
       <dependency>
         <!-- This BOM declares the versions gRPC, Protobuf, Guava, etc. -->
         <groupId>com.google.api</groupId>

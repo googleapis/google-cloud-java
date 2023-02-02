@@ -17,6 +17,7 @@
     <!-- The shared config has RequireUpperBoundDeps enforcer rule -->
     <artifactId>google-cloud-shared-config</artifactId>
     <version>1.5.5</version>
+    <relativePath/>
   </parent>
 
   <properties>
@@ -26,6 +27,13 @@
 
   <dependencyManagement>
     <dependencies>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-shared-dependencies</artifactId>
+        <version>3.1.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
