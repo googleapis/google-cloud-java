@@ -56,7 +56,8 @@ public interface UpdateBillingAccountRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The billing account resource to replace the resource on the server.
+   * Required. The billing account resource to replace the resource on the
+   * server.
    * </pre>
    *
    * <code>
@@ -70,7 +71,8 @@ public interface UpdateBillingAccountRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The billing account resource to replace the resource on the server.
+   * Required. The billing account resource to replace the resource on the
+   * server.
    * </pre>
    *
    * <code>
@@ -84,7 +86,8 @@ public interface UpdateBillingAccountRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The billing account resource to replace the resource on the server.
+   * Required. The billing account resource to replace the resource on the
+   * server.
    * </pre>
    *
    * <code>

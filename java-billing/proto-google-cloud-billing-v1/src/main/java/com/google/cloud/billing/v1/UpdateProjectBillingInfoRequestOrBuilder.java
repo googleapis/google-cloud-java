@@ -27,8 +27,9 @@ public interface UpdateProjectBillingInfoRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the project associated with the billing information
-   * that you want to update. For example, `projects/tokyo-rain-123`.
+   * Required. The resource name of the project associated with the billing
+   * information that you want to update. For example,
+   * `projects/tokyo-rain-123`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -40,8 +41,9 @@ public interface UpdateProjectBillingInfoRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the project associated with the billing information
-   * that you want to update. For example, `projects/tokyo-rain-123`.
+   * Required. The resource name of the project associated with the billing
+   * information that you want to update. For example,
+   * `projects/tokyo-rain-123`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>

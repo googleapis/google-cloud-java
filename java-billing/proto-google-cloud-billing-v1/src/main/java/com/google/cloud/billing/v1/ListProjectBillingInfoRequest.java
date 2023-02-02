@@ -76,8 +76,9 @@ public final class ListProjectBillingInfoRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The resource name of the billing account associated with the projects that
-   * you want to list. For example, `billingAccounts/012345-567890-ABCDEF`.
+   * Required. The resource name of the billing account associated with the
+   * projects that you want to list. For example,
+   * `billingAccounts/012345-567890-ABCDEF`.
    * </pre>
    *
    * <code>
@@ -102,8 +103,9 @@ public final class ListProjectBillingInfoRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The resource name of the billing account associated with the projects that
-   * you want to list. For example, `billingAccounts/012345-567890-ABCDEF`.
+   * Required. The resource name of the billing account associated with the
+   * projects that you want to list. For example,
+   * `billingAccounts/012345-567890-ABCDEF`.
    * </pre>
    *
    * <code>
@@ -593,8 +595,9 @@ public final class ListProjectBillingInfoRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The resource name of the billing account associated with the projects that
-     * you want to list. For example, `billingAccounts/012345-567890-ABCDEF`.
+     * Required. The resource name of the billing account associated with the
+     * projects that you want to list. For example,
+     * `billingAccounts/012345-567890-ABCDEF`.
      * </pre>
      *
      * <code>
@@ -618,8 +621,9 @@ public final class ListProjectBillingInfoRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The resource name of the billing account associated with the projects that
-     * you want to list. For example, `billingAccounts/012345-567890-ABCDEF`.
+     * Required. The resource name of the billing account associated with the
+     * projects that you want to list. For example,
+     * `billingAccounts/012345-567890-ABCDEF`.
      * </pre>
      *
      * <code>
@@ -643,8 +647,9 @@ public final class ListProjectBillingInfoRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The resource name of the billing account associated with the projects that
-     * you want to list. For example, `billingAccounts/012345-567890-ABCDEF`.
+     * Required. The resource name of the billing account associated with the
+     * projects that you want to list. For example,
+     * `billingAccounts/012345-567890-ABCDEF`.
      * </pre>
      *
      * <code>
@@ -667,8 +672,9 @@ public final class ListProjectBillingInfoRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The resource name of the billing account associated with the projects that
-     * you want to list. For example, `billingAccounts/012345-567890-ABCDEF`.
+     * Required. The resource name of the billing account associated with the
+     * projects that you want to list. For example,
+     * `billingAccounts/012345-567890-ABCDEF`.
      * </pre>
      *
      * <code>
@@ -687,8 +693,9 @@ public final class ListProjectBillingInfoRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The resource name of the billing account associated with the projects that
-     * you want to list. For example, `billingAccounts/012345-567890-ABCDEF`.
+     * Required. The resource name of the billing account associated with the
+     * projects that you want to list. For example,
+     * `billingAccounts/012345-567890-ABCDEF`.
      * </pre>
      *
      * <code>

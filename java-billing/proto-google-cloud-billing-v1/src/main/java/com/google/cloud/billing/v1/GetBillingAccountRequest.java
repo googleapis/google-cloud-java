@@ -75,8 +75,8 @@ public final class GetBillingAccountRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The resource name of the billing account to retrieve. For example,
-   * `billingAccounts/012345-567890-ABCDEF`.
+   * Required. The resource name of the billing account to retrieve. For
+   * example, `billingAccounts/012345-567890-ABCDEF`.
    * </pre>
    *
    * <code>
@@ -101,8 +101,8 @@ public final class GetBillingAccountRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The resource name of the billing account to retrieve. For example,
-   * `billingAccounts/012345-567890-ABCDEF`.
+   * Required. The resource name of the billing account to retrieve. For
+   * example, `billingAccounts/012345-567890-ABCDEF`.
    * </pre>
    *
    * <code>
@@ -471,8 +471,8 @@ public final class GetBillingAccountRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The resource name of the billing account to retrieve. For example,
-     * `billingAccounts/012345-567890-ABCDEF`.
+     * Required. The resource name of the billing account to retrieve. For
+     * example, `billingAccounts/012345-567890-ABCDEF`.
      * </pre>
      *
      * <code>
@@ -496,8 +496,8 @@ public final class GetBillingAccountRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The resource name of the billing account to retrieve. For example,
-     * `billingAccounts/012345-567890-ABCDEF`.
+     * Required. The resource name of the billing account to retrieve. For
+     * example, `billingAccounts/012345-567890-ABCDEF`.
      * </pre>
      *
      * <code>
@@ -521,8 +521,8 @@ public final class GetBillingAccountRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The resource name of the billing account to retrieve. For example,
-     * `billingAccounts/012345-567890-ABCDEF`.
+     * Required. The resource name of the billing account to retrieve. For
+     * example, `billingAccounts/012345-567890-ABCDEF`.
      * </pre>
      *
      * <code>
@@ -545,8 +545,8 @@ public final class GetBillingAccountRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The resource name of the billing account to retrieve. For example,
-     * `billingAccounts/012345-567890-ABCDEF`.
+     * Required. The resource name of the billing account to retrieve. For
+     * example, `billingAccounts/012345-567890-ABCDEF`.
      * </pre>
      *
      * <code>
@@ -565,8 +565,8 @@ public final class GetBillingAccountRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The resource name of the billing account to retrieve. For example,
-     * `billingAccounts/012345-567890-ABCDEF`.
+     * Required. The resource name of the billing account to retrieve. For
+     * example, `billingAccounts/012345-567890-ABCDEF`.
      * </pre>
      *
      * <code>

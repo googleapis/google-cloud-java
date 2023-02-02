@@ -27,8 +27,8 @@ public interface GetBillingAccountRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the billing account to retrieve. For example,
-   * `billingAccounts/012345-567890-ABCDEF`.
+   * Required. The resource name of the billing account to retrieve. For
+   * example, `billingAccounts/012345-567890-ABCDEF`.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface GetBillingAccountRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the billing account to retrieve. For example,
-   * `billingAccounts/012345-567890-ABCDEF`.
+   * Required. The resource name of the billing account to retrieve. For
+   * example, `billingAccounts/012345-567890-ABCDEF`.
    * </pre>
    *
    * <code>
