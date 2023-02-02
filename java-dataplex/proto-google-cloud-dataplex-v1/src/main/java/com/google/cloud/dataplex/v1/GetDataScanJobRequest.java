@@ -72,7 +72,7 @@ public final class GetDataScanJobRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * DataScanJob views for getting a partial dataScanJob.
+   * DataScanJob view options.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.dataplex.v1.GetDataScanJobRequest.DataScanJobView}
@@ -92,7 +92,7 @@ public final class GetDataScanJobRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Basic view that does not include spec and result.
+     * Basic view that does not include *spec* and *result*.
      * </pre>
      *
      * <code>BASIC = 1;</code>
@@ -125,7 +125,7 @@ public final class GetDataScanJobRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Basic view that does not include spec and result.
+     * Basic view that does not include *spec* and *result*.
      * </pre>
      *
      * <code>BASIC = 1;</code>
@@ -238,8 +238,8 @@ public final class GetDataScanJobRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The resource name of the DataScanJob:
-   * projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/dataScanJobs/{data_scan_job_id}
-   * where `{project}` refers to a project_id or project_number and
+   * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/dataScanJobs/{data_scan_job_id}`
+   * where `project` refers to a *project_id* or *project_number* and
    * `location_id` refers to a GCP region.
    * </pre>
    *
@@ -266,8 +266,8 @@ public final class GetDataScanJobRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The resource name of the DataScanJob:
-   * projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/dataScanJobs/{data_scan_job_id}
-   * where `{project}` refers to a project_id or project_number and
+   * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/dataScanJobs/{data_scan_job_id}`
+   * where `project` refers to a *project_id* or *project_number* and
    * `location_id` refers to a GCP region.
    * </pre>
    *
@@ -296,8 +296,7 @@ public final class GetDataScanJobRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Used to select the subset of DataScan information to return.
-   * Defaults to `BASIC`.
+   * Optional. Select the DataScanJob view to return. Defaults to `BASIC`.
    * </pre>
    *
    * <code>
@@ -314,8 +313,7 @@ public final class GetDataScanJobRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Used to select the subset of DataScan information to return.
-   * Defaults to `BASIC`.
+   * Optional. Select the DataScanJob view to return. Defaults to `BASIC`.
    * </pre>
    *
    * <code>
@@ -709,8 +707,8 @@ public final class GetDataScanJobRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The resource name of the DataScanJob:
-     * projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/dataScanJobs/{data_scan_job_id}
-     * where `{project}` refers to a project_id or project_number and
+     * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/dataScanJobs/{data_scan_job_id}`
+     * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
@@ -736,8 +734,8 @@ public final class GetDataScanJobRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The resource name of the DataScanJob:
-     * projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/dataScanJobs/{data_scan_job_id}
-     * where `{project}` refers to a project_id or project_number and
+     * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/dataScanJobs/{data_scan_job_id}`
+     * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
@@ -763,8 +761,8 @@ public final class GetDataScanJobRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The resource name of the DataScanJob:
-     * projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/dataScanJobs/{data_scan_job_id}
-     * where `{project}` refers to a project_id or project_number and
+     * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/dataScanJobs/{data_scan_job_id}`
+     * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
@@ -789,8 +787,8 @@ public final class GetDataScanJobRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The resource name of the DataScanJob:
-     * projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/dataScanJobs/{data_scan_job_id}
-     * where `{project}` refers to a project_id or project_number and
+     * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/dataScanJobs/{data_scan_job_id}`
+     * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
@@ -811,8 +809,8 @@ public final class GetDataScanJobRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The resource name of the DataScanJob:
-     * projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/dataScanJobs/{data_scan_job_id}
-     * where `{project}` refers to a project_id or project_number and
+     * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/dataScanJobs/{data_scan_job_id}`
+     * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
@@ -839,8 +837,7 @@ public final class GetDataScanJobRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Used to select the subset of DataScan information to return.
-     * Defaults to `BASIC`.
+     * Optional. Select the DataScanJob view to return. Defaults to `BASIC`.
      * </pre>
      *
      * <code>
@@ -857,8 +854,7 @@ public final class GetDataScanJobRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Used to select the subset of DataScan information to return.
-     * Defaults to `BASIC`.
+     * Optional. Select the DataScanJob view to return. Defaults to `BASIC`.
      * </pre>
      *
      * <code>
@@ -878,8 +874,7 @@ public final class GetDataScanJobRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Used to select the subset of DataScan information to return.
-     * Defaults to `BASIC`.
+     * Optional. Select the DataScanJob view to return. Defaults to `BASIC`.
      * </pre>
      *
      * <code>
@@ -900,8 +895,7 @@ public final class GetDataScanJobRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Used to select the subset of DataScan information to return.
-     * Defaults to `BASIC`.
+     * Optional. Select the DataScanJob view to return. Defaults to `BASIC`.
      * </pre>
      *
      * <code>
@@ -925,8 +919,7 @@ public final class GetDataScanJobRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Used to select the subset of DataScan information to return.
-     * Defaults to `BASIC`.
+     * Optional. Select the DataScanJob view to return. Defaults to `BASIC`.
      * </pre>
      *
      * <code>

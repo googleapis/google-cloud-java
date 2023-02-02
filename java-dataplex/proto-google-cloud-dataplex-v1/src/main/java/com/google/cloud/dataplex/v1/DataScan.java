@@ -100,8 +100,8 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Spec related to how often and when a scan should be triggered.
-     * If not specified, the default is OnDemand, which means the scan will not
-     * run until the user calls RunDataScan API.
+     * If not specified, the default is `OnDemand`, which means the scan will
+     * not run until the user calls `RunDataScan` API.
      * </pre>
      *
      * <code>
@@ -116,8 +116,8 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Spec related to how often and when a scan should be triggered.
-     * If not specified, the default is OnDemand, which means the scan will not
-     * run until the user calls RunDataScan API.
+     * If not specified, the default is `OnDemand`, which means the scan will
+     * not run until the user calls `RunDataScan` API.
      * </pre>
      *
      * <code>
@@ -132,8 +132,8 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Spec related to how often and when a scan should be triggered.
-     * If not specified, the default is OnDemand, which means the scan will not
-     * run until the user calls RunDataScan API.
+     * If not specified, the default is `OnDemand`, which means the scan will
+     * not run until the user calls `RunDataScan` API.
      * </pre>
      *
      * <code>
@@ -146,8 +146,9 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The unnested field (Date or Timestamp) that contains values
-     * that monotonically increase over time.
+     * Immutable. The unnested field (of type *Date* or *Timestamp*) that
+     * contains values which monotonically increase over time.
+     * If not specified, a data scan will run for all data in the table.
      * </pre>
      *
      * <code>string field = 100 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -159,8 +160,9 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The unnested field (Date or Timestamp) that contains values
-     * that monotonically increase over time.
+     * Immutable. The unnested field (of type *Date* or *Timestamp*) that
+     * contains values which monotonically increase over time.
+     * If not specified, a data scan will run for all data in the table.
      * </pre>
      *
      * <code>string field = 100 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -172,8 +174,9 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The unnested field (Date or Timestamp) that contains values
-     * that monotonically increase over time.
+     * Immutable. The unnested field (of type *Date* or *Timestamp*) that
+     * contains values which monotonically increase over time.
+     * If not specified, a data scan will run for all data in the table.
      * </pre>
      *
      * <code>string field = 100 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -282,8 +285,8 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Spec related to how often and when a scan should be triggered.
-     * If not specified, the default is OnDemand, which means the scan will not
-     * run until the user calls RunDataScan API.
+     * If not specified, the default is `OnDemand`, which means the scan will
+     * not run until the user calls `RunDataScan` API.
      * </pre>
      *
      * <code>
@@ -301,8 +304,8 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Spec related to how often and when a scan should be triggered.
-     * If not specified, the default is OnDemand, which means the scan will not
-     * run until the user calls RunDataScan API.
+     * If not specified, the default is `OnDemand`, which means the scan will
+     * not run until the user calls `RunDataScan` API.
      * </pre>
      *
      * <code>
@@ -322,8 +325,8 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Spec related to how often and when a scan should be triggered.
-     * If not specified, the default is OnDemand, which means the scan will not
-     * run until the user calls RunDataScan API.
+     * If not specified, the default is `OnDemand`, which means the scan will
+     * not run until the user calls `RunDataScan` API.
      * </pre>
      *
      * <code>
@@ -342,8 +345,9 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The unnested field (Date or Timestamp) that contains values
-     * that monotonically increase over time.
+     * Immutable. The unnested field (of type *Date* or *Timestamp*) that
+     * contains values which monotonically increase over time.
+     * If not specified, a data scan will run for all data in the table.
      * </pre>
      *
      * <code>string field = 100 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -357,8 +361,9 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The unnested field (Date or Timestamp) that contains values
-     * that monotonically increase over time.
+     * Immutable. The unnested field (of type *Date* or *Timestamp*) that
+     * contains values which monotonically increase over time.
+     * If not specified, a data scan will run for all data in the table.
      * </pre>
      *
      * <code>string field = 100 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -385,8 +390,9 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The unnested field (Date or Timestamp) that contains values
-     * that monotonically increase over time.
+     * Immutable. The unnested field (of type *Date* or *Timestamp*) that
+     * contains values which monotonically increase over time.
+     * If not specified, a data scan will run for all data in the table.
      * </pre>
      *
      * <code>string field = 100 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -839,8 +845,8 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Spec related to how often and when a scan should be triggered.
-       * If not specified, the default is OnDemand, which means the scan will not
-       * run until the user calls RunDataScan API.
+       * If not specified, the default is `OnDemand`, which means the scan will
+       * not run until the user calls `RunDataScan` API.
        * </pre>
        *
        * <code>
@@ -857,8 +863,8 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Spec related to how often and when a scan should be triggered.
-       * If not specified, the default is OnDemand, which means the scan will not
-       * run until the user calls RunDataScan API.
+       * If not specified, the default is `OnDemand`, which means the scan will
+       * not run until the user calls `RunDataScan` API.
        * </pre>
        *
        * <code>
@@ -881,8 +887,8 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Spec related to how often and when a scan should be triggered.
-       * If not specified, the default is OnDemand, which means the scan will not
-       * run until the user calls RunDataScan API.
+       * If not specified, the default is `OnDemand`, which means the scan will
+       * not run until the user calls `RunDataScan` API.
        * </pre>
        *
        * <code>
@@ -907,8 +913,8 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Spec related to how often and when a scan should be triggered.
-       * If not specified, the default is OnDemand, which means the scan will not
-       * run until the user calls RunDataScan API.
+       * If not specified, the default is `OnDemand`, which means the scan will
+       * not run until the user calls `RunDataScan` API.
        * </pre>
        *
        * <code>
@@ -930,8 +936,8 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Spec related to how often and when a scan should be triggered.
-       * If not specified, the default is OnDemand, which means the scan will not
-       * run until the user calls RunDataScan API.
+       * If not specified, the default is `OnDemand`, which means the scan will
+       * not run until the user calls `RunDataScan` API.
        * </pre>
        *
        * <code>
@@ -959,8 +965,8 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Spec related to how often and when a scan should be triggered.
-       * If not specified, the default is OnDemand, which means the scan will not
-       * run until the user calls RunDataScan API.
+       * If not specified, the default is `OnDemand`, which means the scan will
+       * not run until the user calls `RunDataScan` API.
        * </pre>
        *
        * <code>
@@ -982,8 +988,8 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Spec related to how often and when a scan should be triggered.
-       * If not specified, the default is OnDemand, which means the scan will not
-       * run until the user calls RunDataScan API.
+       * If not specified, the default is `OnDemand`, which means the scan will
+       * not run until the user calls `RunDataScan` API.
        * </pre>
        *
        * <code>
@@ -1000,8 +1006,8 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Spec related to how often and when a scan should be triggered.
-       * If not specified, the default is OnDemand, which means the scan will not
-       * run until the user calls RunDataScan API.
+       * If not specified, the default is `OnDemand`, which means the scan will
+       * not run until the user calls `RunDataScan` API.
        * </pre>
        *
        * <code>
@@ -1022,8 +1028,8 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Spec related to how often and when a scan should be triggered.
-       * If not specified, the default is OnDemand, which means the scan will not
-       * run until the user calls RunDataScan API.
+       * If not specified, the default is `OnDemand`, which means the scan will
+       * not run until the user calls `RunDataScan` API.
        * </pre>
        *
        * <code>
@@ -1051,8 +1057,9 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The unnested field (Date or Timestamp) that contains values
-       * that monotonically increase over time.
+       * Immutable. The unnested field (of type *Date* or *Timestamp*) that
+       * contains values which monotonically increase over time.
+       * If not specified, a data scan will run for all data in the table.
        * </pre>
        *
        * <code>string field = 100 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1067,8 +1074,9 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The unnested field (Date or Timestamp) that contains values
-       * that monotonically increase over time.
+       * Immutable. The unnested field (of type *Date* or *Timestamp*) that
+       * contains values which monotonically increase over time.
+       * If not specified, a data scan will run for all data in the table.
        * </pre>
        *
        * <code>string field = 100 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1096,8 +1104,9 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The unnested field (Date or Timestamp) that contains values
-       * that monotonically increase over time.
+       * Immutable. The unnested field (of type *Date* or *Timestamp*) that
+       * contains values which monotonically increase over time.
+       * If not specified, a data scan will run for all data in the table.
        * </pre>
        *
        * <code>string field = 100 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1125,8 +1134,9 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The unnested field (Date or Timestamp) that contains values
-       * that monotonically increase over time.
+       * Immutable. The unnested field (of type *Date* or *Timestamp*) that
+       * contains values which monotonically increase over time.
+       * If not specified, a data scan will run for all data in the table.
        * </pre>
        *
        * <code>string field = 100 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1147,8 +1157,9 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The unnested field (Date or Timestamp) that contains values
-       * that monotonically increase over time.
+       * Immutable. The unnested field (of type *Date* or *Timestamp*) that
+       * contains values which monotonically increase over time.
+       * If not specified, a data scan will run for all data in the table.
        * </pre>
        *
        * <code>string field = 100 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1167,8 +1178,9 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The unnested field (Date or Timestamp) that contains values
-       * that monotonically increase over time.
+       * Immutable. The unnested field (of type *Date* or *Timestamp*) that
+       * contains values which monotonically increase over time.
+       * If not specified, a data scan will run for all data in the table.
        * </pre>
        *
        * <code>string field = 100 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2400,8 +2412,8 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The relative resource name of the scan, of the form:
-   * projects/{project}/locations/{location_id}/dataScans/{datascan_id}.
-   * where `{project}` refers to a project_id or project_number and
+   * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
+   * where `project` refers to a *project_id* or *project_number* and
    * `location_id` refers to a GCP region.
    * </pre>
    *
@@ -2426,8 +2438,8 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The relative resource name of the scan, of the form:
-   * projects/{project}/locations/{location_id}/dataScans/{datascan_id}.
-   * where `{project}` refers to a project_id or project_number and
+   * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
+   * where `project` refers to a *project_id* or *project_number* and
    * `location_id` refers to a GCP region.
    * </pre>
    *
@@ -2900,7 +2912,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. DataScan execution settings.
-   * If not specified, the fields under it will use their default values.
+   * If not specified, the fields in it will use their default values.
    * </pre>
    *
    * <code>
@@ -2918,7 +2930,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. DataScan execution settings.
-   * If not specified, the fields under it will use their default values.
+   * If not specified, the fields in it will use their default values.
    * </pre>
    *
    * <code>
@@ -2938,7 +2950,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. DataScan execution settings.
-   * If not specified, the fields under it will use their default values.
+   * If not specified, the fields in it will use their default values.
    * </pre>
    *
    * <code>
@@ -4145,8 +4157,8 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative resource name of the scan, of the form:
-     * projects/{project}/locations/{location_id}/dataScans/{datascan_id}.
-     * where `{project}` refers to a project_id or project_number and
+     * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
+     * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
@@ -4170,8 +4182,8 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative resource name of the scan, of the form:
-     * projects/{project}/locations/{location_id}/dataScans/{datascan_id}.
-     * where `{project}` refers to a project_id or project_number and
+     * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
+     * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
@@ -4195,8 +4207,8 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative resource name of the scan, of the form:
-     * projects/{project}/locations/{location_id}/dataScans/{datascan_id}.
-     * where `{project}` refers to a project_id or project_number and
+     * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
+     * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
@@ -4219,8 +4231,8 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative resource name of the scan, of the form:
-     * projects/{project}/locations/{location_id}/dataScans/{datascan_id}.
-     * where `{project}` refers to a project_id or project_number and
+     * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
+     * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
@@ -4239,8 +4251,8 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative resource name of the scan, of the form:
-     * projects/{project}/locations/{location_id}/dataScans/{datascan_id}.
-     * where `{project}` refers to a project_id or project_number and
+     * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
+     * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
@@ -5461,7 +5473,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. DataScan execution settings.
-     * If not specified, the fields under it will use their default values.
+     * If not specified, the fields in it will use their default values.
      * </pre>
      *
      * <code>
@@ -5478,7 +5490,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. DataScan execution settings.
-     * If not specified, the fields under it will use their default values.
+     * If not specified, the fields in it will use their default values.
      * </pre>
      *
      * <code>
@@ -5501,7 +5513,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. DataScan execution settings.
-     * If not specified, the fields under it will use their default values.
+     * If not specified, the fields in it will use their default values.
      * </pre>
      *
      * <code>
@@ -5526,7 +5538,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. DataScan execution settings.
-     * If not specified, the fields under it will use their default values.
+     * If not specified, the fields in it will use their default values.
      * </pre>
      *
      * <code>
@@ -5549,7 +5561,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. DataScan execution settings.
-     * If not specified, the fields under it will use their default values.
+     * If not specified, the fields in it will use their default values.
      * </pre>
      *
      * <code>
@@ -5578,7 +5590,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. DataScan execution settings.
-     * If not specified, the fields under it will use their default values.
+     * If not specified, the fields in it will use their default values.
      * </pre>
      *
      * <code>
@@ -5600,7 +5612,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. DataScan execution settings.
-     * If not specified, the fields under it will use their default values.
+     * If not specified, the fields in it will use their default values.
      * </pre>
      *
      * <code>
@@ -5617,7 +5629,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. DataScan execution settings.
-     * If not specified, the fields under it will use their default values.
+     * If not specified, the fields in it will use their default values.
      * </pre>
      *
      * <code>
@@ -5639,7 +5651,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. DataScan execution settings.
-     * If not specified, the fields under it will use their default values.
+     * If not specified, the fields in it will use their default values.
      * </pre>
      *
      * <code>

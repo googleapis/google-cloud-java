@@ -17,7 +17,15 @@ package com.google.cloud.dataplex.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * DataScanService manages DataScan resources which can be configured to run
+ * various types of data scanning workload and generate enriched metadata (e.g.
+ * Data Profile, Data Quality) for the data source.
+ * </pre>
+ */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/dataplex/v1/datascans.proto")
@@ -427,14 +435,22 @@ public final class DataScanServiceGrpc {
     return DataScanServiceFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * DataScanService manages DataScan resources which can be configured to run
+   * various types of data scanning workload and generate enriched metadata (e.g.
+   * Data Profile, Data Quality) for the data source.
+   * </pre>
+   */
   public abstract static class DataScanServiceImplBase implements io.grpc.BindableService {
 
     /**
      *
      *
      * <pre>
-     * Creates a dataScan resource.
+     * Creates a DataScan resource.
      * </pre>
      */
     public void createDataScan(
@@ -448,7 +464,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Update the dataScan resource.
+     * Updates a DataScan resource.
      * </pre>
      */
     public void updateDataScan(
@@ -462,7 +478,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Delete the dataScan resource.
+     * Deletes a DataScan resource.
      * </pre>
      */
     public void deleteDataScan(
@@ -476,7 +492,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Get dataScan resource.
+     * Gets a DataScan resource.
      * </pre>
      */
     public void getDataScan(
@@ -490,7 +506,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Lists dataScans.
+     * Lists DataScans.
      * </pre>
      */
     public void listDataScans(
@@ -505,7 +521,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Run an on demand execution of a DataScan.
+     * Runs an on-demand execution of a DataScan
      * </pre>
      */
     public void runDataScan(
@@ -520,7 +536,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Get DataScanJob resource.
+     * Gets a DataScanJob resource.
      * </pre>
      */
     public void getDataScanJob(
@@ -534,7 +550,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Lists DataScanJobs under the given dataScan.
+     * Lists DataScanJobs under the given DataScan.
      * </pre>
      */
     public void listDataScanJobs(
@@ -603,7 +619,15 @@ public final class DataScanServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * DataScanService manages DataScan resources which can be configured to run
+   * various types of data scanning workload and generate enriched metadata (e.g.
+   * Data Profile, Data Quality) for the data source.
+   * </pre>
+   */
   public static final class DataScanServiceStub
       extends io.grpc.stub.AbstractAsyncStub<DataScanServiceStub> {
     private DataScanServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -619,7 +643,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Creates a dataScan resource.
+     * Creates a DataScan resource.
      * </pre>
      */
     public void createDataScan(
@@ -635,7 +659,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Update the dataScan resource.
+     * Updates a DataScan resource.
      * </pre>
      */
     public void updateDataScan(
@@ -651,7 +675,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Delete the dataScan resource.
+     * Deletes a DataScan resource.
      * </pre>
      */
     public void deleteDataScan(
@@ -667,7 +691,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Get dataScan resource.
+     * Gets a DataScan resource.
      * </pre>
      */
     public void getDataScan(
@@ -683,7 +707,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Lists dataScans.
+     * Lists DataScans.
      * </pre>
      */
     public void listDataScans(
@@ -700,7 +724,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Run an on demand execution of a DataScan.
+     * Runs an on-demand execution of a DataScan
      * </pre>
      */
     public void runDataScan(
@@ -717,7 +741,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Get DataScanJob resource.
+     * Gets a DataScanJob resource.
      * </pre>
      */
     public void getDataScanJob(
@@ -733,7 +757,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Lists DataScanJobs under the given dataScan.
+     * Lists DataScanJobs under the given DataScan.
      * </pre>
      */
     public void listDataScanJobs(
@@ -747,7 +771,15 @@ public final class DataScanServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * DataScanService manages DataScan resources which can be configured to run
+   * various types of data scanning workload and generate enriched metadata (e.g.
+   * Data Profile, Data Quality) for the data source.
+   * </pre>
+   */
   public static final class DataScanServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<DataScanServiceBlockingStub> {
     private DataScanServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -764,7 +796,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Creates a dataScan resource.
+     * Creates a DataScan resource.
      * </pre>
      */
     public com.google.longrunning.Operation createDataScan(
@@ -777,7 +809,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Update the dataScan resource.
+     * Updates a DataScan resource.
      * </pre>
      */
     public com.google.longrunning.Operation updateDataScan(
@@ -790,7 +822,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Delete the dataScan resource.
+     * Deletes a DataScan resource.
      * </pre>
      */
     public com.google.longrunning.Operation deleteDataScan(
@@ -803,7 +835,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Get dataScan resource.
+     * Gets a DataScan resource.
      * </pre>
      */
     public com.google.cloud.dataplex.v1.DataScan getDataScan(
@@ -816,7 +848,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Lists dataScans.
+     * Lists DataScans.
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListDataScansResponse listDataScans(
@@ -829,7 +861,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Run an on demand execution of a DataScan.
+     * Runs an on-demand execution of a DataScan
      * </pre>
      */
     public com.google.cloud.dataplex.v1.RunDataScanResponse runDataScan(
@@ -842,7 +874,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Get DataScanJob resource.
+     * Gets a DataScanJob resource.
      * </pre>
      */
     public com.google.cloud.dataplex.v1.DataScanJob getDataScanJob(
@@ -855,7 +887,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Lists DataScanJobs under the given dataScan.
+     * Lists DataScanJobs under the given DataScan.
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListDataScanJobsResponse listDataScanJobs(
@@ -865,7 +897,15 @@ public final class DataScanServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * DataScanService manages DataScan resources which can be configured to run
+   * various types of data scanning workload and generate enriched metadata (e.g.
+   * Data Profile, Data Quality) for the data source.
+   * </pre>
+   */
   public static final class DataScanServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<DataScanServiceFutureStub> {
     private DataScanServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -882,7 +922,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Creates a dataScan resource.
+     * Creates a DataScan resource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -895,7 +935,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Update the dataScan resource.
+     * Updates a DataScan resource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -908,7 +948,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Delete the dataScan resource.
+     * Deletes a DataScan resource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -921,7 +961,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Get dataScan resource.
+     * Gets a DataScan resource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dataplex.v1.DataScan>
@@ -934,7 +974,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Lists dataScans.
+     * Lists DataScans.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -948,7 +988,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Run an on demand execution of a DataScan.
+     * Runs an on-demand execution of a DataScan
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -962,7 +1002,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Get DataScanJob resource.
+     * Gets a DataScanJob resource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -976,7 +1016,7 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
-     * Lists DataScanJobs under the given dataScan.
+     * Lists DataScanJobs under the given DataScan.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

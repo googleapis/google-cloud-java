@@ -76,7 +76,7 @@ public final class ListDataScanJobsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * DataScanJobs (metadata only) under a given dataScan.
+   * DataScanJobs (`BASIC` view only) under a given dataScan.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>
@@ -89,7 +89,7 @@ public final class ListDataScanJobsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * DataScanJobs (metadata only) under a given dataScan.
+   * DataScanJobs (`BASIC` view only) under a given dataScan.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>
@@ -103,7 +103,7 @@ public final class ListDataScanJobsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * DataScanJobs (metadata only) under a given dataScan.
+   * DataScanJobs (`BASIC` view only) under a given dataScan.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>
@@ -116,7 +116,7 @@ public final class ListDataScanJobsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * DataScanJobs (metadata only) under a given dataScan.
+   * DataScanJobs (`BASIC` view only) under a given dataScan.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>
@@ -129,7 +129,7 @@ public final class ListDataScanJobsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * DataScanJobs (metadata only) under a given dataScan.
+   * DataScanJobs (`BASIC` view only) under a given dataScan.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>
@@ -628,7 +628,7 @@ public final class ListDataScanJobsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * DataScanJobs (metadata only) under a given dataScan.
+     * DataScanJobs (`BASIC` view only) under a given dataScan.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>
@@ -644,7 +644,7 @@ public final class ListDataScanJobsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * DataScanJobs (metadata only) under a given dataScan.
+     * DataScanJobs (`BASIC` view only) under a given dataScan.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>
@@ -660,7 +660,7 @@ public final class ListDataScanJobsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * DataScanJobs (metadata only) under a given dataScan.
+     * DataScanJobs (`BASIC` view only) under a given dataScan.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>
@@ -676,7 +676,7 @@ public final class ListDataScanJobsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * DataScanJobs (metadata only) under a given dataScan.
+     * DataScanJobs (`BASIC` view only) under a given dataScan.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>
@@ -698,7 +698,7 @@ public final class ListDataScanJobsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * DataScanJobs (metadata only) under a given dataScan.
+     * DataScanJobs (`BASIC` view only) under a given dataScan.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>
@@ -718,7 +718,7 @@ public final class ListDataScanJobsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * DataScanJobs (metadata only) under a given dataScan.
+     * DataScanJobs (`BASIC` view only) under a given dataScan.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>
@@ -740,7 +740,7 @@ public final class ListDataScanJobsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * DataScanJobs (metadata only) under a given dataScan.
+     * DataScanJobs (`BASIC` view only) under a given dataScan.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>
@@ -762,7 +762,7 @@ public final class ListDataScanJobsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * DataScanJobs (metadata only) under a given dataScan.
+     * DataScanJobs (`BASIC` view only) under a given dataScan.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>
@@ -782,7 +782,7 @@ public final class ListDataScanJobsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * DataScanJobs (metadata only) under a given dataScan.
+     * DataScanJobs (`BASIC` view only) under a given dataScan.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>
@@ -802,7 +802,7 @@ public final class ListDataScanJobsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * DataScanJobs (metadata only) under a given dataScan.
+     * DataScanJobs (`BASIC` view only) under a given dataScan.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>
@@ -822,7 +822,7 @@ public final class ListDataScanJobsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * DataScanJobs (metadata only) under a given dataScan.
+     * DataScanJobs (`BASIC` view only) under a given dataScan.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>
@@ -841,7 +841,7 @@ public final class ListDataScanJobsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * DataScanJobs (metadata only) under a given dataScan.
+     * DataScanJobs (`BASIC` view only) under a given dataScan.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>
@@ -860,7 +860,7 @@ public final class ListDataScanJobsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * DataScanJobs (metadata only) under a given dataScan.
+     * DataScanJobs (`BASIC` view only) under a given dataScan.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>
@@ -872,7 +872,7 @@ public final class ListDataScanJobsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * DataScanJobs (metadata only) under a given dataScan.
+     * DataScanJobs (`BASIC` view only) under a given dataScan.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>
@@ -888,7 +888,7 @@ public final class ListDataScanJobsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * DataScanJobs (metadata only) under a given dataScan.
+     * DataScanJobs (`BASIC` view only) under a given dataScan.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>
@@ -905,7 +905,7 @@ public final class ListDataScanJobsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * DataScanJobs (metadata only) under a given dataScan.
+     * DataScanJobs (`BASIC` view only) under a given dataScan.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>
@@ -918,7 +918,7 @@ public final class ListDataScanJobsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * DataScanJobs (metadata only) under a given dataScan.
+     * DataScanJobs (`BASIC` view only) under a given dataScan.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>
@@ -931,7 +931,7 @@ public final class ListDataScanJobsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * DataScanJobs (metadata only) under a given dataScan.
+     * DataScanJobs (`BASIC` view only) under a given dataScan.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>

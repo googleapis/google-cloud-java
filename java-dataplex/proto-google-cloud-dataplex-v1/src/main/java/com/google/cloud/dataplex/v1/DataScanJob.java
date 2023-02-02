@@ -22,7 +22,7 @@ package com.google.cloud.dataplex.v1;
  *
  *
  * <pre>
- * A DataScanJob represents an instance of a data scan.
+ * A DataScanJob represents an instance of DataScan execution.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataplex.v1.DataScanJob}
@@ -419,8 +419,8 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The relative resource name of the DataScanJob, of the form:
-   * projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}.
-   * where `{project}` refers to a project_id or project_number and
+   * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}`,
+   * where `project` refers to a *project_id* or *project_number* and
    * `location_id` refers to a GCP region.
    * </pre>
    *
@@ -445,8 +445,8 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The relative resource name of the DataScanJob, of the form:
-   * projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}.
-   * where `{project}` refers to a project_id or project_number and
+   * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}`,
+   * where `project` refers to a *project_id* or *project_number* and
    * `location_id` refers to a GCP region.
    * </pre>
    *
@@ -1277,7 +1277,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A DataScanJob represents an instance of a data scan.
+   * A DataScanJob represents an instance of DataScan execution.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.DataScanJob}
@@ -1673,8 +1673,8 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative resource name of the DataScanJob, of the form:
-     * projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}.
-     * where `{project}` refers to a project_id or project_number and
+     * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}`,
+     * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
@@ -1698,8 +1698,8 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative resource name of the DataScanJob, of the form:
-     * projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}.
-     * where `{project}` refers to a project_id or project_number and
+     * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}`,
+     * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
@@ -1723,8 +1723,8 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative resource name of the DataScanJob, of the form:
-     * projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}.
-     * where `{project}` refers to a project_id or project_number and
+     * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}`,
+     * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
@@ -1747,8 +1747,8 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative resource name of the DataScanJob, of the form:
-     * projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}.
-     * where `{project}` refers to a project_id or project_number and
+     * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}`,
+     * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
@@ -1767,8 +1767,8 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative resource name of the DataScanJob, of the form:
-     * projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}.
-     * where `{project}` refers to a project_id or project_number and
+     * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}`,
+     * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *

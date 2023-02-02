@@ -77,8 +77,8 @@ public final class ListDataScanJobsRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The resource name of the parent environment:
-   * projects/{project}/locations/{location_id}/dataScans/{data_scan_id}
-   * where `{project}` refers to a project_id or project_number and
+   * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}`
+   * where `project` refers to a *project_id* or *project_number* and
    * `location_id` refers to a GCP region.
    * </pre>
    *
@@ -105,8 +105,8 @@ public final class ListDataScanJobsRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The resource name of the parent environment:
-   * projects/{project}/locations/{location_id}/dataScans/{data_scan_id}
-   * where `{project}` refers to a project_id or project_number and
+   * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}`
+   * where `project` refers to a *project_id* or *project_number* and
    * `location_id` refers to a GCP region.
    * </pre>
    *
@@ -601,8 +601,8 @@ public final class ListDataScanJobsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The resource name of the parent environment:
-     * projects/{project}/locations/{location_id}/dataScans/{data_scan_id}
-     * where `{project}` refers to a project_id or project_number and
+     * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}`
+     * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
@@ -628,8 +628,8 @@ public final class ListDataScanJobsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The resource name of the parent environment:
-     * projects/{project}/locations/{location_id}/dataScans/{data_scan_id}
-     * where `{project}` refers to a project_id or project_number and
+     * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}`
+     * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
@@ -655,8 +655,8 @@ public final class ListDataScanJobsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The resource name of the parent environment:
-     * projects/{project}/locations/{location_id}/dataScans/{data_scan_id}
-     * where `{project}` refers to a project_id or project_number and
+     * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}`
+     * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
@@ -681,8 +681,8 @@ public final class ListDataScanJobsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The resource name of the parent environment:
-     * projects/{project}/locations/{location_id}/dataScans/{data_scan_id}
-     * where `{project}` refers to a project_id or project_number and
+     * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}`
+     * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
@@ -703,8 +703,8 @@ public final class ListDataScanJobsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The resource name of the parent environment:
-     * projects/{project}/locations/{location_id}/dataScans/{data_scan_id}
-     * where `{project}` refers to a project_id or project_number and
+     * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}`
+     * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *

@@ -32,7 +32,7 @@ public enum DataScanType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The DataScan Type is unspecified.
+   * The DataScan type is unspecified.
    * </pre>
    *
    * <code>DATA_SCAN_TYPE_UNSPECIFIED = 0;</code>
@@ -42,7 +42,7 @@ public enum DataScanType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Data Quality Scan.
+   * Data Quality scan.
    * </pre>
    *
    * <code>DATA_QUALITY = 1;</code>
@@ -52,7 +52,7 @@ public enum DataScanType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Data Profile Scan.
+   * Data Profile scan.
    * </pre>
    *
    * <code>DATA_PROFILE = 2;</code>
@@ -65,7 +65,7 @@ public enum DataScanType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The DataScan Type is unspecified.
+   * The DataScan type is unspecified.
    * </pre>
    *
    * <code>DATA_SCAN_TYPE_UNSPECIFIED = 0;</code>
@@ -75,7 +75,7 @@ public enum DataScanType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Data Quality Scan.
+   * Data Quality scan.
    * </pre>
    *
    * <code>DATA_QUALITY = 1;</code>
@@ -85,7 +85,7 @@ public enum DataScanType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Data Profile Scan.
+   * Data Profile scan.
    * </pre>
    *
    * <code>DATA_PROFILE = 2;</code>

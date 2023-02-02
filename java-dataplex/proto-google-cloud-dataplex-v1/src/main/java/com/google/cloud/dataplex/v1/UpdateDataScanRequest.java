@@ -71,7 +71,7 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Update description.
+   * Required. DataScan resource to be updated.
    * Only fields specified in `update_mask` are updated.
    * </pre>
    *
@@ -89,7 +89,7 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Update description.
+   * Required. DataScan resource to be updated.
    * Only fields specified in `update_mask` are updated.
    * </pre>
    *
@@ -109,7 +109,7 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Update description.
+   * Required. DataScan resource to be updated.
    * Only fields specified in `update_mask` are updated.
    * </pre>
    *
@@ -563,7 +563,7 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Update description.
+     * Required. DataScan resource to be updated.
      * Only fields specified in `update_mask` are updated.
      * </pre>
      *
@@ -580,7 +580,7 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Update description.
+     * Required. DataScan resource to be updated.
      * Only fields specified in `update_mask` are updated.
      * </pre>
      *
@@ -603,7 +603,7 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Update description.
+     * Required. DataScan resource to be updated.
      * Only fields specified in `update_mask` are updated.
      * </pre>
      *
@@ -628,7 +628,7 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Update description.
+     * Required. DataScan resource to be updated.
      * Only fields specified in `update_mask` are updated.
      * </pre>
      *
@@ -650,7 +650,7 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Update description.
+     * Required. DataScan resource to be updated.
      * Only fields specified in `update_mask` are updated.
      * </pre>
      *
@@ -678,7 +678,7 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Update description.
+     * Required. DataScan resource to be updated.
      * Only fields specified in `update_mask` are updated.
      * </pre>
      *
@@ -700,7 +700,7 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Update description.
+     * Required. DataScan resource to be updated.
      * Only fields specified in `update_mask` are updated.
      * </pre>
      *
@@ -717,7 +717,7 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Update description.
+     * Required. DataScan resource to be updated.
      * Only fields specified in `update_mask` are updated.
      * </pre>
      *
@@ -738,7 +738,7 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Update description.
+     * Required. DataScan resource to be updated.
      * Only fields specified in `update_mask` are updated.
      * </pre>
      *

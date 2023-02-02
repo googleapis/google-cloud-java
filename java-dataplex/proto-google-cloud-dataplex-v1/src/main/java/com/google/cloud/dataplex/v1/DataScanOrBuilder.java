@@ -28,8 +28,8 @@ public interface DataScanOrBuilder
    *
    * <pre>
    * Output only. The relative resource name of the scan, of the form:
-   * projects/{project}/locations/{location_id}/dataScans/{datascan_id}.
-   * where `{project}` refers to a project_id or project_number and
+   * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
+   * where `project` refers to a *project_id* or *project_number* and
    * `location_id` refers to a GCP region.
    * </pre>
    *
@@ -43,8 +43,8 @@ public interface DataScanOrBuilder
    *
    * <pre>
    * Output only. The relative resource name of the scan, of the form:
-   * projects/{project}/locations/{location_id}/dataScans/{datascan_id}.
-   * where `{project}` refers to a project_id or project_number and
+   * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
+   * where `project` refers to a *project_id* or *project_number* and
    * `location_id` refers to a GCP region.
    * </pre>
    *
@@ -339,7 +339,7 @@ public interface DataScanOrBuilder
    *
    * <pre>
    * Optional. DataScan execution settings.
-   * If not specified, the fields under it will use their default values.
+   * If not specified, the fields in it will use their default values.
    * </pre>
    *
    * <code>
@@ -354,7 +354,7 @@ public interface DataScanOrBuilder
    *
    * <pre>
    * Optional. DataScan execution settings.
-   * If not specified, the fields under it will use their default values.
+   * If not specified, the fields in it will use their default values.
    * </pre>
    *
    * <code>
@@ -369,7 +369,7 @@ public interface DataScanOrBuilder
    *
    * <pre>
    * Optional. DataScan execution settings.
-   * If not specified, the fields under it will use their default values.
+   * If not specified, the fields in it will use their default values.
    * </pre>
    *
    * <code>

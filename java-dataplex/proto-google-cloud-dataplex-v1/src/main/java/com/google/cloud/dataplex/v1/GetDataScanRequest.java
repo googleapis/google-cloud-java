@@ -72,7 +72,7 @@ public final class GetDataScanRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * DataScan views for getting a partial dataScan.
+   * DataScan view options.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.dataplex.v1.GetDataScanRequest.DataScanView}
@@ -92,7 +92,7 @@ public final class GetDataScanRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Basic view that does not include spec and result.
+     * Basic view that does not include *spec* and *result*.
      * </pre>
      *
      * <code>BASIC = 1;</code>
@@ -125,7 +125,7 @@ public final class GetDataScanRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Basic view that does not include spec and result.
+     * Basic view that does not include *spec* and *result*.
      * </pre>
      *
      * <code>BASIC = 1;</code>
@@ -234,8 +234,8 @@ public final class GetDataScanRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The resource name of the dataScan:
-   * projects/{project}/locations/{location_id}/dataScans/{data_scan_id}
-   * where `{project}` refers to a project_id or project_number and
+   * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}`
+   * where `project` refers to a *project_id* or *project_number* and
    * `location_id` refers to a GCP region.
    * </pre>
    *
@@ -262,8 +262,8 @@ public final class GetDataScanRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The resource name of the dataScan:
-   * projects/{project}/locations/{location_id}/dataScans/{data_scan_id}
-   * where `{project}` refers to a project_id or project_number and
+   * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}`
+   * where `project` refers to a *project_id* or *project_number* and
    * `location_id` refers to a GCP region.
    * </pre>
    *
@@ -292,8 +292,7 @@ public final class GetDataScanRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Used to select the subset of DataScan information to return.
-   * Defaults to `BASIC`.
+   * Optional. Select the DataScan view to return. Defaults to `BASIC`.
    * </pre>
    *
    * <code>
@@ -310,8 +309,7 @@ public final class GetDataScanRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Used to select the subset of DataScan information to return.
-   * Defaults to `BASIC`.
+   * Optional. Select the DataScan view to return. Defaults to `BASIC`.
    * </pre>
    *
    * <code>
@@ -703,8 +701,8 @@ public final class GetDataScanRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The resource name of the dataScan:
-     * projects/{project}/locations/{location_id}/dataScans/{data_scan_id}
-     * where `{project}` refers to a project_id or project_number and
+     * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}`
+     * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
@@ -730,8 +728,8 @@ public final class GetDataScanRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The resource name of the dataScan:
-     * projects/{project}/locations/{location_id}/dataScans/{data_scan_id}
-     * where `{project}` refers to a project_id or project_number and
+     * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}`
+     * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
@@ -757,8 +755,8 @@ public final class GetDataScanRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The resource name of the dataScan:
-     * projects/{project}/locations/{location_id}/dataScans/{data_scan_id}
-     * where `{project}` refers to a project_id or project_number and
+     * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}`
+     * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
@@ -783,8 +781,8 @@ public final class GetDataScanRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The resource name of the dataScan:
-     * projects/{project}/locations/{location_id}/dataScans/{data_scan_id}
-     * where `{project}` refers to a project_id or project_number and
+     * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}`
+     * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
@@ -805,8 +803,8 @@ public final class GetDataScanRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The resource name of the dataScan:
-     * projects/{project}/locations/{location_id}/dataScans/{data_scan_id}
-     * where `{project}` refers to a project_id or project_number and
+     * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}`
+     * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
@@ -833,8 +831,7 @@ public final class GetDataScanRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Used to select the subset of DataScan information to return.
-     * Defaults to `BASIC`.
+     * Optional. Select the DataScan view to return. Defaults to `BASIC`.
      * </pre>
      *
      * <code>
@@ -851,8 +848,7 @@ public final class GetDataScanRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Used to select the subset of DataScan information to return.
-     * Defaults to `BASIC`.
+     * Optional. Select the DataScan view to return. Defaults to `BASIC`.
      * </pre>
      *
      * <code>
@@ -872,8 +868,7 @@ public final class GetDataScanRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Used to select the subset of DataScan information to return.
-     * Defaults to `BASIC`.
+     * Optional. Select the DataScan view to return. Defaults to `BASIC`.
      * </pre>
      *
      * <code>
@@ -894,8 +889,7 @@ public final class GetDataScanRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Used to select the subset of DataScan information to return.
-     * Defaults to `BASIC`.
+     * Optional. Select the DataScan view to return. Defaults to `BASIC`.
      * </pre>
      *
      * <code>
@@ -918,8 +912,7 @@ public final class GetDataScanRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Used to select the subset of DataScan information to return.
-     * Defaults to `BASIC`.
+     * Optional. Select the DataScan view to return. Defaults to `BASIC`.
      * </pre>
      *
      * <code>

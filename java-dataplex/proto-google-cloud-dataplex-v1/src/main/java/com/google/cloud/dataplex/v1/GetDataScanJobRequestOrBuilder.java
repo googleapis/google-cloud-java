@@ -28,8 +28,8 @@ public interface GetDataScanJobRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the DataScanJob:
-   * projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/dataScanJobs/{data_scan_job_id}
-   * where `{project}` refers to a project_id or project_number and
+   * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/dataScanJobs/{data_scan_job_id}`
+   * where `project` refers to a *project_id* or *project_number* and
    * `location_id` refers to a GCP region.
    * </pre>
    *
@@ -45,8 +45,8 @@ public interface GetDataScanJobRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the DataScanJob:
-   * projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/dataScanJobs/{data_scan_job_id}
-   * where `{project}` refers to a project_id or project_number and
+   * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/dataScanJobs/{data_scan_job_id}`
+   * where `project` refers to a *project_id* or *project_number* and
    * `location_id` refers to a GCP region.
    * </pre>
    *
@@ -62,8 +62,7 @@ public interface GetDataScanJobRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Used to select the subset of DataScan information to return.
-   * Defaults to `BASIC`.
+   * Optional. Select the DataScanJob view to return. Defaults to `BASIC`.
    * </pre>
    *
    * <code>
@@ -77,8 +76,7 @@ public interface GetDataScanJobRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Used to select the subset of DataScan information to return.
-   * Defaults to `BASIC`.
+   * Optional. Select the DataScanJob view to return. Defaults to `BASIC`.
    * </pre>
    *
    * <code>

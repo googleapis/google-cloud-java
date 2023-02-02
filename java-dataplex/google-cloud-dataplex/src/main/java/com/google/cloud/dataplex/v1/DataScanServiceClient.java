@@ -45,8 +45,12 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * This class provides the ability to make remote calls to the backing service through method calls
- * that map to API methods. Sample code to get started:
+ * Service Description: DataScanService manages DataScan resources which can be configured to run
+ * various types of data scanning workload and generate enriched metadata (e.g. Data Profile, Data
+ * Quality) for the data source.
+ *
+ * <p>This class provides the ability to make remote calls to the backing service through method
+ * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -211,7 +215,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a dataScan resource.
+   * Creates a DataScan resource.
    *
    * <p>Sample code:
    *
@@ -231,8 +235,8 @@ public class DataScanServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the parent location:
-   *     projects/{project}/locations/{location_id} where `{project}` refers to a project_id or
-   *     project_number and `location_id` refers to a GCP region.
+   *     `projects/{project}/locations/{location_id}` where `project` refers to a
+   *     &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a GCP region.
    * @param dataScan Required. DataScan resource.
    * @param dataScanId Required. DataScan identifier.
    *     <ul>
@@ -258,7 +262,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a dataScan resource.
+   * Creates a DataScan resource.
    *
    * <p>Sample code:
    *
@@ -278,8 +282,8 @@ public class DataScanServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the parent location:
-   *     projects/{project}/locations/{location_id} where `{project}` refers to a project_id or
-   *     project_number and `location_id` refers to a GCP region.
+   *     `projects/{project}/locations/{location_id}` where `project` refers to a
+   *     &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a GCP region.
    * @param dataScan Required. DataScan resource.
    * @param dataScanId Required. DataScan identifier.
    *     <ul>
@@ -305,7 +309,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a dataScan resource.
+   * Creates a DataScan resource.
    *
    * <p>Sample code:
    *
@@ -336,7 +340,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a dataScan resource.
+   * Creates a DataScan resource.
    *
    * <p>Sample code:
    *
@@ -367,7 +371,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a dataScan resource.
+   * Creates a DataScan resource.
    *
    * <p>Sample code:
    *
@@ -397,7 +401,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update the dataScan resource.
+   * Updates a DataScan resource.
    *
    * <p>Sample code:
    *
@@ -414,8 +418,8 @@ public class DataScanServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param dataScan Required. Update description. Only fields specified in `update_mask` are
-   *     updated.
+   * @param dataScan Required. DataScan resource to be updated.
+   *     <p>Only fields specified in `update_mask` are updated.
    * @param updateMask Required. Mask of fields to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -428,7 +432,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update the dataScan resource.
+   * Updates a DataScan resource.
    *
    * <p>Sample code:
    *
@@ -458,7 +462,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update the dataScan resource.
+   * Updates a DataScan resource.
    *
    * <p>Sample code:
    *
@@ -488,7 +492,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update the dataScan resource.
+   * Updates a DataScan resource.
    *
    * <p>Sample code:
    *
@@ -517,7 +521,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete the dataScan resource.
+   * Deletes a DataScan resource.
    *
    * <p>Sample code:
    *
@@ -534,8 +538,9 @@ public class DataScanServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the dataScan:
-   *     projects/{project}/locations/{location_id}/dataScans/{data_scan_id} where `{project}`
-   *     refers to a project_id or project_number and `location_id` refers to a GCP region.
+   *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}` where `project`
+   *     refers to a &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a
+   *     GCP region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteDataScanAsync(DataScanName name) {
@@ -546,7 +551,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete the dataScan resource.
+   * Deletes a DataScan resource.
    *
    * <p>Sample code:
    *
@@ -563,8 +568,9 @@ public class DataScanServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the dataScan:
-   *     projects/{project}/locations/{location_id}/dataScans/{data_scan_id} where `{project}`
-   *     refers to a project_id or project_number and `location_id` refers to a GCP region.
+   *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}` where `project`
+   *     refers to a &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a
+   *     GCP region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteDataScanAsync(String name) {
@@ -574,7 +580,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete the dataScan resource.
+   * Deletes a DataScan resource.
    *
    * <p>Sample code:
    *
@@ -603,7 +609,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete the dataScan resource.
+   * Deletes a DataScan resource.
    *
    * <p>Sample code:
    *
@@ -632,7 +638,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete the dataScan resource.
+   * Deletes a DataScan resource.
    *
    * <p>Sample code:
    *
@@ -660,7 +666,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get dataScan resource.
+   * Gets a DataScan resource.
    *
    * <p>Sample code:
    *
@@ -677,8 +683,9 @@ public class DataScanServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the dataScan:
-   *     projects/{project}/locations/{location_id}/dataScans/{data_scan_id} where `{project}`
-   *     refers to a project_id or project_number and `location_id` refers to a GCP region.
+   *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}` where `project`
+   *     refers to a &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a
+   *     GCP region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataScan getDataScan(DataScanName name) {
@@ -689,7 +696,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get dataScan resource.
+   * Gets a DataScan resource.
    *
    * <p>Sample code:
    *
@@ -706,8 +713,9 @@ public class DataScanServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the dataScan:
-   *     projects/{project}/locations/{location_id}/dataScans/{data_scan_id} where `{project}`
-   *     refers to a project_id or project_number and `location_id` refers to a GCP region.
+   *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}` where `project`
+   *     refers to a &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a
+   *     GCP region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataScan getDataScan(String name) {
@@ -717,7 +725,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get dataScan resource.
+   * Gets a DataScan resource.
    *
    * <p>Sample code:
    *
@@ -745,7 +753,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get dataScan resource.
+   * Gets a DataScan resource.
    *
    * <p>Sample code:
    *
@@ -772,7 +780,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists dataScans.
+   * Lists DataScans.
    *
    * <p>Sample code:
    *
@@ -790,8 +798,9 @@ public class DataScanServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. projects/{project}/locations/{location_id} where `{project}` refers to
-   *     a project_id or project_number and `location_id` refers to a GCP region.
+   * @param parent Required. The resource name of the parent location:
+   *     `projects/{project}/locations/{location_id}` where `project` refers to a
+   *     &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a GCP region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDataScansPagedResponse listDataScans(LocationName parent) {
@@ -804,7 +813,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists dataScans.
+   * Lists DataScans.
    *
    * <p>Sample code:
    *
@@ -822,8 +831,9 @@ public class DataScanServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. projects/{project}/locations/{location_id} where `{project}` refers to
-   *     a project_id or project_number and `location_id` refers to a GCP region.
+   * @param parent Required. The resource name of the parent location:
+   *     `projects/{project}/locations/{location_id}` where `project` refers to a
+   *     &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a GCP region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDataScansPagedResponse listDataScans(String parent) {
@@ -833,7 +843,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists dataScans.
+   * Lists DataScans.
    *
    * <p>Sample code:
    *
@@ -867,7 +877,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists dataScans.
+   * Lists DataScans.
    *
    * <p>Sample code:
    *
@@ -902,7 +912,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists dataScans.
+   * Lists DataScans.
    *
    * <p>Sample code:
    *
@@ -943,7 +953,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Run an on demand execution of a DataScan.
+   * Runs an on-demand execution of a DataScan
    *
    * <p>Sample code:
    *
@@ -960,9 +970,10 @@ public class DataScanServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the DataScan:
-   *     projects/{project}/locations/{location_id}/dataScans/{data_scan_id}. where `{project}`
-   *     refers to a project_id or project_number and `location_id` refers to a GCP region. Only
-   *     on-demand DataScans are allowed.
+   *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}`. where `project`
+   *     refers to a &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a
+   *     GCP region.
+   *     <p>Only &#42;&#42;OnDemand&#42;&#42; data scans are allowed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RunDataScanResponse runDataScan(DataScanName name) {
@@ -973,7 +984,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Run an on demand execution of a DataScan.
+   * Runs an on-demand execution of a DataScan
    *
    * <p>Sample code:
    *
@@ -990,9 +1001,10 @@ public class DataScanServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the DataScan:
-   *     projects/{project}/locations/{location_id}/dataScans/{data_scan_id}. where `{project}`
-   *     refers to a project_id or project_number and `location_id` refers to a GCP region. Only
-   *     on-demand DataScans are allowed.
+   *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}`. where `project`
+   *     refers to a &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a
+   *     GCP region.
+   *     <p>Only &#42;&#42;OnDemand&#42;&#42; data scans are allowed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RunDataScanResponse runDataScan(String name) {
@@ -1002,7 +1014,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Run an on demand execution of a DataScan.
+   * Runs an on-demand execution of a DataScan
    *
    * <p>Sample code:
    *
@@ -1030,7 +1042,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Run an on demand execution of a DataScan.
+   * Runs an on-demand execution of a DataScan
    *
    * <p>Sample code:
    *
@@ -1058,7 +1070,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get DataScanJob resource.
+   * Gets a DataScanJob resource.
    *
    * <p>Sample code:
    *
@@ -1075,9 +1087,9 @@ public class DataScanServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the DataScanJob:
-   *     projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/dataScanJobs/{data_scan_job_id}
-   *     where `{project}` refers to a project_id or project_number and `location_id` refers to a
-   *     GCP region.
+   *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/dataScanJobs/{data_scan_job_id}`
+   *     where `project` refers to a &#42;project_id&#42; or &#42;project_number&#42; and
+   *     `location_id` refers to a GCP region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataScanJob getDataScanJob(DataScanJobName name) {
@@ -1088,7 +1100,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get DataScanJob resource.
+   * Gets a DataScanJob resource.
    *
    * <p>Sample code:
    *
@@ -1105,9 +1117,9 @@ public class DataScanServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the DataScanJob:
-   *     projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/dataScanJobs/{data_scan_job_id}
-   *     where `{project}` refers to a project_id or project_number and `location_id` refers to a
-   *     GCP region.
+   *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/dataScanJobs/{data_scan_job_id}`
+   *     where `project` refers to a &#42;project_id&#42; or &#42;project_number&#42; and
+   *     `location_id` refers to a GCP region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataScanJob getDataScanJob(String name) {
@@ -1117,7 +1129,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get DataScanJob resource.
+   * Gets a DataScanJob resource.
    *
    * <p>Sample code:
    *
@@ -1146,7 +1158,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get DataScanJob resource.
+   * Gets a DataScanJob resource.
    *
    * <p>Sample code:
    *
@@ -1175,7 +1187,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists DataScanJobs under the given dataScan.
+   * Lists DataScanJobs under the given DataScan.
    *
    * <p>Sample code:
    *
@@ -1194,8 +1206,9 @@ public class DataScanServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the parent environment:
-   *     projects/{project}/locations/{location_id}/dataScans/{data_scan_id} where `{project}`
-   *     refers to a project_id or project_number and `location_id` refers to a GCP region.
+   *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}` where `project`
+   *     refers to a &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a
+   *     GCP region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDataScanJobsPagedResponse listDataScanJobs(DataScanName parent) {
@@ -1208,7 +1221,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists DataScanJobs under the given dataScan.
+   * Lists DataScanJobs under the given DataScan.
    *
    * <p>Sample code:
    *
@@ -1227,8 +1240,9 @@ public class DataScanServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the parent environment:
-   *     projects/{project}/locations/{location_id}/dataScans/{data_scan_id} where `{project}`
-   *     refers to a project_id or project_number and `location_id` refers to a GCP region.
+   *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}` where `project`
+   *     refers to a &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a
+   *     GCP region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDataScanJobsPagedResponse listDataScanJobs(String parent) {
@@ -1239,7 +1253,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists DataScanJobs under the given dataScan.
+   * Lists DataScanJobs under the given DataScan.
    *
    * <p>Sample code:
    *
@@ -1271,7 +1285,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists DataScanJobs under the given dataScan.
+   * Lists DataScanJobs under the given DataScan.
    *
    * <p>Sample code:
    *
@@ -1304,7 +1318,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists DataScanJobs under the given dataScan.
+   * Lists DataScanJobs under the given DataScan.
    *
    * <p>Sample code:
    *

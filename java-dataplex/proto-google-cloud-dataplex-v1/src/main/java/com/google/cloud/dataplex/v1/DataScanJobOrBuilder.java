@@ -28,8 +28,8 @@ public interface DataScanJobOrBuilder
    *
    * <pre>
    * Output only. The relative resource name of the DataScanJob, of the form:
-   * projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}.
-   * where `{project}` refers to a project_id or project_number and
+   * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}`,
+   * where `project` refers to a *project_id* or *project_number* and
    * `location_id` refers to a GCP region.
    * </pre>
    *
@@ -43,8 +43,8 @@ public interface DataScanJobOrBuilder
    *
    * <pre>
    * Output only. The relative resource name of the DataScanJob, of the form:
-   * projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}.
-   * where `{project}` refers to a project_id or project_number and
+   * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}`,
+   * where `project` refers to a *project_id* or *project_number* and
    * `location_id` refers to a GCP region.
    * </pre>
    *

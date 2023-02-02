@@ -27,7 +27,7 @@ public interface ListDataScansResponseOrBuilder
    *
    *
    * <pre>
-   * DataScans (metadata only) under the given parent location.
+   * DataScans (`BASIC` view only) under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataScan data_scans = 1;</code>
@@ -37,7 +37,7 @@ public interface ListDataScansResponseOrBuilder
    *
    *
    * <pre>
-   * DataScans (metadata only) under the given parent location.
+   * DataScans (`BASIC` view only) under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataScan data_scans = 1;</code>
@@ -47,7 +47,7 @@ public interface ListDataScansResponseOrBuilder
    *
    *
    * <pre>
-   * DataScans (metadata only) under the given parent location.
+   * DataScans (`BASIC` view only) under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataScan data_scans = 1;</code>
@@ -57,7 +57,7 @@ public interface ListDataScansResponseOrBuilder
    *
    *
    * <pre>
-   * DataScans (metadata only) under the given parent location.
+   * DataScans (`BASIC` view only) under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataScan data_scans = 1;</code>
@@ -68,7 +68,7 @@ public interface ListDataScansResponseOrBuilder
    *
    *
    * <pre>
-   * DataScans (metadata only) under the given parent location.
+   * DataScans (`BASIC` view only) under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataScan data_scans = 1;</code>

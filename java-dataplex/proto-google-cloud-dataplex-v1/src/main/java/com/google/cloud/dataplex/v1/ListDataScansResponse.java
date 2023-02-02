@@ -77,7 +77,7 @@ public final class ListDataScansResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * DataScans (metadata only) under the given parent location.
+   * DataScans (`BASIC` view only) under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataScan data_scans = 1;</code>
@@ -90,7 +90,7 @@ public final class ListDataScansResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * DataScans (metadata only) under the given parent location.
+   * DataScans (`BASIC` view only) under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataScan data_scans = 1;</code>
@@ -104,7 +104,7 @@ public final class ListDataScansResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * DataScans (metadata only) under the given parent location.
+   * DataScans (`BASIC` view only) under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataScan data_scans = 1;</code>
@@ -117,7 +117,7 @@ public final class ListDataScansResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * DataScans (metadata only) under the given parent location.
+   * DataScans (`BASIC` view only) under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataScan data_scans = 1;</code>
@@ -130,7 +130,7 @@ public final class ListDataScansResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * DataScans (metadata only) under the given parent location.
+   * DataScans (`BASIC` view only) under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataScan data_scans = 1;</code>
@@ -730,7 +730,7 @@ public final class ListDataScansResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * DataScans (metadata only) under the given parent location.
+     * DataScans (`BASIC` view only) under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScan data_scans = 1;</code>
@@ -746,7 +746,7 @@ public final class ListDataScansResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * DataScans (metadata only) under the given parent location.
+     * DataScans (`BASIC` view only) under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScan data_scans = 1;</code>
@@ -762,7 +762,7 @@ public final class ListDataScansResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * DataScans (metadata only) under the given parent location.
+     * DataScans (`BASIC` view only) under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScan data_scans = 1;</code>
@@ -778,7 +778,7 @@ public final class ListDataScansResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * DataScans (metadata only) under the given parent location.
+     * DataScans (`BASIC` view only) under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScan data_scans = 1;</code>
@@ -800,7 +800,7 @@ public final class ListDataScansResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * DataScans (metadata only) under the given parent location.
+     * DataScans (`BASIC` view only) under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScan data_scans = 1;</code>
@@ -820,7 +820,7 @@ public final class ListDataScansResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * DataScans (metadata only) under the given parent location.
+     * DataScans (`BASIC` view only) under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScan data_scans = 1;</code>
@@ -842,7 +842,7 @@ public final class ListDataScansResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * DataScans (metadata only) under the given parent location.
+     * DataScans (`BASIC` view only) under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScan data_scans = 1;</code>
@@ -864,7 +864,7 @@ public final class ListDataScansResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * DataScans (metadata only) under the given parent location.
+     * DataScans (`BASIC` view only) under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScan data_scans = 1;</code>
@@ -883,7 +883,7 @@ public final class ListDataScansResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * DataScans (metadata only) under the given parent location.
+     * DataScans (`BASIC` view only) under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScan data_scans = 1;</code>
@@ -903,7 +903,7 @@ public final class ListDataScansResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * DataScans (metadata only) under the given parent location.
+     * DataScans (`BASIC` view only) under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScan data_scans = 1;</code>
@@ -923,7 +923,7 @@ public final class ListDataScansResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * DataScans (metadata only) under the given parent location.
+     * DataScans (`BASIC` view only) under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScan data_scans = 1;</code>
@@ -942,7 +942,7 @@ public final class ListDataScansResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * DataScans (metadata only) under the given parent location.
+     * DataScans (`BASIC` view only) under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScan data_scans = 1;</code>
@@ -961,7 +961,7 @@ public final class ListDataScansResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * DataScans (metadata only) under the given parent location.
+     * DataScans (`BASIC` view only) under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScan data_scans = 1;</code>
@@ -973,7 +973,7 @@ public final class ListDataScansResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * DataScans (metadata only) under the given parent location.
+     * DataScans (`BASIC` view only) under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScan data_scans = 1;</code>
@@ -989,7 +989,7 @@ public final class ListDataScansResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * DataScans (metadata only) under the given parent location.
+     * DataScans (`BASIC` view only) under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScan data_scans = 1;</code>
@@ -1006,7 +1006,7 @@ public final class ListDataScansResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * DataScans (metadata only) under the given parent location.
+     * DataScans (`BASIC` view only) under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScan data_scans = 1;</code>
@@ -1019,7 +1019,7 @@ public final class ListDataScansResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * DataScans (metadata only) under the given parent location.
+     * DataScans (`BASIC` view only) under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScan data_scans = 1;</code>
@@ -1032,7 +1032,7 @@ public final class ListDataScansResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * DataScans (metadata only) under the given parent location.
+     * DataScans (`BASIC` view only) under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataScan data_scans = 1;</code>

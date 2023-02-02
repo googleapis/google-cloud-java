@@ -27,7 +27,7 @@ public interface RunDataScanResponseOrBuilder
    *
    *
    * <pre>
-   * DataScanJob created by RunDataScan API.
+   * DataScanJob created by RunDataScan request.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataScanJob job = 1;</code>
@@ -39,7 +39,7 @@ public interface RunDataScanResponseOrBuilder
    *
    *
    * <pre>
-   * DataScanJob created by RunDataScan API.
+   * DataScanJob created by RunDataScan request.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataScanJob job = 1;</code>
@@ -51,7 +51,7 @@ public interface RunDataScanResponseOrBuilder
    *
    *
    * <pre>
-   * DataScanJob created by RunDataScan API.
+   * DataScanJob created by RunDataScan request.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataScanJob job = 1;</code>

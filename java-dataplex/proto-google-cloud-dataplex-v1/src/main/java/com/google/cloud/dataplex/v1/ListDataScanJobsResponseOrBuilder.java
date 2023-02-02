@@ -27,7 +27,7 @@ public interface ListDataScanJobsResponseOrBuilder
    *
    *
    * <pre>
-   * DataScanJobs (metadata only) under a given dataScan.
+   * DataScanJobs (`BASIC` view only) under a given dataScan.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>
@@ -37,7 +37,7 @@ public interface ListDataScanJobsResponseOrBuilder
    *
    *
    * <pre>
-   * DataScanJobs (metadata only) under a given dataScan.
+   * DataScanJobs (`BASIC` view only) under a given dataScan.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>
@@ -47,7 +47,7 @@ public interface ListDataScanJobsResponseOrBuilder
    *
    *
    * <pre>
-   * DataScanJobs (metadata only) under a given dataScan.
+   * DataScanJobs (`BASIC` view only) under a given dataScan.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>
@@ -57,7 +57,7 @@ public interface ListDataScanJobsResponseOrBuilder
    *
    *
    * <pre>
-   * DataScanJobs (metadata only) under a given dataScan.
+   * DataScanJobs (`BASIC` view only) under a given dataScan.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>
@@ -68,7 +68,7 @@ public interface ListDataScanJobsResponseOrBuilder
    *
    *
    * <pre>
-   * DataScanJobs (metadata only) under a given dataScan.
+   * DataScanJobs (`BASIC` view only) under a given dataScan.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataScanJob data_scan_jobs = 1;</code>

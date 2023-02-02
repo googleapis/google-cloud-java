@@ -78,8 +78,9 @@ public final class ListDataScansRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. projects/{project}/locations/{location_id}
-   * where `{project}` refers to a project_id or project_number and
+   * Required. The resource name of the parent location:
+   * `projects/{project}/locations/{location_id}`
+   * where `project` refers to a *project_id* or *project_number* and
    * `location_id` refers to a GCP region.
    * </pre>
    *
@@ -105,8 +106,9 @@ public final class ListDataScansRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. projects/{project}/locations/{location_id}
-   * where `{project}` refers to a project_id or project_number and
+   * Required. The resource name of the parent location:
+   * `projects/{project}/locations/{location_id}`
+   * where `project` refers to a *project_id* or *project_number* and
    * `location_id` refers to a GCP region.
    * </pre>
    *
@@ -265,7 +267,7 @@ public final class ListDataScansRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Order by fields (name or create_time) for the result.
+   * Optional. Order by fields (`name` or `create_time`) for the result.
    * If not specified, the ordering is undefined.
    * </pre>
    *
@@ -289,7 +291,7 @@ public final class ListDataScansRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Order by fields (name or create_time) for the result.
+   * Optional. Order by fields (`name` or `create_time`) for the result.
    * If not specified, the ordering is undefined.
    * </pre>
    *
@@ -751,8 +753,9 @@ public final class ListDataScansRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. projects/{project}/locations/{location_id}
-     * where `{project}` refers to a project_id or project_number and
+     * Required. The resource name of the parent location:
+     * `projects/{project}/locations/{location_id}`
+     * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
@@ -777,8 +780,9 @@ public final class ListDataScansRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. projects/{project}/locations/{location_id}
-     * where `{project}` refers to a project_id or project_number and
+     * Required. The resource name of the parent location:
+     * `projects/{project}/locations/{location_id}`
+     * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
@@ -803,8 +807,9 @@ public final class ListDataScansRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. projects/{project}/locations/{location_id}
-     * where `{project}` refers to a project_id or project_number and
+     * Required. The resource name of the parent location:
+     * `projects/{project}/locations/{location_id}`
+     * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
@@ -828,8 +833,9 @@ public final class ListDataScansRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. projects/{project}/locations/{location_id}
-     * where `{project}` refers to a project_id or project_number and
+     * Required. The resource name of the parent location:
+     * `projects/{project}/locations/{location_id}`
+     * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
@@ -849,8 +855,9 @@ public final class ListDataScansRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. projects/{project}/locations/{location_id}
-     * where `{project}` refers to a project_id or project_number and
+     * Required. The resource name of the parent location:
+     * `projects/{project}/locations/{location_id}`
+     * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
@@ -1163,7 +1170,7 @@ public final class ListDataScansRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Order by fields (name or create_time) for the result.
+     * Optional. Order by fields (`name` or `create_time`) for the result.
      * If not specified, the ordering is undefined.
      * </pre>
      *
@@ -1186,7 +1193,7 @@ public final class ListDataScansRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Order by fields (name or create_time) for the result.
+     * Optional. Order by fields (`name` or `create_time`) for the result.
      * If not specified, the ordering is undefined.
      * </pre>
      *
@@ -1209,7 +1216,7 @@ public final class ListDataScansRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Order by fields (name or create_time) for the result.
+     * Optional. Order by fields (`name` or `create_time`) for the result.
      * If not specified, the ordering is undefined.
      * </pre>
      *
@@ -1231,7 +1238,7 @@ public final class ListDataScansRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Order by fields (name or create_time) for the result.
+     * Optional. Order by fields (`name` or `create_time`) for the result.
      * If not specified, the ordering is undefined.
      * </pre>
      *
@@ -1249,7 +1256,7 @@ public final class ListDataScansRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Order by fields (name or create_time) for the result.
+     * Optional. Order by fields (`name` or `create_time`) for the result.
      * If not specified, the ordering is undefined.
      * </pre>
      *

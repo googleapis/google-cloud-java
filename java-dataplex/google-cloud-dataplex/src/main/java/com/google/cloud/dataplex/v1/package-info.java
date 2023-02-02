@@ -40,6 +40,10 @@
  *
  * <p>======================= DataScanServiceClient =======================
  *
+ * <p>Service Description: DataScanService manages DataScan resources which can be configured to run
+ * various types of data scanning workload and generate enriched metadata (e.g. Data Profile, Data
+ * Quality) for the data source.
+ *
  * <p>Sample for DataScanServiceClient:
  *
  * <pre>{@code
