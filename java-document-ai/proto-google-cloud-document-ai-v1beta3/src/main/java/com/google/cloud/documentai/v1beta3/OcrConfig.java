@@ -37,7 +37,9 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private OcrConfig() {}
+  private OcrConfig() {
+    advancedOcrOptions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -84,6 +86,69 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     return enableNativePdfParsing_;
   }
 
+  public static final int ADVANCED_OCR_OPTIONS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringList advancedOcrOptions_;
+  /**
+   *
+   *
+   * <pre>
+   * A list of advanced OCR options to further fine-tune OCR behavior.
+   * </pre>
+   *
+   * <code>repeated string advanced_ocr_options = 5;</code>
+   *
+   * @return A list containing the advancedOcrOptions.
+   */
+  public com.google.protobuf.ProtocolStringList getAdvancedOcrOptionsList() {
+    return advancedOcrOptions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of advanced OCR options to further fine-tune OCR behavior.
+   * </pre>
+   *
+   * <code>repeated string advanced_ocr_options = 5;</code>
+   *
+   * @return The count of advancedOcrOptions.
+   */
+  public int getAdvancedOcrOptionsCount() {
+    return advancedOcrOptions_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of advanced OCR options to further fine-tune OCR behavior.
+   * </pre>
+   *
+   * <code>repeated string advanced_ocr_options = 5;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The advancedOcrOptions at the given index.
+   */
+  public java.lang.String getAdvancedOcrOptions(int index) {
+    return advancedOcrOptions_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of advanced OCR options to further fine-tune OCR behavior.
+   * </pre>
+   *
+   * <code>repeated string advanced_ocr_options = 5;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the advancedOcrOptions at the given index.
+   */
+  public com.google.protobuf.ByteString getAdvancedOcrOptionsBytes(int index) {
+    return advancedOcrOptions_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -101,6 +166,9 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     if (enableNativePdfParsing_ != false) {
       output.writeBool(3, enableNativePdfParsing_);
     }
+    for (int i = 0; i < advancedOcrOptions_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, advancedOcrOptions_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -112,6 +180,14 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (enableNativePdfParsing_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, enableNativePdfParsing_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < advancedOcrOptions_.size(); i++) {
+        dataSize += computeStringSizeNoTag(advancedOcrOptions_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getAdvancedOcrOptionsList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -130,6 +206,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.documentai.v1beta3.OcrConfig) obj;
 
     if (getEnableNativePdfParsing() != other.getEnableNativePdfParsing()) return false;
+    if (!getAdvancedOcrOptionsList().equals(other.getAdvancedOcrOptionsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -143,6 +220,10 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ENABLE_NATIVE_PDF_PARSING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableNativePdfParsing());
+    if (getAdvancedOcrOptionsCount() > 0) {
+      hash = (37 * hash) + ADVANCED_OCR_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getAdvancedOcrOptionsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -283,6 +364,8 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       enableNativePdfParsing_ = false;
+      advancedOcrOptions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -310,11 +393,20 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.documentai.v1beta3.OcrConfig buildPartial() {
       com.google.cloud.documentai.v1beta3.OcrConfig result =
           new com.google.cloud.documentai.v1beta3.OcrConfig(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.documentai.v1beta3.OcrConfig result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        advancedOcrOptions_ = advancedOcrOptions_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.advancedOcrOptions_ = advancedOcrOptions_;
     }
 
     private void buildPartial0(com.google.cloud.documentai.v1beta3.OcrConfig result) {
@@ -372,6 +464,16 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.getEnableNativePdfParsing() != false) {
         setEnableNativePdfParsing(other.getEnableNativePdfParsing());
       }
+      if (!other.advancedOcrOptions_.isEmpty()) {
+        if (advancedOcrOptions_.isEmpty()) {
+          advancedOcrOptions_ = other.advancedOcrOptions_;
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ensureAdvancedOcrOptionsIsMutable();
+          advancedOcrOptions_.addAll(other.advancedOcrOptions_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -404,6 +506,13 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 24
+            case 42:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureAdvancedOcrOptionsIsMutable();
+                advancedOcrOptions_.add(s);
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -475,6 +584,174 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEnableNativePdfParsing() {
       bitField0_ = (bitField0_ & ~0x00000001);
       enableNativePdfParsing_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList advancedOcrOptions_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureAdvancedOcrOptionsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        advancedOcrOptions_ = new com.google.protobuf.LazyStringArrayList(advancedOcrOptions_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of advanced OCR options to further fine-tune OCR behavior.
+     * </pre>
+     *
+     * <code>repeated string advanced_ocr_options = 5;</code>
+     *
+     * @return A list containing the advancedOcrOptions.
+     */
+    public com.google.protobuf.ProtocolStringList getAdvancedOcrOptionsList() {
+      return advancedOcrOptions_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of advanced OCR options to further fine-tune OCR behavior.
+     * </pre>
+     *
+     * <code>repeated string advanced_ocr_options = 5;</code>
+     *
+     * @return The count of advancedOcrOptions.
+     */
+    public int getAdvancedOcrOptionsCount() {
+      return advancedOcrOptions_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of advanced OCR options to further fine-tune OCR behavior.
+     * </pre>
+     *
+     * <code>repeated string advanced_ocr_options = 5;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The advancedOcrOptions at the given index.
+     */
+    public java.lang.String getAdvancedOcrOptions(int index) {
+      return advancedOcrOptions_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of advanced OCR options to further fine-tune OCR behavior.
+     * </pre>
+     *
+     * <code>repeated string advanced_ocr_options = 5;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the advancedOcrOptions at the given index.
+     */
+    public com.google.protobuf.ByteString getAdvancedOcrOptionsBytes(int index) {
+      return advancedOcrOptions_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of advanced OCR options to further fine-tune OCR behavior.
+     * </pre>
+     *
+     * <code>repeated string advanced_ocr_options = 5;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The advancedOcrOptions to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdvancedOcrOptions(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAdvancedOcrOptionsIsMutable();
+      advancedOcrOptions_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of advanced OCR options to further fine-tune OCR behavior.
+     * </pre>
+     *
+     * <code>repeated string advanced_ocr_options = 5;</code>
+     *
+     * @param value The advancedOcrOptions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdvancedOcrOptions(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAdvancedOcrOptionsIsMutable();
+      advancedOcrOptions_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of advanced OCR options to further fine-tune OCR behavior.
+     * </pre>
+     *
+     * <code>repeated string advanced_ocr_options = 5;</code>
+     *
+     * @param values The advancedOcrOptions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAdvancedOcrOptions(java.lang.Iterable<java.lang.String> values) {
+      ensureAdvancedOcrOptionsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, advancedOcrOptions_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of advanced OCR options to further fine-tune OCR behavior.
+     * </pre>
+     *
+     * <code>repeated string advanced_ocr_options = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdvancedOcrOptions() {
+      advancedOcrOptions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of advanced OCR options to further fine-tune OCR behavior.
+     * </pre>
+     *
+     * <code>repeated string advanced_ocr_options = 5;</code>
+     *
+     * @param value The bytes of the advancedOcrOptions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdvancedOcrOptionsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureAdvancedOcrOptionsIsMutable();
+      advancedOcrOptions_.add(value);
       onChanged();
       return this;
     }

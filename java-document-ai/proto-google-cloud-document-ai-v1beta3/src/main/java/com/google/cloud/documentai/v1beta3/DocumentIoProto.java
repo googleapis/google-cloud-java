@@ -94,15 +94,16 @@ public final class DocumentIoProto {
           + ".cloud.documentai.v1beta3.DocumentOutput"
           + "Config.GcsOutputConfig.ShardingConfig\032@\n"
           + "\016ShardingConfig\022\027\n\017pages_per_shard\030\001 \001(\005"
-          + "\022\025\n\rpages_overlap\030\002 \001(\005B\r\n\013destination\"."
+          + "\022\025\n\rpages_overlap\030\002 \001(\005B\r\n\013destination\"L"
           + "\n\tOcrConfig\022!\n\031enable_native_pdf_parsing"
-          + "\030\003 \001(\010B\354\001\n#com.google.cloud.documentai.v"
-          + "1beta3B\017DocumentIoProtoP\001ZIgoogle.golang"
-          + ".org/genproto/googleapis/cloud/documenta"
-          + "i/v1beta3;documentai\252\002\037Google.Cloud.Docu"
-          + "mentAI.V1Beta3\312\002\037Google\\Cloud\\DocumentAI"
-          + "\\V1beta3\352\002\"Google::Cloud::DocumentAI::V1"
-          + "beta3b\006proto3"
+          + "\030\003 \001(\010\022\034\n\024advanced_ocr_options\030\005 \003(\tB\354\001\n"
+          + "#com.google.cloud.documentai.v1beta3B\017Do"
+          + "cumentIoProtoP\001ZIgoogle.golang.org/genpr"
+          + "oto/googleapis/cloud/documentai/v1beta3;"
+          + "documentai\252\002\037Google.Cloud.DocumentAI.V1B"
+          + "eta3\312\002\037Google\\Cloud\\DocumentAI\\V1beta3\352\002"
+          + "\"Google::Cloud::DocumentAI::V1beta3b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -184,7 +185,7 @@ public final class DocumentIoProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_OcrConfig_descriptor,
             new java.lang.String[] {
-              "EnableNativePdfParsing",
+              "EnableNativePdfParsing", "AdvancedOcrOptions",
             });
     com.google.protobuf.FieldMaskProto.getDescriptor();
   }
