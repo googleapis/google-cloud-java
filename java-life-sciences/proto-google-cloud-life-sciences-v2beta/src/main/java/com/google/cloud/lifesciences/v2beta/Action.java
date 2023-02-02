@@ -152,9 +152,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The URI to pull the container image from. Note that all images referenced
-   * by actions in the pipeline are pulled before the first action runs. If
-   * multiple actions reference the same image, it is only pulled once,
+   * Required. The URI to pull the container image from. Note that all images
+   * referenced by actions in the pipeline are pulled before the first action
+   * runs. If multiple actions reference the same image, it is only pulled once,
    * ensuring that the same image is used for all actions in a single pipeline.
    * The image URI can be either a complete host and image specification (e.g.,
    * quay.io/biocontainers/samtools), a library and image name (e.g.,
@@ -163,7 +163,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * If the specified image is not public, the service account specified for
    * the Virtual Machine must have access to pull the images from GCR, or
    * appropriate credentials must be specified in the
-   * [google.cloud.lifesciences.v2beta.Action.credentials][google.cloud.lifesciences.v2beta.Action.credentials] field.
+   * [google.cloud.lifesciences.v2beta.Action.credentials][google.cloud.lifesciences.v2beta.Action.credentials]
+   * field.
    * </pre>
    *
    * <code>string image_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -186,9 +187,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The URI to pull the container image from. Note that all images referenced
-   * by actions in the pipeline are pulled before the first action runs. If
-   * multiple actions reference the same image, it is only pulled once,
+   * Required. The URI to pull the container image from. Note that all images
+   * referenced by actions in the pipeline are pulled before the first action
+   * runs. If multiple actions reference the same image, it is only pulled once,
    * ensuring that the same image is used for all actions in a single pipeline.
    * The image URI can be either a complete host and image specification (e.g.,
    * quay.io/biocontainers/samtools), a library and image name (e.g.,
@@ -197,7 +198,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * If the specified image is not public, the service account specified for
    * the Virtual Machine must have access to pull the images from GCR, or
    * appropriate credentials must be specified in the
-   * [google.cloud.lifesciences.v2beta.Action.credentials][google.cloud.lifesciences.v2beta.Action.credentials] field.
+   * [google.cloud.lifesciences.v2beta.Action.credentials][google.cloud.lifesciences.v2beta.Action.credentials]
+   * field.
    * </pre>
    *
    * <code>string image_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -375,7 +377,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The environment to pass into the container. This environment is merged
-   * with values specified in the [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
+   * with values specified in the
+   * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
    * message, overwriting any duplicate values.
    * In addition to the values passed here, a few other values are
    * automatically injected into the environment. These cannot be hidden or
@@ -409,7 +412,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The environment to pass into the container. This environment is merged
-   * with values specified in the [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
+   * with values specified in the
+   * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
    * message, overwriting any duplicate values.
    * In addition to the values passed here, a few other values are
    * automatically injected into the environment. These cannot be hidden or
@@ -434,7 +438,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The environment to pass into the container. This environment is merged
-   * with values specified in the [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
+   * with values specified in the
+   * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
    * message, overwriting any duplicate values.
    * In addition to the values passed here, a few other values are
    * automatically injected into the environment. These cannot be hidden or
@@ -466,7 +471,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The environment to pass into the container. This environment is merged
-   * with values specified in the [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
+   * with values specified in the
+   * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
    * message, overwriting any duplicate values.
    * In addition to the values passed here, a few other values are
    * automatically injected into the environment. These cannot be hidden or
@@ -502,8 +508,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The encrypted environment to pass into the container. This environment is
    * merged with values specified in the
-   * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline] message, overwriting any
-   * duplicate values.
+   * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
+   * message, overwriting any duplicate values.
    * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
    * serve as environment variable names and their values. The decoded
    * environment variables can overwrite the values specified by the
@@ -524,8 +530,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The encrypted environment to pass into the container. This environment is
    * merged with values specified in the
-   * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline] message, overwriting any
-   * duplicate values.
+   * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
+   * message, overwriting any duplicate values.
    * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
    * serve as environment variable names and their values. The decoded
    * environment variables can overwrite the values specified by the
@@ -548,8 +554,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The encrypted environment to pass into the container. This environment is
    * merged with values specified in the
-   * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline] message, overwriting any
-   * duplicate values.
+   * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
+   * message, overwriting any duplicate values.
    * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
    * serve as environment variable names and their values. The decoded
    * environment variables can overwrite the values specified by the
@@ -2333,9 +2339,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The URI to pull the container image from. Note that all images referenced
-     * by actions in the pipeline are pulled before the first action runs. If
-     * multiple actions reference the same image, it is only pulled once,
+     * Required. The URI to pull the container image from. Note that all images
+     * referenced by actions in the pipeline are pulled before the first action
+     * runs. If multiple actions reference the same image, it is only pulled once,
      * ensuring that the same image is used for all actions in a single pipeline.
      * The image URI can be either a complete host and image specification (e.g.,
      * quay.io/biocontainers/samtools), a library and image name (e.g.,
@@ -2344,7 +2350,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * If the specified image is not public, the service account specified for
      * the Virtual Machine must have access to pull the images from GCR, or
      * appropriate credentials must be specified in the
-     * [google.cloud.lifesciences.v2beta.Action.credentials][google.cloud.lifesciences.v2beta.Action.credentials] field.
+     * [google.cloud.lifesciences.v2beta.Action.credentials][google.cloud.lifesciences.v2beta.Action.credentials]
+     * field.
      * </pre>
      *
      * <code>string image_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2366,9 +2373,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The URI to pull the container image from. Note that all images referenced
-     * by actions in the pipeline are pulled before the first action runs. If
-     * multiple actions reference the same image, it is only pulled once,
+     * Required. The URI to pull the container image from. Note that all images
+     * referenced by actions in the pipeline are pulled before the first action
+     * runs. If multiple actions reference the same image, it is only pulled once,
      * ensuring that the same image is used for all actions in a single pipeline.
      * The image URI can be either a complete host and image specification (e.g.,
      * quay.io/biocontainers/samtools), a library and image name (e.g.,
@@ -2377,7 +2384,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * If the specified image is not public, the service account specified for
      * the Virtual Machine must have access to pull the images from GCR, or
      * appropriate credentials must be specified in the
-     * [google.cloud.lifesciences.v2beta.Action.credentials][google.cloud.lifesciences.v2beta.Action.credentials] field.
+     * [google.cloud.lifesciences.v2beta.Action.credentials][google.cloud.lifesciences.v2beta.Action.credentials]
+     * field.
      * </pre>
      *
      * <code>string image_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2399,9 +2407,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The URI to pull the container image from. Note that all images referenced
-     * by actions in the pipeline are pulled before the first action runs. If
-     * multiple actions reference the same image, it is only pulled once,
+     * Required. The URI to pull the container image from. Note that all images
+     * referenced by actions in the pipeline are pulled before the first action
+     * runs. If multiple actions reference the same image, it is only pulled once,
      * ensuring that the same image is used for all actions in a single pipeline.
      * The image URI can be either a complete host and image specification (e.g.,
      * quay.io/biocontainers/samtools), a library and image name (e.g.,
@@ -2410,7 +2418,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * If the specified image is not public, the service account specified for
      * the Virtual Machine must have access to pull the images from GCR, or
      * appropriate credentials must be specified in the
-     * [google.cloud.lifesciences.v2beta.Action.credentials][google.cloud.lifesciences.v2beta.Action.credentials] field.
+     * [google.cloud.lifesciences.v2beta.Action.credentials][google.cloud.lifesciences.v2beta.Action.credentials]
+     * field.
      * </pre>
      *
      * <code>string image_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2431,9 +2440,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The URI to pull the container image from. Note that all images referenced
-     * by actions in the pipeline are pulled before the first action runs. If
-     * multiple actions reference the same image, it is only pulled once,
+     * Required. The URI to pull the container image from. Note that all images
+     * referenced by actions in the pipeline are pulled before the first action
+     * runs. If multiple actions reference the same image, it is only pulled once,
      * ensuring that the same image is used for all actions in a single pipeline.
      * The image URI can be either a complete host and image specification (e.g.,
      * quay.io/biocontainers/samtools), a library and image name (e.g.,
@@ -2442,7 +2451,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * If the specified image is not public, the service account specified for
      * the Virtual Machine must have access to pull the images from GCR, or
      * appropriate credentials must be specified in the
-     * [google.cloud.lifesciences.v2beta.Action.credentials][google.cloud.lifesciences.v2beta.Action.credentials] field.
+     * [google.cloud.lifesciences.v2beta.Action.credentials][google.cloud.lifesciences.v2beta.Action.credentials]
+     * field.
      * </pre>
      *
      * <code>string image_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2459,9 +2469,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The URI to pull the container image from. Note that all images referenced
-     * by actions in the pipeline are pulled before the first action runs. If
-     * multiple actions reference the same image, it is only pulled once,
+     * Required. The URI to pull the container image from. Note that all images
+     * referenced by actions in the pipeline are pulled before the first action
+     * runs. If multiple actions reference the same image, it is only pulled once,
      * ensuring that the same image is used for all actions in a single pipeline.
      * The image URI can be either a complete host and image specification (e.g.,
      * quay.io/biocontainers/samtools), a library and image name (e.g.,
@@ -2470,7 +2480,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * If the specified image is not public, the service account specified for
      * the Virtual Machine must have access to pull the images from GCR, or
      * appropriate credentials must be specified in the
-     * [google.cloud.lifesciences.v2beta.Action.credentials][google.cloud.lifesciences.v2beta.Action.credentials] field.
+     * [google.cloud.lifesciences.v2beta.Action.credentials][google.cloud.lifesciences.v2beta.Action.credentials]
+     * field.
      * </pre>
      *
      * <code>string image_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2823,7 +2834,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The environment to pass into the container. This environment is merged
-     * with values specified in the [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
+     * with values specified in the
+     * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
      * message, overwriting any duplicate values.
      * In addition to the values passed here, a few other values are
      * automatically injected into the environment. These cannot be hidden or
@@ -2857,7 +2869,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The environment to pass into the container. This environment is merged
-     * with values specified in the [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
+     * with values specified in the
+     * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
      * message, overwriting any duplicate values.
      * In addition to the values passed here, a few other values are
      * automatically injected into the environment. These cannot be hidden or
@@ -2882,7 +2895,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The environment to pass into the container. This environment is merged
-     * with values specified in the [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
+     * with values specified in the
+     * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
      * message, overwriting any duplicate values.
      * In addition to the values passed here, a few other values are
      * automatically injected into the environment. These cannot be hidden or
@@ -2914,7 +2928,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The environment to pass into the container. This environment is merged
-     * with values specified in the [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
+     * with values specified in the
+     * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
      * message, overwriting any duplicate values.
      * In addition to the values passed here, a few other values are
      * automatically injected into the environment. These cannot be hidden or
@@ -2952,7 +2967,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The environment to pass into the container. This environment is merged
-     * with values specified in the [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
+     * with values specified in the
+     * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
      * message, overwriting any duplicate values.
      * In addition to the values passed here, a few other values are
      * automatically injected into the environment. These cannot be hidden or
@@ -2986,7 +3002,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The environment to pass into the container. This environment is merged
-     * with values specified in the [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
+     * with values specified in the
+     * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
      * message, overwriting any duplicate values.
      * In addition to the values passed here, a few other values are
      * automatically injected into the environment. These cannot be hidden or
@@ -3018,7 +3035,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The environment to pass into the container. This environment is merged
-     * with values specified in the [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
+     * with values specified in the
+     * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
      * message, overwriting any duplicate values.
      * In addition to the values passed here, a few other values are
      * automatically injected into the environment. These cannot be hidden or
@@ -3052,8 +3070,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The encrypted environment to pass into the container. This environment is
      * merged with values specified in the
-     * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline] message, overwriting any
-     * duplicate values.
+     * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
+     * message, overwriting any duplicate values.
      * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
      * serve as environment variable names and their values. The decoded
      * environment variables can overwrite the values specified by the
@@ -3073,8 +3091,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The encrypted environment to pass into the container. This environment is
      * merged with values specified in the
-     * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline] message, overwriting any
-     * duplicate values.
+     * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
+     * message, overwriting any duplicate values.
      * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
      * serve as environment variable names and their values. The decoded
      * environment variables can overwrite the values specified by the
@@ -3100,8 +3118,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The encrypted environment to pass into the container. This environment is
      * merged with values specified in the
-     * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline] message, overwriting any
-     * duplicate values.
+     * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
+     * message, overwriting any duplicate values.
      * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
      * serve as environment variable names and their values. The decoded
      * environment variables can overwrite the values specified by the
@@ -3129,8 +3147,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The encrypted environment to pass into the container. This environment is
      * merged with values specified in the
-     * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline] message, overwriting any
-     * duplicate values.
+     * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
+     * message, overwriting any duplicate values.
      * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
      * serve as environment variable names and their values. The decoded
      * environment variables can overwrite the values specified by the
@@ -3156,8 +3174,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The encrypted environment to pass into the container. This environment is
      * merged with values specified in the
-     * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline] message, overwriting any
-     * duplicate values.
+     * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
+     * message, overwriting any duplicate values.
      * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
      * serve as environment variable names and their values. The decoded
      * environment variables can overwrite the values specified by the
@@ -3189,8 +3207,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The encrypted environment to pass into the container. This environment is
      * merged with values specified in the
-     * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline] message, overwriting any
-     * duplicate values.
+     * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
+     * message, overwriting any duplicate values.
      * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
      * serve as environment variable names and their values. The decoded
      * environment variables can overwrite the values specified by the
@@ -3215,8 +3233,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The encrypted environment to pass into the container. This environment is
      * merged with values specified in the
-     * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline] message, overwriting any
-     * duplicate values.
+     * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
+     * message, overwriting any duplicate values.
      * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
      * serve as environment variable names and their values. The decoded
      * environment variables can overwrite the values specified by the
@@ -3236,8 +3254,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The encrypted environment to pass into the container. This environment is
      * merged with values specified in the
-     * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline] message, overwriting any
-     * duplicate values.
+     * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
+     * message, overwriting any duplicate values.
      * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
      * serve as environment variable names and their values. The decoded
      * environment variables can overwrite the values specified by the
@@ -3261,8 +3279,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The encrypted environment to pass into the container. This environment is
      * merged with values specified in the
-     * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline] message, overwriting any
-     * duplicate values.
+     * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
+     * message, overwriting any duplicate values.
      * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
      * serve as environment variable names and their values. The decoded
      * environment variables can overwrite the values specified by the

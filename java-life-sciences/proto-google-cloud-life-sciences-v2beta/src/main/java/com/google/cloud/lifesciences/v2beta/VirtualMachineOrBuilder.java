@@ -27,11 +27,11 @@ public interface VirtualMachineOrBuilder
    *
    *
    * <pre>
-   * Required. The machine type of the virtual machine to create. Must be the short name
-   * of a standard machine type (such as "n1-standard-1") or a custom machine
-   * type (such as "custom-1-4096", where "1" indicates the number of vCPUs and
-   * "4096" indicates the memory in MB). See
-   * [Creating an instance with a custom machine
+   * Required. The machine type of the virtual machine to create. Must be the
+   * short name of a standard machine type (such as "n1-standard-1") or a custom
+   * machine type (such as "custom-1-4096", where "1" indicates the number of
+   * vCPUs and "4096" indicates the memory in MB). See [Creating an instance
+   * with a custom machine
    * type](https://cloud.google.com/compute/docs/instances/creating-instance-with-custom-machine-type#create)
    * for more specifications on creating a custom machine type.
    * </pre>
@@ -45,11 +45,11 @@ public interface VirtualMachineOrBuilder
    *
    *
    * <pre>
-   * Required. The machine type of the virtual machine to create. Must be the short name
-   * of a standard machine type (such as "n1-standard-1") or a custom machine
-   * type (such as "custom-1-4096", where "1" indicates the number of vCPUs and
-   * "4096" indicates the memory in MB). See
-   * [Creating an instance with a custom machine
+   * Required. The machine type of the virtual machine to create. Must be the
+   * short name of a standard machine type (such as "n1-standard-1") or a custom
+   * machine type (such as "custom-1-4096", where "1" indicates the number of
+   * vCPUs and "4096" indicates the memory in MB). See [Creating an instance
+   * with a custom machine
    * type](https://cloud.google.com/compute/docs/instances/creating-instance-with-custom-machine-type#create)
    * for more specifications on creating a custom machine type.
    * </pre>
@@ -450,7 +450,7 @@ public interface VirtualMachineOrBuilder
    * <code>string nvidia_driver_version = 11 [deprecated = true];</code>
    *
    * @deprecated google.cloud.lifesciences.v2beta.VirtualMachine.nvidia_driver_version is
-   *     deprecated. See google/cloud/lifesciences/v2beta/workflows.proto;l=410
+   *     deprecated. See google/cloud/lifesciences/v2beta/workflows.proto;l=411
    * @return The nvidiaDriverVersion.
    */
   @java.lang.Deprecated
@@ -468,7 +468,7 @@ public interface VirtualMachineOrBuilder
    * <code>string nvidia_driver_version = 11 [deprecated = true];</code>
    *
    * @deprecated google.cloud.lifesciences.v2beta.VirtualMachine.nvidia_driver_version is
-   *     deprecated. See google/cloud/lifesciences/v2beta/workflows.proto;l=410
+   *     deprecated. See google/cloud/lifesciences/v2beta/workflows.proto;l=411
    * @return The bytes for nvidiaDriverVersion.
    */
   @java.lang.Deprecated
