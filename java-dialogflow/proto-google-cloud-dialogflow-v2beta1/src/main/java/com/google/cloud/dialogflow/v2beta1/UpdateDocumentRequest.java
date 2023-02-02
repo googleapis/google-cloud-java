@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * Request message for [Documents.UpdateDocument][google.cloud.dialogflow.v2beta1.Documents.UpdateDocument].
+ * Request message for
+ * [Documents.UpdateDocument][google.cloud.dialogflow.v2beta1.Documents.UpdateDocument].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.UpdateDocumentRequest}
@@ -359,7 +360,8 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request message for [Documents.UpdateDocument][google.cloud.dialogflow.v2beta1.Documents.UpdateDocument].
+   * Request message for
+   * [Documents.UpdateDocument][google.cloud.dialogflow.v2beta1.Documents.UpdateDocument].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.UpdateDocumentRequest}

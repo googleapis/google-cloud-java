@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [Conversations.SuggestConversationSummary][google.cloud.dialogflow.v2beta1.Conversations.SuggestConversationSummary].
+ * The request message for
+ * [Conversations.SuggestConversationSummary][google.cloud.dialogflow.v2beta1.Conversations.SuggestConversationSummary].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.SuggestConversationSummaryRequest}
@@ -390,7 +391,8 @@ public final class SuggestConversationSummaryRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * The request message for [Conversations.SuggestConversationSummary][google.cloud.dialogflow.v2beta1.Conversations.SuggestConversationSummary].
+   * The request message for
+   * [Conversations.SuggestConversationSummary][google.cloud.dialogflow.v2beta1.Conversations.SuggestConversationSummary].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.SuggestConversationSummaryRequest}

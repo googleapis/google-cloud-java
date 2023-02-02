@@ -21,7 +21,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Service for managing [ConversationProfiles][google.cloud.dialogflow.v2beta1.ConversationProfile].
+ * Service for managing
+ * [ConversationProfiles][google.cloud.dialogflow.v2beta1.ConversationProfile].
  * </pre>
  */
 @javax.annotation.Generated(
@@ -447,7 +448,8 @@ public final class ConversationProfilesGrpc {
    *
    *
    * <pre>
-   * Service for managing [ConversationProfiles][google.cloud.dialogflow.v2beta1.ConversationProfile].
+   * Service for managing
+   * [ConversationProfiles][google.cloud.dialogflow.v2beta1.ConversationProfile].
    * </pre>
    */
   public abstract static class ConversationProfilesImplBase implements io.grpc.BindableService {
@@ -490,7 +492,8 @@ public final class ConversationProfilesGrpc {
      * Creates a conversation profile in the specified project.
      * [ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][]
      * aren't populated in the response. You can retrieve them via
-     * [GetConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfiles.GetConversationProfile] API.
+     * [GetConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfiles.GetConversationProfile]
+     * API.
      * </pre>
      */
     public void createConversationProfile(
@@ -508,7 +511,8 @@ public final class ConversationProfilesGrpc {
      * Updates the specified conversation profile.
      * [ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][]
      * aren't populated in the response. You can retrieve them via
-     * [GetConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfiles.GetConversationProfile] API.
+     * [GetConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfiles.GetConversationProfile]
+     * API.
      * </pre>
      */
     public void updateConversationProfile(
@@ -544,8 +548,10 @@ public final class ConversationProfilesGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [SetSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2beta1.SetSuggestionFeatureConfigOperationMetadata]
-     * - `response`: [ConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfile]
+     * - `metadata`:
+     * [SetSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2beta1.SetSuggestionFeatureConfigOperationMetadata]
+     * - `response`:
+     * [ConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfile]
      * If a long running operation to add or update suggestion feature
      * config for the same conversation profile, participant role and suggestion
      * feature type exists, please cancel the existing long running operation
@@ -568,8 +574,10 @@ public final class ConversationProfilesGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [ClearSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2beta1.ClearSuggestionFeatureConfigOperationMetadata]
-     * - `response`: [ConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfile]
+     * - `metadata`:
+     * [ClearSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2beta1.ClearSuggestionFeatureConfigOperationMetadata]
+     * - `response`:
+     * [ConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfile]
      * </pre>
      */
     public void clearSuggestionFeatureConfig(
@@ -638,7 +646,8 @@ public final class ConversationProfilesGrpc {
    *
    *
    * <pre>
-   * Service for managing [ConversationProfiles][google.cloud.dialogflow.v2beta1.ConversationProfile].
+   * Service for managing
+   * [ConversationProfiles][google.cloud.dialogflow.v2beta1.ConversationProfile].
    * </pre>
    */
   public static final class ConversationProfilesStub
@@ -695,7 +704,8 @@ public final class ConversationProfilesGrpc {
      * Creates a conversation profile in the specified project.
      * [ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][]
      * aren't populated in the response. You can retrieve them via
-     * [GetConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfiles.GetConversationProfile] API.
+     * [GetConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfiles.GetConversationProfile]
+     * API.
      * </pre>
      */
     public void createConversationProfile(
@@ -715,7 +725,8 @@ public final class ConversationProfilesGrpc {
      * Updates the specified conversation profile.
      * [ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][]
      * aren't populated in the response. You can retrieve them via
-     * [GetConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfiles.GetConversationProfile] API.
+     * [GetConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfiles.GetConversationProfile]
+     * API.
      * </pre>
      */
     public void updateConversationProfile(
@@ -755,8 +766,10 @@ public final class ConversationProfilesGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [SetSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2beta1.SetSuggestionFeatureConfigOperationMetadata]
-     * - `response`: [ConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfile]
+     * - `metadata`:
+     * [SetSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2beta1.SetSuggestionFeatureConfigOperationMetadata]
+     * - `response`:
+     * [ConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfile]
      * If a long running operation to add or update suggestion feature
      * config for the same conversation profile, participant role and suggestion
      * feature type exists, please cancel the existing long running operation
@@ -781,8 +794,10 @@ public final class ConversationProfilesGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [ClearSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2beta1.ClearSuggestionFeatureConfigOperationMetadata]
-     * - `response`: [ConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfile]
+     * - `metadata`:
+     * [ClearSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2beta1.ClearSuggestionFeatureConfigOperationMetadata]
+     * - `response`:
+     * [ConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfile]
      * </pre>
      */
     public void clearSuggestionFeatureConfig(
@@ -799,7 +814,8 @@ public final class ConversationProfilesGrpc {
    *
    *
    * <pre>
-   * Service for managing [ConversationProfiles][google.cloud.dialogflow.v2beta1.ConversationProfile].
+   * Service for managing
+   * [ConversationProfiles][google.cloud.dialogflow.v2beta1.ConversationProfile].
    * </pre>
    */
   public static final class ConversationProfilesBlockingStub
@@ -849,7 +865,8 @@ public final class ConversationProfilesGrpc {
      * Creates a conversation profile in the specified project.
      * [ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][]
      * aren't populated in the response. You can retrieve them via
-     * [GetConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfiles.GetConversationProfile] API.
+     * [GetConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfiles.GetConversationProfile]
+     * API.
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.ConversationProfile createConversationProfile(
@@ -865,7 +882,8 @@ public final class ConversationProfilesGrpc {
      * Updates the specified conversation profile.
      * [ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][]
      * aren't populated in the response. You can retrieve them via
-     * [GetConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfiles.GetConversationProfile] API.
+     * [GetConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfiles.GetConversationProfile]
+     * API.
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.ConversationProfile updateConversationProfile(
@@ -898,8 +916,10 @@ public final class ConversationProfilesGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [SetSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2beta1.SetSuggestionFeatureConfigOperationMetadata]
-     * - `response`: [ConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfile]
+     * - `metadata`:
+     * [SetSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2beta1.SetSuggestionFeatureConfigOperationMetadata]
+     * - `response`:
+     * [ConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfile]
      * If a long running operation to add or update suggestion feature
      * config for the same conversation profile, participant role and suggestion
      * feature type exists, please cancel the existing long running operation
@@ -921,8 +941,10 @@ public final class ConversationProfilesGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [ClearSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2beta1.ClearSuggestionFeatureConfigOperationMetadata]
-     * - `response`: [ConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfile]
+     * - `metadata`:
+     * [ClearSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2beta1.ClearSuggestionFeatureConfigOperationMetadata]
+     * - `response`:
+     * [ConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfile]
      * </pre>
      */
     public com.google.longrunning.Operation clearSuggestionFeatureConfig(
@@ -936,7 +958,8 @@ public final class ConversationProfilesGrpc {
    *
    *
    * <pre>
-   * Service for managing [ConversationProfiles][google.cloud.dialogflow.v2beta1.ConversationProfile].
+   * Service for managing
+   * [ConversationProfiles][google.cloud.dialogflow.v2beta1.ConversationProfile].
    * </pre>
    */
   public static final class ConversationProfilesFutureStub
@@ -989,7 +1012,8 @@ public final class ConversationProfilesGrpc {
      * Creates a conversation profile in the specified project.
      * [ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][]
      * aren't populated in the response. You can retrieve them via
-     * [GetConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfiles.GetConversationProfile] API.
+     * [GetConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfiles.GetConversationProfile]
+     * API.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1007,7 +1031,8 @@ public final class ConversationProfilesGrpc {
      * Updates the specified conversation profile.
      * [ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][]
      * aren't populated in the response. You can retrieve them via
-     * [GetConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfiles.GetConversationProfile] API.
+     * [GetConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfiles.GetConversationProfile]
+     * API.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1043,8 +1068,10 @@ public final class ConversationProfilesGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [SetSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2beta1.SetSuggestionFeatureConfigOperationMetadata]
-     * - `response`: [ConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfile]
+     * - `metadata`:
+     * [SetSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2beta1.SetSuggestionFeatureConfigOperationMetadata]
+     * - `response`:
+     * [ConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfile]
      * If a long running operation to add or update suggestion feature
      * config for the same conversation profile, participant role and suggestion
      * feature type exists, please cancel the existing long running operation
@@ -1067,8 +1094,10 @@ public final class ConversationProfilesGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [ClearSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2beta1.ClearSuggestionFeatureConfigOperationMetadata]
-     * - `response`: [ConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfile]
+     * - `metadata`:
+     * [ClearSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2beta1.ClearSuggestionFeatureConfigOperationMetadata]
+     * - `response`:
+     * [ConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfile]
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

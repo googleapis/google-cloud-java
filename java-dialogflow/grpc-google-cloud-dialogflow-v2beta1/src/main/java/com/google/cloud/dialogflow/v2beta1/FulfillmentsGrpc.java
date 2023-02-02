@@ -21,7 +21,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Service for managing [Fulfillments][google.cloud.dialogflow.v2beta1.Fulfillment].
+ * Service for managing
+ * [Fulfillments][google.cloud.dialogflow.v2beta1.Fulfillment].
  * </pre>
  */
 @javax.annotation.Generated(
@@ -172,7 +173,8 @@ public final class FulfillmentsGrpc {
    *
    *
    * <pre>
-   * Service for managing [Fulfillments][google.cloud.dialogflow.v2beta1.Fulfillment].
+   * Service for managing
+   * [Fulfillments][google.cloud.dialogflow.v2beta1.Fulfillment].
    * </pre>
    */
   public abstract static class FulfillmentsImplBase implements io.grpc.BindableService {
@@ -232,7 +234,8 @@ public final class FulfillmentsGrpc {
    *
    *
    * <pre>
-   * Service for managing [Fulfillments][google.cloud.dialogflow.v2beta1.Fulfillment].
+   * Service for managing
+   * [Fulfillments][google.cloud.dialogflow.v2beta1.Fulfillment].
    * </pre>
    */
   public static final class FulfillmentsStub
@@ -285,7 +288,8 @@ public final class FulfillmentsGrpc {
    *
    *
    * <pre>
-   * Service for managing [Fulfillments][google.cloud.dialogflow.v2beta1.Fulfillment].
+   * Service for managing
+   * [Fulfillments][google.cloud.dialogflow.v2beta1.Fulfillment].
    * </pre>
    */
   public static final class FulfillmentsBlockingStub
@@ -331,7 +335,8 @@ public final class FulfillmentsGrpc {
    *
    *
    * <pre>
-   * Service for managing [Fulfillments][google.cloud.dialogflow.v2beta1.Fulfillment].
+   * Service for managing
+   * [Fulfillments][google.cloud.dialogflow.v2beta1.Fulfillment].
    * </pre>
    */
   public static final class FulfillmentsFutureStub

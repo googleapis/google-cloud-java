@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [Participants.SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers].
+ * The request message for
+ * [Participants.SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest}
@@ -461,7 +462,8 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The request message for [Participants.SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers].
+   * The request message for
+   * [Participants.SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest}

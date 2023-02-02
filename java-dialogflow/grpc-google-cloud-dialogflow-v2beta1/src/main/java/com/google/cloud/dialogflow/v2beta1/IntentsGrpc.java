@@ -488,7 +488,8 @@ public final class IntentsGrpc {
      * The returned `Operation` type has the following method-specific fields:
      * - `metadata`: An empty [Struct
      *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
-     * - `response`: [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]
+     * - `response`:
+     * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]
      * Note: You should always train an agent prior to sending it queries. See the
      * [training
      * documentation](https://cloud.google.com/dialogflow/es/docs/training).
@@ -690,7 +691,8 @@ public final class IntentsGrpc {
      * The returned `Operation` type has the following method-specific fields:
      * - `metadata`: An empty [Struct
      *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
-     * - `response`: [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]
+     * - `response`:
+     * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]
      * Note: You should always train an agent prior to sending it queries. See the
      * [training
      * documentation](https://cloud.google.com/dialogflow/es/docs/training).
@@ -834,7 +836,8 @@ public final class IntentsGrpc {
      * The returned `Operation` type has the following method-specific fields:
      * - `metadata`: An empty [Struct
      *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
-     * - `response`: [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]
+     * - `response`:
+     * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]
      * Note: You should always train an agent prior to sending it queries. See the
      * [training
      * documentation](https://cloud.google.com/dialogflow/es/docs/training).
@@ -976,7 +979,8 @@ public final class IntentsGrpc {
      * The returned `Operation` type has the following method-specific fields:
      * - `metadata`: An empty [Struct
      *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
-     * - `response`: [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]
+     * - `response`:
+     * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]
      * Note: You should always train an agent prior to sending it queries. See the
      * [training
      * documentation](https://cloud.google.com/dialogflow/es/docs/training).

@@ -60,8 +60,8 @@ public interface EnvironmentHistoryOrBuilder
    *
    *
    * <pre>
-   * Output only. The list of agent environments. There will be a maximum number of items
-   * returned based on the page_size field in the request.
+   * Output only. The list of agent environments. There will be a maximum number
+   * of items returned based on the page_size field in the request.
    * </pre>
    *
    * <code>
@@ -73,8 +73,8 @@ public interface EnvironmentHistoryOrBuilder
    *
    *
    * <pre>
-   * Output only. The list of agent environments. There will be a maximum number of items
-   * returned based on the page_size field in the request.
+   * Output only. The list of agent environments. There will be a maximum number
+   * of items returned based on the page_size field in the request.
    * </pre>
    *
    * <code>
@@ -86,8 +86,8 @@ public interface EnvironmentHistoryOrBuilder
    *
    *
    * <pre>
-   * Output only. The list of agent environments. There will be a maximum number of items
-   * returned based on the page_size field in the request.
+   * Output only. The list of agent environments. There will be a maximum number
+   * of items returned based on the page_size field in the request.
    * </pre>
    *
    * <code>
@@ -99,8 +99,8 @@ public interface EnvironmentHistoryOrBuilder
    *
    *
    * <pre>
-   * Output only. The list of agent environments. There will be a maximum number of items
-   * returned based on the page_size field in the request.
+   * Output only. The list of agent environments. There will be a maximum number
+   * of items returned based on the page_size field in the request.
    * </pre>
    *
    * <code>
@@ -113,8 +113,8 @@ public interface EnvironmentHistoryOrBuilder
    *
    *
    * <pre>
-   * Output only. The list of agent environments. There will be a maximum number of items
-   * returned based on the page_size field in the request.
+   * Output only. The list of agent environments. There will be a maximum number
+   * of items returned based on the page_size field in the request.
    * </pre>
    *
    * <code>
@@ -128,8 +128,8 @@ public interface EnvironmentHistoryOrBuilder
    *
    *
    * <pre>
-   * Output only. Token to retrieve the next page of results, or empty if there are no
-   * more results in the list.
+   * Output only. Token to retrieve the next page of results, or empty if there
+   * are no more results in the list.
    * </pre>
    *
    * <code>string next_page_token = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -141,8 +141,8 @@ public interface EnvironmentHistoryOrBuilder
    *
    *
    * <pre>
-   * Output only. Token to retrieve the next page of results, or empty if there are no
-   * more results in the list.
+   * Output only. Token to retrieve the next page of results, or empty if there
+   * are no more results in the list.
    * </pre>
    *
    * <code>string next_page_token = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

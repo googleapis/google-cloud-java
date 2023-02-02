@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [Participants.SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles].
+ * The request message for
+ * [Participants.SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.SuggestArticlesRequest}
@@ -195,8 +196,9 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Optional. Max number of messages prior to and including
-   * [latest_message][google.cloud.dialogflow.v2beta1.SuggestArticlesRequest.latest_message] to use as context
-   * when compiling the suggestion. By default 20 and at most 50.
+   * [latest_message][google.cloud.dialogflow.v2beta1.SuggestArticlesRequest.latest_message]
+   * to use as context when compiling the suggestion. By default 20 and at
+   * most 50.
    * </pre>
    *
    * <code>int32 context_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -461,7 +463,8 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The request message for [Participants.SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles].
+   * The request message for
+   * [Participants.SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.SuggestArticlesRequest}
@@ -952,8 +955,9 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Max number of messages prior to and including
-     * [latest_message][google.cloud.dialogflow.v2beta1.SuggestArticlesRequest.latest_message] to use as context
-     * when compiling the suggestion. By default 20 and at most 50.
+     * [latest_message][google.cloud.dialogflow.v2beta1.SuggestArticlesRequest.latest_message]
+     * to use as context when compiling the suggestion. By default 20 and at
+     * most 50.
      * </pre>
      *
      * <code>int32 context_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -969,8 +973,9 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Max number of messages prior to and including
-     * [latest_message][google.cloud.dialogflow.v2beta1.SuggestArticlesRequest.latest_message] to use as context
-     * when compiling the suggestion. By default 20 and at most 50.
+     * [latest_message][google.cloud.dialogflow.v2beta1.SuggestArticlesRequest.latest_message]
+     * to use as context when compiling the suggestion. By default 20 and at
+     * most 50.
      * </pre>
      *
      * <code>int32 context_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -990,8 +995,9 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Max number of messages prior to and including
-     * [latest_message][google.cloud.dialogflow.v2beta1.SuggestArticlesRequest.latest_message] to use as context
-     * when compiling the suggestion. By default 20 and at most 50.
+     * [latest_message][google.cloud.dialogflow.v2beta1.SuggestArticlesRequest.latest_message]
+     * to use as context when compiling the suggestion. By default 20 and at
+     * most 50.
      * </pre>
      *
      * <code>int32 context_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

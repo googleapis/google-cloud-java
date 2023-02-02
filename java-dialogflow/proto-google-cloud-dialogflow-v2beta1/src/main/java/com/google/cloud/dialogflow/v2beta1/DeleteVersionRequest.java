@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [Versions.DeleteVersion][google.cloud.dialogflow.v2beta1.Versions.DeleteVersion].
+ * The request message for
+ * [Versions.DeleteVersion][google.cloud.dialogflow.v2beta1.Versions.DeleteVersion].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.DeleteVersionRequest}
@@ -294,7 +295,8 @@ public final class DeleteVersionRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The request message for [Versions.DeleteVersion][google.cloud.dialogflow.v2beta1.Versions.DeleteVersion].
+   * The request message for
+   * [Versions.DeleteVersion][google.cloud.dialogflow.v2beta1.Versions.DeleteVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.DeleteVersionRequest}

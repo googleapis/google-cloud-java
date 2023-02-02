@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [ConversationProfiles.DeleteConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfiles.DeleteConversationProfile].
+ * The request message for
+ * [ConversationProfiles.DeleteConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfiles.DeleteConversationProfile].
  * This operation fails if the conversation profile is still referenced from
  * a phone number.
  * </pre>
@@ -294,7 +295,8 @@ public final class DeleteConversationProfileRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * The request message for [ConversationProfiles.DeleteConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfiles.DeleteConversationProfile].
+   * The request message for
+   * [ConversationProfiles.DeleteConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfiles.DeleteConversationProfile].
    * This operation fails if the conversation profile is still referenced from
    * a phone number.
    * </pre>

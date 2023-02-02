@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * Response message for [Documents.ImportDocuments][google.cloud.dialogflow.v2beta1.Documents.ImportDocuments].
+ * Response message for
+ * [Documents.ImportDocuments][google.cloud.dialogflow.v2beta1.Documents.ImportDocuments].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.ImportDocumentsResponse}
@@ -303,7 +304,8 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Response message for [Documents.ImportDocuments][google.cloud.dialogflow.v2beta1.Documents.ImportDocuments].
+   * Response message for
+   * [Documents.ImportDocuments][google.cloud.dialogflow.v2beta1.Documents.ImportDocuments].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.ImportDocumentsResponse}

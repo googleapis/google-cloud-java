@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [Agents.DeleteAgent][google.cloud.dialogflow.v2beta1.Agents.DeleteAgent].
+ * The request message for
+ * [Agents.DeleteAgent][google.cloud.dialogflow.v2beta1.Agents.DeleteAgent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.DeleteAgentRequest}
@@ -290,7 +291,8 @@ public final class DeleteAgentRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The request message for [Agents.DeleteAgent][google.cloud.dialogflow.v2beta1.Agents.DeleteAgent].
+   * The request message for
+   * [Agents.DeleteAgent][google.cloud.dialogflow.v2beta1.Agents.DeleteAgent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.DeleteAgentRequest}

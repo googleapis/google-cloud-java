@@ -21,7 +21,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Service for managing [Environments][google.cloud.dialogflow.v2beta1.Environment].
+ * Service for managing
+ * [Environments][google.cloud.dialogflow.v2beta1.Environment].
  * </pre>
  */
 @javax.annotation.Generated(
@@ -358,7 +359,8 @@ public final class EnvironmentsGrpc {
    *
    *
    * <pre>
-   * Service for managing [Environments][google.cloud.dialogflow.v2beta1.Environment].
+   * Service for managing
+   * [Environments][google.cloud.dialogflow.v2beta1.Environment].
    * </pre>
    */
   public abstract static class EnvironmentsImplBase implements io.grpc.BindableService {
@@ -514,7 +516,8 @@ public final class EnvironmentsGrpc {
    *
    *
    * <pre>
-   * Service for managing [Environments][google.cloud.dialogflow.v2beta1.Environment].
+   * Service for managing
+   * [Environments][google.cloud.dialogflow.v2beta1.Environment].
    * </pre>
    */
   public static final class EnvironmentsStub
@@ -644,7 +647,8 @@ public final class EnvironmentsGrpc {
    *
    *
    * <pre>
-   * Service for managing [Environments][google.cloud.dialogflow.v2beta1.Environment].
+   * Service for managing
+   * [Environments][google.cloud.dialogflow.v2beta1.Environment].
    * </pre>
    */
   public static final class EnvironmentsBlockingStub
@@ -752,7 +756,8 @@ public final class EnvironmentsGrpc {
    *
    *
    * <pre>
-   * Service for managing [Environments][google.cloud.dialogflow.v2beta1.Environment].
+   * Service for managing
+   * [Environments][google.cloud.dialogflow.v2beta1.Environment].
    * </pre>
    */
   public static final class EnvironmentsFutureStub

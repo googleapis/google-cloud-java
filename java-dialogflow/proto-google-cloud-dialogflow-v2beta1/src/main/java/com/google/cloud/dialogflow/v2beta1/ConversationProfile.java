@@ -552,7 +552,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Configuration for publishing new message events. Event will be sent in
-   * format of [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
+   * format of
+   * [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
    * </pre>
    *
    * <code>
@@ -570,7 +571,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Configuration for publishing new message events. Event will be sent in
-   * format of [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
+   * format of
+   * [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
    * </pre>
    *
    * <code>
@@ -591,7 +593,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Configuration for publishing new message events. Event will be sent in
-   * format of [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
+   * format of
+   * [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
    * </pre>
    *
    * <code>
@@ -3219,7 +3222,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Configuration for publishing new message events. Event will be sent in
-     * format of [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
+     * format of
+     * [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
      * </pre>
      *
      * <code>
@@ -3236,7 +3240,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Configuration for publishing new message events. Event will be sent in
-     * format of [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
+     * format of
+     * [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
      * </pre>
      *
      * <code>
@@ -3260,7 +3265,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Configuration for publishing new message events. Event will be sent in
-     * format of [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
+     * format of
+     * [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
      * </pre>
      *
      * <code>
@@ -3286,7 +3292,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Configuration for publishing new message events. Event will be sent in
-     * format of [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
+     * format of
+     * [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
      * </pre>
      *
      * <code>
@@ -3309,7 +3316,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Configuration for publishing new message events. Event will be sent in
-     * format of [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
+     * format of
+     * [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
      * </pre>
      *
      * <code>
@@ -3339,7 +3347,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Configuration for publishing new message events. Event will be sent in
-     * format of [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
+     * format of
+     * [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
      * </pre>
      *
      * <code>
@@ -3361,7 +3370,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Configuration for publishing new message events. Event will be sent in
-     * format of [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
+     * format of
+     * [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
      * </pre>
      *
      * <code>
@@ -3379,7 +3389,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Configuration for publishing new message events. Event will be sent in
-     * format of [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
+     * format of
+     * [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
      * </pre>
      *
      * <code>
@@ -3401,7 +3412,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Configuration for publishing new message events. Event will be sent in
-     * format of [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
+     * format of
+     * [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
      * </pre>
      *
      * <code>

@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [SessionEntityTypes.ListSessionEntityTypes][google.cloud.dialogflow.v2beta1.SessionEntityTypes.ListSessionEntityTypes].
+ * The request message for
+ * [SessionEntityTypes.ListSessionEntityTypes][google.cloud.dialogflow.v2beta1.SessionEntityTypes.ListSessionEntityTypes].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.ListSessionEntityTypesRequest}
@@ -400,7 +401,8 @@ public final class ListSessionEntityTypesRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The request message for [SessionEntityTypes.ListSessionEntityTypes][google.cloud.dialogflow.v2beta1.SessionEntityTypes.ListSessionEntityTypes].
+   * The request message for
+   * [SessionEntityTypes.ListSessionEntityTypes][google.cloud.dialogflow.v2beta1.SessionEntityTypes.ListSessionEntityTypes].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.ListSessionEntityTypesRequest}

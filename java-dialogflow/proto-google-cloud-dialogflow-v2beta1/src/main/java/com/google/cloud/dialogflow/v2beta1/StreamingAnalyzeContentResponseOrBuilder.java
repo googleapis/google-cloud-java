@@ -155,7 +155,9 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    * Optional. Only set if a Dialogflow automated agent has responded.
    * Note that: [AutomatedAgentReply.detect_intent_response.output_audio][]
    * and [AutomatedAgentReply.detect_intent_response.output_audio_config][]
-   * are always empty, use [reply_audio][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse.reply_audio] instead.
+   * are always empty, use
+   * [reply_audio][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse.reply_audio]
+   * instead.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.AutomatedAgentReply automated_agent_reply = 4;</code>
@@ -170,7 +172,9 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    * Optional. Only set if a Dialogflow automated agent has responded.
    * Note that: [AutomatedAgentReply.detect_intent_response.output_audio][]
    * and [AutomatedAgentReply.detect_intent_response.output_audio_config][]
-   * are always empty, use [reply_audio][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse.reply_audio] instead.
+   * are always empty, use
+   * [reply_audio][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse.reply_audio]
+   * instead.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.AutomatedAgentReply automated_agent_reply = 4;</code>
@@ -185,7 +189,9 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    * Optional. Only set if a Dialogflow automated agent has responded.
    * Note that: [AutomatedAgentReply.detect_intent_response.output_audio][]
    * and [AutomatedAgentReply.detect_intent_response.output_audio_config][]
-   * are always empty, use [reply_audio][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse.reply_audio] instead.
+   * are always empty, use
+   * [reply_audio][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse.reply_audio]
+   * instead.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.AutomatedAgentReply automated_agent_reply = 4;</code>
@@ -233,7 +239,8 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    *
    * <pre>
    * The suggestions for most recent human agent. The order is the same as
-   * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
+   * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
+   * of
    * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
    * </pre>
    *
@@ -248,7 +255,8 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    *
    * <pre>
    * The suggestions for most recent human agent. The order is the same as
-   * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
+   * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
+   * of
    * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
    * </pre>
    *
@@ -262,7 +270,8 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    *
    * <pre>
    * The suggestions for most recent human agent. The order is the same as
-   * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
+   * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
+   * of
    * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
    * </pre>
    *
@@ -276,7 +285,8 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    *
    * <pre>
    * The suggestions for most recent human agent. The order is the same as
-   * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
+   * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
+   * of
    * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
    * </pre>
    *
@@ -291,7 +301,8 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    *
    * <pre>
    * The suggestions for most recent human agent. The order is the same as
-   * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
+   * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
+   * of
    * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
    * </pre>
    *
@@ -307,7 +318,8 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    *
    * <pre>
    * The suggestions for end user. The order is the same as
-   * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
+   * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
+   * of
    * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
    * </pre>
    *
@@ -322,7 +334,8 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    *
    * <pre>
    * The suggestions for end user. The order is the same as
-   * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
+   * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
+   * of
    * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
    * </pre>
    *
@@ -336,7 +349,8 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    *
    * <pre>
    * The suggestions for end user. The order is the same as
-   * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
+   * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
+   * of
    * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
    * </pre>
    *
@@ -350,7 +364,8 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    *
    * <pre>
    * The suggestions for end user. The order is the same as
-   * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
+   * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
+   * of
    * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
    * </pre>
    *
@@ -365,7 +380,8 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    *
    * <pre>
    * The suggestions for end user. The order is the same as
-   * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
+   * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
+   * of
    * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
    * </pre>
    *

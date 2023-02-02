@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [Agents.SetAgent][google.cloud.dialogflow.v2beta1.Agents.SetAgent].
+ * The request message for
+ * [Agents.SetAgent][google.cloud.dialogflow.v2beta1.Agents.SetAgent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.SetAgentRequest}
@@ -345,7 +346,8 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The request message for [Agents.SetAgent][google.cloud.dialogflow.v2beta1.Agents.SetAgent].
+   * The request message for
+   * [Agents.SetAgent][google.cloud.dialogflow.v2beta1.Agents.SetAgent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.SetAgentRequest}

@@ -27,7 +27,8 @@ public interface DeleteAllContextsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the session to delete all contexts from. Supported formats:
+   * Required. The name of the session to delete all contexts from. Supported
+   * formats:
    * - `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;,
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session
    *   ID&gt;`,
@@ -52,7 +53,8 @@ public interface DeleteAllContextsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the session to delete all contexts from. Supported formats:
+   * Required. The name of the session to delete all contexts from. Supported
+   * formats:
    * - `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;,
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/sessions/&lt;Session
    *   ID&gt;`,

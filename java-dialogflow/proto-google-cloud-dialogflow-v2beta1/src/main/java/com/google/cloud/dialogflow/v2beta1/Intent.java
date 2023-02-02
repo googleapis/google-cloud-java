@@ -316,7 +316,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Note: Do not forget to include whitespace at part boundaries,
      * so the training phrase is well formatted when the parts are concatenated.
      * If the training phrase does not need to be annotated with parameters,
-     * you just need a single part with only the [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text] field set.
+     * you just need a single part with only the
+     * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
+     * field set.
      * If you want to annotate the training phrase, you must create multiple
      * parts, where the fields of each part are populated in one of two ways:
      * -   `Part.text` is set to a part of the phrase that has no parameters.
@@ -341,7 +343,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Note: Do not forget to include whitespace at part boundaries,
      * so the training phrase is well formatted when the parts are concatenated.
      * If the training phrase does not need to be annotated with parameters,
-     * you just need a single part with only the [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text] field set.
+     * you just need a single part with only the
+     * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
+     * field set.
      * If you want to annotate the training phrase, you must create multiple
      * parts, where the fields of each part are populated in one of two ways:
      * -   `Part.text` is set to a part of the phrase that has no parameters.
@@ -366,7 +370,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Note: Do not forget to include whitespace at part boundaries,
      * so the training phrase is well formatted when the parts are concatenated.
      * If the training phrase does not need to be annotated with parameters,
-     * you just need a single part with only the [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text] field set.
+     * you just need a single part with only the
+     * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
+     * field set.
      * If you want to annotate the training phrase, you must create multiple
      * parts, where the fields of each part are populated in one of two ways:
      * -   `Part.text` is set to a part of the phrase that has no parameters.
@@ -391,7 +397,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Note: Do not forget to include whitespace at part boundaries,
      * so the training phrase is well formatted when the parts are concatenated.
      * If the training phrase does not need to be annotated with parameters,
-     * you just need a single part with only the [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text] field set.
+     * you just need a single part with only the
+     * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
+     * field set.
      * If you want to annotate the training phrase, you must create multiple
      * parts, where the fields of each part are populated in one of two ways:
      * -   `Part.text` is set to a part of the phrase that has no parameters.
@@ -418,7 +426,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Note: Do not forget to include whitespace at part boundaries,
      * so the training phrase is well formatted when the parts are concatenated.
      * If the training phrase does not need to be annotated with parameters,
-     * you just need a single part with only the [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text] field set.
+     * you just need a single part with only the
+     * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
+     * field set.
      * If you want to annotate the training phrase, you must create multiple
      * parts, where the fields of each part are populated in one of two ways:
      * -   `Part.text` is set to a part of the phrase that has no parameters.
@@ -2000,7 +2010,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Note: Do not forget to include whitespace at part boundaries,
      * so the training phrase is well formatted when the parts are concatenated.
      * If the training phrase does not need to be annotated with parameters,
-     * you just need a single part with only the [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text] field set.
+     * you just need a single part with only the
+     * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
+     * field set.
      * If you want to annotate the training phrase, you must create multiple
      * parts, where the fields of each part are populated in one of two ways:
      * -   `Part.text` is set to a part of the phrase that has no parameters.
@@ -2029,7 +2041,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Note: Do not forget to include whitespace at part boundaries,
      * so the training phrase is well formatted when the parts are concatenated.
      * If the training phrase does not need to be annotated with parameters,
-     * you just need a single part with only the [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text] field set.
+     * you just need a single part with only the
+     * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
+     * field set.
      * If you want to annotate the training phrase, you must create multiple
      * parts, where the fields of each part are populated in one of two ways:
      * -   `Part.text` is set to a part of the phrase that has no parameters.
@@ -2059,7 +2073,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Note: Do not forget to include whitespace at part boundaries,
      * so the training phrase is well formatted when the parts are concatenated.
      * If the training phrase does not need to be annotated with parameters,
-     * you just need a single part with only the [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text] field set.
+     * you just need a single part with only the
+     * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
+     * field set.
      * If you want to annotate the training phrase, you must create multiple
      * parts, where the fields of each part are populated in one of two ways:
      * -   `Part.text` is set to a part of the phrase that has no parameters.
@@ -2087,7 +2103,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Note: Do not forget to include whitespace at part boundaries,
      * so the training phrase is well formatted when the parts are concatenated.
      * If the training phrase does not need to be annotated with parameters,
-     * you just need a single part with only the [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text] field set.
+     * you just need a single part with only the
+     * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
+     * field set.
      * If you want to annotate the training phrase, you must create multiple
      * parts, where the fields of each part are populated in one of two ways:
      * -   `Part.text` is set to a part of the phrase that has no parameters.
@@ -2115,7 +2133,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Note: Do not forget to include whitespace at part boundaries,
      * so the training phrase is well formatted when the parts are concatenated.
      * If the training phrase does not need to be annotated with parameters,
-     * you just need a single part with only the [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text] field set.
+     * you just need a single part with only the
+     * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
+     * field set.
      * If you want to annotate the training phrase, you must create multiple
      * parts, where the fields of each part are populated in one of two ways:
      * -   `Part.text` is set to a part of the phrase that has no parameters.
@@ -2859,7 +2879,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
        * If the training phrase does not need to be annotated with parameters,
-       * you just need a single part with only the [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text] field set.
+       * you just need a single part with only the
+       * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
+       * field set.
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
        * -   `Part.text` is set to a part of the phrase that has no parameters.
@@ -2891,7 +2913,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
        * If the training phrase does not need to be annotated with parameters,
-       * you just need a single part with only the [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text] field set.
+       * you just need a single part with only the
+       * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
+       * field set.
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
        * -   `Part.text` is set to a part of the phrase that has no parameters.
@@ -2922,7 +2946,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
        * If the training phrase does not need to be annotated with parameters,
-       * you just need a single part with only the [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text] field set.
+       * you just need a single part with only the
+       * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
+       * field set.
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
        * -   `Part.text` is set to a part of the phrase that has no parameters.
@@ -2953,7 +2979,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
        * If the training phrase does not need to be annotated with parameters,
-       * you just need a single part with only the [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text] field set.
+       * you just need a single part with only the
+       * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
+       * field set.
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
        * -   `Part.text` is set to a part of the phrase that has no parameters.
@@ -2991,7 +3019,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
        * If the training phrase does not need to be annotated with parameters,
-       * you just need a single part with only the [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text] field set.
+       * you just need a single part with only the
+       * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
+       * field set.
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
        * -   `Part.text` is set to a part of the phrase that has no parameters.
@@ -3027,7 +3057,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
        * If the training phrase does not need to be annotated with parameters,
-       * you just need a single part with only the [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text] field set.
+       * you just need a single part with only the
+       * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
+       * field set.
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
        * -   `Part.text` is set to a part of the phrase that has no parameters.
@@ -3065,7 +3097,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
        * If the training phrase does not need to be annotated with parameters,
-       * you just need a single part with only the [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text] field set.
+       * you just need a single part with only the
+       * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
+       * field set.
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
        * -   `Part.text` is set to a part of the phrase that has no parameters.
@@ -3103,7 +3137,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
        * If the training phrase does not need to be annotated with parameters,
-       * you just need a single part with only the [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text] field set.
+       * you just need a single part with only the
+       * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
+       * field set.
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
        * -   `Part.text` is set to a part of the phrase that has no parameters.
@@ -3138,7 +3174,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
        * If the training phrase does not need to be annotated with parameters,
-       * you just need a single part with only the [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text] field set.
+       * you just need a single part with only the
+       * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
+       * field set.
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
        * -   `Part.text` is set to a part of the phrase that has no parameters.
@@ -3174,7 +3212,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
        * If the training phrase does not need to be annotated with parameters,
-       * you just need a single part with only the [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text] field set.
+       * you just need a single part with only the
+       * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
+       * field set.
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
        * -   `Part.text` is set to a part of the phrase that has no parameters.
@@ -3211,7 +3251,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
        * If the training phrase does not need to be annotated with parameters,
-       * you just need a single part with only the [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text] field set.
+       * you just need a single part with only the
+       * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
+       * field set.
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
        * -   `Part.text` is set to a part of the phrase that has no parameters.
@@ -3245,7 +3287,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
        * If the training phrase does not need to be annotated with parameters,
-       * you just need a single part with only the [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text] field set.
+       * you just need a single part with only the
+       * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
+       * field set.
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
        * -   `Part.text` is set to a part of the phrase that has no parameters.
@@ -3279,7 +3323,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
        * If the training phrase does not need to be annotated with parameters,
-       * you just need a single part with only the [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text] field set.
+       * you just need a single part with only the
+       * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
+       * field set.
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
        * -   `Part.text` is set to a part of the phrase that has no parameters.
@@ -3307,7 +3353,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
        * If the training phrase does not need to be annotated with parameters,
-       * you just need a single part with only the [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text] field set.
+       * you just need a single part with only the
+       * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
+       * field set.
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
        * -   `Part.text` is set to a part of the phrase that has no parameters.
@@ -3339,7 +3387,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
        * If the training phrase does not need to be annotated with parameters,
-       * you just need a single part with only the [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text] field set.
+       * you just need a single part with only the
+       * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
+       * field set.
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
        * -   `Part.text` is set to a part of the phrase that has no parameters.
@@ -3372,7 +3422,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
        * If the training phrase does not need to be annotated with parameters,
-       * you just need a single part with only the [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text] field set.
+       * you just need a single part with only the
+       * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
+       * field set.
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
        * -   `Part.text` is set to a part of the phrase that has no parameters.
@@ -3403,7 +3455,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
        * If the training phrase does not need to be annotated with parameters,
-       * you just need a single part with only the [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text] field set.
+       * you just need a single part with only the
+       * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
+       * field set.
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
        * -   `Part.text` is set to a part of the phrase that has no parameters.
@@ -3435,7 +3489,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Note: Do not forget to include whitespace at part boundaries,
        * so the training phrase is well formatted when the parts are concatenated.
        * If the training phrase does not need to be annotated with parameters,
-       * you just need a single part with only the [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text] field set.
+       * you just need a single part with only the
+       * [Part.text][google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.text]
+       * field set.
        * If you want to annotate the training phrase, you must create multiple
        * parts, where the fields of each part are populated in one of two ways:
        * -   `Part.text` is set to a part of the phrase that has no parameters.
@@ -31208,7 +31264,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Rich cards allow you to respond to users with more vivid content, e.g.
      * with media and suggestions.
      * If you want to show a single card with more control over the layout,
-     * please use [RbmStandaloneCard][google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard] instead.
+     * please use
+     * [RbmStandaloneCard][google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard]
+     * instead.
      * </pre>
      *
      * Protobuf type {@code google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard}
@@ -31738,7 +31796,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Rich cards allow you to respond to users with more vivid content, e.g.
        * with media and suggestions.
        * If you want to show a single card with more control over the layout,
-       * please use [RbmStandaloneCard][google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard] instead.
+       * please use
+       * [RbmStandaloneCard][google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard]
+       * instead.
        * </pre>
        *
        * Protobuf type {@code google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard}
@@ -32709,8 +32769,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Standalone Rich Business Messaging (RBM) rich card.
      * Rich cards allow you to respond to users with more vivid content, e.g.
      * with media and suggestions.
-     * You can group multiple rich cards into one using [RbmCarouselCard][google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard] but
-     * carousel cards will give you less control over the card layout.
+     * You can group multiple rich cards into one using
+     * [RbmCarouselCard][google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard]
+     * but carousel cards will give you less control over the card layout.
      * </pre>
      *
      * Protobuf type {@code google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard}
@@ -33441,8 +33502,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Standalone Rich Business Messaging (RBM) rich card.
        * Rich cards allow you to respond to users with more vivid content, e.g.
        * with media and suggestions.
-       * You can group multiple rich cards into one using [RbmCarouselCard][google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard] but
-       * carousel cards will give you less control over the card layout.
+       * You can group multiple rich cards into one using
+       * [RbmCarouselCard][google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard]
+       * but carousel cards will give you less control over the card layout.
        * </pre>
        *
        * Protobuf type {@code google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard}
@@ -54843,7 +54905,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Column properties for [TableCard][google.cloud.dialogflow.v2beta1.Intent.Message.TableCard].
+     * Column properties for
+     * [TableCard][google.cloud.dialogflow.v2beta1.Intent.Message.TableCard].
      * </pre>
      *
      * Protobuf type {@code google.cloud.dialogflow.v2beta1.Intent.Message.ColumnProperties}
@@ -55353,7 +55416,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Column properties for [TableCard][google.cloud.dialogflow.v2beta1.Intent.Message.TableCard].
+       * Column properties for
+       * [TableCard][google.cloud.dialogflow.v2beta1.Intent.Message.TableCard].
        * </pre>
        *
        * Protobuf type {@code google.cloud.dialogflow.v2beta1.Intent.Message.ColumnProperties}
@@ -55923,7 +55987,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Row of [TableCard][google.cloud.dialogflow.v2beta1.Intent.Message.TableCard].
+     * Row of
+     * [TableCard][google.cloud.dialogflow.v2beta1.Intent.Message.TableCard].
      * </pre>
      *
      * Protobuf type {@code google.cloud.dialogflow.v2beta1.Intent.Message.TableCardRow}
@@ -56244,7 +56309,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Row of [TableCard][google.cloud.dialogflow.v2beta1.Intent.Message.TableCard].
+       * Row of
+       * [TableCard][google.cloud.dialogflow.v2beta1.Intent.Message.TableCard].
        * </pre>
        *
        * Protobuf type {@code google.cloud.dialogflow.v2beta1.Intent.Message.TableCardRow}
@@ -57041,7 +57107,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cell of [TableCardRow][google.cloud.dialogflow.v2beta1.Intent.Message.TableCardRow].
+     * Cell of
+     * [TableCardRow][google.cloud.dialogflow.v2beta1.Intent.Message.TableCardRow].
      * </pre>
      *
      * Protobuf type {@code google.cloud.dialogflow.v2beta1.Intent.Message.TableCardCell}
@@ -57304,7 +57371,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Cell of [TableCardRow][google.cloud.dialogflow.v2beta1.Intent.Message.TableCardRow].
+       * Cell of
+       * [TableCardRow][google.cloud.dialogflow.v2beta1.Intent.Message.TableCardRow].
        * </pre>
        *
        * Protobuf type {@code google.cloud.dialogflow.v2beta1.Intent.Message.TableCardCell}
@@ -65596,7 +65664,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The unique identifier of this intent.
-   * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
+   * Required for
+   * [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent]
+   * and
+   * [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
    * methods.
    * Supported formats:
    * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
@@ -65624,7 +65695,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The unique identifier of this intent.
-   * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
+   * Required for
+   * [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent]
+   * and
+   * [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
    * methods.
    * Supported formats:
    * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
@@ -65804,7 +65878,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * <code>bool ml_enabled = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.Intent.ml_enabled is deprecated. See
-   *     google/cloud/dialogflow/v2beta1/intent.proto;l=1142
+   *     google/cloud/dialogflow/v2beta1/intent.proto;l=1154
    * @return The mlEnabled.
    */
   @java.lang.Override
@@ -66643,9 +66717,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The unique identifier of the parent intent in the
    * chain of followup intents. You can set this field when creating an intent,
-   * for example with [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
-   * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents], in order to make this
-   * intent a followup intent.
+   * for example with
+   * [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
+   * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents],
+   * in order to make this intent a followup intent.
    * It identifies the parent followup intent.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
@@ -66672,9 +66747,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The unique identifier of the parent intent in the
    * chain of followup intents. You can set this field when creating an intent,
-   * for example with [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
-   * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents], in order to make this
-   * intent a followup intent.
+   * for example with
+   * [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
+   * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents],
+   * in order to make this intent a followup intent.
    * It identifies the parent followup intent.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
@@ -66705,8 +66781,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Information about all followup intents that have this intent as
-   * a direct or indirect parent. We populate this field only in the output.
+   * Output only. Information about all followup intents that have this intent
+   * as a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
    * <code>
@@ -66722,8 +66798,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Information about all followup intents that have this intent as
-   * a direct or indirect parent. We populate this field only in the output.
+   * Output only. Information about all followup intents that have this intent
+   * as a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
    * <code>
@@ -66740,8 +66816,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Information about all followup intents that have this intent as
-   * a direct or indirect parent. We populate this field only in the output.
+   * Output only. Information about all followup intents that have this intent
+   * as a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
    * <code>
@@ -66756,8 +66832,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Information about all followup intents that have this intent as
-   * a direct or indirect parent. We populate this field only in the output.
+   * Output only. Information about all followup intents that have this intent
+   * as a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
    * <code>
@@ -66773,8 +66849,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Information about all followup intents that have this intent as
-   * a direct or indirect parent. We populate this field only in the output.
+   * Output only. Information about all followup intents that have this intent
+   * as a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
    * <code>
@@ -67906,7 +67982,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The unique identifier of this intent.
-     * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
+     * Required for
+     * [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent]
+     * and
+     * [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
      * methods.
      * Supported formats:
      * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
@@ -67933,7 +68012,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The unique identifier of this intent.
-     * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
+     * Required for
+     * [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent]
+     * and
+     * [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
      * methods.
      * Supported formats:
      * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
@@ -67960,7 +68042,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The unique identifier of this intent.
-     * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
+     * Required for
+     * [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent]
+     * and
+     * [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
      * methods.
      * Supported formats:
      * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
@@ -67986,7 +68071,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The unique identifier of this intent.
-     * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
+     * Required for
+     * [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent]
+     * and
+     * [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
      * methods.
      * Supported formats:
      * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
@@ -68008,7 +68096,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The unique identifier of this intent.
-     * Required for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent] and [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
+     * Required for
+     * [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent]
+     * and
+     * [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents]
      * methods.
      * Supported formats:
      * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
@@ -68385,7 +68476,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.Intent.ml_enabled is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/intent.proto;l=1142
+     *     google/cloud/dialogflow/v2beta1/intent.proto;l=1154
      * @return The mlEnabled.
      */
     @java.lang.Override
@@ -68414,7 +68505,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.Intent.ml_enabled is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/intent.proto;l=1142
+     *     google/cloud/dialogflow/v2beta1/intent.proto;l=1154
      * @param value The mlEnabled to set.
      * @return This builder for chaining.
      */
@@ -68447,7 +68538,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.Intent.ml_enabled is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/intent.proto;l=1142
+     *     google/cloud/dialogflow/v2beta1/intent.proto;l=1154
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -71280,9 +71371,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The unique identifier of the parent intent in the
      * chain of followup intents. You can set this field when creating an intent,
-     * for example with [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
-     * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents], in order to make this
-     * intent a followup intent.
+     * for example with
+     * [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
+     * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents],
+     * in order to make this intent a followup intent.
      * It identifies the parent followup intent.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
@@ -71309,9 +71401,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The unique identifier of the parent intent in the
      * chain of followup intents. You can set this field when creating an intent,
-     * for example with [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
-     * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents], in order to make this
-     * intent a followup intent.
+     * for example with
+     * [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
+     * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents],
+     * in order to make this intent a followup intent.
      * It identifies the parent followup intent.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
@@ -71338,9 +71431,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The unique identifier of the parent intent in the
      * chain of followup intents. You can set this field when creating an intent,
-     * for example with [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
-     * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents], in order to make this
-     * intent a followup intent.
+     * for example with
+     * [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
+     * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents],
+     * in order to make this intent a followup intent.
      * It identifies the parent followup intent.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
@@ -71366,9 +71460,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The unique identifier of the parent intent in the
      * chain of followup intents. You can set this field when creating an intent,
-     * for example with [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
-     * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents], in order to make this
-     * intent a followup intent.
+     * for example with
+     * [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
+     * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents],
+     * in order to make this intent a followup intent.
      * It identifies the parent followup intent.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
@@ -71390,9 +71485,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The unique identifier of the parent intent in the
      * chain of followup intents. You can set this field when creating an intent,
-     * for example with [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
-     * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents], in order to make this
-     * intent a followup intent.
+     * for example with
+     * [CreateIntent][google.cloud.dialogflow.v2beta1.Intents.CreateIntent] or
+     * [BatchUpdateIntents][google.cloud.dialogflow.v2beta1.Intents.BatchUpdateIntents],
+     * in order to make this intent a followup intent.
      * It identifies the parent followup intent.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
@@ -71436,8 +71532,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about all followup intents that have this intent as
-     * a direct or indirect parent. We populate this field only in the output.
+     * Output only. Information about all followup intents that have this intent
+     * as a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
@@ -71456,8 +71552,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about all followup intents that have this intent as
-     * a direct or indirect parent. We populate this field only in the output.
+     * Output only. Information about all followup intents that have this intent
+     * as a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
@@ -71475,8 +71571,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about all followup intents that have this intent as
-     * a direct or indirect parent. We populate this field only in the output.
+     * Output only. Information about all followup intents that have this intent
+     * as a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
@@ -71495,8 +71591,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about all followup intents that have this intent as
-     * a direct or indirect parent. We populate this field only in the output.
+     * Output only. Information about all followup intents that have this intent
+     * as a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
@@ -71521,8 +71617,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about all followup intents that have this intent as
-     * a direct or indirect parent. We populate this field only in the output.
+     * Output only. Information about all followup intents that have this intent
+     * as a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
@@ -71545,8 +71641,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about all followup intents that have this intent as
-     * a direct or indirect parent. We populate this field only in the output.
+     * Output only. Information about all followup intents that have this intent
+     * as a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
@@ -71571,8 +71667,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about all followup intents that have this intent as
-     * a direct or indirect parent. We populate this field only in the output.
+     * Output only. Information about all followup intents that have this intent
+     * as a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
@@ -71597,8 +71693,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about all followup intents that have this intent as
-     * a direct or indirect parent. We populate this field only in the output.
+     * Output only. Information about all followup intents that have this intent
+     * as a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
@@ -71620,8 +71716,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about all followup intents that have this intent as
-     * a direct or indirect parent. We populate this field only in the output.
+     * Output only. Information about all followup intents that have this intent
+     * as a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
@@ -71644,8 +71740,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about all followup intents that have this intent as
-     * a direct or indirect parent. We populate this field only in the output.
+     * Output only. Information about all followup intents that have this intent
+     * as a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
@@ -71668,8 +71764,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about all followup intents that have this intent as
-     * a direct or indirect parent. We populate this field only in the output.
+     * Output only. Information about all followup intents that have this intent
+     * as a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
@@ -71690,8 +71786,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about all followup intents that have this intent as
-     * a direct or indirect parent. We populate this field only in the output.
+     * Output only. Information about all followup intents that have this intent
+     * as a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
@@ -71712,8 +71808,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about all followup intents that have this intent as
-     * a direct or indirect parent. We populate this field only in the output.
+     * Output only. Information about all followup intents that have this intent
+     * as a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
@@ -71728,8 +71824,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about all followup intents that have this intent as
-     * a direct or indirect parent. We populate this field only in the output.
+     * Output only. Information about all followup intents that have this intent
+     * as a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
@@ -71748,8 +71844,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about all followup intents that have this intent as
-     * a direct or indirect parent. We populate this field only in the output.
+     * Output only. Information about all followup intents that have this intent
+     * as a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
@@ -71769,8 +71865,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about all followup intents that have this intent as
-     * a direct or indirect parent. We populate this field only in the output.
+     * Output only. Information about all followup intents that have this intent
+     * as a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
@@ -71787,8 +71883,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about all followup intents that have this intent as
-     * a direct or indirect parent. We populate this field only in the output.
+     * Output only. Information about all followup intents that have this intent
+     * as a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>
@@ -71806,8 +71902,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about all followup intents that have this intent as
-     * a direct or indirect parent. We populate this field only in the output.
+     * Output only. Information about all followup intents that have this intent
+     * as a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
      * <code>

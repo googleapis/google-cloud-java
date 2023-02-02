@@ -21,7 +21,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Service for managing [KnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBase].
+ * Service for managing
+ * [KnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBase].
  * </pre>
  */
 @javax.annotation.Generated(
@@ -319,7 +320,8 @@ public final class KnowledgeBasesGrpc {
    *
    *
    * <pre>
-   * Service for managing [KnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBase].
+   * Service for managing
+   * [KnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBase].
    * </pre>
    */
   public abstract static class KnowledgeBasesImplBase implements io.grpc.BindableService {
@@ -453,7 +455,8 @@ public final class KnowledgeBasesGrpc {
    *
    *
    * <pre>
-   * Service for managing [KnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBase].
+   * Service for managing
+   * [KnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBase].
    * </pre>
    */
   public static final class KnowledgeBasesStub
@@ -566,7 +569,8 @@ public final class KnowledgeBasesGrpc {
    *
    *
    * <pre>
-   * Service for managing [KnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBase].
+   * Service for managing
+   * [KnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBase].
    * </pre>
    */
   public static final class KnowledgeBasesBlockingStub
@@ -661,7 +665,8 @@ public final class KnowledgeBasesGrpc {
    *
    *
    * <pre>
-   * Service for managing [KnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBase].
+   * Service for managing
+   * [KnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBase].
    * </pre>
    */
   public static final class KnowledgeBasesFutureStub

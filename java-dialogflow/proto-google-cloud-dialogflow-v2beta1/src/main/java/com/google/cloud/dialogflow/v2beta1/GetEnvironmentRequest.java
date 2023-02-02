@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [Environments.GetEnvironment][google.cloud.dialogflow.v2beta1.Environments.GetEnvironment].
+ * The request message for
+ * [Environments.GetEnvironment][google.cloud.dialogflow.v2beta1.Environments.GetEnvironment].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.GetEnvironmentRequest}
@@ -294,7 +295,8 @@ public final class GetEnvironmentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The request message for [Environments.GetEnvironment][google.cloud.dialogflow.v2beta1.Environments.GetEnvironment].
+   * The request message for
+   * [Environments.GetEnvironment][google.cloud.dialogflow.v2beta1.Environments.GetEnvironment].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.GetEnvironmentRequest}
