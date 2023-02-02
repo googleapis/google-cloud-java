@@ -405,7 +405,7 @@ ClusterControllerClient clusterControllerClient = ClusterControllerClient.create
 
 If you are using more than one Google Cloud client library, we recommend you use one of
 our Bill of Material (BOM) artifacts to help manage dependency versions. For more information,
-see https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM.
+see [Using the Cloud Client Libraries](https://cloud.google.com/java/docs/bom).
 
 ## Java Versions
 
