@@ -75,9 +75,9 @@ public final class UpdateSshPublicKeyRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The fingerprint of the public key to update. Public keys are identified by
-   * their SHA-256 fingerprint. The fingerprint of the public key is in format
-   * `users/{user}/sshPublicKeys/{fingerprint}`.
+   * Required. The fingerprint of the public key to update. Public keys are
+   * identified by their SHA-256 fingerprint. The fingerprint of the public key
+   * is in format `users/{user}/sshPublicKeys/{fingerprint}`.
    * </pre>
    *
    * <code>
@@ -102,9 +102,9 @@ public final class UpdateSshPublicKeyRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The fingerprint of the public key to update. Public keys are identified by
-   * their SHA-256 fingerprint. The fingerprint of the public key is in format
-   * `users/{user}/sshPublicKeys/{fingerprint}`.
+   * Required. The fingerprint of the public key to update. Public keys are
+   * identified by their SHA-256 fingerprint. The fingerprint of the public key
+   * is in format `users/{user}/sshPublicKeys/{fingerprint}`.
    * </pre>
    *
    * <code>
@@ -640,9 +640,9 @@ public final class UpdateSshPublicKeyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The fingerprint of the public key to update. Public keys are identified by
-     * their SHA-256 fingerprint. The fingerprint of the public key is in format
-     * `users/{user}/sshPublicKeys/{fingerprint}`.
+     * Required. The fingerprint of the public key to update. Public keys are
+     * identified by their SHA-256 fingerprint. The fingerprint of the public key
+     * is in format `users/{user}/sshPublicKeys/{fingerprint}`.
      * </pre>
      *
      * <code>
@@ -666,9 +666,9 @@ public final class UpdateSshPublicKeyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The fingerprint of the public key to update. Public keys are identified by
-     * their SHA-256 fingerprint. The fingerprint of the public key is in format
-     * `users/{user}/sshPublicKeys/{fingerprint}`.
+     * Required. The fingerprint of the public key to update. Public keys are
+     * identified by their SHA-256 fingerprint. The fingerprint of the public key
+     * is in format `users/{user}/sshPublicKeys/{fingerprint}`.
      * </pre>
      *
      * <code>
@@ -692,9 +692,9 @@ public final class UpdateSshPublicKeyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The fingerprint of the public key to update. Public keys are identified by
-     * their SHA-256 fingerprint. The fingerprint of the public key is in format
-     * `users/{user}/sshPublicKeys/{fingerprint}`.
+     * Required. The fingerprint of the public key to update. Public keys are
+     * identified by their SHA-256 fingerprint. The fingerprint of the public key
+     * is in format `users/{user}/sshPublicKeys/{fingerprint}`.
      * </pre>
      *
      * <code>
@@ -717,9 +717,9 @@ public final class UpdateSshPublicKeyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The fingerprint of the public key to update. Public keys are identified by
-     * their SHA-256 fingerprint. The fingerprint of the public key is in format
-     * `users/{user}/sshPublicKeys/{fingerprint}`.
+     * Required. The fingerprint of the public key to update. Public keys are
+     * identified by their SHA-256 fingerprint. The fingerprint of the public key
+     * is in format `users/{user}/sshPublicKeys/{fingerprint}`.
      * </pre>
      *
      * <code>
@@ -738,9 +738,9 @@ public final class UpdateSshPublicKeyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The fingerprint of the public key to update. Public keys are identified by
-     * their SHA-256 fingerprint. The fingerprint of the public key is in format
-     * `users/{user}/sshPublicKeys/{fingerprint}`.
+     * Required. The fingerprint of the public key to update. Public keys are
+     * identified by their SHA-256 fingerprint. The fingerprint of the public key
+     * is in format `users/{user}/sshPublicKeys/{fingerprint}`.
      * </pre>
      *
      * <code>

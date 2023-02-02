@@ -27,9 +27,9 @@ public interface DeletePosixAccountRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A reference to the POSIX account to update. POSIX accounts are identified
-   * by the project ID they are associated with. A reference to the POSIX
-   * account is in format `users/{user}/projects/{project}`.
+   * Required. A reference to the POSIX account to update. POSIX accounts are
+   * identified by the project ID they are associated with. A reference to the
+   * POSIX account is in format `users/{user}/projects/{project}`.
    * </pre>
    *
    * <code>
@@ -43,9 +43,9 @@ public interface DeletePosixAccountRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A reference to the POSIX account to update. POSIX accounts are identified
-   * by the project ID they are associated with. A reference to the POSIX
-   * account is in format `users/{user}/projects/{project}`.
+   * Required. A reference to the POSIX account to update. POSIX accounts are
+   * identified by the project ID they are associated with. A reference to the
+   * POSIX account is in format `users/{user}/projects/{project}`.
    * </pre>
    *
    * <code>
