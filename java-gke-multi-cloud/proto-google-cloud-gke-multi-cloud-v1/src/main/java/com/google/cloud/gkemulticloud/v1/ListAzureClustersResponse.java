@@ -77,7 +77,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
    *
    * <pre>
    * A list of [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
-   * resources in the specified GCP project and region region.
+   * resources in the specified Google Cloud Platform project and region region.
    * </pre>
    *
    * <code>repeated .google.cloud.gkemulticloud.v1.AzureCluster azure_clusters = 1;</code>
@@ -91,7 +91,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
    *
    * <pre>
    * A list of [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
-   * resources in the specified GCP project and region region.
+   * resources in the specified Google Cloud Platform project and region region.
    * </pre>
    *
    * <code>repeated .google.cloud.gkemulticloud.v1.AzureCluster azure_clusters = 1;</code>
@@ -106,7 +106,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
    *
    * <pre>
    * A list of [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
-   * resources in the specified GCP project and region region.
+   * resources in the specified Google Cloud Platform project and region region.
    * </pre>
    *
    * <code>repeated .google.cloud.gkemulticloud.v1.AzureCluster azure_clusters = 1;</code>
@@ -120,7 +120,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
    *
    * <pre>
    * A list of [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
-   * resources in the specified GCP project and region region.
+   * resources in the specified Google Cloud Platform project and region region.
    * </pre>
    *
    * <code>repeated .google.cloud.gkemulticloud.v1.AzureCluster azure_clusters = 1;</code>
@@ -134,7 +134,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
    *
    * <pre>
    * A list of [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
-   * resources in the specified GCP project and region region.
+   * resources in the specified Google Cloud Platform project and region region.
    * </pre>
    *
    * <code>repeated .google.cloud.gkemulticloud.v1.AzureCluster azure_clusters = 1;</code>
@@ -635,7 +635,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * A list of [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
-     * resources in the specified GCP project and region region.
+     * resources in the specified Google Cloud Platform project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureCluster azure_clusters = 1;</code>
@@ -652,7 +652,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * A list of [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
-     * resources in the specified GCP project and region region.
+     * resources in the specified Google Cloud Platform project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureCluster azure_clusters = 1;</code>
@@ -669,7 +669,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * A list of [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
-     * resources in the specified GCP project and region region.
+     * resources in the specified Google Cloud Platform project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureCluster azure_clusters = 1;</code>
@@ -686,7 +686,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * A list of [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
-     * resources in the specified GCP project and region region.
+     * resources in the specified Google Cloud Platform project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureCluster azure_clusters = 1;</code>
@@ -710,7 +710,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * A list of [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
-     * resources in the specified GCP project and region region.
+     * resources in the specified Google Cloud Platform project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureCluster azure_clusters = 1;</code>
@@ -731,7 +731,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * A list of [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
-     * resources in the specified GCP project and region region.
+     * resources in the specified Google Cloud Platform project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureCluster azure_clusters = 1;</code>
@@ -754,7 +754,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * A list of [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
-     * resources in the specified GCP project and region region.
+     * resources in the specified Google Cloud Platform project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureCluster azure_clusters = 1;</code>
@@ -778,7 +778,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * A list of [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
-     * resources in the specified GCP project and region region.
+     * resources in the specified Google Cloud Platform project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureCluster azure_clusters = 1;</code>
@@ -799,7 +799,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * A list of [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
-     * resources in the specified GCP project and region region.
+     * resources in the specified Google Cloud Platform project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureCluster azure_clusters = 1;</code>
@@ -820,7 +820,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * A list of [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
-     * resources in the specified GCP project and region region.
+     * resources in the specified Google Cloud Platform project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureCluster azure_clusters = 1;</code>
@@ -841,7 +841,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * A list of [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
-     * resources in the specified GCP project and region region.
+     * resources in the specified Google Cloud Platform project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureCluster azure_clusters = 1;</code>
@@ -861,7 +861,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * A list of [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
-     * resources in the specified GCP project and region region.
+     * resources in the specified Google Cloud Platform project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureCluster azure_clusters = 1;</code>
@@ -881,7 +881,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * A list of [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
-     * resources in the specified GCP project and region region.
+     * resources in the specified Google Cloud Platform project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureCluster azure_clusters = 1;</code>
@@ -895,7 +895,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * A list of [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
-     * resources in the specified GCP project and region region.
+     * resources in the specified Google Cloud Platform project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureCluster azure_clusters = 1;</code>
@@ -913,7 +913,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * A list of [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
-     * resources in the specified GCP project and region region.
+     * resources in the specified Google Cloud Platform project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureCluster azure_clusters = 1;</code>
@@ -931,7 +931,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * A list of [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
-     * resources in the specified GCP project and region region.
+     * resources in the specified Google Cloud Platform project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureCluster azure_clusters = 1;</code>
@@ -945,7 +945,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * A list of [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
-     * resources in the specified GCP project and region region.
+     * resources in the specified Google Cloud Platform project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureCluster azure_clusters = 1;</code>
@@ -960,7 +960,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * A list of [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
-     * resources in the specified GCP project and region region.
+     * resources in the specified Google Cloud Platform project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureCluster azure_clusters = 1;</code>

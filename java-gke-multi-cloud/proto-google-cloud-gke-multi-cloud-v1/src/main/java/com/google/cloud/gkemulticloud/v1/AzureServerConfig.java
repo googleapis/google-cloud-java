@@ -82,7 +82,7 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
    * `AzureServerConfig` names are formatted as
    * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureServerConfig`.
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
-   * for more details on GCP resource names.
+   * for more details on Google Cloud Platform resource names.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -109,7 +109,7 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
    * `AzureServerConfig` names are formatted as
    * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureServerConfig`.
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
-   * for more details on GCP resource names.
+   * for more details on Google Cloud Platform resource names.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -731,7 +731,7 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
      * `AzureServerConfig` names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureServerConfig`.
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
-     * for more details on GCP resource names.
+     * for more details on Google Cloud Platform resource names.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -757,7 +757,7 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
      * `AzureServerConfig` names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureServerConfig`.
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
-     * for more details on GCP resource names.
+     * for more details on Google Cloud Platform resource names.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -783,7 +783,7 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
      * `AzureServerConfig` names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureServerConfig`.
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
-     * for more details on GCP resource names.
+     * for more details on Google Cloud Platform resource names.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -808,7 +808,7 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
      * `AzureServerConfig` names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureServerConfig`.
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
-     * for more details on GCP resource names.
+     * for more details on Google Cloud Platform resource names.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -829,7 +829,7 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
      * `AzureServerConfig` names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureServerConfig`.
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
-     * for more details on GCP resource names.
+     * for more details on Google Cloud Platform resource names.
      * </pre>
      *
      * <code>string name = 1;</code>

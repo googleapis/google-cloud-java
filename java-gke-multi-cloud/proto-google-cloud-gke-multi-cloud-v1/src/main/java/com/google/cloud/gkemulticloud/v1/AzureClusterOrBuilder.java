@@ -31,7 +31,7 @@ public interface AzureClusterOrBuilder
    * Cluster names are formatted as
    * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
-   * for more details on GCP resource names.
+   * for more details on Google Cloud Platform resource names.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -47,7 +47,7 @@ public interface AzureClusterOrBuilder
    * Cluster names are formatted as
    * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
-   * for more details on GCP resource names.
+   * for more details on Google Cloud Platform resource names.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -149,19 +149,19 @@ public interface AzureClusterOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the
+   * Optional. Name of the
    * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] that contains
    * authentication configuration for how the Anthos Multi-Cloud API connects to
    * Azure APIs.
-   * The `AzureClient` resource must reside on the same GCP project and region
-   * as the `AzureCluster`.
+   * The `AzureClient` resource must reside on the same Google Cloud Platform
+   * project and region as the `AzureCluster`.
    * `AzureClient` names are formatted as
    * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
    *
-   * <code>string azure_client = 16 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string azure_client = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The azureClient.
    */
@@ -170,19 +170,19 @@ public interface AzureClusterOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the
+   * Optional. Name of the
    * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] that contains
    * authentication configuration for how the Anthos Multi-Cloud API connects to
    * Azure APIs.
-   * The `AzureClient` resource must reside on the same GCP project and region
-   * as the `AzureCluster`.
+   * The `AzureClient` resource must reside on the same Google Cloud Platform
+   * project and region as the `AzureCluster`.
    * `AzureClient` names are formatted as
    * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
    *
-   * <code>string azure_client = 16 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string azure_client = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for azureClient.
    */
@@ -310,6 +310,48 @@ public interface AzureClusterOrBuilder
    * </code>
    */
   com.google.cloud.gkemulticloud.v1.AzureAuthorizationOrBuilder getAuthorizationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Authentication configuration for management of Azure resources.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AzureServicesAuthentication azure_services_authentication = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the azureServicesAuthentication field is set.
+   */
+  boolean hasAzureServicesAuthentication();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Authentication configuration for management of Azure resources.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AzureServicesAuthentication azure_services_authentication = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The azureServicesAuthentication.
+   */
+  com.google.cloud.gkemulticloud.v1.AzureServicesAuthentication getAzureServicesAuthentication();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Authentication configuration for management of Azure resources.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AzureServicesAuthentication azure_services_authentication = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.gkemulticloud.v1.AzureServicesAuthenticationOrBuilder
+      getAzureServicesAuthenticationOrBuilder();
 
   /**
    *

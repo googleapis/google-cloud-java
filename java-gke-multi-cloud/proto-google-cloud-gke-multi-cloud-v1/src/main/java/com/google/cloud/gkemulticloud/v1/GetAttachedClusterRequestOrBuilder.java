@@ -33,7 +33,7 @@ public interface GetAttachedClusterRequestOrBuilder
    * `AttachedCluster` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/attachedClusters/&lt;cluster-id&gt;`.
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
-   * for more details on GCP resource names.
+   * for more details on Google Cloud Platform resource names.
    * </pre>
    *
    * <code>
@@ -53,7 +53,7 @@ public interface GetAttachedClusterRequestOrBuilder
    * `AttachedCluster` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/attachedClusters/&lt;cluster-id&gt;`.
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
-   * for more details on GCP resource names.
+   * for more details on Google Cloud Platform resource names.
    * </pre>
    *
    * <code>

@@ -94,6 +94,9 @@ public interface UpdateAzureClusterRequestOrBuilder
    *  *   `annotations`.
    *  *   `authorization.admin_users`.
    *  *   `control_plane.root_volume.size_gib`.
+   *  *   `azure_services_authentication`.
+   *  *   `azure_services_authentication.tenant_id`.
+   *  *   `azure_services_authentication.application_id`.
    *  *   `control_plane.proxy_config`.
    *  *   `control_plane.proxy_config.resource_group_id`.
    *  *   `control_plane.proxy_config.secret_id`.
@@ -122,6 +125,9 @@ public interface UpdateAzureClusterRequestOrBuilder
    *  *   `annotations`.
    *  *   `authorization.admin_users`.
    *  *   `control_plane.root_volume.size_gib`.
+   *  *   `azure_services_authentication`.
+   *  *   `azure_services_authentication.tenant_id`.
+   *  *   `azure_services_authentication.application_id`.
    *  *   `control_plane.proxy_config`.
    *  *   `control_plane.proxy_config.resource_group_id`.
    *  *   `control_plane.proxy_config.secret_id`.
@@ -150,6 +156,9 @@ public interface UpdateAzureClusterRequestOrBuilder
    *  *   `annotations`.
    *  *   `authorization.admin_users`.
    *  *   `control_plane.root_volume.size_gib`.
+   *  *   `azure_services_authentication`.
+   *  *   `azure_services_authentication.tenant_id`.
+   *  *   `azure_services_authentication.application_id`.
    *  *   `control_plane.proxy_config`.
    *  *   `control_plane.proxy_config.resource_group_id`.
    *  *   `control_plane.proxy_config.secret_id`.

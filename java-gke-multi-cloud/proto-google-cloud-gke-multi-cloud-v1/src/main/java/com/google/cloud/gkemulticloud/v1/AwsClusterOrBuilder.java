@@ -31,7 +31,7 @@ public interface AwsClusterOrBuilder
    * Cluster names are formatted as
    * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;`.
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
-   * for more details on GCP resource names.
+   * for more details on Google Cloud Platform resource names.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -47,7 +47,7 @@ public interface AwsClusterOrBuilder
    * Cluster names are formatted as
    * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;`.
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
-   * for more details on GCP resource names.
+   * for more details on Google Cloud Platform resource names.
    * </pre>
    *
    * <code>string name = 1;</code>

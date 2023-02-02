@@ -918,7 +918,7 @@ public final class AzureClustersGrpc {
      *
      * <pre>
      * Creates a new [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
-     * resource on a given GCP project and region.
+     * resource on a given Google Cloud Platform project and region.
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -1330,7 +1330,7 @@ public final class AzureClustersGrpc {
      *
      * <pre>
      * Creates a new [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
-     * resource on a given GCP project and region.
+     * resource on a given Google Cloud Platform project and region.
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -1643,7 +1643,7 @@ public final class AzureClustersGrpc {
      *
      * <pre>
      * Creates a new [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
-     * resource on a given GCP project and region.
+     * resource on a given Google Cloud Platform project and region.
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -1916,7 +1916,7 @@ public final class AzureClustersGrpc {
      *
      * <pre>
      * Creates a new [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
-     * resource on a given GCP project and region.
+     * resource on a given Google Cloud Platform project and region.
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.

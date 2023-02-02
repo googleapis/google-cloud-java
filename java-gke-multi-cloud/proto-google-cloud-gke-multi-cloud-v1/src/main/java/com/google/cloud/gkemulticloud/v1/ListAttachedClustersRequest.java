@@ -80,7 +80,7 @@ public final class ListAttachedClustersRequest extends com.google.protobuf.Gener
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resources.
    * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
-   * for more details on GCP resource names.
+   * for more details on Google Cloud Platform resource names.
    * </pre>
    *
    * <code>
@@ -109,7 +109,7 @@ public final class ListAttachedClustersRequest extends com.google.protobuf.Gener
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resources.
    * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
-   * for more details on GCP resource names.
+   * for more details on Google Cloud Platform resource names.
    * </pre>
    *
    * <code>
@@ -610,7 +610,7 @@ public final class ListAttachedClustersRequest extends com.google.protobuf.Gener
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resources.
      * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
-     * for more details on GCP resource names.
+     * for more details on Google Cloud Platform resource names.
      * </pre>
      *
      * <code>
@@ -638,7 +638,7 @@ public final class ListAttachedClustersRequest extends com.google.protobuf.Gener
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resources.
      * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
-     * for more details on GCP resource names.
+     * for more details on Google Cloud Platform resource names.
      * </pre>
      *
      * <code>
@@ -666,7 +666,7 @@ public final class ListAttachedClustersRequest extends com.google.protobuf.Gener
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resources.
      * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
-     * for more details on GCP resource names.
+     * for more details on Google Cloud Platform resource names.
      * </pre>
      *
      * <code>
@@ -693,7 +693,7 @@ public final class ListAttachedClustersRequest extends com.google.protobuf.Gener
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resources.
      * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
-     * for more details on GCP resource names.
+     * for more details on Google Cloud Platform resource names.
      * </pre>
      *
      * <code>
@@ -716,7 +716,7 @@ public final class ListAttachedClustersRequest extends com.google.protobuf.Gener
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resources.
      * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
-     * for more details on GCP resource names.
+     * for more details on Google Cloud Platform resource names.
      * </pre>
      *
      * <code>

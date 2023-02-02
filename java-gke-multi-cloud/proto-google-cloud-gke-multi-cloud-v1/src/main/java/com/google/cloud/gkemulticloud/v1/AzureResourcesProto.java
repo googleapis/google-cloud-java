@@ -80,6 +80,10 @@ public final class AzureResourcesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gkemulticloud_v1_AzureAuthorization_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkemulticloud_v1_AzureServicesAuthentication_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkemulticloud_v1_AzureServicesAuthentication_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_gkemulticloud_v1_AzureClusterUser_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gkemulticloud_v1_AzureClusterUser_fieldAccessorTable;
@@ -145,158 +149,165 @@ public final class AzureResourcesProto {
           + "d.v1\032\037google/api/field_behavior.proto\032\031g"
           + "oogle/api/resource.proto\0324google/cloud/g"
           + "kemulticloud/v1/common_resources.proto\032\037"
-          + "google/protobuf/timestamp.proto\"\355\013\n\014Azur"
+          + "google/protobuf/timestamp.proto\"\325\014\n\014Azur"
           + "eCluster\022\014\n\004name\030\001 \001(\t\022\030\n\013description\030\002 "
           + "\001(\tB\003\340A\001\022\031\n\014azure_region\030\003 \001(\tB\003\340A\002\022\036\n\021r"
           + "esource_group_id\030\021 \001(\tB\003\340A\002\022\031\n\014azure_cli"
-          + "ent\030\020 \001(\tB\003\340A\002\022N\n\nnetworking\030\004 \001(\01325.goo"
+          + "ent\030\020 \001(\tB\003\340A\001\022N\n\nnetworking\030\004 \001(\01325.goo"
           + "gle.cloud.gkemulticloud.v1.AzureClusterN"
           + "etworkingB\003\340A\002\022L\n\rcontrol_plane\030\005 \001(\01320."
           + "google.cloud.gkemulticloud.v1.AzureContr"
           + "olPlaneB\003\340A\002\022M\n\rauthorization\030\006 \001(\01321.go"
           + "ogle.cloud.gkemulticloud.v1.AzureAuthori"
-          + "zationB\003\340A\002\022E\n\005state\030\007 \001(\01621.google.clou"
-          + "d.gkemulticloud.v1.AzureCluster.StateB\003\340"
-          + "A\003\022\025\n\010endpoint\030\010 \001(\tB\003\340A\003\022\020\n\003uid\030\t \001(\tB\003"
-          + "\340A\003\022\030\n\013reconciling\030\n \001(\010B\003\340A\003\0224\n\013create_"
-          + "time\030\013 \001(\0132\032.google.protobuf.TimestampB\003"
-          + "\340A\003\0224\n\013update_time\030\014 \001(\0132\032.google.protob"
-          + "uf.TimestampB\003\340A\003\022\014\n\004etag\030\r \001(\t\022V\n\013annot"
-          + "ations\030\016 \003(\0132<.google.cloud.gkemulticlou"
-          + "d.v1.AzureCluster.AnnotationsEntryB\003\340A\001\022"
-          + "\\\n\030workload_identity_config\030\022 \001(\01325.goog"
-          + "le.cloud.gkemulticloud.v1.WorkloadIdenti"
-          + "tyConfigB\003\340A\003\022#\n\026cluster_ca_certificate\030"
-          + "\023 \001(\tB\003\340A\003\0228\n\005fleet\030\024 \001(\0132$.google.cloud"
-          + ".gkemulticloud.v1.FleetB\003\340A\002\022T\n\021managed_"
-          + "resources\030\025 \001(\01324.google.cloud.gkemultic"
-          + "loud.v1.AzureClusterResourcesB\003\340A\003\022I\n\016lo"
-          + "gging_config\030\027 \001(\0132,.google.cloud.gkemul"
-          + "ticloud.v1.LoggingConfigB\003\340A\001\022E\n\006errors\030"
-          + "\030 \003(\01320.google.cloud.gkemulticloud.v1.Az"
-          + "ureClusterErrorB\003\340A\003\022O\n\021monitoring_confi"
-          + "g\030\031 \001(\0132/.google.cloud.gkemulticloud.v1."
-          + "MonitoringConfigB\003\340A\001\0322\n\020AnnotationsEntr"
-          + "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"u\n\005Sta"
-          + "te\022\025\n\021STATE_UNSPECIFIED\020\000\022\020\n\014PROVISIONIN"
-          + "G\020\001\022\013\n\007RUNNING\020\002\022\017\n\013RECONCILING\020\003\022\014\n\010STO"
-          + "PPING\020\004\022\t\n\005ERROR\020\005\022\014\n\010DEGRADED\020\006:u\352Ar\n)g"
-          + "kemulticloud.googleapis.com/AzureCluster"
-          + "\022Eprojects/{project}/locations/{location"
-          + "}/azureClusters/{azure_cluster}\"\267\001\n\026Azur"
-          + "eClusterNetworking\022\037\n\022virtual_network_id"
-          + "\030\001 \001(\tB\003\340A\002\022$\n\027pod_address_cidr_blocks\030\002"
-          + " \003(\tB\003\340A\002\022(\n\033service_address_cidr_blocks"
-          + "\030\003 \003(\tB\003\340A\002\022,\n\037service_load_balancer_sub"
-          + "net_id\030\005 \001(\tB\003\340A\001\"\242\006\n\021AzureControlPlane\022"
-          + "\024\n\007version\030\001 \001(\tB\003\340A\002\022\026\n\tsubnet_id\030\002 \001(\t"
-          + "B\003\340A\001\022\024\n\007vm_size\030\003 \001(\tB\003\340A\001\022F\n\nssh_confi"
-          + "g\030\013 \001(\0132-.google.cloud.gkemulticloud.v1."
-          + "AzureSshConfigB\003\340A\002\022J\n\013root_volume\030\004 \001(\013"
-          + "20.google.cloud.gkemulticloud.v1.AzureDi"
-          + "skTemplateB\003\340A\001\022J\n\013main_volume\030\005 \001(\01320.g"
-          + "oogle.cloud.gkemulticloud.v1.AzureDiskTe"
-          + "mplateB\003\340A\001\022X\n\023database_encryption\030\n \001(\013"
-          + "26.google.cloud.gkemulticloud.v1.AzureDa"
-          + "tabaseEncryptionB\003\340A\001\022J\n\014proxy_config\030\014 "
-          + "\001(\0132/.google.cloud.gkemulticloud.v1.Azur"
-          + "eProxyConfigB\003\340A\001\022T\n\021config_encryption\030\016"
-          + " \001(\01324.google.cloud.gkemulticloud.v1.Azu"
-          + "reConfigEncryptionB\003\340A\001\022M\n\004tags\030\007 \003(\0132:."
-          + "google.cloud.gkemulticloud.v1.AzureContr"
-          + "olPlane.TagsEntryB\003\340A\001\022P\n\022replica_placem"
-          + "ents\030\r \003(\0132/.google.cloud.gkemulticloud."
-          + "v1.ReplicaPlacementB\003\340A\001\022\037\n\022endpoint_sub"
-          + "net_id\030\017 \001(\tB\003\340A\001\032+\n\tTagsEntry\022\013\n\003key\030\001 "
-          + "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"P\n\020ReplicaPlaceme"
-          + "nt\022\026\n\tsubnet_id\030\001 \001(\tB\003\340A\002\022$\n\027azure_avai"
-          + "lability_zone\030\002 \001(\tB\003\340A\002\"@\n\020AzureProxyCo"
-          + "nfig\022\031\n\021resource_group_id\030\001 \001(\t\022\021\n\tsecre"
-          + "t_id\030\002 \001(\t\".\n\027AzureDatabaseEncryption\022\023\n"
-          + "\006key_id\030\003 \001(\tB\003\340A\002\"E\n\025AzureConfigEncrypt"
-          + "ion\022\023\n\006key_id\030\002 \001(\tB\003\340A\002\022\027\n\npublic_key\030\003"
-          + " \001(\tB\003\340A\001\"*\n\021AzureDiskTemplate\022\025\n\010size_g"
-          + "ib\030\001 \001(\005B\003\340A\001\"\265\003\n\013AzureClient\022\014\n\004name\030\001 "
-          + "\001(\t\022\026\n\ttenant_id\030\002 \001(\tB\003\340A\002\022\033\n\016applicati"
-          + "on_id\030\003 \001(\tB\003\340A\002\022U\n\013annotations\030\010 \003(\0132;."
-          + "google.cloud.gkemulticloud.v1.AzureClien"
-          + "t.AnnotationsEntryB\003\340A\001\022\034\n\017pem_certifica"
-          + "te\030\007 \001(\tB\003\340A\003\022\020\n\003uid\030\005 \001(\tB\003\340A\003\0224\n\013creat"
-          + "e_time\030\006 \001(\0132\032.google.protobuf.Timestamp"
-          + "B\003\340A\003\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r"
-          + "\n\005value\030\002 \001(\t:\0028\001:r\352Ao\n(gkemulticloud.go"
-          + "ogleapis.com/AzureClient\022Cprojects/{proj"
-          + "ect}/locations/{location}/azureClients/{"
-          + "azure_client}\"_\n\022AzureAuthorization\022I\n\013a"
-          + "dmin_users\030\001 \003(\0132/.google.cloud.gkemulti"
-          + "cloud.v1.AzureClusterUserB\003\340A\002\")\n\020AzureC"
-          + "lusterUser\022\025\n\010username\030\001 \001(\tB\003\340A\002\"\262\010\n\rAz"
-          + "ureNodePool\022\014\n\004name\030\001 \001(\t\022\024\n\007version\030\002 \001"
-          + "(\tB\003\340A\002\022C\n\006config\030\026 \001(\0132..google.cloud.g"
-          + "kemulticloud.v1.AzureNodeConfigB\003\340A\002\022\026\n\t"
-          + "subnet_id\030\003 \001(\tB\003\340A\002\022Q\n\013autoscaling\030\004 \001("
-          + "\01327.google.cloud.gkemulticloud.v1.AzureN"
-          + "odePoolAutoscalingB\003\340A\002\022F\n\005state\030\006 \001(\01622"
-          + ".google.cloud.gkemulticloud.v1.AzureNode"
-          + "Pool.StateB\003\340A\003\022\020\n\003uid\030\010 \001(\tB\003\340A\003\022\030\n\013rec"
-          + "onciling\030\t \001(\010B\003\340A\003\0224\n\013create_time\030\n \001(\013"
-          + "2\032.google.protobuf.TimestampB\003\340A\003\0224\n\013upd"
-          + "ate_time\030\013 \001(\0132\032.google.protobuf.Timesta"
-          + "mpB\003\340A\003\022\014\n\004etag\030\014 \001(\t\022W\n\013annotations\030\r \003"
-          + "(\0132=.google.cloud.gkemulticloud.v1.Azure"
-          + "NodePool.AnnotationsEntryB\003\340A\001\022R\n\023max_po"
-          + "ds_constraint\030\025 \001(\01320.google.cloud.gkemu"
-          + "lticloud.v1.MaxPodsConstraintB\003\340A\002\022$\n\027az"
-          + "ure_availability_zone\030\027 \001(\tB\003\340A\001\022F\n\006erro"
-          + "rs\030\035 \003(\01321.google.cloud.gkemulticloud.v1"
-          + ".AzureNodePoolErrorB\003\340A\003\0322\n\020AnnotationsE"
-          + "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"u\n\005"
-          + "State\022\025\n\021STATE_UNSPECIFIED\020\000\022\020\n\014PROVISIO"
-          + "NING\020\001\022\013\n\007RUNNING\020\002\022\017\n\013RECONCILING\020\003\022\014\n\010"
-          + "STOPPING\020\004\022\t\n\005ERROR\020\005\022\014\n\010DEGRADED\020\006:\230\001\352A"
-          + "\224\001\n*gkemulticloud.googleapis.com/AzureNo"
-          + "dePool\022fprojects/{project}/locations/{lo"
-          + "cation}/azureClusters/{azure_cluster}/az"
-          + "ureNodePools/{azure_node_pool}\"\257\005\n\017Azure"
-          + "NodeConfig\022\024\n\007vm_size\030\001 \001(\tB\003\340A\001\022J\n\013root"
-          + "_volume\030\002 \001(\01320.google.cloud.gkemulticlo"
-          + "ud.v1.AzureDiskTemplateB\003\340A\001\022K\n\004tags\030\003 \003"
-          + "(\01328.google.cloud.gkemulticloud.v1.Azure"
-          + "NodeConfig.TagsEntryB\003\340A\001\022\027\n\nimage_type\030"
-          + "\010 \001(\tB\003\340A\001\022F\n\nssh_config\030\007 \001(\0132-.google."
-          + "cloud.gkemulticloud.v1.AzureSshConfigB\003\340"
-          + "A\002\022J\n\014proxy_config\030\t \001(\0132/.google.cloud."
-          + "gkemulticloud.v1.AzureProxyConfigB\003\340A\001\022T"
-          + "\n\021config_encryption\030\014 \001(\01324.google.cloud"
-          + ".gkemulticloud.v1.AzureConfigEncryptionB"
-          + "\003\340A\001\022=\n\006taints\030\n \003(\0132(.google.cloud.gkem"
-          + "ulticloud.v1.NodeTaintB\003\340A\001\022O\n\006labels\030\013 "
-          + "\003(\0132:.google.cloud.gkemulticloud.v1.Azur"
-          + "eNodeConfig.LabelsEntryB\003\340A\001\032+\n\tTagsEntr"
-          + "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032-\n\013Lab"
-          + "elsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001"
-          + "\"T\n\030AzureNodePoolAutoscaling\022\033\n\016min_node"
-          + "_count\030\001 \001(\005B\003\340A\002\022\033\n\016max_node_count\030\002 \001("
-          + "\005B\003\340A\002\"\376\001\n\021AzureServerConfig\022\014\n\004name\030\001 \001"
-          + "(\t\022J\n\016valid_versions\030\002 \003(\01322.google.clou"
-          + "d.gkemulticloud.v1.AzureK8sVersionInfo\022\037"
-          + "\n\027supported_azure_regions\030\003 \003(\t:n\352Ak\n.gk"
-          + "emulticloud.googleapis.com/AzureServerCo"
-          + "nfig\0229projects/{project}/locations/{loca"
-          + "tion}/azureServerConfig\"&\n\023AzureK8sVersi"
-          + "onInfo\022\017\n\007version\030\001 \001(\t\"-\n\016AzureSshConfi"
-          + "g\022\033\n\016authorized_key\030\001 \001(\tB\003\340A\002\"y\n\025AzureC"
-          + "lusterResources\022&\n\031network_security_grou"
-          + "p_id\030\001 \001(\tB\003\340A\003\0228\n+control_plane_applica"
-          + "tion_security_group_id\030\002 \001(\tB\003\340A\003\"$\n\021Azu"
-          + "reClusterError\022\017\n\007message\030\001 \001(\t\"%\n\022Azure"
-          + "NodePoolError\022\017\n\007message\030\001 \001(\tB\351\001\n!com.g"
-          + "oogle.cloud.gkemulticloud.v1B\023AzureResou"
-          + "rcesProtoP\001ZJgoogle.golang.org/genproto/"
-          + "googleapis/cloud/gkemulticloud/v1;gkemul"
-          + "ticloud\252\002\035Google.Cloud.GkeMultiCloud.V1\312"
-          + "\002\035Google\\Cloud\\GkeMultiCloud\\V1\352\002 Google"
-          + "::Cloud::GkeMultiCloud::V1b\006proto3"
+          + "zationB\003\340A\002\022f\n\035azure_services_authentica"
+          + "tion\030\026 \001(\0132:.google.cloud.gkemulticloud."
+          + "v1.AzureServicesAuthenticationB\003\340A\001\022E\n\005s"
+          + "tate\030\007 \001(\01621.google.cloud.gkemulticloud."
+          + "v1.AzureCluster.StateB\003\340A\003\022\025\n\010endpoint\030\010"
+          + " \001(\tB\003\340A\003\022\020\n\003uid\030\t \001(\tB\003\340A\003\022\030\n\013reconcili"
+          + "ng\030\n \001(\010B\003\340A\003\0224\n\013create_time\030\013 \001(\0132\032.goo"
+          + "gle.protobuf.TimestampB\003\340A\003\0224\n\013update_ti"
+          + "me\030\014 \001(\0132\032.google.protobuf.TimestampB\003\340A"
+          + "\003\022\014\n\004etag\030\r \001(\t\022V\n\013annotations\030\016 \003(\0132<.g"
+          + "oogle.cloud.gkemulticloud.v1.AzureCluste"
+          + "r.AnnotationsEntryB\003\340A\001\022\\\n\030workload_iden"
+          + "tity_config\030\022 \001(\01325.google.cloud.gkemult"
+          + "icloud.v1.WorkloadIdentityConfigB\003\340A\003\022#\n"
+          + "\026cluster_ca_certificate\030\023 \001(\tB\003\340A\003\0228\n\005fl"
+          + "eet\030\024 \001(\0132$.google.cloud.gkemulticloud.v"
+          + "1.FleetB\003\340A\002\022T\n\021managed_resources\030\025 \001(\0132"
+          + "4.google.cloud.gkemulticloud.v1.AzureClu"
+          + "sterResourcesB\003\340A\003\022I\n\016logging_config\030\027 \001"
+          + "(\0132,.google.cloud.gkemulticloud.v1.Loggi"
+          + "ngConfigB\003\340A\001\022E\n\006errors\030\030 \003(\01320.google.c"
+          + "loud.gkemulticloud.v1.AzureClusterErrorB"
+          + "\003\340A\003\022O\n\021monitoring_config\030\031 \001(\0132/.google"
+          + ".cloud.gkemulticloud.v1.MonitoringConfig"
+          + "B\003\340A\001\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r"
+          + "\n\005value\030\002 \001(\t:\0028\001\"u\n\005State\022\025\n\021STATE_UNSP"
+          + "ECIFIED\020\000\022\020\n\014PROVISIONING\020\001\022\013\n\007RUNNING\020\002"
+          + "\022\017\n\013RECONCILING\020\003\022\014\n\010STOPPING\020\004\022\t\n\005ERROR"
+          + "\020\005\022\014\n\010DEGRADED\020\006:u\352Ar\n)gkemulticloud.goo"
+          + "gleapis.com/AzureCluster\022Eprojects/{proj"
+          + "ect}/locations/{location}/azureClusters/"
+          + "{azure_cluster}\"\267\001\n\026AzureClusterNetworki"
+          + "ng\022\037\n\022virtual_network_id\030\001 \001(\tB\003\340A\002\022$\n\027p"
+          + "od_address_cidr_blocks\030\002 \003(\tB\003\340A\002\022(\n\033ser"
+          + "vice_address_cidr_blocks\030\003 \003(\tB\003\340A\002\022,\n\037s"
+          + "ervice_load_balancer_subnet_id\030\005 \001(\tB\003\340A"
+          + "\001\"\242\006\n\021AzureControlPlane\022\024\n\007version\030\001 \001(\t"
+          + "B\003\340A\002\022\026\n\tsubnet_id\030\002 \001(\tB\003\340A\001\022\024\n\007vm_size"
+          + "\030\003 \001(\tB\003\340A\001\022F\n\nssh_config\030\013 \001(\0132-.google"
+          + ".cloud.gkemulticloud.v1.AzureSshConfigB\003"
+          + "\340A\002\022J\n\013root_volume\030\004 \001(\01320.google.cloud."
+          + "gkemulticloud.v1.AzureDiskTemplateB\003\340A\001\022"
+          + "J\n\013main_volume\030\005 \001(\01320.google.cloud.gkem"
+          + "ulticloud.v1.AzureDiskTemplateB\003\340A\001\022X\n\023d"
+          + "atabase_encryption\030\n \001(\01326.google.cloud."
+          + "gkemulticloud.v1.AzureDatabaseEncryption"
+          + "B\003\340A\001\022J\n\014proxy_config\030\014 \001(\0132/.google.clo"
+          + "ud.gkemulticloud.v1.AzureProxyConfigB\003\340A"
+          + "\001\022T\n\021config_encryption\030\016 \001(\01324.google.cl"
+          + "oud.gkemulticloud.v1.AzureConfigEncrypti"
+          + "onB\003\340A\001\022M\n\004tags\030\007 \003(\0132:.google.cloud.gke"
+          + "multicloud.v1.AzureControlPlane.TagsEntr"
+          + "yB\003\340A\001\022P\n\022replica_placements\030\r \003(\0132/.goo"
+          + "gle.cloud.gkemulticloud.v1.ReplicaPlacem"
+          + "entB\003\340A\001\022\037\n\022endpoint_subnet_id\030\017 \001(\tB\003\340A"
+          + "\001\032+\n\tTagsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001"
+          + "(\t:\0028\001\"P\n\020ReplicaPlacement\022\026\n\tsubnet_id\030"
+          + "\001 \001(\tB\003\340A\002\022$\n\027azure_availability_zone\030\002 "
+          + "\001(\tB\003\340A\002\"@\n\020AzureProxyConfig\022\031\n\021resource"
+          + "_group_id\030\001 \001(\t\022\021\n\tsecret_id\030\002 \001(\t\".\n\027Az"
+          + "ureDatabaseEncryption\022\023\n\006key_id\030\003 \001(\tB\003\340"
+          + "A\002\"E\n\025AzureConfigEncryption\022\023\n\006key_id\030\002 "
+          + "\001(\tB\003\340A\002\022\027\n\npublic_key\030\003 \001(\tB\003\340A\001\"*\n\021Azu"
+          + "reDiskTemplate\022\025\n\010size_gib\030\001 \001(\005B\003\340A\001\"\205\004"
+          + "\n\013AzureClient\022\014\n\004name\030\001 \001(\t\022\026\n\ttenant_id"
+          + "\030\002 \001(\tB\003\340A\002\022\033\n\016application_id\030\003 \001(\tB\003\340A\002"
+          + "\022\030\n\013reconciling\030\t \001(\010B\003\340A\003\022U\n\013annotation"
+          + "s\030\010 \003(\0132;.google.cloud.gkemulticloud.v1."
+          + "AzureClient.AnnotationsEntryB\003\340A\001\022\034\n\017pem"
+          + "_certificate\030\007 \001(\tB\003\340A\003\022\020\n\003uid\030\005 \001(\tB\003\340A"
+          + "\003\0224\n\013create_time\030\006 \001(\0132\032.google.protobuf"
+          + ".TimestampB\003\340A\003\0224\n\013update_time\030\n \001(\0132\032.g"
+          + "oogle.protobuf.TimestampB\003\340A\003\0322\n\020Annotat"
+          + "ionsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028"
+          + "\001:r\352Ao\n(gkemulticloud.googleapis.com/Azu"
+          + "reClient\022Cprojects/{project}/locations/{"
+          + "location}/azureClients/{azure_client}\"_\n"
+          + "\022AzureAuthorization\022I\n\013admin_users\030\001 \003(\013"
+          + "2/.google.cloud.gkemulticloud.v1.AzureCl"
+          + "usterUserB\003\340A\002\"R\n\033AzureServicesAuthentic"
+          + "ation\022\026\n\ttenant_id\030\001 \001(\tB\003\340A\002\022\033\n\016applica"
+          + "tion_id\030\002 \001(\tB\003\340A\002\")\n\020AzureClusterUser\022\025"
+          + "\n\010username\030\001 \001(\tB\003\340A\002\"\262\010\n\rAzureNodePool\022"
+          + "\014\n\004name\030\001 \001(\t\022\024\n\007version\030\002 \001(\tB\003\340A\002\022C\n\006c"
+          + "onfig\030\026 \001(\0132..google.cloud.gkemulticloud"
+          + ".v1.AzureNodeConfigB\003\340A\002\022\026\n\tsubnet_id\030\003 "
+          + "\001(\tB\003\340A\002\022Q\n\013autoscaling\030\004 \001(\01327.google.c"
+          + "loud.gkemulticloud.v1.AzureNodePoolAutos"
+          + "calingB\003\340A\002\022F\n\005state\030\006 \001(\01622.google.clou"
+          + "d.gkemulticloud.v1.AzureNodePool.StateB\003"
+          + "\340A\003\022\020\n\003uid\030\010 \001(\tB\003\340A\003\022\030\n\013reconciling\030\t \001"
+          + "(\010B\003\340A\003\0224\n\013create_time\030\n \001(\0132\032.google.pr"
+          + "otobuf.TimestampB\003\340A\003\0224\n\013update_time\030\013 \001"
+          + "(\0132\032.google.protobuf.TimestampB\003\340A\003\022\014\n\004e"
+          + "tag\030\014 \001(\t\022W\n\013annotations\030\r \003(\0132=.google."
+          + "cloud.gkemulticloud.v1.AzureNodePool.Ann"
+          + "otationsEntryB\003\340A\001\022R\n\023max_pods_constrain"
+          + "t\030\025 \001(\01320.google.cloud.gkemulticloud.v1."
+          + "MaxPodsConstraintB\003\340A\002\022$\n\027azure_availabi"
+          + "lity_zone\030\027 \001(\tB\003\340A\001\022F\n\006errors\030\035 \003(\01321.g"
+          + "oogle.cloud.gkemulticloud.v1.AzureNodePo"
+          + "olErrorB\003\340A\003\0322\n\020AnnotationsEntry\022\013\n\003key\030"
+          + "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"u\n\005State\022\025\n\021STA"
+          + "TE_UNSPECIFIED\020\000\022\020\n\014PROVISIONING\020\001\022\013\n\007RU"
+          + "NNING\020\002\022\017\n\013RECONCILING\020\003\022\014\n\010STOPPING\020\004\022\t"
+          + "\n\005ERROR\020\005\022\014\n\010DEGRADED\020\006:\230\001\352A\224\001\n*gkemulti"
+          + "cloud.googleapis.com/AzureNodePool\022fproj"
+          + "ects/{project}/locations/{location}/azur"
+          + "eClusters/{azure_cluster}/azureNodePools"
+          + "/{azure_node_pool}\"\257\005\n\017AzureNodeConfig\022\024"
+          + "\n\007vm_size\030\001 \001(\tB\003\340A\001\022J\n\013root_volume\030\002 \001("
+          + "\01320.google.cloud.gkemulticloud.v1.AzureD"
+          + "iskTemplateB\003\340A\001\022K\n\004tags\030\003 \003(\01328.google."
+          + "cloud.gkemulticloud.v1.AzureNodeConfig.T"
+          + "agsEntryB\003\340A\001\022\027\n\nimage_type\030\010 \001(\tB\003\340A\001\022F"
+          + "\n\nssh_config\030\007 \001(\0132-.google.cloud.gkemul"
+          + "ticloud.v1.AzureSshConfigB\003\340A\002\022J\n\014proxy_"
+          + "config\030\t \001(\0132/.google.cloud.gkemulticlou"
+          + "d.v1.AzureProxyConfigB\003\340A\001\022T\n\021config_enc"
+          + "ryption\030\014 \001(\01324.google.cloud.gkemulticlo"
+          + "ud.v1.AzureConfigEncryptionB\003\340A\001\022=\n\006tain"
+          + "ts\030\n \003(\0132(.google.cloud.gkemulticloud.v1"
+          + ".NodeTaintB\003\340A\001\022O\n\006labels\030\013 \003(\0132:.google"
+          + ".cloud.gkemulticloud.v1.AzureNodeConfig."
+          + "LabelsEntryB\003\340A\001\032+\n\tTagsEntry\022\013\n\003key\030\001 \001"
+          + "(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032-\n\013LabelsEntry\022\013\n\003"
+          + "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"T\n\030AzureNod"
+          + "ePoolAutoscaling\022\033\n\016min_node_count\030\001 \001(\005"
+          + "B\003\340A\002\022\033\n\016max_node_count\030\002 \001(\005B\003\340A\002\"\376\001\n\021A"
+          + "zureServerConfig\022\014\n\004name\030\001 \001(\t\022J\n\016valid_"
+          + "versions\030\002 \003(\01322.google.cloud.gkemulticl"
+          + "oud.v1.AzureK8sVersionInfo\022\037\n\027supported_"
+          + "azure_regions\030\003 \003(\t:n\352Ak\n.gkemulticloud."
+          + "googleapis.com/AzureServerConfig\0229projec"
+          + "ts/{project}/locations/{location}/azureS"
+          + "erverConfig\"&\n\023AzureK8sVersionInfo\022\017\n\007ve"
+          + "rsion\030\001 \001(\t\"-\n\016AzureSshConfig\022\033\n\016authori"
+          + "zed_key\030\001 \001(\tB\003\340A\002\"y\n\025AzureClusterResour"
+          + "ces\022&\n\031network_security_group_id\030\001 \001(\tB\003"
+          + "\340A\003\0228\n+control_plane_application_securit"
+          + "y_group_id\030\002 \001(\tB\003\340A\003\"$\n\021AzureClusterErr"
+          + "or\022\017\n\007message\030\001 \001(\t\"%\n\022AzureNodePoolErro"
+          + "r\022\017\n\007message\030\001 \001(\tB\351\001\n!com.google.cloud."
+          + "gkemulticloud.v1B\023AzureResourcesProtoP\001Z"
+          + "Jgoogle.golang.org/genproto/googleapis/c"
+          + "loud/gkemulticloud/v1;gkemulticloud\252\002\035Go"
+          + "ogle.Cloud.GkeMultiCloud.V1\312\002\035Google\\Clo"
+          + "ud\\GkeMultiCloud\\V1\352\002 Google::Cloud::Gke"
+          + "MultiCloud::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -321,6 +332,7 @@ public final class AzureResourcesProto {
               "Networking",
               "ControlPlane",
               "Authorization",
+              "AzureServicesAuthentication",
               "State",
               "Endpoint",
               "Uid",
@@ -436,10 +448,12 @@ public final class AzureResourcesProto {
               "Name",
               "TenantId",
               "ApplicationId",
+              "Reconciling",
               "Annotations",
               "PemCertificate",
               "Uid",
               "CreateTime",
+              "UpdateTime",
             });
     internal_static_google_cloud_gkemulticloud_v1_AzureClient_AnnotationsEntry_descriptor =
         internal_static_google_cloud_gkemulticloud_v1_AzureClient_descriptor
@@ -459,8 +473,16 @@ public final class AzureResourcesProto {
             new java.lang.String[] {
               "AdminUsers",
             });
-    internal_static_google_cloud_gkemulticloud_v1_AzureClusterUser_descriptor =
+    internal_static_google_cloud_gkemulticloud_v1_AzureServicesAuthentication_descriptor =
         getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_gkemulticloud_v1_AzureServicesAuthentication_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkemulticloud_v1_AzureServicesAuthentication_descriptor,
+            new java.lang.String[] {
+              "TenantId", "ApplicationId",
+            });
+    internal_static_google_cloud_gkemulticloud_v1_AzureClusterUser_descriptor =
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_gkemulticloud_v1_AzureClusterUser_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_AzureClusterUser_descriptor,
@@ -468,7 +490,7 @@ public final class AzureResourcesProto {
               "Username",
             });
     internal_static_google_cloud_gkemulticloud_v1_AzureNodePool_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_gkemulticloud_v1_AzureNodePool_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_AzureNodePool_descriptor,
@@ -500,7 +522,7 @@ public final class AzureResourcesProto {
               "Key", "Value",
             });
     internal_static_google_cloud_gkemulticloud_v1_AzureNodeConfig_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_gkemulticloud_v1_AzureNodeConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_AzureNodeConfig_descriptor,
@@ -536,7 +558,7 @@ public final class AzureResourcesProto {
               "Key", "Value",
             });
     internal_static_google_cloud_gkemulticloud_v1_AzureNodePoolAutoscaling_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_gkemulticloud_v1_AzureNodePoolAutoscaling_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_AzureNodePoolAutoscaling_descriptor,
@@ -544,7 +566,7 @@ public final class AzureResourcesProto {
               "MinNodeCount", "MaxNodeCount",
             });
     internal_static_google_cloud_gkemulticloud_v1_AzureServerConfig_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_gkemulticloud_v1_AzureServerConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_AzureServerConfig_descriptor,
@@ -552,7 +574,7 @@ public final class AzureResourcesProto {
               "Name", "ValidVersions", "SupportedAzureRegions",
             });
     internal_static_google_cloud_gkemulticloud_v1_AzureK8sVersionInfo_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_gkemulticloud_v1_AzureK8sVersionInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_AzureK8sVersionInfo_descriptor,
@@ -560,7 +582,7 @@ public final class AzureResourcesProto {
               "Version",
             });
     internal_static_google_cloud_gkemulticloud_v1_AzureSshConfig_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_gkemulticloud_v1_AzureSshConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_AzureSshConfig_descriptor,
@@ -568,7 +590,7 @@ public final class AzureResourcesProto {
               "AuthorizedKey",
             });
     internal_static_google_cloud_gkemulticloud_v1_AzureClusterResources_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_gkemulticloud_v1_AzureClusterResources_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_AzureClusterResources_descriptor,
@@ -576,7 +598,7 @@ public final class AzureResourcesProto {
               "NetworkSecurityGroupId", "ControlPlaneApplicationSecurityGroupId",
             });
     internal_static_google_cloud_gkemulticloud_v1_AzureClusterError_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_gkemulticloud_v1_AzureClusterError_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_AzureClusterError_descriptor,
@@ -584,7 +606,7 @@ public final class AzureResourcesProto {
               "Message",
             });
     internal_static_google_cloud_gkemulticloud_v1_AzureNodePoolError_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_gkemulticloud_v1_AzureNodePoolError_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_AzureNodePoolError_descriptor,

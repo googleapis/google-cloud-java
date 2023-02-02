@@ -31,7 +31,7 @@ public interface ListAwsClustersRequestOrBuilder
    * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resources.
    * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
-   * for more details on GCP resource names.
+   * for more details on Google Cloud Platform resource names.
    * </pre>
    *
    * <code>
@@ -49,7 +49,7 @@ public interface ListAwsClustersRequestOrBuilder
    * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resources.
    * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
-   * for more details on GCP resource names.
+   * for more details on Google Cloud Platform resource names.
    * </pre>
    *
    * <code>

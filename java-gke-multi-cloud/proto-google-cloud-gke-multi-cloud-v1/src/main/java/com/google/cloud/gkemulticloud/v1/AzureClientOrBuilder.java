@@ -110,6 +110,19 @@ public interface AzureClientOrBuilder
    *
    *
    * <pre>
+   * Output only. If set, there are currently pending changes to the client.
+   * </pre>
+   *
+   * <code>bool reconciling = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The reconciling.
+   */
+  boolean getReconciling();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Annotations on the resource.
    * This field has the same restrictions as Kubernetes annotations.
    * The total size of all keys and values combined is limited to 256k.
@@ -291,4 +304,42 @@ public interface AzureClientOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time at which this client was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  boolean hasUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time at which this client was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  com.google.protobuf.Timestamp getUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time at which this client was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 }

@@ -204,8 +204,8 @@ public class AwsClustersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource on a given GCP
-   * project and region.
+   * Creates a new [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource on a given Google
+   * Cloud Platform project and region.
    *
    * <p>If successful, the response contains a newly created
    * [Operation][google.longrunning.Operation] resource that can be described to track the status of
@@ -256,8 +256,8 @@ public class AwsClustersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource on a given GCP
-   * project and region.
+   * Creates a new [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource on a given Google
+   * Cloud Platform project and region.
    *
    * <p>If successful, the response contains a newly created
    * [Operation][google.longrunning.Operation] resource that can be described to track the status of
@@ -308,8 +308,8 @@ public class AwsClustersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource on a given GCP
-   * project and region.
+   * Creates a new [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource on a given Google
+   * Cloud Platform project and region.
    *
    * <p>If successful, the response contains a newly created
    * [Operation][google.longrunning.Operation] resource that can be described to track the status of
@@ -345,8 +345,8 @@ public class AwsClustersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource on a given GCP
-   * project and region.
+   * Creates a new [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource on a given Google
+   * Cloud Platform project and region.
    *
    * <p>If successful, the response contains a newly created
    * [Operation][google.longrunning.Operation] resource that can be described to track the status of
@@ -382,8 +382,8 @@ public class AwsClustersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource on a given GCP
-   * project and region.
+   * Creates a new [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource on a given Google
+   * Cloud Platform project and region.
    *
    * <p>If successful, the response contains a newly created
    * [Operation][google.longrunning.Operation] resource that can be described to track the status of
@@ -579,7 +579,7 @@ public class AwsClustersClient implements BackgroundResource {
    *     <p>`AwsCluster` names are formatted as
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;`.
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
-   *     details on GCP resource names.
+   *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AwsCluster getAwsCluster(AwsClusterName name) {
@@ -611,7 +611,7 @@ public class AwsClustersClient implements BackgroundResource {
    *     <p>`AwsCluster` names are formatted as
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;`.
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
-   *     details on GCP resource names.
+   *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AwsCluster getAwsCluster(String name) {
@@ -699,7 +699,7 @@ public class AwsClustersClient implements BackgroundResource {
    *     [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resources.
    *     <p>Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
-   *     details on GCP resource names.
+   *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAwsClustersPagedResponse listAwsClusters(LocationName parent) {
@@ -735,7 +735,7 @@ public class AwsClustersClient implements BackgroundResource {
    *     [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resources.
    *     <p>Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
-   *     details on GCP resource names.
+   *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAwsClustersPagedResponse listAwsClusters(String parent) {
@@ -881,7 +881,7 @@ public class AwsClustersClient implements BackgroundResource {
    *     <p>`AwsCluster` names are formatted as
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;`.
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
-   *     details on GCP resource names.
+   *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteAwsClusterAsync(
@@ -921,7 +921,7 @@ public class AwsClustersClient implements BackgroundResource {
    *     <p>`AwsCluster` names are formatted as
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;`.
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
-   *     details on GCP resource names.
+   *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteAwsClusterAsync(String name) {

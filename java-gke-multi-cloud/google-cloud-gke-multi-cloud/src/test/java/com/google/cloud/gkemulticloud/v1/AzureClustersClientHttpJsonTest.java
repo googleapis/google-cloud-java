@@ -92,10 +92,12 @@ public class AzureClustersClientHttpJsonTest {
             .setName(AzureClientName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLIENT]").toString())
             .setTenantId("tenantId-1306693787")
             .setApplicationId("applicationId-1011352949")
+            .setReconciling(true)
             .putAllAnnotations(new HashMap<String, String>())
             .setPemCertificate("pemCertificate153491807")
             .setUid("uid115792")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -152,10 +154,12 @@ public class AzureClustersClientHttpJsonTest {
             .setName(AzureClientName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLIENT]").toString())
             .setTenantId("tenantId-1306693787")
             .setApplicationId("applicationId-1011352949")
+            .setReconciling(true)
             .putAllAnnotations(new HashMap<String, String>())
             .setPemCertificate("pemCertificate153491807")
             .setUid("uid115792")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -212,10 +216,12 @@ public class AzureClustersClientHttpJsonTest {
             .setName(AzureClientName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLIENT]").toString())
             .setTenantId("tenantId-1306693787")
             .setApplicationId("applicationId-1011352949")
+            .setReconciling(true)
             .putAllAnnotations(new HashMap<String, String>())
             .setPemCertificate("pemCertificate153491807")
             .setUid("uid115792")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -262,10 +268,12 @@ public class AzureClustersClientHttpJsonTest {
             .setName(AzureClientName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLIENT]").toString())
             .setTenantId("tenantId-1306693787")
             .setApplicationId("applicationId-1011352949")
+            .setReconciling(true)
             .putAllAnnotations(new HashMap<String, String>())
             .setPemCertificate("pemCertificate153491807")
             .setUid("uid115792")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -507,6 +515,7 @@ public class AzureClustersClientHttpJsonTest {
             .setNetworking(AzureClusterNetworking.newBuilder().build())
             .setControlPlane(AzureControlPlane.newBuilder().build())
             .setAuthorization(AzureAuthorization.newBuilder().build())
+            .setAzureServicesAuthentication(AzureServicesAuthentication.newBuilder().build())
             .setEndpoint("endpoint1741102485")
             .setUid("uid115792")
             .setReconciling(true)
@@ -582,6 +591,7 @@ public class AzureClustersClientHttpJsonTest {
             .setNetworking(AzureClusterNetworking.newBuilder().build())
             .setControlPlane(AzureControlPlane.newBuilder().build())
             .setAuthorization(AzureAuthorization.newBuilder().build())
+            .setAzureServicesAuthentication(AzureServicesAuthentication.newBuilder().build())
             .setEndpoint("endpoint1741102485")
             .setUid("uid115792")
             .setReconciling(true)
@@ -657,6 +667,7 @@ public class AzureClustersClientHttpJsonTest {
             .setNetworking(AzureClusterNetworking.newBuilder().build())
             .setControlPlane(AzureControlPlane.newBuilder().build())
             .setAuthorization(AzureAuthorization.newBuilder().build())
+            .setAzureServicesAuthentication(AzureServicesAuthentication.newBuilder().build())
             .setEndpoint("endpoint1741102485")
             .setUid("uid115792")
             .setReconciling(true)
@@ -690,6 +701,7 @@ public class AzureClustersClientHttpJsonTest {
             .setNetworking(AzureClusterNetworking.newBuilder().build())
             .setControlPlane(AzureControlPlane.newBuilder().build())
             .setAuthorization(AzureAuthorization.newBuilder().build())
+            .setAzureServicesAuthentication(AzureServicesAuthentication.newBuilder().build())
             .setEndpoint("endpoint1741102485")
             .setUid("uid115792")
             .setReconciling(true)
@@ -743,6 +755,7 @@ public class AzureClustersClientHttpJsonTest {
               .setNetworking(AzureClusterNetworking.newBuilder().build())
               .setControlPlane(AzureControlPlane.newBuilder().build())
               .setAuthorization(AzureAuthorization.newBuilder().build())
+              .setAzureServicesAuthentication(AzureServicesAuthentication.newBuilder().build())
               .setEndpoint("endpoint1741102485")
               .setUid("uid115792")
               .setReconciling(true)
@@ -777,6 +790,7 @@ public class AzureClustersClientHttpJsonTest {
             .setNetworking(AzureClusterNetworking.newBuilder().build())
             .setControlPlane(AzureControlPlane.newBuilder().build())
             .setAuthorization(AzureAuthorization.newBuilder().build())
+            .setAzureServicesAuthentication(AzureServicesAuthentication.newBuilder().build())
             .setEndpoint("endpoint1741102485")
             .setUid("uid115792")
             .setReconciling(true)
@@ -842,6 +856,7 @@ public class AzureClustersClientHttpJsonTest {
             .setNetworking(AzureClusterNetworking.newBuilder().build())
             .setControlPlane(AzureControlPlane.newBuilder().build())
             .setAuthorization(AzureAuthorization.newBuilder().build())
+            .setAzureServicesAuthentication(AzureServicesAuthentication.newBuilder().build())
             .setEndpoint("endpoint1741102485")
             .setUid("uid115792")
             .setReconciling(true)

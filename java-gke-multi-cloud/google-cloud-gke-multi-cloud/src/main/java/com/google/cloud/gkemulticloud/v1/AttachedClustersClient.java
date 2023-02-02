@@ -212,7 +212,7 @@ public class AttachedClustersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource on a
-   * given GCP project and region.
+   * given Google Cloud Platform project and region.
    *
    * <p>If successful, the response contains a newly created
    * [Operation][google.longrunning.Operation] resource that can be described to track the status of
@@ -266,7 +266,7 @@ public class AttachedClustersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource on a
-   * given GCP project and region.
+   * given Google Cloud Platform project and region.
    *
    * <p>If successful, the response contains a newly created
    * [Operation][google.longrunning.Operation] resource that can be described to track the status of
@@ -320,7 +320,7 @@ public class AttachedClustersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource on a
-   * given GCP project and region.
+   * given Google Cloud Platform project and region.
    *
    * <p>If successful, the response contains a newly created
    * [Operation][google.longrunning.Operation] resource that can be described to track the status of
@@ -357,7 +357,7 @@ public class AttachedClustersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource on a
-   * given GCP project and region.
+   * given Google Cloud Platform project and region.
    *
    * <p>If successful, the response contains a newly created
    * [Operation][google.longrunning.Operation] resource that can be described to track the status of
@@ -394,7 +394,7 @@ public class AttachedClustersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource on a
-   * given GCP project and region.
+   * given Google Cloud Platform project and region.
    *
    * <p>If successful, the response contains a newly created
    * [Operation][google.longrunning.Operation] resource that can be described to track the status of
@@ -800,7 +800,7 @@ public class AttachedClustersClient implements BackgroundResource {
    *     <p>`AttachedCluster` names are formatted as
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/attachedClusters/&lt;cluster-id&gt;`.
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
-   *     details on GCP resource names.
+   *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AttachedCluster getAttachedCluster(AttachedClusterName name) {
@@ -835,7 +835,7 @@ public class AttachedClustersClient implements BackgroundResource {
    *     <p>`AttachedCluster` names are formatted as
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/attachedClusters/&lt;cluster-id&gt;`.
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
-   *     details on GCP resource names.
+   *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AttachedCluster getAttachedCluster(String name) {
@@ -931,7 +931,7 @@ public class AttachedClustersClient implements BackgroundResource {
    *     [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resources.
    *     <p>Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
-   *     details on GCP resource names.
+   *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAttachedClustersPagedResponse listAttachedClusters(LocationName parent) {
@@ -968,7 +968,7 @@ public class AttachedClustersClient implements BackgroundResource {
    *     [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resources.
    *     <p>Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
-   *     details on GCP resource names.
+   *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAttachedClustersPagedResponse listAttachedClusters(String parent) {
@@ -1115,7 +1115,7 @@ public class AttachedClustersClient implements BackgroundResource {
    *     <p>`AttachedCluster` names are formatted as
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/attachedClusters/&lt;cluster-id&gt;`.
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
-   *     details on GCP resource names.
+   *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteAttachedClusterAsync(
@@ -1155,7 +1155,7 @@ public class AttachedClustersClient implements BackgroundResource {
    *     <p>`AttachedCluster` names are formatted as
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/attachedClusters/&lt;cluster-id&gt;`.
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
-   *     details on GCP resource names.
+   *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteAttachedClusterAsync(String name) {
@@ -1432,15 +1432,15 @@ public class AttachedClustersClient implements BackgroundResource {
    *     <p>Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud resource names.
-   * @param attachedClusterId Required. A client provided ID the resource. Must be unique within the
-   *     parent resource.
+   * @param attachedClusterId Required. A client provided ID of the resource. Must be unique within
+   *     the parent resource.
    *     <p>The provided ID will be part of the
    *     [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource name formatted as
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/attachedClusters/&lt;cluster-id&gt;`.
    *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    *     <p>When generating an install manifest for importing an existing Membership resource, the
    *     attached_cluster_id field must be the Membership id.
-   *     <p>Membership names are formatted as `resource name formatted as
+   *     <p>Membership names are formatted as
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/memberships/&lt;membership-id&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1479,15 +1479,15 @@ public class AttachedClustersClient implements BackgroundResource {
    *     <p>Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud resource names.
-   * @param attachedClusterId Required. A client provided ID the resource. Must be unique within the
-   *     parent resource.
+   * @param attachedClusterId Required. A client provided ID of the resource. Must be unique within
+   *     the parent resource.
    *     <p>The provided ID will be part of the
    *     [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource name formatted as
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/attachedClusters/&lt;cluster-id&gt;`.
    *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    *     <p>When generating an install manifest for importing an existing Membership resource, the
    *     attached_cluster_id field must be the Membership id.
-   *     <p>Membership names are formatted as `resource name formatted as
+   *     <p>Membership names are formatted as
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/memberships/&lt;membership-id&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

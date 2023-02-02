@@ -81,7 +81,7 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
    * `AzureCluster` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
-   * for more details on GCP resource names.
+   * for more details on Google Cloud Platform resource names.
    * </pre>
    *
    * <code>
@@ -111,7 +111,7 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
    * `AzureCluster` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
-   * for more details on GCP resource names.
+   * for more details on Google Cloud Platform resource names.
    * </pre>
    *
    * <code>
@@ -653,7 +653,7 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
      * `AzureCluster` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
-     * for more details on GCP resource names.
+     * for more details on Google Cloud Platform resource names.
      * </pre>
      *
      * <code>
@@ -682,7 +682,7 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
      * `AzureCluster` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
-     * for more details on GCP resource names.
+     * for more details on Google Cloud Platform resource names.
      * </pre>
      *
      * <code>
@@ -711,7 +711,7 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
      * `AzureCluster` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
-     * for more details on GCP resource names.
+     * for more details on Google Cloud Platform resource names.
      * </pre>
      *
      * <code>
@@ -739,7 +739,7 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
      * `AzureCluster` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
-     * for more details on GCP resource names.
+     * for more details on Google Cloud Platform resource names.
      * </pre>
      *
      * <code>
@@ -763,7 +763,7 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
      * `AzureCluster` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
-     * for more details on GCP resource names.
+     * for more details on Google Cloud Platform resource names.
      * </pre>
      *
      * <code>

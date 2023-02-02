@@ -577,7 +577,7 @@ public class AzureClustersClient implements BackgroundResource {
    *     [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources.
    *     <p>Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
-   *     details on GCP resource names.
+   *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAzureClientsPagedResponse listAzureClients(LocationName parent) {
@@ -613,7 +613,7 @@ public class AzureClustersClient implements BackgroundResource {
    *     [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources.
    *     <p>Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
-   *     details on GCP resource names.
+   *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAzureClientsPagedResponse listAzureClients(String parent) {
@@ -926,7 +926,7 @@ public class AzureClustersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource on a given
-   * GCP project and region.
+   * Google Cloud Platform project and region.
    *
    * <p>If successful, the response contains a newly created
    * [Operation][google.longrunning.Operation] resource that can be described to track the status of
@@ -978,7 +978,7 @@ public class AzureClustersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource on a given
-   * GCP project and region.
+   * Google Cloud Platform project and region.
    *
    * <p>If successful, the response contains a newly created
    * [Operation][google.longrunning.Operation] resource that can be described to track the status of
@@ -1030,7 +1030,7 @@ public class AzureClustersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource on a given
-   * GCP project and region.
+   * Google Cloud Platform project and region.
    *
    * <p>If successful, the response contains a newly created
    * [Operation][google.longrunning.Operation] resource that can be described to track the status of
@@ -1067,7 +1067,7 @@ public class AzureClustersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource on a given
-   * GCP project and region.
+   * Google Cloud Platform project and region.
    *
    * <p>If successful, the response contains a newly created
    * [Operation][google.longrunning.Operation] resource that can be described to track the status of
@@ -1104,7 +1104,7 @@ public class AzureClustersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource on a given
-   * GCP project and region.
+   * Google Cloud Platform project and region.
    *
    * <p>If successful, the response contains a newly created
    * [Operation][google.longrunning.Operation] resource that can be described to track the status of
@@ -1164,7 +1164,9 @@ public class AzureClustersClient implements BackgroundResource {
    *     [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]:
    *     <p>&#42; `description`. &#42; `azureClient`. &#42; `control_plane.version`. &#42;
    *     `control_plane.vm_size`. &#42; `annotations`. &#42; `authorization.admin_users`. &#42;
-   *     `control_plane.root_volume.size_gib`. &#42; `control_plane.proxy_config`. &#42;
+   *     `control_plane.root_volume.size_gib`. &#42; `azure_services_authentication`. &#42;
+   *     `azure_services_authentication.tenant_id`. &#42;
+   *     `azure_services_authentication.application_id`. &#42; `control_plane.proxy_config`. &#42;
    *     `control_plane.proxy_config.resource_group_id`. &#42;
    *     `control_plane.proxy_config.secret_id`. &#42; `control_plane.ssh_config.authorized_key`.
    *     &#42; `logging_config.component_config.enable_components` &#42;
@@ -1296,7 +1298,7 @@ public class AzureClustersClient implements BackgroundResource {
    *     <p>`AzureCluster` names are formatted as
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
-   *     details on GCP resource names.
+   *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AzureCluster getAzureCluster(AzureClusterName name) {
@@ -1328,7 +1330,7 @@ public class AzureClustersClient implements BackgroundResource {
    *     <p>`AzureCluster` names are formatted as
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
-   *     details on GCP resource names.
+   *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AzureCluster getAzureCluster(String name) {
@@ -1417,7 +1419,7 @@ public class AzureClustersClient implements BackgroundResource {
    *     [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resources.
    *     <p>Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
-   *     details on GCP resource names.
+   *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAzureClustersPagedResponse listAzureClusters(LocationName parent) {
@@ -1453,7 +1455,7 @@ public class AzureClustersClient implements BackgroundResource {
    *     [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resources.
    *     <p>Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
-   *     details on GCP resource names.
+   *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAzureClustersPagedResponse listAzureClusters(String parent) {
@@ -1600,7 +1602,7 @@ public class AzureClustersClient implements BackgroundResource {
    *     <p>`AzureCluster` names are formatted as
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
-   *     details on GCP resource names.
+   *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteAzureClusterAsync(
@@ -1642,7 +1644,7 @@ public class AzureClustersClient implements BackgroundResource {
    *     <p>`AzureCluster` names are formatted as
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
-   *     details on GCP resource names.
+   *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteAzureClusterAsync(String name) {

@@ -251,6 +251,24 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int RECONCILING_FIELD_NUMBER = 9;
+  private boolean reconciling_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If set, there are currently pending changes to the client.
+   * </pre>
+   *
+   * <code>bool reconciling = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The reconciling.
+   */
+  @java.lang.Override
+  public boolean getReconciling() {
+    return reconciling_;
+  }
+
   public static final int ANNOTATIONS_FIELD_NUMBER = 8;
 
   private static final class AnnotationsDefaultEntryHolder {
@@ -537,6 +555,55 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
+  public static final int UPDATE_TIME_FIELD_NUMBER = 10;
+  private com.google.protobuf.Timestamp updateTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time at which this client was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateTime() {
+    return updateTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time at which this client was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getUpdateTime() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time at which this client was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -571,6 +638,12 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetAnnotations(), AnnotationsDefaultEntryHolder.defaultEntry, 8);
+    if (reconciling_ != false) {
+      output.writeBool(9, reconciling_);
+    }
+    if (updateTime_ != null) {
+      output.writeMessage(10, getUpdateTime());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -608,6 +681,12 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, annotations__);
     }
+    if (reconciling_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, reconciling_);
+    }
+    if (updateTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getUpdateTime());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -627,12 +706,17 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
     if (!getName().equals(other.getName())) return false;
     if (!getTenantId().equals(other.getTenantId())) return false;
     if (!getApplicationId().equals(other.getApplicationId())) return false;
+    if (getReconciling() != other.getReconciling()) return false;
     if (!internalGetAnnotations().equals(other.internalGetAnnotations())) return false;
     if (!getPemCertificate().equals(other.getPemCertificate())) return false;
     if (!getUid().equals(other.getUid())) return false;
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
+    if (hasUpdateTime()) {
+      if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -651,6 +735,8 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getTenantId().hashCode();
     hash = (37 * hash) + APPLICATION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getApplicationId().hashCode();
+    hash = (37 * hash) + RECONCILING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReconciling());
     if (!internalGetAnnotations().getMap().isEmpty()) {
       hash = (37 * hash) + ANNOTATIONS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetAnnotations().hashCode();
@@ -662,6 +748,10 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    if (hasUpdateTime()) {
+      hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateTime().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -833,6 +923,7 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
       name_ = "";
       tenantId_ = "";
       applicationId_ = "";
+      reconciling_ = false;
       internalGetMutableAnnotations().clear();
       pemCertificate_ = "";
       uid_ = "";
@@ -840,6 +931,11 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
+      }
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
+        updateTimeBuilder_ = null;
       }
       return this;
     }
@@ -887,17 +983,23 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
         result.applicationId_ = applicationId_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.reconciling_ = reconciling_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.annotations_ = internalGetAnnotations();
         result.annotations_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.pemCertificate_ = pemCertificate_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.uid_ = uid_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
       }
     }
 
@@ -961,20 +1063,26 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (other.getReconciling() != false) {
+        setReconciling(other.getReconciling());
+      }
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       if (!other.getPemCertificate().isEmpty()) {
         pemCertificate_ = other.pemCertificate_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getUid().isEmpty()) {
         uid_ = other.uid_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
+      }
+      if (other.hasUpdateTime()) {
+        mergeUpdateTime(other.getUpdateTime());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1023,19 +1131,19 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 uid_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 50
             case 58:
               {
                 pemCertificate_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             case 66:
@@ -1047,9 +1155,21 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableAnnotations()
                     .getMutableMap()
                     .put(annotations__.getKey(), annotations__.getValue());
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 66
+            case 72:
+              {
+                reconciling_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 72
+            case 82:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1407,6 +1527,59 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private boolean reconciling_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If set, there are currently pending changes to the client.
+     * </pre>
+     *
+     * <code>bool reconciling = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The reconciling.
+     */
+    @java.lang.Override
+    public boolean getReconciling() {
+      return reconciling_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If set, there are currently pending changes to the client.
+     * </pre>
+     *
+     * <code>bool reconciling = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The reconciling to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReconciling(boolean value) {
+
+      reconciling_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If set, there are currently pending changes to the client.
+     * </pre>
+     *
+     * <code>bool reconciling = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReconciling() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      reconciling_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> annotations_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -1427,7 +1600,7 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
       if (!annotations_.isMutable()) {
         annotations_ = annotations_.copy();
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return annotations_;
     }
@@ -1544,7 +1717,7 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearAnnotations() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
@@ -1575,7 +1748,7 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       return internalGetMutableAnnotations().getMutableMap();
     }
     /**
@@ -1603,7 +1776,7 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableAnnotations().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -1625,7 +1798,7 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       return this;
     }
 
@@ -1691,7 +1864,7 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       pemCertificate_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1708,7 +1881,7 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPemCertificate() {
       pemCertificate_ = getDefaultInstance().getPemCertificate();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1730,7 +1903,7 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       pemCertificate_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1797,7 +1970,7 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       uid_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1814,7 +1987,7 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearUid() {
       uid_ = getDefaultInstance().getUid();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1836,7 +2009,7 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       uid_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1861,7 +2034,7 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -1905,7 +2078,7 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1926,7 +2099,7 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1943,7 +2116,7 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -1953,7 +2126,7 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1969,7 +2142,7 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -1990,7 +2163,7 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2040,6 +2213,207 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
         createTime_ = null;
       }
       return createTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp updateTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this client was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the updateTime field is set.
+     */
+    public boolean hasUpdateTime() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this client was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The updateTime.
+     */
+    public com.google.protobuf.Timestamp getUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      } else {
+        return updateTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this client was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateTime_ = value;
+      } else {
+        updateTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this client was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = builderForValue.build();
+      } else {
+        updateTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this client was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
+        } else {
+          updateTime_ = value;
+        }
+      } else {
+        updateTimeBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this client was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearUpdateTime() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
+        updateTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this client was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getUpdateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this client was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+      if (updateTimeBuilder_ != null) {
+        return updateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this client was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getUpdateTimeFieldBuilder() {
+      if (updateTimeBuilder_ == null) {
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
+        updateTime_ = null;
+      }
+      return updateTimeBuilder_;
     }
 
     @java.lang.Override

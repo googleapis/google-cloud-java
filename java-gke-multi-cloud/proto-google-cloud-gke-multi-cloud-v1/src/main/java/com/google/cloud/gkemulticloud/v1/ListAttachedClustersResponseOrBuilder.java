@@ -28,7 +28,7 @@ public interface ListAttachedClustersResponseOrBuilder
    *
    * <pre>
    * A list of [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]
-   * resources in the specified GCP project and region region.
+   * resources in the specified Google Cloud Platform project and region region.
    * </pre>
    *
    * <code>repeated .google.cloud.gkemulticloud.v1.AttachedCluster attached_clusters = 1;</code>
@@ -39,7 +39,7 @@ public interface ListAttachedClustersResponseOrBuilder
    *
    * <pre>
    * A list of [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]
-   * resources in the specified GCP project and region region.
+   * resources in the specified Google Cloud Platform project and region region.
    * </pre>
    *
    * <code>repeated .google.cloud.gkemulticloud.v1.AttachedCluster attached_clusters = 1;</code>
@@ -50,7 +50,7 @@ public interface ListAttachedClustersResponseOrBuilder
    *
    * <pre>
    * A list of [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]
-   * resources in the specified GCP project and region region.
+   * resources in the specified Google Cloud Platform project and region region.
    * </pre>
    *
    * <code>repeated .google.cloud.gkemulticloud.v1.AttachedCluster attached_clusters = 1;</code>
@@ -61,7 +61,7 @@ public interface ListAttachedClustersResponseOrBuilder
    *
    * <pre>
    * A list of [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]
-   * resources in the specified GCP project and region region.
+   * resources in the specified Google Cloud Platform project and region region.
    * </pre>
    *
    * <code>repeated .google.cloud.gkemulticloud.v1.AttachedCluster attached_clusters = 1;</code>
@@ -73,7 +73,7 @@ public interface ListAttachedClustersResponseOrBuilder
    *
    * <pre>
    * A list of [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]
-   * resources in the specified GCP project and region region.
+   * resources in the specified Google Cloud Platform project and region region.
    * </pre>
    *
    * <code>repeated .google.cloud.gkemulticloud.v1.AttachedCluster attached_clusters = 1;</code>

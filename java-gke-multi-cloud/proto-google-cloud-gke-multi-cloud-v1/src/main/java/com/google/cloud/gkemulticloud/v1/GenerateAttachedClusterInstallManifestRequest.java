@@ -146,7 +146,7 @@ public final class GenerateAttachedClusterInstallManifestRequest
    *
    *
    * <pre>
-   * Required. A client provided ID the resource. Must be unique within the
+   * Required. A client provided ID of the resource. Must be unique within the
    * parent resource.
    * The provided ID will be part of the
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource
@@ -155,7 +155,7 @@ public final class GenerateAttachedClusterInstallManifestRequest
    * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * When generating an install manifest for importing an existing Membership
    * resource, the attached_cluster_id field must be the Membership id.
-   * Membership names are formatted as `resource name formatted as
+   * Membership names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/memberships/&lt;membership-id&gt;`.
    * </pre>
    *
@@ -179,7 +179,7 @@ public final class GenerateAttachedClusterInstallManifestRequest
    *
    *
    * <pre>
-   * Required. A client provided ID the resource. Must be unique within the
+   * Required. A client provided ID of the resource. Must be unique within the
    * parent resource.
    * The provided ID will be part of the
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource
@@ -188,7 +188,7 @@ public final class GenerateAttachedClusterInstallManifestRequest
    * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * When generating an install manifest for importing an existing Membership
    * resource, the attached_cluster_id field must be the Membership id.
-   * Membership names are formatted as `resource name formatted as
+   * Membership names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/memberships/&lt;membership-id&gt;`.
    * </pre>
    *
@@ -826,7 +826,7 @@ public final class GenerateAttachedClusterInstallManifestRequest
      *
      *
      * <pre>
-     * Required. A client provided ID the resource. Must be unique within the
+     * Required. A client provided ID of the resource. Must be unique within the
      * parent resource.
      * The provided ID will be part of the
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource
@@ -835,7 +835,7 @@ public final class GenerateAttachedClusterInstallManifestRequest
      * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
      * When generating an install manifest for importing an existing Membership
      * resource, the attached_cluster_id field must be the Membership id.
-     * Membership names are formatted as `resource name formatted as
+     * Membership names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/memberships/&lt;membership-id&gt;`.
      * </pre>
      *
@@ -858,7 +858,7 @@ public final class GenerateAttachedClusterInstallManifestRequest
      *
      *
      * <pre>
-     * Required. A client provided ID the resource. Must be unique within the
+     * Required. A client provided ID of the resource. Must be unique within the
      * parent resource.
      * The provided ID will be part of the
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource
@@ -867,7 +867,7 @@ public final class GenerateAttachedClusterInstallManifestRequest
      * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
      * When generating an install manifest for importing an existing Membership
      * resource, the attached_cluster_id field must be the Membership id.
-     * Membership names are formatted as `resource name formatted as
+     * Membership names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/memberships/&lt;membership-id&gt;`.
      * </pre>
      *
@@ -890,7 +890,7 @@ public final class GenerateAttachedClusterInstallManifestRequest
      *
      *
      * <pre>
-     * Required. A client provided ID the resource. Must be unique within the
+     * Required. A client provided ID of the resource. Must be unique within the
      * parent resource.
      * The provided ID will be part of the
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource
@@ -899,7 +899,7 @@ public final class GenerateAttachedClusterInstallManifestRequest
      * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
      * When generating an install manifest for importing an existing Membership
      * resource, the attached_cluster_id field must be the Membership id.
-     * Membership names are formatted as `resource name formatted as
+     * Membership names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/memberships/&lt;membership-id&gt;`.
      * </pre>
      *
@@ -921,7 +921,7 @@ public final class GenerateAttachedClusterInstallManifestRequest
      *
      *
      * <pre>
-     * Required. A client provided ID the resource. Must be unique within the
+     * Required. A client provided ID of the resource. Must be unique within the
      * parent resource.
      * The provided ID will be part of the
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource
@@ -930,7 +930,7 @@ public final class GenerateAttachedClusterInstallManifestRequest
      * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
      * When generating an install manifest for importing an existing Membership
      * resource, the attached_cluster_id field must be the Membership id.
-     * Membership names are formatted as `resource name formatted as
+     * Membership names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/memberships/&lt;membership-id&gt;`.
      * </pre>
      *
@@ -948,7 +948,7 @@ public final class GenerateAttachedClusterInstallManifestRequest
      *
      *
      * <pre>
-     * Required. A client provided ID the resource. Must be unique within the
+     * Required. A client provided ID of the resource. Must be unique within the
      * parent resource.
      * The provided ID will be part of the
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource
@@ -957,7 +957,7 @@ public final class GenerateAttachedClusterInstallManifestRequest
      * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
      * When generating an install manifest for importing an existing Membership
      * resource, the attached_cluster_id field must be the Membership id.
-     * Membership names are formatted as `resource name formatted as
+     * Membership names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/memberships/&lt;membership-id&gt;`.
      * </pre>
      *
