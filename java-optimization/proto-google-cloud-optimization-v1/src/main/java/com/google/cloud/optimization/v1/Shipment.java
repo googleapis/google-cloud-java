@@ -669,7 +669,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated: Use [VisitRequest.load_demands][] instead.
+     * Deprecated: Use
+     * [VisitRequest.load_demands][google.cloud.optimization.v1.Shipment.VisitRequest.load_demands]
+     * instead.
      * </pre>
      *
      * <code>
@@ -682,7 +684,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated: Use [VisitRequest.load_demands][] instead.
+     * Deprecated: Use
+     * [VisitRequest.load_demands][google.cloud.optimization.v1.Shipment.VisitRequest.load_demands]
+     * instead.
      * </pre>
      *
      * <code>
@@ -695,7 +699,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated: Use [VisitRequest.load_demands][] instead.
+     * Deprecated: Use
+     * [VisitRequest.load_demands][google.cloud.optimization.v1.Shipment.VisitRequest.load_demands]
+     * instead.
      * </pre>
      *
      * <code>
@@ -708,7 +714,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated: Use [VisitRequest.load_demands][] instead.
+     * Deprecated: Use
+     * [VisitRequest.load_demands][google.cloud.optimization.v1.Shipment.VisitRequest.load_demands]
+     * instead.
      * </pre>
      *
      * <code>
@@ -722,7 +730,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated: Use [VisitRequest.load_demands][] instead.
+     * Deprecated: Use
+     * [VisitRequest.load_demands][google.cloud.optimization.v1.Shipment.VisitRequest.load_demands]
+     * instead.
      * </pre>
      *
      * <code>
@@ -1572,7 +1582,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated: Use [VisitRequest.load_demands][] instead.
+     * Deprecated: Use
+     * [VisitRequest.load_demands][google.cloud.optimization.v1.Shipment.VisitRequest.load_demands]
+     * instead.
      * </pre>
      *
      * <code>
@@ -1588,7 +1600,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated: Use [VisitRequest.load_demands][] instead.
+     * Deprecated: Use
+     * [VisitRequest.load_demands][google.cloud.optimization.v1.Shipment.VisitRequest.load_demands]
+     * instead.
      * </pre>
      *
      * <code>
@@ -1605,7 +1619,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated: Use [VisitRequest.load_demands][] instead.
+     * Deprecated: Use
+     * [VisitRequest.load_demands][google.cloud.optimization.v1.Shipment.VisitRequest.load_demands]
+     * instead.
      * </pre>
      *
      * <code>
@@ -1621,7 +1637,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated: Use [VisitRequest.load_demands][] instead.
+     * Deprecated: Use
+     * [VisitRequest.load_demands][google.cloud.optimization.v1.Shipment.VisitRequest.load_demands]
+     * instead.
      * </pre>
      *
      * <code>
@@ -1637,7 +1655,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated: Use [VisitRequest.load_demands][] instead.
+     * Deprecated: Use
+     * [VisitRequest.load_demands][google.cloud.optimization.v1.Shipment.VisitRequest.load_demands]
+     * instead.
      * </pre>
      *
      * <code>
@@ -4829,7 +4849,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Deprecated: Use [VisitRequest.load_demands][] instead.
+       * Deprecated: Use
+       * [VisitRequest.load_demands][google.cloud.optimization.v1.Shipment.VisitRequest.load_demands]
+       * instead.
        * </pre>
        *
        * <code>
@@ -4848,7 +4870,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Deprecated: Use [VisitRequest.load_demands][] instead.
+       * Deprecated: Use
+       * [VisitRequest.load_demands][google.cloud.optimization.v1.Shipment.VisitRequest.load_demands]
+       * instead.
        * </pre>
        *
        * <code>
@@ -4867,7 +4891,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Deprecated: Use [VisitRequest.load_demands][] instead.
+       * Deprecated: Use
+       * [VisitRequest.load_demands][google.cloud.optimization.v1.Shipment.VisitRequest.load_demands]
+       * instead.
        * </pre>
        *
        * <code>
@@ -4886,7 +4912,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Deprecated: Use [VisitRequest.load_demands][] instead.
+       * Deprecated: Use
+       * [VisitRequest.load_demands][google.cloud.optimization.v1.Shipment.VisitRequest.load_demands]
+       * instead.
        * </pre>
        *
        * <code>
@@ -4912,7 +4940,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Deprecated: Use [VisitRequest.load_demands][] instead.
+       * Deprecated: Use
+       * [VisitRequest.load_demands][google.cloud.optimization.v1.Shipment.VisitRequest.load_demands]
+       * instead.
        * </pre>
        *
        * <code>
@@ -4935,7 +4965,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Deprecated: Use [VisitRequest.load_demands][] instead.
+       * Deprecated: Use
+       * [VisitRequest.load_demands][google.cloud.optimization.v1.Shipment.VisitRequest.load_demands]
+       * instead.
        * </pre>
        *
        * <code>
@@ -4960,7 +4992,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Deprecated: Use [VisitRequest.load_demands][] instead.
+       * Deprecated: Use
+       * [VisitRequest.load_demands][google.cloud.optimization.v1.Shipment.VisitRequest.load_demands]
+       * instead.
        * </pre>
        *
        * <code>
@@ -4986,7 +5020,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Deprecated: Use [VisitRequest.load_demands][] instead.
+       * Deprecated: Use
+       * [VisitRequest.load_demands][google.cloud.optimization.v1.Shipment.VisitRequest.load_demands]
+       * instead.
        * </pre>
        *
        * <code>
@@ -5009,7 +5045,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Deprecated: Use [VisitRequest.load_demands][] instead.
+       * Deprecated: Use
+       * [VisitRequest.load_demands][google.cloud.optimization.v1.Shipment.VisitRequest.load_demands]
+       * instead.
        * </pre>
        *
        * <code>
@@ -5032,7 +5070,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Deprecated: Use [VisitRequest.load_demands][] instead.
+       * Deprecated: Use
+       * [VisitRequest.load_demands][google.cloud.optimization.v1.Shipment.VisitRequest.load_demands]
+       * instead.
        * </pre>
        *
        * <code>
@@ -5055,7 +5095,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Deprecated: Use [VisitRequest.load_demands][] instead.
+       * Deprecated: Use
+       * [VisitRequest.load_demands][google.cloud.optimization.v1.Shipment.VisitRequest.load_demands]
+       * instead.
        * </pre>
        *
        * <code>
@@ -5077,7 +5119,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Deprecated: Use [VisitRequest.load_demands][] instead.
+       * Deprecated: Use
+       * [VisitRequest.load_demands][google.cloud.optimization.v1.Shipment.VisitRequest.load_demands]
+       * instead.
        * </pre>
        *
        * <code>
@@ -5099,7 +5143,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Deprecated: Use [VisitRequest.load_demands][] instead.
+       * Deprecated: Use
+       * [VisitRequest.load_demands][google.cloud.optimization.v1.Shipment.VisitRequest.load_demands]
+       * instead.
        * </pre>
        *
        * <code>
@@ -5115,7 +5161,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Deprecated: Use [VisitRequest.load_demands][] instead.
+       * Deprecated: Use
+       * [VisitRequest.load_demands][google.cloud.optimization.v1.Shipment.VisitRequest.load_demands]
+       * instead.
        * </pre>
        *
        * <code>
@@ -5135,7 +5183,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Deprecated: Use [VisitRequest.load_demands][] instead.
+       * Deprecated: Use
+       * [VisitRequest.load_demands][google.cloud.optimization.v1.Shipment.VisitRequest.load_demands]
+       * instead.
        * </pre>
        *
        * <code>
@@ -5155,7 +5205,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Deprecated: Use [VisitRequest.load_demands][] instead.
+       * Deprecated: Use
+       * [VisitRequest.load_demands][google.cloud.optimization.v1.Shipment.VisitRequest.load_demands]
+       * instead.
        * </pre>
        *
        * <code>
@@ -5171,7 +5223,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Deprecated: Use [VisitRequest.load_demands][] instead.
+       * Deprecated: Use
+       * [VisitRequest.load_demands][google.cloud.optimization.v1.Shipment.VisitRequest.load_demands]
+       * instead.
        * </pre>
        *
        * <code>
@@ -5189,7 +5243,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Deprecated: Use [VisitRequest.load_demands][] instead.
+       * Deprecated: Use
+       * [VisitRequest.load_demands][google.cloud.optimization.v1.Shipment.VisitRequest.load_demands]
+       * instead.
        * </pre>
        *
        * <code>
@@ -6734,7 +6790,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Deprecated: Use [Shipment.load_demands][] instead.
+   * Deprecated: Use
+   * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+   * instead.
    * </pre>
    *
    * <code>repeated .google.cloud.optimization.v1.CapacityQuantity demands = 3 [deprecated = true];
@@ -6749,7 +6807,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Deprecated: Use [Shipment.load_demands][] instead.
+   * Deprecated: Use
+   * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+   * instead.
    * </pre>
    *
    * <code>repeated .google.cloud.optimization.v1.CapacityQuantity demands = 3 [deprecated = true];
@@ -6765,7 +6825,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Deprecated: Use [Shipment.load_demands][] instead.
+   * Deprecated: Use
+   * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+   * instead.
    * </pre>
    *
    * <code>repeated .google.cloud.optimization.v1.CapacityQuantity demands = 3 [deprecated = true];
@@ -6780,7 +6842,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Deprecated: Use [Shipment.load_demands][] instead.
+   * Deprecated: Use
+   * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+   * instead.
    * </pre>
    *
    * <code>repeated .google.cloud.optimization.v1.CapacityQuantity demands = 3 [deprecated = true];
@@ -6795,7 +6859,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Deprecated: Use [Shipment.load_demands][] instead.
+   * Deprecated: Use
+   * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+   * instead.
    * </pre>
    *
    * <code>repeated .google.cloud.optimization.v1.CapacityQuantity demands = 3 [deprecated = true];
@@ -10330,7 +10396,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated: Use [Shipment.load_demands][] instead.
+     * Deprecated: Use
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * instead.
      * </pre>
      *
      * <code>
@@ -10349,7 +10417,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated: Use [Shipment.load_demands][] instead.
+     * Deprecated: Use
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * instead.
      * </pre>
      *
      * <code>
@@ -10368,7 +10438,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated: Use [Shipment.load_demands][] instead.
+     * Deprecated: Use
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * instead.
      * </pre>
      *
      * <code>
@@ -10387,7 +10459,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated: Use [Shipment.load_demands][] instead.
+     * Deprecated: Use
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * instead.
      * </pre>
      *
      * <code>
@@ -10412,7 +10486,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated: Use [Shipment.load_demands][] instead.
+     * Deprecated: Use
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * instead.
      * </pre>
      *
      * <code>
@@ -10435,7 +10511,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated: Use [Shipment.load_demands][] instead.
+     * Deprecated: Use
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * instead.
      * </pre>
      *
      * <code>
@@ -10460,7 +10538,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated: Use [Shipment.load_demands][] instead.
+     * Deprecated: Use
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * instead.
      * </pre>
      *
      * <code>
@@ -10485,7 +10565,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated: Use [Shipment.load_demands][] instead.
+     * Deprecated: Use
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * instead.
      * </pre>
      *
      * <code>
@@ -10508,7 +10590,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated: Use [Shipment.load_demands][] instead.
+     * Deprecated: Use
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * instead.
      * </pre>
      *
      * <code>
@@ -10531,7 +10615,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated: Use [Shipment.load_demands][] instead.
+     * Deprecated: Use
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * instead.
      * </pre>
      *
      * <code>
@@ -10554,7 +10640,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated: Use [Shipment.load_demands][] instead.
+     * Deprecated: Use
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * instead.
      * </pre>
      *
      * <code>
@@ -10576,7 +10664,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated: Use [Shipment.load_demands][] instead.
+     * Deprecated: Use
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * instead.
      * </pre>
      *
      * <code>
@@ -10598,7 +10688,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated: Use [Shipment.load_demands][] instead.
+     * Deprecated: Use
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * instead.
      * </pre>
      *
      * <code>
@@ -10613,7 +10705,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated: Use [Shipment.load_demands][] instead.
+     * Deprecated: Use
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * instead.
      * </pre>
      *
      * <code>
@@ -10633,7 +10727,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated: Use [Shipment.load_demands][] instead.
+     * Deprecated: Use
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * instead.
      * </pre>
      *
      * <code>
@@ -10653,7 +10749,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated: Use [Shipment.load_demands][] instead.
+     * Deprecated: Use
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * instead.
      * </pre>
      *
      * <code>
@@ -10669,7 +10767,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated: Use [Shipment.load_demands][] instead.
+     * Deprecated: Use
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * instead.
      * </pre>
      *
      * <code>
@@ -10686,7 +10786,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated: Use [Shipment.load_demands][] instead.
+     * Deprecated: Use
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * instead.
      * </pre>
      *
      * <code>

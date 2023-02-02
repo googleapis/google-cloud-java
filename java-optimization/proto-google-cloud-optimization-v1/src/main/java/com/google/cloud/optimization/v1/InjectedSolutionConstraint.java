@@ -286,7 +286,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        * <pre>
        * The constraint relaxation level that applies when the conditions
        * at or after `threshold_time` AND at least `threshold_visit_count` are
-       * satified.
+       * satisfied.
        * </pre>
        *
        * <code>
@@ -302,7 +302,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        * <pre>
        * The constraint relaxation level that applies when the conditions
        * at or after `threshold_time` AND at least `threshold_visit_count` are
-       * satified.
+       * satisfied.
        * </pre>
        *
        * <code>
@@ -453,7 +453,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        *
        * <pre>
        * Expresses the different constraint relaxation levels, which are
-       * applied for a visit and those that follow when it satifies the
+       * applied for a visit and those that follow when it satisfies the
        * threshold conditions.
        * The enumeration below is in order of increasing relaxation.
        * </pre>
@@ -468,7 +468,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
          * <pre>
          * Implicit default relaxation level: no constraints are relaxed,
          * i.e., all visits are fully constrained.
-         * This value must not be explicly used in `level`.
+         * This value must not be explicitly used in `level`.
          * </pre>
          *
          * <code>LEVEL_UNSPECIFIED = 0;</code>
@@ -519,7 +519,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
          * <pre>
          * Implicit default relaxation level: no constraints are relaxed,
          * i.e., all visits are fully constrained.
-         * This value must not be explicly used in `level`.
+         * This value must not be explicitly used in `level`.
          * </pre>
          *
          * <code>LEVEL_UNSPECIFIED = 0;</code>
@@ -659,7 +659,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        * <pre>
        * The constraint relaxation level that applies when the conditions
        * at or after `threshold_time` AND at least `threshold_visit_count` are
-       * satified.
+       * satisfied.
        * </pre>
        *
        * <code>
@@ -678,7 +678,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        * <pre>
        * The constraint relaxation level that applies when the conditions
        * at or after `threshold_time` AND at least `threshold_visit_count` are
-       * satified.
+       * satisfied.
        * </pre>
        *
        * <code>
@@ -1274,7 +1274,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
          * <pre>
          * The constraint relaxation level that applies when the conditions
          * at or after `threshold_time` AND at least `threshold_visit_count` are
-         * satified.
+         * satisfied.
          * </pre>
          *
          * <code>
@@ -1293,7 +1293,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
          * <pre>
          * The constraint relaxation level that applies when the conditions
          * at or after `threshold_time` AND at least `threshold_visit_count` are
-         * satified.
+         * satisfied.
          * </pre>
          *
          * <code>
@@ -1315,7 +1315,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
          * <pre>
          * The constraint relaxation level that applies when the conditions
          * at or after `threshold_time` AND at least `threshold_visit_count` are
-         * satified.
+         * satisfied.
          * </pre>
          *
          * <code>
@@ -1344,7 +1344,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
          * <pre>
          * The constraint relaxation level that applies when the conditions
          * at or after `threshold_time` AND at least `threshold_visit_count` are
-         * satified.
+         * satisfied.
          * </pre>
          *
          * <code>
@@ -1372,7 +1372,7 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
          * <pre>
          * The constraint relaxation level that applies when the conditions
          * at or after `threshold_time` AND at least `threshold_visit_count` are
-         * satified.
+         * satisfied.
          * </pre>
          *
          * <code>

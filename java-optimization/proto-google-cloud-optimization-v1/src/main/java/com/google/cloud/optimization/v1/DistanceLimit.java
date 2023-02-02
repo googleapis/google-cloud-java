@@ -151,8 +151,8 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cost per kilometer incurred if `soft_max_meters` limit is violated. The
-   * additional cost is 0 if the distance is under the limit, otherwise the
+   * Cost per kilometer incurred if distance is above `soft_max_meters` limit.
+   * The additional cost is 0 if the distance is under the limit, otherwise the
    * formula used to compute the cost is the following:
    * ```
    *   (distance_meters - soft_max_meters) / 1000.0 *
@@ -173,8 +173,8 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cost per kilometer incurred if `soft_max_meters` limit is violated. The
-   * additional cost is 0 if the distance is under the limit, otherwise the
+   * Cost per kilometer incurred if distance is above `soft_max_meters` limit.
+   * The additional cost is 0 if the distance is under the limit, otherwise the
    * formula used to compute the cost is the following:
    * ```
    *   (distance_meters - soft_max_meters) / 1000.0 *
@@ -765,8 +765,8 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cost per kilometer incurred if `soft_max_meters` limit is violated. The
-     * additional cost is 0 if the distance is under the limit, otherwise the
+     * Cost per kilometer incurred if distance is above `soft_max_meters` limit.
+     * The additional cost is 0 if the distance is under the limit, otherwise the
      * formula used to compute the cost is the following:
      * ```
      *   (distance_meters - soft_max_meters) / 1000.0 *
@@ -787,8 +787,8 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cost per kilometer incurred if `soft_max_meters` limit is violated. The
-     * additional cost is 0 if the distance is under the limit, otherwise the
+     * Cost per kilometer incurred if distance is above `soft_max_meters` limit.
+     * The additional cost is 0 if the distance is under the limit, otherwise the
      * formula used to compute the cost is the following:
      * ```
      *   (distance_meters - soft_max_meters) / 1000.0 *
@@ -809,8 +809,8 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cost per kilometer incurred if `soft_max_meters` limit is violated. The
-     * additional cost is 0 if the distance is under the limit, otherwise the
+     * Cost per kilometer incurred if distance is above `soft_max_meters` limit.
+     * The additional cost is 0 if the distance is under the limit, otherwise the
      * formula used to compute the cost is the following:
      * ```
      *   (distance_meters - soft_max_meters) / 1000.0 *
@@ -835,8 +835,8 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cost per kilometer incurred if `soft_max_meters` limit is violated. The
-     * additional cost is 0 if the distance is under the limit, otherwise the
+     * Cost per kilometer incurred if distance is above `soft_max_meters` limit.
+     * The additional cost is 0 if the distance is under the limit, otherwise the
      * formula used to compute the cost is the following:
      * ```
      *   (distance_meters - soft_max_meters) / 1000.0 *

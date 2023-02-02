@@ -543,9 +543,10 @@ public interface ShipmentRouteOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
-   * Vehicle loads upon arrival at its end location, for each
-   * type specified in
+   * Deprecated: Use
+   * [Transition.vehicle_loads][google.cloud.optimization.v1.ShipmentRoute.Transition.vehicle_loads]
+   * instead. Vehicle loads upon arrival at its end location, for each type
+   * specified in
    * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
    * `start_load_intervals`, `end_load_intervals` or demands. Exception: we omit
    * loads for quantity types unconstrained by intervals and that don't have any
@@ -562,9 +563,10 @@ public interface ShipmentRouteOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
-   * Vehicle loads upon arrival at its end location, for each
-   * type specified in
+   * Deprecated: Use
+   * [Transition.vehicle_loads][google.cloud.optimization.v1.ShipmentRoute.Transition.vehicle_loads]
+   * instead. Vehicle loads upon arrival at its end location, for each type
+   * specified in
    * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
    * `start_load_intervals`, `end_load_intervals` or demands. Exception: we omit
    * loads for quantity types unconstrained by intervals and that don't have any
@@ -581,9 +583,10 @@ public interface ShipmentRouteOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
-   * Vehicle loads upon arrival at its end location, for each
-   * type specified in
+   * Deprecated: Use
+   * [Transition.vehicle_loads][google.cloud.optimization.v1.ShipmentRoute.Transition.vehicle_loads]
+   * instead. Vehicle loads upon arrival at its end location, for each type
+   * specified in
    * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
    * `start_load_intervals`, `end_load_intervals` or demands. Exception: we omit
    * loads for quantity types unconstrained by intervals and that don't have any
@@ -600,9 +603,10 @@ public interface ShipmentRouteOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
-   * Vehicle loads upon arrival at its end location, for each
-   * type specified in
+   * Deprecated: Use
+   * [Transition.vehicle_loads][google.cloud.optimization.v1.ShipmentRoute.Transition.vehicle_loads]
+   * instead. Vehicle loads upon arrival at its end location, for each type
+   * specified in
    * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
    * `start_load_intervals`, `end_load_intervals` or demands. Exception: we omit
    * loads for quantity types unconstrained by intervals and that don't have any
@@ -620,9 +624,10 @@ public interface ShipmentRouteOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
-   * Vehicle loads upon arrival at its end location, for each
-   * type specified in
+   * Deprecated: Use
+   * [Transition.vehicle_loads][google.cloud.optimization.v1.ShipmentRoute.Transition.vehicle_loads]
+   * instead. Vehicle loads upon arrival at its end location, for each type
+   * specified in
    * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
    * `start_load_intervals`, `end_load_intervals` or demands. Exception: we omit
    * loads for quantity types unconstrained by intervals and that don't have any
@@ -640,8 +645,9 @@ public interface ShipmentRouteOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [ShipmentRoute.Transition][] instead.
-   * Ordered list of travel steps for the route.
+   * Deprecated: Use
+   * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]
+   * instead. Ordered list of travel steps for the route.
    * </pre>
    *
    * <code>
@@ -654,8 +660,9 @@ public interface ShipmentRouteOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [ShipmentRoute.Transition][] instead.
-   * Ordered list of travel steps for the route.
+   * Deprecated: Use
+   * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]
+   * instead. Ordered list of travel steps for the route.
    * </pre>
    *
    * <code>
@@ -668,8 +675,9 @@ public interface ShipmentRouteOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [ShipmentRoute.Transition][] instead.
-   * Ordered list of travel steps for the route.
+   * Deprecated: Use
+   * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]
+   * instead. Ordered list of travel steps for the route.
    * </pre>
    *
    * <code>
@@ -682,8 +690,9 @@ public interface ShipmentRouteOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [ShipmentRoute.Transition][] instead.
-   * Ordered list of travel steps for the route.
+   * Deprecated: Use
+   * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]
+   * instead. Ordered list of travel steps for the route.
    * </pre>
    *
    * <code>
@@ -697,8 +706,9 @@ public interface ShipmentRouteOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [ShipmentRoute.Transition][] instead.
-   * Ordered list of travel steps for the route.
+   * Deprecated: Use
+   * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]
+   * instead. Ordered list of travel steps for the route.
    * </pre>
    *
    * <code>
@@ -716,7 +726,9 @@ public interface ShipmentRouteOrBuilder
    * Deprecated: No longer used.
    * This field will only be populated at the
    * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit]
-   * level. Extra detour time due to the shipments visited on the route.
+   * level.
+   * This field is the extra detour time due to the shipments visited on the
+   * route.
    * It is equal to `vehicle_end_time` - `vehicle_start_time` - travel duration
    * from the vehicle's start_location to its `end_location`.
    * </pre>
@@ -724,7 +736,7 @@ public interface ShipmentRouteOrBuilder
    * <code>.google.protobuf.Duration vehicle_detour = 15 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.ShipmentRoute.vehicle_detour is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=2135
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=2165
    * @return Whether the vehicleDetour field is set.
    */
   @java.lang.Deprecated
@@ -736,7 +748,9 @@ public interface ShipmentRouteOrBuilder
    * Deprecated: No longer used.
    * This field will only be populated at the
    * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit]
-   * level. Extra detour time due to the shipments visited on the route.
+   * level.
+   * This field is the extra detour time due to the shipments visited on the
+   * route.
    * It is equal to `vehicle_end_time` - `vehicle_start_time` - travel duration
    * from the vehicle's start_location to its `end_location`.
    * </pre>
@@ -744,7 +758,7 @@ public interface ShipmentRouteOrBuilder
    * <code>.google.protobuf.Duration vehicle_detour = 15 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.ShipmentRoute.vehicle_detour is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=2135
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=2165
    * @return The vehicleDetour.
    */
   @java.lang.Deprecated
@@ -756,7 +770,9 @@ public interface ShipmentRouteOrBuilder
    * Deprecated: No longer used.
    * This field will only be populated at the
    * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit]
-   * level. Extra detour time due to the shipments visited on the route.
+   * level.
+   * This field is the extra detour time due to the shipments visited on the
+   * route.
    * It is equal to `vehicle_end_time` - `vehicle_start_time` - travel duration
    * from the vehicle's start_location to its `end_location`.
    * </pre>
@@ -770,8 +786,7 @@ public interface ShipmentRouteOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [ShipmentRoute.Transition.delay_duration][] instead.
-   * Delay occurring before the vehicle end. See
+   * Deprecated: Delay occurring before the vehicle end. See
    * [TransitionAttributes.delay][google.cloud.optimization.v1.TransitionAttributes.delay].
    * </pre>
    *
@@ -780,7 +795,7 @@ public interface ShipmentRouteOrBuilder
    * </code>
    *
    * @deprecated google.cloud.optimization.v1.ShipmentRoute.delay_before_vehicle_end is deprecated.
-   *     See google/cloud/optimization/v1/fleet_routing.proto;l=2140
+   *     See google/cloud/optimization/v1/fleet_routing.proto;l=2169
    * @return Whether the delayBeforeVehicleEnd field is set.
    */
   @java.lang.Deprecated
@@ -789,8 +804,7 @@ public interface ShipmentRouteOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [ShipmentRoute.Transition.delay_duration][] instead.
-   * Delay occurring before the vehicle end. See
+   * Deprecated: Delay occurring before the vehicle end. See
    * [TransitionAttributes.delay][google.cloud.optimization.v1.TransitionAttributes.delay].
    * </pre>
    *
@@ -799,7 +813,7 @@ public interface ShipmentRouteOrBuilder
    * </code>
    *
    * @deprecated google.cloud.optimization.v1.ShipmentRoute.delay_before_vehicle_end is deprecated.
-   *     See google/cloud/optimization/v1/fleet_routing.proto;l=2140
+   *     See google/cloud/optimization/v1/fleet_routing.proto;l=2169
    * @return The delayBeforeVehicleEnd.
    */
   @java.lang.Deprecated
@@ -808,8 +822,7 @@ public interface ShipmentRouteOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [ShipmentRoute.Transition.delay_duration][] instead.
-   * Delay occurring before the vehicle end. See
+   * Deprecated: Delay occurring before the vehicle end. See
    * [TransitionAttributes.delay][google.cloud.optimization.v1.TransitionAttributes.delay].
    * </pre>
    *

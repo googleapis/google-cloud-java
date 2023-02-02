@@ -4277,17 +4277,18 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Deprecated: Use top level [BreakRule][] instead.
+   * Deprecated: Use top level
+   * [BreakRule][google.cloud.optimization.v1.ShipmentModel.BreakRule] instead.
    * Rules to generate time breaks for a vehicle (e.g. lunch
    * breaks). A break is a contiguous period of time during which the vehicle
    * remains idle at its current position and cannot perform any visit. A break
    * may occur:
    * * during the travel between two visits (which includes the time right
    *   before or right after a visit, but not in the middle of a visit), in
-   *   which case it extends the corresponding transit time between the visits,
-   * * or before the vehicle start (the vehicle may not start in the middle of
+   *   which case it extends the corresponding transit time between the visits
+   * * before the vehicle start (the vehicle may not start in the middle of
    *   a break), in which case it does not affect the vehicle start time.
-   * * or after the vehicle end (ditto, with the vehicle end time).
+   * * after the vehicle end (ditto, with the vehicle end time).
    * </pre>
    *
    * Protobuf type {@code google.cloud.optimization.v1.ShipmentModel.BreakRule}
@@ -7401,17 +7402,18 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated: Use top level [BreakRule][] instead.
+     * Deprecated: Use top level
+     * [BreakRule][google.cloud.optimization.v1.ShipmentModel.BreakRule] instead.
      * Rules to generate time breaks for a vehicle (e.g. lunch
      * breaks). A break is a contiguous period of time during which the vehicle
      * remains idle at its current position and cannot perform any visit. A break
      * may occur:
      * * during the travel between two visits (which includes the time right
      *   before or right after a visit, but not in the middle of a visit), in
-     *   which case it extends the corresponding transit time between the visits,
-     * * or before the vehicle start (the vehicle may not start in the middle of
+     *   which case it extends the corresponding transit time between the visits
+     * * before the vehicle start (the vehicle may not start in the middle of
      *   a break), in which case it does not affect the vehicle start time.
-     * * or after the vehicle end (ditto, with the vehicle end time).
+     * * after the vehicle end (ditto, with the vehicle end time).
      * </pre>
      *
      * Protobuf type {@code google.cloud.optimization.v1.ShipmentModel.BreakRule}

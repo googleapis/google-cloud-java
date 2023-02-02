@@ -279,16 +279,17 @@ public interface OptimizeToursResponseOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [Metrics.total_cost][] instead.
-   * Total cost of the solution. This takes into account all costs: costs per
-   * per hour and travel hour, fixed vehicle costs, unperformed shipment penalty
-   * costs, global duration cost, etc.
+   * Deprecated: Use
+   * [Metrics.total_cost][google.cloud.optimization.v1.OptimizeToursResponse.Metrics.total_cost]
+   * instead. Total cost of the solution. This takes into account all costs:
+   * costs per per hour and travel hour, fixed vehicle costs, unperformed
+   * shipment penalty costs, global duration cost, etc.
    * </pre>
    *
    * <code>double total_cost = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.OptimizeToursResponse.total_cost is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=423
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=425
    * @return The totalCost.
    */
   @java.lang.Deprecated

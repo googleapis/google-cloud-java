@@ -163,7 +163,7 @@ public interface OptimizeToursRequestOrBuilder
    *
    *
    * <pre>
-   * Truncates the number of validation errors returned. Those errors are
+   * Truncates the number of validation errors returned. These errors are
    * typically attached to an INVALID_ARGUMENT error payload as a BadRequest
    * error detail (https://cloud.google.com/apis/design/errors#error_details),
    * unless solving_mode=VALIDATE_ONLY: see the
@@ -181,7 +181,7 @@ public interface OptimizeToursRequestOrBuilder
    *
    *
    * <pre>
-   * Truncates the number of validation errors returned. Those errors are
+   * Truncates the number of validation errors returned. These errors are
    * typically attached to an INVALID_ARGUMENT error payload as a BadRequest
    * error detail (https://cloud.google.com/apis/design/errors#error_details),
    * unless solving_mode=VALIDATE_ONLY: see the
@@ -779,7 +779,8 @@ public interface OptimizeToursRequestOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [OptimizeToursRequest.populate_transition_polylines][]
+   * Deprecated: Use
+   * [OptimizeToursRequest.populate_transition_polylines][google.cloud.optimization.v1.OptimizeToursRequest.populate_transition_polylines]
    * instead. If true, polylines will be populated in response
    * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions].
    * Note that in this case, the polylines will also be populated in the
@@ -789,7 +790,7 @@ public interface OptimizeToursRequestOrBuilder
    * <code>bool populate_travel_step_polylines = 20 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.OptimizeToursRequest.populate_travel_step_polylines is
-   *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=350
+   *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=351
    * @return The populateTravelStepPolylines.
    */
   @java.lang.Deprecated

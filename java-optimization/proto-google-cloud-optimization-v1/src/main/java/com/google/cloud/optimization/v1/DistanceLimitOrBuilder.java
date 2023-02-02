@@ -87,8 +87,8 @@ public interface DistanceLimitOrBuilder
    *
    *
    * <pre>
-   * Cost per kilometer incurred if `soft_max_meters` limit is violated. The
-   * additional cost is 0 if the distance is under the limit, otherwise the
+   * Cost per kilometer incurred if distance is above `soft_max_meters` limit.
+   * The additional cost is 0 if the distance is under the limit, otherwise the
    * formula used to compute the cost is the following:
    * ```
    *   (distance_meters - soft_max_meters) / 1000.0 *
@@ -106,8 +106,8 @@ public interface DistanceLimitOrBuilder
    *
    *
    * <pre>
-   * Cost per kilometer incurred if `soft_max_meters` limit is violated. The
-   * additional cost is 0 if the distance is under the limit, otherwise the
+   * Cost per kilometer incurred if distance is above `soft_max_meters` limit.
+   * The additional cost is 0 if the distance is under the limit, otherwise the
    * formula used to compute the cost is the following:
    * ```
    *   (distance_meters - soft_max_meters) / 1000.0 *

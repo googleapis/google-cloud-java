@@ -22,7 +22,9 @@ package com.google.cloud.optimization.v1;
  *
  *
  * <pre>
- * Deprecated: Use [Vehicle.LoadLimit.Interval][] instead.
+ * Deprecated: Use
+ * [Vehicle.LoadLimit.Interval][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval]
+ * instead.
  * </pre>
  *
  * Protobuf type {@code google.cloud.optimization.v1.CapacityQuantityInterval}
@@ -342,7 +344,9 @@ public final class CapacityQuantityInterval extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Deprecated: Use [Vehicle.LoadLimit.Interval][] instead.
+   * Deprecated: Use
+   * [Vehicle.LoadLimit.Interval][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval]
+   * instead.
    * </pre>
    *
    * Protobuf type {@code google.cloud.optimization.v1.CapacityQuantityInterval}

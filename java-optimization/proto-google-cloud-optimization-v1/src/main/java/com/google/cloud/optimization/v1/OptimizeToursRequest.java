@@ -617,7 +617,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Truncates the number of validation errors returned. Those errors are
+   * Truncates the number of validation errors returned. These errors are
    * typically attached to an INVALID_ARGUMENT error payload as a BadRequest
    * error detail (https://cloud.google.com/apis/design/errors#error_details),
    * unless solving_mode=VALIDATE_ONLY: see the
@@ -638,7 +638,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Truncates the number of validation errors returned. Those errors are
+   * Truncates the number of validation errors returned. These errors are
    * typically attached to an INVALID_ARGUMENT error payload as a BadRequest
    * error detail (https://cloud.google.com/apis/design/errors#error_details),
    * unless solving_mode=VALIDATE_ONLY: see the
@@ -1373,7 +1373,8 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Deprecated: Use [OptimizeToursRequest.populate_transition_polylines][]
+   * Deprecated: Use
+   * [OptimizeToursRequest.populate_transition_polylines][google.cloud.optimization.v1.OptimizeToursRequest.populate_transition_polylines]
    * instead. If true, polylines will be populated in response
    * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions].
    * Note that in this case, the polylines will also be populated in the
@@ -1383,7 +1384,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    * <code>bool populate_travel_step_polylines = 20 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.OptimizeToursRequest.populate_travel_step_polylines is
-   *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=350
+   *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=351
    * @return The populateTravelStepPolylines.
    */
   @java.lang.Override
@@ -2900,7 +2901,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Truncates the number of validation errors returned. Those errors are
+     * Truncates the number of validation errors returned. These errors are
      * typically attached to an INVALID_ARGUMENT error payload as a BadRequest
      * error detail (https://cloud.google.com/apis/design/errors#error_details),
      * unless solving_mode=VALIDATE_ONLY: see the
@@ -2921,7 +2922,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Truncates the number of validation errors returned. Those errors are
+     * Truncates the number of validation errors returned. These errors are
      * typically attached to an INVALID_ARGUMENT error payload as a BadRequest
      * error detail (https://cloud.google.com/apis/design/errors#error_details),
      * unless solving_mode=VALIDATE_ONLY: see the
@@ -2942,7 +2943,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Truncates the number of validation errors returned. Those errors are
+     * Truncates the number of validation errors returned. These errors are
      * typically attached to an INVALID_ARGUMENT error payload as a BadRequest
      * error detail (https://cloud.google.com/apis/design/errors#error_details),
      * unless solving_mode=VALIDATE_ONLY: see the
@@ -2967,7 +2968,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Truncates the number of validation errors returned. Those errors are
+     * Truncates the number of validation errors returned. These errors are
      * typically attached to an INVALID_ARGUMENT error payload as a BadRequest
      * error detail (https://cloud.google.com/apis/design/errors#error_details),
      * unless solving_mode=VALIDATE_ONLY: see the
@@ -5464,7 +5465,8 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Deprecated: Use [OptimizeToursRequest.populate_transition_polylines][]
+     * Deprecated: Use
+     * [OptimizeToursRequest.populate_transition_polylines][google.cloud.optimization.v1.OptimizeToursRequest.populate_transition_polylines]
      * instead. If true, polylines will be populated in response
      * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions].
      * Note that in this case, the polylines will also be populated in the
@@ -5474,7 +5476,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * <code>bool populate_travel_step_polylines = 20 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.OptimizeToursRequest.populate_travel_step_polylines
-     *     is deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=350
+     *     is deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=351
      * @return The populateTravelStepPolylines.
      */
     @java.lang.Override
@@ -5486,7 +5488,8 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Deprecated: Use [OptimizeToursRequest.populate_transition_polylines][]
+     * Deprecated: Use
+     * [OptimizeToursRequest.populate_transition_polylines][google.cloud.optimization.v1.OptimizeToursRequest.populate_transition_polylines]
      * instead. If true, polylines will be populated in response
      * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions].
      * Note that in this case, the polylines will also be populated in the
@@ -5496,7 +5499,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * <code>bool populate_travel_step_polylines = 20 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.OptimizeToursRequest.populate_travel_step_polylines
-     *     is deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=350
+     *     is deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=351
      * @param value The populateTravelStepPolylines to set.
      * @return This builder for chaining.
      */
@@ -5512,7 +5515,8 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Deprecated: Use [OptimizeToursRequest.populate_transition_polylines][]
+     * Deprecated: Use
+     * [OptimizeToursRequest.populate_transition_polylines][google.cloud.optimization.v1.OptimizeToursRequest.populate_transition_polylines]
      * instead. If true, polylines will be populated in response
      * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions].
      * Note that in this case, the polylines will also be populated in the
@@ -5522,7 +5526,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * <code>bool populate_travel_step_polylines = 20 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.OptimizeToursRequest.populate_travel_step_polylines
-     *     is deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=350
+     *     is deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=351
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

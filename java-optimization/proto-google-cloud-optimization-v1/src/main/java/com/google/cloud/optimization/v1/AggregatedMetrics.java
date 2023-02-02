@@ -604,8 +604,11 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Deprecated: Use [ShipmentRoute.route_costs][] and
-   * [OptimizeToursResponse.Metrics.costs][] instead.
+   * Deprecated: Use
+   * [ShipmentRoute.route_costs][google.cloud.optimization.v1.ShipmentRoute.route_costs]
+   * and
+   * [OptimizeToursResponse.Metrics.costs][google.cloud.optimization.v1.OptimizeToursResponse.Metrics.costs]
+   * instead.
    * </pre>
    *
    * <code>map&lt;string, double&gt; costs = 10 [deprecated = true];</code>
@@ -628,8 +631,11 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Deprecated: Use [ShipmentRoute.route_costs][] and
-   * [OptimizeToursResponse.Metrics.costs][] instead.
+   * Deprecated: Use
+   * [ShipmentRoute.route_costs][google.cloud.optimization.v1.ShipmentRoute.route_costs]
+   * and
+   * [OptimizeToursResponse.Metrics.costs][google.cloud.optimization.v1.OptimizeToursResponse.Metrics.costs]
+   * instead.
    * </pre>
    *
    * <code>map&lt;string, double&gt; costs = 10 [deprecated = true];</code>
@@ -643,8 +649,11 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Deprecated: Use [ShipmentRoute.route_costs][] and
-   * [OptimizeToursResponse.Metrics.costs][] instead.
+   * Deprecated: Use
+   * [ShipmentRoute.route_costs][google.cloud.optimization.v1.ShipmentRoute.route_costs]
+   * and
+   * [OptimizeToursResponse.Metrics.costs][google.cloud.optimization.v1.OptimizeToursResponse.Metrics.costs]
+   * instead.
    * </pre>
    *
    * <code>map&lt;string, double&gt; costs = 10 [deprecated = true];</code>
@@ -662,8 +671,11 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Deprecated: Use [ShipmentRoute.route_costs][] and
-   * [OptimizeToursResponse.Metrics.costs][] instead.
+   * Deprecated: Use
+   * [ShipmentRoute.route_costs][google.cloud.optimization.v1.ShipmentRoute.route_costs]
+   * and
+   * [OptimizeToursResponse.Metrics.costs][google.cloud.optimization.v1.OptimizeToursResponse.Metrics.costs]
+   * instead.
    * </pre>
    *
    * <code>map&lt;string, double&gt; costs = 10 [deprecated = true];</code>
@@ -687,14 +699,17 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Deprecated: Use [ShipmentRoute.route_total_cost][] and
-   * [OptimizeToursResponse.Metrics.total_cost][] instead.
+   * Deprecated: Use
+   * [ShipmentRoute.route_total_cost][google.cloud.optimization.v1.ShipmentRoute.route_total_cost]
+   * and
+   * [OptimizeToursResponse.Metrics.total_cost][google.cloud.optimization.v1.OptimizeToursResponse.Metrics.total_cost]
+   * instead.
    * </pre>
    *
    * <code>double total_cost = 11 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.AggregatedMetrics.total_cost is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=2296
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=2331
    * @return The totalCost.
    */
   @java.lang.Override
@@ -2897,8 +2912,11 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Deprecated: Use [ShipmentRoute.route_costs][] and
-     * [OptimizeToursResponse.Metrics.costs][] instead.
+     * Deprecated: Use
+     * [ShipmentRoute.route_costs][google.cloud.optimization.v1.ShipmentRoute.route_costs]
+     * and
+     * [OptimizeToursResponse.Metrics.costs][google.cloud.optimization.v1.OptimizeToursResponse.Metrics.costs]
+     * instead.
      * </pre>
      *
      * <code>map&lt;string, double&gt; costs = 10 [deprecated = true];</code>
@@ -2921,8 +2939,11 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Deprecated: Use [ShipmentRoute.route_costs][] and
-     * [OptimizeToursResponse.Metrics.costs][] instead.
+     * Deprecated: Use
+     * [ShipmentRoute.route_costs][google.cloud.optimization.v1.ShipmentRoute.route_costs]
+     * and
+     * [OptimizeToursResponse.Metrics.costs][google.cloud.optimization.v1.OptimizeToursResponse.Metrics.costs]
+     * instead.
      * </pre>
      *
      * <code>map&lt;string, double&gt; costs = 10 [deprecated = true];</code>
@@ -2936,8 +2957,11 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Deprecated: Use [ShipmentRoute.route_costs][] and
-     * [OptimizeToursResponse.Metrics.costs][] instead.
+     * Deprecated: Use
+     * [ShipmentRoute.route_costs][google.cloud.optimization.v1.ShipmentRoute.route_costs]
+     * and
+     * [OptimizeToursResponse.Metrics.costs][google.cloud.optimization.v1.OptimizeToursResponse.Metrics.costs]
+     * instead.
      * </pre>
      *
      * <code>map&lt;string, double&gt; costs = 10 [deprecated = true];</code>
@@ -2955,8 +2979,11 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Deprecated: Use [ShipmentRoute.route_costs][] and
-     * [OptimizeToursResponse.Metrics.costs][] instead.
+     * Deprecated: Use
+     * [ShipmentRoute.route_costs][google.cloud.optimization.v1.ShipmentRoute.route_costs]
+     * and
+     * [OptimizeToursResponse.Metrics.costs][google.cloud.optimization.v1.OptimizeToursResponse.Metrics.costs]
+     * instead.
      * </pre>
      *
      * <code>map&lt;string, double&gt; costs = 10 [deprecated = true];</code>
@@ -2984,8 +3011,11 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Deprecated: Use [ShipmentRoute.route_costs][] and
-     * [OptimizeToursResponse.Metrics.costs][] instead.
+     * Deprecated: Use
+     * [ShipmentRoute.route_costs][google.cloud.optimization.v1.ShipmentRoute.route_costs]
+     * and
+     * [OptimizeToursResponse.Metrics.costs][google.cloud.optimization.v1.OptimizeToursResponse.Metrics.costs]
+     * instead.
      * </pre>
      *
      * <code>map&lt;string, double&gt; costs = 10 [deprecated = true];</code>
@@ -3008,8 +3038,11 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Deprecated: Use [ShipmentRoute.route_costs][] and
-     * [OptimizeToursResponse.Metrics.costs][] instead.
+     * Deprecated: Use
+     * [ShipmentRoute.route_costs][google.cloud.optimization.v1.ShipmentRoute.route_costs]
+     * and
+     * [OptimizeToursResponse.Metrics.costs][google.cloud.optimization.v1.OptimizeToursResponse.Metrics.costs]
+     * instead.
      * </pre>
      *
      * <code>map&lt;string, double&gt; costs = 10 [deprecated = true];</code>
@@ -3028,8 +3061,11 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Deprecated: Use [ShipmentRoute.route_costs][] and
-     * [OptimizeToursResponse.Metrics.costs][] instead.
+     * Deprecated: Use
+     * [ShipmentRoute.route_costs][google.cloud.optimization.v1.ShipmentRoute.route_costs]
+     * and
+     * [OptimizeToursResponse.Metrics.costs][google.cloud.optimization.v1.OptimizeToursResponse.Metrics.costs]
+     * instead.
      * </pre>
      *
      * <code>map&lt;string, double&gt; costs = 10 [deprecated = true];</code>
@@ -3046,14 +3082,17 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Deprecated: Use [ShipmentRoute.route_total_cost][] and
-     * [OptimizeToursResponse.Metrics.total_cost][] instead.
+     * Deprecated: Use
+     * [ShipmentRoute.route_total_cost][google.cloud.optimization.v1.ShipmentRoute.route_total_cost]
+     * and
+     * [OptimizeToursResponse.Metrics.total_cost][google.cloud.optimization.v1.OptimizeToursResponse.Metrics.total_cost]
+     * instead.
      * </pre>
      *
      * <code>double total_cost = 11 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.AggregatedMetrics.total_cost is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=2296
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=2331
      * @return The totalCost.
      */
     @java.lang.Override
@@ -3065,14 +3104,17 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Deprecated: Use [ShipmentRoute.route_total_cost][] and
-     * [OptimizeToursResponse.Metrics.total_cost][] instead.
+     * Deprecated: Use
+     * [ShipmentRoute.route_total_cost][google.cloud.optimization.v1.ShipmentRoute.route_total_cost]
+     * and
+     * [OptimizeToursResponse.Metrics.total_cost][google.cloud.optimization.v1.OptimizeToursResponse.Metrics.total_cost]
+     * instead.
      * </pre>
      *
      * <code>double total_cost = 11 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.AggregatedMetrics.total_cost is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=2296
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=2331
      * @param value The totalCost to set.
      * @return This builder for chaining.
      */
@@ -3088,14 +3130,17 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Deprecated: Use [ShipmentRoute.route_total_cost][] and
-     * [OptimizeToursResponse.Metrics.total_cost][] instead.
+     * Deprecated: Use
+     * [ShipmentRoute.route_total_cost][google.cloud.optimization.v1.ShipmentRoute.route_total_cost]
+     * and
+     * [OptimizeToursResponse.Metrics.total_cost][google.cloud.optimization.v1.OptimizeToursResponse.Metrics.total_cost]
+     * instead.
      * </pre>
      *
      * <code>double total_cost = 11 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.AggregatedMetrics.total_cost is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=2296
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=2331
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

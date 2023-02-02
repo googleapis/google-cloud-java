@@ -675,7 +675,9 @@ public interface ShipmentOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [Shipment.load_demands][] instead.
+   * Deprecated: Use
+   * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+   * instead.
    * </pre>
    *
    * <code>repeated .google.cloud.optimization.v1.CapacityQuantity demands = 3 [deprecated = true];
@@ -687,7 +689,9 @@ public interface ShipmentOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [Shipment.load_demands][] instead.
+   * Deprecated: Use
+   * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+   * instead.
    * </pre>
    *
    * <code>repeated .google.cloud.optimization.v1.CapacityQuantity demands = 3 [deprecated = true];
@@ -699,7 +703,9 @@ public interface ShipmentOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [Shipment.load_demands][] instead.
+   * Deprecated: Use
+   * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+   * instead.
    * </pre>
    *
    * <code>repeated .google.cloud.optimization.v1.CapacityQuantity demands = 3 [deprecated = true];
@@ -711,7 +717,9 @@ public interface ShipmentOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [Shipment.load_demands][] instead.
+   * Deprecated: Use
+   * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+   * instead.
    * </pre>
    *
    * <code>repeated .google.cloud.optimization.v1.CapacityQuantity demands = 3 [deprecated = true];
@@ -724,7 +732,9 @@ public interface ShipmentOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [Shipment.load_demands][] instead.
+   * Deprecated: Use
+   * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+   * instead.
    * </pre>
    *
    * <code>repeated .google.cloud.optimization.v1.CapacityQuantity demands = 3 [deprecated = true];

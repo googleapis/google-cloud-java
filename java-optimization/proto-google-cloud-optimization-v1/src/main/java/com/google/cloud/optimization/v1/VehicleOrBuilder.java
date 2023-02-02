@@ -1106,14 +1106,15 @@ public interface VehicleOrBuilder
    * <pre>
    * Deprecated: No longer used.
    * Indices in the `break_rule` field in the source
-   * [ShipmentModel][]. They correspond to break rules enforced on the vehicle.
+   * [ShipmentModel][google.cloud.optimization.v1.ShipmentModel]. They
+   * correspond to break rules enforced on the vehicle.
    * As of 2018/03, at most one rule index per vehicle can be specified.
    * </pre>
    *
    * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=1436
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=1443
    * @return A list containing the breakRuleIndices.
    */
   @java.lang.Deprecated
@@ -1124,14 +1125,15 @@ public interface VehicleOrBuilder
    * <pre>
    * Deprecated: No longer used.
    * Indices in the `break_rule` field in the source
-   * [ShipmentModel][]. They correspond to break rules enforced on the vehicle.
+   * [ShipmentModel][google.cloud.optimization.v1.ShipmentModel]. They
+   * correspond to break rules enforced on the vehicle.
    * As of 2018/03, at most one rule index per vehicle can be specified.
    * </pre>
    *
    * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=1436
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=1443
    * @return The count of breakRuleIndices.
    */
   @java.lang.Deprecated
@@ -1142,14 +1144,15 @@ public interface VehicleOrBuilder
    * <pre>
    * Deprecated: No longer used.
    * Indices in the `break_rule` field in the source
-   * [ShipmentModel][]. They correspond to break rules enforced on the vehicle.
+   * [ShipmentModel][google.cloud.optimization.v1.ShipmentModel]. They
+   * correspond to break rules enforced on the vehicle.
    * As of 2018/03, at most one rule index per vehicle can be specified.
    * </pre>
    *
    * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=1436
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=1443
    * @param index The index of the element to return.
    * @return The breakRuleIndices at the given index.
    */
@@ -1160,7 +1163,9 @@ public interface VehicleOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [Vehicle.load_limits][] instead.
+   * Deprecated: Use
+   * [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits]
+   * instead.
    * </pre>
    *
    * <code>
@@ -1173,7 +1178,9 @@ public interface VehicleOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [Vehicle.load_limits][] instead.
+   * Deprecated: Use
+   * [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits]
+   * instead.
    * </pre>
    *
    * <code>
@@ -1186,7 +1193,9 @@ public interface VehicleOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [Vehicle.load_limits][] instead.
+   * Deprecated: Use
+   * [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits]
+   * instead.
    * </pre>
    *
    * <code>
@@ -1199,7 +1208,9 @@ public interface VehicleOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [Vehicle.load_limits][] instead.
+   * Deprecated: Use
+   * [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits]
+   * instead.
    * </pre>
    *
    * <code>
@@ -1213,7 +1224,9 @@ public interface VehicleOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [Vehicle.load_limits][] instead.
+   * Deprecated: Use
+   * [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits]
+   * instead.
    * </pre>
    *
    * <code>
@@ -1227,7 +1240,9 @@ public interface VehicleOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [Vehicle.LoadLimit.start_load_interval][] instead.
+   * Deprecated: Use
+   * [Vehicle.LoadLimit.start_load_interval][google.cloud.optimization.v1.Vehicle.LoadLimit.start_load_interval]
+   * instead.
    * </pre>
    *
    * <code>
@@ -1241,7 +1256,9 @@ public interface VehicleOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [Vehicle.LoadLimit.start_load_interval][] instead.
+   * Deprecated: Use
+   * [Vehicle.LoadLimit.start_load_interval][google.cloud.optimization.v1.Vehicle.LoadLimit.start_load_interval]
+   * instead.
    * </pre>
    *
    * <code>
@@ -1254,7 +1271,9 @@ public interface VehicleOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [Vehicle.LoadLimit.start_load_interval][] instead.
+   * Deprecated: Use
+   * [Vehicle.LoadLimit.start_load_interval][google.cloud.optimization.v1.Vehicle.LoadLimit.start_load_interval]
+   * instead.
    * </pre>
    *
    * <code>
@@ -1267,7 +1286,9 @@ public interface VehicleOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [Vehicle.LoadLimit.start_load_interval][] instead.
+   * Deprecated: Use
+   * [Vehicle.LoadLimit.start_load_interval][google.cloud.optimization.v1.Vehicle.LoadLimit.start_load_interval]
+   * instead.
    * </pre>
    *
    * <code>
@@ -1281,7 +1302,9 @@ public interface VehicleOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [Vehicle.LoadLimit.start_load_interval][] instead.
+   * Deprecated: Use
+   * [Vehicle.LoadLimit.start_load_interval][google.cloud.optimization.v1.Vehicle.LoadLimit.start_load_interval]
+   * instead.
    * </pre>
    *
    * <code>
@@ -1296,7 +1319,9 @@ public interface VehicleOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [Vehicle.LoadLimit.end_load_interval][] instead.
+   * Deprecated: Use
+   * [Vehicle.LoadLimit.end_load_interval][google.cloud.optimization.v1.Vehicle.LoadLimit.end_load_interval]
+   * instead.
    * </pre>
    *
    * <code>
@@ -1310,7 +1335,9 @@ public interface VehicleOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [Vehicle.LoadLimit.end_load_interval][] instead.
+   * Deprecated: Use
+   * [Vehicle.LoadLimit.end_load_interval][google.cloud.optimization.v1.Vehicle.LoadLimit.end_load_interval]
+   * instead.
    * </pre>
    *
    * <code>
@@ -1323,7 +1350,9 @@ public interface VehicleOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [Vehicle.LoadLimit.end_load_interval][] instead.
+   * Deprecated: Use
+   * [Vehicle.LoadLimit.end_load_interval][google.cloud.optimization.v1.Vehicle.LoadLimit.end_load_interval]
+   * instead.
    * </pre>
    *
    * <code>
@@ -1336,7 +1365,9 @@ public interface VehicleOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [Vehicle.LoadLimit.end_load_interval][] instead.
+   * Deprecated: Use
+   * [Vehicle.LoadLimit.end_load_interval][google.cloud.optimization.v1.Vehicle.LoadLimit.end_load_interval]
+   * instead.
    * </pre>
    *
    * <code>
@@ -1350,7 +1381,9 @@ public interface VehicleOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [Vehicle.LoadLimit.end_load_interval][] instead.
+   * Deprecated: Use
+   * [Vehicle.LoadLimit.end_load_interval][google.cloud.optimization.v1.Vehicle.LoadLimit.end_load_interval]
+   * instead.
    * </pre>
    *
    * <code>
