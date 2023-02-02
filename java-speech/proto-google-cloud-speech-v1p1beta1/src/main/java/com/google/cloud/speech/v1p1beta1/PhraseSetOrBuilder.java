@@ -111,8 +111,8 @@ public interface PhraseSetOrBuilder
    * enabled, so negative boost will simply be ignored. Though `boost` can
    * accept a wide range of positive values, most use cases are best served with
    * values between 0 (exclusive) and 20. We recommend using a binary search
-   * approach to finding the optimal value for your use case. Speech recognition
-   * will skip PhraseSets with a boost value of 0.
+   * approach to finding the optimal value for your use case as well as adding
+   * phrases both with and without boost to your requests.
    * </pre>
    *
    * <code>float boost = 4;</code>

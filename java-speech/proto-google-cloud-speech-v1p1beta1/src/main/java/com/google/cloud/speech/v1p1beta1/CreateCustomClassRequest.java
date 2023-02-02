@@ -76,7 +76,8 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The parent resource where this custom class will be created. Format:
+   * Required. The parent resource where this custom class will be created.
+   * Format:
    * `projects/{project}/locations/{location}/customClasses`
    * Speech-to-Text supports three locations: `global`, `us` (US North America),
    * and `eu` (Europe). If you are calling the `speech.googleapis.com`
@@ -107,7 +108,8 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The parent resource where this custom class will be created. Format:
+   * Required. The parent resource where this custom class will be created.
+   * Format:
    * `projects/{project}/locations/{location}/customClasses`
    * Speech-to-Text supports three locations: `global`, `us` (US North America),
    * and `eu` (Europe). If you are calling the `speech.googleapis.com`
@@ -652,7 +654,8 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The parent resource where this custom class will be created. Format:
+     * Required. The parent resource where this custom class will be created.
+     * Format:
      * `projects/{project}/locations/{location}/customClasses`
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`
@@ -682,7 +685,8 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The parent resource where this custom class will be created. Format:
+     * Required. The parent resource where this custom class will be created.
+     * Format:
      * `projects/{project}/locations/{location}/customClasses`
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`
@@ -712,7 +716,8 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The parent resource where this custom class will be created. Format:
+     * Required. The parent resource where this custom class will be created.
+     * Format:
      * `projects/{project}/locations/{location}/customClasses`
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`
@@ -741,7 +746,8 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The parent resource where this custom class will be created. Format:
+     * Required. The parent resource where this custom class will be created.
+     * Format:
      * `projects/{project}/locations/{location}/customClasses`
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`
@@ -766,7 +772,8 @@ public final class CreateCustomClassRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The parent resource where this custom class will be created. Format:
+     * Required. The parent resource where this custom class will be created.
+     * Format:
      * `projects/{project}/locations/{location}/customClasses`
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`

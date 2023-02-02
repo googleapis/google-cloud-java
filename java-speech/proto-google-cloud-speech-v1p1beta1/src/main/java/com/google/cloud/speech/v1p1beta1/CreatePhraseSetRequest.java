@@ -76,7 +76,8 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The parent resource where this phrase set will be created. Format:
+   * Required. The parent resource where this phrase set will be created.
+   * Format:
    * `projects/{project}/locations/{location}/phraseSets`
    * Speech-to-Text supports three locations: `global`, `us` (US North America),
    * and `eu` (Europe). If you are calling the `speech.googleapis.com`
@@ -107,7 +108,8 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The parent resource where this phrase set will be created. Format:
+   * Required. The parent resource where this phrase set will be created.
+   * Format:
    * `projects/{project}/locations/{location}/phraseSets`
    * Speech-to-Text supports three locations: `global`, `us` (US North America),
    * and `eu` (Europe). If you are calling the `speech.googleapis.com`
@@ -651,7 +653,8 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The parent resource where this phrase set will be created. Format:
+     * Required. The parent resource where this phrase set will be created.
+     * Format:
      * `projects/{project}/locations/{location}/phraseSets`
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`
@@ -681,7 +684,8 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The parent resource where this phrase set will be created. Format:
+     * Required. The parent resource where this phrase set will be created.
+     * Format:
      * `projects/{project}/locations/{location}/phraseSets`
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`
@@ -711,7 +715,8 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The parent resource where this phrase set will be created. Format:
+     * Required. The parent resource where this phrase set will be created.
+     * Format:
      * `projects/{project}/locations/{location}/phraseSets`
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`
@@ -740,7 +745,8 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The parent resource where this phrase set will be created. Format:
+     * Required. The parent resource where this phrase set will be created.
+     * Format:
      * `projects/{project}/locations/{location}/phraseSets`
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`
@@ -765,7 +771,8 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The parent resource where this phrase set will be created. Format:
+     * Required. The parent resource where this phrase set will be created.
+     * Format:
      * `projects/{project}/locations/{location}/phraseSets`
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`
