@@ -101,6 +101,16 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      * <code>BLOB = 1;</code>
      */
     BLOB(1),
+    /**
+     *
+     *
+     * <pre>
+     * Agent content will be exported in JSON Package format.
+     * </pre>
+     *
+     * <code>JSON_PACKAGE = 4;</code>
+     */
+    JSON_PACKAGE(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -124,6 +134,16 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      * <code>BLOB = 1;</code>
      */
     public static final int BLOB_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Agent content will be exported in JSON Package format.
+     * </pre>
+     *
+     * <code>JSON_PACKAGE = 4;</code>
+     */
+    public static final int JSON_PACKAGE_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -153,6 +173,8 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
           return DATA_FORMAT_UNSPECIFIED;
         case 1:
           return BLOB;
+        case 4:
+          return JSON_PACKAGE;
         default:
           return null;
       }
