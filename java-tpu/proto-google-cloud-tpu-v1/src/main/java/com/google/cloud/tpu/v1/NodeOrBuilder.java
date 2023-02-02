@@ -114,7 +114,7 @@ public interface NodeOrBuilder
    * <code>string ip_address = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.tpu.v1.Node.ip_address is deprecated. See
-   *     google/cloud/tpu/v1/cloud_tpu.proto;l=275
+   *     google/cloud/tpu/v1/cloud_tpu.proto;l=279
    * @return The ipAddress.
    */
   @java.lang.Deprecated
@@ -131,7 +131,7 @@ public interface NodeOrBuilder
    * <code>string ip_address = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.tpu.v1.Node.ip_address is deprecated. See
-   *     google/cloud/tpu/v1/cloud_tpu.proto;l=275
+   *     google/cloud/tpu/v1/cloud_tpu.proto;l=279
    * @return The bytes for ipAddress.
    */
   @java.lang.Deprecated
@@ -148,7 +148,7 @@ public interface NodeOrBuilder
    * <code>string port = 14 [deprecated = true];</code>
    *
    * @deprecated google.cloud.tpu.v1.Node.port is deprecated. See
-   *     google/cloud/tpu/v1/cloud_tpu.proto;l=279
+   *     google/cloud/tpu/v1/cloud_tpu.proto;l=283
    * @return The port.
    */
   @java.lang.Deprecated
@@ -164,7 +164,7 @@ public interface NodeOrBuilder
    * <code>string port = 14 [deprecated = true];</code>
    *
    * @deprecated google.cloud.tpu.v1.Node.port is deprecated. See
-   *     google/cloud/tpu/v1/cloud_tpu.proto;l=279
+   *     google/cloud/tpu/v1/cloud_tpu.proto;l=283
    * @return The bytes for port.
    */
   @java.lang.Deprecated
@@ -201,8 +201,8 @@ public interface NodeOrBuilder
    *
    *
    * <pre>
-   * Output only. If this field is populated, it contains a description of why the TPU Node
-   * is unhealthy.
+   * Output only. If this field is populated, it contains a description of why
+   * the TPU Node is unhealthy.
    * </pre>
    *
    * <code>string health_description = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -214,8 +214,8 @@ public interface NodeOrBuilder
    *
    *
    * <pre>
-   * Output only. If this field is populated, it contains a description of why the TPU Node
-   * is unhealthy.
+   * Output only. If this field is populated, it contains a description of why
+   * the TPU Node is unhealthy.
    * </pre>
    *
    * <code>string health_description = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -321,10 +321,10 @@ public interface NodeOrBuilder
    *
    *
    * <pre>
-   * Output only. The service account used to run the tensor flow services within the node.
-   * To share resources, including Google Cloud Storage data, with the
-   * Tensorflow job running in the Node, this account must have permissions to
-   * that data.
+   * Output only. The service account used to run the tensor flow services
+   * within the node. To share resources, including Google Cloud Storage data,
+   * with the Tensorflow job running in the Node, this account must have
+   * permissions to that data.
    * </pre>
    *
    * <code>string service_account = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -336,10 +336,10 @@ public interface NodeOrBuilder
    *
    *
    * <pre>
-   * Output only. The service account used to run the tensor flow services within the node.
-   * To share resources, including Google Cloud Storage data, with the
-   * Tensorflow job running in the Node, this account must have permissions to
-   * that data.
+   * Output only. The service account used to run the tensor flow services
+   * within the node. To share resources, including Google Cloud Storage data,
+   * with the Tensorflow job running in the Node, this account must have
+   * permissions to that data.
    * </pre>
    *
    * <code>string service_account = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

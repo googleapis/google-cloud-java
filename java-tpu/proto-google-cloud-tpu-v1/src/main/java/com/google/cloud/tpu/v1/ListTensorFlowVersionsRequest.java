@@ -22,7 +22,8 @@ package com.google.cloud.tpu.v1;
  *
  *
  * <pre>
- * Request for [ListTensorFlowVersions][google.cloud.tpu.v1.Tpu.ListTensorFlowVersions].
+ * Request for
+ * [ListTensorFlowVersions][google.cloud.tpu.v1.Tpu.ListTensorFlowVersions].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tpu.v1.ListTensorFlowVersionsRequest}
@@ -496,7 +497,8 @@ public final class ListTensorFlowVersionsRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Request for [ListTensorFlowVersions][google.cloud.tpu.v1.Tpu.ListTensorFlowVersions].
+   * Request for
+   * [ListTensorFlowVersions][google.cloud.tpu.v1.Tpu.ListTensorFlowVersions].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tpu.v1.ListTensorFlowVersionsRequest}

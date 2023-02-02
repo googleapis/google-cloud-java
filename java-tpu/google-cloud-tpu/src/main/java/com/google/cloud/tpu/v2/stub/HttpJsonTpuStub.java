@@ -585,7 +585,7 @@ public class HttpJsonTpuStub extends TpuStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListLocationsRequest>newBuilder()
                       .setPath(
-                          "/v1alpha1/{name=projects/*}/locations",
+                          "/v2/{name=projects/*}/locations",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<ListLocationsRequest> serializer =
@@ -593,10 +593,6 @@ public class HttpJsonTpuStub extends TpuStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
-                      .setAdditionalPaths(
-                          "/v1/{name=projects/*}/locations",
-                          "/v2alpha1/{name=projects/*}/locations",
-                          "/v2/{name=projects/*}/locations")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -623,7 +619,7 @@ public class HttpJsonTpuStub extends TpuStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetLocationRequest>newBuilder()
                       .setPath(
-                          "/v1alpha1/{name=projects/*/locations/*}",
+                          "/v2/{name=projects/*/locations/*}",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<GetLocationRequest> serializer =
@@ -631,10 +627,6 @@ public class HttpJsonTpuStub extends TpuStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
-                      .setAdditionalPaths(
-                          "/v1/{name=projects/*/locations/*}",
-                          "/v2alpha1/{name=projects/*/locations/*}",
-                          "/v2/{name=projects/*/locations/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

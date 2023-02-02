@@ -22,7 +22,8 @@ package com.google.cloud.tpu.v1;
  *
  *
  * <pre>
- * Response for [ListTensorFlowVersions][google.cloud.tpu.v1.Tpu.ListTensorFlowVersions].
+ * Response for
+ * [ListTensorFlowVersions][google.cloud.tpu.v1.Tpu.ListTensorFlowVersions].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tpu.v1.ListTensorFlowVersionsResponse}
@@ -448,7 +449,8 @@ public final class ListTensorFlowVersionsResponse extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Response for [ListTensorFlowVersions][google.cloud.tpu.v1.Tpu.ListTensorFlowVersions].
+   * Response for
+   * [ListTensorFlowVersions][google.cloud.tpu.v1.Tpu.ListTensorFlowVersions].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tpu.v1.ListTensorFlowVersionsResponse}

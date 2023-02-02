@@ -133,7 +133,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The unqualified resource name. Should follow the `^[A-Za-z0-9_.~+%-]+$`
+   * The unqualified resource name. Should follow the ^[A-Za-z0-9_.~+%-]+$
    * regex format.
    * </pre>
    *
@@ -157,7 +157,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The unqualified resource name. Should follow the `^[A-Za-z0-9_.~+%-]+$`
+   * The unqualified resource name. Should follow the ^[A-Za-z0-9_.~+%-]+$
    * regex format.
    * </pre>
    *
@@ -830,7 +830,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The unqualified resource name. Should follow the `^[A-Za-z0-9_.~+%-]+$`
+     * The unqualified resource name. Should follow the ^[A-Za-z0-9_.~+%-]+$
      * regex format.
      * </pre>
      *
@@ -853,7 +853,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The unqualified resource name. Should follow the `^[A-Za-z0-9_.~+%-]+$`
+     * The unqualified resource name. Should follow the ^[A-Za-z0-9_.~+%-]+$
      * regex format.
      * </pre>
      *
@@ -876,7 +876,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The unqualified resource name. Should follow the `^[A-Za-z0-9_.~+%-]+$`
+     * The unqualified resource name. Should follow the ^[A-Za-z0-9_.~+%-]+$
      * regex format.
      * </pre>
      *
@@ -898,7 +898,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The unqualified resource name. Should follow the `^[A-Za-z0-9_.~+%-]+$`
+     * The unqualified resource name. Should follow the ^[A-Za-z0-9_.~+%-]+$
      * regex format.
      * </pre>
      *
@@ -916,7 +916,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The unqualified resource name. Should follow the `^[A-Za-z0-9_.~+%-]+$`
+     * The unqualified resource name. Should follow the ^[A-Za-z0-9_.~+%-]+$
      * regex format.
      * </pre>
      *
