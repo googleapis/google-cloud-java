@@ -36,7 +36,7 @@ public interface StartIPRotationRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.StartIPRotationRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4014
+   *     google/container/v1beta1/cluster_service.proto;l=4020
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -54,7 +54,7 @@ public interface StartIPRotationRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.StartIPRotationRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4014
+   *     google/container/v1beta1/cluster_service.proto;l=4020
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -73,7 +73,7 @@ public interface StartIPRotationRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.StartIPRotationRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4021
+   *     google/container/v1beta1/cluster_service.proto;l=4027
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -91,7 +91,7 @@ public interface StartIPRotationRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.StartIPRotationRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4021
+   *     google/container/v1beta1/cluster_service.proto;l=4027
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -109,7 +109,7 @@ public interface StartIPRotationRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.StartIPRotationRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4025
+   *     google/container/v1beta1/cluster_service.proto;l=4031
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface StartIPRotationRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.StartIPRotationRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4025
+   *     google/container/v1beta1/cluster_service.proto;l=4031
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated

@@ -389,7 +389,9 @@ public interface NodeConfigOrBuilder
    *
    * <pre>
    * The image type to use for this node. Note that for a given image type,
-   * the latest version of it will be used.
+   * the latest version of it will be used. Please see
+   * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images for
+   * available image types.
    * </pre>
    *
    * <code>string image_type = 5;</code>
@@ -402,7 +404,9 @@ public interface NodeConfigOrBuilder
    *
    * <pre>
    * The image type to use for this node. Note that for a given image type,
-   * the latest version of it will be used.
+   * the latest version of it will be used. Please see
+   * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images for
+   * available image types.
    * </pre>
    *
    * <code>string image_type = 5;</code>

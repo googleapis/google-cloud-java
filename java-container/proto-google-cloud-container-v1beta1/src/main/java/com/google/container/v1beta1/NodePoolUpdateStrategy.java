@@ -32,7 +32,8 @@ public enum NodePoolUpdateStrategy implements com.google.protobuf.ProtocolMessag
    *
    *
    * <pre>
-   * Default value.
+   * Default value if unset. GKE internally defaults the update strategy to
+   * SURGE for unspecified strategies.
    * </pre>
    *
    * <code>NODE_POOL_UPDATE_STRATEGY_UNSPECIFIED = 0;</code>
@@ -66,7 +67,8 @@ public enum NodePoolUpdateStrategy implements com.google.protobuf.ProtocolMessag
    *
    *
    * <pre>
-   * Default value.
+   * Default value if unset. GKE internally defaults the update strategy to
+   * SURGE for unspecified strategies.
    * </pre>
    *
    * <code>NODE_POOL_UPDATE_STRATEGY_UNSPECIFIED = 0;</code>
