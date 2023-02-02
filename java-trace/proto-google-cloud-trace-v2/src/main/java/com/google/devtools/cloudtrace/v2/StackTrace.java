@@ -112,9 +112,10 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An un-mangled function name, if `function_name` is
-     * [mangled](http://www.avabodh.com/cxxin/namemangling.html). The name can
-     * be fully-qualified (up to 1024 bytes).
+     * An un-mangled function name, if `function_name` is mangled.
+     * To get information about name mangling, run
+     * [this search](https://www.google.com/search?q=cxx+name+mangling).
+     * The name can be fully-qualified (up to 1024 bytes).
      * </pre>
      *
      * <code>.google.devtools.cloudtrace.v2.TruncatableString original_function_name = 2;</code>
@@ -126,9 +127,10 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An un-mangled function name, if `function_name` is
-     * [mangled](http://www.avabodh.com/cxxin/namemangling.html). The name can
-     * be fully-qualified (up to 1024 bytes).
+     * An un-mangled function name, if `function_name` is mangled.
+     * To get information about name mangling, run
+     * [this search](https://www.google.com/search?q=cxx+name+mangling).
+     * The name can be fully-qualified (up to 1024 bytes).
      * </pre>
      *
      * <code>.google.devtools.cloudtrace.v2.TruncatableString original_function_name = 2;</code>
@@ -140,9 +142,10 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An un-mangled function name, if `function_name` is
-     * [mangled](http://www.avabodh.com/cxxin/namemangling.html). The name can
-     * be fully-qualified (up to 1024 bytes).
+     * An un-mangled function name, if `function_name` is mangled.
+     * To get information about name mangling, run
+     * [this search](https://www.google.com/search?q=cxx+name+mangling).
+     * The name can be fully-qualified (up to 1024 bytes).
      * </pre>
      *
      * <code>.google.devtools.cloudtrace.v2.TruncatableString original_function_name = 2;</code>
@@ -390,9 +393,10 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An un-mangled function name, if `function_name` is
-     * [mangled](http://www.avabodh.com/cxxin/namemangling.html). The name can
-     * be fully-qualified (up to 1024 bytes).
+     * An un-mangled function name, if `function_name` is mangled.
+     * To get information about name mangling, run
+     * [this search](https://www.google.com/search?q=cxx+name+mangling).
+     * The name can be fully-qualified (up to 1024 bytes).
      * </pre>
      *
      * <code>.google.devtools.cloudtrace.v2.TruncatableString original_function_name = 2;</code>
@@ -407,9 +411,10 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An un-mangled function name, if `function_name` is
-     * [mangled](http://www.avabodh.com/cxxin/namemangling.html). The name can
-     * be fully-qualified (up to 1024 bytes).
+     * An un-mangled function name, if `function_name` is mangled.
+     * To get information about name mangling, run
+     * [this search](https://www.google.com/search?q=cxx+name+mangling).
+     * The name can be fully-qualified (up to 1024 bytes).
      * </pre>
      *
      * <code>.google.devtools.cloudtrace.v2.TruncatableString original_function_name = 2;</code>
@@ -426,9 +431,10 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An un-mangled function name, if `function_name` is
-     * [mangled](http://www.avabodh.com/cxxin/namemangling.html). The name can
-     * be fully-qualified (up to 1024 bytes).
+     * An un-mangled function name, if `function_name` is mangled.
+     * To get information about name mangling, run
+     * [this search](https://www.google.com/search?q=cxx+name+mangling).
+     * The name can be fully-qualified (up to 1024 bytes).
      * </pre>
      *
      * <code>.google.devtools.cloudtrace.v2.TruncatableString original_function_name = 2;</code>
@@ -1367,9 +1373,10 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * An un-mangled function name, if `function_name` is
-       * [mangled](http://www.avabodh.com/cxxin/namemangling.html). The name can
-       * be fully-qualified (up to 1024 bytes).
+       * An un-mangled function name, if `function_name` is mangled.
+       * To get information about name mangling, run
+       * [this search](https://www.google.com/search?q=cxx+name+mangling).
+       * The name can be fully-qualified (up to 1024 bytes).
        * </pre>
        *
        * <code>.google.devtools.cloudtrace.v2.TruncatableString original_function_name = 2;</code>
@@ -1383,9 +1390,10 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * An un-mangled function name, if `function_name` is
-       * [mangled](http://www.avabodh.com/cxxin/namemangling.html). The name can
-       * be fully-qualified (up to 1024 bytes).
+       * An un-mangled function name, if `function_name` is mangled.
+       * To get information about name mangling, run
+       * [this search](https://www.google.com/search?q=cxx+name+mangling).
+       * The name can be fully-qualified (up to 1024 bytes).
        * </pre>
        *
        * <code>.google.devtools.cloudtrace.v2.TruncatableString original_function_name = 2;</code>
@@ -1405,9 +1413,10 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * An un-mangled function name, if `function_name` is
-       * [mangled](http://www.avabodh.com/cxxin/namemangling.html). The name can
-       * be fully-qualified (up to 1024 bytes).
+       * An un-mangled function name, if `function_name` is mangled.
+       * To get information about name mangling, run
+       * [this search](https://www.google.com/search?q=cxx+name+mangling).
+       * The name can be fully-qualified (up to 1024 bytes).
        * </pre>
        *
        * <code>.google.devtools.cloudtrace.v2.TruncatableString original_function_name = 2;</code>
@@ -1430,9 +1439,10 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * An un-mangled function name, if `function_name` is
-       * [mangled](http://www.avabodh.com/cxxin/namemangling.html). The name can
-       * be fully-qualified (up to 1024 bytes).
+       * An un-mangled function name, if `function_name` is mangled.
+       * To get information about name mangling, run
+       * [this search](https://www.google.com/search?q=cxx+name+mangling).
+       * The name can be fully-qualified (up to 1024 bytes).
        * </pre>
        *
        * <code>.google.devtools.cloudtrace.v2.TruncatableString original_function_name = 2;</code>
@@ -1452,9 +1462,10 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * An un-mangled function name, if `function_name` is
-       * [mangled](http://www.avabodh.com/cxxin/namemangling.html). The name can
-       * be fully-qualified (up to 1024 bytes).
+       * An un-mangled function name, if `function_name` is mangled.
+       * To get information about name mangling, run
+       * [this search](https://www.google.com/search?q=cxx+name+mangling).
+       * The name can be fully-qualified (up to 1024 bytes).
        * </pre>
        *
        * <code>.google.devtools.cloudtrace.v2.TruncatableString original_function_name = 2;</code>
@@ -1481,9 +1492,10 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * An un-mangled function name, if `function_name` is
-       * [mangled](http://www.avabodh.com/cxxin/namemangling.html). The name can
-       * be fully-qualified (up to 1024 bytes).
+       * An un-mangled function name, if `function_name` is mangled.
+       * To get information about name mangling, run
+       * [this search](https://www.google.com/search?q=cxx+name+mangling).
+       * The name can be fully-qualified (up to 1024 bytes).
        * </pre>
        *
        * <code>.google.devtools.cloudtrace.v2.TruncatableString original_function_name = 2;</code>
@@ -1502,9 +1514,10 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * An un-mangled function name, if `function_name` is
-       * [mangled](http://www.avabodh.com/cxxin/namemangling.html). The name can
-       * be fully-qualified (up to 1024 bytes).
+       * An un-mangled function name, if `function_name` is mangled.
+       * To get information about name mangling, run
+       * [this search](https://www.google.com/search?q=cxx+name+mangling).
+       * The name can be fully-qualified (up to 1024 bytes).
        * </pre>
        *
        * <code>.google.devtools.cloudtrace.v2.TruncatableString original_function_name = 2;</code>
@@ -1519,9 +1532,10 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * An un-mangled function name, if `function_name` is
-       * [mangled](http://www.avabodh.com/cxxin/namemangling.html). The name can
-       * be fully-qualified (up to 1024 bytes).
+       * An un-mangled function name, if `function_name` is mangled.
+       * To get information about name mangling, run
+       * [this search](https://www.google.com/search?q=cxx+name+mangling).
+       * The name can be fully-qualified (up to 1024 bytes).
        * </pre>
        *
        * <code>.google.devtools.cloudtrace.v2.TruncatableString original_function_name = 2;</code>
@@ -1540,9 +1554,10 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * An un-mangled function name, if `function_name` is
-       * [mangled](http://www.avabodh.com/cxxin/namemangling.html). The name can
-       * be fully-qualified (up to 1024 bytes).
+       * An un-mangled function name, if `function_name` is mangled.
+       * To get information about name mangling, run
+       * [this search](https://www.google.com/search?q=cxx+name+mangling).
+       * The name can be fully-qualified (up to 1024 bytes).
        * </pre>
        *
        * <code>.google.devtools.cloudtrace.v2.TruncatableString original_function_name = 2;</code>

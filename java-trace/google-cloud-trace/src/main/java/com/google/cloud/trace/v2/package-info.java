@@ -15,14 +15,19 @@
  */
 
 /**
- * The interfaces provided are listed below, along with usage samples.
+ * A client to Stackdriver Trace API
+ *
+ * <p>The interfaces provided are listed below, along with usage samples.
  *
  * <p>======================= TraceServiceClient =======================
  *
- * <p>Service Description: This file describes an API for collecting and viewing traces and spans
- * within a trace. A Trace is a collection of spans corresponding to a single operation or set of
- * operations for an application. A span is an individual timed event which forms a node of the
- * trace tree. A single trace may contain span(s) from multiple services.
+ * <p>Service Description: Service for collecting and viewing traces and spans within a trace.
+ *
+ * <p>A trace is a collection of spans corresponding to a single operation or a set of operations in
+ * an application.
+ *
+ * <p>A span is an individual timed event which forms a node of the trace tree. A single trace can
+ * contain spans from multiple services.
  *
  * <p>Sample for TraceServiceClient:
  *

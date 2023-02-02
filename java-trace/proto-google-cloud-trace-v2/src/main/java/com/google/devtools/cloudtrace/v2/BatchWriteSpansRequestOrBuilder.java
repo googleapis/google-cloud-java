@@ -59,7 +59,7 @@ public interface BatchWriteSpansRequestOrBuilder
    *
    * <pre>
    * Required. A list of new spans. The span names must not match existing
-   * spans, or the results are undefined.
+   * spans, otherwise the results are undefined.
    * </pre>
    *
    * <code>
@@ -72,7 +72,7 @@ public interface BatchWriteSpansRequestOrBuilder
    *
    * <pre>
    * Required. A list of new spans. The span names must not match existing
-   * spans, or the results are undefined.
+   * spans, otherwise the results are undefined.
    * </pre>
    *
    * <code>
@@ -85,7 +85,7 @@ public interface BatchWriteSpansRequestOrBuilder
    *
    * <pre>
    * Required. A list of new spans. The span names must not match existing
-   * spans, or the results are undefined.
+   * spans, otherwise the results are undefined.
    * </pre>
    *
    * <code>
@@ -98,7 +98,7 @@ public interface BatchWriteSpansRequestOrBuilder
    *
    * <pre>
    * Required. A list of new spans. The span names must not match existing
-   * spans, or the results are undefined.
+   * spans, otherwise the results are undefined.
    * </pre>
    *
    * <code>
@@ -111,7 +111,7 @@ public interface BatchWriteSpansRequestOrBuilder
    *
    * <pre>
    * Required. A list of new spans. The span names must not match existing
-   * spans, or the results are undefined.
+   * spans, otherwise the results are undefined.
    * </pre>
    *
    * <code>

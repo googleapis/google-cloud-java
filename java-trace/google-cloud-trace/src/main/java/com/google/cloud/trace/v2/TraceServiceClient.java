@@ -31,10 +31,13 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: This file describes an API for collecting and viewing traces and spans
- * within a trace. A Trace is a collection of spans corresponding to a single operation or set of
- * operations for an application. A span is an individual timed event which forms a node of the
- * trace tree. A single trace may contain span(s) from multiple services.
+ * Service Description: Service for collecting and viewing traces and spans within a trace.
+ *
+ * <p>A trace is a collection of spans corresponding to a single operation or a set of operations in
+ * an application.
+ *
+ * <p>A span is an individual timed event which forms a node of the trace tree. A single trace can
+ * contain spans from multiple services.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -172,7 +175,7 @@ public class TraceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sends new spans to new or existing traces. You cannot update existing spans.
+   * Batch writes new spans to new or existing traces. You cannot update existing spans.
    *
    * <p>Sample code:
    *
@@ -191,8 +194,8 @@ public class TraceServiceClient implements BackgroundResource {
    *
    * @param name Required. The name of the project where the spans belong. The format is
    *     `projects/[PROJECT_ID]`.
-   * @param spans Required. A list of new spans. The span names must not match existing spans, or
-   *     the results are undefined.
+   * @param spans Required. A list of new spans. The span names must not match existing spans,
+   *     otherwise the results are undefined.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void batchWriteSpans(ProjectName name, List<Span> spans) {
@@ -206,7 +209,7 @@ public class TraceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sends new spans to new or existing traces. You cannot update existing spans.
+   * Batch writes new spans to new or existing traces. You cannot update existing spans.
    *
    * <p>Sample code:
    *
@@ -225,8 +228,8 @@ public class TraceServiceClient implements BackgroundResource {
    *
    * @param name Required. The name of the project where the spans belong. The format is
    *     `projects/[PROJECT_ID]`.
-   * @param spans Required. A list of new spans. The span names must not match existing spans, or
-   *     the results are undefined.
+   * @param spans Required. A list of new spans. The span names must not match existing spans,
+   *     otherwise the results are undefined.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void batchWriteSpans(String name, List<Span> spans) {
@@ -237,7 +240,7 @@ public class TraceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sends new spans to new or existing traces. You cannot update existing spans.
+   * Batch writes new spans to new or existing traces. You cannot update existing spans.
    *
    * <p>Sample code:
    *
@@ -266,7 +269,7 @@ public class TraceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sends new spans to new or existing traces. You cannot update existing spans.
+   * Batch writes new spans to new or existing traces. You cannot update existing spans.
    *
    * <p>Sample code:
    *

@@ -28,11 +28,14 @@ public interface SpanOrBuilder
    *
    * <pre>
    * Required. The resource name of the span in the following format:
-   *     projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]
-   * [TRACE_ID] is a unique identifier for a trace within a project;
-   * it is a 32-character hexadecimal encoding of a 16-byte array.
-   * [SPAN_ID] is a unique identifier for a span within a trace; it
-   * is a 16-character hexadecimal encoding of an 8-byte array.
+   *  * `projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]`
+   * `[TRACE_ID]` is a unique identifier for a trace within a project;
+   * it is a 32-character hexadecimal encoding of a 16-byte array. It should
+   * not be zero.
+   * `[SPAN_ID]` is a unique identifier for a span within a trace; it
+   * is a 16-character hexadecimal encoding of an 8-byte array. It should not
+   * be zero.
+   * .
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -45,11 +48,14 @@ public interface SpanOrBuilder
    *
    * <pre>
    * Required. The resource name of the span in the following format:
-   *     projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]
-   * [TRACE_ID] is a unique identifier for a trace within a project;
-   * it is a 32-character hexadecimal encoding of a 16-byte array.
-   * [SPAN_ID] is a unique identifier for a span within a trace; it
-   * is a 16-character hexadecimal encoding of an 8-byte array.
+   *  * `projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]`
+   * `[TRACE_ID]` is a unique identifier for a trace within a project;
+   * it is a 32-character hexadecimal encoding of a 16-byte array. It should
+   * not be zero.
+   * `[SPAN_ID]` is a unique identifier for a span within a trace; it
+   * is a 16-character hexadecimal encoding of an 8-byte array. It should not
+   * be zero.
+   * .
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -62,7 +68,7 @@ public interface SpanOrBuilder
    *
    *
    * <pre>
-   * Required. The [SPAN_ID] portion of the span's resource name.
+   * Required. The `[SPAN_ID]` portion of the span's resource name.
    * </pre>
    *
    * <code>string span_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -74,7 +80,7 @@ public interface SpanOrBuilder
    *
    *
    * <pre>
-   * Required. The [SPAN_ID] portion of the span's resource name.
+   * Required. The `[SPAN_ID]` portion of the span's resource name.
    * </pre>
    *
    * <code>string span_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -87,7 +93,7 @@ public interface SpanOrBuilder
    *
    *
    * <pre>
-   * The [SPAN_ID] of this span's parent span. If this is a root span,
+   * The `[SPAN_ID]` of this span's parent span. If this is a root span,
    * then this field must be empty.
    * </pre>
    *
@@ -100,7 +106,7 @@ public interface SpanOrBuilder
    *
    *
    * <pre>
-   * The [SPAN_ID] of this span's parent span. If this is a root span,
+   * The `[SPAN_ID]` of this span's parent span. If this is a root span,
    * then this field must be empty.
    * </pre>
    *
@@ -115,8 +121,8 @@ public interface SpanOrBuilder
    *
    * <pre>
    * Required. A description of the span's operation (up to 128 bytes).
-   * Stackdriver Trace displays the description in the
-   * Google Cloud Platform Console.
+   * Cloud Trace displays the description in the
+   * Cloud console.
    * For example, the display name can be a qualified method name or a file name
    * and a line number where the operation is called. A best practice is to use
    * the same display name within an application and at the same call point.
@@ -135,8 +141,8 @@ public interface SpanOrBuilder
    *
    * <pre>
    * Required. A description of the span's operation (up to 128 bytes).
-   * Stackdriver Trace displays the description in the
-   * Google Cloud Platform Console.
+   * Cloud Trace displays the description in the
+   * Cloud console.
    * For example, the display name can be a qualified method name or a file name
    * and a line number where the operation is called. A best practice is to use
    * the same display name within an application and at the same call point.
@@ -155,8 +161,8 @@ public interface SpanOrBuilder
    *
    * <pre>
    * Required. A description of the span's operation (up to 128 bytes).
-   * Stackdriver Trace displays the description in the
-   * Google Cloud Platform Console.
+   * Cloud Trace displays the description in the
+   * Cloud console.
    * For example, the display name can be a qualified method name or a file name
    * and a line number where the operation is called. A best practice is to use
    * the same display name within an application and at the same call point.
@@ -173,9 +179,10 @@ public interface SpanOrBuilder
    *
    *
    * <pre>
-   * Required. The start time of the span. On the client side, this is the time kept by
-   * the local machine where the span execution starts. On the server side, this
-   * is the time when the server's application handler starts running.
+   * Required. The start time of the span. On the client side, this is the time
+   * kept by the local machine where the span execution starts. On the server
+   * side, this is the time when the server's application handler starts
+   * running.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
@@ -188,9 +195,10 @@ public interface SpanOrBuilder
    *
    *
    * <pre>
-   * Required. The start time of the span. On the client side, this is the time kept by
-   * the local machine where the span execution starts. On the server side, this
-   * is the time when the server's application handler starts running.
+   * Required. The start time of the span. On the client side, this is the time
+   * kept by the local machine where the span execution starts. On the server
+   * side, this is the time when the server's application handler starts
+   * running.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
@@ -203,9 +211,10 @@ public interface SpanOrBuilder
    *
    *
    * <pre>
-   * Required. The start time of the span. On the client side, this is the time kept by
-   * the local machine where the span execution starts. On the server side, this
-   * is the time when the server's application handler starts running.
+   * Required. The start time of the span. On the client side, this is the time
+   * kept by the local machine where the span execution starts. On the server
+   * side, this is the time when the server's application handler starts
+   * running.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
@@ -217,9 +226,9 @@ public interface SpanOrBuilder
    *
    *
    * <pre>
-   * Required. The end time of the span. On the client side, this is the time kept by
-   * the local machine where the span execution ends. On the server side, this
-   * is the time when the server application handler stops running.
+   * Required. The end time of the span. On the client side, this is the time
+   * kept by the local machine where the span execution ends. On the server
+   * side, this is the time when the server application handler stops running.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -231,9 +240,9 @@ public interface SpanOrBuilder
    *
    *
    * <pre>
-   * Required. The end time of the span. On the client side, this is the time kept by
-   * the local machine where the span execution ends. On the server side, this
-   * is the time when the server application handler stops running.
+   * Required. The end time of the span. On the client side, this is the time
+   * kept by the local machine where the span execution ends. On the server
+   * side, this is the time when the server application handler stops running.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -245,9 +254,9 @@ public interface SpanOrBuilder
    *
    *
    * <pre>
-   * Required. The end time of the span. On the client side, this is the time kept by
-   * the local machine where the span execution ends. On the server side, this
-   * is the time when the server application handler stops running.
+   * Required. The end time of the span. On the client side, this is the time
+   * kept by the local machine where the span execution ends. On the server
+   * side, this is the time when the server application handler stops running.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -441,8 +450,7 @@ public interface SpanOrBuilder
    * <pre>
    * Optional. Set this parameter to indicate whether this span is in
    * the same process as its parent. If you do not set this parameter,
-   * Stackdriver Trace is unable to take advantage of this helpful
-   * information.
+   * Trace is unable to take advantage of this helpful information.
    * </pre>
    *
    * <code>
@@ -458,8 +466,7 @@ public interface SpanOrBuilder
    * <pre>
    * Optional. Set this parameter to indicate whether this span is in
    * the same process as its parent. If you do not set this parameter,
-   * Stackdriver Trace is unable to take advantage of this helpful
-   * information.
+   * Trace is unable to take advantage of this helpful information.
    * </pre>
    *
    * <code>
@@ -475,8 +482,7 @@ public interface SpanOrBuilder
    * <pre>
    * Optional. Set this parameter to indicate whether this span is in
    * the same process as its parent. If you do not set this parameter,
-   * Stackdriver Trace is unable to take advantage of this helpful
-   * information.
+   * Trace is unable to take advantage of this helpful information.
    * </pre>
    *
    * <code>
@@ -533,9 +539,9 @@ public interface SpanOrBuilder
    *
    *
    * <pre>
-   * Optional. Distinguishes between spans generated in a particular context. For example,
-   * two spans with the same name may be distinguished using `CLIENT` (caller)
-   * and `SERVER` (callee) to identify an RPC call.
+   * Optional. Distinguishes between spans generated in a particular context.
+   * For example, two spans with the same name may be distinguished using
+   * `CLIENT` (caller) and `SERVER` (callee) to identify an RPC call.
    * </pre>
    *
    * <code>
@@ -549,9 +555,9 @@ public interface SpanOrBuilder
    *
    *
    * <pre>
-   * Optional. Distinguishes between spans generated in a particular context. For example,
-   * two spans with the same name may be distinguished using `CLIENT` (caller)
-   * and `SERVER` (callee) to identify an RPC call.
+   * Optional. Distinguishes between spans generated in a particular context.
+   * For example, two spans with the same name may be distinguished using
+   * `CLIENT` (caller) and `SERVER` (callee) to identify an RPC call.
    * </pre>
    *
    * <code>

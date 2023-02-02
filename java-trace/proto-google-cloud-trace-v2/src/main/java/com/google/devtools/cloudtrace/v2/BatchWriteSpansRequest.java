@@ -134,7 +134,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. A list of new spans. The span names must not match existing
-   * spans, or the results are undefined.
+   * spans, otherwise the results are undefined.
    * </pre>
    *
    * <code>
@@ -150,7 +150,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. A list of new spans. The span names must not match existing
-   * spans, or the results are undefined.
+   * spans, otherwise the results are undefined.
    * </pre>
    *
    * <code>
@@ -167,7 +167,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. A list of new spans. The span names must not match existing
-   * spans, or the results are undefined.
+   * spans, otherwise the results are undefined.
    * </pre>
    *
    * <code>
@@ -183,7 +183,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. A list of new spans. The span names must not match existing
-   * spans, or the results are undefined.
+   * spans, otherwise the results are undefined.
    * </pre>
    *
    * <code>
@@ -199,7 +199,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. A list of new spans. The span names must not match existing
-   * spans, or the results are undefined.
+   * spans, otherwise the results are undefined.
    * </pre>
    *
    * <code>
@@ -768,7 +768,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. A list of new spans. The span names must not match existing
-     * spans, or the results are undefined.
+     * spans, otherwise the results are undefined.
      * </pre>
      *
      * <code>
@@ -787,7 +787,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. A list of new spans. The span names must not match existing
-     * spans, or the results are undefined.
+     * spans, otherwise the results are undefined.
      * </pre>
      *
      * <code>
@@ -806,7 +806,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. A list of new spans. The span names must not match existing
-     * spans, or the results are undefined.
+     * spans, otherwise the results are undefined.
      * </pre>
      *
      * <code>
@@ -825,7 +825,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. A list of new spans. The span names must not match existing
-     * spans, or the results are undefined.
+     * spans, otherwise the results are undefined.
      * </pre>
      *
      * <code>
@@ -850,7 +850,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. A list of new spans. The span names must not match existing
-     * spans, or the results are undefined.
+     * spans, otherwise the results are undefined.
      * </pre>
      *
      * <code>
@@ -873,7 +873,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. A list of new spans. The span names must not match existing
-     * spans, or the results are undefined.
+     * spans, otherwise the results are undefined.
      * </pre>
      *
      * <code>
@@ -898,7 +898,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. A list of new spans. The span names must not match existing
-     * spans, or the results are undefined.
+     * spans, otherwise the results are undefined.
      * </pre>
      *
      * <code>
@@ -923,7 +923,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. A list of new spans. The span names must not match existing
-     * spans, or the results are undefined.
+     * spans, otherwise the results are undefined.
      * </pre>
      *
      * <code>
@@ -945,7 +945,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. A list of new spans. The span names must not match existing
-     * spans, or the results are undefined.
+     * spans, otherwise the results are undefined.
      * </pre>
      *
      * <code>
@@ -968,7 +968,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. A list of new spans. The span names must not match existing
-     * spans, or the results are undefined.
+     * spans, otherwise the results are undefined.
      * </pre>
      *
      * <code>
@@ -991,7 +991,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. A list of new spans. The span names must not match existing
-     * spans, or the results are undefined.
+     * spans, otherwise the results are undefined.
      * </pre>
      *
      * <code>
@@ -1013,7 +1013,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. A list of new spans. The span names must not match existing
-     * spans, or the results are undefined.
+     * spans, otherwise the results are undefined.
      * </pre>
      *
      * <code>
@@ -1035,7 +1035,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. A list of new spans. The span names must not match existing
-     * spans, or the results are undefined.
+     * spans, otherwise the results are undefined.
      * </pre>
      *
      * <code>
@@ -1050,7 +1050,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. A list of new spans. The span names must not match existing
-     * spans, or the results are undefined.
+     * spans, otherwise the results are undefined.
      * </pre>
      *
      * <code>
@@ -1069,7 +1069,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. A list of new spans. The span names must not match existing
-     * spans, or the results are undefined.
+     * spans, otherwise the results are undefined.
      * </pre>
      *
      * <code>
@@ -1089,7 +1089,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. A list of new spans. The span names must not match existing
-     * spans, or the results are undefined.
+     * spans, otherwise the results are undefined.
      * </pre>
      *
      * <code>
@@ -1105,7 +1105,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. A list of new spans. The span names must not match existing
-     * spans, or the results are undefined.
+     * spans, otherwise the results are undefined.
      * </pre>
      *
      * <code>
@@ -1121,7 +1121,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. A list of new spans. The span names must not match existing
-     * spans, or the results are undefined.
+     * spans, otherwise the results are undefined.
      * </pre>
      *
      * <code>

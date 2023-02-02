@@ -25,8 +25,9 @@ package com.google.devtools.cloudtrace.v2;
  * A span represents a single operation within a trace. Spans can be
  * nested to form a trace tree. Often, a trace contains a root span
  * that describes the end-to-end latency, and one or more subspans for
- * its sub-operations. A trace can also contain multiple root spans,
- * or none at all. Spans do not need to be contiguous&amp;mdash;there may be
+ * its sub-operations.
+ * A trace can also contain multiple root spans, or none at all.
+ * Spans do not need to be contiguous. There might be
  * gaps or overlaps between spans in a trace.
  * </pre>
  *
@@ -326,9 +327,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The set of attributes. Each attribute's key can be up to 128 bytes
+     * A set of attributes. Each attribute's key can be up to 128 bytes
      * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
-     * or the Boolean values `true` and `false`. For example:
+     * or the boolean values `true` or `false`. For example:
      *     "/instance_id": { "string_value": { "value": "my-instance" } }
      *     "/http/request_bytes": { "int_value": 300 }
      *     "abc.com/myattribute": { "bool_value": false }
@@ -342,9 +343,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The set of attributes. Each attribute's key can be up to 128 bytes
+     * A set of attributes. Each attribute's key can be up to 128 bytes
      * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
-     * or the Boolean values `true` and `false`. For example:
+     * or the boolean values `true` or `false`. For example:
      *     "/instance_id": { "string_value": { "value": "my-instance" } }
      *     "/http/request_bytes": { "int_value": 300 }
      *     "abc.com/myattribute": { "bool_value": false }
@@ -362,9 +363,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The set of attributes. Each attribute's key can be up to 128 bytes
+     * A set of attributes. Each attribute's key can be up to 128 bytes
      * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
-     * or the Boolean values `true` and `false`. For example:
+     * or the boolean values `true` or `false`. For example:
      *     "/instance_id": { "string_value": { "value": "my-instance" } }
      *     "/http/request_bytes": { "int_value": 300 }
      *     "abc.com/myattribute": { "bool_value": false }
@@ -379,9 +380,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The set of attributes. Each attribute's key can be up to 128 bytes
+     * A set of attributes. Each attribute's key can be up to 128 bytes
      * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
-     * or the Boolean values `true` and `false`. For example:
+     * or the boolean values `true` or `false`. For example:
      *     "/instance_id": { "string_value": { "value": "my-instance" } }
      *     "/http/request_bytes": { "int_value": 300 }
      *     "abc.com/myattribute": { "bool_value": false }
@@ -399,9 +400,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The set of attributes. Each attribute's key can be up to 128 bytes
+     * A set of attributes. Each attribute's key can be up to 128 bytes
      * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
-     * or the Boolean values `true` and `false`. For example:
+     * or the boolean values `true` or `false`. For example:
      *     "/instance_id": { "string_value": { "value": "my-instance" } }
      *     "/http/request_bytes": { "int_value": 300 }
      *     "abc.com/myattribute": { "bool_value": false }
@@ -431,7 +432,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A set of attributes, each in the format `[KEY]:[VALUE]`.
+   * A set of attributes as key-value pairs.
    * </pre>
    *
    * Protobuf type {@code google.devtools.cloudtrace.v2.Span.Attributes}
@@ -524,9 +525,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The set of attributes. Each attribute's key can be up to 128 bytes
+     * A set of attributes. Each attribute's key can be up to 128 bytes
      * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
-     * or the Boolean values `true` and `false`. For example:
+     * or the boolean values `true` or `false`. For example:
      *     "/instance_id": { "string_value": { "value": "my-instance" } }
      *     "/http/request_bytes": { "int_value": 300 }
      *     "abc.com/myattribute": { "bool_value": false }
@@ -553,9 +554,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The set of attributes. Each attribute's key can be up to 128 bytes
+     * A set of attributes. Each attribute's key can be up to 128 bytes
      * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
-     * or the Boolean values `true` and `false`. For example:
+     * or the boolean values `true` or `false`. For example:
      *     "/instance_id": { "string_value": { "value": "my-instance" } }
      *     "/http/request_bytes": { "int_value": 300 }
      *     "abc.com/myattribute": { "bool_value": false }
@@ -573,9 +574,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The set of attributes. Each attribute's key can be up to 128 bytes
+     * A set of attributes. Each attribute's key can be up to 128 bytes
      * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
-     * or the Boolean values `true` and `false`. For example:
+     * or the boolean values `true` or `false`. For example:
      *     "/instance_id": { "string_value": { "value": "my-instance" } }
      *     "/http/request_bytes": { "int_value": 300 }
      *     "abc.com/myattribute": { "bool_value": false }
@@ -600,9 +601,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The set of attributes. Each attribute's key can be up to 128 bytes
+     * A set of attributes. Each attribute's key can be up to 128 bytes
      * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
-     * or the Boolean values `true` and `false`. For example:
+     * or the boolean values `true` or `false`. For example:
      *     "/instance_id": { "string_value": { "value": "my-instance" } }
      *     "/http/request_bytes": { "int_value": 300 }
      *     "abc.com/myattribute": { "bool_value": false }
@@ -828,7 +829,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of attributes, each in the format `[KEY]:[VALUE]`.
+     * A set of attributes as key-value pairs.
      * </pre>
      *
      * Protobuf type {@code google.devtools.cloudtrace.v2.Span.Attributes}
@@ -1085,9 +1086,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The set of attributes. Each attribute's key can be up to 128 bytes
+       * A set of attributes. Each attribute's key can be up to 128 bytes
        * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
-       * or the Boolean values `true` and `false`. For example:
+       * or the boolean values `true` or `false`. For example:
        *     "/instance_id": { "string_value": { "value": "my-instance" } }
        *     "/http/request_bytes": { "int_value": 300 }
        *     "abc.com/myattribute": { "bool_value": false }
@@ -1114,9 +1115,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The set of attributes. Each attribute's key can be up to 128 bytes
+       * A set of attributes. Each attribute's key can be up to 128 bytes
        * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
-       * or the Boolean values `true` and `false`. For example:
+       * or the boolean values `true` or `false`. For example:
        *     "/instance_id": { "string_value": { "value": "my-instance" } }
        *     "/http/request_bytes": { "int_value": 300 }
        *     "abc.com/myattribute": { "bool_value": false }
@@ -1134,9 +1135,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The set of attributes. Each attribute's key can be up to 128 bytes
+       * A set of attributes. Each attribute's key can be up to 128 bytes
        * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
-       * or the Boolean values `true` and `false`. For example:
+       * or the boolean values `true` or `false`. For example:
        *     "/instance_id": { "string_value": { "value": "my-instance" } }
        *     "/http/request_bytes": { "int_value": 300 }
        *     "abc.com/myattribute": { "bool_value": false }
@@ -1162,9 +1163,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The set of attributes. Each attribute's key can be up to 128 bytes
+       * A set of attributes. Each attribute's key can be up to 128 bytes
        * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
-       * or the Boolean values `true` and `false`. For example:
+       * or the boolean values `true` or `false`. For example:
        *     "/instance_id": { "string_value": { "value": "my-instance" } }
        *     "/http/request_bytes": { "int_value": 300 }
        *     "abc.com/myattribute": { "bool_value": false }
@@ -1196,9 +1197,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The set of attributes. Each attribute's key can be up to 128 bytes
+       * A set of attributes. Each attribute's key can be up to 128 bytes
        * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
-       * or the Boolean values `true` and `false`. For example:
+       * or the boolean values `true` or `false`. For example:
        *     "/instance_id": { "string_value": { "value": "my-instance" } }
        *     "/http/request_bytes": { "int_value": 300 }
        *     "abc.com/myattribute": { "bool_value": false }
@@ -1225,9 +1226,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The set of attributes. Each attribute's key can be up to 128 bytes
+       * A set of attributes. Each attribute's key can be up to 128 bytes
        * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
-       * or the Boolean values `true` and `false`. For example:
+       * or the boolean values `true` or `false`. For example:
        *     "/instance_id": { "string_value": { "value": "my-instance" } }
        *     "/http/request_bytes": { "int_value": 300 }
        *     "abc.com/myattribute": { "bool_value": false }
@@ -1252,9 +1253,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The set of attributes. Each attribute's key can be up to 128 bytes
+       * A set of attributes. Each attribute's key can be up to 128 bytes
        * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
-       * or the Boolean values `true` and `false`. For example:
+       * or the boolean values `true` or `false`. For example:
        *     "/instance_id": { "string_value": { "value": "my-instance" } }
        *     "/http/request_bytes": { "int_value": 300 }
        *     "abc.com/myattribute": { "bool_value": false }
@@ -2673,8 +2674,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * An identifier for the MessageEvent's message that can be used to match
-       * SENT and RECEIVED MessageEvents. It is recommended to be unique within
-       * a Span.
+       * `SENT` and `RECEIVED` MessageEvents.
        * </pre>
        *
        * <code>int64 id = 2;</code>
@@ -2700,8 +2700,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The number of compressed bytes sent or received. If missing assumed to
-       * be the same size as uncompressed.
+       * The number of compressed bytes sent or received. If missing, the
+       * compressed size is assumed to be the same size as the uncompressed
+       * size.
        * </pre>
        *
        * <code>int64 compressed_size_bytes = 4;</code>
@@ -2965,8 +2966,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * An identifier for the MessageEvent's message that can be used to match
-       * SENT and RECEIVED MessageEvents. It is recommended to be unique within
-       * a Span.
+       * `SENT` and `RECEIVED` MessageEvents.
        * </pre>
        *
        * <code>int64 id = 2;</code>
@@ -3002,8 +3002,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The number of compressed bytes sent or received. If missing assumed to
-       * be the same size as uncompressed.
+       * The number of compressed bytes sent or received. If missing, the
+       * compressed size is assumed to be the same size as the uncompressed
+       * size.
        * </pre>
        *
        * <code>int64 compressed_size_bytes = 4;</code>
@@ -3541,8 +3542,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * An identifier for the MessageEvent's message that can be used to match
-         * SENT and RECEIVED MessageEvents. It is recommended to be unique within
-         * a Span.
+         * `SENT` and `RECEIVED` MessageEvents.
          * </pre>
          *
          * <code>int64 id = 2;</code>
@@ -3558,8 +3558,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * An identifier for the MessageEvent's message that can be used to match
-         * SENT and RECEIVED MessageEvents. It is recommended to be unique within
-         * a Span.
+         * `SENT` and `RECEIVED` MessageEvents.
          * </pre>
          *
          * <code>int64 id = 2;</code>
@@ -3579,8 +3578,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * An identifier for the MessageEvent's message that can be used to match
-         * SENT and RECEIVED MessageEvents. It is recommended to be unique within
-         * a Span.
+         * `SENT` and `RECEIVED` MessageEvents.
          * </pre>
          *
          * <code>int64 id = 2;</code>
@@ -3652,8 +3650,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The number of compressed bytes sent or received. If missing assumed to
-         * be the same size as uncompressed.
+         * The number of compressed bytes sent or received. If missing, the
+         * compressed size is assumed to be the same size as the uncompressed
+         * size.
          * </pre>
          *
          * <code>int64 compressed_size_bytes = 4;</code>
@@ -3668,8 +3667,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The number of compressed bytes sent or received. If missing assumed to
-         * be the same size as uncompressed.
+         * The number of compressed bytes sent or received. If missing, the
+         * compressed size is assumed to be the same size as the uncompressed
+         * size.
          * </pre>
          *
          * <code>int64 compressed_size_bytes = 4;</code>
@@ -3688,8 +3688,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The number of compressed bytes sent or received. If missing assumed to
-         * be the same size as uncompressed.
+         * The number of compressed bytes sent or received. If missing, the
+         * compressed size is assumed to be the same size as the uncompressed
+         * size.
          * </pre>
          *
          * <code>int64 compressed_size_bytes = 4;</code>
@@ -6328,7 +6329,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [TRACE_ID] for a trace within a project.
+     * The `[TRACE_ID]` for a trace within a project.
      * </pre>
      *
      * <code>string trace_id = 1;</code>
@@ -6340,7 +6341,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [TRACE_ID] for a trace within a project.
+     * The `[TRACE_ID]` for a trace within a project.
      * </pre>
      *
      * <code>string trace_id = 1;</code>
@@ -6353,7 +6354,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [SPAN_ID] for a span within a trace.
+     * The `[SPAN_ID]` for a span within a trace.
      * </pre>
      *
      * <code>string span_id = 2;</code>
@@ -6365,7 +6366,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [SPAN_ID] for a span within a trace.
+     * The `[SPAN_ID]` for a span within a trace.
      * </pre>
      *
      * <code>string span_id = 2;</code>
@@ -6403,8 +6404,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of attributes on the link. You have have up to  32 attributes per
-     * link.
+     * A set of attributes on the link. Up to 32 attributes can be
+     * specified per link.
      * </pre>
      *
      * <code>.google.devtools.cloudtrace.v2.Span.Attributes attributes = 4;</code>
@@ -6416,8 +6417,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of attributes on the link. You have have up to  32 attributes per
-     * link.
+     * A set of attributes on the link. Up to 32 attributes can be
+     * specified per link.
      * </pre>
      *
      * <code>.google.devtools.cloudtrace.v2.Span.Attributes attributes = 4;</code>
@@ -6429,8 +6430,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of attributes on the link. You have have up to  32 attributes per
-     * link.
+     * A set of attributes on the link. Up to 32 attributes can be
+     * specified per link.
      * </pre>
      *
      * <code>.google.devtools.cloudtrace.v2.Span.Attributes attributes = 4;</code>
@@ -6657,7 +6658,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [TRACE_ID] for a trace within a project.
+     * The `[TRACE_ID]` for a trace within a project.
      * </pre>
      *
      * <code>string trace_id = 1;</code>
@@ -6680,7 +6681,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [TRACE_ID] for a trace within a project.
+     * The `[TRACE_ID]` for a trace within a project.
      * </pre>
      *
      * <code>string trace_id = 1;</code>
@@ -6708,7 +6709,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [SPAN_ID] for a span within a trace.
+     * The `[SPAN_ID]` for a span within a trace.
      * </pre>
      *
      * <code>string span_id = 2;</code>
@@ -6731,7 +6732,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [SPAN_ID] for a span within a trace.
+     * The `[SPAN_ID]` for a span within a trace.
      * </pre>
      *
      * <code>string span_id = 2;</code>
@@ -6794,8 +6795,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of attributes on the link. You have have up to  32 attributes per
-     * link.
+     * A set of attributes on the link. Up to 32 attributes can be
+     * specified per link.
      * </pre>
      *
      * <code>.google.devtools.cloudtrace.v2.Span.Attributes attributes = 4;</code>
@@ -6810,8 +6811,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of attributes on the link. You have have up to  32 attributes per
-     * link.
+     * A set of attributes on the link. Up to 32 attributes can be
+     * specified per link.
      * </pre>
      *
      * <code>.google.devtools.cloudtrace.v2.Span.Attributes attributes = 4;</code>
@@ -6828,8 +6829,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of attributes on the link. You have have up to  32 attributes per
-     * link.
+     * A set of attributes on the link. Up to 32 attributes can be
+     * specified per link.
      * </pre>
      *
      * <code>.google.devtools.cloudtrace.v2.Span.Attributes attributes = 4;</code>
@@ -7272,7 +7273,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The [TRACE_ID] for a trace within a project.
+       * The `[TRACE_ID]` for a trace within a project.
        * </pre>
        *
        * <code>string trace_id = 1;</code>
@@ -7294,7 +7295,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The [TRACE_ID] for a trace within a project.
+       * The `[TRACE_ID]` for a trace within a project.
        * </pre>
        *
        * <code>string trace_id = 1;</code>
@@ -7316,7 +7317,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The [TRACE_ID] for a trace within a project.
+       * The `[TRACE_ID]` for a trace within a project.
        * </pre>
        *
        * <code>string trace_id = 1;</code>
@@ -7337,7 +7338,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The [TRACE_ID] for a trace within a project.
+       * The `[TRACE_ID]` for a trace within a project.
        * </pre>
        *
        * <code>string trace_id = 1;</code>
@@ -7354,7 +7355,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The [TRACE_ID] for a trace within a project.
+       * The `[TRACE_ID]` for a trace within a project.
        * </pre>
        *
        * <code>string trace_id = 1;</code>
@@ -7378,7 +7379,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The [SPAN_ID] for a span within a trace.
+       * The `[SPAN_ID]` for a span within a trace.
        * </pre>
        *
        * <code>string span_id = 2;</code>
@@ -7400,7 +7401,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The [SPAN_ID] for a span within a trace.
+       * The `[SPAN_ID]` for a span within a trace.
        * </pre>
        *
        * <code>string span_id = 2;</code>
@@ -7422,7 +7423,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The [SPAN_ID] for a span within a trace.
+       * The `[SPAN_ID]` for a span within a trace.
        * </pre>
        *
        * <code>string span_id = 2;</code>
@@ -7443,7 +7444,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The [SPAN_ID] for a span within a trace.
+       * The `[SPAN_ID]` for a span within a trace.
        * </pre>
        *
        * <code>string span_id = 2;</code>
@@ -7460,7 +7461,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The [SPAN_ID] for a span within a trace.
+       * The `[SPAN_ID]` for a span within a trace.
        * </pre>
        *
        * <code>string span_id = 2;</code>
@@ -7581,8 +7582,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A set of attributes on the link. You have have up to  32 attributes per
-       * link.
+       * A set of attributes on the link. Up to 32 attributes can be
+       * specified per link.
        * </pre>
        *
        * <code>.google.devtools.cloudtrace.v2.Span.Attributes attributes = 4;</code>
@@ -7596,8 +7597,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A set of attributes on the link. You have have up to  32 attributes per
-       * link.
+       * A set of attributes on the link. Up to 32 attributes can be
+       * specified per link.
        * </pre>
        *
        * <code>.google.devtools.cloudtrace.v2.Span.Attributes attributes = 4;</code>
@@ -7617,8 +7618,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A set of attributes on the link. You have have up to  32 attributes per
-       * link.
+       * A set of attributes on the link. Up to 32 attributes can be
+       * specified per link.
        * </pre>
        *
        * <code>.google.devtools.cloudtrace.v2.Span.Attributes attributes = 4;</code>
@@ -7640,8 +7641,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A set of attributes on the link. You have have up to  32 attributes per
-       * link.
+       * A set of attributes on the link. Up to 32 attributes can be
+       * specified per link.
        * </pre>
        *
        * <code>.google.devtools.cloudtrace.v2.Span.Attributes attributes = 4;</code>
@@ -7661,8 +7662,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A set of attributes on the link. You have have up to  32 attributes per
-       * link.
+       * A set of attributes on the link. Up to 32 attributes can be
+       * specified per link.
        * </pre>
        *
        * <code>.google.devtools.cloudtrace.v2.Span.Attributes attributes = 4;</code>
@@ -7688,8 +7689,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A set of attributes on the link. You have have up to  32 attributes per
-       * link.
+       * A set of attributes on the link. Up to 32 attributes can be
+       * specified per link.
        * </pre>
        *
        * <code>.google.devtools.cloudtrace.v2.Span.Attributes attributes = 4;</code>
@@ -7708,8 +7709,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A set of attributes on the link. You have have up to  32 attributes per
-       * link.
+       * A set of attributes on the link. Up to 32 attributes can be
+       * specified per link.
        * </pre>
        *
        * <code>.google.devtools.cloudtrace.v2.Span.Attributes attributes = 4;</code>
@@ -7723,8 +7724,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A set of attributes on the link. You have have up to  32 attributes per
-       * link.
+       * A set of attributes on the link. Up to 32 attributes can be
+       * specified per link.
        * </pre>
        *
        * <code>.google.devtools.cloudtrace.v2.Span.Attributes attributes = 4;</code>
@@ -7742,8 +7743,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A set of attributes on the link. You have have up to  32 attributes per
-       * link.
+       * A set of attributes on the link. Up to 32 attributes can be
+       * specified per link.
        * </pre>
        *
        * <code>.google.devtools.cloudtrace.v2.Span.Attributes attributes = 4;</code>
@@ -8933,11 +8934,14 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The resource name of the span in the following format:
-   *     projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]
-   * [TRACE_ID] is a unique identifier for a trace within a project;
-   * it is a 32-character hexadecimal encoding of a 16-byte array.
-   * [SPAN_ID] is a unique identifier for a span within a trace; it
-   * is a 16-character hexadecimal encoding of an 8-byte array.
+   *  * `projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]`
+   * `[TRACE_ID]` is a unique identifier for a trace within a project;
+   * it is a 32-character hexadecimal encoding of a 16-byte array. It should
+   * not be zero.
+   * `[SPAN_ID]` is a unique identifier for a span within a trace; it
+   * is a 16-character hexadecimal encoding of an 8-byte array. It should not
+   * be zero.
+   * .
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -8961,11 +8965,14 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The resource name of the span in the following format:
-   *     projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]
-   * [TRACE_ID] is a unique identifier for a trace within a project;
-   * it is a 32-character hexadecimal encoding of a 16-byte array.
-   * [SPAN_ID] is a unique identifier for a span within a trace; it
-   * is a 16-character hexadecimal encoding of an 8-byte array.
+   *  * `projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]`
+   * `[TRACE_ID]` is a unique identifier for a trace within a project;
+   * it is a 32-character hexadecimal encoding of a 16-byte array. It should
+   * not be zero.
+   * `[SPAN_ID]` is a unique identifier for a span within a trace; it
+   * is a 16-character hexadecimal encoding of an 8-byte array. It should not
+   * be zero.
+   * .
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -8993,7 +9000,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The [SPAN_ID] portion of the span's resource name.
+   * Required. The `[SPAN_ID]` portion of the span's resource name.
    * </pre>
    *
    * <code>string span_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -9016,7 +9023,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The [SPAN_ID] portion of the span's resource name.
+   * Required. The `[SPAN_ID]` portion of the span's resource name.
    * </pre>
    *
    * <code>string span_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -9044,7 +9051,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The [SPAN_ID] of this span's parent span. If this is a root span,
+   * The `[SPAN_ID]` of this span's parent span. If this is a root span,
    * then this field must be empty.
    * </pre>
    *
@@ -9068,7 +9075,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The [SPAN_ID] of this span's parent span. If this is a root span,
+   * The `[SPAN_ID]` of this span's parent span. If this is a root span,
    * then this field must be empty.
    * </pre>
    *
@@ -9096,8 +9103,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. A description of the span's operation (up to 128 bytes).
-   * Stackdriver Trace displays the description in the
-   * Google Cloud Platform Console.
+   * Cloud Trace displays the description in the
+   * Cloud console.
    * For example, the display name can be a qualified method name or a file name
    * and a line number where the operation is called. A best practice is to use
    * the same display name within an application and at the same call point.
@@ -9119,8 +9126,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. A description of the span's operation (up to 128 bytes).
-   * Stackdriver Trace displays the description in the
-   * Google Cloud Platform Console.
+   * Cloud Trace displays the description in the
+   * Cloud console.
    * For example, the display name can be a qualified method name or a file name
    * and a line number where the operation is called. A best practice is to use
    * the same display name within an application and at the same call point.
@@ -9144,8 +9151,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. A description of the span's operation (up to 128 bytes).
-   * Stackdriver Trace displays the description in the
-   * Google Cloud Platform Console.
+   * Cloud Trace displays the description in the
+   * Cloud console.
    * For example, the display name can be a qualified method name or a file name
    * and a line number where the operation is called. A best practice is to use
    * the same display name within an application and at the same call point.
@@ -9169,9 +9176,10 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The start time of the span. On the client side, this is the time kept by
-   * the local machine where the span execution starts. On the server side, this
-   * is the time when the server's application handler starts running.
+   * Required. The start time of the span. On the client side, this is the time
+   * kept by the local machine where the span execution starts. On the server
+   * side, this is the time when the server's application handler starts
+   * running.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
@@ -9187,9 +9195,10 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The start time of the span. On the client side, this is the time kept by
-   * the local machine where the span execution starts. On the server side, this
-   * is the time when the server's application handler starts running.
+   * Required. The start time of the span. On the client side, this is the time
+   * kept by the local machine where the span execution starts. On the server
+   * side, this is the time when the server's application handler starts
+   * running.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
@@ -9205,9 +9214,10 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The start time of the span. On the client side, this is the time kept by
-   * the local machine where the span execution starts. On the server side, this
-   * is the time when the server's application handler starts running.
+   * Required. The start time of the span. On the client side, this is the time
+   * kept by the local machine where the span execution starts. On the server
+   * side, this is the time when the server's application handler starts
+   * running.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
@@ -9224,9 +9234,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The end time of the span. On the client side, this is the time kept by
-   * the local machine where the span execution ends. On the server side, this
-   * is the time when the server application handler stops running.
+   * Required. The end time of the span. On the client side, this is the time
+   * kept by the local machine where the span execution ends. On the server
+   * side, this is the time when the server application handler stops running.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -9241,9 +9251,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The end time of the span. On the client side, this is the time kept by
-   * the local machine where the span execution ends. On the server side, this
-   * is the time when the server application handler stops running.
+   * Required. The end time of the span. On the client side, this is the time
+   * kept by the local machine where the span execution ends. On the server
+   * side, this is the time when the server application handler stops running.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -9258,9 +9268,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The end time of the span. On the client side, this is the time kept by
-   * the local machine where the span execution ends. On the server side, this
-   * is the time when the server application handler stops running.
+   * Required. The end time of the span. On the client side, this is the time
+   * kept by the local machine where the span execution ends. On the server
+   * side, this is the time when the server application handler stops running.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -9530,8 +9540,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Set this parameter to indicate whether this span is in
    * the same process as its parent. If you do not set this parameter,
-   * Stackdriver Trace is unable to take advantage of this helpful
-   * information.
+   * Trace is unable to take advantage of this helpful information.
    * </pre>
    *
    * <code>
@@ -9550,8 +9559,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Set this parameter to indicate whether this span is in
    * the same process as its parent. If you do not set this parameter,
-   * Stackdriver Trace is unable to take advantage of this helpful
-   * information.
+   * Trace is unable to take advantage of this helpful information.
    * </pre>
    *
    * <code>
@@ -9572,8 +9580,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Set this parameter to indicate whether this span is in
    * the same process as its parent. If you do not set this parameter,
-   * Stackdriver Trace is unable to take advantage of this helpful
-   * information.
+   * Trace is unable to take advantage of this helpful information.
    * </pre>
    *
    * <code>
@@ -9652,9 +9659,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Distinguishes between spans generated in a particular context. For example,
-   * two spans with the same name may be distinguished using `CLIENT` (caller)
-   * and `SERVER` (callee) to identify an RPC call.
+   * Optional. Distinguishes between spans generated in a particular context.
+   * For example, two spans with the same name may be distinguished using
+   * `CLIENT` (caller) and `SERVER` (callee) to identify an RPC call.
    * </pre>
    *
    * <code>
@@ -9671,9 +9678,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Distinguishes between spans generated in a particular context. For example,
-   * two spans with the same name may be distinguished using `CLIENT` (caller)
-   * and `SERVER` (callee) to identify an RPC call.
+   * Optional. Distinguishes between spans generated in a particular context.
+   * For example, two spans with the same name may be distinguished using
+   * `CLIENT` (caller) and `SERVER` (callee) to identify an RPC call.
    * </pre>
    *
    * <code>
@@ -10025,8 +10032,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    * A span represents a single operation within a trace. Spans can be
    * nested to form a trace tree. Often, a trace contains a root span
    * that describes the end-to-end latency, and one or more subspans for
-   * its sub-operations. A trace can also contain multiple root spans,
-   * or none at all. Spans do not need to be contiguous&amp;mdash;there may be
+   * its sub-operations.
+   * A trace can also contain multiple root spans, or none at all.
+   * Spans do not need to be contiguous. There might be
    * gaps or overlaps between spans in a trace.
    * </pre>
    *
@@ -10430,11 +10438,14 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the span in the following format:
-     *     projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]
-     * [TRACE_ID] is a unique identifier for a trace within a project;
-     * it is a 32-character hexadecimal encoding of a 16-byte array.
-     * [SPAN_ID] is a unique identifier for a span within a trace; it
-     * is a 16-character hexadecimal encoding of an 8-byte array.
+     *  * `projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]`
+     * `[TRACE_ID]` is a unique identifier for a trace within a project;
+     * it is a 32-character hexadecimal encoding of a 16-byte array. It should
+     * not be zero.
+     * `[SPAN_ID]` is a unique identifier for a span within a trace; it
+     * is a 16-character hexadecimal encoding of an 8-byte array. It should not
+     * be zero.
+     * .
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -10457,11 +10468,14 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the span in the following format:
-     *     projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]
-     * [TRACE_ID] is a unique identifier for a trace within a project;
-     * it is a 32-character hexadecimal encoding of a 16-byte array.
-     * [SPAN_ID] is a unique identifier for a span within a trace; it
-     * is a 16-character hexadecimal encoding of an 8-byte array.
+     *  * `projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]`
+     * `[TRACE_ID]` is a unique identifier for a trace within a project;
+     * it is a 32-character hexadecimal encoding of a 16-byte array. It should
+     * not be zero.
+     * `[SPAN_ID]` is a unique identifier for a span within a trace; it
+     * is a 16-character hexadecimal encoding of an 8-byte array. It should not
+     * be zero.
+     * .
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -10484,11 +10498,14 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the span in the following format:
-     *     projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]
-     * [TRACE_ID] is a unique identifier for a trace within a project;
-     * it is a 32-character hexadecimal encoding of a 16-byte array.
-     * [SPAN_ID] is a unique identifier for a span within a trace; it
-     * is a 16-character hexadecimal encoding of an 8-byte array.
+     *  * `projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]`
+     * `[TRACE_ID]` is a unique identifier for a trace within a project;
+     * it is a 32-character hexadecimal encoding of a 16-byte array. It should
+     * not be zero.
+     * `[SPAN_ID]` is a unique identifier for a span within a trace; it
+     * is a 16-character hexadecimal encoding of an 8-byte array. It should not
+     * be zero.
+     * .
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -10510,11 +10527,14 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the span in the following format:
-     *     projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]
-     * [TRACE_ID] is a unique identifier for a trace within a project;
-     * it is a 32-character hexadecimal encoding of a 16-byte array.
-     * [SPAN_ID] is a unique identifier for a span within a trace; it
-     * is a 16-character hexadecimal encoding of an 8-byte array.
+     *  * `projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]`
+     * `[TRACE_ID]` is a unique identifier for a trace within a project;
+     * it is a 32-character hexadecimal encoding of a 16-byte array. It should
+     * not be zero.
+     * `[SPAN_ID]` is a unique identifier for a span within a trace; it
+     * is a 16-character hexadecimal encoding of an 8-byte array. It should not
+     * be zero.
+     * .
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -10532,11 +10552,14 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the span in the following format:
-     *     projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]
-     * [TRACE_ID] is a unique identifier for a trace within a project;
-     * it is a 32-character hexadecimal encoding of a 16-byte array.
-     * [SPAN_ID] is a unique identifier for a span within a trace; it
-     * is a 16-character hexadecimal encoding of an 8-byte array.
+     *  * `projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]`
+     * `[TRACE_ID]` is a unique identifier for a trace within a project;
+     * it is a 32-character hexadecimal encoding of a 16-byte array. It should
+     * not be zero.
+     * `[SPAN_ID]` is a unique identifier for a span within a trace; it
+     * is a 16-character hexadecimal encoding of an 8-byte array. It should not
+     * be zero.
+     * .
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -10560,7 +10583,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [SPAN_ID] portion of the span's resource name.
+     * Required. The `[SPAN_ID]` portion of the span's resource name.
      * </pre>
      *
      * <code>string span_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -10582,7 +10605,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [SPAN_ID] portion of the span's resource name.
+     * Required. The `[SPAN_ID]` portion of the span's resource name.
      * </pre>
      *
      * <code>string span_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -10604,7 +10627,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [SPAN_ID] portion of the span's resource name.
+     * Required. The `[SPAN_ID]` portion of the span's resource name.
      * </pre>
      *
      * <code>string span_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -10625,7 +10648,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [SPAN_ID] portion of the span's resource name.
+     * Required. The `[SPAN_ID]` portion of the span's resource name.
      * </pre>
      *
      * <code>string span_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -10642,7 +10665,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [SPAN_ID] portion of the span's resource name.
+     * Required. The `[SPAN_ID]` portion of the span's resource name.
      * </pre>
      *
      * <code>string span_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -10666,7 +10689,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [SPAN_ID] of this span's parent span. If this is a root span,
+     * The `[SPAN_ID]` of this span's parent span. If this is a root span,
      * then this field must be empty.
      * </pre>
      *
@@ -10689,7 +10712,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [SPAN_ID] of this span's parent span. If this is a root span,
+     * The `[SPAN_ID]` of this span's parent span. If this is a root span,
      * then this field must be empty.
      * </pre>
      *
@@ -10712,7 +10735,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [SPAN_ID] of this span's parent span. If this is a root span,
+     * The `[SPAN_ID]` of this span's parent span. If this is a root span,
      * then this field must be empty.
      * </pre>
      *
@@ -10734,7 +10757,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [SPAN_ID] of this span's parent span. If this is a root span,
+     * The `[SPAN_ID]` of this span's parent span. If this is a root span,
      * then this field must be empty.
      * </pre>
      *
@@ -10752,7 +10775,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [SPAN_ID] of this span's parent span. If this is a root span,
+     * The `[SPAN_ID]` of this span's parent span. If this is a root span,
      * then this field must be empty.
      * </pre>
      *
@@ -10783,8 +10806,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. A description of the span's operation (up to 128 bytes).
-     * Stackdriver Trace displays the description in the
-     * Google Cloud Platform Console.
+     * Cloud Trace displays the description in the
+     * Cloud console.
      * For example, the display name can be a qualified method name or a file name
      * and a line number where the operation is called. A best practice is to use
      * the same display name within an application and at the same call point.
@@ -10805,8 +10828,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. A description of the span's operation (up to 128 bytes).
-     * Stackdriver Trace displays the description in the
-     * Google Cloud Platform Console.
+     * Cloud Trace displays the description in the
+     * Cloud console.
      * For example, the display name can be a qualified method name or a file name
      * and a line number where the operation is called. A best practice is to use
      * the same display name within an application and at the same call point.
@@ -10833,8 +10856,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. A description of the span's operation (up to 128 bytes).
-     * Stackdriver Trace displays the description in the
-     * Google Cloud Platform Console.
+     * Cloud Trace displays the description in the
+     * Cloud console.
      * For example, the display name can be a qualified method name or a file name
      * and a line number where the operation is called. A best practice is to use
      * the same display name within an application and at the same call point.
@@ -10863,8 +10886,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. A description of the span's operation (up to 128 bytes).
-     * Stackdriver Trace displays the description in the
-     * Google Cloud Platform Console.
+     * Cloud Trace displays the description in the
+     * Cloud console.
      * For example, the display name can be a qualified method name or a file name
      * and a line number where the operation is called. A best practice is to use
      * the same display name within an application and at the same call point.
@@ -10891,8 +10914,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. A description of the span's operation (up to 128 bytes).
-     * Stackdriver Trace displays the description in the
-     * Google Cloud Platform Console.
+     * Cloud Trace displays the description in the
+     * Cloud console.
      * For example, the display name can be a qualified method name or a file name
      * and a line number where the operation is called. A best practice is to use
      * the same display name within an application and at the same call point.
@@ -10925,8 +10948,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. A description of the span's operation (up to 128 bytes).
-     * Stackdriver Trace displays the description in the
-     * Google Cloud Platform Console.
+     * Cloud Trace displays the description in the
+     * Cloud console.
      * For example, the display name can be a qualified method name or a file name
      * and a line number where the operation is called. A best practice is to use
      * the same display name within an application and at the same call point.
@@ -10952,8 +10975,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. A description of the span's operation (up to 128 bytes).
-     * Stackdriver Trace displays the description in the
-     * Google Cloud Platform Console.
+     * Cloud Trace displays the description in the
+     * Cloud console.
      * For example, the display name can be a qualified method name or a file name
      * and a line number where the operation is called. A best practice is to use
      * the same display name within an application and at the same call point.
@@ -10974,8 +10997,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. A description of the span's operation (up to 128 bytes).
-     * Stackdriver Trace displays the description in the
-     * Google Cloud Platform Console.
+     * Cloud Trace displays the description in the
+     * Cloud console.
      * For example, the display name can be a qualified method name or a file name
      * and a line number where the operation is called. A best practice is to use
      * the same display name within an application and at the same call point.
@@ -11000,8 +11023,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. A description of the span's operation (up to 128 bytes).
-     * Stackdriver Trace displays the description in the
-     * Google Cloud Platform Console.
+     * Cloud Trace displays the description in the
+     * Cloud console.
      * For example, the display name can be a qualified method name or a file name
      * and a line number where the operation is called. A best practice is to use
      * the same display name within an application and at the same call point.
@@ -11039,9 +11062,10 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The start time of the span. On the client side, this is the time kept by
-     * the local machine where the span execution starts. On the server side, this
-     * is the time when the server's application handler starts running.
+     * Required. The start time of the span. On the client side, this is the time
+     * kept by the local machine where the span execution starts. On the server
+     * side, this is the time when the server's application handler starts
+     * running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
@@ -11056,9 +11080,10 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The start time of the span. On the client side, this is the time kept by
-     * the local machine where the span execution starts. On the server side, this
-     * is the time when the server's application handler starts running.
+     * Required. The start time of the span. On the client side, this is the time
+     * kept by the local machine where the span execution starts. On the server
+     * side, this is the time when the server's application handler starts
+     * running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
@@ -11077,9 +11102,10 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The start time of the span. On the client side, this is the time kept by
-     * the local machine where the span execution starts. On the server side, this
-     * is the time when the server's application handler starts running.
+     * Required. The start time of the span. On the client side, this is the time
+     * kept by the local machine where the span execution starts. On the server
+     * side, this is the time when the server's application handler starts
+     * running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
@@ -11102,9 +11128,10 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The start time of the span. On the client side, this is the time kept by
-     * the local machine where the span execution starts. On the server side, this
-     * is the time when the server's application handler starts running.
+     * Required. The start time of the span. On the client side, this is the time
+     * kept by the local machine where the span execution starts. On the server
+     * side, this is the time when the server's application handler starts
+     * running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
@@ -11124,9 +11151,10 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The start time of the span. On the client side, this is the time kept by
-     * the local machine where the span execution starts. On the server side, this
-     * is the time when the server's application handler starts running.
+     * Required. The start time of the span. On the client side, this is the time
+     * kept by the local machine where the span execution starts. On the server
+     * side, this is the time when the server's application handler starts
+     * running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
@@ -11152,9 +11180,10 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The start time of the span. On the client side, this is the time kept by
-     * the local machine where the span execution starts. On the server side, this
-     * is the time when the server's application handler starts running.
+     * Required. The start time of the span. On the client side, this is the time
+     * kept by the local machine where the span execution starts. On the server
+     * side, this is the time when the server's application handler starts
+     * running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
@@ -11174,9 +11203,10 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The start time of the span. On the client side, this is the time kept by
-     * the local machine where the span execution starts. On the server side, this
-     * is the time when the server's application handler starts running.
+     * Required. The start time of the span. On the client side, this is the time
+     * kept by the local machine where the span execution starts. On the server
+     * side, this is the time when the server's application handler starts
+     * running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
@@ -11191,9 +11221,10 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The start time of the span. On the client side, this is the time kept by
-     * the local machine where the span execution starts. On the server side, this
-     * is the time when the server's application handler starts running.
+     * Required. The start time of the span. On the client side, this is the time
+     * kept by the local machine where the span execution starts. On the server
+     * side, this is the time when the server's application handler starts
+     * running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
@@ -11210,9 +11241,10 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The start time of the span. On the client side, this is the time kept by
-     * the local machine where the span execution starts. On the server side, this
-     * is the time when the server's application handler starts running.
+     * Required. The start time of the span. On the client side, this is the time
+     * kept by the local machine where the span execution starts. On the server
+     * side, this is the time when the server's application handler starts
+     * running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
@@ -11245,9 +11277,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The end time of the span. On the client side, this is the time kept by
-     * the local machine where the span execution ends. On the server side, this
-     * is the time when the server application handler stops running.
+     * Required. The end time of the span. On the client side, this is the time
+     * kept by the local machine where the span execution ends. On the server
+     * side, this is the time when the server application handler stops running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];
@@ -11262,9 +11294,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The end time of the span. On the client side, this is the time kept by
-     * the local machine where the span execution ends. On the server side, this
-     * is the time when the server application handler stops running.
+     * Required. The end time of the span. On the client side, this is the time
+     * kept by the local machine where the span execution ends. On the server
+     * side, this is the time when the server application handler stops running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];
@@ -11283,9 +11315,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The end time of the span. On the client side, this is the time kept by
-     * the local machine where the span execution ends. On the server side, this
-     * is the time when the server application handler stops running.
+     * Required. The end time of the span. On the client side, this is the time
+     * kept by the local machine where the span execution ends. On the server
+     * side, this is the time when the server application handler stops running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];
@@ -11308,9 +11340,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The end time of the span. On the client side, this is the time kept by
-     * the local machine where the span execution ends. On the server side, this
-     * is the time when the server application handler stops running.
+     * Required. The end time of the span. On the client side, this is the time
+     * kept by the local machine where the span execution ends. On the server
+     * side, this is the time when the server application handler stops running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];
@@ -11330,9 +11362,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The end time of the span. On the client side, this is the time kept by
-     * the local machine where the span execution ends. On the server side, this
-     * is the time when the server application handler stops running.
+     * Required. The end time of the span. On the client side, this is the time
+     * kept by the local machine where the span execution ends. On the server
+     * side, this is the time when the server application handler stops running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];
@@ -11358,9 +11390,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The end time of the span. On the client side, this is the time kept by
-     * the local machine where the span execution ends. On the server side, this
-     * is the time when the server application handler stops running.
+     * Required. The end time of the span. On the client side, this is the time
+     * kept by the local machine where the span execution ends. On the server
+     * side, this is the time when the server application handler stops running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];
@@ -11380,9 +11412,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The end time of the span. On the client side, this is the time kept by
-     * the local machine where the span execution ends. On the server side, this
-     * is the time when the server application handler stops running.
+     * Required. The end time of the span. On the client side, this is the time
+     * kept by the local machine where the span execution ends. On the server
+     * side, this is the time when the server application handler stops running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];
@@ -11397,9 +11429,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The end time of the span. On the client side, this is the time kept by
-     * the local machine where the span execution ends. On the server side, this
-     * is the time when the server application handler stops running.
+     * Required. The end time of the span. On the client side, this is the time
+     * kept by the local machine where the span execution ends. On the server
+     * side, this is the time when the server application handler stops running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];
@@ -11416,9 +11448,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The end time of the span. On the client side, this is the time kept by
-     * the local machine where the span execution ends. On the server side, this
-     * is the time when the server application handler stops running.
+     * Required. The end time of the span. On the client side, this is the time
+     * kept by the local machine where the span execution ends. On the server
+     * side, this is the time when the server application handler stops running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];
@@ -12382,8 +12414,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Set this parameter to indicate whether this span is in
      * the same process as its parent. If you do not set this parameter,
-     * Stackdriver Trace is unable to take advantage of this helpful
-     * information.
+     * Trace is unable to take advantage of this helpful information.
      * </pre>
      *
      * <code>
@@ -12401,8 +12432,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Set this parameter to indicate whether this span is in
      * the same process as its parent. If you do not set this parameter,
-     * Stackdriver Trace is unable to take advantage of this helpful
-     * information.
+     * Trace is unable to take advantage of this helpful information.
      * </pre>
      *
      * <code>
@@ -12426,8 +12456,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Set this parameter to indicate whether this span is in
      * the same process as its parent. If you do not set this parameter,
-     * Stackdriver Trace is unable to take advantage of this helpful
-     * information.
+     * Trace is unable to take advantage of this helpful information.
      * </pre>
      *
      * <code>
@@ -12453,8 +12482,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Set this parameter to indicate whether this span is in
      * the same process as its parent. If you do not set this parameter,
-     * Stackdriver Trace is unable to take advantage of this helpful
-     * information.
+     * Trace is unable to take advantage of this helpful information.
      * </pre>
      *
      * <code>
@@ -12478,8 +12506,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Set this parameter to indicate whether this span is in
      * the same process as its parent. If you do not set this parameter,
-     * Stackdriver Trace is unable to take advantage of this helpful
-     * information.
+     * Trace is unable to take advantage of this helpful information.
      * </pre>
      *
      * <code>
@@ -12508,8 +12535,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Set this parameter to indicate whether this span is in
      * the same process as its parent. If you do not set this parameter,
-     * Stackdriver Trace is unable to take advantage of this helpful
-     * information.
+     * Trace is unable to take advantage of this helpful information.
      * </pre>
      *
      * <code>
@@ -12532,8 +12558,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Set this parameter to indicate whether this span is in
      * the same process as its parent. If you do not set this parameter,
-     * Stackdriver Trace is unable to take advantage of this helpful
-     * information.
+     * Trace is unable to take advantage of this helpful information.
      * </pre>
      *
      * <code>
@@ -12551,8 +12576,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Set this parameter to indicate whether this span is in
      * the same process as its parent. If you do not set this parameter,
-     * Stackdriver Trace is unable to take advantage of this helpful
-     * information.
+     * Trace is unable to take advantage of this helpful information.
      * </pre>
      *
      * <code>
@@ -12574,8 +12598,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Set this parameter to indicate whether this span is in
      * the same process as its parent. If you do not set this parameter,
-     * Stackdriver Trace is unable to take advantage of this helpful
-     * information.
+     * Trace is unable to take advantage of this helpful information.
      * </pre>
      *
      * <code>
@@ -12814,9 +12837,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Distinguishes between spans generated in a particular context. For example,
-     * two spans with the same name may be distinguished using `CLIENT` (caller)
-     * and `SERVER` (callee) to identify an RPC call.
+     * Optional. Distinguishes between spans generated in a particular context.
+     * For example, two spans with the same name may be distinguished using
+     * `CLIENT` (caller) and `SERVER` (callee) to identify an RPC call.
      * </pre>
      *
      * <code>
@@ -12833,9 +12856,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Distinguishes between spans generated in a particular context. For example,
-     * two spans with the same name may be distinguished using `CLIENT` (caller)
-     * and `SERVER` (callee) to identify an RPC call.
+     * Optional. Distinguishes between spans generated in a particular context.
+     * For example, two spans with the same name may be distinguished using
+     * `CLIENT` (caller) and `SERVER` (callee) to identify an RPC call.
      * </pre>
      *
      * <code>
@@ -12855,9 +12878,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Distinguishes between spans generated in a particular context. For example,
-     * two spans with the same name may be distinguished using `CLIENT` (caller)
-     * and `SERVER` (callee) to identify an RPC call.
+     * Optional. Distinguishes between spans generated in a particular context.
+     * For example, two spans with the same name may be distinguished using
+     * `CLIENT` (caller) and `SERVER` (callee) to identify an RPC call.
      * </pre>
      *
      * <code>
@@ -12876,9 +12899,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Distinguishes between spans generated in a particular context. For example,
-     * two spans with the same name may be distinguished using `CLIENT` (caller)
-     * and `SERVER` (callee) to identify an RPC call.
+     * Optional. Distinguishes between spans generated in a particular context.
+     * For example, two spans with the same name may be distinguished using
+     * `CLIENT` (caller) and `SERVER` (callee) to identify an RPC call.
      * </pre>
      *
      * <code>
@@ -12901,9 +12924,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Distinguishes between spans generated in a particular context. For example,
-     * two spans with the same name may be distinguished using `CLIENT` (caller)
-     * and `SERVER` (callee) to identify an RPC call.
+     * Optional. Distinguishes between spans generated in a particular context.
+     * For example, two spans with the same name may be distinguished using
+     * `CLIENT` (caller) and `SERVER` (callee) to identify an RPC call.
      * </pre>
      *
      * <code>

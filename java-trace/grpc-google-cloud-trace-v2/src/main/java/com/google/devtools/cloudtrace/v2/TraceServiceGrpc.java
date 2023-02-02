@@ -21,11 +21,11 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * This file describes an API for collecting and viewing traces and spans
- * within a trace.  A Trace is a collection of spans corresponding to a single
- * operation or set of operations for an application. A span is an individual
- * timed event which forms a node of the trace tree. A single trace may
- * contain span(s) from multiple services.
+ * Service for collecting and viewing traces and spans within a trace.
+ * A trace is a collection of spans corresponding to a single
+ * operation or a set of operations in an application.
+ * A span is an individual timed event which forms a node of the trace tree.
+ * A single trace can contain spans from multiple services.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -168,11 +168,11 @@ public final class TraceServiceGrpc {
    *
    *
    * <pre>
-   * This file describes an API for collecting and viewing traces and spans
-   * within a trace.  A Trace is a collection of spans corresponding to a single
-   * operation or set of operations for an application. A span is an individual
-   * timed event which forms a node of the trace tree. A single trace may
-   * contain span(s) from multiple services.
+   * Service for collecting and viewing traces and spans within a trace.
+   * A trace is a collection of spans corresponding to a single
+   * operation or a set of operations in an application.
+   * A span is an individual timed event which forms a node of the trace tree.
+   * A single trace can contain spans from multiple services.
    * </pre>
    */
   public abstract static class TraceServiceImplBase implements io.grpc.BindableService {
@@ -181,7 +181,7 @@ public final class TraceServiceGrpc {
      *
      *
      * <pre>
-     * Sends new spans to new or existing traces. You cannot update
+     * Batch writes new spans to new or existing traces. You cannot update
      * existing spans.
      * </pre>
      */
@@ -228,11 +228,11 @@ public final class TraceServiceGrpc {
    *
    *
    * <pre>
-   * This file describes an API for collecting and viewing traces and spans
-   * within a trace.  A Trace is a collection of spans corresponding to a single
-   * operation or set of operations for an application. A span is an individual
-   * timed event which forms a node of the trace tree. A single trace may
-   * contain span(s) from multiple services.
+   * Service for collecting and viewing traces and spans within a trace.
+   * A trace is a collection of spans corresponding to a single
+   * operation or a set of operations in an application.
+   * A span is an individual timed event which forms a node of the trace tree.
+   * A single trace can contain spans from multiple services.
    * </pre>
    */
   public static final class TraceServiceStub
@@ -250,7 +250,7 @@ public final class TraceServiceGrpc {
      *
      *
      * <pre>
-     * Sends new spans to new or existing traces. You cannot update
+     * Batch writes new spans to new or existing traces. You cannot update
      * existing spans.
      * </pre>
      */
@@ -282,11 +282,11 @@ public final class TraceServiceGrpc {
    *
    *
    * <pre>
-   * This file describes an API for collecting and viewing traces and spans
-   * within a trace.  A Trace is a collection of spans corresponding to a single
-   * operation or set of operations for an application. A span is an individual
-   * timed event which forms a node of the trace tree. A single trace may
-   * contain span(s) from multiple services.
+   * Service for collecting and viewing traces and spans within a trace.
+   * A trace is a collection of spans corresponding to a single
+   * operation or a set of operations in an application.
+   * A span is an individual timed event which forms a node of the trace tree.
+   * A single trace can contain spans from multiple services.
    * </pre>
    */
   public static final class TraceServiceBlockingStub
@@ -305,7 +305,7 @@ public final class TraceServiceGrpc {
      *
      *
      * <pre>
-     * Sends new spans to new or existing traces. You cannot update
+     * Batch writes new spans to new or existing traces. You cannot update
      * existing spans.
      * </pre>
      */
@@ -333,11 +333,11 @@ public final class TraceServiceGrpc {
    *
    *
    * <pre>
-   * This file describes an API for collecting and viewing traces and spans
-   * within a trace.  A Trace is a collection of spans corresponding to a single
-   * operation or set of operations for an application. A span is an individual
-   * timed event which forms a node of the trace tree. A single trace may
-   * contain span(s) from multiple services.
+   * Service for collecting and viewing traces and spans within a trace.
+   * A trace is a collection of spans corresponding to a single
+   * operation or a set of operations in an application.
+   * A span is an individual timed event which forms a node of the trace tree.
+   * A single trace can contain spans from multiple services.
    * </pre>
    */
   public static final class TraceServiceFutureStub
@@ -356,7 +356,7 @@ public final class TraceServiceGrpc {
      *
      *
      * <pre>
-     * Sends new spans to new or existing traces. You cannot update
+     * Batch writes new spans to new or existing traces. You cannot update
      * existing spans.
      * </pre>
      */

@@ -22,7 +22,7 @@ package com.google.devtools.cloudtrace.v2;
  *
  *
  * <pre>
- * The allowed types for [VALUE] in a `[KEY]:[VALUE]` attribute.
+ * The allowed types for `[VALUE]` in a `[KEY]:[VALUE]` attribute.
  * </pre>
  *
  * Protobuf type {@code google.devtools.cloudtrace.v2.AttributeValue}
@@ -444,7 +444,7 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The allowed types for [VALUE] in a `[KEY]:[VALUE]` attribute.
+   * The allowed types for `[VALUE]` in a `[KEY]:[VALUE]` attribute.
    * </pre>
    *
    * Protobuf type {@code google.devtools.cloudtrace.v2.AttributeValue}
