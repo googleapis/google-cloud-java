@@ -65,10 +65,9 @@ public interface MaintenanceWindowOrBuilder
    *
    *
    * <pre>
-   * Required. Maintenance window end time. It is used only to calculate the duration of
-   * the maintenance window.
-   * The value for end-time must be in the future, relative to
-   * `start_time`.
+   * Required. Maintenance window end time. It is used only to calculate the
+   * duration of the maintenance window. The value for end-time must be in the
+   * future, relative to `start_time`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -80,10 +79,9 @@ public interface MaintenanceWindowOrBuilder
    *
    *
    * <pre>
-   * Required. Maintenance window end time. It is used only to calculate the duration of
-   * the maintenance window.
-   * The value for end-time must be in the future, relative to
-   * `start_time`.
+   * Required. Maintenance window end time. It is used only to calculate the
+   * duration of the maintenance window. The value for end-time must be in the
+   * future, relative to `start_time`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -95,10 +93,9 @@ public interface MaintenanceWindowOrBuilder
    *
    *
    * <pre>
-   * Required. Maintenance window end time. It is used only to calculate the duration of
-   * the maintenance window.
-   * The value for end-time must be in the future, relative to
-   * `start_time`.
+   * Required. Maintenance window end time. It is used only to calculate the
+   * duration of the maintenance window. The value for end-time must be in the
+   * future, relative to `start_time`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = REQUIRED];</code>

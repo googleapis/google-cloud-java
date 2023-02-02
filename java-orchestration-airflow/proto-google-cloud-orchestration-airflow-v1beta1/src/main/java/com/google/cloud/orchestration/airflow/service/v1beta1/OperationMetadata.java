@@ -763,8 +763,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. The time when the operation terminated, regardless of its success.
-   * This field is unset if the operation is still ongoing.
+   * Output only. The time when the operation terminated, regardless of its
+   * success. This field is unset if the operation is still ongoing.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 6;</code>
@@ -779,8 +779,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. The time when the operation terminated, regardless of its success.
-   * This field is unset if the operation is still ongoing.
+   * Output only. The time when the operation terminated, regardless of its
+   * success. This field is unset if the operation is still ongoing.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 6;</code>
@@ -795,8 +795,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. The time when the operation terminated, regardless of its success.
-   * This field is unset if the operation is still ongoing.
+   * Output only. The time when the operation terminated, regardless of its
+   * success. This field is unset if the operation is still ongoing.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 6;</code>
@@ -1920,8 +1920,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The time when the operation terminated, regardless of its success.
-     * This field is unset if the operation is still ongoing.
+     * Output only. The time when the operation terminated, regardless of its
+     * success. This field is unset if the operation is still ongoing.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 6;</code>
@@ -1935,8 +1935,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The time when the operation terminated, regardless of its success.
-     * This field is unset if the operation is still ongoing.
+     * Output only. The time when the operation terminated, regardless of its
+     * success. This field is unset if the operation is still ongoing.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 6;</code>
@@ -1954,8 +1954,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The time when the operation terminated, regardless of its success.
-     * This field is unset if the operation is still ongoing.
+     * Output only. The time when the operation terminated, regardless of its
+     * success. This field is unset if the operation is still ongoing.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 6;</code>
@@ -1977,8 +1977,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The time when the operation terminated, regardless of its success.
-     * This field is unset if the operation is still ongoing.
+     * Output only. The time when the operation terminated, regardless of its
+     * success. This field is unset if the operation is still ongoing.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 6;</code>
@@ -1997,8 +1997,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The time when the operation terminated, regardless of its success.
-     * This field is unset if the operation is still ongoing.
+     * Output only. The time when the operation terminated, regardless of its
+     * success. This field is unset if the operation is still ongoing.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 6;</code>
@@ -2023,8 +2023,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The time when the operation terminated, regardless of its success.
-     * This field is unset if the operation is still ongoing.
+     * Output only. The time when the operation terminated, regardless of its
+     * success. This field is unset if the operation is still ongoing.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 6;</code>
@@ -2043,8 +2043,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The time when the operation terminated, regardless of its success.
-     * This field is unset if the operation is still ongoing.
+     * Output only. The time when the operation terminated, regardless of its
+     * success. This field is unset if the operation is still ongoing.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 6;</code>
@@ -2058,8 +2058,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The time when the operation terminated, regardless of its success.
-     * This field is unset if the operation is still ongoing.
+     * Output only. The time when the operation terminated, regardless of its
+     * success. This field is unset if the operation is still ongoing.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 6;</code>
@@ -2075,8 +2075,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The time when the operation terminated, regardless of its success.
-     * This field is unset if the operation is still ongoing.
+     * Output only. The time when the operation terminated, regardless of its
+     * success. This field is unset if the operation is still ongoing.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 6;</code>

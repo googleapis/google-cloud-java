@@ -116,7 +116,8 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. User-provided description. It must contain at most 300 characters.
+     * Optional. User-provided description. It must contain at most 300
+     * characters.
      * </pre>
      *
      * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -128,7 +129,8 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. User-provided description. It must contain at most 300 characters.
+     * Optional. User-provided description. It must contain at most 300
+     * characters.
      * </pre>
      *
      * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -261,7 +263,8 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. User-provided description. It must contain at most 300 characters.
+     * Optional. User-provided description. It must contain at most 300
+     * characters.
      * </pre>
      *
      * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -284,7 +287,8 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. User-provided description. It must contain at most 300 characters.
+     * Optional. User-provided description. It must contain at most 300
+     * characters.
      * </pre>
      *
      * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -873,7 +877,8 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Optional. User-provided description. It must contain at most 300 characters.
+       * Optional. User-provided description. It must contain at most 300
+       * characters.
        * </pre>
        *
        * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -895,7 +900,8 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Optional. User-provided description. It must contain at most 300 characters.
+       * Optional. User-provided description. It must contain at most 300
+       * characters.
        * </pre>
        *
        * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -917,7 +923,8 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Optional. User-provided description. It must contain at most 300 characters.
+       * Optional. User-provided description. It must contain at most 300
+       * characters.
        * </pre>
        *
        * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -938,7 +945,8 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Optional. User-provided description. It must contain at most 300 characters.
+       * Optional. User-provided description. It must contain at most 300
+       * characters.
        * </pre>
        *
        * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -955,7 +963,8 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Optional. User-provided description. It must contain at most 300 characters.
+       * Optional. User-provided description. It must contain at most 300
+       * characters.
        * </pre>
        *
        * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -89,8 +89,9 @@ public interface PrivateEnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The CIDR block from which IP range for web server will be reserved. Needs
-   * to be disjoint from private_cluster_config.master_ipv4_cidr_block and
+   * Optional. The CIDR block from which IP range for web server will be
+   * reserved. Needs to be disjoint from
+   * private_cluster_config.master_ipv4_cidr_block and
    * cloud_sql_ipv4_cidr_block.
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
@@ -105,8 +106,9 @@ public interface PrivateEnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The CIDR block from which IP range for web server will be reserved. Needs
-   * to be disjoint from private_cluster_config.master_ipv4_cidr_block and
+   * Optional. The CIDR block from which IP range for web server will be
+   * reserved. Needs to be disjoint from
+   * private_cluster_config.master_ipv4_cidr_block and
    * cloud_sql_ipv4_cidr_block.
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
@@ -122,8 +124,9 @@ public interface PrivateEnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The CIDR block from which IP range in tenant project will be reserved for
-   * Cloud SQL. Needs to be disjoint from web_server_ipv4_cidr_block
+   * Optional. The CIDR block from which IP range in tenant project will be
+   * reserved for Cloud SQL. Needs to be disjoint from
+   * web_server_ipv4_cidr_block
    * </pre>
    *
    * <code>string cloud_sql_ipv4_cidr_block = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -135,8 +138,9 @@ public interface PrivateEnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The CIDR block from which IP range in tenant project will be reserved for
-   * Cloud SQL. Needs to be disjoint from web_server_ipv4_cidr_block
+   * Optional. The CIDR block from which IP range in tenant project will be
+   * reserved for Cloud SQL. Needs to be disjoint from
+   * web_server_ipv4_cidr_block
    * </pre>
    *
    * <code>string cloud_sql_ipv4_cidr_block = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -180,8 +184,8 @@ public interface PrivateEnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The CIDR block from which IP range for Cloud Composer Network in tenant
-   * project will be reserved. Needs to be disjoint from
+   * Optional. The CIDR block from which IP range for Cloud Composer Network in
+   * tenant project will be reserved. Needs to be disjoint from
    * private_cluster_config.master_ipv4_cidr_block and
    * cloud_sql_ipv4_cidr_block.
    * This field is supported for Cloud Composer environments in versions
@@ -199,8 +203,8 @@ public interface PrivateEnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The CIDR block from which IP range for Cloud Composer Network in tenant
-   * project will be reserved. Needs to be disjoint from
+   * Optional. The CIDR block from which IP range for Cloud Composer Network in
+   * tenant project will be reserved. Needs to be disjoint from
    * private_cluster_config.master_ipv4_cidr_block and
    * cloud_sql_ipv4_cidr_block.
    * This field is supported for Cloud Composer environments in versions
@@ -219,7 +223,8 @@ public interface PrivateEnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. The IP range reserved for the tenant project's Cloud Composer network.
+   * Output only. The IP range reserved for the tenant project's Cloud Composer
+   * network.
    * This field is supported for Cloud Composer environments in versions
    * composer-2.*.*-airflow-*.*.* and newer.
    * </pre>
@@ -235,7 +240,8 @@ public interface PrivateEnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. The IP range reserved for the tenant project's Cloud Composer network.
+   * Output only. The IP range reserved for the tenant project's Cloud Composer
+   * network.
    * This field is supported for Cloud Composer environments in versions
    * composer-2.*.*-airflow-*.*.* and newer.
    * </pre>
@@ -252,8 +258,8 @@ public interface PrivateEnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. When enabled, IPs from public (non-RFC1918) ranges can be used for
-   * `IPAllocationPolicy.cluster_ipv4_cidr_block` and
+   * Optional. When enabled, IPs from public (non-RFC1918) ranges can be used
+   * for `IPAllocationPolicy.cluster_ipv4_cidr_block` and
    * `IPAllocationPolicy.service_ipv4_cidr_block`.
    * </pre>
    *
@@ -303,7 +309,8 @@ public interface PrivateEnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Configuration for the network connections configuration in the environment.
+   * Optional. Configuration for the network connections configuration in the
+   * environment.
    * </pre>
    *
    * <code>
@@ -317,7 +324,8 @@ public interface PrivateEnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Configuration for the network connections configuration in the environment.
+   * Optional. Configuration for the network connections configuration in the
+   * environment.
    * </pre>
    *
    * <code>
@@ -331,7 +339,8 @@ public interface PrivateEnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Configuration for the network connections configuration in the environment.
+   * Optional. Configuration for the network connections configuration in the
+   * environment.
    * </pre>
    *
    * <code>

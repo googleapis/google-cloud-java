@@ -27,9 +27,9 @@ public interface NetworkingConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Indicates the user requested specifc connection type between Tenant and
-   * Customer projects.
-   * You cannot set networking connection type in public IP environment.
+   * Optional. Indicates the user requested specifc connection type between
+   * Tenant and Customer projects. You cannot set networking connection type in
+   * public IP environment.
    * </pre>
    *
    * <code>
@@ -43,9 +43,9 @@ public interface NetworkingConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Indicates the user requested specifc connection type between Tenant and
-   * Customer projects.
-   * You cannot set networking connection type in public IP environment.
+   * Optional. Indicates the user requested specifc connection type between
+   * Tenant and Customer projects. You cannot set networking connection type in
+   * public IP environment.
    * </pre>
    *
    * <code>

@@ -408,7 +408,8 @@ public interface NodeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The configuration for controlling how IPs are allocated in the GKE cluster.
+   * Optional. The configuration for controlling how IPs are allocated in the
+   * GKE cluster.
    * </pre>
    *
    * <code>
@@ -422,7 +423,8 @@ public interface NodeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The configuration for controlling how IPs are allocated in the GKE cluster.
+   * Optional. The configuration for controlling how IPs are allocated in the
+   * GKE cluster.
    * </pre>
    *
    * <code>
@@ -436,7 +438,8 @@ public interface NodeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The configuration for controlling how IPs are allocated in the GKE cluster.
+   * Optional. The configuration for controlling how IPs are allocated in the
+   * GKE cluster.
    * </pre>
    *
    * <code>

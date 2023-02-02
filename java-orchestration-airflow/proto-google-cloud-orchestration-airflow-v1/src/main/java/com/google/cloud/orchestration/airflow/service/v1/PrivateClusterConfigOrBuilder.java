@@ -41,8 +41,8 @@ public interface PrivateClusterConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The CIDR block from which IPv4 range for GKE master will be reserved. If
-   * left blank, the default value of '172.16.0.0/23' is used.
+   * Optional. The CIDR block from which IPv4 range for GKE master will be
+   * reserved. If left blank, the default value of '172.16.0.0/23' is used.
    * </pre>
    *
    * <code>string master_ipv4_cidr_block = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -54,8 +54,8 @@ public interface PrivateClusterConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The CIDR block from which IPv4 range for GKE master will be reserved. If
-   * left blank, the default value of '172.16.0.0/23' is used.
+   * Optional. The CIDR block from which IPv4 range for GKE master will be
+   * reserved. If left blank, the default value of '172.16.0.0/23' is used.
    * </pre>
    *
    * <code>string master_ipv4_cidr_block = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -68,11 +68,11 @@ public interface PrivateClusterConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. The IP range in CIDR notation to use for the hosted master network. This
-   * range is used for assigning internal IP addresses to the GKE cluster
-   * master or set of masters and to the internal load balancer virtual IP.
-   * This range must not overlap with any other ranges in use
-   * within the cluster's network.
+   * Output only. The IP range in CIDR notation to use for the hosted master
+   * network. This range is used for assigning internal IP addresses to the GKE
+   * cluster master or set of masters and to the internal load balancer virtual
+   * IP. This range must not overlap with any other ranges in use within the
+   * cluster's network.
    * </pre>
    *
    * <code>string master_ipv4_reserved_range = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -85,11 +85,11 @@ public interface PrivateClusterConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. The IP range in CIDR notation to use for the hosted master network. This
-   * range is used for assigning internal IP addresses to the GKE cluster
-   * master or set of masters and to the internal load balancer virtual IP.
-   * This range must not overlap with any other ranges in use
-   * within the cluster's network.
+   * Output only. The IP range in CIDR notation to use for the hosted master
+   * network. This range is used for assigning internal IP addresses to the GKE
+   * cluster master or set of masters and to the internal load balancer virtual
+   * IP. This range must not overlap with any other ranges in use within the
+   * cluster's network.
    * </pre>
    *
    * <code>string master_ipv4_reserved_range = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];

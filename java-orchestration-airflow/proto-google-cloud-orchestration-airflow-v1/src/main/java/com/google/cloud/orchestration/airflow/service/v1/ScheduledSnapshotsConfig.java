@@ -96,7 +96,8 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. The Cloud Storage location for storing automatically created snapshots.
+   * Optional. The Cloud Storage location for storing automatically created
+   * snapshots.
    * </pre>
    *
    * <code>string snapshot_location = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -119,7 +120,8 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. The Cloud Storage location for storing automatically created snapshots.
+   * Optional. The Cloud Storage location for storing automatically created
+   * snapshots.
    * </pre>
    *
    * <code>string snapshot_location = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -147,9 +149,9 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. The cron expression representing the time when snapshots creation mechanism
-   * runs. This field is subject to additional validation around frequency of
-   * execution.
+   * Optional. The cron expression representing the time when snapshots creation
+   * mechanism runs. This field is subject to additional validation around
+   * frequency of execution.
    * </pre>
    *
    * <code>string snapshot_creation_schedule = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -172,9 +174,9 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. The cron expression representing the time when snapshots creation mechanism
-   * runs. This field is subject to additional validation around frequency of
-   * execution.
+   * Optional. The cron expression representing the time when snapshots creation
+   * mechanism runs. This field is subject to additional validation around
+   * frequency of execution.
    * </pre>
    *
    * <code>string snapshot_creation_schedule = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -202,7 +204,8 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. Time zone that sets the context to interpret snapshot_creation_schedule.
+   * Optional. Time zone that sets the context to interpret
+   * snapshot_creation_schedule.
    * </pre>
    *
    * <code>string time_zone = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -225,7 +228,8 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. Time zone that sets the context to interpret snapshot_creation_schedule.
+   * Optional. Time zone that sets the context to interpret
+   * snapshot_creation_schedule.
    * </pre>
    *
    * <code>string time_zone = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -735,7 +739,8 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The Cloud Storage location for storing automatically created snapshots.
+     * Optional. The Cloud Storage location for storing automatically created
+     * snapshots.
      * </pre>
      *
      * <code>string snapshot_location = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -757,7 +762,8 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The Cloud Storage location for storing automatically created snapshots.
+     * Optional. The Cloud Storage location for storing automatically created
+     * snapshots.
      * </pre>
      *
      * <code>string snapshot_location = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -779,7 +785,8 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The Cloud Storage location for storing automatically created snapshots.
+     * Optional. The Cloud Storage location for storing automatically created
+     * snapshots.
      * </pre>
      *
      * <code>string snapshot_location = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -800,7 +807,8 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The Cloud Storage location for storing automatically created snapshots.
+     * Optional. The Cloud Storage location for storing automatically created
+     * snapshots.
      * </pre>
      *
      * <code>string snapshot_location = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -817,7 +825,8 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The Cloud Storage location for storing automatically created snapshots.
+     * Optional. The Cloud Storage location for storing automatically created
+     * snapshots.
      * </pre>
      *
      * <code>string snapshot_location = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -841,9 +850,9 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The cron expression representing the time when snapshots creation mechanism
-     * runs. This field is subject to additional validation around frequency of
-     * execution.
+     * Optional. The cron expression representing the time when snapshots creation
+     * mechanism runs. This field is subject to additional validation around
+     * frequency of execution.
      * </pre>
      *
      * <code>string snapshot_creation_schedule = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -865,9 +874,9 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The cron expression representing the time when snapshots creation mechanism
-     * runs. This field is subject to additional validation around frequency of
-     * execution.
+     * Optional. The cron expression representing the time when snapshots creation
+     * mechanism runs. This field is subject to additional validation around
+     * frequency of execution.
      * </pre>
      *
      * <code>string snapshot_creation_schedule = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -889,9 +898,9 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The cron expression representing the time when snapshots creation mechanism
-     * runs. This field is subject to additional validation around frequency of
-     * execution.
+     * Optional. The cron expression representing the time when snapshots creation
+     * mechanism runs. This field is subject to additional validation around
+     * frequency of execution.
      * </pre>
      *
      * <code>string snapshot_creation_schedule = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -912,9 +921,9 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The cron expression representing the time when snapshots creation mechanism
-     * runs. This field is subject to additional validation around frequency of
-     * execution.
+     * Optional. The cron expression representing the time when snapshots creation
+     * mechanism runs. This field is subject to additional validation around
+     * frequency of execution.
      * </pre>
      *
      * <code>string snapshot_creation_schedule = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -931,9 +940,9 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The cron expression representing the time when snapshots creation mechanism
-     * runs. This field is subject to additional validation around frequency of
-     * execution.
+     * Optional. The cron expression representing the time when snapshots creation
+     * mechanism runs. This field is subject to additional validation around
+     * frequency of execution.
      * </pre>
      *
      * <code>string snapshot_creation_schedule = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -957,7 +966,8 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. Time zone that sets the context to interpret snapshot_creation_schedule.
+     * Optional. Time zone that sets the context to interpret
+     * snapshot_creation_schedule.
      * </pre>
      *
      * <code>string time_zone = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -979,7 +989,8 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. Time zone that sets the context to interpret snapshot_creation_schedule.
+     * Optional. Time zone that sets the context to interpret
+     * snapshot_creation_schedule.
      * </pre>
      *
      * <code>string time_zone = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1001,7 +1012,8 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. Time zone that sets the context to interpret snapshot_creation_schedule.
+     * Optional. Time zone that sets the context to interpret
+     * snapshot_creation_schedule.
      * </pre>
      *
      * <code>string time_zone = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1022,7 +1034,8 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. Time zone that sets the context to interpret snapshot_creation_schedule.
+     * Optional. Time zone that sets the context to interpret
+     * snapshot_creation_schedule.
      * </pre>
      *
      * <code>string time_zone = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1039,7 +1052,8 @@ public final class ScheduledSnapshotsConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. Time zone that sets the context to interpret snapshot_creation_schedule.
+     * Optional. Time zone that sets the context to interpret
+     * snapshot_creation_schedule.
      * </pre>
      *
      * <code>string time_zone = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

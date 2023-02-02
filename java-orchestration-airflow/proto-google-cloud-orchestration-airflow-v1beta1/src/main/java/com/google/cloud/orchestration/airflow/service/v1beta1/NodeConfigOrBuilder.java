@@ -308,9 +308,9 @@ public interface NodeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The Google Cloud Platform Service Account to be used by the workloads. If a
-   * service account is not specified, the "default" Compute Engine service
-   * account is used. Cannot be updated.
+   * Optional. The Google Cloud Platform Service Account to be used by the
+   * workloads. If a service account is not specified, the "default" Compute
+   * Engine service account is used. Cannot be updated.
    * </pre>
    *
    * <code>string service_account = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -322,9 +322,9 @@ public interface NodeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The Google Cloud Platform Service Account to be used by the workloads. If a
-   * service account is not specified, the "default" Compute Engine service
-   * account is used. Cannot be updated.
+   * Optional. The Google Cloud Platform Service Account to be used by the
+   * workloads. If a service account is not specified, the "default" Compute
+   * Engine service account is used. Cannot be updated.
    * </pre>
    *
    * <code>string service_account = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -450,14 +450,14 @@ public interface NodeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The maximum number of pods per node in the Cloud Composer GKE cluster.
-   * The value must be between 8 and 110 and it can be set only if
-   * the environment is VPC-native.
-   * The default value is 32. Values of this field will be propagated both to
-   * the `default-pool` node pool of the newly created GKE cluster, and to the
-   * default "Maximum Pods per Node" value which is used for newly created
-   * node pools if their value is not explicitly set during node pool creation.
-   * For more information, see [Optimizing IP address allocation]
+   * Optional. The maximum number of pods per node in the Cloud Composer GKE
+   * cluster. The value must be between 8 and 110 and it can be set only if the
+   * environment is VPC-native. The default value is 32. Values of this field
+   * will be propagated both to the `default-pool` node pool of the newly
+   * created GKE cluster, and to the default "Maximum Pods per Node" value which
+   * is used for newly created node pools if their value is not explicitly set
+   * during node pool creation. For more information, see [Optimizing IP address
+   * allocation]
    * (https://cloud.google.com/kubernetes-engine/docs/how-to/flexible-pod-cidr).
    * Cannot be updated.
    * This field is supported for Cloud Composer environments in versions

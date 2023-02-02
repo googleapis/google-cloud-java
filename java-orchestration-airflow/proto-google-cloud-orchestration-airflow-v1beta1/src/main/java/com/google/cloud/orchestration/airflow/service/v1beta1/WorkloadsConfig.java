@@ -89,7 +89,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Memory (GB) request and limit for a single Airflow scheduler replica.
+     * Optional. Memory (GB) request and limit for a single Airflow scheduler
+     * replica.
      * </pre>
      *
      * <code>float memory_gb = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -102,7 +103,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Storage (GB) request and limit for a single Airflow scheduler replica.
+     * Optional. Storage (GB) request and limit for a single Airflow scheduler
+     * replica.
      * </pre>
      *
      * <code>float storage_gb = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -198,7 +200,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Memory (GB) request and limit for a single Airflow scheduler replica.
+     * Optional. Memory (GB) request and limit for a single Airflow scheduler
+     * replica.
      * </pre>
      *
      * <code>float memory_gb = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -216,7 +219,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Storage (GB) request and limit for a single Airflow scheduler replica.
+     * Optional. Storage (GB) request and limit for a single Airflow scheduler
+     * replica.
      * </pre>
      *
      * <code>float storage_gb = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -769,7 +773,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. Memory (GB) request and limit for a single Airflow scheduler replica.
+       * Optional. Memory (GB) request and limit for a single Airflow scheduler
+       * replica.
        * </pre>
        *
        * <code>float memory_gb = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -784,7 +789,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. Memory (GB) request and limit for a single Airflow scheduler replica.
+       * Optional. Memory (GB) request and limit for a single Airflow scheduler
+       * replica.
        * </pre>
        *
        * <code>float memory_gb = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -803,7 +809,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. Memory (GB) request and limit for a single Airflow scheduler replica.
+       * Optional. Memory (GB) request and limit for a single Airflow scheduler
+       * replica.
        * </pre>
        *
        * <code>float memory_gb = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -822,7 +829,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. Storage (GB) request and limit for a single Airflow scheduler replica.
+       * Optional. Storage (GB) request and limit for a single Airflow scheduler
+       * replica.
        * </pre>
        *
        * <code>float storage_gb = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -837,7 +845,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. Storage (GB) request and limit for a single Airflow scheduler replica.
+       * Optional. Storage (GB) request and limit for a single Airflow scheduler
+       * replica.
        * </pre>
        *
        * <code>float storage_gb = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -856,7 +865,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. Storage (GB) request and limit for a single Airflow scheduler replica.
+       * Optional. Storage (GB) request and limit for a single Airflow scheduler
+       * replica.
        * </pre>
        *
        * <code>float storage_gb = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1837,7 +1847,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Memory (GB) request and limit for a single Airflow worker replica.
+     * Optional. Memory (GB) request and limit for a single Airflow worker
+     * replica.
      * </pre>
      *
      * <code>float memory_gb = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1850,7 +1861,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Storage (GB) request and limit for a single Airflow worker replica.
+     * Optional. Storage (GB) request and limit for a single Airflow worker
+     * replica.
      * </pre>
      *
      * <code>float storage_gb = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1959,7 +1971,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Memory (GB) request and limit for a single Airflow worker replica.
+     * Optional. Memory (GB) request and limit for a single Airflow worker
+     * replica.
      * </pre>
      *
      * <code>float memory_gb = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1977,7 +1990,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Storage (GB) request and limit for a single Airflow worker replica.
+     * Optional. Storage (GB) request and limit for a single Airflow worker
+     * replica.
      * </pre>
      *
      * <code>float storage_gb = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2563,7 +2577,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. Memory (GB) request and limit for a single Airflow worker replica.
+       * Optional. Memory (GB) request and limit for a single Airflow worker
+       * replica.
        * </pre>
        *
        * <code>float memory_gb = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2578,7 +2593,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. Memory (GB) request and limit for a single Airflow worker replica.
+       * Optional. Memory (GB) request and limit for a single Airflow worker
+       * replica.
        * </pre>
        *
        * <code>float memory_gb = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2597,7 +2613,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. Memory (GB) request and limit for a single Airflow worker replica.
+       * Optional. Memory (GB) request and limit for a single Airflow worker
+       * replica.
        * </pre>
        *
        * <code>float memory_gb = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2616,7 +2633,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. Storage (GB) request and limit for a single Airflow worker replica.
+       * Optional. Storage (GB) request and limit for a single Airflow worker
+       * replica.
        * </pre>
        *
        * <code>float storage_gb = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2631,7 +2649,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. Storage (GB) request and limit for a single Airflow worker replica.
+       * Optional. Storage (GB) request and limit for a single Airflow worker
+       * replica.
        * </pre>
        *
        * <code>float storage_gb = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2650,7 +2669,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. Storage (GB) request and limit for a single Airflow worker replica.
+       * Optional. Storage (GB) request and limit for a single Airflow worker
+       * replica.
        * </pre>
        *
        * <code>float storage_gb = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2876,7 +2896,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Memory (GB) request and limit for a single Airflow triggerer replica.
+     * Optional. Memory (GB) request and limit for a single Airflow triggerer
+     * replica.
      * </pre>
      *
      * <code>float memory_gb = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2977,7 +2998,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Memory (GB) request and limit for a single Airflow triggerer replica.
+     * Optional. Memory (GB) request and limit for a single Airflow triggerer
+     * replica.
      * </pre>
      *
      * <code>float memory_gb = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3542,7 +3564,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. Memory (GB) request and limit for a single Airflow triggerer replica.
+       * Optional. Memory (GB) request and limit for a single Airflow triggerer
+       * replica.
        * </pre>
        *
        * <code>float memory_gb = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3557,7 +3580,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. Memory (GB) request and limit for a single Airflow triggerer replica.
+       * Optional. Memory (GB) request and limit for a single Airflow triggerer
+       * replica.
        * </pre>
        *
        * <code>float memory_gb = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3576,7 +3600,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. Memory (GB) request and limit for a single Airflow triggerer replica.
+       * Optional. Memory (GB) request and limit for a single Airflow triggerer
+       * replica.
        * </pre>
        *
        * <code>float memory_gb = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -345,8 +345,8 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. Extract from a docker image build log containing information about pypi
-   * modules conflicts.
+   * Output only. Extract from a docker image build log containing information
+   * about pypi modules conflicts.
    * </pre>
    *
    * <code>string pypi_conflict_build_log_extract = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -370,8 +370,8 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. Extract from a docker image build log containing information about pypi
-   * modules conflicts.
+   * Output only. Extract from a docker image build log containing information
+   * about pypi modules conflicts.
    * </pre>
    *
    * <code>string pypi_conflict_build_log_extract = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1258,8 +1258,8 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. Extract from a docker image build log containing information about pypi
-     * modules conflicts.
+     * Output only. Extract from a docker image build log containing information
+     * about pypi modules conflicts.
      * </pre>
      *
      * <code>
@@ -1283,8 +1283,8 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. Extract from a docker image build log containing information about pypi
-     * modules conflicts.
+     * Output only. Extract from a docker image build log containing information
+     * about pypi modules conflicts.
      * </pre>
      *
      * <code>
@@ -1308,8 +1308,8 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. Extract from a docker image build log containing information about pypi
-     * modules conflicts.
+     * Output only. Extract from a docker image build log containing information
+     * about pypi modules conflicts.
      * </pre>
      *
      * <code>
@@ -1332,8 +1332,8 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. Extract from a docker image build log containing information about pypi
-     * modules conflicts.
+     * Output only. Extract from a docker image build log containing information
+     * about pypi modules conflicts.
      * </pre>
      *
      * <code>
@@ -1352,8 +1352,8 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. Extract from a docker image build log containing information about pypi
-     * modules conflicts.
+     * Output only. Extract from a docker image build log containing information
+     * about pypi modules conflicts.
      * </pre>
      *
      * <code>

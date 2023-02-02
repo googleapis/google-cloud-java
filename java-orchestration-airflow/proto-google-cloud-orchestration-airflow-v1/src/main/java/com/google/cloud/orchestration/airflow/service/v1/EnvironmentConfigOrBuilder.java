@@ -52,10 +52,11 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. The Cloud Storage prefix of the DAGs for this environment. Although Cloud
-   * Storage objects reside in a flat namespace, a hierarchical file tree
-   * can be simulated using "/"-delimited object name prefixes. DAG objects for
-   * this environment reside in a simulated directory with the given prefix.
+   * Output only. The Cloud Storage prefix of the DAGs for this environment.
+   * Although Cloud Storage objects reside in a flat namespace, a hierarchical
+   * file tree can be simulated using "/"-delimited object name prefixes. DAG
+   * objects for this environment reside in a simulated directory with the given
+   * prefix.
    * </pre>
    *
    * <code>string dag_gcs_prefix = 2;</code>
@@ -67,10 +68,11 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. The Cloud Storage prefix of the DAGs for this environment. Although Cloud
-   * Storage objects reside in a flat namespace, a hierarchical file tree
-   * can be simulated using "/"-delimited object name prefixes. DAG objects for
-   * this environment reside in a simulated directory with the given prefix.
+   * Output only. The Cloud Storage prefix of the DAGs for this environment.
+   * Although Cloud Storage objects reside in a flat namespace, a hierarchical
+   * file tree can be simulated using "/"-delimited object name prefixes. DAG
+   * objects for this environment reside in a simulated directory with the given
+   * prefix.
    * </pre>
    *
    * <code>string dag_gcs_prefix = 2;</code>
@@ -213,8 +215,9 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The network-level access control policy for the Airflow web server. If
-   * unspecified, no network-level access restrictions will be applied.
+   * Optional. The network-level access control policy for the Airflow web
+   * server. If unspecified, no network-level access restrictions will be
+   * applied.
    * </pre>
    *
    * <code>
@@ -228,8 +231,9 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The network-level access control policy for the Airflow web server. If
-   * unspecified, no network-level access restrictions will be applied.
+   * Optional. The network-level access control policy for the Airflow web
+   * server. If unspecified, no network-level access restrictions will be
+   * applied.
    * </pre>
    *
    * <code>
@@ -244,8 +248,9 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The network-level access control policy for the Airflow web server. If
-   * unspecified, no network-level access restrictions will be applied.
+   * Optional. The network-level access control policy for the Airflow web
+   * server. If unspecified, no network-level access restrictions will be
+   * applied.
    * </pre>
    *
    * <code>
@@ -259,8 +264,8 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The configuration settings for Cloud SQL instance used internally by Apache
-   * Airflow software.
+   * Optional. The configuration settings for Cloud SQL instance used internally
+   * by Apache Airflow software.
    * </pre>
    *
    * <code>
@@ -274,8 +279,8 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The configuration settings for Cloud SQL instance used internally by Apache
-   * Airflow software.
+   * Optional. The configuration settings for Cloud SQL instance used internally
+   * by Apache Airflow software.
    * </pre>
    *
    * <code>
@@ -289,8 +294,8 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The configuration settings for Cloud SQL instance used internally by Apache
-   * Airflow software.
+   * Optional. The configuration settings for Cloud SQL instance used internally
+   * by Apache Airflow software.
    * </pre>
    *
    * <code>
@@ -304,7 +309,8 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The configuration settings for the Airflow web server App Engine instance.
+   * Optional. The configuration settings for the Airflow web server App Engine
+   * instance.
    * </pre>
    *
    * <code>
@@ -318,7 +324,8 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The configuration settings for the Airflow web server App Engine instance.
+   * Optional. The configuration settings for the Airflow web server App Engine
+   * instance.
    * </pre>
    *
    * <code>
@@ -332,7 +339,8 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The configuration settings for the Airflow web server App Engine instance.
+   * Optional. The configuration settings for the Airflow web server App Engine
+   * instance.
    * </pre>
    *
    * <code>
@@ -391,9 +399,9 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The maintenance window is the period when Cloud Composer components may
-   * undergo maintenance. It is defined so that maintenance is not executed
-   * during peak hours or critical time periods.
+   * Optional. The maintenance window is the period when Cloud Composer
+   * components may undergo maintenance. It is defined so that maintenance is
+   * not executed during peak hours or critical time periods.
    * The system will not be under maintenance for every occurrence of this
    * window, but when maintenance is planned, it will be scheduled
    * during the window.
@@ -415,9 +423,9 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The maintenance window is the period when Cloud Composer components may
-   * undergo maintenance. It is defined so that maintenance is not executed
-   * during peak hours or critical time periods.
+   * Optional. The maintenance window is the period when Cloud Composer
+   * components may undergo maintenance. It is defined so that maintenance is
+   * not executed during peak hours or critical time periods.
    * The system will not be under maintenance for every occurrence of this
    * window, but when maintenance is planned, it will be scheduled
    * during the window.
@@ -439,9 +447,9 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The maintenance window is the period when Cloud Composer components may
-   * undergo maintenance. It is defined so that maintenance is not executed
-   * during peak hours or critical time periods.
+   * Optional. The maintenance window is the period when Cloud Composer
+   * components may undergo maintenance. It is defined so that maintenance is
+   * not executed during peak hours or critical time periods.
    * The system will not be under maintenance for every occurrence of this
    * window, but when maintenance is planned, it will be scheduled
    * during the window.
@@ -463,9 +471,9 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The workloads configuration settings for the GKE cluster associated with
-   * the Cloud Composer environment. The GKE cluster runs Airflow scheduler, web
-   * server and workers workloads.
+   * Optional. The workloads configuration settings for the GKE cluster
+   * associated with the Cloud Composer environment. The GKE cluster runs
+   * Airflow scheduler, web server and workers workloads.
    * This field is supported for Cloud Composer environments in versions
    * composer-2.*.*-airflow-*.*.* and newer.
    * </pre>
@@ -481,9 +489,9 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The workloads configuration settings for the GKE cluster associated with
-   * the Cloud Composer environment. The GKE cluster runs Airflow scheduler, web
-   * server and workers workloads.
+   * Optional. The workloads configuration settings for the GKE cluster
+   * associated with the Cloud Composer environment. The GKE cluster runs
+   * Airflow scheduler, web server and workers workloads.
    * This field is supported for Cloud Composer environments in versions
    * composer-2.*.*-airflow-*.*.* and newer.
    * </pre>
@@ -499,9 +507,9 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The workloads configuration settings for the GKE cluster associated with
-   * the Cloud Composer environment. The GKE cluster runs Airflow scheduler, web
-   * server and workers workloads.
+   * Optional. The workloads configuration settings for the GKE cluster
+   * associated with the Cloud Composer environment. The GKE cluster runs
+   * Airflow scheduler, web server and workers workloads.
    * This field is supported for Cloud Composer environments in versions
    * composer-2.*.*-airflow-*.*.* and newer.
    * </pre>
@@ -551,8 +559,8 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. The URI of the Apache Airflow Web UI hosted within this environment (see
-   * [Airflow web
+   * Output only. The URI of the Apache Airflow Web UI hosted within this
+   * environment (see [Airflow web
    * interface](/composer/docs/how-to/accessing/airflow-web-interface)).
    * </pre>
    *
@@ -565,8 +573,8 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. The URI of the Apache Airflow Web UI hosted within this environment (see
-   * [Airflow web
+   * Output only. The URI of the Apache Airflow Web UI hosted within this
+   * environment (see [Airflow web
    * interface](/composer/docs/how-to/accessing/airflow-web-interface)).
    * </pre>
    *
@@ -580,8 +588,8 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The configuration options for GKE cluster master authorized networks.
-   * By default master authorized networks feature is:
+   * Optional. The configuration options for GKE cluster master authorized
+   * networks. By default master authorized networks feature is:
    * - in case of private environment: enabled with no external networks
    * allowlisted.
    * - in case of public environment: disabled.
@@ -598,8 +606,8 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The configuration options for GKE cluster master authorized networks.
-   * By default master authorized networks feature is:
+   * Optional. The configuration options for GKE cluster master authorized
+   * networks. By default master authorized networks feature is:
    * - in case of private environment: enabled with no external networks
    * allowlisted.
    * - in case of public environment: disabled.
@@ -617,8 +625,8 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The configuration options for GKE cluster master authorized networks.
-   * By default master authorized networks feature is:
+   * Optional. The configuration options for GKE cluster master authorized
+   * networks. By default master authorized networks feature is:
    * - in case of private environment: enabled with no external networks
    * allowlisted.
    * - in case of public environment: disabled.

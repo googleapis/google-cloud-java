@@ -77,9 +77,9 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Customer-managed Encryption Key available through Google's Key Management
-   * Service. Cannot be updated.
-   * If not specified, Google-managed key will be used.
+   * Optional. Customer-managed Encryption Key available through Google's Key
+   * Management Service. Cannot be updated. If not specified, Google-managed key
+   * will be used.
    * </pre>
    *
    * <code>string kms_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -102,9 +102,9 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Customer-managed Encryption Key available through Google's Key Management
-   * Service. Cannot be updated.
-   * If not specified, Google-managed key will be used.
+   * Optional. Customer-managed Encryption Key available through Google's Key
+   * Management Service. Cannot be updated. If not specified, Google-managed key
+   * will be used.
    * </pre>
    *
    * <code>string kms_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -482,9 +482,9 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Customer-managed Encryption Key available through Google's Key Management
-     * Service. Cannot be updated.
-     * If not specified, Google-managed key will be used.
+     * Optional. Customer-managed Encryption Key available through Google's Key
+     * Management Service. Cannot be updated. If not specified, Google-managed key
+     * will be used.
      * </pre>
      *
      * <code>string kms_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -506,9 +506,9 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Customer-managed Encryption Key available through Google's Key Management
-     * Service. Cannot be updated.
-     * If not specified, Google-managed key will be used.
+     * Optional. Customer-managed Encryption Key available through Google's Key
+     * Management Service. Cannot be updated. If not specified, Google-managed key
+     * will be used.
      * </pre>
      *
      * <code>string kms_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -530,9 +530,9 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Customer-managed Encryption Key available through Google's Key Management
-     * Service. Cannot be updated.
-     * If not specified, Google-managed key will be used.
+     * Optional. Customer-managed Encryption Key available through Google's Key
+     * Management Service. Cannot be updated. If not specified, Google-managed key
+     * will be used.
      * </pre>
      *
      * <code>string kms_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -553,9 +553,9 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Customer-managed Encryption Key available through Google's Key Management
-     * Service. Cannot be updated.
-     * If not specified, Google-managed key will be used.
+     * Optional. Customer-managed Encryption Key available through Google's Key
+     * Management Service. Cannot be updated. If not specified, Google-managed key
+     * will be used.
      * </pre>
      *
      * <code>string kms_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -572,9 +572,9 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Customer-managed Encryption Key available through Google's Key Management
-     * Service. Cannot be updated.
-     * If not specified, Google-managed key will be used.
+     * Optional. Customer-managed Encryption Key available through Google's Key
+     * Management Service. Cannot be updated. If not specified, Google-managed key
+     * will be used.
      * </pre>
      *
      * <code>string kms_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>

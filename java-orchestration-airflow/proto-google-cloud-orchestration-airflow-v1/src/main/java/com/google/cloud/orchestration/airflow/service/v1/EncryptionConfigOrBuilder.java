@@ -27,9 +27,9 @@ public interface EncryptionConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Customer-managed Encryption Key available through Google's Key Management
-   * Service. Cannot be updated.
-   * If not specified, Google-managed key will be used.
+   * Optional. Customer-managed Encryption Key available through Google's Key
+   * Management Service. Cannot be updated. If not specified, Google-managed key
+   * will be used.
    * </pre>
    *
    * <code>string kms_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -41,9 +41,9 @@ public interface EncryptionConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Customer-managed Encryption Key available through Google's Key Management
-   * Service. Cannot be updated.
-   * If not specified, Google-managed key will be used.
+   * Optional. Customer-managed Encryption Key available through Google's Key
+   * Management Service. Cannot be updated. If not specified, Google-managed key
+   * will be used.
    * </pre>
    *
    * <code>string kms_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
