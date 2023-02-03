@@ -120,6 +120,7 @@ public class IndexEndpointServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setNetwork("network1843485230")
             .setEnablePrivateServiceConnect(true)
+            .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -178,6 +179,7 @@ public class IndexEndpointServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setNetwork("network1843485230")
             .setEnablePrivateServiceConnect(true)
+            .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -236,6 +238,7 @@ public class IndexEndpointServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setNetwork("network1843485230")
             .setEnablePrivateServiceConnect(true)
+            .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
             .build();
     mockIndexEndpointService.addResponse(expectedResponse);
 
@@ -283,6 +286,7 @@ public class IndexEndpointServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setNetwork("network1843485230")
             .setEnablePrivateServiceConnect(true)
+            .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
             .build();
     mockIndexEndpointService.addResponse(expectedResponse);
 
@@ -418,6 +422,7 @@ public class IndexEndpointServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setNetwork("network1843485230")
             .setEnablePrivateServiceConnect(true)
+            .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
             .build();
     mockIndexEndpointService.addResponse(expectedResponse);
 
