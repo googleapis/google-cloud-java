@@ -111,14 +111,14 @@ public final class ScanConfigProto {
           + "\n\n\006NORMAL\020\001\022\007\n\003LOW\020\002\"m\n\035ExportToSecurity"
           + "CommandCenter\0221\n-EXPORT_TO_SECURITY_COMM"
           + "AND_CENTER_UNSPECIFIED\020\000\022\013\n\007ENABLED\020\001\022\014\n"
-          + "\010DISABLED\020\002B\203\002\n&com.google.cloud.websecu"
-          + "rityscanner.v1B\017ScanConfigProtoP\001ZTgoogl"
-          + "e.golang.org/genproto/googleapis/cloud/w"
-          + "ebsecurityscanner/v1;websecurityscanner\252"
-          + "\002\"Google.Cloud.WebSecurityScanner.V1\312\002\"G"
-          + "oogle\\Cloud\\WebSecurityScanner\\V1\352\002%Goog"
-          + "le::Cloud::WebSecurityScanner::V1b\006proto"
-          + "3"
+          + "\010DISABLED\020\002B\205\002\n&com.google.cloud.websecu"
+          + "rityscanner.v1B\017ScanConfigProtoP\001ZVcloud"
+          + ".google.com/go/websecurityscanner/apiv1/"
+          + "websecurityscannerpb;websecurityscannerp"
+          + "b\252\002\"Google.Cloud.WebSecurityScanner.V1\312\002"
+          + "\"Google\\Cloud\\WebSecurityScanner\\V1\352\002%Go"
+          + "ogle::Cloud::WebSecurityScanner::V1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

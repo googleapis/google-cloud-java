@@ -148,13 +148,13 @@ public final class OutputsProto {
           + "_channel\030\004 \001(\005B\003\340A\002\" \n\nTextStream\022\022\n\005cod"
           + "ec\030\001 \001(\tB\003\340A\002\"F\n\017SegmentSettings\0223\n\020segm"
           + "ent_duration\030\001 \001(\0132\031.google.protobuf.Dur"
-          + "ationB\357\001\n$com.google.cloud.video.livestr"
-          + "eam.v1B\014OutputsProtoP\001ZJgoogle.golang.or"
-          + "g/genproto/googleapis/cloud/video/livest"
-          + "ream/v1;livestream\252\002 Google.Cloud.Video."
-          + "LiveStream.V1\312\002 Google\\Cloud\\Video\\LiveS"
-          + "tream\\V1\352\002$Google::Cloud::Video::LiveStr"
-          + "eam::V1b\006proto3"
+          + "ationB\351\001\n$com.google.cloud.video.livestr"
+          + "eam.v1B\014OutputsProtoP\001ZDcloud.google.com"
+          + "/go/video/livestream/apiv1/livestreampb;"
+          + "livestreampb\252\002 Google.Cloud.Video.LiveSt"
+          + "ream.V1\312\002 Google\\Cloud\\Video\\LiveStream\\"
+          + "V1\352\002$Google::Cloud::Video::LiveStream::V"
+          + "1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -80,11 +80,11 @@ public final class WebDetectionProto {
           + "tection.WebImage\022U\n\027partial_matching_ima"
           + "ges\030\005 \003(\01324.google.cloud.vision.v1p1beta"
           + "1.WebDetection.WebImage\0320\n\010WebLabel\022\r\n\005l"
-          + "abel\030\001 \001(\t\022\025\n\rlanguage_code\030\002 \001(\tB\200\001\n!co"
-          + "m.google.cloud.vision.v1p1beta1B\021WebDete"
-          + "ctionProtoP\001ZCgoogle.golang.org/genproto"
-          + "/googleapis/cloud/vision/v1p1beta1;visio"
-          + "n\370\001\001b\006proto3"
+          + "abel\030\001 \001(\t\022\025\n\rlanguage_code\030\002 \001(\tBv\n!com"
+          + ".google.cloud.vision.v1p1beta1B\021WebDetec"
+          + "tionProtoP\001Z9cloud.google.com/go/vision/"
+          + "apiv1p1beta1/visionpb;visionpb\370\001\001b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -81,10 +81,10 @@ public final class CompanionsProto {
           + "ad_resource\"%\n\016HtmlAdResource\022\023\n\013html_so"
           + "urce\030\001 \001(\t\"\037\n\020IframeAdResource\022\013\n\003uri\030\001 "
           + "\001(\t\"6\n\020StaticAdResource\022\013\n\003uri\030\001 \001(\t\022\025\n\r"
-          + "creative_type\030\002 \001(\tB\177\n\"com.google.cloud."
-          + "video.stitcher.v1B\017CompanionsProtoP\001ZFgo"
-          + "ogle.golang.org/genproto/googleapis/clou"
-          + "d/video/stitcher/v1;stitcherb\006proto3"
+          + "creative_type\030\002 \001(\tBw\n\"com.google.cloud."
+          + "video.stitcher.v1B\017CompanionsProtoP\001Z>cl"
+          + "oud.google.com/go/video/stitcher/apiv1/s"
+          + "titcherpb;stitcherpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

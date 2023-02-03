@@ -390,10 +390,10 @@ public final class ImageAnnotatorProto {
           + "\032v\312A\025vision.googleapis.com\322A[https://www"
           + ".googleapis.com/auth/cloud-platform,http"
           + "s://www.googleapis.com/auth/cloud-vision"
-          + "B\202\001\n!com.google.cloud.vision.v1p3beta1B\023"
-          + "ImageAnnotatorProtoP\001ZCgoogle.golang.org"
-          + "/genproto/googleapis/cloud/vision/v1p3be"
-          + "ta1;vision\370\001\001b\006proto3"
+          + "Bx\n!com.google.cloud.vision.v1p3beta1B\023I"
+          + "mageAnnotatorProtoP\001Z9cloud.google.com/g"
+          + "o/vision/apiv1p3beta1/visionpb;visionpb\370"
+          + "\001\001b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

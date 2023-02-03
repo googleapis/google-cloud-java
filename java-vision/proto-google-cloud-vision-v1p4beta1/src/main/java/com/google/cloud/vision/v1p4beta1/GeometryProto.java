@@ -60,11 +60,10 @@ public final class GeometryProto {
           + "d.vision.v1p4beta1.Vertex\022L\n\023normalized_"
           + "vertices\030\002 \003(\0132/.google.cloud.vision.v1p"
           + "4beta1.NormalizedVertex\"+\n\010Position\022\t\n\001x"
-          + "\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002B\203\001\n!com.goo"
-          + "gle.cloud.vision.v1p4beta1B\rGeometryProt"
-          + "oP\001ZCgoogle.golang.org/genproto/googleap"
-          + "is/cloud/vision/v1p4beta1;vision\370\001\001\242\002\004GC"
-          + "VNb\006proto3"
+          + "\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002By\n!com.goog"
+          + "le.cloud.vision.v1p4beta1B\rGeometryProto"
+          + "P\001Z9cloud.google.com/go/vision/apiv1p4be"
+          + "ta1/visionpb;visionpb\370\001\001\242\002\004GCVNb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

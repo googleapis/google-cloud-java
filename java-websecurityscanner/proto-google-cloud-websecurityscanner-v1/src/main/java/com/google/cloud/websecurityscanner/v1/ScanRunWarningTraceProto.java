@@ -49,14 +49,14 @@ public final class ScanRunWarningTraceProto {
           + "FFICIENT_CRAWL_RESULTS\020\001\022\032\n\026TOO_MANY_CRA"
           + "WL_RESULTS\020\002\022\027\n\023TOO_MANY_FUZZ_TASKS\020\003\022\022\n"
           + "\016BLOCKED_BY_IAP\020\004\022*\n&NO_STARTING_URL_FOU"
-          + "ND_FOR_MANAGED_SCAN\020\005B\214\002\n&com.google.clo"
+          + "ND_FOR_MANAGED_SCAN\020\005B\216\002\n&com.google.clo"
           + "ud.websecurityscanner.v1B\030ScanRunWarning"
-          + "TraceProtoP\001ZTgoogle.golang.org/genproto"
-          + "/googleapis/cloud/websecurityscanner/v1;"
-          + "websecurityscanner\252\002\"Google.Cloud.WebSec"
-          + "urityScanner.V1\312\002\"Google\\Cloud\\WebSecuri"
-          + "tyScanner\\V1\352\002%Google::Cloud::WebSecurit"
-          + "yScanner::V1b\006proto3"
+          + "TraceProtoP\001ZVcloud.google.com/go/websec"
+          + "urityscanner/apiv1/websecurityscannerpb;"
+          + "websecurityscannerpb\252\002\"Google.Cloud.WebS"
+          + "ecurityScanner.V1\312\002\"Google\\Cloud\\WebSecu"
+          + "rityScanner\\V1\352\002%Google::Cloud::WebSecur"
+          + "ityScanner::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

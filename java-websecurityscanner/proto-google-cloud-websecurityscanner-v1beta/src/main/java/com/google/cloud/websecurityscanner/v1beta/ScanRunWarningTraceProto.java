@@ -48,15 +48,15 @@ public final class ScanRunWarningTraceProto {
           + "ingTrace.Code\"\205\001\n\004Code\022\024\n\020CODE_UNSPECIFI"
           + "ED\020\000\022\036\n\032INSUFFICIENT_CRAWL_RESULTS\020\001\022\032\n\026"
           + "TOO_MANY_CRAWL_RESULTS\020\002\022\027\n\023TOO_MANY_FUZ"
-          + "Z_TASKS\020\003\022\022\n\016BLOCKED_BY_IAP\020\004B\240\002\n*com.go"
+          + "Z_TASKS\020\003\022\022\n\016BLOCKED_BY_IAP\020\004B\242\002\n*com.go"
           + "ogle.cloud.websecurityscanner.v1betaB\030Sc"
-          + "anRunWarningTraceProtoP\001ZXgoogle.golang."
-          + "org/genproto/googleapis/cloud/websecurit"
-          + "yscanner/v1beta;websecurityscanner\252\002&Goo"
-          + "gle.Cloud.WebSecurityScanner.V1Beta\312\002&Go"
-          + "ogle\\Cloud\\WebSecurityScanner\\V1beta\352\002)G"
-          + "oogle::Cloud::WebSecurityScanner::V1beta"
-          + "b\006proto3"
+          + "anRunWarningTraceProtoP\001ZZcloud.google.c"
+          + "om/go/websecurityscanner/apiv1beta/webse"
+          + "curityscannerpb;websecurityscannerpb\252\002&G"
+          + "oogle.Cloud.WebSecurityScanner.V1Beta\312\002&"
+          + "Google\\Cloud\\WebSecurityScanner\\V1beta\352\002"
+          + ")Google::Cloud::WebSecurityScanner::V1be"
+          + "tab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

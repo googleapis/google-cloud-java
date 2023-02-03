@@ -1414,12 +1414,12 @@ public final class VmMigrationProto {
           + "gratingVms/*/replicationCycles/*}\332A\004name"
           + "\032N\312A\032vmmigration.googleapis.com\322A.https:"
           + "//www.googleapis.com/auth/cloud-platform"
-          + "B\332\001\n\037com.google.cloud.vmmigration.v1B\020Vm"
-          + "MigrationProtoP\001ZFgoogle.golang.org/genp"
-          + "roto/googleapis/cloud/vmmigration/v1;vmm"
-          + "igration\252\002\033Google.Cloud.VMMigration.V1\312\002"
-          + "\033Google\\Cloud\\VMMigration\\V1\352\002\036Google::C"
-          + "loud::VMMigration::V1b\006proto3"
+          + "B\325\001\n\037com.google.cloud.vmmigration.v1B\020Vm"
+          + "MigrationProtoP\001ZAcloud.google.com/go/vm"
+          + "migration/apiv1/vmmigrationpb;vmmigratio"
+          + "npb\252\002\033Google.Cloud.VMMigration.V1\312\002\033Goog"
+          + "le\\Cloud\\VMMigration\\V1\352\002\036Google::Cloud:"
+          + ":VMMigration::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

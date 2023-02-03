@@ -62,11 +62,11 @@ public final class EventsProto {
           + "EAR\020\031\022\010\n\004SKIP\020\032\022\025\n\021ACCEPT_INVITATION\020\033\"v"
           + "\n\rProgressEvent\022.\n\013time_offset\030\001 \001(\0132\031.g"
           + "oogle.protobuf.Duration\0225\n\006events\030\002 \003(\0132"
-          + "%.google.cloud.video.stitcher.v1.EventB{"
+          + "%.google.cloud.video.stitcher.v1.EventBs"
           + "\n\"com.google.cloud.video.stitcher.v1B\013Ev"
-          + "entsProtoP\001ZFgoogle.golang.org/genproto/"
-          + "googleapis/cloud/video/stitcher/v1;stitc"
-          + "herb\006proto3"
+          + "entsProtoP\001Z>cloud.google.com/go/video/s"
+          + "titcher/apiv1/stitcherpb;stitcherpbb\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

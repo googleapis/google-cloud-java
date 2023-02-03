@@ -98,14 +98,14 @@ public final class FindingAddonProto {
           + "_location\030\002 \001(\01620.google.cloud.websecuri"
           + "tyscanner.v1.Xxe.Location\"?\n\010Location\022\030\n"
           + "\024LOCATION_UNSPECIFIED\020\000\022\031\n\025COMPLETE_REQU"
-          + "EST_BODY\020\001B\205\002\n&com.google.cloud.websecur"
-          + "ityscanner.v1B\021FindingAddonProtoP\001ZTgoog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "websecurityscanner/v1;websecurityscanner"
-          + "\252\002\"Google.Cloud.WebSecurityScanner.V1\312\002\""
-          + "Google\\Cloud\\WebSecurityScanner\\V1\352\002%Goo"
-          + "gle::Cloud::WebSecurityScanner::V1b\006prot"
-          + "o3"
+          + "EST_BODY\020\001B\207\002\n&com.google.cloud.websecur"
+          + "ityscanner.v1B\021FindingAddonProtoP\001ZVclou"
+          + "d.google.com/go/websecurityscanner/apiv1"
+          + "/websecurityscannerpb;websecurityscanner"
+          + "pb\252\002\"Google.Cloud.WebSecurityScanner.V1\312"
+          + "\002\"Google\\Cloud\\WebSecurityScanner\\V1\352\002%G"
+          + "oogle::Cloud::WebSecurityScanner::V1b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

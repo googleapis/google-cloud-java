@@ -83,11 +83,10 @@ public final class AdTagDetailsProto {
           + "\022(\n\007headers\030\002 \001(\0132\027.google.protobuf.Stru"
           + "ct\022\023\n\013status_code\030\003 \001(\t\022\022\n\nsize_bytes\030\004 "
           + "\001(\005\022+\n\010duration\030\005 \001(\0132\031.google.protobuf."
-          + "Duration\022\014\n\004body\030\006 \001(\tB\201\001\n\"com.google.cl"
-          + "oud.video.stitcher.v1B\021AdTagDetailsProto"
-          + "P\001ZFgoogle.golang.org/genproto/googleapi"
-          + "s/cloud/video/stitcher/v1;stitcherb\006prot"
-          + "o3"
+          + "Duration\022\014\n\004body\030\006 \001(\tBy\n\"com.google.clo"
+          + "ud.video.stitcher.v1B\021AdTagDetailsProtoP"
+          + "\001Z>cloud.google.com/go/video/stitcher/ap"
+          + "iv1/stitcherpb;stitcherpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

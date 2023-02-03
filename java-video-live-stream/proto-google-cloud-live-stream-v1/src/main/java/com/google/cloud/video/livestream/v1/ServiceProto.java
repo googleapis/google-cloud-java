@@ -279,13 +279,13 @@ public final class ServiceProto {
           + "1/{name=projects/*/locations/*/channels/"
           + "*/events/*}\332A\004name\032M\312A\031livestream.google"
           + "apis.com\322A.https://www.googleapis.com/au"
-          + "th/cloud-platformB\357\001\n$com.google.cloud.v"
-          + "ideo.livestream.v1B\014ServiceProtoP\001ZJgoog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "video/livestream/v1;livestream\252\002 Google."
-          + "Cloud.Video.LiveStream.V1\312\002 Google\\Cloud"
-          + "\\Video\\LiveStream\\V1\352\002$Google::Cloud::Vi"
-          + "deo::LiveStream::V1b\006proto3"
+          + "th/cloud-platformB\351\001\n$com.google.cloud.v"
+          + "ideo.livestream.v1B\014ServiceProtoP\001ZDclou"
+          + "d.google.com/go/video/livestream/apiv1/l"
+          + "ivestreampb;livestreampb\252\002 Google.Cloud."
+          + "Video.LiveStream.V1\312\002 Google\\Cloud\\Video"
+          + "\\LiveStream\\V1\352\002$Google::Cloud::Video::L"
+          + "iveStream::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

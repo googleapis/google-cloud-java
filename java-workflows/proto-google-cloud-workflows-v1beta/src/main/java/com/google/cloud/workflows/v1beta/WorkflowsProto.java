@@ -147,10 +147,10 @@ public final class WorkflowsProto {
           + "kflow\332A\024workflow,update_mask\312A\035\n\010Workflo"
           + "w\022\021OperationMetadata\032L\312A\030workflows.googl"
           + "eapis.com\322A.https://www.googleapis.com/a"
-          + "uth/cloud-platformB}\n!com.google.cloud.w"
-          + "orkflows.v1betaB\016WorkflowsProtoP\001ZFgoogl"
-          + "e.golang.org/genproto/googleapis/cloud/w"
-          + "orkflows/v1beta;workflowsb\006proto3"
+          + "uth/cloud-platformBv\n!com.google.cloud.w"
+          + "orkflows.v1betaB\016WorkflowsProtoP\001Z?cloud"
+          + ".google.com/go/workflows/apiv1beta/workf"
+          + "lowspb;workflowspbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

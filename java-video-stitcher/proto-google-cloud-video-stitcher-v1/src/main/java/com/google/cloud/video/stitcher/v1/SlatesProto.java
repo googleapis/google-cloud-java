@@ -46,11 +46,11 @@ public final class SlatesProto {
           + "pi/resource.proto\"\210\001\n\005Slate\022\021\n\004name\030\001 \001("
           + "\tB\003\340A\003\022\013\n\003uri\030\002 \001(\t:_\352A\\\n\"videostitcher."
           + "googleapis.com/Slate\0226projects/{project}"
-          + "/locations/{location}/slates/{slate}B{\n\""
+          + "/locations/{location}/slates/{slate}Bs\n\""
           + "com.google.cloud.video.stitcher.v1B\013Slat"
-          + "esProtoP\001ZFgoogle.golang.org/genproto/go"
-          + "ogleapis/cloud/video/stitcher/v1;stitche"
-          + "rb\006proto3"
+          + "esProtoP\001Z>cloud.google.com/go/video/sti"
+          + "tcher/apiv1/stitcherpb;stitcherpbb\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

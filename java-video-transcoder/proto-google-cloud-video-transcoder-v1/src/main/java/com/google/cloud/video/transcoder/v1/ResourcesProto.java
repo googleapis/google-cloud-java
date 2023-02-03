@@ -401,11 +401,11 @@ public final class ResourcesProto {
           + "\n\tinput_key\030\002 \001(\tB\003\340A\002\022\030\n\013input_track\030\003 "
           + "\001(\005B\003\340A\002\"h\n\017SegmentSettings\0223\n\020segment_d"
           + "uration\030\001 \001(\0132\031.google.protobuf.Duration"
-          + "\022 \n\023individual_segments\030\003 \001(\010B\003\340A\002B\204\001\n$c"
-          + "om.google.cloud.video.transcoder.v1B\016Res"
-          + "ourcesProtoP\001ZJgoogle.golang.org/genprot"
-          + "o/googleapis/cloud/video/transcoder/v1;t"
-          + "ranscoderb\006proto3"
+          + "\022 \n\023individual_segments\030\003 \001(\010B\003\340A\002B~\n$co"
+          + "m.google.cloud.video.transcoder.v1B\016Reso"
+          + "urcesProtoP\001ZDcloud.google.com/go/video/"
+          + "transcoder/apiv1/transcoderpb;transcoder"
+          + "pbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

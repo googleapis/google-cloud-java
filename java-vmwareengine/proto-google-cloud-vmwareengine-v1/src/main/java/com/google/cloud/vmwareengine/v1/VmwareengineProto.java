@@ -533,15 +533,14 @@ public final class VmwareengineProto {
           + "/*/locations/*}/vmwareEngineNetworks\332A\006p"
           + "arent\032O\312A\033vmwareengine.googleapis.com\322A."
           + "https://www.googleapis.com/auth/cloud-pl"
-          + "atformB\262\002\n com.google.cloud.vmwareengine"
-          + ".v1B\021VmwareengineProtoP\001ZHgoogle.golang."
-          + "org/genproto/googleapis/cloud/vmwareengi"
-          + "ne/v1;vmwareengine\252\002\034Google.Cloud.Vmware"
-          + "Engine.V1\312\002\034Google\\Cloud\\VmwareEngine\\V1"
-          + "\352\002\037Google::Cloud::VmwareEngine::V1\352AN\n\036c"
-          + "ompute.googleapis.com/Network\022,projects/"
-          + "{project}/global/networks/{network}b\006pro"
-          + "to3"
+          + "atformB\256\002\n com.google.cloud.vmwareengine"
+          + ".v1B\021VmwareengineProtoP\001ZDcloud.google.c"
+          + "om/go/vmwareengine/apiv1/vmwareenginepb;"
+          + "vmwareenginepb\252\002\034Google.Cloud.VmwareEngi"
+          + "ne.V1\312\002\034Google\\Cloud\\VmwareEngine\\V1\352\002\037G"
+          + "oogle::Cloud::VmwareEngine::V1\352AN\n\036compu"
+          + "te.googleapis.com/Network\022,projects/{pro"
+          + "ject}/global/networks/{network}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -72,11 +72,12 @@ public final class FindingProto {
           + "URITY_HEADER_VALUES\020\013:\204\001\352A\200\001\n)websecurit"
           + "yscanner.googleapis.com/Finding\022Sproject"
           + "s/{project}/scanConfigs/{scan_config}/sc"
-          + "anRuns/{scan_run}/findings/{finding}B\230\001\n"
+          + "anRuns/{scan_run}/findings/{finding}B\232\001\n"
           + "+com.google.cloud.websecurityscanner.v1a"
-          + "lphaB\014FindingProtoP\001ZYgoogle.golang.org/"
-          + "genproto/googleapis/cloud/websecuritysca"
-          + "nner/v1alpha;websecurityscannerb\006proto3"
+          + "lphaB\014FindingProtoP\001Z[cloud.google.com/g"
+          + "o/websecurityscanner/apiv1alpha/websecur"
+          + "ityscannerpb;websecurityscannerpbb\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -176,13 +176,12 @@ public final class WebRiskProto {
           + "e\"9\202\323\344\223\002\030\022\026/v1beta1/hashes:search\332A\030hash"
           + "_prefix,threat_types\032J\312A\026webrisk.googlea"
           + "pis.com\322A.https://www.googleapis.com/aut"
-          + "h/cloud-platformB\330\001\n\032com.google.webrisk."
-          + "v1beta1B\014WebRiskProtoP\001ZCgoogle.golang.o"
-          + "rg/genproto/googleapis/cloud/webrisk/v1b"
-          + "eta1;webrisk\242\002\004GCWR\252\002\034Google.Cloud.WebRi"
-          + "sk.V1Beta1\312\002\034Google\\Cloud\\WebRisk\\V1beta"
-          + "1\352\002\037Google::Cloud::WebRisk::V1beta1b\006pro"
-          + "to3"
+          + "h/cloud-platformB\317\001\n\032com.google.webrisk."
+          + "v1beta1B\014WebRiskProtoP\001Z:cloud.google.co"
+          + "m/go/webrisk/apiv1beta1/webriskpb;webris"
+          + "kpb\242\002\004GCWR\252\002\034Google.Cloud.WebRisk.V1Beta"
+          + "1\312\002\034Google\\Cloud\\WebRisk\\V1beta1\352\002\037Googl"
+          + "e::Cloud::WebRisk::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

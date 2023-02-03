@@ -370,10 +370,10 @@ public final class ProductSearchServiceProto {
           + "tionMetadata\032v\312A\025vision.googleapis.com\322A"
           + "[https://www.googleapis.com/auth/cloud-p"
           + "latform,https://www.googleapis.com/auth/"
-          + "cloud-visionB\210\001\n!com.google.cloud.vision"
-          + ".v1p3beta1B\031ProductSearchServiceProtoP\001Z"
-          + "Cgoogle.golang.org/genproto/googleapis/c"
-          + "loud/vision/v1p3beta1;vision\370\001\001b\006proto3"
+          + "cloud-visionB~\n!com.google.cloud.vision."
+          + "v1p3beta1B\031ProductSearchServiceProtoP\001Z9"
+          + "cloud.google.com/go/vision/apiv1p3beta1/"
+          + "visionpb;visionpb\370\001\001b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

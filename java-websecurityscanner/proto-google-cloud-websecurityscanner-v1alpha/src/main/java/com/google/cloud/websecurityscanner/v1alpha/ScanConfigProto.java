@@ -95,11 +95,11 @@ public final class ScanConfigProto {
           + "M_UNSPECIFIED\020\000\022\016\n\nAPP_ENGINE\020\001\022\013\n\007COMPU"
           + "TE\020\002:_\352A\\\n,websecurityscanner.googleapis"
           + ".com/ScanConfig\022,projects/{project}/scan"
-          + "Configs/{scan_config}B\233\001\n+com.google.clo"
+          + "Configs/{scan_config}B\235\001\n+com.google.clo"
           + "ud.websecurityscanner.v1alphaB\017ScanConfi"
-          + "gProtoP\001ZYgoogle.golang.org/genproto/goo"
-          + "gleapis/cloud/websecurityscanner/v1alpha"
-          + ";websecurityscannerb\006proto3"
+          + "gProtoP\001Z[cloud.google.com/go/websecurit"
+          + "yscanner/apiv1alpha/websecurityscannerpb"
+          + ";websecurityscannerpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

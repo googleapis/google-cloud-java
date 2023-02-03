@@ -56,11 +56,10 @@ public final class CelebrityProto {
           + "splay_name\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\"h\n"
           + "\025FaceRecognitionResult\022;\n\tcelebrity\030\001 \001("
           + "\0132(.google.cloud.vision.v1p4beta1.Celebr"
-          + "ity\022\022\n\nconfidence\030\002 \001(\002B\204\001\n!com.google.c"
-          + "loud.vision.v1p4beta1B\016CelebrityProtoP\001Z"
-          + "Cgoogle.golang.org/genproto/googleapis/c"
-          + "loud/vision/v1p4beta1;vision\370\001\001\242\002\004GCVNb\006"
-          + "proto3"
+          + "ity\022\022\n\nconfidence\030\002 \001(\002Bz\n!com.google.cl"
+          + "oud.vision.v1p4beta1B\016CelebrityProtoP\001Z9"
+          + "cloud.google.com/go/vision/apiv1p4beta1/"
+          + "visionpb;visionpb\370\001\001\242\002\004GCVNb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

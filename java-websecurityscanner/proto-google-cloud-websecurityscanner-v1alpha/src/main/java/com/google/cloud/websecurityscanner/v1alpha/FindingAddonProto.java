@@ -74,11 +74,11 @@ public final class FindingAddonProto {
           + "cloud.websecurityscanner.v1alpha.Vulnera"
           + "bleHeaders.Header\032%\n\006Header\022\014\n\004name\030\001 \001("
           + "\t\022\r\n\005value\030\002 \001(\t\"2\n\003Xss\022\024\n\014stack_traces\030"
-          + "\001 \003(\t\022\025\n\rerror_message\030\002 \001(\tB\235\001\n+com.goo"
+          + "\001 \003(\t\022\025\n\rerror_message\030\002 \001(\tB\237\001\n+com.goo"
           + "gle.cloud.websecurityscanner.v1alphaB\021Fi"
-          + "ndingAddonProtoP\001ZYgoogle.golang.org/gen"
-          + "proto/googleapis/cloud/websecurityscanne"
-          + "r/v1alpha;websecurityscannerb\006proto3"
+          + "ndingAddonProtoP\001Z[cloud.google.com/go/w"
+          + "ebsecurityscanner/apiv1alpha/websecurity"
+          + "scannerpb;websecurityscannerpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

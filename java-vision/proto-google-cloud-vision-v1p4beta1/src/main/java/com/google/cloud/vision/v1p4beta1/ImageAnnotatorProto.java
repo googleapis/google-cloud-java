@@ -446,11 +446,10 @@ public final class ImageAnnotatorProto {
           + "\021OperationMetadata\032v\312A\025vision.googleapis"
           + ".com\322A[https://www.googleapis.com/auth/c"
           + "loud-platform,https://www.googleapis.com"
-          + "/auth/cloud-visionB\211\001\n!com.google.cloud."
-          + "vision.v1p4beta1B\023ImageAnnotatorProtoP\001Z"
-          + "Cgoogle.golang.org/genproto/googleapis/c"
-          + "loud/vision/v1p4beta1;vision\370\001\001\242\002\004GCVNb\006"
-          + "proto3"
+          + "/auth/cloud-visionB\177\n!com.google.cloud.v"
+          + "ision.v1p4beta1B\023ImageAnnotatorProtoP\001Z9"
+          + "cloud.google.com/go/vision/apiv1p4beta1/"
+          + "visionpb;visionpb\370\001\001\242\002\004GCVNb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

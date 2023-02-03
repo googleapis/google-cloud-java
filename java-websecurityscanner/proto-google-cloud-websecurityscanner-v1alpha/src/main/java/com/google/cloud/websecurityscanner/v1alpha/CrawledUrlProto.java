@@ -44,11 +44,11 @@ public final class CrawledUrlProto {
           + "a/crawled_url.proto\022\'google.cloud.websec"
           + "urityscanner.v1alpha\"<\n\nCrawledUrl\022\023\n\013ht"
           + "tp_method\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\014\n\004body\030\003 \001"
-          + "(\tB\233\001\n+com.google.cloud.websecurityscann"
-          + "er.v1alphaB\017CrawledUrlProtoP\001ZYgoogle.go"
-          + "lang.org/genproto/googleapis/cloud/webse"
-          + "curityscanner/v1alpha;websecurityscanner"
-          + "b\006proto3"
+          + "(\tB\235\001\n+com.google.cloud.websecurityscann"
+          + "er.v1alphaB\017CrawledUrlProtoP\001Z[cloud.goo"
+          + "gle.com/go/websecurityscanner/apiv1alpha"
+          + "/websecurityscannerpb;websecurityscanner"
+          + "pbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

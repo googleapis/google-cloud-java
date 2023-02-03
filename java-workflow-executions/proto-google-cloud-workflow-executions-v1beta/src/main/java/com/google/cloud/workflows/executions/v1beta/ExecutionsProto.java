@@ -131,14 +131,14 @@ public final class ExecutionsProto {
           + "me=projects/*/locations/*/workflows/*/ex"
           + "ecutions/*}:cancel:\001*\332A\004name\032U\312A!workflo"
           + "wexecutions.googleapis.com\322A.https://www"
-          + ".googleapis.com/auth/cloud-platformB\371\001\n,"
+          + ".googleapis.com/auth/cloud-platformB\363\001\n,"
           + "com.google.cloud.workflows.executions.v1"
-          + "betaB\017ExecutionsProtoP\001ZRgoogle.golang.o"
-          + "rg/genproto/googleapis/cloud/workflows/e"
-          + "xecutions/v1beta;executions\352Aa\n!workflow"
-          + "s.googleapis.com/Workflow\022<projects/{pro"
-          + "ject}/locations/{location}/workflows/{wo"
-          + "rkflow}b\006proto3"
+          + "betaB\017ExecutionsProtoP\001ZLcloud.google.co"
+          + "m/go/workflows/executions/apiv1beta/exec"
+          + "utionspb;executionspb\352Aa\n!workflows.goog"
+          + "leapis.com/Workflow\022<projects/{project}/"
+          + "locations/{location}/workflows/{workflow"
+          + "}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

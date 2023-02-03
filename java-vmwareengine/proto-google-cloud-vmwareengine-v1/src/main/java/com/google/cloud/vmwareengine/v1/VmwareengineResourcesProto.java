@@ -258,13 +258,13 @@ public final class VmwareengineResourcesProto {
           + "Y\020\001:\213\001\352A\207\001\n/vmwareengine.googleapis.com/"
           + "VmwareEngineNetwork\022Tprojects/{project}/"
           + "locations/{location}/vmwareEngineNetwork"
-          + "s/{vmware_engine_network}B\352\001\n com.google"
+          + "s/{vmware_engine_network}B\346\001\n com.google"
           + ".cloud.vmwareengine.v1B\032VmwareengineReso"
-          + "urcesProtoP\001ZHgoogle.golang.org/genproto"
-          + "/googleapis/cloud/vmwareengine/v1;vmware"
-          + "engine\252\002\034Google.Cloud.VmwareEngine.V1\312\002\034"
-          + "Google\\Cloud\\VmwareEngine\\V1\352\002\037Google::C"
-          + "loud::VmwareEngine::V1b\006proto3"
+          + "urcesProtoP\001ZDcloud.google.com/go/vmware"
+          + "engine/apiv1/vmwareenginepb;vmwareengine"
+          + "pb\252\002\034Google.Cloud.VmwareEngine.V1\312\002\034Goog"
+          + "le\\Cloud\\VmwareEngine\\V1\352\002\037Google::Cloud"
+          + "::VmwareEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

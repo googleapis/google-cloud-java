@@ -44,14 +44,14 @@ public final class CrawledUrlProto {
           + "/crawled_url.proto\022&google.cloud.websecu"
           + "rityscanner.v1beta\"<\n\nCrawledUrl\022\023\n\013http"
           + "_method\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\014\n\004body\030\003 \001(\t"
-          + "B\227\002\n*com.google.cloud.websecurityscanner"
-          + ".v1betaB\017CrawledUrlProtoP\001ZXgoogle.golan"
-          + "g.org/genproto/googleapis/cloud/websecur"
-          + "ityscanner/v1beta;websecurityscanner\252\002&G"
-          + "oogle.Cloud.WebSecurityScanner.V1Beta\312\002&"
-          + "Google\\Cloud\\WebSecurityScanner\\V1beta\352\002"
-          + ")Google::Cloud::WebSecurityScanner::V1be"
-          + "tab\006proto3"
+          + "B\231\002\n*com.google.cloud.websecurityscanner"
+          + ".v1betaB\017CrawledUrlProtoP\001ZZcloud.google"
+          + ".com/go/websecurityscanner/apiv1beta/web"
+          + "securityscannerpb;websecurityscannerpb\252\002"
+          + "&Google.Cloud.WebSecurityScanner.V1Beta\312"
+          + "\002&Google\\Cloud\\WebSecurityScanner\\V1beta"
+          + "\352\002)Google::Cloud::WebSecurityScanner::V1"
+          + "betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

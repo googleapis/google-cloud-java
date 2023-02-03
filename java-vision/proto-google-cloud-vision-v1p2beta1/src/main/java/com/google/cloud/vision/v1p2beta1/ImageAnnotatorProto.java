@@ -372,11 +372,11 @@ public final class ImageAnnotatorProto {
           + "tateFilesResponse\022\021OperationMetadata\032v\312A"
           + "\025vision.googleapis.com\322A[https://www.goo"
           + "gleapis.com/auth/cloud-platform,https://"
-          + "www.googleapis.com/auth/cloud-visionB\202\001\n"
-          + "!com.google.cloud.vision.v1p2beta1B\023Imag"
-          + "eAnnotatorProtoP\001ZCgoogle.golang.org/gen"
-          + "proto/googleapis/cloud/vision/v1p2beta1;"
-          + "vision\370\001\001b\006proto3"
+          + "www.googleapis.com/auth/cloud-visionBx\n!"
+          + "com.google.cloud.vision.v1p2beta1B\023Image"
+          + "AnnotatorProtoP\001Z9cloud.google.com/go/vi"
+          + "sion/apiv1p2beta1/visionpb;visionpb\370\001\001b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -84,11 +84,10 @@ public final class ProductSearchProto {
           + "on.v1p4beta1.ProductSearchResults.Result"
           + "\022`\n\022object_annotations\030\003 \003(\0132D.google.cl"
           + "oud.vision.v1p4beta1.ProductSearchResult"
-          + "s.ObjectAnnotationB\210\001\n!com.google.cloud."
-          + "vision.v1p4beta1B\022ProductSearchProtoP\001ZC"
-          + "google.golang.org/genproto/googleapis/cl"
-          + "oud/vision/v1p4beta1;vision\370\001\001\242\002\004GCVNb\006p"
-          + "roto3"
+          + "s.ObjectAnnotationB~\n!com.google.cloud.v"
+          + "ision.v1p4beta1B\022ProductSearchProtoP\001Z9c"
+          + "loud.google.com/go/vision/apiv1p4beta1/v"
+          + "isionpb;visionpb\370\001\001\242\002\004GCVNb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

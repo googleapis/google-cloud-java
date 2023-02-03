@@ -145,10 +145,10 @@ public final class WorkflowsProto {
           + "rkflow\332A\024workflow,update_mask\312A\035\n\010Workfl"
           + "ow\022\021OperationMetadata\032L\312A\030workflows.goog"
           + "leapis.com\322A.https://www.googleapis.com/"
-          + "auth/cloud-platformBu\n\035com.google.cloud."
-          + "workflows.v1B\016WorkflowsProtoP\001ZBgoogle.g"
-          + "olang.org/genproto/googleapis/cloud/work"
-          + "flows/v1;workflowsb\006proto3"
+          + "auth/cloud-platformBn\n\035com.google.cloud."
+          + "workflows.v1B\016WorkflowsProtoP\001Z;cloud.go"
+          + "ogle.com/go/workflows/apiv1/workflowspb;"
+          + "workflowspbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

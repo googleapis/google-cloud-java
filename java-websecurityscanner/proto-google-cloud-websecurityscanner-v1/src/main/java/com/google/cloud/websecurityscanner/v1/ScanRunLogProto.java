@@ -54,13 +54,13 @@ public final class ScanRunLogProto {
           + "\001(\003\022\031\n\021urls_tested_count\030\006 \001(\003\022\024\n\014has_fi"
           + "ndings\030\007 \001(\010\022J\n\013error_trace\030\010 \001(\01325.goog"
           + "le.cloud.websecurityscanner.v1.ScanRunEr"
-          + "rorTraceB\203\002\n&com.google.cloud.websecurit"
-          + "yscanner.v1B\017ScanRunLogProtoP\001ZTgoogle.g"
-          + "olang.org/genproto/googleapis/cloud/webs"
-          + "ecurityscanner/v1;websecurityscanner\252\002\"G"
-          + "oogle.Cloud.WebSecurityScanner.V1\312\002\"Goog"
-          + "le\\Cloud\\WebSecurityScanner\\V1\352\002%Google:"
-          + ":Cloud::WebSecurityScanner::V1b\006proto3"
+          + "rorTraceB\205\002\n&com.google.cloud.websecurit"
+          + "yscanner.v1B\017ScanRunLogProtoP\001ZVcloud.go"
+          + "ogle.com/go/websecurityscanner/apiv1/web"
+          + "securityscannerpb;websecurityscannerpb\252\002"
+          + "\"Google.Cloud.WebSecurityScanner.V1\312\002\"Go"
+          + "ogle\\Cloud\\WebSecurityScanner\\V1\352\002%Googl"
+          + "e::Cloud::WebSecurityScanner::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

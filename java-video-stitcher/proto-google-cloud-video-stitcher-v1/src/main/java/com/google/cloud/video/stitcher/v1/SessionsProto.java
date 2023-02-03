@@ -151,10 +151,10 @@ public final class SessionsProto {
           + "erPolicy\"J\n\013OrderPolicy\022\034\n\030ORDER_POLICY_"
           + "UNSPECIFIED\020\000\022\r\n\tASCENDING\020\001\022\016\n\nDESCENDI"
           + "NG\020\002\"6\n\017RenditionFilter\022\023\n\013bitrate_bps\030\001"
-          + " \001(\005\022\016\n\006codecs\030\002 \001(\tB}\n\"com.google.cloud"
-          + ".video.stitcher.v1B\rSessionsProtoP\001ZFgoo"
-          + "gle.golang.org/genproto/googleapis/cloud"
-          + "/video/stitcher/v1;stitcherb\006proto3"
+          + " \001(\005\022\016\n\006codecs\030\002 \001(\tBu\n\"com.google.cloud"
+          + ".video.stitcher.v1B\rSessionsProtoP\001Z>clo"
+          + "ud.google.com/go/video/stitcher/apiv1/st"
+          + "itcherpb;stitcherpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -61,11 +61,11 @@ public final class ScanRunProto {
           + "\002\022\n\n\006KILLED\020\003:p\352Am\n)websecurityscanner.g"
           + "oogleapis.com/ScanRun\022@projects/{project"
           + "}/scanConfigs/{scan_config}/scanRuns/{sc"
-          + "an_run}B\230\001\n+com.google.cloud.websecurity"
-          + "scanner.v1alphaB\014ScanRunProtoP\001ZYgoogle."
-          + "golang.org/genproto/googleapis/cloud/web"
-          + "securityscanner/v1alpha;websecurityscann"
-          + "erb\006proto3"
+          + "an_run}B\232\001\n+com.google.cloud.websecurity"
+          + "scanner.v1alphaB\014ScanRunProtoP\001Z[cloud.g"
+          + "oogle.com/go/websecurityscanner/apiv1alp"
+          + "ha/websecurityscannerpb;websecurityscann"
+          + "erpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

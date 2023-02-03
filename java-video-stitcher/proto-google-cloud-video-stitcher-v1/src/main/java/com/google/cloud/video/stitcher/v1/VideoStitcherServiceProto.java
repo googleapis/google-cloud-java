@@ -327,10 +327,10 @@ public final class VideoStitcherServiceProto {
           + "cts/*/locations/*/liveSessions/*}\332A\004name"
           + "\032P\312A\034videostitcher.googleapis.com\322A.http"
           + "s://www.googleapis.com/auth/cloud-platfo"
-          + "rmB\211\001\n\"com.google.cloud.video.stitcher.v"
-          + "1B\031VideoStitcherServiceProtoP\001ZFgoogle.g"
-          + "olang.org/genproto/googleapis/cloud/vide"
-          + "o/stitcher/v1;stitcherb\006proto3"
+          + "rmB\201\001\n\"com.google.cloud.video.stitcher.v"
+          + "1B\031VideoStitcherServiceProtoP\001Z>cloud.go"
+          + "ogle.com/go/video/stitcher/apiv1/stitche"
+          + "rpb;stitcherpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -577,15 +577,15 @@ public final class VideoIntelligenceServiceProto {
           + "ligence.v1p3beta1.StreamingAnnotateVideo"
           + "Response\"\000(\0010\001\032T\312A videointelligence.goo"
           + "gleapis.com\322A.https://www.googleapis.com"
-          + "/auth/cloud-platformB\256\002\n,com.google.clou"
+          + "/auth/cloud-platformB\257\002\n,com.google.clou"
           + "d.videointelligence.v1p3beta1B\035VideoInte"
-          + "lligenceServiceProtoP\001ZYgoogle.golang.or"
-          + "g/genproto/googleapis/cloud/videointelli"
-          + "gence/v1p3beta1;videointelligence\252\002(Goog"
-          + "le.Cloud.VideoIntelligence.V1P3Beta1\312\002(G"
-          + "oogle\\Cloud\\VideoIntelligence\\V1p3beta1\352"
-          + "\002+Google::Cloud::VideoIntelligence::V1p3"
-          + "beta1b\006proto3"
+          + "lligenceServiceProtoP\001ZZcloud.google.com"
+          + "/go/videointelligence/apiv1p3beta1/video"
+          + "intelligencepb;videointelligencepb\252\002(Goo"
+          + "gle.Cloud.VideoIntelligence.V1P3Beta1\312\002("
+          + "Google\\Cloud\\VideoIntelligence\\V1p3beta1"
+          + "\352\002+Google::Cloud::VideoIntelligence::V1p"
+          + "3beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

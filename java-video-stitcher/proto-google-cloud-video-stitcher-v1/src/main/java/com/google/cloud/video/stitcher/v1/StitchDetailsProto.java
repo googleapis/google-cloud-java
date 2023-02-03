@@ -67,10 +67,10 @@ public final class StitchDetailsProto {
           + "ogle.cloud.video.stitcher.v1.AdStitchDet"
           + "ail.MediaEntryB\003\340A\001\032D\n\nMediaEntry\022\013\n\003key"
           + "\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.google.protobuf."
-          + "Value:\0028\001B\202\001\n\"com.google.cloud.video.sti"
-          + "tcher.v1B\022StitchDetailsProtoP\001ZFgoogle.g"
-          + "olang.org/genproto/googleapis/cloud/vide"
-          + "o/stitcher/v1;stitcherb\006proto3"
+          + "Value:\0028\001Bz\n\"com.google.cloud.video.stit"
+          + "cher.v1B\022StitchDetailsProtoP\001Z>cloud.goo"
+          + "gle.com/go/video/stitcher/apiv1/stitcher"
+          + "pb;stitcherpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

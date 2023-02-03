@@ -209,13 +209,13 @@ public final class ResourcesProto {
           + "\013\n\007STOPPED\020\006:o\352Al\n\037livestream.googleapis"
           + ".com/Event\022Iprojects/{project}/locations"
           + "/{location}/channels/{channel}/events/{e"
-          + "vent}B\006\n\004taskB\361\001\n$com.google.cloud.video"
-          + ".livestream.v1B\016ResourcesProtoP\001ZJgoogle"
-          + ".golang.org/genproto/googleapis/cloud/vi"
-          + "deo/livestream/v1;livestream\252\002 Google.Cl"
-          + "oud.Video.LiveStream.V1\312\002 Google\\Cloud\\V"
-          + "ideo\\LiveStream\\V1\352\002$Google::Cloud::Vide"
-          + "o::LiveStream::V1b\006proto3"
+          + "vent}B\006\n\004taskB\353\001\n$com.google.cloud.video"
+          + ".livestream.v1B\016ResourcesProtoP\001ZDcloud."
+          + "google.com/go/video/livestream/apiv1/liv"
+          + "estreampb;livestreampb\252\002 Google.Cloud.Vi"
+          + "deo.LiveStream.V1\312\002 Google\\Cloud\\Video\\L"
+          + "iveStream\\V1\352\002$Google::Cloud::Video::Liv"
+          + "eStream::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

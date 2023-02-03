@@ -68,11 +68,10 @@ public final class CdnKeysProto {
           + "oogleCdnKey\022\030\n\013private_key\030\001 \001(\014B\003\340A\004\022\020\n"
           + "\010key_name\030\002 \001(\t\"&\n\014AkamaiCdnKey\022\026\n\ttoken"
           + "_key\030\001 \001(\014B\003\340A\004\"9\n\013MediaCdnKey\022\030\n\013privat"
-          + "e_key\030\001 \001(\014B\003\340A\004\022\020\n\010key_name\030\002 \001(\tB|\n\"co"
+          + "e_key\030\001 \001(\014B\003\340A\004\022\020\n\010key_name\030\002 \001(\tBt\n\"co"
           + "m.google.cloud.video.stitcher.v1B\014CdnKey"
-          + "sProtoP\001ZFgoogle.golang.org/genproto/goo"
-          + "gleapis/cloud/video/stitcher/v1;stitcher"
-          + "b\006proto3"
+          + "sProtoP\001Z>cloud.google.com/go/video/stit"
+          + "cher/apiv1/stitcherpb;stitcherpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

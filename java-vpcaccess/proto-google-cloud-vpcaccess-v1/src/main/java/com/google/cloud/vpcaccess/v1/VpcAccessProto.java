@@ -130,13 +130,13 @@ public final class VpcAccessProto {
           + "/*/locations/*/connectors/*}\332A\004name\312A*\n\025"
           + "google.protobuf.Empty\022\021OperationMetadata"
           + "\032L\312A\030vpcaccess.googleapis.com\322A.https://"
-          + "www.googleapis.com/auth/cloud-platformB\314"
+          + "www.googleapis.com/auth/cloud-platformB\305"
           + "\001\n\035com.google.cloud.vpcaccess.v1B\016VpcAcc"
-          + "essProtoP\001ZBgoogle.golang.org/genproto/g"
-          + "oogleapis/cloud/vpcaccess/v1;vpcaccess\252\002"
-          + "\031Google.Cloud.VpcAccess.V1\312\002\031Google\\Clou"
-          + "d\\VpcAccess\\V1\352\002\034Google::Cloud::VpcAcces"
-          + "s::V1b\006proto3"
+          + "essProtoP\001Z;cloud.google.com/go/vpcacces"
+          + "s/apiv1/vpcaccesspb;vpcaccesspb\252\002\031Google"
+          + ".Cloud.VpcAccess.V1\312\002\031Google\\Cloud\\VpcAc"
+          + "cess\\V1\352\002\034Google::Cloud::VpcAccess::V1b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
