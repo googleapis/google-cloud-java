@@ -83,13 +83,13 @@ public final class MitreAttackProto {
           + "S\020\037\022\035\n\031NETWORK_SERVICE_DISCOVERY\020 \022\035\n\031AC"
           + "CESS_TOKEN_MANIPULATION\020!\022%\n!ABUSE_ELEVA"
           + "TION_CONTROL_MECHANISM\020\"\022\024\n\020DEFAULT_ACCO"
-          + "UNTS\020#B\354\001\n\"com.google.cloud.securitycent"
-          + "er.v1B\020MitreAttackProtoP\001ZLgoogle.golang"
-          + ".org/genproto/googleapis/cloud/securityc"
-          + "enter/v1;securitycenter\252\002\036Google.Cloud.S"
-          + "ecurityCenter.V1\312\002\036Google\\Cloud\\Security"
-          + "Center\\V1\352\002!Google::Cloud::SecurityCente"
-          + "r::V1b\006proto3"
+          + "UNTS\020#B\352\001\n\"com.google.cloud.securitycent"
+          + "er.v1B\020MitreAttackProtoP\001ZJcloud.google."
+          + "com/go/securitycenter/apiv1/securitycent"
+          + "erpb;securitycenterpb\252\002\036Google.Cloud.Sec"
+          + "urityCenter.V1\312\002\036Google\\Cloud\\SecurityCe"
+          + "nter\\V1\352\002!Google::Cloud::SecurityCenter:"
+          + ":V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

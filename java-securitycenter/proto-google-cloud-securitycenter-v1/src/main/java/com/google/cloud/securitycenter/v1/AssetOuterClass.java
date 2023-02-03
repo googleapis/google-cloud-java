@@ -85,13 +85,12 @@ public final class AssetOuterClass {
           + "oogleapis.com/Asset\022+organizations/{orga"
           + "nization}/assets/{asset}\022\037folders/{folde"
           + "r}/assets/{asset}\022!projects/{project}/as"
-          + "sets/{asset}B\332\001\n\"com.google.cloud.securi"
-          + "tycenter.v1P\001ZLgoogle.golang.org/genprot"
-          + "o/googleapis/cloud/securitycenter/v1;sec"
-          + "uritycenter\252\002\036Google.Cloud.SecurityCente"
-          + "r.V1\312\002\036Google\\Cloud\\SecurityCenter\\V1\352\002!"
-          + "Google::Cloud::SecurityCenter::V1b\006proto"
-          + "3"
+          + "sets/{asset}B\330\001\n\"com.google.cloud.securi"
+          + "tycenter.v1P\001ZJcloud.google.com/go/secur"
+          + "itycenter/apiv1/securitycenterpb;securit"
+          + "ycenterpb\252\002\036Google.Cloud.SecurityCenter."
+          + "V1\312\002\036Google\\Cloud\\SecurityCenter\\V1\352\002!Go"
+          + "ogle::Cloud::SecurityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

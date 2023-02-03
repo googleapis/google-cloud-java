@@ -50,13 +50,13 @@ public final class KernelRootkitProto {
           + "xpected_kernel_code_pages\030\006 \001(\010\022&\n\036unexp"
           + "ected_system_call_handler\030\007 \001(\010\022$\n\034unexp"
           + "ected_interrupt_handler\030\010 \001(\010\022(\n unexpec"
-          + "ted_processes_in_runqueue\030\t \001(\010B\356\001\n\"com."
+          + "ted_processes_in_runqueue\030\t \001(\010B\354\001\n\"com."
           + "google.cloud.securitycenter.v1B\022KernelRo"
-          + "otkitProtoP\001ZLgoogle.golang.org/genproto"
-          + "/googleapis/cloud/securitycenter/v1;secu"
-          + "ritycenter\252\002\036Google.Cloud.SecurityCenter"
-          + ".V1\312\002\036Google\\Cloud\\SecurityCenter\\V1\352\002!G"
-          + "oogle::Cloud::SecurityCenter::V1b\006proto3"
+          + "otkitProtoP\001ZJcloud.google.com/go/securi"
+          + "tycenter/apiv1/securitycenterpb;security"
+          + "centerpb\252\002\036Google.Cloud.SecurityCenter.V"
+          + "1\312\002\036Google\\Cloud\\SecurityCenter\\V1\352\002!Goo"
+          + "gle::Cloud::SecurityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

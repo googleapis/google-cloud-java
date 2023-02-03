@@ -130,10 +130,9 @@ public final class ExecutionProto {
           + "tions/*/jobs/*/executions/*}\332A\004name\312A\026\n\t"
           + "Execution\022\tExecution\032F\312A\022run.googleapis."
           + "com\322A.https://www.googleapis.com/auth/cl"
-          + "oud-platformBc\n\027com.google.cloud.run.v2B"
-          + "\016ExecutionProtoP\001Z6google.golang.org/gen"
-          + "proto/googleapis/cloud/run/v2;runb\006proto"
-          + "3"
+          + "oud-platformBV\n\027com.google.cloud.run.v2B"
+          + "\016ExecutionProtoP\001Z)cloud.google.com/go/r"
+          + "un/apiv2/runpb;runpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

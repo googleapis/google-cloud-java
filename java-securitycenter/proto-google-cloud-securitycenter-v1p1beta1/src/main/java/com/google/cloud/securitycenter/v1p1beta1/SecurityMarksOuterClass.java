@@ -62,13 +62,13 @@ public final class SecurityMarksOuterClass {
           + "ders/{folder}/sources/{source}/findings/"
           + "{finding}/securityMarks\022Dprojects/{proje"
           + "ct}/sources/{source}/findings/{finding}/"
-          + "securityMarksB\375\001\n)com.google.cloud.secur"
-          + "itycenter.v1p1beta1P\001ZSgoogle.golang.org"
-          + "/genproto/googleapis/cloud/securitycente"
-          + "r/v1p1beta1;securitycenter\252\002%Google.Clou"
-          + "d.SecurityCenter.V1P1Beta1\312\002%Google\\Clou"
-          + "d\\SecurityCenter\\V1p1beta1\352\002(Google::Clo"
-          + "ud::SecurityCenter::V1p1beta1b\006proto3"
+          + "securityMarksB\373\001\n)com.google.cloud.secur"
+          + "itycenter.v1p1beta1P\001ZQcloud.google.com/"
+          + "go/securitycenter/apiv1p1beta1/securityc"
+          + "enterpb;securitycenterpb\252\002%Google.Cloud."
+          + "SecurityCenter.V1P1Beta1\312\002%Google\\Cloud\\"
+          + "SecurityCenter\\V1p1beta1\352\002(Google::Cloud"
+          + "::SecurityCenter::V1p1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

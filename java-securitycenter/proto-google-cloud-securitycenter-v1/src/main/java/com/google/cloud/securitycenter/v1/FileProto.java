@@ -44,13 +44,13 @@ public final class FileProto {
           + "oto\022\036google.cloud.securitycenter.v1\"s\n\004F"
           + "ile\022\014\n\004path\030\001 \001(\t\022\014\n\004size\030\002 \001(\003\022\016\n\006sha25"
           + "6\030\003 \001(\t\022\023\n\013hashed_size\030\004 \001(\003\022\030\n\020partiall"
-          + "y_hashed\030\005 \001(\010\022\020\n\010contents\030\006 \001(\tB\345\001\n\"com"
+          + "y_hashed\030\005 \001(\010\022\020\n\010contents\030\006 \001(\tB\343\001\n\"com"
           + ".google.cloud.securitycenter.v1B\tFilePro"
-          + "toP\001ZLgoogle.golang.org/genproto/googlea"
-          + "pis/cloud/securitycenter/v1;securitycent"
-          + "er\252\002\036Google.Cloud.SecurityCenter.V1\312\002\036Go"
-          + "ogle\\Cloud\\SecurityCenter\\V1\352\002!Google::C"
-          + "loud::SecurityCenter::V1b\006proto3"
+          + "toP\001ZJcloud.google.com/go/securitycenter"
+          + "/apiv1/securitycenterpb;securitycenterpb"
+          + "\252\002\036Google.Cloud.SecurityCenter.V1\312\002\036Goog"
+          + "le\\Cloud\\SecurityCenter\\V1\352\002!Google::Clo"
+          + "ud::SecurityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

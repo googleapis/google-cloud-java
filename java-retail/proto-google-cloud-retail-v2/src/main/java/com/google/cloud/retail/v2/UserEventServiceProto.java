@@ -111,13 +111,12 @@ public final class UserEventServiceProto {
           + "gs/*}/userEvents:rejoin:\001*\312A4\n\030RejoinUse"
           + "rEventsResponse\022\030RejoinUserEventsMetadat"
           + "a\032I\312A\025retail.googleapis.com\322A.https://ww"
-          + "w.googleapis.com/auth/cloud-platformB\312\001\n"
+          + "w.googleapis.com/auth/cloud-platformB\300\001\n"
           + "\032com.google.cloud.retail.v2B\025UserEventSe"
-          + "rviceProtoP\001Z<google.golang.org/genproto"
-          + "/googleapis/cloud/retail/v2;retail\242\002\006RET"
-          + "AIL\252\002\026Google.Cloud.Retail.V2\312\002\026Google\\Cl"
-          + "oud\\Retail\\V2\352\002\031Google::Cloud::Retail::V"
-          + "2b\006proto3"
+          + "rviceProtoP\001Z2cloud.google.com/go/retail"
+          + "/apiv2/retailpb;retailpb\242\002\006RETAIL\252\002\026Goog"
+          + "le.Cloud.Retail.V2\312\002\026Google\\Cloud\\Retail"
+          + "\\V2\352\002\031Google::Cloud::Retail::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

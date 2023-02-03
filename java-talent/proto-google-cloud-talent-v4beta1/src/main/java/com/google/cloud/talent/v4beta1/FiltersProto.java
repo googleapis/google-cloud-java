@@ -106,11 +106,10 @@ public final class FiltersProto {
           + "icH\000\0220\n\016departure_time\030\006 \001(\0132\026.google.ty"
           + "pe.TimeOfDayH\000\"L\n\013RoadTraffic\022\034\n\030ROAD_TR"
           + "AFFIC_UNSPECIFIED\020\000\022\020\n\014TRAFFIC_FREE\020\001\022\r\n"
-          + "\tBUSY_HOUR\020\002B\020\n\016traffic_optionBz\n\037com.go"
+          + "\tBUSY_HOUR\020\002B\020\n\016traffic_optionBp\n\037com.go"
           + "ogle.cloud.talent.v4beta1B\014FiltersProtoP"
-          + "\001ZAgoogle.golang.org/genproto/googleapis"
-          + "/cloud/talent/v4beta1;talent\242\002\003CTSb\006prot"
-          + "o3"
+          + "\001Z7cloud.google.com/go/talent/apiv4beta1"
+          + "/talentpb;talentpb\242\002\003CTSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

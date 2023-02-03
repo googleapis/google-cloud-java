@@ -46,13 +46,13 @@ public final class IamBindingProto {
           + "le.cloud.securitycenter.v1.IamBinding.Ac"
           + "tion\022\014\n\004role\030\002 \001(\t\022\016\n\006member\030\003 \001(\t\"5\n\006Ac"
           + "tion\022\026\n\022ACTION_UNSPECIFIED\020\000\022\007\n\003ADD\020\001\022\n\n"
-          + "\006REMOVE\020\002B\353\001\n\"com.google.cloud.securityc"
-          + "enter.v1B\017IamBindingProtoP\001ZLgoogle.gola"
-          + "ng.org/genproto/googleapis/cloud/securit"
-          + "ycenter/v1;securitycenter\252\002\036Google.Cloud"
-          + ".SecurityCenter.V1\312\002\036Google\\Cloud\\Securi"
-          + "tyCenter\\V1\352\002!Google::Cloud::SecurityCen"
-          + "ter::V1b\006proto3"
+          + "\006REMOVE\020\002B\351\001\n\"com.google.cloud.securityc"
+          + "enter.v1B\017IamBindingProtoP\001ZJcloud.googl"
+          + "e.com/go/securitycenter/apiv1/securityce"
+          + "nterpb;securitycenterpb\252\002\036Google.Cloud.S"
+          + "ecurityCenter.V1\312\002\036Google\\Cloud\\Security"
+          + "Center\\V1\352\002!Google::Cloud::SecurityCente"
+          + "r::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

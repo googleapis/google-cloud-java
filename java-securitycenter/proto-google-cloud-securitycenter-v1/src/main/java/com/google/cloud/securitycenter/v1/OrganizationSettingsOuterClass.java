@@ -60,13 +60,13 @@ public final class OrganizationSettingsOuterClass {
           + "IED\020\000\022\020\n\014INCLUDE_ONLY\020\001\022\013\n\007EXCLUDE\020\002:j\352A"
           + "g\n2securitycenter.googleapis.com/Organiz"
           + "ationSettings\0221organizations/{organizati"
-          + "on}/organizationSettingsB\332\001\n\"com.google."
-          + "cloud.securitycenter.v1P\001ZLgoogle.golang"
-          + ".org/genproto/googleapis/cloud/securityc"
-          + "enter/v1;securitycenter\252\002\036Google.Cloud.S"
-          + "ecurityCenter.V1\312\002\036Google\\Cloud\\Security"
-          + "Center\\V1\352\002!Google::Cloud::SecurityCente"
-          + "r::V1b\006proto3"
+          + "on}/organizationSettingsB\330\001\n\"com.google."
+          + "cloud.securitycenter.v1P\001ZJcloud.google."
+          + "com/go/securitycenter/apiv1/securitycent"
+          + "erpb;securitycenterpb\252\002\036Google.Cloud.Sec"
+          + "urityCenter.V1\312\002\036Google\\Cloud\\SecurityCe"
+          + "nter\\V1\352\002!Google::Cloud::SecurityCenter:"
+          + ":V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

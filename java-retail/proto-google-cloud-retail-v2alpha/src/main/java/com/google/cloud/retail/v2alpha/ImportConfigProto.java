@@ -189,13 +189,12 @@ public final class ImportConfigProto {
           + "\023joined_events_count\030\001 \001(\003\022\035\n\025unjoined_e"
           + "vents_count\030\002 \001(\003\"I\n\034ImportCompletionDat"
           + "aResponse\022)\n\rerror_samples\030\001 \003(\0132\022.googl"
-          + "e.rpc.StatusB\337\001\n\037com.google.cloud.retail"
-          + ".v2alphaB\021ImportConfigProtoP\001ZAgoogle.go"
-          + "lang.org/genproto/googleapis/cloud/retai"
-          + "l/v2alpha;retail\242\002\006RETAIL\252\002\033Google.Cloud"
-          + ".Retail.V2Alpha\312\002\033Google\\Cloud\\Retail\\V2"
-          + "alpha\352\002\036Google::Cloud::Retail::V2alphab\006"
-          + "proto3"
+          + "e.rpc.StatusB\325\001\n\037com.google.cloud.retail"
+          + ".v2alphaB\021ImportConfigProtoP\001Z7cloud.goo"
+          + "gle.com/go/retail/apiv2alpha/retailpb;re"
+          + "tailpb\242\002\006RETAIL\252\002\033Google.Cloud.Retail.V2"
+          + "Alpha\312\002\033Google\\Cloud\\Retail\\V2alpha\352\002\036Go"
+          + "ogle::Cloud::Retail::V2alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

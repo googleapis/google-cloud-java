@@ -266,11 +266,10 @@ public final class JobServiceProto {
           + "ent=projects/*}/jobs:searchForAlert:\001*\032l"
           + "\312A\023jobs.googleapis.com\322AShttps://www.goo"
           + "gleapis.com/auth/cloud-platform,https://"
-          + "www.googleapis.com/auth/jobsB}\n\037com.goog"
+          + "www.googleapis.com/auth/jobsBs\n\037com.goog"
           + "le.cloud.talent.v4beta1B\017JobServiceProto"
-          + "P\001ZAgoogle.golang.org/genproto/googleapi"
-          + "s/cloud/talent/v4beta1;talent\242\002\003CTSb\006pro"
-          + "to3"
+          + "P\001Z7cloud.google.com/go/talent/apiv4beta"
+          + "1/talentpb;talentpb\242\002\003CTSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

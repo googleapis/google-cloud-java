@@ -61,15 +61,15 @@ public final class NotificationConfigProto {
           + "ers/{folder}/notificationConfigs/{notifi"
           + "cation_config}\022<projects/{project}/notif"
           + "icationConfigs/{notification_config}B\017\n\r"
-          + "notify_configB\266\002\n\"com.google.cloud.secur"
+          + "notify_configB\264\002\n\"com.google.cloud.secur"
           + "itycenter.v1B\027NotificationConfigProtoP\001Z"
-          + "Lgoogle.golang.org/genproto/googleapis/c"
-          + "loud/securitycenter/v1;securitycenter\252\002\036"
-          + "Google.Cloud.SecurityCenter.V1\312\002\036Google\\"
-          + "Cloud\\SecurityCenter\\V1\352\002!Google::Cloud:"
-          + ":SecurityCenter::V1\352A@\n\033pubsub.googleapi"
-          + "s.com/Topic\022!projects/{project}/topics/{"
-          + "topic}b\006proto3"
+          + "Jcloud.google.com/go/securitycenter/apiv"
+          + "1/securitycenterpb;securitycenterpb\252\002\036Go"
+          + "ogle.Cloud.SecurityCenter.V1\312\002\036Google\\Cl"
+          + "oud\\SecurityCenter\\V1\352\002!Google::Cloud::S"
+          + "ecurityCenter::V1\352A@\n\033pubsub.googleapis."
+          + "com/Topic\022!projects/{project}/topics/{to"
+          + "pic}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

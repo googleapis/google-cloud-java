@@ -104,12 +104,12 @@ public final class TargetProto {
           + "e_account_email\030\001 \001(\t\022\020\n\010audience\030\002 \001(\t*"
           + "s\n\nHttpMethod\022\033\n\027HTTP_METHOD_UNSPECIFIED"
           + "\020\000\022\010\n\004POST\020\001\022\007\n\003GET\020\002\022\010\n\004HEAD\020\003\022\007\n\003PUT\020\004"
-          + "\022\n\n\006DELETE\020\005\022\t\n\005PATCH\020\006\022\013\n\007OPTIONS\020\007B\265\001\n"
+          + "\022\n\n\006DELETE\020\005\022\t\n\005PATCH\020\006\022\013\n\007OPTIONS\020\007B\256\001\n"
           + "\035com.google.cloud.scheduler.v1B\013TargetPr"
-          + "otoP\001ZBgoogle.golang.org/genproto/google"
-          + "apis/cloud/scheduler/v1;scheduler\352A@\n\033pu"
-          + "bsub.googleapis.com/Topic\022!projects/{pro"
-          + "ject}/topics/{topic}b\006proto3"
+          + "otoP\001Z;cloud.google.com/go/scheduler/api"
+          + "v1/schedulerpb;schedulerpb\352A@\n\033pubsub.go"
+          + "ogleapis.com/Topic\022!projects/{project}/t"
+          + "opics/{topic}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

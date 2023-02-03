@@ -307,11 +307,11 @@ public final class RecommenderProto {
           + "type_config\332A\037insight_type_config,update"
           + "_mask\032N\312A\032recommender.googleapis.com\322A.h"
           + "ttps://www.googleapis.com/auth/cloud-pla"
-          + "tformB\242\001\n\037com.google.cloud.recommender.v"
-          + "1B\020RecommenderProtoP\001ZFgoogle.golang.org"
-          + "/genproto/googleapis/cloud/recommender/v"
-          + "1;recommender\242\002\004CREC\252\002\033Google.Cloud.Reco"
-          + "mmender.V1b\006proto3"
+          + "tformB\235\001\n\037com.google.cloud.recommender.v"
+          + "1B\020RecommenderProtoP\001ZAcloud.google.com/"
+          + "go/recommender/apiv1/recommenderpb;recom"
+          + "menderpb\242\002\004CREC\252\002\033Google.Cloud.Recommend"
+          + "er.V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

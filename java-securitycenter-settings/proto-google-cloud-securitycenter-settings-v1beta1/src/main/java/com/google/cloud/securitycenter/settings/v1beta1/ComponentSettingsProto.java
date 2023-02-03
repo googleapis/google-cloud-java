@@ -132,15 +132,15 @@ public final class ComponentSettingsProto {
           + "ntSettings\022\033\n\023approved_identities\030\001 \003(\t*"
           + "l\n\030ComponentEnablementState\022*\n&COMPONENT"
           + "_ENABLEMENT_STATE_UNSPECIFIED\020\000\022\013\n\007DISAB"
-          + "LE\020\001\022\n\n\006ENABLE\020\002\022\013\n\007INHERIT\020\003B\266\002\n0com.go"
+          + "LE\020\001\022\n\n\006ENABLE\020\002\022\013\n\007INHERIT\020\003B\256\002\n0com.go"
           + "ogle.cloud.securitycenter.settings.v1bet"
-          + "a1B\026ComponentSettingsProtoP\001ZTgoogle.gol"
-          + "ang.org/genproto/googleapis/cloud/securi"
-          + "tycenter/settings/v1beta1;settings\370\001\001\252\002,"
-          + "Google.Cloud.SecurityCenter.Settings.V1B"
-          + "eta1\312\002,Google\\Cloud\\SecurityCenter\\Setti"
-          + "ngs\\V1beta1\352\0020Google::Cloud::SecurityCen"
-          + "ter::Settings::V1beta1b\006proto3"
+          + "a1B\026ComponentSettingsProtoP\001ZLcloud.goog"
+          + "le.com/go/securitycenter/settings/apiv1b"
+          + "eta1/settingspb;settingspb\370\001\001\252\002,Google.C"
+          + "loud.SecurityCenter.Settings.V1Beta1\312\002,G"
+          + "oogle\\Cloud\\SecurityCenter\\Settings\\V1be"
+          + "ta1\352\0020Google::Cloud::SecurityCenter::Set"
+          + "tings::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

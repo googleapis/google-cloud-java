@@ -42,13 +42,13 @@ public final class LabelProto {
     java.lang.String[] descriptorData = {
       "\n*google/cloud/securitycenter/v1/label.p"
           + "roto\022\036google.cloud.securitycenter.v1\"$\n\005"
-          + "Label\022\014\n\004name\030\001 \001(\t\022\r\n\005value\030\002 \001(\tB\346\001\n\"c"
+          + "Label\022\014\n\004name\030\001 \001(\t\022\r\n\005value\030\002 \001(\tB\344\001\n\"c"
           + "om.google.cloud.securitycenter.v1B\nLabel"
-          + "ProtoP\001ZLgoogle.golang.org/genproto/goog"
-          + "leapis/cloud/securitycenter/v1;securityc"
-          + "enter\252\002\036Google.Cloud.SecurityCenter.V1\312\002"
-          + "\036Google\\Cloud\\SecurityCenter\\V1\352\002!Google"
-          + "::Cloud::SecurityCenter::V1b\006proto3"
+          + "ProtoP\001ZJcloud.google.com/go/securitycen"
+          + "ter/apiv1/securitycenterpb;securitycente"
+          + "rpb\252\002\036Google.Cloud.SecurityCenter.V1\312\002\036G"
+          + "oogle\\Cloud\\SecurityCenter\\V1\352\002!Google::"
+          + "Cloud::SecurityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

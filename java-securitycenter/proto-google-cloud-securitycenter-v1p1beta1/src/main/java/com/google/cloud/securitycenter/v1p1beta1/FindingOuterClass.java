@@ -75,14 +75,14 @@ public final class FindingOuterClass {
           + "on}/sources/{source}/findings/{finding}\022"
           + "4folders/{folder}/sources/{source}/findi"
           + "ngs/{finding}\0226projects/{project}/source"
-          + "s/{source}/findings/{finding}B\375\001\n)com.go"
-          + "ogle.cloud.securitycenter.v1p1beta1P\001ZSg"
-          + "oogle.golang.org/genproto/googleapis/clo"
-          + "ud/securitycenter/v1p1beta1;securitycent"
-          + "er\252\002%Google.Cloud.SecurityCenter.V1P1Bet"
-          + "a1\312\002%Google\\Cloud\\SecurityCenter\\V1p1bet"
-          + "a1\352\002(Google::Cloud::SecurityCenter::V1p1"
-          + "beta1b\006proto3"
+          + "s/{source}/findings/{finding}B\373\001\n)com.go"
+          + "ogle.cloud.securitycenter.v1p1beta1P\001ZQc"
+          + "loud.google.com/go/securitycenter/apiv1p"
+          + "1beta1/securitycenterpb;securitycenterpb"
+          + "\252\002%Google.Cloud.SecurityCenter.V1P1Beta1"
+          + "\312\002%Google\\Cloud\\SecurityCenter\\V1p1beta1"
+          + "\352\002(Google::Cloud::SecurityCenter::V1p1be"
+          + "ta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

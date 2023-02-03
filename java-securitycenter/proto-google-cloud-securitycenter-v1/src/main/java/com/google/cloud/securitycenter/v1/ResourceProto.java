@@ -49,13 +49,13 @@ public final class ResourceProto {
           + "\024project_display_name\030\003 \001(\t\022\016\n\006parent\030\004 "
           + "\001(\t\022\033\n\023parent_display_name\030\005 \001(\t\022<\n\007fold"
           + "ers\030\007 \003(\0132&.google.cloud.securitycenter."
-          + "v1.FolderB\003\340A\003B\351\001\n\"com.google.cloud.secu"
-          + "ritycenter.v1B\rResourceProtoP\001ZLgoogle.g"
-          + "olang.org/genproto/googleapis/cloud/secu"
-          + "ritycenter/v1;securitycenter\252\002\036Google.Cl"
-          + "oud.SecurityCenter.V1\312\002\036Google\\Cloud\\Sec"
-          + "urityCenter\\V1\352\002!Google::Cloud::Security"
-          + "Center::V1b\006proto3"
+          + "v1.FolderB\003\340A\003B\347\001\n\"com.google.cloud.secu"
+          + "ritycenter.v1B\rResourceProtoP\001ZJcloud.go"
+          + "ogle.com/go/securitycenter/apiv1/securit"
+          + "ycenterpb;securitycenterpb\252\002\036Google.Clou"
+          + "d.SecurityCenter.V1\312\002\036Google\\Cloud\\Secur"
+          + "ityCenter\\V1\352\002!Google::Cloud::SecurityCe"
+          + "nter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

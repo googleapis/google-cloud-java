@@ -74,10 +74,10 @@ public final class TaskProto {
           + "patch_time\030\002 \001(\0132\032.google.protobuf.Times"
           + "tamp\0221\n\rresponse_time\030\003 \001(\0132\032.google.pro"
           + "tobuf.Timestamp\022+\n\017response_status\030\004 \001(\013"
-          + "2\022.google.rpc.StatusBn\n\036com.google.cloud"
-          + ".tasks.v2beta3B\tTaskProtoP\001Z?google.gola"
-          + "ng.org/genproto/googleapis/cloud/tasks/v"
-          + "2beta3;tasksb\006proto3"
+          + "2\022.google.rpc.StatusBc\n\036com.google.cloud"
+          + ".tasks.v2beta3B\tTaskProtoP\001Z4cloud.googl"
+          + "e.com/go/tasks/apiv2beta3/taskspb;tasksp"
+          + "bb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

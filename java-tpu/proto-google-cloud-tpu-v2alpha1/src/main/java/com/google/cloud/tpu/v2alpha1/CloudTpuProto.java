@@ -581,10 +581,10 @@ public final class CloudTpuProto {
           + "cations/*/nodes/*}:simulateMaintenanceEv"
           + "ent:\001*\312A\031\n\004Node\022\021OperationMetadata\032F\312A\022t"
           + "pu.googleapis.com\322A.https://www.googleap"
-          + "is.com/auth/cloud-platformBn\n\035com.google"
-          + ".cloud.tpu.v2alpha1B\rCloudTpuProtoP\001Z<go"
-          + "ogle.golang.org/genproto/googleapis/clou"
-          + "d/tpu/v2alpha1;tpub\006proto3"
+          + "is.com/auth/cloud-platformBa\n\035com.google"
+          + ".cloud.tpu.v2alpha1B\rCloudTpuProtoP\001Z/cl"
+          + "oud.google.com/go/tpu/apiv2alpha1/tpupb;"
+          + "tpupbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

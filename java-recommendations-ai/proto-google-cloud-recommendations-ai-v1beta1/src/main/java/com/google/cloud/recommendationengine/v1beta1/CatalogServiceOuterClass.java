@@ -138,14 +138,14 @@ public final class CatalogServiceOuterClass {
           + "equest_id,input_config,errors_config\032W\312A"
           + "#recommendationengine.googleapis.com\322A.h"
           + "ttps://www.googleapis.com/auth/cloud-pla"
-          + "tformB\237\002\n-com.google.cloud.recommendatio"
-          + "nengine.v1beta1P\001Z]google.golang.org/gen"
-          + "proto/googleapis/cloud/recommendationeng"
-          + "ine/v1beta1;recommendationengine\242\002\005RECAI"
-          + "\252\002)Google.Cloud.RecommendationEngine.V1B"
-          + "eta1\312\002)Google\\Cloud\\RecommendationEngine"
-          + "\\V1beta1\352\002,Google::Cloud::Recommendation"
-          + "Engine::V1beta1b\006proto3"
+          + "tformB\243\002\n-com.google.cloud.recommendatio"
+          + "nengine.v1beta1P\001Zacloud.google.com/go/r"
+          + "ecommendationengine/apiv1beta1/recommend"
+          + "ationenginepb;recommendationenginepb\242\002\005R"
+          + "ECAI\252\002)Google.Cloud.RecommendationEngine"
+          + ".V1Beta1\312\002)Google\\Cloud\\RecommendationEn"
+          + "gine\\V1beta1\352\002,Google::Cloud::Recommenda"
+          + "tionEngine::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

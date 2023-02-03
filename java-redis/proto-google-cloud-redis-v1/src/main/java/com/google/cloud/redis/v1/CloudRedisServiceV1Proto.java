@@ -365,10 +365,10 @@ public final class CloudRedisServiceV1Proto {
           + "dis.v1.Instance\022\'google.cloud.redis.v1.O"
           + "perationMetadata\032H\312A\024redis.googleapis.co"
           + "m\322A.https://www.googleapis.com/auth/clou"
-          + "d-platformBs\n\031com.google.cloud.redis.v1B"
-          + "\030CloudRedisServiceV1ProtoP\001Z:google.gola"
-          + "ng.org/genproto/googleapis/cloud/redis/v"
-          + "1;redisb\006proto3"
+          + "d-platformBh\n\031com.google.cloud.redis.v1B"
+          + "\030CloudRedisServiceV1ProtoP\001Z/cloud.googl"
+          + "e.com/go/redis/apiv1/redispb;redispbb\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

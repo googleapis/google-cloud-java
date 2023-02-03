@@ -212,10 +212,10 @@ public final class CommonProto {
           + "DISABLED\020\001\022\032\n\026SIMPLE_FORMATTING_ONLY\020\002*c"
           + "\n\rCommuteMethod\022\036\n\032COMMUTE_METHOD_UNSPEC"
           + "IFIED\020\000\022\013\n\007DRIVING\020\001\022\013\n\007TRANSIT\020\002\022\013\n\007WAL"
-          + "KING\020\003\022\013\n\007CYCLING\020\004By\n\037com.google.cloud."
-          + "talent.v4beta1B\013CommonProtoP\001ZAgoogle.go"
-          + "lang.org/genproto/googleapis/cloud/talen"
-          + "t/v4beta1;talent\242\002\003CTSb\006proto3"
+          + "KING\020\003\022\013\n\007CYCLING\020\004Bo\n\037com.google.cloud."
+          + "talent.v4beta1B\013CommonProtoP\001Z7cloud.goo"
+          + "gle.com/go/talent/apiv4beta1/talentpb;ta"
+          + "lentpb\242\002\003CTSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -59,9 +59,9 @@ public final class TrafficTargetProto {
           + "_TARGET_ALLOCATION_TYPE_UNSPECIFIED\020\000\022)\n"
           + "%TRAFFIC_TARGET_ALLOCATION_TYPE_LATEST\020\001"
           + "\022+\n\'TRAFFIC_TARGET_ALLOCATION_TYPE_REVIS"
-          + "ION\020\002Bg\n\027com.google.cloud.run.v2B\022Traffi"
-          + "cTargetProtoP\001Z6google.golang.org/genpro"
-          + "to/googleapis/cloud/run/v2;runb\006proto3"
+          + "ION\020\002BZ\n\027com.google.cloud.run.v2B\022Traffi"
+          + "cTargetProtoP\001Z)cloud.google.com/go/run/"
+          + "apiv2/runpb;runpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

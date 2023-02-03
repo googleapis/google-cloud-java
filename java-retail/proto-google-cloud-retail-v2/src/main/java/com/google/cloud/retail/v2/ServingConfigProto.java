@@ -70,12 +70,12 @@ public final class ServingConfigProto {
           + "EN_DIVERSITY\020\003:\205\001\352A\201\001\n#retail.googleapis"
           + ".com/ServingConfig\022Zprojects/{project}/l"
           + "ocations/{location}/catalogs/{catalog}/s"
-          + "ervingConfigs/{serving_config}B\307\001\n\032com.g"
+          + "ervingConfigs/{serving_config}B\275\001\n\032com.g"
           + "oogle.cloud.retail.v2B\022ServingConfigProt"
-          + "oP\001Z<google.golang.org/genproto/googleap"
-          + "is/cloud/retail/v2;retail\242\002\006RETAIL\252\002\026Goo"
-          + "gle.Cloud.Retail.V2\312\002\026Google\\Cloud\\Retai"
-          + "l\\V2\352\002\031Google::Cloud::Retail::V2b\006proto3"
+          + "oP\001Z2cloud.google.com/go/retail/apiv2/re"
+          + "tailpb;retailpb\242\002\006RETAIL\252\002\026Google.Cloud."
+          + "Retail.V2\312\002\026Google\\Cloud\\Retail\\V2\352\002\031Goo"
+          + "gle::Cloud::Retail::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -58,12 +58,12 @@ public final class ControlProto {
           + "ionUseCase:q\352An\n\035retail.googleapis.com/C"
           + "ontrol\022Mprojects/{project}/locations/{lo"
           + "cation}/catalogs/{catalog}/controls/{con"
-          + "trol}B\t\n\007controlB\325\001\n\036com.google.cloud.re"
-          + "tail.v2betaB\014ControlProtoP\001Z@google.gola"
-          + "ng.org/genproto/googleapis/cloud/retail/"
-          + "v2beta;retail\242\002\006RETAIL\252\002\032Google.Cloud.Re"
-          + "tail.V2Beta\312\002\032Google\\Cloud\\Retail\\V2beta"
-          + "\352\002\035Google::Cloud::Retail::V2betab\006proto3"
+          + "trol}B\t\n\007controlB\313\001\n\036com.google.cloud.re"
+          + "tail.v2betaB\014ControlProtoP\001Z6cloud.googl"
+          + "e.com/go/retail/apiv2beta/retailpb;retai"
+          + "lpb\242\002\006RETAIL\252\002\032Google.Cloud.Retail.V2Bet"
+          + "a\312\002\032Google\\Cloud\\Retail\\V2beta\352\002\035Google:"
+          + ":Cloud::Retail::V2betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

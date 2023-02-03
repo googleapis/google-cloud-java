@@ -125,15 +125,15 @@ public final class TextToSpeechProto {
           + "sponse\"9\202\323\344\223\002\030\"\023/v1/text:synthesize:\001*\332A"
           + "\030input,voice,audio_config\032O\312A\033texttospee"
           + "ch.googleapis.com\322A.https://www.googleap"
-          + "is.com/auth/cloud-platformB\274\002\n com.googl"
+          + "is.com/auth/cloud-platformB\270\002\n com.googl"
           + "e.cloud.texttospeech.v1B\021TextToSpeechPro"
-          + "toP\001ZHgoogle.golang.org/genproto/googlea"
-          + "pis/cloud/texttospeech/v1;texttospeech\370\001"
-          + "\001\252\002\034Google.Cloud.TextToSpeech.V1\312\002\034Googl"
-          + "e\\Cloud\\TextToSpeech\\V1\352\002\037Google::Cloud:"
-          + ":TextToSpeech::V1\352AU\n\033automl.googleapis."
-          + "com/Model\0226projects/{project}/locations/"
-          + "{location}/models/{model}b\006proto3"
+          + "toP\001ZDcloud.google.com/go/texttospeech/a"
+          + "piv1/texttospeechpb;texttospeechpb\370\001\001\252\002\034"
+          + "Google.Cloud.TextToSpeech.V1\312\002\034Google\\Cl"
+          + "oud\\TextToSpeech\\V1\352\002\037Google::Cloud::Tex"
+          + "tToSpeech::V1\352AU\n\033automl.googleapis.com/"
+          + "Model\0226projects/{project}/locations/{loc"
+          + "ation}/models/{model}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

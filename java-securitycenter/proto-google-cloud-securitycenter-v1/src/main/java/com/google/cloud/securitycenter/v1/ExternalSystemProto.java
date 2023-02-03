@@ -55,13 +55,13 @@ public final class ExternalSystemProto {
           + "{source}/findings/{finding}/externalSyst"
           + "ems/{externalsystem}\022Wprojects/{project}"
           + "/sources/{source}/findings/{finding}/ext"
-          + "ernalSystems/{externalsystem}B\357\001\n\"com.go"
+          + "ernalSystems/{externalsystem}B\355\001\n\"com.go"
           + "ogle.cloud.securitycenter.v1B\023ExternalSy"
-          + "stemProtoP\001ZLgoogle.golang.org/genproto/"
-          + "googleapis/cloud/securitycenter/v1;secur"
-          + "itycenter\252\002\036Google.Cloud.SecurityCenter."
-          + "V1\312\002\036Google\\Cloud\\SecurityCenter\\V1\352\002!Go"
-          + "ogle::Cloud::SecurityCenter::V1b\006proto3"
+          + "stemProtoP\001ZJcloud.google.com/go/securit"
+          + "ycenter/apiv1/securitycenterpb;securityc"
+          + "enterpb\252\002\036Google.Cloud.SecurityCenter.V1"
+          + "\312\002\036Google\\Cloud\\SecurityCenter\\V1\352\002!Goog"
+          + "le::Cloud::SecurityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

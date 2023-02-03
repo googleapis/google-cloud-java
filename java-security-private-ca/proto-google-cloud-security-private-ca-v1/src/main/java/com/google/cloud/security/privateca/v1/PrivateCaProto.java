@@ -543,13 +543,13 @@ public final class PrivateCaProto {
           + ",update_mask\312A(\n\023CertificateTemplate\022\021Op"
           + "erationMetadata\032L\312A\030privateca.googleapis"
           + ".com\322A.https://www.googleapis.com/auth/c"
-          + "loud-platformB\375\001\n&com.google.cloud.secur"
-          + "ity.privateca.v1B\016PrivateCaProtoP\001ZKgoog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "security/privateca/v1;privateca\370\001\001\252\002\"Goo"
-          + "gle.Cloud.Security.PrivateCA.V1\312\002\"Google"
-          + "\\Cloud\\Security\\PrivateCA\\V1\352\002&Google::C"
-          + "loud::Security::PrivateCA::V1b\006proto3"
+          + "loud-platformB\366\001\n&com.google.cloud.secur"
+          + "ity.privateca.v1B\016PrivateCaProtoP\001ZDclou"
+          + "d.google.com/go/security/privateca/apiv1"
+          + "/privatecapb;privatecapb\370\001\001\252\002\"Google.Clo"
+          + "ud.Security.PrivateCA.V1\312\002\"Google\\Cloud\\"
+          + "Security\\PrivateCA\\V1\352\002&Google::Cloud::S"
+          + "ecurity::PrivateCA::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -91,10 +91,10 @@ public final class QueueProto {
           + "tampB\003\340A\003\022\'\n\032executed_last_minute_count\030"
           + "\003 \001(\003B\003\340A\003\022(\n\033concurrent_dispatches_coun"
           + "t\030\004 \001(\003B\003\340A\003\022%\n\030effective_execution_rate"
-          + "\030\005 \001(\001B\003\340A\003Bo\n\036com.google.cloud.tasks.v2"
-          + "beta2B\nQueueProtoP\001Z?google.golang.org/g"
-          + "enproto/googleapis/cloud/tasks/v2beta2;t"
-          + "asksb\006proto3"
+          + "\030\005 \001(\001B\003\340A\003Bd\n\036com.google.cloud.tasks.v2"
+          + "beta2B\nQueueProtoP\001Z4cloud.google.com/go"
+          + "/tasks/apiv2beta2/taskspb;taskspbb\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

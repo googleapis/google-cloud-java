@@ -379,9 +379,9 @@ public final class CloudTpuProto {
           + "{name=projects/*/locations/*/nodes/*}:ge"
           + "tGuestAttributes:\001*\032F\312A\022tpu.googleapis.c"
           + "om\322A.https://www.googleapis.com/auth/clo"
-          + "ud-platformBb\n\027com.google.cloud.tpu.v2B\r"
-          + "CloudTpuProtoP\001Z6google.golang.org/genpr"
-          + "oto/googleapis/cloud/tpu/v2;tpub\006proto3"
+          + "ud-platformBU\n\027com.google.cloud.tpu.v2B\r"
+          + "CloudTpuProtoP\001Z)cloud.google.com/go/tpu"
+          + "/apiv2/tpupb;tpupbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

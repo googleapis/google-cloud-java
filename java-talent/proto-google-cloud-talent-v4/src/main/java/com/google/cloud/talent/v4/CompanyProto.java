@@ -62,10 +62,10 @@ public final class CompanyProto {
           + "arters_location\030\001 \001(\0132 .google.cloud.tal"
           + "ent.v4.Location:Y\352AV\n\033jobs.googleapis.co"
           + "m/Company\0227projects/{project}/tenants/{t"
-          + "enant}/companies/{company}Bp\n\032com.google"
-          + ".cloud.talent.v4B\014CompanyProtoP\001Z<google"
-          + ".golang.org/genproto/googleapis/cloud/ta"
-          + "lent/v4;talent\242\002\003CTSb\006proto3"
+          + "enant}/companies/{company}Bf\n\032com.google"
+          + ".cloud.talent.v4B\014CompanyProtoP\001Z2cloud."
+          + "google.com/go/talent/apiv4/talentpb;tale"
+          + "ntpb\242\002\003CTSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

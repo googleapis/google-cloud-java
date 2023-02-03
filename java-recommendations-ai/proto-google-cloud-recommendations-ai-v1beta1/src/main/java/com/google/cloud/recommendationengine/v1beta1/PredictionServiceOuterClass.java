@@ -110,14 +110,14 @@ public final class PredictionServiceOuterClass {
           + "ements/*}:predict:\001*\332A\017name,user_event\032W"
           + "\312A#recommendationengine.googleapis.com\322A"
           + ".https://www.googleapis.com/auth/cloud-p"
-          + "latformB\237\002\n-com.google.cloud.recommendat"
-          + "ionengine.v1beta1P\001Z]google.golang.org/g"
-          + "enproto/googleapis/cloud/recommendatione"
-          + "ngine/v1beta1;recommendationengine\242\002\005REC"
-          + "AI\252\002)Google.Cloud.RecommendationEngine.V"
-          + "1Beta1\312\002)Google\\Cloud\\RecommendationEngi"
-          + "ne\\V1beta1\352\002,Google::Cloud::Recommendati"
-          + "onEngine::V1beta1b\006proto3"
+          + "latformB\243\002\n-com.google.cloud.recommendat"
+          + "ionengine.v1beta1P\001Zacloud.google.com/go"
+          + "/recommendationengine/apiv1beta1/recomme"
+          + "ndationenginepb;recommendationenginepb\242\002"
+          + "\005RECAI\252\002)Google.Cloud.RecommendationEngi"
+          + "ne.V1Beta1\312\002)Google\\Cloud\\Recommendation"
+          + "Engine\\V1beta1\352\002,Google::Cloud::Recommen"
+          + "dationEngine::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

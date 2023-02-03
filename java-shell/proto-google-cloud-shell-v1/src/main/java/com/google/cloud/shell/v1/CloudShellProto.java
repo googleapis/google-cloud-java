@@ -180,9 +180,9 @@ public final class CloudShellProto {
           + "vePublicKeyResponse\022\027RemovePublicKeyMeta"
           + "data\032M\312A\031cloudshell.googleapis.com\322A.htt"
           + "ps://www.googleapis.com/auth/cloud-platf"
-          + "ormBj\n\031com.google.cloud.shell.v1B\017CloudS"
-          + "hellProtoP\001Z:google.golang.org/genproto/"
-          + "googleapis/cloud/shell/v1;shellb\006proto3"
+          + "ormB_\n\031com.google.cloud.shell.v1B\017CloudS"
+          + "hellProtoP\001Z/cloud.google.com/go/shell/a"
+          + "piv1/shellpb;shellpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

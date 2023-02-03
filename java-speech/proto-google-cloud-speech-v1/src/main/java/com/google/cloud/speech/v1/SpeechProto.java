@@ -264,10 +264,9 @@ public final class SpeechProto {
           + "oud.speech.v1.StreamingRecognizeResponse"
           + "\"\000(\0010\001\032I\312A\025speech.googleapis.com\322A.https"
           + "://www.googleapis.com/auth/cloud-platfor"
-          + "mBr\n\032com.google.cloud.speech.v1B\013SpeechP"
-          + "rotoP\001Z<google.golang.org/genproto/googl"
-          + "eapis/cloud/speech/v1;speech\370\001\001\242\002\003GCSb\006p"
-          + "roto3"
+          + "mBh\n\032com.google.cloud.speech.v1B\013SpeechP"
+          + "rotoP\001Z2cloud.google.com/go/speech/apiv1"
+          + "/speechpb;speechpb\370\001\001\242\002\003GCSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

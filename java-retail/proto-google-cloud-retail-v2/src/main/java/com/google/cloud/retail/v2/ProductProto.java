@@ -96,15 +96,14 @@ public final class ProductProto {
           + "eapis.com/Product\022_projects/{project}/lo"
           + "cations/{location}/catalogs/{catalog}/br"
           + "anches/{branch}/products/{product}B\014\n\nex"
-          + "pirationB\260\002\n\032com.google.cloud.retail.v2B"
-          + "\014ProductProtoP\001Z<google.golang.org/genpr"
-          + "oto/googleapis/cloud/retail/v2;retail\242\002\006"
-          + "RETAIL\252\002\026Google.Cloud.Retail.V2\312\002\026Google"
-          + "\\Cloud\\Retail\\V2\352\002\031Google::Cloud::Retail"
-          + "::V2\352Al\n\034retail.googleapis.com/Branch\022Lp"
-          + "rojects/{project}/locations/{location}/c"
-          + "atalogs/{catalog}/branches/{branch}b\006pro"
-          + "to3"
+          + "pirationB\246\002\n\032com.google.cloud.retail.v2B"
+          + "\014ProductProtoP\001Z2cloud.google.com/go/ret"
+          + "ail/apiv2/retailpb;retailpb\242\002\006RETAIL\252\002\026G"
+          + "oogle.Cloud.Retail.V2\312\002\026Google\\Cloud\\Ret"
+          + "ail\\V2\352\002\031Google::Cloud::Retail::V2\352Al\n\034r"
+          + "etail.googleapis.com/Branch\022Lprojects/{p"
+          + "roject}/locations/{location}/catalogs/{c"
+          + "atalog}/branches/{branch}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -69,10 +69,10 @@ public final class VendorSettingsProto {
           + "MENT_GEN1\020\001\022\036\n\032EXECUTION_ENVIRONMENT_GEN"
           + "2\020\002*p\n\035EncryptionKeyRevocationAction\0220\n,"
           + "ENCRYPTION_KEY_REVOCATION_ACTION_UNSPECI"
-          + "FIED\020\000\022\017\n\013PREVENT_NEW\020\001\022\014\n\010SHUTDOWN\020\002Bh\n"
+          + "FIED\020\000\022\017\n\013PREVENT_NEW\020\001\022\014\n\010SHUTDOWN\020\002B[\n"
           + "\027com.google.cloud.run.v2B\023VendorSettings"
-          + "ProtoP\001Z6google.golang.org/genproto/goog"
-          + "leapis/cloud/run/v2;runb\006proto3"
+          + "ProtoP\001Z)cloud.google.com/go/run/apiv2/r"
+          + "unpb;runpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -138,14 +138,14 @@ public final class Import {
           + "engine.v1beta1.UserEventImportSummary\"T\n"
           + "\026UserEventImportSummary\022\033\n\023joined_events"
           + "_count\030\001 \001(\003\022\035\n\025unjoined_events_count\030\002 "
-          + "\001(\003B\237\002\n-com.google.cloud.recommendatione"
-          + "ngine.v1beta1P\001Z]google.golang.org/genpr"
-          + "oto/googleapis/cloud/recommendationengin"
-          + "e/v1beta1;recommendationengine\242\002\005RECAI\252\002"
-          + ")Google.Cloud.RecommendationEngine.V1Bet"
-          + "a1\312\002)Google\\Cloud\\RecommendationEngine\\V"
-          + "1beta1\352\002,Google::Cloud::RecommendationEn"
-          + "gine::V1beta1b\006proto3"
+          + "\001(\003B\243\002\n-com.google.cloud.recommendatione"
+          + "ngine.v1beta1P\001Zacloud.google.com/go/rec"
+          + "ommendationengine/apiv1beta1/recommendat"
+          + "ionenginepb;recommendationenginepb\242\002\005REC"
+          + "AI\252\002)Google.Cloud.RecommendationEngine.V"
+          + "1Beta1\312\002)Google\\Cloud\\RecommendationEngi"
+          + "ne\\V1beta1\352\002,Google::Cloud::Recommendati"
+          + "onEngine::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

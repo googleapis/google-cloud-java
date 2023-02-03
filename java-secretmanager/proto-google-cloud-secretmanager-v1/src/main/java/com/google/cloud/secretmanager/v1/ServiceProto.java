@@ -222,13 +222,13 @@ public final class ServiceProto {
           + "\223\002;\"6/v1/{resource=projects/*/secrets/*}"
           + ":testIamPermissions:\001*\032P\312A\034secretmanager"
           + ".googleapis.com\322A.https://www.googleapis"
-          + ".com/auth/cloud-platformB\353\001\n!com.google."
-          + "cloud.secretmanager.v1B\014ServiceProtoP\001ZJ"
-          + "google.golang.org/genproto/googleapis/cl"
-          + "oud/secretmanager/v1;secretmanager\370\001\001\242\002\003"
-          + "GSM\252\002\035Google.Cloud.SecretManager.V1\312\002\035Go"
-          + "ogle\\Cloud\\SecretManager\\V1\352\002 Google::Cl"
-          + "oud::SecretManager::V1b\006proto3"
+          + ".com/auth/cloud-platformB\350\001\n!com.google."
+          + "cloud.secretmanager.v1B\014ServiceProtoP\001ZG"
+          + "cloud.google.com/go/secretmanager/apiv1/"
+          + "secretmanagerpb;secretmanagerpb\370\001\001\242\002\003GSM"
+          + "\252\002\035Google.Cloud.SecretManager.V1\312\002\035Googl"
+          + "e\\Cloud\\SecretManager\\V1\352\002 Google::Cloud"
+          + "::SecretManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

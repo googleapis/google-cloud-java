@@ -64,10 +64,9 @@ public final class EventProto {
           + "CT_FROM_SEARCH\020\t\022\036\n\032APPLICATION_COMPANY_"
           + "SUBMIT\020\n\022\014\n\010BOOKMARK\020\013\022\020\n\014NOTIFICATION\020\014"
           + "\022\t\n\005HIRED\020\r\022\013\n\007SENT_CV\020\016\022\025\n\021INTERVIEW_GR"
-          + "ANTED\020\017Bn\n\032com.google.cloud.talent.v4B\nE"
-          + "ventProtoP\001Z<google.golang.org/genproto/"
-          + "googleapis/cloud/talent/v4;talent\242\002\003CTSb"
-          + "\006proto3"
+          + "ANTED\020\017Bd\n\032com.google.cloud.talent.v4B\nE"
+          + "ventProtoP\001Z2cloud.google.com/go/talent/"
+          + "apiv4/talentpb;talentpb\242\002\003CTSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

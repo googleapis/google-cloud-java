@@ -42,13 +42,13 @@ public final class PromotionProto {
     java.lang.String[] descriptorData = {
       "\n*google/cloud/retail/v2beta/promotion.p"
           + "roto\022\032google.cloud.retail.v2beta\"!\n\tProm"
-          + "otion\022\024\n\014promotion_id\030\001 \001(\tB\327\001\n\036com.goog"
+          + "otion\022\024\n\014promotion_id\030\001 \001(\tB\315\001\n\036com.goog"
           + "le.cloud.retail.v2betaB\016PromotionProtoP\001"
-          + "Z@google.golang.org/genproto/googleapis/"
-          + "cloud/retail/v2beta;retail\242\002\006RETAIL\252\002\032Go"
-          + "ogle.Cloud.Retail.V2Beta\312\002\032Google\\Cloud\\"
-          + "Retail\\V2beta\352\002\035Google::Cloud::Retail::V"
-          + "2betab\006proto3"
+          + "Z6cloud.google.com/go/retail/apiv2beta/r"
+          + "etailpb;retailpb\242\002\006RETAIL\252\002\032Google.Cloud"
+          + ".Retail.V2Beta\312\002\032Google\\Cloud\\Retail\\V2b"
+          + "eta\352\002\035Google::Cloud::Retail::V2betab\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

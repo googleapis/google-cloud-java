@@ -49,12 +49,12 @@ public final class RunAssetDiscoveryResponseOuterClass {
           + "e\022+\n\010duration\030\002 \001(\0132\031.google.protobuf.Du"
           + "ration\"M\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\r"
           + "\n\tCOMPLETED\020\001\022\016\n\nSUPERSEDED\020\002\022\016\n\nTERMINA"
-          + "TED\020\003B\332\001\n\"com.google.cloud.securitycente"
-          + "r.v1P\001ZLgoogle.golang.org/genproto/googl"
-          + "eapis/cloud/securitycenter/v1;securityce"
-          + "nter\252\002\036Google.Cloud.SecurityCenter.V1\312\002\036"
-          + "Google\\Cloud\\SecurityCenter\\V1\352\002!Google:"
-          + ":Cloud::SecurityCenter::V1b\006proto3"
+          + "TED\020\003B\330\001\n\"com.google.cloud.securitycente"
+          + "r.v1P\001ZJcloud.google.com/go/securitycent"
+          + "er/apiv1/securitycenterpb;securitycenter"
+          + "pb\252\002\036Google.Cloud.SecurityCenter.V1\312\002\036Go"
+          + "ogle\\Cloud\\SecurityCenter\\V1\352\002!Google::C"
+          + "loud::SecurityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

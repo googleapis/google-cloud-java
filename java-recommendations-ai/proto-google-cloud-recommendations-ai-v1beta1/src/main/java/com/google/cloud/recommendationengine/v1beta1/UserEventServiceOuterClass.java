@@ -140,15 +140,15 @@ public final class UserEventServiceOuterClass {
           + "1beta1.ImportMetadata\332A,parent,request_i"
           + "d,input_config,errors_config\032W\312A#recomme"
           + "ndationengine.googleapis.com\322A.https://w"
-          + "ww.googleapis.com/auth/cloud-platformB\237\002"
+          + "ww.googleapis.com/auth/cloud-platformB\243\002"
           + "\n-com.google.cloud.recommendationengine."
-          + "v1beta1P\001Z]google.golang.org/genproto/go"
-          + "ogleapis/cloud/recommendationengine/v1be"
-          + "ta1;recommendationengine\242\002\005RECAI\252\002)Googl"
-          + "e.Cloud.RecommendationEngine.V1Beta1\312\002)G"
-          + "oogle\\Cloud\\RecommendationEngine\\V1beta1"
-          + "\352\002,Google::Cloud::RecommendationEngine::"
-          + "V1beta1b\006proto3"
+          + "v1beta1P\001Zacloud.google.com/go/recommend"
+          + "ationengine/apiv1beta1/recommendationeng"
+          + "inepb;recommendationenginepb\242\002\005RECAI\252\002)G"
+          + "oogle.Cloud.RecommendationEngine.V1Beta1"
+          + "\312\002)Google\\Cloud\\RecommendationEngine\\V1b"
+          + "eta1\352\002,Google::Cloud::RecommendationEngi"
+          + "ne::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -105,14 +105,14 @@ public final class Catalog {
           + "UT_OF_STOCK\020\001\022\014\n\010PREORDER\020\002\022\r\n\tBACKORDER"
           + "\020\003\032\002\020\001B\007\n\005price\"B\n\005Image\022\020\n\003uri\030\001 \001(\tB\003\340"
           + "A\002\022\023\n\006height\030\002 \001(\005B\003\340A\001\022\022\n\005width\030\003 \001(\005B\003"
-          + "\340A\001B\237\002\n-com.google.cloud.recommendatione"
-          + "ngine.v1beta1P\001Z]google.golang.org/genpr"
-          + "oto/googleapis/cloud/recommendationengin"
-          + "e/v1beta1;recommendationengine\242\002\005RECAI\252\002"
-          + ")Google.Cloud.RecommendationEngine.V1Bet"
-          + "a1\312\002)Google\\Cloud\\RecommendationEngine\\V"
-          + "1beta1\352\002,Google::Cloud::RecommendationEn"
-          + "gine::V1beta1b\006proto3"
+          + "\340A\001B\243\002\n-com.google.cloud.recommendatione"
+          + "ngine.v1beta1P\001Zacloud.google.com/go/rec"
+          + "ommendationengine/apiv1beta1/recommendat"
+          + "ionenginepb;recommendationenginepb\242\002\005REC"
+          + "AI\252\002)Google.Cloud.RecommendationEngine.V"
+          + "1Beta1\312\002)Google\\Cloud\\RecommendationEngi"
+          + "ne\\V1beta1\352\002,Google::Cloud::Recommendati"
+          + "onEngine::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

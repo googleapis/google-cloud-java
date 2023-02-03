@@ -60,10 +60,10 @@ public final class ExecutionTemplateProto {
           + "te\030\005 \001(\0132!.google.cloud.run.v2.TaskTempl"
           + "ateB\003\340A\002\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
           + "value\030\002 \001(\t:\0028\001\0322\n\020AnnotationsEntry\022\013\n\003k"
-          + "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001Bk\n\027com.googl"
+          + "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B^\n\027com.googl"
           + "e.cloud.run.v2B\026ExecutionTemplateProtoP\001"
-          + "Z6google.golang.org/genproto/googleapis/"
-          + "cloud/run/v2;runb\006proto3"
+          + "Z)cloud.google.com/go/run/apiv2/runpb;ru"
+          + "npbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

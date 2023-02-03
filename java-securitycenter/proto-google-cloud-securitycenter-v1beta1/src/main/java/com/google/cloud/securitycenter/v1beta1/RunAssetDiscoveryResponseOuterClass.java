@@ -49,10 +49,10 @@ public final class RunAssetDiscoveryResponseOuterClass {
           + "ryResponse.State\022+\n\010duration\030\002 \001(\0132\031.goo"
           + "gle.protobuf.Duration\"M\n\005State\022\025\n\021STATE_"
           + "UNSPECIFIED\020\000\022\r\n\tCOMPLETED\020\001\022\016\n\nSUPERSED"
-          + "ED\020\002\022\016\n\nTERMINATED\020\003B~\n\'com.google.cloud"
-          + ".securitycenter.v1beta1P\001ZQgoogle.golang"
-          + ".org/genproto/googleapis/cloud/securityc"
-          + "enter/v1beta1;securitycenterb\006proto3"
+          + "ED\020\002\022\016\n\nTERMINATED\020\003B|\n\'com.google.cloud"
+          + ".securitycenter.v1beta1P\001ZOcloud.google."
+          + "com/go/securitycenter/apiv1beta1/securit"
+          + "ycenterpb;securitycenterpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

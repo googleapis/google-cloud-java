@@ -277,11 +277,10 @@ public final class SpeechProto {
           + "eRequest\0329.google.cloud.speech.v1p1beta1"
           + ".StreamingRecognizeResponse\"\000(\0010\001\032I\312A\025sp"
           + "eech.googleapis.com\322A.https://www.google"
-          + "apis.com/auth/cloud-platformB\200\001\n!com.goo"
-          + "gle.cloud.speech.v1p1beta1B\013SpeechProtoP"
-          + "\001ZCgoogle.golang.org/genproto/googleapis"
-          + "/cloud/speech/v1p1beta1;speech\370\001\001\242\002\003GCSb"
-          + "\006proto3"
+          + "apis.com/auth/cloud-platformBv\n!com.goog"
+          + "le.cloud.speech.v1p1beta1B\013SpeechProtoP\001"
+          + "Z9cloud.google.com/go/speech/apiv1p1beta"
+          + "1/speechpb;speechpb\370\001\001\242\002\003GCSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

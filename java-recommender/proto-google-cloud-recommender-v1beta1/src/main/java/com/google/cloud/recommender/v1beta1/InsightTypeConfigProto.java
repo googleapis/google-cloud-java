@@ -70,12 +70,12 @@ public final class InsightTypeConfigProto {
           + "rganization}/locations/{location}/insigh"
           + "tTypes/{insight_type}/config\"F\n\033InsightT"
           + "ypeGenerationConfig\022\'\n\006params\030\001 \001(\0132\027.go"
-          + "ogle.protobuf.StructB\267\001\n$com.google.clou"
+          + "ogle.protobuf.StructB\262\001\n$com.google.clou"
           + "d.recommender.v1beta1B\026InsightTypeConfig"
-          + "ProtoP\001ZKgoogle.golang.org/genproto/goog"
-          + "leapis/cloud/recommender/v1beta1;recomme"
-          + "nder\242\002\004CREC\252\002 Google.Cloud.Recommender.V"
-          + "1Beta1b\006proto3"
+          + "ProtoP\001ZFcloud.google.com/go/recommender"
+          + "/apiv1beta1/recommenderpb;recommenderpb\242"
+          + "\002\004CREC\252\002 Google.Cloud.Recommender.V1Beta"
+          + "1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

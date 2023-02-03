@@ -274,10 +274,9 @@ public final class CloudTpuProto {
           + "\344\223\0026\0224/v1/{name=projects/*/locations/*/a"
           + "cceleratorTypes/*}\332A\004name\032F\312A\022tpu.google"
           + "apis.com\322A.https://www.googleapis.com/au"
-          + "th/cloud-platformBb\n\027com.google.cloud.tp"
-          + "u.v1B\rCloudTpuProtoP\001Z6google.golang.org"
-          + "/genproto/googleapis/cloud/tpu/v1;tpub\006p"
-          + "roto3"
+          + "th/cloud-platformBU\n\027com.google.cloud.tp"
+          + "u.v1B\rCloudTpuProtoP\001Z)cloud.google.com/"
+          + "go/tpu/apiv1/tpupb;tpupbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

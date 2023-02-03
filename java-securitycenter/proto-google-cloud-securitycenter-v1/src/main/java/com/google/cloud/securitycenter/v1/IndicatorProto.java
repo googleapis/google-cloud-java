@@ -74,13 +74,13 @@ public final class IndicatorProto {
           + "moryHashSignature.Detection\032:\n\tDetection"
           + "\022\016\n\006binary\030\002 \001(\t\022\035\n\025percent_pages_matche"
           + "d\030\003 \001(\001\032&\n\021YaraRuleSignature\022\021\n\tyara_rul"
-          + "e\030\005 \001(\tB\013\n\tsignatureB\352\001\n\"com.google.clou"
-          + "d.securitycenter.v1B\016IndicatorProtoP\001ZLg"
-          + "oogle.golang.org/genproto/googleapis/clo"
-          + "ud/securitycenter/v1;securitycenter\252\002\036Go"
-          + "ogle.Cloud.SecurityCenter.V1\312\002\036Google\\Cl"
-          + "oud\\SecurityCenter\\V1\352\002!Google::Cloud::S"
-          + "ecurityCenter::V1b\006proto3"
+          + "e\030\005 \001(\tB\013\n\tsignatureB\350\001\n\"com.google.clou"
+          + "d.securitycenter.v1B\016IndicatorProtoP\001ZJc"
+          + "loud.google.com/go/securitycenter/apiv1/"
+          + "securitycenterpb;securitycenterpb\252\002\036Goog"
+          + "le.Cloud.SecurityCenter.V1\312\002\036Google\\Clou"
+          + "d\\SecurityCenter\\V1\352\002!Google::Cloud::Sec"
+          + "urityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

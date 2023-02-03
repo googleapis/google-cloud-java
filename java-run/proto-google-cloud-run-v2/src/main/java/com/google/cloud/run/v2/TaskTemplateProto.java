@@ -55,9 +55,9 @@ public final class TaskTemplateProto {
           + "\022>\n\016encryption_key\030\007 \001(\tB&\372A#\n!cloudkms."
           + "googleapis.com/CryptoKey\0222\n\nvpc_access\030\010"
           + " \001(\0132\036.google.cloud.run.v2.VpcAccessB\t\n\007"
-          + "retriesBf\n\027com.google.cloud.run.v2B\021Task"
-          + "TemplateProtoP\001Z6google.golang.org/genpr"
-          + "oto/googleapis/cloud/run/v2;runb\006proto3"
+          + "retriesBY\n\027com.google.cloud.run.v2B\021Task"
+          + "TemplateProtoP\001Z)cloud.google.com/go/run"
+          + "/apiv2/runpb;runpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

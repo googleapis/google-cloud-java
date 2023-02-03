@@ -108,10 +108,10 @@ public final class JobProto {
           + "(\t\0226\n\005value\030\002 \001(\0132\'.google.cloud.talent."
           + "v4.CustomAttribute:\0028\001:L\352AI\n\027jobs.google"
           + "apis.com/Job\022.projects/{project}/tenants"
-          + "/{tenant}/jobs/{job}Bl\n\032com.google.cloud"
-          + ".talent.v4B\010JobProtoP\001Z<google.golang.or"
-          + "g/genproto/googleapis/cloud/talent/v4;ta"
-          + "lent\242\002\003CTSb\006proto3"
+          + "/{tenant}/jobs/{job}Bb\n\032com.google.cloud"
+          + ".talent.v4B\010JobProtoP\001Z2cloud.google.com"
+          + "/go/talent/apiv4/talentpb;talentpb\242\002\003CTS"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

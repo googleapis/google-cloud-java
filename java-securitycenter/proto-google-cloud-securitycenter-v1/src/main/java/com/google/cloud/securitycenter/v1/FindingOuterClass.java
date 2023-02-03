@@ -146,12 +146,12 @@ public final class FindingOuterClass {
           + "findings/{finding}\0224folders/{folder}/sou"
           + "rces/{source}/findings/{finding}\0226projec"
           + "ts/{project}/sources/{source}/findings/{"
-          + "finding}B\332\001\n\"com.google.cloud.securityce"
-          + "nter.v1P\001ZLgoogle.golang.org/genproto/go"
-          + "ogleapis/cloud/securitycenter/v1;securit"
-          + "ycenter\252\002\036Google.Cloud.SecurityCenter.V1"
-          + "\312\002\036Google\\Cloud\\SecurityCenter\\V1\352\002!Goog"
-          + "le::Cloud::SecurityCenter::V1b\006proto3"
+          + "finding}B\330\001\n\"com.google.cloud.securityce"
+          + "nter.v1P\001ZJcloud.google.com/go/securityc"
+          + "enter/apiv1/securitycenterpb;securitycen"
+          + "terpb\252\002\036Google.Cloud.SecurityCenter.V1\312\002"
+          + "\036Google\\Cloud\\SecurityCenter\\V1\352\002!Google"
+          + "::Cloud::SecurityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

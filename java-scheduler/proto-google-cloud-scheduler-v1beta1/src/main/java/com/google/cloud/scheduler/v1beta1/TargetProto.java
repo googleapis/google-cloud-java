@@ -106,12 +106,12 @@ public final class TargetProto {
           + "nce\030\002 \001(\t*s\n\nHttpMethod\022\033\n\027HTTP_METHOD_U"
           + "NSPECIFIED\020\000\022\010\n\004POST\020\001\022\007\n\003GET\020\002\022\010\n\004HEAD\020"
           + "\003\022\007\n\003PUT\020\004\022\n\n\006DELETE\020\005\022\t\n\005PATCH\020\006\022\013\n\007OPT"
-          + "IONS\020\007B\277\001\n\"com.google.cloud.scheduler.v1"
-          + "beta1B\013TargetProtoP\001ZGgoogle.golang.org/"
-          + "genproto/googleapis/cloud/scheduler/v1be"
-          + "ta1;scheduler\352A@\n\033pubsub.googleapis.com/"
-          + "Topic\022!projects/{project}/topics/{topic}"
-          + "b\006proto3"
+          + "IONS\020\007B\270\001\n\"com.google.cloud.scheduler.v1"
+          + "beta1B\013TargetProtoP\001Z@cloud.google.com/g"
+          + "o/scheduler/apiv1beta1/schedulerpb;sched"
+          + "ulerpb\352A@\n\033pubsub.googleapis.com/Topic\022!"
+          + "projects/{project}/topics/{topic}b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

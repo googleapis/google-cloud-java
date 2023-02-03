@@ -48,13 +48,13 @@ public final class ContactDetailsProto {
           + "_details.proto\022\036google.cloud.securitycen"
           + "ter.v1\"K\n\016ContactDetails\0229\n\010contacts\030\001 \003"
           + "(\0132\'.google.cloud.securitycenter.v1.Cont"
-          + "act\"\030\n\007Contact\022\r\n\005email\030\001 \001(\tB\357\001\n\"com.go"
+          + "act\"\030\n\007Contact\022\r\n\005email\030\001 \001(\tB\355\001\n\"com.go"
           + "ogle.cloud.securitycenter.v1B\023ContactDet"
-          + "ailsProtoP\001ZLgoogle.golang.org/genproto/"
-          + "googleapis/cloud/securitycenter/v1;secur"
-          + "itycenter\252\002\036Google.Cloud.SecurityCenter."
-          + "V1\312\002\036Google\\Cloud\\SecurityCenter\\V1\352\002!Go"
-          + "ogle::Cloud::SecurityCenter::V1b\006proto3"
+          + "ailsProtoP\001ZJcloud.google.com/go/securit"
+          + "ycenter/apiv1/securitycenterpb;securityc"
+          + "enterpb\252\002\036Google.Cloud.SecurityCenter.V1"
+          + "\312\002\036Google\\Cloud\\SecurityCenter\\V1\352\002!Goog"
+          + "le::Cloud::SecurityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

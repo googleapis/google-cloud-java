@@ -125,14 +125,14 @@ public final class UserEventOuterClass {
           + "uantity\030\006 \001(\005B\003\340A\001\022\037\n\022available_quantity"
           + "\030\007 \001(\005B\003\340A\001\022S\n\017item_attributes\030\010 \001(\01325.g"
           + "oogle.cloud.recommendationengine.v1beta1"
-          + ".FeatureMapB\003\340A\001B\237\002\n-com.google.cloud.re"
-          + "commendationengine.v1beta1P\001Z]google.gol"
-          + "ang.org/genproto/googleapis/cloud/recomm"
-          + "endationengine/v1beta1;recommendationeng"
-          + "ine\242\002\005RECAI\252\002)Google.Cloud.Recommendatio"
-          + "nEngine.V1Beta1\312\002)Google\\Cloud\\Recommend"
-          + "ationEngine\\V1beta1\352\002,Google::Cloud::Rec"
-          + "ommendationEngine::V1beta1b\006proto3"
+          + ".FeatureMapB\003\340A\001B\243\002\n-com.google.cloud.re"
+          + "commendationengine.v1beta1P\001Zacloud.goog"
+          + "le.com/go/recommendationengine/apiv1beta"
+          + "1/recommendationenginepb;recommendatione"
+          + "nginepb\242\002\005RECAI\252\002)Google.Cloud.Recommend"
+          + "ationEngine.V1Beta1\312\002)Google\\Cloud\\Recom"
+          + "mendationEngine\\V1beta1\352\002,Google::Cloud:"
+          + ":RecommendationEngine::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

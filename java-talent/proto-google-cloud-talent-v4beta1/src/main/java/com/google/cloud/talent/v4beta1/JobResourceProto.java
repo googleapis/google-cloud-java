@@ -111,10 +111,10 @@ public final class JobResourceProto {
           + "alent.v4beta1.CustomAttribute:\0028\001:k\352Ah\n\027"
           + "jobs.googleapis.com/Job\022.projects/{proje"
           + "ct}/tenants/{tenant}/jobs/{job}\022\035project"
-          + "s/{project}/jobs/{job}B~\n\037com.google.clo"
-          + "ud.talent.v4beta1B\020JobResourceProtoP\001ZAg"
-          + "oogle.golang.org/genproto/googleapis/clo"
-          + "ud/talent/v4beta1;talent\242\002\003CTSb\006proto3"
+          + "s/{project}/jobs/{job}Bt\n\037com.google.clo"
+          + "ud.talent.v4beta1B\020JobResourceProtoP\001Z7c"
+          + "loud.google.com/go/talent/apiv4beta1/tal"
+          + "entpb;talentpb\242\002\003CTSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

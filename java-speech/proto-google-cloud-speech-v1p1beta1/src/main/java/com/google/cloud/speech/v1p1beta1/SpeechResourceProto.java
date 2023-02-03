@@ -96,10 +96,10 @@ public final class SpeechResourceProto {
           + " \003(\0132<.google.cloud.speech.v1p1beta1.Tra"
           + "nscriptNormalization.Entry\032@\n\005Entry\022\016\n\006s"
           + "earch\030\001 \001(\t\022\017\n\007replace\030\002 \001(\t\022\026\n\016case_sen"
-          + "sitive\030\003 \001(\010B\210\001\n!com.google.cloud.speech"
-          + ".v1p1beta1B\023SpeechResourceProtoP\001ZCgoogl"
-          + "e.golang.org/genproto/googleapis/cloud/s"
-          + "peech/v1p1beta1;speech\370\001\001\242\002\003GCSb\006proto3"
+          + "sitive\030\003 \001(\010B~\n!com.google.cloud.speech."
+          + "v1p1beta1B\023SpeechResourceProtoP\001Z9cloud."
+          + "google.com/go/speech/apiv1p1beta1/speech"
+          + "pb;speechpb\370\001\001\242\002\003GCSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

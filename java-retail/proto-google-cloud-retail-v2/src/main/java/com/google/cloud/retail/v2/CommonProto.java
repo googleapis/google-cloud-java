@@ -214,12 +214,12 @@ public final class CommonProto {
           + "_SEARCH\020\002*\213\001\n\025SearchSolutionUseCase\022(\n$S"
           + "EARCH_SOLUTION_USE_CASE_UNSPECIFIED\020\000\022#\n"
           + "\037SEARCH_SOLUTION_USE_CASE_SEARCH\020\001\022#\n\037SE"
-          + "ARCH_SOLUTION_USE_CASE_BROWSE\020\002B\300\001\n\032com."
-          + "google.cloud.retail.v2B\013CommonProtoP\001Z<g"
-          + "oogle.golang.org/genproto/googleapis/clo"
-          + "ud/retail/v2;retail\242\002\006RETAIL\252\002\026Google.Cl"
-          + "oud.Retail.V2\312\002\026Google\\Cloud\\Retail\\V2\352\002"
-          + "\031Google::Cloud::Retail::V2b\006proto3"
+          + "ARCH_SOLUTION_USE_CASE_BROWSE\020\002B\266\001\n\032com."
+          + "google.cloud.retail.v2B\013CommonProtoP\001Z2c"
+          + "loud.google.com/go/retail/apiv2/retailpb"
+          + ";retailpb\242\002\006RETAIL\252\002\026Google.Cloud.Retail"
+          + ".V2\312\002\026Google\\Cloud\\Retail\\V2\352\002\031Google::C"
+          + "loud::Retail::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

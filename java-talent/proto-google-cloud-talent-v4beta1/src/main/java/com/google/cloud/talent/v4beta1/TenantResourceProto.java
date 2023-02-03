@@ -51,10 +51,10 @@ public final class TenantResourceProto {
           + "Type\022\037\n\033DATA_USAGE_TYPE_UNSPECIFIED\020\000\022\016\n"
           + "\nAGGREGATED\020\001\022\014\n\010ISOLATED\020\002:D\352AA\n\032jobs.g"
           + "oogleapis.com/Tenant\022#projects/{project}"
-          + "/tenants/{tenant}B\201\001\n\037com.google.cloud.t"
-          + "alent.v4beta1B\023TenantResourceProtoP\001ZAgo"
-          + "ogle.golang.org/genproto/googleapis/clou"
-          + "d/talent/v4beta1;talent\242\002\003CTSb\006proto3"
+          + "/tenants/{tenant}Bw\n\037com.google.cloud.ta"
+          + "lent.v4beta1B\023TenantResourceProtoP\001Z7clo"
+          + "ud.google.com/go/talent/apiv4beta1/talen"
+          + "tpb;talentpb\242\002\003CTSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

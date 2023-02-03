@@ -402,14 +402,14 @@ public final class PrivateCaProto {
           + "ent=projects/*/locations/*}/reusableConf"
           + "igs\332A\006parent\032L\312A\030privateca.googleapis.co"
           + "m\322A.https://www.googleapis.com/auth/clou"
-          + "d-platformB\226\002\n+com.google.cloud.security"
-          + ".privateca.v1beta1B\016PrivateCaProtoP\001ZPgo"
-          + "ogle.golang.org/genproto/googleapis/clou"
-          + "d/security/privateca/v1beta1;privateca\370\001"
-          + "\001\252\002\'Google.Cloud.Security.PrivateCA.V1Be"
-          + "ta1\312\002\'Google\\Cloud\\Security\\PrivateCA\\V1"
-          + "beta1\352\002+Google::Cloud::Security::Private"
-          + "CA::V1beta1b\006proto3"
+          + "d-platformB\217\002\n+com.google.cloud.security"
+          + ".privateca.v1beta1B\016PrivateCaProtoP\001ZIcl"
+          + "oud.google.com/go/security/privateca/api"
+          + "v1beta1/privatecapb;privatecapb\370\001\001\252\002\'Goo"
+          + "gle.Cloud.Security.PrivateCA.V1Beta1\312\002\'G"
+          + "oogle\\Cloud\\Security\\PrivateCA\\V1beta1\352\002"
+          + "+Google::Cloud::Security::PrivateCA::V1b"
+          + "eta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

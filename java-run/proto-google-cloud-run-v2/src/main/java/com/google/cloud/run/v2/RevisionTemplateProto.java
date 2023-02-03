@@ -72,10 +72,9 @@ public final class RevisionTemplateProto {
           + "instance_request_concurrency\030\017 \001(\005\032-\n\013La"
           + "belsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028"
           + "\001\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va"
-          + "lue\030\002 \001(\t:\0028\001Bj\n\027com.google.cloud.run.v2"
-          + "B\025RevisionTemplateProtoP\001Z6google.golang"
-          + ".org/genproto/googleapis/cloud/run/v2;ru"
-          + "nb\006proto3"
+          + "lue\030\002 \001(\t:\0028\001B]\n\027com.google.cloud.run.v2"
+          + "B\025RevisionTemplateProtoP\001Z)cloud.google."
+          + "com/go/run/apiv2/runpb;runpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

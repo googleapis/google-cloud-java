@@ -316,12 +316,12 @@ public final class RecommenderProto {
           + "ypes/*/config}:\023insight_type_config\332A\037in"
           + "sight_type_config,update_mask\032N\312A\032recomm"
           + "ender.googleapis.com\322A.https://www.googl"
-          + "eapis.com/auth/cloud-platformB\261\001\n$com.go"
+          + "eapis.com/auth/cloud-platformB\254\001\n$com.go"
           + "ogle.cloud.recommender.v1beta1B\020Recommen"
-          + "derProtoP\001ZKgoogle.golang.org/genproto/g"
-          + "oogleapis/cloud/recommender/v1beta1;reco"
-          + "mmender\242\002\004CREC\252\002 Google.Cloud.Recommende"
-          + "r.V1Beta1b\006proto3"
+          + "derProtoP\001ZFcloud.google.com/go/recommen"
+          + "der/apiv1beta1/recommenderpb;recommender"
+          + "pb\242\002\004CREC\252\002 Google.Cloud.Recommender.V1B"
+          + "eta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

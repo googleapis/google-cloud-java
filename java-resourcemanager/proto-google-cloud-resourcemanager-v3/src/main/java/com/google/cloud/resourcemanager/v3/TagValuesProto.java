@@ -152,13 +152,13 @@ public final class TagValuesProto {
           + "udresourcemanager.googleapis.com\322Aghttps"
           + "://www.googleapis.com/auth/cloud-platfor"
           + "m,https://www.googleapis.com/auth/cloud-"
-          + "platform.read-onlyB\360\001\n#com.google.cloud."
-          + "resourcemanager.v3B\016TagValuesProtoP\001ZNgo"
-          + "ogle.golang.org/genproto/googleapis/clou"
-          + "d/resourcemanager/v3;resourcemanager\252\002\037G"
-          + "oogle.Cloud.ResourceManager.V3\312\002\037Google\\"
-          + "Cloud\\ResourceManager\\V3\352\002\"Google::Cloud"
-          + "::ResourceManager::V3b\006proto3"
+          + "platform.read-onlyB\357\001\n#com.google.cloud."
+          + "resourcemanager.v3B\016TagValuesProtoP\001ZMcl"
+          + "oud.google.com/go/resourcemanager/apiv3/"
+          + "resourcemanagerpb;resourcemanagerpb\252\002\037Go"
+          + "ogle.Cloud.ResourceManager.V3\312\002\037Google\\C"
+          + "loud\\ResourceManager\\V3\352\002\"Google::Cloud:"
+          + ":ResourceManager::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

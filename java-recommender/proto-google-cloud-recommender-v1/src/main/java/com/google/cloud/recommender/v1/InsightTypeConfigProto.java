@@ -70,11 +70,11 @@ public final class InsightTypeConfigProto {
           + "ns/{location}/insightTypes/{insight_type"
           + "}/config\"F\n\033InsightTypeGenerationConfig\022"
           + "\'\n\006params\030\001 \001(\0132\027.google.protobuf.Struct"
-          + "B\250\001\n\037com.google.cloud.recommender.v1B\026In"
-          + "sightTypeConfigProtoP\001ZFgoogle.golang.or"
-          + "g/genproto/googleapis/cloud/recommender/"
-          + "v1;recommender\242\002\004CREC\252\002\033Google.Cloud.Rec"
-          + "ommender.V1b\006proto3"
+          + "B\243\001\n\037com.google.cloud.recommender.v1B\026In"
+          + "sightTypeConfigProtoP\001ZAcloud.google.com"
+          + "/go/recommender/apiv1/recommenderpb;reco"
+          + "mmenderpb\242\002\004CREC\252\002\033Google.Cloud.Recommen"
+          + "der.V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

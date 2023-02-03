@@ -263,13 +263,12 @@ public final class ProductServiceProto {
           + "onse\0229google.cloud.retail.v2beta.RemoveL"
           + "ocalInventoriesMetadata\032I\312A\025retail.googl"
           + "eapis.com\322A.https://www.googleapis.com/a"
-          + "uth/cloud-platformB\334\001\n\036com.google.cloud."
-          + "retail.v2betaB\023ProductServiceProtoP\001Z@go"
-          + "ogle.golang.org/genproto/googleapis/clou"
-          + "d/retail/v2beta;retail\242\002\006RETAIL\252\002\032Google"
-          + ".Cloud.Retail.V2Beta\312\002\032Google\\Cloud\\Reta"
-          + "il\\V2beta\352\002\035Google::Cloud::Retail::V2bet"
-          + "ab\006proto3"
+          + "uth/cloud-platformB\322\001\n\036com.google.cloud."
+          + "retail.v2betaB\023ProductServiceProtoP\001Z6cl"
+          + "oud.google.com/go/retail/apiv2beta/retai"
+          + "lpb;retailpb\242\002\006RETAIL\252\002\032Google.Cloud.Ret"
+          + "ail.V2Beta\312\002\032Google\\Cloud\\Retail\\V2beta\352"
+          + "\002\035Google::Cloud::Retail::V2betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

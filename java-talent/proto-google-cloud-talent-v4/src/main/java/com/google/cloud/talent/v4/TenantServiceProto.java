@@ -107,10 +107,10 @@ public final class TenantServiceProto {
           + "/{parent=projects/*}/tenants\332A\006parent\032l\312"
           + "A\023jobs.googleapis.com\322AShttps://www.goog"
           + "leapis.com/auth/cloud-platform,https://w"
-          + "ww.googleapis.com/auth/jobsBv\n\032com.googl"
+          + "ww.googleapis.com/auth/jobsBl\n\032com.googl"
           + "e.cloud.talent.v4B\022TenantServiceProtoP\001Z"
-          + "<google.golang.org/genproto/googleapis/c"
-          + "loud/talent/v4;talent\242\002\003CTSb\006proto3"
+          + "2cloud.google.com/go/talent/apiv4/talent"
+          + "pb;talentpb\242\002\003CTSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

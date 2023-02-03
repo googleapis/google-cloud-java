@@ -188,13 +188,13 @@ public final class ResourcesProto {
           + "tampB\003\340A\001\0227\n\017rotation_period\030\002 \001(\0132\031.goo"
           + "gle.protobuf.DurationB\003\340A\004\"L\n\rSecretPayl"
           + "oad\022\014\n\004data\030\001 \001(\014\022\035\n\013data_crc32c\030\002 \001(\003B\003"
-          + "\340A\001H\000\210\001\001B\016\n\014_data_crc32cB\355\001\n!com.google."
+          + "\340A\001H\000\210\001\001B\016\n\014_data_crc32cB\352\001\n!com.google."
           + "cloud.secretmanager.v1B\016ResourcesProtoP\001"
-          + "ZJgoogle.golang.org/genproto/googleapis/"
-          + "cloud/secretmanager/v1;secretmanager\370\001\001\242"
-          + "\002\003GSM\252\002\035Google.Cloud.SecretManager.V1\312\002\035"
-          + "Google\\Cloud\\SecretManager\\V1\352\002 Google::"
-          + "Cloud::SecretManager::V1b\006proto3"
+          + "ZGcloud.google.com/go/secretmanager/apiv"
+          + "1/secretmanagerpb;secretmanagerpb\370\001\001\242\002\003G"
+          + "SM\252\002\035Google.Cloud.SecretManager.V1\312\002\035Goo"
+          + "gle\\Cloud\\SecretManager\\V1\352\002 Google::Clo"
+          + "ud::SecretManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -91,13 +91,12 @@ public final class UserEventProto {
           + "\021selected_position\030\003 \001(\005\"n\n\023PurchaseTran"
           + "saction\022\n\n\002id\030\001 \001(\t\022\024\n\007revenue\030\002 \001(\002B\003\340A"
           + "\002\022\013\n\003tax\030\003 \001(\002\022\014\n\004cost\030\004 \001(\002\022\032\n\rcurrency"
-          + "_code\030\005 \001(\tB\003\340A\002B\334\001\n\037com.google.cloud.re"
-          + "tail.v2alphaB\016UserEventProtoP\001ZAgoogle.g"
-          + "olang.org/genproto/googleapis/cloud/reta"
-          + "il/v2alpha;retail\242\002\006RETAIL\252\002\033Google.Clou"
-          + "d.Retail.V2Alpha\312\002\033Google\\Cloud\\Retail\\V"
-          + "2alpha\352\002\036Google::Cloud::Retail::V2alphab"
-          + "\006proto3"
+          + "_code\030\005 \001(\tB\003\340A\002B\322\001\n\037com.google.cloud.re"
+          + "tail.v2alphaB\016UserEventProtoP\001Z7cloud.go"
+          + "ogle.com/go/retail/apiv2alpha/retailpb;r"
+          + "etailpb\242\002\006RETAIL\252\002\033Google.Cloud.Retail.V"
+          + "2Alpha\312\002\033Google\\Cloud\\Retail\\V2alpha\352\002\036G"
+          + "oogle::Cloud::Retail::V2alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

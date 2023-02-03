@@ -49,15 +49,15 @@ public final class DetectorsProto {
           + "B\003\340A\003\022\026\n\tcomponent\030\002 \001(\tB\003\340A\003\022T\n\014billing"
           + "_tier\030\003 \001(\01629.google.cloud.securitycente"
           + "r.settings.v1beta1.BillingTierB\003\340A\003\022\034\n\017d"
-          + "etector_labels\030\004 \003(\tB\003\340A\003B\256\002\n0com.google"
+          + "etector_labels\030\004 \003(\tB\003\340A\003B\246\002\n0com.google"
           + ".cloud.securitycenter.settings.v1beta1B\016"
-          + "DetectorsProtoP\001ZTgoogle.golang.org/genp"
-          + "roto/googleapis/cloud/securitycenter/set"
-          + "tings/v1beta1;settings\370\001\001\252\002,Google.Cloud"
-          + ".SecurityCenter.Settings.V1Beta1\312\002,Googl"
-          + "e\\Cloud\\SecurityCenter\\Settings\\V1beta1\352"
-          + "\0020Google::Cloud::SecurityCenter::Setting"
-          + "s::V1beta1b\006proto3"
+          + "DetectorsProtoP\001ZLcloud.google.com/go/se"
+          + "curitycenter/settings/apiv1beta1/setting"
+          + "spb;settingspb\370\001\001\252\002,Google.Cloud.Securit"
+          + "yCenter.Settings.V1Beta1\312\002,Google\\Cloud\\"
+          + "SecurityCenter\\Settings\\V1beta1\352\0020Google"
+          + "::Cloud::SecurityCenter::Settings::V1bet"
+          + "a1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

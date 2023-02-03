@@ -36,10 +36,10 @@ public final class BatchProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\'google/cloud/talent/v4beta1/batch.prot"
-          + "o\022\033google.cloud.talent.v4beta1Bx\n\037com.go"
+          + "o\022\033google.cloud.talent.v4beta1Bn\n\037com.go"
           + "ogle.cloud.talent.v4beta1B\nBatchProtoP\001Z"
-          + "Agoogle.golang.org/genproto/googleapis/c"
-          + "loud/talent/v4beta1;talent\242\002\003CTSb\006proto3"
+          + "7cloud.google.com/go/talent/apiv4beta1/t"
+          + "alentpb;talentpb\242\002\003CTSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

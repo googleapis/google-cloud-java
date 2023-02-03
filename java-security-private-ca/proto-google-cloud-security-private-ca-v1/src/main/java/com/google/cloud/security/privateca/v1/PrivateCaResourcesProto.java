@@ -497,13 +497,13 @@ public final class PrivateCaResourcesProto {
           + "IBUTE_AUTHORITY_COMPROMISE\020\010*]\n\022SubjectR"
           + "equestMode\022$\n SUBJECT_REQUEST_MODE_UNSPE"
           + "CIFIED\020\000\022\013\n\007DEFAULT\020\001\022\024\n\020REFLECTED_SPIFF"
-          + "E\020\002B\206\002\n&com.google.cloud.security.privat"
-          + "eca.v1B\027PrivateCaResourcesProtoP\001ZKgoogl"
-          + "e.golang.org/genproto/googleapis/cloud/s"
-          + "ecurity/privateca/v1;privateca\370\001\001\252\002\"Goog"
-          + "le.Cloud.Security.PrivateCA.V1\312\002\"Google\\"
-          + "Cloud\\Security\\PrivateCA\\V1\352\002&Google::Cl"
-          + "oud::Security::PrivateCA::V1b\006proto3"
+          + "E\020\002B\377\001\n&com.google.cloud.security.privat"
+          + "eca.v1B\027PrivateCaResourcesProtoP\001ZDcloud"
+          + ".google.com/go/security/privateca/apiv1/"
+          + "privatecapb;privatecapb\370\001\001\252\002\"Google.Clou"
+          + "d.Security.PrivateCA.V1\312\002\"Google\\Cloud\\S"
+          + "ecurity\\PrivateCA\\V1\352\002&Google::Cloud::Se"
+          + "curity::PrivateCA::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

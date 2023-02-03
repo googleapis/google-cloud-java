@@ -90,12 +90,11 @@ public final class UserEventProto {
           + "ion\030\003 \001(\005\"n\n\023PurchaseTransaction\022\n\n\002id\030\001"
           + " \001(\t\022\024\n\007revenue\030\002 \001(\002B\003\340A\002\022\013\n\003tax\030\003 \001(\002\022"
           + "\014\n\004cost\030\004 \001(\002\022\032\n\rcurrency_code\030\005 \001(\tB\003\340A"
-          + "\002B\303\001\n\032com.google.cloud.retail.v2B\016UserEv"
-          + "entProtoP\001Z<google.golang.org/genproto/g"
-          + "oogleapis/cloud/retail/v2;retail\242\002\006RETAI"
-          + "L\252\002\026Google.Cloud.Retail.V2\312\002\026Google\\Clou"
-          + "d\\Retail\\V2\352\002\031Google::Cloud::Retail::V2b"
-          + "\006proto3"
+          + "\002B\271\001\n\032com.google.cloud.retail.v2B\016UserEv"
+          + "entProtoP\001Z2cloud.google.com/go/retail/a"
+          + "piv2/retailpb;retailpb\242\002\006RETAIL\252\002\026Google"
+          + ".Cloud.Retail.V2\312\002\026Google\\Cloud\\Retail\\V"
+          + "2\352\002\031Google::Cloud::Retail::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

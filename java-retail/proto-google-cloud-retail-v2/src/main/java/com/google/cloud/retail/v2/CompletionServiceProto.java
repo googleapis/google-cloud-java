@@ -96,12 +96,12 @@ public final class CompletionServiceProto {
           + "ponse\022%google.cloud.retail.v2.ImportMeta"
           + "data\032I\312A\025retail.googleapis.com\322A.https:/"
           + "/www.googleapis.com/auth/cloud-platformB"
-          + "\313\001\n\032com.google.cloud.retail.v2B\026Completi"
-          + "onServiceProtoP\001Z<google.golang.org/genp"
-          + "roto/googleapis/cloud/retail/v2;retail\242\002"
-          + "\006RETAIL\252\002\026Google.Cloud.Retail.V2\312\002\026Googl"
-          + "e\\Cloud\\Retail\\V2\352\002\031Google::Cloud::Retai"
-          + "l::V2b\006proto3"
+          + "\301\001\n\032com.google.cloud.retail.v2B\026Completi"
+          + "onServiceProtoP\001Z2cloud.google.com/go/re"
+          + "tail/apiv2/retailpb;retailpb\242\002\006RETAIL\252\002\026"
+          + "Google.Cloud.Retail.V2\312\002\026Google\\Cloud\\Re"
+          + "tail\\V2\352\002\031Google::Cloud::Retail::V2b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

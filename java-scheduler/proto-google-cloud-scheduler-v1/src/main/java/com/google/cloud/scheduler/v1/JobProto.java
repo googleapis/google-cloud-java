@@ -76,10 +76,10 @@ public final class JobProto {
           + "7\n\024min_backoff_duration\030\003 \001(\0132\031.google.p"
           + "rotobuf.Duration\0227\n\024max_backoff_duration"
           + "\030\004 \001(\0132\031.google.protobuf.Duration\022\025\n\rmax"
-          + "_doublings\030\005 \001(\005Bo\n\035com.google.cloud.sch"
-          + "eduler.v1B\010JobProtoP\001ZBgoogle.golang.org"
-          + "/genproto/googleapis/cloud/scheduler/v1;"
-          + "schedulerb\006proto3"
+          + "_doublings\030\005 \001(\005Bh\n\035com.google.cloud.sch"
+          + "eduler.v1B\010JobProtoP\001Z;cloud.google.com/"
+          + "go/scheduler/apiv1/schedulerpb;scheduler"
+          + "pbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

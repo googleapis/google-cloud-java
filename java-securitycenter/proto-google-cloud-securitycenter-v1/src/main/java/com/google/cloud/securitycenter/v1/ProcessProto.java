@@ -57,13 +57,13 @@ public final class ProcessProto {
           + "tycenter.v1.EnvironmentVariable\022\037\n\027env_v"
           + "ariables_truncated\030\t \001(\010\022\013\n\003pid\030\n \001(\003\022\022\n"
           + "\nparent_pid\030\013 \001(\003\"0\n\023EnvironmentVariable"
-          + "\022\014\n\004name\030\001 \001(\t\022\013\n\003val\030\002 \001(\tB\350\001\n\"com.goog"
+          + "\022\014\n\004name\030\001 \001(\t\022\013\n\003val\030\002 \001(\tB\346\001\n\"com.goog"
           + "le.cloud.securitycenter.v1B\014ProcessProto"
-          + "P\001ZLgoogle.golang.org/genproto/googleapi"
-          + "s/cloud/securitycenter/v1;securitycenter"
-          + "\252\002\036Google.Cloud.SecurityCenter.V1\312\002\036Goog"
-          + "le\\Cloud\\SecurityCenter\\V1\352\002!Google::Clo"
-          + "ud::SecurityCenter::V1b\006proto3"
+          + "P\001ZJcloud.google.com/go/securitycenter/a"
+          + "piv1/securitycenterpb;securitycenterpb\252\002"
+          + "\036Google.Cloud.SecurityCenter.V1\312\002\036Google"
+          + "\\Cloud\\SecurityCenter\\V1\352\002!Google::Cloud"
+          + "::SecurityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

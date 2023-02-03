@@ -91,9 +91,9 @@ public final class TargetProto {
           + "\002 \001(\t*s\n\nHttpMethod\022\033\n\027HTTP_METHOD_UNSPE"
           + "CIFIED\020\000\022\010\n\004POST\020\001\022\007\n\003GET\020\002\022\010\n\004HEAD\020\003\022\007\n"
           + "\003PUT\020\004\022\n\n\006DELETE\020\005\022\t\n\005PATCH\020\006\022\013\n\007OPTIONS"
-          + "\020\007Bf\n\031com.google.cloud.tasks.v2B\013TargetP"
-          + "rotoP\001Z:google.golang.org/genproto/googl"
-          + "eapis/cloud/tasks/v2;tasksb\006proto3"
+          + "\020\007B[\n\031com.google.cloud.tasks.v2B\013TargetP"
+          + "rotoP\001Z/cloud.google.com/go/tasks/apiv2/"
+          + "taskspb;taskspbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -80,10 +80,10 @@ public final class ConditionProto {
           + "_WARMING\020\014\"~\n\017ExecutionReason\022\036\n\032EXECUTI"
           + "ON_REASON_UNDEFINED\020\000\022$\n JOB_STATUS_SERV"
           + "ICE_POLLING_ERROR\020\001\022\026\n\022NON_ZERO_EXIT_COD"
-          + "E\020\002\022\r\n\tCANCELLED\020\003B\t\n\007reasonsBc\n\027com.goo"
-          + "gle.cloud.run.v2B\016ConditionProtoP\001Z6goog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "run/v2;runb\006proto3"
+          + "E\020\002\022\r\n\tCANCELLED\020\003B\t\n\007reasonsBV\n\027com.goo"
+          + "gle.cloud.run.v2B\016ConditionProtoP\001Z)clou"
+          + "d.google.com/go/run/apiv2/runpb;runpbb\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -43,13 +43,13 @@ public final class ComplianceProto {
       "\n/google/cloud/securitycenter/v1/complia"
           + "nce.proto\022\036google.cloud.securitycenter.v"
           + "1\"<\n\nCompliance\022\020\n\010standard\030\001 \001(\t\022\017\n\007ver"
-          + "sion\030\002 \001(\t\022\013\n\003ids\030\003 \003(\tB\353\001\n\"com.google.c"
+          + "sion\030\002 \001(\t\022\013\n\003ids\030\003 \003(\tB\351\001\n\"com.google.c"
           + "loud.securitycenter.v1B\017ComplianceProtoP"
-          + "\001ZLgoogle.golang.org/genproto/googleapis"
-          + "/cloud/securitycenter/v1;securitycenter\252"
-          + "\002\036Google.Cloud.SecurityCenter.V1\312\002\036Googl"
-          + "e\\Cloud\\SecurityCenter\\V1\352\002!Google::Clou"
-          + "d::SecurityCenter::V1b\006proto3"
+          + "\001ZJcloud.google.com/go/securitycenter/ap"
+          + "iv1/securitycenterpb;securitycenterpb\252\002\036"
+          + "Google.Cloud.SecurityCenter.V1\312\002\036Google\\"
+          + "Cloud\\SecurityCenter\\V1\352\002!Google::Cloud:"
+          + ":SecurityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

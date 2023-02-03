@@ -49,13 +49,13 @@ public final class SourceOuterClass {
           + "apis.com/Source\022-organizations/{organiza"
           + "tion}/sources/{source}\022!folders/{folder}"
           + "/sources/{source}\022#projects/{project}/so"
-          + "urces/{source}B\375\001\n)com.google.cloud.secu"
-          + "ritycenter.v1p1beta1P\001ZSgoogle.golang.or"
-          + "g/genproto/googleapis/cloud/securitycent"
-          + "er/v1p1beta1;securitycenter\252\002%Google.Clo"
-          + "ud.SecurityCenter.V1P1Beta1\312\002%Google\\Clo"
-          + "ud\\SecurityCenter\\V1p1beta1\352\002(Google::Cl"
-          + "oud::SecurityCenter::V1p1beta1b\006proto3"
+          + "urces/{source}B\373\001\n)com.google.cloud.secu"
+          + "ritycenter.v1p1beta1P\001ZQcloud.google.com"
+          + "/go/securitycenter/apiv1p1beta1/security"
+          + "centerpb;securitycenterpb\252\002%Google.Cloud"
+          + ".SecurityCenter.V1P1Beta1\312\002%Google\\Cloud"
+          + "\\SecurityCenter\\V1p1beta1\352\002(Google::Clou"
+          + "d::SecurityCenter::V1p1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

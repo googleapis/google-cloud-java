@@ -95,12 +95,12 @@ public final class PredictionServiceProto {
           + "rojects/*/locations/*/catalogs/*/serving"
           + "Configs/*}:predict:\001*\032I\312A\025retail.googlea"
           + "pis.com\322A.https://www.googleapis.com/aut"
-          + "h/cloud-platformB\313\001\n\032com.google.cloud.re"
-          + "tail.v2B\026PredictionServiceProtoP\001Z<googl"
-          + "e.golang.org/genproto/googleapis/cloud/r"
-          + "etail/v2;retail\242\002\006RETAIL\252\002\026Google.Cloud."
-          + "Retail.V2\312\002\026Google\\Cloud\\Retail\\V2\352\002\031Goo"
-          + "gle::Cloud::Retail::V2b\006proto3"
+          + "h/cloud-platformB\301\001\n\032com.google.cloud.re"
+          + "tail.v2B\026PredictionServiceProtoP\001Z2cloud"
+          + ".google.com/go/retail/apiv2/retailpb;ret"
+          + "ailpb\242\002\006RETAIL\252\002\026Google.Cloud.Retail.V2\312"
+          + "\002\026Google\\Cloud\\Retail\\V2\352\002\031Google::Cloud"
+          + "::Retail::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

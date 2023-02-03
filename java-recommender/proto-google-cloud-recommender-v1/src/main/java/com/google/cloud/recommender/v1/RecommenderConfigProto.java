@@ -69,12 +69,12 @@ public final class RecommenderConfigProto {
           + "Sorganizations/{organization}/locations/"
           + "{location}/recommenders/{recommender}/co"
           + "nfig\"F\n\033RecommenderGenerationConfig\022\'\n\006p"
-          + "arams\030\001 \001(\0132\027.google.protobuf.StructB\250\001\n"
+          + "arams\030\001 \001(\0132\027.google.protobuf.StructB\243\001\n"
           + "\037com.google.cloud.recommender.v1B\026Recomm"
-          + "enderConfigProtoP\001ZFgoogle.golang.org/ge"
-          + "nproto/googleapis/cloud/recommender/v1;r"
-          + "ecommender\242\002\004CREC\252\002\033Google.Cloud.Recomme"
-          + "nder.V1b\006proto3"
+          + "enderConfigProtoP\001ZAcloud.google.com/go/"
+          + "recommender/apiv1/recommenderpb;recommen"
+          + "derpb\242\002\004CREC\252\002\033Google.Cloud.Recommender."
+          + "V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

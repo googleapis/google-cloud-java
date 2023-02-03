@@ -142,13 +142,13 @@ public final class ServingConfigServiceProto {
           + "locations/*/catalogs/*/servingConfigs/*}"
           + ":removeControl:\001*\332A\016serving_config\032I\312A\025r"
           + "etail.googleapis.com\322A.https://www.googl"
-          + "eapis.com/auth/cloud-platformB\342\001\n\036com.go"
+          + "eapis.com/auth/cloud-platformB\330\001\n\036com.go"
           + "ogle.cloud.retail.v2betaB\031ServingConfigS"
-          + "erviceProtoP\001Z@google.golang.org/genprot"
-          + "o/googleapis/cloud/retail/v2beta;retail\242"
-          + "\002\006RETAIL\252\002\032Google.Cloud.Retail.V2Beta\312\002\032"
-          + "Google\\Cloud\\Retail\\V2beta\352\002\035Google::Clo"
-          + "ud::Retail::V2betab\006proto3"
+          + "erviceProtoP\001Z6cloud.google.com/go/retai"
+          + "l/apiv2beta/retailpb;retailpb\242\002\006RETAIL\252\002"
+          + "\032Google.Cloud.Retail.V2Beta\312\002\032Google\\Clo"
+          + "ud\\Retail\\V2beta\352\002\035Google::Cloud::Retail"
+          + "::V2betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -345,10 +345,10 @@ public final class SecuritycenterService {
           + "*/securityMarks}:\016security_marks\332A\016secur"
           + "ity_marks\032Q\312A\035securitycenter.googleapis."
           + "com\322A.https://www.googleapis.com/auth/cl"
-          + "oud-platformB~\n\'com.google.cloud.securit"
-          + "ycenter.v1beta1P\001ZQgoogle.golang.org/gen"
-          + "proto/googleapis/cloud/securitycenter/v1"
-          + "beta1;securitycenterb\006proto3"
+          + "oud-platformB|\n\'com.google.cloud.securit"
+          + "ycenter.v1beta1P\001ZOcloud.google.com/go/s"
+          + "ecuritycenter/apiv1beta1/securitycenterp"
+          + "b;securitycenterpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

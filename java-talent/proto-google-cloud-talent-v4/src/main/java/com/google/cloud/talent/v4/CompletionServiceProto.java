@@ -81,11 +81,10 @@ public final class CompletionServiceProto {
           + "/{tenant=projects/*/tenants/*}:completeQ"
           + "uery\032l\312A\023jobs.googleapis.com\322AShttps://w"
           + "ww.googleapis.com/auth/cloud-platform,ht"
-          + "tps://www.googleapis.com/auth/jobsBz\n\032co"
+          + "tps://www.googleapis.com/auth/jobsBp\n\032co"
           + "m.google.cloud.talent.v4B\026CompletionServ"
-          + "iceProtoP\001Z<google.golang.org/genproto/g"
-          + "oogleapis/cloud/talent/v4;talent\242\002\003CTSb\006"
-          + "proto3"
+          + "iceProtoP\001Z2cloud.google.com/go/talent/a"
+          + "piv4/talentpb;talentpb\242\002\003CTSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -45,14 +45,13 @@ public final class ContainerProto {
           + "\032*google/cloud/securitycenter/v1/label.p"
           + "roto\"o\n\tContainer\022\014\n\004name\030\001 \001(\t\022\013\n\003uri\030\002"
           + " \001(\t\022\020\n\010image_id\030\003 \001(\t\0225\n\006labels\030\004 \003(\0132%"
-          + ".google.cloud.securitycenter.v1.LabelB\352\001"
+          + ".google.cloud.securitycenter.v1.LabelB\350\001"
           + "\n\"com.google.cloud.securitycenter.v1B\016Co"
-          + "ntainerProtoP\001ZLgoogle.golang.org/genpro"
-          + "to/googleapis/cloud/securitycenter/v1;se"
-          + "curitycenter\252\002\036Google.Cloud.SecurityCent"
-          + "er.V1\312\002\036Google\\Cloud\\SecurityCenter\\V1\352\002"
-          + "!Google::Cloud::SecurityCenter::V1b\006prot"
-          + "o3"
+          + "ntainerProtoP\001ZJcloud.google.com/go/secu"
+          + "ritycenter/apiv1/securitycenterpb;securi"
+          + "tycenterpb\252\002\036Google.Cloud.SecurityCenter"
+          + ".V1\312\002\036Google\\Cloud\\SecurityCenter\\V1\352\002!G"
+          + "oogle::Cloud::SecurityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

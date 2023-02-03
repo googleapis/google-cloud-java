@@ -55,11 +55,11 @@ public final class SecurityMarksOuterClass {
           + "urityMarks\0229organizations/{organization}"
           + "/assets/{asset}/securityMarks\022Norganizat"
           + "ions/{organization}/sources/{source}/fin"
-          + "dings/{finding}/securityMarksB~\n\'com.goo"
-          + "gle.cloud.securitycenter.v1beta1P\001ZQgoog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "securitycenter/v1beta1;securitycenterb\006p"
-          + "roto3"
+          + "dings/{finding}/securityMarksB|\n\'com.goo"
+          + "gle.cloud.securitycenter.v1beta1P\001ZOclou"
+          + "d.google.com/go/securitycenter/apiv1beta"
+          + "1/securitycenterpb;securitycenterpbb\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

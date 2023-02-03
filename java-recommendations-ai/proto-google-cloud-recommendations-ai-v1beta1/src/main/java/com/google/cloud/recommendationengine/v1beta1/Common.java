@@ -71,15 +71,15 @@ public final class Common {
           + "v1beta1.FeatureMap.StringList:\0028\001\032y\n\026Num"
           + "ericalFeaturesEntry\022\013\n\003key\030\001 \001(\t\022N\n\005valu"
           + "e\030\002 \001(\0132?.google.cloud.recommendationeng"
-          + "ine.v1beta1.FeatureMap.FloatList:\0028\001B\237\002\n"
+          + "ine.v1beta1.FeatureMap.FloatList:\0028\001B\243\002\n"
           + "-com.google.cloud.recommendationengine.v"
-          + "1beta1P\001Z]google.golang.org/genproto/goo"
-          + "gleapis/cloud/recommendationengine/v1bet"
-          + "a1;recommendationengine\242\002\005RECAI\252\002)Google"
-          + ".Cloud.RecommendationEngine.V1Beta1\312\002)Go"
-          + "ogle\\Cloud\\RecommendationEngine\\V1beta1\352"
-          + "\002,Google::Cloud::RecommendationEngine::V"
-          + "1beta1b\006proto3"
+          + "1beta1P\001Zacloud.google.com/go/recommenda"
+          + "tionengine/apiv1beta1/recommendationengi"
+          + "nepb;recommendationenginepb\242\002\005RECAI\252\002)Go"
+          + "ogle.Cloud.RecommendationEngine.V1Beta1\312"
+          + "\002)Google\\Cloud\\RecommendationEngine\\V1be"
+          + "ta1\352\002,Google::Cloud::RecommendationEngin"
+          + "e::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

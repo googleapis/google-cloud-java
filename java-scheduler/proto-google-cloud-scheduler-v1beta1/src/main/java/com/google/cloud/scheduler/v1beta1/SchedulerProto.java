@@ -139,11 +139,11 @@ public final class SchedulerProto {
           + "1.Job\"C\202\323\344\223\0026\"1/v1beta1/{name=projects/*"
           + "/locations/*/jobs/*}:run:\001*\332A\004name\032Q\312A\035c"
           + "loudscheduler.googleapis.com\322A.https://w"
-          + "ww.googleapis.com/auth/cloud-platformB\213\001"
+          + "ww.googleapis.com/auth/cloud-platformB\204\001"
           + "\n\"com.google.cloud.scheduler.v1beta1B\016Sc"
-          + "hedulerProtoP\001ZGgoogle.golang.org/genpro"
-          + "to/googleapis/cloud/scheduler/v1beta1;sc"
-          + "heduler\242\002\tSCHEDULERb\006proto3"
+          + "hedulerProtoP\001Z@cloud.google.com/go/sche"
+          + "duler/apiv1beta1/schedulerpb;schedulerpb"
+          + "\242\002\tSCHEDULERb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

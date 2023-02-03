@@ -149,12 +149,12 @@ public final class ModelServiceProto {
           + "\022-google.cloud.retail.v2alpha.TuneModelM"
           + "etadata\032I\312A\025retail.googleapis.com\322A.http"
           + "s://www.googleapis.com/auth/cloud-platfo"
-          + "rmB\337\001\n\037com.google.cloud.retail.v2alphaB\021"
-          + "ModelServiceProtoP\001ZAgoogle.golang.org/g"
-          + "enproto/googleapis/cloud/retail/v2alpha;"
-          + "retail\242\002\006RETAIL\252\002\033Google.Cloud.Retail.V2"
-          + "Alpha\312\002\033Google\\Cloud\\Retail\\V2alpha\352\002\036Go"
-          + "ogle::Cloud::Retail::V2alphab\006proto3"
+          + "rmB\325\001\n\037com.google.cloud.retail.v2alphaB\021"
+          + "ModelServiceProtoP\001Z7cloud.google.com/go"
+          + "/retail/apiv2alpha/retailpb;retailpb\242\002\006R"
+          + "ETAIL\252\002\033Google.Cloud.Retail.V2Alpha\312\002\033Go"
+          + "ogle\\Cloud\\Retail\\V2alpha\352\002\036Google::Clou"
+          + "d::Retail::V2alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

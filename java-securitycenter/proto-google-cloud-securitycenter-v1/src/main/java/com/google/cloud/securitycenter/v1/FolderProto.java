@@ -43,13 +43,13 @@ public final class FolderProto {
       "\n+google/cloud/securitycenter/v1/folder."
           + "proto\022\036google.cloud.securitycenter.v1\"G\n"
           + "\006Folder\022\027\n\017resource_folder\030\001 \001(\t\022$\n\034reso"
-          + "urce_folder_display_name\030\002 \001(\tB\347\001\n\"com.g"
+          + "urce_folder_display_name\030\002 \001(\tB\345\001\n\"com.g"
           + "oogle.cloud.securitycenter.v1B\013FolderPro"
-          + "toP\001ZLgoogle.golang.org/genproto/googlea"
-          + "pis/cloud/securitycenter/v1;securitycent"
-          + "er\252\002\036Google.Cloud.SecurityCenter.V1\312\002\036Go"
-          + "ogle\\Cloud\\SecurityCenter\\V1\352\002!Google::C"
-          + "loud::SecurityCenter::V1b\006proto3"
+          + "toP\001ZJcloud.google.com/go/securitycenter"
+          + "/apiv1/securitycenterpb;securitycenterpb"
+          + "\252\002\036Google.Cloud.SecurityCenter.V1\312\002\036Goog"
+          + "le\\Cloud\\SecurityCenter\\V1\352\002!Google::Clo"
+          + "ud::SecurityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -55,13 +55,13 @@ public final class BigQueryExportProto {
           + "port\0225organizations/{organization}/bigQu"
           + "eryExports/{export}\022)folders/{folder}/bi"
           + "gQueryExports/{export}\022+projects/{projec"
-          + "t}/bigQueryExports/{export}B\357\001\n\"com.goog"
+          + "t}/bigQueryExports/{export}B\355\001\n\"com.goog"
           + "le.cloud.securitycenter.v1B\023BigQueryExpo"
-          + "rtProtoP\001ZLgoogle.golang.org/genproto/go"
-          + "ogleapis/cloud/securitycenter/v1;securit"
-          + "ycenter\252\002\036Google.Cloud.SecurityCenter.V1"
-          + "\312\002\036Google\\Cloud\\SecurityCenter\\V1\352\002!Goog"
-          + "le::Cloud::SecurityCenter::V1b\006proto3"
+          + "rtProtoP\001ZJcloud.google.com/go/securityc"
+          + "enter/apiv1/securitycenterpb;securitycen"
+          + "terpb\252\002\036Google.Cloud.SecurityCenter.V1\312\002"
+          + "\036Google\\Cloud\\SecurityCenter\\V1\352\002!Google"
+          + "::Cloud::SecurityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

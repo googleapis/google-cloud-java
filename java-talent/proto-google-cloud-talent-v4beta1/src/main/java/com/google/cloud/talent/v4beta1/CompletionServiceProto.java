@@ -84,10 +84,10 @@ public final class CompletionServiceProto {
           + "ects/*}:complete\032l\312A\023jobs.googleapis.com"
           + "\322AShttps://www.googleapis.com/auth/cloud"
           + "-platform,https://www.googleapis.com/aut"
-          + "h/jobsB\204\001\n\037com.google.cloud.talent.v4bet"
-          + "a1B\026CompletionServiceProtoP\001ZAgoogle.gol"
-          + "ang.org/genproto/googleapis/cloud/talent"
-          + "/v4beta1;talent\242\002\003CTSb\006proto3"
+          + "h/jobsBz\n\037com.google.cloud.talent.v4beta"
+          + "1B\026CompletionServiceProtoP\001Z7cloud.googl"
+          + "e.com/go/talent/apiv4beta1/talentpb;tale"
+          + "ntpb\242\002\003CTSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

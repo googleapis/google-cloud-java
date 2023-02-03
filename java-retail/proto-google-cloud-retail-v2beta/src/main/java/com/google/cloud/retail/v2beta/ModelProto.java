@@ -82,13 +82,12 @@ public final class ModelProto {
           + "IED\020\000\022\013\n\007DATA_OK\020\001\022\016\n\nDATA_ERROR\020\002:k\352Ah\n"
           + "\033retail.googleapis.com/Model\022Iprojects/{"
           + "project}/locations/{location}/catalogs/{"
-          + "catalog}/models/{model}B\323\001\n\036com.google.c"
-          + "loud.retail.v2betaB\nModelProtoP\001Z@google"
-          + ".golang.org/genproto/googleapis/cloud/re"
-          + "tail/v2beta;retail\242\002\006RETAIL\252\002\032Google.Clo"
-          + "ud.Retail.V2Beta\312\002\032Google\\Cloud\\Retail\\V"
-          + "2beta\352\002\035Google::Cloud::Retail::V2betab\006p"
-          + "roto3"
+          + "catalog}/models/{model}B\311\001\n\036com.google.c"
+          + "loud.retail.v2betaB\nModelProtoP\001Z6cloud."
+          + "google.com/go/retail/apiv2beta/retailpb;"
+          + "retailpb\242\002\006RETAIL\252\002\032Google.Cloud.Retail."
+          + "V2Beta\312\002\032Google\\Cloud\\Retail\\V2beta\352\002\035Go"
+          + "ogle::Cloud::Retail::V2betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

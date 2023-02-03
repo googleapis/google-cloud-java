@@ -378,10 +378,10 @@ public final class CloudRedisServiceBetaProto {
           + "ime\312A:\n#google.cloud.redis.v1beta1.Insta"
           + "nce\022\023google.protobuf.Any\032H\312A\024redis.googl"
           + "eapis.com\322A.https://www.googleapis.com/a"
-          + "uth/cloud-platformB\177\n\036com.google.cloud.r"
+          + "uth/cloud-platformBt\n\036com.google.cloud.r"
           + "edis.v1beta1B\032CloudRedisServiceBetaProto"
-          + "P\001Z?google.golang.org/genproto/googleapi"
-          + "s/cloud/redis/v1beta1;redisb\006proto3"
+          + "P\001Z4cloud.google.com/go/redis/apiv1beta1"
+          + "/redispb;redispbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

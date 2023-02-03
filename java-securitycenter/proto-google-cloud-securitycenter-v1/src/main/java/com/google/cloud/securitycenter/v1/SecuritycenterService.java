@@ -709,12 +709,12 @@ public final class SecuritycenterService {
           + "{parent=projects/*}/bigQueryExports\332A\006pa"
           + "rent\032Q\312A\035securitycenter.googleapis.com\322A"
           + ".https://www.googleapis.com/auth/cloud-p"
-          + "latformB\332\001\n\"com.google.cloud.securitycen"
-          + "ter.v1P\001ZLgoogle.golang.org/genproto/goo"
-          + "gleapis/cloud/securitycenter/v1;security"
-          + "center\252\002\036Google.Cloud.SecurityCenter.V1\312"
-          + "\002\036Google\\Cloud\\SecurityCenter\\V1\352\002!Googl"
-          + "e::Cloud::SecurityCenter::V1P\000b\006proto3"
+          + "latformB\330\001\n\"com.google.cloud.securitycen"
+          + "ter.v1P\001ZJcloud.google.com/go/securityce"
+          + "nter/apiv1/securitycenterpb;securitycent"
+          + "erpb\252\002\036Google.Cloud.SecurityCenter.V1\312\002\036"
+          + "Google\\Cloud\\SecurityCenter\\V1\352\002!Google:"
+          + ":Cloud::SecurityCenter::V1P\000b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

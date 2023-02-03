@@ -44,13 +44,13 @@ public final class DatabaseProto {
           + "e.proto\022\036google.cloud.securitycenter.v1\""
           + "b\n\010Database\022\014\n\004name\030\001 \001(\t\022\024\n\014display_nam"
           + "e\030\002 \001(\t\022\021\n\tuser_name\030\003 \001(\t\022\r\n\005query\030\004 \001("
-          + "\t\022\020\n\010grantees\030\005 \003(\tB\351\001\n\"com.google.cloud"
-          + ".securitycenter.v1B\rDatabaseProtoP\001ZLgoo"
-          + "gle.golang.org/genproto/googleapis/cloud"
-          + "/securitycenter/v1;securitycenter\252\002\036Goog"
-          + "le.Cloud.SecurityCenter.V1\312\002\036Google\\Clou"
-          + "d\\SecurityCenter\\V1\352\002!Google::Cloud::Sec"
-          + "urityCenter::V1b\006proto3"
+          + "\t\022\020\n\010grantees\030\005 \003(\tB\347\001\n\"com.google.cloud"
+          + ".securitycenter.v1B\rDatabaseProtoP\001ZJclo"
+          + "ud.google.com/go/securitycenter/apiv1/se"
+          + "curitycenterpb;securitycenterpb\252\002\036Google"
+          + ".Cloud.SecurityCenter.V1\312\002\036Google\\Cloud\\"
+          + "SecurityCenter\\V1\352\002!Google::Cloud::Secur"
+          + "ityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

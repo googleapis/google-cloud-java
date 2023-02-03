@@ -59,10 +59,10 @@ public final class EventServiceProto {
           + "ent,client_event\032l\312A\023jobs.googleapis.com"
           + "\322AShttps://www.googleapis.com/auth/cloud"
           + "-platform,https://www.googleapis.com/aut"
-          + "h/jobsB\177\n\037com.google.cloud.talent.v4beta"
-          + "1B\021EventServiceProtoP\001ZAgoogle.golang.or"
-          + "g/genproto/googleapis/cloud/talent/v4bet"
-          + "a1;talent\242\002\003CTSb\006proto3"
+          + "h/jobsBu\n\037com.google.cloud.talent.v4beta"
+          + "1B\021EventServiceProtoP\001Z7cloud.google.com"
+          + "/go/talent/apiv4beta1/talentpb;talentpb\242"
+          + "\002\003CTSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

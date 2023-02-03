@@ -110,10 +110,10 @@ public final class CompanyServiceProto {
           + "ies\332A\006parent\032l\312A\023jobs.googleapis.com\322ASh"
           + "ttps://www.googleapis.com/auth/cloud-pla"
           + "tform,https://www.googleapis.com/auth/jo"
-          + "bsBw\n\032com.google.cloud.talent.v4B\023Compan"
-          + "yServiceProtoP\001Z<google.golang.org/genpr"
-          + "oto/googleapis/cloud/talent/v4;talent\242\002\003"
-          + "CTSb\006proto3"
+          + "bsBm\n\032com.google.cloud.talent.v4B\023Compan"
+          + "yServiceProtoP\001Z2cloud.google.com/go/tal"
+          + "ent/apiv4/talentpb;talentpb\242\002\003CTSb\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

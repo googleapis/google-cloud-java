@@ -131,12 +131,12 @@ public final class CatalogProto {
           + "2*.google.cloud.retail.v2.ProductLevelCo"
           + "nfigB\003\340A\002:^\352A[\n\035retail.googleapis.com/Ca"
           + "talog\022:projects/{project}/locations/{loc"
-          + "ation}/catalogs/{catalog}B\301\001\n\032com.google"
-          + ".cloud.retail.v2B\014CatalogProtoP\001Z<google"
-          + ".golang.org/genproto/googleapis/cloud/re"
-          + "tail/v2;retail\242\002\006RETAIL\252\002\026Google.Cloud.R"
-          + "etail.V2\312\002\026Google\\Cloud\\Retail\\V2\352\002\031Goog"
-          + "le::Cloud::Retail::V2b\006proto3"
+          + "ation}/catalogs/{catalog}B\267\001\n\032com.google"
+          + ".cloud.retail.v2B\014CatalogProtoP\001Z2cloud."
+          + "google.com/go/retail/apiv2/retailpb;reta"
+          + "ilpb\242\002\006RETAIL\252\002\026Google.Cloud.Retail.V2\312\002"
+          + "\026Google\\Cloud\\Retail\\V2\352\002\031Google::Cloud:"
+          + ":Retail::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

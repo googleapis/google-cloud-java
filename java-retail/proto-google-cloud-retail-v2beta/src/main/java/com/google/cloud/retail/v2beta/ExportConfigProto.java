@@ -90,12 +90,12 @@ public final class ExportConfigProto {
           + "beta.GcsOutputResult\"<\n\024BigQueryOutputRe"
           + "sult\022\022\n\ndataset_id\030\001 \001(\t\022\020\n\010table_id\030\002 \001"
           + "(\t\"%\n\017GcsOutputResult\022\022\n\noutput_uri\030\001 \001("
-          + "\tB\332\001\n\036com.google.cloud.retail.v2betaB\021Ex"
-          + "portConfigProtoP\001Z@google.golang.org/gen"
-          + "proto/googleapis/cloud/retail/v2beta;ret"
-          + "ail\242\002\006RETAIL\252\002\032Google.Cloud.Retail.V2Bet"
-          + "a\312\002\032Google\\Cloud\\Retail\\V2beta\352\002\035Google:"
-          + ":Cloud::Retail::V2betab\006proto3"
+          + "\tB\320\001\n\036com.google.cloud.retail.v2betaB\021Ex"
+          + "portConfigProtoP\001Z6cloud.google.com/go/r"
+          + "etail/apiv2beta/retailpb;retailpb\242\002\006RETA"
+          + "IL\252\002\032Google.Cloud.Retail.V2Beta\312\002\032Google"
+          + "\\Cloud\\Retail\\V2beta\352\002\035Google::Cloud::Re"
+          + "tail::V2betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -49,14 +49,14 @@ public final class ResourceProto {
           + "y_name\030\003 \001(\t\022\016\n\006parent\030\004 \001(\t\022\033\n\023parent_d"
           + "isplay_name\030\005 \001(\t\022C\n\007folders\030\007 \003(\0132-.goo"
           + "gle.cloud.securitycenter.v1p1beta1.Folde"
-          + "rB\003\340A\003B\214\002\n)com.google.cloud.securitycent"
-          + "er.v1p1beta1B\rResourceProtoP\001ZSgoogle.go"
-          + "lang.org/genproto/googleapis/cloud/secur"
-          + "itycenter/v1p1beta1;securitycenter\252\002%Goo"
-          + "gle.Cloud.SecurityCenter.V1P1Beta1\312\002%Goo"
-          + "gle\\Cloud\\SecurityCenter\\V1p1beta1\352\002(Goo"
-          + "gle::Cloud::SecurityCenter::V1p1beta1b\006p"
-          + "roto3"
+          + "rB\003\340A\003B\212\002\n)com.google.cloud.securitycent"
+          + "er.v1p1beta1B\rResourceProtoP\001ZQcloud.goo"
+          + "gle.com/go/securitycenter/apiv1p1beta1/s"
+          + "ecuritycenterpb;securitycenterpb\252\002%Googl"
+          + "e.Cloud.SecurityCenter.V1P1Beta1\312\002%Googl"
+          + "e\\Cloud\\SecurityCenter\\V1p1beta1\352\002(Googl"
+          + "e::Cloud::SecurityCenter::V1p1beta1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

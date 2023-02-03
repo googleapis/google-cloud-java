@@ -46,10 +46,9 @@ public final class TenantProto {
           + "o\"v\n\006Tenant\022\014\n\004name\030\001 \001(\t\022\030\n\013external_id"
           + "\030\002 \001(\tB\003\340A\002:D\352AA\n\032jobs.googleapis.com/Te"
           + "nant\022#projects/{project}/tenants/{tenant"
-          + "}Bo\n\032com.google.cloud.talent.v4B\013TenantP"
-          + "rotoP\001Z<google.golang.org/genproto/googl"
-          + "eapis/cloud/talent/v4;talent\242\002\003CTSb\006prot"
-          + "o3"
+          + "}Be\n\032com.google.cloud.talent.v4B\013TenantP"
+          + "rotoP\001Z2cloud.google.com/go/talent/apiv4"
+          + "/talentpb;talentpb\242\002\003CTSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

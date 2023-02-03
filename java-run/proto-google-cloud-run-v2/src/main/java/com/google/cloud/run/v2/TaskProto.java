@@ -130,9 +130,9 @@ public final class TaskProto {
           + "t=projects/*/locations/*/jobs/*/executio"
           + "ns/*}/tasks\332A\006parent\032F\312A\022run.googleapis."
           + "com\322A.https://www.googleapis.com/auth/cl"
-          + "oud-platformB^\n\027com.google.cloud.run.v2B"
-          + "\tTaskProtoP\001Z6google.golang.org/genproto"
-          + "/googleapis/cloud/run/v2;runb\006proto3"
+          + "oud-platformBQ\n\027com.google.cloud.run.v2B"
+          + "\tTaskProtoP\001Z)cloud.google.com/go/run/ap"
+          + "iv2/runpb;runpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

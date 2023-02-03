@@ -109,12 +109,12 @@ public final class ControlServiceProto {
           + "arent=projects/*/locations/*/catalogs/*}"
           + "/controls\332A\006parent\032I\312A\025retail.googleapis"
           + ".com\322A.https://www.googleapis.com/auth/c"
-          + "loud-platformB\310\001\n\032com.google.cloud.retai"
-          + "l.v2B\023ControlServiceProtoP\001Z<google.gola"
-          + "ng.org/genproto/googleapis/cloud/retail/"
-          + "v2;retail\242\002\006RETAIL\252\002\026Google.Cloud.Retail"
-          + ".V2\312\002\026Google\\Cloud\\Retail\\V2\352\002\031Google::C"
-          + "loud::Retail::V2b\006proto3"
+          + "loud-platformB\276\001\n\032com.google.cloud.retai"
+          + "l.v2B\023ControlServiceProtoP\001Z2cloud.googl"
+          + "e.com/go/retail/apiv2/retailpb;retailpb\242"
+          + "\002\006RETAIL\252\002\026Google.Cloud.Retail.V2\312\002\026Goog"
+          + "le\\Cloud\\Retail\\V2\352\002\031Google::Cloud::Reta"
+          + "il::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

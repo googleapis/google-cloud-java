@@ -140,12 +140,12 @@ public final class ServingConfigServiceProto {
           + "rvingConfigs/*}:removeControl:\001*\332A\016servi"
           + "ng_config\032I\312A\025retail.googleapis.com\322A.ht"
           + "tps://www.googleapis.com/auth/cloud-plat"
-          + "formB\316\001\n\032com.google.cloud.retail.v2B\031Ser"
-          + "vingConfigServiceProtoP\001Z<google.golang."
-          + "org/genproto/googleapis/cloud/retail/v2;"
-          + "retail\242\002\006RETAIL\252\002\026Google.Cloud.Retail.V2"
-          + "\312\002\026Google\\Cloud\\Retail\\V2\352\002\031Google::Clou"
-          + "d::Retail::V2b\006proto3"
+          + "formB\304\001\n\032com.google.cloud.retail.v2B\031Ser"
+          + "vingConfigServiceProtoP\001Z2cloud.google.c"
+          + "om/go/retail/apiv2/retailpb;retailpb\242\002\006R"
+          + "ETAIL\252\002\026Google.Cloud.Retail.V2\312\002\026Google\\"
+          + "Cloud\\Retail\\V2\352\002\031Google::Cloud::Retail:"
+          + ":V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

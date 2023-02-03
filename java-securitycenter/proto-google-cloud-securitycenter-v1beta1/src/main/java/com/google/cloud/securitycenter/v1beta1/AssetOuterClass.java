@@ -72,11 +72,11 @@ public final class AssetOuterClass {
           + "rtiesEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026"
           + ".google.protobuf.Value:\0028\001:U\352AR\n#securit"
           + "ycenter.googleapis.com/Asset\022+organizati"
-          + "ons/{organization}/assets/{asset}B~\n\'com"
-          + ".google.cloud.securitycenter.v1beta1P\001ZQ"
-          + "google.golang.org/genproto/googleapis/cl"
-          + "oud/securitycenter/v1beta1;securitycente"
-          + "rb\006proto3"
+          + "ons/{organization}/assets/{asset}B|\n\'com"
+          + ".google.cloud.securitycenter.v1beta1P\001ZO"
+          + "cloud.google.com/go/securitycenter/apiv1"
+          + "beta1/securitycenterpb;securitycenterpbb"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

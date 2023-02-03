@@ -340,15 +340,14 @@ public final class SettingsServiceProto {
           + "nt=organizations/*}/components\332A\006parent\032"
           + "Q\312A\035securitycenter.googleapis.com\322A.http"
           + "s://www.googleapis.com/auth/cloud-platfo"
-          + "rmB\264\002\n0com.google.cloud.securitycenter.s"
+          + "rmB\254\002\n0com.google.cloud.securitycenter.s"
           + "ettings.v1beta1B\024SettingsServiceProtoP\001Z"
-          + "Tgoogle.golang.org/genproto/googleapis/c"
-          + "loud/securitycenter/settings/v1beta1;set"
-          + "tings\370\001\001\252\002,Google.Cloud.SecurityCenter.S"
-          + "ettings.V1Beta1\312\002,Google\\Cloud\\SecurityC"
-          + "enter\\Settings\\V1beta1\352\0020Google::Cloud::"
-          + "SecurityCenter::Settings::V1beta1b\006proto"
-          + "3"
+          + "Lcloud.google.com/go/securitycenter/sett"
+          + "ings/apiv1beta1/settingspb;settingspb\370\001\001"
+          + "\252\002,Google.Cloud.SecurityCenter.Settings."
+          + "V1Beta1\312\002,Google\\Cloud\\SecurityCenter\\Se"
+          + "ttings\\V1beta1\352\0020Google::Cloud::Security"
+          + "Center::Settings::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -211,10 +211,10 @@ public final class CommonProto {
           + "_FORMATTING_ONLY\020\002*{\n\rCommuteMethod\022\036\n\032C"
           + "OMMUTE_METHOD_UNSPECIFIED\020\000\022\013\n\007DRIVING\020\001"
           + "\022\013\n\007TRANSIT\020\002\022\013\n\007WALKING\020\003\022\013\n\007CYCLING\020\004\022"
-          + "\026\n\022TRANSIT_ACCESSIBLE\020\005Bo\n\032com.google.cl"
-          + "oud.talent.v4B\013CommonProtoP\001Z<google.gol"
-          + "ang.org/genproto/googleapis/cloud/talent"
-          + "/v4;talent\242\002\003CTSb\006proto3"
+          + "\026\n\022TRANSIT_ACCESSIBLE\020\005Be\n\032com.google.cl"
+          + "oud.talent.v4B\013CommonProtoP\001Z2cloud.goog"
+          + "le.com/go/talent/apiv4/talentpb;talentpb"
+          + "\242\002\003CTSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

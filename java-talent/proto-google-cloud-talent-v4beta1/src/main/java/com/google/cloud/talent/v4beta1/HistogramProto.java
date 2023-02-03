@@ -55,10 +55,10 @@ public final class HistogramProto {
           + "y\030\001 \001(\t\022S\n\thistogram\030\002 \003(\0132@.google.clou"
           + "d.talent.v4beta1.HistogramQueryResult.Hi"
           + "stogramEntry\0320\n\016HistogramEntry\022\013\n\003key\030\001 "
-          + "\001(\t\022\r\n\005value\030\002 \001(\003:\0028\001B|\n\037com.google.clo"
-          + "ud.talent.v4beta1B\016HistogramProtoP\001ZAgoo"
-          + "gle.golang.org/genproto/googleapis/cloud"
-          + "/talent/v4beta1;talent\242\002\003CTSb\006proto3"
+          + "\001(\t\022\r\n\005value\030\002 \001(\003:\0028\001Br\n\037com.google.clo"
+          + "ud.talent.v4beta1B\016HistogramProtoP\001Z7clo"
+          + "ud.google.com/go/talent/apiv4beta1/talen"
+          + "tpb;talentpb\242\002\003CTSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

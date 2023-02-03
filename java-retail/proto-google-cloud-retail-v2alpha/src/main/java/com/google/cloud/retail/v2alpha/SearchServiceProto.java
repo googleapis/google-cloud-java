@@ -226,12 +226,12 @@ public final class SearchServiceProto {
           + "ations/*/catalogs/*/servingConfigs/*}:se"
           + "arch:\001*\032I\312A\025retail.googleapis.com\322A.http"
           + "s://www.googleapis.com/auth/cloud-platfo"
-          + "rmB\340\001\n\037com.google.cloud.retail.v2alphaB\022"
-          + "SearchServiceProtoP\001ZAgoogle.golang.org/"
-          + "genproto/googleapis/cloud/retail/v2alpha"
-          + ";retail\242\002\006RETAIL\252\002\033Google.Cloud.Retail.V"
-          + "2Alpha\312\002\033Google\\Cloud\\Retail\\V2alpha\352\002\036G"
-          + "oogle::Cloud::Retail::V2alphab\006proto3"
+          + "rmB\326\001\n\037com.google.cloud.retail.v2alphaB\022"
+          + "SearchServiceProtoP\001Z7cloud.google.com/g"
+          + "o/retail/apiv2alpha/retailpb;retailpb\242\002\006"
+          + "RETAIL\252\002\033Google.Cloud.Retail.V2Alpha\312\002\033G"
+          + "oogle\\Cloud\\Retail\\V2alpha\352\002\036Google::Clo"
+          + "ud::Retail::V2alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

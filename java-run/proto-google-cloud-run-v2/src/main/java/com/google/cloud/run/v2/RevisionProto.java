@@ -142,10 +142,10 @@ public final class RevisionProto {
           + "s/*}\212\323\344\223\002.\022,\n\004name\022$projects/*/locations"
           + "/{location=*}/**\332A\004name\312A\024\n\010Revision\022\010Re"
           + "vision\032F\312A\022run.googleapis.com\322A.https://"
-          + "www.googleapis.com/auth/cloud-platformBb"
+          + "www.googleapis.com/auth/cloud-platformBU"
           + "\n\027com.google.cloud.run.v2B\rRevisionProto"
-          + "P\001Z6google.golang.org/genproto/googleapi"
-          + "s/cloud/run/v2;runb\006proto3"
+          + "P\001Z)cloud.google.com/go/run/apiv2/runpb;"
+          + "runpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

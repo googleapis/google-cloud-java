@@ -115,13 +115,12 @@ public final class ModelProto {
           + "DATA_ERROR\020\002:k\352Ah\n\033retail.googleapis.com"
           + "/Model\022Iprojects/{project}/locations/{lo"
           + "cation}/catalogs/{catalog}/models/{model"
-          + "}B\021\n\017training_configB\330\001\n\037com.google.clou"
-          + "d.retail.v2alphaB\nModelProtoP\001ZAgoogle.g"
-          + "olang.org/genproto/googleapis/cloud/reta"
-          + "il/v2alpha;retail\242\002\006RETAIL\252\002\033Google.Clou"
-          + "d.Retail.V2Alpha\312\002\033Google\\Cloud\\Retail\\V"
-          + "2alpha\352\002\036Google::Cloud::Retail::V2alphab"
-          + "\006proto3"
+          + "}B\021\n\017training_configB\316\001\n\037com.google.clou"
+          + "d.retail.v2alphaB\nModelProtoP\001Z7cloud.go"
+          + "ogle.com/go/retail/apiv2alpha/retailpb;r"
+          + "etailpb\242\002\006RETAIL\252\002\033Google.Cloud.Retail.V"
+          + "2Alpha\312\002\033Google\\Cloud\\Retail\\V2alpha\352\002\036G"
+          + "oogle::Cloud::Retail::V2alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

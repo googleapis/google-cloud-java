@@ -46,11 +46,11 @@ public final class SourceOuterClass {
           + "ource\022\014\n\004name\030\001 \001(\t\022\024\n\014display_name\030\002 \001("
           + "\t\022\023\n\013description\030\003 \001(\t:X\352AU\n$securitycen"
           + "ter.googleapis.com/Source\022-organizations"
-          + "/{organization}/sources/{source}B~\n\'com."
-          + "google.cloud.securitycenter.v1beta1P\001ZQg"
-          + "oogle.golang.org/genproto/googleapis/clo"
-          + "ud/securitycenter/v1beta1;securitycenter"
-          + "b\006proto3"
+          + "/{organization}/sources/{source}B|\n\'com."
+          + "google.cloud.securitycenter.v1beta1P\001ZOc"
+          + "loud.google.com/go/securitycenter/apiv1b"
+          + "eta1/securitycenterpb;securitycenterpbb\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

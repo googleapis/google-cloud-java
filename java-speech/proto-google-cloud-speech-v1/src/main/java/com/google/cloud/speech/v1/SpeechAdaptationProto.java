@@ -175,10 +175,10 @@ public final class SpeechAdaptationProto {
           + "\344\223\0023*1/v1/{name=projects/*/locations/*/c"
           + "ustomClasses/*}\332A\004name\032I\312A\025speech.google"
           + "apis.com\322A.https://www.googleapis.com/au"
-          + "th/cloud-platformB|\n\032com.google.cloud.sp"
-          + "eech.v1B\025SpeechAdaptationProtoP\001Z<google"
-          + ".golang.org/genproto/googleapis/cloud/sp"
-          + "eech/v1;speech\370\001\001\242\002\003GCSb\006proto3"
+          + "th/cloud-platformBr\n\032com.google.cloud.sp"
+          + "eech.v1B\025SpeechAdaptationProtoP\001Z2cloud."
+          + "google.com/go/speech/apiv1/speechpb;spee"
+          + "chpb\370\001\001\242\002\003GCSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -51,13 +51,13 @@ public final class ExfiltrationProto {
           + "urce\022>\n\007targets\030\002 \003(\0132-.google.cloud.sec"
           + "uritycenter.v1.ExfilResource\"1\n\rExfilRes"
           + "ource\022\014\n\004name\030\001 \001(\t\022\022\n\ncomponents\030\002 \003(\tB"
-          + "\355\001\n\"com.google.cloud.securitycenter.v1B\021"
-          + "ExfiltrationProtoP\001ZLgoogle.golang.org/g"
-          + "enproto/googleapis/cloud/securitycenter/"
-          + "v1;securitycenter\252\002\036Google.Cloud.Securit"
-          + "yCenter.V1\312\002\036Google\\Cloud\\SecurityCenter"
-          + "\\V1\352\002!Google::Cloud::SecurityCenter::V1b"
-          + "\006proto3"
+          + "\353\001\n\"com.google.cloud.securitycenter.v1B\021"
+          + "ExfiltrationProtoP\001ZJcloud.google.com/go"
+          + "/securitycenter/apiv1/securitycenterpb;s"
+          + "ecuritycenterpb\252\002\036Google.Cloud.SecurityC"
+          + "enter.V1\312\002\036Google\\Cloud\\SecurityCenter\\V"
+          + "1\352\002!Google::Cloud::SecurityCenter::V1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

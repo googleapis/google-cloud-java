@@ -56,12 +56,12 @@ public final class PurgeConfigProto {
           + "A\037\n\035retail.googleapis.com/Catalog\022\023\n\006fil"
           + "ter\030\002 \001(\tB\003\340A\002\022\r\n\005force\030\003 \001(\010\"6\n\027PurgeUs"
           + "erEventsResponse\022\033\n\023purged_events_count\030"
-          + "\001 \001(\003B\331\001\n\036com.google.cloud.retail.v2beta"
-          + "B\020PurgeConfigProtoP\001Z@google.golang.org/"
-          + "genproto/googleapis/cloud/retail/v2beta;"
-          + "retail\242\002\006RETAIL\252\002\032Google.Cloud.Retail.V2"
-          + "Beta\312\002\032Google\\Cloud\\Retail\\V2beta\352\002\035Goog"
-          + "le::Cloud::Retail::V2betab\006proto3"
+          + "\001 \001(\003B\317\001\n\036com.google.cloud.retail.v2beta"
+          + "B\020PurgeConfigProtoP\001Z6cloud.google.com/g"
+          + "o/retail/apiv2beta/retailpb;retailpb\242\002\006R"
+          + "ETAIL\252\002\032Google.Cloud.Retail.V2Beta\312\002\032Goo"
+          + "gle\\Cloud\\Retail\\V2beta\352\002\035Google::Cloud:"
+          + ":Retail::V2betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

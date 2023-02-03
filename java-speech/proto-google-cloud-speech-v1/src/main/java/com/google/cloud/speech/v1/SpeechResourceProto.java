@@ -82,11 +82,10 @@ public final class SpeechResourceProto {
           + "2#.google.cloud.speech.v1.CustomClass\022J\n"
           + "\014abnf_grammar\030\004 \001(\01324.google.cloud.speec"
           + "h.v1.SpeechAdaptation.ABNFGrammar\032#\n\013ABN"
-          + "FGrammar\022\024\n\014abnf_strings\030\001 \003(\tBz\n\032com.go"
+          + "FGrammar\022\024\n\014abnf_strings\030\001 \003(\tBp\n\032com.go"
           + "ogle.cloud.speech.v1B\023SpeechResourceProt"
-          + "oP\001Z<google.golang.org/genproto/googleap"
-          + "is/cloud/speech/v1;speech\370\001\001\242\002\003GCSb\006prot"
-          + "o3"
+          + "oP\001Z2cloud.google.com/go/speech/apiv1/sp"
+          + "eechpb;speechpb\370\001\001\242\002\003GCSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

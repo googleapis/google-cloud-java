@@ -71,13 +71,13 @@ public final class ServingConfigProto {
           + "SITY\020\003:\205\001\352A\201\001\n#retail.googleapis.com/Ser"
           + "vingConfig\022Zprojects/{project}/locations"
           + "/{location}/catalogs/{catalog}/servingCo"
-          + "nfigs/{serving_config}B\333\001\n\036com.google.cl"
+          + "nfigs/{serving_config}B\321\001\n\036com.google.cl"
           + "oud.retail.v2betaB\022ServingConfigProtoP\001Z"
-          + "@google.golang.org/genproto/googleapis/c"
-          + "loud/retail/v2beta;retail\242\002\006RETAIL\252\002\032Goo"
-          + "gle.Cloud.Retail.V2Beta\312\002\032Google\\Cloud\\R"
-          + "etail\\V2beta\352\002\035Google::Cloud::Retail::V2"
-          + "betab\006proto3"
+          + "6cloud.google.com/go/retail/apiv2beta/re"
+          + "tailpb;retailpb\242\002\006RETAIL\252\002\032Google.Cloud."
+          + "Retail.V2Beta\312\002\032Google\\Cloud\\Retail\\V2be"
+          + "ta\352\002\035Google::Cloud::Retail::V2betab\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

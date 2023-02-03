@@ -447,15 +447,14 @@ public final class PrivateCaResourcesProto {
           + "\023AFFILIATION_CHANGED\020\003\022\016\n\nSUPERSEDED\020\004\022\032"
           + "\n\026CESSATION_OF_OPERATION\020\005\022\024\n\020CERTIFICAT"
           + "E_HOLD\020\006\022\027\n\023PRIVILEGE_WITHDRAWN\020\007\022\"\n\036ATT"
-          + "RIBUTE_AUTHORITY_COMPROMISE\020\010B\237\002\n+com.go"
+          + "RIBUTE_AUTHORITY_COMPROMISE\020\010B\230\002\n+com.go"
           + "ogle.cloud.security.privateca.v1beta1B\027P"
-          + "rivateCaResourcesProtoP\001ZPgoogle.golang."
-          + "org/genproto/googleapis/cloud/security/p"
-          + "rivateca/v1beta1;privateca\370\001\001\252\002\'Google.C"
-          + "loud.Security.PrivateCA.V1Beta1\312\002\'Google"
-          + "\\Cloud\\Security\\PrivateCA\\V1beta1\352\002+Goog"
-          + "le::Cloud::Security::PrivateCA::V1beta1b"
-          + "\006proto3"
+          + "rivateCaResourcesProtoP\001ZIcloud.google.c"
+          + "om/go/security/privateca/apiv1beta1/priv"
+          + "atecapb;privatecapb\370\001\001\252\002\'Google.Cloud.Se"
+          + "curity.PrivateCA.V1Beta1\312\002\'Google\\Cloud\\"
+          + "Security\\PrivateCA\\V1beta1\352\002+Google::Clo"
+          + "ud::Security::PrivateCA::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

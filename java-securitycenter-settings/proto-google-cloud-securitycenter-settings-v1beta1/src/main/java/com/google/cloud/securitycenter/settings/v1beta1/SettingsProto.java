@@ -99,15 +99,15 @@ public final class SettingsProto {
           + "/clusters/{cluster}/settings\022?projects/{"
           + "project}/regions/{region}/clusters/{clus"
           + "ter}/settings\022;projects/{project}/zones/"
-          + "{zone}/clusters/{cluster}/settingsB\255\002\n0c"
+          + "{zone}/clusters/{cluster}/settingsB\245\002\n0c"
           + "om.google.cloud.securitycenter.settings."
-          + "v1beta1B\rSettingsProtoP\001ZTgoogle.golang."
-          + "org/genproto/googleapis/cloud/securityce"
-          + "nter/settings/v1beta1;settings\370\001\001\252\002,Goog"
-          + "le.Cloud.SecurityCenter.Settings.V1Beta1"
-          + "\312\002,Google\\Cloud\\SecurityCenter\\Settings\\"
-          + "V1beta1\352\0020Google::Cloud::SecurityCenter:"
-          + ":Settings::V1beta1b\006proto3"
+          + "v1beta1B\rSettingsProtoP\001ZLcloud.google.c"
+          + "om/go/securitycenter/settings/apiv1beta1"
+          + "/settingspb;settingspb\370\001\001\252\002,Google.Cloud"
+          + ".SecurityCenter.Settings.V1Beta1\312\002,Googl"
+          + "e\\Cloud\\SecurityCenter\\Settings\\V1beta1\352"
+          + "\0020Google::Cloud::SecurityCenter::Setting"
+          + "s::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

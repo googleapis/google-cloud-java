@@ -49,13 +49,13 @@ public final class NotificationMessageProto {
           + "(\t\022:\n\007finding\030\002 \001(\0132\'.google.cloud.secur"
           + "itycenter.v1.FindingH\000\022:\n\010resource\030\003 \001(\013"
           + "2(.google.cloud.securitycenter.v1.Resour"
-          + "ceB\007\n\005eventB\364\001\n\"com.google.cloud.securit"
-          + "ycenter.v1B\030NotificationMessageProtoP\001ZL"
-          + "google.golang.org/genproto/googleapis/cl"
-          + "oud/securitycenter/v1;securitycenter\252\002\036G"
-          + "oogle.Cloud.SecurityCenter.V1\312\002\036Google\\C"
-          + "loud\\SecurityCenter\\V1\352\002!Google::Cloud::"
-          + "SecurityCenter::V1b\006proto3"
+          + "ceB\007\n\005eventB\362\001\n\"com.google.cloud.securit"
+          + "ycenter.v1B\030NotificationMessageProtoP\001ZJ"
+          + "cloud.google.com/go/securitycenter/apiv1"
+          + "/securitycenterpb;securitycenterpb\252\002\036Goo"
+          + "gle.Cloud.SecurityCenter.V1\312\002\036Google\\Clo"
+          + "ud\\SecurityCenter\\V1\352\002!Google::Cloud::Se"
+          + "curityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -56,15 +56,15 @@ public final class BillingSettingsProto {
           + "IED\020\000\022\014\n\010STANDARD\020\001\022\013\n\007PREMIUM\020\002*`\n\013Bill"
           + "ingType\022\034\n\030BILLING_TYPE_UNSPECIFIED\020\000\022\020\n"
           + "\014SUBSCRIPTION\020\001\022\026\n\022TRIAL_SUBSCRIPTION\020\002\022"
-          + "\t\n\005ALPHA\020\003B\264\002\n0com.google.cloud.security"
+          + "\t\n\005ALPHA\020\003B\254\002\n0com.google.cloud.security"
           + "center.settings.v1beta1B\024BillingSettings"
-          + "ProtoP\001ZTgoogle.golang.org/genproto/goog"
-          + "leapis/cloud/securitycenter/settings/v1b"
-          + "eta1;settings\370\001\001\252\002,Google.Cloud.Security"
-          + "Center.Settings.V1Beta1\312\002,Google\\Cloud\\S"
-          + "ecurityCenter\\Settings\\V1beta1\352\0020Google:"
-          + ":Cloud::SecurityCenter::Settings::V1beta"
-          + "1b\006proto3"
+          + "ProtoP\001ZLcloud.google.com/go/securitycen"
+          + "ter/settings/apiv1beta1/settingspb;setti"
+          + "ngspb\370\001\001\252\002,Google.Cloud.SecurityCenter.S"
+          + "ettings.V1Beta1\312\002,Google\\Cloud\\SecurityC"
+          + "enter\\Settings\\V1beta1\352\0020Google::Cloud::"
+          + "SecurityCenter::Settings::V1beta1b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -181,10 +181,10 @@ public final class ServiceProto {
           + "ponse\"N\202\323\344\223\002H\"C/v2/{resource=projects/*/"
           + "locations/*/services/*}:testIamPermissio"
           + "ns:\001*\032F\312A\022run.googleapis.com\322A.https://w"
-          + "ww.googleapis.com/auth/cloud-platformBa\n"
+          + "ww.googleapis.com/auth/cloud-platformBT\n"
           + "\027com.google.cloud.run.v2B\014ServiceProtoP\001"
-          + "Z6google.golang.org/genproto/googleapis/"
-          + "cloud/run/v2;runb\006proto3"
+          + "Z)cloud.google.com/go/run/apiv2/runpb;ru"
+          + "npbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

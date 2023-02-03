@@ -494,13 +494,13 @@ public final class SecuritycenterService {
           + "ity_marks\332A\032security_marks,update_mask\032Q"
           + "\312A\035securitycenter.googleapis.com\322A.https"
           + "://www.googleapis.com/auth/cloud-platfor"
-          + "mB\375\001\n)com.google.cloud.securitycenter.v1"
-          + "p1beta1P\001ZSgoogle.golang.org/genproto/go"
-          + "ogleapis/cloud/securitycenter/v1p1beta1;"
-          + "securitycenter\252\002%Google.Cloud.SecurityCe"
-          + "nter.V1P1Beta1\312\002%Google\\Cloud\\SecurityCe"
-          + "nter\\V1p1beta1\352\002(Google::Cloud::Security"
-          + "Center::V1p1beta1P\000P\001b\006proto3"
+          + "mB\373\001\n)com.google.cloud.securitycenter.v1"
+          + "p1beta1P\001ZQcloud.google.com/go/securityc"
+          + "enter/apiv1p1beta1/securitycenterpb;secu"
+          + "ritycenterpb\252\002%Google.Cloud.SecurityCent"
+          + "er.V1P1Beta1\312\002%Google\\Cloud\\SecurityCent"
+          + "er\\V1p1beta1\352\002(Google::Cloud::SecurityCe"
+          + "nter::V1p1beta1P\000P\001b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -105,14 +105,14 @@ public final class KubernetesProto {
           + "\022\022\n\016SERVICEACCOUNT\020\002\022\t\n\005GROUP\020\003\032}\n\014Acces"
           + "sReview\022\r\n\005group\030\001 \001(\t\022\n\n\002ns\030\002 \001(\t\022\014\n\004na"
           + "me\030\003 \001(\t\022\020\n\010resource\030\004 \001(\t\022\023\n\013subresourc"
-          + "e\030\005 \001(\t\022\014\n\004verb\030\006 \001(\t\022\017\n\007version\030\007 \001(\tB\353"
+          + "e\030\005 \001(\t\022\014\n\004verb\030\006 \001(\t\022\017\n\007version\030\007 \001(\tB\351"
           + "\001\n\"com.google.cloud.securitycenter.v1B\017K"
-          + "ubernetesProtoP\001ZLgoogle.golang.org/genp"
-          + "roto/googleapis/cloud/securitycenter/v1;"
-          + "securitycenter\252\002\036Google.Cloud.SecurityCe"
-          + "nter.V1\312\002\036Google\\Cloud\\SecurityCenter\\V1"
-          + "\352\002!Google::Cloud::SecurityCenter::V1b\006pr"
-          + "oto3"
+          + "ubernetesProtoP\001ZJcloud.google.com/go/se"
+          + "curitycenter/apiv1/securitycenterpb;secu"
+          + "ritycenterpb\252\002\036Google.Cloud.SecurityCent"
+          + "er.V1\312\002\036Google\\Cloud\\SecurityCenter\\V1\352\002"
+          + "!Google::Cloud::SecurityCenter::V1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

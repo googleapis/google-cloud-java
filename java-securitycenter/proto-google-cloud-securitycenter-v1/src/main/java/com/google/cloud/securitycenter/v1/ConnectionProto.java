@@ -48,13 +48,13 @@ public final class ConnectionProto {
           + " \001(\01623.google.cloud.securitycenter.v1.Co"
           + "nnection.Protocol\"R\n\010Protocol\022\030\n\024PROTOCO"
           + "L_UNSPECIFIED\020\000\022\010\n\004ICMP\020\001\022\007\n\003TCP\020\006\022\007\n\003UD"
-          + "P\020\021\022\007\n\003GRE\020/\022\007\n\003ESP\0202B\353\001\n\"com.google.clo"
+          + "P\020\021\022\007\n\003GRE\020/\022\007\n\003ESP\0202B\351\001\n\"com.google.clo"
           + "ud.securitycenter.v1B\017ConnectionProtoP\001Z"
-          + "Lgoogle.golang.org/genproto/googleapis/c"
-          + "loud/securitycenter/v1;securitycenter\252\002\036"
-          + "Google.Cloud.SecurityCenter.V1\312\002\036Google\\"
-          + "Cloud\\SecurityCenter\\V1\352\002!Google::Cloud:"
-          + ":SecurityCenter::V1b\006proto3"
+          + "Jcloud.google.com/go/securitycenter/apiv"
+          + "1/securitycenterpb;securitycenterpb\252\002\036Go"
+          + "ogle.Cloud.SecurityCenter.V1\312\002\036Google\\Cl"
+          + "oud\\SecurityCenter\\V1\352\002!Google::Cloud::S"
+          + "ecurityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

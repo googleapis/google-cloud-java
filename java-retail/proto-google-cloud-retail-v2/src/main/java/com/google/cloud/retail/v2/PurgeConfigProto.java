@@ -55,13 +55,12 @@ public final class PurgeConfigProto {
           + "ntsRequest\0225\n\006parent\030\001 \001(\tB%\340A\002\372A\037\n\035reta"
           + "il.googleapis.com/Catalog\022\023\n\006filter\030\002 \001("
           + "\tB\003\340A\002\022\r\n\005force\030\003 \001(\010\"6\n\027PurgeUserEvents"
-          + "Response\022\033\n\023purged_events_count\030\001 \001(\003B\305\001"
+          + "Response\022\033\n\023purged_events_count\030\001 \001(\003B\273\001"
           + "\n\032com.google.cloud.retail.v2B\020PurgeConfi"
-          + "gProtoP\001Z<google.golang.org/genproto/goo"
-          + "gleapis/cloud/retail/v2;retail\242\002\006RETAIL\252"
-          + "\002\026Google.Cloud.Retail.V2\312\002\026Google\\Cloud\\"
-          + "Retail\\V2\352\002\031Google::Cloud::Retail::V2b\006p"
-          + "roto3"
+          + "gProtoP\001Z2cloud.google.com/go/retail/api"
+          + "v2/retailpb;retailpb\242\002\006RETAIL\252\002\026Google.C"
+          + "loud.Retail.V2\312\002\026Google\\Cloud\\Retail\\V2\352"
+          + "\002\031Google::Cloud::Retail::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

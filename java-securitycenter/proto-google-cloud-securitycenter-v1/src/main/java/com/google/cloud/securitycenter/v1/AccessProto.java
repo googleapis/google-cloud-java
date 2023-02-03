@@ -62,13 +62,13 @@ public final class AccessProto {
           + "er_name\030\013 \001(\t\"R\n\034ServiceAccountDelegatio"
           + "nInfo\022\027\n\017principal_email\030\001 \001(\t\022\031\n\021princi"
           + "pal_subject\030\002 \001(\t\"\"\n\013Geolocation\022\023\n\013regi"
-          + "on_code\030\001 \001(\tB\347\001\n\"com.google.cloud.secur"
-          + "itycenter.v1B\013AccessProtoP\001ZLgoogle.gola"
-          + "ng.org/genproto/googleapis/cloud/securit"
-          + "ycenter/v1;securitycenter\252\002\036Google.Cloud"
-          + ".SecurityCenter.V1\312\002\036Google\\Cloud\\Securi"
-          + "tyCenter\\V1\352\002!Google::Cloud::SecurityCen"
-          + "ter::V1b\006proto3"
+          + "on_code\030\001 \001(\tB\345\001\n\"com.google.cloud.secur"
+          + "itycenter.v1B\013AccessProtoP\001ZJcloud.googl"
+          + "e.com/go/securitycenter/apiv1/securityce"
+          + "nterpb;securitycenterpb\252\002\036Google.Cloud.S"
+          + "ecurityCenter.V1\312\002\036Google\\Cloud\\Security"
+          + "Center\\V1\352\002!Google::Cloud::SecurityCente"
+          + "r::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

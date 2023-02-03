@@ -76,13 +76,13 @@ public final class TextToSpeechLongAudioSynthesisProto {
           + "dioResponse\022\033SynthesizeLongAudioMetadata"
           + "\032O\312A\033texttospeech.googleapis.com\322A.https"
           + "://www.googleapis.com/auth/cloud-platfor"
-          + "mB\366\001\n com.google.cloud.texttospeech.v1B#"
-          + "TextToSpeechLongAudioSynthesisProtoP\001ZHg"
-          + "oogle.golang.org/genproto/googleapis/clo"
-          + "ud/texttospeech/v1;texttospeech\370\001\001\252\002\034Goo"
-          + "gle.Cloud.TextToSpeech.V1\312\002\034Google\\Cloud"
-          + "\\TextToSpeech\\V1\352\002\037Google::Cloud::TextTo"
-          + "Speech::V1b\006proto3"
+          + "mB\362\001\n com.google.cloud.texttospeech.v1B#"
+          + "TextToSpeechLongAudioSynthesisProtoP\001ZDc"
+          + "loud.google.com/go/texttospeech/apiv1/te"
+          + "xttospeechpb;texttospeechpb\370\001\001\252\002\034Google."
+          + "Cloud.TextToSpeech.V1\312\002\034Google\\Cloud\\Tex"
+          + "tToSpeech\\V1\352\002\037Google::Cloud::TextToSpee"
+          + "ch::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

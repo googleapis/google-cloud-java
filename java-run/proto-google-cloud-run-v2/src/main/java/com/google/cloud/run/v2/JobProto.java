@@ -181,10 +181,9 @@ public final class JobProto {
           + "\223\002D\"?/v2/{resource=projects/*/locations/"
           + "*/jobs/*}:testIamPermissions:\001*\032F\312A\022run."
           + "googleapis.com\322A.https://www.googleapis."
-          + "com/auth/cloud-platformB]\n\027com.google.cl"
-          + "oud.run.v2B\010JobProtoP\001Z6google.golang.or"
-          + "g/genproto/googleapis/cloud/run/v2;runP\000"
-          + "b\006proto3"
+          + "com/auth/cloud-platformBP\n\027com.google.cl"
+          + "oud.run.v2B\010JobProtoP\001Z)cloud.google.com"
+          + "/go/run/apiv2/runpb;runpbP\000b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -64,10 +64,10 @@ public final class CompanyResourceProto {
           + "ation:\201\001\352A~\n\033jobs.googleapis.com/Company"
           + "\0227projects/{project}/tenants/{tenant}/co"
           + "mpanies/{company}\022&projects/{project}/co"
-          + "mpanies/{company}B\202\001\n\037com.google.cloud.t"
-          + "alent.v4beta1B\024CompanyResourceProtoP\001ZAg"
-          + "oogle.golang.org/genproto/googleapis/clo"
-          + "ud/talent/v4beta1;talent\242\002\003CTSb\006proto3"
+          + "mpanies/{company}Bx\n\037com.google.cloud.ta"
+          + "lent.v4beta1B\024CompanyResourceProtoP\001Z7cl"
+          + "oud.google.com/go/talent/apiv4beta1/tale"
+          + "ntpb;talentpb\242\002\003CTSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

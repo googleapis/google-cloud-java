@@ -86,14 +86,14 @@ public final class AssetOuterClass {
           + "\001\352A\226\001\n#securitycenter.googleapis.com/Ass"
           + "et\022+organizations/{organization}/assets/"
           + "{asset}\022\037folders/{folder}/assets/{asset}"
-          + "\022!projects/{project}/assets/{asset}B\375\001\n)"
+          + "\022!projects/{project}/assets/{asset}B\373\001\n)"
           + "com.google.cloud.securitycenter.v1p1beta"
-          + "1P\001ZSgoogle.golang.org/genproto/googleap"
-          + "is/cloud/securitycenter/v1p1beta1;securi"
-          + "tycenter\252\002%Google.Cloud.SecurityCenter.V"
-          + "1P1Beta1\312\002%Google\\Cloud\\SecurityCenter\\V"
-          + "1p1beta1\352\002(Google::Cloud::SecurityCenter"
-          + "::V1p1beta1b\006proto3"
+          + "1P\001ZQcloud.google.com/go/securitycenter/"
+          + "apiv1p1beta1/securitycenterpb;securityce"
+          + "nterpb\252\002%Google.Cloud.SecurityCenter.V1P"
+          + "1Beta1\312\002%Google\\Cloud\\SecurityCenter\\V1p"
+          + "1beta1\352\002(Google::Cloud::SecurityCenter::"
+          + "V1p1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

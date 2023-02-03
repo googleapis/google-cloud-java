@@ -117,11 +117,11 @@ public final class CompanyServiceProto {
           + "v4beta1/{parent=projects/*}/companies\332A\006"
           + "parent\032l\312A\023jobs.googleapis.com\322AShttps:/"
           + "/www.googleapis.com/auth/cloud-platform,"
-          + "https://www.googleapis.com/auth/jobsB\201\001\n"
-          + "\037com.google.cloud.talent.v4beta1B\023Compan"
-          + "yServiceProtoP\001ZAgoogle.golang.org/genpr"
-          + "oto/googleapis/cloud/talent/v4beta1;tale"
-          + "nt\242\002\003CTSb\006proto3"
+          + "https://www.googleapis.com/auth/jobsBw\n\037"
+          + "com.google.cloud.talent.v4beta1B\023Company"
+          + "ServiceProtoP\001Z7cloud.google.com/go/tale"
+          + "nt/apiv4beta1/talentpb;talentpb\242\002\003CTSb\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

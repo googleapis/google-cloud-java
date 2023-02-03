@@ -54,12 +54,12 @@ public final class ControlProto {
           + "rchSolutionUseCase:q\352An\n\035retail.googleap"
           + "is.com/Control\022Mprojects/{project}/locat"
           + "ions/{location}/catalogs/{catalog}/contr"
-          + "ols/{control}B\t\n\007controlB\301\001\n\032com.google."
-          + "cloud.retail.v2B\014ControlProtoP\001Z<google."
-          + "golang.org/genproto/googleapis/cloud/ret"
-          + "ail/v2;retail\242\002\006RETAIL\252\002\026Google.Cloud.Re"
-          + "tail.V2\312\002\026Google\\Cloud\\Retail\\V2\352\002\031Googl"
-          + "e::Cloud::Retail::V2b\006proto3"
+          + "ols/{control}B\t\n\007controlB\267\001\n\032com.google."
+          + "cloud.retail.v2B\014ControlProtoP\001Z2cloud.g"
+          + "oogle.com/go/retail/apiv2/retailpb;retai"
+          + "lpb\242\002\006RETAIL\252\002\026Google.Cloud.Retail.V2\312\002\026"
+          + "Google\\Cloud\\Retail\\V2\352\002\031Google::Cloud::"
+          + "Retail::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

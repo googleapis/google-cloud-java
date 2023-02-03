@@ -55,13 +55,13 @@ public final class MuteConfigProto {
           + "rganization}/muteConfigs/{mute_config}\022*"
           + "folders/{folder}/muteConfigs/{mute_confi"
           + "g}\022,projects/{project}/muteConfigs/{mute"
-          + "_config}B\353\001\n\"com.google.cloud.securityce"
-          + "nter.v1B\017MuteConfigProtoP\001ZLgoogle.golan"
-          + "g.org/genproto/googleapis/cloud/security"
-          + "center/v1;securitycenter\252\002\036Google.Cloud."
-          + "SecurityCenter.V1\312\002\036Google\\Cloud\\Securit"
-          + "yCenter\\V1\352\002!Google::Cloud::SecurityCent"
-          + "er::V1b\006proto3"
+          + "_config}B\351\001\n\"com.google.cloud.securityce"
+          + "nter.v1B\017MuteConfigProtoP\001ZJcloud.google"
+          + ".com/go/securitycenter/apiv1/securitycen"
+          + "terpb;securitycenterpb\252\002\036Google.Cloud.Se"
+          + "curityCenter.V1\312\002\036Google\\Cloud\\SecurityC"
+          + "enter\\V1\352\002!Google::Cloud::SecurityCenter"
+          + "::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

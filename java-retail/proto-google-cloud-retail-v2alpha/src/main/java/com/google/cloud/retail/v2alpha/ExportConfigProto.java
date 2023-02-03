@@ -90,13 +90,12 @@ public final class ExportConfigProto {
           + "tail.v2alpha.GcsOutputResult\"<\n\024BigQuery"
           + "OutputResult\022\022\n\ndataset_id\030\001 \001(\t\022\020\n\010tabl"
           + "e_id\030\002 \001(\t\"%\n\017GcsOutputResult\022\022\n\noutput_"
-          + "uri\030\001 \001(\tB\337\001\n\037com.google.cloud.retail.v2"
-          + "alphaB\021ExportConfigProtoP\001ZAgoogle.golan"
-          + "g.org/genproto/googleapis/cloud/retail/v"
-          + "2alpha;retail\242\002\006RETAIL\252\002\033Google.Cloud.Re"
-          + "tail.V2Alpha\312\002\033Google\\Cloud\\Retail\\V2alp"
-          + "ha\352\002\036Google::Cloud::Retail::V2alphab\006pro"
-          + "to3"
+          + "uri\030\001 \001(\tB\325\001\n\037com.google.cloud.retail.v2"
+          + "alphaB\021ExportConfigProtoP\001Z7cloud.google"
+          + ".com/go/retail/apiv2alpha/retailpb;retai"
+          + "lpb\242\002\006RETAIL\252\002\033Google.Cloud.Retail.V2Alp"
+          + "ha\312\002\033Google\\Cloud\\Retail\\V2alpha\352\002\036Googl"
+          + "e::Cloud::Retail::V2alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

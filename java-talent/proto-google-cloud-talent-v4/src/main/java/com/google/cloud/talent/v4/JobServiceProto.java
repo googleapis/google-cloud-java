@@ -263,10 +263,9 @@ public final class JobServiceProto {
           + "rchForAlert:\001*\032l\312A\023jobs.googleapis.com\322A"
           + "Shttps://www.googleapis.com/auth/cloud-p"
           + "latform,https://www.googleapis.com/auth/"
-          + "jobsBs\n\032com.google.cloud.talent.v4B\017JobS"
-          + "erviceProtoP\001Z<google.golang.org/genprot"
-          + "o/googleapis/cloud/talent/v4;talent\242\002\003CT"
-          + "Sb\006proto3"
+          + "jobsBi\n\032com.google.cloud.talent.v4B\017JobS"
+          + "erviceProtoP\001Z2cloud.google.com/go/talen"
+          + "t/apiv4/talentpb;talentpb\242\002\003CTSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

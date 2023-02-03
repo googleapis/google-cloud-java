@@ -70,12 +70,12 @@ public final class RecommenderConfigProto {
           + "nization}/locations/{location}/recommend"
           + "ers/{recommender}/config\"F\n\033RecommenderG"
           + "enerationConfig\022\'\n\006params\030\001 \001(\0132\027.google"
-          + ".protobuf.StructB\267\001\n$com.google.cloud.re"
+          + ".protobuf.StructB\262\001\n$com.google.cloud.re"
           + "commender.v1beta1B\026RecommenderConfigProt"
-          + "oP\001ZKgoogle.golang.org/genproto/googleap"
-          + "is/cloud/recommender/v1beta1;recommender"
-          + "\242\002\004CREC\252\002 Google.Cloud.Recommender.V1Bet"
-          + "a1b\006proto3"
+          + "oP\001ZFcloud.google.com/go/recommender/api"
+          + "v1beta1/recommenderpb;recommenderpb\242\002\004CR"
+          + "EC\252\002 Google.Cloud.Recommender.V1Beta1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

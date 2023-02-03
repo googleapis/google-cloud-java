@@ -49,14 +49,14 @@ public final class RunAssetDiscoveryResponseOuterClass {
           + "iscoveryResponse.State\022+\n\010duration\030\002 \001(\013"
           + "2\031.google.protobuf.Duration\"M\n\005State\022\025\n\021"
           + "STATE_UNSPECIFIED\020\000\022\r\n\tCOMPLETED\020\001\022\016\n\nSU"
-          + "PERSEDED\020\002\022\016\n\nTERMINATED\020\003B\375\001\n)com.googl"
-          + "e.cloud.securitycenter.v1p1beta1P\001ZSgoog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "securitycenter/v1p1beta1;securitycenter\252"
-          + "\002%Google.Cloud.SecurityCenter.V1P1Beta1\312"
-          + "\002%Google\\Cloud\\SecurityCenter\\V1p1beta1\352"
-          + "\002(Google::Cloud::SecurityCenter::V1p1bet"
-          + "a1b\006proto3"
+          + "PERSEDED\020\002\022\016\n\nTERMINATED\020\003B\373\001\n)com.googl"
+          + "e.cloud.securitycenter.v1p1beta1P\001ZQclou"
+          + "d.google.com/go/securitycenter/apiv1p1be"
+          + "ta1/securitycenterpb;securitycenterpb\252\002%"
+          + "Google.Cloud.SecurityCenter.V1P1Beta1\312\002%"
+          + "Google\\Cloud\\SecurityCenter\\V1p1beta1\352\002("
+          + "Google::Cloud::SecurityCenter::V1p1beta1"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

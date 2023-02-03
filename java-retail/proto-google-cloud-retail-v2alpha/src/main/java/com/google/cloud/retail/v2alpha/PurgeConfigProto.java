@@ -78,13 +78,13 @@ public final class PurgeConfigProto {
           + "t\0225\n\006parent\030\001 \001(\tB%\340A\002\372A\037\n\035retail.google"
           + "apis.com/Catalog\022\023\n\006filter\030\002 \001(\tB\003\340A\002\022\r\n"
           + "\005force\030\003 \001(\010\"6\n\027PurgeUserEventsResponse\022"
-          + "\033\n\023purged_events_count\030\001 \001(\003B\336\001\n\037com.goo"
+          + "\033\n\023purged_events_count\030\001 \001(\003B\324\001\n\037com.goo"
           + "gle.cloud.retail.v2alphaB\020PurgeConfigPro"
-          + "toP\001ZAgoogle.golang.org/genproto/googlea"
-          + "pis/cloud/retail/v2alpha;retail\242\002\006RETAIL"
-          + "\252\002\033Google.Cloud.Retail.V2Alpha\312\002\033Google\\"
-          + "Cloud\\Retail\\V2alpha\352\002\036Google::Cloud::Re"
-          + "tail::V2alphab\006proto3"
+          + "toP\001Z7cloud.google.com/go/retail/apiv2al"
+          + "pha/retailpb;retailpb\242\002\006RETAIL\252\002\033Google."
+          + "Cloud.Retail.V2Alpha\312\002\033Google\\Cloud\\Reta"
+          + "il\\V2alpha\352\002\036Google::Cloud::Retail::V2al"
+          + "phab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

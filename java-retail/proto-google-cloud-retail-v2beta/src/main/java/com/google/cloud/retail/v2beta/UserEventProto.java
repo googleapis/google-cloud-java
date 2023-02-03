@@ -91,12 +91,12 @@ public final class UserEventProto {
           + "osition\030\003 \001(\005\"n\n\023PurchaseTransaction\022\n\n\002"
           + "id\030\001 \001(\t\022\024\n\007revenue\030\002 \001(\002B\003\340A\002\022\013\n\003tax\030\003 "
           + "\001(\002\022\014\n\004cost\030\004 \001(\002\022\032\n\rcurrency_code\030\005 \001(\t"
-          + "B\003\340A\002B\327\001\n\036com.google.cloud.retail.v2beta"
-          + "B\016UserEventProtoP\001Z@google.golang.org/ge"
-          + "nproto/googleapis/cloud/retail/v2beta;re"
-          + "tail\242\002\006RETAIL\252\002\032Google.Cloud.Retail.V2Be"
-          + "ta\312\002\032Google\\Cloud\\Retail\\V2beta\352\002\035Google"
-          + "::Cloud::Retail::V2betab\006proto3"
+          + "B\003\340A\002B\315\001\n\036com.google.cloud.retail.v2beta"
+          + "B\016UserEventProtoP\001Z6cloud.google.com/go/"
+          + "retail/apiv2beta/retailpb;retailpb\242\002\006RET"
+          + "AIL\252\002\032Google.Cloud.Retail.V2Beta\312\002\032Googl"
+          + "e\\Cloud\\Retail\\V2beta\352\002\035Google::Cloud::R"
+          + "etail::V2betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

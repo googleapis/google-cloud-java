@@ -228,13 +228,12 @@ public final class CatalogServiceProto {
           + "s/*/catalogs/*/attributesConfig}:replace"
           + "CatalogAttribute:\001*\032I\312A\025retail.googleapi"
           + "s.com\322A.https://www.googleapis.com/auth/"
-          + "cloud-platformB\341\001\n\037com.google.cloud.reta"
-          + "il.v2alphaB\023CatalogServiceProtoP\001ZAgoogl"
-          + "e.golang.org/genproto/googleapis/cloud/r"
-          + "etail/v2alpha;retail\242\002\006RETAIL\252\002\033Google.C"
-          + "loud.Retail.V2Alpha\312\002\033Google\\Cloud\\Retai"
-          + "l\\V2alpha\352\002\036Google::Cloud::Retail::V2alp"
-          + "hab\006proto3"
+          + "cloud-platformB\327\001\n\037com.google.cloud.reta"
+          + "il.v2alphaB\023CatalogServiceProtoP\001Z7cloud"
+          + ".google.com/go/retail/apiv2alpha/retailp"
+          + "b;retailpb\242\002\006RETAIL\252\002\033Google.Cloud.Retai"
+          + "l.V2Alpha\312\002\033Google\\Cloud\\Retail\\V2alpha\352"
+          + "\002\036Google::Cloud::Retail::V2alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

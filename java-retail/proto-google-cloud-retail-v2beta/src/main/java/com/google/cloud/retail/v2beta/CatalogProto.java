@@ -160,12 +160,12 @@ public final class CatalogProto {
           + ".MerchantCenterLinkingConfig:^\352A[\n\035retai"
           + "l.googleapis.com/Catalog\022:projects/{proj"
           + "ect}/locations/{location}/catalogs/{cata"
-          + "log}B\325\001\n\036com.google.cloud.retail.v2betaB"
-          + "\014CatalogProtoP\001Z@google.golang.org/genpr"
-          + "oto/googleapis/cloud/retail/v2beta;retai"
-          + "l\242\002\006RETAIL\252\002\032Google.Cloud.Retail.V2Beta\312"
-          + "\002\032Google\\Cloud\\Retail\\V2beta\352\002\035Google::C"
-          + "loud::Retail::V2betab\006proto3"
+          + "log}B\313\001\n\036com.google.cloud.retail.v2betaB"
+          + "\014CatalogProtoP\001Z6cloud.google.com/go/ret"
+          + "ail/apiv2beta/retailpb;retailpb\242\002\006RETAIL"
+          + "\252\002\032Google.Cloud.Retail.V2Beta\312\002\032Google\\C"
+          + "loud\\Retail\\V2beta\352\002\035Google::Cloud::Reta"
+          + "il::V2betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
