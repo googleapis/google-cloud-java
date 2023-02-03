@@ -22,6 +22,8 @@ import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListDataLabel
 import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListHyperparameterTuningJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListModelDeploymentMonitoringJobsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListNasJobsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListNasTrialDetailsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -1529,6 +1531,628 @@ public class JobServiceClientTest {
     try {
       String name = "name3373707";
       client.cancelHyperparameterTuningJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createNasJobTest() throws Exception {
+    NasJob expectedResponse =
+        NasJob.newBuilder()
+            .setName(NasJobName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]").toString())
+            .setDisplayName("displayName1714148973")
+            .setNasJobSpec(NasJobSpec.newBuilder().build())
+            .setNasJobOutput(NasJobOutput.newBuilder().build())
+            .setState(JobState.forNumber(0))
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setError(Status.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setEnableRestrictedImageTraining(true)
+            .build();
+    mockJobService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    NasJob nasJob = NasJob.newBuilder().build();
+
+    NasJob actualResponse = client.createNasJob(parent, nasJob);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateNasJobRequest actualRequest = ((CreateNasJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(nasJob, actualRequest.getNasJob());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createNasJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      NasJob nasJob = NasJob.newBuilder().build();
+      client.createNasJob(parent, nasJob);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createNasJobTest2() throws Exception {
+    NasJob expectedResponse =
+        NasJob.newBuilder()
+            .setName(NasJobName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]").toString())
+            .setDisplayName("displayName1714148973")
+            .setNasJobSpec(NasJobSpec.newBuilder().build())
+            .setNasJobOutput(NasJobOutput.newBuilder().build())
+            .setState(JobState.forNumber(0))
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setError(Status.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setEnableRestrictedImageTraining(true)
+            .build();
+    mockJobService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    NasJob nasJob = NasJob.newBuilder().build();
+
+    NasJob actualResponse = client.createNasJob(parent, nasJob);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateNasJobRequest actualRequest = ((CreateNasJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(nasJob, actualRequest.getNasJob());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createNasJobExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      NasJob nasJob = NasJob.newBuilder().build();
+      client.createNasJob(parent, nasJob);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getNasJobTest() throws Exception {
+    NasJob expectedResponse =
+        NasJob.newBuilder()
+            .setName(NasJobName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]").toString())
+            .setDisplayName("displayName1714148973")
+            .setNasJobSpec(NasJobSpec.newBuilder().build())
+            .setNasJobOutput(NasJobOutput.newBuilder().build())
+            .setState(JobState.forNumber(0))
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setError(Status.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setEnableRestrictedImageTraining(true)
+            .build();
+    mockJobService.addResponse(expectedResponse);
+
+    NasJobName name = NasJobName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]");
+
+    NasJob actualResponse = client.getNasJob(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetNasJobRequest actualRequest = ((GetNasJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getNasJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      NasJobName name = NasJobName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]");
+      client.getNasJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getNasJobTest2() throws Exception {
+    NasJob expectedResponse =
+        NasJob.newBuilder()
+            .setName(NasJobName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]").toString())
+            .setDisplayName("displayName1714148973")
+            .setNasJobSpec(NasJobSpec.newBuilder().build())
+            .setNasJobOutput(NasJobOutput.newBuilder().build())
+            .setState(JobState.forNumber(0))
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setError(Status.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setEnableRestrictedImageTraining(true)
+            .build();
+    mockJobService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    NasJob actualResponse = client.getNasJob(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetNasJobRequest actualRequest = ((GetNasJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getNasJobExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getNasJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listNasJobsTest() throws Exception {
+    NasJob responsesElement = NasJob.newBuilder().build();
+    ListNasJobsResponse expectedResponse =
+        ListNasJobsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllNasJobs(Arrays.asList(responsesElement))
+            .build();
+    mockJobService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListNasJobsPagedResponse pagedListResponse = client.listNasJobs(parent);
+
+    List<NasJob> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getNasJobsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListNasJobsRequest actualRequest = ((ListNasJobsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listNasJobsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listNasJobs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listNasJobsTest2() throws Exception {
+    NasJob responsesElement = NasJob.newBuilder().build();
+    ListNasJobsResponse expectedResponse =
+        ListNasJobsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllNasJobs(Arrays.asList(responsesElement))
+            .build();
+    mockJobService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListNasJobsPagedResponse pagedListResponse = client.listNasJobs(parent);
+
+    List<NasJob> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getNasJobsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListNasJobsRequest actualRequest = ((ListNasJobsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listNasJobsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listNasJobs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteNasJobTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteNasJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockJobService.addResponse(resultOperation);
+
+    NasJobName name = NasJobName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]");
+
+    client.deleteNasJobAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteNasJobRequest actualRequest = ((DeleteNasJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteNasJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      NasJobName name = NasJobName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]");
+      client.deleteNasJobAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteNasJobTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteNasJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockJobService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteNasJobAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteNasJobRequest actualRequest = ((DeleteNasJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteNasJobExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteNasJobAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void cancelNasJobTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockJobService.addResponse(expectedResponse);
+
+    NasJobName name = NasJobName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]");
+
+    client.cancelNasJob(name);
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CancelNasJobRequest actualRequest = ((CancelNasJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void cancelNasJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      NasJobName name = NasJobName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]");
+      client.cancelNasJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void cancelNasJobTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockJobService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.cancelNasJob(name);
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CancelNasJobRequest actualRequest = ((CancelNasJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void cancelNasJobExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.cancelNasJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getNasTrialDetailTest() throws Exception {
+    NasTrialDetail expectedResponse =
+        NasTrialDetail.newBuilder()
+            .setName(
+                NasTrialDetailName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]", "[NAS_TRIAL_DETAIL]")
+                    .toString())
+            .setParameters("parameters458736106")
+            .setSearchTrial(NasTrial.newBuilder().build())
+            .setTrainTrial(NasTrial.newBuilder().build())
+            .build();
+    mockJobService.addResponse(expectedResponse);
+
+    NasTrialDetailName name =
+        NasTrialDetailName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]", "[NAS_TRIAL_DETAIL]");
+
+    NasTrialDetail actualResponse = client.getNasTrialDetail(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetNasTrialDetailRequest actualRequest = ((GetNasTrialDetailRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getNasTrialDetailExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      NasTrialDetailName name =
+          NasTrialDetailName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]", "[NAS_TRIAL_DETAIL]");
+      client.getNasTrialDetail(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getNasTrialDetailTest2() throws Exception {
+    NasTrialDetail expectedResponse =
+        NasTrialDetail.newBuilder()
+            .setName(
+                NasTrialDetailName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]", "[NAS_TRIAL_DETAIL]")
+                    .toString())
+            .setParameters("parameters458736106")
+            .setSearchTrial(NasTrial.newBuilder().build())
+            .setTrainTrial(NasTrial.newBuilder().build())
+            .build();
+    mockJobService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    NasTrialDetail actualResponse = client.getNasTrialDetail(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetNasTrialDetailRequest actualRequest = ((GetNasTrialDetailRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getNasTrialDetailExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getNasTrialDetail(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listNasTrialDetailsTest() throws Exception {
+    NasTrialDetail responsesElement = NasTrialDetail.newBuilder().build();
+    ListNasTrialDetailsResponse expectedResponse =
+        ListNasTrialDetailsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllNasTrialDetails(Arrays.asList(responsesElement))
+            .build();
+    mockJobService.addResponse(expectedResponse);
+
+    NasJobName parent = NasJobName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]");
+
+    ListNasTrialDetailsPagedResponse pagedListResponse = client.listNasTrialDetails(parent);
+
+    List<NasTrialDetail> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getNasTrialDetailsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListNasTrialDetailsRequest actualRequest = ((ListNasTrialDetailsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listNasTrialDetailsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      NasJobName parent = NasJobName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]");
+      client.listNasTrialDetails(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listNasTrialDetailsTest2() throws Exception {
+    NasTrialDetail responsesElement = NasTrialDetail.newBuilder().build();
+    ListNasTrialDetailsResponse expectedResponse =
+        ListNasTrialDetailsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllNasTrialDetails(Arrays.asList(responsesElement))
+            .build();
+    mockJobService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListNasTrialDetailsPagedResponse pagedListResponse = client.listNasTrialDetails(parent);
+
+    List<NasTrialDetail> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getNasTrialDetailsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockJobService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListNasTrialDetailsRequest actualRequest = ((ListNasTrialDetailsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listNasTrialDetailsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockJobService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listNasTrialDetails(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
