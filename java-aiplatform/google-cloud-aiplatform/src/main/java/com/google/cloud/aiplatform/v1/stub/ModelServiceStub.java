@@ -27,6 +27,9 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesRequest;
 import com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesResponse;
+import com.google.cloud.aiplatform.v1.CopyModelOperationMetadata;
+import com.google.cloud.aiplatform.v1.CopyModelRequest;
+import com.google.cloud.aiplatform.v1.CopyModelResponse;
 import com.google.cloud.aiplatform.v1.DeleteModelRequest;
 import com.google.cloud.aiplatform.v1.DeleteModelVersionRequest;
 import com.google.cloud.aiplatform.v1.DeleteOperationMetadata;
@@ -145,6 +148,15 @@ public abstract class ModelServiceStub implements BackgroundResource {
 
   public UnaryCallable<ExportModelRequest, Operation> exportModelCallable() {
     throw new UnsupportedOperationException("Not implemented: exportModelCallable()");
+  }
+
+  public OperationCallable<CopyModelRequest, CopyModelResponse, CopyModelOperationMetadata>
+      copyModelOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: copyModelOperationCallable()");
+  }
+
+  public UnaryCallable<CopyModelRequest, Operation> copyModelCallable() {
+    throw new UnsupportedOperationException("Not implemented: copyModelCallable()");
   }
 
   public UnaryCallable<ImportModelEvaluationRequest, ModelEvaluation>

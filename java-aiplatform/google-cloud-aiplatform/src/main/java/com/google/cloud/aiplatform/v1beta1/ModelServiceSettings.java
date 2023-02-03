@@ -180,6 +180,17 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
     return ((ModelServiceStubSettings) getStubSettings()).exportModelOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to copyModel. */
+  public UnaryCallSettings<CopyModelRequest, Operation> copyModelSettings() {
+    return ((ModelServiceStubSettings) getStubSettings()).copyModelSettings();
+  }
+
+  /** Returns the object with the settings used for calls to copyModel. */
+  public OperationCallSettings<CopyModelRequest, CopyModelResponse, CopyModelOperationMetadata>
+      copyModelOperationSettings() {
+    return ((ModelServiceStubSettings) getStubSettings()).copyModelOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to importModelEvaluation. */
   public UnaryCallSettings<ImportModelEvaluationRequest, ModelEvaluation>
       importModelEvaluationSettings() {
@@ -437,6 +448,18 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
             ExportModelRequest, ExportModelResponse, ExportModelOperationMetadata>
         exportModelOperationSettings() {
       return getStubSettingsBuilder().exportModelOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to copyModel. */
+    public UnaryCallSettings.Builder<CopyModelRequest, Operation> copyModelSettings() {
+      return getStubSettingsBuilder().copyModelSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to copyModel. */
+    public OperationCallSettings.Builder<
+            CopyModelRequest, CopyModelResponse, CopyModelOperationMetadata>
+        copyModelOperationSettings() {
+      return getStubSettingsBuilder().copyModelOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to importModelEvaluation. */

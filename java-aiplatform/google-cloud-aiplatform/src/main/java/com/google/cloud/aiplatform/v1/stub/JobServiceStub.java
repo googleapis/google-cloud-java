@@ -22,6 +22,8 @@ import static com.google.cloud.aiplatform.v1.JobServiceClient.ListDataLabelingJo
 import static com.google.cloud.aiplatform.v1.JobServiceClient.ListHyperparameterTuningJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1.JobServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.aiplatform.v1.JobServiceClient.ListModelDeploymentMonitoringJobsPagedResponse;
+import static com.google.cloud.aiplatform.v1.JobServiceClient.ListNasJobsPagedResponse;
+import static com.google.cloud.aiplatform.v1.JobServiceClient.ListNasTrialDetailsPagedResponse;
 import static com.google.cloud.aiplatform.v1.JobServiceClient.SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -32,11 +34,13 @@ import com.google.cloud.aiplatform.v1.CancelBatchPredictionJobRequest;
 import com.google.cloud.aiplatform.v1.CancelCustomJobRequest;
 import com.google.cloud.aiplatform.v1.CancelDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1.CancelHyperparameterTuningJobRequest;
+import com.google.cloud.aiplatform.v1.CancelNasJobRequest;
 import com.google.cloud.aiplatform.v1.CreateBatchPredictionJobRequest;
 import com.google.cloud.aiplatform.v1.CreateCustomJobRequest;
 import com.google.cloud.aiplatform.v1.CreateDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1.CreateHyperparameterTuningJobRequest;
 import com.google.cloud.aiplatform.v1.CreateModelDeploymentMonitoringJobRequest;
+import com.google.cloud.aiplatform.v1.CreateNasJobRequest;
 import com.google.cloud.aiplatform.v1.CustomJob;
 import com.google.cloud.aiplatform.v1.DataLabelingJob;
 import com.google.cloud.aiplatform.v1.DeleteBatchPredictionJobRequest;
@@ -44,12 +48,15 @@ import com.google.cloud.aiplatform.v1.DeleteCustomJobRequest;
 import com.google.cloud.aiplatform.v1.DeleteDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1.DeleteHyperparameterTuningJobRequest;
 import com.google.cloud.aiplatform.v1.DeleteModelDeploymentMonitoringJobRequest;
+import com.google.cloud.aiplatform.v1.DeleteNasJobRequest;
 import com.google.cloud.aiplatform.v1.DeleteOperationMetadata;
 import com.google.cloud.aiplatform.v1.GetBatchPredictionJobRequest;
 import com.google.cloud.aiplatform.v1.GetCustomJobRequest;
 import com.google.cloud.aiplatform.v1.GetDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1.GetHyperparameterTuningJobRequest;
 import com.google.cloud.aiplatform.v1.GetModelDeploymentMonitoringJobRequest;
+import com.google.cloud.aiplatform.v1.GetNasJobRequest;
+import com.google.cloud.aiplatform.v1.GetNasTrialDetailRequest;
 import com.google.cloud.aiplatform.v1.HyperparameterTuningJob;
 import com.google.cloud.aiplatform.v1.ListBatchPredictionJobsRequest;
 import com.google.cloud.aiplatform.v1.ListBatchPredictionJobsResponse;
@@ -61,7 +68,13 @@ import com.google.cloud.aiplatform.v1.ListHyperparameterTuningJobsRequest;
 import com.google.cloud.aiplatform.v1.ListHyperparameterTuningJobsResponse;
 import com.google.cloud.aiplatform.v1.ListModelDeploymentMonitoringJobsRequest;
 import com.google.cloud.aiplatform.v1.ListModelDeploymentMonitoringJobsResponse;
+import com.google.cloud.aiplatform.v1.ListNasJobsRequest;
+import com.google.cloud.aiplatform.v1.ListNasJobsResponse;
+import com.google.cloud.aiplatform.v1.ListNasTrialDetailsRequest;
+import com.google.cloud.aiplatform.v1.ListNasTrialDetailsResponse;
 import com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob;
+import com.google.cloud.aiplatform.v1.NasJob;
+import com.google.cloud.aiplatform.v1.NasTrialDetail;
 import com.google.cloud.aiplatform.v1.PauseModelDeploymentMonitoringJobRequest;
 import com.google.cloud.aiplatform.v1.ResumeModelDeploymentMonitoringJobRequest;
 import com.google.cloud.aiplatform.v1.SearchModelDeploymentMonitoringStatsAnomaliesRequest;
@@ -199,6 +212,49 @@ public abstract class JobServiceStub implements BackgroundResource {
       cancelHyperparameterTuningJobCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: cancelHyperparameterTuningJobCallable()");
+  }
+
+  public UnaryCallable<CreateNasJobRequest, NasJob> createNasJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: createNasJobCallable()");
+  }
+
+  public UnaryCallable<GetNasJobRequest, NasJob> getNasJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: getNasJobCallable()");
+  }
+
+  public UnaryCallable<ListNasJobsRequest, ListNasJobsPagedResponse> listNasJobsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listNasJobsPagedCallable()");
+  }
+
+  public UnaryCallable<ListNasJobsRequest, ListNasJobsResponse> listNasJobsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listNasJobsCallable()");
+  }
+
+  public OperationCallable<DeleteNasJobRequest, Empty, DeleteOperationMetadata>
+      deleteNasJobOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteNasJobOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteNasJobRequest, Operation> deleteNasJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteNasJobCallable()");
+  }
+
+  public UnaryCallable<CancelNasJobRequest, Empty> cancelNasJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: cancelNasJobCallable()");
+  }
+
+  public UnaryCallable<GetNasTrialDetailRequest, NasTrialDetail> getNasTrialDetailCallable() {
+    throw new UnsupportedOperationException("Not implemented: getNasTrialDetailCallable()");
+  }
+
+  public UnaryCallable<ListNasTrialDetailsRequest, ListNasTrialDetailsPagedResponse>
+      listNasTrialDetailsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listNasTrialDetailsPagedCallable()");
+  }
+
+  public UnaryCallable<ListNasTrialDetailsRequest, ListNasTrialDetailsResponse>
+      listNasTrialDetailsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listNasTrialDetailsCallable()");
   }
 
   public UnaryCallable<CreateBatchPredictionJobRequest, BatchPredictionJob>

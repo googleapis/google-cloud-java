@@ -22,6 +22,8 @@ import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListDataLabel
 import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListHyperparameterTuningJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListModelDeploymentMonitoringJobsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListNasJobsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListNasTrialDetailsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -33,11 +35,13 @@ import com.google.cloud.aiplatform.v1beta1.CancelBatchPredictionJobRequest;
 import com.google.cloud.aiplatform.v1beta1.CancelCustomJobRequest;
 import com.google.cloud.aiplatform.v1beta1.CancelDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1beta1.CancelHyperparameterTuningJobRequest;
+import com.google.cloud.aiplatform.v1beta1.CancelNasJobRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateBatchPredictionJobRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateCustomJobRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateHyperparameterTuningJobRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateModelDeploymentMonitoringJobRequest;
+import com.google.cloud.aiplatform.v1beta1.CreateNasJobRequest;
 import com.google.cloud.aiplatform.v1beta1.CustomJob;
 import com.google.cloud.aiplatform.v1beta1.DataLabelingJob;
 import com.google.cloud.aiplatform.v1beta1.DeleteBatchPredictionJobRequest;
@@ -45,12 +49,15 @@ import com.google.cloud.aiplatform.v1beta1.DeleteCustomJobRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteHyperparameterTuningJobRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteModelDeploymentMonitoringJobRequest;
+import com.google.cloud.aiplatform.v1beta1.DeleteNasJobRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.GetBatchPredictionJobRequest;
 import com.google.cloud.aiplatform.v1beta1.GetCustomJobRequest;
 import com.google.cloud.aiplatform.v1beta1.GetDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1beta1.GetHyperparameterTuningJobRequest;
 import com.google.cloud.aiplatform.v1beta1.GetModelDeploymentMonitoringJobRequest;
+import com.google.cloud.aiplatform.v1beta1.GetNasJobRequest;
+import com.google.cloud.aiplatform.v1beta1.GetNasTrialDetailRequest;
 import com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJob;
 import com.google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsResponse;
@@ -62,7 +69,13 @@ import com.google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsResponse;
 import com.google.cloud.aiplatform.v1beta1.ListModelDeploymentMonitoringJobsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListModelDeploymentMonitoringJobsResponse;
+import com.google.cloud.aiplatform.v1beta1.ListNasJobsRequest;
+import com.google.cloud.aiplatform.v1beta1.ListNasJobsResponse;
+import com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsRequest;
+import com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsResponse;
 import com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob;
+import com.google.cloud.aiplatform.v1beta1.NasJob;
+import com.google.cloud.aiplatform.v1beta1.NasTrialDetail;
 import com.google.cloud.aiplatform.v1beta1.PauseModelDeploymentMonitoringJobRequest;
 import com.google.cloud.aiplatform.v1beta1.ResumeModelDeploymentMonitoringJobRequest;
 import com.google.cloud.aiplatform.v1beta1.SearchModelDeploymentMonitoringStatsAnomaliesRequest;
@@ -201,6 +214,49 @@ public abstract class JobServiceStub implements BackgroundResource {
       cancelHyperparameterTuningJobCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: cancelHyperparameterTuningJobCallable()");
+  }
+
+  public UnaryCallable<CreateNasJobRequest, NasJob> createNasJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: createNasJobCallable()");
+  }
+
+  public UnaryCallable<GetNasJobRequest, NasJob> getNasJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: getNasJobCallable()");
+  }
+
+  public UnaryCallable<ListNasJobsRequest, ListNasJobsPagedResponse> listNasJobsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listNasJobsPagedCallable()");
+  }
+
+  public UnaryCallable<ListNasJobsRequest, ListNasJobsResponse> listNasJobsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listNasJobsCallable()");
+  }
+
+  public OperationCallable<DeleteNasJobRequest, Empty, DeleteOperationMetadata>
+      deleteNasJobOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteNasJobOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteNasJobRequest, Operation> deleteNasJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteNasJobCallable()");
+  }
+
+  public UnaryCallable<CancelNasJobRequest, Empty> cancelNasJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: cancelNasJobCallable()");
+  }
+
+  public UnaryCallable<GetNasTrialDetailRequest, NasTrialDetail> getNasTrialDetailCallable() {
+    throw new UnsupportedOperationException("Not implemented: getNasTrialDetailCallable()");
+  }
+
+  public UnaryCallable<ListNasTrialDetailsRequest, ListNasTrialDetailsPagedResponse>
+      listNasTrialDetailsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listNasTrialDetailsPagedCallable()");
+  }
+
+  public UnaryCallable<ListNasTrialDetailsRequest, ListNasTrialDetailsResponse>
+      listNasTrialDetailsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listNasTrialDetailsCallable()");
   }
 
   public UnaryCallable<CreateBatchPredictionJobRequest, BatchPredictionJob>

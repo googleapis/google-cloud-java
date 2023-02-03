@@ -50,6 +50,9 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesRequest;
 import com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesResponse;
+import com.google.cloud.aiplatform.v1.CopyModelOperationMetadata;
+import com.google.cloud.aiplatform.v1.CopyModelRequest;
+import com.google.cloud.aiplatform.v1.CopyModelResponse;
 import com.google.cloud.aiplatform.v1.DeleteModelRequest;
 import com.google.cloud.aiplatform.v1.DeleteModelVersionRequest;
 import com.google.cloud.aiplatform.v1.DeleteOperationMetadata;
@@ -161,6 +164,10 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
   private final OperationCallSettings<
           ExportModelRequest, ExportModelResponse, ExportModelOperationMetadata>
       exportModelOperationSettings;
+  private final UnaryCallSettings<CopyModelRequest, Operation> copyModelSettings;
+  private final OperationCallSettings<
+          CopyModelRequest, CopyModelResponse, CopyModelOperationMetadata>
+      copyModelOperationSettings;
   private final UnaryCallSettings<ImportModelEvaluationRequest, ModelEvaluation>
       importModelEvaluationSettings;
   private final UnaryCallSettings<
@@ -567,6 +574,17 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     return exportModelOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to copyModel. */
+  public UnaryCallSettings<CopyModelRequest, Operation> copyModelSettings() {
+    return copyModelSettings;
+  }
+
+  /** Returns the object with the settings used for calls to copyModel. */
+  public OperationCallSettings<CopyModelRequest, CopyModelResponse, CopyModelOperationMetadata>
+      copyModelOperationSettings() {
+    return copyModelOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to importModelEvaluation. */
   public UnaryCallSettings<ImportModelEvaluationRequest, ModelEvaluation>
       importModelEvaluationSettings() {
@@ -726,6 +744,8 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     mergeVersionAliasesSettings = settingsBuilder.mergeVersionAliasesSettings().build();
     exportModelSettings = settingsBuilder.exportModelSettings().build();
     exportModelOperationSettings = settingsBuilder.exportModelOperationSettings().build();
+    copyModelSettings = settingsBuilder.copyModelSettings().build();
+    copyModelOperationSettings = settingsBuilder.copyModelOperationSettings().build();
     importModelEvaluationSettings = settingsBuilder.importModelEvaluationSettings().build();
     batchImportModelEvaluationSlicesSettings =
         settingsBuilder.batchImportModelEvaluationSlicesSettings().build();
@@ -769,6 +789,10 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     private final OperationCallSettings.Builder<
             ExportModelRequest, ExportModelResponse, ExportModelOperationMetadata>
         exportModelOperationSettings;
+    private final UnaryCallSettings.Builder<CopyModelRequest, Operation> copyModelSettings;
+    private final OperationCallSettings.Builder<
+            CopyModelRequest, CopyModelResponse, CopyModelOperationMetadata>
+        copyModelOperationSettings;
     private final UnaryCallSettings.Builder<ImportModelEvaluationRequest, ModelEvaluation>
         importModelEvaluationSettings;
     private final UnaryCallSettings.Builder<
@@ -836,6 +860,8 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
       mergeVersionAliasesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       exportModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       exportModelOperationSettings = OperationCallSettings.newBuilder();
+      copyModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      copyModelOperationSettings = OperationCallSettings.newBuilder();
       importModelEvaluationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchImportModelEvaluationSlicesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getModelEvaluationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -861,6 +887,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
               deleteModelVersionSettings,
               mergeVersionAliasesSettings,
               exportModelSettings,
+              copyModelSettings,
               importModelEvaluationSettings,
               batchImportModelEvaluationSlicesSettings,
               getModelEvaluationSettings,
@@ -892,6 +919,8 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
       mergeVersionAliasesSettings = settings.mergeVersionAliasesSettings.toBuilder();
       exportModelSettings = settings.exportModelSettings.toBuilder();
       exportModelOperationSettings = settings.exportModelOperationSettings.toBuilder();
+      copyModelSettings = settings.copyModelSettings.toBuilder();
+      copyModelOperationSettings = settings.copyModelOperationSettings.toBuilder();
       importModelEvaluationSettings = settings.importModelEvaluationSettings.toBuilder();
       batchImportModelEvaluationSlicesSettings =
           settings.batchImportModelEvaluationSlicesSettings.toBuilder();
@@ -916,6 +945,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
               deleteModelVersionSettings,
               mergeVersionAliasesSettings,
               exportModelSettings,
+              copyModelSettings,
               importModelEvaluationSettings,
               batchImportModelEvaluationSlicesSettings,
               getModelEvaluationSettings,
@@ -985,6 +1015,11 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
 
       builder
           .exportModelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .copyModelSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1138,6 +1173,30 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .copyModelOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<CopyModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(CopyModelResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  CopyModelOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1238,6 +1297,20 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
             ExportModelRequest, ExportModelResponse, ExportModelOperationMetadata>
         exportModelOperationSettings() {
       return exportModelOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to copyModel. */
+    public UnaryCallSettings.Builder<CopyModelRequest, Operation> copyModelSettings() {
+      return copyModelSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to copyModel. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            CopyModelRequest, CopyModelResponse, CopyModelOperationMetadata>
+        copyModelOperationSettings() {
+      return copyModelOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to importModelEvaluation. */

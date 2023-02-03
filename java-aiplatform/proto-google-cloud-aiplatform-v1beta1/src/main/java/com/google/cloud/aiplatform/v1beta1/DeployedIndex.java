@@ -545,9 +545,9 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
    * Available machine types for MEDIUM shard:
    * e2-standard-16 and all machine types available for LARGE shard.
    * Available machine types for LARGE shard:
-   * e2-standard-32, e2-highmem-16, n2d-standard-32.
+   * e2-highmem-16, n2d-standard-32.
    * n1-standard-16 and n1-standard-32 are still available, but we recommend
-   * e2-standard-16 and e2-standard-32 for cost efficiency.
+   * e2-standard-16 and e2-highmem-16 for cost efficiency.
    * </pre>
    *
    * <code>
@@ -574,9 +574,9 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
    * Available machine types for MEDIUM shard:
    * e2-standard-16 and all machine types available for LARGE shard.
    * Available machine types for LARGE shard:
-   * e2-standard-32, e2-highmem-16, n2d-standard-32.
+   * e2-highmem-16, n2d-standard-32.
    * n1-standard-16 and n1-standard-32 are still available, but we recommend
-   * e2-standard-16 and e2-standard-32 for cost efficiency.
+   * e2-standard-16 and e2-highmem-16 for cost efficiency.
    * </pre>
    *
    * <code>
@@ -605,9 +605,9 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
    * Available machine types for MEDIUM shard:
    * e2-standard-16 and all machine types available for LARGE shard.
    * Available machine types for LARGE shard:
-   * e2-standard-32, e2-highmem-16, n2d-standard-32.
+   * e2-highmem-16, n2d-standard-32.
    * n1-standard-16 and n1-standard-32 are still available, but we recommend
-   * e2-standard-16 and e2-standard-32 for cost efficiency.
+   * e2-standard-16 and e2-highmem-16 for cost efficiency.
    * </pre>
    *
    * <code>
@@ -2951,9 +2951,9 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * Available machine types for MEDIUM shard:
      * e2-standard-16 and all machine types available for LARGE shard.
      * Available machine types for LARGE shard:
-     * e2-standard-32, e2-highmem-16, n2d-standard-32.
+     * e2-highmem-16, n2d-standard-32.
      * n1-standard-16 and n1-standard-32 are still available, but we recommend
-     * e2-standard-16 and e2-standard-32 for cost efficiency.
+     * e2-standard-16 and e2-highmem-16 for cost efficiency.
      * </pre>
      *
      * <code>
@@ -2979,9 +2979,9 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * Available machine types for MEDIUM shard:
      * e2-standard-16 and all machine types available for LARGE shard.
      * Available machine types for LARGE shard:
-     * e2-standard-32, e2-highmem-16, n2d-standard-32.
+     * e2-highmem-16, n2d-standard-32.
      * n1-standard-16 and n1-standard-32 are still available, but we recommend
-     * e2-standard-16 and e2-standard-32 for cost efficiency.
+     * e2-standard-16 and e2-highmem-16 for cost efficiency.
      * </pre>
      *
      * <code>
@@ -3013,9 +3013,9 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * Available machine types for MEDIUM shard:
      * e2-standard-16 and all machine types available for LARGE shard.
      * Available machine types for LARGE shard:
-     * e2-standard-32, e2-highmem-16, n2d-standard-32.
+     * e2-highmem-16, n2d-standard-32.
      * n1-standard-16 and n1-standard-32 are still available, but we recommend
-     * e2-standard-16 and e2-standard-32 for cost efficiency.
+     * e2-standard-16 and e2-highmem-16 for cost efficiency.
      * </pre>
      *
      * <code>
@@ -3050,9 +3050,9 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * Available machine types for MEDIUM shard:
      * e2-standard-16 and all machine types available for LARGE shard.
      * Available machine types for LARGE shard:
-     * e2-standard-32, e2-highmem-16, n2d-standard-32.
+     * e2-highmem-16, n2d-standard-32.
      * n1-standard-16 and n1-standard-32 are still available, but we recommend
-     * e2-standard-16 and e2-standard-32 for cost efficiency.
+     * e2-standard-16 and e2-highmem-16 for cost efficiency.
      * </pre>
      *
      * <code>
@@ -3084,9 +3084,9 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * Available machine types for MEDIUM shard:
      * e2-standard-16 and all machine types available for LARGE shard.
      * Available machine types for LARGE shard:
-     * e2-standard-32, e2-highmem-16, n2d-standard-32.
+     * e2-highmem-16, n2d-standard-32.
      * n1-standard-16 and n1-standard-32 are still available, but we recommend
-     * e2-standard-16 and e2-standard-32 for cost efficiency.
+     * e2-standard-16 and e2-highmem-16 for cost efficiency.
      * </pre>
      *
      * <code>
@@ -3125,9 +3125,9 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * Available machine types for MEDIUM shard:
      * e2-standard-16 and all machine types available for LARGE shard.
      * Available machine types for LARGE shard:
-     * e2-standard-32, e2-highmem-16, n2d-standard-32.
+     * e2-highmem-16, n2d-standard-32.
      * n1-standard-16 and n1-standard-32 are still available, but we recommend
-     * e2-standard-16 and e2-standard-32 for cost efficiency.
+     * e2-standard-16 and e2-highmem-16 for cost efficiency.
      * </pre>
      *
      * <code>
@@ -3158,9 +3158,9 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * Available machine types for MEDIUM shard:
      * e2-standard-16 and all machine types available for LARGE shard.
      * Available machine types for LARGE shard:
-     * e2-standard-32, e2-highmem-16, n2d-standard-32.
+     * e2-highmem-16, n2d-standard-32.
      * n1-standard-16 and n1-standard-32 are still available, but we recommend
-     * e2-standard-16 and e2-standard-32 for cost efficiency.
+     * e2-standard-16 and e2-highmem-16 for cost efficiency.
      * </pre>
      *
      * <code>
@@ -3187,9 +3187,9 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * Available machine types for MEDIUM shard:
      * e2-standard-16 and all machine types available for LARGE shard.
      * Available machine types for LARGE shard:
-     * e2-standard-32, e2-highmem-16, n2d-standard-32.
+     * e2-highmem-16, n2d-standard-32.
      * n1-standard-16 and n1-standard-32 are still available, but we recommend
-     * e2-standard-16 and e2-standard-32 for cost efficiency.
+     * e2-standard-16 and e2-highmem-16 for cost efficiency.
      * </pre>
      *
      * <code>
@@ -3220,9 +3220,9 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * Available machine types for MEDIUM shard:
      * e2-standard-16 and all machine types available for LARGE shard.
      * Available machine types for LARGE shard:
-     * e2-standard-32, e2-highmem-16, n2d-standard-32.
+     * e2-highmem-16, n2d-standard-32.
      * n1-standard-16 and n1-standard-32 are still available, but we recommend
-     * e2-standard-16 and e2-standard-32 for cost efficiency.
+     * e2-standard-16 and e2-highmem-16 for cost efficiency.
      * </pre>
      *
      * <code>

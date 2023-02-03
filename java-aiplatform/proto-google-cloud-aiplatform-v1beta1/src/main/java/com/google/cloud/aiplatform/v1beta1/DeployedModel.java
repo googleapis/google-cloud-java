@@ -674,6 +674,28 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         : explanationSpec_;
   }
 
+  public static final int DISABLE_EXPLANATIONS_FIELD_NUMBER = 19;
+  private boolean disableExplanations_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * If true, deploy the model without explainable feature, regardless the
+   * existence of
+   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]
+   * or
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec].
+   * </pre>
+   *
+   * <code>bool disable_explanations = 19;</code>
+   *
+   * @return The disableExplanations.
+   */
+  @java.lang.Override
+  public boolean getDisableExplanations() {
+    return disableExplanations_;
+  }
+
   public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 11;
 
   @SuppressWarnings("serial")
@@ -761,6 +783,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * If true, online prediction access logs are sent to StackDriver
+   * Logging.
    * These logs are like standard server access logs, containing
    * information like timestamp and latency for each prediction request.
    * Note that Stackdriver logs may incur a cost, especially if your project
@@ -898,6 +922,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersionId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, modelVersionId_);
     }
+    if (disableExplanations_ != false) {
+      output.writeBool(19, disableExplanations_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -950,6 +977,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersionId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, modelVersionId_);
     }
+    if (disableExplanations_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(19, disableExplanations_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -978,6 +1008,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (hasExplanationSpec()) {
       if (!getExplanationSpec().equals(other.getExplanationSpec())) return false;
     }
+    if (getDisableExplanations() != other.getDisableExplanations()) return false;
     if (!getServiceAccount().equals(other.getServiceAccount())) return false;
     if (getEnableContainerLogging() != other.getEnableContainerLogging()) return false;
     if (getEnableAccessLogging() != other.getEnableAccessLogging()) return false;
@@ -1026,6 +1057,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + EXPLANATION_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getExplanationSpec().hashCode();
     }
+    hash = (37 * hash) + DISABLE_EXPLANATIONS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableExplanations());
     hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
     hash = (53 * hash) + getServiceAccount().hashCode();
     hash = (37 * hash) + ENABLE_CONTAINER_LOGGING_FIELD_NUMBER;
@@ -1211,6 +1244,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         explanationSpecBuilder_.dispose();
         explanationSpecBuilder_ = null;
       }
+      disableExplanations_ = false;
       serviceAccount_ = "";
       enableContainerLogging_ = false;
       enableAccessLogging_ = false;
@@ -1278,15 +1312,18 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
             explanationSpecBuilder_ == null ? explanationSpec_ : explanationSpecBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.serviceAccount_ = serviceAccount_;
+        result.disableExplanations_ = disableExplanations_;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.enableContainerLogging_ = enableContainerLogging_;
+        result.serviceAccount_ = serviceAccount_;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.enableAccessLogging_ = enableAccessLogging_;
+        result.enableContainerLogging_ = enableContainerLogging_;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.enableAccessLogging_ = enableAccessLogging_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.privateEndpoints_ =
             privateEndpointsBuilder_ == null ? privateEndpoints_ : privateEndpointsBuilder_.build();
       }
@@ -1375,9 +1412,12 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       if (other.hasExplanationSpec()) {
         mergeExplanationSpec(other.getExplanationSpec());
       }
+      if (other.getDisableExplanations() != false) {
+        setDisableExplanations(other.getDisableExplanations());
+      }
       if (!other.getServiceAccount().isEmpty()) {
         serviceAccount_ = other.serviceAccount_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.getEnableContainerLogging() != false) {
@@ -1485,26 +1525,26 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
             case 90:
               {
                 serviceAccount_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 90
             case 96:
               {
                 enableContainerLogging_ = input.readBool();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 96
             case 104:
               {
                 enableAccessLogging_ = input.readBool();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 104
             case 114:
               {
                 input.readMessage(
                     getPrivateEndpointsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 114
             case 138:
@@ -1520,6 +1560,12 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 146
+            case 152:
+              {
+                disableExplanations_ = input.readBool();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 152
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3138,6 +3184,71 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       return explanationSpecBuilder_;
     }
 
+    private boolean disableExplanations_;
+    /**
+     *
+     *
+     * <pre>
+     * If true, deploy the model without explainable feature, regardless the
+     * existence of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]
+     * or
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec].
+     * </pre>
+     *
+     * <code>bool disable_explanations = 19;</code>
+     *
+     * @return The disableExplanations.
+     */
+    @java.lang.Override
+    public boolean getDisableExplanations() {
+      return disableExplanations_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, deploy the model without explainable feature, regardless the
+     * existence of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]
+     * or
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec].
+     * </pre>
+     *
+     * <code>bool disable_explanations = 19;</code>
+     *
+     * @param value The disableExplanations to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisableExplanations(boolean value) {
+
+      disableExplanations_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, deploy the model without explainable feature, regardless the
+     * existence of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]
+     * or
+     * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec].
+     * </pre>
+     *
+     * <code>bool disable_explanations = 19;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisableExplanations() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      disableExplanations_ = false;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object serviceAccount_ = "";
     /**
      *
@@ -3215,7 +3326,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       serviceAccount_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3237,7 +3348,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearServiceAccount() {
       serviceAccount_ = getDefaultInstance().getServiceAccount();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3264,7 +3375,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       serviceAccount_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3304,7 +3415,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableContainerLogging(boolean value) {
 
       enableContainerLogging_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3322,7 +3433,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableContainerLogging() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       enableContainerLogging_ = false;
       onChanged();
       return this;
@@ -3333,6 +3444,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * If true, online prediction access logs are sent to StackDriver
+     * Logging.
      * These logs are like standard server access logs, containing
      * information like timestamp and latency for each prediction request.
      * Note that Stackdriver logs may incur a cost, especially if your project
@@ -3352,6 +3465,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * If true, online prediction access logs are sent to StackDriver
+     * Logging.
      * These logs are like standard server access logs, containing
      * information like timestamp and latency for each prediction request.
      * Note that Stackdriver logs may incur a cost, especially if your project
@@ -3367,7 +3482,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableAccessLogging(boolean value) {
 
       enableAccessLogging_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3375,6 +3490,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * If true, online prediction access logs are sent to StackDriver
+     * Logging.
      * These logs are like standard server access logs, containing
      * information like timestamp and latency for each prediction request.
      * Note that Stackdriver logs may incur a cost, especially if your project
@@ -3387,7 +3504,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableAccessLogging() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       enableAccessLogging_ = false;
       onChanged();
       return this;
@@ -3416,7 +3533,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the privateEndpoints field is set.
      */
     public boolean hasPrivateEndpoints() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -3466,7 +3583,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         privateEndpointsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3491,7 +3608,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         privateEndpointsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3512,7 +3629,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     public Builder mergePrivateEndpoints(
         com.google.cloud.aiplatform.v1beta1.PrivateEndpoints value) {
       if (privateEndpointsBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && privateEndpoints_ != null
             && privateEndpoints_
                 != com.google.cloud.aiplatform.v1beta1.PrivateEndpoints.getDefaultInstance()) {
@@ -3523,7 +3640,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         privateEndpointsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3542,7 +3659,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPrivateEndpoints() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       privateEndpoints_ = null;
       if (privateEndpointsBuilder_ != null) {
         privateEndpointsBuilder_.dispose();
@@ -3567,7 +3684,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.aiplatform.v1beta1.PrivateEndpoints.Builder
         getPrivateEndpointsBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getPrivateEndpointsFieldBuilder().getBuilder();
     }

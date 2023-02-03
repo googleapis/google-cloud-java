@@ -31,6 +31,9 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesRequest;
 import com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesResponse;
+import com.google.cloud.aiplatform.v1.CopyModelOperationMetadata;
+import com.google.cloud.aiplatform.v1.CopyModelRequest;
+import com.google.cloud.aiplatform.v1.CopyModelResponse;
 import com.google.cloud.aiplatform.v1.DeleteModelRequest;
 import com.google.cloud.aiplatform.v1.DeleteModelVersionRequest;
 import com.google.cloud.aiplatform.v1.DeleteOperationMetadata;
@@ -161,6 +164,14 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setType(MethodDescriptor.MethodType.UNARY)
           .setFullMethodName("google.cloud.aiplatform.v1.ModelService/ExportModel")
           .setRequestMarshaller(ProtoUtils.marshaller(ExportModelRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<CopyModelRequest, Operation> copyModelMethodDescriptor =
+      MethodDescriptor.<CopyModelRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.aiplatform.v1.ModelService/CopyModel")
+          .setRequestMarshaller(ProtoUtils.marshaller(CopyModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
 
@@ -306,6 +317,9 @@ public class GrpcModelServiceStub extends ModelServiceStub {
   private final OperationCallable<
           ExportModelRequest, ExportModelResponse, ExportModelOperationMetadata>
       exportModelOperationCallable;
+  private final UnaryCallable<CopyModelRequest, Operation> copyModelCallable;
+  private final OperationCallable<CopyModelRequest, CopyModelResponse, CopyModelOperationMetadata>
+      copyModelOperationCallable;
   private final UnaryCallable<ImportModelEvaluationRequest, ModelEvaluation>
       importModelEvaluationCallable;
   private final UnaryCallable<
@@ -463,6 +477,16 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                 request -> {
                   ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                   params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<CopyModelRequest, Operation> copyModelTransportSettings =
+        GrpcCallSettings.<CopyModelRequest, Operation>newBuilder()
+            .setMethodDescriptor(copyModelMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
                   return params.build();
                 })
             .build();
@@ -653,6 +677,15 @@ public class GrpcModelServiceStub extends ModelServiceStub {
             settings.exportModelOperationSettings(),
             clientContext,
             operationsStub);
+    this.copyModelCallable =
+        callableFactory.createUnaryCallable(
+            copyModelTransportSettings, settings.copyModelSettings(), clientContext);
+    this.copyModelOperationCallable =
+        callableFactory.createOperationCallable(
+            copyModelTransportSettings,
+            settings.copyModelOperationSettings(),
+            clientContext,
+            operationsStub);
     this.importModelEvaluationCallable =
         callableFactory.createUnaryCallable(
             importModelEvaluationTransportSettings,
@@ -801,6 +834,17 @@ public class GrpcModelServiceStub extends ModelServiceStub {
   public OperationCallable<ExportModelRequest, ExportModelResponse, ExportModelOperationMetadata>
       exportModelOperationCallable() {
     return exportModelOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CopyModelRequest, Operation> copyModelCallable() {
+    return copyModelCallable;
+  }
+
+  @Override
+  public OperationCallable<CopyModelRequest, CopyModelResponse, CopyModelOperationMetadata>
+      copyModelOperationCallable() {
+    return copyModelOperationCallable;
   }
 
   @Override

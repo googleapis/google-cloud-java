@@ -382,6 +382,23 @@ public interface DeployedModelOrBuilder
    *
    *
    * <pre>
+   * If true, deploy the model without explainable feature, regardless the
+   * existence of
+   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]
+   * or
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec].
+   * </pre>
+   *
+   * <code>bool disable_explanations = 19;</code>
+   *
+   * @return The disableExplanations.
+   */
+  boolean getDisableExplanations();
+
+  /**
+   *
+   *
+   * <pre>
    * The service account that the DeployedModel's container runs as. Specify the
    * email address of the service account. If this service account is not
    * specified, the container runs as a service account that doesn't have access
@@ -432,6 +449,8 @@ public interface DeployedModelOrBuilder
    *
    *
    * <pre>
+   * If true, online prediction access logs are sent to StackDriver
+   * Logging.
    * These logs are like standard server access logs, containing
    * information like timestamp and latency for each prediction request.
    * Note that Stackdriver logs may incur a cost, especially if your project

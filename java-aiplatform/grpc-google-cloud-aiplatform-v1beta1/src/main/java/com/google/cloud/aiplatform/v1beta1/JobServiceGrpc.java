@@ -760,6 +760,322 @@ public final class JobServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.CreateNasJobRequest,
+          com.google.cloud.aiplatform.v1beta1.NasJob>
+      getCreateNasJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateNasJob",
+      requestType = com.google.cloud.aiplatform.v1beta1.CreateNasJobRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.NasJob.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.CreateNasJobRequest,
+          com.google.cloud.aiplatform.v1beta1.NasJob>
+      getCreateNasJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.CreateNasJobRequest,
+            com.google.cloud.aiplatform.v1beta1.NasJob>
+        getCreateNasJobMethod;
+    if ((getCreateNasJobMethod = JobServiceGrpc.getCreateNasJobMethod) == null) {
+      synchronized (JobServiceGrpc.class) {
+        if ((getCreateNasJobMethod = JobServiceGrpc.getCreateNasJobMethod) == null) {
+          JobServiceGrpc.getCreateNasJobMethod =
+              getCreateNasJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.CreateNasJobRequest,
+                          com.google.cloud.aiplatform.v1beta1.NasJob>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateNasJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.CreateNasJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.NasJob.getDefaultInstance()))
+                      .setSchemaDescriptor(new JobServiceMethodDescriptorSupplier("CreateNasJob"))
+                      .build();
+        }
+      }
+    }
+    return getCreateNasJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.GetNasJobRequest,
+          com.google.cloud.aiplatform.v1beta1.NasJob>
+      getGetNasJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetNasJob",
+      requestType = com.google.cloud.aiplatform.v1beta1.GetNasJobRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.NasJob.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.GetNasJobRequest,
+          com.google.cloud.aiplatform.v1beta1.NasJob>
+      getGetNasJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.GetNasJobRequest,
+            com.google.cloud.aiplatform.v1beta1.NasJob>
+        getGetNasJobMethod;
+    if ((getGetNasJobMethod = JobServiceGrpc.getGetNasJobMethod) == null) {
+      synchronized (JobServiceGrpc.class) {
+        if ((getGetNasJobMethod = JobServiceGrpc.getGetNasJobMethod) == null) {
+          JobServiceGrpc.getGetNasJobMethod =
+              getGetNasJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.GetNasJobRequest,
+                          com.google.cloud.aiplatform.v1beta1.NasJob>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetNasJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.GetNasJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.NasJob.getDefaultInstance()))
+                      .setSchemaDescriptor(new JobServiceMethodDescriptorSupplier("GetNasJob"))
+                      .build();
+        }
+      }
+    }
+    return getGetNasJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.ListNasJobsRequest,
+          com.google.cloud.aiplatform.v1beta1.ListNasJobsResponse>
+      getListNasJobsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListNasJobs",
+      requestType = com.google.cloud.aiplatform.v1beta1.ListNasJobsRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.ListNasJobsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.ListNasJobsRequest,
+          com.google.cloud.aiplatform.v1beta1.ListNasJobsResponse>
+      getListNasJobsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.ListNasJobsRequest,
+            com.google.cloud.aiplatform.v1beta1.ListNasJobsResponse>
+        getListNasJobsMethod;
+    if ((getListNasJobsMethod = JobServiceGrpc.getListNasJobsMethod) == null) {
+      synchronized (JobServiceGrpc.class) {
+        if ((getListNasJobsMethod = JobServiceGrpc.getListNasJobsMethod) == null) {
+          JobServiceGrpc.getListNasJobsMethod =
+              getListNasJobsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.ListNasJobsRequest,
+                          com.google.cloud.aiplatform.v1beta1.ListNasJobsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListNasJobs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.ListNasJobsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.ListNasJobsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new JobServiceMethodDescriptorSupplier("ListNasJobs"))
+                      .build();
+        }
+      }
+    }
+    return getListNasJobsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.DeleteNasJobRequest, com.google.longrunning.Operation>
+      getDeleteNasJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteNasJob",
+      requestType = com.google.cloud.aiplatform.v1beta1.DeleteNasJobRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.DeleteNasJobRequest, com.google.longrunning.Operation>
+      getDeleteNasJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.DeleteNasJobRequest,
+            com.google.longrunning.Operation>
+        getDeleteNasJobMethod;
+    if ((getDeleteNasJobMethod = JobServiceGrpc.getDeleteNasJobMethod) == null) {
+      synchronized (JobServiceGrpc.class) {
+        if ((getDeleteNasJobMethod = JobServiceGrpc.getDeleteNasJobMethod) == null) {
+          JobServiceGrpc.getDeleteNasJobMethod =
+              getDeleteNasJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.DeleteNasJobRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteNasJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.DeleteNasJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new JobServiceMethodDescriptorSupplier("DeleteNasJob"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteNasJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.CancelNasJobRequest, com.google.protobuf.Empty>
+      getCancelNasJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CancelNasJob",
+      requestType = com.google.cloud.aiplatform.v1beta1.CancelNasJobRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.CancelNasJobRequest, com.google.protobuf.Empty>
+      getCancelNasJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.CancelNasJobRequest, com.google.protobuf.Empty>
+        getCancelNasJobMethod;
+    if ((getCancelNasJobMethod = JobServiceGrpc.getCancelNasJobMethod) == null) {
+      synchronized (JobServiceGrpc.class) {
+        if ((getCancelNasJobMethod = JobServiceGrpc.getCancelNasJobMethod) == null) {
+          JobServiceGrpc.getCancelNasJobMethod =
+              getCancelNasJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.CancelNasJobRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CancelNasJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.CancelNasJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(new JobServiceMethodDescriptorSupplier("CancelNasJob"))
+                      .build();
+        }
+      }
+    }
+    return getCancelNasJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.GetNasTrialDetailRequest,
+          com.google.cloud.aiplatform.v1beta1.NasTrialDetail>
+      getGetNasTrialDetailMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetNasTrialDetail",
+      requestType = com.google.cloud.aiplatform.v1beta1.GetNasTrialDetailRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.NasTrialDetail.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.GetNasTrialDetailRequest,
+          com.google.cloud.aiplatform.v1beta1.NasTrialDetail>
+      getGetNasTrialDetailMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.GetNasTrialDetailRequest,
+            com.google.cloud.aiplatform.v1beta1.NasTrialDetail>
+        getGetNasTrialDetailMethod;
+    if ((getGetNasTrialDetailMethod = JobServiceGrpc.getGetNasTrialDetailMethod) == null) {
+      synchronized (JobServiceGrpc.class) {
+        if ((getGetNasTrialDetailMethod = JobServiceGrpc.getGetNasTrialDetailMethod) == null) {
+          JobServiceGrpc.getGetNasTrialDetailMethod =
+              getGetNasTrialDetailMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.GetNasTrialDetailRequest,
+                          com.google.cloud.aiplatform.v1beta1.NasTrialDetail>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetNasTrialDetail"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.GetNasTrialDetailRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.NasTrialDetail
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new JobServiceMethodDescriptorSupplier("GetNasTrialDetail"))
+                      .build();
+        }
+      }
+    }
+    return getGetNasTrialDetailMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsRequest,
+          com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsResponse>
+      getListNasTrialDetailsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListNasTrialDetails",
+      requestType = com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsRequest,
+          com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsResponse>
+      getListNasTrialDetailsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsRequest,
+            com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsResponse>
+        getListNasTrialDetailsMethod;
+    if ((getListNasTrialDetailsMethod = JobServiceGrpc.getListNasTrialDetailsMethod) == null) {
+      synchronized (JobServiceGrpc.class) {
+        if ((getListNasTrialDetailsMethod = JobServiceGrpc.getListNasTrialDetailsMethod) == null) {
+          JobServiceGrpc.getListNasTrialDetailsMethod =
+              getListNasTrialDetailsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsRequest,
+                          com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListNasTrialDetails"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new JobServiceMethodDescriptorSupplier("ListNasTrialDetails"))
+                      .build();
+        }
+      }
+    }
+    return getListNasTrialDetailsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1beta1.CreateBatchPredictionJobRequest,
           com.google.cloud.aiplatform.v1beta1.BatchPredictionJob>
       getCreateBatchPredictionJobMethod;
@@ -1755,6 +2071,118 @@ public final class JobServiceGrpc {
      *
      *
      * <pre>
+     * Creates a NasJob
+     * </pre>
+     */
+    public void createNasJob(
+        com.google.cloud.aiplatform.v1beta1.CreateNasJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.NasJob> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateNasJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a NasJob
+     * </pre>
+     */
+    public void getNasJob(
+        com.google.cloud.aiplatform.v1beta1.GetNasJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.NasJob> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetNasJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists NasJobs in a Location.
+     * </pre>
+     */
+    public void listNasJobs(
+        com.google.cloud.aiplatform.v1beta1.ListNasJobsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListNasJobsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListNasJobsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a NasJob.
+     * </pre>
+     */
+    public void deleteNasJob(
+        com.google.cloud.aiplatform.v1beta1.DeleteNasJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteNasJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a NasJob.
+     * Starts asynchronous cancellation on the NasJob. The server
+     * makes a best effort to cancel the job, but success is not
+     * guaranteed. Clients can use
+     * [JobService.GetNasJob][google.cloud.aiplatform.v1beta1.JobService.GetNasJob]
+     * or other methods to check whether the cancellation succeeded or whether the
+     * job completed despite cancellation. On successful cancellation,
+     * the NasJob is not deleted; instead it becomes a job with
+     * a [NasJob.error][google.cloud.aiplatform.v1beta1.NasJob.error] value with a
+     * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
+     * `Code.CANCELLED`, and
+     * [NasJob.state][google.cloud.aiplatform.v1beta1.NasJob.state] is set to
+     * `CANCELLED`.
+     * </pre>
+     */
+    public void cancelNasJob(
+        com.google.cloud.aiplatform.v1beta1.CancelNasJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCancelNasJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a NasTrialDetail.
+     * </pre>
+     */
+    public void getNasTrialDetail(
+        com.google.cloud.aiplatform.v1beta1.GetNasTrialDetailRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.NasTrialDetail>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetNasTrialDetailMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List top NasTrialDetails of a NasJob.
+     * </pre>
+     */
+    public void listNasTrialDetails(
+        com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListNasTrialDetailsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a BatchPredictionJob. A BatchPredictionJob once created will
      * right away be attempted to start.
      * </pre>
@@ -2068,6 +2496,51 @@ public final class JobServiceGrpc {
                   new MethodHandlers<
                       com.google.cloud.aiplatform.v1beta1.CancelHyperparameterTuningJobRequest,
                       com.google.protobuf.Empty>(this, METHODID_CANCEL_HYPERPARAMETER_TUNING_JOB)))
+          .addMethod(
+              getCreateNasJobMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1beta1.CreateNasJobRequest,
+                      com.google.cloud.aiplatform.v1beta1.NasJob>(this, METHODID_CREATE_NAS_JOB)))
+          .addMethod(
+              getGetNasJobMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1beta1.GetNasJobRequest,
+                      com.google.cloud.aiplatform.v1beta1.NasJob>(this, METHODID_GET_NAS_JOB)))
+          .addMethod(
+              getListNasJobsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1beta1.ListNasJobsRequest,
+                      com.google.cloud.aiplatform.v1beta1.ListNasJobsResponse>(
+                      this, METHODID_LIST_NAS_JOBS)))
+          .addMethod(
+              getDeleteNasJobMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1beta1.DeleteNasJobRequest,
+                      com.google.longrunning.Operation>(this, METHODID_DELETE_NAS_JOB)))
+          .addMethod(
+              getCancelNasJobMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1beta1.CancelNasJobRequest,
+                      com.google.protobuf.Empty>(this, METHODID_CANCEL_NAS_JOB)))
+          .addMethod(
+              getGetNasTrialDetailMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1beta1.GetNasTrialDetailRequest,
+                      com.google.cloud.aiplatform.v1beta1.NasTrialDetail>(
+                      this, METHODID_GET_NAS_TRIAL_DETAIL)))
+          .addMethod(
+              getListNasTrialDetailsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsRequest,
+                      com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsResponse>(
+                      this, METHODID_LIST_NAS_TRIAL_DETAILS)))
           .addMethod(
               getCreateBatchPredictionJobMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2455,6 +2928,131 @@ public final class JobServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCancelHyperparameterTuningJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a NasJob
+     * </pre>
+     */
+    public void createNasJob(
+        com.google.cloud.aiplatform.v1beta1.CreateNasJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.NasJob> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateNasJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a NasJob
+     * </pre>
+     */
+    public void getNasJob(
+        com.google.cloud.aiplatform.v1beta1.GetNasJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.NasJob> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetNasJobMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists NasJobs in a Location.
+     * </pre>
+     */
+    public void listNasJobs(
+        com.google.cloud.aiplatform.v1beta1.ListNasJobsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListNasJobsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListNasJobsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a NasJob.
+     * </pre>
+     */
+    public void deleteNasJob(
+        com.google.cloud.aiplatform.v1beta1.DeleteNasJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteNasJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a NasJob.
+     * Starts asynchronous cancellation on the NasJob. The server
+     * makes a best effort to cancel the job, but success is not
+     * guaranteed. Clients can use
+     * [JobService.GetNasJob][google.cloud.aiplatform.v1beta1.JobService.GetNasJob]
+     * or other methods to check whether the cancellation succeeded or whether the
+     * job completed despite cancellation. On successful cancellation,
+     * the NasJob is not deleted; instead it becomes a job with
+     * a [NasJob.error][google.cloud.aiplatform.v1beta1.NasJob.error] value with a
+     * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
+     * `Code.CANCELLED`, and
+     * [NasJob.state][google.cloud.aiplatform.v1beta1.NasJob.state] is set to
+     * `CANCELLED`.
+     * </pre>
+     */
+    public void cancelNasJob(
+        com.google.cloud.aiplatform.v1beta1.CancelNasJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCancelNasJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a NasTrialDetail.
+     * </pre>
+     */
+    public void getNasTrialDetail(
+        com.google.cloud.aiplatform.v1beta1.GetNasTrialDetailRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.NasTrialDetail>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetNasTrialDetailMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List top NasTrialDetails of a NasJob.
+     * </pre>
+     */
+    public void listNasTrialDetails(
+        com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListNasTrialDetailsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2947,6 +3545,109 @@ public final class JobServiceGrpc {
      *
      *
      * <pre>
+     * Creates a NasJob
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.NasJob createNasJob(
+        com.google.cloud.aiplatform.v1beta1.CreateNasJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateNasJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a NasJob
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.NasJob getNasJob(
+        com.google.cloud.aiplatform.v1beta1.GetNasJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetNasJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists NasJobs in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListNasJobsResponse listNasJobs(
+        com.google.cloud.aiplatform.v1beta1.ListNasJobsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListNasJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a NasJob.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteNasJob(
+        com.google.cloud.aiplatform.v1beta1.DeleteNasJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteNasJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a NasJob.
+     * Starts asynchronous cancellation on the NasJob. The server
+     * makes a best effort to cancel the job, but success is not
+     * guaranteed. Clients can use
+     * [JobService.GetNasJob][google.cloud.aiplatform.v1beta1.JobService.GetNasJob]
+     * or other methods to check whether the cancellation succeeded or whether the
+     * job completed despite cancellation. On successful cancellation,
+     * the NasJob is not deleted; instead it becomes a job with
+     * a [NasJob.error][google.cloud.aiplatform.v1beta1.NasJob.error] value with a
+     * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
+     * `Code.CANCELLED`, and
+     * [NasJob.state][google.cloud.aiplatform.v1beta1.NasJob.state] is set to
+     * `CANCELLED`.
+     * </pre>
+     */
+    public com.google.protobuf.Empty cancelNasJob(
+        com.google.cloud.aiplatform.v1beta1.CancelNasJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelNasJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a NasTrialDetail.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.NasTrialDetail getNasTrialDetail(
+        com.google.cloud.aiplatform.v1beta1.GetNasTrialDetailRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetNasTrialDetailMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List top NasTrialDetails of a NasJob.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsResponse listNasTrialDetails(
+        com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListNasTrialDetailsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a BatchPredictionJob. A BatchPredictionJob once created will
      * right away be attempted to start.
      * </pre>
@@ -3404,6 +4105,115 @@ public final class JobServiceGrpc {
      *
      *
      * <pre>
+     * Creates a NasJob
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.NasJob>
+        createNasJob(com.google.cloud.aiplatform.v1beta1.CreateNasJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateNasJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a NasJob
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.NasJob>
+        getNasJob(com.google.cloud.aiplatform.v1beta1.GetNasJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetNasJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists NasJobs in a Location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.ListNasJobsResponse>
+        listNasJobs(com.google.cloud.aiplatform.v1beta1.ListNasJobsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListNasJobsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a NasJob.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteNasJob(com.google.cloud.aiplatform.v1beta1.DeleteNasJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteNasJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a NasJob.
+     * Starts asynchronous cancellation on the NasJob. The server
+     * makes a best effort to cancel the job, but success is not
+     * guaranteed. Clients can use
+     * [JobService.GetNasJob][google.cloud.aiplatform.v1beta1.JobService.GetNasJob]
+     * or other methods to check whether the cancellation succeeded or whether the
+     * job completed despite cancellation. On successful cancellation,
+     * the NasJob is not deleted; instead it becomes a job with
+     * a [NasJob.error][google.cloud.aiplatform.v1beta1.NasJob.error] value with a
+     * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
+     * `Code.CANCELLED`, and
+     * [NasJob.state][google.cloud.aiplatform.v1beta1.NasJob.state] is set to
+     * `CANCELLED`.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        cancelNasJob(com.google.cloud.aiplatform.v1beta1.CancelNasJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCancelNasJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a NasTrialDetail.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.NasTrialDetail>
+        getNasTrialDetail(com.google.cloud.aiplatform.v1beta1.GetNasTrialDetailRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetNasTrialDetailMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List top NasTrialDetails of a NasJob.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsResponse>
+        listNasTrialDetails(
+            com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListNasTrialDetailsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a BatchPredictionJob. A BatchPredictionJob once created will
      * right away be attempted to start.
      * </pre>
@@ -3634,19 +4444,26 @@ public final class JobServiceGrpc {
   private static final int METHODID_LIST_HYPERPARAMETER_TUNING_JOBS = 12;
   private static final int METHODID_DELETE_HYPERPARAMETER_TUNING_JOB = 13;
   private static final int METHODID_CANCEL_HYPERPARAMETER_TUNING_JOB = 14;
-  private static final int METHODID_CREATE_BATCH_PREDICTION_JOB = 15;
-  private static final int METHODID_GET_BATCH_PREDICTION_JOB = 16;
-  private static final int METHODID_LIST_BATCH_PREDICTION_JOBS = 17;
-  private static final int METHODID_DELETE_BATCH_PREDICTION_JOB = 18;
-  private static final int METHODID_CANCEL_BATCH_PREDICTION_JOB = 19;
-  private static final int METHODID_CREATE_MODEL_DEPLOYMENT_MONITORING_JOB = 20;
-  private static final int METHODID_SEARCH_MODEL_DEPLOYMENT_MONITORING_STATS_ANOMALIES = 21;
-  private static final int METHODID_GET_MODEL_DEPLOYMENT_MONITORING_JOB = 22;
-  private static final int METHODID_LIST_MODEL_DEPLOYMENT_MONITORING_JOBS = 23;
-  private static final int METHODID_UPDATE_MODEL_DEPLOYMENT_MONITORING_JOB = 24;
-  private static final int METHODID_DELETE_MODEL_DEPLOYMENT_MONITORING_JOB = 25;
-  private static final int METHODID_PAUSE_MODEL_DEPLOYMENT_MONITORING_JOB = 26;
-  private static final int METHODID_RESUME_MODEL_DEPLOYMENT_MONITORING_JOB = 27;
+  private static final int METHODID_CREATE_NAS_JOB = 15;
+  private static final int METHODID_GET_NAS_JOB = 16;
+  private static final int METHODID_LIST_NAS_JOBS = 17;
+  private static final int METHODID_DELETE_NAS_JOB = 18;
+  private static final int METHODID_CANCEL_NAS_JOB = 19;
+  private static final int METHODID_GET_NAS_TRIAL_DETAIL = 20;
+  private static final int METHODID_LIST_NAS_TRIAL_DETAILS = 21;
+  private static final int METHODID_CREATE_BATCH_PREDICTION_JOB = 22;
+  private static final int METHODID_GET_BATCH_PREDICTION_JOB = 23;
+  private static final int METHODID_LIST_BATCH_PREDICTION_JOBS = 24;
+  private static final int METHODID_DELETE_BATCH_PREDICTION_JOB = 25;
+  private static final int METHODID_CANCEL_BATCH_PREDICTION_JOB = 26;
+  private static final int METHODID_CREATE_MODEL_DEPLOYMENT_MONITORING_JOB = 27;
+  private static final int METHODID_SEARCH_MODEL_DEPLOYMENT_MONITORING_STATS_ANOMALIES = 28;
+  private static final int METHODID_GET_MODEL_DEPLOYMENT_MONITORING_JOB = 29;
+  private static final int METHODID_LIST_MODEL_DEPLOYMENT_MONITORING_JOBS = 30;
+  private static final int METHODID_UPDATE_MODEL_DEPLOYMENT_MONITORING_JOB = 31;
+  private static final int METHODID_DELETE_MODEL_DEPLOYMENT_MONITORING_JOB = 32;
+  private static final int METHODID_PAUSE_MODEL_DEPLOYMENT_MONITORING_JOB = 33;
+  private static final int METHODID_RESUME_MODEL_DEPLOYMENT_MONITORING_JOB = 34;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3753,6 +4570,47 @@ public final class JobServiceGrpc {
           serviceImpl.cancelHyperparameterTuningJob(
               (com.google.cloud.aiplatform.v1beta1.CancelHyperparameterTuningJobRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_CREATE_NAS_JOB:
+          serviceImpl.createNasJob(
+              (com.google.cloud.aiplatform.v1beta1.CreateNasJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.NasJob>)
+                  responseObserver);
+          break;
+        case METHODID_GET_NAS_JOB:
+          serviceImpl.getNasJob(
+              (com.google.cloud.aiplatform.v1beta1.GetNasJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.NasJob>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_NAS_JOBS:
+          serviceImpl.listNasJobs(
+              (com.google.cloud.aiplatform.v1beta1.ListNasJobsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListNasJobsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_NAS_JOB:
+          serviceImpl.deleteNasJob(
+              (com.google.cloud.aiplatform.v1beta1.DeleteNasJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CANCEL_NAS_JOB:
+          serviceImpl.cancelNasJob(
+              (com.google.cloud.aiplatform.v1beta1.CancelNasJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_GET_NAS_TRIAL_DETAIL:
+          serviceImpl.getNasTrialDetail(
+              (com.google.cloud.aiplatform.v1beta1.GetNasTrialDetailRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.NasTrialDetail>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_NAS_TRIAL_DETAILS:
+          serviceImpl.listNasTrialDetails(
+              (com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsResponse>)
+                  responseObserver);
           break;
         case METHODID_CREATE_BATCH_PREDICTION_JOB:
           serviceImpl.createBatchPredictionJob(
@@ -3920,6 +4778,13 @@ public final class JobServiceGrpc {
                       .addMethod(getListHyperparameterTuningJobsMethod())
                       .addMethod(getDeleteHyperparameterTuningJobMethod())
                       .addMethod(getCancelHyperparameterTuningJobMethod())
+                      .addMethod(getCreateNasJobMethod())
+                      .addMethod(getGetNasJobMethod())
+                      .addMethod(getListNasJobsMethod())
+                      .addMethod(getDeleteNasJobMethod())
+                      .addMethod(getCancelNasJobMethod())
+                      .addMethod(getGetNasTrialDetailMethod())
+                      .addMethod(getListNasTrialDetailsMethod())
                       .addMethod(getCreateBatchPredictionJobMethod())
                       .addMethod(getGetBatchPredictionJobMethod())
                       .addMethod(getListBatchPredictionJobsMethod())

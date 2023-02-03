@@ -379,6 +379,9 @@
             "CancelHyperparameterTuningJob": {
               "methods": ["cancelHyperparameterTuningJob", "cancelHyperparameterTuningJob", "cancelHyperparameterTuningJob", "cancelHyperparameterTuningJobCallable"]
             },
+            "CancelNasJob": {
+              "methods": ["cancelNasJob", "cancelNasJob", "cancelNasJob", "cancelNasJobCallable"]
+            },
             "CreateBatchPredictionJob": {
               "methods": ["createBatchPredictionJob", "createBatchPredictionJob", "createBatchPredictionJob", "createBatchPredictionJobCallable"]
             },
@@ -394,6 +397,9 @@
             "CreateModelDeploymentMonitoringJob": {
               "methods": ["createModelDeploymentMonitoringJob", "createModelDeploymentMonitoringJob", "createModelDeploymentMonitoringJob", "createModelDeploymentMonitoringJobCallable"]
             },
+            "CreateNasJob": {
+              "methods": ["createNasJob", "createNasJob", "createNasJob", "createNasJobCallable"]
+            },
             "DeleteBatchPredictionJob": {
               "methods": ["deleteBatchPredictionJobAsync", "deleteBatchPredictionJobAsync", "deleteBatchPredictionJobAsync", "deleteBatchPredictionJobOperationCallable", "deleteBatchPredictionJobCallable"]
             },
@@ -408,6 +414,9 @@
             },
             "DeleteModelDeploymentMonitoringJob": {
               "methods": ["deleteModelDeploymentMonitoringJobAsync", "deleteModelDeploymentMonitoringJobAsync", "deleteModelDeploymentMonitoringJobAsync", "deleteModelDeploymentMonitoringJobOperationCallable", "deleteModelDeploymentMonitoringJobCallable"]
+            },
+            "DeleteNasJob": {
+              "methods": ["deleteNasJobAsync", "deleteNasJobAsync", "deleteNasJobAsync", "deleteNasJobOperationCallable", "deleteNasJobCallable"]
             },
             "GetBatchPredictionJob": {
               "methods": ["getBatchPredictionJob", "getBatchPredictionJob", "getBatchPredictionJob", "getBatchPredictionJobCallable"]
@@ -430,6 +439,12 @@
             "GetModelDeploymentMonitoringJob": {
               "methods": ["getModelDeploymentMonitoringJob", "getModelDeploymentMonitoringJob", "getModelDeploymentMonitoringJob", "getModelDeploymentMonitoringJobCallable"]
             },
+            "GetNasJob": {
+              "methods": ["getNasJob", "getNasJob", "getNasJob", "getNasJobCallable"]
+            },
+            "GetNasTrialDetail": {
+              "methods": ["getNasTrialDetail", "getNasTrialDetail", "getNasTrialDetail", "getNasTrialDetailCallable"]
+            },
             "ListBatchPredictionJobs": {
               "methods": ["listBatchPredictionJobs", "listBatchPredictionJobs", "listBatchPredictionJobs", "listBatchPredictionJobsPagedCallable", "listBatchPredictionJobsCallable"]
             },
@@ -447,6 +462,12 @@
             },
             "ListModelDeploymentMonitoringJobs": {
               "methods": ["listModelDeploymentMonitoringJobs", "listModelDeploymentMonitoringJobs", "listModelDeploymentMonitoringJobs", "listModelDeploymentMonitoringJobsPagedCallable", "listModelDeploymentMonitoringJobsCallable"]
+            },
+            "ListNasJobs": {
+              "methods": ["listNasJobs", "listNasJobs", "listNasJobs", "listNasJobsPagedCallable", "listNasJobsCallable"]
+            },
+            "ListNasTrialDetails": {
+              "methods": ["listNasTrialDetails", "listNasTrialDetails", "listNasTrialDetails", "listNasTrialDetailsPagedCallable", "listNasTrialDetailsCallable"]
             },
             "PauseModelDeploymentMonitoringJob": {
               "methods": ["pauseModelDeploymentMonitoringJob", "pauseModelDeploymentMonitoringJob", "pauseModelDeploymentMonitoringJob", "pauseModelDeploymentMonitoringJobCallable"]
@@ -627,6 +648,9 @@
           "rpcs": {
             "BatchImportModelEvaluationSlices": {
               "methods": ["batchImportModelEvaluationSlices", "batchImportModelEvaluationSlices", "batchImportModelEvaluationSlices", "batchImportModelEvaluationSlicesCallable"]
+            },
+            "CopyModel": {
+              "methods": ["copyModelAsync", "copyModelAsync", "copyModelAsync", "copyModelAsync", "copyModelAsync", "copyModelOperationCallable", "copyModelCallable"]
             },
             "DeleteModel": {
               "methods": ["deleteModelAsync", "deleteModelAsync", "deleteModelAsync", "deleteModelOperationCallable", "deleteModelCallable"]
