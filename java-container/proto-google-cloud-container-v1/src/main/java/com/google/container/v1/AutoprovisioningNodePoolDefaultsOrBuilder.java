@@ -181,8 +181,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * information, read [how to specify min CPU
    * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform).
    * This field is deprecated, min_cpu_platform should be specified using
-   * https://cloud.google.com/requested-min-cpu-platform label selector on the
-   * pod.
+   * `cloud.google.com/requested-min-cpu-platform` label selector on the pod.
    * To unset the min cpu platform field pass "automatic"
    * as field value.
    * </pre>
@@ -190,7 +189,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * <code>string min_cpu_platform = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-   *     deprecated. See google/container/v1/cluster_service.proto;l=3508
+   *     deprecated. See google/container/v1/cluster_service.proto;l=3509
    * @return The minCpuPlatform.
    */
   @java.lang.Deprecated
@@ -207,8 +206,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * information, read [how to specify min CPU
    * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform).
    * This field is deprecated, min_cpu_platform should be specified using
-   * https://cloud.google.com/requested-min-cpu-platform label selector on the
-   * pod.
+   * `cloud.google.com/requested-min-cpu-platform` label selector on the pod.
    * To unset the min cpu platform field pass "automatic"
    * as field value.
    * </pre>
@@ -216,7 +214,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * <code>string min_cpu_platform = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-   *     deprecated. See google/container/v1/cluster_service.proto;l=3508
+   *     deprecated. See google/container/v1/cluster_service.proto;l=3509
    * @return The bytes for minCpuPlatform.
    */
   @java.lang.Deprecated
