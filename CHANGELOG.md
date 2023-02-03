@@ -1,5 +1,50 @@
 # Changelog
 
+## [1.4.0](https://github.com/googleapis/google-cloud-java/compare/v1.3.0...v1.4.0) (2023-02-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* [networkconnectivity] remove policy based routing API ([#9036](https://github.com/googleapis/google-cloud-java/issues/9036))
+* [vmwareengine] resource proto messages moved to new file ([#9044](https://github.com/googleapis/google-cloud-java/issues/9044))
+
+### Features
+
+* [aiplatform] add service_networking.proto to aiplatform v1 ([#9073](https://github.com/googleapis/google-cloud-java/issues/9073)) ([3cebec3](https://github.com/googleapis/google-cloud-java/commit/3cebec3f6958dbf611473df55947b3d33d2ea6db))
+* [dialogflow-cx] added JSON_PACKAGE field to ExportAgentRequest ([#9025](https://github.com/googleapis/google-cloud-java/issues/9025)) ([10bb0cb](https://github.com/googleapis/google-cloud-java/commit/10bb0cb494f64b864408ede46834e1046351370c))
+* [documentai] added advanced_ocr_options field in OcrConfig ([#9042](https://github.com/googleapis/google-cloud-java/issues/9042)) ([f845147](https://github.com/googleapis/google-cloud-java/commit/f8451473516eb45bdd7251d3533c28da4a31e652))
+* [gke-multi-cloud] Added support for Azure workload identity federation ([#9055](https://github.com/googleapis/google-cloud-java/issues/9055)) ([374fd84](https://github.com/googleapis/google-cloud-java/commit/374fd84892fa30c77bb61c0eb50d02358c5cbcc1))
+
+
+### Bug Fixes
+
+* [certificatemanager] workaround crashes in gRPC for C++ ([#9033](https://github.com/googleapis/google-cloud-java/issues/9033)) ([2bf4ad6](https://github.com/googleapis/google-cloud-java/commit/2bf4ad6a6f59eec0b6944617721aa94352b25b0b))
+* [networkconnectivity] remove policy based routing API ([#9036](https://github.com/googleapis/google-cloud-java/issues/9036)) ([20c36b2](https://github.com/googleapis/google-cloud-java/commit/20c36b2df369868f5a07db98a40e8d2a7432f6e7))
+* [tpu] proper http bindings for v2 API ([#9035](https://github.com/googleapis/google-cloud-java/issues/9035)) ([ec05dad](https://github.com/googleapis/google-cloud-java/commit/ec05dad77119cf97adcfe1a7d067d2591e234b51))
+* **deps:** update dependency com.fasterxml.jackson:jackson-bom to v2.14.2 ([#9057](https://github.com/googleapis/google-cloud-java/issues/9057)) ([05c4183](https://github.com/googleapis/google-cloud-java/commit/05c4183a4151d82a472a5f1c289d8006e5deb999))
+* **deps:** update dependency com.google.api-client:google-api-client-bom to v2.2.0 ([#9058](https://github.com/googleapis/google-cloud-java/issues/9058)) ([6f02472](https://github.com/googleapis/google-cloud-java/commit/6f024724263bda464947ba1e377c157f5e88d1e9))
+* **deps:** update dependency com.google.api:gapic-generator-java-bom to v2.15.0 ([#9060](https://github.com/googleapis/google-cloud-java/issues/9060)) ([77d7442](https://github.com/googleapis/google-cloud-java/commit/77d7442a8d315c7826bbca2a0da8a8dce379a929))
+* **deps:** update dependency com.google.apis:google-api-services-cloudresourcemanager to v1-rev20230129-2.0.0 ([#9049](https://github.com/googleapis/google-cloud-java/issues/9049)) ([c56075c](https://github.com/googleapis/google-cloud-java/commit/c56075c32040b95b90508d8fcf09a44161255dd0))
+* **deps:** update dependency com.google.apis:google-api-services-dns to v1-rev20230126-2.0.0 ([#9047](https://github.com/googleapis/google-cloud-java/issues/9047)) ([1500a14](https://github.com/googleapis/google-cloud-java/commit/1500a144c3ee1f62701eb12ef8831fc07add06df))
+* **deps:** update dependency com.google.cloud:google-cloud-storage to v2.17.2 ([#9023](https://github.com/googleapis/google-cloud-java/issues/9023)) ([c82e099](https://github.com/googleapis/google-cloud-java/commit/c82e0999d622ca4a536a94b2d9bd1bb014f54abc))
+* **deps:** update dependency org.checkerframework:checker-qual to v3.30.0 ([#9063](https://github.com/googleapis/google-cloud-java/issues/9063)) ([30ebd0d](https://github.com/googleapis/google-cloud-java/commit/30ebd0dd699dc5499d2990a3935a97aff84ce171))
+* Outdated versioning info in README.md ([#979](https://github.com/googleapis/google-cloud-java/issues/979)) ([b92c43b](https://github.com/googleapis/google-cloud-java/commit/b92c43b0124f05431f547aeebdc7860a45accae3))
+
+
+### Documentation
+
+* [cloudoptimization] clarification for deprecated fields ([#9062](https://github.com/googleapis/google-cloud-java/issues/9062)) ([8816cde](https://github.com/googleapis/google-cloud-java/commit/8816cde0b23ef5e64adfbf75796ca0f17e537703))
+* [cloudtrace] Remove html formatting (cleanup) ([#9027](https://github.com/googleapis/google-cloud-java/issues/9027)) ([9591b89](https://github.com/googleapis/google-cloud-java/commit/9591b891f6fe7ad47f3a94e45da1b7823539d86a))
+* [container] Add clarification on whether `NodePool.version` is a required field ([#9074](https://github.com/googleapis/google-cloud-java/issues/9074)) ([2bccdf3](https://github.com/googleapis/google-cloud-java/commit/2bccdf3a5f68f27cf5ba914e6b5b0c00202cd6af))
+* [container] clarified wording around the NodePoolUpdateStrategy default behavior ([#9046](https://github.com/googleapis/google-cloud-java/issues/9046)) ([55e4de1](https://github.com/googleapis/google-cloud-java/commit/55e4de106b8f6fc41a706248ad3817d564367777))
+* [container] Improve `version` documentation for `NodePool` ([#9061](https://github.com/googleapis/google-cloud-java/issues/9061)) ([dd109d8](https://github.com/googleapis/google-cloud-java/commit/dd109d865193bfeb809cdcdd9a5043edac253e91))
+* [dataplex] Improvements to DataScan API documentation ([#9054](https://github.com/googleapis/google-cloud-java/issues/9054)) ([2396d77](https://github.com/googleapis/google-cloud-java/commit/2396d77e8d2f93169f9e04b8235f20c7560e3c04))
+* [dialogflow] Reformat some comments and documentation ([#9024](https://github.com/googleapis/google-cloud-java/issues/9024)) ([2c1bd38](https://github.com/googleapis/google-cloud-java/commit/2c1bd383046e895f30a4c720ebbef7a7c78c9e0c))
+* [speech] Clarified boost usage ([#9032](https://github.com/googleapis/google-cloud-java/issues/9032)) ([fd273d6](https://github.com/googleapis/google-cloud-java/commit/fd273d671446aedbb7662c48222f2b573cbf837a))
+* [vmwareengine] resource proto messages moved to new file ([#9044](https://github.com/googleapis/google-cloud-java/issues/9044)) ([32bd679](https://github.com/googleapis/google-cloud-java/commit/32bd679cb746824c37a8c9c408f430e3728fd0d0))
+* README.md to point to Cloud site ([#9034](https://github.com/googleapis/google-cloud-java/issues/9034)) ([67a0c22](https://github.com/googleapis/google-cloud-java/commit/67a0c22e4c00c1dec0f26ab170fa070898d52708))
+* **ruby:** [datalineage] fixed formatting for several literal expressions ([#9026](https://github.com/googleapis/google-cloud-java/issues/9026)) ([7d96c4e](https://github.com/googleapis/google-cloud-java/commit/7d96c4ed28ed2b34d61f0503dae4cea3b13bbd82))
+
 ## [1.3.0](https://github.com/googleapis/google-cloud-java/compare/v1.2.0...v1.3.0) (2023-01-23)
 
 
