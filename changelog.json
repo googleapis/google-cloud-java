@@ -1,4 +1,280 @@
 {
   "repository": "googleapis/google-cloud-java",
-  "entries": []
+  "entries": [
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "2c1bd383046e895f30a4c720ebbef7a7c78c9e0c",
+          "message": "[dialogflow] Reformat some comments and documentation",
+          "issues": [
+            "9024"
+          ]
+        }
+      ],
+      "version": "1.4.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dialogflow",
+      "id": "8e6af2ff-350e-4a8c-afb7-faf31cfb776f",
+      "createTime": "2023-02-03T16:27:23.199Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "374fd84892fa30c77bb61c0eb50d02358c5cbcc1",
+          "message": "[gke-multi-cloud] Added support for Azure workload identity federation",
+          "issues": [
+            "9055"
+          ]
+        }
+      ],
+      "version": "1.4.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-gke-multi-cloud",
+      "id": "ffa29c13-edb0-4b10-886f-f66825901c1c",
+      "createTime": "2023-02-03T16:27:23.199Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "2396d77e8d2f93169f9e04b8235f20c7560e3c04",
+          "message": "[dataplex] Improvements to DataScan API documentation",
+          "issues": [
+            "9054"
+          ]
+        }
+      ],
+      "version": "1.4.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataplex",
+      "id": "8e1da2a8-2a07-41ca-a600-717879e2af73",
+      "createTime": "2023-02-03T16:27:23.199Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "32bd679cb746824c37a8c9c408f430e3728fd0d0",
+          "message": "[vmwareengine] resource proto messages moved to new file",
+          "issues": [
+            "9044"
+          ],
+          "breakingChangeNote": "[vmwareengine] resource proto messages moved to new file ([#9044](https://github.com/googleapis/google-cloud-java/issues/9044))"
+        }
+      ],
+      "version": "1.4.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-vmwareengine",
+      "id": "c69bceec-784a-4ae9-87ee-5d41bf58e745",
+      "createTime": "2023-02-03T16:27:23.199Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "f8451473516eb45bdd7251d3533c28da4a31e652",
+          "message": "[documentai] added advanced_ocr_options field in OcrConfig",
+          "issues": [
+            "9042"
+          ]
+        }
+      ],
+      "version": "1.4.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-document-ai",
+      "id": "5f817d23-415e-42cc-ba5a-4ee2908644aa",
+      "createTime": "2023-02-03T16:27:23.198Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "20c36b2df369868f5a07db98a40e8d2a7432f6e7",
+          "message": "[networkconnectivity] remove policy based routing API",
+          "issues": [
+            "9036"
+          ],
+          "breakingChangeNote": "[networkconnectivity] remove policy based routing API ([#9036](https://github.com/googleapis/google-cloud-java/issues/9036))"
+        }
+      ],
+      "version": "1.4.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-networkconnectivity",
+      "id": "7d3da345-0f21-405a-a8ab-8f226265fdb8",
+      "createTime": "2023-02-03T16:27:23.198Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "ec05dad77119cf97adcfe1a7d067d2591e234b51",
+          "message": "[tpu] proper http bindings for v2 API",
+          "issues": [
+            "9035"
+          ]
+        }
+      ],
+      "version": "1.4.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-tpu",
+      "id": "e13f52c6-4479-4910-86c6-8ccb0d16bf8e",
+      "createTime": "2023-02-03T16:27:23.198Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "2bf4ad6a6f59eec0b6944617721aa94352b25b0b",
+          "message": "[certificatemanager] workaround crashes in gRPC for C++",
+          "issues": [
+            "9033"
+          ]
+        }
+      ],
+      "version": "1.4.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-certificate-manager",
+      "id": "4c354a46-d819-46c5-8087-7fc63656dd03",
+      "createTime": "2023-02-03T16:27:23.198Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "fd273d671446aedbb7662c48222f2b573cbf837a",
+          "message": "[speech] Clarified boost usage",
+          "issues": [
+            "9032"
+          ]
+        }
+      ],
+      "version": "1.4.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-speech",
+      "id": "14b28276-bb46-404d-a39d-6283b7bf899f",
+      "createTime": "2023-02-03T16:27:23.198Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "9591b891f6fe7ad47f3a94e45da1b7823539d86a",
+          "message": "[cloudtrace] Remove html formatting (cleanup)",
+          "issues": [
+            "9027"
+          ]
+        }
+      ],
+      "version": "1.4.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-trace",
+      "id": "ad2bf9cb-9eb3-464b-897b-cad49526a703",
+      "createTime": "2023-02-03T16:27:23.198Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "7d96c4ed28ed2b34d61f0503dae4cea3b13bbd82",
+          "message": "[datalineage] fixed formatting for several literal expressions",
+          "issues": [
+            "9026"
+          ],
+          "scope": "ruby"
+        }
+      ],
+      "version": "1.4.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-datalineage",
+      "id": "f476efd7-115a-46d4-9995-02a57c206533",
+      "createTime": "2023-02-03T16:27:23.198Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "10bb0cb494f64b864408ede46834e1046351370c",
+          "message": "[dialogflow-cx] added JSON_PACKAGE field to ExportAgentRequest",
+          "issues": [
+            "9025"
+          ]
+        }
+      ],
+      "version": "1.4.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dialogflow-cx",
+      "id": "268bd46b-8d2e-472a-b7b6-e096cf87a655",
+      "createTime": "2023-02-03T16:27:23.198Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "8816cde0b23ef5e64adfbf75796ca0f17e537703",
+          "message": "[cloudoptimization] clarification for deprecated fields",
+          "issues": [
+            "9062"
+          ]
+        }
+      ],
+      "version": "1.4.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-optimization",
+      "id": "ec738669-45b6-420a-9099-a9b5fe36540f",
+      "createTime": "2023-02-03T16:27:23.198Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "2bccdf3a5f68f27cf5ba914e6b5b0c00202cd6af",
+          "message": "[container] Add clarification on whether `NodePool.version` is a required field",
+          "issues": [
+            "9074"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "dd109d865193bfeb809cdcdd9a5043edac253e91",
+          "message": "[container] Improve `version` documentation for `NodePool`",
+          "issues": [
+            "9061"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "55e4de106b8f6fc41a706248ad3817d564367777",
+          "message": "[container] clarified wording around the NodePoolUpdateStrategy default behavior",
+          "issues": [
+            "9046"
+          ]
+        }
+      ],
+      "version": "1.4.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-container",
+      "id": "616b4777-7daa-41da-a003-6b7c4e8d5abd",
+      "createTime": "2023-02-03T16:27:23.198Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "3cebec3f6958dbf611473df55947b3d33d2ea6db",
+          "message": "[aiplatform] add service_networking.proto to aiplatform v1",
+          "issues": [
+            "9073"
+          ]
+        }
+      ],
+      "version": "1.4.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-aiplatform",
+      "id": "9cd1ac26-7485-4b2c-9bd9-cd35f08f9a32",
+      "createTime": "2023-02-03T16:27:23.198Z"
+    }
+  ],
+  "updateTime": "2023-02-03T16:27:23.199Z"
 }
