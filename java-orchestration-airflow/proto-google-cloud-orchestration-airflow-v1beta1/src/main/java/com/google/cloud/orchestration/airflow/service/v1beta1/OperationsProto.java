@@ -57,12 +57,11 @@ public final class OperationsProto {
           + "\020\002\022\016\n\nSUCCESSFUL\020\003\022\n\n\006FAILED\020\004\"q\n\004Type\022\024"
           + "\n\020TYPE_UNSPECIFIED\020\000\022\n\n\006CREATE\020\001\022\n\n\006DELE"
           + "TE\020\002\022\n\n\006UPDATE\020\003\022\t\n\005CHECK\020\004\022\021\n\rSAVE_SNAP"
-          + "SHOT\020\005\022\021\n\rLOAD_SNAPSHOT\020\006B\246\001\n6com.google"
+          + "SHOT\020\005\022\021\n\rLOAD_SNAPSHOT\020\006B\235\001\n6com.google"
           + ".cloud.orchestration.airflow.service.v1b"
-          + "eta1B\017OperationsProtoP\001ZYgoogle.golang.o"
-          + "rg/genproto/googleapis/cloud/orchestrati"
-          + "on/airflow/service/v1beta1;serviceb\006prot"
-          + "o3"
+          + "eta1B\017OperationsProtoP\001ZPcloud.google.co"
+          + "m/go/orchestration/airflow/service/apiv1"
+          + "beta1/servicepb;servicepbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

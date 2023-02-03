@@ -434,10 +434,10 @@ public final class EnvironmentsOuterClass {
           + "stration.airflow.service.v1.OperationMet"
           + "adata\032K\312A\027composer.googleapis.com\322A.http"
           + "s://www.googleapis.com/auth/cloud-platfo"
-          + "rmB\213\001\n1com.google.cloud.orchestration.ai"
-          + "rflow.service.v1P\001ZTgoogle.golang.org/ge"
-          + "nproto/googleapis/cloud/orchestration/ai"
-          + "rflow/service/v1;serviceb\006proto3"
+          + "rmB\202\001\n1com.google.cloud.orchestration.ai"
+          + "rflow.service.v1P\001ZKcloud.google.com/go/"
+          + "orchestration/airflow/service/apiv1/serv"
+          + "icepb;servicepbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

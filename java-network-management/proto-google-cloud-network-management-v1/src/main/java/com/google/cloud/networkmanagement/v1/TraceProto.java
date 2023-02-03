@@ -291,13 +291,13 @@ public final class TraceProto {
           + "QLInstanceInfo\022\024\n\014display_name\030\001 \001(\t\022\013\n\003"
           + "uri\030\002 \001(\t\022\023\n\013network_uri\030\004 \001(\t\022\023\n\013intern"
           + "al_ip\030\005 \001(\t\022\023\n\013external_ip\030\006 \001(\t\022\016\n\006regi"
-          + "on\030\007 \001(\tB\370\001\n%com.google.cloud.networkman"
-          + "agement.v1B\nTraceProtoP\001ZRgoogle.golang."
-          + "org/genproto/googleapis/cloud/networkman"
-          + "agement/v1;networkmanagement\252\002!Google.Cl"
-          + "oud.NetworkManagement.V1\312\002!Google\\Cloud\\"
-          + "NetworkManagement\\V1\352\002$Google::Cloud::Ne"
-          + "tworkManagement::V1b\006proto3"
+          + "on\030\007 \001(\tB\371\001\n%com.google.cloud.networkman"
+          + "agement.v1B\nTraceProtoP\001ZScloud.google.c"
+          + "om/go/networkmanagement/apiv1/networkman"
+          + "agementpb;networkmanagementpb\252\002!Google.C"
+          + "loud.NetworkManagement.V1\312\002!Google\\Cloud"
+          + "\\NetworkManagement\\V1\352\002$Google::Cloud::N"
+          + "etworkManagement::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

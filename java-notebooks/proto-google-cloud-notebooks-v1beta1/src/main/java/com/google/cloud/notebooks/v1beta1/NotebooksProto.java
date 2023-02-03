@@ -303,13 +303,13 @@ public final class NotebooksProto {
           + "ects/*/locations/*/environments/*}\312A*\n\025g"
           + "oogle.protobuf.Empty\022\021OperationMetadata\032"
           + "L\312A\030notebooks.googleapis.com\322A.https://w"
-          + "ww.googleapis.com/auth/cloud-platformB\345\001"
+          + "ww.googleapis.com/auth/cloud-platformB\336\001"
           + "\n\"com.google.cloud.notebooks.v1beta1B\016No"
-          + "tebooksProtoP\001ZGgoogle.golang.org/genpro"
-          + "to/googleapis/cloud/notebooks/v1beta1;no"
-          + "tebooks\252\002\036Google.Cloud.Notebooks.V1Beta1"
-          + "\312\002\036Google\\Cloud\\Notebooks\\V1beta1\352\002!Goog"
-          + "le::Cloud::Notebooks::V1beta1b\006proto3"
+          + "tebooksProtoP\001Z@cloud.google.com/go/note"
+          + "books/apiv1beta1/notebookspb;notebookspb"
+          + "\252\002\036Google.Cloud.Notebooks.V1Beta1\312\002\036Goog"
+          + "le\\Cloud\\Notebooks\\V1beta1\352\002!Google::Clo"
+          + "ud::Notebooks::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

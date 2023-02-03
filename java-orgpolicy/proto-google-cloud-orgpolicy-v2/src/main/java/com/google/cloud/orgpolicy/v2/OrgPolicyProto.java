@@ -194,12 +194,12 @@ public final class OrgPolicyProto {
           + "ies/*}Z\'*%/v2/{name=organizations/*/poli"
           + "cies/*}\332A\004name\032L\312A\030orgpolicy.googleapis."
           + "com\322A.https://www.googleapis.com/auth/cl"
-          + "oud-platformB\314\001\n\035com.google.cloud.orgpol"
-          + "icy.v2B\016OrgPolicyProtoP\001ZBgoogle.golang."
-          + "org/genproto/googleapis/cloud/orgpolicy/"
-          + "v2;orgpolicy\252\002\031Google.Cloud.OrgPolicy.V2"
-          + "\312\002\031Google\\Cloud\\OrgPolicy\\V2\352\002\034Google::C"
-          + "loud::OrgPolicy::V2b\006proto3"
+          + "oud-platformB\305\001\n\035com.google.cloud.orgpol"
+          + "icy.v2B\016OrgPolicyProtoP\001Z;cloud.google.c"
+          + "om/go/orgpolicy/apiv2/orgpolicypb;orgpol"
+          + "icypb\252\002\031Google.Cloud.OrgPolicy.V2\312\002\031Goog"
+          + "le\\Cloud\\OrgPolicy\\V2\352\002\034Google::Cloud::O"
+          + "rgPolicy::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

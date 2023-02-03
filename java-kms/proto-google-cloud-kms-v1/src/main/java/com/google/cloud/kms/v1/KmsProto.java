@@ -500,10 +500,10 @@ public final class KmsProto {
           + "ion_level\032t\312A\027cloudkms.googleapis.com\322AW"
           + "https://www.googleapis.com/auth/cloud-pl"
           + "atform,https://www.googleapis.com/auth/c"
-          + "loudkmsB\214\001\n\027com.google.cloud.kms.v1B\010Kms"
-          + "ProtoP\001Z6google.golang.org/genproto/goog"
-          + "leapis/cloud/kms/v1;kms\370\001\001\252\002\023Google.Clou"
-          + "d.Kms.V1\312\002\023Google\\Cloud\\Kms\\V1b\006proto3"
+          + "loudkmsB\177\n\027com.google.cloud.kms.v1B\010KmsP"
+          + "rotoP\001Z)cloud.google.com/go/kms/apiv1/km"
+          + "spb;kmspb\370\001\001\252\002\023Google.Cloud.Kms.V1\312\002\023Goo"
+          + "gle\\Cloud\\Kms\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

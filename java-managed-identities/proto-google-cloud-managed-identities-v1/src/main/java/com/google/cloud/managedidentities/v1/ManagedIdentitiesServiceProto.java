@@ -199,14 +199,14 @@ public final class ManagedIdentitiesServiceProto {
           + "st:\001*\332A\nname,trust\312A\024\n\006Domain\022\nOpMetadat"
           + "a\032T\312A managedidentities.googleapis.com\322A"
           + ".https://www.googleapis.com/auth/cloud-p"
-          + "latformB\222\002\n%com.google.cloud.managediden"
+          + "latformB\223\002\n%com.google.cloud.managediden"
           + "tities.v1B\035ManagedIdentitiesServiceProto"
-          + "P\001ZRgoogle.golang.org/genproto/googleapi"
-          + "s/cloud/managedidentities/v1;managediden"
-          + "tities\242\002\004GCMI\252\002!Google.Cloud.ManagedIden"
-          + "tities.V1\312\002!Google\\Cloud\\ManagedIdentiti"
-          + "es\\V1\352\002$Google::Cloud::ManagedIdentities"
-          + "::V1b\006proto3"
+          + "P\001ZScloud.google.com/go/managedidentitie"
+          + "s/apiv1/managedidentitiespb;managedident"
+          + "itiespb\242\002\004GCMI\252\002!Google.Cloud.ManagedIde"
+          + "ntities.V1\312\002!Google\\Cloud\\ManagedIdentit"
+          + "ies\\V1\352\002$Google::Cloud::ManagedIdentitie"
+          + "s::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

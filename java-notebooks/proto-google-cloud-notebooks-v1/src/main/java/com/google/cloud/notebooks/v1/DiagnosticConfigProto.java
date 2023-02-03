@@ -47,10 +47,10 @@ public final class DiagnosticConfigProto {
           + "\rrelative_path\030\002 \001(\tB\003\340A\001\022 \n\023repair_flag"
           + "_enabled\030\003 \001(\010B\003\340A\001\022(\n\033packet_capture_fl"
           + "ag_enabled\030\004 \001(\010B\003\340A\001\022)\n\034copy_home_files"
-          + "_flag_enabled\030\005 \001(\010B\003\340A\001B|\n\035com.google.c"
+          + "_flag_enabled\030\005 \001(\010B\003\340A\001Bu\n\035com.google.c"
           + "loud.notebooks.v1B\025DiagnosticConfigProto"
-          + "P\001ZBgoogle.golang.org/genproto/googleapi"
-          + "s/cloud/notebooks/v1;notebooksb\006proto3"
+          + "P\001Z;cloud.google.com/go/notebooks/apiv1/"
+          + "notebookspb;notebookspbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

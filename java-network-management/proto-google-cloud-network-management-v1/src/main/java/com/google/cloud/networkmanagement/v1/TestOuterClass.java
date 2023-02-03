@@ -92,14 +92,14 @@ public final class TestOuterClass {
           + "\0228\n\006traces\030\005 \003(\0132(.google.cloud.networkm"
           + "anagement.v1.Trace\"a\n\006Result\022\026\n\022RESULT_U"
           + "NSPECIFIED\020\000\022\r\n\tREACHABLE\020\001\022\017\n\013UNREACHAB"
-          + "LE\020\002\022\r\n\tAMBIGUOUS\020\004\022\020\n\014UNDETERMINED\020\005B\374\001"
+          + "LE\020\002\022\r\n\tAMBIGUOUS\020\004\022\020\n\014UNDETERMINED\020\005B\375\001"
           + "\n%com.google.cloud.networkmanagement.v1B"
-          + "\016TestOuterClassP\001ZRgoogle.golang.org/gen"
-          + "proto/googleapis/cloud/networkmanagement"
-          + "/v1;networkmanagement\252\002!Google.Cloud.Net"
-          + "workManagement.V1\312\002!Google\\Cloud\\Network"
-          + "Management\\V1\352\002$Google::Cloud::NetworkMa"
-          + "nagement::V1b\006proto3"
+          + "\016TestOuterClassP\001ZScloud.google.com/go/n"
+          + "etworkmanagement/apiv1/networkmanagement"
+          + "pb;networkmanagementpb\252\002!Google.Cloud.Ne"
+          + "tworkManagement.V1\312\002!Google\\Cloud\\Networ"
+          + "kManagement\\V1\352\002$Google::Cloud::NetworkM"
+          + "anagement::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

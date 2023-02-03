@@ -50,15 +50,15 @@ public final class CommonProto {
           + "mestampB\003\340A\003\022\023\n\006target\030\003 \001(\tB\003\340A\003\022\021\n\004ver"
           + "b\030\004 \001(\tB\003\340A\003\022\033\n\016status_message\030\005 \001(\tB\003\340A"
           + "\003\022#\n\026requested_cancellation\030\006 \001(\010B\003\340A\003\022\030"
-          + "\n\013api_version\030\007 \001(\tB\003\340A\003B\243\002\n-com.google."
+          + "\n\013api_version\030\007 \001(\tB\003\340A\003B\246\002\n-com.google."
           + "cloud.networkconnectivity.v1alpha1B\013Comm"
-          + "onProtoP\001Z\\google.golang.org/genproto/go"
-          + "ogleapis/cloud/networkconnectivity/v1alp"
-          + "ha1;networkconnectivity\252\002)Google.Cloud.N"
-          + "etworkConnectivity.V1Alpha1\312\002)Google\\Clo"
-          + "ud\\NetworkConnectivity\\V1alpha1\352\002,Google"
-          + "::Cloud::NetworkConnectivity::V1alpha1b\006"
-          + "proto3"
+          + "onProtoP\001Z_cloud.google.com/go/networkco"
+          + "nnectivity/apiv1alpha1/networkconnectivi"
+          + "typb;networkconnectivitypb\252\002)Google.Clou"
+          + "d.NetworkConnectivity.V1Alpha1\312\002)Google\\"
+          + "Cloud\\NetworkConnectivity\\V1alpha1\352\002,Goo"
+          + "gle::Cloud::NetworkConnectivity::V1alpha"
+          + "1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -142,14 +142,14 @@ public final class AuthorizationPolicyProto {
           + "ecurity.v1.AuthorizationPolicyB\003\340A\002\"l\n D"
           + "eleteAuthorizationPolicyRequest\022H\n\004name\030"
           + "\001 \001(\tB:\340A\002\372A4\n2networksecurity.googleapi"
-          + "s.com/AuthorizationPolicyB\372\001\n#com.google"
+          + "s.com/AuthorizationPolicyB\371\001\n#com.google"
           + ".cloud.networksecurity.v1B\030Authorization"
-          + "PolicyProtoP\001ZNgoogle.golang.org/genprot"
-          + "o/googleapis/cloud/networksecurity/v1;ne"
-          + "tworksecurity\252\002\037Google.Cloud.NetworkSecu"
-          + "rity.V1\312\002\037Google\\Cloud\\NetworkSecurity\\V"
-          + "1\352\002\"Google::Cloud::NetworkSecurity::V1b\006"
-          + "proto3"
+          + "PolicyProtoP\001ZMcloud.google.com/go/netwo"
+          + "rksecurity/apiv1/networksecuritypb;netwo"
+          + "rksecuritypb\252\002\037Google.Cloud.NetworkSecur"
+          + "ity.V1\312\002\037Google\\Cloud\\NetworkSecurity\\V1"
+          + "\352\002\"Google::Cloud::NetworkSecurity::V1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

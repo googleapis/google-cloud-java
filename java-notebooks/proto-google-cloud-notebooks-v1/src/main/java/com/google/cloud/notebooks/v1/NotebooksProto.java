@@ -545,12 +545,12 @@ public final class NotebooksProto {
           + "on,execution_id\312A\036\n\tExecution\022\021Operation"
           + "Metadata\032L\312A\030notebooks.googleapis.com\322A."
           + "https://www.googleapis.com/auth/cloud-pl"
-          + "atformB\314\001\n\035com.google.cloud.notebooks.v1"
-          + "B\016NotebooksProtoP\001ZBgoogle.golang.org/ge"
-          + "nproto/googleapis/cloud/notebooks/v1;not"
-          + "ebooks\252\002\031Google.Cloud.Notebooks.V1\312\002\031Goo"
-          + "gle\\Cloud\\Notebooks\\V1\352\002\034Google::Cloud::"
-          + "Notebooks::V1b\006proto3"
+          + "atformB\305\001\n\035com.google.cloud.notebooks.v1"
+          + "B\016NotebooksProtoP\001Z;cloud.google.com/go/"
+          + "notebooks/apiv1/notebookspb;notebookspb\252"
+          + "\002\031Google.Cloud.Notebooks.V1\312\002\031Google\\Clo"
+          + "ud\\Notebooks\\V1\352\002\034Google::Cloud::Noteboo"
+          + "ks::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

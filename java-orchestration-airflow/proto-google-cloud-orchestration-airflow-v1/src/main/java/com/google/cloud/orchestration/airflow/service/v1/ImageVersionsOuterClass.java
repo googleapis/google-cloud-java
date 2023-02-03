@@ -72,11 +72,10 @@ public final class ImageVersionsOuterClass {
           + "/{parent=projects/*/locations/*}/imageVe"
           + "rsions\332A\006parent\032K\312A\027composer.googleapis."
           + "com\322A.https://www.googleapis.com/auth/cl"
-          + "oud-platformB\213\001\n1com.google.cloud.orches"
-          + "tration.airflow.service.v1P\001ZTgoogle.gol"
-          + "ang.org/genproto/googleapis/cloud/orches"
-          + "tration/airflow/service/v1;serviceb\006prot"
-          + "o3"
+          + "oud-platformB\202\001\n1com.google.cloud.orches"
+          + "tration.airflow.service.v1P\001ZKcloud.goog"
+          + "le.com/go/orchestration/airflow/service/"
+          + "apiv1/servicepb;servicepbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

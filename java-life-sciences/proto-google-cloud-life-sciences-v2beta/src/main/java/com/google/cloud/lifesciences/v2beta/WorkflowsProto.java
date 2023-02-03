@@ -325,14 +325,14 @@ public final class WorkflowsProto {
           + "=projects/*/locations/*}/pipelines:run:\001"
           + "*\312A\037\n\023RunPipelineResponse\022\010Metadata\032O\312A\033"
           + "lifesciences.googleapis.com\322A.https://ww"
-          + "w.googleapis.com/auth/cloud-platformB\371\001\n"
+          + "w.googleapis.com/auth/cloud-platformB\365\001\n"
           + "$com.google.cloud.lifesciences.v2betaB\016W"
-          + "orkflowsProtoP\001ZLgoogle.golang.org/genpr"
-          + "oto/googleapis/cloud/lifesciences/v2beta"
-          + ";lifesciences\242\002\004CLSW\252\002 Google.Cloud.Life"
-          + "Sciences.V2Beta\312\002 Google\\Cloud\\LifeScien"
-          + "ces\\V2beta\352\002#Google::Cloud::LifeSciences"
-          + "::V2betab\006proto3"
+          + "orkflowsProtoP\001ZHcloud.google.com/go/lif"
+          + "esciences/apiv2beta/lifesciencespb;lifes"
+          + "ciencespb\242\002\004CLSW\252\002 Google.Cloud.LifeScie"
+          + "nces.V2Beta\312\002 Google\\Cloud\\LifeSciences\\"
+          + "V2beta\352\002#Google::Cloud::LifeSciences::V2"
+          + "betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

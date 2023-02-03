@@ -36578,10 +36578,10 @@ public final class PatchJobs {
           + "ollout.Mode\022G\n\021disruption_budget\030\002 \001(\0132,"
           + ".google.cloud.osconfig.v1beta.FixedOrPer"
           + "cent\"D\n\004Mode\022\024\n\020MODE_UNSPECIFIED\020\000\022\020\n\014ZO"
-          + "NE_BY_ZONE\020\001\022\024\n\020CONCURRENT_ZONES\020\002Bs\n co"
+          + "NE_BY_ZONE\020\001\022\024\n\020CONCURRENT_ZONES\020\002Bk\n co"
           + "m.google.cloud.osconfig.v1betaB\tPatchJob"
-          + "sZDgoogle.golang.org/genproto/googleapis"
-          + "/cloud/osconfig/v1beta;osconfigb\006proto3"
+          + "sZ<cloud.google.com/go/osconfig/apiv1bet"
+          + "a/osconfigpb;osconfigpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

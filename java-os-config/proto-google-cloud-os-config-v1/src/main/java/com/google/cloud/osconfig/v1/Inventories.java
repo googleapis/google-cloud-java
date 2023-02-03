@@ -178,12 +178,12 @@ public final class Inventories {
           + "e\0228\n\013inventories\030\001 \003(\0132#.google.cloud.os"
           + "config.v1.Inventory\022\027\n\017next_page_token\030\002"
           + " \001(\t*D\n\rInventoryView\022\036\n\032INVENTORY_VIEW_"
-          + "UNSPECIFIED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL\020\002B\303\001\n\034c"
+          + "UNSPECIFIED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL\020\002B\273\001\n\034c"
           + "om.google.cloud.osconfig.v1B\013Inventories"
-          + "P\001Z@google.golang.org/genproto/googleapi"
-          + "s/cloud/osconfig/v1;osconfig\252\002\030Google.Cl"
-          + "oud.OsConfig.V1\312\002\030Google\\Cloud\\OsConfig\\"
-          + "V1\352\002\033Google::Cloud::OsConfig::V1b\006proto3"
+          + "P\001Z8cloud.google.com/go/osconfig/apiv1/o"
+          + "sconfigpb;osconfigpb\252\002\030Google.Cloud.OsCo"
+          + "nfig.V1\312\002\030Google\\Cloud\\OsConfig\\V1\352\002\033Goo"
+          + "gle::Cloud::OsConfig::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

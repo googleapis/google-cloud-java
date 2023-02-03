@@ -515,11 +515,10 @@ public final class EnvironmentsOuterClass {
           + "tion.airflow.service.v1beta1.OperationMe"
           + "tadata\032K\312A\027composer.googleapis.com\322A.htt"
           + "ps://www.googleapis.com/auth/cloud-platf"
-          + "ormB\225\001\n6com.google.cloud.orchestration.a"
-          + "irflow.service.v1beta1P\001ZYgoogle.golang."
-          + "org/genproto/googleapis/cloud/orchestrat"
-          + "ion/airflow/service/v1beta1;serviceb\006pro"
-          + "to3"
+          + "ormB\214\001\n6com.google.cloud.orchestration.a"
+          + "irflow.service.v1beta1P\001ZPcloud.google.c"
+          + "om/go/orchestration/airflow/service/apiv"
+          + "1beta1/servicepb;servicepbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -137,14 +137,14 @@ public final class EkmServiceProto {
           + "\332A\032ekm_connection,update_mask\032t\312A\027cloudk"
           + "ms.googleapis.com\322AWhttps://www.googleap"
           + "is.com/auth/cloud-platform,https://www.g"
-          + "oogleapis.com/auth/cloudkmsB\222\002\n\027com.goog"
-          + "le.cloud.kms.v1B\017EkmServiceProtoP\001Z6goog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "kms/v1;kms\370\001\001\252\002\023Google.Cloud.Kms.V1\312\002\023Go"
-          + "ogle\\Cloud\\Kms\\V1\352A|\n\'servicedirectory.g"
-          + "oogleapis.com/Service\022Qprojects/{project"
-          + "}/locations/{location}/namespaces/{names"
-          + "pace}/services/{service}b\006proto3"
+          + "oogleapis.com/auth/cloudkmsB\205\002\n\027com.goog"
+          + "le.cloud.kms.v1B\017EkmServiceProtoP\001Z)clou"
+          + "d.google.com/go/kms/apiv1/kmspb;kmspb\370\001\001"
+          + "\252\002\023Google.Cloud.Kms.V1\312\002\023Google\\Cloud\\Km"
+          + "s\\V1\352A|\n\'servicedirectory.googleapis.com"
+          + "/Service\022Qprojects/{project}/locations/{"
+          + "location}/namespaces/{namespace}/service"
+          + "s/{service}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

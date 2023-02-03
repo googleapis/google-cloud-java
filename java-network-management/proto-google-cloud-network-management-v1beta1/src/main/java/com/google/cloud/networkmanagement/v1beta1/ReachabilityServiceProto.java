@@ -143,15 +143,15 @@ public final class ReachabilityServiceProto {
           + "obal/connectivityTests/*}\312A*\n\025google.pro"
           + "tobuf.Empty\022\021OperationMetadata\032T\312A netwo"
           + "rkmanagement.googleapis.com\322A.https://ww"
-          + "w.googleapis.com/auth/cloud-platformB\237\002\n"
+          + "w.googleapis.com/auth/cloud-platformB\240\002\n"
           + "*com.google.cloud.networkmanagement.v1be"
-          + "ta1B\030ReachabilityServiceProtoP\001ZWgoogle."
-          + "golang.org/genproto/googleapis/cloud/net"
-          + "workmanagement/v1beta1;networkmanagement"
-          + "\252\002&Google.Cloud.NetworkManagement.V1Beta"
-          + "1\312\002&Google\\Cloud\\NetworkManagement\\V1bet"
-          + "a1\352\002)Google::Cloud::NetworkManagement::V"
-          + "1beta1b\006proto3"
+          + "ta1B\030ReachabilityServiceProtoP\001ZXcloud.g"
+          + "oogle.com/go/networkmanagement/apiv1beta"
+          + "1/networkmanagementpb;networkmanagementp"
+          + "b\252\002&Google.Cloud.NetworkManagement.V1Bet"
+          + "a1\312\002&Google\\Cloud\\NetworkManagement\\V1be"
+          + "ta1\352\002)Google::Cloud::NetworkManagement::"
+          + "V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

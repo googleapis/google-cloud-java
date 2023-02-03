@@ -302,10 +302,10 @@ public final class CloudMemcacheProto {
           + "le.cloud.memcache.v1.Instance\022*google.cl"
           + "oud.memcache.v1.OperationMetadata\032K\312A\027me"
           + "mcache.googleapis.com\322A.https://www.goog"
-          + "leapis.com/auth/cloud-platformBv\n\034com.go"
+          + "leapis.com/auth/cloud-platformBn\n\034com.go"
           + "ogle.cloud.memcache.v1B\022CloudMemcachePro"
-          + "toP\001Z@google.golang.org/genproto/googlea"
-          + "pis/cloud/memcache/v1;memcacheb\006proto3"
+          + "toP\001Z8cloud.google.com/go/memcache/apiv1"
+          + "/memcachepb;memcachepbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

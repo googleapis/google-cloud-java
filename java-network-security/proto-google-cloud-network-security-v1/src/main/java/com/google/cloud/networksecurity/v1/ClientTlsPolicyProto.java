@@ -111,14 +111,13 @@ public final class ClientTlsPolicyProto {
           + "ud.networksecurity.v1.ClientTlsPolicyB\003\340"
           + "A\002\"d\n\034DeleteClientTlsPolicyRequest\022D\n\004na"
           + "me\030\001 \001(\tB6\340A\002\372A0\n.networksecurity.google"
-          + "apis.com/ClientTlsPolicyB\366\001\n#com.google."
+          + "apis.com/ClientTlsPolicyB\365\001\n#com.google."
           + "cloud.networksecurity.v1B\024ClientTlsPolic"
-          + "yProtoP\001ZNgoogle.golang.org/genproto/goo"
-          + "gleapis/cloud/networksecurity/v1;network"
-          + "security\252\002\037Google.Cloud.NetworkSecurity."
-          + "V1\312\002\037Google\\Cloud\\NetworkSecurity\\V1\352\002\"G"
-          + "oogle::Cloud::NetworkSecurity::V1b\006proto"
-          + "3"
+          + "yProtoP\001ZMcloud.google.com/go/networksec"
+          + "urity/apiv1/networksecuritypb;networksec"
+          + "uritypb\252\002\037Google.Cloud.NetworkSecurity.V"
+          + "1\312\002\037Google\\Cloud\\NetworkSecurity\\V1\352\002\"Go"
+          + "ogle::Cloud::NetworkSecurity::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

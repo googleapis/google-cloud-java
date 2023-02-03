@@ -125,13 +125,13 @@ public final class ExecutionProto {
           + "\n\007EXPIRED\020\t\022\020\n\014INITIALIZING\020\n:f\352Ac\n\"note"
           + "books.googleapis.com/Execution\022=projects"
           + "/{project}/location/{location}/execution"
-          + "s/{execution}B\343\001\n\035com.google.cloud.noteb"
-          + "ooks.v1B\016ExecutionProtoP\001ZBgoogle.golang"
-          + ".org/genproto/googleapis/cloud/notebooks"
-          + "/v1;notebooks\352Ak\n%aiplatform.googleapis."
-          + "com/Tensorboard\022Bprojects/{project}/loca"
-          + "tions/{location}/tensorboards/{tensorboa"
-          + "rd}b\006proto3"
+          + "s/{execution}B\334\001\n\035com.google.cloud.noteb"
+          + "ooks.v1B\016ExecutionProtoP\001Z;cloud.google."
+          + "com/go/notebooks/apiv1/notebookspb;noteb"
+          + "ookspb\352Ak\n%aiplatform.googleapis.com/Ten"
+          + "sorboard\022Bprojects/{project}/locations/{"
+          + "location}/tensorboards/{tensorboard}b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

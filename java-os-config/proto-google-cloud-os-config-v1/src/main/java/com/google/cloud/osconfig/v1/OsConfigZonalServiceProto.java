@@ -119,12 +119,12 @@ public final class OsConfigZonalServiceProto {
           + "tions/*/instances/*}/vulnerabilityReport"
           + "s\332A\006parent\032K\312A\027osconfig.googleapis.com\322A"
           + ".https://www.googleapis.com/auth/cloud-p"
-          + "latformB\321\001\n\034com.google.cloud.osconfig.v1"
-          + "B\031OsConfigZonalServiceProtoP\001Z@google.go"
-          + "lang.org/genproto/googleapis/cloud/oscon"
-          + "fig/v1;osconfig\252\002\030Google.Cloud.OsConfig."
-          + "V1\312\002\030Google\\Cloud\\OsConfig\\V1\352\002\033Google::"
-          + "Cloud::OsConfig::V1b\006proto3"
+          + "latformB\311\001\n\034com.google.cloud.osconfig.v1"
+          + "B\031OsConfigZonalServiceProtoP\001Z8cloud.goo"
+          + "gle.com/go/osconfig/apiv1/osconfigpb;osc"
+          + "onfigpb\252\002\030Google.Cloud.OsConfig.V1\312\002\030Goo"
+          + "gle\\Cloud\\OsConfig\\V1\352\002\033Google::Cloud::O"
+          + "sConfig::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

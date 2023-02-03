@@ -142,14 +142,14 @@ public final class ReachabilityServiceProto {
           + "ctivityTests/*}\332A\004name\312A*\n\025google.protob"
           + "uf.Empty\022\021OperationMetadata\032T\312A networkm"
           + "anagement.googleapis.com\322A.https://www.g"
-          + "oogleapis.com/auth/cloud-platformB\206\002\n%co"
+          + "oogleapis.com/auth/cloud-platformB\207\002\n%co"
           + "m.google.cloud.networkmanagement.v1B\030Rea"
-          + "chabilityServiceProtoP\001ZRgoogle.golang.o"
-          + "rg/genproto/googleapis/cloud/networkmana"
-          + "gement/v1;networkmanagement\252\002!Google.Clo"
-          + "ud.NetworkManagement.V1\312\002!Google\\Cloud\\N"
-          + "etworkManagement\\V1\352\002$Google::Cloud::Net"
-          + "workManagement::V1b\006proto3"
+          + "chabilityServiceProtoP\001ZScloud.google.co"
+          + "m/go/networkmanagement/apiv1/networkmana"
+          + "gementpb;networkmanagementpb\252\002!Google.Cl"
+          + "oud.NetworkManagement.V1\312\002!Google\\Cloud\\"
+          + "NetworkManagement\\V1\352\002$Google::Cloud::Ne"
+          + "tworkManagement::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

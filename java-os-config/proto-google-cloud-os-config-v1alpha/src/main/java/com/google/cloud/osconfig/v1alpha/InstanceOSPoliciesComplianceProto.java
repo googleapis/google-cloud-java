@@ -95,14 +95,13 @@ public final class InstanceOSPoliciesComplianceProto {
           + "pliancesResponse\022e\n instance_os_policies"
           + "_compliances\030\001 \003(\0132;.google.cloud.osconf"
           + "ig.v1alpha.InstanceOSPoliciesCompliance\022"
-          + "\027\n\017next_page_token\030\002 \001(\t:\002\030\001B\362\001\n!com.goo"
+          + "\027\n\017next_page_token\030\002 \001(\t:\002\030\001B\352\001\n!com.goo"
           + "gle.cloud.osconfig.v1alphaB!InstanceOSPo"
-          + "liciesComplianceProtoP\001ZEgoogle.golang.o"
-          + "rg/genproto/googleapis/cloud/osconfig/v1"
-          + "alpha;osconfig\252\002\035Google.Cloud.OsConfig.V"
-          + "1Alpha\312\002\035Google\\Cloud\\OsConfig\\V1alpha\352\002"
-          + " Google::Cloud::OsConfig::V1alphab\006proto"
-          + "3"
+          + "liciesComplianceProtoP\001Z=cloud.google.co"
+          + "m/go/osconfig/apiv1alpha/osconfigpb;osco"
+          + "nfigpb\252\002\035Google.Cloud.OsConfig.V1Alpha\312\002"
+          + "\035Google\\Cloud\\OsConfig\\V1alpha\352\002 Google:"
+          + ":Cloud::OsConfig::V1alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

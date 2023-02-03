@@ -49469,10 +49469,10 @@ public final class GuestPolicies {
           + "(\0132,.google.cloud.osconfig.v1beta.Softwa"
           + "reRecipe*V\n\014DesiredState\022\035\n\031DESIRED_STAT"
           + "E_UNSPECIFIED\020\000\022\r\n\tINSTALLED\020\001\022\013\n\007UPDATE"
-          + "D\020\002\022\013\n\007REMOVED\020\003Bw\n com.google.cloud.osc"
-          + "onfig.v1betaB\rGuestPoliciesZDgoogle.gola"
-          + "ng.org/genproto/googleapis/cloud/osconfi"
-          + "g/v1beta;osconfigb\006proto3"
+          + "D\020\002\022\013\n\007REMOVED\020\003Bo\n com.google.cloud.osc"
+          + "onfig.v1betaB\rGuestPoliciesZ<cloud.googl"
+          + "e.com/go/osconfig/apiv1beta/osconfigpb;o"
+          + "sconfigpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

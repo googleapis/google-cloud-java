@@ -513,14 +513,14 @@ public final class RecaptchaEnterpriseProto {
           + "tgroupmemberships:search:\001*\332A\031project,ha"
           + "shed_account_id\032V\312A\"recaptchaenterprise."
           + "googleapis.com\322A.https://www.googleapis."
-          + "com/auth/cloud-platformB\223\002\n!com.google.r"
+          + "com/auth/cloud-platformB\226\002\n!com.google.r"
           + "ecaptchaenterprise.v1B\030RecaptchaEnterpri"
-          + "seProtoP\001ZVgoogle.golang.org/genproto/go"
-          + "ogleapis/cloud/recaptchaenterprise/v1;re"
-          + "captchaenterprise\242\002\004GCRE\252\002#Google.Cloud."
-          + "RecaptchaEnterprise.V1\312\002#Google\\Cloud\\Re"
-          + "captchaEnterprise\\V1\352\002&Google::Cloud::Re"
-          + "captchaEnterprise::V1b\006proto3"
+          + "seProtoP\001ZYcloud.google.com/go/recaptcha"
+          + "enterprise/apiv1/recaptchaenterprisepb;r"
+          + "ecaptchaenterprisepb\242\002\004GCRE\252\002#Google.Clo"
+          + "ud.RecaptchaEnterprise.V1\312\002#Google\\Cloud"
+          + "\\RecaptchaEnterprise\\V1\352\002&Google::Cloud:"
+          + ":RecaptchaEnterprise::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

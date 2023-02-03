@@ -61,10 +61,10 @@ public final class ScheduleProto {
           + "AILED\020\004\022\020\n\014INITIALIZING\020\005\022\014\n\010DELETING\020\006:"
           + "c\352A`\n!notebooks.googleapis.com/Schedule\022"
           + ";projects/{project}/location/{location}/"
-          + "schedules/{schedule}Bt\n\035com.google.cloud"
-          + ".notebooks.v1B\rScheduleProtoP\001ZBgoogle.g"
-          + "olang.org/genproto/googleapis/cloud/note"
-          + "books/v1;notebooksb\006proto3"
+          + "schedules/{schedule}Bm\n\035com.google.cloud"
+          + ".notebooks.v1B\rScheduleProtoP\001Z;cloud.go"
+          + "ogle.com/go/notebooks/apiv1/notebookspb;"
+          + "notebookspbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

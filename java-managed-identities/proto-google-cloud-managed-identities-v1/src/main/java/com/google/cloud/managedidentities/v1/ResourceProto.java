@@ -94,13 +94,13 @@ public final class ResourceProto {
           + "ED\020\000\022\n\n\006FOREST\020\001\022\014\n\010EXTERNAL\020\002\"_\n\016TrustD"
           + "irection\022\037\n\033TRUST_DIRECTION_UNSPECIFIED\020"
           + "\000\022\013\n\007INBOUND\020\001\022\014\n\010OUTBOUND\020\002\022\021\n\rBIDIRECT"
-          + "IONAL\020\003B\373\001\n%com.google.cloud.managediden"
-          + "tities.v1B\rResourceProtoP\001ZRgoogle.golan"
-          + "g.org/genproto/googleapis/cloud/managedi"
-          + "dentities/v1;managedidentities\252\002!Google."
-          + "Cloud.ManagedIdentities.V1\312\002!Google\\Clou"
-          + "d\\ManagedIdentities\\V1\352\002$Google::Cloud::"
-          + "ManagedIdentities::V1b\006proto3"
+          + "IONAL\020\003B\374\001\n%com.google.cloud.managediden"
+          + "tities.v1B\rResourceProtoP\001ZScloud.google"
+          + ".com/go/managedidentities/apiv1/managedi"
+          + "dentitiespb;managedidentitiespb\252\002!Google"
+          + ".Cloud.ManagedIdentities.V1\312\002!Google\\Clo"
+          + "ud\\ManagedIdentities\\V1\352\002$Google::Cloud:"
+          + ":ManagedIdentities::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

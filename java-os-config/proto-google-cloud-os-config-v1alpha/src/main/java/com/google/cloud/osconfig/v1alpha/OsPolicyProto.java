@@ -246,13 +246,13 @@ public final class OsPolicyProto {
           + "olicy.InventoryFilter\022H\n\tresources\030\002 \003(\013"
           + "20.google.cloud.osconfig.v1alpha.OSPolic"
           + "y.ResourceB\003\340A\002\"=\n\004Mode\022\024\n\020MODE_UNSPECIF"
-          + "IED\020\000\022\016\n\nVALIDATION\020\001\022\017\n\013ENFORCEMENT\020\002B\336"
+          + "IED\020\000\022\016\n\nVALIDATION\020\001\022\017\n\013ENFORCEMENT\020\002B\326"
           + "\001\n!com.google.cloud.osconfig.v1alphaB\rOs"
-          + "PolicyProtoP\001ZEgoogle.golang.org/genprot"
-          + "o/googleapis/cloud/osconfig/v1alpha;osco"
-          + "nfig\252\002\035Google.Cloud.OsConfig.V1Alpha\312\002\035G"
-          + "oogle\\Cloud\\OsConfig\\V1alpha\352\002 Google::C"
-          + "loud::OsConfig::V1alphab\006proto3"
+          + "PolicyProtoP\001Z=cloud.google.com/go/oscon"
+          + "fig/apiv1alpha/osconfigpb;osconfigpb\252\002\035G"
+          + "oogle.Cloud.OsConfig.V1Alpha\312\002\035Google\\Cl"
+          + "oud\\OsConfig\\V1alpha\352\002 Google::Cloud::Os"
+          + "Config::V1alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

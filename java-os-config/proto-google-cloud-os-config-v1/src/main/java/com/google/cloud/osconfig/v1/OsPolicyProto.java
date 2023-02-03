@@ -235,12 +235,12 @@ public final class OsPolicyProto {
           + "ryFilter\022C\n\tresources\030\002 \003(\0132+.google.clo"
           + "ud.osconfig.v1.OSPolicy.ResourceB\003\340A\002\"=\n"
           + "\004Mode\022\024\n\020MODE_UNSPECIFIED\020\000\022\016\n\nVALIDATIO"
-          + "N\020\001\022\017\n\013ENFORCEMENT\020\002B\305\001\n\034com.google.clou"
-          + "d.osconfig.v1B\rOsPolicyProtoP\001Z@google.g"
-          + "olang.org/genproto/googleapis/cloud/osco"
-          + "nfig/v1;osconfig\252\002\030Google.Cloud.OsConfig"
-          + ".V1\312\002\030Google\\Cloud\\OsConfig\\V1\352\002\033Google:"
-          + ":Cloud::OsConfig::V1b\006proto3"
+          + "N\020\001\022\017\n\013ENFORCEMENT\020\002B\275\001\n\034com.google.clou"
+          + "d.osconfig.v1B\rOsPolicyProtoP\001Z8cloud.go"
+          + "ogle.com/go/osconfig/apiv1/osconfigpb;os"
+          + "configpb\252\002\030Google.Cloud.OsConfig.V1\312\002\030Go"
+          + "ogle\\Cloud\\OsConfig\\V1\352\002\033Google::Cloud::"
+          + "OsConfig::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

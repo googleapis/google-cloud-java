@@ -326,10 +326,10 @@ public final class CloudMemcacheProto {
           + "google.cloud.memcache.v1beta2.OperationM"
           + "etadata\032K\312A\027memcache.googleapis.com\322A.ht"
           + "tps://www.googleapis.com/auth/cloud-plat"
-          + "formB\200\001\n!com.google.cloud.memcache.v1bet"
-          + "a2B\022CloudMemcacheProtoP\001ZEgoogle.golang."
-          + "org/genproto/googleapis/cloud/memcache/v"
-          + "1beta2;memcacheb\006proto3"
+          + "formBx\n!com.google.cloud.memcache.v1beta"
+          + "2B\022CloudMemcacheProtoP\001Z=cloud.google.co"
+          + "m/go/memcache/apiv1beta2/memcachepb;memc"
+          + "achepbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

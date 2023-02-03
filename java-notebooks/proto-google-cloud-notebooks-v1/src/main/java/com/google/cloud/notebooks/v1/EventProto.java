@@ -55,10 +55,10 @@ public final class EventProto {
           + "\n\014DetailsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001"
           + "(\t:\0028\001\"]\n\tEventType\022\032\n\026EVENT_TYPE_UNSPEC"
           + "IFIED\020\000\022\010\n\004IDLE\020\001\022\r\n\tHEARTBEAT\020\002\022\n\n\006HEAL"
-          + "TH\020\003\022\017\n\013MAINTENANCE\020\004Bq\n\035com.google.clou"
-          + "d.notebooks.v1B\nEventProtoP\001ZBgoogle.gol"
-          + "ang.org/genproto/googleapis/cloud/notebo"
-          + "oks/v1;notebooksb\006proto3"
+          + "TH\020\003\022\017\n\013MAINTENANCE\020\004Bj\n\035com.google.clou"
+          + "d.notebooks.v1B\nEventProtoP\001Z;cloud.goog"
+          + "le.com/go/notebooks/apiv1/notebookspb;no"
+          + "tebookspbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

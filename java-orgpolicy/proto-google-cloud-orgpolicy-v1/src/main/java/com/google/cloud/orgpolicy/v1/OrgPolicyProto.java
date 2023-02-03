@@ -70,13 +70,13 @@ public final class OrgPolicyProto {
           + "\n\023inherit_from_parent\030\005 \001(\010\"<\n\tAllValues"
           + "\022\032\n\026ALL_VALUES_UNSPECIFIED\020\000\022\t\n\005ALLOW\020\001\022"
           + "\010\n\004DENY\020\002\032!\n\rBooleanPolicy\022\020\n\010enforced\030\001"
-          + " \001(\010\032\020\n\016RestoreDefaultB\r\n\013policy_typeB\314\001"
+          + " \001(\010\032\020\n\016RestoreDefaultB\r\n\013policy_typeB\305\001"
           + "\n\035com.google.cloud.orgpolicy.v1B\016OrgPoli"
-          + "cyProtoP\001ZBgoogle.golang.org/genproto/go"
-          + "ogleapis/cloud/orgpolicy/v1;orgpolicy\252\002\031"
-          + "Google.Cloud.OrgPolicy.V1\312\002\031Google\\Cloud"
-          + "\\OrgPolicy\\V1\352\002\034Google::Cloud::OrgPolicy"
-          + "::V1b\006proto3"
+          + "cyProtoP\001Z;cloud.google.com/go/orgpolicy"
+          + "/apiv1/orgpolicypb;orgpolicypb\252\002\031Google."
+          + "Cloud.OrgPolicy.V1\312\002\031Google\\Cloud\\OrgPol"
+          + "icy\\V1\352\002\034Google::Cloud::OrgPolicy::V1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

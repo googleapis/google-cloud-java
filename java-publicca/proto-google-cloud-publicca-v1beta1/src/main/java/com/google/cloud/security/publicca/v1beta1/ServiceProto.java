@@ -61,14 +61,14 @@ public final class ServiceProto {
           + "nalAccountKeys:\024external_account_key\332A\033p"
           + "arent,external_account_key\032K\312A\027publicca."
           + "googleapis.com\322A.https://www.googleapis."
-          + "com/auth/cloud-platformB\216\002\n*com.google.c"
+          + "com/auth/cloud-platformB\206\002\n*com.google.c"
           + "loud.security.publicca.v1beta1B\014ServiceP"
-          + "rotoP\001ZNgoogle.golang.org/genproto/googl"
-          + "eapis/cloud/security/publicca/v1beta1;pu"
-          + "blicca\370\001\001\252\002&Google.Cloud.Security.Public"
-          + "CA.V1Beta1\312\002&Google\\Cloud\\Security\\Publi"
-          + "cCA\\V1beta1\352\002*Google::Cloud::Security::P"
-          + "ublicCA::V1beta1b\006proto3"
+          + "rotoP\001ZFcloud.google.com/go/security/pub"
+          + "licca/apiv1beta1/publiccapb;publiccapb\370\001"
+          + "\001\252\002&Google.Cloud.Security.PublicCA.V1Bet"
+          + "a1\312\002&Google\\Cloud\\Security\\PublicCA\\V1be"
+          + "ta1\352\002*Google::Cloud::Security::PublicCA:"
+          + ":V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

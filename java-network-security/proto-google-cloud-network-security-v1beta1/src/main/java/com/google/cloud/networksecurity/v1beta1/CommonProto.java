@@ -50,14 +50,14 @@ public final class CommonProto {
           + "A\003\022\023\n\006target\030\003 \001(\tB\003\340A\003\022\021\n\004verb\030\004 \001(\tB\003\340"
           + "A\003\022\033\n\016status_message\030\005 \001(\tB\003\340A\003\022#\n\026reque"
           + "sted_cancellation\030\006 \001(\010B\003\340A\003\022\030\n\013api_vers"
-          + "ion\030\007 \001(\tB\003\340A\003B\206\002\n(com.google.cloud.netw"
-          + "orksecurity.v1beta1B\013CommonProtoP\001ZSgoog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "networksecurity/v1beta1;networksecurity\252"
-          + "\002$Google.Cloud.NetworkSecurity.V1Beta1\312\002"
-          + "$Google\\Cloud\\NetworkSecurity\\V1beta1\352\002\'"
-          + "Google::Cloud::NetworkSecurity::V1beta1b"
-          + "\006proto3"
+          + "ion\030\007 \001(\tB\003\340A\003B\205\002\n(com.google.cloud.netw"
+          + "orksecurity.v1beta1B\013CommonProtoP\001ZRclou"
+          + "d.google.com/go/networksecurity/apiv1bet"
+          + "a1/networksecuritypb;networksecuritypb\252\002"
+          + "$Google.Cloud.NetworkSecurity.V1Beta1\312\002$"
+          + "Google\\Cloud\\NetworkSecurity\\V1beta1\352\002\'G"
+          + "oogle::Cloud::NetworkSecurity::V1beta1b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

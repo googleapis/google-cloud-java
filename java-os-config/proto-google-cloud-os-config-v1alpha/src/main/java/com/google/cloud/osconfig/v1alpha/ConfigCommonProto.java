@@ -74,13 +74,13 @@ public final class ConfigCommonProto {
           + "icyComplianceState\022*\n&OS_POLICY_COMPLIAN"
           + "CE_STATE_UNSPECIFIED\020\000\022\r\n\tCOMPLIANT\020\001\022\021\n"
           + "\rNON_COMPLIANT\020\002\022\013\n\007UNKNOWN\020\003\022\035\n\031NO_OS_P"
-          + "OLICIES_APPLICABLE\020\004\032\002\030\001B\342\001\n!com.google."
+          + "OLICIES_APPLICABLE\020\004\032\002\030\001B\332\001\n!com.google."
           + "cloud.osconfig.v1alphaB\021ConfigCommonProt"
-          + "oP\001ZEgoogle.golang.org/genproto/googleap"
-          + "is/cloud/osconfig/v1alpha;osconfig\252\002\035Goo"
-          + "gle.Cloud.OsConfig.V1Alpha\312\002\035Google\\Clou"
-          + "d\\OsConfig\\V1alpha\352\002 Google::Cloud::OsCo"
-          + "nfig::V1alphab\006proto3"
+          + "oP\001Z=cloud.google.com/go/osconfig/apiv1a"
+          + "lpha/osconfigpb;osconfigpb\252\002\035Google.Clou"
+          + "d.OsConfig.V1Alpha\312\002\035Google\\Cloud\\OsConf"
+          + "ig\\V1alpha\352\002 Google::Cloud::OsConfig::V1"
+          + "alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -891,10 +891,10 @@ public final class Common {
       "\n2google/cloud/osconfig/v1beta/osconfig_"
           + "common.proto\022\034google.cloud.osconfig.v1be"
           + "ta\"<\n\016FixedOrPercent\022\017\n\005fixed\030\001 \001(\005H\000\022\021\n"
-          + "\007percent\030\002 \001(\005H\000B\006\n\004modeBp\n com.google.c"
-          + "loud.osconfig.v1betaB\006CommonZDgoogle.gol"
-          + "ang.org/genproto/googleapis/cloud/osconf"
-          + "ig/v1beta;osconfigb\006proto3"
+          + "\007percent\030\002 \001(\005H\000B\006\n\004modeBh\n com.google.c"
+          + "loud.osconfig.v1betaB\006CommonZ<cloud.goog"
+          + "le.com/go/osconfig/apiv1beta/osconfigpb;"
+          + "osconfigpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

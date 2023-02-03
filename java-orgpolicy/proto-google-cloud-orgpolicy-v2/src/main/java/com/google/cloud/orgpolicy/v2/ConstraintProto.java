@@ -69,12 +69,12 @@ public final class ConstraintProto {
           + "/constraints/{constraint}\022)folders/{fold"
           + "er}/constraints/{constraint}\0225organizati"
           + "ons/{organization}/constraints/{constrai"
-          + "nt}B\021\n\017constraint_typeB\315\001\n\035com.google.cl"
-          + "oud.orgpolicy.v2B\017ConstraintProtoP\001ZBgoo"
-          + "gle.golang.org/genproto/googleapis/cloud"
-          + "/orgpolicy/v2;orgpolicy\252\002\031Google.Cloud.O"
-          + "rgPolicy.V2\312\002\031Google\\Cloud\\OrgPolicy\\V2\352"
-          + "\002\034Google::Cloud::OrgPolicy::V2b\006proto3"
+          + "nt}B\021\n\017constraint_typeB\306\001\n\035com.google.cl"
+          + "oud.orgpolicy.v2B\017ConstraintProtoP\001Z;clo"
+          + "ud.google.com/go/orgpolicy/apiv2/orgpoli"
+          + "cypb;orgpolicypb\252\002\031Google.Cloud.OrgPolic"
+          + "y.V2\312\002\031Google\\Cloud\\OrgPolicy\\V2\352\002\034Googl"
+          + "e::Cloud::OrgPolicy::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

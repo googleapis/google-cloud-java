@@ -78,10 +78,10 @@ public final class AsyncModelProto {
           + "TATE_UNSPECIFIED\020\000\022\013\n\007RUNNING\020\001\022\r\n\tSUCCE"
           + "EDED\020\002\022\r\n\tCANCELLED\020\003\022\n\n\006FAILED\020\004*?\n\nDat"
           + "aFormat\022\033\n\027DATA_FORMAT_UNSPECIFIED\020\000\022\010\n\004"
-          + "JSON\020\001\022\n\n\006STRING\020\002B\177\n com.google.cloud.o"
-          + "ptimization.v1B\017AsyncModelProtoP\001ZHgoogl"
-          + "e.golang.org/genproto/googleapis/cloud/o"
-          + "ptimization/v1;optimizationb\006proto3"
+          + "JSON\020\001\022\n\n\006STRING\020\002B{\n com.google.cloud.o"
+          + "ptimization.v1B\017AsyncModelProtoP\001ZDcloud"
+          + ".google.com/go/optimization/apiv1/optimi"
+          + "zationpb;optimizationpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

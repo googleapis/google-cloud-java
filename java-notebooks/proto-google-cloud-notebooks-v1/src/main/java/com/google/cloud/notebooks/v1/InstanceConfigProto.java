@@ -44,12 +44,12 @@ public final class InstanceConfigProto {
           + "fig.proto\022\031google.cloud.notebooks.v1\"U\n\016"
           + "InstanceConfig\022!\n\031notebook_upgrade_sched"
           + "ule\030\001 \001(\t\022 \n\030enable_health_monitoring\030\002 "
-          + "\001(\010B\321\001\n\035com.google.cloud.notebooks.v1B\023I"
-          + "nstanceConfigProtoP\001ZBgoogle.golang.org/"
-          + "genproto/googleapis/cloud/notebooks/v1;n"
-          + "otebooks\252\002\031Google.Cloud.Notebooks.V1\312\002\031G"
-          + "oogle\\Cloud\\Notebooks\\V1\352\002\034Google::Cloud"
-          + "::Notebooks::V1b\006proto3"
+          + "\001(\010B\312\001\n\035com.google.cloud.notebooks.v1B\023I"
+          + "nstanceConfigProtoP\001Z;cloud.google.com/g"
+          + "o/notebooks/apiv1/notebookspb;notebooksp"
+          + "b\252\002\031Google.Cloud.Notebooks.V1\312\002\031Google\\C"
+          + "loud\\Notebooks\\V1\352\002\034Google::Cloud::Noteb"
+          + "ooks::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

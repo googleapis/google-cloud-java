@@ -66,13 +66,12 @@ public final class EnvironmentProto {
           + " \001(\tB\003\340A\002\022\024\n\nimage_name\030\002 \001(\tH\000\022\026\n\014image"
           + "_family\030\003 \001(\tH\000B\007\n\005image\"6\n\016ContainerIma"
           + "ge\022\027\n\nrepository\030\001 \001(\tB\003\340A\002\022\013\n\003tag\030\002 \001(\t"
-          + "B\347\001\n\"com.google.cloud.notebooks.v1beta1B"
-          + "\020EnvironmentProtoP\001ZGgoogle.golang.org/g"
-          + "enproto/googleapis/cloud/notebooks/v1bet"
-          + "a1;notebooks\252\002\036Google.Cloud.Notebooks.V1"
-          + "Beta1\312\002\036Google\\Cloud\\Notebooks\\V1beta1\352\002"
-          + "!Google::Cloud::Notebooks::V1beta1b\006prot"
-          + "o3"
+          + "B\340\001\n\"com.google.cloud.notebooks.v1beta1B"
+          + "\020EnvironmentProtoP\001Z@cloud.google.com/go"
+          + "/notebooks/apiv1beta1/notebookspb;notebo"
+          + "okspb\252\002\036Google.Cloud.Notebooks.V1Beta1\312\002"
+          + "\036Google\\Cloud\\Notebooks\\V1beta1\352\002!Google"
+          + "::Cloud::Notebooks::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

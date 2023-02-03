@@ -7805,12 +7805,12 @@ public final class Explanations {
           + "_CONDITIONAL\020\003\022\027\n\023UNKNOWN_INFO_DENIED\020\004*"
           + "O\n\022HeuristicRelevance\022#\n\037HEURISTIC_RELEV"
           + "ANCE_UNSPECIFIED\020\000\022\n\n\006NORMAL\020\001\022\010\n\004HIGH\020\002"
-          + "B\322\001ZXgoogle.golang.org/genproto/googleap"
-          + "is/cloud/policytroubleshooter/v1;policyt"
-          + "roubleshooter\252\002$Google.Cloud.PolicyTroub"
-          + "leshooter.V1\312\002$Google\\Cloud\\PolicyTroubl"
-          + "eshooter\\V1\352\002\'Google::Cloud::PolicyTroub"
-          + "leshooter::V1b\006proto3"
+          + "B\326\001Z\\cloud.google.com/go/policytroublesh"
+          + "ooter/apiv1/policytroubleshooterpb;polic"
+          + "ytroubleshooterpb\252\002$Google.Cloud.PolicyT"
+          + "roubleshooter.V1\312\002$Google\\Cloud\\PolicyTr"
+          + "oubleshooter\\V1\352\002\'Google::Cloud::PolicyT"
+          + "roubleshooter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -701,11 +701,10 @@ public final class FleetRoutingProto {
           + "rs:\001*\312A0\n\032BatchOptimizeToursResponse\022\022As"
           + "yncModelMetadata\032T\312A cloudoptimization.g"
           + "oogleapis.com\322A.https://www.googleapis.c"
-          + "om/auth/cloud-platformB\201\001\n com.google.cl"
-          + "oud.optimization.v1B\021FleetRoutingProtoP\001"
-          + "ZHgoogle.golang.org/genproto/googleapis/"
-          + "cloud/optimization/v1;optimizationb\006prot"
-          + "o3"
+          + "om/auth/cloud-platformB}\n com.google.clo"
+          + "ud.optimization.v1B\021FleetRoutingProtoP\001Z"
+          + "Dcloud.google.com/go/optimization/apiv1/"
+          + "optimizationpb;optimizationpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

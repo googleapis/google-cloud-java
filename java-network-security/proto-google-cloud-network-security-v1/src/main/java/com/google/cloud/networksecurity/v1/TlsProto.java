@@ -67,13 +67,13 @@ public final class TlsProto {
           + "ksecurity.v1.GrpcEndpointH\000\022e\n\035certifica"
           + "te_provider_instance\030\003 \001(\0132<.google.clou"
           + "d.networksecurity.v1.CertificateProvider"
-          + "InstanceH\000B\006\n\004typeB\352\001\n#com.google.cloud."
-          + "networksecurity.v1B\010TlsProtoP\001ZNgoogle.g"
-          + "olang.org/genproto/googleapis/cloud/netw"
-          + "orksecurity/v1;networksecurity\252\002\037Google."
-          + "Cloud.NetworkSecurity.V1\312\002\037Google\\Cloud\\"
-          + "NetworkSecurity\\V1\352\002\"Google::Cloud::Netw"
-          + "orkSecurity::V1b\006proto3"
+          + "InstanceH\000B\006\n\004typeB\351\001\n#com.google.cloud."
+          + "networksecurity.v1B\010TlsProtoP\001ZMcloud.go"
+          + "ogle.com/go/networksecurity/apiv1/networ"
+          + "ksecuritypb;networksecuritypb\252\002\037Google.C"
+          + "loud.NetworkSecurity.V1\312\002\037Google\\Cloud\\N"
+          + "etworkSecurity\\V1\352\002\"Google::Cloud::Netwo"
+          + "rkSecurity::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

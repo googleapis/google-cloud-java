@@ -155,12 +155,11 @@ public final class OsLoginProto {
           + "com/auth/cloud-platform.read-only,https:"
           + "//www.googleapis.com/auth/compute,https:"
           + "//www.googleapis.com/auth/compute.readon"
-          + "lyB\276\001\n\033com.google.cloud.oslogin.v1B\014OsLo"
-          + "ginProtoP\001Z>google.golang.org/genproto/g"
-          + "oogleapis/cloud/oslogin/v1;oslogin\252\002\027Goo"
-          + "gle.Cloud.OsLogin.V1\312\002\027Google\\Cloud\\OsLo"
-          + "gin\\V1\352\002\032Google::Cloud::OsLogin::V1b\006pro"
-          + "to3"
+          + "lyB\265\001\n\033com.google.cloud.oslogin.v1B\014OsLo"
+          + "ginProtoP\001Z5cloud.google.com/go/oslogin/"
+          + "apiv1/osloginpb;osloginpb\252\002\027Google.Cloud"
+          + ".OsLogin.V1\312\002\027Google\\Cloud\\OsLogin\\V1\352\002\032"
+          + "Google::Cloud::OsLogin::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

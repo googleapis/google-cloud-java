@@ -63,14 +63,15 @@ public final class IAMCheckerProto {
           + "TroubleshootIamPolicyResponse\"\037\202\323\344\223\002\031\"\024/"
           + "v1/iam:troubleshoot:\001*\032W\312A#policytrouble"
           + "shooter.googleapis.com\322A.https://www.goo"
-          + "gleapis.com/auth/cloud-platformB\222\002\n(com."
+          + "gleapis.com/auth/cloud-platformB\226\002\n(com."
           + "google.cloud.policytroubleshooter.v1B\017IA"
-          + "MCheckerProtoP\001ZXgoogle.golang.org/genpr"
-          + "oto/googleapis/cloud/policytroubleshoote"
-          + "r/v1;policytroubleshooter\370\001\001\252\002$Google.Cl"
-          + "oud.PolicyTroubleshooter.V1\312\002$Google\\Clo"
-          + "ud\\PolicyTroubleshooter\\V1\352\002\'Google::Clo"
-          + "ud::PolicyTroubleshooter::V1P\000b\006proto3"
+          + "MCheckerProtoP\001Z\\cloud.google.com/go/pol"
+          + "icytroubleshooter/apiv1/policytroublesho"
+          + "oterpb;policytroubleshooterpb\370\001\001\252\002$Googl"
+          + "e.Cloud.PolicyTroubleshooter.V1\312\002$Google"
+          + "\\Cloud\\PolicyTroubleshooter\\V1\352\002\'Google:"
+          + ":Cloud::PolicyTroubleshooter::V1P\000b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -146,14 +146,14 @@ public final class TestOuterClass {
           + "STENT\020\003\022\020\n\014UNDETERMINED\020\004\"g\n\021ProbingAbor"
           + "tCause\022#\n\037PROBING_ABORT_CAUSE_UNSPECIFIE"
           + "D\020\000\022\025\n\021PERMISSION_DENIED\020\001\022\026\n\022NO_SOURCE_"
-          + "LOCATION\020\002B\225\002\n*com.google.cloud.networkm"
-          + "anagement.v1beta1B\016TestOuterClassP\001ZWgoo"
-          + "gle.golang.org/genproto/googleapis/cloud"
-          + "/networkmanagement/v1beta1;networkmanage"
-          + "ment\252\002&Google.Cloud.NetworkManagement.V1"
-          + "Beta1\312\002&Google\\Cloud\\NetworkManagement\\V"
-          + "1beta1\352\002)Google::Cloud::NetworkManagemen"
-          + "t::V1beta1b\006proto3"
+          + "LOCATION\020\002B\226\002\n*com.google.cloud.networkm"
+          + "anagement.v1beta1B\016TestOuterClassP\001ZXclo"
+          + "ud.google.com/go/networkmanagement/apiv1"
+          + "beta1/networkmanagementpb;networkmanagem"
+          + "entpb\252\002&Google.Cloud.NetworkManagement.V"
+          + "1Beta1\312\002&Google\\Cloud\\NetworkManagement\\"
+          + "V1beta1\352\002)Google::Cloud::NetworkManageme"
+          + "nt::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

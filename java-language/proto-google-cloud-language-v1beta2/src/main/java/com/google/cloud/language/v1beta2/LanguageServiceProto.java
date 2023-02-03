@@ -377,11 +377,11 @@ public final class LanguageServiceProto {
           + "_type\332A\021document,features\032z\312A\027language.g"
           + "oogleapis.com\322A]https://www.googleapis.c"
           + "om/auth/cloud-language,https://www.googl"
-          + "eapis.com/auth/cloud-platformB\202\001\n!com.go"
-          + "ogle.cloud.language.v1beta2B\024LanguageSer"
-          + "viceProtoP\001ZEgoogle.golang.org/genproto/"
-          + "googleapis/cloud/language/v1beta2;langua"
-          + "geb\006proto3"
+          + "eapis.com/auth/cloud-platformBz\n!com.goo"
+          + "gle.cloud.language.v1beta2B\024LanguageServ"
+          + "iceProtoP\001Z=cloud.google.com/go/language"
+          + "/apiv1beta2/languagepb;languagepbb\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

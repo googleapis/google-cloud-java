@@ -118,14 +118,14 @@ public final class ServerTlsPolicyProto {
           + "cloud.networksecurity.v1beta1.ServerTlsP"
           + "olicyB\003\340A\002\"d\n\034DeleteServerTlsPolicyReque"
           + "st\022D\n\004name\030\001 \001(\tB6\340A\002\372A0\n.networksecurit"
-          + "y.googleapis.com/ServerTlsPolicyB\217\002\n(com"
+          + "y.googleapis.com/ServerTlsPolicyB\216\002\n(com"
           + ".google.cloud.networksecurity.v1beta1B\024S"
-          + "erverTlsPolicyProtoP\001ZSgoogle.golang.org"
-          + "/genproto/googleapis/cloud/networksecuri"
-          + "ty/v1beta1;networksecurity\252\002$Google.Clou"
-          + "d.NetworkSecurity.V1Beta1\312\002$Google\\Cloud"
-          + "\\NetworkSecurity\\V1beta1\352\002\'Google::Cloud"
-          + "::NetworkSecurity::V1beta1b\006proto3"
+          + "erverTlsPolicyProtoP\001ZRcloud.google.com/"
+          + "go/networksecurity/apiv1beta1/networksec"
+          + "uritypb;networksecuritypb\252\002$Google.Cloud"
+          + ".NetworkSecurity.V1Beta1\312\002$Google\\Cloud\\"
+          + "NetworkSecurity\\V1beta1\352\002\'Google::Cloud:"
+          + ":NetworkSecurity::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

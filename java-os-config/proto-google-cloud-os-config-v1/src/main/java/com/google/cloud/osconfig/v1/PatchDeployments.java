@@ -19075,13 +19075,12 @@ public final class PatchDeployments {
           + "\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'osconfig.googleapi"
           + "s.com/PatchDeployment\"]\n\034ResumePatchDepl"
           + "oymentRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'osc"
-          + "onfig.googleapis.com/PatchDeploymentB\306\001\n"
+          + "onfig.googleapis.com/PatchDeploymentB\276\001\n"
           + "\034com.google.cloud.osconfig.v1B\020PatchDepl"
-          + "oymentsZ@google.golang.org/genproto/goog"
-          + "leapis/cloud/osconfig/v1;osconfig\252\002\030Goog"
-          + "le.Cloud.OsConfig.V1\312\002\030Google\\Cloud\\OsCo"
-          + "nfig\\V1\352\002\033Google::Cloud::OsConfig::V1b\006p"
-          + "roto3"
+          + "oymentsZ8cloud.google.com/go/osconfig/ap"
+          + "iv1/osconfigpb;osconfigpb\252\002\030Google.Cloud"
+          + ".OsConfig.V1\312\002\030Google\\Cloud\\OsConfig\\V1\352"
+          + "\002\033Google::Cloud::OsConfig::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

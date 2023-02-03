@@ -127,13 +127,13 @@ public final class InstanceProto {
           + "icType\022\030\n\024UNSPECIFIED_NIC_TYPE\020\000\022\016\n\nVIRT"
           + "IO_NET\020\001\022\t\n\005GVNIC\020\002:O\352AL\n!notebooks.goog"
           + "leapis.com/Instance\022\'projects/{project}/"
-          + "instances/{instance}B\r\n\013environmentB\344\001\n\""
+          + "instances/{instance}B\r\n\013environmentB\335\001\n\""
           + "com.google.cloud.notebooks.v1beta1B\rInst"
-          + "anceProtoP\001ZGgoogle.golang.org/genproto/"
-          + "googleapis/cloud/notebooks/v1beta1;noteb"
-          + "ooks\252\002\036Google.Cloud.Notebooks.V1Beta1\312\002\036"
-          + "Google\\Cloud\\Notebooks\\V1beta1\352\002!Google:"
-          + ":Cloud::Notebooks::V1beta1b\006proto3"
+          + "anceProtoP\001Z@cloud.google.com/go/noteboo"
+          + "ks/apiv1beta1/notebookspb;notebookspb\252\002\036"
+          + "Google.Cloud.Notebooks.V1Beta1\312\002\036Google\\"
+          + "Cloud\\Notebooks\\V1beta1\352\002!Google::Cloud:"
+          + ":Notebooks::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -184,12 +184,12 @@ public final class OsPolicyAssignmentsProto {
           + "ssignment\022\027\n\017next_page_token\030\002 \001(\t\"c\n\037De"
           + "leteOSPolicyAssignmentRequest\022@\n\004name\030\001 "
           + "\001(\tB2\340A\002\372A,\n*osconfig.googleapis.com/OSP"
-          + "olicyAssignmentB\320\001\n\034com.google.cloud.osc"
-          + "onfig.v1B\030OsPolicyAssignmentsProtoP\001Z@go"
-          + "ogle.golang.org/genproto/googleapis/clou"
-          + "d/osconfig/v1;osconfig\252\002\030Google.Cloud.Os"
-          + "Config.V1\312\002\030Google\\Cloud\\OsConfig\\V1\352\002\033G"
-          + "oogle::Cloud::OsConfig::V1b\006proto3"
+          + "olicyAssignmentB\310\001\n\034com.google.cloud.osc"
+          + "onfig.v1B\030OsPolicyAssignmentsProtoP\001Z8cl"
+          + "oud.google.com/go/osconfig/apiv1/osconfi"
+          + "gpb;osconfigpb\252\002\030Google.Cloud.OsConfig.V"
+          + "1\312\002\030Google\\Cloud\\OsConfig\\V1\352\002\033Google::C"
+          + "loud::OsConfig::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -362,11 +362,10 @@ public final class LanguageServiceProto {
           + "ng_type\332A\021document,features\032z\312A\027language"
           + ".googleapis.com\322A]https://www.googleapis"
           + ".com/auth/cloud-language,https://www.goo"
-          + "gleapis.com/auth/cloud-platformBx\n\034com.g"
+          + "gleapis.com/auth/cloud-platformBp\n\034com.g"
           + "oogle.cloud.language.v1B\024LanguageService"
-          + "ProtoP\001Z@google.golang.org/genproto/goog"
-          + "leapis/cloud/language/v1;languageb\006proto"
-          + "3"
+          + "ProtoP\001Z8cloud.google.com/go/language/ap"
+          + "iv1/languagepb;languagepbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -236,13 +236,13 @@ public final class RuntimeProto {
           + "etadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t"
           + ":\0028\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu"
           + "e\030\002 \001(\t:\0028\001\">\n\007NicType\022\030\n\024UNSPECIFIED_NI"
-          + "C_TYPE\020\000\022\016\n\nVIRTIO_NET\020\001\022\t\n\005GVNIC\020\002B\312\001\n\035"
+          + "C_TYPE\020\000\022\016\n\nVIRTIO_NET\020\001\022\t\n\005GVNIC\020\002B\303\001\n\035"
           + "com.google.cloud.notebooks.v1B\014RuntimePr"
-          + "otoP\001ZBgoogle.golang.org/genproto/google"
-          + "apis/cloud/notebooks/v1;notebooks\252\002\031Goog"
-          + "le.Cloud.Notebooks.V1\312\002\031Google\\Cloud\\Not"
-          + "ebooks\\V1\352\002\034Google::Cloud::Notebooks::V1"
-          + "b\006proto3"
+          + "otoP\001Z;cloud.google.com/go/notebooks/api"
+          + "v1/notebookspb;notebookspb\252\002\031Google.Clou"
+          + "d.Notebooks.V1\312\002\031Google\\Cloud\\Notebooks\\"
+          + "V1\352\002\034Google::Cloud::Notebooks::V1b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

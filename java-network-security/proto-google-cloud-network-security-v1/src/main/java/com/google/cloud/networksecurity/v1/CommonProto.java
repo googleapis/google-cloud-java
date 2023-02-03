@@ -50,13 +50,13 @@ public final class CommonProto {
           + "et\030\003 \001(\tB\003\340A\003\022\021\n\004verb\030\004 \001(\tB\003\340A\003\022\033\n\016stat"
           + "us_message\030\005 \001(\tB\003\340A\003\022#\n\026requested_cance"
           + "llation\030\006 \001(\010B\003\340A\003\022\030\n\013api_version\030\007 \001(\tB"
-          + "\003\340A\003B\355\001\n#com.google.cloud.networksecurit"
-          + "y.v1B\013CommonProtoP\001ZNgoogle.golang.org/g"
-          + "enproto/googleapis/cloud/networksecurity"
-          + "/v1;networksecurity\252\002\037Google.Cloud.Netwo"
-          + "rkSecurity.V1\312\002\037Google\\Cloud\\NetworkSecu"
-          + "rity\\V1\352\002\"Google::Cloud::NetworkSecurity"
-          + "::V1b\006proto3"
+          + "\003\340A\003B\354\001\n#com.google.cloud.networksecurit"
+          + "y.v1B\013CommonProtoP\001ZMcloud.google.com/go"
+          + "/networksecurity/apiv1/networksecuritypb"
+          + ";networksecuritypb\252\002\037Google.Cloud.Networ"
+          + "kSecurity.V1\312\002\037Google\\Cloud\\NetworkSecur"
+          + "ity\\V1\352\002\"Google::Cloud::NetworkSecurity:"
+          + ":V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

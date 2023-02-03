@@ -155,14 +155,14 @@ public final class NetworkSecurityOuterClass {
           + "buf.Empty\0226google.cloud.networksecurity."
           + "v1beta1.OperationMetadata\032R\312A\036networksec"
           + "urity.googleapis.com\322A.https://www.googl"
-          + "eapis.com/auth/cloud-platformB\371\001\n(com.go"
-          + "ogle.cloud.networksecurity.v1beta1P\001ZSgo"
-          + "ogle.golang.org/genproto/googleapis/clou"
-          + "d/networksecurity/v1beta1;networksecurit"
-          + "y\252\002$Google.Cloud.NetworkSecurity.V1Beta1"
-          + "\312\002$Google\\Cloud\\NetworkSecurity\\V1beta1\352"
-          + "\002\'Google::Cloud::NetworkSecurity::V1beta"
-          + "1b\006proto3"
+          + "eapis.com/auth/cloud-platformB\370\001\n(com.go"
+          + "ogle.cloud.networksecurity.v1beta1P\001ZRcl"
+          + "oud.google.com/go/networksecurity/apiv1b"
+          + "eta1/networksecuritypb;networksecuritypb"
+          + "\252\002$Google.Cloud.NetworkSecurity.V1Beta1\312"
+          + "\002$Google\\Cloud\\NetworkSecurity\\V1beta1\352\002"
+          + "\'Google::Cloud::NetworkSecurity::V1beta1"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

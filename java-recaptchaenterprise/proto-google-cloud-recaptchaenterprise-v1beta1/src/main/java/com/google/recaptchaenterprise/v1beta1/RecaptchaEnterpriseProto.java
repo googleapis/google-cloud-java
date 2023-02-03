@@ -157,14 +157,15 @@ public final class RecaptchaEnterpriseProto {
           + "sments/*}:annotate:\001*\332A\017name,annotation\032"
           + "V\312A\"recaptchaenterprise.googleapis.com\322A"
           + ".https://www.googleapis.com/auth/cloud-p"
-          + "latformB\254\002\n&com.google.recaptchaenterpri"
-          + "se.v1beta1B\030RecaptchaEnterpriseProtoP\001Z["
-          + "google.golang.org/genproto/googleapis/cl"
-          + "oud/recaptchaenterprise/v1beta1;recaptch"
-          + "aenterprise\242\002\004GCRE\252\002(Google.Cloud.Recapt"
-          + "chaEnterprise.V1Beta1\312\002(Google\\Cloud\\Rec"
-          + "aptchaEnterprise\\V1beta1\352\002+Google::Cloud"
-          + "::RecaptchaEnterprise::V1beta1b\006proto3"
+          + "latformB\257\002\n&com.google.recaptchaenterpri"
+          + "se.v1beta1B\030RecaptchaEnterpriseProtoP\001Z^"
+          + "cloud.google.com/go/recaptchaenterprise/"
+          + "apiv1beta1/recaptchaenterprisepb;recaptc"
+          + "haenterprisepb\242\002\004GCRE\252\002(Google.Cloud.Rec"
+          + "aptchaEnterprise.V1Beta1\312\002(Google\\Cloud\\"
+          + "RecaptchaEnterprise\\V1beta1\352\002+Google::Cl"
+          + "oud::RecaptchaEnterprise::V1beta1b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

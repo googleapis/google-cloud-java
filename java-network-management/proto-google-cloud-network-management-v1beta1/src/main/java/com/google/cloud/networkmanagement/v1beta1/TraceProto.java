@@ -320,14 +320,14 @@ public final class TraceProto {
           + "isplay_name\030\001 \001(\t\022\013\n\003uri\030\002 \001(\t\022\020\n\010locati"
           + "on\030\003 \001(\t\022\022\n\nversion_id\030\004 \001(\003\"G\n\020VpcConne"
           + "ctorInfo\022\024\n\014display_name\030\001 \001(\t\022\013\n\003uri\030\002 "
-          + "\001(\t\022\020\n\010location\030\003 \001(\tB\221\002\n*com.google.clo"
+          + "\001(\t\022\020\n\010location\030\003 \001(\tB\222\002\n*com.google.clo"
           + "ud.networkmanagement.v1beta1B\nTraceProto"
-          + "P\001ZWgoogle.golang.org/genproto/googleapi"
-          + "s/cloud/networkmanagement/v1beta1;networ"
-          + "kmanagement\252\002&Google.Cloud.NetworkManage"
-          + "ment.V1Beta1\312\002&Google\\Cloud\\NetworkManag"
-          + "ement\\V1beta1\352\002)Google::Cloud::NetworkMa"
-          + "nagement::V1beta1b\006proto3"
+          + "P\001ZXcloud.google.com/go/networkmanagemen"
+          + "t/apiv1beta1/networkmanagementpb;network"
+          + "managementpb\252\002&Google.Cloud.NetworkManag"
+          + "ement.V1Beta1\312\002&Google\\Cloud\\NetworkMana"
+          + "gement\\V1beta1\352\002)Google::Cloud::NetworkM"
+          + "anagement::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

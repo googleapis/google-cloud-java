@@ -133,10 +133,10 @@ public final class OsConfigProto {
           + "nes/*/instances/*}:lookupEffectiveGuestP"
           + "olicy:\001*\032K\312A\027osconfig.googleapis.com\322A.h"
           + "ttps://www.googleapis.com/auth/cloud-pla"
-          + "tformBw\n com.google.cloud.osconfig.v1bet"
-          + "aB\rOsConfigProtoZDgoogle.golang.org/genp"
-          + "roto/googleapis/cloud/osconfig/v1beta;os"
-          + "configb\006proto3"
+          + "tformBo\n com.google.cloud.osconfig.v1bet"
+          + "aB\rOsConfigProtoZ<cloud.google.com/go/os"
+          + "config/apiv1beta/osconfigpb;osconfigpbb\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

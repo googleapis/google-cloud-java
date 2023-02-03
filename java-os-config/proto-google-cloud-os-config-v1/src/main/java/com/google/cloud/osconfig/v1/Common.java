@@ -889,12 +889,12 @@ public final class Common {
       "\n.google/cloud/osconfig/v1/osconfig_comm"
           + "on.proto\022\030google.cloud.osconfig.v1\"<\n\016Fi"
           + "xedOrPercent\022\017\n\005fixed\030\001 \001(\005H\000\022\021\n\007percent"
-          + "\030\002 \001(\005H\000B\006\n\004modeB\274\001\n\034com.google.cloud.os"
-          + "config.v1B\006CommonZ@google.golang.org/gen"
-          + "proto/googleapis/cloud/osconfig/v1;oscon"
-          + "fig\252\002\030Google.Cloud.OsConfig.V1\312\002\030Google\\"
-          + "Cloud\\OsConfig\\V1\352\002\033Google::Cloud::OsCon"
-          + "fig::V1b\006proto3"
+          + "\030\002 \001(\005H\000B\006\n\004modeB\264\001\n\034com.google.cloud.os"
+          + "config.v1B\006CommonZ8cloud.google.com/go/o"
+          + "sconfig/apiv1/osconfigpb;osconfigpb\252\002\030Go"
+          + "ogle.Cloud.OsConfig.V1\312\002\030Google\\Cloud\\Os"
+          + "Config\\V1\352\002\033Google::Cloud::OsConfig::V1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
