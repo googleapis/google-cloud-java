@@ -64,10 +64,10 @@ public final class DiscoveryProto {
           + "t_schema_uri\030\004 \001(\tB\003\340A\003\"\202\001\n\022FilteringAtt"
           + "ribute\022\026\n\tattribute\030\001 \001(\tB\003\340A\003\022\030\n\013descri"
           + "ption\030\002 \001(\tB\003\340A\003\022\025\n\010required\030\003 \001(\010B\003\340A\003\022"
-          + "#\n\026path_pattern_supported\030\004 \001(\010B\003\340A\003Br\n\034"
+          + "#\n\026path_pattern_supported\030\004 \001(\010B\003\340A\003Bj\n\034"
           + "com.google.cloud.eventarc.v1B\016DiscoveryP"
-          + "rotoP\001Z@google.golang.org/genproto/googl"
-          + "eapis/cloud/eventarc/v1;eventarcb\006proto3"
+          + "rotoP\001Z8cloud.google.com/go/eventarc/api"
+          + "v1/eventarcpb;eventarcpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

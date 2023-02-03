@@ -195,12 +195,11 @@ public final class EnvironmentProto {
           + "ments/*}/history\032x\312A\031dialogflow.googleap"
           + "is.com\322AYhttps://www.googleapis.com/auth"
           + "/cloud-platform,https://www.googleapis.c"
-          + "om/auth/dialogflowB\256\001\n#com.google.cloud."
-          + "dialogflow.v2beta1B\020EnvironmentProtoP\001ZI"
-          + "google.golang.org/genproto/googleapis/cl"
-          + "oud/dialogflow/v2beta1;dialogflow\370\001\001\242\002\002D"
-          + "F\252\002\037Google.Cloud.Dialogflow.V2beta1b\006pro"
-          + "to3"
+          + "om/auth/dialogflowB\250\001\n#com.google.cloud."
+          + "dialogflow.v2beta1B\020EnvironmentProtoP\001ZC"
+          + "cloud.google.com/go/dialogflow/apiv2beta"
+          + "1/dialogflowpb;dialogflowpb\370\001\001\242\002\002DF\252\002\037Go"
+          + "ogle.Cloud.Dialogflow.V2beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

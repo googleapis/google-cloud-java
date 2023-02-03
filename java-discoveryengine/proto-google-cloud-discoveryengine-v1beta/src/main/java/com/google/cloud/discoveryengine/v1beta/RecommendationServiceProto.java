@@ -102,14 +102,14 @@ public final class RecommendationServiceProto {
           + "dataStores/*/servingConfigs/*}:recommend"
           + ":\001*\032R\312A\036discoveryengine.googleapis.com\322A"
           + ".https://www.googleapis.com/auth/cloud-p"
-          + "latformB\242\002\n\'com.google.cloud.discoveryen"
+          + "latformB\241\002\n\'com.google.cloud.discoveryen"
           + "gine.v1betaB\032RecommendationServiceProtoP"
-          + "\001ZRgoogle.golang.org/genproto/googleapis"
-          + "/cloud/discoveryengine/v1beta;discoverye"
-          + "ngine\242\002\017DISCOVERYENGINE\252\002#Google.Cloud.D"
-          + "iscoveryEngine.V1Beta\312\002#Google\\Cloud\\Dis"
-          + "coveryEngine\\V1beta\352\002&Google::Cloud::Dis"
-          + "coveryEngine::V1betab\006proto3"
+          + "\001ZQcloud.google.com/go/discoveryengine/a"
+          + "piv1beta/discoveryenginepb;discoveryengi"
+          + "nepb\242\002\017DISCOVERYENGINE\252\002#Google.Cloud.Di"
+          + "scoveryEngine.V1Beta\312\002#Google\\Cloud\\Disc"
+          + "overyEngine\\V1beta\352\002&Google::Cloud::Disc"
+          + "overyEngine::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

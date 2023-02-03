@@ -66,10 +66,10 @@ public final class GameServerConfigsServiceOuterClass {
           + "rDeployments/*/configs/*}\332A\004name\312A*\n\025goo"
           + "gle.protobuf.Empty\022\021OperationMetadata\032O\312"
           + "A\033gameservices.googleapis.com\322A.https://"
-          + "www.googleapis.com/auth/cloud-platformB\\"
-          + "\n\032com.google.cloud.gaming.v1P\001Z<google.g"
-          + "olang.org/genproto/googleapis/cloud/gami"
-          + "ng/v1;gamingb\006proto3"
+          + "www.googleapis.com/auth/cloud-platformBR"
+          + "\n\032com.google.cloud.gaming.v1P\001Z2cloud.go"
+          + "ogle.com/go/gaming/apiv1/gamingpb;gaming"
+          + "pbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

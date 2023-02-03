@@ -57,13 +57,13 @@ public final class DocumentAiProcessorType {
           + "o\022\023\n\013location_id\030\001 \001(\t:u\352Ar\n\'documentai."
           + "googleapis.com/ProcessorType\022Gprojects/{"
           + "project}/locations/{location}/processorT"
-          + "ypes/{processor_type}B\333\001\n\036com.google.clo"
+          + "ypes/{processor_type}B\325\001\n\036com.google.clo"
           + "ud.documentai.v1B\027DocumentAiProcessorTyp"
-          + "eP\001ZDgoogle.golang.org/genproto/googleap"
-          + "is/cloud/documentai/v1;documentai\252\002\032Goog"
-          + "le.Cloud.DocumentAI.V1\312\002\032Google\\Cloud\\Do"
-          + "cumentAI\\V1\352\002\035Google::Cloud::DocumentAI:"
-          + ":V1b\006proto3"
+          + "eP\001Z>cloud.google.com/go/documentai/apiv"
+          + "1/documentaipb;documentaipb\252\002\032Google.Clo"
+          + "ud.DocumentAI.V1\312\002\032Google\\Cloud\\Document"
+          + "AI\\V1\352\002\035Google::Cloud::DocumentAI::V1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

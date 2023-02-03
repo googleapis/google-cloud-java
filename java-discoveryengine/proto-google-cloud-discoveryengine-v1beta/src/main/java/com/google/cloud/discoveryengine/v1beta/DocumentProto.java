@@ -52,14 +52,14 @@ public final class DocumentProto {
           + "scoveryengine.googleapis.com/Document\022fp"
           + "rojects/{project}/locations/{location}/d"
           + "ataStores/{data_store}/branches/{branch}"
-          + "/documents/{document}B\006\n\004dataB\225\002\n\'com.go"
+          + "/documents/{document}B\006\n\004dataB\224\002\n\'com.go"
           + "ogle.cloud.discoveryengine.v1betaB\rDocum"
-          + "entProtoP\001ZRgoogle.golang.org/genproto/g"
-          + "oogleapis/cloud/discoveryengine/v1beta;d"
-          + "iscoveryengine\242\002\017DISCOVERYENGINE\252\002#Googl"
-          + "e.Cloud.DiscoveryEngine.V1Beta\312\002#Google\\"
-          + "Cloud\\DiscoveryEngine\\V1beta\352\002&Google::C"
-          + "loud::DiscoveryEngine::V1betab\006proto3"
+          + "entProtoP\001ZQcloud.google.com/go/discover"
+          + "yengine/apiv1beta/discoveryenginepb;disc"
+          + "overyenginepb\242\002\017DISCOVERYENGINE\252\002#Google"
+          + ".Cloud.DiscoveryEngine.V1Beta\312\002#Google\\C"
+          + "loud\\DiscoveryEngine\\V1beta\352\002&Google::Cl"
+          + "oud::DiscoveryEngine::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

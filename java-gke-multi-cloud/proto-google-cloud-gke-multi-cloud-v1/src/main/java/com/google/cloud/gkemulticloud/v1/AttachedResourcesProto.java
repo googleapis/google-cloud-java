@@ -121,13 +121,13 @@ public final class AttachedResourcesProto {
           + "/{project}/locations/{location}/attached"
           + "ServerConfig\".\n\033AttachedPlatformVersionI"
           + "nfo\022\017\n\007version\030\001 \001(\t\"\'\n\024AttachedClusterE"
-          + "rror\022\017\n\007message\030\001 \001(\tB\354\001\n!com.google.clo"
+          + "rror\022\017\n\007message\030\001 \001(\tB\351\001\n!com.google.clo"
           + "ud.gkemulticloud.v1B\026AttachedResourcesPr"
-          + "otoP\001ZJgoogle.golang.org/genproto/google"
-          + "apis/cloud/gkemulticloud/v1;gkemulticlou"
-          + "d\252\002\035Google.Cloud.GkeMultiCloud.V1\312\002\035Goog"
-          + "le\\Cloud\\GkeMultiCloud\\V1\352\002 Google::Clou"
-          + "d::GkeMultiCloud::V1b\006proto3"
+          + "otoP\001ZGcloud.google.com/go/gkemulticloud"
+          + "/apiv1/gkemulticloudpb;gkemulticloudpb\252\002"
+          + "\035Google.Cloud.GkeMultiCloud.V1\312\002\035Google\\"
+          + "Cloud\\GkeMultiCloud\\V1\352\002 Google::Cloud::"
+          + "GkeMultiCloud::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

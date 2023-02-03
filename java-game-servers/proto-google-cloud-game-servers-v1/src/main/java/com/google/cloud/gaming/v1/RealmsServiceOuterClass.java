@@ -70,9 +70,9 @@ public final class RealmsServiceOuterClass {
           + "ojects/*/locations/*/realms/*}:previewUp"
           + "date:\005realm\032O\312A\033gameservices.googleapis."
           + "com\322A.https://www.googleapis.com/auth/cl"
-          + "oud-platformB\\\n\032com.google.cloud.gaming."
-          + "v1P\001Z<google.golang.org/genproto/googlea"
-          + "pis/cloud/gaming/v1;gamingb\006proto3"
+          + "oud-platformBR\n\032com.google.cloud.gaming."
+          + "v1P\001Z2cloud.google.com/go/gaming/apiv1/g"
+          + "amingpb;gamingpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

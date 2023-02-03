@@ -292,12 +292,12 @@ public final class MembershipProto {
           + "*/locations/global/memberships}:initiali"
           + "zeHub:\001*\032I\312A\025gkehub.googleapis.com\322A.htt"
           + "ps://www.googleapis.com/auth/cloud-platf"
-          + "ormB\331\001\n com.google.cloud.gkehub.v1alpha2"
-          + "B\017MembershipProtoP\001ZBgoogle.golang.org/g"
-          + "enproto/googleapis/cloud/gkehub/v1alpha2"
-          + ";gkehub\252\002\034Google.Cloud.GkeHub.V1Alpha2\312\002"
-          + "\034Google\\Cloud\\GkeHub\\V1alpha2\352\002\037Google::"
-          + "Cloud::GkeHub::V1alpha2b\006proto3"
+          + "ormB\317\001\n com.google.cloud.gkehub.v1alpha2"
+          + "B\017MembershipProtoP\001Z8cloud.google.com/go"
+          + "/gkehub/apiv1alpha2/gkehubpb;gkehubpb\252\002\034"
+          + "Google.Cloud.GkeHub.V1Alpha2\312\002\034Google\\Cl"
+          + "oud\\GkeHub\\V1alpha2\352\002\037Google::Cloud::Gke"
+          + "Hub::V1alpha2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

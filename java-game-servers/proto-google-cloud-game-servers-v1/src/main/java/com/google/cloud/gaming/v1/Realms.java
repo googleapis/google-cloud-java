@@ -116,10 +116,10 @@ public final class Realms {
           + "scription\030\010 \001(\t\032-\n\013LabelsEntry\022\013\n\003key\030\001 "
           + "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:^\352A[\n!gameservice"
           + "s.googleapis.com/Realm\0226projects/{projec"
-          + "t}/locations/{location}/realms/{realm}B\\"
-          + "\n\032com.google.cloud.gaming.v1P\001Z<google.g"
-          + "olang.org/genproto/googleapis/cloud/gami"
-          + "ng/v1;gamingb\006proto3"
+          + "t}/locations/{location}/realms/{realm}BR"
+          + "\n\032com.google.cloud.gaming.v1P\001Z2cloud.go"
+          + "ogle.com/go/gaming/apiv1/gamingpb;gaming"
+          + "pbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -170,10 +170,9 @@ public final class Common {
           + "loyedFleetAutoscaler\022\022\n\nautoscaler\030\001 \001(\t"
           + "\022;\n\013spec_source\030\004 \001(\0132&.google.cloud.gam"
           + "ing.v1beta.SpecSource\022\035\n\025fleet_autoscale"
-          + "r_spec\030\003 \001(\tBd\n\036com.google.cloud.gaming."
-          + "v1betaP\001Z@google.golang.org/genproto/goo"
-          + "gleapis/cloud/gaming/v1beta;gamingb\006prot"
-          + "o3"
+          + "r_spec\030\003 \001(\tBZ\n\036com.google.cloud.gaming."
+          + "v1betaP\001Z6cloud.google.com/go/gaming/api"
+          + "v1beta/gamingpb;gamingpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -64,13 +64,13 @@ public final class RestorePlanProto {
           + "\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001("
           + "\t:\0028\001:n\352Ak\n$gkebackup.googleapis.com/Res"
           + "torePlan\022Cprojects/{project}/locations/{"
-          + "location}/restorePlans/{restore_plan}B\316\001"
+          + "location}/restorePlans/{restore_plan}B\307\001"
           + "\n\035com.google.cloud.gkebackup.v1B\020Restore"
-          + "PlanProtoP\001ZBgoogle.golang.org/genproto/"
-          + "googleapis/cloud/gkebackup/v1;gkebackup\252"
-          + "\002\031Google.Cloud.GkeBackup.V1\312\002\031Google\\Clo"
-          + "ud\\GkeBackup\\V1\352\002\034Google::Cloud::GkeBack"
-          + "up::V1b\006proto3"
+          + "PlanProtoP\001Z;cloud.google.com/go/gkeback"
+          + "up/apiv1/gkebackuppb;gkebackuppb\252\002\031Googl"
+          + "e.Cloud.GkeBackup.V1\312\002\031Google\\Cloud\\GkeB"
+          + "ackup\\V1\352\002\034Google::Cloud::GkeBackup::V1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

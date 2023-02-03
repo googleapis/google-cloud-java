@@ -183,13 +183,13 @@ public final class DocumentAiProto {
           + "\"./v1beta2/{parent=projects/*}/documents"
           + ":process:\001*\032M\312A\031documentai.googleapis.co"
           + "m\322A.https://www.googleapis.com/auth/clou"
-          + "d-platformB\354\001\n#com.google.cloud.document"
-          + "ai.v1beta2B\017DocumentAiProtoP\001ZIgoogle.go"
-          + "lang.org/genproto/googleapis/cloud/docum"
-          + "entai/v1beta2;documentai\252\002\037Google.Cloud."
-          + "DocumentAI.V1Beta2\312\002\037Google\\Cloud\\Docume"
-          + "ntAI\\V1beta2\352\002\"Google::Cloud::DocumentAI"
-          + "::V1beta2b\006proto3"
+          + "d-platformB\346\001\n#com.google.cloud.document"
+          + "ai.v1beta2B\017DocumentAiProtoP\001ZCcloud.goo"
+          + "gle.com/go/documentai/apiv1beta2/documen"
+          + "taipb;documentaipb\252\002\037Google.Cloud.Docume"
+          + "ntAI.V1Beta2\312\002\037Google\\Cloud\\DocumentAI\\V"
+          + "1beta2\352\002\"Google::Cloud::DocumentAI::V1be"
+          + "ta2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

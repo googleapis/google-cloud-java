@@ -175,13 +175,13 @@ public final class AttachedServiceProto {
           + "generateAttachedClusterInstallManifest\332A"
           + "\032parent,attached_cluster_id\032P\312A\034gkemulti"
           + "cloud.googleapis.com\322A.https://www.googl"
-          + "eapis.com/auth/cloud-platformB\352\001\n!com.go"
+          + "eapis.com/auth/cloud-platformB\347\001\n!com.go"
           + "ogle.cloud.gkemulticloud.v1B\024AttachedSer"
-          + "viceProtoP\001ZJgoogle.golang.org/genproto/"
-          + "googleapis/cloud/gkemulticloud/v1;gkemul"
-          + "ticloud\252\002\035Google.Cloud.GkeMultiCloud.V1\312"
-          + "\002\035Google\\Cloud\\GkeMultiCloud\\V1\352\002 Google"
-          + "::Cloud::GkeMultiCloud::V1b\006proto3"
+          + "viceProtoP\001ZGcloud.google.com/go/gkemult"
+          + "icloud/apiv1/gkemulticloudpb;gkemulticlo"
+          + "udpb\252\002\035Google.Cloud.GkeMultiCloud.V1\312\002\035G"
+          + "oogle\\Cloud\\GkeMultiCloud\\V1\352\002 Google::C"
+          + "loud::GkeMultiCloud::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

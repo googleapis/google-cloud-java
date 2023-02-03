@@ -285,13 +285,13 @@ public final class AwsResourcesProto {
           + "alingGroupMetricsCollection\022\030\n\013granulari"
           + "ty\030\001 \001(\tB\003\340A\002\022\024\n\007metrics\030\002 \003(\tB\003\340A\001\"\"\n\017A"
           + "wsClusterError\022\017\n\007message\030\001 \001(\t\"#\n\020AwsNo"
-          + "dePoolError\022\017\n\007message\030\001 \001(\tB\347\001\n!com.goo"
+          + "dePoolError\022\017\n\007message\030\001 \001(\tB\344\001\n!com.goo"
           + "gle.cloud.gkemulticloud.v1B\021AwsResources"
-          + "ProtoP\001ZJgoogle.golang.org/genproto/goog"
-          + "leapis/cloud/gkemulticloud/v1;gkemulticl"
-          + "oud\252\002\035Google.Cloud.GkeMultiCloud.V1\312\002\035Go"
-          + "ogle\\Cloud\\GkeMultiCloud\\V1\352\002 Google::Cl"
-          + "oud::GkeMultiCloud::V1b\006proto3"
+          + "ProtoP\001ZGcloud.google.com/go/gkemulticlo"
+          + "ud/apiv1/gkemulticloudpb;gkemulticloudpb"
+          + "\252\002\035Google.Cloud.GkeMultiCloud.V1\312\002\035Googl"
+          + "e\\Cloud\\GkeMultiCloud\\V1\352\002 Google::Cloud"
+          + "::GkeMultiCloud::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

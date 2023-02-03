@@ -287,11 +287,11 @@ public final class CloudFilestoreServiceProto {
           + "A/\n\006Backup\022%google.cloud.common.Operatio"
           + "nMetadata\032G\312A\023file.googleapis.com\322A.http"
           + "s://www.googleapis.com/auth/cloud-platfo"
-          + "rmB\271\001\n\035com.google.cloud.filestore.v1B\032Cl"
-          + "oudFilestoreServiceProtoP\001ZBgoogle.golan"
-          + "g.org/genproto/googleapis/cloud/filestor"
-          + "e/v1;filestore\252\002\031Google.Cloud.Filestore."
-          + "V1\312\002\031Google\\Cloud\\Filestore\\V1b\006proto3"
+          + "rmB\262\001\n\035com.google.cloud.filestore.v1B\032Cl"
+          + "oudFilestoreServiceProtoP\001Z;cloud.google"
+          + ".com/go/filestore/apiv1/filestorepb;file"
+          + "storepb\252\002\031Google.Cloud.Filestore.V1\312\002\031Go"
+          + "ogle\\Cloud\\Filestore\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -130,12 +130,12 @@ public final class RestoreProto {
           + "ESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIE"
           + "D\020\000\022\026\n\022DELETE_AND_RESTORE\020\001\022\024\n\020FAIL_ON_C"
           + "ONFLICT\020\002B#\n!namespaced_resource_restore"
-          + "_scopeB\312\001\n\035com.google.cloud.gkebackup.v1"
-          + "B\014RestoreProtoP\001ZBgoogle.golang.org/genp"
-          + "roto/googleapis/cloud/gkebackup/v1;gkeba"
-          + "ckup\252\002\031Google.Cloud.GkeBackup.V1\312\002\031Googl"
-          + "e\\Cloud\\GkeBackup\\V1\352\002\034Google::Cloud::Gk"
-          + "eBackup::V1b\006proto3"
+          + "_scopeB\303\001\n\035com.google.cloud.gkebackup.v1"
+          + "B\014RestoreProtoP\001Z;cloud.google.com/go/gk"
+          + "ebackup/apiv1/gkebackuppb;gkebackuppb\252\002\031"
+          + "Google.Cloud.GkeBackup.V1\312\002\031Google\\Cloud"
+          + "\\GkeBackup\\V1\352\002\034Google::Cloud::GkeBackup"
+          + "::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

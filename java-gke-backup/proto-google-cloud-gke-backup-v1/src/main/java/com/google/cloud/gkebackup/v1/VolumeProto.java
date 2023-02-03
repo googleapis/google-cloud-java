@@ -94,12 +94,12 @@ public final class VolumeProto {
           + "VolumeRestore\022vprojects/{project}/locati"
           + "ons/{location}/restorePlans/{restore_pla"
           + "n}/restores/{restore}/volumeRestores/{vo"
-          + "lume_restore}B\311\001\n\035com.google.cloud.gkeba"
-          + "ckup.v1B\013VolumeProtoP\001ZBgoogle.golang.or"
-          + "g/genproto/googleapis/cloud/gkebackup/v1"
-          + ";gkebackup\252\002\031Google.Cloud.GkeBackup.V1\312\002"
-          + "\031Google\\Cloud\\GkeBackup\\V1\352\002\034Google::Clo"
-          + "ud::GkeBackup::V1b\006proto3"
+          + "lume_restore}B\302\001\n\035com.google.cloud.gkeba"
+          + "ckup.v1B\013VolumeProtoP\001Z;cloud.google.com"
+          + "/go/gkebackup/apiv1/gkebackuppb;gkebacku"
+          + "ppb\252\002\031Google.Cloud.GkeBackup.V1\312\002\031Google"
+          + "\\Cloud\\GkeBackup\\V1\352\002\034Google::Cloud::Gke"
+          + "Backup::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

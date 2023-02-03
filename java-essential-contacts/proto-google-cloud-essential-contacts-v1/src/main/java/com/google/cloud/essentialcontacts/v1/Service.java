@@ -179,13 +179,13 @@ public final class Service {
           + "urce=organizations/*}/contacts:sendTestM"
           + "essage:\001*\032T\312A essentialcontacts.googleap"
           + "is.com\322A.https://www.googleapis.com/auth"
-          + "/cloud-platformB\354\001\n%com.google.cloud.ess"
-          + "entialcontacts.v1P\001ZRgoogle.golang.org/g"
-          + "enproto/googleapis/cloud/essentialcontac"
-          + "ts/v1;essentialcontacts\252\002!Google.Cloud.E"
-          + "ssentialContacts.V1\312\002!Google\\Cloud\\Essen"
-          + "tialContacts\\V1\352\002$Google::Cloud::Essenti"
-          + "alContacts::V1b\006proto3"
+          + "/cloud-platformB\355\001\n%com.google.cloud.ess"
+          + "entialcontacts.v1P\001ZScloud.google.com/go"
+          + "/essentialcontacts/apiv1/essentialcontac"
+          + "tspb;essentialcontactspb\252\002!Google.Cloud."
+          + "EssentialContacts.V1\312\002!Google\\Cloud\\Esse"
+          + "ntialContacts\\V1\352\002$Google::Cloud::Essent"
+          + "ialContacts::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -46,13 +46,13 @@ public final class MeteringProto {
           + "to\"\201\001\n\017MembershipState\0229\n\025last_measureme"
           + "nt_time\030\001 \001(\0132\032.google.protobuf.Timestam"
           + "p\0223\n+precise_last_measured_cluster_vcpu_"
-          + "capacity\030\003 \001(\002B\375\001\n\'com.google.cloud.gkeh"
-          + "ub.metering.v1betaB\rMeteringProtoP\001ZKgoo"
-          + "gle.golang.org/genproto/googleapis/cloud"
-          + "/gkehub/metering/v1beta;metering\252\002#Googl"
-          + "e.Cloud.GkeHub.Metering.V1Beta\312\002#Google\\"
-          + "Cloud\\GkeHub\\Metering\\V1beta\352\002\'Google::C"
-          + "loud::GkeHub::Metering::V1betab\006proto3"
+          + "capacity\030\003 \001(\002B\365\001\n\'com.google.cloud.gkeh"
+          + "ub.metering.v1betaB\rMeteringProtoP\001ZCclo"
+          + "ud.google.com/go/gkehub/metering/apiv1be"
+          + "ta/meteringpb;meteringpb\252\002#Google.Cloud."
+          + "GkeHub.Metering.V1Beta\312\002#Google\\Cloud\\Gk"
+          + "eHub\\Metering\\V1beta\352\002\'Google::Cloud::Gk"
+          + "eHub::Metering::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

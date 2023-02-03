@@ -78,14 +78,14 @@ public final class PublisherProto {
           + "nel=projects/*/locations/*/channels/*}:p"
           + "ublishEvents:\001*\032U\312A!eventarcpublishing.g"
           + "oogleapis.com\322A.https://www.googleapis.c"
-          + "om/auth/cloud-platformB\377\001\n\'com.google.cl"
+          + "om/auth/cloud-platformB\372\001\n\'com.google.cl"
           + "oud.eventarc.publishing.v1B\016PublisherPro"
-          + "toP\001ZLgoogle.golang.org/genproto/googlea"
-          + "pis/cloud/eventarc/publishing/v1;publish"
-          + "er\252\002#Google.Cloud.Eventarc.Publishing.V1"
-          + "\312\002#Google\\Cloud\\Eventarc\\Publishing\\V1\352\002"
-          + "\'Google::Cloud::Eventarc::Publishing::V1"
-          + "b\006proto3"
+          + "toP\001ZGcloud.google.com/go/eventarc/publi"
+          + "shing/apiv1/publishingpb;publishingpb\252\002#"
+          + "Google.Cloud.Eventarc.Publishing.V1\312\002#Go"
+          + "ogle\\Cloud\\Eventarc\\Publishing\\V1\352\002\'Goog"
+          + "le::Cloud::Eventarc::Publishing::V1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

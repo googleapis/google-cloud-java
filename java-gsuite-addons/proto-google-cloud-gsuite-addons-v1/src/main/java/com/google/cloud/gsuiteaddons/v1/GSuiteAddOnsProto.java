@@ -206,12 +206,12 @@ public final class GSuiteAddOnsProto {
           + "s/*/deployments/*/installStatus}\332A\004name\032"
           + "O\312A\033gsuiteaddons.googleapis.com\322A.https:"
           + "//www.googleapis.com/auth/cloud-platform"
-          + "B\341\001\n com.google.cloud.gsuiteaddons.v1B\021G"
-          + "SuiteAddOnsProtoP\001ZHgoogle.golang.org/ge"
-          + "nproto/googleapis/cloud/gsuiteaddons/v1;"
-          + "gsuiteaddons\252\002\034Google.Cloud.GSuiteAddOns"
-          + ".V1\312\002\034Google\\Cloud\\GSuiteAddOns\\V1\352\002\037Goo"
-          + "gle::Cloud::GSuiteAddOns::V1b\006proto3"
+          + "B\335\001\n com.google.cloud.gsuiteaddons.v1B\021G"
+          + "SuiteAddOnsProtoP\001ZDcloud.google.com/go/"
+          + "gsuiteaddons/apiv1/gsuiteaddonspb;gsuite"
+          + "addonspb\252\002\034Google.Cloud.GSuiteAddOns.V1\312"
+          + "\002\034Google\\Cloud\\GSuiteAddOns\\V1\352\002\037Google:"
+          + ":Cloud::GSuiteAddOns::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

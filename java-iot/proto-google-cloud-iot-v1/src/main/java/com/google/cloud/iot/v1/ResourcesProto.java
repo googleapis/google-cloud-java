@@ -191,10 +191,9 @@ public final class ResourcesProto {
           + "9_CERTIFICATE_PEM\020\001*v\n\017PublicKeyFormat\022!"
           + "\n\035UNSPECIFIED_PUBLIC_KEY_FORMAT\020\000\022\013\n\007RSA"
           + "_PEM\020\003\022\020\n\014RSA_X509_PEM\020\001\022\r\n\tES256_PEM\020\002\022"
-          + "\022\n\016ES256_X509_PEM\020\004Bf\n\027com.google.cloud."
-          + "iot.v1B\016ResourcesProtoP\001Z6google.golang."
-          + "org/genproto/googleapis/cloud/iot/v1;iot"
-          + "\370\001\001b\006proto3"
+          + "\022\n\016ES256_X509_PEM\020\004BY\n\027com.google.cloud."
+          + "iot.v1B\016ResourcesProtoP\001Z)cloud.google.c"
+          + "om/go/iot/apiv1/iotpb;iotpb\370\001\001b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

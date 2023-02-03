@@ -313,12 +313,12 @@ public final class ClouddmsProto {
           + "ionProfiles/*}\332A\004name\312A*\n\025google.protobu"
           + "f.Empty\022\021OperationMetadata\032P\312A\034datamigra"
           + "tion.googleapis.com\322A.https://www.google"
-          + "apis.com/auth/cloud-platformB\305\001\n\034com.goo"
-          + "gle.cloud.clouddms.v1B\rClouddmsProtoP\001Z@"
-          + "google.golang.org/genproto/googleapis/cl"
-          + "oud/clouddms/v1;clouddms\252\002\030Google.Cloud."
-          + "CloudDms.V1\312\002\030Google\\Cloud\\CloudDms\\V1\352\002"
-          + "\033Google::Cloud::CloudDMS::V1b\006proto3"
+          + "apis.com/auth/cloud-platformB\275\001\n\034com.goo"
+          + "gle.cloud.clouddms.v1B\rClouddmsProtoP\001Z8"
+          + "cloud.google.com/go/clouddms/apiv1/cloud"
+          + "dmspb;clouddmspb\252\002\030Google.Cloud.CloudDms"
+          + ".V1\312\002\030Google\\Cloud\\CloudDms\\V1\352\002\033Google:"
+          + ":Cloud::CloudDMS::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

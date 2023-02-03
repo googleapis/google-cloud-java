@@ -97,11 +97,11 @@ public final class GameServerClustersServiceOuterClass {
           + "ons/*/realms/*/gameServerClusters/*}:pre"
           + "viewUpdate:\023game_server_cluster\032O\312A\033game"
           + "services.googleapis.com\322A.https://www.go"
-          + "ogleapis.com/auth/cloud-platformB\201\001\n\036com"
-          + ".google.cloud.gaming.v1betaP\001Z@google.go"
-          + "lang.org/genproto/googleapis/cloud/gamin"
-          + "g/v1beta;gaming\312\002\032Google\\Cloud\\Gaming\\V1"
-          + "betab\006proto3"
+          + "ogleapis.com/auth/cloud-platformBw\n\036com."
+          + "google.cloud.gaming.v1betaP\001Z6cloud.goog"
+          + "le.com/go/gaming/apiv1beta/gamingpb;gami"
+          + "ngpb\312\002\032Google\\Cloud\\Gaming\\V1betab\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

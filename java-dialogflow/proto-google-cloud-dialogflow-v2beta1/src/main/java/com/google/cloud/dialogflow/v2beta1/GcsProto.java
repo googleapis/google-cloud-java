@@ -53,11 +53,11 @@ public final class GcsProto {
           + "ogle/api/field_behavior.proto\"\037\n\nGcsSour"
           + "ces\022\021\n\004uris\030\002 \003(\tB\003\340A\002\"\030\n\tGcsSource\022\013\n\003u"
           + "ri\030\001 \001(\t\"\035\n\016GcsDestination\022\013\n\003uri\030\001 \001(\tB"
-          + "\246\001\n#com.google.cloud.dialogflow.v2beta1B"
-          + "\010GcsProtoP\001ZIgoogle.golang.org/genproto/"
-          + "googleapis/cloud/dialogflow/v2beta1;dial"
-          + "ogflow\370\001\001\242\002\002DF\252\002\037Google.Cloud.Dialogflow"
-          + ".V2beta1b\006proto3"
+          + "\240\001\n#com.google.cloud.dialogflow.v2beta1B"
+          + "\010GcsProtoP\001ZCcloud.google.com/go/dialogf"
+          + "low/apiv2beta1/dialogflowpb;dialogflowpb"
+          + "\370\001\001\242\002\002DF\252\002\037Google.Cloud.Dialogflow.V2bet"
+          + "a1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -274,12 +274,12 @@ public final class ClouddmsResourcesProto {
           + "GINE_UNSPECIFIED\020\000\022\t\n\005MYSQL\020\001\022\016\n\nPOSTGRE"
           + "SQL\020\002*L\n\020DatabaseProvider\022!\n\035DATABASE_PR"
           + "OVIDER_UNSPECIFIED\020\000\022\014\n\010CLOUDSQL\020\001\022\007\n\003RD"
-          + "S\020\002B\316\001\n\034com.google.cloud.clouddms.v1B\026Cl"
-          + "ouddmsResourcesProtoP\001Z@google.golang.or"
-          + "g/genproto/googleapis/cloud/clouddms/v1;"
-          + "clouddms\252\002\030Google.Cloud.CloudDms.V1\312\002\030Go"
-          + "ogle\\Cloud\\CloudDms\\V1\352\002\033Google::Cloud::"
-          + "CloudDMS::V1b\006proto3"
+          + "S\020\002B\306\001\n\034com.google.cloud.clouddms.v1B\026Cl"
+          + "ouddmsResourcesProtoP\001Z8cloud.google.com"
+          + "/go/clouddms/apiv1/clouddmspb;clouddmspb"
+          + "\252\002\030Google.Cloud.CloudDms.V1\312\002\030Google\\Clo"
+          + "ud\\CloudDms\\V1\352\002\033Google::Cloud::CloudDMS"
+          + "::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -52,10 +52,10 @@ public final class FunctionsOperationsProto {
           + "rce_token\030\007 \001(\t\022\022\n\nbuild_name\030\010 \001(\t*i\n\rO"
           + "perationType\022\031\n\025OPERATION_UNSPECIFIED\020\000\022"
           + "\023\n\017CREATE_FUNCTION\020\001\022\023\n\017UPDATE_FUNCTION\020"
-          + "\002\022\023\n\017DELETE_FUNCTION\020\003B\177\n\035com.google.clo"
+          + "\002\022\023\n\017DELETE_FUNCTION\020\003Bx\n\035com.google.clo"
           + "ud.functions.v1B\030FunctionsOperationsProt"
-          + "oP\001ZBgoogle.golang.org/genproto/googleap"
-          + "is/cloud/functions/v1;functionsb\006proto3"
+          + "oP\001Z;cloud.google.com/go/functions/apiv1"
+          + "/functionspb;functionspbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

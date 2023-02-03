@@ -183,12 +183,12 @@ public final class SessionEntityTypeProto {
           + "Types/*}\332A\004name\032x\312A\031dialogflow.googleapi"
           + "s.com\322AYhttps://www.googleapis.com/auth/"
           + "cloud-platform,https://www.googleapis.co"
-          + "m/auth/dialogflowB\264\001\n#com.google.cloud.d"
+          + "m/auth/dialogflowB\256\001\n#com.google.cloud.d"
           + "ialogflow.v2beta1B\026SessionEntityTypeProt"
-          + "oP\001ZIgoogle.golang.org/genproto/googleap"
-          + "is/cloud/dialogflow/v2beta1;dialogflow\370\001"
-          + "\001\242\002\002DF\252\002\037Google.Cloud.Dialogflow.V2beta1"
-          + "b\006proto3"
+          + "oP\001ZCcloud.google.com/go/dialogflow/apiv"
+          + "2beta1/dialogflowpb;dialogflowpb\370\001\001\242\002\002DF"
+          + "\252\002\037Google.Cloud.Dialogflow.V2beta1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

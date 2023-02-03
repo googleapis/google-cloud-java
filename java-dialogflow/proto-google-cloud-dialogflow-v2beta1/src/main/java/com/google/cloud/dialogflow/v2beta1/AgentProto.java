@@ -208,12 +208,11 @@ public final class AgentProto {
           + "}/agent/validationResult\032x\312A\031dialogflow."
           + "googleapis.com\322AYhttps://www.googleapis."
           + "com/auth/cloud-platform,https://www.goog"
-          + "leapis.com/auth/dialogflowB\250\001\n#com.googl"
+          + "leapis.com/auth/dialogflowB\242\001\n#com.googl"
           + "e.cloud.dialogflow.v2beta1B\nAgentProtoP\001"
-          + "ZIgoogle.golang.org/genproto/googleapis/"
-          + "cloud/dialogflow/v2beta1;dialogflow\370\001\001\242\002"
-          + "\002DF\252\002\037Google.Cloud.Dialogflow.V2beta1b\006p"
-          + "roto3"
+          + "ZCcloud.google.com/go/dialogflow/apiv2be"
+          + "ta1/dialogflowpb;dialogflowpb\370\001\001\242\002\002DF\252\002\037"
+          + "Google.Cloud.Dialogflow.V2beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

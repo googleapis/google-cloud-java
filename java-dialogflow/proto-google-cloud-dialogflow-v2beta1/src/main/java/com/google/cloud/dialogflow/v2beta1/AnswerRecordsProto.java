@@ -163,12 +163,12 @@ public final class AnswerRecordsProto {
           + "A\031answer_record,update_mask\032x\312A\031dialogfl"
           + "ow.googleapis.com\322AYhttps://www.googleap"
           + "is.com/auth/cloud-platform,https://www.g"
-          + "oogleapis.com/auth/dialogflowB\260\001\n#com.go"
+          + "oogleapis.com/auth/dialogflowB\252\001\n#com.go"
           + "ogle.cloud.dialogflow.v2beta1B\022AnswerRec"
-          + "ordsProtoP\001ZIgoogle.golang.org/genproto/"
-          + "googleapis/cloud/dialogflow/v2beta1;dial"
-          + "ogflow\370\001\001\242\002\002DF\252\002\037Google.Cloud.Dialogflow"
-          + ".V2beta1b\006proto3"
+          + "ordsProtoP\001ZCcloud.google.com/go/dialogf"
+          + "low/apiv2beta1/dialogflowpb;dialogflowpb"
+          + "\370\001\001\242\002\002DF\252\002\037Google.Cloud.Dialogflow.V2bet"
+          + "a1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

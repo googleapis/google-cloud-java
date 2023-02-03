@@ -301,13 +301,13 @@ public final class AzureResourcesProto {
           + "\340A\003\0228\n+control_plane_application_securit"
           + "y_group_id\030\002 \001(\tB\003\340A\003\"$\n\021AzureClusterErr"
           + "or\022\017\n\007message\030\001 \001(\t\"%\n\022AzureNodePoolErro"
-          + "r\022\017\n\007message\030\001 \001(\tB\351\001\n!com.google.cloud."
+          + "r\022\017\n\007message\030\001 \001(\tB\346\001\n!com.google.cloud."
           + "gkemulticloud.v1B\023AzureResourcesProtoP\001Z"
-          + "Jgoogle.golang.org/genproto/googleapis/c"
-          + "loud/gkemulticloud/v1;gkemulticloud\252\002\035Go"
-          + "ogle.Cloud.GkeMultiCloud.V1\312\002\035Google\\Clo"
-          + "ud\\GkeMultiCloud\\V1\352\002 Google::Cloud::Gke"
-          + "MultiCloud::V1b\006proto3"
+          + "Gcloud.google.com/go/gkemulticloud/apiv1"
+          + "/gkemulticloudpb;gkemulticloudpb\252\002\035Googl"
+          + "e.Cloud.GkeMultiCloud.V1\312\002\035Google\\Cloud\\"
+          + "GkeMultiCloud\\V1\352\002 Google::Cloud::GkeMul"
+          + "tiCloud::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

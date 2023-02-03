@@ -168,13 +168,13 @@ public final class DocumentAiProto {
           + "requests\312A2\n\035BatchProcessDocumentsRespon"
           + "se\022\021OperationMetadata\032M\312A\031documentai.goo"
           + "gleapis.com\322A.https://www.googleapis.com"
-          + "/auth/cloud-platformB\354\001\n#com.google.clou"
+          + "/auth/cloud-platformB\346\001\n#com.google.clou"
           + "d.documentai.v1beta1B\017DocumentAiProtoP\001Z"
-          + "Igoogle.golang.org/genproto/googleapis/c"
-          + "loud/documentai/v1beta1;documentai\252\002\037Goo"
-          + "gle.Cloud.DocumentAI.V1Beta1\312\002\037Google\\Cl"
-          + "oud\\DocumentAI\\V1beta1\352\002\"Google::Cloud::"
-          + "DocumentAI::V1beta1b\006proto3"
+          + "Ccloud.google.com/go/documentai/apiv1bet"
+          + "a1/documentaipb;documentaipb\252\002\037Google.Cl"
+          + "oud.DocumentAI.V1Beta1\312\002\037Google\\Cloud\\Do"
+          + "cumentAI\\V1beta1\352\002\"Google::Cloud::Docume"
+          + "ntAI::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

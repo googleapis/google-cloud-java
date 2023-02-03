@@ -90,12 +90,12 @@ public final class DocumentIoProto {
           + "utputConfig.GcsOutputConfig.ShardingConf"
           + "ig\032@\n\016ShardingConfig\022\027\n\017pages_per_shard\030"
           + "\001 \001(\005\022\025\n\rpages_overlap\030\002 \001(\005B\r\n\013destinat"
-          + "ionB\323\001\n\036com.google.cloud.documentai.v1B\017"
-          + "DocumentIoProtoP\001ZDgoogle.golang.org/gen"
-          + "proto/googleapis/cloud/documentai/v1;doc"
-          + "umentai\252\002\032Google.Cloud.DocumentAI.V1\312\002\032G"
-          + "oogle\\Cloud\\DocumentAI\\V1\352\002\035Google::Clou"
-          + "d::DocumentAI::V1b\006proto3"
+          + "ionB\315\001\n\036com.google.cloud.documentai.v1B\017"
+          + "DocumentIoProtoP\001Z>cloud.google.com/go/d"
+          + "ocumentai/apiv1/documentaipb;documentaip"
+          + "b\252\002\032Google.Cloud.DocumentAI.V1\312\002\032Google\\"
+          + "Cloud\\DocumentAI\\V1\352\002\035Google::Cloud::Doc"
+          + "umentAI::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

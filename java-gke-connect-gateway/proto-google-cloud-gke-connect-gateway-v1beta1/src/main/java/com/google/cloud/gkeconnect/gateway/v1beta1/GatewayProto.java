@@ -52,14 +52,13 @@ public final class GatewayProto {
           + "\032\024.google.api.HttpBody\"\023\202\323\344\223\002\r2\013/v1beta1"
           + "/**\032Q\312A\035connectgateway.googleapis.com\322A."
           + "https://www.googleapis.com/auth/cloud-pl"
-          + "atformB\217\002\n+com.google.cloud.gkeconnect.g"
-          + "ateway.v1beta1B\014GatewayProtoP\001ZNgoogle.g"
-          + "olang.org/genproto/googleapis/cloud/gkec"
-          + "onnect/gateway/v1beta1;gateway\252\002\'Google."
-          + "Cloud.GkeConnect.Gateway.V1Beta1\312\002\'Googl"
-          + "e\\Cloud\\GkeConnect\\Gateway\\V1beta1\352\002+Goo"
-          + "gle::Cloud::GkeConnect::Gateway::V1beta1"
-          + "b\006proto3"
+          + "atformB\206\002\n+com.google.cloud.gkeconnect.g"
+          + "ateway.v1beta1B\014GatewayProtoP\001ZEcloud.go"
+          + "ogle.com/go/gkeconnect/gateway/apiv1beta"
+          + "1/gatewaypb;gatewaypb\252\002\'Google.Cloud.Gke"
+          + "Connect.Gateway.V1Beta1\312\002\'Google\\Cloud\\G"
+          + "keConnect\\Gateway\\V1beta1\352\002+Google::Clou"
+          + "d::GkeConnect::Gateway::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

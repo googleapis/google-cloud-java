@@ -457,10 +457,9 @@ public final class DomainsProto {
           + "istrations/*}:resetAuthorizationCode:\001*\332"
           + "A\014registration\032J\312A\026domains.googleapis.co"
           + "m\322A.https://www.googleapis.com/auth/clou"
-          + "d-platformBm\n\033com.google.cloud.domains.v"
-          + "1B\014DomainsProtoP\001Z>google.golang.org/gen"
-          + "proto/googleapis/cloud/domains/v1;domain"
-          + "sb\006proto3"
+          + "d-platformBd\n\033com.google.cloud.domains.v"
+          + "1B\014DomainsProtoP\001Z5cloud.google.com/go/d"
+          + "omains/apiv1/domainspb;domainspbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

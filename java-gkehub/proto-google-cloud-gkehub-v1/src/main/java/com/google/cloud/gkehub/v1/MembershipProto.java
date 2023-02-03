@@ -130,12 +130,12 @@ public final class MembershipProto {
           + "RVICE_UPDATING\020\005\"}\n\tAuthority\022\023\n\006issuer\030"
           + "\001 \001(\tB\003\340A\001\022#\n\026workload_identity_pool\030\002 \001"
           + "(\tB\003\340A\003\022\036\n\021identity_provider\030\003 \001(\tB\003\340A\003\022"
-          + "\026\n\toidc_jwks\030\004 \001(\014B\003\340A\001B\273\001\n\032com.google.c"
-          + "loud.gkehub.v1B\017MembershipProtoP\001Z<googl"
-          + "e.golang.org/genproto/googleapis/cloud/g"
-          + "kehub/v1;gkehub\252\002\026Google.Cloud.GkeHub.V1"
-          + "\312\002\026Google\\Cloud\\GkeHub\\V1\352\002\031Google::Clou"
-          + "d::GkeHub::V1b\006proto3"
+          + "\026\n\toidc_jwks\030\004 \001(\014B\003\340A\001B\261\001\n\032com.google.c"
+          + "loud.gkehub.v1B\017MembershipProtoP\001Z2cloud"
+          + ".google.com/go/gkehub/apiv1/gkehubpb;gke"
+          + "hubpb\252\002\026Google.Cloud.GkeHub.V1\312\002\026Google\\"
+          + "Cloud\\GkeHub\\V1\352\002\031Google::Cloud::GkeHub:"
+          + ":V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

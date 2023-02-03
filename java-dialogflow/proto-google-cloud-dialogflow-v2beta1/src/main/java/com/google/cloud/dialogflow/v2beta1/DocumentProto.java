@@ -255,12 +255,12 @@ public final class DocumentProto {
           + "ocument\022\032KnowledgeOperationMetadata\032x\312A\031"
           + "dialogflow.googleapis.com\322AYhttps://www."
           + "googleapis.com/auth/cloud-platform,https"
-          + "://www.googleapis.com/auth/dialogflowB\253\001"
+          + "://www.googleapis.com/auth/dialogflowB\245\001"
           + "\n#com.google.cloud.dialogflow.v2beta1B\rD"
-          + "ocumentProtoP\001ZIgoogle.golang.org/genpro"
-          + "to/googleapis/cloud/dialogflow/v2beta1;d"
-          + "ialogflow\370\001\001\242\002\002DF\252\002\037Google.Cloud.Dialogf"
-          + "low.V2beta1b\006proto3"
+          + "ocumentProtoP\001ZCcloud.google.com/go/dial"
+          + "ogflow/apiv2beta1/dialogflowpb;dialogflo"
+          + "wpb\370\001\001\242\002\002DF\252\002\037Google.Cloud.Dialogflow.V2"
+          + "beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

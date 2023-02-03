@@ -57,14 +57,14 @@ public final class DocumentAiProcessorType {
           + "\032#\n\014LocationInfo\022\023\n\013location_id\030\001 \001(\t:u\352"
           + "Ar\n\'documentai.googleapis.com/ProcessorT"
           + "ype\022Gprojects/{project}/locations/{locat"
-          + "ion}/processorTypes/{processor_type}B\364\001\n"
+          + "ion}/processorTypes/{processor_type}B\356\001\n"
           + "#com.google.cloud.documentai.v1beta3B\027Do"
-          + "cumentAiProcessorTypeP\001ZIgoogle.golang.o"
-          + "rg/genproto/googleapis/cloud/documentai/"
-          + "v1beta3;documentai\252\002\037Google.Cloud.Docume"
-          + "ntAI.V1Beta3\312\002\037Google\\Cloud\\DocumentAI\\V"
-          + "1beta3\352\002\"Google::Cloud::DocumentAI::V1be"
-          + "ta3b\006proto3"
+          + "cumentAiProcessorTypeP\001ZCcloud.google.co"
+          + "m/go/documentai/apiv1beta3/documentaipb;"
+          + "documentaipb\252\002\037Google.Cloud.DocumentAI.V"
+          + "1Beta3\312\002\037Google\\Cloud\\DocumentAI\\V1beta3"
+          + "\352\002\"Google::Cloud::DocumentAI::V1beta3b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

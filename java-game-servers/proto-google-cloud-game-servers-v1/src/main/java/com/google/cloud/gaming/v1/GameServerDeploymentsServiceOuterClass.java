@@ -101,9 +101,9 @@ public final class GameServerDeploymentsServiceOuterClass {
           + "rverDeployments/*}:fetchDeploymentState:"
           + "\001*\032O\312A\033gameservices.googleapis.com\322A.htt"
           + "ps://www.googleapis.com/auth/cloud-platf"
-          + "ormB\\\n\032com.google.cloud.gaming.v1P\001Z<goo"
-          + "gle.golang.org/genproto/googleapis/cloud"
-          + "/gaming/v1;gamingb\006proto3"
+          + "ormBR\n\032com.google.cloud.gaming.v1P\001Z2clo"
+          + "ud.google.com/go/gaming/apiv1/gamingpb;g"
+          + "amingpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

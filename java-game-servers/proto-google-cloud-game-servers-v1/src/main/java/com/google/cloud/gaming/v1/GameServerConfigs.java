@@ -115,9 +115,9 @@ public final class GameServerConfigs {
           + "gameservices.googleapis.com/GameServerCo"
           + "nfig\022[projects/{project}/locations/{loca"
           + "tion}/gameServerDeployments/{deployment}"
-          + "/configs/{config}B\\\n\032com.google.cloud.ga"
-          + "ming.v1P\001Z<google.golang.org/genproto/go"
-          + "ogleapis/cloud/gaming/v1;gamingb\006proto3"
+          + "/configs/{config}BR\n\032com.google.cloud.ga"
+          + "ming.v1P\001Z2cloud.google.com/go/gaming/ap"
+          + "iv1/gamingpb;gamingpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

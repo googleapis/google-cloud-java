@@ -316,13 +316,12 @@ public final class EventarcProto {
           + "*/googleChannelConfig}:\025google_channel_c"
           + "onfig\332A!google_channel_config,update_mas"
           + "k\032K\312A\027eventarc.googleapis.com\322A.https://"
-          + "www.googleapis.com/auth/cloud-platformB\305"
+          + "www.googleapis.com/auth/cloud-platformB\275"
           + "\001\n\034com.google.cloud.eventarc.v1B\rEventar"
-          + "cProtoP\001Z@google.golang.org/genproto/goo"
-          + "gleapis/cloud/eventarc/v1;eventarc\252\002\030Goo"
-          + "gle.Cloud.Eventarc.V1\312\002\030Google\\Cloud\\Eve"
-          + "ntarc\\V1\352\002\033Google::Cloud::Eventarc::V1b\006"
-          + "proto3"
+          + "cProtoP\001Z8cloud.google.com/go/eventarc/a"
+          + "piv1/eventarcpb;eventarcpb\252\002\030Google.Clou"
+          + "d.Eventarc.V1\312\002\030Google\\Cloud\\Eventarc\\V1"
+          + "\352\002\033Google::Cloud::Eventarc::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

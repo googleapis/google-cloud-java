@@ -145,14 +145,14 @@ public final class ImportConfigProto {
           + ")\n\rerror_samples\030\001 \003(\0132\022.google.rpc.Stat"
           + "us\022L\n\014error_config\030\002 \001(\01326.google.cloud."
           + "discoveryengine.v1beta.ImportErrorConfig"
-          + "B\231\002\n\'com.google.cloud.discoveryengine.v1"
-          + "betaB\021ImportConfigProtoP\001ZRgoogle.golang"
-          + ".org/genproto/googleapis/cloud/discovery"
-          + "engine/v1beta;discoveryengine\242\002\017DISCOVER"
-          + "YENGINE\252\002#Google.Cloud.DiscoveryEngine.V"
-          + "1Beta\312\002#Google\\Cloud\\DiscoveryEngine\\V1b"
-          + "eta\352\002&Google::Cloud::DiscoveryEngine::V1"
-          + "betab\006proto3"
+          + "B\230\002\n\'com.google.cloud.discoveryengine.v1"
+          + "betaB\021ImportConfigProtoP\001ZQcloud.google."
+          + "com/go/discoveryengine/apiv1beta/discove"
+          + "ryenginepb;discoveryenginepb\242\002\017DISCOVERY"
+          + "ENGINE\252\002#Google.Cloud.DiscoveryEngine.V1"
+          + "Beta\312\002#Google\\Cloud\\DiscoveryEngine\\V1be"
+          + "ta\352\002&Google::Cloud::DiscoveryEngine::V1b"
+          + "etab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

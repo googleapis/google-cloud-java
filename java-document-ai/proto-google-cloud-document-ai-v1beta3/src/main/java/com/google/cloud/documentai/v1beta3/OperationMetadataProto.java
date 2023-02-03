@@ -51,14 +51,14 @@ public final class OperationMetadataProto {
           + "p\022/\n\013update_time\030\004 \001(\0132\032.google.protobuf"
           + ".Timestamp\"e\n\005State\022\025\n\021STATE_UNSPECIFIED"
           + "\020\000\022\013\n\007RUNNING\020\001\022\016\n\nCANCELLING\020\002\022\r\n\tSUCCE"
-          + "EDED\020\003\022\n\n\006FAILED\020\004\022\r\n\tCANCELLED\020\005B\363\001\n#co"
+          + "EDED\020\003\022\n\n\006FAILED\020\004\022\r\n\tCANCELLED\020\005B\355\001\n#co"
           + "m.google.cloud.documentai.v1beta3B\026Opera"
-          + "tionMetadataProtoP\001ZIgoogle.golang.org/g"
-          + "enproto/googleapis/cloud/documentai/v1be"
-          + "ta3;documentai\252\002\037Google.Cloud.DocumentAI"
-          + ".V1Beta3\312\002\037Google\\Cloud\\DocumentAI\\V1bet"
-          + "a3\352\002\"Google::Cloud::DocumentAI::V1beta3b"
-          + "\006proto3"
+          + "tionMetadataProtoP\001ZCcloud.google.com/go"
+          + "/documentai/apiv1beta3/documentaipb;docu"
+          + "mentaipb\252\002\037Google.Cloud.DocumentAI.V1Bet"
+          + "a3\312\002\037Google\\Cloud\\DocumentAI\\V1beta3\352\002\"G"
+          + "oogle::Cloud::DocumentAI::V1beta3b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

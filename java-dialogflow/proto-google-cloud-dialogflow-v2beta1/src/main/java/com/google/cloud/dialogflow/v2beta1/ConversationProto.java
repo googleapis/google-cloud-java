@@ -234,11 +234,11 @@ public final class ConversationProto {
           + "onversation\032x\312A\031dialogflow.googleapis.co"
           + "m\322AYhttps://www.googleapis.com/auth/clou"
           + "d-platform,https://www.googleapis.com/au"
-          + "th/dialogflowB\257\001\n#com.google.cloud.dialo"
-          + "gflow.v2beta1B\021ConversationProtoP\001ZIgoog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "dialogflow/v2beta1;dialogflow\370\001\001\242\002\002DF\252\002\037"
-          + "Google.Cloud.Dialogflow.V2beta1b\006proto3"
+          + "th/dialogflowB\251\001\n#com.google.cloud.dialo"
+          + "gflow.v2beta1B\021ConversationProtoP\001ZCclou"
+          + "d.google.com/go/dialogflow/apiv2beta1/di"
+          + "alogflowpb;dialogflowpb\370\001\001\242\002\002DF\252\002\037Google"
+          + ".Cloud.Dialogflow.V2beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

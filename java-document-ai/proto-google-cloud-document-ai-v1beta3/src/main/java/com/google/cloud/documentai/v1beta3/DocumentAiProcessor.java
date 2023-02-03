@@ -89,13 +89,13 @@ public final class DocumentAiProcessor {
           + "\022\014\n\010CREATING\020\005\022\n\n\006FAILED\020\006\022\014\n\010DELETING\020\007"
           + ":h\352Ae\n#documentai.googleapis.com/Process"
           + "or\022>projects/{project}/locations/{locati"
-          + "on}/processors/{processor}B\360\001\n#com.googl"
+          + "on}/processors/{processor}B\352\001\n#com.googl"
           + "e.cloud.documentai.v1beta3B\023DocumentAiPr"
-          + "ocessorP\001ZIgoogle.golang.org/genproto/go"
-          + "ogleapis/cloud/documentai/v1beta3;docume"
-          + "ntai\252\002\037Google.Cloud.DocumentAI.V1Beta3\312\002"
-          + "\037Google\\Cloud\\DocumentAI\\V1beta3\352\002\"Googl"
-          + "e::Cloud::DocumentAI::V1beta3b\006proto3"
+          + "ocessorP\001ZCcloud.google.com/go/documenta"
+          + "i/apiv1beta3/documentaipb;documentaipb\252\002"
+          + "\037Google.Cloud.DocumentAI.V1Beta3\312\002\037Googl"
+          + "e\\Cloud\\DocumentAI\\V1beta3\352\002\"Google::Clo"
+          + "ud::DocumentAI::V1beta3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

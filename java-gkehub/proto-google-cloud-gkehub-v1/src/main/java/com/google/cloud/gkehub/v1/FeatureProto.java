@@ -130,12 +130,12 @@ public final class FeatureProto {
           + "igmanagement\030j \001(\01328.google.cloud.gkehub"
           + ".configmanagement.v1.MembershipStateH\000\0223"
           + "\n\005state\030\001 \001(\0132$.google.cloud.gkehub.v1.F"
-          + "eatureStateB\017\n\rfeature_stateB\270\001\n\032com.goo"
-          + "gle.cloud.gkehub.v1B\014FeatureProtoP\001Z<goo"
-          + "gle.golang.org/genproto/googleapis/cloud"
-          + "/gkehub/v1;gkehub\252\002\026Google.Cloud.GkeHub."
-          + "V1\312\002\026Google\\Cloud\\GkeHub\\V1\352\002\031Google::Cl"
-          + "oud::GkeHub::V1b\006proto3"
+          + "eatureStateB\017\n\rfeature_stateB\256\001\n\032com.goo"
+          + "gle.cloud.gkehub.v1B\014FeatureProtoP\001Z2clo"
+          + "ud.google.com/go/gkehub/apiv1/gkehubpb;g"
+          + "kehubpb\252\002\026Google.Cloud.GkeHub.V1\312\002\026Googl"
+          + "e\\Cloud\\GkeHub\\V1\352\002\031Google::Cloud::GkeHu"
+          + "b::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

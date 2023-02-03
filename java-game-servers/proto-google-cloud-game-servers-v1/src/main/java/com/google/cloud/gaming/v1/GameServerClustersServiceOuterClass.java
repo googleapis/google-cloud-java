@@ -95,9 +95,9 @@ public final class GameServerClustersServiceOuterClass {
           + "meServerClusters/*}:previewUpdate:\023game_"
           + "server_cluster\032O\312A\033gameservices.googleap"
           + "is.com\322A.https://www.googleapis.com/auth"
-          + "/cloud-platformB\\\n\032com.google.cloud.gami"
-          + "ng.v1P\001Z<google.golang.org/genproto/goog"
-          + "leapis/cloud/gaming/v1;gamingb\006proto3"
+          + "/cloud-platformBR\n\032com.google.cloud.gami"
+          + "ng.v1P\001Z2cloud.google.com/go/gaming/apiv"
+          + "1/gamingpb;gamingpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

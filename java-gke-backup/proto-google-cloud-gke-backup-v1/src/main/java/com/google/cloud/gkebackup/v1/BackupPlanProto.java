@@ -92,12 +92,12 @@ public final class BackupPlanProto {
           + "\r\n\005value\030\002 \001(\t:\0028\001:k\352Ah\n#gkebackup.googl"
           + "eapis.com/BackupPlan\022Aprojects/{project}"
           + "/locations/{location}/backupPlans/{backu"
-          + "p_plan}B\315\001\n\035com.google.cloud.gkebackup.v"
-          + "1B\017BackupPlanProtoP\001ZBgoogle.golang.org/"
-          + "genproto/googleapis/cloud/gkebackup/v1;g"
-          + "kebackup\252\002\031Google.Cloud.GkeBackup.V1\312\002\031G"
-          + "oogle\\Cloud\\GkeBackup\\V1\352\002\034Google::Cloud"
-          + "::GkeBackup::V1b\006proto3"
+          + "p_plan}B\306\001\n\035com.google.cloud.gkebackup.v"
+          + "1B\017BackupPlanProtoP\001Z;cloud.google.com/g"
+          + "o/gkebackup/apiv1/gkebackuppb;gkebackupp"
+          + "b\252\002\031Google.Cloud.GkeBackup.V1\312\002\031Google\\C"
+          + "loud\\GkeBackup\\V1\352\002\034Google::Cloud::GkeBa"
+          + "ckup::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

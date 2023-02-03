@@ -43,13 +43,13 @@ public final class BarcodeProto {
       "\n-google/cloud/documentai/v1beta3/barcod"
           + "e.proto\022\037google.cloud.documentai.v1beta3"
           + "\"B\n\007Barcode\022\016\n\006format\030\001 \001(\t\022\024\n\014value_for"
-          + "mat\030\002 \001(\t\022\021\n\traw_value\030\003 \001(\tB\351\001\n#com.goo"
+          + "mat\030\002 \001(\t\022\021\n\traw_value\030\003 \001(\tB\343\001\n#com.goo"
           + "gle.cloud.documentai.v1beta3B\014BarcodePro"
-          + "toP\001ZIgoogle.golang.org/genproto/googlea"
-          + "pis/cloud/documentai/v1beta3;documentai\252"
-          + "\002\037Google.Cloud.DocumentAI.V1Beta3\312\002\037Goog"
-          + "le\\Cloud\\DocumentAI\\V1beta3\352\002\"Google::Cl"
-          + "oud::DocumentAI::V1beta3b\006proto3"
+          + "toP\001ZCcloud.google.com/go/documentai/api"
+          + "v1beta3/documentaipb;documentaipb\252\002\037Goog"
+          + "le.Cloud.DocumentAI.V1Beta3\312\002\037Google\\Clo"
+          + "ud\\DocumentAI\\V1beta3\352\002\"Google::Cloud::D"
+          + "ocumentAI::V1beta3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

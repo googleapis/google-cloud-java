@@ -108,14 +108,13 @@ public final class DocumentAiEvaluation {
           + "oogleapis.com/Evaluation\022}projects/{proj"
           + "ect}/locations/{location}/processors/{pr"
           + "ocessor}/processorVersions/{processor_ve"
-          + "rsion}/evaluations/{evaluation}B\361\001\n#com."
+          + "rsion}/evaluations/{evaluation}B\353\001\n#com."
           + "google.cloud.documentai.v1beta3B\024Documen"
-          + "tAiEvaluationP\001ZIgoogle.golang.org/genpr"
-          + "oto/googleapis/cloud/documentai/v1beta3;"
-          + "documentai\252\002\037Google.Cloud.DocumentAI.V1B"
-          + "eta3\312\002\037Google\\Cloud\\DocumentAI\\V1beta3\352\002"
-          + "\"Google::Cloud::DocumentAI::V1beta3b\006pro"
-          + "to3"
+          + "tAiEvaluationP\001ZCcloud.google.com/go/doc"
+          + "umentai/apiv1beta3/documentaipb;document"
+          + "aipb\252\002\037Google.Cloud.DocumentAI.V1Beta3\312\002"
+          + "\037Google\\Cloud\\DocumentAI\\V1beta3\352\002\"Googl"
+          + "e::Cloud::DocumentAI::V1beta3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

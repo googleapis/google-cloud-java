@@ -231,12 +231,12 @@ public final class ServiceProto {
           + "projects/*/locations/*/memberships/*}:ge"
           + "nerateConnectManifest\032I\312A\025gkehub.googlea"
           + "pis.com\322A.https://www.googleapis.com/aut"
-          + "h/cloud-platformB\270\001\n\032com.google.cloud.gk"
-          + "ehub.v1B\014ServiceProtoP\001Z<google.golang.o"
-          + "rg/genproto/googleapis/cloud/gkehub/v1;g"
-          + "kehub\252\002\026Google.Cloud.GkeHub.V1\312\002\026Google\\"
-          + "Cloud\\GkeHub\\V1\352\002\031Google::Cloud::GkeHub:"
-          + ":V1b\006proto3"
+          + "h/cloud-platformB\256\001\n\032com.google.cloud.gk"
+          + "ehub.v1B\014ServiceProtoP\001Z2cloud.google.co"
+          + "m/go/gkehub/apiv1/gkehubpb;gkehubpb\252\002\026Go"
+          + "ogle.Cloud.GkeHub.V1\312\002\026Google\\Cloud\\GkeH"
+          + "ub\\V1\352\002\031Google::Cloud::GkeHub::V1b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

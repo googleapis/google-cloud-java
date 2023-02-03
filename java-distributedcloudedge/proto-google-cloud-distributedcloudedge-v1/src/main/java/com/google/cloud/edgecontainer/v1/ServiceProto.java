@@ -308,11 +308,11 @@ public final class ServiceProto {
           + "vpnConnections/*}\332A\004name\312A*\n\025google.prot"
           + "obuf.Empty\022\021OperationMetadata\032P\312A\034edgeco"
           + "ntainer.googleapis.com\322A.https://www.goo"
-          + "gleapis.com/auth/cloud-platformB\177\n!com.g"
+          + "gleapis.com/auth/cloud-platformB|\n!com.g"
           + "oogle.cloud.edgecontainer.v1B\014ServicePro"
-          + "toP\001ZJgoogle.golang.org/genproto/googlea"
-          + "pis/cloud/edgecontainer/v1;edgecontainer"
-          + "b\006proto3"
+          + "toP\001ZGcloud.google.com/go/edgecontainer/"
+          + "apiv1/edgecontainerpb;edgecontainerpbb\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

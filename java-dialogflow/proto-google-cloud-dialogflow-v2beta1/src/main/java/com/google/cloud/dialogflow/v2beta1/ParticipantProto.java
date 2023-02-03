@@ -594,11 +594,11 @@ public final class ParticipantProto {
           + "e:\001*\032x\312A\031dialogflow.googleapis.com\322AYhtt"
           + "ps://www.googleapis.com/auth/cloud-platf"
           + "orm,https://www.googleapis.com/auth/dial"
-          + "ogflowB\256\001\n#com.google.cloud.dialogflow.v"
-          + "2beta1B\020ParticipantProtoP\001ZIgoogle.golan"
-          + "g.org/genproto/googleapis/cloud/dialogfl"
-          + "ow/v2beta1;dialogflow\370\001\001\242\002\002DF\252\002\037Google.C"
-          + "loud.Dialogflow.V2beta1b\006proto3"
+          + "ogflowB\250\001\n#com.google.cloud.dialogflow.v"
+          + "2beta1B\020ParticipantProtoP\001ZCcloud.google"
+          + ".com/go/dialogflow/apiv2beta1/dialogflow"
+          + "pb;dialogflowpb\370\001\001\242\002\002DF\252\002\037Google.Cloud.D"
+          + "ialogflow.V2beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

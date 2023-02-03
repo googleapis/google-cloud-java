@@ -43,15 +43,15 @@ public final class MultiClusterIngressProto {
       "\nDgoogle/cloud/gkehub/v1/multiclustering"
           + "ress/multiclusteringress.proto\022*google.c"
           + "loud.gkehub.multiclusteringress.v1\"(\n\013Fe"
-          + "atureSpec\022\031\n\021config_membership\030\001 \001(\tB\266\002\n"
+          + "atureSpec\022\031\n\021config_membership\030\001 \001(\tB\271\002\n"
           + ".com.google.cloud.gkehub.multiclustering"
-          + "ress.v1B\030MultiClusterIngressProtoP\001Z]goo"
-          + "gle.golang.org/genproto/googleapis/cloud"
-          + "/gkehub/multiclusteringress/v1;multiclus"
-          + "teringress\252\002*Google.Cloud.GkeHub.MultiCl"
-          + "usterIngress.V1\312\002*Google\\Cloud\\GkeHub\\Mu"
-          + "ltiClusterIngress\\V1\352\002.Google::Cloud::Gk"
-          + "eHub::MultiClusterIngress::V1b\006proto3"
+          + "ress.v1B\030MultiClusterIngressProtoP\001Z`clo"
+          + "ud.google.com/go/gkehub/multiclusteringr"
+          + "ess/apiv1/multiclusteringresspb;multiclu"
+          + "steringresspb\252\002*Google.Cloud.GkeHub.Mult"
+          + "iClusterIngress.V1\312\002*Google\\Cloud\\GkeHub"
+          + "\\MultiClusterIngress\\V1\352\002.Google::Cloud:"
+          + ":GkeHub::MultiClusterIngress::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

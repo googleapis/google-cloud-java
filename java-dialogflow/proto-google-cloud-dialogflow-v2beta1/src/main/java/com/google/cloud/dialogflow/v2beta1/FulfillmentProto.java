@@ -109,12 +109,11 @@ public final class FulfillmentProto {
           + "nt,update_mask\032x\312A\031dialogflow.googleapis"
           + ".com\322AYhttps://www.googleapis.com/auth/c"
           + "loud-platform,https://www.googleapis.com"
-          + "/auth/dialogflowB\256\001\n#com.google.cloud.di"
-          + "alogflow.v2beta1B\020FulfillmentProtoP\001ZIgo"
-          + "ogle.golang.org/genproto/googleapis/clou"
-          + "d/dialogflow/v2beta1;dialogflow\370\001\001\242\002\002DF\252"
-          + "\002\037Google.Cloud.Dialogflow.V2beta1b\006proto"
-          + "3"
+          + "/auth/dialogflowB\250\001\n#com.google.cloud.di"
+          + "alogflow.v2beta1B\020FulfillmentProtoP\001ZCcl"
+          + "oud.google.com/go/dialogflow/apiv2beta1/"
+          + "dialogflowpb;dialogflowpb\370\001\001\242\002\002DF\252\002\037Goog"
+          + "le.Cloud.Dialogflow.V2beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

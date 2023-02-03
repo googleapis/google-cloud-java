@@ -72,10 +72,10 @@ public final class RealmsServiceOuterClass {
           + "/locations/*/realms/*}:previewUpdate:\005re"
           + "alm\032O\312A\033gameservices.googleapis.com\322A.ht"
           + "tps://www.googleapis.com/auth/cloud-plat"
-          + "formB\201\001\n\036com.google.cloud.gaming.v1betaP"
-          + "\001Z@google.golang.org/genproto/googleapis"
-          + "/cloud/gaming/v1beta;gaming\312\002\032Google\\Clo"
-          + "ud\\Gaming\\V1betab\006proto3"
+          + "formBw\n\036com.google.cloud.gaming.v1betaP\001"
+          + "Z6cloud.google.com/go/gaming/apiv1beta/g"
+          + "amingpb;gamingpb\312\002\032Google\\Cloud\\Gaming\\V"
+          + "1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -96,14 +96,13 @@ public final class DocumentIoProto {
           + "\016ShardingConfig\022\027\n\017pages_per_shard\030\001 \001(\005"
           + "\022\025\n\rpages_overlap\030\002 \001(\005B\r\n\013destination\"L"
           + "\n\tOcrConfig\022!\n\031enable_native_pdf_parsing"
-          + "\030\003 \001(\010\022\034\n\024advanced_ocr_options\030\005 \003(\tB\354\001\n"
+          + "\030\003 \001(\010\022\034\n\024advanced_ocr_options\030\005 \003(\tB\346\001\n"
           + "#com.google.cloud.documentai.v1beta3B\017Do"
-          + "cumentIoProtoP\001ZIgoogle.golang.org/genpr"
-          + "oto/googleapis/cloud/documentai/v1beta3;"
-          + "documentai\252\002\037Google.Cloud.DocumentAI.V1B"
-          + "eta3\312\002\037Google\\Cloud\\DocumentAI\\V1beta3\352\002"
-          + "\"Google::Cloud::DocumentAI::V1beta3b\006pro"
-          + "to3"
+          + "cumentIoProtoP\001ZCcloud.google.com/go/doc"
+          + "umentai/apiv1beta3/documentaipb;document"
+          + "aipb\252\002\037Google.Cloud.DocumentAI.V1Beta3\312\002"
+          + "\037Google\\Cloud\\DocumentAI\\V1beta3\352\002\"Googl"
+          + "e::Cloud::DocumentAI::V1beta3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -185,11 +185,10 @@ public final class GameServerDeployments {
           + "\001\"\216\001\n*PreviewGameServerDeploymentRollout"
           + "Response\022\023\n\013unavailable\030\002 \003(\t\022\014\n\004etag\030\003 "
           + "\001(\t\022=\n\014target_state\030\004 \001(\0132\'.google.cloud"
-          + ".gaming.v1beta.TargetStateB\201\001\n\036com.googl"
-          + "e.cloud.gaming.v1betaP\001Z@google.golang.o"
-          + "rg/genproto/googleapis/cloud/gaming/v1be"
-          + "ta;gaming\312\002\032Google\\Cloud\\Gaming\\V1betab\006"
-          + "proto3"
+          + ".gaming.v1beta.TargetStateBw\n\036com.google"
+          + ".cloud.gaming.v1betaP\001Z6cloud.google.com"
+          + "/go/gaming/apiv1beta/gamingpb;gamingpb\312\002"
+          + "\032Google\\Cloud\\Gaming\\V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

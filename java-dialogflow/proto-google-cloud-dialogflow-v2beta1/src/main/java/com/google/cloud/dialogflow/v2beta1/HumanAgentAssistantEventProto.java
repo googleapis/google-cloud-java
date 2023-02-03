@@ -47,12 +47,12 @@ public final class HumanAgentAssistantEventProto {
           + "nAgentAssistantEvent\022\024\n\014conversation\030\001 \001"
           + "(\t\022\023\n\013participant\030\003 \001(\t\022M\n\022suggestion_re"
           + "sults\030\005 \003(\01321.google.cloud.dialogflow.v2"
-          + "beta1.SuggestionResultB\273\001\n#com.google.cl"
+          + "beta1.SuggestionResultB\265\001\n#com.google.cl"
           + "oud.dialogflow.v2beta1B\035HumanAgentAssist"
-          + "antEventProtoP\001ZIgoogle.golang.org/genpr"
-          + "oto/googleapis/cloud/dialogflow/v2beta1;"
-          + "dialogflow\370\001\001\242\002\002DF\252\002\037Google.Cloud.Dialog"
-          + "flow.V2beta1b\006proto3"
+          + "antEventProtoP\001ZCcloud.google.com/go/dia"
+          + "logflow/apiv2beta1/dialogflowpb;dialogfl"
+          + "owpb\370\001\001\242\002\002DF\252\002\037Google.Cloud.Dialogflow.V"
+          + "2beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

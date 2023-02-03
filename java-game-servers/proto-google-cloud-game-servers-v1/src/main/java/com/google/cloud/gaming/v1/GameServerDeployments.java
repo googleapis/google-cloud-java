@@ -184,9 +184,9 @@ public final class GameServerDeployments {
           + "wGameServerDeploymentRolloutResponse\022\023\n\013"
           + "unavailable\030\002 \003(\t\022\014\n\004etag\030\003 \001(\t\0229\n\014targe"
           + "t_state\030\004 \001(\0132#.google.cloud.gaming.v1.T"
-          + "argetStateB\\\n\032com.google.cloud.gaming.v1"
-          + "P\001Z<google.golang.org/genproto/googleapi"
-          + "s/cloud/gaming/v1;gamingb\006proto3"
+          + "argetStateBR\n\032com.google.cloud.gaming.v1"
+          + "P\001Z2cloud.google.com/go/gaming/apiv1/gam"
+          + "ingpb;gamingpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -278,13 +278,13 @@ public final class DocumentProto {
           + "\tB\003\340A\001\"\207\001\n\nLayoutType\022\033\n\027LAYOUT_TYPE_UNS"
           + "PECIFIED\020\000\022\t\n\005BLOCK\020\001\022\r\n\tPARAGRAPH\020\002\022\010\n\004"
           + "LINE\020\003\022\t\n\005TOKEN\020\004\022\022\n\016VISUAL_ELEMENT\020\005\022\t\n"
-          + "\005TABLE\020\006\022\016\n\nFORM_FIELD\020\007B\010\n\006sourceB\352\001\n#c"
+          + "\005TABLE\020\006\022\016\n\nFORM_FIELD\020\007B\010\n\006sourceB\344\001\n#c"
           + "om.google.cloud.documentai.v1beta2B\rDocu"
-          + "mentProtoP\001ZIgoogle.golang.org/genproto/"
-          + "googleapis/cloud/documentai/v1beta2;docu"
-          + "mentai\252\002\037Google.Cloud.DocumentAI.V1Beta2"
-          + "\312\002\037Google\\Cloud\\DocumentAI\\V1beta2\352\002\"Goo"
-          + "gle::Cloud::DocumentAI::V1beta2b\006proto3"
+          + "mentProtoP\001ZCcloud.google.com/go/documen"
+          + "tai/apiv1beta2/documentaipb;documentaipb"
+          + "\252\002\037Google.Cloud.DocumentAI.V1Beta2\312\002\037Goo"
+          + "gle\\Cloud\\DocumentAI\\V1beta2\352\002\"Google::C"
+          + "loud::DocumentAI::V1beta2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -203,9 +203,9 @@ public final class GameServerClusters {
           + "ON_VERIFICATION_FAILED\020\006\022\030\n\024AGONES_NOT_I"
           + "NSTALLED\020\007*V\n\025GameServerClusterView\022(\n$G"
           + "AME_SERVER_CLUSTER_VIEW_UNSPECIFIED\020\000\022\t\n"
-          + "\005BASIC\020\001\022\010\n\004FULL\020\002B\\\n\032com.google.cloud.g"
-          + "aming.v1P\001Z<google.golang.org/genproto/g"
-          + "oogleapis/cloud/gaming/v1;gamingb\006proto3"
+          + "\005BASIC\020\001\022\010\n\004FULL\020\002BR\n\032com.google.cloud.g"
+          + "aming.v1P\001Z2cloud.google.com/go/gaming/a"
+          + "piv1/gamingpb;gamingpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

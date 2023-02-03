@@ -83,14 +83,14 @@ public final class UserEventServiceProto {
           + "e.cloud.discoveryengine.v1beta.ImportUse"
           + "rEventsMetadata\032R\312A\036discoveryengine.goog"
           + "leapis.com\322A.https://www.googleapis.com/"
-          + "auth/cloud-platformB\235\002\n\'com.google.cloud"
+          + "auth/cloud-platformB\234\002\n\'com.google.cloud"
           + ".discoveryengine.v1betaB\025UserEventServic"
-          + "eProtoP\001ZRgoogle.golang.org/genproto/goo"
-          + "gleapis/cloud/discoveryengine/v1beta;dis"
-          + "coveryengine\242\002\017DISCOVERYENGINE\252\002#Google."
-          + "Cloud.DiscoveryEngine.V1Beta\312\002#Google\\Cl"
-          + "oud\\DiscoveryEngine\\V1beta\352\002&Google::Clo"
-          + "ud::DiscoveryEngine::V1betab\006proto3"
+          + "eProtoP\001ZQcloud.google.com/go/discoverye"
+          + "ngine/apiv1beta/discoveryenginepb;discov"
+          + "eryenginepb\242\002\017DISCOVERYENGINE\252\002#Google.C"
+          + "loud.DiscoveryEngine.V1Beta\312\002#Google\\Clo"
+          + "ud\\DiscoveryEngine\\V1beta\352\002&Google::Clou"
+          + "d::DiscoveryEngine::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

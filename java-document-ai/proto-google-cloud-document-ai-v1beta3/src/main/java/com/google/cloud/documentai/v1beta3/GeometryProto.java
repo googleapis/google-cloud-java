@@ -55,13 +55,13 @@ public final class GeometryProto {
           + "BoundingPoly\0229\n\010vertices\030\001 \003(\0132\'.google."
           + "cloud.documentai.v1beta3.Vertex\022N\n\023norma"
           + "lized_vertices\030\002 \003(\01321.google.cloud.docu"
-          + "mentai.v1beta3.NormalizedVertexB\352\001\n#com."
+          + "mentai.v1beta3.NormalizedVertexB\344\001\n#com."
           + "google.cloud.documentai.v1beta3B\rGeometr"
-          + "yProtoP\001ZIgoogle.golang.org/genproto/goo"
-          + "gleapis/cloud/documentai/v1beta3;documen"
-          + "tai\252\002\037Google.Cloud.DocumentAI.V1Beta3\312\002\037"
-          + "Google\\Cloud\\DocumentAI\\V1beta3\352\002\"Google"
-          + "::Cloud::DocumentAI::V1beta3b\006proto3"
+          + "yProtoP\001ZCcloud.google.com/go/documentai"
+          + "/apiv1beta3/documentaipb;documentaipb\252\002\037"
+          + "Google.Cloud.DocumentAI.V1Beta3\312\002\037Google"
+          + "\\Cloud\\DocumentAI\\V1beta3\352\002\"Google::Clou"
+          + "d::DocumentAI::V1beta3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

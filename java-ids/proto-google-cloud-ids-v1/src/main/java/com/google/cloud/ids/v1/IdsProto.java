@@ -136,10 +136,9 @@ public final class IdsProto {
           + "\004name\312A*\n\025google.protobuf.Empty\022\021Operati"
           + "onMetadata\032F\312A\022ids.googleapis.com\322A.http"
           + "s://www.googleapis.com/auth/cloud-platfo"
-          + "rmBv\n\027com.google.cloud.ids.v1B\010IdsProtoP"
-          + "\001Z6google.golang.org/genproto/googleapis"
-          + "/cloud/ids/v1;ids\352\002\026Google::Cloud::IDS::"
-          + "V1b\006proto3"
+          + "rmBi\n\027com.google.cloud.ids.v1B\010IdsProtoP"
+          + "\001Z)cloud.google.com/go/ids/apiv1/idspb;i"
+          + "dspb\352\002\026Google::Cloud::IDS::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

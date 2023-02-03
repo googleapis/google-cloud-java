@@ -227,13 +227,13 @@ public final class AwsServiceProto {
           + "/{name=projects/*/locations/*/awsServerC"
           + "onfig}\332A\004name\032P\312A\034gkemulticloud.googleap"
           + "is.com\322A.https://www.googleapis.com/auth"
-          + "/cloud-platformB\345\001\n!com.google.cloud.gke"
-          + "multicloud.v1B\017AwsServiceProtoP\001ZJgoogle"
-          + ".golang.org/genproto/googleapis/cloud/gk"
-          + "emulticloud/v1;gkemulticloud\252\002\035Google.Cl"
-          + "oud.GkeMultiCloud.V1\312\002\035Google\\Cloud\\GkeM"
-          + "ultiCloud\\V1\352\002 Google::Cloud::GkeMultiCl"
-          + "oud::V1b\006proto3"
+          + "/cloud-platformB\342\001\n!com.google.cloud.gke"
+          + "multicloud.v1B\017AwsServiceProtoP\001ZGcloud."
+          + "google.com/go/gkemulticloud/apiv1/gkemul"
+          + "ticloudpb;gkemulticloudpb\252\002\035Google.Cloud"
+          + ".GkeMultiCloud.V1\312\002\035Google\\Cloud\\GkeMult"
+          + "iCloud\\V1\352\002 Google::Cloud::GkeMultiCloud"
+          + "::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

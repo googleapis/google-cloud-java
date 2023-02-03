@@ -117,11 +117,11 @@ public final class Realms {
           + "iption\030\010 \001(\t\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t"
           + "\022\r\n\005value\030\002 \001(\t:\0028\001:^\352A[\n!gameservices.g"
           + "oogleapis.com/Realm\0226projects/{project}/"
-          + "locations/{location}/realms/{realm}B\201\001\n\036"
-          + "com.google.cloud.gaming.v1betaP\001Z@google"
-          + ".golang.org/genproto/googleapis/cloud/ga"
-          + "ming/v1beta;gaming\312\002\032Google\\Cloud\\Gaming"
-          + "\\V1betab\006proto3"
+          + "locations/{location}/realms/{realm}Bw\n\036c"
+          + "om.google.cloud.gaming.v1betaP\001Z6cloud.g"
+          + "oogle.com/go/gaming/apiv1beta/gamingpb;g"
+          + "amingpb\312\002\032Google\\Cloud\\Gaming\\V1betab\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

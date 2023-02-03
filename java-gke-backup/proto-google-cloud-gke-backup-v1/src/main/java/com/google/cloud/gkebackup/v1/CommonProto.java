@@ -60,13 +60,13 @@ public final class CommonProto {
           + "\n\020namespaced_names\030\001 \003(\0132).google.cloud."
           + "gkebackup.v1.NamespacedName\"W\n\rEncryptio"
           + "nKey\022F\n\026gcp_kms_encryption_key\030\001 \001(\tB&\372A"
-          + "#\n!cloudkms.googleapis.com/CryptoKeyB\311\001\n"
+          + "#\n!cloudkms.googleapis.com/CryptoKeyB\302\001\n"
           + "\035com.google.cloud.gkebackup.v1B\013CommonPr"
-          + "otoP\001ZBgoogle.golang.org/genproto/google"
-          + "apis/cloud/gkebackup/v1;gkebackup\252\002\031Goog"
-          + "le.Cloud.GkeBackup.V1\312\002\031Google\\Cloud\\Gke"
-          + "Backup\\V1\352\002\034Google::Cloud::GkeBackup::V1"
-          + "b\006proto3"
+          + "otoP\001Z;cloud.google.com/go/gkebackup/api"
+          + "v1/gkebackuppb;gkebackuppb\252\002\031Google.Clou"
+          + "d.GkeBackup.V1\312\002\031Google\\Cloud\\GkeBackup\\"
+          + "V1\352\002\034Google::Cloud::GkeBackup::V1b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

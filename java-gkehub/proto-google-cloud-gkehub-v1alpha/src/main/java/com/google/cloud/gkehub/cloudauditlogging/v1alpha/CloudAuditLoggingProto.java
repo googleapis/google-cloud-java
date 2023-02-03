@@ -44,15 +44,15 @@ public final class CloudAuditLoggingProto {
           + "logging/cloudauditlogging.proto\022-google."
           + "cloud.gkehub.cloudauditlogging.v1alpha\"3"
           + "\n\013FeatureSpec\022$\n\034allowlisted_service_acc"
-          + "ounts\030\001 \003(\tB\301\002\n1com.google.cloud.gkehub."
+          + "ounts\030\001 \003(\tB\302\002\n1com.google.cloud.gkehub."
           + "cloudauditlogging.v1alphaB\026CloudAuditLog"
-          + "gingProtoP\001Z^google.golang.org/genproto/"
-          + "googleapis/cloud/gkehub/cloudauditloggin"
-          + "g/v1alpha;cloudauditlogging\252\002-Google.Clo"
-          + "ud.GkeHub.CloudAuditLogging.V1Alpha\312\002-Go"
-          + "ogle\\Cloud\\GkeHub\\CloudAuditLogging\\V1al"
-          + "pha\352\0021Google::Cloud::GkeHub::CloudAuditL"
-          + "ogging::V1alphab\006proto3"
+          + "gingProtoP\001Z_cloud.google.com/go/gkehub/"
+          + "cloudauditlogging/apiv1alpha/cloudauditl"
+          + "oggingpb;cloudauditloggingpb\252\002-Google.Cl"
+          + "oud.GkeHub.CloudAuditLogging.V1Alpha\312\002-G"
+          + "oogle\\Cloud\\GkeHub\\CloudAuditLogging\\V1a"
+          + "lpha\352\0021Google::Cloud::GkeHub::CloudAudit"
+          + "Logging::V1alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

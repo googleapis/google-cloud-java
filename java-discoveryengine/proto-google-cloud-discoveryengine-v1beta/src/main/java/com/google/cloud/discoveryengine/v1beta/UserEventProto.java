@@ -126,15 +126,15 @@ public final class UserEventProto {
           + "_total_panels\"\215\001\n\tMediaInfo\022:\n\027media_pro"
           + "gress_duration\030\001 \001(\0132\031.google.protobuf.D"
           + "uration\022&\n\031media_progress_percentage\030\002 \001"
-          + "(\002H\000\210\001\001B\034\n\032_media_progress_percentageB\226\002"
+          + "(\002H\000\210\001\001B\034\n\032_media_progress_percentageB\225\002"
           + "\n\'com.google.cloud.discoveryengine.v1bet"
-          + "aB\016UserEventProtoP\001ZRgoogle.golang.org/g"
-          + "enproto/googleapis/cloud/discoveryengine"
-          + "/v1beta;discoveryengine\242\002\017DISCOVERYENGIN"
-          + "E\252\002#Google.Cloud.DiscoveryEngine.V1Beta\312"
-          + "\002#Google\\Cloud\\DiscoveryEngine\\V1beta\352\002&"
-          + "Google::Cloud::DiscoveryEngine::V1betab\006"
-          + "proto3"
+          + "aB\016UserEventProtoP\001ZQcloud.google.com/go"
+          + "/discoveryengine/apiv1beta/discoveryengi"
+          + "nepb;discoveryenginepb\242\002\017DISCOVERYENGINE"
+          + "\252\002#Google.Cloud.DiscoveryEngine.V1Beta\312\002"
+          + "#Google\\Cloud\\DiscoveryEngine\\V1beta\352\002&G"
+          + "oogle::Cloud::DiscoveryEngine::V1betab\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

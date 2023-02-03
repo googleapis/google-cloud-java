@@ -43,14 +43,14 @@ public final class EnumsProto {
           + "\022\013\n\007BILLING\020\007\022\t\n\005LEGAL\020\010\022\023\n\017PRODUCT_UPDA"
           + "TES\020\t\022\027\n\023TECHNICAL_INCIDENTS\020\n*K\n\017Valida"
           + "tionState\022 \n\034VALIDATION_STATE_UNSPECIFIE"
-          + "D\020\000\022\t\n\005VALID\020\001\022\013\n\007INVALID\020\002B\370\001\n%com.goog"
+          + "D\020\000\022\t\n\005VALID\020\001\022\013\n\007INVALID\020\002B\371\001\n%com.goog"
           + "le.cloud.essentialcontacts.v1B\nEnumsProt"
-          + "oP\001ZRgoogle.golang.org/genproto/googleap"
-          + "is/cloud/essentialcontacts/v1;essentialc"
-          + "ontacts\252\002!Google.Cloud.EssentialContacts"
-          + ".V1\312\002!Google\\Cloud\\EssentialContacts\\V1\352"
-          + "\002$Google::Cloud::EssentialContacts::V1b\006"
-          + "proto3"
+          + "oP\001ZScloud.google.com/go/essentialcontac"
+          + "ts/apiv1/essentialcontactspb;essentialco"
+          + "ntactspb\252\002!Google.Cloud.EssentialContact"
+          + "s.V1\312\002!Google\\Cloud\\EssentialContacts\\V1"
+          + "\352\002$Google::Cloud::EssentialContacts::V1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

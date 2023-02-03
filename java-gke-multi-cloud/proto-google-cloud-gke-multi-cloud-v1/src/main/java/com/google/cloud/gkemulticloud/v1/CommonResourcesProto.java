@@ -103,14 +103,13 @@ public final class CommonResourcesProto {
           + "S\020\002\"m\n\020MonitoringConfig\022Y\n\031managed_prome"
           + "theus_config\030\002 \001(\01326.google.cloud.gkemul"
           + "ticloud.v1.ManagedPrometheusConfig\"*\n\027Ma"
-          + "nagedPrometheusConfig\022\017\n\007enabled\030\001 \001(\010B\352"
+          + "nagedPrometheusConfig\022\017\n\007enabled\030\001 \001(\010B\347"
           + "\001\n!com.google.cloud.gkemulticloud.v1B\024Co"
-          + "mmonResourcesProtoP\001ZJgoogle.golang.org/"
-          + "genproto/googleapis/cloud/gkemulticloud/"
-          + "v1;gkemulticloud\252\002\035Google.Cloud.GkeMulti"
-          + "Cloud.V1\312\002\035Google\\Cloud\\GkeMultiCloud\\V1"
-          + "\352\002 Google::Cloud::GkeMultiCloud::V1b\006pro"
-          + "to3"
+          + "mmonResourcesProtoP\001ZGcloud.google.com/g"
+          + "o/gkemulticloud/apiv1/gkemulticloudpb;gk"
+          + "emulticloudpb\252\002\035Google.Cloud.GkeMultiClo"
+          + "ud.V1\312\002\035Google\\Cloud\\GkeMultiCloud\\V1\352\002 "
+          + "Google::Cloud::GkeMultiCloud::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -332,10 +332,9 @@ public final class DeviceManagerProto {
           + "y_id,device_id\032t\312A\027cloudiot.googleapis.c"
           + "om\322AWhttps://www.googleapis.com/auth/clo"
           + "ud-platform,https://www.googleapis.com/a"
-          + "uth/cloudiotBj\n\027com.google.cloud.iot.v1B"
-          + "\022DeviceManagerProtoP\001Z6google.golang.org"
-          + "/genproto/googleapis/cloud/iot/v1;iot\370\001\001"
-          + "b\006proto3"
+          + "uth/cloudiotB]\n\027com.google.cloud.iot.v1B"
+          + "\022DeviceManagerProtoP\001Z)cloud.google.com/"
+          + "go/iot/apiv1/iotpb;iotpb\370\001\001b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

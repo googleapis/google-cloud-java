@@ -126,14 +126,14 @@ public final class DocumentServiceProto {
           + "iscoveryengine.v1beta.ImportDocumentsMet"
           + "adata\032R\312A\036discoveryengine.googleapis.com"
           + "\322A.https://www.googleapis.com/auth/cloud"
-          + "-platformB\234\002\n\'com.google.cloud.discovery"
-          + "engine.v1betaB\024DocumentServiceProtoP\001ZRg"
-          + "oogle.golang.org/genproto/googleapis/clo"
-          + "ud/discoveryengine/v1beta;discoveryengin"
-          + "e\242\002\017DISCOVERYENGINE\252\002#Google.Cloud.Disco"
-          + "veryEngine.V1Beta\312\002#Google\\Cloud\\Discove"
-          + "ryEngine\\V1beta\352\002&Google::Cloud::Discove"
-          + "ryEngine::V1betab\006proto3"
+          + "-platformB\233\002\n\'com.google.cloud.discovery"
+          + "engine.v1betaB\024DocumentServiceProtoP\001ZQc"
+          + "loud.google.com/go/discoveryengine/apiv1"
+          + "beta/discoveryenginepb;discoveryenginepb"
+          + "\242\002\017DISCOVERYENGINE\252\002#Google.Cloud.Discov"
+          + "eryEngine.V1Beta\312\002#Google\\Cloud\\Discover"
+          + "yEngine\\V1beta\352\002&Google::Cloud::Discover"
+          + "yEngine::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

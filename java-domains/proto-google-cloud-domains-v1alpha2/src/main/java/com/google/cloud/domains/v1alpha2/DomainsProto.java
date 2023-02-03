@@ -469,10 +469,10 @@ public final class DomainsProto {
           + "/*/registrations/*}:resetAuthorizationCo"
           + "de:\001*\332A\014registration\032J\312A\026domains.googlea"
           + "pis.com\322A.https://www.googleapis.com/aut"
-          + "h/cloud-platformBy\n!com.google.cloud.dom"
-          + "ains.v1alpha2B\014DomainsProtoP\001ZDgoogle.go"
-          + "lang.org/genproto/googleapis/cloud/domai"
-          + "ns/v1alpha2;domainsb\006proto3"
+          + "h/cloud-platformBp\n!com.google.cloud.dom"
+          + "ains.v1alpha2B\014DomainsProtoP\001Z;cloud.goo"
+          + "gle.com/go/domains/apiv1alpha2/domainspb"
+          + ";domainspbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

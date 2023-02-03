@@ -54,13 +54,13 @@ public final class ChannelConnectionProto {
           + "arc.googleapis.com/ChannelConnection\022Opr"
           + "ojects/{project}/locations/{location}/ch"
           + "annelConnections/{channel_connection}*\022c"
-          + "hannelConnections2\021channelConnectionB\316\001\n"
+          + "hannelConnections2\021channelConnectionB\306\001\n"
           + "\034com.google.cloud.eventarc.v1B\026ChannelCo"
-          + "nnectionProtoP\001Z@google.golang.org/genpr"
-          + "oto/googleapis/cloud/eventarc/v1;eventar"
-          + "c\252\002\030Google.Cloud.Eventarc.V1\312\002\030Google\\Cl"
-          + "oud\\Eventarc\\V1\352\002\033Google::Cloud::Eventar"
-          + "c::V1b\006proto3"
+          + "nnectionProtoP\001Z8cloud.google.com/go/eve"
+          + "ntarc/apiv1/eventarcpb;eventarcpb\252\002\030Goog"
+          + "le.Cloud.Eventarc.V1\312\002\030Google\\Cloud\\Even"
+          + "tarc\\V1\352\002\033Google::Cloud::Eventarc::V1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

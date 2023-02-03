@@ -78,14 +78,14 @@ public final class ServiceMeshProto {
           + ".gkehub.servicemesh.v1alpha.AnalysisMess"
           + "ageBase\022\023\n\013description\030\002 \001(\t\022\026\n\016resource"
           + "_paths\030\003 \003(\t\022%\n\004args\030\004 \001(\0132\027.google.prot"
-          + "obuf.StructB\227\002\n+com.google.cloud.gkehub."
+          + "obuf.StructB\222\002\n+com.google.cloud.gkehub."
           + "servicemesh.v1alphaB\020ServiceMeshProtoP\001Z"
-          + "Rgoogle.golang.org/genproto/googleapis/c"
-          + "loud/gkehub/servicemesh/v1alpha;servicem"
-          + "esh\252\002\'Google.Cloud.GkeHub.ServiceMesh.V1"
-          + "Alpha\312\002\'Google\\Cloud\\GkeHub\\ServiceMesh\\"
-          + "V1alpha\352\002+Google::Cloud::GkeHub::Service"
-          + "Mesh::V1alphab\006proto3"
+          + "Mcloud.google.com/go/gkehub/servicemesh/"
+          + "apiv1alpha/servicemeshpb;servicemeshpb\252\002"
+          + "\'Google.Cloud.GkeHub.ServiceMesh.V1Alpha"
+          + "\312\002\'Google\\Cloud\\GkeHub\\ServiceMesh\\V1alp"
+          + "ha\352\002+Google::Cloud::GkeHub::ServiceMesh:"
+          + ":V1alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

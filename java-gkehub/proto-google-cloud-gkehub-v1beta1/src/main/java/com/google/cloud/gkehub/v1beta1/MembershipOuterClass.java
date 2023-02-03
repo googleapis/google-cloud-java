@@ -345,12 +345,12 @@ public final class MembershipOuterClass {
           + "/{name=projects/*/locations/*/membership"
           + "s/*}:generateExclusivityManifest\032I\312A\025gke"
           + "hub.googleapis.com\322A.https://www.googlea"
-          + "pis.com/auth/cloud-platformB\303\001\n\037com.goog"
-          + "le.cloud.gkehub.v1beta1P\001ZAgoogle.golang"
-          + ".org/genproto/googleapis/cloud/gkehub/v1"
-          + "beta1;gkehub\252\002\033Google.Cloud.GkeHub.V1Bet"
-          + "a1\312\002\033Google\\Cloud\\GkeHub\\V1beta1\352\002\036Googl"
-          + "e::Cloud::GkeHub::V1beta1b\006proto3"
+          + "pis.com/auth/cloud-platformB\271\001\n\037com.goog"
+          + "le.cloud.gkehub.v1beta1P\001Z7cloud.google."
+          + "com/go/gkehub/apiv1beta1/gkehubpb;gkehub"
+          + "pb\252\002\033Google.Cloud.GkeHub.V1Beta1\312\002\033Googl"
+          + "e\\Cloud\\GkeHub\\V1beta1\352\002\036Google::Cloud::"
+          + "GkeHub::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

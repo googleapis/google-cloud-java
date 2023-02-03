@@ -82,13 +82,13 @@ public final class DocumentAiDocumentSchema {
           + "ument_splitter\030\001 \001(\010\022&\n\036document_allow_m"
           + "ultiple_labels\030\002 \001(\010\022%\n\035prefixed_naming_"
           + "on_properties\030\006 \001(\010\022\036\n\026skip_naming_valid"
-          + "ation\030\007 \001(\010B\365\001\n#com.google.cloud.documen"
+          + "ation\030\007 \001(\010B\357\001\n#com.google.cloud.documen"
           + "tai.v1beta3B\030DocumentAiDocumentSchemaP\001Z"
-          + "Igoogle.golang.org/genproto/googleapis/c"
-          + "loud/documentai/v1beta3;documentai\252\002\037Goo"
-          + "gle.Cloud.DocumentAI.V1Beta3\312\002\037Google\\Cl"
-          + "oud\\DocumentAI\\V1beta3\352\002\"Google::Cloud::"
-          + "DocumentAI::V1beta3b\006proto3"
+          + "Ccloud.google.com/go/documentai/apiv1bet"
+          + "a3/documentaipb;documentaipb\252\002\037Google.Cl"
+          + "oud.DocumentAI.V1Beta3\312\002\037Google\\Cloud\\Do"
+          + "cumentAI\\V1beta3\352\002\"Google::Cloud::Docume"
+          + "ntAI::V1beta3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

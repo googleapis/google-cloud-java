@@ -121,12 +121,12 @@ public final class ServiceProto {
           + "ame,resource,update_mask\312A\034\n\007Feature\022\021Op"
           + "erationMetadata\032I\312A\025gkehub.googleapis.co"
           + "m\322A.https://www.googleapis.com/auth/clou"
-          + "d-platformB\314\001\n\036com.google.cloud.gkehub.v"
-          + "1betaB\014ServiceProtoP\001Z@google.golang.org"
-          + "/genproto/googleapis/cloud/gkehub/v1beta"
-          + ";gkehub\252\002\032Google.Cloud.GkeHub.V1Beta\312\002\032G"
-          + "oogle\\Cloud\\GkeHub\\V1beta\352\002\035Google::Clou"
-          + "d::GkeHub::V1betab\006proto3"
+          + "d-platformB\302\001\n\036com.google.cloud.gkehub.v"
+          + "1betaB\014ServiceProtoP\001Z6cloud.google.com/"
+          + "go/gkehub/apiv1beta/gkehubpb;gkehubpb\252\002\032"
+          + "Google.Cloud.GkeHub.V1Beta\312\002\032Google\\Clou"
+          + "d\\GkeHub\\V1beta\352\002\035Google::Cloud::GkeHub:"
+          + ":V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -507,13 +507,12 @@ public final class CloudFilestoreServiceProto {
           + "}:\005share\332A\021share,update_mask\312A.\n\005Share\022%"
           + "google.cloud.common.OperationMetadata\032G\312"
           + "A\023file.googleapis.com\322A.https://www.goog"
-          + "leapis.com/auth/cloud-platformB\315\001\n\"com.g"
+          + "leapis.com/auth/cloud-platformB\306\001\n\"com.g"
           + "oogle.cloud.filestore.v1beta1B\032CloudFile"
-          + "storeServiceProtoP\001ZGgoogle.golang.org/g"
-          + "enproto/googleapis/cloud/filestore/v1bet"
-          + "a1;filestore\252\002\036Google.Cloud.Filestore.V1"
-          + "Beta1\312\002\036Google\\Cloud\\Filestore\\V1beta1b\006"
-          + "proto3"
+          + "storeServiceProtoP\001Z@cloud.google.com/go"
+          + "/filestore/apiv1beta1/filestorepb;filest"
+          + "orepb\252\002\036Google.Cloud.Filestore.V1Beta1\312\002"
+          + "\036Google\\Cloud\\Filestore\\V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

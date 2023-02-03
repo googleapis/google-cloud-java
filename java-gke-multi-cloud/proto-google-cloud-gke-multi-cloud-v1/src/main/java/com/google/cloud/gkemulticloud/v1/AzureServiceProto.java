@@ -291,13 +291,13 @@ public final class AzureServiceProto {
           + "\"B\202\323\344\223\0025\0223/v1/{name=projects/*/locations"
           + "/*/azureServerConfig}\332A\004name\032P\312A\034gkemult"
           + "icloud.googleapis.com\322A.https://www.goog"
-          + "leapis.com/auth/cloud-platformB\347\001\n!com.g"
+          + "leapis.com/auth/cloud-platformB\344\001\n!com.g"
           + "oogle.cloud.gkemulticloud.v1B\021AzureServi"
-          + "ceProtoP\001ZJgoogle.golang.org/genproto/go"
-          + "ogleapis/cloud/gkemulticloud/v1;gkemulti"
-          + "cloud\252\002\035Google.Cloud.GkeMultiCloud.V1\312\002\035"
-          + "Google\\Cloud\\GkeMultiCloud\\V1\352\002 Google::"
-          + "Cloud::GkeMultiCloud::V1b\006proto3"
+          + "ceProtoP\001ZGcloud.google.com/go/gkemultic"
+          + "loud/apiv1/gkemulticloudpb;gkemulticloud"
+          + "pb\252\002\035Google.Cloud.GkeMultiCloud.V1\312\002\035Goo"
+          + "gle\\Cloud\\GkeMultiCloud\\V1\352\002 Google::Clo"
+          + "ud::GkeMultiCloud::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
