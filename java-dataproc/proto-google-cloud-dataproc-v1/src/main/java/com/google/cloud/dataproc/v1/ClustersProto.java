@@ -526,15 +526,15 @@ public final class ClustersProto {
           + "DiagnoseClusterResults\0221google.cloud.dat"
           + "aproc.v1.ClusterOperationMetadata\032K\312A\027da"
           + "taproc.googleapis.com\322A.https://www.goog"
-          + "leapis.com/auth/cloud-platformB\263\002\n\034com.g"
+          + "leapis.com/auth/cloud-platformB\253\002\n\034com.g"
           + "oogle.cloud.dataproc.v1B\rClustersProtoP\001"
-          + "Z@google.golang.org/genproto/googleapis/"
-          + "cloud/dataproc/v1;dataproc\352A^\n container"
-          + ".googleapis.com/Cluster\022:projects/{proje"
-          + "ct}/locations/{location}/clusters/{clust"
-          + "er}\352A^\n metastore.googleapis.com/Service"
-          + "\022:projects/{project}/locations/{location"
-          + "}/services/{service}b\006proto3"
+          + "Z8cloud.google.com/go/dataproc/apiv1/dat"
+          + "aprocpb;dataprocpb\352A^\n container.googlea"
+          + "pis.com/Cluster\022:projects/{project}/loca"
+          + "tions/{location}/clusters/{cluster}\352A^\n "
+          + "metastore.googleapis.com/Service\022:projec"
+          + "ts/{project}/locations/{location}/servic"
+          + "es/{service}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

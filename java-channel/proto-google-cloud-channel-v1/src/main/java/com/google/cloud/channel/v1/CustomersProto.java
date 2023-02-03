@@ -68,9 +68,9 @@ public final class CustomersProto {
           + "nfo\022\022\n\nfirst_name\030\001 \001(\t\022\021\n\tlast_name\030\002 \001"
           + "(\t\022\031\n\014display_name\030\004 \001(\tB\003\340A\003\022\r\n\005email\030\005"
           + " \001(\t\022\022\n\005title\030\006 \001(\tB\003\340A\001\022\r\n\005phone\030\007 \001(\tB"
-          + "o\n\033com.google.cloud.channel.v1B\016Customer"
-          + "sProtoP\001Z>google.golang.org/genproto/goo"
-          + "gleapis/cloud/channel/v1;channelb\006proto3"
+          + "f\n\033com.google.cloud.channel.v1B\016Customer"
+          + "sProtoP\001Z5cloud.google.com/go/channel/ap"
+          + "iv1/channelpb;channelpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

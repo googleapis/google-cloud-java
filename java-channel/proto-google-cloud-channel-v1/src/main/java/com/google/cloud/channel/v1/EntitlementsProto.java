@@ -136,10 +136,10 @@ public final class EntitlementsProto {
           + "3.google.cloud.channel.v1.TransferEligib"
           + "ility.Reason\"e\n\006Reason\022\026\n\022REASON_UNSPECI"
           + "FIED\020\000\022\032\n\026PENDING_TOS_ACCEPTANCE\020\001\022\024\n\020SK"
-          + "U_NOT_ELIGIBLE\020\002\022\021\n\rSKU_SUSPENDED\020\003Br\n\033c"
+          + "U_NOT_ELIGIBLE\020\002\022\021\n\rSKU_SUSPENDED\020\003Bi\n\033c"
           + "om.google.cloud.channel.v1B\021Entitlements"
-          + "ProtoP\001Z>google.golang.org/genproto/goog"
-          + "leapis/cloud/channel/v1;channelb\006proto3"
+          + "ProtoP\001Z5cloud.google.com/go/channel/api"
+          + "v1/channelpb;channelpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -779,15 +779,15 @@ public final class ContactCenterInsightsProto {
           + "\323\344\223\002+*)/v1/{name=projects/*/locations/*/"
           + "views/*}\332A\004name\032X\312A$contactcenterinsight"
           + "s.googleapis.com\322A.https://www.googleapi"
-          + "s.com/auth/cloud-platformB\240\002\n)com.google"
+          + "s.com/auth/cloud-platformB\245\002\n)com.google"
           + ".cloud.contactcenterinsights.v1B\032Contact"
-          + "CenterInsightsProtoP\001ZZgoogle.golang.org"
-          + "/genproto/googleapis/cloud/contactcenter"
-          + "insights/v1;contactcenterinsights\252\002%Goog"
-          + "le.Cloud.ContactCenterInsights.V1\312\002%Goog"
-          + "le\\Cloud\\ContactCenterInsights\\V1\352\002(Goog"
-          + "le::Cloud::ContactCenterInsights::V1b\006pr"
-          + "oto3"
+          + "CenterInsightsProtoP\001Z_cloud.google.com/"
+          + "go/contactcenterinsights/apiv1/contactce"
+          + "nterinsightspb;contactcenterinsightspb\252\002"
+          + "%Google.Cloud.ContactCenterInsights.V1\312\002"
+          + "%Google\\Cloud\\ContactCenterInsights\\V1\352\002"
+          + "(Google::Cloud::ContactCenterInsights::V"
+          + "1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

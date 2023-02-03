@@ -498,10 +498,10 @@ public final class ServiceProto {
           + "ojects/*/locations/*/lakes/*/environment"
           + "s/*}/sessions\332A\006parent\032K\312A\027dataplex.goog"
           + "leapis.com\322A.https://www.googleapis.com/"
-          + "auth/cloud-platformBp\n\034com.google.cloud."
-          + "dataplex.v1B\014ServiceProtoP\001Z@google.gola"
-          + "ng.org/genproto/googleapis/cloud/dataple"
-          + "x/v1;dataplexb\006proto3"
+          + "auth/cloud-platformBh\n\034com.google.cloud."
+          + "dataplex.v1B\014ServiceProtoP\001Z8cloud.googl"
+          + "e.com/go/dataplex/apiv1/dataplexpb;datap"
+          + "lexpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

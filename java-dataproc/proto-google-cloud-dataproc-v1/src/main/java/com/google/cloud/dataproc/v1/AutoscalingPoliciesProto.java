@@ -172,12 +172,12 @@ public final class AutoscalingPoliciesProto {
           + "=projects/*/regions/*/autoscalingPolicie"
           + "s/*}\332A\004name\032K\312A\027dataproc.googleapis.com\322"
           + "A.https://www.googleapis.com/auth/cloud-"
-          + "platformB\304\001\n\034com.google.cloud.dataproc.v"
-          + "1B\030AutoscalingPoliciesProtoP\001Z@google.go"
-          + "lang.org/genproto/googleapis/cloud/datap"
-          + "roc/v1;dataproc\352AE\n\036dataproc.googleapis."
-          + "com/Region\022#projects/{project}/regions/{"
-          + "region}b\006proto3"
+          + "platformB\274\001\n\034com.google.cloud.dataproc.v"
+          + "1B\030AutoscalingPoliciesProtoP\001Z8cloud.goo"
+          + "gle.com/go/dataproc/apiv1/dataprocpb;dat"
+          + "aprocpb\352AE\n\036dataproc.googleapis.com/Regi"
+          + "on\022#projects/{project}/regions/{region}b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

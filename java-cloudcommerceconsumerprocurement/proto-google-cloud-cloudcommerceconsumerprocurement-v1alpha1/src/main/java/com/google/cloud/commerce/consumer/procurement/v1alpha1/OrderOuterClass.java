@@ -142,15 +142,15 @@ public final class OrderOuterClass {
           + "_STATE_REASON_TYPE_EXPIRED\020\001\0225\n1LINE_ITE"
           + "M_CHANGE_STATE_REASON_TYPE_USER_CANCELLE"
           + "D\020\002\0227\n3LINE_ITEM_CHANGE_STATE_REASON_TYP"
-          + "E_SYSTEM_CANCELLED\020\003B\260\002\n7com.google.clou"
+          + "E_SYSTEM_CANCELLED\020\003B\253\002\n7com.google.clou"
           + "d.commerce.consumer.procurement.v1alpha1"
-          + "P\001Z^google.golang.org/genproto/googleapi"
-          + "s/cloud/commerce/consumer/procurement/v1"
-          + "alpha1;procurement\352A\221\001\n)commerceoffercat"
-          + "alog.googleapis.com/Offer\022)services/{ser"
-          + "vice}/standardOffers/{offer}\0229billingAcc"
-          + "ounts/{consumer_billing_account}/offers/"
-          + "{offer}b\006proto3"
+          + "P\001ZYcloud.google.com/go/commerce/consume"
+          + "r/procurement/apiv1alpha1/procurementpb;"
+          + "procurementpb\352A\221\001\n)commerceoffercatalog."
+          + "googleapis.com/Offer\022)services/{service}"
+          + "/standardOffers/{offer}\0229billingAccounts"
+          + "/{consumer_billing_account}/offers/{offe"
+          + "r}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

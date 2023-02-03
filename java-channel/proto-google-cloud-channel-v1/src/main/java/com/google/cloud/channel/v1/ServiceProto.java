@@ -811,10 +811,9 @@ public final class ServiceProto {
           + "nse\"0\202\323\344\223\002*\022(/v1/{account=accounts/*}:li"
           + "stSubscribers\032K\312A\033cloudchannel.googleapi"
           + "s.com\322A*https://www.googleapis.com/auth/"
-          + "apps.orderBm\n\033com.google.cloud.channel.v"
-          + "1B\014ServiceProtoP\001Z>google.golang.org/gen"
-          + "proto/googleapis/cloud/channel/v1;channe"
-          + "lb\006proto3"
+          + "apps.orderBd\n\033com.google.cloud.channel.v"
+          + "1B\014ServiceProtoP\001Z5cloud.google.com/go/c"
+          + "hannel/apiv1/channelpb;channelpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

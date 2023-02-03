@@ -403,13 +403,13 @@ public final class LineageProto {
           + "ects/*/locations/*}:batchSearchLinkProce"
           + "sses:\001*\032N\312A\032datalineage.googleapis.com\322A"
           + ".https://www.googleapis.com/auth/cloud-p"
-          + "latformB\373\001\n\'com.google.cloud.datacatalog"
-          + ".lineage.v1B\014LineageProtoP\001ZJgoogle.gola"
-          + "ng.org/genproto/googleapis/cloud/datacat"
-          + "alog/lineage/v1;lineage\252\002#Google.Cloud.D"
-          + "ataCatalog.Lineage.V1\312\002#Google\\Cloud\\Dat"
-          + "aCatalog\\Lineage\\V1\352\002\'Google::Cloud::Dat"
-          + "aCatalog::Lineage::V1b\006proto3"
+          + "latformB\362\001\n\'com.google.cloud.datacatalog"
+          + ".lineage.v1B\014LineageProtoP\001ZAcloud.googl"
+          + "e.com/go/datacatalog/lineage/apiv1/linea"
+          + "gepb;lineagepb\252\002#Google.Cloud.DataCatalo"
+          + "g.Lineage.V1\312\002#Google\\Cloud\\DataCatalog\\"
+          + "Lineage\\V1\352\002\'Google::Cloud::DataCatalog:"
+          + ":Lineage::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

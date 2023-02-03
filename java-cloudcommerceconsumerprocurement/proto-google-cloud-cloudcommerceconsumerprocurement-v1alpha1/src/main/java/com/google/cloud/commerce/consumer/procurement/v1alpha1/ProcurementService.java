@@ -96,11 +96,11 @@ public final class ProcurementService {
           + "ha1/{parent=billingAccounts/*}/orders\032c\312"
           + "A/cloudcommerceconsumerprocurement.googl"
           + "eapis.com\322A.https://www.googleapis.com/a"
-          + "uth/cloud-platformB\233\001\n7com.google.cloud."
+          + "uth/cloud-platformB\226\001\n7com.google.cloud."
           + "commerce.consumer.procurement.v1alpha1P\001"
-          + "Z^google.golang.org/genproto/googleapis/"
-          + "cloud/commerce/consumer/procurement/v1al"
-          + "pha1;procurementb\006proto3"
+          + "ZYcloud.google.com/go/commerce/consumer/"
+          + "procurement/apiv1alpha1/procurementpb;pr"
+          + "ocurementpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

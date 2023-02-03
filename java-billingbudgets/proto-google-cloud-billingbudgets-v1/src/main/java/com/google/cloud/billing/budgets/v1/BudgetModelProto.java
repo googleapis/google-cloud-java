@@ -120,11 +120,11 @@ public final class BudgetModelProto {
           + "2\021.google.type.DateB\003\340A\002\022(\n\010end_date\030\002 \001"
           + "(\0132\021.google.type.DateB\003\340A\001*S\n\016CalendarPe"
           + "riod\022\037\n\033CALENDAR_PERIOD_UNSPECIFIED\020\000\022\t\n"
-          + "\005MONTH\020\001\022\013\n\007QUARTER\020\002\022\010\n\004YEAR\020\003B\201\001\n#com."
-          + "google.cloud.billing.budgets.v1B\020BudgetM"
-          + "odelProtoP\001ZFgoogle.golang.org/genproto/"
-          + "googleapis/cloud/billing/budgets/v1;budg"
-          + "etsb\006proto3"
+          + "\005MONTH\020\001\022\013\n\007QUARTER\020\002\022\010\n\004YEAR\020\003Bx\n#com.g"
+          + "oogle.cloud.billing.budgets.v1B\020BudgetMo"
+          + "delProtoP\001Z=cloud.google.com/go/billing/"
+          + "budgets/apiv1/budgetspb;budgetspbb\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

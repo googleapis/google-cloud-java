@@ -39,10 +39,9 @@ public final class LogEnumsProto {
           + "\022\026google.cloud.deploy.v1*b\n\004Type\022\024\n\020TYPE"
           + "_UNSPECIFIED\020\000\022$\n TYPE_PUBSUB_NOTIFICATI"
           + "ON_FAILURE\020\001\022\036\n\032TYPE_RENDER_STATUES_CHAN"
-          + "GE\020\002Bk\n\032com.google.cloud.deploy.v1B\rLogE"
-          + "numsProtoP\001Z<google.golang.org/genproto/"
-          + "googleapis/cloud/deploy/v1;deployb\006proto"
-          + "3"
+          + "GE\020\002Ba\n\032com.google.cloud.deploy.v1B\rLogE"
+          + "numsProtoP\001Z2cloud.google.com/go/deploy/"
+          + "apiv1/deploypb;deploypbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

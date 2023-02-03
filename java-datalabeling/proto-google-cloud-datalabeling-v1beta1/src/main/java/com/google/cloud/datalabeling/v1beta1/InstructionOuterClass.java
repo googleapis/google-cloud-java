@@ -67,13 +67,13 @@ public final class InstructionOuterClass {
           + "leapis.com/Instruction\022-projects/{projec"
           + "t}/instructions/{instruction}\"&\n\016CsvInst"
           + "ruction\022\024\n\014gcs_file_uri\030\001 \001(\t\"&\n\016PdfInst"
-          + "ruction\022\024\n\014gcs_file_uri\030\001 \001(\tB\347\001\n%com.go"
-          + "ogle.cloud.datalabeling.v1beta1P\001ZMgoogl"
-          + "e.golang.org/genproto/googleapis/cloud/d"
-          + "atalabeling/v1beta1;datalabeling\252\002!Googl"
-          + "e.Cloud.DataLabeling.V1Beta1\312\002!Google\\Cl"
-          + "oud\\DataLabeling\\V1beta1\352\002$Google::Cloud"
-          + "::DataLabeling::V1beta1b\006proto3"
+          + "ruction\022\024\n\014gcs_file_uri\030\001 \001(\tB\343\001\n%com.go"
+          + "ogle.cloud.datalabeling.v1beta1P\001ZIcloud"
+          + ".google.com/go/datalabeling/apiv1beta1/d"
+          + "atalabelingpb;datalabelingpb\252\002!Google.Cl"
+          + "oud.DataLabeling.V1Beta1\312\002!Google\\Cloud\\"
+          + "DataLabeling\\V1beta1\352\002$Google::Cloud::Da"
+          + "taLabeling::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

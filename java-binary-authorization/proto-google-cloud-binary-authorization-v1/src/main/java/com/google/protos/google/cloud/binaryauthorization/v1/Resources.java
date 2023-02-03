@@ -14327,14 +14327,14 @@ public final class Resources {
           + " \001(\tB\003\340A\001\022\n\n\002id\030\002 \001(\t\022&\n\034ascii_armored_p"
           + "gp_public_key\030\003 \001(\tH\000\022M\n\017pkix_public_key"
           + "\030\005 \001(\01322.google.cloud.binaryauthorizatio"
-          + "n.v1.PkixPublicKeyH\000B\014\n\npublic_keyB\211\002\n5c"
+          + "n.v1.PkixPublicKeyH\000B\014\n\npublic_keyB\214\002\n5c"
           + "om.google.protos.google.cloud.binaryauth"
-          + "orization.v1P\000ZVgoogle.golang.org/genpro"
-          + "to/googleapis/cloud/binaryauthorization/"
-          + "v1;binaryauthorization\370\001\001\252\002#Google.Cloud"
-          + ".BinaryAuthorization.V1\312\002#Google\\Cloud\\B"
-          + "inaryAuthorization\\V1\352\002&Google::Cloud::B"
-          + "inaryAuthorization::V1b\006proto3"
+          + "orization.v1P\000ZYcloud.google.com/go/bina"
+          + "ryauthorization/apiv1/binaryauthorizatio"
+          + "npb;binaryauthorizationpb\370\001\001\252\002#Google.Cl"
+          + "oud.BinaryAuthorization.V1\312\002#Google\\Clou"
+          + "d\\BinaryAuthorization\\V1\352\002&Google::Cloud"
+          + "::BinaryAuthorization::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

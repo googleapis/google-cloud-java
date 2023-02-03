@@ -159,10 +159,10 @@ public final class CloudCatalogProto {
           + "uth/cloud-billing,https://www.googleapis"
           + ".com/auth/cloud-billing.readonly,https:/"
           + "/www.googleapis.com/auth/cloud-platformB"
-          + "\226\001\n\033com.google.cloud.billing.v1B\021CloudCa"
-          + "talogProtoP\001Z>google.golang.org/genproto"
-          + "/googleapis/cloud/billing/v1;billing\242\002\007C"
-          + "LDCTLG\252\002\027Google.Cloud.Billing.V1b\006proto3"
+          + "\215\001\n\033com.google.cloud.billing.v1B\021CloudCa"
+          + "talogProtoP\001Z5cloud.google.com/go/billin"
+          + "g/apiv1/billingpb;billingpb\242\002\007CLDCTLG\252\002\027"
+          + "Google.Cloud.Billing.V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

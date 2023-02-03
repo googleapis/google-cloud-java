@@ -565,15 +565,15 @@ public final class DatastreamResourcesProto {
           + ".v1.ValidationMessage.MetadataEntry\022\014\n\004c"
           + "ode\030\004 \001(\t\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022"
           + "\r\n\005value\030\002 \001(\t:\0028\001\"6\n\005Level\022\025\n\021LEVEL_UNS"
-          + "PECIFIED\020\000\022\013\n\007WARNING\020\001\022\t\n\005ERROR\020\002B\256\002\n\036c"
+          + "PECIFIED\020\000\022\013\n\007WARNING\020\001\022\t\n\005ERROR\020\002B\250\002\n\036c"
           + "om.google.cloud.datastream.v1B\030Datastrea"
-          + "mResourcesProtoP\001ZDgoogle.golang.org/gen"
-          + "proto/googleapis/cloud/datastream/v1;dat"
-          + "astream\252\002\032Google.Cloud.Datastream.V1\312\002\032G"
-          + "oogle\\Cloud\\Datastream\\V1\352\002\035Google::Clou"
-          + "d::Datastream::V1\352AO\n\037compute.googleapis"
-          + ".com/Networks\022,projects/{project}/global"
-          + "/networks/{network}b\006proto3"
+          + "mResourcesProtoP\001Z>cloud.google.com/go/d"
+          + "atastream/apiv1/datastreampb;datastreamp"
+          + "b\252\002\032Google.Cloud.Datastream.V1\312\002\032Google\\"
+          + "Cloud\\Datastream\\V1\352\002\035Google::Cloud::Dat"
+          + "astream::V1\352AO\n\037compute.googleapis.com/N"
+          + "etworks\022,projects/{project}/global/netwo"
+          + "rks/{network}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

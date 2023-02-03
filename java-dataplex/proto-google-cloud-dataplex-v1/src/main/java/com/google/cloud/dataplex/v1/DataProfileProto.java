@@ -106,11 +106,10 @@ public final class DataProfileProto {
           + "ieldInfo\022\017\n\007average\030\001 \001(\001\022\032\n\022standard_de"
           + "viation\030\003 \001(\001\022\013\n\003min\030\004 \001(\001\022\021\n\tquartiles\030"
           + "\006 \003(\001\022\013\n\003max\030\005 \001(\001\032)\n\tTopNValue\022\r\n\005value"
-          + "\030\001 \001(\t\022\r\n\005count\030\002 \001(\003B\014\n\nfield_infoBt\n\034c"
+          + "\030\001 \001(\t\022\r\n\005count\030\002 \001(\003B\014\n\nfield_infoBl\n\034c"
           + "om.google.cloud.dataplex.v1B\020DataProfile"
-          + "ProtoP\001Z@google.golang.org/genproto/goog"
-          + "leapis/cloud/dataplex/v1;dataplexb\006proto"
-          + "3"
+          + "ProtoP\001Z8cloud.google.com/go/dataplex/ap"
+          + "iv1/dataplexpb;dataplexpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

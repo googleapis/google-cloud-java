@@ -249,10 +249,10 @@ public final class DataScansProto {
           + "arent=projects/*/locations/*/dataScans/*"
           + "}/jobs\332A\006parent\032K\312A\027dataplex.googleapis."
           + "com\322A.https://www.googleapis.com/auth/cl"
-          + "oud-platformBr\n\034com.google.cloud.dataple"
-          + "x.v1B\016DataScansProtoP\001Z@google.golang.or"
-          + "g/genproto/googleapis/cloud/dataplex/v1;"
-          + "dataplexb\006proto3"
+          + "oud-platformBj\n\034com.google.cloud.dataple"
+          + "x.v1B\016DataScansProtoP\001Z8cloud.google.com"
+          + "/go/dataplex/apiv1/dataplexpb;dataplexpb"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

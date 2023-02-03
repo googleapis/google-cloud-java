@@ -180,9 +180,9 @@ public final class DocumentProto {
           + "_DOCUMENT_FILE_TYPE_XLSX\020\003\022\037\n\033RAW_DOCUME"
           + "NT_FILE_TYPE_PPTX\020\004\022\037\n\033RAW_DOCUMENT_FILE"
           + "_TYPE_TEXT\020\005B\211\001\n$com.google.cloud.conten"
-          + "twarehouse.v1B\rDocumentProtoP\001ZPgoogle.g"
-          + "olang.org/genproto/googleapis/cloud/cont"
-          + "entwarehouse/v1;contentwarehouseb\006proto3"
+          + "twarehouse.v1B\rDocumentProtoP\001ZPcloud.go"
+          + "ogle.com/go/contentwarehouse/apiv1/conte"
+          + "ntwarehousepb;contentwarehousepbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -406,13 +406,13 @@ public final class CloudDatastreamResourcesProto {
           + "CIFIED\020\000\022\010\n\004AVRO\020\001\032\002\030\001*`\n\020SchemaFileForm"
           + "at\022\"\n\036SCHEMA_FILE_FORMAT_UNSPECIFIED\020\000\022\022"
           + "\n\016NO_SCHEMA_FILE\020\001\022\024\n\020AVRO_SCHEMA_FILE\020\002"
-          + "B\377\001\n$com.google.cloud.datastream.v1alpha"
-          + "1B\035CloudDatastreamResourcesProtoP\001ZJgoog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "datastream/v1alpha1;datastream\252\002 Google."
-          + "Cloud.Datastream.V1Alpha1\312\002 Google\\Cloud"
-          + "\\Datastream\\V1alpha1\352\002#Google::Cloud::Da"
-          + "tastream::V1alpha1b\006proto3"
+          + "B\371\001\n$com.google.cloud.datastream.v1alpha"
+          + "1B\035CloudDatastreamResourcesProtoP\001ZDclou"
+          + "d.google.com/go/datastream/apiv1alpha1/d"
+          + "atastreampb;datastreampb\252\002 Google.Cloud."
+          + "Datastream.V1Alpha1\312\002 Google\\Cloud\\Datas"
+          + "tream\\V1alpha1\352\002#Google::Cloud::Datastre"
+          + "am::V1alpha1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

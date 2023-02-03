@@ -74,10 +74,10 @@ public final class ProcessingProto {
           + "\030\001 \001(\01326.google.cloud.dataplex.v1.Scanne"
           + "dData.IncrementalFieldH\000\032=\n\020IncrementalF"
           + "ield\022\r\n\005field\030\001 \001(\t\022\r\n\005start\030\002 \001(\t\022\013\n\003en"
-          + "d\030\003 \001(\tB\014\n\ndata_rangeBs\n\034com.google.clou"
-          + "d.dataplex.v1B\017ProcessingProtoP\001Z@google"
-          + ".golang.org/genproto/googleapis/cloud/da"
-          + "taplex/v1;dataplexb\006proto3"
+          + "d\030\003 \001(\tB\014\n\ndata_rangeBk\n\034com.google.clou"
+          + "d.dataplex.v1B\017ProcessingProtoP\001Z8cloud."
+          + "google.com/go/dataplex/apiv1/dataplexpb;"
+          + "dataplexpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

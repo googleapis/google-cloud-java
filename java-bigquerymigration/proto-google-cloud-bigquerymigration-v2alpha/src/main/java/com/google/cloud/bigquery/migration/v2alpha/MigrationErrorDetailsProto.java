@@ -62,13 +62,13 @@ public final class MigrationErrorDetailsProto {
           + "ErrorLocationB\003\340A\001\022.\n\nerror_info\030\002 \001(\0132\025"
           + ".google.rpc.ErrorInfoB\003\340A\002\"7\n\rErrorLocat"
           + "ion\022\021\n\004line\030\001 \001(\005B\003\340A\001\022\023\n\006column\030\002 \001(\005B\003"
-          + "\340A\001B\361\001\n+com.google.cloud.bigquery.migrat"
+          + "\340A\001B\352\001\n+com.google.cloud.bigquery.migrat"
           + "ion.v2alphaB\032MigrationErrorDetailsProtoP"
-          + "\001ZPgoogle.golang.org/genproto/googleapis"
-          + "/cloud/bigquery/migration/v2alpha;migrat"
-          + "ion\252\002\'Google.Cloud.BigQuery.Migration.V2"
-          + "Alpha\312\002\'Google\\Cloud\\BigQuery\\Migration\\"
-          + "V2alphab\006proto3"
+          + "\001ZIcloud.google.com/go/bigquery/migratio"
+          + "n/apiv2alpha/migrationpb;migrationpb\252\002\'G"
+          + "oogle.Cloud.BigQuery.Migration.V2Alpha\312\002"
+          + "\'Google\\Cloud\\BigQuery\\Migration\\V2alpha"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

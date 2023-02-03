@@ -126,13 +126,13 @@ public final class TranslationTaskProto {
           + "ntMapEntry\0329\n\027FileReplacementMapEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\":\n\020Dataset"
           + "Reference\022\022\n\ndataset_id\030\001 \001(\t\022\022\n\nproject"
-          + "_id\030\002 \001(\tB\353\001\n+com.google.cloud.bigquery."
+          + "_id\030\002 \001(\tB\344\001\n+com.google.cloud.bigquery."
           + "migration.v2alphaB\024TranslationTaskProtoP"
-          + "\001ZPgoogle.golang.org/genproto/googleapis"
-          + "/cloud/bigquery/migration/v2alpha;migrat"
-          + "ion\252\002\'Google.Cloud.BigQuery.Migration.V2"
-          + "Alpha\312\002\'Google\\Cloud\\BigQuery\\Migration\\"
-          + "V2alphab\006proto3"
+          + "\001ZIcloud.google.com/go/bigquery/migratio"
+          + "n/apiv2alpha/migrationpb;migrationpb\252\002\'G"
+          + "oogle.Cloud.BigQuery.Migration.V2Alpha\312\002"
+          + "\'Google\\Cloud\\BigQuery\\Migration\\V2alpha"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

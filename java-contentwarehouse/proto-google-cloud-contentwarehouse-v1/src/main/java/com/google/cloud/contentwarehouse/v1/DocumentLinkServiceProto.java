@@ -141,9 +141,9 @@ public final class DocumentLinkServiceProto {
           + "se.googleapis.com\322A.https://www.googleap"
           + "is.com/auth/cloud-platformB\224\001\n$com.googl"
           + "e.cloud.contentwarehouse.v1B\030DocumentLin"
-          + "kServiceProtoP\001ZPgoogle.golang.org/genpr"
-          + "oto/googleapis/cloud/contentwarehouse/v1"
-          + ";contentwarehouseb\006proto3"
+          + "kServiceProtoP\001ZPcloud.google.com/go/con"
+          + "tentwarehouse/apiv1/contentwarehousepb;c"
+          + "ontentwarehousepbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

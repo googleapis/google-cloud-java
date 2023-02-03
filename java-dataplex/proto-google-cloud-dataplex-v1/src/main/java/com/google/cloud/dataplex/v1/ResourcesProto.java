@@ -348,11 +348,10 @@ public final class ResourcesProto {
           + "t}/locations/{location}/lakes/{lake}/zon"
           + "es/{zone}/assets/{asset}*[\n\005State\022\025\n\021STA"
           + "TE_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010CREATING"
-          + "\020\002\022\014\n\010DELETING\020\003\022\023\n\017ACTION_REQUIRED\020\004Br\n"
+          + "\020\002\022\014\n\010DELETING\020\003\022\023\n\017ACTION_REQUIRED\020\004Bj\n"
           + "\034com.google.cloud.dataplex.v1B\016Resources"
-          + "ProtoP\001Z@google.golang.org/genproto/goog"
-          + "leapis/cloud/dataplex/v1;dataplexb\006proto"
-          + "3"
+          + "ProtoP\001Z8cloud.google.com/go/dataplex/ap"
+          + "iv1/dataplexpb;dataplexpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

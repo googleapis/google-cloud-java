@@ -63,10 +63,10 @@ public final class ChannelPartnerLinksProto {
           + "L\020\002*z\n\027ChannelPartnerLinkState\022*\n&CHANNE"
           + "L_PARTNER_LINK_STATE_UNSPECIFIED\020\000\022\013\n\007IN"
           + "VITED\020\001\022\n\n\006ACTIVE\020\002\022\013\n\007REVOKED\020\003\022\r\n\tSUSP"
-          + "ENDED\020\004By\n\033com.google.cloud.channel.v1B\030"
-          + "ChannelPartnerLinksProtoP\001Z>google.golan"
-          + "g.org/genproto/googleapis/cloud/channel/"
-          + "v1;channelb\006proto3"
+          + "ENDED\020\004Bp\n\033com.google.cloud.channel.v1B\030"
+          + "ChannelPartnerLinksProtoP\001Z5cloud.google"
+          + ".com/go/channel/apiv1/channelpb;channelp"
+          + "bb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

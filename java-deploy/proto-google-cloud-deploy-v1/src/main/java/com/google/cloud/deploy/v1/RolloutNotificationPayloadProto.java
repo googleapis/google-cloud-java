@@ -47,10 +47,10 @@ public final class RolloutNotificationPayloadProto {
           + "age\030\001 \001(\t\022\024\n\014pipeline_uid\030\002 \001(\t\022\023\n\013relea"
           + "se_uid\030\003 \001(\t\022\017\n\007rollout\030\004 \001(\t\022*\n\004type\030\005 "
           + "\001(\0162\034.google.cloud.deploy.v1.Type\022\021\n\ttar"
-          + "get_id\030\006 \001(\tB}\n\032com.google.cloud.deploy."
-          + "v1B\037RolloutNotificationPayloadProtoP\001Z<g"
-          + "oogle.golang.org/genproto/googleapis/clo"
-          + "ud/deploy/v1;deployb\006proto3"
+          + "get_id\030\006 \001(\tBs\n\032com.google.cloud.deploy."
+          + "v1B\037RolloutNotificationPayloadProtoP\001Z2c"
+          + "loud.google.com/go/deploy/apiv1/deploypb"
+          + ";deploypbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

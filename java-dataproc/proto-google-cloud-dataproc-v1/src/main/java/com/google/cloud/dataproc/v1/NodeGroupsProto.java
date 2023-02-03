@@ -86,13 +86,13 @@ public final class NodeGroupsProto {
           + "\202\323\344\223\0029\0227/v1/{name=projects/*/regions/*/c"
           + "lusters/*/nodeGroups/*}\332A\004name\032K\312A\027datap"
           + "roc.googleapis.com\322A.https://www.googlea"
-          + "pis.com/auth/cloud-platformB\325\001\n\034com.goog"
+          + "pis.com/auth/cloud-platformB\315\001\n\034com.goog"
           + "le.cloud.dataproc.v1B\017NodeGroupsProtoP\001Z"
-          + "@google.golang.org/genproto/googleapis/c"
-          + "loud/dataproc/v1;dataproc\352A_\n%dataproc.g"
-          + "oogleapis.com/ClusterRegion\0226projects/{p"
-          + "roject}/regions/{region}/clusters/{clust"
-          + "er}b\006proto3"
+          + "8cloud.google.com/go/dataproc/apiv1/data"
+          + "procpb;dataprocpb\352A_\n%dataproc.googleapi"
+          + "s.com/ClusterRegion\0226projects/{project}/"
+          + "regions/{region}/clusters/{cluster}b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

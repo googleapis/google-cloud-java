@@ -139,9 +139,9 @@ public final class DocumentServiceRequestProto {
           + "ogle.cloud.contentwarehouse.v1.RequestMe"
           + "tadata\022\025\n\rproject_owner\030\004 \001(\010B\227\001\n$com.go"
           + "ogle.cloud.contentwarehouse.v1B\033Document"
-          + "ServiceRequestProtoP\001ZPgoogle.golang.org"
-          + "/genproto/googleapis/cloud/contentwareho"
-          + "use/v1;contentwarehouseb\006proto3"
+          + "ServiceRequestProtoP\001ZPcloud.google.com/"
+          + "go/contentwarehouse/apiv1/contentwarehou"
+          + "sepb;contentwarehousepbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

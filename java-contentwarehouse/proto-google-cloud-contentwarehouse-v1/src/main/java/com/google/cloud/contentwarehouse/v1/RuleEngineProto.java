@@ -188,9 +188,9 @@ public final class RuleEngineProto {
           + "\007UNKNOWN\020\000\022\024\n\020ACTION_SUCCEEDED\020\001\022\021\n\rACTI"
           + "ON_FAILED\020\002\022\024\n\020ACTION_TIMED_OUT\020\003\022\022\n\016ACT"
           + "ION_PENDING\020\004B\213\001\n$com.google.cloud.conte"
-          + "ntwarehouse.v1B\017RuleEngineProtoP\001ZPgoogl"
-          + "e.golang.org/genproto/googleapis/cloud/c"
-          + "ontentwarehouse/v1;contentwarehouseb\006pro"
+          + "ntwarehouse.v1B\017RuleEngineProtoP\001ZPcloud"
+          + ".google.com/go/contentwarehouse/apiv1/co"
+          + "ntentwarehousepb;contentwarehousepbb\006pro"
           + "to3"
     };
     descriptor =

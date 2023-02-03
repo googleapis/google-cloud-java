@@ -180,10 +180,10 @@ public final class ReportsServiceProto {
           + "rent=accounts/*}/reports\332A\006parent\032\\\312A\033cl"
           + "oudchannel.googleapis.com\322A;https://www."
           + "googleapis.com/auth/apps.reports.usage.r"
-          + "eadonlyBt\n\033com.google.cloud.channel.v1B\023"
-          + "ReportsServiceProtoP\001Z>google.golang.org"
-          + "/genproto/googleapis/cloud/channel/v1;ch"
-          + "annelb\006proto3"
+          + "eadonlyBk\n\033com.google.cloud.channel.v1B\023"
+          + "ReportsServiceProtoP\001Z5cloud.google.com/"
+          + "go/channel/apiv1/channelpb;channelpbb\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

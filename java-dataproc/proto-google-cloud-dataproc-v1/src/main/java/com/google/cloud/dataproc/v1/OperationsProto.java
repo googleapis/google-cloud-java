@@ -113,10 +113,10 @@ public final class OperationsProto {
           + "ue\030\002 \001(\t:\0028\001\"s\n\026NodeGroupOperationType\022)"
           + "\n%NODE_GROUP_OPERATION_TYPE_UNSPECIFIED\020"
           + "\000\022\n\n\006CREATE\020\001\022\n\n\006UPDATE\020\002\022\n\n\006DELETE\020\003\022\n\n"
-          + "\006RESIZE\020\004Bs\n\034com.google.cloud.dataproc.v"
-          + "1B\017OperationsProtoP\001Z@google.golang.org/"
-          + "genproto/googleapis/cloud/dataproc/v1;da"
-          + "taprocb\006proto3"
+          + "\006RESIZE\020\004Bk\n\034com.google.cloud.dataproc.v"
+          + "1B\017OperationsProtoP\001Z8cloud.google.com/g"
+          + "o/dataproc/apiv1/dataprocpb;dataprocpbb\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

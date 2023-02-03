@@ -151,10 +151,10 @@ public final class OffersProto {
           + "\022\007\n\003MAU\020\002\022\006\n\002GB\020\003\022\021\n\rLICENSED_USER\020\004\022\013\n\007"
           + "MINUTES\020\005\022\016\n\nIAAS_USAGE\020\006\022\020\n\014SUBSCRIPTIO"
           + "N\020\007*G\n\nPeriodType\022\033\n\027PERIOD_TYPE_UNSPECI"
-          + "FIED\020\000\022\007\n\003DAY\020\001\022\t\n\005MONTH\020\002\022\010\n\004YEAR\020\003Bl\n\033"
+          + "FIED\020\000\022\007\n\003DAY\020\001\022\t\n\005MONTH\020\002\022\010\n\004YEAR\020\003Bc\n\033"
           + "com.google.cloud.channel.v1B\013OffersProto"
-          + "P\001Z>google.golang.org/genproto/googleapi"
-          + "s/cloud/channel/v1;channelb\006proto3"
+          + "P\001Z5cloud.google.com/go/channel/apiv1/ch"
+          + "annelpb;channelpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

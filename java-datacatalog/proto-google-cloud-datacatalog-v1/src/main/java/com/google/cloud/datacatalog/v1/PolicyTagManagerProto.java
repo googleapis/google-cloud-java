@@ -222,13 +222,13 @@ public final class PolicyTagManagerProto {
           + "ocations/*/taxonomies/*/policyTags/*}:te"
           + "stIamPermissions:\001*\032N\312A\032datacatalog.goog"
           + "leapis.com\322A.https://www.googleapis.com/"
-          + "auth/cloud-platformB\342\001\n\037com.google.cloud"
+          + "auth/cloud-platformB\335\001\n\037com.google.cloud"
           + ".datacatalog.v1B\025PolicyTagManagerProtoP\001"
-          + "ZFgoogle.golang.org/genproto/googleapis/"
-          + "cloud/datacatalog/v1;datacatalog\370\001\001\252\002\033Go"
-          + "ogle.Cloud.DataCatalog.V1\312\002\033Google\\Cloud"
-          + "\\DataCatalog\\V1\352\002\036Google::Cloud::DataCat"
-          + "alog::V1b\006proto3"
+          + "ZAcloud.google.com/go/datacatalog/apiv1/"
+          + "datacatalogpb;datacatalogpb\370\001\001\252\002\033Google."
+          + "Cloud.DataCatalog.V1\312\002\033Google\\Cloud\\Data"
+          + "Catalog\\V1\352\002\036Google::Cloud::DataCatalog:"
+          + ":V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

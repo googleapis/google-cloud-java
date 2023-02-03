@@ -45,11 +45,10 @@ public final class ReleaseNotificationPayloadProto {
           + ".v1\032&google/cloud/deploy/v1/log_enums.pr"
           + "oto\"h\n\030ReleaseNotificationEvent\022\017\n\007messa"
           + "ge\030\001 \001(\t\022\017\n\007release\030\002 \001(\t\022*\n\004type\030\003 \001(\0162"
-          + "\034.google.cloud.deploy.v1.TypeB}\n\032com.goo"
+          + "\034.google.cloud.deploy.v1.TypeBs\n\032com.goo"
           + "gle.cloud.deploy.v1B\037ReleaseNotification"
-          + "PayloadProtoP\001Z<google.golang.org/genpro"
-          + "to/googleapis/cloud/deploy/v1;deployb\006pr"
-          + "oto3"
+          + "PayloadProtoP\001Z2cloud.google.com/go/depl"
+          + "oy/apiv1/deploypb;deploypbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

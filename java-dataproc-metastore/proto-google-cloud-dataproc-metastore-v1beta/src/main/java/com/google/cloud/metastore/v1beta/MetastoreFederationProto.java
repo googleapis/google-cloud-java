@@ -164,11 +164,11 @@ public final class MetastoreFederationProto {
           + "AH\n\025google.protobuf.Empty\022/google.cloud."
           + "metastore.v1beta.OperationMetadata\032L\312A\030m"
           + "etastore.googleapis.com\322A.https://www.go"
-          + "ogleapis.com/auth/cloud-platformB\207\001\n!com"
+          + "ogleapis.com/auth/cloud-platformB\200\001\n!com"
           + ".google.cloud.metastore.v1betaB\030Metastor"
-          + "eFederationProtoP\001ZFgoogle.golang.org/ge"
-          + "nproto/googleapis/cloud/metastore/v1beta"
-          + ";metastoreb\006proto3"
+          + "eFederationProtoP\001Z?cloud.google.com/go/"
+          + "metastore/apiv1beta/metastorepb;metastor"
+          + "epbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

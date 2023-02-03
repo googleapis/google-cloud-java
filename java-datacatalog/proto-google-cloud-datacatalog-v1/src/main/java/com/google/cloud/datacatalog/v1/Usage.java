@@ -61,13 +61,13 @@ public final class Usage {
           + "tacatalog.v1.UsageSignal.UsageWithinTime"
           + "RangeEntryB\003\340A\003\032d\n\031UsageWithinTimeRangeE"
           + "ntry\022\013\n\003key\030\001 \001(\t\0226\n\005value\030\002 \001(\0132\'.googl"
-          + "e.cloud.datacatalog.v1.UsageStats:\0028\001B\313\001"
-          + "\n\037com.google.cloud.datacatalog.v1P\001ZFgoo"
-          + "gle.golang.org/genproto/googleapis/cloud"
-          + "/datacatalog/v1;datacatalog\370\001\001\252\002\033Google."
-          + "Cloud.DataCatalog.V1\312\002\033Google\\Cloud\\Data"
-          + "Catalog\\V1\352\002\036Google::Cloud::DataCatalog:"
-          + ":V1b\006proto3"
+          + "e.cloud.datacatalog.v1.UsageStats:\0028\001B\306\001"
+          + "\n\037com.google.cloud.datacatalog.v1P\001ZAclo"
+          + "ud.google.com/go/datacatalog/apiv1/datac"
+          + "atalogpb;datacatalogpb\370\001\001\252\002\033Google.Cloud"
+          + ".DataCatalog.V1\312\002\033Google\\Cloud\\DataCatal"
+          + "og\\V1\352\002\036Google::Cloud::DataCatalog::V1b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

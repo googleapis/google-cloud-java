@@ -207,13 +207,13 @@ public final class DatasetOuterClass {
           + "ts/{annotated_dataset}/examples/{example"
           + "}B\t\n\007payload*W\n\010DataType\022\031\n\025DATA_TYPE_UN"
           + "SPECIFIED\020\000\022\t\n\005IMAGE\020\001\022\t\n\005VIDEO\020\002\022\010\n\004TEX"
-          + "T\020\004\022\020\n\014GENERAL_DATA\020\006B\347\001\n%com.google.clo"
-          + "ud.datalabeling.v1beta1P\001ZMgoogle.golang"
-          + ".org/genproto/googleapis/cloud/datalabel"
-          + "ing/v1beta1;datalabeling\252\002!Google.Cloud."
-          + "DataLabeling.V1Beta1\312\002!Google\\Cloud\\Data"
-          + "Labeling\\V1beta1\352\002$Google::Cloud::DataLa"
-          + "beling::V1beta1b\006proto3"
+          + "T\020\004\022\020\n\014GENERAL_DATA\020\006B\343\001\n%com.google.clo"
+          + "ud.datalabeling.v1beta1P\001ZIcloud.google."
+          + "com/go/datalabeling/apiv1beta1/datalabel"
+          + "ingpb;datalabelingpb\252\002!Google.Cloud.Data"
+          + "Labeling.V1Beta1\312\002!Google\\Cloud\\DataLabe"
+          + "ling\\V1beta1\352\002$Google::Cloud::DataLabeli"
+          + "ng::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

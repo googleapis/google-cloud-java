@@ -80,8 +80,8 @@ public final class FiltersProto {
           + "\031\n\025FILE_TYPE_UNSPECIFIED\020\000\022\007\n\003ALL\020\001\022\n\n\006F"
           + "OLDER\020\002\022\014\n\010DOCUMENT\020\003B\210\001\n$com.google.clo"
           + "ud.contentwarehouse.v1B\014FiltersProtoP\001ZP"
-          + "google.golang.org/genproto/googleapis/cl"
-          + "oud/contentwarehouse/v1;contentwarehouse"
+          + "cloud.google.com/go/contentwarehouse/api"
+          + "v1/contentwarehousepb;contentwarehousepb"
           + "b\006proto3"
     };
     descriptor =

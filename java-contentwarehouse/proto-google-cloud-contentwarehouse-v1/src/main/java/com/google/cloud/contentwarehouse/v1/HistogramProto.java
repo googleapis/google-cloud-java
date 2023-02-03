@@ -74,9 +74,9 @@ public final class HistogramProto {
           + "stogramEntry\0320\n\016HistogramEntry\022\013\n\003key\030\001 "
           + "\001(\t\022\r\n\005value\030\002 \001(\003:\0028\001B\212\001\n$com.google.cl"
           + "oud.contentwarehouse.v1B\016HistogramProtoP"
-          + "\001ZPgoogle.golang.org/genproto/googleapis"
-          + "/cloud/contentwarehouse/v1;contentwareho"
-          + "useb\006proto3"
+          + "\001ZPcloud.google.com/go/contentwarehouse/"
+          + "apiv1/contentwarehousepb;contentwarehous"
+          + "epbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

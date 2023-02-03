@@ -137,13 +137,13 @@ public final class EvaluationOuterClass {
           + "on_spec\030\001 \001(\01321.google.cloud.datalabelin"
           + "g.v1beta1.AnnotationSpec\022X\n\007entries\030\002 \003("
           + "\0132G.google.cloud.datalabeling.v1beta1.Co"
-          + "nfusionMatrix.ConfusionMatrixEntryB\347\001\n%c"
-          + "om.google.cloud.datalabeling.v1beta1P\001ZM"
-          + "google.golang.org/genproto/googleapis/cl"
-          + "oud/datalabeling/v1beta1;datalabeling\252\002!"
-          + "Google.Cloud.DataLabeling.V1Beta1\312\002!Goog"
-          + "le\\Cloud\\DataLabeling\\V1beta1\352\002$Google::"
-          + "Cloud::DataLabeling::V1beta1b\006proto3"
+          + "nfusionMatrix.ConfusionMatrixEntryB\343\001\n%c"
+          + "om.google.cloud.datalabeling.v1beta1P\001ZI"
+          + "cloud.google.com/go/datalabeling/apiv1be"
+          + "ta1/datalabelingpb;datalabelingpb\252\002!Goog"
+          + "le.Cloud.DataLabeling.V1Beta1\312\002!Google\\C"
+          + "loud\\DataLabeling\\V1beta1\352\002$Google::Clou"
+          + "d::DataLabeling::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

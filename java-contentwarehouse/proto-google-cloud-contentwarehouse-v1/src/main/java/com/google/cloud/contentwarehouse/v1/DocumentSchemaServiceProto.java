@@ -119,9 +119,9 @@ public final class DocumentSchemaServiceProto {
           + "oogleapis.com\322A.https://www.googleapis.c"
           + "om/auth/cloud-platformB\226\001\n$com.google.cl"
           + "oud.contentwarehouse.v1B\032DocumentSchemaS"
-          + "erviceProtoP\001ZPgoogle.golang.org/genprot"
-          + "o/googleapis/cloud/contentwarehouse/v1;c"
-          + "ontentwarehouseb\006proto3"
+          + "erviceProtoP\001ZPcloud.google.com/go/conte"
+          + "ntwarehouse/apiv1/contentwarehousepb;con"
+          + "tentwarehousepbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

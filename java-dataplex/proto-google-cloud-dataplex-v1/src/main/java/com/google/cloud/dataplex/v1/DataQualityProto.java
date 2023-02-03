@@ -145,10 +145,10 @@ public final class DataQualityProto {
           + "\022\010\n\004MEAN\020\001\022\007\n\003MIN\020\002\022\007\n\003MAX\020\003\0321\n\027RowCondi"
           + "tionExpectation\022\026\n\016sql_expression\030\001 \001(\t\032"
           + "3\n\031TableConditionExpectation\022\026\n\016sql_expr"
-          + "ession\030\001 \001(\tB\013\n\trule_typeBt\n\034com.google."
-          + "cloud.dataplex.v1B\020DataQualityProtoP\001Z@g"
-          + "oogle.golang.org/genproto/googleapis/clo"
-          + "ud/dataplex/v1;dataplexb\006proto3"
+          + "ession\030\001 \001(\tB\013\n\trule_typeBl\n\034com.google."
+          + "cloud.dataplex.v1B\020DataQualityProtoP\001Z8c"
+          + "loud.google.com/go/dataplex/apiv1/datapl"
+          + "expb;dataplexpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

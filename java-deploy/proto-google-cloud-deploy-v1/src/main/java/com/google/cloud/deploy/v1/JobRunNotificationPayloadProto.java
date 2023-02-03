@@ -47,11 +47,10 @@ public final class JobRunNotificationPayloadProto {
           + "e\030\001 \001(\t\022\017\n\007job_run\030\002 \001(\t\022\024\n\014pipeline_uid"
           + "\030\003 \001(\t\022\023\n\013release_uid\030\004 \001(\t\022\023\n\013rollout_u"
           + "id\030\005 \001(\t\022\021\n\ttarget_id\030\006 \001(\t\022*\n\004type\030\007 \001("
-          + "\0162\034.google.cloud.deploy.v1.TypeB|\n\032com.g"
+          + "\0162\034.google.cloud.deploy.v1.TypeBr\n\032com.g"
           + "oogle.cloud.deploy.v1B\036JobRunNotificatio"
-          + "nPayloadProtoP\001Z<google.golang.org/genpr"
-          + "oto/googleapis/cloud/deploy/v1;deployb\006p"
-          + "roto3"
+          + "nPayloadProtoP\001Z2cloud.google.com/go/dep"
+          + "loy/apiv1/deploypb;deploypbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

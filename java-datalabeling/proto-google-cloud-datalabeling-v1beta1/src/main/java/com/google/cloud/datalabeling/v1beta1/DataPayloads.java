@@ -64,13 +64,13 @@ public final class DataPayloads {
           + "\022\021\n\tmime_type\030\001 \001(\t\022\021\n\tvideo_uri\030\002 \001(\t\022K"
           + "\n\020video_thumbnails\030\003 \003(\01321.google.cloud."
           + "datalabeling.v1beta1.VideoThumbnail\022\022\n\nf"
-          + "rame_rate\030\004 \001(\002\022\022\n\nsigned_uri\030\005 \001(\tB\347\001\n%"
+          + "rame_rate\030\004 \001(\002\022\022\n\nsigned_uri\030\005 \001(\tB\343\001\n%"
           + "com.google.cloud.datalabeling.v1beta1P\001Z"
-          + "Mgoogle.golang.org/genproto/googleapis/c"
-          + "loud/datalabeling/v1beta1;datalabeling\252\002"
-          + "!Google.Cloud.DataLabeling.V1Beta1\312\002!Goo"
-          + "gle\\Cloud\\DataLabeling\\V1beta1\352\002$Google:"
-          + ":Cloud::DataLabeling::V1beta1b\006proto3"
+          + "Icloud.google.com/go/datalabeling/apiv1b"
+          + "eta1/datalabelingpb;datalabelingpb\252\002!Goo"
+          + "gle.Cloud.DataLabeling.V1Beta1\312\002!Google\\"
+          + "Cloud\\DataLabeling\\V1beta1\352\002$Google::Clo"
+          + "ud::DataLabeling::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

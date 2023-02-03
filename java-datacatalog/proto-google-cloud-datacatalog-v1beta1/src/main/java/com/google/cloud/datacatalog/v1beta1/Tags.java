@@ -124,13 +124,13 @@ public final class Tags {
           + "\tEnumValue\022\031\n\014display_name\030\001 \001(\tB\003\340A\002\"`\n"
           + "\rPrimitiveType\022\036\n\032PRIMITIVE_TYPE_UNSPECI"
           + "FIED\020\000\022\n\n\006DOUBLE\020\001\022\n\n\006STRING\020\002\022\010\n\004BOOL\020\003"
-          + "\022\r\n\tTIMESTAMP\020\004B\013\n\ttype_declB\344\001\n$com.goo"
-          + "gle.cloud.datacatalog.v1beta1P\001ZKgoogle."
-          + "golang.org/genproto/googleapis/cloud/dat"
-          + "acatalog/v1beta1;datacatalog\370\001\001\252\002 Google"
-          + ".Cloud.DataCatalog.V1Beta1\312\002 Google\\Clou"
-          + "d\\DataCatalog\\V1beta1\352\002#Google::Cloud::D"
-          + "ataCatalog::V1beta1b\006proto3"
+          + "\022\r\n\tTIMESTAMP\020\004B\013\n\ttype_declB\337\001\n$com.goo"
+          + "gle.cloud.datacatalog.v1beta1P\001ZFcloud.g"
+          + "oogle.com/go/datacatalog/apiv1beta1/data"
+          + "catalogpb;datacatalogpb\370\001\001\252\002 Google.Clou"
+          + "d.DataCatalog.V1Beta1\312\002 Google\\Cloud\\Dat"
+          + "aCatalog\\V1beta1\352\002#Google::Cloud::DataCa"
+          + "talog::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

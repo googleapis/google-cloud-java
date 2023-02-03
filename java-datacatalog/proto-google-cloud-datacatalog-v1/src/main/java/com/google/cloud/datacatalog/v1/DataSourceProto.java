@@ -55,13 +55,13 @@ public final class DataSourceProto {
           + "vice\022\027\n\023SERVICE_UNSPECIFIED\020\000\022\021\n\rCLOUD_S"
           + "TORAGE\020\001\022\014\n\010BIGQUERY\020\002B\014\n\nproperties\"<\n\021"
           + "StorageProperties\022\024\n\014file_pattern\030\001 \003(\t\022"
-          + "\021\n\tfile_type\030\002 \001(\tB\334\001\n\037com.google.cloud."
-          + "datacatalog.v1B\017DataSourceProtoP\001ZFgoogl"
-          + "e.golang.org/genproto/googleapis/cloud/d"
-          + "atacatalog/v1;datacatalog\370\001\001\252\002\033Google.Cl"
-          + "oud.DataCatalog.V1\312\002\033Google\\Cloud\\DataCa"
-          + "talog\\V1\352\002\036Google::Cloud::DataCatalog::V"
-          + "1b\006proto3"
+          + "\021\n\tfile_type\030\002 \001(\tB\327\001\n\037com.google.cloud."
+          + "datacatalog.v1B\017DataSourceProtoP\001ZAcloud"
+          + ".google.com/go/datacatalog/apiv1/datacat"
+          + "alogpb;datacatalogpb\370\001\001\252\002\033Google.Cloud.D"
+          + "ataCatalog.V1\312\002\033Google\\Cloud\\DataCatalog"
+          + "\\V1\352\002\036Google::Cloud::DataCatalog::V1b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

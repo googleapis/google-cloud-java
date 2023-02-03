@@ -225,13 +225,13 @@ public final class PolicyTagManagerProto {
           + "axonomies/*/policyTags/*}:testIamPermiss"
           + "ions:\001*\032N\312A\032datacatalog.googleapis.com\322A"
           + ".https://www.googleapis.com/auth/cloud-p"
-          + "latformB\373\001\n$com.google.cloud.datacatalog"
-          + ".v1beta1B\025PolicyTagManagerProtoP\001ZKgoogl"
-          + "e.golang.org/genproto/googleapis/cloud/d"
-          + "atacatalog/v1beta1;datacatalog\370\001\001\252\002 Goog"
-          + "le.Cloud.DataCatalog.V1Beta1\312\002 Google\\Cl"
-          + "oud\\DataCatalog\\V1beta1\352\002#Google::Cloud:"
-          + ":DataCatalog::V1beta1b\006proto3"
+          + "latformB\366\001\n$com.google.cloud.datacatalog"
+          + ".v1beta1B\025PolicyTagManagerProtoP\001ZFcloud"
+          + ".google.com/go/datacatalog/apiv1beta1/da"
+          + "tacatalogpb;datacatalogpb\370\001\001\252\002 Google.Cl"
+          + "oud.DataCatalog.V1Beta1\312\002 Google\\Cloud\\D"
+          + "ataCatalog\\V1beta1\352\002#Google::Cloud::Data"
+          + "Catalog::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

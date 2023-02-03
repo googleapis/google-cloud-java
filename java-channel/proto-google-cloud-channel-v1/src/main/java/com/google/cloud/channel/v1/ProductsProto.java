@@ -69,10 +69,10 @@ public final class ProductsProto {
           + "edia\"Y\n\005Media\022\r\n\005title\030\001 \001(\t\022\017\n\007content\030"
           + "\002 \001(\t\0220\n\004type\030\003 \001(\0162\".google.cloud.chann"
           + "el.v1.MediaType*=\n\tMediaType\022\032\n\026MEDIA_TY"
-          + "PE_UNSPECIFIED\020\000\022\024\n\020MEDIA_TYPE_IMAGE\020\001Bn"
+          + "PE_UNSPECIFIED\020\000\022\024\n\020MEDIA_TYPE_IMAGE\020\001Be"
           + "\n\033com.google.cloud.channel.v1B\rProductsP"
-          + "rotoP\001Z>google.golang.org/genproto/googl"
-          + "eapis/cloud/channel/v1;channelb\006proto3"
+          + "rotoP\001Z5cloud.google.com/go/channel/apiv"
+          + "1/channelpb;channelpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

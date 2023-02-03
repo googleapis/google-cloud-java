@@ -71,9 +71,9 @@ public final class SynonymSetServiceProto {
           + "house.googleapis.com\322A.https://www.googl"
           + "eapis.com/auth/cloud-platformB\222\001\n$com.go"
           + "ogle.cloud.contentwarehouse.v1B\026SynonymS"
-          + "etServiceProtoP\001ZPgoogle.golang.org/genp"
-          + "roto/googleapis/cloud/contentwarehouse/v"
-          + "1;contentwarehouseb\006proto3"
+          + "etServiceProtoP\001ZPcloud.google.com/go/co"
+          + "ntentwarehouse/apiv1/contentwarehousepb;"
+          + "contentwarehousepbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

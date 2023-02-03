@@ -43,10 +43,10 @@ public final class ReleaseRenderPayloadProto {
       "\n3google/cloud/deploy/v1/release_render_"
           + "payload.proto\022\026google.cloud.deploy.v1\"6\n"
           + "\022ReleaseRenderEvent\022\017\n\007message\030\001 \001(\t\022\017\n\007"
-          + "release\030\002 \001(\tBw\n\032com.google.cloud.deploy"
-          + ".v1B\031ReleaseRenderPayloadProtoP\001Z<google"
-          + ".golang.org/genproto/googleapis/cloud/de"
-          + "ploy/v1;deployb\006proto3"
+          + "release\030\002 \001(\tBm\n\032com.google.cloud.deploy"
+          + ".v1B\031ReleaseRenderPayloadProtoP\001Z2cloud."
+          + "google.com/go/deploy/apiv1/deploypb;depl"
+          + "oypbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

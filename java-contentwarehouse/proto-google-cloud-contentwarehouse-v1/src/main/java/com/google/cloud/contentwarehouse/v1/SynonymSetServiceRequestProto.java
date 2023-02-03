@@ -86,9 +86,9 @@ public final class SynonymSetServiceRequestProto {
           + "e\030\001 \001(\tB2\340A\002\372A,\n*contentwarehouse.google"
           + "apis.com/SynonymSetB\231\001\n$com.google.cloud"
           + ".contentwarehouse.v1B\035SynonymSetServiceR"
-          + "equestProtoP\001ZPgoogle.golang.org/genprot"
-          + "o/googleapis/cloud/contentwarehouse/v1;c"
-          + "ontentwarehouseb\006proto3"
+          + "equestProtoP\001ZPcloud.google.com/go/conte"
+          + "ntwarehouse/apiv1/contentwarehousepb;con"
+          + "tentwarehousepbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -149,15 +149,15 @@ public final class BinaryAuthorizationServiceProto {
           + "beta1/{name=locations/*/policy}\332A\004name\032V"
           + "\312A\"binaryauthorization.googleapis.com\322A."
           + "https://www.googleapis.com/auth/cloud-pl"
-          + "atformB\265\002\n,com.google.cloud.binaryauthor"
+          + "atformB\270\002\n,com.google.cloud.binaryauthor"
           + "ization.v1beta1B\037BinaryAuthorizationServ"
-          + "iceProtoP\001Z[google.golang.org/genproto/g"
-          + "oogleapis/cloud/binaryauthorization/v1be"
-          + "ta1;binaryauthorization\370\001\001\252\002(Google.Clou"
-          + "d.BinaryAuthorization.V1Beta1\312\002(Google\\C"
-          + "loud\\BinaryAuthorization\\V1beta1\352\002+Googl"
-          + "e::Cloud::BinaryAuthorization::V1beta1b\006"
-          + "proto3"
+          + "iceProtoP\001Z^cloud.google.com/go/binaryau"
+          + "thorization/apiv1beta1/binaryauthorizati"
+          + "onpb;binaryauthorizationpb\370\001\001\252\002(Google.C"
+          + "loud.BinaryAuthorization.V1Beta1\312\002(Googl"
+          + "e\\Cloud\\BinaryAuthorization\\V1beta1\352\002+Go"
+          + "ogle::Cloud::BinaryAuthorization::V1beta"
+          + "1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

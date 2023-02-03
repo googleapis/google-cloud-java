@@ -52,13 +52,13 @@ public final class AssessmentTaskProto {
           + "ataset\030\002 \001(\tB\003\340A\002\022\033\n\016querylogs_path\030\003 \001("
           + "\tB\003\340A\001\022\030\n\013data_source\030\004 \001(\tB\003\340A\002\"Q\n$Asse"
           + "ssmentOrchestrationResultDetails\022)\n\034outp"
-          + "ut_tables_schema_version\030\001 \001(\tB\003\340A\001B\352\001\n+"
+          + "ut_tables_schema_version\030\001 \001(\tB\003\340A\001B\343\001\n+"
           + "com.google.cloud.bigquery.migration.v2al"
-          + "phaB\023AssessmentTaskProtoP\001ZPgoogle.golan"
-          + "g.org/genproto/googleapis/cloud/bigquery"
-          + "/migration/v2alpha;migration\252\002\'Google.Cl"
-          + "oud.BigQuery.Migration.V2Alpha\312\002\'Google\\"
-          + "Cloud\\BigQuery\\Migration\\V2alphab\006proto3"
+          + "phaB\023AssessmentTaskProtoP\001ZIcloud.google"
+          + ".com/go/bigquery/migration/apiv2alpha/mi"
+          + "grationpb;migrationpb\252\002\'Google.Cloud.Big"
+          + "Query.Migration.V2Alpha\312\002\'Google\\Cloud\\B"
+          + "igQuery\\Migration\\V2alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

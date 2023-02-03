@@ -111,10 +111,10 @@ public final class BudgetServiceOuterClass {
           + "gets/*}\032\177\312A\035billingbudgets.googleapis.co"
           + "m\322A\\https://www.googleapis.com/auth/clou"
           + "d-billing,https://www.googleapis.com/aut"
-          + "h/cloud-platformBy\n(com.google.cloud.bil"
-          + "ling.budgets.v1beta1P\001ZKgoogle.golang.or"
-          + "g/genproto/googleapis/cloud/billing/budg"
-          + "ets/v1beta1;budgetsb\006proto3"
+          + "h/cloud-platformBp\n(com.google.cloud.bil"
+          + "ling.budgets.v1beta1P\001ZBcloud.google.com"
+          + "/go/billing/budgets/apiv1beta1/budgetspb"
+          + ";budgetspbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

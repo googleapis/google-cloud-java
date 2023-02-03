@@ -11022,14 +11022,14 @@ public final class Service {
           + "stors/*}:validateAttestationOccurrence:\001"
           + "*\032V\312A\"binaryauthorization.googleapis.com"
           + "\322A.https://www.googleapis.com/auth/cloud"
-          + "-platformB\211\002\n5com.google.protos.google.c"
-          + "loud.binaryauthorization.v1P\000ZVgoogle.go"
-          + "lang.org/genproto/googleapis/cloud/binar"
-          + "yauthorization/v1;binaryauthorization\370\001\001"
-          + "\252\002#Google.Cloud.BinaryAuthorization.V1\312\002"
-          + "#Google\\Cloud\\BinaryAuthorization\\V1\352\002&G"
-          + "oogle::Cloud::BinaryAuthorization::V1b\006p"
-          + "roto3"
+          + "-platformB\214\002\n5com.google.protos.google.c"
+          + "loud.binaryauthorization.v1P\000ZYcloud.goo"
+          + "gle.com/go/binaryauthorization/apiv1/bin"
+          + "aryauthorizationpb;binaryauthorizationpb"
+          + "\370\001\001\252\002#Google.Cloud.BinaryAuthorization.V"
+          + "1\312\002#Google\\Cloud\\BinaryAuthorization\\V1\352"
+          + "\002&Google::Cloud::BinaryAuthorization::V1"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

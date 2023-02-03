@@ -299,10 +299,10 @@ public final class MetadataProto {
           + "ons/*/lakes/*/zones/*/entities/*}/partit"
           + "ions\332A\006parent\032K\312A\027dataplex.googleapis.co"
           + "m\322A.https://www.googleapis.com/auth/clou"
-          + "d-platformBq\n\034com.google.cloud.dataplex."
-          + "v1B\rMetadataProtoP\001Z@google.golang.org/g"
-          + "enproto/googleapis/cloud/dataplex/v1;dat"
-          + "aplexb\006proto3"
+          + "d-platformBi\n\034com.google.cloud.dataplex."
+          + "v1B\rMetadataProtoP\001Z8cloud.google.com/go"
+          + "/dataplex/apiv1/dataplexpb;dataplexpbb\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

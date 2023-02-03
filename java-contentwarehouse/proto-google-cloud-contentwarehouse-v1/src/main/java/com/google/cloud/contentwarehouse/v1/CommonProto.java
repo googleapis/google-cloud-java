@@ -86,9 +86,9 @@ public final class CommonProto {
           + "_LEVEL_ACCESS_CONTROL_BYOID\020\002\022.\n*ACL_MOD"
           + "E_DOCUMENT_LEVEL_ACCESS_CONTROL_GCI\020\003B\335\001"
           + "\n$com.google.cloud.contentwarehouse.v1B\013"
-          + "CommonProtoP\001ZPgoogle.golang.org/genprot"
-          + "o/googleapis/cloud/contentwarehouse/v1;c"
-          + "ontentwarehouse\352AS\n(contentwarehouse.goo"
+          + "CommonProtoP\001ZPcloud.google.com/go/conte"
+          + "ntwarehouse/apiv1/contentwarehousepb;con"
+          + "tentwarehousepb\352AS\n(contentwarehouse.goo"
           + "gleapis.com/Location\022\'projects/{project}"
           + "/locations/{location}b\006proto3"
     };

@@ -50,13 +50,13 @@ public final class Search {
           + "urce_name\030\003 \001(\t\022\027\n\017linked_resource\030\004 \001(\t"
           + "*d\n\020SearchResultType\022\"\n\036SEARCH_RESULT_TY"
           + "PE_UNSPECIFIED\020\000\022\t\n\005ENTRY\020\001\022\020\n\014TAG_TEMPL"
-          + "ATE\020\002\022\017\n\013ENTRY_GROUP\020\003B\344\001\n$com.google.cl"
-          + "oud.datacatalog.v1beta1P\001ZKgoogle.golang"
-          + ".org/genproto/googleapis/cloud/datacatal"
-          + "og/v1beta1;datacatalog\370\001\001\252\002 Google.Cloud"
-          + ".DataCatalog.V1Beta1\312\002 Google\\Cloud\\Data"
-          + "Catalog\\V1beta1\352\002#Google::Cloud::DataCat"
-          + "alog::V1beta1b\006proto3"
+          + "ATE\020\002\022\017\n\013ENTRY_GROUP\020\003B\337\001\n$com.google.cl"
+          + "oud.datacatalog.v1beta1P\001ZFcloud.google."
+          + "com/go/datacatalog/apiv1beta1/datacatalo"
+          + "gpb;datacatalogpb\370\001\001\252\002 Google.Cloud.Data"
+          + "Catalog.V1Beta1\312\002 Google\\Cloud\\DataCatal"
+          + "og\\V1beta1\352\002#Google::Cloud::DataCatalog:"
+          + ":V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

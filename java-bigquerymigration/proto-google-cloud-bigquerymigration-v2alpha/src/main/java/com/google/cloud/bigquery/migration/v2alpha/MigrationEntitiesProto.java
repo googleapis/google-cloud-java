@@ -127,13 +127,13 @@ public final class MigrationEntitiesProto {
           + "Result\022k\n\022assessment_details\030\001 \001(\0132M.goo"
           + "gle.cloud.bigquery.migration.v2alpha.Ass"
           + "essmentOrchestrationResultDetailsH\000B\t\n\007d"
-          + "etailsB\355\001\n+com.google.cloud.bigquery.mig"
+          + "etailsB\346\001\n+com.google.cloud.bigquery.mig"
           + "ration.v2alphaB\026MigrationEntitiesProtoP\001"
-          + "ZPgoogle.golang.org/genproto/googleapis/"
-          + "cloud/bigquery/migration/v2alpha;migrati"
-          + "on\252\002\'Google.Cloud.BigQuery.Migration.V2A"
-          + "lpha\312\002\'Google\\Cloud\\BigQuery\\Migration\\V"
-          + "2alphab\006proto3"
+          + "ZIcloud.google.com/go/bigquery/migration"
+          + "/apiv2alpha/migrationpb;migrationpb\252\002\'Go"
+          + "ogle.Cloud.BigQuery.Migration.V2Alpha\312\002\'"
+          + "Google\\Cloud\\BigQuery\\Migration\\V2alphab"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

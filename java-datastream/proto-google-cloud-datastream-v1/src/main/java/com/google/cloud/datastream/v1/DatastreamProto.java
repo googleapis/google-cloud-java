@@ -462,13 +462,12 @@ public final class DatastreamProto {
           + "*/routes/*}\332A\004name\312A*\n\025google.protobuf.E"
           + "mpty\022\021OperationMetadata\032M\312A\031datastream.g"
           + "oogleapis.com\322A.https://www.googleapis.c"
-          + "om/auth/cloud-platformB\323\001\n\036com.google.cl"
-          + "oud.datastream.v1B\017DatastreamProtoP\001ZDgo"
-          + "ogle.golang.org/genproto/googleapis/clou"
-          + "d/datastream/v1;datastream\252\002\032Google.Clou"
-          + "d.Datastream.V1\312\002\032Google\\Cloud\\Datastrea"
-          + "m\\V1\352\002\035Google::Cloud::Datastream::V1b\006pr"
-          + "oto3"
+          + "om/auth/cloud-platformB\315\001\n\036com.google.cl"
+          + "oud.datastream.v1B\017DatastreamProtoP\001Z>cl"
+          + "oud.google.com/go/datastream/apiv1/datas"
+          + "treampb;datastreampb\252\002\032Google.Cloud.Data"
+          + "stream.V1\312\002\032Google\\Cloud\\Datastream\\V1\352\002"
+          + "\035Google::Cloud::Datastream::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

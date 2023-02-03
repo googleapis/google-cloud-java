@@ -110,11 +110,10 @@ public final class BudgetServiceProto {
           + "budgets/*}\332A\004name\032\177\312A\035billingbudgets.goo"
           + "gleapis.com\322A\\https://www.googleapis.com"
           + "/auth/cloud-billing,https://www.googleap"
-          + "is.com/auth/cloud-platformB\203\001\n#com.googl"
-          + "e.cloud.billing.budgets.v1B\022BudgetServic"
-          + "eProtoP\001ZFgoogle.golang.org/genproto/goo"
-          + "gleapis/cloud/billing/budgets/v1;budgets"
-          + "b\006proto3"
+          + "is.com/auth/cloud-platformBz\n#com.google"
+          + ".cloud.billing.budgets.v1B\022BudgetService"
+          + "ProtoP\001Z=cloud.google.com/go/billing/bud"
+          + "gets/apiv1/budgetspb;budgetspbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

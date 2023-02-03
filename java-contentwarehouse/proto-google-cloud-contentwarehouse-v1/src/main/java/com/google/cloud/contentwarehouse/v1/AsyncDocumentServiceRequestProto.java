@@ -51,9 +51,9 @@ public final class AsyncDocumentServiceRequestProto {
           + "proto\"\030\n\026CreateDocumentMetadata\"\030\n\026Updat"
           + "eDocumentMetadataB\234\001\n$com.google.cloud.c"
           + "ontentwarehouse.v1B AsyncDocumentService"
-          + "RequestProtoP\001ZPgoogle.golang.org/genpro"
-          + "to/googleapis/cloud/contentwarehouse/v1;"
-          + "contentwarehouseb\006proto3"
+          + "RequestProtoP\001ZPcloud.google.com/go/cont"
+          + "entwarehouse/apiv1/contentwarehousepb;co"
+          + "ntentwarehousepbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

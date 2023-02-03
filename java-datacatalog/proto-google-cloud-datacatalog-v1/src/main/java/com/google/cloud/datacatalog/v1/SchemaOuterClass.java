@@ -52,12 +52,12 @@ public final class SchemaOuterClass {
           + "n\030\006 \001(\tB\003\340A\002\022\021\n\004type\030\001 \001(\tB\003\340A\002\022\030\n\013descr"
           + "iption\030\002 \001(\tB\003\340A\001\022\021\n\004mode\030\003 \001(\tB\003\340A\001\022B\n\n"
           + "subcolumns\030\007 \003(\0132).google.cloud.datacata"
-          + "log.v1.ColumnSchemaB\003\340A\001B\313\001\n\037com.google."
-          + "cloud.datacatalog.v1P\001ZFgoogle.golang.or"
-          + "g/genproto/googleapis/cloud/datacatalog/"
-          + "v1;datacatalog\370\001\001\252\002\033Google.Cloud.DataCat"
-          + "alog.V1\312\002\033Google\\Cloud\\DataCatalog\\V1\352\002\036"
-          + "Google::Cloud::DataCatalog::V1b\006proto3"
+          + "log.v1.ColumnSchemaB\003\340A\001B\306\001\n\037com.google."
+          + "cloud.datacatalog.v1P\001ZAcloud.google.com"
+          + "/go/datacatalog/apiv1/datacatalogpb;data"
+          + "catalogpb\370\001\001\252\002\033Google.Cloud.DataCatalog."
+          + "V1\312\002\033Google\\Cloud\\DataCatalog\\V1\352\002\036Googl"
+          + "e::Cloud::DataCatalog::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

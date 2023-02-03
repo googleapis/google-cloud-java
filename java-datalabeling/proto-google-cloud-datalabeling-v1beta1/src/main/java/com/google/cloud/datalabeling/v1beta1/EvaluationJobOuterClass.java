@@ -107,13 +107,13 @@ public final class EvaluationJobOuterClass {
           + "ceptable_mean_average_precision\030\002 \001(\001\"i\n"
           + "\007Attempt\0220\n\014attempt_time\030\001 \001(\0132\032.google."
           + "protobuf.Timestamp\022,\n\020partial_failures\030\002"
-          + " \003(\0132\022.google.rpc.StatusB\347\001\n%com.google."
-          + "cloud.datalabeling.v1beta1P\001ZMgoogle.gol"
-          + "ang.org/genproto/googleapis/cloud/datala"
-          + "beling/v1beta1;datalabeling\252\002!Google.Clo"
-          + "ud.DataLabeling.V1Beta1\312\002!Google\\Cloud\\D"
-          + "ataLabeling\\V1beta1\352\002$Google::Cloud::Dat"
-          + "aLabeling::V1beta1b\006proto3"
+          + " \003(\0132\022.google.rpc.StatusB\343\001\n%com.google."
+          + "cloud.datalabeling.v1beta1P\001ZIcloud.goog"
+          + "le.com/go/datalabeling/apiv1beta1/datala"
+          + "belingpb;datalabelingpb\252\002!Google.Cloud.D"
+          + "ataLabeling.V1Beta1\312\002!Google\\Cloud\\DataL"
+          + "abeling\\V1beta1\352\002$Google::Cloud::DataLab"
+          + "eling::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

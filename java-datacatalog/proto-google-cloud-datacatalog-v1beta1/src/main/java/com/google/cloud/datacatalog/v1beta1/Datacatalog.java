@@ -467,13 +467,13 @@ public final class Datacatalog {
           + "ions/*/entryGroups/*/entries/*}:testIamP"
           + "ermissions:\001*\032N\312A\032datacatalog.googleapis"
           + ".com\322A.https://www.googleapis.com/auth/c"
-          + "loud-platformB\344\001\n$com.google.cloud.datac"
-          + "atalog.v1beta1P\001ZKgoogle.golang.org/genp"
-          + "roto/googleapis/cloud/datacatalog/v1beta"
-          + "1;datacatalog\370\001\001\252\002 Google.Cloud.DataCata"
-          + "log.V1Beta1\312\002 Google\\Cloud\\DataCatalog\\V"
-          + "1beta1\352\002#Google::Cloud::DataCatalog::V1b"
-          + "eta1b\006proto3"
+          + "loud-platformB\337\001\n$com.google.cloud.datac"
+          + "atalog.v1beta1P\001ZFcloud.google.com/go/da"
+          + "tacatalog/apiv1beta1/datacatalogpb;datac"
+          + "atalogpb\370\001\001\252\002 Google.Cloud.DataCatalog.V"
+          + "1Beta1\312\002 Google\\Cloud\\DataCatalog\\V1beta"
+          + "1\352\002#Google::Cloud::DataCatalog::V1beta1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

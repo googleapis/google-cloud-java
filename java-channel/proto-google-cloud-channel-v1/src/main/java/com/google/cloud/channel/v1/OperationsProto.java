@@ -52,10 +52,10 @@ public final class OperationsProto {
           + "ENTITLEMENT\020\t\022\031\n\025TRANSFER_ENTITLEMENTS\020\n"
           + "\022#\n\037TRANSFER_ENTITLEMENTS_TO_GOOGLE\020\013\022\020\n"
           + "\014CHANGE_OFFER\020\016\022\025\n\021CHANGE_PARAMETERS\020\017\022\034"
-          + "\n\030PROVISION_CLOUD_IDENTITY\020\020Bp\n\033com.goog"
-          + "le.cloud.channel.v1B\017OperationsProtoP\001Z>"
-          + "google.golang.org/genproto/googleapis/cl"
-          + "oud/channel/v1;channelb\006proto3"
+          + "\n\030PROVISION_CLOUD_IDENTITY\020\020Bg\n\033com.goog"
+          + "le.cloud.channel.v1B\017OperationsProtoP\001Z5"
+          + "cloud.google.com/go/channel/apiv1/channe"
+          + "lpb;channelpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

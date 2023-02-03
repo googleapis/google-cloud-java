@@ -181,10 +181,10 @@ public final class SharedProto {
           + "\022\n\n\006PRESTO\020\006\022\n\n\006RANGER\020\014\022\010\n\004SOLR\020\n\022\014\n\010ZE"
           + "PPELIN\020\004\022\r\n\tZOOKEEPER\020\010*J\n\rFailureAction"
           + "\022\036\n\032FAILURE_ACTION_UNSPECIFIED\020\000\022\r\n\tNO_A"
-          + "CTION\020\001\022\n\n\006DELETE\020\002Bo\n\034com.google.cloud."
-          + "dataproc.v1B\013SharedProtoP\001Z@google.golan"
-          + "g.org/genproto/googleapis/cloud/dataproc"
-          + "/v1;dataprocb\006proto3"
+          + "CTION\020\001\022\n\n\006DELETE\020\002Bg\n\034com.google.cloud."
+          + "dataproc.v1B\013SharedProtoP\001Z8cloud.google"
+          + ".com/go/dataproc/apiv1/dataprocpb;datapr"
+          + "ocpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

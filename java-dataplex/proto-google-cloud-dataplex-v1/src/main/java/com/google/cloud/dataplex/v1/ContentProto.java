@@ -142,10 +142,10 @@ public final class ContentProto {
           + "contentitemsZ5\0223/v1/{parent=projects/*/l"
           + "ocations/*/lakes/*}/content\332A\006parent\032K\312A"
           + "\027dataplex.googleapis.com\322A.https://www.g"
-          + "oogleapis.com/auth/cloud-platformBp\n\034com"
+          + "oogleapis.com/auth/cloud-platformBh\n\034com"
           + ".google.cloud.dataplex.v1B\014ContentProtoP"
-          + "\001Z@google.golang.org/genproto/googleapis"
-          + "/cloud/dataplex/v1;dataplexb\006proto3"
+          + "\001Z8cloud.google.com/go/dataplex/apiv1/da"
+          + "taplexpb;dataplexpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -53,13 +53,13 @@ public final class SchemaOuterClass {
           + "\030\001 \001(\tB\003\340A\002\022\030\n\013description\030\002 \001(\tB\003\340A\001\022\021\n"
           + "\004mode\030\003 \001(\tB\003\340A\001\022G\n\nsubcolumns\030\007 \003(\0132..g"
           + "oogle.cloud.datacatalog.v1beta1.ColumnSc"
-          + "hemaB\003\340A\001B\344\001\n$com.google.cloud.datacatal"
-          + "og.v1beta1P\001ZKgoogle.golang.org/genproto"
-          + "/googleapis/cloud/datacatalog/v1beta1;da"
-          + "tacatalog\370\001\001\252\002 Google.Cloud.DataCatalog."
-          + "V1Beta1\312\002 Google\\Cloud\\DataCatalog\\V1bet"
-          + "a1\352\002#Google::Cloud::DataCatalog::V1beta1"
-          + "b\006proto3"
+          + "hemaB\003\340A\001B\337\001\n$com.google.cloud.datacatal"
+          + "og.v1beta1P\001ZFcloud.google.com/go/dataca"
+          + "talog/apiv1beta1/datacatalogpb;datacatal"
+          + "ogpb\370\001\001\252\002 Google.Cloud.DataCatalog.V1Bet"
+          + "a1\312\002 Google\\Cloud\\DataCatalog\\V1beta1\352\002#"
+          + "Google::Cloud::DataCatalog::V1beta1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

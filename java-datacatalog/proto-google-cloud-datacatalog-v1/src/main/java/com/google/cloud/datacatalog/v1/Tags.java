@@ -125,12 +125,12 @@ public final class Tags {
           + "lay_name\030\001 \001(\tB\003\340A\002\"n\n\rPrimitiveType\022\036\n\032"
           + "PRIMITIVE_TYPE_UNSPECIFIED\020\000\022\n\n\006DOUBLE\020\001"
           + "\022\n\n\006STRING\020\002\022\010\n\004BOOL\020\003\022\r\n\tTIMESTAMP\020\004\022\014\n"
-          + "\010RICHTEXT\020\005B\013\n\ttype_declB\313\001\n\037com.google."
-          + "cloud.datacatalog.v1P\001ZFgoogle.golang.or"
-          + "g/genproto/googleapis/cloud/datacatalog/"
-          + "v1;datacatalog\370\001\001\252\002\033Google.Cloud.DataCat"
-          + "alog.V1\312\002\033Google\\Cloud\\DataCatalog\\V1\352\002\036"
-          + "Google::Cloud::DataCatalog::V1b\006proto3"
+          + "\010RICHTEXT\020\005B\013\n\ttype_declB\306\001\n\037com.google."
+          + "cloud.datacatalog.v1P\001ZAcloud.google.com"
+          + "/go/datacatalog/apiv1/datacatalogpb;data"
+          + "catalogpb\370\001\001\252\002\033Google.Cloud.DataCatalog."
+          + "V1\312\002\033Google\\Cloud\\DataCatalog\\V1\352\002\036Googl"
+          + "e::Cloud::DataCatalog::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

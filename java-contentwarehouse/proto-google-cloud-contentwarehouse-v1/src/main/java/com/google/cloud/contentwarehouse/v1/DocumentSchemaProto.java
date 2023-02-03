@@ -122,9 +122,9 @@ public final class DocumentSchemaProto {
           + "\"R\n\017EnumTypeOptions\022\034\n\017possible_values\030\001"
           + " \003(\tB\003\340A\002\022!\n\031validation_check_disabled\030\002"
           + " \001(\010B\217\001\n$com.google.cloud.contentwarehou"
-          + "se.v1B\023DocumentSchemaProtoP\001ZPgoogle.gol"
-          + "ang.org/genproto/googleapis/cloud/conten"
-          + "twarehouse/v1;contentwarehouseb\006proto3"
+          + "se.v1B\023DocumentSchemaProtoP\001ZPcloud.goog"
+          + "le.com/go/contentwarehouse/apiv1/content"
+          + "warehousepb;contentwarehousepbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

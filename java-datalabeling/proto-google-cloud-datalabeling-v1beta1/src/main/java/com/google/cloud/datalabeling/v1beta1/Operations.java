@@ -209,13 +209,13 @@ public final class Operations {
           + "tructionMetadata\022\023\n\013instruction\030\001 \001(\t\022,\n"
           + "\020partial_failures\030\002 \003(\0132\022.google.rpc.Sta"
           + "tus\022/\n\013create_time\030\003 \001(\0132\032.google.protob"
-          + "uf.TimestampB\347\001\n%com.google.cloud.datala"
-          + "beling.v1beta1P\001ZMgoogle.golang.org/genp"
-          + "roto/googleapis/cloud/datalabeling/v1bet"
-          + "a1;datalabeling\252\002!Google.Cloud.DataLabel"
-          + "ing.V1Beta1\312\002!Google\\Cloud\\DataLabeling\\"
-          + "V1beta1\352\002$Google::Cloud::DataLabeling::V"
-          + "1beta1b\006proto3"
+          + "uf.TimestampB\343\001\n%com.google.cloud.datala"
+          + "beling.v1beta1P\001ZIcloud.google.com/go/da"
+          + "talabeling/apiv1beta1/datalabelingpb;dat"
+          + "alabelingpb\252\002!Google.Cloud.DataLabeling."
+          + "V1Beta1\312\002!Google\\Cloud\\DataLabeling\\V1be"
+          + "ta1\352\002$Google::Cloud::DataLabeling::V1bet"
+          + "a1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

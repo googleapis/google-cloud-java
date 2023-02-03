@@ -85,9 +85,9 @@ public final class RuleSetServiceRequestProto {
           + "ontentwarehouse.v1.RuleSet\022\027\n\017next_page_"
           + "token\030\002 \001(\tB\226\001\n$com.google.cloud.content"
           + "warehouse.v1B\032RuleSetServiceRequestProto"
-          + "P\001ZPgoogle.golang.org/genproto/googleapi"
-          + "s/cloud/contentwarehouse/v1;contentwareh"
-          + "ouseb\006proto3"
+          + "P\001ZPcloud.google.com/go/contentwarehouse"
+          + "/apiv1/contentwarehousepb;contentwarehou"
+          + "sepbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

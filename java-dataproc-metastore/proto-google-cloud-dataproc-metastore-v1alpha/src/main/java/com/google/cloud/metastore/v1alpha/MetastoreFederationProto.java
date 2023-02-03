@@ -165,11 +165,10 @@ public final class MetastoreFederationProto {
           + "buf.Empty\0220google.cloud.metastore.v1alph"
           + "a.OperationMetadata\032L\312A\030metastore.google"
           + "apis.com\322A.https://www.googleapis.com/au"
-          + "th/cloud-platformB\211\001\n\"com.google.cloud.m"
+          + "th/cloud-platformB\202\001\n\"com.google.cloud.m"
           + "etastore.v1alphaB\030MetastoreFederationPro"
-          + "toP\001ZGgoogle.golang.org/genproto/googlea"
-          + "pis/cloud/metastore/v1alpha;metastoreb\006p"
-          + "roto3"
+          + "toP\001Z@cloud.google.com/go/metastore/apiv"
+          + "1alpha/metastorepb;metastorepbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

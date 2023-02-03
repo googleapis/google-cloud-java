@@ -185,10 +185,10 @@ public final class TasksProto {
           + "AILED\020\005\022\013\n\007ABORTED\020\006:n\352Ak\n\033dataplex.goog"
           + "leapis.com/Job\022Lprojects/{project}/locat"
           + "ions/{location}/lakes/{lake}/tasks/{task"
-          + "}/jobs/{job}Bn\n\034com.google.cloud.dataple"
-          + "x.v1B\nTasksProtoP\001Z@google.golang.org/ge"
-          + "nproto/googleapis/cloud/dataplex/v1;data"
-          + "plexb\006proto3"
+          + "}/jobs/{job}Bf\n\034com.google.cloud.dataple"
+          + "x.v1B\nTasksProtoP\001Z8cloud.google.com/go/"
+          + "dataplex/apiv1/dataplexpb;dataplexpbb\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

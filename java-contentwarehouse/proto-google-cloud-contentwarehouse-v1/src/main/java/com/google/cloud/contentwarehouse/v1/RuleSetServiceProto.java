@@ -69,9 +69,9 @@ public final class RuleSetServiceProto {
           + "e.googleapis.com\322A.https://www.googleapi"
           + "s.com/auth/cloud-platformB\217\001\n$com.google"
           + ".cloud.contentwarehouse.v1B\023RuleSetServi"
-          + "ceProtoP\001ZPgoogle.golang.org/genproto/go"
-          + "ogleapis/cloud/contentwarehouse/v1;conte"
-          + "ntwarehouseb\006proto3"
+          + "ceProtoP\001ZPcloud.google.com/go/contentwa"
+          + "rehouse/apiv1/contentwarehousepb;content"
+          + "warehousepbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

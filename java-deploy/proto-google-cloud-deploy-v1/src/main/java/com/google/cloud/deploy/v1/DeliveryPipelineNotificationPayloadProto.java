@@ -46,11 +46,10 @@ public final class DeliveryPipelineNotificationPayloadProto {
           + "_enums.proto\"{\n!DeliveryPipelineNotifica"
           + "tionEvent\022\017\n\007message\030\001 \001(\t\022\031\n\021delivery_p"
           + "ipeline\030\002 \001(\t\022*\n\004type\030\003 \001(\0162\034.google.clo"
-          + "ud.deploy.v1.TypeB\206\001\n\032com.google.cloud.d"
-          + "eploy.v1B(DeliveryPipelineNotificationPa"
-          + "yloadProtoP\001Z<google.golang.org/genproto"
-          + "/googleapis/cloud/deploy/v1;deployb\006prot"
-          + "o3"
+          + "ud.deploy.v1.TypeB|\n\032com.google.cloud.de"
+          + "ploy.v1B(DeliveryPipelineNotificationPay"
+          + "loadProtoP\001Z2cloud.google.com/go/deploy/"
+          + "apiv1/deploypb;deploypbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -83,15 +83,15 @@ public final class ContinuousValidationLoggingProto {
           + "\002\"[\n\030PolicyConformanceVerdict\022*\n&POLICY_"
           + "CONFORMANCE_VERDICT_UNSPECIFIED\020\000\022\023\n\017VIO"
           + "LATES_POLICY\020\001\032-\n\026UnsupportedPolicyEvent"
-          + "\022\023\n\013description\030\001 \001(\tB\014\n\nevent_typeB\266\002\n,"
+          + "\022\023\n\013description\030\001 \001(\tB\014\n\nevent_typeB\271\002\n,"
           + "com.google.cloud.binaryauthorization.v1b"
           + "eta1B ContinuousValidationLoggingProtoP\001"
-          + "Z[google.golang.org/genproto/googleapis/"
-          + "cloud/binaryauthorization/v1beta1;binary"
-          + "authorization\370\001\001\252\002(Google.Cloud.BinaryAu"
-          + "thorization.V1Beta1\312\002(Google\\Cloud\\Binar"
-          + "yAuthorization\\V1beta1\352\002+Google::Cloud::"
-          + "BinaryAuthorization::V1beta1b\006proto3"
+          + "Z^cloud.google.com/go/binaryauthorizatio"
+          + "n/apiv1beta1/binaryauthorizationpb;binar"
+          + "yauthorizationpb\370\001\001\252\002(Google.Cloud.Binar"
+          + "yAuthorization.V1Beta1\312\002(Google\\Cloud\\Bi"
+          + "naryAuthorization\\V1beta1\352\002+Google::Clou"
+          + "d::BinaryAuthorization::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

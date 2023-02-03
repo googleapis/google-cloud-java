@@ -74,12 +74,12 @@ public final class MigrationMetricsProto {
           + "lue\030\002 \001(\003H\000\022\026\n\014double_value\030\003 \001(\001H\000\022\026\n\014s"
           + "tring_value\030\004 \001(\tH\000\0226\n\022distribution_valu"
           + "e\030\005 \001(\0132\030.google.api.DistributionH\000B\007\n\005v"
-          + "alueB\330\001\n&com.google.cloud.bigquery.migra"
-          + "tion.v2B\025MigrationMetricsProtoP\001ZKgoogle"
-          + ".golang.org/genproto/googleapis/cloud/bi"
-          + "gquery/migration/v2;migration\252\002\"Google.C"
-          + "loud.BigQuery.Migration.V2\312\002\"Google\\Clou"
-          + "d\\BigQuery\\Migration\\V2b\006proto3"
+          + "alueB\321\001\n&com.google.cloud.bigquery.migra"
+          + "tion.v2B\025MigrationMetricsProtoP\001ZDcloud."
+          + "google.com/go/bigquery/migration/apiv2/m"
+          + "igrationpb;migrationpb\252\002\"Google.Cloud.Bi"
+          + "gQuery.Migration.V2\312\002\"Google\\Cloud\\BigQu"
+          + "ery\\Migration\\V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

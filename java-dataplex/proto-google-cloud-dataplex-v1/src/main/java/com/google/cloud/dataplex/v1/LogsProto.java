@@ -181,10 +181,10 @@ public final class LogsProto {
           + "D\020\003\022\r\n\tCANCELLED\020\004\"?\n\007Trigger\022\027\n\023TRIGGER"
           + "_UNSPECIFIED\020\000\022\r\n\tON_DEMAND\020\001\022\014\n\010SCHEDUL"
           + "E\020\002\"9\n\005Scope\022\025\n\021SCOPE_UNSPECIFIED\020\000\022\010\n\004F"
-          + "ULL\020\001\022\017\n\013INCREMENTAL\020\002B\010\n\006resultBm\n\034com."
-          + "google.cloud.dataplex.v1B\tLogsProtoP\001Z@g"
-          + "oogle.golang.org/genproto/googleapis/clo"
-          + "ud/dataplex/v1;dataplexb\006proto3"
+          + "ULL\020\001\022\017\n\013INCREMENTAL\020\002B\010\n\006resultBe\n\034com."
+          + "google.cloud.dataplex.v1B\tLogsProtoP\001Z8c"
+          + "loud.google.com/go/dataplex/apiv1/datapl"
+          + "expb;dataplexpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

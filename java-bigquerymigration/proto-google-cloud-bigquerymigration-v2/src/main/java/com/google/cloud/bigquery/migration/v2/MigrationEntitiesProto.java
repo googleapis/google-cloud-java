@@ -109,12 +109,12 @@ public final class MigrationEntitiesProto {
           + "\n1bigquerymigration.googleapis.com/Migra"
           + "tionSubtask\022Oprojects/{project}/location"
           + "s/{location}/workflows/{workflow}/subtas"
-          + "ks/{subtask}B\331\001\n&com.google.cloud.bigque"
+          + "ks/{subtask}B\322\001\n&com.google.cloud.bigque"
           + "ry.migration.v2B\026MigrationEntitiesProtoP"
-          + "\001ZKgoogle.golang.org/genproto/googleapis"
-          + "/cloud/bigquery/migration/v2;migration\252\002"
-          + "\"Google.Cloud.BigQuery.Migration.V2\312\002\"Go"
-          + "ogle\\Cloud\\BigQuery\\Migration\\V2b\006proto3"
+          + "\001ZDcloud.google.com/go/bigquery/migratio"
+          + "n/apiv2/migrationpb;migrationpb\252\002\"Google"
+          + ".Cloud.BigQuery.Migration.V2\312\002\"Google\\Cl"
+          + "oud\\BigQuery\\Migration\\V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -256,13 +256,13 @@ public final class AnnotationOuterClass {
           + "N\020\005\022\032\n\026VIDEO_EVENT_ANNOTATION\020\006\022\"\n\036TEXT_"
           + "CLASSIFICATION_ANNOTATION\020\010\022%\n!TEXT_ENTI"
           + "TY_EXTRACTION_ANNOTATION\020\t\022%\n!GENERAL_CL"
-          + "ASSIFICATION_ANNOTATION\020\016B\347\001\n%com.google"
-          + ".cloud.datalabeling.v1beta1P\001ZMgoogle.go"
-          + "lang.org/genproto/googleapis/cloud/datal"
-          + "abeling/v1beta1;datalabeling\252\002!Google.Cl"
-          + "oud.DataLabeling.V1Beta1\312\002!Google\\Cloud\\"
-          + "DataLabeling\\V1beta1\352\002$Google::Cloud::Da"
-          + "taLabeling::V1beta1b\006proto3"
+          + "ASSIFICATION_ANNOTATION\020\016B\343\001\n%com.google"
+          + ".cloud.datalabeling.v1beta1P\001ZIcloud.goo"
+          + "gle.com/go/datalabeling/apiv1beta1/datal"
+          + "abelingpb;datalabelingpb\252\002!Google.Cloud."
+          + "DataLabeling.V1Beta1\312\002!Google\\Cloud\\Data"
+          + "Labeling\\V1beta1\352\002$Google::Cloud::DataLa"
+          + "beling::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

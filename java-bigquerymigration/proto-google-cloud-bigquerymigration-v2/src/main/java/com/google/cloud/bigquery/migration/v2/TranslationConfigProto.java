@@ -189,13 +189,13 @@ public final class TranslationConfigProto {
           + "\n\020NameMappingValue\022\020\n\010database\030\001 \001(\t\022\016\n\006"
           + "schema\030\002 \001(\t\022\020\n\010relation\030\003 \001(\t\022\021\n\tattrib"
           + "ute\030\004 \001(\t\"A\n\tSourceEnv\022\030\n\020default_databa"
-          + "se\030\001 \001(\t\022\032\n\022schema_search_path\030\002 \003(\tB\331\001\n"
+          + "se\030\001 \001(\t\022\032\n\022schema_search_path\030\002 \003(\tB\322\001\n"
           + "&com.google.cloud.bigquery.migration.v2B"
-          + "\026TranslationConfigProtoP\001ZKgoogle.golang"
-          + ".org/genproto/googleapis/cloud/bigquery/"
-          + "migration/v2;migration\252\002\"Google.Cloud.Bi"
-          + "gQuery.Migration.V2\312\002\"Google\\Cloud\\BigQu"
-          + "ery\\Migration\\V2b\006proto3"
+          + "\026TranslationConfigProtoP\001ZDcloud.google."
+          + "com/go/bigquery/migration/apiv2/migratio"
+          + "npb;migrationpb\252\002\"Google.Cloud.BigQuery."
+          + "Migration.V2\312\002\"Google\\Cloud\\BigQuery\\Mig"
+          + "ration\\V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

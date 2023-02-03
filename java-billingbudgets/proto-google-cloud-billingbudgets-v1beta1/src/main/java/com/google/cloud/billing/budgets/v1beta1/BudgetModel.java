@@ -122,10 +122,10 @@ public final class BudgetModel {
           + "end_date\030\002 \001(\0132\021.google.type.DateB\003\340A\001*S"
           + "\n\016CalendarPeriod\022\037\n\033CALENDAR_PERIOD_UNSP"
           + "ECIFIED\020\000\022\t\n\005MONTH\020\001\022\013\n\007QUARTER\020\002\022\010\n\004YEA"
-          + "R\020\003By\n(com.google.cloud.billing.budgets."
-          + "v1beta1P\001ZKgoogle.golang.org/genproto/go"
-          + "ogleapis/cloud/billing/budgets/v1beta1;b"
-          + "udgetsb\006proto3"
+          + "R\020\003Bp\n(com.google.cloud.billing.budgets."
+          + "v1beta1P\001ZBcloud.google.com/go/billing/b"
+          + "udgets/apiv1beta1/budgetspb;budgetspbb\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

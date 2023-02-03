@@ -131,10 +131,10 @@ public final class RepricingProto {
           + "dition\"&\n\021SkuGroupCondition\022\021\n\tsku_group"
           + "\030\001 \001(\t*]\n\016RebillingBasis\022\037\n\033REBILLING_BA"
           + "SIS_UNSPECIFIED\020\000\022\020\n\014COST_AT_LIST\020\001\022\030\n\024D"
-          + "IRECT_CUSTOMER_COST\020\002Bo\n\033com.google.clou"
-          + "d.channel.v1B\016RepricingProtoP\001Z>google.g"
-          + "olang.org/genproto/googleapis/cloud/chan"
-          + "nel/v1;channelb\006proto3"
+          + "IRECT_CUSTOMER_COST\020\002Bf\n\033com.google.clou"
+          + "d.channel.v1B\016RepricingProtoP\001Z5cloud.go"
+          + "ogle.com/go/channel/apiv1/channelpb;chan"
+          + "nelpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

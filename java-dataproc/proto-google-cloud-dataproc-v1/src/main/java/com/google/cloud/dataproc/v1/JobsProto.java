@@ -415,10 +415,10 @@ public final class JobsProto {
           + "t_id}/regions/{region}/jobs/{job_id}\332A\030p"
           + "roject_id,region,job_id\032K\312A\027dataproc.goo"
           + "gleapis.com\322A.https://www.googleapis.com"
-          + "/auth/cloud-platformBm\n\034com.google.cloud"
-          + ".dataproc.v1B\tJobsProtoP\001Z@google.golang"
-          + ".org/genproto/googleapis/cloud/dataproc/"
-          + "v1;dataprocb\006proto3"
+          + "/auth/cloud-platformBe\n\034com.google.cloud"
+          + ".dataproc.v1B\tJobsProtoP\001Z8cloud.google."
+          + "com/go/dataproc/apiv1/dataprocpb;datapro"
+          + "cpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

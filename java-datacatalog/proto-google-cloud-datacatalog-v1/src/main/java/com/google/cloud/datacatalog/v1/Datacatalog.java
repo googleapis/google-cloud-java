@@ -628,17 +628,17 @@ public final class Datacatalog {
           + "ntryGroups/*/entries/*}:testIamPermissio"
           + "ns:\001*\032N\312A\032datacatalog.googleapis.com\322A.h"
           + "ttps://www.googleapis.com/auth/cloud-pla",
-      "tformB\217\003\n\037com.google.cloud.datacatalog.v"
-          + "1P\001ZFgoogle.golang.org/genproto/googleap"
-          + "is/cloud/datacatalog/v1;datacatalog\370\001\001\252\002"
-          + "\033Google.Cloud.DataCatalog.V1\312\002\033Google\\Cl"
-          + "oud\\DataCatalog\\V1\352\002\036Google::Cloud::Data"
-          + "Catalog::V1\352A\300\001\n4datacatalog.googleapis."
-          + "com/TagTemplateFieldEnumValue\022\207\001projects"
-          + "/{project}/locations/{location}/tagTempl"
-          + "ates/{tag_template}/fields/{tag_template"
-          + "_field_id}/enumValues/{enum_value_displa"
-          + "y_name}b\006proto3"
+      "tformB\212\003\n\037com.google.cloud.datacatalog.v"
+          + "1P\001ZAcloud.google.com/go/datacatalog/api"
+          + "v1/datacatalogpb;datacatalogpb\370\001\001\252\002\033Goog"
+          + "le.Cloud.DataCatalog.V1\312\002\033Google\\Cloud\\D"
+          + "ataCatalog\\V1\352\002\036Google::Cloud::DataCatal"
+          + "og::V1\352A\300\001\n4datacatalog.googleapis.com/T"
+          + "agTemplateFieldEnumValue\022\207\001projects/{pro"
+          + "ject}/locations/{location}/tagTemplates/"
+          + "{tag_template}/fields/{tag_template_fiel"
+          + "d_id}/enumValues/{enum_value_display_nam"
+          + "e}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

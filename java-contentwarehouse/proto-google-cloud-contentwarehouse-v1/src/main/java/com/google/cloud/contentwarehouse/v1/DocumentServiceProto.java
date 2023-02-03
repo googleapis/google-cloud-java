@@ -161,9 +161,9 @@ public final class DocumentServiceProto {
           + "ntwarehouse.googleapis.com\322A.https://www"
           + ".googleapis.com/auth/cloud-platformB\220\001\n$"
           + "com.google.cloud.contentwarehouse.v1B\024Do"
-          + "cumentServiceProtoP\001ZPgoogle.golang.org/"
-          + "genproto/googleapis/cloud/contentwarehou"
-          + "se/v1;contentwarehouseb\006proto3"
+          + "cumentServiceProtoP\001ZPcloud.google.com/g"
+          + "o/contentwarehouse/apiv1/contentwarehous"
+          + "epb;contentwarehousepbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

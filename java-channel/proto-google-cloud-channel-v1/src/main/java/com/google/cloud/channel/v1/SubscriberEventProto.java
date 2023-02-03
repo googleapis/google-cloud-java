@@ -71,10 +71,10 @@ public final class SubscriberEventProto {
           + "event\030\001 \001(\0132&.google.cloud.channel.v1.Cu"
           + "stomerEventH\000\022F\n\021entitlement_event\030\002 \001(\013"
           + "2).google.cloud.channel.v1.EntitlementEv"
-          + "entH\000B\007\n\005eventBu\n\033com.google.cloud.chann"
-          + "el.v1B\024SubscriberEventProtoP\001Z>google.go"
-          + "lang.org/genproto/googleapis/cloud/chann"
-          + "el/v1;channelb\006proto3"
+          + "entH\000B\007\n\005eventBl\n\033com.google.cloud.chann"
+          + "el.v1B\024SubscriberEventProtoP\001Z5cloud.goo"
+          + "gle.com/go/channel/apiv1/channelpb;chann"
+          + "elpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

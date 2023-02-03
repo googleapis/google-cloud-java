@@ -65,13 +65,13 @@ public final class BigQueryProto {
           + "onSpec.DatabaseType\"F\n\014DatabaseType\022\035\n\031D"
           + "ATABASE_TYPE_UNSPECIFIED\020\000\022\014\n\010POSTGRES\020\001"
           + "\022\t\n\005MYSQL\020\002\"1\n\023BigQueryRoutineSpec\022\032\n\022im"
-          + "ported_libraries\030\001 \003(\tB\332\001\n\037com.google.cl"
-          + "oud.datacatalog.v1B\rBigQueryProtoP\001ZFgoo"
-          + "gle.golang.org/genproto/googleapis/cloud"
-          + "/datacatalog/v1;datacatalog\370\001\001\252\002\033Google."
-          + "Cloud.DataCatalog.V1\312\002\033Google\\Cloud\\Data"
-          + "Catalog\\V1\352\002\036Google::Cloud::DataCatalog:"
-          + ":V1b\006proto3"
+          + "ported_libraries\030\001 \003(\tB\325\001\n\037com.google.cl"
+          + "oud.datacatalog.v1B\rBigQueryProtoP\001ZAclo"
+          + "ud.google.com/go/datacatalog/apiv1/datac"
+          + "atalogpb;datacatalogpb\370\001\001\252\002\033Google.Cloud"
+          + ".DataCatalog.V1\312\002\033Google\\Cloud\\DataCatal"
+          + "og\\V1\352\002\036Google::Cloud::DataCatalog::V1b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

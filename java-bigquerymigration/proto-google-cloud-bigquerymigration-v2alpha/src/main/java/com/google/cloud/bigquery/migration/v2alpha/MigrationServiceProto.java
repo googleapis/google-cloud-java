@@ -162,13 +162,13 @@ public final class MigrationServiceProto {
           + "/*/locations/*/workflows/*}/subtasks\332A\006p"
           + "arent\032T\312A bigquerymigration.googleapis.c"
           + "om\322A.https://www.googleapis.com/auth/clo"
-          + "ud-platformB\354\001\n+com.google.cloud.bigquer"
+          + "ud-platformB\345\001\n+com.google.cloud.bigquer"
           + "y.migration.v2alphaB\025MigrationServicePro"
-          + "toP\001ZPgoogle.golang.org/genproto/googlea"
-          + "pis/cloud/bigquery/migration/v2alpha;mig"
-          + "ration\252\002\'Google.Cloud.BigQuery.Migration"
-          + ".V2Alpha\312\002\'Google\\Cloud\\BigQuery\\Migrati"
-          + "on\\V2alphab\006proto3"
+          + "toP\001ZIcloud.google.com/go/bigquery/migra"
+          + "tion/apiv2alpha/migrationpb;migrationpb\252"
+          + "\002\'Google.Cloud.BigQuery.Migration.V2Alph"
+          + "a\312\002\'Google\\Cloud\\BigQuery\\Migration\\V2al"
+          + "phab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

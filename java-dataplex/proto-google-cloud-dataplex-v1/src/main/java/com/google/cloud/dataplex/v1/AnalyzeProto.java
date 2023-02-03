@@ -171,10 +171,10 @@ public final class AnalyzeProto {
           + "plex.v1.StateB\003\340A\003:\211\001\352A\205\001\n\037dataplex.goog"
           + "leapis.com/Session\022bprojects/{project}/l"
           + "ocations/{location}/lakes/{lake}/environ"
-          + "ments/{environment}/sessions/{session}Bp"
+          + "ments/{environment}/sessions/{session}Bh"
           + "\n\034com.google.cloud.dataplex.v1B\014AnalyzeP"
-          + "rotoP\001Z@google.golang.org/genproto/googl"
-          + "eapis/cloud/dataplex/v1;dataplexb\006proto3"
+          + "rotoP\001Z8cloud.google.com/go/dataplex/api"
+          + "v1/dataplexpb;dataplexpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

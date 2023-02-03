@@ -81,10 +81,9 @@ public final class CommonProto {
           + "e\030\004 \001(\0132\024.google.protobuf.AnyH\000\022\024\n\nbool_"
           + "value\030\005 \001(\010H\000B\006\n\004kind\"C\n\tAdminUser\022\r\n\005em"
           + "ail\030\001 \001(\t\022\022\n\ngiven_name\030\002 \001(\t\022\023\n\013family_"
-          + "name\030\003 \001(\tBl\n\033com.google.cloud.channel.v"
-          + "1B\013CommonProtoP\001Z>google.golang.org/genp"
-          + "roto/googleapis/cloud/channel/v1;channel"
-          + "b\006proto3"
+          + "name\030\003 \001(\tBc\n\033com.google.cloud.channel.v"
+          + "1B\013CommonProtoP\001Z5cloud.google.com/go/ch"
+          + "annel/apiv1/channelpb;channelpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -404,14 +404,14 @@ public final class CloudDatastreamServiceProto {
           + "nnections/*/routes/*}\332A\004name\312A*\n\025google."
           + "protobuf.Empty\022\021OperationMetadata\032M\312A\031da"
           + "tastream.googleapis.com\322A.https://www.go"
-          + "ogleapis.com/auth/cloud-platformB\375\001\n$com"
+          + "ogleapis.com/auth/cloud-platformB\367\001\n$com"
           + ".google.cloud.datastream.v1alpha1B\033Cloud"
-          + "DatastreamServiceProtoP\001ZJgoogle.golang."
-          + "org/genproto/googleapis/cloud/datastream"
-          + "/v1alpha1;datastream\252\002 Google.Cloud.Data"
-          + "stream.V1Alpha1\312\002 Google\\Cloud\\Datastrea"
-          + "m\\V1alpha1\352\002#Google::Cloud::Datastream::"
-          + "V1alpha1b\006proto3"
+          + "DatastreamServiceProtoP\001ZDcloud.google.c"
+          + "om/go/datastream/apiv1alpha1/datastreamp"
+          + "b;datastreampb\252\002 Google.Cloud.Datastream"
+          + ".V1Alpha1\312\002 Google\\Cloud\\Datastream\\V1al"
+          + "pha1\352\002#Google::Cloud::Datastream::V1alph"
+          + "a1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

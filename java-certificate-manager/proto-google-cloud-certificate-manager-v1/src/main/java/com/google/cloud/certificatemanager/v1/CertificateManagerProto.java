@@ -575,14 +575,14 @@ public final class CertificateManagerProto {
           + "nfigs/*}\332A\004name\312A*\n\025google.protobuf.Empt"
           + "y\022\021OperationMetadata\032U\312A!certificatemana"
           + "ger.googleapis.com\322A.https://www.googlea"
-          + "pis.com/auth/cloud-platformB\213\002\n&com.goog"
+          + "pis.com/auth/cloud-platformB\215\002\n&com.goog"
           + "le.cloud.certificatemanager.v1B\027Certific"
-          + "ateManagerProtoP\001ZTgoogle.golang.org/gen"
-          + "proto/googleapis/cloud/certificatemanage"
-          + "r/v1;certificatemanager\252\002\"Google.Cloud.C"
-          + "ertificateManager.V1\312\002\"Google\\Cloud\\Cert"
-          + "ificateManager\\V1\352\002%Google::Cloud::Certi"
-          + "ficateManager::V1b\006proto3"
+          + "ateManagerProtoP\001ZVcloud.google.com/go/c"
+          + "ertificatemanager/apiv1/certificatemanag"
+          + "erpb;certificatemanagerpb\252\002\"Google.Cloud"
+          + ".CertificateManager.V1\312\002\"Google\\Cloud\\Ce"
+          + "rtificateManager\\V1\352\002%Google::Cloud::Cer"
+          + "tificateManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

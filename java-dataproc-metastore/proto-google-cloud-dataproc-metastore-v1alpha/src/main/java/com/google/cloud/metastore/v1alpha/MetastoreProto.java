@@ -647,18 +647,18 @@ public final class MetastoreProto {
           + "esourceLocationResponse\0220google.cloud.me"
           + "tastore.v1alpha.OperationMetadata\032L\312A\030me"
           + "tastore.googleapis.com\322A.https://www.goo"
-          + "gleapis.com/auth/cloud-platformB\254\003\n\"com."
+          + "gleapis.com/auth/cloud-platformB\245\003\n\"com."
           + "google.cloud.metastore.v1alphaB\016Metastor"
-          + "eProtoP\001ZGgoogle.golang.org/genproto/goo"
-          + "gleapis/cloud/metastore/v1alpha;metastor"
-          + "e\312\002\036Google\\Cloud\\Metastore\\V1alpha\352AN\n\036c"
-          + "ompute.googleapis.com/Network\022,projects/"
-          + "{project}/global/networks/{network}\352Aa\n!"
-          + "compute.googleapis.com/Subnetwork\022<proje"
-          + "cts/{project}/regions/{region}/subnetwor",
-      "ks/{subnetwork}\352AT\n\034dataplex.googleapis."
-          + "com/Lake\0224projects/{project}/locations/{"
-          + "location}/lakes/{lake}b\006proto3"
+          + "eProtoP\001Z@cloud.google.com/go/metastore/"
+          + "apiv1alpha/metastorepb;metastorepb\312\002\036Goo"
+          + "gle\\Cloud\\Metastore\\V1alpha\352AN\n\036compute."
+          + "googleapis.com/Network\022,projects/{projec"
+          + "t}/global/networks/{network}\352Aa\n!compute"
+          + ".googleapis.com/Subnetwork\022<projects/{pr"
+          + "oject}/regions/{region}/subnetworks/{sub",
+      "network}\352AT\n\034dataplex.googleapis.com/Lak"
+          + "e\0224projects/{project}/locations/{locatio"
+          + "n}/lakes/{lake}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

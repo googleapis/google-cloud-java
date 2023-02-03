@@ -169,10 +169,10 @@ public final class CloudBillingProto {
           + "\223\001https://www.googleapis.com/auth/cloud-"
           + "billing,https://www.googleapis.com/auth/"
           + "cloud-billing.readonly,https://www.googl"
-          + "eapis.com/auth/cloud-platformBr\n\033com.goo"
+          + "eapis.com/auth/cloud-platformBi\n\033com.goo"
           + "gle.cloud.billing.v1B\021CloudBillingProtoP"
-          + "\001Z>google.golang.org/genproto/googleapis"
-          + "/cloud/billing/v1;billingb\006proto3"
+          + "\001Z5cloud.google.com/go/billing/apiv1/bil"
+          + "lingpb;billingpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
