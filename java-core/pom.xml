@@ -22,6 +22,10 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-core-parent</site.installationModule>
+    <!-- This module itself does not have integration tests and thus cannot
+        be tested with native image plugin. Instead, the client libraries that
+        use this java-core module have integration tests on native image. -->
+    <skipNativeTests>true</skipNativeTests>
   </properties>
 
   <modules>
