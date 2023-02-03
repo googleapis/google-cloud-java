@@ -513,14 +513,13 @@ public final class JobServiceProto {
           + "/{name=projects/*/locations/*/modelDeplo"
           + "ymentMonitoringJobs/*}:resume:\001*\332A\004name\032"
           + "M\312A\031aiplatform.googleapis.com\322A.https://"
-          + "www.googleapis.com/auth/cloud-platformB\354"
+          + "www.googleapis.com/auth/cloud-platformB\346"
           + "\001\n#com.google.cloud.aiplatform.v1beta1B\017"
-          + "JobServiceProtoP\001ZIgoogle.golang.org/gen"
-          + "proto/googleapis/cloud/aiplatform/v1beta"
-          + "1;aiplatform\252\002\037Google.Cloud.AIPlatform.V"
-          + "1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1"
-          + "\352\002\"Google::Cloud::AIPlatform::V1beta1b\006p"
-          + "roto3"
+          + "JobServiceProtoP\001ZCcloud.google.com/go/a"
+          + "iplatform/apiv1beta1/aiplatformpb;aiplat"
+          + "formpb\252\002\037Google.Cloud.AIPlatform.V1Beta1"
+          + "\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Goo"
+          + "gle::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

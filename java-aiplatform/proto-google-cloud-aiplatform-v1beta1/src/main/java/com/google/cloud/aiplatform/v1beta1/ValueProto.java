@@ -44,13 +44,13 @@ public final class ValueProto {
           + "proto\022\037google.cloud.aiplatform.v1beta1\"U"
           + "\n\005Value\022\023\n\tint_value\030\001 \001(\003H\000\022\026\n\014double_v"
           + "alue\030\002 \001(\001H\000\022\026\n\014string_value\030\003 \001(\tH\000B\007\n\005"
-          + "valueB\347\001\n#com.google.cloud.aiplatform.v1"
-          + "beta1B\nValueProtoP\001ZIgoogle.golang.org/g"
-          + "enproto/googleapis/cloud/aiplatform/v1be"
-          + "ta1;aiplatform\252\002\037Google.Cloud.AIPlatform"
-          + ".V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1bet"
-          + "a1\352\002\"Google::Cloud::AIPlatform::V1beta1b"
-          + "\006proto3"
+          + "valueB\341\001\n#com.google.cloud.aiplatform.v1"
+          + "beta1B\nValueProtoP\001ZCcloud.google.com/go"
+          + "/aiplatform/apiv1beta1/aiplatformpb;aipl"
+          + "atformpb\252\002\037Google.Cloud.AIPlatform.V1Bet"
+          + "a1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"G"
+          + "oogle::Cloud::AIPlatform::V1beta1b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

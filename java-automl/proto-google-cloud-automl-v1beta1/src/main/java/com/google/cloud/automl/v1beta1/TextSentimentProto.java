@@ -2723,12 +2723,12 @@ public final class TextSentimentProto {
           + "a\030\007 \001(\002\022f\n\020confusion_matrix\030\010 \001(\0132L.goog"
           + "le.cloud.automl.v1beta1.ClassificationEv"
           + "aluationMetrics.ConfusionMatrix\022\036\n\022annot"
-          + "ation_spec_id\030\t \003(\tB\002\030\001B\267\001\n\037com.google.c"
+          + "ation_spec_id\030\t \003(\tB\002\030\001B\255\001\n\037com.google.c"
           + "loud.automl.v1beta1B\022TextSentimentProtoZ"
-          + "Agoogle.golang.org/genproto/googleapis/c"
-          + "loud/automl/v1beta1;automl\312\002\033Google\\Clou"
-          + "d\\AutoMl\\V1beta1\352\002\036Google::Cloud::AutoML"
-          + "::V1beta1b\006proto3"
+          + "7cloud.google.com/go/automl/apiv1beta1/a"
+          + "utomlpb;automlpb\312\002\033Google\\Cloud\\AutoMl\\V"
+          + "1beta1\352\002\036Google::Cloud::AutoML::V1beta1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

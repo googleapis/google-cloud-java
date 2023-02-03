@@ -94,13 +94,13 @@ public final class MachineResourcesProto {
           + "b\030\002 \001(\005\"L\n\010NfsMount\022\023\n\006server\030\001 \001(\tB\003\340A\002"
           + "\022\021\n\004path\030\002 \001(\tB\003\340A\002\022\030\n\013mount_point\030\003 \001(\t"
           + "B\003\340A\002\"A\n\025AutoscalingMetricSpec\022\030\n\013metric"
-          + "_name\030\001 \001(\tB\003\340A\002\022\016\n\006target\030\002 \001(\005B\331\001\n\036com"
+          + "_name\030\001 \001(\tB\003\340A\002\022\016\n\006target\030\002 \001(\005B\323\001\n\036com"
           + ".google.cloud.aiplatform.v1B\025MachineReso"
-          + "urcesProtoP\001ZDgoogle.golang.org/genproto"
-          + "/googleapis/cloud/aiplatform/v1;aiplatfo"
-          + "rm\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Google"
-          + "\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AI"
-          + "Platform::V1b\006proto3"
+          + "urcesProtoP\001Z>cloud.google.com/go/aiplat"
+          + "form/apiv1/aiplatformpb;aiplatformpb\252\002\032G"
+          + "oogle.Cloud.AIPlatform.V1\312\002\032Google\\Cloud"
+          + "\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatfo"
+          + "rm::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

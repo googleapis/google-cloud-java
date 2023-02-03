@@ -113,14 +113,13 @@ public final class DataLabelingJobProto {
           + "TEGY_UNSPECIFIED\020\000\022\017\n\013UNCERTAINTY\020\001B\033\n\031i"
           + "nitial_batch_sample_sizeB\035\n\033following_ba"
           + "tch_sample_size\"6\n\016TrainingConfig\022$\n\034tim"
-          + "eout_training_milli_hours\030\001 \001(\003B\361\001\n#com."
+          + "eout_training_milli_hours\030\001 \001(\003B\353\001\n#com."
           + "google.cloud.aiplatform.v1beta1B\024DataLab"
-          + "elingJobProtoP\001ZIgoogle.golang.org/genpr"
-          + "oto/googleapis/cloud/aiplatform/v1beta1;"
-          + "aiplatform\252\002\037Google.Cloud.AIPlatform.V1B"
-          + "eta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002"
-          + "\"Google::Cloud::AIPlatform::V1beta1b\006pro"
-          + "to3"
+          + "elingJobProtoP\001ZCcloud.google.com/go/aip"
+          + "latform/apiv1beta1/aiplatformpb;aiplatfo"
+          + "rmpb\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002"
+          + "\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Googl"
+          + "e::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

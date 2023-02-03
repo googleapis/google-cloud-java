@@ -190,13 +190,12 @@ public final class ExplanationProto {
           + "TA_FORMAT_UNSPECIFIED\020\000\022\r\n\tINSTANCES\020\001\022\016"
           + "\n\nEMBEDDINGS\020\002\"T\n\035ExamplesRestrictionsNa"
           + "mespace\022\026\n\016namespace_name\030\001 \001(\t\022\r\n\005allow"
-          + "\030\002 \003(\t\022\014\n\004deny\030\003 \003(\tB\324\001\n\036com.google.clou"
-          + "d.aiplatform.v1B\020ExplanationProtoP\001ZDgoo"
-          + "gle.golang.org/genproto/googleapis/cloud"
-          + "/aiplatform/v1;aiplatform\252\002\032Google.Cloud"
-          + ".AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatform"
-          + "\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006pro"
-          + "to3"
+          + "\030\002 \003(\t\022\014\n\004deny\030\003 \003(\tB\316\001\n\036com.google.clou"
+          + "d.aiplatform.v1B\020ExplanationProtoP\001Z>clo"
+          + "ud.google.com/go/aiplatform/apiv1/aiplat"
+          + "formpb;aiplatformpb\252\002\032Google.Cloud.AIPla"
+          + "tform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035"
+          + "Google::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

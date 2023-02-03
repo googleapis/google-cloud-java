@@ -69,13 +69,12 @@ public final class TensorboardTimeSeriesProto {
           + "ries\022\177projects/{project}/locations/{loca"
           + "tion}/tensorboards/{tensorboard}/experim"
           + "ents/{experiment}/runs/{run}/timeSeries/"
-          + "{time_series}B\336\001\n\036com.google.cloud.aipla"
-          + "tform.v1B\032TensorboardTimeSeriesProtoP\001ZD"
-          + "google.golang.org/genproto/googleapis/cl"
-          + "oud/aiplatform/v1;aiplatform\252\002\032Google.Cl"
-          + "oud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatf"
-          + "orm\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006"
-          + "proto3"
+          + "{time_series}B\330\001\n\036com.google.cloud.aipla"
+          + "tform.v1B\032TensorboardTimeSeriesProtoP\001Z>"
+          + "cloud.google.com/go/aiplatform/apiv1/aip"
+          + "latformpb;aiplatformpb\252\002\032Google.Cloud.AI"
+          + "Platform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1"
+          + "\352\002\035Google::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

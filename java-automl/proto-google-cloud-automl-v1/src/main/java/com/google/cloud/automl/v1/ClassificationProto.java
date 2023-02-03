@@ -83,12 +83,12 @@ public final class ClassificationProto {
           + "cs.ConfusionMatrix.Row\032\034\n\003Row\022\025\n\rexample"
           + "_count\030\001 \003(\005*Y\n\022ClassificationType\022#\n\037CL"
           + "ASSIFICATION_TYPE_UNSPECIFIED\020\000\022\016\n\nMULTI"
-          + "CLASS\020\001\022\016\n\nMULTILABEL\020\002B\277\001\n\032com.google.c"
-          + "loud.automl.v1B\023ClassificationProtoP\001Z<g"
-          + "oogle.golang.org/genproto/googleapis/clo"
-          + "ud/automl/v1;automl\252\002\026Google.Cloud.AutoM"
-          + "L.V1\312\002\026Google\\Cloud\\AutoMl\\V1\352\002\031Google::"
-          + "Cloud::AutoML::V1b\006proto3"
+          + "CLASS\020\001\022\016\n\nMULTILABEL\020\002B\265\001\n\032com.google.c"
+          + "loud.automl.v1B\023ClassificationProtoP\001Z2c"
+          + "loud.google.com/go/automl/apiv1/automlpb"
+          + ";automlpb\252\002\026Google.Cloud.AutoML.V1\312\002\026Goo"
+          + "gle\\Cloud\\AutoMl\\V1\352\002\031Google::Cloud::Aut"
+          + "oML::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

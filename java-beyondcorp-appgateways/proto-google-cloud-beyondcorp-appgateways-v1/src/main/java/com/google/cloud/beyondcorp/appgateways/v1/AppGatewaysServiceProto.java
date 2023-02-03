@@ -158,14 +158,14 @@ public final class AppGatewaysServiceProto {
           + "4\n\025google.protobuf.Empty\022\033AppGatewayOper"
           + "ationMetadata\032M\312A\031beyondcorp.googleapis."
           + "com\322A.https://www.googleapis.com/auth/cl"
-          + "oud-platformB\231\002\n*com.google.cloud.beyond"
+          + "oud-platformB\224\002\n*com.google.cloud.beyond"
           + "corp.appgateways.v1B\027AppGatewaysServiceP"
-          + "rotoP\001ZQgoogle.golang.org/genproto/googl"
-          + "eapis/cloud/beyondcorp/appgateways/v1;ap"
-          + "pgateways\252\002&Google.Cloud.BeyondCorp.AppG"
-          + "ateways.V1\312\002&Google\\Cloud\\BeyondCorp\\App"
-          + "Gateways\\V1\352\002*Google::Cloud::BeyondCorp:"
-          + ":AppGateways::V1b\006proto3"
+          + "rotoP\001ZLcloud.google.com/go/beyondcorp/a"
+          + "ppgateways/apiv1/appgatewayspb;appgatewa"
+          + "yspb\252\002&Google.Cloud.BeyondCorp.AppGatewa"
+          + "ys.V1\312\002&Google\\Cloud\\BeyondCorp\\AppGatew"
+          + "ays\\V1\352\002*Google::Cloud::BeyondCorp::AppG"
+          + "ateways::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

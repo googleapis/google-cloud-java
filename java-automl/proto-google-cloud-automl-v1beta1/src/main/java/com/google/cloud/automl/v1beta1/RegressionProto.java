@@ -1051,12 +1051,12 @@ public final class RegressionProto {
           + "_squared_error\030\001 \001(\002\022\033\n\023mean_absolute_er"
           + "ror\030\002 \001(\002\022&\n\036mean_absolute_percentage_er"
           + "ror\030\003 \001(\002\022\021\n\tr_squared\030\004 \001(\002\022#\n\033root_mea"
-          + "n_squared_log_error\030\005 \001(\002B\264\001\n\037com.google"
-          + ".cloud.automl.v1beta1B\017RegressionProtoZA"
-          + "google.golang.org/genproto/googleapis/cl"
-          + "oud/automl/v1beta1;automl\312\002\033Google\\Cloud"
-          + "\\AutoMl\\V1beta1\352\002\036Google::Cloud::AutoML:"
-          + ":V1beta1b\006proto3"
+          + "n_squared_log_error\030\005 \001(\002B\252\001\n\037com.google"
+          + ".cloud.automl.v1beta1B\017RegressionProtoZ7"
+          + "cloud.google.com/go/automl/apiv1beta1/au"
+          + "tomlpb;automlpb\312\002\033Google\\Cloud\\AutoMl\\V1"
+          + "beta1\352\002\036Google::Cloud::AutoML::V1beta1b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

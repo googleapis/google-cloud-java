@@ -159,14 +159,14 @@ public final class NetworkProto {
           + "cation\030\001 \001(\tB)\340A\002\372A#\n!locations.googleap"
           + "is.com/Location\"]\n\030ListNetworkUsageRespo"
           + "nse\022A\n\010networks\030\001 \003(\0132/.google.cloud.bar"
-          + "emetalsolution.v2.NetworkUsageB\372\001\n%com.g"
+          + "emetalsolution.v2.NetworkUsageB\373\001\n%com.g"
           + "oogle.cloud.baremetalsolution.v2B\014Networ"
-          + "kProtoP\001ZRgoogle.golang.org/genproto/goo"
-          + "gleapis/cloud/baremetalsolution/v2;barem"
-          + "etalsolution\252\002!Google.Cloud.BareMetalSol"
-          + "ution.V2\312\002!Google\\Cloud\\BareMetalSolutio"
-          + "n\\V2\352\002$Google::Cloud::BareMetalSolution:"
-          + ":V2b\006proto3"
+          + "kProtoP\001ZScloud.google.com/go/baremetals"
+          + "olution/apiv2/baremetalsolutionpb;bareme"
+          + "talsolutionpb\252\002!Google.Cloud.BareMetalSo"
+          + "lution.V2\312\002!Google\\Cloud\\BareMetalSoluti"
+          + "on\\V2\352\002$Google::Cloud::BareMetalSolution"
+          + "::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

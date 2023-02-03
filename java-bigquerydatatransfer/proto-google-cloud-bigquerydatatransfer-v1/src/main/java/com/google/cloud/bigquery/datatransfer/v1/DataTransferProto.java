@@ -385,14 +385,14 @@ public final class DataTransferProto {
           + "nrollDataSources:\001*Z,\"\'/v1/{name=project"
           + "s/*}:enrollDataSources:\001*\032W\312A#bigqueryda"
           + "tatransfer.googleapis.com\322A.https://www."
-          + "googleapis.com/auth/cloud-platformB\217\002\n)c"
+          + "googleapis.com/auth/cloud-platformB\213\002\n)c"
           + "om.google.cloud.bigquery.datatransfer.v1"
-          + "B\021DataTransferProtoP\001ZQgoogle.golang.org"
-          + "/genproto/googleapis/cloud/bigquery/data"
-          + "transfer/v1;datatransfer\252\002%Google.Cloud."
-          + "BigQuery.DataTransfer.V1\312\002%Google\\Cloud\\"
-          + "BigQuery\\DataTransfer\\V1\352\002)Google::Cloud"
-          + "::Bigquery::DataTransfer::V1b\006proto3"
+          + "B\021DataTransferProtoP\001ZMcloud.google.com/"
+          + "go/bigquery/datatransfer/apiv1/datatrans"
+          + "ferpb;datatransferpb\252\002%Google.Cloud.BigQ"
+          + "uery.DataTransfer.V1\312\002%Google\\Cloud\\BigQ"
+          + "uery\\DataTransfer\\V1\352\002)Google::Cloud::Bi"
+          + "gquery::DataTransfer::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

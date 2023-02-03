@@ -9931,11 +9931,11 @@ public final class ClassificationProto {
           + "\n\003Row\022\025\n\rexample_count\030\001 \003(\005*Y\n\022Classifi"
           + "cationType\022#\n\037CLASSIFICATION_TYPE_UNSPEC"
           + "IFIED\020\000\022\016\n\nMULTICLASS\020\001\022\016\n\nMULTILABEL\020\002B"
-          + "\270\001\n\037com.google.cloud.automl.v1beta1B\023Cla"
-          + "ssificationProtoZAgoogle.golang.org/genp"
-          + "roto/googleapis/cloud/automl/v1beta1;aut"
-          + "oml\312\002\033Google\\Cloud\\AutoMl\\V1beta1\352\002\036Goog"
-          + "le::Cloud::AutoML::V1beta1b\006proto3"
+          + "\256\001\n\037com.google.cloud.automl.v1beta1B\023Cla"
+          + "ssificationProtoZ7cloud.google.com/go/au"
+          + "toml/apiv1beta1/automlpb;automlpb\312\002\033Goog"
+          + "le\\Cloud\\AutoMl\\V1beta1\352\002\036Google::Cloud:"
+          + ":AutoML::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

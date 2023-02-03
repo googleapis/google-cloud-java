@@ -104,14 +104,13 @@ public final class IndexEndpointProto {
           + "er\032:\n\014AuthProvider\022\021\n\taudiences\030\001 \003(\t\022\027\n"
           + "\017allowed_issuers\030\002 \003(\t\"Y\n\025IndexPrivateEn"
           + "dpoints\022\037\n\022match_grpc_address\030\001 \001(\tB\003\340A\003"
-          + "\022\037\n\022service_attachment\030\002 \001(\tB\003\340A\003B\357\001\n#co"
+          + "\022\037\n\022service_attachment\030\002 \001(\tB\003\340A\003B\351\001\n#co"
           + "m.google.cloud.aiplatform.v1beta1B\022Index"
-          + "EndpointProtoP\001ZIgoogle.golang.org/genpr"
-          + "oto/googleapis/cloud/aiplatform/v1beta1;"
-          + "aiplatform\252\002\037Google.Cloud.AIPlatform.V1B"
-          + "eta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002"
-          + "\"Google::Cloud::AIPlatform::V1beta1b\006pro"
-          + "to3"
+          + "EndpointProtoP\001ZCcloud.google.com/go/aip"
+          + "latform/apiv1beta1/aiplatformpb;aiplatfo"
+          + "rmpb\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002"
+          + "\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Googl"
+          + "e::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

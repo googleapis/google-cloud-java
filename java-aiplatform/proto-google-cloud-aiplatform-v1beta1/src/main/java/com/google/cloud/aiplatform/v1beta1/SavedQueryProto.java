@@ -57,13 +57,13 @@ public final class SavedQueryProto {
           + "B\003\340A\003:\200\001\352A}\n$aiplatform.googleapis.com/S"
           + "avedQuery\022Uprojects/{project}/locations/"
           + "{location}/datasets/{dataset}/savedQueri"
-          + "es/{saved_query}B\354\001\n#com.google.cloud.ai"
-          + "platform.v1beta1B\017SavedQueryProtoP\001ZIgoo"
-          + "gle.golang.org/genproto/googleapis/cloud"
-          + "/aiplatform/v1beta1;aiplatform\252\002\037Google."
-          + "Cloud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\"
-          + "AIPlatform\\V1beta1\352\002\"Google::Cloud::AIPl"
-          + "atform::V1beta1b\006proto3"
+          + "es/{saved_query}B\346\001\n#com.google.cloud.ai"
+          + "platform.v1beta1B\017SavedQueryProtoP\001ZCclo"
+          + "ud.google.com/go/aiplatform/apiv1beta1/a"
+          + "iplatformpb;aiplatformpb\252\002\037Google.Cloud."
+          + "AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPlat"
+          + "form\\V1beta1\352\002\"Google::Cloud::AIPlatform"
+          + "::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

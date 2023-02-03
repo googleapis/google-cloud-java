@@ -194,13 +194,13 @@ public final class ModelMonitoringProto {
           + "_sample_config\030\001 \001(\0132D.google.cloud.aipl"
           + "atform.v1beta1.SamplingStrategy.RandomSa"
           + "mpleConfig\032)\n\022RandomSampleConfig\022\023\n\013samp"
-          + "le_rate\030\001 \001(\001B\361\001\n#com.google.cloud.aipla"
-          + "tform.v1beta1B\024ModelMonitoringProtoP\001ZIg"
-          + "oogle.golang.org/genproto/googleapis/clo"
-          + "ud/aiplatform/v1beta1;aiplatform\252\002\037Googl"
-          + "e.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Clou"
-          + "d\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AI"
-          + "Platform::V1beta1b\006proto3"
+          + "le_rate\030\001 \001(\001B\353\001\n#com.google.cloud.aipla"
+          + "tform.v1beta1B\024ModelMonitoringProtoP\001ZCc"
+          + "loud.google.com/go/aiplatform/apiv1beta1"
+          + "/aiplatformpb;aiplatformpb\252\002\037Google.Clou"
+          + "d.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPl"
+          + "atform\\V1beta1\352\002\"Google::Cloud::AIPlatfo"
+          + "rm::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

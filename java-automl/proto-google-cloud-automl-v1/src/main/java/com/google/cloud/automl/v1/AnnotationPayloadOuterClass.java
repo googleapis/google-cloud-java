@@ -59,11 +59,11 @@ public final class AnnotationPayloadOuterClass {
           + "ment\030\007 \001(\0132/.google.cloud.automl.v1.Text"
           + "SentimentAnnotationH\000\022\032\n\022annotation_spec"
           + "_id\030\001 \001(\t\022\024\n\014display_name\030\005 \001(\tB\010\n\006detai"
-          + "lB\252\001\n\032com.google.cloud.automl.v1P\001Z<goog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "automl/v1;automl\252\002\026Google.Cloud.AutoML.V"
-          + "1\312\002\026Google\\Cloud\\AutoMl\\V1\352\002\031Google::Clo"
-          + "ud::AutoML::V1b\006proto3"
+          + "lB\240\001\n\032com.google.cloud.automl.v1P\001Z2clou"
+          + "d.google.com/go/automl/apiv1/automlpb;au"
+          + "tomlpb\252\002\026Google.Cloud.AutoML.V1\312\002\026Google"
+          + "\\Cloud\\AutoMl\\V1\352\002\031Google::Cloud::AutoML"
+          + "::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -136,12 +136,12 @@ public final class ModelProto {
           + "ud.aiplatform.v1.ModelSourceInfo.ModelSo"
           + "urceType\"V\n\017ModelSourceType\022!\n\035MODEL_SOU"
           + "RCE_TYPE_UNSPECIFIED\020\000\022\n\n\006AUTOML\020\001\022\n\n\006CU"
-          + "STOM\020\002\022\010\n\004BQML\020\003B\316\001\n\036com.google.cloud.ai"
-          + "platform.v1B\nModelProtoP\001ZDgoogle.golang"
-          + ".org/genproto/googleapis/cloud/aiplatfor"
-          + "m/v1;aiplatform\252\002\032Google.Cloud.AIPlatfor"
-          + "m.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Goog"
-          + "le::Cloud::AIPlatform::V1b\006proto3"
+          + "STOM\020\002\022\010\n\004BQML\020\003B\310\001\n\036com.google.cloud.ai"
+          + "platform.v1B\nModelProtoP\001Z>cloud.google."
+          + "com/go/aiplatform/apiv1/aiplatformpb;aip"
+          + "latformpb\252\002\032Google.Cloud.AIPlatform.V1\312\002"
+          + "\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google::Cl"
+          + "oud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

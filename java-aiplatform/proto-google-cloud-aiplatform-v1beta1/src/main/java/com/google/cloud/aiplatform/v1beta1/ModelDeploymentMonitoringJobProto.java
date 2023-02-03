@@ -173,14 +173,13 @@ public final class ModelDeploymentMonitoringJobProto {
           + "G_OBJECTIVE_TYPE_UNSPECIFIED\020\000\022\024\n\020RAW_FE"
           + "ATURE_SKEW\020\001\022\025\n\021RAW_FEATURE_DRIFT\020\002\022\034\n\030F"
           + "EATURE_ATTRIBUTION_SKEW\020\003\022\035\n\031FEATURE_ATT"
-          + "RIBUTION_DRIFT\020\004B\376\001\n#com.google.cloud.ai"
+          + "RIBUTION_DRIFT\020\004B\370\001\n#com.google.cloud.ai"
           + "platform.v1beta1B!ModelDeploymentMonitor"
-          + "ingJobProtoP\001ZIgoogle.golang.org/genprot"
-          + "o/googleapis/cloud/aiplatform/v1beta1;ai"
-          + "platform\252\002\037Google.Cloud.AIPlatform.V1Bet"
-          + "a1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"G"
-          + "oogle::Cloud::AIPlatform::V1beta1b\006proto"
-          + "3"
+          + "ingJobProtoP\001ZCcloud.google.com/go/aipla"
+          + "tform/apiv1beta1/aiplatformpb;aiplatform"
+          + "pb\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037G"
+          + "oogle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google:"
+          + ":Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -64,13 +64,13 @@ public final class ContextProto {
           + "!aiplatform.googleapis.com/Context\022Zproj"
           + "ects/{project}/locations/{location}/meta"
           + "dataStores/{metadata_store}/contexts/{co"
-          + "ntext}B\351\001\n#com.google.cloud.aiplatform.v"
-          + "1beta1B\014ContextProtoP\001ZIgoogle.golang.or"
-          + "g/genproto/googleapis/cloud/aiplatform/v"
-          + "1beta1;aiplatform\252\002\037Google.Cloud.AIPlatf"
-          + "orm.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1"
-          + "beta1\352\002\"Google::Cloud::AIPlatform::V1bet"
-          + "a1b\006proto3"
+          + "ntext}B\343\001\n#com.google.cloud.aiplatform.v"
+          + "1beta1B\014ContextProtoP\001ZCcloud.google.com"
+          + "/go/aiplatform/apiv1beta1/aiplatformpb;a"
+          + "iplatformpb\252\002\037Google.Cloud.AIPlatform.V1"
+          + "Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352"
+          + "\002\"Google::Cloud::AIPlatform::V1beta1b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

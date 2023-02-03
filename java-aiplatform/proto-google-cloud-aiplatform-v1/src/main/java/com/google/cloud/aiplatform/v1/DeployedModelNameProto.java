@@ -46,13 +46,12 @@ public final class DeployedModelNameProto {
           + "le/api/resource.proto\"p\n\020DeployedModelRe"
           + "f\022<\n\010endpoint\030\001 \001(\tB*\340A\005\372A$\n\"aiplatform."
           + "googleapis.com/Endpoint\022\036\n\021deployed_mode"
-          + "l_id\030\002 \001(\tB\003\340A\005B\332\001\n\036com.google.cloud.aip"
-          + "latform.v1B\026DeployedModelNameProtoP\001ZDgo"
-          + "ogle.golang.org/genproto/googleapis/clou"
-          + "d/aiplatform/v1;aiplatform\252\002\032Google.Clou"
-          + "d.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatfor"
-          + "m\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006pr"
-          + "oto3"
+          + "l_id\030\002 \001(\tB\003\340A\005B\324\001\n\036com.google.cloud.aip"
+          + "latform.v1B\026DeployedModelNameProtoP\001Z>cl"
+          + "oud.google.com/go/aiplatform/apiv1/aipla"
+          + "tformpb;aiplatformpb\252\002\032Google.Cloud.AIPl"
+          + "atform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002"
+          + "\035Google::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

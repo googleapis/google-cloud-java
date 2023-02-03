@@ -137,12 +137,11 @@ public final class Operations {
           + "tput_info\030\002 \001(\0132J.google.cloud.automl.v1"
           + ".ExportModelOperationMetadata.ExportMode"
           + "lOutputInfo\0325\n\025ExportModelOutputInfo\022\034\n\024"
-          + "gcs_output_directory\030\001 \001(\tB\252\001\n\032com.googl"
-          + "e.cloud.automl.v1P\001Z<google.golang.org/g"
-          + "enproto/googleapis/cloud/automl/v1;autom"
-          + "l\252\002\026Google.Cloud.AutoML.V1\312\002\026Google\\Clou"
-          + "d\\AutoMl\\V1\352\002\031Google::Cloud::AutoML::V1b"
-          + "\006proto3"
+          + "gcs_output_directory\030\001 \001(\tB\240\001\n\032com.googl"
+          + "e.cloud.automl.v1P\001Z2cloud.google.com/go"
+          + "/automl/apiv1/automlpb;automlpb\252\002\026Google"
+          + ".Cloud.AutoML.V1\312\002\026Google\\Cloud\\AutoMl\\V"
+          + "1\352\002\031Google::Cloud::AutoML::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -170,13 +170,12 @@ public final class ModelDeploymentMonitoringJobProto {
           + "_TYPE_UNSPECIFIED\020\000\022\024\n\020RAW_FEATURE_SKEW\020"
           + "\001\022\025\n\021RAW_FEATURE_DRIFT\020\002\022\034\n\030FEATURE_ATTR"
           + "IBUTION_SKEW\020\003\022\035\n\031FEATURE_ATTRIBUTION_DR"
-          + "IFT\020\004B\345\001\n\036com.google.cloud.aiplatform.v1"
-          + "B!ModelDeploymentMonitoringJobProtoP\001ZDg"
-          + "oogle.golang.org/genproto/googleapis/clo"
-          + "ud/aiplatform/v1;aiplatform\252\002\032Google.Clo"
-          + "ud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatfo"
-          + "rm\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006p"
-          + "roto3"
+          + "IFT\020\004B\337\001\n\036com.google.cloud.aiplatform.v1"
+          + "B!ModelDeploymentMonitoringJobProtoP\001Z>c"
+          + "loud.google.com/go/aiplatform/apiv1/aipl"
+          + "atformpb;aiplatformpb\252\002\032Google.Cloud.AIP"
+          + "latform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352"
+          + "\002\035Google::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

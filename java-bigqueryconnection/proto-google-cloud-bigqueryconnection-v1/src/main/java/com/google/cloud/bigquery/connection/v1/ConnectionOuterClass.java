@@ -213,12 +213,12 @@ public final class ConnectionOuterClass {
           + "rmissions\032~\312A!bigqueryconnection.googlea"
           + "pis.com\322AWhttps://www.googleapis.com/aut"
           + "h/bigquery,https://www.googleapis.com/au"
-          + "th/cloud-platformB\306\001\n\'com.google.cloud.b"
-          + "igquery.connection.v1P\001ZMgoogle.golang.o"
-          + "rg/genproto/googleapis/cloud/bigquery/co"
-          + "nnection/v1;connection\252\002#Google.Cloud.Bi"
-          + "gQuery.Connection.V1\312\002#Google\\Cloud\\BigQ"
-          + "uery\\Connection\\V1b\006proto3"
+          + "th/cloud-platformB\300\001\n\'com.google.cloud.b"
+          + "igquery.connection.v1P\001ZGcloud.google.co"
+          + "m/go/bigquery/connection/apiv1/connectio"
+          + "npb;connectionpb\252\002#Google.Cloud.BigQuery"
+          + ".Connection.V1\312\002#Google\\Cloud\\BigQuery\\C"
+          + "onnection\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

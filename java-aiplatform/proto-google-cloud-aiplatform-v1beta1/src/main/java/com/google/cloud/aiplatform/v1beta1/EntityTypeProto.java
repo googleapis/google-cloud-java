@@ -64,13 +64,13 @@ public final class EntityTypeProto {
           + "(\t:\0028\001:\212\001\352A\206\001\n$aiplatform.googleapis.com"
           + "/EntityType\022^projects/{project}/location"
           + "s/{location}/featurestores/{featurestore"
-          + "}/entityTypes/{entity_type}B\354\001\n#com.goog"
+          + "}/entityTypes/{entity_type}B\346\001\n#com.goog"
           + "le.cloud.aiplatform.v1beta1B\017EntityTypeP"
-          + "rotoP\001ZIgoogle.golang.org/genproto/googl"
-          + "eapis/cloud/aiplatform/v1beta1;aiplatfor"
-          + "m\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Go"
-          + "ogle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::"
-          + "Cloud::AIPlatform::V1beta1b\006proto3"
+          + "rotoP\001ZCcloud.google.com/go/aiplatform/a"
+          + "piv1beta1/aiplatformpb;aiplatformpb\252\002\037Go"
+          + "ogle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\C"
+          + "loud\\AIPlatform\\V1beta1\352\002\"Google::Cloud:"
+          + ":AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -80,13 +80,13 @@ public final class FeaturestoreMonitoringProto {
           + "ELINE_UNSPECIFIED\020\000\022\020\n\014LATEST_STATS\020\001\022\036\n"
           + "\032MOST_RECENT_SNAPSHOT_STATS\020\002\022\"\n\036PREVIOU"
           + "S_IMPORT_FEATURES_STATS\020\003\032/\n\017ThresholdCo"
-          + "nfig\022\017\n\005value\030\001 \001(\001H\000B\013\n\tthresholdB\337\001\n\036c"
+          + "nfig\022\017\n\005value\030\001 \001(\001H\000B\013\n\tthresholdB\331\001\n\036c"
           + "om.google.cloud.aiplatform.v1B\033Featurest"
-          + "oreMonitoringProtoP\001ZDgoogle.golang.org/"
-          + "genproto/googleapis/cloud/aiplatform/v1;"
-          + "aiplatform\252\002\032Google.Cloud.AIPlatform.V1\312"
-          + "\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google::C"
-          + "loud::AIPlatform::V1b\006proto3"
+          + "oreMonitoringProtoP\001Z>cloud.google.com/g"
+          + "o/aiplatform/apiv1/aiplatformpb;aiplatfo"
+          + "rmpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Goog"
+          + "le\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::"
+          + "AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -590,14 +590,13 @@ public final class FeaturestoreServiceProto {
           + "/locations/*}/featurestores:searchFeatur"
           + "es\332A\010location\332A\016location,query\032M\312A\031aipla"
           + "tform.googleapis.com\322A.https://www.googl"
-          + "eapis.com/auth/cloud-platformB\365\001\n#com.go"
+          + "eapis.com/auth/cloud-platformB\357\001\n#com.go"
           + "ogle.cloud.aiplatform.v1beta1B\030Featurest"
-          + "oreServiceProtoP\001ZIgoogle.golang.org/gen"
-          + "proto/googleapis/cloud/aiplatform/v1beta"
-          + "1;aiplatform\252\002\037Google.Cloud.AIPlatform.V"
-          + "1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1"
-          + "\352\002\"Google::Cloud::AIPlatform::V1beta1b\006p"
-          + "roto3"
+          + "oreServiceProtoP\001ZCcloud.google.com/go/a"
+          + "iplatform/apiv1beta1/aiplatformpb;aiplat"
+          + "formpb\252\002\037Google.Cloud.AIPlatform.V1Beta1"
+          + "\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Goo"
+          + "gle::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

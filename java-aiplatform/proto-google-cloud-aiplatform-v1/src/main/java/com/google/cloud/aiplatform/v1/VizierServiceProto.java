@@ -270,12 +270,12 @@ public final class VizierServiceProto {
           + "studies/*}/trials:listOptimalTrials:\001*\332A"
           + "\006parent\032M\312A\031aiplatform.googleapis.com\322A."
           + "https://www.googleapis.com/auth/cloud-pl"
-          + "atformB\326\001\n\036com.google.cloud.aiplatform.v"
-          + "1B\022VizierServiceProtoP\001ZDgoogle.golang.o"
-          + "rg/genproto/googleapis/cloud/aiplatform/"
-          + "v1;aiplatform\252\002\032Google.Cloud.AIPlatform."
-          + "V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google"
-          + "::Cloud::AIPlatform::V1b\006proto3"
+          + "atformB\320\001\n\036com.google.cloud.aiplatform.v"
+          + "1B\022VizierServiceProtoP\001Z>cloud.google.co"
+          + "m/go/aiplatform/apiv1/aiplatformpb;aipla"
+          + "tformpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032G"
+          + "oogle\\Cloud\\AIPlatform\\V1\352\002\035Google::Clou"
+          + "d::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

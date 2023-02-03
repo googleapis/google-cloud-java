@@ -287,12 +287,12 @@ public final class AutoMlProto {
           + "=projects/*/locations/*/models/*}/modelE"
           + "valuations\332A\rparent,filter\032I\312A\025automl.go"
           + "ogleapis.com\322A.https://www.googleapis.co"
-          + "m/auth/cloud-platformB\267\001\n\032com.google.clo"
-          + "ud.automl.v1B\013AutoMlProtoP\001Z<google.gola"
-          + "ng.org/genproto/googleapis/cloud/automl/"
-          + "v1;automl\252\002\026Google.Cloud.AutoML.V1\312\002\026Goo"
-          + "gle\\Cloud\\AutoMl\\V1\352\002\031Google::Cloud::Aut"
-          + "oML::V1b\006proto3"
+          + "m/auth/cloud-platformB\255\001\n\032com.google.clo"
+          + "ud.automl.v1B\013AutoMlProtoP\001Z2cloud.googl"
+          + "e.com/go/automl/apiv1/automlpb;automlpb\252"
+          + "\002\026Google.Cloud.AutoML.V1\312\002\026Google\\Cloud\\"
+          + "AutoMl\\V1\352\002\031Google::Cloud::AutoML::V1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

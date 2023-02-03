@@ -49,12 +49,12 @@ public final class FeatureMonitoringStatsProto {
           + "ly_detection_threshold\030\t \001(\001\022.\n\nstart_ti"
           + "me\030\007 \001(\0132\032.google.protobuf.Timestamp\022,\n\010"
           + "end_time\030\010 \001(\0132\032.google.protobuf.Timesta"
-          + "mpB\337\001\n\036com.google.cloud.aiplatform.v1B\033F"
-          + "eatureMonitoringStatsProtoP\001ZDgoogle.gol"
-          + "ang.org/genproto/googleapis/cloud/aiplat"
-          + "form/v1;aiplatform\252\002\032Google.Cloud.AIPlat"
-          + "form.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035G"
-          + "oogle::Cloud::AIPlatform::V1b\006proto3"
+          + "mpB\331\001\n\036com.google.cloud.aiplatform.v1B\033F"
+          + "eatureMonitoringStatsProtoP\001Z>cloud.goog"
+          + "le.com/go/aiplatform/apiv1/aiplatformpb;"
+          + "aiplatformpb\252\002\032Google.Cloud.AIPlatform.V"
+          + "1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google:"
+          + ":Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

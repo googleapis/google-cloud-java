@@ -111,13 +111,13 @@ public final class TetherProto {
           + "sponse\032,.google.cloud.apigeeconnect.v1.E"
           + "gressRequest\"\000(\0010\001\032P\312A\034apigeeconnect.goo"
           + "gleapis.com\322A.https://www.googleapis.com"
-          + "/auth/cloud-platformB\341\001\n!com.google.clou"
-          + "d.apigeeconnect.v1B\013TetherProtoP\001ZJgoogl"
-          + "e.golang.org/genproto/googleapis/cloud/a"
-          + "pigeeconnect/v1;apigeeconnect\252\002\035Google.C"
-          + "loud.ApigeeConnect.V1\312\002\035Google\\Cloud\\Api"
-          + "geeConnect\\V1\352\002 Google::Cloud::ApigeeCon"
-          + "nect::V1b\006proto3"
+          + "/auth/cloud-platformB\336\001\n!com.google.clou"
+          + "d.apigeeconnect.v1B\013TetherProtoP\001ZGcloud"
+          + ".google.com/go/apigeeconnect/apiv1/apige"
+          + "econnectpb;apigeeconnectpb\252\002\035Google.Clou"
+          + "d.ApigeeConnect.V1\312\002\035Google\\Cloud\\Apigee"
+          + "Connect\\V1\352\002 Google::Cloud::ApigeeConnec"
+          + "t::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

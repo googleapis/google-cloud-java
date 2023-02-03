@@ -60,13 +60,13 @@ public final class DataItemProto {
           + "lue\030\002 \001(\t:\0028\001:y\352Av\n\"aiplatform.googleapi"
           + "s.com/DataItem\022Pprojects/{project}/locat"
           + "ions/{location}/datasets/{dataset}/dataI"
-          + "tems/{data_item}B\352\001\n#com.google.cloud.ai"
-          + "platform.v1beta1B\rDataItemProtoP\001ZIgoogl"
-          + "e.golang.org/genproto/googleapis/cloud/a"
-          + "iplatform/v1beta1;aiplatform\252\002\037Google.Cl"
-          + "oud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AI"
-          + "Platform\\V1beta1\352\002\"Google::Cloud::AIPlat"
-          + "form::V1beta1b\006proto3"
+          + "tems/{data_item}B\344\001\n#com.google.cloud.ai"
+          + "platform.v1beta1B\rDataItemProtoP\001ZCcloud"
+          + ".google.com/go/aiplatform/apiv1beta1/aip"
+          + "latformpb;aiplatformpb\252\002\037Google.Cloud.AI"
+          + "Platform.V1Beta1\312\002\037Google\\Cloud\\AIPlatfo"
+          + "rm\\V1beta1\352\002\"Google::Cloud::AIPlatform::"
+          + "V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

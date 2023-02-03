@@ -51,11 +51,11 @@ public final class TableSpecOuterClass {
           + "utConfig\022\014\n\004etag\030\006 \001(\t:x\352Au\n\037automl.goog"
           + "leapis.com/TableSpec\022Rprojects/{project}"
           + "/locations/{location}/datasets/{dataset}"
-          + "/tableSpecs/{table_spec}B\245\001\n\037com.google."
-          + "cloud.automl.v1beta1P\001ZAgoogle.golang.or"
-          + "g/genproto/googleapis/cloud/automl/v1bet"
-          + "a1;automl\312\002\033Google\\Cloud\\AutoMl\\V1beta1\352"
-          + "\002\036Google::Cloud::AutoML::V1beta1b\006proto3"
+          + "/tableSpecs/{table_spec}B\233\001\n\037com.google."
+          + "cloud.automl.v1beta1P\001Z7cloud.google.com"
+          + "/go/automl/apiv1beta1/automlpb;automlpb\312"
+          + "\002\033Google\\Cloud\\AutoMl\\V1beta1\352\002\036Google::"
+          + "Cloud::AutoML::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

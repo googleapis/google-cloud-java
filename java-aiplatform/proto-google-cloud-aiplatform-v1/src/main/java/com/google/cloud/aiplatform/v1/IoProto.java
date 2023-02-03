@@ -88,13 +88,12 @@ public final class IoProto {
           + "\023TFRecordDestination\022H\n\017gcs_destination\030"
           + "\001 \001(\0132*.google.cloud.aiplatform.v1.GcsDe"
           + "stinationB\003\340A\002\"7\n\034ContainerRegistryDesti"
-          + "nation\022\027\n\noutput_uri\030\001 \001(\tB\003\340A\002B\313\001\n\036com."
-          + "google.cloud.aiplatform.v1B\007IoProtoP\001ZDg"
-          + "oogle.golang.org/genproto/googleapis/clo"
-          + "ud/aiplatform/v1;aiplatform\252\002\032Google.Clo"
-          + "ud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatfo"
-          + "rm\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006p"
-          + "roto3"
+          + "nation\022\027\n\noutput_uri\030\001 \001(\tB\003\340A\002B\305\001\n\036com."
+          + "google.cloud.aiplatform.v1B\007IoProtoP\001Z>c"
+          + "loud.google.com/go/aiplatform/apiv1/aipl"
+          + "atformpb;aiplatformpb\252\002\032Google.Cloud.AIP"
+          + "latform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352"
+          + "\002\035Google::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

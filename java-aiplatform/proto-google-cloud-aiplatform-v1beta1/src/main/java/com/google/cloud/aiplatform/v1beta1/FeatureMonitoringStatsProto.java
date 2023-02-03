@@ -49,13 +49,13 @@ public final class FeatureMonitoringStatsProto {
           + "\001\022#\n\033anomaly_detection_threshold\030\t \001(\001\022."
           + "\n\nstart_time\030\007 \001(\0132\032.google.protobuf.Tim"
           + "estamp\022,\n\010end_time\030\010 \001(\0132\032.google.protob"
-          + "uf.TimestampB\370\001\n#com.google.cloud.aiplat"
+          + "uf.TimestampB\362\001\n#com.google.cloud.aiplat"
           + "form.v1beta1B\033FeatureMonitoringStatsProt"
-          + "oP\001ZIgoogle.golang.org/genproto/googleap"
-          + "is/cloud/aiplatform/v1beta1;aiplatform\252\002"
-          + "\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Googl"
-          + "e\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::Clo"
-          + "ud::AIPlatform::V1beta1b\006proto3"
+          + "oP\001ZCcloud.google.com/go/aiplatform/apiv"
+          + "1beta1/aiplatformpb;aiplatformpb\252\002\037Googl"
+          + "e.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Clou"
+          + "d\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AI"
+          + "Platform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

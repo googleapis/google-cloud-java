@@ -113,13 +113,13 @@ public final class ProvisioningServiceProto {
           + "<\202\323\344\223\002/\022-/v1/{name=projects/*/locations/"
           + "*/instances/*}\332A\004name\032Q\312A\035apigeeregistry"
           + ".googleapis.com\322A.https://www.googleapis"
-          + ".com/auth/cloud-platformB\364\001\n\"com.google."
+          + ".com/auth/cloud-platformB\362\001\n\"com.google."
           + "cloud.apigeeregistry.v1B\030ProvisioningSer"
-          + "viceProtoP\001ZLgoogle.golang.org/genproto/"
-          + "googleapis/cloud/apigeeregistry/v1;apige"
-          + "eregistry\252\002\036Google.Cloud.ApigeeRegistry."
-          + "V1\312\002\036Google\\Cloud\\ApigeeRegistry\\V1\352\002!Go"
-          + "ogle::Cloud::ApigeeRegistry::V1b\006proto3"
+          + "viceProtoP\001ZJcloud.google.com/go/apigeer"
+          + "egistry/apiv1/apigeeregistrypb;apigeereg"
+          + "istrypb\252\002\036Google.Cloud.ApigeeRegistry.V1"
+          + "\312\002\036Google\\Cloud\\ApigeeRegistry\\V1\352\002!Goog"
+          + "le::Cloud::ApigeeRegistry::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

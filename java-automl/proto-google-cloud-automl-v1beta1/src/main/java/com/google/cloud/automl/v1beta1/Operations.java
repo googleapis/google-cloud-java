@@ -153,11 +153,11 @@ public final class Operations {
           + "valuatedExamplesOperationMetadata.Export"
           + "EvaluatedExamplesOutputInfo\032D\n!ExportEva"
           + "luatedExamplesOutputInfo\022\037\n\027bigquery_out"
-          + "put_dataset\030\002 \001(\tB\245\001\n\037com.google.cloud.a"
-          + "utoml.v1beta1P\001ZAgoogle.golang.org/genpr"
-          + "oto/googleapis/cloud/automl/v1beta1;auto"
-          + "ml\312\002\033Google\\Cloud\\AutoMl\\V1beta1\352\002\036Googl"
-          + "e::Cloud::AutoML::V1beta1b\006proto3"
+          + "put_dataset\030\002 \001(\tB\233\001\n\037com.google.cloud.a"
+          + "utoml.v1beta1P\001Z7cloud.google.com/go/aut"
+          + "oml/apiv1beta1/automlpb;automlpb\312\002\033Googl"
+          + "e\\Cloud\\AutoMl\\V1beta1\352\002\036Google::Cloud::"
+          + "AutoML::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

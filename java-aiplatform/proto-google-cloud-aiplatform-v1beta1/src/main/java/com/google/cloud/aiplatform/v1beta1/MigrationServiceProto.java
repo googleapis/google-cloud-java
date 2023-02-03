@@ -183,13 +183,13 @@ public final class MigrationServiceProto {
           + "onse\022&BatchMigrateResourcesOperationMeta"
           + "data\032M\312A\031aiplatform.googleapis.com\322A.htt"
           + "ps://www.googleapis.com/auth/cloud-platf"
-          + "ormB\362\001\n#com.google.cloud.aiplatform.v1be"
-          + "ta1B\025MigrationServiceProtoP\001ZIgoogle.gol"
-          + "ang.org/genproto/googleapis/cloud/aiplat"
-          + "form/v1beta1;aiplatform\252\002\037Google.Cloud.A"
-          + "IPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPlatf"
-          + "orm\\V1beta1\352\002\"Google::Cloud::AIPlatform:"
-          + ":V1beta1b\006proto3"
+          + "ormB\354\001\n#com.google.cloud.aiplatform.v1be"
+          + "ta1B\025MigrationServiceProtoP\001ZCcloud.goog"
+          + "le.com/go/aiplatform/apiv1beta1/aiplatfo"
+          + "rmpb;aiplatformpb\252\002\037Google.Cloud.AIPlatf"
+          + "orm.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1"
+          + "beta1\352\002\"Google::Cloud::AIPlatform::V1bet"
+          + "a1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

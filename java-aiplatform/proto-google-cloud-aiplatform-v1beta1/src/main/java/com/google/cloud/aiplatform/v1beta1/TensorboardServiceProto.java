@@ -618,13 +618,13 @@ public final class TensorboardServiceProto {
           + "tTensorboardTimeSeries:\001*\332A\027tensorboard_"
           + "time_series\032M\312A\031aiplatform.googleapis.co"
           + "m\322A.https://www.googleapis.com/auth/clou"
-          + "d-platformB\364\001\n#com.google.cloud.aiplatfo"
-          + "rm.v1beta1B\027TensorboardServiceProtoP\001ZIg"
-          + "oogle.golang.org/genproto/googleapis/clo"
-          + "ud/aiplatform/v1beta1;aiplatform\252\002\037Googl"
-          + "e.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Clou"
-          + "d\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AI",
-      "Platform::V1beta1b\006proto3"
+          + "d-platformB\356\001\n#com.google.cloud.aiplatfo"
+          + "rm.v1beta1B\027TensorboardServiceProtoP\001ZCc"
+          + "loud.google.com/go/aiplatform/apiv1beta1"
+          + "/aiplatformpb;aiplatformpb\252\002\037Google.Clou"
+          + "d.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPl"
+          + "atform\\V1beta1\352\002\"Google::Cloud::AIPlatfo",
+      "rm::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

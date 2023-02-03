@@ -304,13 +304,13 @@ public final class DatasetServiceProto {
           + "asets/*/dataItems/*}/annotations\332A\006paren"
           + "t\032M\312A\031aiplatform.googleapis.com\322A.https:"
           + "//www.googleapis.com/auth/cloud-platform"
-          + "B\360\001\n#com.google.cloud.aiplatform.v1beta1"
-          + "B\023DatasetServiceProtoP\001ZIgoogle.golang.o"
-          + "rg/genproto/googleapis/cloud/aiplatform/"
-          + "v1beta1;aiplatform\252\002\037Google.Cloud.AIPlat"
-          + "form.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V"
-          + "1beta1\352\002\"Google::Cloud::AIPlatform::V1be"
-          + "ta1b\006proto3"
+          + "B\352\001\n#com.google.cloud.aiplatform.v1beta1"
+          + "B\023DatasetServiceProtoP\001ZCcloud.google.co"
+          + "m/go/aiplatform/apiv1beta1/aiplatformpb;"
+          + "aiplatformpb\252\002\037Google.Cloud.AIPlatform.V"
+          + "1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1"
+          + "\352\002\"Google::Cloud::AIPlatform::V1beta1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

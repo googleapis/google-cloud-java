@@ -140,12 +140,11 @@ public final class DataStatsOuterClass {
           + ".google.cloud.automl.v1beta1.CategorySta"
           + "ts.SingleCategoryStats\0323\n\023SingleCategory"
           + "Stats\022\r\n\005value\030\001 \001(\t\022\r\n\005count\030\002 \001(\003\"%\n\020C"
-          + "orrelationStats\022\021\n\tcramers_v\030\001 \001(\001B\245\001\n\037c"
-          + "om.google.cloud.automl.v1beta1P\001ZAgoogle"
-          + ".golang.org/genproto/googleapis/cloud/au"
-          + "toml/v1beta1;automl\312\002\033Google\\Cloud\\AutoM"
-          + "l\\V1beta1\352\002\036Google::Cloud::AutoML::V1bet"
-          + "a1b\006proto3"
+          + "orrelationStats\022\021\n\tcramers_v\030\001 \001(\001B\233\001\n\037c"
+          + "om.google.cloud.automl.v1beta1P\001Z7cloud."
+          + "google.com/go/automl/apiv1beta1/automlpb"
+          + ";automlpb\312\002\033Google\\Cloud\\AutoMl\\V1beta1\352"
+          + "\002\036Google::Cloud::AutoML::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

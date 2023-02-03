@@ -44,14 +44,14 @@ public final class UserActionReferenceProto {
           + "ction_reference.proto\022\037google.cloud.aipl"
           + "atform.v1beta1\"d\n\023UserActionReference\022\023\n"
           + "\toperation\030\001 \001(\tH\000\022\033\n\021data_labeling_job\030"
-          + "\002 \001(\tH\000\022\016\n\006method\030\003 \001(\tB\013\n\treferenceB\365\001\n"
+          + "\002 \001(\tH\000\022\016\n\006method\030\003 \001(\tB\013\n\treferenceB\357\001\n"
           + "#com.google.cloud.aiplatform.v1beta1B\030Us"
-          + "erActionReferenceProtoP\001ZIgoogle.golang."
-          + "org/genproto/googleapis/cloud/aiplatform"
-          + "/v1beta1;aiplatform\252\002\037Google.Cloud.AIPla"
-          + "tform.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\"
-          + "V1beta1\352\002\"Google::Cloud::AIPlatform::V1b"
-          + "eta1b\006proto3"
+          + "erActionReferenceProtoP\001ZCcloud.google.c"
+          + "om/go/aiplatform/apiv1beta1/aiplatformpb"
+          + ";aiplatformpb\252\002\037Google.Cloud.AIPlatform."
+          + "V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta"
+          + "1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

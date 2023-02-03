@@ -139,12 +139,12 @@ public final class AssetServiceProto {
           + "oogle.protobuf.Empty\",\202\323\344\223\002\037*\035/v1p2beta1"
           + "/{name=*/*/feeds/*}\332A\004name\032M\312A\031cloudasse"
           + "t.googleapis.com\322A.https://www.googleapi"
-          + "s.com/auth/cloud-platformB\270\001\n com.google"
+          + "s.com/auth/cloud-platformB\255\001\n com.google"
           + ".cloud.asset.v1p2beta1B\021AssetServiceProt"
-          + "oP\001ZAgoogle.golang.org/genproto/googleap"
-          + "is/cloud/asset/v1p2beta1;asset\252\002\034Google."
-          + "Cloud.Asset.V1p2Beta1\312\002\034Google\\Cloud\\Ass"
-          + "et\\V1p2beta1b\006proto3"
+          + "oP\001Z6cloud.google.com/go/asset/apiv1p2be"
+          + "ta1/assetpb;assetpb\252\002\034Google.Cloud.Asset"
+          + ".V1p2Beta1\312\002\034Google\\Cloud\\Asset\\V1p2beta"
+          + "1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

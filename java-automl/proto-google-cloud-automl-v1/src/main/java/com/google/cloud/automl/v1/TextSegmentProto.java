@@ -43,12 +43,12 @@ public final class TextSegmentProto {
       "\n)google/cloud/automl/v1/text_segment.pr"
           + "oto\022\026google.cloud.automl.v1\"H\n\013TextSegme"
           + "nt\022\017\n\007content\030\003 \001(\t\022\024\n\014start_offset\030\001 \001("
-          + "\003\022\022\n\nend_offset\030\002 \001(\003B\274\001\n\032com.google.clo"
-          + "ud.automl.v1B\020TextSegmentProtoP\001Z<google"
-          + ".golang.org/genproto/googleapis/cloud/au"
-          + "toml/v1;automl\252\002\026Google.Cloud.AutoML.V1\312"
-          + "\002\026Google\\Cloud\\AutoMl\\V1\352\002\031Google::Cloud"
-          + "::AutoML::V1b\006proto3"
+          + "\003\022\022\n\nend_offset\030\002 \001(\003B\262\001\n\032com.google.clo"
+          + "ud.automl.v1B\020TextSegmentProtoP\001Z2cloud."
+          + "google.com/go/automl/apiv1/automlpb;auto"
+          + "mlpb\252\002\026Google.Cloud.AutoML.V1\312\002\026Google\\C"
+          + "loud\\AutoMl\\V1\352\002\031Google::Cloud::AutoML::"
+          + "V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

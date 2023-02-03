@@ -66,13 +66,12 @@ public final class ExecutionProto {
           + "D\020\006:\211\001\352A\205\001\n#aiplatform.googleapis.com/Ex"
           + "ecution\022^projects/{project}/locations/{l"
           + "ocation}/metadataStores/{metadata_store}"
-          + "/executions/{execution}B\322\001\n\036com.google.c"
-          + "loud.aiplatform.v1B\016ExecutionProtoP\001ZDgo"
-          + "ogle.golang.org/genproto/googleapis/clou"
-          + "d/aiplatform/v1;aiplatform\252\002\032Google.Clou"
-          + "d.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatfor"
-          + "m\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006pr"
-          + "oto3"
+          + "/executions/{execution}B\314\001\n\036com.google.c"
+          + "loud.aiplatform.v1B\016ExecutionProtoP\001Z>cl"
+          + "oud.google.com/go/aiplatform/apiv1/aipla"
+          + "tformpb;aiplatformpb\252\002\032Google.Cloud.AIPl"
+          + "atform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002"
+          + "\035Google::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

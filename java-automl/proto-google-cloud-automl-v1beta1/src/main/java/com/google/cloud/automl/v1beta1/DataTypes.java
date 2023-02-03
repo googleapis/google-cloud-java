@@ -63,11 +63,11 @@ public final class DataTypes {
           + "v1beta1.DataType:\0028\001*r\n\010TypeCode\022\031\n\025TYPE"
           + "_CODE_UNSPECIFIED\020\000\022\013\n\007FLOAT64\020\003\022\r\n\tTIME"
           + "STAMP\020\004\022\n\n\006STRING\020\006\022\t\n\005ARRAY\020\010\022\n\n\006STRUCT"
-          + "\020\t\022\014\n\010CATEGORY\020\nB\245\001\n\037com.google.cloud.au"
-          + "toml.v1beta1P\001ZAgoogle.golang.org/genpro"
-          + "to/googleapis/cloud/automl/v1beta1;autom"
-          + "l\312\002\033Google\\Cloud\\AutoMl\\V1beta1\352\002\036Google"
-          + "::Cloud::AutoML::V1beta1b\006proto3"
+          + "\020\t\022\014\n\010CATEGORY\020\nB\233\001\n\037com.google.cloud.au"
+          + "toml.v1beta1P\001Z7cloud.google.com/go/auto"
+          + "ml/apiv1beta1/automlpb;automlpb\312\002\033Google"
+          + "\\Cloud\\AutoMl\\V1beta1\352\002\036Google::Cloud::A"
+          + "utoML::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

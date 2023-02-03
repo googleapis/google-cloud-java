@@ -118,13 +118,13 @@ public final class VolumeProto {
           + "buf.FieldMask\"h\n\023ResizeVolumeRequest\022?\n\006"
           + "volume\030\001 \001(\tB/\340A\002\372A)\n\'baremetalsolution."
           + "googleapis.com/Volume\022\020\n\010size_gib\030\002 \001(\003B"
-          + "\371\001\n%com.google.cloud.baremetalsolution.v"
-          + "2B\013VolumeProtoP\001ZRgoogle.golang.org/genp"
-          + "roto/googleapis/cloud/baremetalsolution/"
-          + "v2;baremetalsolution\252\002!Google.Cloud.Bare"
-          + "MetalSolution.V2\312\002!Google\\Cloud\\BareMeta"
-          + "lSolution\\V2\352\002$Google::Cloud::BareMetalS"
-          + "olution::V2b\006proto3"
+          + "\372\001\n%com.google.cloud.baremetalsolution.v"
+          + "2B\013VolumeProtoP\001ZScloud.google.com/go/ba"
+          + "remetalsolution/apiv2/baremetalsolutionp"
+          + "b;baremetalsolutionpb\252\002!Google.Cloud.Bar"
+          + "eMetalSolution.V2\312\002!Google\\Cloud\\BareMet"
+          + "alSolution\\V2\352\002$Google::Cloud::BareMetal"
+          + "Solution::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

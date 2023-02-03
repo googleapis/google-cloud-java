@@ -116,12 +116,12 @@ public final class ApigatewayService {
           + "configs/*}\332A\004name\312A*\n\025google.protobuf.Em"
           + "pty\022\021OperationMetadata\032M\312A\031apigateway.go"
           + "ogleapis.com\322A.https://www.googleapis.co"
-          + "m/auth/cloud-platformB\302\001\n\036com.google.clo"
-          + "ud.apigateway.v1P\001ZDgoogle.golang.org/ge"
-          + "nproto/googleapis/cloud/apigateway/v1;ap"
-          + "igateway\252\002\032Google.Cloud.ApiGateway.V1\312\002\032"
-          + "Google\\Cloud\\ApiGateway\\V1\352\002\035Google::Clo"
-          + "ud::ApiGateway::V1b\006proto3"
+          + "m/auth/cloud-platformB\274\001\n\036com.google.clo"
+          + "ud.apigateway.v1P\001Z>cloud.google.com/go/"
+          + "apigateway/apiv1/apigatewaypb;apigateway"
+          + "pb\252\002\032Google.Cloud.ApiGateway.V1\312\002\032Google"
+          + "\\Cloud\\ApiGateway\\V1\352\002\035Google::Cloud::Ap"
+          + "iGateway::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

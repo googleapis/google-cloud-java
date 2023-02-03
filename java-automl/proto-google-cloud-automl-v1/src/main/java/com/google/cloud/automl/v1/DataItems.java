@@ -96,12 +96,12 @@ public final class DataItems {
           + "ogle.cloud.automl.v1.ImageH\000\022;\n\014text_sni"
           + "ppet\030\002 \001(\0132#.google.cloud.automl.v1.Text"
           + "SnippetH\000\0224\n\010document\030\004 \001(\0132 .google.clo"
-          + "ud.automl.v1.DocumentH\000B\t\n\007payloadB\252\001\n\032c"
-          + "om.google.cloud.automl.v1P\001Z<google.gola"
-          + "ng.org/genproto/googleapis/cloud/automl/"
-          + "v1;automl\252\002\026Google.Cloud.AutoML.V1\312\002\026Goo"
-          + "gle\\Cloud\\AutoMl\\V1\352\002\031Google::Cloud::Aut"
-          + "oML::V1b\006proto3"
+          + "ud.automl.v1.DocumentH\000B\t\n\007payloadB\240\001\n\032c"
+          + "om.google.cloud.automl.v1P\001Z2cloud.googl"
+          + "e.com/go/automl/apiv1/automlpb;automlpb\252"
+          + "\002\026Google.Cloud.AutoML.V1\312\002\026Google\\Cloud\\"
+          + "AutoMl\\V1\352\002\031Google::Cloud::AutoML::V1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

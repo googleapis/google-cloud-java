@@ -84,13 +84,13 @@ public final class FeaturestoreMonitoringProto {
           + "EST_STATS\020\001\022\036\n\032MOST_RECENT_SNAPSHOT_STAT"
           + "S\020\002\022\"\n\036PREVIOUS_IMPORT_FEATURES_STATS\020\003\032"
           + "/\n\017ThresholdConfig\022\017\n\005value\030\001 \001(\001H\000B\013\n\tt"
-          + "hresholdB\370\001\n#com.google.cloud.aiplatform"
+          + "hresholdB\362\001\n#com.google.cloud.aiplatform"
           + ".v1beta1B\033FeaturestoreMonitoringProtoP\001Z"
-          + "Igoogle.golang.org/genproto/googleapis/c"
-          + "loud/aiplatform/v1beta1;aiplatform\252\002\037Goo"
-          + "gle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Cl"
-          + "oud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::"
-          + "AIPlatform::V1beta1b\006proto3"
+          + "Ccloud.google.com/go/aiplatform/apiv1bet"
+          + "a1/aiplatformpb;aiplatformpb\252\002\037Google.Cl"
+          + "oud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AI"
+          + "Platform\\V1beta1\352\002\"Google::Cloud::AIPlat"
+          + "form::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

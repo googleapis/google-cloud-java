@@ -55,12 +55,12 @@ public final class TextSentimentProto {
           + "a\030\006 \001(\002\022\027\n\017quadratic_kappa\030\007 \001(\002\022a\n\020conf"
           + "usion_matrix\030\010 \001(\0132G.google.cloud.automl"
           + ".v1.ClassificationEvaluationMetrics.Conf"
-          + "usionMatrixB\276\001\n\032com.google.cloud.automl."
-          + "v1B\022TextSentimentProtoP\001Z<google.golang."
-          + "org/genproto/googleapis/cloud/automl/v1;"
-          + "automl\252\002\026Google.Cloud.AutoML.V1\312\002\026Google"
-          + "\\Cloud\\AutoMl\\V1\352\002\031Google::Cloud::AutoML"
-          + "::V1b\006proto3"
+          + "usionMatrixB\264\001\n\032com.google.cloud.automl."
+          + "v1B\022TextSentimentProtoP\001Z2cloud.google.c"
+          + "om/go/automl/apiv1/automlpb;automlpb\252\002\026G"
+          + "oogle.Cloud.AutoML.V1\312\002\026Google\\Cloud\\Aut"
+          + "oMl\\V1\352\002\031Google::Cloud::AutoML::V1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

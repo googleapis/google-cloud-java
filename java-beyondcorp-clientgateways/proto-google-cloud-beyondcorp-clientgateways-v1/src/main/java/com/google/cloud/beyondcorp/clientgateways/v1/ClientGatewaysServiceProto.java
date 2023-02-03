@@ -139,15 +139,15 @@ public final class ClientGatewaysServiceProto {
           + "tGateways/*}\332A\004name\312A7\n\025google.protobuf."
           + "Empty\022\036ClientGatewayOperationMetadata\032M\312"
           + "A\031beyondcorp.googleapis.com\322A.https://ww"
-          + "w.googleapis.com/auth/cloud-platformB\256\002\n"
+          + "w.googleapis.com/auth/cloud-platformB\254\002\n"
           + "-com.google.cloud.beyondcorp.clientgatew"
-          + "ays.v1B\032ClientGatewaysServiceProtoP\001ZWgo"
-          + "ogle.golang.org/genproto/googleapis/clou"
-          + "d/beyondcorp/clientgateways/v1;clientgat"
-          + "eways\252\002)Google.Cloud.BeyondCorp.ClientGa"
-          + "teways.V1\312\002)Google\\Cloud\\BeyondCorp\\Clie"
-          + "ntGateways\\V1\352\002-Google::Cloud::BeyondCor"
-          + "p::ClientGateways::V1b\006proto3"
+          + "ays.v1B\032ClientGatewaysServiceProtoP\001ZUcl"
+          + "oud.google.com/go/beyondcorp/clientgatew"
+          + "ays/apiv1/clientgatewayspb;clientgateway"
+          + "spb\252\002)Google.Cloud.BeyondCorp.ClientGate"
+          + "ways.V1\312\002)Google\\Cloud\\BeyondCorp\\Client"
+          + "Gateways\\V1\352\002-Google::Cloud::BeyondCorp:"
+          + ":ClientGateways::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

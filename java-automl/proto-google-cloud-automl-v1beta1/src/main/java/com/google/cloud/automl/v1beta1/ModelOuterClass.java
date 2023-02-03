@@ -82,11 +82,11 @@ public final class ModelOuterClass {
           + "\020\000\022\014\n\010DEPLOYED\020\001\022\016\n\nUNDEPLOYED\020\002:X\352AU\n\033a"
           + "utoml.googleapis.com/Model\0226projects/{pr"
           + "oject}/locations/{location}/models/{mode"
-          + "l}B\020\n\016model_metadataB\245\001\n\037com.google.clou"
-          + "d.automl.v1beta1P\001ZAgoogle.golang.org/ge"
-          + "nproto/googleapis/cloud/automl/v1beta1;a"
-          + "utoml\312\002\033Google\\Cloud\\AutoMl\\V1beta1\352\002\036Go"
-          + "ogle::Cloud::AutoML::V1beta1b\006proto3"
+          + "l}B\020\n\016model_metadataB\233\001\n\037com.google.clou"
+          + "d.automl.v1beta1P\001Z7cloud.google.com/go/"
+          + "automl/apiv1beta1/automlpb;automlpb\312\002\033Go"
+          + "ogle\\Cloud\\AutoMl\\V1beta1\352\002\036Google::Clou"
+          + "d::AutoML::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -279,13 +279,12 @@ public final class JobProto {
           + "leapis.com/TaskGroup\022Jprojects/{project}"
           + "/locations/{location}/jobs/{job}/taskGro"
           + "ups/{task_group}\"/\n\016ServiceAccount\022\r\n\005em"
-          + "ail\030\001 \001(\t\022\016\n\006scopes\030\002 \003(\tB\315\001\n\036com.google"
-          + ".cloud.batch.v1alphaB\010JobProtoP\001Z?google"
-          + ".golang.org/genproto/googleapis/cloud/ba"
-          + "tch/v1alpha;batch\242\002\003GCB\252\002\032Google.Cloud.B"
-          + "atch.V1Alpha\312\002\032Google\\Cloud\\Batch\\V1alph"
-          + "a\352\002\035Google::Cloud::Batch::V1alphab\006proto"
-          + "3"
+          + "ail\030\001 \001(\t\022\016\n\006scopes\030\002 \003(\tB\302\001\n\036com.google"
+          + ".cloud.batch.v1alphaB\010JobProtoP\001Z4cloud."
+          + "google.com/go/batch/apiv1alpha/batchpb;b"
+          + "atchpb\242\002\003GCB\252\002\032Google.Cloud.Batch.V1Alph"
+          + "a\312\002\032Google\\Cloud\\Batch\\V1alpha\352\002\035Google:"
+          + ":Cloud::Batch::V1alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

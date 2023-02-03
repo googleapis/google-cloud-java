@@ -58,13 +58,13 @@ public final class EventProto {
           + "22.google.cloud.aiplatform.v1beta1.Event"
           + ".LabelsEntry\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t"
           + "\022\r\n\005value\030\002 \001(\t:\0028\001\"3\n\004Type\022\024\n\020TYPE_UNSP"
-          + "ECIFIED\020\000\022\t\n\005INPUT\020\001\022\n\n\006OUTPUT\020\002B\347\001\n#com"
+          + "ECIFIED\020\000\022\t\n\005INPUT\020\001\022\n\n\006OUTPUT\020\002B\341\001\n#com"
           + ".google.cloud.aiplatform.v1beta1B\nEventP"
-          + "rotoP\001ZIgoogle.golang.org/genproto/googl"
-          + "eapis/cloud/aiplatform/v1beta1;aiplatfor"
-          + "m\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Go"
-          + "ogle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::"
-          + "Cloud::AIPlatform::V1beta1b\006proto3"
+          + "rotoP\001ZCcloud.google.com/go/aiplatform/a"
+          + "piv1beta1/aiplatformpb;aiplatformpb\252\002\037Go"
+          + "ogle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\C"
+          + "loud\\AIPlatform\\V1beta1\352\002\"Google::Cloud:"
+          + ":AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

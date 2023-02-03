@@ -49,12 +49,12 @@ public final class UnmanagedContainerModelProto {
           + "google.cloud.aiplatform.v1.PredictSchema"
           + "ta\022K\n\016container_spec\030\003 \001(\0132..google.clou"
           + "d.aiplatform.v1.ModelContainerSpecB\003\340A\004B"
-          + "\340\001\n\036com.google.cloud.aiplatform.v1B\034Unma"
-          + "nagedContainerModelProtoP\001ZDgoogle.golan"
-          + "g.org/genproto/googleapis/cloud/aiplatfo"
-          + "rm/v1;aiplatform\252\002\032Google.Cloud.AIPlatfo"
-          + "rm.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Goo"
-          + "gle::Cloud::AIPlatform::V1b\006proto3"
+          + "\332\001\n\036com.google.cloud.aiplatform.v1B\034Unma"
+          + "nagedContainerModelProtoP\001Z>cloud.google"
+          + ".com/go/aiplatform/apiv1/aiplatformpb;ai"
+          + "platformpb\252\002\032Google.Cloud.AIPlatform.V1\312"
+          + "\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google::C"
+          + "loud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

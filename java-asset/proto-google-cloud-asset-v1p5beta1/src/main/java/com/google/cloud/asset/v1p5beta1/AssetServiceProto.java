@@ -70,11 +70,11 @@ public final class AssetServiceProto {
           + "\036/v1p5beta1/{parent=*/*}/assets\332A\006parent"
           + "\032M\312A\031cloudasset.googleapis.com\322A.https:/"
           + "/www.googleapis.com/auth/cloud-platformB"
-          + "\270\001\n com.google.cloud.asset.v1p5beta1B\021As"
-          + "setServiceProtoP\001ZAgoogle.golang.org/gen"
-          + "proto/googleapis/cloud/asset/v1p5beta1;a"
-          + "sset\252\002\034Google.Cloud.Asset.V1P5Beta1\312\002\034Go"
-          + "ogle\\Cloud\\Asset\\V1p5beta1b\006proto3"
+          + "\255\001\n com.google.cloud.asset.v1p5beta1B\021As"
+          + "setServiceProtoP\001Z6cloud.google.com/go/a"
+          + "sset/apiv1p5beta1/assetpb;assetpb\252\002\034Goog"
+          + "le.Cloud.Asset.V1P5Beta1\312\002\034Google\\Cloud\\"
+          + "Asset\\V1p5beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

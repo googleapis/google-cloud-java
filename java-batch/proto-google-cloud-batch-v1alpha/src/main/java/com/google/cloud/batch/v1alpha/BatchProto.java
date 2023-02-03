@@ -137,12 +137,12 @@ public final class BatchProto {
           + "ent=projects/*/locations/*/jobs/*/taskGr"
           + "oups/*}/tasks\332A\006parent\032H\312A\024batch.googlea"
           + "pis.com\322A.https://www.googleapis.com/aut"
-          + "h/cloud-platformB\317\001\n\036com.google.cloud.ba"
-          + "tch.v1alphaB\nBatchProtoP\001Z?google.golang"
-          + ".org/genproto/googleapis/cloud/batch/v1a"
-          + "lpha;batch\242\002\003GCB\252\002\032Google.Cloud.Batch.V1"
-          + "Alpha\312\002\032Google\\Cloud\\Batch\\V1alpha\352\002\035Goo"
-          + "gle::Cloud::Batch::V1alphaP\000b\006proto3"
+          + "h/cloud-platformB\304\001\n\036com.google.cloud.ba"
+          + "tch.v1alphaB\nBatchProtoP\001Z4cloud.google."
+          + "com/go/batch/apiv1alpha/batchpb;batchpb\242"
+          + "\002\003GCB\252\002\032Google.Cloud.Batch.V1Alpha\312\002\032Goo"
+          + "gle\\Cloud\\Batch\\V1alpha\352\002\035Google::Cloud:"
+          + ":Batch::V1alphaP\000b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -566,13 +566,13 @@ public final class RegistryServiceProto {
           + "s/*/apis/*/deployments/*/artifacts/*}\332A\004"
           + "name\032Q\312A\035apigeeregistry.googleapis.com\322A"
           + ".https://www.googleapis.com/auth/cloud-p"
-          + "latformB\360\001\n\"com.google.cloud.apigeeregis"
-          + "try.v1B\024RegistryServiceProtoP\001ZLgoogle.g"
-          + "olang.org/genproto/googleapis/cloud/apig"
-          + "eeregistry/v1;apigeeregistry\252\002\036Google.Cl"
-          + "oud.ApigeeRegistry.V1\312\002\036Google\\Cloud\\Api"
-          + "geeRegistry\\V1\352\002!Google::Cloud::ApigeeRe"
-          + "gistry::V1b\006proto3"
+          + "latformB\356\001\n\"com.google.cloud.apigeeregis"
+          + "try.v1B\024RegistryServiceProtoP\001ZJcloud.go"
+          + "ogle.com/go/apigeeregistry/apiv1/apigeer"
+          + "egistrypb;apigeeregistrypb\252\002\036Google.Clou"
+          + "d.ApigeeRegistry.V1\312\002\036Google\\Cloud\\Apige"
+          + "eRegistry\\V1\352\002!Google::Cloud::ApigeeRegi"
+          + "stry::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

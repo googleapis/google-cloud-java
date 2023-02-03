@@ -79,13 +79,13 @@ public final class FeaturestoreProto {
           + "TE_UNSPECIFIED\020\000\022\n\n\006STABLE\020\001\022\014\n\010UPDATING"
           + "\020\002:q\352An\n&aiplatform.googleapis.com/Featu"
           + "restore\022Dprojects/{project}/locations/{l"
-          + "ocation}/featurestores/{featurestore}B\325\001"
+          + "ocation}/featurestores/{featurestore}B\317\001"
           + "\n\036com.google.cloud.aiplatform.v1B\021Featur"
-          + "estoreProtoP\001ZDgoogle.golang.org/genprot"
-          + "o/googleapis/cloud/aiplatform/v1;aiplatf"
-          + "orm\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Googl"
-          + "e\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::A"
-          + "IPlatform::V1b\006proto3"
+          + "estoreProtoP\001Z>cloud.google.com/go/aipla"
+          + "tform/apiv1/aiplatformpb;aiplatformpb\252\002\032"
+          + "Google.Cloud.AIPlatform.V1\312\002\032Google\\Clou"
+          + "d\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatf"
+          + "orm::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

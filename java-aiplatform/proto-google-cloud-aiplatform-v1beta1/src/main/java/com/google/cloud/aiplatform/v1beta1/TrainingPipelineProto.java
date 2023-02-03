@@ -135,13 +135,13 @@ public final class TrainingPipelineProto {
           + "\n\003key\030\004 \001(\tB\003\340A\002\"r\n\017StratifiedSplit\022\031\n\021t"
           + "raining_fraction\030\001 \001(\001\022\033\n\023validation_fra"
           + "ction\030\002 \001(\001\022\025\n\rtest_fraction\030\003 \001(\001\022\020\n\003ke"
-          + "y\030\004 \001(\tB\003\340A\002B\362\001\n#com.google.cloud.aiplat"
-          + "form.v1beta1B\025TrainingPipelineProtoP\001ZIg"
-          + "oogle.golang.org/genproto/googleapis/clo"
-          + "ud/aiplatform/v1beta1;aiplatform\252\002\037Googl"
-          + "e.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Clou"
-          + "d\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AI"
-          + "Platform::V1beta1b\006proto3"
+          + "y\030\004 \001(\tB\003\340A\002B\354\001\n#com.google.cloud.aiplat"
+          + "form.v1beta1B\025TrainingPipelineProtoP\001ZCc"
+          + "loud.google.com/go/aiplatform/apiv1beta1"
+          + "/aiplatformpb;aiplatformpb\252\002\037Google.Clou"
+          + "d.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPl"
+          + "atform\\V1beta1\352\002\"Google::Cloud::AIPlatfo"
+          + "rm::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

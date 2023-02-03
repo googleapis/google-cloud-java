@@ -109,11 +109,11 @@ public final class DataItems {
           + "a1.TextSnippetH\000\0229\n\010document\030\004 \001(\0132%.goo"
           + "gle.cloud.automl.v1beta1.DocumentH\000\022/\n\003r"
           + "ow\030\003 \001(\0132 .google.cloud.automl.v1beta1.R"
-          + "owH\000B\t\n\007payloadB\245\001\n\037com.google.cloud.aut"
-          + "oml.v1beta1P\001ZAgoogle.golang.org/genprot"
-          + "o/googleapis/cloud/automl/v1beta1;automl"
-          + "\312\002\033Google\\Cloud\\AutoMl\\V1beta1\352\002\036Google:"
-          + ":Cloud::AutoML::V1beta1b\006proto3"
+          + "owH\000B\t\n\007payloadB\233\001\n\037com.google.cloud.aut"
+          + "oml.v1beta1P\001Z7cloud.google.com/go/autom"
+          + "l/apiv1beta1/automlpb;automlpb\312\002\033Google\\"
+          + "Cloud\\AutoMl\\V1beta1\352\002\036Google::Cloud::Au"
+          + "toML::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

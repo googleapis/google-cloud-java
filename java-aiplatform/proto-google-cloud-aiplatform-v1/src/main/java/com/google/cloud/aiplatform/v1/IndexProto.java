@@ -96,13 +96,13 @@ public final class IndexProto {
           + "\t\022\022\n\nallow_list\030\002 \003(\t\022\021\n\tdeny_list\030\003 \003(\t"
           + "\032)\n\013CrowdingTag\022\032\n\022crowding_attribute\030\001 "
           + "\001(\t\"C\n\nIndexStats\022\032\n\rvectors_count\030\001 \001(\003"
-          + "B\003\340A\003\022\031\n\014shards_count\030\002 \001(\005B\003\340A\003B\316\001\n\036com"
+          + "B\003\340A\003\022\031\n\014shards_count\030\002 \001(\005B\003\340A\003B\310\001\n\036com"
           + ".google.cloud.aiplatform.v1B\nIndexProtoP"
-          + "\001ZDgoogle.golang.org/genproto/googleapis"
-          + "/cloud/aiplatform/v1;aiplatform\252\002\032Google"
-          + ".Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPl"
-          + "atform\\V1\352\002\035Google::Cloud::AIPlatform::V"
-          + "1b\006proto3"
+          + "\001Z>cloud.google.com/go/aiplatform/apiv1/"
+          + "aiplatformpb;aiplatformpb\252\002\032Google.Cloud"
+          + ".AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatform"
+          + "\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

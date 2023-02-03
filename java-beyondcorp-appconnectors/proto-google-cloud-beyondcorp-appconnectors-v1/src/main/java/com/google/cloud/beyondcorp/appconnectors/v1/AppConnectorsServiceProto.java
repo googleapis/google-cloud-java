@@ -200,14 +200,14 @@ public final class AppConnectorsServiceProto {
           + "pConnector\022\035AppConnectorOperationMetadat"
           + "a\032M\312A\031beyondcorp.googleapis.com\322A.https:"
           + "//www.googleapis.com/auth/cloud-platform"
-          + "B\247\002\n,com.google.cloud.beyondcorp.appconn"
-          + "ectors.v1B\031AppConnectorsServiceProtoP\001ZU"
-          + "google.golang.org/genproto/googleapis/cl"
-          + "oud/beyondcorp/appconnectors/v1;appconne"
-          + "ctors\252\002(Google.Cloud.BeyondCorp.AppConne"
-          + "ctors.V1\312\002(Google\\Cloud\\BeyondCorp\\AppCo"
-          + "nnectors\\V1\352\002,Google::Cloud::BeyondCorp:"
-          + ":AppConnectors::V1b\006proto3"
+          + "B\244\002\n,com.google.cloud.beyondcorp.appconn"
+          + "ectors.v1B\031AppConnectorsServiceProtoP\001ZR"
+          + "cloud.google.com/go/beyondcorp/appconnec"
+          + "tors/apiv1/appconnectorspb;appconnectors"
+          + "pb\252\002(Google.Cloud.BeyondCorp.AppConnecto"
+          + "rs.V1\312\002(Google\\Cloud\\BeyondCorp\\AppConne"
+          + "ctors\\V1\352\002,Google::Cloud::BeyondCorp::Ap"
+          + "pConnectors::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

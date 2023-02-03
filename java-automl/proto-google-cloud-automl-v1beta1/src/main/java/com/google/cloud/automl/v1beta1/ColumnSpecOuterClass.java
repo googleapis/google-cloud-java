@@ -62,11 +62,11 @@ public final class ColumnSpecOuterClass {
           + "l.googleapis.com/ColumnSpec\022lprojects/{p"
           + "roject}/locations/{location}/datasets/{d"
           + "ataset}/tableSpecs/{table_spec}/columnSp"
-          + "ecs/{column_spec}B\245\001\n\037com.google.cloud.a"
-          + "utoml.v1beta1P\001ZAgoogle.golang.org/genpr"
-          + "oto/googleapis/cloud/automl/v1beta1;auto"
-          + "ml\312\002\033Google\\Cloud\\AutoMl\\V1beta1\352\002\036Googl"
-          + "e::Cloud::AutoML::V1beta1b\006proto3"
+          + "ecs/{column_spec}B\233\001\n\037com.google.cloud.a"
+          + "utoml.v1beta1P\001Z7cloud.google.com/go/aut"
+          + "oml/apiv1beta1/automlpb;automlpb\312\002\033Googl"
+          + "e\\Cloud\\AutoMl\\V1beta1\352\002\036Google::Cloud::"
+          + "AutoML::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

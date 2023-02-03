@@ -52,14 +52,14 @@ public final class AnnotationSpecProto {
           + "ag\030\005 \001(\tB\003\340A\001:\214\001\352A\210\001\n(aiplatform.googlea"
           + "pis.com/AnnotationSpec\022\\projects/{projec"
           + "t}/locations/{location}/datasets/{datase"
-          + "t}/annotationSpecs/{annotation_spec}B\360\001\n"
+          + "t}/annotationSpecs/{annotation_spec}B\352\001\n"
           + "#com.google.cloud.aiplatform.v1beta1B\023An"
-          + "notationSpecProtoP\001ZIgoogle.golang.org/g"
-          + "enproto/googleapis/cloud/aiplatform/v1be"
-          + "ta1;aiplatform\252\002\037Google.Cloud.AIPlatform"
-          + ".V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1bet"
-          + "a1\352\002\"Google::Cloud::AIPlatform::V1beta1b"
-          + "\006proto3"
+          + "notationSpecProtoP\001ZCcloud.google.com/go"
+          + "/aiplatform/apiv1beta1/aiplatformpb;aipl"
+          + "atformpb\252\002\037Google.Cloud.AIPlatform.V1Bet"
+          + "a1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"G"
+          + "oogle::Cloud::AIPlatform::V1beta1b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

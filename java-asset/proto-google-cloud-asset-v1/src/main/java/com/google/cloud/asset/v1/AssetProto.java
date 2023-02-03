@@ -285,11 +285,11 @@ public final class AssetProto {
           + "\030\001 \003(\01327.google.cloud.asset.v1.IamPolicy"
           + "AnalysisResult.Identity\022H\n\013group_edges\030\002"
           + " \003(\01323.google.cloud.asset.v1.IamPolicyAn"
-          + "alysisResult.EdgeB\230\001\n\031com.google.cloud.a"
-          + "sset.v1B\nAssetProtoP\001Z:google.golang.org"
-          + "/genproto/googleapis/cloud/asset/v1;asse"
-          + "t\370\001\001\252\002\025Google.Cloud.Asset.V1\312\002\025Google\\Cl"
-          + "oud\\Asset\\V1b\006proto3"
+          + "alysisResult.EdgeB\215\001\n\031com.google.cloud.a"
+          + "sset.v1B\nAssetProtoP\001Z/cloud.google.com/"
+          + "go/asset/apiv1/assetpb;assetpb\370\001\001\252\002\025Goog"
+          + "le.Cloud.Asset.V1\312\002\025Google\\Cloud\\Asset\\V"
+          + "1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

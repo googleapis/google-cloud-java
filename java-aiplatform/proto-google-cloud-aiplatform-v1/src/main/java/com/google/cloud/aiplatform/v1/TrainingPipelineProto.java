@@ -133,12 +133,12 @@ public final class TrainingPipelineProto {
           + "\tB\003\340A\002\"r\n\017StratifiedSplit\022\031\n\021training_fr"
           + "action\030\001 \001(\001\022\033\n\023validation_fraction\030\002 \001("
           + "\001\022\025\n\rtest_fraction\030\003 \001(\001\022\020\n\003key\030\004 \001(\tB\003\340"
-          + "A\002B\331\001\n\036com.google.cloud.aiplatform.v1B\025T"
-          + "rainingPipelineProtoP\001ZDgoogle.golang.or"
-          + "g/genproto/googleapis/cloud/aiplatform/v"
-          + "1;aiplatform\252\002\032Google.Cloud.AIPlatform.V"
-          + "1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google:"
-          + ":Cloud::AIPlatform::V1b\006proto3"
+          + "A\002B\323\001\n\036com.google.cloud.aiplatform.v1B\025T"
+          + "rainingPipelineProtoP\001Z>cloud.google.com"
+          + "/go/aiplatform/apiv1/aiplatformpb;aiplat"
+          + "formpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Go"
+          + "ogle\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud"
+          + "::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

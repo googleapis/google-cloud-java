@@ -79,13 +79,12 @@ public final class HyperparameterTuningJobProto {
           + "eapis.com/HyperparameterTuningJob\022\\proje"
           + "cts/{project}/locations/{location}/hyper"
           + "parameterTuningJobs/{hyperparameter_tuni"
-          + "ng_job}B\340\001\n\036com.google.cloud.aiplatform."
-          + "v1B\034HyperparameterTuningJobProtoP\001ZDgoog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "aiplatform/v1;aiplatform\252\002\032Google.Cloud."
-          + "AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatform\\"
-          + "V1\352\002\035Google::Cloud::AIPlatform::V1b\006prot"
-          + "o3"
+          + "ng_job}B\332\001\n\036com.google.cloud.aiplatform."
+          + "v1B\034HyperparameterTuningJobProtoP\001Z>clou"
+          + "d.google.com/go/aiplatform/apiv1/aiplatf"
+          + "ormpb;aiplatformpb\252\002\032Google.Cloud.AIPlat"
+          + "form.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035G"
+          + "oogle::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

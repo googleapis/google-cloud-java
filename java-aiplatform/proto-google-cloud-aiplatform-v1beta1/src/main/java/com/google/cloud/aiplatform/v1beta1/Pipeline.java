@@ -225,15 +225,14 @@ public final class Pipeline {
           + "aching_check_jobs\030\004 \003(\tB\003\340A\003\032O\n\017CustomJo"
           + "bDetail\0228\n\003job\030\001 \001(\tB+\340A\003\372A%\n#aiplatform"
           + ".googleapis.com/CustomJob:\002\030\001B\t\n\007details"
-          + "B\266\002\n#com.google.cloud.aiplatform.v1beta1"
-          + "B\010PipelineP\001ZIgoogle.golang.org/genproto"
-          + "/googleapis/cloud/aiplatform/v1beta1;aip"
-          + "latform\252\002\037Google.Cloud.AIPlatform.V1Beta"
-          + "1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Go"
-          + "ogle::Cloud::AIPlatform::V1beta1\352AN\n\036com"
-          + "pute.googleapis.com/Network\022,projects/{p"
-          + "roject}/global/networks/{network}b\006proto"
-          + "3"
+          + "B\260\002\n#com.google.cloud.aiplatform.v1beta1"
+          + "B\010PipelineP\001ZCcloud.google.com/go/aiplat"
+          + "form/apiv1beta1/aiplatformpb;aiplatformp"
+          + "b\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Go"
+          + "ogle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::"
+          + "Cloud::AIPlatform::V1beta1\352AN\n\036compute.g"
+          + "oogleapis.com/Network\022,projects/{project"
+          + "}/global/networks/{network}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

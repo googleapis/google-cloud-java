@@ -168,14 +168,14 @@ public final class BareMetalSolutionProto {
           + "e,update_mask\312A\035\n\010NfsShare\022\021OperationMet"
           + "adata\032T\312A baremetalsolution.googleapis.c"
           + "om\322A.https://www.googleapis.com/auth/clo"
-          + "ud-platformB\204\002\n%com.google.cloud.baremet"
+          + "ud-platformB\205\002\n%com.google.cloud.baremet"
           + "alsolution.v2B\026BareMetalSolutionProtoP\001Z"
-          + "Rgoogle.golang.org/genproto/googleapis/c"
-          + "loud/baremetalsolution/v2;baremetalsolut"
-          + "ion\252\002!Google.Cloud.BareMetalSolution.V2\312"
-          + "\002!Google\\Cloud\\BareMetalSolution\\V2\352\002$Go"
-          + "ogle::Cloud::BareMetalSolution::V2b\006prot"
-          + "o3"
+          + "Scloud.google.com/go/baremetalsolution/a"
+          + "piv2/baremetalsolutionpb;baremetalsoluti"
+          + "onpb\252\002!Google.Cloud.BareMetalSolution.V2"
+          + "\312\002!Google\\Cloud\\BareMetalSolution\\V2\352\002$G"
+          + "oogle::Cloud::BareMetalSolution::V2b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

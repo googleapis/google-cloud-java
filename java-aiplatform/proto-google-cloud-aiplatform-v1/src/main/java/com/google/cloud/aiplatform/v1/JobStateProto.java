@@ -43,13 +43,13 @@ public final class JobStateProto {
           + "DED\020\004\022\024\n\020JOB_STATE_FAILED\020\005\022\030\n\024JOB_STATE"
           + "_CANCELLING\020\006\022\027\n\023JOB_STATE_CANCELLED\020\007\022\024"
           + "\n\020JOB_STATE_PAUSED\020\010\022\025\n\021JOB_STATE_EXPIRE"
-          + "D\020\t\022\026\n\022JOB_STATE_UPDATING\020\nB\321\001\n\036com.goog"
+          + "D\020\t\022\026\n\022JOB_STATE_UPDATING\020\nB\313\001\n\036com.goog"
           + "le.cloud.aiplatform.v1B\rJobStateProtoP\001Z"
-          + "Dgoogle.golang.org/genproto/googleapis/c"
-          + "loud/aiplatform/v1;aiplatform\252\002\032Google.C"
-          + "loud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlat"
-          + "form\\V1\352\002\035Google::Cloud::AIPlatform::V1b"
-          + "\006proto3"
+          + ">cloud.google.com/go/aiplatform/apiv1/ai"
+          + "platformpb;aiplatformpb\252\002\032Google.Cloud.A"
+          + "IPlatform.V1\312\002\032Google\\Cloud\\AIPlatform\\V"
+          + "1\352\002\035Google::Cloud::AIPlatform::V1b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

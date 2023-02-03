@@ -117,12 +117,12 @@ public final class EndpointProto {
           + "nfig\022\017\n\007enabled\030\001 \001(\010\022\025\n\rsampling_rate\030\002"
           + " \001(\001\022M\n\024bigquery_destination\030\003 \001(\0132/.goo"
           + "gle.cloud.aiplatform.v1.BigQueryDestinat"
-          + "ionB\321\001\n\036com.google.cloud.aiplatform.v1B\r"
-          + "EndpointProtoP\001ZDgoogle.golang.org/genpr"
-          + "oto/googleapis/cloud/aiplatform/v1;aipla"
-          + "tform\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Goo"
-          + "gle\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud:"
-          + ":AIPlatform::V1b\006proto3"
+          + "ionB\313\001\n\036com.google.cloud.aiplatform.v1B\r"
+          + "EndpointProtoP\001Z>cloud.google.com/go/aip"
+          + "latform/apiv1/aiplatformpb;aiplatformpb\252"
+          + "\002\032Google.Cloud.AIPlatform.V1\312\002\032Google\\Cl"
+          + "oud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPla"
+          + "tform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

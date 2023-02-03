@@ -40,13 +40,13 @@ public final class PipelineFailurePolicyProto {
           + "orm.v1*\216\001\n\025PipelineFailurePolicy\022\'\n#PIPE"
           + "LINE_FAILURE_POLICY_UNSPECIFIED\020\000\022%\n!PIP"
           + "ELINE_FAILURE_POLICY_FAIL_SLOW\020\001\022%\n!PIPE"
-          + "LINE_FAILURE_POLICY_FAIL_FAST\020\002B\336\001\n\036com."
+          + "LINE_FAILURE_POLICY_FAIL_FAST\020\002B\330\001\n\036com."
           + "google.cloud.aiplatform.v1B\032PipelineFail"
-          + "urePolicyProtoP\001ZDgoogle.golang.org/genp"
-          + "roto/googleapis/cloud/aiplatform/v1;aipl"
-          + "atform\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Go"
-          + "ogle\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud"
-          + "::AIPlatform::V1b\006proto3"
+          + "urePolicyProtoP\001Z>cloud.google.com/go/ai"
+          + "platform/apiv1/aiplatformpb;aiplatformpb"
+          + "\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Google\\C"
+          + "loud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPl"
+          + "atform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

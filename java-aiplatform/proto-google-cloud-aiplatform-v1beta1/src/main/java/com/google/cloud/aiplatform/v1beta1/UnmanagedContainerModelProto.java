@@ -49,14 +49,13 @@ public final class UnmanagedContainerModelProto {
           + "hemata\030\002 \001(\01320.google.cloud.aiplatform.v"
           + "1beta1.PredictSchemata\022P\n\016container_spec"
           + "\030\003 \001(\01323.google.cloud.aiplatform.v1beta1"
-          + ".ModelContainerSpecB\003\340A\004B\371\001\n#com.google."
+          + ".ModelContainerSpecB\003\340A\004B\363\001\n#com.google."
           + "cloud.aiplatform.v1beta1B\034UnmanagedConta"
-          + "inerModelProtoP\001ZIgoogle.golang.org/genp"
-          + "roto/googleapis/cloud/aiplatform/v1beta1"
-          + ";aiplatform\252\002\037Google.Cloud.AIPlatform.V1"
-          + "Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352"
-          + "\002\"Google::Cloud::AIPlatform::V1beta1b\006pr"
-          + "oto3"
+          + "inerModelProtoP\001ZCcloud.google.com/go/ai"
+          + "platform/apiv1beta1/aiplatformpb;aiplatf"
+          + "ormpb\252\002\037Google.Cloud.AIPlatform.V1Beta1\312"
+          + "\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Goog"
+          + "le::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

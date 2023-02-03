@@ -161,15 +161,15 @@ public final class DataPolicyProto {
           + "Permissions:\001*\032~\312A!bigquerydatapolicy.go"
           + "ogleapis.com\322AWhttps://www.googleapis.co"
           + "m/auth/bigquery,https://www.googleapis.c"
-          + "om/auth/cloud-platformB\246\002\n.com.google.cl"
+          + "om/auth/cloud-platformB\242\002\n.com.google.cl"
           + "oud.bigquery.datapolicies.v1beta1B\017DataP"
-          + "olicyProtoP\001ZVgoogle.golang.org/genproto"
-          + "/googleapis/cloud/bigquery/datapolicies/"
-          + "v1beta1;datapolicies\252\002*Google.Cloud.BigQ"
-          + "uery.DataPolicies.V1Beta1\312\002*Google\\Cloud"
-          + "\\BigQuery\\DataPolicies\\V1beta1\352\002.Google:"
-          + ":Cloud::Bigquery::DataPolicies::V1beta1b"
-          + "\006proto3"
+          + "olicyProtoP\001ZRcloud.google.com/go/bigque"
+          + "ry/datapolicies/apiv1beta1/datapoliciesp"
+          + "b;datapoliciespb\252\002*Google.Cloud.BigQuery"
+          + ".DataPolicies.V1Beta1\312\002*Google\\Cloud\\Big"
+          + "Query\\DataPolicies\\V1beta1\352\002.Google::Clo"
+          + "ud::Bigquery::DataPolicies::V1beta1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

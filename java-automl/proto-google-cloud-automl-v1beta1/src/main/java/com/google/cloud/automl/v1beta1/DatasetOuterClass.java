@@ -79,11 +79,11 @@ public final class DatasetOuterClass {
           + "estamp\022\014\n\004etag\030\021 \001(\t:^\352A[\n\035automl.google"
           + "apis.com/Dataset\022:projects/{project}/loc"
           + "ations/{location}/datasets/{dataset}B\022\n\020"
-          + "dataset_metadataB\245\001\n\037com.google.cloud.au"
-          + "toml.v1beta1P\001ZAgoogle.golang.org/genpro"
-          + "to/googleapis/cloud/automl/v1beta1;autom"
-          + "l\312\002\033Google\\Cloud\\AutoMl\\V1beta1\352\002\036Google"
-          + "::Cloud::AutoML::V1beta1b\006proto3"
+          + "dataset_metadataB\233\001\n\037com.google.cloud.au"
+          + "toml.v1beta1P\001Z7cloud.google.com/go/auto"
+          + "ml/apiv1beta1/automlpb;automlpb\312\002\033Google"
+          + "\\Cloud\\AutoMl\\V1beta1\352\002\036Google::Cloud::A"
+          + "utoML::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

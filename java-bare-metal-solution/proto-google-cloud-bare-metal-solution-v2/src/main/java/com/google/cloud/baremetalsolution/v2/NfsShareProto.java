@@ -104,13 +104,13 @@ public final class NfsShareProto {
           + "est\022C\n\tnfs_share\030\001 \001(\0132+.google.cloud.ba"
           + "remetalsolution.v2.NfsShareB\003\340A\002\022/\n\013upda"
           + "te_mask\030\002 \001(\0132\032.google.protobuf.FieldMas"
-          + "kB\373\001\n%com.google.cloud.baremetalsolution"
-          + ".v2B\rNfsShareProtoP\001ZRgoogle.golang.org/"
-          + "genproto/googleapis/cloud/baremetalsolut"
-          + "ion/v2;baremetalsolution\252\002!Google.Cloud."
-          + "BareMetalSolution.V2\312\002!Google\\Cloud\\Bare"
-          + "MetalSolution\\V2\352\002$Google::Cloud::BareMe"
-          + "talSolution::V2b\006proto3"
+          + "kB\374\001\n%com.google.cloud.baremetalsolution"
+          + ".v2B\rNfsShareProtoP\001ZScloud.google.com/g"
+          + "o/baremetalsolution/apiv2/baremetalsolut"
+          + "ionpb;baremetalsolutionpb\252\002!Google.Cloud"
+          + ".BareMetalSolution.V2\312\002!Google\\Cloud\\Bar"
+          + "eMetalSolution\\V2\352\002$Google::Cloud::BareM"
+          + "etalSolution::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

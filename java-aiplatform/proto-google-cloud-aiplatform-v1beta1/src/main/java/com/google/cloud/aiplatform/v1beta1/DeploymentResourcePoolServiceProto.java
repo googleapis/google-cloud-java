@@ -156,14 +156,14 @@ public final class DeploymentResourcePoolServiceProto {
           + "ploymentResourcePools/*}:queryDeployedMo"
           + "dels\332A\030deployment_resource_pool\032M\312A\031aipl"
           + "atform.googleapis.com\322A.https://www.goog"
-          + "leapis.com/auth/cloud-platformB\377\001\n#com.g"
+          + "leapis.com/auth/cloud-platformB\371\001\n#com.g"
           + "oogle.cloud.aiplatform.v1beta1B\"Deployme"
-          + "ntResourcePoolServiceProtoP\001ZIgoogle.gol"
-          + "ang.org/genproto/googleapis/cloud/aiplat"
-          + "form/v1beta1;aiplatform\252\002\037Google.Cloud.A"
-          + "IPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPlatf"
-          + "orm\\V1beta1\352\002\"Google::Cloud::AIPlatform:"
-          + ":V1beta1b\006proto3"
+          + "ntResourcePoolServiceProtoP\001ZCcloud.goog"
+          + "le.com/go/aiplatform/apiv1beta1/aiplatfo"
+          + "rmpb;aiplatformpb\252\002\037Google.Cloud.AIPlatf"
+          + "orm.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1"
+          + "beta1\352\002\"Google::Cloud::AIPlatform::V1bet"
+          + "a1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

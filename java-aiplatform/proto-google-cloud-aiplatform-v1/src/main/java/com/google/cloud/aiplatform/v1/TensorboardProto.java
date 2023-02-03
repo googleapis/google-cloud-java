@@ -63,13 +63,12 @@ public final class TensorboardProto {
           + "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:n\352Ak\n%aip"
           + "latform.googleapis.com/Tensorboard\022Bproj"
           + "ects/{project}/locations/{location}/tens"
-          + "orboards/{tensorboard}B\324\001\n\036com.google.cl"
-          + "oud.aiplatform.v1B\020TensorboardProtoP\001ZDg"
-          + "oogle.golang.org/genproto/googleapis/clo"
-          + "ud/aiplatform/v1;aiplatform\252\002\032Google.Clo"
-          + "ud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatfo"
-          + "rm\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006p"
-          + "roto3"
+          + "orboards/{tensorboard}B\316\001\n\036com.google.cl"
+          + "oud.aiplatform.v1B\020TensorboardProtoP\001Z>c"
+          + "loud.google.com/go/aiplatform/apiv1/aipl"
+          + "atformpb;aiplatformpb\252\002\032Google.Cloud.AIP"
+          + "latform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352"
+          + "\002\035Google::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

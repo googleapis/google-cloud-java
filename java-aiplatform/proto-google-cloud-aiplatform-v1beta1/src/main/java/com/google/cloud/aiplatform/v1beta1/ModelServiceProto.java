@@ -359,13 +359,13 @@ public final class ModelServiceProto {
           + "nt=projects/*/locations/*/models/*/evalu"
           + "ations/*}/slices\332A\006parent\032M\312A\031aiplatform"
           + ".googleapis.com\322A.https://www.googleapis"
-          + ".com/auth/cloud-platformB\356\001\n#com.google."
+          + ".com/auth/cloud-platformB\350\001\n#com.google."
           + "cloud.aiplatform.v1beta1B\021ModelServicePr"
-          + "otoP\001ZIgoogle.golang.org/genproto/google"
-          + "apis/cloud/aiplatform/v1beta1;aiplatform"
-          + "\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Goo"
-          + "gle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::C"
-          + "loud::AIPlatform::V1beta1b\006proto3"
+          + "otoP\001ZCcloud.google.com/go/aiplatform/ap"
+          + "iv1beta1/aiplatformpb;aiplatformpb\252\002\037Goo"
+          + "gle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Cl"
+          + "oud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::"
+          + "AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

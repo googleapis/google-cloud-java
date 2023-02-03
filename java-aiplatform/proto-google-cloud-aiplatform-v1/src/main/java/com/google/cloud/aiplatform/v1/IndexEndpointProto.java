@@ -103,13 +103,13 @@ public final class IndexEndpointProto {
           + "Provider\022\021\n\taudiences\030\001 \003(\t\022\027\n\017allowed_i"
           + "ssuers\030\002 \003(\t\"Y\n\025IndexPrivateEndpoints\022\037\n"
           + "\022match_grpc_address\030\001 \001(\tB\003\340A\003\022\037\n\022servic"
-          + "e_attachment\030\002 \001(\tB\003\340A\003B\326\001\n\036com.google.c"
+          + "e_attachment\030\002 \001(\tB\003\340A\003B\320\001\n\036com.google.c"
           + "loud.aiplatform.v1B\022IndexEndpointProtoP\001"
-          + "ZDgoogle.golang.org/genproto/googleapis/"
-          + "cloud/aiplatform/v1;aiplatform\252\002\032Google."
-          + "Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPla"
-          + "tform\\V1\352\002\035Google::Cloud::AIPlatform::V1"
-          + "b\006proto3"
+          + "Z>cloud.google.com/go/aiplatform/apiv1/a"
+          + "iplatformpb;aiplatformpb\252\002\032Google.Cloud."
+          + "AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatform\\"
+          + "V1\352\002\035Google::Cloud::AIPlatform::V1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

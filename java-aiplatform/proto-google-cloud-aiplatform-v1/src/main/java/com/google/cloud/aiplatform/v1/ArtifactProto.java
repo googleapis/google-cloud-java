@@ -65,12 +65,12 @@ public final class ArtifactProto {
           + ":\206\001\352A\202\001\n\"aiplatform.googleapis.com/Artif"
           + "act\022\\projects/{project}/locations/{locat"
           + "ion}/metadataStores/{metadata_store}/art"
-          + "ifacts/{artifact}B\321\001\n\036com.google.cloud.a"
-          + "iplatform.v1B\rArtifactProtoP\001ZDgoogle.go"
-          + "lang.org/genproto/googleapis/cloud/aipla"
-          + "tform/v1;aiplatform\252\002\032Google.Cloud.AIPla"
-          + "tform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035"
-          + "Google::Cloud::AIPlatform::V1b\006proto3"
+          + "ifacts/{artifact}B\313\001\n\036com.google.cloud.a"
+          + "iplatform.v1B\rArtifactProtoP\001Z>cloud.goo"
+          + "gle.com/go/aiplatform/apiv1/aiplatformpb"
+          + ";aiplatformpb\252\002\032Google.Cloud.AIPlatform."
+          + "V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google"
+          + "::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

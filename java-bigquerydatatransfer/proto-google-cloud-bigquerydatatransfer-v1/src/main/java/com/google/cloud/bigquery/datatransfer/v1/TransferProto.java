@@ -129,14 +129,14 @@ public final class TransferProto {
           + "\000\022\t\n\005BATCH\020\001\022\r\n\tSTREAMING\020\002\032\002\030\001*s\n\rTrans"
           + "ferState\022\036\n\032TRANSFER_STATE_UNSPECIFIED\020\000"
           + "\022\013\n\007PENDING\020\002\022\013\n\007RUNNING\020\003\022\r\n\tSUCCEEDED\020"
-          + "\004\022\n\n\006FAILED\020\005\022\r\n\tCANCELLED\020\006B\223\002\n)com.goo"
+          + "\004\022\n\n\006FAILED\020\005\022\r\n\tCANCELLED\020\006B\217\002\n)com.goo"
           + "gle.cloud.bigquery.datatransfer.v1B\rTran"
-          + "sferProtoP\001ZQgoogle.golang.org/genproto/"
-          + "googleapis/cloud/bigquery/datatransfer/v"
-          + "1;datatransfer\242\002\005GCBDT\252\002%Google.Cloud.Bi"
-          + "gQuery.DataTransfer.V1\312\002%Google\\Cloud\\Bi"
-          + "gQuery\\DataTransfer\\V1\352\002)Google::Cloud::"
-          + "Bigquery::DataTransfer::V1b\006proto3"
+          + "sferProtoP\001ZMcloud.google.com/go/bigquer"
+          + "y/datatransfer/apiv1/datatransferpb;data"
+          + "transferpb\242\002\005GCBDT\252\002%Google.Cloud.BigQue"
+          + "ry.DataTransfer.V1\312\002%Google\\Cloud\\BigQue"
+          + "ry\\DataTransfer\\V1\352\002)Google::Cloud::Bigq"
+          + "uery::DataTransfer::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

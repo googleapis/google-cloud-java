@@ -216,13 +216,13 @@ public final class ExplanationProto {
           + "t\022\033\n\027DATA_FORMAT_UNSPECIFIED\020\000\022\r\n\tINSTAN"
           + "CES\020\001\022\016\n\nEMBEDDINGS\020\002\"T\n\035ExamplesRestric"
           + "tionsNamespace\022\026\n\016namespace_name\030\001 \001(\t\022\r"
-          + "\n\005allow\030\002 \003(\t\022\014\n\004deny\030\003 \003(\tB\355\001\n#com.goog"
+          + "\n\005allow\030\002 \003(\t\022\014\n\004deny\030\003 \003(\tB\347\001\n#com.goog"
           + "le.cloud.aiplatform.v1beta1B\020Explanation"
-          + "ProtoP\001ZIgoogle.golang.org/genproto/goog"
-          + "leapis/cloud/aiplatform/v1beta1;aiplatfo"
-          + "rm\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037G"
-          + "oogle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google:"
-          + ":Cloud::AIPlatform::V1beta1b\006proto3"
+          + "ProtoP\001ZCcloud.google.com/go/aiplatform/"
+          + "apiv1beta1/aiplatformpb;aiplatformpb\252\002\037G"
+          + "oogle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\"
+          + "Cloud\\AIPlatform\\V1beta1\352\002\"Google::Cloud"
+          + "::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -161,13 +161,13 @@ public final class InstanceProto {
           + "projects/{project}/locations/{location}/"
           + "serverNetworkTemplate/{server_network_te"
           + "mplate}\"\027\n\025StartInstanceResponse\"\026\n\024Stop"
-          + "InstanceResponseB\373\001\n%com.google.cloud.ba"
-          + "remetalsolution.v2B\rInstanceProtoP\001ZRgoo"
-          + "gle.golang.org/genproto/googleapis/cloud"
-          + "/baremetalsolution/v2;baremetalsolution\252"
-          + "\002!Google.Cloud.BareMetalSolution.V2\312\002!Go"
-          + "ogle\\Cloud\\BareMetalSolution\\V2\352\002$Google"
-          + "::Cloud::BareMetalSolution::V2b\006proto3"
+          + "InstanceResponseB\374\001\n%com.google.cloud.ba"
+          + "remetalsolution.v2B\rInstanceProtoP\001ZSclo"
+          + "ud.google.com/go/baremetalsolution/apiv2"
+          + "/baremetalsolutionpb;baremetalsolutionpb"
+          + "\252\002!Google.Cloud.BareMetalSolution.V2\312\002!G"
+          + "oogle\\Cloud\\BareMetalSolution\\V2\352\002$Googl"
+          + "e::Cloud::BareMetalSolution::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

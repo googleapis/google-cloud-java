@@ -118,12 +118,12 @@ public final class PredictionServiceProto {
           + "put_config,output_config,params\312A\'\n\022Batc"
           + "hPredictResult\022\021OperationMetadata\032I\312A\025au"
           + "toml.googleapis.com\322A.https://www.google"
-          + "apis.com/auth/cloud-platformB\275\001\n\037com.goo"
+          + "apis.com/auth/cloud-platformB\263\001\n\037com.goo"
           + "gle.cloud.automl.v1beta1B\026PredictionServ"
-          + "iceProtoP\001ZAgoogle.golang.org/genproto/g"
-          + "oogleapis/cloud/automl/v1beta1;automl\312\002\033"
-          + "Google\\Cloud\\AutoMl\\V1beta1\352\002\036Google::Cl"
-          + "oud::AutoML::V1beta1b\006proto3"
+          + "iceProtoP\001Z7cloud.google.com/go/automl/a"
+          + "piv1beta1/automlpb;automlpb\312\002\033Google\\Clo"
+          + "ud\\AutoMl\\V1beta1\352\002\036Google::Cloud::AutoM"
+          + "L::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -220,14 +220,14 @@ public final class Pipeline {
           + "\003\340A\003\022*\n\035failed_pre_caching_check_jobs\030\004 "
           + "\003(\tB\003\340A\003\032O\n\017CustomJobDetail\0228\n\003job\030\001 \001(\t"
           + "B+\340A\003\372A%\n#aiplatform.googleapis.com/Cust"
-          + "omJob:\002\030\001B\t\n\007detailsB\235\002\n\036com.google.clou"
-          + "d.aiplatform.v1B\010PipelineP\001ZDgoogle.gola"
-          + "ng.org/genproto/googleapis/cloud/aiplatf"
-          + "orm/v1;aiplatform\252\002\032Google.Cloud.AIPlatf"
-          + "orm.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Go"
-          + "ogle::Cloud::AIPlatform::V1\352AN\n\036compute."
-          + "googleapis.com/Network\022,projects/{projec"
-          + "t}/global/networks/{network}b\006proto3"
+          + "omJob:\002\030\001B\t\n\007detailsB\227\002\n\036com.google.clou"
+          + "d.aiplatform.v1B\010PipelineP\001Z>cloud.googl"
+          + "e.com/go/aiplatform/apiv1/aiplatformpb;a"
+          + "iplatformpb\252\002\032Google.Cloud.AIPlatform.V1"
+          + "\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google::"
+          + "Cloud::AIPlatform::V1\352AN\n\036compute.google"
+          + "apis.com/Network\022,projects/{project}/glo"
+          + "bal/networks/{network}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

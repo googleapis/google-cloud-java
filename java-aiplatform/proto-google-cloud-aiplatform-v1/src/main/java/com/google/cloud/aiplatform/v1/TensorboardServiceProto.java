@@ -605,12 +605,12 @@ public final class TensorboardServiceProto {
           + "orm.googleapis.com\322Aghttps://www.googlea"
           + "pis.com/auth/cloud-platform,https://www."
           + "googleapis.com/auth/cloud-platform.read-"
-          + "onlyB\333\001\n\036com.google.cloud.aiplatform.v1B"
-          + "\027TensorboardServiceProtoP\001ZDgoogle.golan"
-          + "g.org/genproto/googleapis/cloud/aiplatfo"
-          + "rm/v1;aiplatform\252\002\032Google.Cloud.AIPlatfo"
-          + "rm.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Goo"
-          + "gle::Cloud::AIPlatform::V1b\006proto3"
+          + "onlyB\325\001\n\036com.google.cloud.aiplatform.v1B"
+          + "\027TensorboardServiceProtoP\001Z>cloud.google"
+          + ".com/go/aiplatform/apiv1/aiplatformpb;ai"
+          + "platformpb\252\002\032Google.Cloud.AIPlatform.V1\312"
+          + "\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google::C"
+          + "loud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

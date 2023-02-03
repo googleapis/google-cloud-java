@@ -65,12 +65,11 @@ public final class TranslationProto {
           + "code\030\002 \001(\t\022\034\n\024target_language_code\030\003 \001(\t"
           + "\"]\n\025TranslationAnnotation\022D\n\022translated_"
           + "content\030\001 \001(\0132(.google.cloud.automl.v1be"
-          + "ta1.TextSnippetB\267\001\n\037com.google.cloud.aut"
-          + "oml.v1beta1B\020TranslationProtoP\001ZAgoogle."
-          + "golang.org/genproto/googleapis/cloud/aut"
-          + "oml/v1beta1;automl\312\002\033Google\\Cloud\\AutoMl"
-          + "\\V1beta1\352\002\036Google::Cloud::AutoML::V1beta"
-          + "1b\006proto3"
+          + "ta1.TextSnippetB\255\001\n\037com.google.cloud.aut"
+          + "oml.v1beta1B\020TranslationProtoP\001Z7cloud.g"
+          + "oogle.com/go/automl/apiv1beta1/automlpb;"
+          + "automlpb\312\002\033Google\\Cloud\\AutoMl\\V1beta1\352\002"
+          + "\036Google::Cloud::AutoML::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

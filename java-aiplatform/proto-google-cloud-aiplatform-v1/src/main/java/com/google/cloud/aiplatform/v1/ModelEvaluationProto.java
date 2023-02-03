@@ -68,13 +68,13 @@ public final class ModelEvaluationProto {
           + "aiplatform.v1.ExplanationSpec:\177\352A|\n)aipl"
           + "atform.googleapis.com/ModelEvaluation\022Op"
           + "rojects/{project}/locations/{location}/m"
-          + "odels/{model}/evaluations/{evaluation}B\330"
+          + "odels/{model}/evaluations/{evaluation}B\322"
           + "\001\n\036com.google.cloud.aiplatform.v1B\024Model"
-          + "EvaluationProtoP\001ZDgoogle.golang.org/gen"
-          + "proto/googleapis/cloud/aiplatform/v1;aip"
-          + "latform\252\002\032Google.Cloud.AIPlatform.V1\312\002\032G"
-          + "oogle\\Cloud\\AIPlatform\\V1\352\002\035Google::Clou"
-          + "d::AIPlatform::V1b\006proto3"
+          + "EvaluationProtoP\001Z>cloud.google.com/go/a"
+          + "iplatform/apiv1/aiplatformpb;aiplatformp"
+          + "b\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Google\\"
+          + "Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AIP"
+          + "latform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -58,12 +58,12 @@ public final class VideoProto {
           + "\"$\n\"VideoClassificationDatasetMetadata\"$"
           + "\n\"VideoObjectTrackingDatasetMetadata\"\"\n "
           + "VideoClassificationModelMetadata\"\"\n Vide"
-          + "oObjectTrackingModelMetadataB\261\001\n\037com.goo"
-          + "gle.cloud.automl.v1beta1B\nVideoProtoP\001ZA"
-          + "google.golang.org/genproto/googleapis/cl"
-          + "oud/automl/v1beta1;automl\312\002\033Google\\Cloud"
-          + "\\AutoMl\\V1beta1\352\002\036Google::Cloud::AutoML:"
-          + ":V1beta1b\006proto3"
+          + "oObjectTrackingModelMetadataB\247\001\n\037com.goo"
+          + "gle.cloud.automl.v1beta1B\nVideoProtoP\001Z7"
+          + "cloud.google.com/go/automl/apiv1beta1/au"
+          + "tomlpb;automlpb\312\002\033Google\\Cloud\\AutoMl\\V1"
+          + "beta1\352\002\036Google::Cloud::AutoML::V1beta1b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

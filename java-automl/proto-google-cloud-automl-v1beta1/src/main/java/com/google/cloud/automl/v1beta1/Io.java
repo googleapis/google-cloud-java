@@ -133,11 +133,11 @@ public final class Io {
           + "ri\030\001 \001(\t\"+\n\016GcsDestination\022\031\n\021output_uri"
           + "_prefix\030\001 \001(\t\")\n\023BigQueryDestination\022\022\n\n"
           + "output_uri\030\001 \001(\t\"$\n\016GcrDestination\022\022\n\nou"
-          + "tput_uri\030\001 \001(\tB\245\001\n\037com.google.cloud.auto"
-          + "ml.v1beta1P\001ZAgoogle.golang.org/genproto"
-          + "/googleapis/cloud/automl/v1beta1;automl\312"
-          + "\002\033Google\\Cloud\\AutoMl\\V1beta1\352\002\036Google::"
-          + "Cloud::AutoML::V1beta1b\006proto3"
+          + "tput_uri\030\001 \001(\tB\233\001\n\037com.google.cloud.auto"
+          + "ml.v1beta1P\001Z7cloud.google.com/go/automl"
+          + "/apiv1beta1/automlpb;automlpb\312\002\033Google\\C"
+          + "loud\\AutoMl\\V1beta1\352\002\036Google::Cloud::Aut"
+          + "oML::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

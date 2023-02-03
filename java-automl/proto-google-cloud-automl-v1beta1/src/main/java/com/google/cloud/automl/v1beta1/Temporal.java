@@ -45,12 +45,11 @@ public final class Temporal {
           + "e/protobuf/duration.proto\"w\n\013TimeSegment"
           + "\0224\n\021start_time_offset\030\001 \001(\0132\031.google.pro"
           + "tobuf.Duration\0222\n\017end_time_offset\030\002 \001(\0132"
-          + "\031.google.protobuf.DurationB\245\001\n\037com.googl"
-          + "e.cloud.automl.v1beta1P\001ZAgoogle.golang."
-          + "org/genproto/googleapis/cloud/automl/v1b"
-          + "eta1;automl\312\002\033Google\\Cloud\\AutoMl\\V1beta"
-          + "1\352\002\036Google::Cloud::AutoML::V1beta1b\006prot"
-          + "o3"
+          + "\031.google.protobuf.DurationB\233\001\n\037com.googl"
+          + "e.cloud.automl.v1beta1P\001Z7cloud.google.c"
+          + "om/go/automl/apiv1beta1/automlpb;automlp"
+          + "b\312\002\033Google\\Cloud\\AutoMl\\V1beta1\352\002\036Google"
+          + "::Cloud::AutoML::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

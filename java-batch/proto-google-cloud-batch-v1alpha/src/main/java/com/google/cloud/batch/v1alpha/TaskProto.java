@@ -181,12 +181,12 @@ public final class TaskProto {
           + "key_name\030\001 \001(\t\022\023\n\013cipher_text\030\002 \001(\t\0320\n\016V"
           + "ariablesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001("
           + "\t:\0028\001\0326\n\024SecretVariablesEntry\022\013\n\003key\030\001 \001"
-          + "(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\316\001\n\036com.google.clo"
-          + "ud.batch.v1alphaB\tTaskProtoP\001Z?google.go"
-          + "lang.org/genproto/googleapis/cloud/batch"
-          + "/v1alpha;batch\242\002\003GCB\252\002\032Google.Cloud.Batc"
-          + "h.V1Alpha\312\002\032Google\\Cloud\\Batch\\V1alpha\352\002"
-          + "\035Google::Cloud::Batch::V1alphab\006proto3"
+          + "(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\303\001\n\036com.google.clo"
+          + "ud.batch.v1alphaB\tTaskProtoP\001Z4cloud.goo"
+          + "gle.com/go/batch/apiv1alpha/batchpb;batc"
+          + "hpb\242\002\003GCB\252\002\032Google.Cloud.Batch.V1Alpha\312\002"
+          + "\032Google\\Cloud\\Batch\\V1alpha\352\002\035Google::Cl"
+          + "oud::Batch::V1alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

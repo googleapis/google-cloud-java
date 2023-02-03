@@ -523,12 +523,12 @@ public final class FeaturestoreServiceProto {
           + "estores:searchFeatures\332A\010location\332A\016loca"
           + "tion,query\032M\312A\031aiplatform.googleapis.com"
           + "\322A.https://www.googleapis.com/auth/cloud"
-          + "-platformB\334\001\n\036com.google.cloud.aiplatfor"
-          + "m.v1B\030FeaturestoreServiceProtoP\001ZDgoogle"
-          + ".golang.org/genproto/googleapis/cloud/ai"
-          + "platform/v1;aiplatform\252\002\032Google.Cloud.AI"
-          + "Platform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1"
-          + "\352\002\035Google::Cloud::AIPlatform::V1b\006proto3"
+          + "-platformB\326\001\n\036com.google.cloud.aiplatfor"
+          + "m.v1B\030FeaturestoreServiceProtoP\001Z>cloud."
+          + "google.com/go/aiplatform/apiv1/aiplatfor"
+          + "mpb;aiplatformpb\252\002\032Google.Cloud.AIPlatfo"
+          + "rm.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Goo"
+          + "gle::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

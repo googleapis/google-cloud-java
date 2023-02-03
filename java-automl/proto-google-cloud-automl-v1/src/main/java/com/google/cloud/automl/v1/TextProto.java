@@ -71,12 +71,12 @@ public final class TextProto {
           + "pe\"\037\n\035TextExtractionDatasetMetadata\"\035\n\033T"
           + "extExtractionModelMetadata\"5\n\034TextSentim"
           + "entDatasetMetadata\022\025\n\rsentiment_max\030\001 \001("
-          + "\005\"\034\n\032TextSentimentModelMetadataB\265\001\n\032com."
-          + "google.cloud.automl.v1B\tTextProtoP\001Z<goo"
-          + "gle.golang.org/genproto/googleapis/cloud"
-          + "/automl/v1;automl\252\002\026Google.Cloud.AutoML."
-          + "V1\312\002\026Google\\Cloud\\AutoMl\\V1\352\002\031Google::Cl"
-          + "oud::AutoML::V1b\006proto3"
+          + "\005\"\034\n\032TextSentimentModelMetadataB\253\001\n\032com."
+          + "google.cloud.automl.v1B\tTextProtoP\001Z2clo"
+          + "ud.google.com/go/automl/apiv1/automlpb;a"
+          + "utomlpb\252\002\026Google.Cloud.AutoML.V1\312\002\026Googl"
+          + "e\\Cloud\\AutoMl\\V1\352\002\031Google::Cloud::AutoM"
+          + "L::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

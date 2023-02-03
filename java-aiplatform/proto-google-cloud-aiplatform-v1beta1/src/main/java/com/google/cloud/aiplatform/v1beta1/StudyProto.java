@@ -271,13 +271,13 @@ public final class StudyProto {
           + "\003\340A\003\022\027\n\nstep_count\030\002 \001(\003B\003\340A\003\022I\n\007metrics"
           + "\030\003 \003(\01323.google.cloud.aiplatform.v1beta1"
           + ".Measurement.MetricB\003\340A\003\0324\n\006Metric\022\026\n\tme"
-          + "tric_id\030\001 \001(\tB\003\340A\003\022\022\n\005value\030\002 \001(\001B\003\340A\003B\347"
+          + "tric_id\030\001 \001(\tB\003\340A\003\022\022\n\005value\030\002 \001(\001B\003\340A\003B\341"
           + "\001\n#com.google.cloud.aiplatform.v1beta1B\n"
-          + "StudyProtoP\001ZIgoogle.golang.org/genproto"
-          + "/googleapis/cloud/aiplatform/v1beta1;aip"
-          + "latform\252\002\037Google.Cloud.AIPlatform.V1Beta"
-          + "1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Go"
-          + "ogle::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "StudyProtoP\001ZCcloud.google.com/go/aiplat"
+          + "form/apiv1beta1/aiplatformpb;aiplatformp"
+          + "b\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Go"
+          + "ogle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::"
+          + "Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

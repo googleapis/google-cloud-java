@@ -57,12 +57,12 @@ public final class MetadataSchemaProto {
           + ".com/MetadataSchema\022iprojects/{project}/"
           + "locations/{location}/metadataStores/{met"
           + "adata_store}/metadataSchemas/{metadata_s"
-          + "chema}B\327\001\n\036com.google.cloud.aiplatform.v"
-          + "1B\023MetadataSchemaProtoP\001ZDgoogle.golang."
-          + "org/genproto/googleapis/cloud/aiplatform"
-          + "/v1;aiplatform\252\002\032Google.Cloud.AIPlatform"
-          + ".V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Googl"
-          + "e::Cloud::AIPlatform::V1b\006proto3"
+          + "chema}B\321\001\n\036com.google.cloud.aiplatform.v"
+          + "1B\023MetadataSchemaProtoP\001Z>cloud.google.c"
+          + "om/go/aiplatform/apiv1/aiplatformpb;aipl"
+          + "atformpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032"
+          + "Google\\Cloud\\AIPlatform\\V1\352\002\035Google::Clo"
+          + "ud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

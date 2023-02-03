@@ -180,13 +180,13 @@ public final class FeaturestoreOnlineServiceProto {
           + "pes/*}:writeFeatureValues:\001*\332A\024entity_ty"
           + "pe,payloads\032M\312A\031aiplatform.googleapis.co"
           + "m\322A.https://www.googleapis.com/auth/clou"
-          + "d-platformB\373\001\n#com.google.cloud.aiplatfo"
+          + "d-platformB\365\001\n#com.google.cloud.aiplatfo"
           + "rm.v1beta1B\036FeaturestoreOnlineServicePro"
-          + "toP\001ZIgoogle.golang.org/genproto/googlea"
-          + "pis/cloud/aiplatform/v1beta1;aiplatform\252"
-          + "\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Goog"
-          + "le\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::Cl"
-          + "oud::AIPlatform::V1beta1b\006proto3"
+          + "toP\001ZCcloud.google.com/go/aiplatform/api"
+          + "v1beta1/aiplatformpb;aiplatformpb\252\002\037Goog"
+          + "le.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Clo"
+          + "ud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::A"
+          + "IPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

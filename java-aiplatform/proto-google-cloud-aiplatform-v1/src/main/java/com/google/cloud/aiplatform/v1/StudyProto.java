@@ -249,12 +249,12 @@ public final class StudyProto {
           + "D\n\007metrics\030\003 \003(\0132..google.cloud.aiplatfo"
           + "rm.v1.Measurement.MetricB\003\340A\003\0324\n\006Metric\022"
           + "\026\n\tmetric_id\030\001 \001(\tB\003\340A\003\022\022\n\005value\030\002 \001(\001B\003"
-          + "\340A\003B\316\001\n\036com.google.cloud.aiplatform.v1B\n"
-          + "StudyProtoP\001ZDgoogle.golang.org/genproto"
-          + "/googleapis/cloud/aiplatform/v1;aiplatfo"
-          + "rm\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Google"
-          + "\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AI"
-          + "Platform::V1b\006proto3"
+          + "\340A\003B\310\001\n\036com.google.cloud.aiplatform.v1B\n"
+          + "StudyProtoP\001Z>cloud.google.com/go/aiplat"
+          + "form/apiv1/aiplatformpb;aiplatformpb\252\002\032G"
+          + "oogle.Cloud.AIPlatform.V1\312\002\032Google\\Cloud"
+          + "\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatfo"
+          + "rm::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

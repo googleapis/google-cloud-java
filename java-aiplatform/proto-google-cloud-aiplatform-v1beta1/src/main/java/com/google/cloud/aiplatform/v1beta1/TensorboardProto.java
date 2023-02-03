@@ -64,13 +64,13 @@ public final class TensorboardProto {
           + "value\030\002 \001(\t:\0028\001:n\352Ak\n%aiplatform.googlea"
           + "pis.com/Tensorboard\022Bprojects/{project}/"
           + "locations/{location}/tensorboards/{tenso"
-          + "rboard}B\355\001\n#com.google.cloud.aiplatform."
-          + "v1beta1B\020TensorboardProtoP\001ZIgoogle.gola"
-          + "ng.org/genproto/googleapis/cloud/aiplatf"
-          + "orm/v1beta1;aiplatform\252\002\037Google.Cloud.AI"
-          + "Platform.V1Beta1\312\002\037Google\\Cloud\\AIPlatfo"
-          + "rm\\V1beta1\352\002\"Google::Cloud::AIPlatform::"
-          + "V1beta1b\006proto3"
+          + "rboard}B\347\001\n#com.google.cloud.aiplatform."
+          + "v1beta1B\020TensorboardProtoP\001ZCcloud.googl"
+          + "e.com/go/aiplatform/apiv1beta1/aiplatfor"
+          + "mpb;aiplatformpb\252\002\037Google.Cloud.AIPlatfo"
+          + "rm.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1b"
+          + "eta1\352\002\"Google::Cloud::AIPlatform::V1beta"
+          + "1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -843,11 +843,11 @@ public final class AssetServiceProto {
           + "rgPolicyGovernedAssets\332A\027scope,constrain"
           + "t,filter\032M\312A\031cloudasset.googleapis.com\322A"
           + ".https://www.googleapis.com/auth/cloud-p"
-          + "latformB\234\001\n\031com.google.cloud.asset.v1B\021A"
-          + "ssetServiceProtoP\001Z:google.golang.org/ge"
-          + "nproto/googleapis/cloud/asset/v1;asset\252\002"
-          + "\025Google.Cloud.Asset.V1\312\002\025Google\\Cloud\\As"
-          + "set\\V1b\006proto3"
+          + "latformB\221\001\n\031com.google.cloud.asset.v1B\021A"
+          + "ssetServiceProtoP\001Z/cloud.google.com/go/"
+          + "asset/apiv1/assetpb;assetpb\252\002\025Google.Clo"
+          + "ud.Asset.V1\312\002\025Google\\Cloud\\Asset\\V1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

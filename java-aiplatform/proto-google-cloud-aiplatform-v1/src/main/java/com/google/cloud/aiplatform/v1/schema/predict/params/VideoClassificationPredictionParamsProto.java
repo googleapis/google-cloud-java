@@ -48,15 +48,15 @@ public final class VideoClassificationPredictionParamsProto {
           + "\017max_predictions\030\002 \001(\005\022\036\n\026segment_classi"
           + "fication\030\003 \001(\010\022\033\n\023shot_classification\030\004 "
           + "\001(\010\022\'\n\037one_sec_interval_classification\030\005"
-          + " \001(\010B\331\002\n4com.google.cloud.aiplatform.v1."
+          + " \001(\010B\317\002\n4com.google.cloud.aiplatform.v1."
           + "schema.predict.paramsB(VideoClassificati"
-          + "onPredictionParamsProtoP\001ZVgoogle.golang"
-          + ".org/genproto/googleapis/cloud/aiplatfor"
-          + "m/v1/schema/predict/params;params\252\0020Goog"
-          + "le.Cloud.AIPlatform.V1.Schema.Predict.Pa"
-          + "rams\312\0020Google\\Cloud\\AIPlatform\\V1\\Schema"
-          + "\\Predict\\Params\352\0026Google::Cloud::AIPlatf"
-          + "orm::V1::Schema::Predict::Paramsb\006proto3"
+          + "onPredictionParamsProtoP\001ZLcloud.google."
+          + "com/go/aiplatform/apiv1/schema/predict/p"
+          + "arams/paramspb;paramspb\252\0020Google.Cloud.A"
+          + "IPlatform.V1.Schema.Predict.Params\312\0020Goo"
+          + "gle\\Cloud\\AIPlatform\\V1\\Schema\\Predict\\P"
+          + "arams\352\0026Google::Cloud::AIPlatform::V1::S"
+          + "chema::Predict::Paramsb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

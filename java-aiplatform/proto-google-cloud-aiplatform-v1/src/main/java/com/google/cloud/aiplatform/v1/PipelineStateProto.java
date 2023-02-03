@@ -43,13 +43,13 @@ public final class PipelineStateProto {
           + "_RUNNING\020\003\022\034\n\030PIPELINE_STATE_SUCCEEDED\020\004"
           + "\022\031\n\025PIPELINE_STATE_FAILED\020\005\022\035\n\031PIPELINE_"
           + "STATE_CANCELLING\020\006\022\034\n\030PIPELINE_STATE_CAN"
-          + "CELLED\020\007\022\031\n\025PIPELINE_STATE_PAUSED\020\010B\326\001\n\036"
+          + "CELLED\020\007\022\031\n\025PIPELINE_STATE_PAUSED\020\010B\320\001\n\036"
           + "com.google.cloud.aiplatform.v1B\022Pipeline"
-          + "StateProtoP\001ZDgoogle.golang.org/genproto"
-          + "/googleapis/cloud/aiplatform/v1;aiplatfo"
-          + "rm\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Google"
-          + "\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AI"
-          + "Platform::V1b\006proto3"
+          + "StateProtoP\001Z>cloud.google.com/go/aiplat"
+          + "form/apiv1/aiplatformpb;aiplatformpb\252\002\032G"
+          + "oogle.Cloud.AIPlatform.V1\312\002\032Google\\Cloud"
+          + "\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatfo"
+          + "rm::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

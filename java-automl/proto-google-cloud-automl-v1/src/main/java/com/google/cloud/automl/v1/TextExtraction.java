@@ -60,12 +60,11 @@ public final class TextExtraction {
           + "valuationMetrics.ConfidenceMetricsEntry\032"
           + "k\n\026ConfidenceMetricsEntry\022\034\n\024confidence_"
           + "threshold\030\001 \001(\002\022\016\n\006recall\030\003 \001(\002\022\021\n\tpreci"
-          + "sion\030\004 \001(\002\022\020\n\010f1_score\030\005 \001(\002B\252\001\n\032com.goo"
-          + "gle.cloud.automl.v1P\001Z<google.golang.org"
-          + "/genproto/googleapis/cloud/automl/v1;aut"
-          + "oml\252\002\026Google.Cloud.AutoML.V1\312\002\026Google\\Cl"
-          + "oud\\AutoMl\\V1\352\002\031Google::Cloud::AutoML::V"
-          + "1b\006proto3"
+          + "sion\030\004 \001(\002\022\020\n\010f1_score\030\005 \001(\002B\240\001\n\032com.goo"
+          + "gle.cloud.automl.v1P\001Z2cloud.google.com/"
+          + "go/automl/apiv1/automlpb;automlpb\252\002\026Goog"
+          + "le.Cloud.AutoML.V1\312\002\026Google\\Cloud\\AutoMl"
+          + "\\V1\352\002\031Google::Cloud::AutoML::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

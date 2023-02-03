@@ -55,12 +55,12 @@ public final class VolumeProto {
           + "device_name\030\006 \001(\tH\000\022\022\n\nmount_path\030\004 \001(\t\022"
           + "\025\n\rmount_options\030\005 \003(\tB\010\n\006source\"*\n\003NFS\022"
           + "\016\n\006server\030\001 \001(\t\022\023\n\013remote_path\030\002 \001(\t\"\032\n\003"
-          + "GCS\022\023\n\013remote_path\030\001 \001(\tB\267\001\n\031com.google."
-          + "cloud.batch.v1B\013VolumeProtoP\001Z:google.go"
-          + "lang.org/genproto/googleapis/cloud/batch"
-          + "/v1;batch\242\002\003GCB\252\002\025Google.Cloud.Batch.V1\312"
-          + "\002\025Google\\Cloud\\Batch\\V1\352\002\030Google::Cloud:"
-          + ":Batch::V1b\006proto3"
+          + "GCS\022\023\n\013remote_path\030\001 \001(\tB\254\001\n\031com.google."
+          + "cloud.batch.v1B\013VolumeProtoP\001Z/cloud.goo"
+          + "gle.com/go/batch/apiv1/batchpb;batchpb\242\002"
+          + "\003GCB\252\002\025Google.Cloud.Batch.V1\312\002\025Google\\Cl"
+          + "oud\\Batch\\V1\352\002\030Google::Cloud::Batch::V1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

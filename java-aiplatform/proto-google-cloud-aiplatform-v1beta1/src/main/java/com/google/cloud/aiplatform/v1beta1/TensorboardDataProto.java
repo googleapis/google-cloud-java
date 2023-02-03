@@ -84,13 +84,13 @@ public final class TensorboardDataProto {
           + "\"[\n\027TensorboardBlobSequence\022@\n\006values\030\001 "
           + "\003(\01320.google.cloud.aiplatform.v1beta1.Te"
           + "nsorboardBlob\"5\n\017TensorboardBlob\022\017\n\002id\030\001"
-          + " \001(\tB\003\340A\003\022\021\n\004data\030\002 \001(\014B\003\340A\001B\361\001\n#com.goo"
+          + " \001(\tB\003\340A\003\022\021\n\004data\030\002 \001(\014B\003\340A\001B\353\001\n#com.goo"
           + "gle.cloud.aiplatform.v1beta1B\024Tensorboar"
-          + "dDataProtoP\001ZIgoogle.golang.org/genproto"
-          + "/googleapis/cloud/aiplatform/v1beta1;aip"
-          + "latform\252\002\037Google.Cloud.AIPlatform.V1Beta"
-          + "1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Go"
-          + "ogle::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "dDataProtoP\001ZCcloud.google.com/go/aiplat"
+          + "form/apiv1beta1/aiplatformpb;aiplatformp"
+          + "b\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Go"
+          + "ogle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::"
+          + "Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

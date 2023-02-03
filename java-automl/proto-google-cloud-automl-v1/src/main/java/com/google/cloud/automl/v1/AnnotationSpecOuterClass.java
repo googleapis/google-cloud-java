@@ -47,12 +47,12 @@ public final class AnnotationSpecOuterClass {
           + "ple_count\030\t \001(\005:\210\001\352A\204\001\n$automl.googleapi"
           + "s.com/AnnotationSpec\022\\projects/{project}"
           + "/locations/{location}/datasets/{dataset}"
-          + "/annotationSpecs/{annotation_spec}B\252\001\n\032c"
-          + "om.google.cloud.automl.v1P\001Z<google.gola"
-          + "ng.org/genproto/googleapis/cloud/automl/"
-          + "v1;automl\252\002\026Google.Cloud.AutoML.V1\312\002\026Goo"
-          + "gle\\Cloud\\AutoMl\\V1\352\002\031Google::Cloud::Aut"
-          + "oML::V1b\006proto3"
+          + "/annotationSpecs/{annotation_spec}B\240\001\n\032c"
+          + "om.google.cloud.automl.v1P\001Z2cloud.googl"
+          + "e.com/go/automl/apiv1/automlpb;automlpb\252"
+          + "\002\026Google.Cloud.AutoML.V1\312\002\026Google\\Cloud\\"
+          + "AutoMl\\V1\352\002\031Google::Cloud::AutoML::V1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

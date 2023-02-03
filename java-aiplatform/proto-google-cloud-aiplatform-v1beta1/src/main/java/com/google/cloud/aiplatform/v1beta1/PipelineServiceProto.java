@@ -191,13 +191,13 @@ public final class PipelineServiceProto {
           + "name=projects/*/locations/*/pipelineJobs"
           + "/*}:cancel:\001*\332A\004name\032M\312A\031aiplatform.goog"
           + "leapis.com\322A.https://www.googleapis.com/"
-          + "auth/cloud-platformB\361\001\n#com.google.cloud"
+          + "auth/cloud-platformB\353\001\n#com.google.cloud"
           + ".aiplatform.v1beta1B\024PipelineServiceProt"
-          + "oP\001ZIgoogle.golang.org/genproto/googleap"
-          + "is/cloud/aiplatform/v1beta1;aiplatform\252\002"
-          + "\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Googl"
-          + "e\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::Clo"
-          + "ud::AIPlatform::V1beta1b\006proto3"
+          + "oP\001ZCcloud.google.com/go/aiplatform/apiv"
+          + "1beta1/aiplatformpb;aiplatformpb\252\002\037Googl"
+          + "e.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Clou"
+          + "d\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AI"
+          + "Platform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

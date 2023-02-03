@@ -101,12 +101,11 @@ public final class Io {
           + "-\n\013ParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001"
           + "(\t:\0028\001B\r\n\013destination\"$\n\tGcsSource\022\027\n\nin"
           + "put_uris\030\001 \003(\tB\003\340A\002\"0\n\016GcsDestination\022\036\n"
-          + "\021output_uri_prefix\030\001 \001(\tB\003\340A\002B\252\001\n\032com.go"
-          + "ogle.cloud.automl.v1P\001Z<google.golang.or"
-          + "g/genproto/googleapis/cloud/automl/v1;au"
-          + "toml\252\002\026Google.Cloud.AutoML.V1\312\002\026Google\\C"
-          + "loud\\AutoMl\\V1\352\002\031Google::Cloud::AutoML::"
-          + "V1b\006proto3"
+          + "\021output_uri_prefix\030\001 \001(\tB\003\340A\002B\240\001\n\032com.go"
+          + "ogle.cloud.automl.v1P\001Z2cloud.google.com"
+          + "/go/automl/apiv1/automlpb;automlpb\252\002\026Goo"
+          + "gle.Cloud.AutoML.V1\312\002\026Google\\Cloud\\AutoM"
+          + "l\\V1\352\002\031Google::Cloud::AutoML::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

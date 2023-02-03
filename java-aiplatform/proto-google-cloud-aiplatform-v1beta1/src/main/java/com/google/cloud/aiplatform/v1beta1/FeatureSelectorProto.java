@@ -50,13 +50,13 @@ public final class FeatureSelectorProto {
           + "to\"\035\n\tIdMatcher\022\020\n\003ids\030\001 \003(\tB\003\340A\002\"V\n\017Fea"
           + "tureSelector\022C\n\nid_matcher\030\001 \001(\0132*.googl"
           + "e.cloud.aiplatform.v1beta1.IdMatcherB\003\340A"
-          + "\002B\361\001\n#com.google.cloud.aiplatform.v1beta"
-          + "1B\024FeatureSelectorProtoP\001ZIgoogle.golang"
-          + ".org/genproto/googleapis/cloud/aiplatfor"
-          + "m/v1beta1;aiplatform\252\002\037Google.Cloud.AIPl"
-          + "atform.V1Beta1\312\002\037Google\\Cloud\\AIPlatform"
-          + "\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1"
-          + "beta1b\006proto3"
+          + "\002B\353\001\n#com.google.cloud.aiplatform.v1beta"
+          + "1B\024FeatureSelectorProtoP\001ZCcloud.google."
+          + "com/go/aiplatform/apiv1beta1/aiplatformp"
+          + "b;aiplatformpb\252\002\037Google.Cloud.AIPlatform"
+          + ".V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1bet"
+          + "a1\352\002\"Google::Cloud::AIPlatform::V1beta1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

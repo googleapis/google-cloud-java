@@ -48,12 +48,12 @@ public final class Geometry {
           + "\026google.cloud.automl.v1\"(\n\020NormalizedVer"
           + "tex\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\"U\n\014BoundingPol"
           + "y\022E\n\023normalized_vertices\030\002 \003(\0132(.google."
-          + "cloud.automl.v1.NormalizedVertexB\252\001\n\032com"
-          + ".google.cloud.automl.v1P\001Z<google.golang"
-          + ".org/genproto/googleapis/cloud/automl/v1"
-          + ";automl\252\002\026Google.Cloud.AutoML.V1\312\002\026Googl"
-          + "e\\Cloud\\AutoMl\\V1\352\002\031Google::Cloud::AutoM"
-          + "L::V1b\006proto3"
+          + "cloud.automl.v1.NormalizedVertexB\240\001\n\032com"
+          + ".google.cloud.automl.v1P\001Z2cloud.google."
+          + "com/go/automl/apiv1/automlpb;automlpb\252\002\026"
+          + "Google.Cloud.AutoML.V1\312\002\026Google\\Cloud\\Au"
+          + "toMl\\V1\352\002\031Google::Cloud::AutoML::V1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

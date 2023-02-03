@@ -70,12 +70,12 @@ public final class AssetProto {
           + "rsion\030\001 \001(\t\022\036\n\026discovery_document_uri\030\002 "
           + "\001(\t\022\026\n\016discovery_name\030\003 \001(\t\022\024\n\014resource_"
           + "url\030\004 \001(\t\022\016\n\006parent\030\005 \001(\t\022%\n\004data\030\006 \001(\0132"
-          + "\027.google.protobuf.StructB\264\001\n com.google."
-          + "cloud.asset.v1p2beta1B\nAssetProtoP\001ZAgoo"
-          + "gle.golang.org/genproto/googleapis/cloud"
-          + "/asset/v1p2beta1;asset\370\001\001\252\002\034Google.Cloud"
-          + ".Asset.v1p2beta1\312\002\034Google\\Cloud\\Asset\\V1"
-          + "p2beta1b\006proto3"
+          + "\027.google.protobuf.StructB\251\001\n com.google."
+          + "cloud.asset.v1p2beta1B\nAssetProtoP\001Z6clo"
+          + "ud.google.com/go/asset/apiv1p2beta1/asse"
+          + "tpb;assetpb\370\001\001\252\002\034Google.Cloud.Asset.v1p2"
+          + "beta1\312\002\034Google\\Cloud\\Asset\\V1p2beta1b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

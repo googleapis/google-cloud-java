@@ -141,13 +141,13 @@ public final class SpecialistPoolServiceProto {
           + "Pool\022%UpdateSpecialistPoolOperationMetad"
           + "ata\032M\312A\031aiplatform.googleapis.com\322A.http"
           + "s://www.googleapis.com/auth/cloud-platfo"
-          + "rmB\367\001\n#com.google.cloud.aiplatform.v1bet"
-          + "a1B\032SpecialistPoolServiceProtoP\001ZIgoogle"
-          + ".golang.org/genproto/googleapis/cloud/ai"
-          + "platform/v1beta1;aiplatform\252\002\037Google.Clo"
-          + "ud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIP"
-          + "latform\\V1beta1\352\002\"Google::Cloud::AIPlatf"
-          + "orm::V1beta1b\006proto3"
+          + "rmB\361\001\n#com.google.cloud.aiplatform.v1bet"
+          + "a1B\032SpecialistPoolServiceProtoP\001ZCcloud."
+          + "google.com/go/aiplatform/apiv1beta1/aipl"
+          + "atformpb;aiplatformpb\252\002\037Google.Cloud.AIP"
+          + "latform.V1Beta1\312\002\037Google\\Cloud\\AIPlatfor"
+          + "m\\V1beta1\352\002\"Google::Cloud::AIPlatform::V"
+          + "1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

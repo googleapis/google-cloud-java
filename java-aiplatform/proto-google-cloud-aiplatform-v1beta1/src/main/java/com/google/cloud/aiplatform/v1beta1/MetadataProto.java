@@ -62,13 +62,13 @@ public final class MetadataProto {
           + "tion_bytes\030\001 \001(\003:u\352Ar\n\'aiplatform.google"
           + "apis.com/MetadataStore\022Gprojects/{projec"
           + "t}/locations/{location}/metadataStores/{"
-          + "metadata_store}B\352\001\n#com.google.cloud.aip"
-          + "latform.v1beta1B\rMetadataProtoP\001ZIgoogle"
-          + ".golang.org/genproto/googleapis/cloud/ai"
-          + "platform/v1beta1;aiplatform\252\002\037Google.Clo"
-          + "ud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIP"
-          + "latform\\V1beta1\352\002\"Google::Cloud::AIPlatf"
-          + "orm::V1beta1b\006proto3"
+          + "metadata_store}B\344\001\n#com.google.cloud.aip"
+          + "latform.v1beta1B\rMetadataProtoP\001ZCcloud."
+          + "google.com/go/aiplatform/apiv1beta1/aipl"
+          + "atformpb;aiplatformpb\252\002\037Google.Cloud.AIP"
+          + "latform.V1Beta1\312\002\037Google\\Cloud\\AIPlatfor"
+          + "m\\V1beta1\352\002\"Google::Cloud::AIPlatform::V"
+          + "1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

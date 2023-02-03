@@ -54,14 +54,13 @@ public final class DeploymentResourcePoolProto {
           + "\001\n0aiplatform.googleapis.com/DeploymentR"
           + "esourcePool\022Zprojects/{project}/location"
           + "s/{location}/deploymentResourcePools/{de"
-          + "ployment_resource_pool}B\370\001\n#com.google.c"
+          + "ployment_resource_pool}B\362\001\n#com.google.c"
           + "loud.aiplatform.v1beta1B\033DeploymentResou"
-          + "rcePoolProtoP\001ZIgoogle.golang.org/genpro"
-          + "to/googleapis/cloud/aiplatform/v1beta1;a"
-          + "iplatform\252\002\037Google.Cloud.AIPlatform.V1Be"
-          + "ta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\""
-          + "Google::Cloud::AIPlatform::V1beta1b\006prot"
-          + "o3"
+          + "rcePoolProtoP\001ZCcloud.google.com/go/aipl"
+          + "atform/apiv1beta1/aiplatformpb;aiplatfor"
+          + "mpb\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037"
+          + "Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Google"
+          + "::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

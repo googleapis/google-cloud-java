@@ -187,12 +187,12 @@ public final class PipelineServiceProto {
           + "cts/*/locations/*/pipelineJobs/*}:cancel"
           + ":\001*\332A\004name\032M\312A\031aiplatform.googleapis.com"
           + "\322A.https://www.googleapis.com/auth/cloud"
-          + "-platformB\330\001\n\036com.google.cloud.aiplatfor"
-          + "m.v1B\024PipelineServiceProtoP\001ZDgoogle.gol"
-          + "ang.org/genproto/googleapis/cloud/aiplat"
-          + "form/v1;aiplatform\252\002\032Google.Cloud.AIPlat"
-          + "form.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035G"
-          + "oogle::Cloud::AIPlatform::V1b\006proto3"
+          + "-platformB\322\001\n\036com.google.cloud.aiplatfor"
+          + "m.v1B\024PipelineServiceProtoP\001Z>cloud.goog"
+          + "le.com/go/aiplatform/apiv1/aiplatformpb;"
+          + "aiplatformpb\252\002\032Google.Cloud.AIPlatform.V"
+          + "1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google:"
+          + ":Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

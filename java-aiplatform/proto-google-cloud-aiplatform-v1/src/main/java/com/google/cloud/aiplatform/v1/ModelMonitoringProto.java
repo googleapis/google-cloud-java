@@ -178,13 +178,13 @@ public final class ModelMonitoringProto {
           + "amplingStrategy\022]\n\024random_sample_config\030"
           + "\001 \001(\0132?.google.cloud.aiplatform.v1.Sampl"
           + "ingStrategy.RandomSampleConfig\032)\n\022Random"
-          + "SampleConfig\022\023\n\013sample_rate\030\001 \001(\001B\330\001\n\036co"
+          + "SampleConfig\022\023\n\013sample_rate\030\001 \001(\001B\322\001\n\036co"
           + "m.google.cloud.aiplatform.v1B\024ModelMonit"
-          + "oringProtoP\001ZDgoogle.golang.org/genproto"
-          + "/googleapis/cloud/aiplatform/v1;aiplatfo"
-          + "rm\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Google"
-          + "\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AI"
-          + "Platform::V1b\006proto3"
+          + "oringProtoP\001Z>cloud.google.com/go/aiplat"
+          + "form/apiv1/aiplatformpb;aiplatformpb\252\002\032G"
+          + "oogle.Cloud.AIPlatform.V1\312\002\032Google\\Cloud"
+          + "\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatfo"
+          + "rm::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

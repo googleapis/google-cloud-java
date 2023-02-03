@@ -127,13 +127,12 @@ public final class ExplanationMetadataProto {
           + "ta.InputMetadata:\0028\001\032n\n\014OutputsEntry\022\013\n\003"
           + "key\030\001 \001(\t\022M\n\005value\030\002 \001(\0132>.google.cloud."
           + "aiplatform.v1.ExplanationMetadata.Output"
-          + "Metadata:\0028\001B\334\001\n\036com.google.cloud.aiplat"
-          + "form.v1B\030ExplanationMetadataProtoP\001ZDgoo"
-          + "gle.golang.org/genproto/googleapis/cloud"
-          + "/aiplatform/v1;aiplatform\252\002\032Google.Cloud"
-          + ".AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatform"
-          + "\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006pro"
-          + "to3"
+          + "Metadata:\0028\001B\326\001\n\036com.google.cloud.aiplat"
+          + "form.v1B\030ExplanationMetadataProtoP\001Z>clo"
+          + "ud.google.com/go/aiplatform/apiv1/aiplat"
+          + "formpb;aiplatformpb\252\002\032Google.Cloud.AIPla"
+          + "tform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035"
+          + "Google::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -88,13 +88,13 @@ public final class FeatureProto {
           + "!aiplatform.googleapis.com/Feature\022qproj"
           + "ects/{project}/locations/{location}/feat"
           + "urestores/{featurestore}/entityTypes/{en"
-          + "tity_type}/features/{feature}B\351\001\n#com.go"
+          + "tity_type}/features/{feature}B\343\001\n#com.go"
           + "ogle.cloud.aiplatform.v1beta1B\014FeaturePr"
-          + "otoP\001ZIgoogle.golang.org/genproto/google"
-          + "apis/cloud/aiplatform/v1beta1;aiplatform"
-          + "\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Goo"
-          + "gle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::C"
-          + "loud::AIPlatform::V1beta1b\006proto3"
+          + "otoP\001ZCcloud.google.com/go/aiplatform/ap"
+          + "iv1beta1/aiplatformpb;aiplatformpb\252\002\037Goo"
+          + "gle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Cl"
+          + "oud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::"
+          + "AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

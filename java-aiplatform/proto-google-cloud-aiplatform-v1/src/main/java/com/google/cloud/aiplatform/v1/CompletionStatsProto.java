@@ -46,13 +46,13 @@ public final class CompletionStatsProto {
           + "pletionStats\022\035\n\020successful_count\030\001 \001(\003B\003"
           + "\340A\003\022\031\n\014failed_count\030\002 \001(\003B\003\340A\003\022\035\n\020incomp"
           + "lete_count\030\003 \001(\003B\003\340A\003\022,\n\037successful_fore"
-          + "cast_point_count\030\005 \001(\003B\003\340A\003B\330\001\n\036com.goog"
+          + "cast_point_count\030\005 \001(\003B\003\340A\003B\322\001\n\036com.goog"
           + "le.cloud.aiplatform.v1B\024CompletionStatsP"
-          + "rotoP\001ZDgoogle.golang.org/genproto/googl"
-          + "eapis/cloud/aiplatform/v1;aiplatform\252\002\032G"
-          + "oogle.Cloud.AIPlatform.V1\312\002\032Google\\Cloud"
-          + "\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatfo"
-          + "rm::V1b\006proto3"
+          + "rotoP\001Z>cloud.google.com/go/aiplatform/a"
+          + "piv1/aiplatformpb;aiplatformpb\252\002\032Google."
+          + "Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPla"
+          + "tform\\V1\352\002\035Google::Cloud::AIPlatform::V1"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -60,13 +60,13 @@ public final class ModelEvaluationSliceProto {
           + "\001\n.aiplatform.googleapis.com/ModelEvalua"
           + "tionSlice\022^projects/{project}/locations/"
           + "{location}/models/{model}/evaluations/{e"
-          + "valuation}/slices/{slice}B\335\001\n\036com.google"
+          + "valuation}/slices/{slice}B\327\001\n\036com.google"
           + ".cloud.aiplatform.v1B\031ModelEvaluationSli"
-          + "ceProtoP\001ZDgoogle.golang.org/genproto/go"
-          + "ogleapis/cloud/aiplatform/v1;aiplatform\252"
-          + "\002\032Google.Cloud.AIPlatform.V1\312\002\032Google\\Cl"
-          + "oud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPla"
-          + "tform::V1b\006proto3"
+          + "ceProtoP\001Z>cloud.google.com/go/aiplatfor"
+          + "m/apiv1/aiplatformpb;aiplatformpb\252\002\032Goog"
+          + "le.Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AI"
+          + "Platform\\V1\352\002\035Google::Cloud::AIPlatform:"
+          + ":V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

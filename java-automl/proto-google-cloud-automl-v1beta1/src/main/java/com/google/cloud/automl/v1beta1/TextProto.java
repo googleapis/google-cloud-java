@@ -72,12 +72,12 @@ public final class TextProto {
           + "ctionDatasetMetadata\"1\n\033TextExtractionMo"
           + "delMetadata\022\022\n\nmodel_hint\030\003 \001(\t\"5\n\034TextS"
           + "entimentDatasetMetadata\022\025\n\rsentiment_max"
-          + "\030\001 \001(\005\"\034\n\032TextSentimentModelMetadataB\260\001\n"
+          + "\030\001 \001(\005\"\034\n\032TextSentimentModelMetadataB\246\001\n"
           + "\037com.google.cloud.automl.v1beta1B\tTextPr"
-          + "otoP\001ZAgoogle.golang.org/genproto/google"
-          + "apis/cloud/automl/v1beta1;automl\312\002\033Googl"
-          + "e\\Cloud\\AutoMl\\V1beta1\352\002\036Google::Cloud::"
-          + "AutoML::V1beta1b\006proto3"
+          + "otoP\001Z7cloud.google.com/go/automl/apiv1b"
+          + "eta1/automlpb;automlpb\312\002\033Google\\Cloud\\Au"
+          + "toMl\\V1beta1\352\002\036Google::Cloud::AutoML::V1"
+          + "beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

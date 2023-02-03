@@ -13412,13 +13412,13 @@ public final class ConnectionProto {
           + "A\024resource,permissions\032~\312A!bigqueryconne"
           + "ction.googleapis.com\322AWhttps://www.googl"
           + "eapis.com/auth/bigquery,https://www.goog"
-          + "leapis.com/auth/cloud-platformB\351\001\n,com.g"
+          + "leapis.com/auth/cloud-platformB\343\001\n,com.g"
           + "oogle.cloud.bigquery.connection.v1beta1B"
-          + "\017ConnectionProtoZRgoogle.golang.org/genp"
-          + "roto/googleapis/cloud/bigquery/connectio"
-          + "n/v1beta1;connection\252\002(Google.Cloud.BigQ"
-          + "uery.Connection.V1Beta1\312\002(Google\\Cloud\\B"
-          + "igQuery\\Connection\\V1beta1b\006proto3"
+          + "\017ConnectionProtoZLcloud.google.com/go/bi"
+          + "gquery/connection/apiv1beta1/connectionp"
+          + "b;connectionpb\252\002(Google.Cloud.BigQuery.C"
+          + "onnection.V1Beta1\312\002(Google\\Cloud\\BigQuer"
+          + "y\\Connection\\V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

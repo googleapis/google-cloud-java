@@ -44,14 +44,14 @@ public final class ManualBatchTuningParametersProto {
           + "_batch_tuning_parameters.proto\022\037google.c"
           + "loud.aiplatform.v1beta1\032\037google/api/fiel"
           + "d_behavior.proto\"6\n\033ManualBatchTuningPar"
-          + "ameters\022\027\n\nbatch_size\030\001 \001(\005B\003\340A\005B\375\001\n#com"
+          + "ameters\022\027\n\nbatch_size\030\001 \001(\005B\003\340A\005B\367\001\n#com"
           + ".google.cloud.aiplatform.v1beta1B Manual"
-          + "BatchTuningParametersProtoP\001ZIgoogle.gol"
-          + "ang.org/genproto/googleapis/cloud/aiplat"
-          + "form/v1beta1;aiplatform\252\002\037Google.Cloud.A"
-          + "IPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPlatf"
-          + "orm\\V1beta1\352\002\"Google::Cloud::AIPlatform:"
-          + ":V1beta1b\006proto3"
+          + "BatchTuningParametersProtoP\001ZCcloud.goog"
+          + "le.com/go/aiplatform/apiv1beta1/aiplatfo"
+          + "rmpb;aiplatformpb\252\002\037Google.Cloud.AIPlatf"
+          + "orm.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1"
+          + "beta1\352\002\"Google::Cloud::AIPlatform::V1bet"
+          + "a1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -48,11 +48,11 @@ public final class AnnotationSpecOuterClass {
           + ".googleapis.com/AnnotationSpec\022\\projects"
           + "/{project}/locations/{location}/datasets"
           + "/{dataset}/annotationSpecs/{annotation_s"
-          + "pec}B\245\001\n\037com.google.cloud.automl.v1beta1"
-          + "P\001ZAgoogle.golang.org/genproto/googleapi"
-          + "s/cloud/automl/v1beta1;automl\312\002\033Google\\C"
-          + "loud\\AutoMl\\V1beta1\352\002\036Google::Cloud::Aut"
-          + "oML::V1beta1b\006proto3"
+          + "pec}B\233\001\n\037com.google.cloud.automl.v1beta1"
+          + "P\001Z7cloud.google.com/go/automl/apiv1beta"
+          + "1/automlpb;automlpb\312\002\033Google\\Cloud\\AutoM"
+          + "l\\V1beta1\352\002\036Google::Cloud::AutoML::V1bet"
+          + "a1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

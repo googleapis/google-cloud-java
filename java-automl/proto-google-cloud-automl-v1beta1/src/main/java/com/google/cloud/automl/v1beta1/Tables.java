@@ -100,12 +100,11 @@ public final class Tables {
           + "blesModelColumnInfo\022\026\n\016baseline_score\030\005 "
           + "\001(\002\"j\n\025TablesModelColumnInfo\022\030\n\020column_s"
           + "pec_name\030\001 \001(\t\022\033\n\023column_display_name\030\002 "
-          + "\001(\t\022\032\n\022feature_importance\030\003 \001(\002B\245\001\n\037com."
-          + "google.cloud.automl.v1beta1P\001ZAgoogle.go"
-          + "lang.org/genproto/googleapis/cloud/autom"
-          + "l/v1beta1;automl\312\002\033Google\\Cloud\\AutoMl\\V"
-          + "1beta1\352\002\036Google::Cloud::AutoML::V1beta1b"
-          + "\006proto3"
+          + "\001(\t\022\032\n\022feature_importance\030\003 \001(\002B\233\001\n\037com."
+          + "google.cloud.automl.v1beta1P\001Z7cloud.goo"
+          + "gle.com/go/automl/apiv1beta1/automlpb;au"
+          + "tomlpb\312\002\033Google\\Cloud\\AutoMl\\V1beta1\352\002\036G"
+          + "oogle::Cloud::AutoML::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

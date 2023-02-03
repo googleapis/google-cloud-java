@@ -57,13 +57,12 @@ public final class TypesProto {
           + "\n\tBoolArray\022\016\n\006values\030\001 \003(\010\"\035\n\013DoubleArr"
           + "ay\022\016\n\006values\030\001 \003(\001\"\034\n\nInt64Array\022\016\n\006valu"
           + "es\030\001 \003(\003\"\035\n\013StringArray\022\016\n\006values\030\001 \003(\tB"
-          + "\347\001\n#com.google.cloud.aiplatform.v1beta1B"
-          + "\nTypesProtoP\001ZIgoogle.golang.org/genprot"
-          + "o/googleapis/cloud/aiplatform/v1beta1;ai"
-          + "platform\252\002\037Google.Cloud.AIPlatform.V1Bet"
-          + "a1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"G"
-          + "oogle::Cloud::AIPlatform::V1beta1b\006proto"
-          + "3"
+          + "\341\001\n#com.google.cloud.aiplatform.v1beta1B"
+          + "\nTypesProtoP\001ZCcloud.google.com/go/aipla"
+          + "tform/apiv1beta1/aiplatformpb;aiplatform"
+          + "pb\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037G"
+          + "oogle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google:"
+          + ":Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

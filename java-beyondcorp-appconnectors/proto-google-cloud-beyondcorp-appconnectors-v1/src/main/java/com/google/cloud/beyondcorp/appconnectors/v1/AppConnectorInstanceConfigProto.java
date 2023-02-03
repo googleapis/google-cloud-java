@@ -70,15 +70,15 @@ public final class AppConnectorInstanceConfigProto {
           + "H\000\032<\n\035CloudPubSubNotificationConfig\022\033\n\023p"
           + "ubsub_subscription\030\001 \001(\tB\010\n\006config\"9\n\013Im"
           + "ageConfig\022\024\n\014target_image\030\001 \001(\t\022\024\n\014stabl"
-          + "e_image\030\002 \001(\tB\255\002\n,com.google.cloud.beyon"
+          + "e_image\030\002 \001(\tB\252\002\n,com.google.cloud.beyon"
           + "dcorp.appconnectors.v1B\037AppConnectorInst"
-          + "anceConfigProtoP\001ZUgoogle.golang.org/gen"
-          + "proto/googleapis/cloud/beyondcorp/appcon"
-          + "nectors/v1;appconnectors\252\002(Google.Cloud."
-          + "BeyondCorp.AppConnectors.V1\312\002(Google\\Clo"
-          + "ud\\BeyondCorp\\AppConnectors\\V1\352\002,Google:"
-          + ":Cloud::BeyondCorp::AppConnectors::V1b\006p"
-          + "roto3"
+          + "anceConfigProtoP\001ZRcloud.google.com/go/b"
+          + "eyondcorp/appconnectors/apiv1/appconnect"
+          + "orspb;appconnectorspb\252\002(Google.Cloud.Bey"
+          + "ondCorp.AppConnectors.V1\312\002(Google\\Cloud\\"
+          + "BeyondCorp\\AppConnectors\\V1\352\002,Google::Cl"
+          + "oud::BeyondCorp::AppConnectors::V1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

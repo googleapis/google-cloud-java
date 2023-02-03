@@ -203,13 +203,13 @@ public final class IndexServiceProto {
           + "ndex=projects/*/locations/*/indexes/*}:r"
           + "emoveDatapoints:\001*\032M\312A\031aiplatform.google"
           + "apis.com\322A.https://www.googleapis.com/au"
-          + "th/cloud-platformB\356\001\n#com.google.cloud.a"
-          + "iplatform.v1beta1B\021IndexServiceProtoP\001ZI"
-          + "google.golang.org/genproto/googleapis/cl"
-          + "oud/aiplatform/v1beta1;aiplatform\252\002\037Goog"
-          + "le.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Clo"
-          + "ud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::A"
-          + "IPlatform::V1beta1b\006proto3"
+          + "th/cloud-platformB\350\001\n#com.google.cloud.a"
+          + "iplatform.v1beta1B\021IndexServiceProtoP\001ZC"
+          + "cloud.google.com/go/aiplatform/apiv1beta"
+          + "1/aiplatformpb;aiplatformpb\252\002\037Google.Clo"
+          + "ud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIP"
+          + "latform\\V1beta1\352\002\"Google::Cloud::AIPlatf"
+          + "orm::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

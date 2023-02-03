@@ -60,12 +60,12 @@ public final class TensorboardRunProto {
           + "ogleapis.com/TensorboardRun\022fprojects/{p"
           + "roject}/locations/{location}/tensorboard"
           + "s/{tensorboard}/experiments/{experiment}"
-          + "/runs/{run}B\327\001\n\036com.google.cloud.aiplatf"
-          + "orm.v1B\023TensorboardRunProtoP\001ZDgoogle.go"
-          + "lang.org/genproto/googleapis/cloud/aipla"
-          + "tform/v1;aiplatform\252\002\032Google.Cloud.AIPla"
-          + "tform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035"
-          + "Google::Cloud::AIPlatform::V1b\006proto3"
+          + "/runs/{run}B\321\001\n\036com.google.cloud.aiplatf"
+          + "orm.v1B\023TensorboardRunProtoP\001Z>cloud.goo"
+          + "gle.com/go/aiplatform/apiv1/aiplatformpb"
+          + ";aiplatformpb\252\002\032Google.Cloud.AIPlatform."
+          + "V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google"
+          + "::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

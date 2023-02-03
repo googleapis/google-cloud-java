@@ -54,14 +54,14 @@ public final class ResourceInfoProto {
           + "1.ResourceInfo*i\n\014HealthStatus\022\035\n\031HEALTH"
           + "_STATUS_UNSPECIFIED\020\000\022\013\n\007HEALTHY\020\001\022\r\n\tUN"
           + "HEALTHY\020\002\022\020\n\014UNRESPONSIVE\020\003\022\014\n\010DEGRADED\020"
-          + "\004B\237\002\n,com.google.cloud.beyondcorp.appcon"
-          + "nectors.v1B\021ResourceInfoProtoP\001ZUgoogle."
-          + "golang.org/genproto/googleapis/cloud/bey"
-          + "ondcorp/appconnectors/v1;appconnectors\252\002"
-          + "(Google.Cloud.BeyondCorp.AppConnectors.V"
-          + "1\312\002(Google\\Cloud\\BeyondCorp\\AppConnector"
-          + "s\\V1\352\002,Google::Cloud::BeyondCorp::AppCon"
-          + "nectors::V1b\006proto3"
+          + "\004B\234\002\n,com.google.cloud.beyondcorp.appcon"
+          + "nectors.v1B\021ResourceInfoProtoP\001ZRcloud.g"
+          + "oogle.com/go/beyondcorp/appconnectors/ap"
+          + "iv1/appconnectorspb;appconnectorspb\252\002(Go"
+          + "ogle.Cloud.BeyondCorp.AppConnectors.V1\312\002"
+          + "(Google\\Cloud\\BeyondCorp\\AppConnectors\\V"
+          + "1\352\002,Google::Cloud::BeyondCorp::AppConnec"
+          + "tors::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

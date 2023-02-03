@@ -80,12 +80,12 @@ public final class ImageProto {
           + "lli_node_hours\030\007 \001(\003\"@\n*ImageClassificat"
           + "ionModelDeploymentMetadata\022\022\n\nnode_count"
           + "\030\001 \001(\003\"A\n+ImageObjectDetectionModelDeplo"
-          + "ymentMetadata\022\022\n\nnode_count\030\001 \001(\003B\261\001\n\037co"
+          + "ymentMetadata\022\022\n\nnode_count\030\001 \001(\003B\247\001\n\037co"
           + "m.google.cloud.automl.v1beta1B\nImageProt"
-          + "oP\001ZAgoogle.golang.org/genproto/googleap"
-          + "is/cloud/automl/v1beta1;automl\312\002\033Google\\"
-          + "Cloud\\AutoMl\\V1beta1\352\002\036Google::Cloud::Au"
-          + "toML::V1beta1b\006proto3"
+          + "oP\001Z7cloud.google.com/go/automl/apiv1bet"
+          + "a1/automlpb;automlpb\312\002\033Google\\Cloud\\Auto"
+          + "Ml\\V1beta1\352\002\036Google::Cloud::AutoML::V1be"
+          + "ta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

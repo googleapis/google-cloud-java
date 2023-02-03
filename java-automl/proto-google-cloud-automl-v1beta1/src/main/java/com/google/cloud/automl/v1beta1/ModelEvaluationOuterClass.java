@@ -78,12 +78,11 @@ public final class ModelEvaluationOuterClass {
           + "\207\001\352A\203\001\n%automl.googleapis.com/ModelEvalu"
           + "ation\022Zprojects/{project}/locations/{loc"
           + "ation}/models/{model}/modelEvaluations/{"
-          + "model_evaluation}B\t\n\007metricsB\245\001\n\037com.goo"
-          + "gle.cloud.automl.v1beta1P\001ZAgoogle.golan"
-          + "g.org/genproto/googleapis/cloud/automl/v"
-          + "1beta1;automl\312\002\033Google\\Cloud\\AutoMl\\V1be"
-          + "ta1\352\002\036Google::Cloud::AutoML::V1beta1b\006pr"
-          + "oto3"
+          + "model_evaluation}B\t\n\007metricsB\233\001\n\037com.goo"
+          + "gle.cloud.automl.v1beta1P\001Z7cloud.google"
+          + ".com/go/automl/apiv1beta1/automlpb;autom"
+          + "lpb\312\002\033Google\\Cloud\\AutoMl\\V1beta1\352\002\036Goog"
+          + "le::Cloud::AutoML::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -97,13 +97,13 @@ public final class IndexProto {
           + "\030\001 \001(\t\022\022\n\nallow_list\030\002 \003(\t\022\021\n\tdeny_list\030"
           + "\003 \003(\t\032)\n\013CrowdingTag\022\032\n\022crowding_attribu"
           + "te\030\001 \001(\t\"C\n\nIndexStats\022\032\n\rvectors_count\030"
-          + "\001 \001(\003B\003\340A\003\022\031\n\014shards_count\030\002 \001(\005B\003\340A\003B\347\001"
+          + "\001 \001(\003B\003\340A\003\022\031\n\014shards_count\030\002 \001(\005B\003\340A\003B\341\001"
           + "\n#com.google.cloud.aiplatform.v1beta1B\nI"
-          + "ndexProtoP\001ZIgoogle.golang.org/genproto/"
-          + "googleapis/cloud/aiplatform/v1beta1;aipl"
-          + "atform\252\002\037Google.Cloud.AIPlatform.V1Beta1"
-          + "\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Goo"
-          + "gle::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "ndexProtoP\001ZCcloud.google.com/go/aiplatf"
+          + "orm/apiv1beta1/aiplatformpb;aiplatformpb"
+          + "\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Goo"
+          + "gle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::C"
+          + "loud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

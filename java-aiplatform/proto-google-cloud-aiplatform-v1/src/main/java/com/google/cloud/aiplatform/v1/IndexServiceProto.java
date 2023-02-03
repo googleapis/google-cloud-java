@@ -199,12 +199,12 @@ public final class IndexServiceProto {
           + "jects/*/locations/*/indexes/*}:removeDat"
           + "apoints:\001*\032M\312A\031aiplatform.googleapis.com"
           + "\322A.https://www.googleapis.com/auth/cloud"
-          + "-platformB\325\001\n\036com.google.cloud.aiplatfor"
-          + "m.v1B\021IndexServiceProtoP\001ZDgoogle.golang"
-          + ".org/genproto/googleapis/cloud/aiplatfor"
-          + "m/v1;aiplatform\252\002\032Google.Cloud.AIPlatfor"
-          + "m.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Goog"
-          + "le::Cloud::AIPlatform::V1b\006proto3"
+          + "-platformB\317\001\n\036com.google.cloud.aiplatfor"
+          + "m.v1B\021IndexServiceProtoP\001Z>cloud.google."
+          + "com/go/aiplatform/apiv1/aiplatformpb;aip"
+          + "latformpb\252\002\032Google.Cloud.AIPlatform.V1\312\002"
+          + "\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google::Cl"
+          + "oud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

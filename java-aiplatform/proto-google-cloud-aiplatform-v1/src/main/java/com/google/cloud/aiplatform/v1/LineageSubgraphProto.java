@@ -49,13 +49,13 @@ public final class LineageSubgraphProto {
           + "\001 \003(\0132$.google.cloud.aiplatform.v1.Artif"
           + "act\0229\n\nexecutions\030\002 \003(\0132%.google.cloud.a"
           + "iplatform.v1.Execution\0221\n\006events\030\003 \003(\0132!"
-          + ".google.cloud.aiplatform.v1.EventB\330\001\n\036co"
+          + ".google.cloud.aiplatform.v1.EventB\322\001\n\036co"
           + "m.google.cloud.aiplatform.v1B\024LineageSub"
-          + "graphProtoP\001ZDgoogle.golang.org/genproto"
-          + "/googleapis/cloud/aiplatform/v1;aiplatfo"
-          + "rm\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Google"
-          + "\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AI"
-          + "Platform::V1b\006proto3"
+          + "graphProtoP\001Z>cloud.google.com/go/aiplat"
+          + "form/apiv1/aiplatformpb;aiplatformpb\252\002\032G"
+          + "oogle.Cloud.AIPlatform.V1\312\002\032Google\\Cloud"
+          + "\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatfo"
+          + "rm::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

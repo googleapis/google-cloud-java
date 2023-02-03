@@ -171,12 +171,11 @@ public final class TaskProto {
           + "y_name\030\001 \001(\t\022\023\n\013cipher_text\030\002 \001(\t\0320\n\016Var"
           + "iablesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:"
           + "\0028\001\0326\n\024SecretVariablesEntry\022\013\n\003key\030\001 \001(\t"
-          + "\022\r\n\005value\030\002 \001(\t:\0028\001B\265\001\n\031com.google.cloud"
-          + ".batch.v1B\tTaskProtoP\001Z:google.golang.or"
-          + "g/genproto/googleapis/cloud/batch/v1;bat"
-          + "ch\242\002\003GCB\252\002\025Google.Cloud.Batch.V1\312\002\025Googl"
-          + "e\\Cloud\\Batch\\V1\352\002\030Google::Cloud::Batch:"
-          + ":V1b\006proto3"
+          + "\022\r\n\005value\030\002 \001(\t:\0028\001B\252\001\n\031com.google.cloud"
+          + ".batch.v1B\tTaskProtoP\001Z/cloud.google.com"
+          + "/go/batch/apiv1/batchpb;batchpb\242\002\003GCB\252\002\025"
+          + "Google.Cloud.Batch.V1\312\002\025Google\\Cloud\\Bat"
+          + "ch\\V1\352\002\030Google::Cloud::Batch::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

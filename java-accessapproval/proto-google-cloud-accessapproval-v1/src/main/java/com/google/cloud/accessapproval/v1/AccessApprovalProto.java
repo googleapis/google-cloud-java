@@ -295,13 +295,13 @@ public final class AccessApprovalProto {
           + "count}Z+\022)/v1/{name=organizations/*/serv"
           + "iceAccount}\332A\004name\032Q\312A\035accessapproval.go"
           + "ogleapis.com\322A.https://www.googleapis.co"
-          + "m/auth/cloud-platformB\357\001\n\"com.google.clo"
+          + "m/auth/cloud-platformB\355\001\n\"com.google.clo"
           + "ud.accessapproval.v1B\023AccessApprovalProt"
-          + "oP\001ZLgoogle.golang.org/genproto/googleap"
-          + "is/cloud/accessapproval/v1;accessapprova"
-          + "l\252\002\036Google.Cloud.AccessApproval.V1\312\002\036Goo"
-          + "gle\\Cloud\\AccessApproval\\V1\352\002!Google::Cl"
-          + "oud::AccessApproval::V1b\006proto3"
+          + "oP\001ZJcloud.google.com/go/accessapproval/"
+          + "apiv1/accessapprovalpb;accessapprovalpb\252"
+          + "\002\036Google.Cloud.AccessApproval.V1\312\002\036Googl"
+          + "e\\Cloud\\AccessApproval\\V1\352\002!Google::Clou"
+          + "d::AccessApproval::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

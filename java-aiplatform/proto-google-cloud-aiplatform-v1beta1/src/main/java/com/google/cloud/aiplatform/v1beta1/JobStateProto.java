@@ -43,14 +43,13 @@ public final class JobStateProto {
           + "ATE_SUCCEEDED\020\004\022\024\n\020JOB_STATE_FAILED\020\005\022\030\n"
           + "\024JOB_STATE_CANCELLING\020\006\022\027\n\023JOB_STATE_CAN"
           + "CELLED\020\007\022\024\n\020JOB_STATE_PAUSED\020\010\022\025\n\021JOB_ST"
-          + "ATE_EXPIRED\020\t\022\026\n\022JOB_STATE_UPDATING\020\nB\352\001"
+          + "ATE_EXPIRED\020\t\022\026\n\022JOB_STATE_UPDATING\020\nB\344\001"
           + "\n#com.google.cloud.aiplatform.v1beta1B\rJ"
-          + "obStateProtoP\001ZIgoogle.golang.org/genpro"
-          + "to/googleapis/cloud/aiplatform/v1beta1;a"
-          + "iplatform\252\002\037Google.Cloud.AIPlatform.V1Be"
-          + "ta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\""
-          + "Google::Cloud::AIPlatform::V1beta1b\006prot"
-          + "o3"
+          + "obStateProtoP\001ZCcloud.google.com/go/aipl"
+          + "atform/apiv1beta1/aiplatformpb;aiplatfor"
+          + "mpb\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037"
+          + "Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Google"
+          + "::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

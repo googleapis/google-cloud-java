@@ -90,11 +90,11 @@ public final class Detection {
           + "Z\n\034bounding_box_metrics_entries\030\004 \003(\01324."
           + "google.cloud.automl.v1beta1.BoundingBoxM"
           + "etricsEntry\022+\n#bounding_box_mean_average"
-          + "_precision\030\006 \001(\002B\245\001\n\037com.google.cloud.au"
-          + "toml.v1beta1P\001ZAgoogle.golang.org/genpro"
-          + "to/googleapis/cloud/automl/v1beta1;autom"
-          + "l\312\002\033Google\\Cloud\\AutoMl\\V1beta1\352\002\036Google"
-          + "::Cloud::AutoML::V1beta1b\006proto3"
+          + "_precision\030\006 \001(\002B\233\001\n\037com.google.cloud.au"
+          + "toml.v1beta1P\001Z7cloud.google.com/go/auto"
+          + "ml/apiv1beta1/automlpb;automlpb\312\002\033Google"
+          + "\\Cloud\\AutoMl\\V1beta1\352\002\036Google::Cloud::A"
+          + "utoML::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

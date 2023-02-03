@@ -132,13 +132,12 @@ public final class CustomJobProto {
           + "env\030\005 \003(\0132\".google.cloud.aiplatform.v1.E"
           + "nvVar\"_\n\nScheduling\022*\n\007timeout\030\001 \001(\0132\031.g"
           + "oogle.protobuf.Duration\022%\n\035restart_job_o"
-          + "n_worker_restart\030\003 \001(\010B\322\001\n\036com.google.cl"
-          + "oud.aiplatform.v1B\016CustomJobProtoP\001ZDgoo"
-          + "gle.golang.org/genproto/googleapis/cloud"
-          + "/aiplatform/v1;aiplatform\252\002\032Google.Cloud"
-          + ".AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatform"
-          + "\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006pro"
-          + "to3"
+          + "n_worker_restart\030\003 \001(\010B\314\001\n\036com.google.cl"
+          + "oud.aiplatform.v1B\016CustomJobProtoP\001Z>clo"
+          + "ud.google.com/go/aiplatform/apiv1/aiplat"
+          + "formpb;aiplatformpb\252\002\032Google.Cloud.AIPla"
+          + "tform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035"
+          + "Google::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

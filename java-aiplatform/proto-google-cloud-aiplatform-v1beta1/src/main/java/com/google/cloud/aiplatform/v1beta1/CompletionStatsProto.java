@@ -46,14 +46,14 @@ public final class CompletionStatsProto {
           + "to\"\230\001\n\017CompletionStats\022\035\n\020successful_cou"
           + "nt\030\001 \001(\003B\003\340A\003\022\031\n\014failed_count\030\002 \001(\003B\003\340A\003"
           + "\022\035\n\020incomplete_count\030\003 \001(\003B\003\340A\003\022,\n\037succe"
-          + "ssful_forecast_point_count\030\005 \001(\003B\003\340A\003B\361\001"
+          + "ssful_forecast_point_count\030\005 \001(\003B\003\340A\003B\353\001"
           + "\n#com.google.cloud.aiplatform.v1beta1B\024C"
-          + "ompletionStatsProtoP\001ZIgoogle.golang.org"
-          + "/genproto/googleapis/cloud/aiplatform/v1"
-          + "beta1;aiplatform\252\002\037Google.Cloud.AIPlatfo"
-          + "rm.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1b"
-          + "eta1\352\002\"Google::Cloud::AIPlatform::V1beta"
-          + "1b\006proto3"
+          + "ompletionStatsProtoP\001ZCcloud.google.com/"
+          + "go/aiplatform/apiv1beta1/aiplatformpb;ai"
+          + "platformpb\252\002\037Google.Cloud.AIPlatform.V1B"
+          + "eta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002"
+          + "\"Google::Cloud::AIPlatform::V1beta1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

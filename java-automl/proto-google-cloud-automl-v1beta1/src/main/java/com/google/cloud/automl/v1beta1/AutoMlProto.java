@@ -393,12 +393,12 @@ public final class AutoMlProto {
           + "1/{parent=projects/*/locations/*/models/"
           + "*}/modelEvaluations\332A\006parent\032I\312A\025automl."
           + "googleapis.com\322A.https://www.googleapis."
-          + "com/auth/cloud-platformB\262\001\n\037com.google.c"
-          + "loud.automl.v1beta1B\013AutoMlProtoP\001ZAgoog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "automl/v1beta1;automl\312\002\033Google\\Cloud\\Aut"
-          + "oMl\\V1beta1\352\002\036Google::Cloud::AutoML::V1b"
-          + "eta1b\006proto3"
+          + "com/auth/cloud-platformB\250\001\n\037com.google.c"
+          + "loud.automl.v1beta1B\013AutoMlProtoP\001Z7clou"
+          + "d.google.com/go/automl/apiv1beta1/automl"
+          + "pb;automlpb\312\002\033Google\\Cloud\\AutoMl\\V1beta"
+          + "1\352\002\036Google::Cloud::AutoML::V1beta1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

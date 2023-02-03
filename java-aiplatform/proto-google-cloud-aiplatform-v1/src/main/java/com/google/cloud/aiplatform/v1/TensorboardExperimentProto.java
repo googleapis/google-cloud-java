@@ -61,12 +61,12 @@ public final class TensorboardExperimentProto {
           + "eapis.com/TensorboardExperiment\022[project"
           + "s/{project}/locations/{location}/tensorb"
           + "oards/{tensorboard}/experiments/{experim"
-          + "ent}B\336\001\n\036com.google.cloud.aiplatform.v1B"
-          + "\032TensorboardExperimentProtoP\001ZDgoogle.go"
-          + "lang.org/genproto/googleapis/cloud/aipla"
-          + "tform/v1;aiplatform\252\002\032Google.Cloud.AIPla"
-          + "tform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035"
-          + "Google::Cloud::AIPlatform::V1b\006proto3"
+          + "ent}B\330\001\n\036com.google.cloud.aiplatform.v1B"
+          + "\032TensorboardExperimentProtoP\001Z>cloud.goo"
+          + "gle.com/go/aiplatform/apiv1/aiplatformpb"
+          + ";aiplatformpb\252\002\032Google.Cloud.AIPlatform."
+          + "V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google"
+          + "::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -42,12 +42,12 @@ public final class RangesProto {
     java.lang.String[] descriptorData = {
       "\n(google/cloud/automl/v1beta1/ranges.pro"
           + "to\022\033google.cloud.automl.v1beta1\")\n\013Doubl"
-          + "eRange\022\r\n\005start\030\001 \001(\001\022\013\n\003end\030\002 \001(\001B\262\001\n\037c"
+          + "eRange\022\r\n\005start\030\001 \001(\001\022\013\n\003end\030\002 \001(\001B\250\001\n\037c"
           + "om.google.cloud.automl.v1beta1B\013RangesPr"
-          + "otoP\001ZAgoogle.golang.org/genproto/google"
-          + "apis/cloud/automl/v1beta1;automl\312\002\033Googl"
-          + "e\\Cloud\\AutoMl\\V1beta1\352\002\036Google::Cloud::"
-          + "AutoML::V1beta1b\006proto3"
+          + "otoP\001Z7cloud.google.com/go/automl/apiv1b"
+          + "eta1/automlpb;automlpb\312\002\033Google\\Cloud\\Au"
+          + "toMl\\V1beta1\352\002\036Google::Cloud::AutoML::V1"
+          + "beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

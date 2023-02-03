@@ -100,13 +100,12 @@ public final class DatasetProto {
           + "fig\022J\n\017gcs_destination\030\001 \001(\0132/.google.cl"
           + "oud.aiplatform.v1beta1.GcsDestinationH\000\022"
           + "\032\n\022annotations_filter\030\002 \001(\tB\r\n\013destinati"
-          + "onB\351\001\n#com.google.cloud.aiplatform.v1bet"
-          + "a1B\014DatasetProtoP\001ZIgoogle.golang.org/ge"
-          + "nproto/googleapis/cloud/aiplatform/v1bet"
-          + "a1;aiplatform\252\002\037Google.Cloud.AIPlatform."
-          + "V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta"
-          + "1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006"
-          + "proto3"
+          + "onB\343\001\n#com.google.cloud.aiplatform.v1bet"
+          + "a1B\014DatasetProtoP\001ZCcloud.google.com/go/"
+          + "aiplatform/apiv1beta1/aiplatformpb;aipla"
+          + "tformpb\252\002\037Google.Cloud.AIPlatform.V1Beta"
+          + "1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Go"
+          + "ogle::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

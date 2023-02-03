@@ -181,13 +181,13 @@ public final class RegistryModelsProto {
           + "s/{spec}/artifacts/{artifact}\022`projects/"
           + "{project}/locations/{location}/apis/{api"
           + "}/deployments/{deployment}/artifacts/{ar"
-          + "tifact}B\357\001\n\"com.google.cloud.apigeeregis"
-          + "try.v1B\023RegistryModelsProtoP\001ZLgoogle.go"
-          + "lang.org/genproto/googleapis/cloud/apige"
-          + "eregistry/v1;apigeeregistry\252\002\036Google.Clo"
-          + "ud.ApigeeRegistry.V1\312\002\036Google\\Cloud\\Apig"
-          + "eeRegistry\\V1\352\002!Google::Cloud::ApigeeReg"
-          + "istry::V1b\006proto3"
+          + "tifact}B\355\001\n\"com.google.cloud.apigeeregis"
+          + "try.v1B\023RegistryModelsProtoP\001ZJcloud.goo"
+          + "gle.com/go/apigeeregistry/apiv1/apigeere"
+          + "gistrypb;apigeeregistrypb\252\002\036Google.Cloud"
+          + ".ApigeeRegistry.V1\312\002\036Google\\Cloud\\Apigee"
+          + "Registry\\V1\352\002!Google::Cloud::ApigeeRegis"
+          + "try::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -216,14 +216,14 @@ public final class IndexEndpointServiceProto {
           + "d_index\312AC\n\033MutateDeployedIndexResponse\022"
           + "$MutateDeployedIndexOperationMetadata\032M\312"
           + "A\031aiplatform.googleapis.com\322A.https://ww"
-          + "w.googleapis.com/auth/cloud-platformB\366\001\n"
+          + "w.googleapis.com/auth/cloud-platformB\360\001\n"
           + "#com.google.cloud.aiplatform.v1beta1B\031In"
-          + "dexEndpointServiceProtoP\001ZIgoogle.golang"
-          + ".org/genproto/googleapis/cloud/aiplatfor"
-          + "m/v1beta1;aiplatform\252\002\037Google.Cloud.AIPl"
-          + "atform.V1Beta1\312\002\037Google\\Cloud\\AIPlatform"
-          + "\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1"
-          + "beta1b\006proto3"
+          + "dexEndpointServiceProtoP\001ZCcloud.google."
+          + "com/go/aiplatform/apiv1beta1/aiplatformp"
+          + "b;aiplatformpb\252\002\037Google.Cloud.AIPlatform"
+          + ".V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1bet"
+          + "a1\352\002\"Google::Cloud::AIPlatform::V1beta1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

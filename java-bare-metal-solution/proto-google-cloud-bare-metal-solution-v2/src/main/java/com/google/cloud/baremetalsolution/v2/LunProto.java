@@ -81,14 +81,14 @@ public final class LunProto {
           + "\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"v\n\020ListLunsRe"
           + "sponse\0224\n\004luns\030\001 \003(\0132&.google.cloud.bare"
           + "metalsolution.v2.Lun\022\027\n\017next_page_token\030"
-          + "\002 \001(\t\022\023\n\013unreachable\030\003 \003(\tB\366\001\n%com.googl"
+          + "\002 \001(\t\022\023\n\013unreachable\030\003 \003(\tB\367\001\n%com.googl"
           + "e.cloud.baremetalsolution.v2B\010LunProtoP\001"
-          + "ZRgoogle.golang.org/genproto/googleapis/"
-          + "cloud/baremetalsolution/v2;baremetalsolu"
-          + "tion\252\002!Google.Cloud.BareMetalSolution.V2"
-          + "\312\002!Google\\Cloud\\BareMetalSolution\\V2\352\002$G"
-          + "oogle::Cloud::BareMetalSolution::V2b\006pro"
-          + "to3"
+          + "ZScloud.google.com/go/baremetalsolution/"
+          + "apiv2/baremetalsolutionpb;baremetalsolut"
+          + "ionpb\252\002!Google.Cloud.BareMetalSolution.V"
+          + "2\312\002!Google\\Cloud\\BareMetalSolution\\V2\352\002$"
+          + "Google::Cloud::BareMetalSolution::V2b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -230,12 +230,12 @@ public final class JobProto {
           + "o\352Al\n\036batch.googleapis.com/TaskGroup\022Jpr"
           + "ojects/{project}/locations/{location}/jo"
           + "bs/{job}/taskGroups/{task_group}\"\037\n\016Serv"
-          + "iceAccount\022\r\n\005email\030\001 \001(\tB\264\001\n\031com.google"
-          + ".cloud.batch.v1B\010JobProtoP\001Z:google.gola"
-          + "ng.org/genproto/googleapis/cloud/batch/v"
-          + "1;batch\242\002\003GCB\252\002\025Google.Cloud.Batch.V1\312\002\025"
-          + "Google\\Cloud\\Batch\\V1\352\002\030Google::Cloud::B"
-          + "atch::V1b\006proto3"
+          + "iceAccount\022\r\n\005email\030\001 \001(\tB\251\001\n\031com.google"
+          + ".cloud.batch.v1B\010JobProtoP\001Z/cloud.googl"
+          + "e.com/go/batch/apiv1/batchpb;batchpb\242\002\003G"
+          + "CB\252\002\025Google.Cloud.Batch.V1\312\002\025Google\\Clou"
+          + "d\\Batch\\V1\352\002\030Google::Cloud::Batch::V1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

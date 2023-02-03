@@ -599,13 +599,13 @@ public final class MetadataServiceProto {
           + "/artifacts/*}:queryArtifactLineageSubgra"
           + "ph\332A\010artifact\032M\312A\031aiplatform.googleapis."
           + "com\322A.https://www.googleapis.com/auth/cl"
-          + "oud-platformB\361\001\n#com.google.cloud.aiplat"
-          + "form.v1beta1B\024MetadataServiceProtoP\001ZIgo"
-          + "ogle.golang.org/genproto/googleapis/clou"
-          + "d/aiplatform/v1beta1;aiplatform\252\002\037Google"
-          + ".Cloud.AIPlatform.V1Beta1\312\002\037Google\\Cloud"
-          + "\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AIP"
-          + "latform::V1beta1b\006proto3"
+          + "oud-platformB\353\001\n#com.google.cloud.aiplat"
+          + "form.v1beta1B\024MetadataServiceProtoP\001ZCcl"
+          + "oud.google.com/go/aiplatform/apiv1beta1/"
+          + "aiplatformpb;aiplatformpb\252\002\037Google.Cloud"
+          + ".AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPla"
+          + "tform\\V1beta1\352\002\"Google::Cloud::AIPlatfor"
+          + "m::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
