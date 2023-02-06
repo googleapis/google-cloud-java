@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.123.2](https://github.com/googleapis/java-pubsub/compare/v1.123.1...v1.123.2) (2023-02-06)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.2.0 ([#1474](https://github.com/googleapis/java-pubsub/issues/1474)) ([5fccae4](https://github.com/googleapis/java-pubsub/commit/5fccae49f912a24c14d144fdcc9617d5a5ae110a))
+
 ## [1.123.1](https://github.com/googleapis/java-pubsub/compare/v1.123.0...v1.123.1) (2023-01-20)
 
 
