@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.30.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.29.0...v2.30.0) (2023-02-06)
+
+
+### Features
+
+* Add userClose flag back to StreamWriter ([#1973](https://github.com/googleapis/java-bigquerystorage/issues/1973)) ([4b51acd](https://github.com/googleapis/java-bigquerystorage/commit/4b51acd49292d99e1c3cd670bec695b8bcd3b5c4))
+
+
+### Bug Fixes
+
+* Close stream connection before each retry ([#1975](https://github.com/googleapis/java-bigquerystorage/issues/1975)) ([54e9bb9](https://github.com/googleapis/java-bigquerystorage/commit/54e9bb9116eb9781b6f2266f98de4d3853a469b8))
+* Improve ConnectionWorker fine logging ([#1972](https://github.com/googleapis/java-bigquerystorage/issues/1972)) ([812bcf1](https://github.com/googleapis/java-bigquerystorage/commit/812bcf16efdc7a1797435f0b87430c35f27f7245))
+
 ## [2.29.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.28.4...v2.29.0) (2023-02-01)
 
 
