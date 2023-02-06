@@ -379,7 +379,7 @@ public class ConnectionWorkerPool {
     connectionWorkerPool.add(connectionWorker);
     log.info(
         String.format(
-            "Scaling up new connection for stream name: %s, pool size after scaling up %s",
+            "Scaling up new connection for stream name: %s, pool size after scaling up %d",
             streamName, connectionWorkerPool.size()));
     return connectionWorker;
   }

@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.storage.v1;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.protobuf.AbstractMessage;
 import io.grpc.ServerServiceDefinition;
+import io.grpc.Status;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
@@ -101,5 +102,9 @@ public class FakeBigQueryWrite implements MockGrpcService {
 
   public void setExecutor(ScheduledExecutorService executor) {
     serviceImpl.setExecutor(executor);
+  }
+
+  public void setFailedStatus(Status failedStatus) {
+    serviceImpl.setFailedStatus(failedStatus);
   }
 }

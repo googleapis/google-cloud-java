@@ -30,6 +30,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.AbortedException;
 import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.UnknownException;
 import com.google.cloud.bigquery.storage.test.Test.FooType;
@@ -1037,7 +1038,7 @@ public class StreamWriterTest {
     // The basic StatusRuntimeException API is not changed.
     assertTrue(actualError instanceof StatusRuntimeException);
     assertEquals(Status.Code.FAILED_PRECONDITION, actualError.getStatus().getCode());
-    assertTrue(actualError.getStatus().getDescription().contains("Connection is already closed"));
+    assertTrue(actualError.getStatus().getDescription().contains("User closed StreamWriter"));
     assertEquals(actualError.getWriterId(), writer.getWriterId());
     assertEquals(actualError.getStreamName(), writer.getStreamName());
   }
@@ -1224,5 +1225,93 @@ public class StreamWriterTest {
     serviceHelper.stop();
     // Ensure closing the writer after disconnect succeeds.
     writer.close();
+  }
+
+  @Test(timeout = 10000)
+  public void testStreamWriterUserCloseMultiplexing() throws Exception {
+    StreamWriter writer =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setWriterSchema(createProtoSchema())
+            .setEnableConnectionPool(true)
+            .setLocation("us")
+            .build();
+
+    writer.close();
+    assertTrue(writer.isDone());
+    ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
+    ExecutionException ex =
+        assertThrows(
+            ExecutionException.class,
+            () -> {
+              appendFuture1.get();
+            });
+    assertEquals(
+        Status.Code.FAILED_PRECONDITION,
+        ((StatusRuntimeException) ex.getCause()).getStatus().getCode());
+  }
+
+  @Test(timeout = 10000)
+  public void testStreamWriterUserCloseNoMultiplexing() throws Exception {
+    StreamWriter writer =
+        StreamWriter.newBuilder(TEST_STREAM_1, client).setWriterSchema(createProtoSchema()).build();
+
+    writer.close();
+    assertTrue(writer.isDone());
+    ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
+    ExecutionException ex =
+        assertThrows(
+            ExecutionException.class,
+            () -> {
+              appendFuture1.get();
+            });
+    assertEquals(
+        Status.Code.FAILED_PRECONDITION,
+        ((StatusRuntimeException) ex.getCause()).getStatus().getCode());
+  }
+
+  @Test(timeout = 10000)
+  public void testStreamWriterPermanentErrorMultiplexing() throws Exception {
+    StreamWriter writer =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setWriterSchema(createProtoSchema())
+            .setEnableConnectionPool(true)
+            .setLocation("us")
+            .build();
+    testBigQueryWrite.setCloseForeverAfter(1);
+    // Permenant errror.
+    testBigQueryWrite.setFailedStatus(Status.INVALID_ARGUMENT);
+    testBigQueryWrite.addResponse(createAppendResponse(0));
+    ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
+    appendFuture1.get();
+    ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer, new String[] {"A"});
+    ExecutionException ex =
+        assertThrows(
+            ExecutionException.class,
+            () -> {
+              appendFuture2.get();
+            });
+    assertTrue(ex.getCause() instanceof InvalidArgumentException);
+    assertFalse(writer.isDone());
+  }
+
+  @Test(timeout = 10000)
+  public void testStreamWriterPermanentErrorNoMultiplexing() throws Exception {
+    StreamWriter writer =
+        StreamWriter.newBuilder(TEST_STREAM_1, client).setWriterSchema(createProtoSchema()).build();
+    testBigQueryWrite.setCloseForeverAfter(1);
+    // Permenant errror.
+    testBigQueryWrite.setFailedStatus(Status.INVALID_ARGUMENT);
+    testBigQueryWrite.addResponse(createAppendResponse(0));
+    ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
+    appendFuture1.get();
+    ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer, new String[] {"A"});
+    ExecutionException ex =
+        assertThrows(
+            ExecutionException.class,
+            () -> {
+              appendFuture2.get();
+            });
+    assertTrue(writer.isDone());
+    assertTrue(ex.getCause() instanceof InvalidArgumentException);
   }
 }

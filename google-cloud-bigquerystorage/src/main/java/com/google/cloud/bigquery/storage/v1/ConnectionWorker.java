@@ -279,6 +279,15 @@ class ConnectionWorker implements AutoCloseable {
     return appendInternal(requestBuilder.build());
   }
 
+  Boolean isUserClosed() {
+    this.lock.lock();
+    try {
+      return userClosed;
+    } finally {
+      this.lock.unlock();
+    }
+  }
+
   private ApiFuture<AppendRowsResponse> appendInternal(AppendRowsRequest message) {
     AppendRequestAndResponse requestWrapper = new AppendRequestAndResponse(message);
     if (requestWrapper.messageSize > getApiMaxRequestBytes()) {
@@ -384,8 +393,13 @@ class ConnectionWorker implements AutoCloseable {
   }
 
   boolean isConnectionInUnrecoverableState() {
-    // If final status is set, there's no
-    return connectionFinalStatus != null;
+    this.lock.lock();
+    try {
+      // If final status is set, there's no
+      return connectionFinalStatus != null;
+    } finally {
+      this.lock.unlock();
+    }
   }
 
   /** Close the stream writer. Shut down all resources. */
@@ -821,7 +835,7 @@ class ConnectionWorker implements AutoCloseable {
   }
 
   // Class that wraps AppendRowsRequest and its corresponding Response future.
-  private static final class AppendRequestAndResponse {
+  static final class AppendRequestAndResponse {
     final SettableApiFuture<AppendRowsResponse> appendResult;
     final AppendRowsRequest message;
     final long messageSize;

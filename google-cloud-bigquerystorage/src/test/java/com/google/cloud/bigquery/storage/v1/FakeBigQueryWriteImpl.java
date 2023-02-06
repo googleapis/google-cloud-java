@@ -62,6 +62,7 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
   // Record whether the first record has been seen on a connection.
   private final Map<StreamObserver<AppendRowsResponse>, Boolean> connectionToFirstRequest =
       new ConcurrentHashMap<>();
+  private Status failedStatus = Status.ABORTED;
 
   /** Class used to save the state of a possible response. */
   private static class Response {
@@ -138,6 +139,10 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
     return connectionCount;
   }
 
+  public void setFailedStatus(Status failedStatus) {
+    this.failedStatus = failedStatus;
+  }
+
   @Override
   public StreamObserver<AppendRowsRequest> appendRows(
       final StreamObserver<AppendRowsResponse> responseObserver) {
@@ -177,10 +182,10 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
                 && recordCount % closeAfter == 0
                 && (numberTimesToClose == 0 || connectionCount <= numberTimesToClose)) {
               LOG.info("Shutting down connection from test...");
-              responseObserver.onError(Status.ABORTED.asException());
+              responseObserver.onError(failedStatus.asException());
             } else if (closeForeverAfter > 0 && recordCount > closeForeverAfter) {
               LOG.info("Shutting down connection from test...");
-              responseObserver.onError(Status.ABORTED.asException());
+              responseObserver.onError(failedStatus.asException());
             } else {
               final Response response = responses.get(offset);
               sendResponse(response, responseObserver);
