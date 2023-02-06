@@ -243,6 +243,11 @@ class ConnectionWorker implements AutoCloseable {
 
   private void resetConnection() {
     log.info("Reconnecting for stream:" + streamName + " id: " + writerId);
+    if (this.streamConnection != null) {
+      // It's safe to directly close the previous connection as the in flight messages
+      // will be picked up by the next connection.
+      this.streamConnection.close();
+    }
     this.streamConnection =
         new StreamConnection(
             this.client,
