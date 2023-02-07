@@ -273,11 +273,11 @@ public final class StorageProto {
           + "apis.com\322A\213\001https://www.googleapis.com/a"
           + "uth/bigquery,https://www.googleapis.com/"
           + "auth/bigquery.insertdata,https://www.goo"
-          + "gleapis.com/auth/cloud-platformB\211\001\n)com."
+          + "gleapis.com/auth/cloud-platformB\200\001\n)com."
           + "google.cloud.bigquery.storage.v1beta2B\014S"
-          + "torageProtoP\001ZLgoogle.golang.org/genprot"
-          + "o/googleapis/cloud/bigquery/storage/v1be"
-          + "ta2;storageb\006proto3"
+          + "torageProtoP\001ZCcloud.google.com/go/bigqu"
+          + "ery/storage/apiv1beta2/storagepb;storage"
+          + "pbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

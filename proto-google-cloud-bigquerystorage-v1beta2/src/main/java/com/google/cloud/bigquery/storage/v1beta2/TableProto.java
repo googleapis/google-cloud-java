@@ -64,10 +64,10 @@ public final class TableProto {
           + "\022\013\n\007NUMERIC\020\014\022\016\n\nBIGNUMERIC\020\r\022\014\n\010INTERVA"
           + "L\020\016\022\010\n\004JSON\020\017\"F\n\004Mode\022\024\n\020MODE_UNSPECIFIE"
           + "D\020\000\022\014\n\010NULLABLE\020\001\022\014\n\010REQUIRED\020\002\022\014\n\010REPEA"
-          + "TED\020\003B\207\001\n)com.google.cloud.bigquery.stor"
-          + "age.v1beta2B\nTableProtoP\001ZLgoogle.golang"
-          + ".org/genproto/googleapis/cloud/bigquery/"
-          + "storage/v1beta2;storageb\006proto3"
+          + "TED\020\003B~\n)com.google.cloud.bigquery.stora"
+          + "ge.v1beta2B\nTableProtoP\001ZCcloud.google.c"
+          + "om/go/bigquery/storage/apiv1beta2/storag"
+          + "epb;storagepbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

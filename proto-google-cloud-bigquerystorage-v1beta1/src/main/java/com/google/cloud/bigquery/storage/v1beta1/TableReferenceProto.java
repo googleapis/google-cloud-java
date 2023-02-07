@@ -1902,11 +1902,11 @@ public final class TableReferenceProto {
           + "mestamp.proto\"J\n\016TableReference\022\022\n\nproje"
           + "ct_id\030\001 \001(\t\022\022\n\ndataset_id\030\002 \001(\t\022\020\n\010table"
           + "_id\030\003 \001(\t\"C\n\016TableModifiers\0221\n\rsnapshot_"
-          + "time\030\001 \001(\0132\032.google.protobuf.TimestampB\216"
+          + "time\030\001 \001(\0132\032.google.protobuf.TimestampB\205"
           + "\001\n)com.google.cloud.bigquery.storage.v1b"
-          + "eta1B\023TableReferenceProtoZLgoogle.golang"
-          + ".org/genproto/googleapis/cloud/bigquery/"
-          + "storage/v1beta1;storageb\006proto3"
+          + "eta1B\023TableReferenceProtoZCcloud.google."
+          + "com/go/bigquery/storage/apiv1beta1/stora"
+          + "gepb;storagepbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

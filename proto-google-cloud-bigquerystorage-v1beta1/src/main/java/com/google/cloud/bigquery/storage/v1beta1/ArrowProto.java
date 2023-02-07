@@ -1282,10 +1282,10 @@ public final class ArrowProto {
           + "ge.v1beta1\"(\n\013ArrowSchema\022\031\n\021serialized_"
           + "schema\030\001 \001(\014\"F\n\020ArrowRecordBatch\022\037\n\027seri"
           + "alized_record_batch\030\001 \001(\014\022\021\n\trow_count\030\002"
-          + " \001(\003B\205\001\n)com.google.cloud.bigquery.stora"
-          + "ge.v1beta1B\nArrowProtoZLgoogle.golang.or"
-          + "g/genproto/googleapis/cloud/bigquery/sto"
-          + "rage/v1beta1;storageb\006proto3"
+          + " \001(\003B|\n)com.google.cloud.bigquery.storag"
+          + "e.v1beta1B\nArrowProtoZCcloud.google.com/"
+          + "go/bigquery/storage/apiv1beta1/storagepb"
+          + ";storagepbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

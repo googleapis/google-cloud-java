@@ -107,13 +107,13 @@ public final class StreamProto {
           + "eStream\022Eprojects/{project}/datasets/{da"
           + "taset}/tables/{table}/streams/{stream}*>"
           + "\n\nDataFormat\022\033\n\027DATA_FORMAT_UNSPECIFIED\020"
-          + "\000\022\010\n\004AVRO\020\001\022\t\n\005ARROW\020\002B\340\001\n)com.google.cl"
+          + "\000\022\010\n\004AVRO\020\001\022\t\n\005ARROW\020\002B\327\001\n)com.google.cl"
           + "oud.bigquery.storage.v1beta2B\013StreamProt"
-          + "oP\001ZLgoogle.golang.org/genproto/googleap"
-          + "is/cloud/bigquery/storage/v1beta2;storag"
-          + "e\352AU\n\035bigquery.googleapis.com/Table\0224pro"
-          + "jects/{project}/datasets/{dataset}/table"
-          + "s/{table}b\006proto3"
+          + "oP\001ZCcloud.google.com/go/bigquery/storag"
+          + "e/apiv1beta2/storagepb;storagepb\352AU\n\035big"
+          + "query.googleapis.com/Table\0224projects/{pr"
+          + "oject}/datasets/{dataset}/tables/{table}"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

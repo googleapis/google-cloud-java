@@ -49,12 +49,12 @@ public final class ProtoBufProto {
           + ".v1\032 google/protobuf/descriptor.proto\"I\n"
           + "\013ProtoSchema\022:\n\020proto_descriptor\030\001 \001(\0132 "
           + ".google.protobuf.DescriptorProto\"$\n\tProt"
-          + "oRows\022\027\n\017serialized_rows\030\001 \003(\014B\306\001\n$com.g"
+          + "oRows\022\027\n\017serialized_rows\030\001 \003(\014B\275\001\n$com.g"
           + "oogle.cloud.bigquery.storage.v1B\rProtoBu"
-          + "fProtoP\001ZGgoogle.golang.org/genproto/goo"
-          + "gleapis/cloud/bigquery/storage/v1;storag"
-          + "e\252\002 Google.Cloud.BigQuery.Storage.V1\312\002 G"
-          + "oogle\\Cloud\\BigQuery\\Storage\\V1b\006proto3"
+          + "fProtoP\001Z>cloud.google.com/go/bigquery/s"
+          + "torage/apiv1/storagepb;storagepb\252\002 Googl"
+          + "e.Cloud.BigQuery.Storage.V1\312\002 Google\\Clo"
+          + "ud\\BigQuery\\Storage\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

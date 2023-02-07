@@ -1374,11 +1374,10 @@ public final class AvroProto {
           + "avro.proto\022%google.cloud.bigquery.storag"
           + "e.v1beta1\"\034\n\nAvroSchema\022\016\n\006schema\030\001 \001(\t\""
           + "=\n\010AvroRows\022\036\n\026serialized_binary_rows\030\001 "
-          + "\001(\014\022\021\n\trow_count\030\002 \001(\003B\204\001\n)com.google.cl"
-          + "oud.bigquery.storage.v1beta1B\tAvroProtoZ"
-          + "Lgoogle.golang.org/genproto/googleapis/c"
-          + "loud/bigquery/storage/v1beta1;storageb\006p"
-          + "roto3"
+          + "\001(\014\022\021\n\trow_count\030\002 \001(\003B{\n)com.google.clo"
+          + "ud.bigquery.storage.v1beta1B\tAvroProtoZC"
+          + "cloud.google.com/go/bigquery/storage/api"
+          + "v1beta1/storagepb;storagepbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

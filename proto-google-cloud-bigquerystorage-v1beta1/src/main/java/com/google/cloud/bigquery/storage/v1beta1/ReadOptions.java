@@ -1140,10 +1140,10 @@ public final class ReadOptions {
           + "read_options.proto\022%google.cloud.bigquer"
           + "y.storage.v1beta1\"D\n\020TableReadOptions\022\027\n"
           + "\017selected_fields\030\001 \003(\t\022\027\n\017row_restrictio"
-          + "n\030\002 \001(\tBy\n)com.google.cloud.bigquery.sto"
-          + "rage.v1beta1ZLgoogle.golang.org/genproto"
-          + "/googleapis/cloud/bigquery/storage/v1bet"
-          + "a1;storageb\006proto3"
+          + "n\030\002 \001(\tBp\n)com.google.cloud.bigquery.sto"
+          + "rage.v1beta1ZCcloud.google.com/go/bigque"
+          + "ry/storage/apiv1beta1/storagepb;storagep"
+          + "bb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

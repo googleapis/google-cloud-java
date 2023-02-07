@@ -57,10 +57,10 @@ public final class ArrowProto {
           + ".cloud.bigquery.storage.v1beta2.ArrowSer"
           + "ializationOptions.Format\"@\n\006Format\022\026\n\022FO"
           + "RMAT_UNSPECIFIED\020\000\022\016\n\nARROW_0_14\020\001\022\016\n\nAR"
-          + "ROW_0_15\020\002B\207\001\n)com.google.cloud.bigquery"
-          + ".storage.v1beta2B\nArrowProtoP\001ZLgoogle.g"
-          + "olang.org/genproto/googleapis/cloud/bigq"
-          + "uery/storage/v1beta2;storageb\006proto3"
+          + "ROW_0_15\020\002B~\n)com.google.cloud.bigquery."
+          + "storage.v1beta2B\nArrowProtoP\001ZCcloud.goo"
+          + "gle.com/go/bigquery/storage/apiv1beta2/s"
+          + "toragepb;storagepbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

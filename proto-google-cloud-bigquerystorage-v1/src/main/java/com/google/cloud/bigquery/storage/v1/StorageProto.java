@@ -297,14 +297,14 @@ public final class StorageProto {
           + "oogleapis.com/auth/bigquery,https://www."
           + "googleapis.com/auth/bigquery.insertdata,"
           + "https://www.googleapis.com/auth/cloud-pl"
-          + "atformB\235\002\n$com.google.cloud.bigquery.sto"
-          + "rage.v1B\014StorageProtoP\001ZGgoogle.golang.o"
-          + "rg/genproto/googleapis/cloud/bigquery/st"
-          + "orage/v1;storage\252\002 Google.Cloud.BigQuery"
-          + ".Storage.V1\312\002 Google\\Cloud\\BigQuery\\Stor"
-          + "age\\V1\352AU\n\035bigquery.googleapis.com/Table"
-          + "\0224projects/{project}/datasets/{dataset}/"
-          + "tables/{table}b\006proto3"
+          + "atformB\224\002\n$com.google.cloud.bigquery.sto"
+          + "rage.v1B\014StorageProtoP\001Z>cloud.google.co"
+          + "m/go/bigquery/storage/apiv1/storagepb;st"
+          + "oragepb\252\002 Google.Cloud.BigQuery.Storage."
+          + "V1\312\002 Google\\Cloud\\BigQuery\\Storage\\V1\352AU"
+          + "\n\035bigquery.googleapis.com/Table\0224project"
+          + "s/{project}/datasets/{dataset}/tables/{t"
+          + "able}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

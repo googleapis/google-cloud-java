@@ -117,12 +117,12 @@ public final class StreamProto {
           + "ms/{stream}*>\n\nDataFormat\022\033\n\027DATA_FORMAT"
           + "_UNSPECIFIED\020\000\022\010\n\004AVRO\020\001\022\t\n\005ARROW\020\002*I\n\017W"
           + "riteStreamView\022!\n\035WRITE_STREAM_VIEW_UNSP"
-          + "ECIFIED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL\020\002B\304\001\n$com.g"
+          + "ECIFIED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL\020\002B\273\001\n$com.g"
           + "oogle.cloud.bigquery.storage.v1B\013StreamP"
-          + "rotoP\001ZGgoogle.golang.org/genproto/googl"
-          + "eapis/cloud/bigquery/storage/v1;storage\252"
-          + "\002 Google.Cloud.BigQuery.Storage.V1\312\002 Goo"
-          + "gle\\Cloud\\BigQuery\\Storage\\V1b\006proto3"
+          + "rotoP\001Z>cloud.google.com/go/bigquery/sto"
+          + "rage/apiv1/storagepb;storagepb\252\002 Google."
+          + "Cloud.BigQuery.Storage.V1\312\002 Google\\Cloud"
+          + "\\BigQuery\\Storage\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -65,12 +65,12 @@ public final class TableProto {
           + "\013\n\007NUMERIC\020\014\022\016\n\nBIGNUMERIC\020\r\022\014\n\010INTERVAL"
           + "\020\016\022\010\n\004JSON\020\017\"F\n\004Mode\022\024\n\020MODE_UNSPECIFIED"
           + "\020\000\022\014\n\010NULLABLE\020\001\022\014\n\010REQUIRED\020\002\022\014\n\010REPEAT"
-          + "ED\020\003B\303\001\n$com.google.cloud.bigquery.stora"
-          + "ge.v1B\nTableProtoP\001ZGgoogle.golang.org/g"
-          + "enproto/googleapis/cloud/bigquery/storag"
-          + "e/v1;storage\252\002 Google.Cloud.BigQuery.Sto"
-          + "rage.V1\312\002 Google\\Cloud\\BigQuery\\Storage\\"
-          + "V1b\006proto3"
+          + "ED\020\003B\272\001\n$com.google.cloud.bigquery.stora"
+          + "ge.v1B\nTableProtoP\001Z>cloud.google.com/go"
+          + "/bigquery/storage/apiv1/storagepb;storag"
+          + "epb\252\002 Google.Cloud.BigQuery.Storage.V1\312\002"
+          + " Google\\Cloud\\BigQuery\\Storage\\V1b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

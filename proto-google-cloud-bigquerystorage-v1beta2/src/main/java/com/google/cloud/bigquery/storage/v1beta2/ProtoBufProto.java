@@ -50,10 +50,10 @@ public final class ProtoBufProto {
           + "r.proto\"I\n\013ProtoSchema\022:\n\020proto_descript"
           + "or\030\001 \001(\0132 .google.protobuf.DescriptorPro"
           + "to\"$\n\tProtoRows\022\027\n\017serialized_rows\030\001 \003(\014"
-          + "B\212\001\n)com.google.cloud.bigquery.storage.v"
-          + "1beta2B\rProtoBufProtoP\001ZLgoogle.golang.o"
-          + "rg/genproto/googleapis/cloud/bigquery/st"
-          + "orage/v1beta2;storageb\006proto3"
+          + "B\201\001\n)com.google.cloud.bigquery.storage.v"
+          + "1beta2B\rProtoBufProtoP\001ZCcloud.google.co"
+          + "m/go/bigquery/storage/apiv1beta2/storage"
+          + "pb;storagepbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -17464,10 +17464,10 @@ public final class Storage {
           + "inal_stream\032{\312A\036bigquerystorage.googleap"
           + "is.com\322AWhttps://www.googleapis.com/auth"
           + "/bigquery,https://www.googleapis.com/aut"
-          + "h/cloud-platformBy\n)com.google.cloud.big"
-          + "query.storage.v1beta1ZLgoogle.golang.org"
-          + "/genproto/googleapis/cloud/bigquery/stor"
-          + "age/v1beta1;storageb\006proto3"
+          + "h/cloud-platformBp\n)com.google.cloud.big"
+          + "query.storage.v1beta1ZCcloud.google.com/"
+          + "go/bigquery/storage/apiv1beta1/storagepb"
+          + ";storagepbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
