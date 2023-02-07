@@ -1555,6 +1555,57 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
+  public static final int LATEST_EVALUATION_FIELD_NUMBER = 8;
+  private com.google.cloud.documentai.v1beta3.EvaluationReference latestEvaluation_;
+  /**
+   *
+   *
+   * <pre>
+   * The most recently invoked evaluation for the processor version.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8;</code>
+   *
+   * @return Whether the latestEvaluation field is set.
+   */
+  @java.lang.Override
+  public boolean hasLatestEvaluation() {
+    return latestEvaluation_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The most recently invoked evaluation for the processor version.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8;</code>
+   *
+   * @return The latestEvaluation.
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.EvaluationReference getLatestEvaluation() {
+    return latestEvaluation_ == null
+        ? com.google.cloud.documentai.v1beta3.EvaluationReference.getDefaultInstance()
+        : latestEvaluation_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The most recently invoked evaluation for the processor version.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.EvaluationReferenceOrBuilder
+      getLatestEvaluationOrBuilder() {
+    return latestEvaluation_ == null
+        ? com.google.cloud.documentai.v1beta3.EvaluationReference.getDefaultInstance()
+        : latestEvaluation_;
+  }
+
   public static final int KMS_KEY_NAME_FIELD_NUMBER = 9;
 
   @SuppressWarnings("serial")
@@ -1757,6 +1808,9 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     if (createTime_ != null) {
       output.writeMessage(7, getCreateTime());
     }
+    if (latestEvaluation_ != null) {
+      output.writeMessage(8, getLatestEvaluation());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, kmsKeyName_);
     }
@@ -1794,6 +1848,9 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     }
     if (createTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getCreateTime());
+    }
+    if (latestEvaluation_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getLatestEvaluation());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, kmsKeyName_);
@@ -1837,6 +1894,10 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
+    if (hasLatestEvaluation() != other.hasLatestEvaluation()) return false;
+    if (hasLatestEvaluation()) {
+      if (!getLatestEvaluation().equals(other.getLatestEvaluation())) return false;
+    }
     if (!getKmsKeyName().equals(other.getKmsKeyName())) return false;
     if (!getKmsKeyVersionName().equals(other.getKmsKeyVersionName())) return false;
     if (getGoogleManaged() != other.getGoogleManaged()) return false;
@@ -1868,6 +1929,10 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    if (hasLatestEvaluation()) {
+      hash = (37 * hash) + LATEST_EVALUATION_FIELD_NUMBER;
+      hash = (53 * hash) + getLatestEvaluation().hashCode();
     }
     hash = (37 * hash) + KMS_KEY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getKmsKeyName().hashCode();
@@ -2035,6 +2100,11 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
         createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
+      latestEvaluation_ = null;
+      if (latestEvaluationBuilder_ != null) {
+        latestEvaluationBuilder_.dispose();
+        latestEvaluationBuilder_ = null;
+      }
       kmsKeyName_ = "";
       kmsKeyVersionName_ = "";
       googleManaged_ = false;
@@ -2096,15 +2166,19 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.kmsKeyName_ = kmsKeyName_;
+        result.latestEvaluation_ =
+            latestEvaluationBuilder_ == null ? latestEvaluation_ : latestEvaluationBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.kmsKeyVersionName_ = kmsKeyVersionName_;
+        result.kmsKeyName_ = kmsKeyName_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.googleManaged_ = googleManaged_;
+        result.kmsKeyVersionName_ = kmsKeyVersionName_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.googleManaged_ = googleManaged_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.deprecationInfo_ =
             deprecationInfoBuilder_ == null ? deprecationInfo_ : deprecationInfoBuilder_.build();
       }
@@ -2175,14 +2249,17 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
+      if (other.hasLatestEvaluation()) {
+        mergeLatestEvaluation(other.getLatestEvaluation());
+      }
       if (!other.getKmsKeyName().isEmpty()) {
         kmsKeyName_ = other.kmsKeyName_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getKmsKeyVersionName().isEmpty()) {
         kmsKeyVersionName_ = other.kmsKeyVersionName_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.getGoogleManaged() != false) {
@@ -2241,22 +2318,29 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000010;
                 break;
               } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    getLatestEvaluationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 66
             case 74:
               {
                 kmsKeyName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 74
             case 82:
               {
                 kmsKeyVersionName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 82
             case 88:
               {
                 googleManaged_ = input.readBool();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 88
             case 98:
@@ -2268,7 +2352,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
             case 106:
               {
                 input.readMessage(getDeprecationInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 106
             default:
@@ -2973,6 +3057,195 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
       return createTimeBuilder_;
     }
 
+    private com.google.cloud.documentai.v1beta3.EvaluationReference latestEvaluation_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.EvaluationReference,
+            com.google.cloud.documentai.v1beta3.EvaluationReference.Builder,
+            com.google.cloud.documentai.v1beta3.EvaluationReferenceOrBuilder>
+        latestEvaluationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The most recently invoked evaluation for the processor version.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8;</code>
+     *
+     * @return Whether the latestEvaluation field is set.
+     */
+    public boolean hasLatestEvaluation() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The most recently invoked evaluation for the processor version.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8;</code>
+     *
+     * @return The latestEvaluation.
+     */
+    public com.google.cloud.documentai.v1beta3.EvaluationReference getLatestEvaluation() {
+      if (latestEvaluationBuilder_ == null) {
+        return latestEvaluation_ == null
+            ? com.google.cloud.documentai.v1beta3.EvaluationReference.getDefaultInstance()
+            : latestEvaluation_;
+      } else {
+        return latestEvaluationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The most recently invoked evaluation for the processor version.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8;</code>
+     */
+    public Builder setLatestEvaluation(
+        com.google.cloud.documentai.v1beta3.EvaluationReference value) {
+      if (latestEvaluationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        latestEvaluation_ = value;
+      } else {
+        latestEvaluationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The most recently invoked evaluation for the processor version.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8;</code>
+     */
+    public Builder setLatestEvaluation(
+        com.google.cloud.documentai.v1beta3.EvaluationReference.Builder builderForValue) {
+      if (latestEvaluationBuilder_ == null) {
+        latestEvaluation_ = builderForValue.build();
+      } else {
+        latestEvaluationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The most recently invoked evaluation for the processor version.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8;</code>
+     */
+    public Builder mergeLatestEvaluation(
+        com.google.cloud.documentai.v1beta3.EvaluationReference value) {
+      if (latestEvaluationBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && latestEvaluation_ != null
+            && latestEvaluation_
+                != com.google.cloud.documentai.v1beta3.EvaluationReference.getDefaultInstance()) {
+          getLatestEvaluationBuilder().mergeFrom(value);
+        } else {
+          latestEvaluation_ = value;
+        }
+      } else {
+        latestEvaluationBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The most recently invoked evaluation for the processor version.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8;</code>
+     */
+    public Builder clearLatestEvaluation() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      latestEvaluation_ = null;
+      if (latestEvaluationBuilder_ != null) {
+        latestEvaluationBuilder_.dispose();
+        latestEvaluationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The most recently invoked evaluation for the processor version.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8;</code>
+     */
+    public com.google.cloud.documentai.v1beta3.EvaluationReference.Builder
+        getLatestEvaluationBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getLatestEvaluationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The most recently invoked evaluation for the processor version.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8;</code>
+     */
+    public com.google.cloud.documentai.v1beta3.EvaluationReferenceOrBuilder
+        getLatestEvaluationOrBuilder() {
+      if (latestEvaluationBuilder_ != null) {
+        return latestEvaluationBuilder_.getMessageOrBuilder();
+      } else {
+        return latestEvaluation_ == null
+            ? com.google.cloud.documentai.v1beta3.EvaluationReference.getDefaultInstance()
+            : latestEvaluation_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The most recently invoked evaluation for the processor version.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.EvaluationReference,
+            com.google.cloud.documentai.v1beta3.EvaluationReference.Builder,
+            com.google.cloud.documentai.v1beta3.EvaluationReferenceOrBuilder>
+        getLatestEvaluationFieldBuilder() {
+      if (latestEvaluationBuilder_ == null) {
+        latestEvaluationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.EvaluationReference,
+                com.google.cloud.documentai.v1beta3.EvaluationReference.Builder,
+                com.google.cloud.documentai.v1beta3.EvaluationReferenceOrBuilder>(
+                getLatestEvaluation(), getParentForChildren(), isClean());
+        latestEvaluation_ = null;
+      }
+      return latestEvaluationBuilder_;
+    }
+
     private java.lang.Object kmsKeyName_ = "";
     /**
      *
@@ -3035,7 +3308,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       kmsKeyName_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3052,7 +3325,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearKmsKeyName() {
       kmsKeyName_ = getDefaultInstance().getKmsKeyName();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -3074,7 +3347,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       kmsKeyName_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3141,7 +3414,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       kmsKeyVersionName_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3158,7 +3431,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearKmsKeyVersionName() {
       kmsKeyVersionName_ = getDefaultInstance().getKmsKeyVersionName();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3180,7 +3453,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       kmsKeyVersionName_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3216,7 +3489,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     public Builder setGoogleManaged(boolean value) {
 
       googleManaged_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3232,7 +3505,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearGoogleManaged() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       googleManaged_ = false;
       onChanged();
       return this;
@@ -3258,7 +3531,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      * @return Whether the deprecationInfo field is set.
      */
     public boolean hasDeprecationInfo() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3305,7 +3578,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
       } else {
         deprecationInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3328,7 +3601,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
       } else {
         deprecationInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3346,7 +3619,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     public Builder mergeDeprecationInfo(
         com.google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfo value) {
       if (deprecationInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && deprecationInfo_ != null
             && deprecationInfo_
                 != com.google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfo
@@ -3358,7 +3631,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
       } else {
         deprecationInfoBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3374,7 +3647,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearDeprecationInfo() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       deprecationInfo_ = null;
       if (deprecationInfoBuilder_ != null) {
         deprecationInfoBuilder_.dispose();
@@ -3396,7 +3669,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfo.Builder
         getDeprecationInfoBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getDeprecationInfoFieldBuilder().getBuilder();
     }

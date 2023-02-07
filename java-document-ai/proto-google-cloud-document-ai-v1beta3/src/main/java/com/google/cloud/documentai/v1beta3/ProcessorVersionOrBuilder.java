@@ -176,6 +176,41 @@ public interface ProcessorVersionOrBuilder
    *
    *
    * <pre>
+   * The most recently invoked evaluation for the processor version.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8;</code>
+   *
+   * @return Whether the latestEvaluation field is set.
+   */
+  boolean hasLatestEvaluation();
+  /**
+   *
+   *
+   * <pre>
+   * The most recently invoked evaluation for the processor version.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8;</code>
+   *
+   * @return The latestEvaluation.
+   */
+  com.google.cloud.documentai.v1beta3.EvaluationReference getLatestEvaluation();
+  /**
+   *
+   *
+   * <pre>
+   * The most recently invoked evaluation for the processor version.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8;</code>
+   */
+  com.google.cloud.documentai.v1beta3.EvaluationReferenceOrBuilder getLatestEvaluationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The KMS key name used for encryption.
    * </pre>
    *

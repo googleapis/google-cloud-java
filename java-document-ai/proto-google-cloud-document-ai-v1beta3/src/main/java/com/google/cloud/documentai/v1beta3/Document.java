@@ -54071,10 +54071,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * The index of the revision that produced this element.
      * </pre>
      *
-     * <code>int32 revision = 1;</code>
+     * <code>int32 revision = 1 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.revision is deprecated. See
+     *     google/cloud/documentai/v1beta3/document.proto;l=763
      * @return The revision.
      */
+    @java.lang.Deprecated
     int getRevision();
 
     /**
@@ -54088,7 +54091,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 id = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.id is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=760
+     *     google/cloud/documentai/v1beta3/document.proto;l=767
      * @return The id.
      */
     @java.lang.Deprecated
@@ -54274,42 +54277,60 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Replace an element identified by `parent`.
+       * Updates any fields within the given provenance scope of the message. It
+       * 'overwrites'  the fields rather than replacing them.  This is
+       * especially relevant when we just want to update a field value of an
+       * entity without also affecting all the child properties.
        * </pre>
        *
-       * <code>REPLACE = 3;</code>
+       * <code>UPDATE = 7;</code>
        */
+      UPDATE(7),
+      /**
+       *
+       *
+       * <pre>
+       * Currently unused. Replace an element identified by `parent`.
+       * </pre>
+       *
+       * <code>REPLACE = 3 [deprecated = true];</code>
+       */
+      @java.lang.Deprecated
       REPLACE(3),
       /**
        *
        *
        * <pre>
-       * Request human review for the element identified by `parent`.
+       * Deprecated. Request human review for the element identified by
+       * `parent`.
        * </pre>
        *
-       * <code>EVAL_REQUESTED = 4;</code>
+       * <code>EVAL_REQUESTED = 4 [deprecated = true];</code>
        */
+      @java.lang.Deprecated
       EVAL_REQUESTED(4),
       /**
        *
        *
        * <pre>
-       * Element is reviewed and approved at human review, confidence will be
-       * set to 1.0.
+       * Deprecated. Element is reviewed and approved at human review,
+       * confidence will be set to 1.0.
        * </pre>
        *
-       * <code>EVAL_APPROVED = 5;</code>
+       * <code>EVAL_APPROVED = 5 [deprecated = true];</code>
        */
+      @java.lang.Deprecated
       EVAL_APPROVED(5),
       /**
        *
        *
        * <pre>
-       * Element is skipped in the validation process.
+       * Deprecated. Element is skipped in the validation process.
        * </pre>
        *
-       * <code>EVAL_SKIPPED = 6;</code>
+       * <code>EVAL_SKIPPED = 6 [deprecated = true];</code>
        */
+      @java.lang.Deprecated
       EVAL_SKIPPED(6),
       UNRECOGNIZED(-1),
       ;
@@ -54349,43 +54370,57 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Replace an element identified by `parent`.
+       * Updates any fields within the given provenance scope of the message. It
+       * 'overwrites'  the fields rather than replacing them.  This is
+       * especially relevant when we just want to update a field value of an
+       * entity without also affecting all the child properties.
        * </pre>
        *
-       * <code>REPLACE = 3;</code>
+       * <code>UPDATE = 7;</code>
        */
-      public static final int REPLACE_VALUE = 3;
+      public static final int UPDATE_VALUE = 7;
       /**
        *
        *
        * <pre>
-       * Request human review for the element identified by `parent`.
+       * Currently unused. Replace an element identified by `parent`.
        * </pre>
        *
-       * <code>EVAL_REQUESTED = 4;</code>
+       * <code>REPLACE = 3 [deprecated = true];</code>
        */
-      public static final int EVAL_REQUESTED_VALUE = 4;
+      @java.lang.Deprecated public static final int REPLACE_VALUE = 3;
       /**
        *
        *
        * <pre>
-       * Element is reviewed and approved at human review, confidence will be
-       * set to 1.0.
+       * Deprecated. Request human review for the element identified by
+       * `parent`.
        * </pre>
        *
-       * <code>EVAL_APPROVED = 5;</code>
+       * <code>EVAL_REQUESTED = 4 [deprecated = true];</code>
        */
-      public static final int EVAL_APPROVED_VALUE = 5;
+      @java.lang.Deprecated public static final int EVAL_REQUESTED_VALUE = 4;
       /**
        *
        *
        * <pre>
-       * Element is skipped in the validation process.
+       * Deprecated. Element is reviewed and approved at human review,
+       * confidence will be set to 1.0.
        * </pre>
        *
-       * <code>EVAL_SKIPPED = 6;</code>
+       * <code>EVAL_APPROVED = 5 [deprecated = true];</code>
        */
-      public static final int EVAL_SKIPPED_VALUE = 6;
+      @java.lang.Deprecated public static final int EVAL_APPROVED_VALUE = 5;
+      /**
+       *
+       *
+       * <pre>
+       * Deprecated. Element is skipped in the validation process.
+       * </pre>
+       *
+       * <code>EVAL_SKIPPED = 6 [deprecated = true];</code>
+       */
+      @java.lang.Deprecated public static final int EVAL_SKIPPED_VALUE = 6;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -54417,6 +54452,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             return ADD;
           case 2:
             return REMOVE;
+          case 7:
+            return UPDATE;
           case 3:
             return REPLACE;
           case 4:
@@ -55282,11 +55319,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * The index of the revision that produced this element.
      * </pre>
      *
-     * <code>int32 revision = 1;</code>
+     * <code>int32 revision = 1 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.revision is deprecated. See
+     *     google/cloud/documentai/v1beta3/document.proto;l=763
      * @return The revision.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public int getRevision() {
       return revision_;
     }
@@ -55304,7 +55344,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 id = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.id is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=760
+     *     google/cloud/documentai/v1beta3/document.proto;l=767
      * @return The id.
      */
     @java.lang.Override
@@ -55906,11 +55946,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The index of the revision that produced this element.
        * </pre>
        *
-       * <code>int32 revision = 1;</code>
+       * <code>int32 revision = 1 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.revision is deprecated. See
+       *     google/cloud/documentai/v1beta3/document.proto;l=763
        * @return The revision.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public int getRevision() {
         return revision_;
       }
@@ -55921,11 +55964,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The index of the revision that produced this element.
        * </pre>
        *
-       * <code>int32 revision = 1;</code>
+       * <code>int32 revision = 1 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.revision is deprecated. See
+       *     google/cloud/documentai/v1beta3/document.proto;l=763
        * @param value The revision to set.
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder setRevision(int value) {
 
         revision_ = value;
@@ -55940,10 +55986,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The index of the revision that produced this element.
        * </pre>
        *
-       * <code>int32 revision = 1;</code>
+       * <code>int32 revision = 1 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.revision is deprecated. See
+       *     google/cloud/documentai/v1beta3/document.proto;l=763
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder clearRevision() {
         bitField0_ = (bitField0_ & ~0x00000001);
         revision_ = 0;
@@ -55963,7 +56012,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.id is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=760
+       *     google/cloud/documentai/v1beta3/document.proto;l=767
        * @return The id.
        */
       @java.lang.Override
@@ -55982,7 +56031,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.id is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=760
+       *     google/cloud/documentai/v1beta3/document.proto;l=767
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -56005,7 +56054,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.id is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=760
+       *     google/cloud/documentai/v1beta3/document.proto;l=767
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -56650,7 +56699,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Id of the revision.  Unique within the context of the document.
+     * Id of the revision, internally generated by doc proto storage.
+     * Unique within the context of the document.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -56662,7 +56712,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Id of the revision.  Unique within the context of the document.
+     * Id of the revision, internally generated by doc proto storage.
+     * Unique within the context of the document.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -56683,7 +56734,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=798
+     *     google/cloud/documentai/v1beta3/document.proto;l=806
      * @return A list containing the parent.
      */
     @java.lang.Deprecated
@@ -56700,7 +56751,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=798
+     *     google/cloud/documentai/v1beta3/document.proto;l=806
      * @return The count of parent.
      */
     @java.lang.Deprecated
@@ -56717,7 +56768,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=798
+     *     google/cloud/documentai/v1beta3/document.proto;l=806
      * @param index The index of the element to return.
      * @return The parent at the given index.
      */
@@ -56787,7 +56838,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time that the revision was created.
+     * The time that the revision was created, internally generated by
+     * doc proto storage at the time of create.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
@@ -56799,7 +56851,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time that the revision was created.
+     * The time that the revision was created, internally generated by
+     * doc proto storage at the time of create.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
@@ -56811,7 +56864,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time that the revision was created.
+     * The time that the revision was created, internally generated by
+     * doc proto storage at the time of create.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
@@ -57983,7 +58037,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Id of the revision.  Unique within the context of the document.
+     * Id of the revision, internally generated by doc proto storage.
+     * Unique within the context of the document.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -58006,7 +58061,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Id of the revision.  Unique within the context of the document.
+     * Id of the revision, internally generated by doc proto storage.
+     * Unique within the context of the document.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -58042,7 +58098,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=798
+     *     google/cloud/documentai/v1beta3/document.proto;l=806
      * @return A list containing the parent.
      */
     @java.lang.Override
@@ -58062,7 +58118,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=798
+     *     google/cloud/documentai/v1beta3/document.proto;l=806
      * @return The count of parent.
      */
     @java.lang.Deprecated
@@ -58081,7 +58137,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=798
+     *     google/cloud/documentai/v1beta3/document.proto;l=806
      * @param index The index of the element to return.
      * @return The parent at the given index.
      */
@@ -58169,7 +58225,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time that the revision was created.
+     * The time that the revision was created, internally generated by
+     * doc proto storage at the time of create.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
@@ -58184,7 +58241,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time that the revision was created.
+     * The time that the revision was created, internally generated by
+     * doc proto storage at the time of create.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
@@ -58199,7 +58257,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time that the revision was created.
+     * The time that the revision was created, internally generated by
+     * doc proto storage at the time of create.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
@@ -59153,7 +59212,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Id of the revision.  Unique within the context of the document.
+       * Id of the revision, internally generated by doc proto storage.
+       * Unique within the context of the document.
        * </pre>
        *
        * <code>string id = 1;</code>
@@ -59175,7 +59235,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Id of the revision.  Unique within the context of the document.
+       * Id of the revision, internally generated by doc proto storage.
+       * Unique within the context of the document.
        * </pre>
        *
        * <code>string id = 1;</code>
@@ -59197,7 +59258,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Id of the revision.  Unique within the context of the document.
+       * Id of the revision, internally generated by doc proto storage.
+       * Unique within the context of the document.
        * </pre>
        *
        * <code>string id = 1;</code>
@@ -59218,7 +59280,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Id of the revision.  Unique within the context of the document.
+       * Id of the revision, internally generated by doc proto storage.
+       * Unique within the context of the document.
        * </pre>
        *
        * <code>string id = 1;</code>
@@ -59235,7 +59298,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Id of the revision.  Unique within the context of the document.
+       * Id of the revision, internally generated by doc proto storage.
+       * Unique within the context of the document.
        * </pre>
        *
        * <code>string id = 1;</code>
@@ -59274,7 +59338,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=798
+       *     google/cloud/documentai/v1beta3/document.proto;l=806
        * @return A list containing the parent.
        */
       @java.lang.Deprecated
@@ -59295,7 +59359,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=798
+       *     google/cloud/documentai/v1beta3/document.proto;l=806
        * @return The count of parent.
        */
       @java.lang.Deprecated
@@ -59314,7 +59378,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=798
+       *     google/cloud/documentai/v1beta3/document.proto;l=806
        * @param index The index of the element to return.
        * @return The parent at the given index.
        */
@@ -59334,7 +59398,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=798
+       *     google/cloud/documentai/v1beta3/document.proto;l=806
        * @param index The index to set the value at.
        * @param value The parent to set.
        * @return This builder for chaining.
@@ -59359,7 +59423,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=798
+       *     google/cloud/documentai/v1beta3/document.proto;l=806
        * @param value The parent to add.
        * @return This builder for chaining.
        */
@@ -59383,7 +59447,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=798
+       *     google/cloud/documentai/v1beta3/document.proto;l=806
        * @param values The parent to add.
        * @return This builder for chaining.
        */
@@ -59406,7 +59470,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=798
+       *     google/cloud/documentai/v1beta3/document.proto;l=806
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -59613,7 +59677,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time that the revision was created.
+       * The time that the revision was created, internally generated by
+       * doc proto storage at the time of create.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp create_time = 3;</code>
@@ -59627,7 +59692,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time that the revision was created.
+       * The time that the revision was created, internally generated by
+       * doc proto storage at the time of create.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp create_time = 3;</code>
@@ -59647,7 +59713,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time that the revision was created.
+       * The time that the revision was created, internally generated by
+       * doc proto storage at the time of create.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp create_time = 3;</code>
@@ -59669,7 +59736,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time that the revision was created.
+       * The time that the revision was created, internally generated by
+       * doc proto storage at the time of create.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp create_time = 3;</code>
@@ -59688,7 +59756,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time that the revision was created.
+       * The time that the revision was created, internally generated by
+       * doc proto storage at the time of create.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp create_time = 3;</code>
@@ -59713,7 +59782,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time that the revision was created.
+       * The time that the revision was created, internally generated by
+       * doc proto storage at the time of create.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp create_time = 3;</code>
@@ -59732,7 +59802,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time that the revision was created.
+       * The time that the revision was created, internally generated by
+       * doc proto storage at the time of create.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp create_time = 3;</code>
@@ -59746,7 +59817,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time that the revision was created.
+       * The time that the revision was created, internally generated by
+       * doc proto storage at the time of create.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp create_time = 3;</code>
@@ -59764,7 +59836,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time that the revision was created.
+       * The time that the revision was created, internally generated by
+       * doc proto storage at the time of create.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp create_time = 3;</code>
