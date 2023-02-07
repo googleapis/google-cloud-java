@@ -13,7 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-excluded_modules=('gapic-libraries-bom' 'google-cloud-jar-parent' 'google-cloud-pom-parent')
+# TODO: remove java-core once we figure out how setup_cloud understands Maven's
+# "--also-make-dependents" option. https://github.com/googleapis/google-cloud-java/issues/9088
+excluded_modules=('gapic-libraries-bom' 'google-cloud-jar-parent' 'google-cloud-pom-parent' 'java-core')
 
 function retry_with_backoff {
   attempts_left=$1
