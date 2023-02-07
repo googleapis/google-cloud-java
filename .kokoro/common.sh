@@ -124,9 +124,10 @@ function generate_modified_modules_list() {
 
 function run_integration_tests() {
   printf "Running Integration Tests for:\n%s\n" "$1"
+  # --also-make-dependents to run other modules that use the affected module
   mvn -B ${INTEGRATION_TEST_ARGS} \
     -pl "$1" \
-    -amd \
+    --also-make-dependents \
     -ntp \
     -Penable-integration-tests \
     -DtrimStackTrace=false \
@@ -151,7 +152,7 @@ function run_graalvm_tests() {
 
   mvn -B ${INTEGRATION_TEST_ARGS} \
     -pl "$1" \
-    -amd \
+    --also-make-dependents \
     -ntp \
     -DtrimStackTrace=false \
     -Dclirr.skip=true \
