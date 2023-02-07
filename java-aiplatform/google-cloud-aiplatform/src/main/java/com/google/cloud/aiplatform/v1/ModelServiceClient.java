@@ -1552,6 +1552,255 @@ public class ModelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Copies an already existing Vertex AI Model into the specified Location. The source Model must
+   * exist in the same Project. When copying custom Models, the users themselves are responsible for
+   * [Model.metadata][google.cloud.aiplatform.v1.Model.metadata] content to be region-agnostic, as
+   * well as making sure that any resources (e.g. files) it depends on remain accessible.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ModelName sourceModel = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   CopyModelResponse response = modelServiceClient.copyModelAsync(parent, sourceModel).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location into which to copy the Model. Format:
+   *     `projects/{project}/locations/{location}`
+   * @param sourceModel Required. The resource name of the Model to copy. That Model must be in the
+   *     same Project. Format: `projects/{project}/locations/{location}/models/{model}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CopyModelResponse, CopyModelOperationMetadata> copyModelAsync(
+      LocationName parent, ModelName sourceModel) {
+    CopyModelRequest request =
+        CopyModelRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setSourceModel(sourceModel == null ? null : sourceModel.toString())
+            .build();
+    return copyModelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Copies an already existing Vertex AI Model into the specified Location. The source Model must
+   * exist in the same Project. When copying custom Models, the users themselves are responsible for
+   * [Model.metadata][google.cloud.aiplatform.v1.Model.metadata] content to be region-agnostic, as
+   * well as making sure that any resources (e.g. files) it depends on remain accessible.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   String sourceModel = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString();
+   *   CopyModelResponse response = modelServiceClient.copyModelAsync(parent, sourceModel).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location into which to copy the Model. Format:
+   *     `projects/{project}/locations/{location}`
+   * @param sourceModel Required. The resource name of the Model to copy. That Model must be in the
+   *     same Project. Format: `projects/{project}/locations/{location}/models/{model}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CopyModelResponse, CopyModelOperationMetadata> copyModelAsync(
+      LocationName parent, String sourceModel) {
+    CopyModelRequest request =
+        CopyModelRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setSourceModel(sourceModel)
+            .build();
+    return copyModelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Copies an already existing Vertex AI Model into the specified Location. The source Model must
+   * exist in the same Project. When copying custom Models, the users themselves are responsible for
+   * [Model.metadata][google.cloud.aiplatform.v1.Model.metadata] content to be region-agnostic, as
+   * well as making sure that any resources (e.g. files) it depends on remain accessible.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   ModelName sourceModel = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   CopyModelResponse response = modelServiceClient.copyModelAsync(parent, sourceModel).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location into which to copy the Model. Format:
+   *     `projects/{project}/locations/{location}`
+   * @param sourceModel Required. The resource name of the Model to copy. That Model must be in the
+   *     same Project. Format: `projects/{project}/locations/{location}/models/{model}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CopyModelResponse, CopyModelOperationMetadata> copyModelAsync(
+      String parent, ModelName sourceModel) {
+    CopyModelRequest request =
+        CopyModelRequest.newBuilder()
+            .setParent(parent)
+            .setSourceModel(sourceModel == null ? null : sourceModel.toString())
+            .build();
+    return copyModelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Copies an already existing Vertex AI Model into the specified Location. The source Model must
+   * exist in the same Project. When copying custom Models, the users themselves are responsible for
+   * [Model.metadata][google.cloud.aiplatform.v1.Model.metadata] content to be region-agnostic, as
+   * well as making sure that any resources (e.g. files) it depends on remain accessible.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   String sourceModel = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString();
+   *   CopyModelResponse response = modelServiceClient.copyModelAsync(parent, sourceModel).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location into which to copy the Model. Format:
+   *     `projects/{project}/locations/{location}`
+   * @param sourceModel Required. The resource name of the Model to copy. That Model must be in the
+   *     same Project. Format: `projects/{project}/locations/{location}/models/{model}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CopyModelResponse, CopyModelOperationMetadata> copyModelAsync(
+      String parent, String sourceModel) {
+    CopyModelRequest request =
+        CopyModelRequest.newBuilder().setParent(parent).setSourceModel(sourceModel).build();
+    return copyModelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Copies an already existing Vertex AI Model into the specified Location. The source Model must
+   * exist in the same Project. When copying custom Models, the users themselves are responsible for
+   * [Model.metadata][google.cloud.aiplatform.v1.Model.metadata] content to be region-agnostic, as
+   * well as making sure that any resources (e.g. files) it depends on remain accessible.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   CopyModelRequest request =
+   *       CopyModelRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setSourceModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+   *           .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+   *           .build();
+   *   CopyModelResponse response = modelServiceClient.copyModelAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CopyModelResponse, CopyModelOperationMetadata> copyModelAsync(
+      CopyModelRequest request) {
+    return copyModelOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Copies an already existing Vertex AI Model into the specified Location. The source Model must
+   * exist in the same Project. When copying custom Models, the users themselves are responsible for
+   * [Model.metadata][google.cloud.aiplatform.v1.Model.metadata] content to be region-agnostic, as
+   * well as making sure that any resources (e.g. files) it depends on remain accessible.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   CopyModelRequest request =
+   *       CopyModelRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setSourceModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+   *           .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+   *           .build();
+   *   OperationFuture<CopyModelResponse, CopyModelOperationMetadata> future =
+   *       modelServiceClient.copyModelOperationCallable().futureCall(request);
+   *   // Do something.
+   *   CopyModelResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CopyModelRequest, CopyModelResponse, CopyModelOperationMetadata>
+      copyModelOperationCallable() {
+    return stub.copyModelOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Copies an already existing Vertex AI Model into the specified Location. The source Model must
+   * exist in the same Project. When copying custom Models, the users themselves are responsible for
+   * [Model.metadata][google.cloud.aiplatform.v1.Model.metadata] content to be region-agnostic, as
+   * well as making sure that any resources (e.g. files) it depends on remain accessible.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   CopyModelRequest request =
+   *       CopyModelRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setSourceModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+   *           .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = modelServiceClient.copyModelCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CopyModelRequest, Operation> copyModelCallable() {
+    return stub.copyModelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Imports an externally generated ModelEvaluation.
    *
    * <p>Sample code:

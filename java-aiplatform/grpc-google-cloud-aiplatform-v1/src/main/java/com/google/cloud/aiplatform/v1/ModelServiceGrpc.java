@@ -432,6 +432,47 @@ public final class ModelServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.CopyModelRequest, com.google.longrunning.Operation>
+      getCopyModelMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CopyModel",
+      requestType = com.google.cloud.aiplatform.v1.CopyModelRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.CopyModelRequest, com.google.longrunning.Operation>
+      getCopyModelMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.CopyModelRequest, com.google.longrunning.Operation>
+        getCopyModelMethod;
+    if ((getCopyModelMethod = ModelServiceGrpc.getCopyModelMethod) == null) {
+      synchronized (ModelServiceGrpc.class) {
+        if ((getCopyModelMethod = ModelServiceGrpc.getCopyModelMethod) == null) {
+          ModelServiceGrpc.getCopyModelMethod =
+              getCopyModelMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.CopyModelRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CopyModel"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.CopyModelRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new ModelServiceMethodDescriptorSupplier("CopyModel"))
+                      .build();
+        }
+      }
+    }
+    return getCopyModelMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1.ImportModelEvaluationRequest,
           com.google.cloud.aiplatform.v1.ModelEvaluation>
       getImportModelEvaluationMethod;
@@ -922,6 +963,24 @@ public final class ModelServiceGrpc {
      *
      *
      * <pre>
+     * Copies an already existing Vertex AI Model into the specified Location.
+     * The source Model must exist in the same Project.
+     * When copying custom Models, the users themselves are responsible for
+     * [Model.metadata][google.cloud.aiplatform.v1.Model.metadata] content to be
+     * region-agnostic, as well as making sure that any resources (e.g. files) it
+     * depends on remain accessible.
+     * </pre>
+     */
+    public void copyModel(
+        com.google.cloud.aiplatform.v1.CopyModelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCopyModelMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Imports an externally generated ModelEvaluation.
      * </pre>
      */
@@ -1069,6 +1128,12 @@ public final class ModelServiceGrpc {
                   new MethodHandlers<
                       com.google.cloud.aiplatform.v1.ExportModelRequest,
                       com.google.longrunning.Operation>(this, METHODID_EXPORT_MODEL)))
+          .addMethod(
+              getCopyModelMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1.CopyModelRequest,
+                      com.google.longrunning.Operation>(this, METHODID_COPY_MODEL)))
           .addMethod(
               getImportModelEvaluationMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1286,6 +1351,25 @@ public final class ModelServiceGrpc {
           getChannel().newCall(getExportModelMethod(), getCallOptions()),
           request,
           responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Copies an already existing Vertex AI Model into the specified Location.
+     * The source Model must exist in the same Project.
+     * When copying custom Models, the users themselves are responsible for
+     * [Model.metadata][google.cloud.aiplatform.v1.Model.metadata] content to be
+     * region-agnostic, as well as making sure that any resources (e.g. files) it
+     * depends on remain accessible.
+     * </pre>
+     */
+    public void copyModel(
+        com.google.cloud.aiplatform.v1.CopyModelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCopyModelMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1546,6 +1630,24 @@ public final class ModelServiceGrpc {
      *
      *
      * <pre>
+     * Copies an already existing Vertex AI Model into the specified Location.
+     * The source Model must exist in the same Project.
+     * When copying custom Models, the users themselves are responsible for
+     * [Model.metadata][google.cloud.aiplatform.v1.Model.metadata] content to be
+     * region-agnostic, as well as making sure that any resources (e.g. files) it
+     * depends on remain accessible.
+     * </pre>
+     */
+    public com.google.longrunning.Operation copyModel(
+        com.google.cloud.aiplatform.v1.CopyModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCopyModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Imports an externally generated ModelEvaluation.
      * </pre>
      */
@@ -1778,6 +1880,24 @@ public final class ModelServiceGrpc {
      *
      *
      * <pre>
+     * Copies an already existing Vertex AI Model into the specified Location.
+     * The source Model must exist in the same Project.
+     * When copying custom Models, the users themselves are responsible for
+     * [Model.metadata][google.cloud.aiplatform.v1.Model.metadata] content to be
+     * region-agnostic, as well as making sure that any resources (e.g. files) it
+     * depends on remain accessible.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        copyModel(com.google.cloud.aiplatform.v1.CopyModelRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCopyModelMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Imports an externally generated ModelEvaluation.
      * </pre>
      */
@@ -1872,12 +1992,13 @@ public final class ModelServiceGrpc {
   private static final int METHODID_DELETE_MODEL_VERSION = 6;
   private static final int METHODID_MERGE_VERSION_ALIASES = 7;
   private static final int METHODID_EXPORT_MODEL = 8;
-  private static final int METHODID_IMPORT_MODEL_EVALUATION = 9;
-  private static final int METHODID_BATCH_IMPORT_MODEL_EVALUATION_SLICES = 10;
-  private static final int METHODID_GET_MODEL_EVALUATION = 11;
-  private static final int METHODID_LIST_MODEL_EVALUATIONS = 12;
-  private static final int METHODID_GET_MODEL_EVALUATION_SLICE = 13;
-  private static final int METHODID_LIST_MODEL_EVALUATION_SLICES = 14;
+  private static final int METHODID_COPY_MODEL = 9;
+  private static final int METHODID_IMPORT_MODEL_EVALUATION = 10;
+  private static final int METHODID_BATCH_IMPORT_MODEL_EVALUATION_SLICES = 11;
+  private static final int METHODID_GET_MODEL_EVALUATION = 12;
+  private static final int METHODID_LIST_MODEL_EVALUATIONS = 13;
+  private static final int METHODID_GET_MODEL_EVALUATION_SLICE = 14;
+  private static final int METHODID_LIST_MODEL_EVALUATION_SLICES = 15;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1942,6 +2063,11 @@ public final class ModelServiceGrpc {
         case METHODID_EXPORT_MODEL:
           serviceImpl.exportModel(
               (com.google.cloud.aiplatform.v1.ExportModelRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_COPY_MODEL:
+          serviceImpl.copyModel(
+              (com.google.cloud.aiplatform.v1.CopyModelRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_IMPORT_MODEL_EVALUATION:
@@ -2056,6 +2182,7 @@ public final class ModelServiceGrpc {
                       .addMethod(getDeleteModelVersionMethod())
                       .addMethod(getMergeVersionAliasesMethod())
                       .addMethod(getExportModelMethod())
+                      .addMethod(getCopyModelMethod())
                       .addMethod(getImportModelEvaluationMethod())
                       .addMethod(getBatchImportModelEvaluationSlicesMethod())
                       .addMethod(getGetModelEvaluationMethod())

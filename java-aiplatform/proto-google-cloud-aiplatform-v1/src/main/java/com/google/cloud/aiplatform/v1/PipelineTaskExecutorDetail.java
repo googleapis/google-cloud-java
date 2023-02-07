@@ -1858,7 +1858,6 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
     }
   }
 
-  @java.lang.Deprecated
   public interface CustomJobDetailOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail)
@@ -1894,6 +1893,65 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
      * @return The bytes for job.
      */
     com.google.protobuf.ByteString getJobBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of the previously failed
+     * [CustomJob][google.cloud.aiplatform.v1.CustomJob]. The list includes the
+     * all attempts in chronological order.
+     * </pre>
+     *
+     * <code>repeated string failed_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return A list containing the failedJobs.
+     */
+    java.util.List<java.lang.String> getFailedJobsList();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of the previously failed
+     * [CustomJob][google.cloud.aiplatform.v1.CustomJob]. The list includes the
+     * all attempts in chronological order.
+     * </pre>
+     *
+     * <code>repeated string failed_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The count of failedJobs.
+     */
+    int getFailedJobsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of the previously failed
+     * [CustomJob][google.cloud.aiplatform.v1.CustomJob]. The list includes the
+     * all attempts in chronological order.
+     * </pre>
+     *
+     * <code>repeated string failed_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The failedJobs at the given index.
+     */
+    java.lang.String getFailedJobs(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of the previously failed
+     * [CustomJob][google.cloud.aiplatform.v1.CustomJob]. The list includes the
+     * all attempts in chronological order.
+     * </pre>
+     *
+     * <code>repeated string failed_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the failedJobs at the given index.
+     */
+    com.google.protobuf.ByteString getFailedJobsBytes(int index);
   }
   /**
    *
@@ -1904,7 +1962,6 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail}
    */
-  @java.lang.Deprecated
   public static final class CustomJobDetail extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail)
@@ -1917,6 +1974,7 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
 
     private CustomJobDetail() {
       job_ = "";
+      failedJobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -2003,6 +2061,77 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
       }
     }
 
+    public static final int FAILED_JOBS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringList failedJobs_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of the previously failed
+     * [CustomJob][google.cloud.aiplatform.v1.CustomJob]. The list includes the
+     * all attempts in chronological order.
+     * </pre>
+     *
+     * <code>repeated string failed_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return A list containing the failedJobs.
+     */
+    public com.google.protobuf.ProtocolStringList getFailedJobsList() {
+      return failedJobs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of the previously failed
+     * [CustomJob][google.cloud.aiplatform.v1.CustomJob]. The list includes the
+     * all attempts in chronological order.
+     * </pre>
+     *
+     * <code>repeated string failed_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The count of failedJobs.
+     */
+    public int getFailedJobsCount() {
+      return failedJobs_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of the previously failed
+     * [CustomJob][google.cloud.aiplatform.v1.CustomJob]. The list includes the
+     * all attempts in chronological order.
+     * </pre>
+     *
+     * <code>repeated string failed_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The failedJobs at the given index.
+     */
+    public java.lang.String getFailedJobs(int index) {
+      return failedJobs_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of the previously failed
+     * [CustomJob][google.cloud.aiplatform.v1.CustomJob]. The list includes the
+     * all attempts in chronological order.
+     * </pre>
+     *
+     * <code>repeated string failed_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the failedJobs at the given index.
+     */
+    public com.google.protobuf.ByteString getFailedJobsBytes(int index) {
+      return failedJobs_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2020,6 +2149,9 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(job_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, job_);
       }
+      for (int i = 0; i < failedJobs_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, failedJobs_.getRaw(i));
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2031,6 +2163,14 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(job_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, job_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < failedJobs_.size(); i++) {
+          dataSize += computeStringSizeNoTag(failedJobs_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getFailedJobsList().size();
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2050,6 +2190,7 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
           (com.google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail) obj;
 
       if (!getJob().equals(other.getJob())) return false;
+      if (!getFailedJobsList().equals(other.getFailedJobsList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2063,6 +2204,10 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + JOB_FIELD_NUMBER;
       hash = (53 * hash) + getJob().hashCode();
+      if (getFailedJobsCount() > 0) {
+        hash = (37 * hash) + FAILED_JOBS_FIELD_NUMBER;
+        hash = (53 * hash) + getFailedJobsList().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2214,6 +2359,8 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
         super.clear();
         bitField0_ = 0;
         job_ = "";
+        failedJobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -2245,11 +2392,21 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
           buildPartial() {
         com.google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail result =
             new com.google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail(this);
+        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          failedJobs_ = failedJobs_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.failedJobs_ = failedJobs_;
       }
 
       private void buildPartial0(
@@ -2317,6 +2474,16 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
           bitField0_ |= 0x00000001;
           onChanged();
         }
+        if (!other.failedJobs_.isEmpty()) {
+          if (failedJobs_.isEmpty()) {
+            failedJobs_ = other.failedJobs_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureFailedJobsIsMutable();
+            failedJobs_.addAll(other.failedJobs_);
+          }
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2349,6 +2516,13 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 26:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureFailedJobsIsMutable();
+                  failedJobs_.add(s);
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2489,6 +2663,192 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
         return this;
       }
 
+      private com.google.protobuf.LazyStringList failedJobs_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensureFailedJobsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          failedJobs_ = new com.google.protobuf.LazyStringArrayList(failedJobs_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The names of the previously failed
+       * [CustomJob][google.cloud.aiplatform.v1.CustomJob]. The list includes the
+       * all attempts in chronological order.
+       * </pre>
+       *
+       * <code>repeated string failed_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return A list containing the failedJobs.
+       */
+      public com.google.protobuf.ProtocolStringList getFailedJobsList() {
+        return failedJobs_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The names of the previously failed
+       * [CustomJob][google.cloud.aiplatform.v1.CustomJob]. The list includes the
+       * all attempts in chronological order.
+       * </pre>
+       *
+       * <code>repeated string failed_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The count of failedJobs.
+       */
+      public int getFailedJobsCount() {
+        return failedJobs_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The names of the previously failed
+       * [CustomJob][google.cloud.aiplatform.v1.CustomJob]. The list includes the
+       * all attempts in chronological order.
+       * </pre>
+       *
+       * <code>repeated string failed_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The failedJobs at the given index.
+       */
+      public java.lang.String getFailedJobs(int index) {
+        return failedJobs_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The names of the previously failed
+       * [CustomJob][google.cloud.aiplatform.v1.CustomJob]. The list includes the
+       * all attempts in chronological order.
+       * </pre>
+       *
+       * <code>repeated string failed_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the failedJobs at the given index.
+       */
+      public com.google.protobuf.ByteString getFailedJobsBytes(int index) {
+        return failedJobs_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The names of the previously failed
+       * [CustomJob][google.cloud.aiplatform.v1.CustomJob]. The list includes the
+       * all attempts in chronological order.
+       * </pre>
+       *
+       * <code>repeated string failed_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The failedJobs to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFailedJobs(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFailedJobsIsMutable();
+        failedJobs_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The names of the previously failed
+       * [CustomJob][google.cloud.aiplatform.v1.CustomJob]. The list includes the
+       * all attempts in chronological order.
+       * </pre>
+       *
+       * <code>repeated string failed_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The failedJobs to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFailedJobs(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFailedJobsIsMutable();
+        failedJobs_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The names of the previously failed
+       * [CustomJob][google.cloud.aiplatform.v1.CustomJob]. The list includes the
+       * all attempts in chronological order.
+       * </pre>
+       *
+       * <code>repeated string failed_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param values The failedJobs to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllFailedJobs(java.lang.Iterable<java.lang.String> values) {
+        ensureFailedJobsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, failedJobs_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The names of the previously failed
+       * [CustomJob][google.cloud.aiplatform.v1.CustomJob]. The list includes the
+       * all attempts in chronological order.
+       * </pre>
+       *
+       * <code>repeated string failed_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFailedJobs() {
+        failedJobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The names of the previously failed
+       * [CustomJob][google.cloud.aiplatform.v1.CustomJob]. The list includes the
+       * all attempts in chronological order.
+       * </pre>
+       *
+       * <code>repeated string failed_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes of the failedJobs to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFailedJobsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureFailedJobsIsMutable();
+        failedJobs_.add(value);
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2565,7 +2925,6 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CONTAINER_DETAIL(1),
-    @java.lang.Deprecated
     CUSTOM_JOB_DETAIL(2),
     DETAILS_NOT_SET(0);
     private final int value;
@@ -2675,15 +3034,12 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail custom_job_detail = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail custom_job_detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.custom_job_detail is
-   *     deprecated. See google/cloud/aiplatform/v1/pipeline_job.proto;l=401
    * @return Whether the customJobDetail field is set.
    */
   @java.lang.Override
-  @java.lang.Deprecated
   public boolean hasCustomJobDetail() {
     return detailsCase_ == 2;
   }
@@ -2695,15 +3051,12 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail custom_job_detail = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail custom_job_detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.custom_job_detail is
-   *     deprecated. See google/cloud/aiplatform/v1/pipeline_job.proto;l=401
    * @return The customJobDetail.
    */
   @java.lang.Override
-  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail
       getCustomJobDetail() {
     if (detailsCase_ == 2) {
@@ -2720,11 +3073,10 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail custom_job_detail = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail custom_job_detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
-  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetailOrBuilder
       getCustomJobDetailOrBuilder() {
     if (detailsCase_ == 2) {
@@ -3416,15 +3768,12 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail custom_job_detail = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail custom_job_detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.custom_job_detail is
-     *     deprecated. See google/cloud/aiplatform/v1/pipeline_job.proto;l=401
      * @return Whether the customJobDetail field is set.
      */
     @java.lang.Override
-    @java.lang.Deprecated
     public boolean hasCustomJobDetail() {
       return detailsCase_ == 2;
     }
@@ -3436,15 +3785,12 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail custom_job_detail = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail custom_job_detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.custom_job_detail is
-     *     deprecated. See google/cloud/aiplatform/v1/pipeline_job.proto;l=401
      * @return The customJobDetail.
      */
     @java.lang.Override
-    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail
         getCustomJobDetail() {
       if (customJobDetailBuilder_ == null) {
@@ -3470,10 +3816,9 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail custom_job_detail = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail custom_job_detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
-    @java.lang.Deprecated
     public Builder setCustomJobDetail(
         com.google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail value) {
       if (customJobDetailBuilder_ == null) {
@@ -3496,10 +3841,9 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail custom_job_detail = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail custom_job_detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
-    @java.lang.Deprecated
     public Builder setCustomJobDetail(
         com.google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail.Builder
             builderForValue) {
@@ -3520,10 +3864,9 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail custom_job_detail = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail custom_job_detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
-    @java.lang.Deprecated
     public Builder mergeCustomJobDetail(
         com.google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail value) {
       if (customJobDetailBuilder_ == null) {
@@ -3559,10 +3902,9 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail custom_job_detail = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail custom_job_detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
-    @java.lang.Deprecated
     public Builder clearCustomJobDetail() {
       if (customJobDetailBuilder_ == null) {
         if (detailsCase_ == 2) {
@@ -3587,10 +3929,9 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail custom_job_detail = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail custom_job_detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
-    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail.Builder
         getCustomJobDetailBuilder() {
       return getCustomJobDetailFieldBuilder().getBuilder();
@@ -3603,11 +3944,10 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail custom_job_detail = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail custom_job_detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     @java.lang.Override
-    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetailOrBuilder
         getCustomJobDetailOrBuilder() {
       if ((detailsCase_ == 2) && (customJobDetailBuilder_ != null)) {
@@ -3629,7 +3969,7 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail custom_job_detail = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail custom_job_detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

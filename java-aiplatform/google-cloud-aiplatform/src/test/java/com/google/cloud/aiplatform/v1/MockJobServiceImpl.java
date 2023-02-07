@@ -380,6 +380,151 @@ public class MockJobServiceImpl extends JobServiceImplBase {
   }
 
   @Override
+  public void createNasJob(CreateNasJobRequest request, StreamObserver<NasJob> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof NasJob) {
+      requests.add(request);
+      responseObserver.onNext(((NasJob) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateNasJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  NasJob.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getNasJob(GetNasJobRequest request, StreamObserver<NasJob> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof NasJob) {
+      requests.add(request);
+      responseObserver.onNext(((NasJob) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetNasJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  NasJob.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listNasJobs(
+      ListNasJobsRequest request, StreamObserver<ListNasJobsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListNasJobsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListNasJobsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListNasJobs, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListNasJobsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteNasJob(
+      DeleteNasJobRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteNasJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void cancelNasJob(CancelNasJobRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CancelNasJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getNasTrialDetail(
+      GetNasTrialDetailRequest request, StreamObserver<NasTrialDetail> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof NasTrialDetail) {
+      requests.add(request);
+      responseObserver.onNext(((NasTrialDetail) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetNasTrialDetail, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  NasTrialDetail.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listNasTrialDetails(
+      ListNasTrialDetailsRequest request,
+      StreamObserver<ListNasTrialDetailsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListNasTrialDetailsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListNasTrialDetailsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListNasTrialDetails, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListNasTrialDetailsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void createBatchPredictionJob(
       CreateBatchPredictionJobRequest request,
       StreamObserver<BatchPredictionJob> responseObserver) {

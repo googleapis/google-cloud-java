@@ -805,7 +805,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The full name of the Google Compute Engine
+   * Optional. The full name of the Google Compute Engine
    * [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks)
    * to which the Endpoint should be peered.
    * Private services access must already be configured for the network. If left
@@ -820,7 +820,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    * network name.
    * </pre>
    *
-   * <code>string network = 13 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string network = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The network.
    */
@@ -840,7 +842,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The full name of the Google Compute Engine
+   * Optional. The full name of the Google Compute Engine
    * [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks)
    * to which the Endpoint should be peered.
    * Private services access must already be configured for the network. If left
@@ -855,7 +857,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    * network name.
    * </pre>
    *
-   * <code>string network = 13 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string network = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for network.
    */
@@ -888,7 +892,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect is deprecated.
-   *     See google/cloud/aiplatform/v1/endpoint.proto;l=124
+   *     See google/cloud/aiplatform/v1/endpoint.proto;l=125
    * @return The enablePrivateServiceConnect.
    */
   @java.lang.Override
@@ -3726,7 +3730,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full name of the Google Compute Engine
+     * Optional. The full name of the Google Compute Engine
      * [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks)
      * to which the Endpoint should be peered.
      * Private services access must already be configured for the network. If left
@@ -3741,7 +3745,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * network name.
      * </pre>
      *
-     * <code>string network = 13 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string network = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The network.
      */
@@ -3760,7 +3766,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full name of the Google Compute Engine
+     * Optional. The full name of the Google Compute Engine
      * [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks)
      * to which the Endpoint should be peered.
      * Private services access must already be configured for the network. If left
@@ -3775,7 +3781,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * network name.
      * </pre>
      *
-     * <code>string network = 13 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string network = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for network.
      */
@@ -3794,7 +3802,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full name of the Google Compute Engine
+     * Optional. The full name of the Google Compute Engine
      * [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks)
      * to which the Endpoint should be peered.
      * Private services access must already be configured for the network. If left
@@ -3809,7 +3817,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * network name.
      * </pre>
      *
-     * <code>string network = 13 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string network = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The network to set.
      * @return This builder for chaining.
@@ -3827,7 +3837,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full name of the Google Compute Engine
+     * Optional. The full name of the Google Compute Engine
      * [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks)
      * to which the Endpoint should be peered.
      * Private services access must already be configured for the network. If left
@@ -3842,7 +3852,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * network name.
      * </pre>
      *
-     * <code>string network = 13 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string network = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -3856,7 +3868,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full name of the Google Compute Engine
+     * Optional. The full name of the Google Compute Engine
      * [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks)
      * to which the Endpoint should be peered.
      * Private services access must already be configured for the network. If left
@@ -3871,7 +3883,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * network name.
      * </pre>
      *
-     * <code>string network = 13 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string network = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for network to set.
      * @return This builder for chaining.
@@ -3902,7 +3916,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect is deprecated.
-     *     See google/cloud/aiplatform/v1/endpoint.proto;l=124
+     *     See google/cloud/aiplatform/v1/endpoint.proto;l=125
      * @return The enablePrivateServiceConnect.
      */
     @java.lang.Override
@@ -3924,7 +3938,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect is deprecated.
-     *     See google/cloud/aiplatform/v1/endpoint.proto;l=124
+     *     See google/cloud/aiplatform/v1/endpoint.proto;l=125
      * @param value The enablePrivateServiceConnect to set.
      * @return This builder for chaining.
      */
@@ -3950,7 +3964,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect is deprecated.
-     *     See google/cloud/aiplatform/v1/endpoint.proto;l=124
+     *     See google/cloud/aiplatform/v1/endpoint.proto;l=125
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

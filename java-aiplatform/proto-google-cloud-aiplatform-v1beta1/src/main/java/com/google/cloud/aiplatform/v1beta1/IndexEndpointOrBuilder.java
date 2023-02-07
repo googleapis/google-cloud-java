@@ -418,9 +418,60 @@ public interface IndexEndpointOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/index_endpoint.proto;l=102
+   *     deprecated. See google/cloud/aiplatform/v1beta1/index_endpoint.proto;l=103
    * @return The enablePrivateServiceConnect.
    */
   @java.lang.Deprecated
   boolean getEnablePrivateServiceConnect();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for private service connect.
+   * [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] and
+   * [private_service_connect_config][google.cloud.aiplatform.v1beta1.IndexEndpoint.private_service_connect_config]
+   * are mutually exclusive.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the privateServiceConnectConfig field is set.
+   */
+  boolean hasPrivateServiceConnectConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for private service connect.
+   * [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] and
+   * [private_service_connect_config][google.cloud.aiplatform.v1beta1.IndexEndpoint.private_service_connect_config]
+   * are mutually exclusive.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The privateServiceConnectConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig getPrivateServiceConnectConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for private service connect.
+   * [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] and
+   * [private_service_connect_config][google.cloud.aiplatform.v1beta1.IndexEndpoint.private_service_connect_config]
+   * are mutually exclusive.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfigOrBuilder
+      getPrivateServiceConnectConfigOrBuilder();
 }

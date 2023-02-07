@@ -22,6 +22,8 @@ import static com.google.cloud.aiplatform.v1.JobServiceClient.ListDataLabelingJo
 import static com.google.cloud.aiplatform.v1.JobServiceClient.ListHyperparameterTuningJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1.JobServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.aiplatform.v1.JobServiceClient.ListModelDeploymentMonitoringJobsPagedResponse;
+import static com.google.cloud.aiplatform.v1.JobServiceClient.ListNasJobsPagedResponse;
+import static com.google.cloud.aiplatform.v1.JobServiceClient.ListNasTrialDetailsPagedResponse;
 import static com.google.cloud.aiplatform.v1.JobServiceClient.SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -36,11 +38,13 @@ import com.google.cloud.aiplatform.v1.CancelBatchPredictionJobRequest;
 import com.google.cloud.aiplatform.v1.CancelCustomJobRequest;
 import com.google.cloud.aiplatform.v1.CancelDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1.CancelHyperparameterTuningJobRequest;
+import com.google.cloud.aiplatform.v1.CancelNasJobRequest;
 import com.google.cloud.aiplatform.v1.CreateBatchPredictionJobRequest;
 import com.google.cloud.aiplatform.v1.CreateCustomJobRequest;
 import com.google.cloud.aiplatform.v1.CreateDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1.CreateHyperparameterTuningJobRequest;
 import com.google.cloud.aiplatform.v1.CreateModelDeploymentMonitoringJobRequest;
+import com.google.cloud.aiplatform.v1.CreateNasJobRequest;
 import com.google.cloud.aiplatform.v1.CustomJob;
 import com.google.cloud.aiplatform.v1.DataLabelingJob;
 import com.google.cloud.aiplatform.v1.DeleteBatchPredictionJobRequest;
@@ -48,12 +52,15 @@ import com.google.cloud.aiplatform.v1.DeleteCustomJobRequest;
 import com.google.cloud.aiplatform.v1.DeleteDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1.DeleteHyperparameterTuningJobRequest;
 import com.google.cloud.aiplatform.v1.DeleteModelDeploymentMonitoringJobRequest;
+import com.google.cloud.aiplatform.v1.DeleteNasJobRequest;
 import com.google.cloud.aiplatform.v1.DeleteOperationMetadata;
 import com.google.cloud.aiplatform.v1.GetBatchPredictionJobRequest;
 import com.google.cloud.aiplatform.v1.GetCustomJobRequest;
 import com.google.cloud.aiplatform.v1.GetDataLabelingJobRequest;
 import com.google.cloud.aiplatform.v1.GetHyperparameterTuningJobRequest;
 import com.google.cloud.aiplatform.v1.GetModelDeploymentMonitoringJobRequest;
+import com.google.cloud.aiplatform.v1.GetNasJobRequest;
+import com.google.cloud.aiplatform.v1.GetNasTrialDetailRequest;
 import com.google.cloud.aiplatform.v1.HyperparameterTuningJob;
 import com.google.cloud.aiplatform.v1.ListBatchPredictionJobsRequest;
 import com.google.cloud.aiplatform.v1.ListBatchPredictionJobsResponse;
@@ -65,7 +72,13 @@ import com.google.cloud.aiplatform.v1.ListHyperparameterTuningJobsRequest;
 import com.google.cloud.aiplatform.v1.ListHyperparameterTuningJobsResponse;
 import com.google.cloud.aiplatform.v1.ListModelDeploymentMonitoringJobsRequest;
 import com.google.cloud.aiplatform.v1.ListModelDeploymentMonitoringJobsResponse;
+import com.google.cloud.aiplatform.v1.ListNasJobsRequest;
+import com.google.cloud.aiplatform.v1.ListNasJobsResponse;
+import com.google.cloud.aiplatform.v1.ListNasTrialDetailsRequest;
+import com.google.cloud.aiplatform.v1.ListNasTrialDetailsResponse;
 import com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob;
+import com.google.cloud.aiplatform.v1.NasJob;
+import com.google.cloud.aiplatform.v1.NasTrialDetail;
 import com.google.cloud.aiplatform.v1.PauseModelDeploymentMonitoringJobRequest;
 import com.google.cloud.aiplatform.v1.ResumeModelDeploymentMonitoringJobRequest;
 import com.google.cloud.aiplatform.v1.SearchModelDeploymentMonitoringStatsAnomaliesRequest;
@@ -260,6 +273,70 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CancelHyperparameterTuningJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateNasJobRequest, NasJob> createNasJobMethodDescriptor =
+      MethodDescriptor.<CreateNasJobRequest, NasJob>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.aiplatform.v1.JobService/CreateNasJob")
+          .setRequestMarshaller(ProtoUtils.marshaller(CreateNasJobRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(NasJob.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<GetNasJobRequest, NasJob> getNasJobMethodDescriptor =
+      MethodDescriptor.<GetNasJobRequest, NasJob>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.aiplatform.v1.JobService/GetNasJob")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetNasJobRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(NasJob.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<ListNasJobsRequest, ListNasJobsResponse>
+      listNasJobsMethodDescriptor =
+          MethodDescriptor.<ListNasJobsRequest, ListNasJobsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1.JobService/ListNasJobs")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListNasJobsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListNasJobsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteNasJobRequest, Operation>
+      deleteNasJobMethodDescriptor =
+          MethodDescriptor.<DeleteNasJobRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1.JobService/DeleteNasJob")
+              .setRequestMarshaller(ProtoUtils.marshaller(DeleteNasJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CancelNasJobRequest, Empty> cancelNasJobMethodDescriptor =
+      MethodDescriptor.<CancelNasJobRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.aiplatform.v1.JobService/CancelNasJob")
+          .setRequestMarshaller(ProtoUtils.marshaller(CancelNasJobRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<GetNasTrialDetailRequest, NasTrialDetail>
+      getNasTrialDetailMethodDescriptor =
+          MethodDescriptor.<GetNasTrialDetailRequest, NasTrialDetail>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1.JobService/GetNasTrialDetail")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetNasTrialDetailRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(NasTrialDetail.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListNasTrialDetailsRequest, ListNasTrialDetailsResponse>
+      listNasTrialDetailsMethodDescriptor =
+          MethodDescriptor.<ListNasTrialDetailsRequest, ListNasTrialDetailsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1.JobService/ListNasTrialDetails")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListNasTrialDetailsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListNasTrialDetailsResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<CreateBatchPredictionJobRequest, BatchPredictionJob>
@@ -514,6 +591,20 @@ public class GrpcJobServiceStub extends JobServiceStub {
       deleteHyperparameterTuningJobOperationCallable;
   private final UnaryCallable<CancelHyperparameterTuningJobRequest, Empty>
       cancelHyperparameterTuningJobCallable;
+  private final UnaryCallable<CreateNasJobRequest, NasJob> createNasJobCallable;
+  private final UnaryCallable<GetNasJobRequest, NasJob> getNasJobCallable;
+  private final UnaryCallable<ListNasJobsRequest, ListNasJobsResponse> listNasJobsCallable;
+  private final UnaryCallable<ListNasJobsRequest, ListNasJobsPagedResponse>
+      listNasJobsPagedCallable;
+  private final UnaryCallable<DeleteNasJobRequest, Operation> deleteNasJobCallable;
+  private final OperationCallable<DeleteNasJobRequest, Empty, DeleteOperationMetadata>
+      deleteNasJobOperationCallable;
+  private final UnaryCallable<CancelNasJobRequest, Empty> cancelNasJobCallable;
+  private final UnaryCallable<GetNasTrialDetailRequest, NasTrialDetail> getNasTrialDetailCallable;
+  private final UnaryCallable<ListNasTrialDetailsRequest, ListNasTrialDetailsResponse>
+      listNasTrialDetailsCallable;
+  private final UnaryCallable<ListNasTrialDetailsRequest, ListNasTrialDetailsPagedResponse>
+      listNasTrialDetailsPagedCallable;
   private final UnaryCallable<CreateBatchPredictionJobRequest, BatchPredictionJob>
       createBatchPredictionJobCallable;
   private final UnaryCallable<GetBatchPredictionJobRequest, BatchPredictionJob>
@@ -775,6 +866,77 @@ public class GrpcJobServiceStub extends JobServiceStub {
                     request -> {
                       ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                       params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateNasJobRequest, NasJob> createNasJobTransportSettings =
+        GrpcCallSettings.<CreateNasJobRequest, NasJob>newBuilder()
+            .setMethodDescriptor(createNasJobMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<GetNasJobRequest, NasJob> getNasJobTransportSettings =
+        GrpcCallSettings.<GetNasJobRequest, NasJob>newBuilder()
+            .setMethodDescriptor(getNasJobMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<ListNasJobsRequest, ListNasJobsResponse> listNasJobsTransportSettings =
+        GrpcCallSettings.<ListNasJobsRequest, ListNasJobsResponse>newBuilder()
+            .setMethodDescriptor(listNasJobsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteNasJobRequest, Operation> deleteNasJobTransportSettings =
+        GrpcCallSettings.<DeleteNasJobRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteNasJobMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<CancelNasJobRequest, Empty> cancelNasJobTransportSettings =
+        GrpcCallSettings.<CancelNasJobRequest, Empty>newBuilder()
+            .setMethodDescriptor(cancelNasJobMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<GetNasTrialDetailRequest, NasTrialDetail> getNasTrialDetailTransportSettings =
+        GrpcCallSettings.<GetNasTrialDetailRequest, NasTrialDetail>newBuilder()
+            .setMethodDescriptor(getNasTrialDetailMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<ListNasTrialDetailsRequest, ListNasTrialDetailsResponse>
+        listNasTrialDetailsTransportSettings =
+            GrpcCallSettings.<ListNasTrialDetailsRequest, ListNasTrialDetailsResponse>newBuilder()
+                .setMethodDescriptor(listNasTrialDetailsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
                       return params.build();
                     })
                 .build();
@@ -1086,6 +1248,45 @@ public class GrpcJobServiceStub extends JobServiceStub {
             cancelHyperparameterTuningJobTransportSettings,
             settings.cancelHyperparameterTuningJobSettings(),
             clientContext);
+    this.createNasJobCallable =
+        callableFactory.createUnaryCallable(
+            createNasJobTransportSettings, settings.createNasJobSettings(), clientContext);
+    this.getNasJobCallable =
+        callableFactory.createUnaryCallable(
+            getNasJobTransportSettings, settings.getNasJobSettings(), clientContext);
+    this.listNasJobsCallable =
+        callableFactory.createUnaryCallable(
+            listNasJobsTransportSettings, settings.listNasJobsSettings(), clientContext);
+    this.listNasJobsPagedCallable =
+        callableFactory.createPagedCallable(
+            listNasJobsTransportSettings, settings.listNasJobsSettings(), clientContext);
+    this.deleteNasJobCallable =
+        callableFactory.createUnaryCallable(
+            deleteNasJobTransportSettings, settings.deleteNasJobSettings(), clientContext);
+    this.deleteNasJobOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteNasJobTransportSettings,
+            settings.deleteNasJobOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.cancelNasJobCallable =
+        callableFactory.createUnaryCallable(
+            cancelNasJobTransportSettings, settings.cancelNasJobSettings(), clientContext);
+    this.getNasTrialDetailCallable =
+        callableFactory.createUnaryCallable(
+            getNasTrialDetailTransportSettings,
+            settings.getNasTrialDetailSettings(),
+            clientContext);
+    this.listNasTrialDetailsCallable =
+        callableFactory.createUnaryCallable(
+            listNasTrialDetailsTransportSettings,
+            settings.listNasTrialDetailsSettings(),
+            clientContext);
+    this.listNasTrialDetailsPagedCallable =
+        callableFactory.createPagedCallable(
+            listNasTrialDetailsTransportSettings,
+            settings.listNasTrialDetailsSettings(),
+            clientContext);
     this.createBatchPredictionJobCallable =
         callableFactory.createUnaryCallable(
             createBatchPredictionJobTransportSettings,
@@ -1330,6 +1531,59 @@ public class GrpcJobServiceStub extends JobServiceStub {
   public UnaryCallable<CancelHyperparameterTuningJobRequest, Empty>
       cancelHyperparameterTuningJobCallable() {
     return cancelHyperparameterTuningJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateNasJobRequest, NasJob> createNasJobCallable() {
+    return createNasJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetNasJobRequest, NasJob> getNasJobCallable() {
+    return getNasJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListNasJobsRequest, ListNasJobsResponse> listNasJobsCallable() {
+    return listNasJobsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListNasJobsRequest, ListNasJobsPagedResponse> listNasJobsPagedCallable() {
+    return listNasJobsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteNasJobRequest, Operation> deleteNasJobCallable() {
+    return deleteNasJobCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteNasJobRequest, Empty, DeleteOperationMetadata>
+      deleteNasJobOperationCallable() {
+    return deleteNasJobOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CancelNasJobRequest, Empty> cancelNasJobCallable() {
+    return cancelNasJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetNasTrialDetailRequest, NasTrialDetail> getNasTrialDetailCallable() {
+    return getNasTrialDetailCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListNasTrialDetailsRequest, ListNasTrialDetailsResponse>
+      listNasTrialDetailsCallable() {
+    return listNasTrialDetailsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListNasTrialDetailsRequest, ListNasTrialDetailsPagedResponse>
+      listNasTrialDetailsPagedCallable() {
+    return listNasTrialDetailsPagedCallable;
   }
 
   @Override

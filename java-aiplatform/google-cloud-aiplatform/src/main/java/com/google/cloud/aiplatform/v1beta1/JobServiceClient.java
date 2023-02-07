@@ -2333,6 +2333,973 @@ public class JobServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Creates a NasJob
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   NasJob nasJob = NasJob.newBuilder().build();
+   *   NasJob response = jobServiceClient.createNasJob(parent, nasJob);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location to create the NasJob in. Format:
+   *     `projects/{project}/locations/{location}`
+   * @param nasJob Required. The NasJob to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NasJob createNasJob(LocationName parent, NasJob nasJob) {
+    CreateNasJobRequest request =
+        CreateNasJobRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setNasJob(nasJob)
+            .build();
+    return createNasJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a NasJob
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   NasJob nasJob = NasJob.newBuilder().build();
+   *   NasJob response = jobServiceClient.createNasJob(parent, nasJob);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location to create the NasJob in. Format:
+   *     `projects/{project}/locations/{location}`
+   * @param nasJob Required. The NasJob to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NasJob createNasJob(String parent, NasJob nasJob) {
+    CreateNasJobRequest request =
+        CreateNasJobRequest.newBuilder().setParent(parent).setNasJob(nasJob).build();
+    return createNasJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a NasJob
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   CreateNasJobRequest request =
+   *       CreateNasJobRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setNasJob(NasJob.newBuilder().build())
+   *           .build();
+   *   NasJob response = jobServiceClient.createNasJob(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NasJob createNasJob(CreateNasJobRequest request) {
+    return createNasJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a NasJob
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   CreateNasJobRequest request =
+   *       CreateNasJobRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setNasJob(NasJob.newBuilder().build())
+   *           .build();
+   *   ApiFuture<NasJob> future = jobServiceClient.createNasJobCallable().futureCall(request);
+   *   // Do something.
+   *   NasJob response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateNasJobRequest, NasJob> createNasJobCallable() {
+    return stub.createNasJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a NasJob
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   NasJobName name = NasJobName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]");
+   *   NasJob response = jobServiceClient.getNasJob(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the NasJob resource. Format:
+   *     `projects/{project}/locations/{location}/nasJobs/{nas_job}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NasJob getNasJob(NasJobName name) {
+    GetNasJobRequest request =
+        GetNasJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getNasJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a NasJob
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   String name = NasJobName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]").toString();
+   *   NasJob response = jobServiceClient.getNasJob(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the NasJob resource. Format:
+   *     `projects/{project}/locations/{location}/nasJobs/{nas_job}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NasJob getNasJob(String name) {
+    GetNasJobRequest request = GetNasJobRequest.newBuilder().setName(name).build();
+    return getNasJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a NasJob
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   GetNasJobRequest request =
+   *       GetNasJobRequest.newBuilder()
+   *           .setName(NasJobName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]").toString())
+   *           .build();
+   *   NasJob response = jobServiceClient.getNasJob(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NasJob getNasJob(GetNasJobRequest request) {
+    return getNasJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a NasJob
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   GetNasJobRequest request =
+   *       GetNasJobRequest.newBuilder()
+   *           .setName(NasJobName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]").toString())
+   *           .build();
+   *   ApiFuture<NasJob> future = jobServiceClient.getNasJobCallable().futureCall(request);
+   *   // Do something.
+   *   NasJob response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetNasJobRequest, NasJob> getNasJobCallable() {
+    return stub.getNasJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists NasJobs in a Location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (NasJob element : jobServiceClient.listNasJobs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location to list the NasJobs from. Format:
+   *     `projects/{project}/locations/{location}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNasJobsPagedResponse listNasJobs(LocationName parent) {
+    ListNasJobsRequest request =
+        ListNasJobsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listNasJobs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists NasJobs in a Location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (NasJob element : jobServiceClient.listNasJobs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location to list the NasJobs from. Format:
+   *     `projects/{project}/locations/{location}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNasJobsPagedResponse listNasJobs(String parent) {
+    ListNasJobsRequest request = ListNasJobsRequest.newBuilder().setParent(parent).build();
+    return listNasJobs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists NasJobs in a Location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ListNasJobsRequest request =
+   *       ListNasJobsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   for (NasJob element : jobServiceClient.listNasJobs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNasJobsPagedResponse listNasJobs(ListNasJobsRequest request) {
+    return listNasJobsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists NasJobs in a Location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ListNasJobsRequest request =
+   *       ListNasJobsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<NasJob> future = jobServiceClient.listNasJobsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (NasJob element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListNasJobsRequest, ListNasJobsPagedResponse>
+      listNasJobsPagedCallable() {
+    return stub.listNasJobsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists NasJobs in a Location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ListNasJobsRequest request =
+   *       ListNasJobsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   while (true) {
+   *     ListNasJobsResponse response = jobServiceClient.listNasJobsCallable().call(request);
+   *     for (NasJob element : response.getNasJobsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListNasJobsRequest, ListNasJobsResponse> listNasJobsCallable() {
+    return stub.listNasJobsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a NasJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   NasJobName name = NasJobName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]");
+   *   jobServiceClient.deleteNasJobAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the NasJob resource to be deleted. Format:
+   *     `projects/{project}/locations/{location}/nasJobs/{nas_job}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deleteNasJobAsync(NasJobName name) {
+    DeleteNasJobRequest request =
+        DeleteNasJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteNasJobAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a NasJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   String name = NasJobName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]").toString();
+   *   jobServiceClient.deleteNasJobAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the NasJob resource to be deleted. Format:
+   *     `projects/{project}/locations/{location}/nasJobs/{nas_job}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deleteNasJobAsync(String name) {
+    DeleteNasJobRequest request = DeleteNasJobRequest.newBuilder().setName(name).build();
+    return deleteNasJobAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a NasJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   DeleteNasJobRequest request =
+   *       DeleteNasJobRequest.newBuilder()
+   *           .setName(NasJobName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]").toString())
+   *           .build();
+   *   jobServiceClient.deleteNasJobAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deleteNasJobAsync(
+      DeleteNasJobRequest request) {
+    return deleteNasJobOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a NasJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   DeleteNasJobRequest request =
+   *       DeleteNasJobRequest.newBuilder()
+   *           .setName(NasJobName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]").toString())
+   *           .build();
+   *   OperationFuture<Empty, DeleteOperationMetadata> future =
+   *       jobServiceClient.deleteNasJobOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteNasJobRequest, Empty, DeleteOperationMetadata>
+      deleteNasJobOperationCallable() {
+    return stub.deleteNasJobOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a NasJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   DeleteNasJobRequest request =
+   *       DeleteNasJobRequest.newBuilder()
+   *           .setName(NasJobName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future = jobServiceClient.deleteNasJobCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteNasJobRequest, Operation> deleteNasJobCallable() {
+    return stub.deleteNasJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels a NasJob. Starts asynchronous cancellation on the NasJob. The server makes a best
+   * effort to cancel the job, but success is not guaranteed. Clients can use
+   * [JobService.GetNasJob][google.cloud.aiplatform.v1beta1.JobService.GetNasJob] or other methods
+   * to check whether the cancellation succeeded or whether the job completed despite cancellation.
+   * On successful cancellation, the NasJob is not deleted; instead it becomes a job with a
+   * [NasJob.error][google.cloud.aiplatform.v1beta1.NasJob.error] value with a
+   * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to `Code.CANCELLED`, and
+   * [NasJob.state][google.cloud.aiplatform.v1beta1.NasJob.state] is set to `CANCELLED`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   NasJobName name = NasJobName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]");
+   *   jobServiceClient.cancelNasJob(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the NasJob to cancel. Format:
+   *     `projects/{project}/locations/{location}/nasJobs/{nas_job}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void cancelNasJob(NasJobName name) {
+    CancelNasJobRequest request =
+        CancelNasJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    cancelNasJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels a NasJob. Starts asynchronous cancellation on the NasJob. The server makes a best
+   * effort to cancel the job, but success is not guaranteed. Clients can use
+   * [JobService.GetNasJob][google.cloud.aiplatform.v1beta1.JobService.GetNasJob] or other methods
+   * to check whether the cancellation succeeded or whether the job completed despite cancellation.
+   * On successful cancellation, the NasJob is not deleted; instead it becomes a job with a
+   * [NasJob.error][google.cloud.aiplatform.v1beta1.NasJob.error] value with a
+   * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to `Code.CANCELLED`, and
+   * [NasJob.state][google.cloud.aiplatform.v1beta1.NasJob.state] is set to `CANCELLED`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   String name = NasJobName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]").toString();
+   *   jobServiceClient.cancelNasJob(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the NasJob to cancel. Format:
+   *     `projects/{project}/locations/{location}/nasJobs/{nas_job}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void cancelNasJob(String name) {
+    CancelNasJobRequest request = CancelNasJobRequest.newBuilder().setName(name).build();
+    cancelNasJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels a NasJob. Starts asynchronous cancellation on the NasJob. The server makes a best
+   * effort to cancel the job, but success is not guaranteed. Clients can use
+   * [JobService.GetNasJob][google.cloud.aiplatform.v1beta1.JobService.GetNasJob] or other methods
+   * to check whether the cancellation succeeded or whether the job completed despite cancellation.
+   * On successful cancellation, the NasJob is not deleted; instead it becomes a job with a
+   * [NasJob.error][google.cloud.aiplatform.v1beta1.NasJob.error] value with a
+   * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to `Code.CANCELLED`, and
+   * [NasJob.state][google.cloud.aiplatform.v1beta1.NasJob.state] is set to `CANCELLED`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   CancelNasJobRequest request =
+   *       CancelNasJobRequest.newBuilder()
+   *           .setName(NasJobName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]").toString())
+   *           .build();
+   *   jobServiceClient.cancelNasJob(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void cancelNasJob(CancelNasJobRequest request) {
+    cancelNasJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels a NasJob. Starts asynchronous cancellation on the NasJob. The server makes a best
+   * effort to cancel the job, but success is not guaranteed. Clients can use
+   * [JobService.GetNasJob][google.cloud.aiplatform.v1beta1.JobService.GetNasJob] or other methods
+   * to check whether the cancellation succeeded or whether the job completed despite cancellation.
+   * On successful cancellation, the NasJob is not deleted; instead it becomes a job with a
+   * [NasJob.error][google.cloud.aiplatform.v1beta1.NasJob.error] value with a
+   * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to `Code.CANCELLED`, and
+   * [NasJob.state][google.cloud.aiplatform.v1beta1.NasJob.state] is set to `CANCELLED`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   CancelNasJobRequest request =
+   *       CancelNasJobRequest.newBuilder()
+   *           .setName(NasJobName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future = jobServiceClient.cancelNasJobCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CancelNasJobRequest, Empty> cancelNasJobCallable() {
+    return stub.cancelNasJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a NasTrialDetail.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   NasTrialDetailName name =
+   *       NasTrialDetailName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]", "[NAS_TRIAL_DETAIL]");
+   *   NasTrialDetail response = jobServiceClient.getNasTrialDetail(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the NasTrialDetail resource. Format:
+   *     `projects/{project}/locations/{location}/nasJobs/{nas_job}/nasTrialDetails/{nas_trial_detail}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NasTrialDetail getNasTrialDetail(NasTrialDetailName name) {
+    GetNasTrialDetailRequest request =
+        GetNasTrialDetailRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getNasTrialDetail(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a NasTrialDetail.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   String name =
+   *       NasTrialDetailName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]", "[NAS_TRIAL_DETAIL]")
+   *           .toString();
+   *   NasTrialDetail response = jobServiceClient.getNasTrialDetail(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the NasTrialDetail resource. Format:
+   *     `projects/{project}/locations/{location}/nasJobs/{nas_job}/nasTrialDetails/{nas_trial_detail}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NasTrialDetail getNasTrialDetail(String name) {
+    GetNasTrialDetailRequest request = GetNasTrialDetailRequest.newBuilder().setName(name).build();
+    return getNasTrialDetail(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a NasTrialDetail.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   GetNasTrialDetailRequest request =
+   *       GetNasTrialDetailRequest.newBuilder()
+   *           .setName(
+   *               NasTrialDetailName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[NAS_JOB]", "[NAS_TRIAL_DETAIL]")
+   *                   .toString())
+   *           .build();
+   *   NasTrialDetail response = jobServiceClient.getNasTrialDetail(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NasTrialDetail getNasTrialDetail(GetNasTrialDetailRequest request) {
+    return getNasTrialDetailCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a NasTrialDetail.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   GetNasTrialDetailRequest request =
+   *       GetNasTrialDetailRequest.newBuilder()
+   *           .setName(
+   *               NasTrialDetailName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[NAS_JOB]", "[NAS_TRIAL_DETAIL]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<NasTrialDetail> future =
+   *       jobServiceClient.getNasTrialDetailCallable().futureCall(request);
+   *   // Do something.
+   *   NasTrialDetail response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetNasTrialDetailRequest, NasTrialDetail> getNasTrialDetailCallable() {
+    return stub.getNasTrialDetailCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List top NasTrialDetails of a NasJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   NasJobName parent = NasJobName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]");
+   *   for (NasTrialDetail element : jobServiceClient.listNasTrialDetails(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the NasJob resource. Format:
+   *     `projects/{project}/locations/{location}/nasJobs/{nas_job}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNasTrialDetailsPagedResponse listNasTrialDetails(NasJobName parent) {
+    ListNasTrialDetailsRequest request =
+        ListNasTrialDetailsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listNasTrialDetails(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List top NasTrialDetails of a NasJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   String parent = NasJobName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]").toString();
+   *   for (NasTrialDetail element : jobServiceClient.listNasTrialDetails(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the NasJob resource. Format:
+   *     `projects/{project}/locations/{location}/nasJobs/{nas_job}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNasTrialDetailsPagedResponse listNasTrialDetails(String parent) {
+    ListNasTrialDetailsRequest request =
+        ListNasTrialDetailsRequest.newBuilder().setParent(parent).build();
+    return listNasTrialDetails(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List top NasTrialDetails of a NasJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ListNasTrialDetailsRequest request =
+   *       ListNasTrialDetailsRequest.newBuilder()
+   *           .setParent(NasJobName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (NasTrialDetail element : jobServiceClient.listNasTrialDetails(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNasTrialDetailsPagedResponse listNasTrialDetails(
+      ListNasTrialDetailsRequest request) {
+    return listNasTrialDetailsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List top NasTrialDetails of a NasJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ListNasTrialDetailsRequest request =
+   *       ListNasTrialDetailsRequest.newBuilder()
+   *           .setParent(NasJobName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<NasTrialDetail> future =
+   *       jobServiceClient.listNasTrialDetailsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (NasTrialDetail element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListNasTrialDetailsRequest, ListNasTrialDetailsPagedResponse>
+      listNasTrialDetailsPagedCallable() {
+    return stub.listNasTrialDetailsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List top NasTrialDetails of a NasJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ListNasTrialDetailsRequest request =
+   *       ListNasTrialDetailsRequest.newBuilder()
+   *           .setParent(NasJobName.of("[PROJECT]", "[LOCATION]", "[NAS_JOB]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListNasTrialDetailsResponse response =
+   *         jobServiceClient.listNasTrialDetailsCallable().call(request);
+   *     for (NasTrialDetail element : response.getNasTrialDetailsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListNasTrialDetailsRequest, ListNasTrialDetailsResponse>
+      listNasTrialDetailsCallable() {
+    return stub.listNasTrialDetailsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates a BatchPredictionJob. A BatchPredictionJob once created will right away be attempted to
    * start.
    *
@@ -4994,6 +5961,163 @@ public class JobServiceClient implements BackgroundResource {
     protected ListHyperparameterTuningJobsFixedSizeCollection createCollection(
         List<ListHyperparameterTuningJobsPage> pages, int collectionSize) {
       return new ListHyperparameterTuningJobsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListNasJobsPagedResponse
+      extends AbstractPagedListResponse<
+          ListNasJobsRequest,
+          ListNasJobsResponse,
+          NasJob,
+          ListNasJobsPage,
+          ListNasJobsFixedSizeCollection> {
+
+    public static ApiFuture<ListNasJobsPagedResponse> createAsync(
+        PageContext<ListNasJobsRequest, ListNasJobsResponse, NasJob> context,
+        ApiFuture<ListNasJobsResponse> futureResponse) {
+      ApiFuture<ListNasJobsPage> futurePage =
+          ListNasJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage, input -> new ListNasJobsPagedResponse(input), MoreExecutors.directExecutor());
+    }
+
+    private ListNasJobsPagedResponse(ListNasJobsPage page) {
+      super(page, ListNasJobsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListNasJobsPage
+      extends AbstractPage<ListNasJobsRequest, ListNasJobsResponse, NasJob, ListNasJobsPage> {
+
+    private ListNasJobsPage(
+        PageContext<ListNasJobsRequest, ListNasJobsResponse, NasJob> context,
+        ListNasJobsResponse response) {
+      super(context, response);
+    }
+
+    private static ListNasJobsPage createEmptyPage() {
+      return new ListNasJobsPage(null, null);
+    }
+
+    @Override
+    protected ListNasJobsPage createPage(
+        PageContext<ListNasJobsRequest, ListNasJobsResponse, NasJob> context,
+        ListNasJobsResponse response) {
+      return new ListNasJobsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListNasJobsPage> createPageAsync(
+        PageContext<ListNasJobsRequest, ListNasJobsResponse, NasJob> context,
+        ApiFuture<ListNasJobsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListNasJobsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListNasJobsRequest,
+          ListNasJobsResponse,
+          NasJob,
+          ListNasJobsPage,
+          ListNasJobsFixedSizeCollection> {
+
+    private ListNasJobsFixedSizeCollection(List<ListNasJobsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListNasJobsFixedSizeCollection createEmptyCollection() {
+      return new ListNasJobsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListNasJobsFixedSizeCollection createCollection(
+        List<ListNasJobsPage> pages, int collectionSize) {
+      return new ListNasJobsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListNasTrialDetailsPagedResponse
+      extends AbstractPagedListResponse<
+          ListNasTrialDetailsRequest,
+          ListNasTrialDetailsResponse,
+          NasTrialDetail,
+          ListNasTrialDetailsPage,
+          ListNasTrialDetailsFixedSizeCollection> {
+
+    public static ApiFuture<ListNasTrialDetailsPagedResponse> createAsync(
+        PageContext<ListNasTrialDetailsRequest, ListNasTrialDetailsResponse, NasTrialDetail>
+            context,
+        ApiFuture<ListNasTrialDetailsResponse> futureResponse) {
+      ApiFuture<ListNasTrialDetailsPage> futurePage =
+          ListNasTrialDetailsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListNasTrialDetailsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListNasTrialDetailsPagedResponse(ListNasTrialDetailsPage page) {
+      super(page, ListNasTrialDetailsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListNasTrialDetailsPage
+      extends AbstractPage<
+          ListNasTrialDetailsRequest,
+          ListNasTrialDetailsResponse,
+          NasTrialDetail,
+          ListNasTrialDetailsPage> {
+
+    private ListNasTrialDetailsPage(
+        PageContext<ListNasTrialDetailsRequest, ListNasTrialDetailsResponse, NasTrialDetail>
+            context,
+        ListNasTrialDetailsResponse response) {
+      super(context, response);
+    }
+
+    private static ListNasTrialDetailsPage createEmptyPage() {
+      return new ListNasTrialDetailsPage(null, null);
+    }
+
+    @Override
+    protected ListNasTrialDetailsPage createPage(
+        PageContext<ListNasTrialDetailsRequest, ListNasTrialDetailsResponse, NasTrialDetail>
+            context,
+        ListNasTrialDetailsResponse response) {
+      return new ListNasTrialDetailsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListNasTrialDetailsPage> createPageAsync(
+        PageContext<ListNasTrialDetailsRequest, ListNasTrialDetailsResponse, NasTrialDetail>
+            context,
+        ApiFuture<ListNasTrialDetailsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListNasTrialDetailsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListNasTrialDetailsRequest,
+          ListNasTrialDetailsResponse,
+          NasTrialDetail,
+          ListNasTrialDetailsPage,
+          ListNasTrialDetailsFixedSizeCollection> {
+
+    private ListNasTrialDetailsFixedSizeCollection(
+        List<ListNasTrialDetailsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListNasTrialDetailsFixedSizeCollection createEmptyCollection() {
+      return new ListNasTrialDetailsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListNasTrialDetailsFixedSizeCollection createCollection(
+        List<ListNasTrialDetailsPage> pages, int collectionSize) {
+      return new ListNasTrialDetailsFixedSizeCollection(pages, collectionSize);
     }
   }
 

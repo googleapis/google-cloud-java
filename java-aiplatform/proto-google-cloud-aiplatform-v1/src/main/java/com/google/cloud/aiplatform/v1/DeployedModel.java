@@ -684,6 +684,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * If true, online prediction access logs are sent to StackDriver
+   * Logging.
    * These logs are like standard server access logs, containing
    * information like timestamp and latency for each prediction request.
    * Note that Stackdriver logs may incur a cost, especially if your project
@@ -3087,6 +3089,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * If true, online prediction access logs are sent to StackDriver
+     * Logging.
      * These logs are like standard server access logs, containing
      * information like timestamp and latency for each prediction request.
      * Note that Stackdriver logs may incur a cost, especially if your project
@@ -3106,6 +3110,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * If true, online prediction access logs are sent to StackDriver
+     * Logging.
      * These logs are like standard server access logs, containing
      * information like timestamp and latency for each prediction request.
      * Note that Stackdriver logs may incur a cost, especially if your project
@@ -3129,6 +3135,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * If true, online prediction access logs are sent to StackDriver
+     * Logging.
      * These logs are like standard server access logs, containing
      * information like timestamp and latency for each prediction request.
      * Note that Stackdriver logs may incur a cost, especially if your project

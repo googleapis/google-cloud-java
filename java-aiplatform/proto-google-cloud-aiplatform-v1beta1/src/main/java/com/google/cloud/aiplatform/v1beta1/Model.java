@@ -1759,6 +1759,693 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface OriginalModelInfoOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Model this Model is a copy of,
+     * including the revision. Format:
+     * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}`
+     * </pre>
+     *
+     * <code>
+     * string model = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The model.
+     */
+    java.lang.String getModel();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Model this Model is a copy of,
+     * including the revision. Format:
+     * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}`
+     * </pre>
+     *
+     * <code>
+     * string model = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for model.
+     */
+    com.google.protobuf.ByteString getModelBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Contains information about the original Model if this Model is a copy.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo}
+   */
+  public static final class OriginalModelInfo extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo)
+      OriginalModelInfoOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use OriginalModelInfo.newBuilder() to construct.
+    private OriginalModelInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private OriginalModelInfo() {
+      model_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new OriginalModelInfo();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.ModelProto
+          .internal_static_google_cloud_aiplatform_v1beta1_Model_OriginalModelInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.ModelProto
+          .internal_static_google_cloud_aiplatform_v1beta1_Model_OriginalModelInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo.class,
+              com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo.Builder.class);
+    }
+
+    public static final int MODEL_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object model_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Model this Model is a copy of,
+     * including the revision. Format:
+     * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}`
+     * </pre>
+     *
+     * <code>
+     * string model = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The model.
+     */
+    @java.lang.Override
+    public java.lang.String getModel() {
+      java.lang.Object ref = model_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        model_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Model this Model is a copy of,
+     * including the revision. Format:
+     * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}`
+     * </pre>
+     *
+     * <code>
+     * string model = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for model.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getModelBytes() {
+      java.lang.Object ref = model_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        model_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, model_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, model_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo other =
+          (com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo) obj;
+
+      if (!getModel().equals(other.getModel())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MODEL_FIELD_NUMBER;
+      hash = (53 * hash) + getModel().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information about the original Model if this Model is a copy.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo)
+        com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.ModelProto
+            .internal_static_google_cloud_aiplatform_v1beta1_Model_OriginalModelInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.ModelProto
+            .internal_static_google_cloud_aiplatform_v1beta1_Model_OriginalModelInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo.class,
+                com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo.Builder.class);
+      }
+
+      // Construct using com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        model_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.ModelProto
+            .internal_static_google_cloud_aiplatform_v1beta1_Model_OriginalModelInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo build() {
+        com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo result =
+            new com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.model_ = model_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo) {
+          return mergeFrom((com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo.getDefaultInstance())
+          return this;
+        if (!other.getModel().isEmpty()) {
+          model_ = other.model_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  model_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object model_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The resource name of the Model this Model is a copy of,
+       * including the revision. Format:
+       * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}`
+       * </pre>
+       *
+       * <code>
+       * string model = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The model.
+       */
+      public java.lang.String getModel() {
+        java.lang.Object ref = model_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          model_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The resource name of the Model this Model is a copy of,
+       * including the revision. Format:
+       * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}`
+       * </pre>
+       *
+       * <code>
+       * string model = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for model.
+       */
+      public com.google.protobuf.ByteString getModelBytes() {
+        java.lang.Object ref = model_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          model_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The resource name of the Model this Model is a copy of,
+       * including the revision. Format:
+       * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}`
+       * </pre>
+       *
+       * <code>
+       * string model = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The model to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModel(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        model_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The resource name of the Model this Model is a copy of,
+       * including the revision. Format:
+       * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}`
+       * </pre>
+       *
+       * <code>
+       * string model = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearModel() {
+        model_ = getDefaultInstance().getModel();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The resource name of the Model this Model is a copy of,
+       * including the revision. Format:
+       * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}`
+       * </pre>
+       *
+       * <code>
+       * string model = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for model to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        model_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo)
+    private static final com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<OriginalModelInfo> PARSER =
+        new com.google.protobuf.AbstractParser<OriginalModelInfo>() {
+          @java.lang.Override
+          public OriginalModelInfo parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<OriginalModelInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<OriginalModelInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -3891,6 +4578,66 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         : modelSourceInfo_;
   }
 
+  public static final int ORIGINAL_MODEL_INFO_FIELD_NUMBER = 34;
+  private com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo originalModelInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If this Model is a copy of another Model, this contains info
+   * about the original.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo original_model_info = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the originalModelInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasOriginalModelInfo() {
+    return originalModelInfo_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If this Model is a copy of another Model, this contains info
+   * about the original.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo original_model_info = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The originalModelInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo getOriginalModelInfo() {
+    return originalModelInfo_ == null
+        ? com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo.getDefaultInstance()
+        : originalModelInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If this Model is a copy of another Model, this contains info
+   * about the original.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo original_model_info = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfoOrBuilder
+      getOriginalModelInfoOrBuilder() {
+    return originalModelInfo_ == null
+        ? com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo.getDefaultInstance()
+        : originalModelInfo_;
+  }
+
   public static final int METADATA_ARTIFACT_FIELD_NUMBER = 44;
 
   @SuppressWarnings("serial")
@@ -4043,6 +4790,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     if (versionUpdateTime_ != null) {
       output.writeMessage(32, getVersionUpdateTime());
     }
+    if (originalModelInfo_ != null) {
+      output.writeMessage(34, getOriginalModelInfo());
+    }
     if (modelSourceInfo_ != null) {
       output.writeMessage(38, getModelSourceInfo());
     }
@@ -4168,6 +4918,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     if (versionUpdateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(32, getVersionUpdateTime());
     }
+    if (originalModelInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(34, getOriginalModelInfo());
+    }
     if (modelSourceInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(38, getModelSourceInfo());
     }
@@ -4249,6 +5002,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     if (hasModelSourceInfo() != other.hasModelSourceInfo()) return false;
     if (hasModelSourceInfo()) {
       if (!getModelSourceInfo().equals(other.getModelSourceInfo())) return false;
+    }
+    if (hasOriginalModelInfo() != other.hasOriginalModelInfo()) return false;
+    if (hasOriginalModelInfo()) {
+      if (!getOriginalModelInfo().equals(other.getOriginalModelInfo())) return false;
     }
     if (!getMetadataArtifact().equals(other.getMetadataArtifact())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -4347,6 +5104,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     if (hasModelSourceInfo()) {
       hash = (37 * hash) + MODEL_SOURCE_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getModelSourceInfo().hashCode();
+    }
+    if (hasOriginalModelInfo()) {
+      hash = (37 * hash) + ORIGINAL_MODEL_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getOriginalModelInfo().hashCode();
     }
     hash = (37 * hash) + METADATA_ARTIFACT_FIELD_NUMBER;
     hash = (53 * hash) + getMetadataArtifact().hashCode();
@@ -4591,6 +5352,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         modelSourceInfoBuilder_.dispose();
         modelSourceInfoBuilder_ = null;
       }
+      originalModelInfo_ = null;
+      if (originalModelInfoBuilder_ != null) {
+        originalModelInfoBuilder_.dispose();
+        originalModelInfoBuilder_ = null;
+      }
       metadataArtifact_ = "";
       return this;
     }
@@ -4744,6 +5510,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
             modelSourceInfoBuilder_ == null ? modelSourceInfo_ : modelSourceInfoBuilder_.build();
       }
       if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.originalModelInfo_ =
+            originalModelInfoBuilder_ == null
+                ? originalModelInfo_
+                : originalModelInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x08000000) != 0)) {
         result.metadataArtifact_ = metadataArtifact_;
       }
     }
@@ -4964,9 +5736,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       if (other.hasModelSourceInfo()) {
         mergeModelSourceInfo(other.getModelSourceInfo());
       }
+      if (other.hasOriginalModelInfo()) {
+        mergeOriginalModelInfo(other.getOriginalModelInfo());
+      }
       if (!other.getMetadataArtifact().isEmpty()) {
         metadataArtifact_ = other.metadataArtifact_;
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x08000000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -5185,6 +5960,13 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 258
+            case 274:
+              {
+                input.readMessage(
+                    getOriginalModelInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x04000000;
+                break;
+              } // case 274
             case 306:
               {
                 input.readMessage(getModelSourceInfoFieldBuilder().getBuilder(), extensionRegistry);
@@ -5194,7 +5976,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
             case 354:
               {
                 metadataArtifact_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case 354
             default:
@@ -11255,6 +12037,223 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       return modelSourceInfoBuilder_;
     }
 
+    private com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo originalModelInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo,
+            com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo.Builder,
+            com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfoOrBuilder>
+        originalModelInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If this Model is a copy of another Model, this contains info
+     * about the original.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo original_model_info = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the originalModelInfo field is set.
+     */
+    public boolean hasOriginalModelInfo() {
+      return ((bitField0_ & 0x04000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If this Model is a copy of another Model, this contains info
+     * about the original.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo original_model_info = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The originalModelInfo.
+     */
+    public com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo getOriginalModelInfo() {
+      if (originalModelInfoBuilder_ == null) {
+        return originalModelInfo_ == null
+            ? com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo.getDefaultInstance()
+            : originalModelInfo_;
+      } else {
+        return originalModelInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If this Model is a copy of another Model, this contains info
+     * about the original.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo original_model_info = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setOriginalModelInfo(
+        com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo value) {
+      if (originalModelInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        originalModelInfo_ = value;
+      } else {
+        originalModelInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If this Model is a copy of another Model, this contains info
+     * about the original.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo original_model_info = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setOriginalModelInfo(
+        com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo.Builder builderForValue) {
+      if (originalModelInfoBuilder_ == null) {
+        originalModelInfo_ = builderForValue.build();
+      } else {
+        originalModelInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If this Model is a copy of another Model, this contains info
+     * about the original.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo original_model_info = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeOriginalModelInfo(
+        com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo value) {
+      if (originalModelInfoBuilder_ == null) {
+        if (((bitField0_ & 0x04000000) != 0)
+            && originalModelInfo_ != null
+            && originalModelInfo_
+                != com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo
+                    .getDefaultInstance()) {
+          getOriginalModelInfoBuilder().mergeFrom(value);
+        } else {
+          originalModelInfo_ = value;
+        }
+      } else {
+        originalModelInfoBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If this Model is a copy of another Model, this contains info
+     * about the original.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo original_model_info = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearOriginalModelInfo() {
+      bitField0_ = (bitField0_ & ~0x04000000);
+      originalModelInfo_ = null;
+      if (originalModelInfoBuilder_ != null) {
+        originalModelInfoBuilder_.dispose();
+        originalModelInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If this Model is a copy of another Model, this contains info
+     * about the original.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo original_model_info = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo.Builder
+        getOriginalModelInfoBuilder() {
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return getOriginalModelInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If this Model is a copy of another Model, this contains info
+     * about the original.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo original_model_info = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfoOrBuilder
+        getOriginalModelInfoOrBuilder() {
+      if (originalModelInfoBuilder_ != null) {
+        return originalModelInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return originalModelInfo_ == null
+            ? com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo.getDefaultInstance()
+            : originalModelInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If this Model is a copy of another Model, this contains info
+     * about the original.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo original_model_info = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo,
+            com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo.Builder,
+            com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfoOrBuilder>
+        getOriginalModelInfoFieldBuilder() {
+      if (originalModelInfoBuilder_ == null) {
+        originalModelInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo,
+                com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo.Builder,
+                com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfoOrBuilder>(
+                getOriginalModelInfo(), getParentForChildren(), isClean());
+        originalModelInfo_ = null;
+      }
+      return originalModelInfoBuilder_;
+    }
+
     private java.lang.Object metadataArtifact_ = "";
     /**
      *
@@ -11326,7 +12325,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       metadataArtifact_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -11346,7 +12345,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearMetadataArtifact() {
       metadataArtifact_ = getDefaultInstance().getMetadataArtifact();
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       onChanged();
       return this;
     }
@@ -11371,7 +12370,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       metadataArtifact_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }

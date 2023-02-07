@@ -242,6 +242,7 @@ public class ModelServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setModelSourceInfo(ModelSourceInfo.newBuilder().build())
+            .setOriginalModelInfo(Model.OriginalModelInfo.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
             .build();
     mockModelService.addResponse(expectedResponse);
@@ -308,6 +309,7 @@ public class ModelServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setModelSourceInfo(ModelSourceInfo.newBuilder().build())
+            .setOriginalModelInfo(Model.OriginalModelInfo.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
             .build();
     mockModelService.addResponse(expectedResponse);
@@ -550,6 +552,7 @@ public class ModelServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setModelSourceInfo(ModelSourceInfo.newBuilder().build())
+            .setOriginalModelInfo(Model.OriginalModelInfo.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
             .build();
     mockModelService.addResponse(expectedResponse);
@@ -787,6 +790,7 @@ public class ModelServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setModelSourceInfo(ModelSourceInfo.newBuilder().build())
+            .setOriginalModelInfo(Model.OriginalModelInfo.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
             .build();
     mockModelService.addResponse(expectedResponse);
@@ -856,6 +860,7 @@ public class ModelServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setModelSourceInfo(ModelSourceInfo.newBuilder().build())
+            .setOriginalModelInfo(Model.OriginalModelInfo.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
             .build();
     mockModelService.addResponse(expectedResponse);
@@ -981,6 +986,206 @@ public class ModelServiceClientTest {
       ExportModelRequest.OutputConfig outputConfig =
           ExportModelRequest.OutputConfig.newBuilder().build();
       client.exportModelAsync(name, outputConfig).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void copyModelTest() throws Exception {
+    CopyModelResponse expectedResponse =
+        CopyModelResponse.newBuilder()
+            .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setModelVersionId("modelVersionId-2006125846")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("copyModelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockModelService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    ModelName sourceModel = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+
+    CopyModelResponse actualResponse = client.copyModelAsync(parent, sourceModel).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CopyModelRequest actualRequest = ((CopyModelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(sourceModel.toString(), actualRequest.getSourceModel());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void copyModelExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      ModelName sourceModel = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+      client.copyModelAsync(parent, sourceModel).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void copyModelTest2() throws Exception {
+    CopyModelResponse expectedResponse =
+        CopyModelResponse.newBuilder()
+            .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setModelVersionId("modelVersionId-2006125846")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("copyModelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockModelService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    String sourceModel = "sourceModel-101418034";
+
+    CopyModelResponse actualResponse = client.copyModelAsync(parent, sourceModel).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CopyModelRequest actualRequest = ((CopyModelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(sourceModel, actualRequest.getSourceModel());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void copyModelExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      String sourceModel = "sourceModel-101418034";
+      client.copyModelAsync(parent, sourceModel).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void copyModelTest3() throws Exception {
+    CopyModelResponse expectedResponse =
+        CopyModelResponse.newBuilder()
+            .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setModelVersionId("modelVersionId-2006125846")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("copyModelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockModelService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    ModelName sourceModel = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+
+    CopyModelResponse actualResponse = client.copyModelAsync(parent, sourceModel).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CopyModelRequest actualRequest = ((CopyModelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(sourceModel.toString(), actualRequest.getSourceModel());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void copyModelExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      ModelName sourceModel = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+      client.copyModelAsync(parent, sourceModel).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void copyModelTest4() throws Exception {
+    CopyModelResponse expectedResponse =
+        CopyModelResponse.newBuilder()
+            .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setModelVersionId("modelVersionId-2006125846")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("copyModelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockModelService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    String sourceModel = "sourceModel-101418034";
+
+    CopyModelResponse actualResponse = client.copyModelAsync(parent, sourceModel).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CopyModelRequest actualRequest = ((CopyModelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(sourceModel, actualRequest.getSourceModel());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void copyModelExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      String sourceModel = "sourceModel-101418034";
+      client.copyModelAsync(parent, sourceModel).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

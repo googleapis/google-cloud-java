@@ -100,6 +100,42 @@ public final class JobServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_CancelHyperparameterTuningJobRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_CreateNasJobRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_CreateNasJobRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_GetNasJobRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_GetNasJobRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ListNasJobsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ListNasJobsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ListNasJobsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ListNasJobsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_DeleteNasJobRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_DeleteNasJobRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_CancelNasJobRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_CancelNasJobRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_GetNasTrialDetailRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_GetNasTrialDetailRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ListNasTrialDetailsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ListNasTrialDetailsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ListNasTrialDetailsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ListNasTrialDetailsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_CreateBatchPredictionJobRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_CreateBatchPredictionJobRequest_fieldAccessorTable;
@@ -192,334 +228,397 @@ public final class JobServiceProto {
           + ".proto\032?google/cloud/aiplatform/v1beta1/"
           + "hyperparameter_tuning_job.proto\032Egoogle/"
           + "cloud/aiplatform/v1beta1/model_deploymen"
-          + "t_monitoring_job.proto\032/google/cloud/aip"
-          + "latform/v1beta1/operation.proto\032#google/"
-          + "longrunning/operations.proto\032\033google/pro"
-          + "tobuf/empty.proto\032 google/protobuf/field"
-          + "_mask.proto\032\037google/protobuf/timestamp.p"
-          + "roto\"\230\001\n\026CreateCustomJobRequest\0229\n\006paren"
-          + "t\030\001 \001(\tB)\340A\002\372A#\n!locations.googleapis.co"
-          + "m/Location\022C\n\ncustom_job\030\002 \001(\0132*.google."
-          + "cloud.aiplatform.v1beta1.CustomJobB\003\340A\002\""
-          + "P\n\023GetCustomJobRequest\0229\n\004name\030\001 \001(\tB+\340A"
+          + "t_monitoring_job.proto\032-google/cloud/aip"
+          + "latform/v1beta1/nas_job.proto\032/google/cl"
+          + "oud/aiplatform/v1beta1/operation.proto\032#"
+          + "google/longrunning/operations.proto\032\033goo"
+          + "gle/protobuf/empty.proto\032 google/protobu"
+          + "f/field_mask.proto\032\037google/protobuf/time"
+          + "stamp.proto\"\230\001\n\026CreateCustomJobRequest\0229"
+          + "\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations.google"
+          + "apis.com/Location\022C\n\ncustom_job\030\002 \001(\0132*."
+          + "google.cloud.aiplatform.v1beta1.CustomJo"
+          + "bB\003\340A\002\"P\n\023GetCustomJobRequest\0229\n\004name\030\001 "
+          + "\001(\tB+\340A\002\372A%\n#aiplatform.googleapis.com/C"
+          + "ustomJob\"\270\001\n\025ListCustomJobsRequest\0229\n\006pa"
+          + "rent\030\001 \001(\tB)\340A\002\372A#\n!locations.googleapis"
+          + ".com/Location\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_si"
+          + "ze\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\022-\n\tread_mas"
+          + "k\030\005 \001(\0132\032.google.protobuf.FieldMask\"r\n\026L"
+          + "istCustomJobsResponse\022?\n\013custom_jobs\030\001 \003"
+          + "(\0132*.google.cloud.aiplatform.v1beta1.Cus"
+          + "tomJob\022\027\n\017next_page_token\030\002 \001(\t\"S\n\026Delet"
+          + "eCustomJobRequest\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n"
+          + "#aiplatform.googleapis.com/CustomJob\"S\n\026"
+          + "CancelCustomJobRequest\0229\n\004name\030\001 \001(\tB+\340A"
           + "\002\372A%\n#aiplatform.googleapis.com/CustomJo"
-          + "b\"\270\001\n\025ListCustomJobsRequest\0229\n\006parent\030\001 "
-          + "\001(\tB)\340A\002\372A#\n!locations.googleapis.com/Lo"
-          + "cation\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_size\030\003 \001("
-          + "\005\022\022\n\npage_token\030\004 \001(\t\022-\n\tread_mask\030\005 \001(\013"
-          + "2\032.google.protobuf.FieldMask\"r\n\026ListCust"
-          + "omJobsResponse\022?\n\013custom_jobs\030\001 \003(\0132*.go"
-          + "ogle.cloud.aiplatform.v1beta1.CustomJob\022"
-          + "\027\n\017next_page_token\030\002 \001(\t\"S\n\026DeleteCustom"
-          + "JobRequest\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#aiplat"
-          + "form.googleapis.com/CustomJob\"S\n\026CancelC"
-          + "ustomJobRequest\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#a"
-          + "iplatform.googleapis.com/CustomJob\"\253\001\n\034C"
-          + "reateDataLabelingJobRequest\0229\n\006parent\030\001 "
-          + "\001(\tB)\340A\002\372A#\n!locations.googleapis.com/Lo"
-          + "cation\022P\n\021data_labeling_job\030\002 \001(\01320.goog"
-          + "le.cloud.aiplatform.v1beta1.DataLabeling"
-          + "JobB\003\340A\002\"\\\n\031GetDataLabelingJobRequest\022?\n"
-          + "\004name\030\001 \001(\tB1\340A\002\372A+\n)aiplatform.googleap"
-          + "is.com/DataLabelingJob\"\320\001\n\033ListDataLabel"
-          + "ingJobsRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!"
-          + "locations.googleapis.com/Location\022\016\n\006fil"
-          + "ter\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npage_tok"
-          + "en\030\004 \001(\t\022-\n\tread_mask\030\005 \001(\0132\032.google.pro"
-          + "tobuf.FieldMask\022\020\n\010order_by\030\006 \001(\t\"\205\001\n\034Li"
-          + "stDataLabelingJobsResponse\022L\n\022data_label"
-          + "ing_jobs\030\001 \003(\01320.google.cloud.aiplatform"
-          + ".v1beta1.DataLabelingJob\022\027\n\017next_page_to"
-          + "ken\030\002 \001(\t\"_\n\034DeleteDataLabelingJobReques"
-          + "t\022?\n\004name\030\001 \001(\tB1\340A\002\372A+\n)aiplatform.goog"
-          + "leapis.com/DataLabelingJob\"_\n\034CancelData"
-          + "LabelingJobRequest\022?\n\004name\030\001 \001(\tB1\340A\002\372A+"
-          + "\n)aiplatform.googleapis.com/DataLabeling"
-          + "Job\"\303\001\n$CreateHyperparameterTuningJobReq"
-          + "uest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations."
-          + "googleapis.com/Location\022`\n\031hyperparamete"
-          + "r_tuning_job\030\002 \001(\01328.google.cloud.aiplat"
-          + "form.v1beta1.HyperparameterTuningJobB\003\340A"
-          + "\002\"l\n!GetHyperparameterTuningJobRequest\022G"
-          + "\n\004name\030\001 \001(\tB9\340A\002\372A3\n1aiplatform.googlea"
-          + "pis.com/HyperparameterTuningJob\"\306\001\n#List"
-          + "HyperparameterTuningJobsRequest\0229\n\006paren"
-          + "t\030\001 \001(\tB)\340A\002\372A#\n!locations.googleapis.co"
-          + "m/Location\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_size\030"
-          + "\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\022-\n\tread_mask\030\005"
-          + " \001(\0132\032.google.protobuf.FieldMask\"\235\001\n$Lis"
-          + "tHyperparameterTuningJobsResponse\022\\\n\032hyp"
-          + "erparameter_tuning_jobs\030\001 \003(\01328.google.c"
-          + "loud.aiplatform.v1beta1.HyperparameterTu"
-          + "ningJob\022\027\n\017next_page_token\030\002 \001(\t\"o\n$Dele"
-          + "teHyperparameterTuningJobRequest\022G\n\004name"
+          + "b\"\253\001\n\034CreateDataLabelingJobRequest\0229\n\006pa"
+          + "rent\030\001 \001(\tB)\340A\002\372A#\n!locations.googleapis"
+          + ".com/Location\022P\n\021data_labeling_job\030\002 \001(\013"
+          + "20.google.cloud.aiplatform.v1beta1.DataL"
+          + "abelingJobB\003\340A\002\"\\\n\031GetDataLabelingJobReq"
+          + "uest\022?\n\004name\030\001 \001(\tB1\340A\002\372A+\n)aiplatform.g"
+          + "oogleapis.com/DataLabelingJob\"\320\001\n\033ListDa"
+          + "taLabelingJobsRequest\0229\n\006parent\030\001 \001(\tB)\340"
+          + "A\002\372A#\n!locations.googleapis.com/Location"
+          + "\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\022\022\n\np"
+          + "age_token\030\004 \001(\t\022-\n\tread_mask\030\005 \001(\0132\032.goo"
+          + "gle.protobuf.FieldMask\022\020\n\010order_by\030\006 \001(\t"
+          + "\"\205\001\n\034ListDataLabelingJobsResponse\022L\n\022dat"
+          + "a_labeling_jobs\030\001 \003(\01320.google.cloud.aip"
+          + "latform.v1beta1.DataLabelingJob\022\027\n\017next_"
+          + "page_token\030\002 \001(\t\"_\n\034DeleteDataLabelingJo"
+          + "bRequest\022?\n\004name\030\001 \001(\tB1\340A\002\372A+\n)aiplatfo"
+          + "rm.googleapis.com/DataLabelingJob\"_\n\034Can"
+          + "celDataLabelingJobRequest\022?\n\004name\030\001 \001(\tB"
+          + "1\340A\002\372A+\n)aiplatform.googleapis.com/DataL"
+          + "abelingJob\"\303\001\n$CreateHyperparameterTunin"
+          + "gJobRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!loc"
+          + "ations.googleapis.com/Location\022`\n\031hyperp"
+          + "arameter_tuning_job\030\002 \001(\01328.google.cloud"
+          + ".aiplatform.v1beta1.HyperparameterTuning"
+          + "JobB\003\340A\002\"l\n!GetHyperparameterTuningJobRe"
+          + "quest\022G\n\004name\030\001 \001(\tB9\340A\002\372A3\n1aiplatform."
+          + "googleapis.com/HyperparameterTuningJob\"\306"
+          + "\001\n#ListHyperparameterTuningJobsRequest\0229"
+          + "\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations.google"
+          + "apis.com/Location\022\016\n\006filter\030\002 \001(\t\022\021\n\tpag"
+          + "e_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\022-\n\tread"
+          + "_mask\030\005 \001(\0132\032.google.protobuf.FieldMask\""
+          + "\235\001\n$ListHyperparameterTuningJobsResponse"
+          + "\022\\\n\032hyperparameter_tuning_jobs\030\001 \003(\01328.g"
+          + "oogle.cloud.aiplatform.v1beta1.Hyperpara"
+          + "meterTuningJob\022\027\n\017next_page_token\030\002 \001(\t\""
+          + "o\n$DeleteHyperparameterTuningJobRequest\022"
+          + "G\n\004name\030\001 \001(\tB9\340A\002\372A3\n1aiplatform.google"
+          + "apis.com/HyperparameterTuningJob\"o\n$Canc"
+          + "elHyperparameterTuningJobRequest\022G\n\004name"
           + "\030\001 \001(\tB9\340A\002\372A3\n1aiplatform.googleapis.co"
-          + "m/HyperparameterTuningJob\"o\n$CancelHyper"
-          + "parameterTuningJobRequest\022G\n\004name\030\001 \001(\tB"
-          + "9\340A\002\372A3\n1aiplatform.googleapis.com/Hyper"
-          + "parameterTuningJob\"\264\001\n\037CreateBatchPredic"
-          + "tionJobRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!"
-          + "locations.googleapis.com/Location\022V\n\024bat"
-          + "ch_prediction_job\030\002 \001(\01323.google.cloud.a"
-          + "iplatform.v1beta1.BatchPredictionJobB\003\340A"
-          + "\002\"b\n\034GetBatchPredictionJobRequest\022B\n\004nam"
-          + "e\030\001 \001(\tB4\340A\002\372A.\n,aiplatform.googleapis.c"
-          + "om/BatchPredictionJob\"\301\001\n\036ListBatchPredi"
-          + "ctionJobsRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#"
-          + "\n!locations.googleapis.com/Location\022\016\n\006f"
-          + "ilter\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npage_t"
-          + "oken\030\004 \001(\t\022-\n\tread_mask\030\005 \001(\0132\032.google.p"
-          + "rotobuf.FieldMask\"\216\001\n\037ListBatchPredictio"
-          + "nJobsResponse\022R\n\025batch_prediction_jobs\030\001"
-          + " \003(\01323.google.cloud.aiplatform.v1beta1.B"
-          + "atchPredictionJob\022\027\n\017next_page_token\030\002 \001"
-          + "(\t\"e\n\037DeleteBatchPredictionJobRequest\022B\n"
-          + "\004name\030\001 \001(\tB4\340A\002\372A.\n,aiplatform.googleap"
-          + "is.com/BatchPredictionJob\"e\n\037CancelBatch"
-          + "PredictionJobRequest\022B\n\004name\030\001 \001(\tB4\340A\002\372"
-          + "A.\n,aiplatform.googleapis.com/BatchPredi"
-          + "ctionJob\"\323\001\n)CreateModelDeploymentMonito"
-          + "ringJobRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!"
-          + "locations.googleapis.com/Location\022k\n\037mod"
-          + "el_deployment_monitoring_job\030\002 \001(\0132=.goo"
-          + "gle.cloud.aiplatform.v1beta1.ModelDeploy"
-          + "mentMonitoringJobB\003\340A\002\"\371\004\n4SearchModelDe"
-          + "ploymentMonitoringStatsAnomaliesRequest\022"
-          + "g\n\037model_deployment_monitoring_job\030\001 \001(\t"
-          + "B>\340A\002\372A8\n6aiplatform.googleapis.com/Mode"
-          + "lDeploymentMonitoringJob\022\036\n\021deployed_mod"
-          + "el_id\030\002 \001(\tB\003\340A\002\022\034\n\024feature_display_name"
-          + "\030\003 \001(\t\022\206\001\n\nobjectives\030\004 \003(\0132m.google.clo"
-          + "ud.aiplatform.v1beta1.SearchModelDeploym"
-          + "entMonitoringStatsAnomaliesRequest.Stats"
-          + "AnomaliesObjectiveB\003\340A\002\022\021\n\tpage_size\030\005 \001"
-          + "(\005\022\022\n\npage_token\030\006 \001(\t\022.\n\nstart_time\030\007 \001"
-          + "(\0132\032.google.protobuf.Timestamp\022,\n\010end_ti"
-          + "me\030\010 \001(\0132\032.google.protobuf.Timestamp\032\213\001\n"
-          + "\027StatsAnomaliesObjective\022U\n\004type\030\001 \001(\0162G"
-          + ".google.cloud.aiplatform.v1beta1.ModelDe"
-          + "ploymentMonitoringObjectiveType\022\031\n\021top_f"
-          + "eature_count\030\004 \001(\005\"\252\001\n5SearchModelDeploy"
-          + "mentMonitoringStatsAnomaliesResponse\022X\n\020"
-          + "monitoring_stats\030\001 \003(\0132>.google.cloud.ai"
-          + "platform.v1beta1.ModelMonitoringStatsAno"
-          + "malies\022\027\n\017next_page_token\030\002 \001(\t\"v\n&GetMo"
-          + "delDeploymentMonitoringJobRequest\022L\n\004nam"
-          + "e\030\001 \001(\tB>\340A\002\372A8\n6aiplatform.googleapis.c"
-          + "om/ModelDeploymentMonitoringJob\"\313\001\n(List"
-          + "ModelDeploymentMonitoringJobsRequest\0229\n\006"
-          + "parent\030\001 \001(\tB)\340A\002\372A#\n!locations.googleap"
-          + "is.com/Location\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_"
-          + "size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\022-\n\tread_m"
-          + "ask\030\005 \001(\0132\032.google.protobuf.FieldMask\"\255\001"
-          + "\n)ListModelDeploymentMonitoringJobsRespo"
-          + "nse\022g\n model_deployment_monitoring_jobs\030"
-          + "\001 \003(\0132=.google.cloud.aiplatform.v1beta1."
-          + "ModelDeploymentMonitoringJob\022\027\n\017next_pag"
-          + "e_token\030\002 \001(\t\"\316\001\n)UpdateModelDeploymentM"
-          + "onitoringJobRequest\022k\n\037model_deployment_"
-          + "monitoring_job\030\001 \001(\0132=.google.cloud.aipl"
-          + "atform.v1beta1.ModelDeploymentMonitoring"
-          + "JobB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.google.p"
-          + "rotobuf.FieldMaskB\003\340A\002\"y\n)DeleteModelDep"
-          + "loymentMonitoringJobRequest\022L\n\004name\030\001 \001("
-          + "\tB>\340A\002\372A8\n6aiplatform.googleapis.com/Mod"
-          + "elDeploymentMonitoringJob\"x\n(PauseModelD"
-          + "eploymentMonitoringJobRequest\022L\n\004name\030\001 "
-          + "\001(\tB>\340A\002\372A8\n6aiplatform.googleapis.com/M"
-          + "odelDeploymentMonitoringJob\"y\n)ResumeMod"
-          + "elDeploymentMonitoringJobRequest\022L\n\004name"
-          + "\030\001 \001(\tB>\340A\002\372A8\n6aiplatform.googleapis.co"
-          + "m/ModelDeploymentMonitoringJob\"\212\001\n3Updat"
-          + "eModelDeploymentMonitoringJobOperationMe"
-          + "tadata\022S\n\020generic_metadata\030\001 \001(\01329.googl"
-          + "e.cloud.aiplatform.v1beta1.GenericOperat"
-          + "ionMetadata2\2208\n\nJobService\022\323\001\n\017CreateCus"
-          + "tomJob\0227.google.cloud.aiplatform.v1beta1"
-          + ".CreateCustomJobRequest\032*.google.cloud.a"
-          + "iplatform.v1beta1.CustomJob\"[\202\323\344\223\002A\"3/v1"
-          + "beta1/{parent=projects/*/locations/*}/cu"
-          + "stomJobs:\ncustom_job\332A\021parent,custom_job"
-          + "\022\264\001\n\014GetCustomJob\0224.google.cloud.aiplatf"
-          + "orm.v1beta1.GetCustomJobRequest\032*.google"
-          + ".cloud.aiplatform.v1beta1.CustomJob\"B\202\323\344"
-          + "\223\0025\0223/v1beta1/{name=projects/*/locations"
-          + "/*/customJobs/*}\332A\004name\022\307\001\n\016ListCustomJo"
-          + "bs\0226.google.cloud.aiplatform.v1beta1.Lis"
-          + "tCustomJobsRequest\0327.google.cloud.aiplat"
-          + "form.v1beta1.ListCustomJobsResponse\"D\202\323\344"
-          + "\223\0025\0223/v1beta1/{parent=projects/*/locatio"
-          + "ns/*}/customJobs\332A\006parent\022\340\001\n\017DeleteCust"
-          + "omJob\0227.google.cloud.aiplatform.v1beta1."
-          + "DeleteCustomJobRequest\032\035.google.longrunn"
-          + "ing.Operation\"u\202\323\344\223\0025*3/v1beta1/{name=pr"
-          + "ojects/*/locations/*/customJobs/*}\332A\004nam"
-          + "e\312A0\n\025google.protobuf.Empty\022\027DeleteOpera"
-          + "tionMetadata\022\260\001\n\017CancelCustomJob\0227.googl"
-          + "e.cloud.aiplatform.v1beta1.CancelCustomJ"
-          + "obRequest\032\026.google.protobuf.Empty\"L\202\323\344\223\002"
-          + "?\":/v1beta1/{name=projects/*/locations/*"
-          + "/customJobs/*}:cancel:\001*\332A\004name\022\371\001\n\025Crea"
-          + "teDataLabelingJob\022=.google.cloud.aiplatf"
-          + "orm.v1beta1.CreateDataLabelingJobRequest"
-          + "\0320.google.cloud.aiplatform.v1beta1.DataL"
-          + "abelingJob\"o\202\323\344\223\002N\"9/v1beta1/{parent=pro"
-          + "jects/*/locations/*}/dataLabelingJobs:\021d"
-          + "ata_labeling_job\332A\030parent,data_labeling_"
-          + "job\022\314\001\n\022GetDataLabelingJob\022:.google.clou"
-          + "d.aiplatform.v1beta1.GetDataLabelingJobR"
-          + "equest\0320.google.cloud.aiplatform.v1beta1"
-          + ".DataLabelingJob\"H\202\323\344\223\002;\0229/v1beta1/{name"
-          + "=projects/*/locations/*/dataLabelingJobs"
-          + "/*}\332A\004name\022\337\001\n\024ListDataLabelingJobs\022<.go"
-          + "ogle.cloud.aiplatform.v1beta1.ListDataLa"
-          + "belingJobsRequest\032=.google.cloud.aiplatf"
-          + "orm.v1beta1.ListDataLabelingJobsResponse"
-          + "\"J\202\323\344\223\002;\0229/v1beta1/{parent=projects/*/lo"
-          + "cations/*}/dataLabelingJobs\332A\006parent\022\362\001\n"
-          + "\025DeleteDataLabelingJob\022=.google.cloud.ai"
-          + "platform.v1beta1.DeleteDataLabelingJobRe"
-          + "quest\032\035.google.longrunning.Operation\"{\202\323"
-          + "\344\223\002;*9/v1beta1/{name=projects/*/location"
-          + "s/*/dataLabelingJobs/*}\332A\004name\312A0\n\025googl"
-          + "e.protobuf.Empty\022\027DeleteOperationMetadat"
-          + "a\022\302\001\n\025CancelDataLabelingJob\022=.google.clo"
-          + "ud.aiplatform.v1beta1.CancelDataLabeling"
-          + "JobRequest\032\026.google.protobuf.Empty\"R\202\323\344\223"
-          + "\002E\"@/v1beta1/{name=projects/*/locations/"
-          + "*/dataLabelingJobs/*}:cancel:\001*\332A\004name\022\252"
-          + "\002\n\035CreateHyperparameterTuningJob\022E.googl"
-          + "e.cloud.aiplatform.v1beta1.CreateHyperpa"
-          + "rameterTuningJobRequest\0328.google.cloud.a"
-          + "iplatform.v1beta1.HyperparameterTuningJo"
-          + "b\"\207\001\202\323\344\223\002^\"A/v1beta1/{parent=projects/*/"
-          + "locations/*}/hyperparameterTuningJobs:\031h"
-          + "yperparameter_tuning_job\332A parent,hyperp"
-          + "arameter_tuning_job\022\354\001\n\032GetHyperparamete"
-          + "rTuningJob\022B.google.cloud.aiplatform.v1b"
-          + "eta1.GetHyperparameterTuningJobRequest\0328"
-          + ".google.cloud.aiplatform.v1beta1.Hyperpa"
-          + "rameterTuningJob\"P\202\323\344\223\002C\022A/v1beta1/{name"
-          + "=projects/*/locations/*/hyperparameterTu"
-          + "ningJobs/*}\332A\004name\022\377\001\n\034ListHyperparamete"
-          + "rTuningJobs\022D.google.cloud.aiplatform.v1"
-          + "beta1.ListHyperparameterTuningJobsReques"
-          + "t\032E.google.cloud.aiplatform.v1beta1.List"
-          + "HyperparameterTuningJobsResponse\"R\202\323\344\223\002C"
-          + "\022A/v1beta1/{parent=projects/*/locations/"
-          + "*}/hyperparameterTuningJobs\332A\006parent\022\213\002\n"
-          + "\035DeleteHyperparameterTuningJob\022E.google."
-          + "cloud.aiplatform.v1beta1.DeleteHyperpara"
-          + "meterTuningJobRequest\032\035.google.longrunni"
-          + "ng.Operation\"\203\001\202\323\344\223\002C*A/v1beta1/{name=pr"
-          + "ojects/*/locations/*/hyperparameterTunin"
-          + "gJobs/*}\332A\004name\312A0\n\025google.protobuf.Empt"
-          + "y\022\027DeleteOperationMetadata\022\332\001\n\035CancelHyp"
-          + "erparameterTuningJob\022E.google.cloud.aipl"
-          + "atform.v1beta1.CancelHyperparameterTunin"
-          + "gJobRequest\032\026.google.protobuf.Empty\"Z\202\323\344"
-          + "\223\002M\"H/v1beta1/{name=projects/*/locations"
-          + "/*/hyperparameterTuningJobs/*}:cancel:\001*"
-          + "\332A\004name\022\213\002\n\030CreateBatchPredictionJob\022@.g"
-          + "oogle.cloud.aiplatform.v1beta1.CreateBat"
-          + "chPredictionJobRequest\0323.google.cloud.ai"
-          + "platform.v1beta1.BatchPredictionJob\"x\202\323\344"
-          + "\223\002T\"</v1beta1/{parent=projects/*/locatio"
-          + "ns/*}/batchPredictionJobs:\024batch_predict"
-          + "ion_job\332A\033parent,batch_prediction_job\022\330\001"
-          + "\n\025GetBatchPredictionJob\022=.google.cloud.a"
-          + "iplatform.v1beta1.GetBatchPredictionJobR"
-          + "equest\0323.google.cloud.aiplatform.v1beta1"
-          + ".BatchPredictionJob\"K\202\323\344\223\002>\022</v1beta1/{n"
-          + "ame=projects/*/locations/*/batchPredicti"
-          + "onJobs/*}\332A\004name\022\353\001\n\027ListBatchPrediction"
-          + "Jobs\022?.google.cloud.aiplatform.v1beta1.L"
-          + "istBatchPredictionJobsRequest\032@.google.c"
-          + "loud.aiplatform.v1beta1.ListBatchPredict"
-          + "ionJobsResponse\"M\202\323\344\223\002>\022</v1beta1/{paren"
-          + "t=projects/*/locations/*}/batchPredictio"
-          + "nJobs\332A\006parent\022\373\001\n\030DeleteBatchPrediction"
-          + "Job\022@.google.cloud.aiplatform.v1beta1.De"
-          + "leteBatchPredictionJobRequest\032\035.google.l"
-          + "ongrunning.Operation\"~\202\323\344\223\002>*</v1beta1/{"
-          + "name=projects/*/locations/*/batchPredict"
-          + "ionJobs/*}\332A\004name\312A0\n\025google.protobuf.Em"
-          + "pty\022\027DeleteOperationMetadata\022\313\001\n\030CancelB"
-          + "atchPredictionJob\022@.google.cloud.aiplatf"
-          + "orm.v1beta1.CancelBatchPredictionJobRequ"
-          + "est\032\026.google.protobuf.Empty\"U\202\323\344\223\002H\"C/v1"
-          + "beta1/{name=projects/*/locations/*/batch"
-          + "PredictionJobs/*}:cancel:\001*\332A\004name\022\312\002\n\"C"
-          + "reateModelDeploymentMonitoringJob\022J.goog"
-          + "le.cloud.aiplatform.v1beta1.CreateModelD"
-          + "eploymentMonitoringJobRequest\032=.google.c"
-          + "loud.aiplatform.v1beta1.ModelDeploymentM"
-          + "onitoringJob\"\230\001\202\323\344\223\002i\"F/v1beta1/{parent="
-          + "projects/*/locations/*}/modelDeploymentM"
-          + "onitoringJobs:\037model_deployment_monitori"
-          + "ng_job\332A&parent,model_deployment_monitor"
-          + "ing_job\022\261\003\n-SearchModelDeploymentMonitor"
-          + "ingStatsAnomalies\022U.google.cloud.aiplatf"
+          + "m/HyperparameterTuningJob\"\217\001\n\023CreateNasJ"
+          + "obRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locat"
+          + "ions.googleapis.com/Location\022=\n\007nas_job\030"
+          + "\002 \001(\0132\'.google.cloud.aiplatform.v1beta1."
+          + "NasJobB\003\340A\002\"J\n\020GetNasJobRequest\0226\n\004name\030"
+          + "\001 \001(\tB(\340A\002\372A\"\n aiplatform.googleapis.com"
+          + "/NasJob\"\265\001\n\022ListNasJobsRequest\0229\n\006parent"
+          + "\030\001 \001(\tB)\340A\002\372A#\n!locations.googleapis.com"
+          + "/Location\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_size\030\003"
+          + " \001(\005\022\022\n\npage_token\030\004 \001(\t\022-\n\tread_mask\030\005 "
+          + "\001(\0132\032.google.protobuf.FieldMask\"i\n\023ListN"
+          + "asJobsResponse\0229\n\010nas_jobs\030\001 \003(\0132\'.googl"
+          + "e.cloud.aiplatform.v1beta1.NasJob\022\027\n\017nex"
+          + "t_page_token\030\002 \001(\t\"M\n\023DeleteNasJobReques"
+          + "t\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n aiplatform.goog"
+          + "leapis.com/NasJob\"M\n\023CancelNasJobRequest"
+          + "\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n aiplatform.googl"
+          + "eapis.com/NasJob\"Z\n\030GetNasTrialDetailReq"
+          + "uest\022>\n\004name\030\001 \001(\tB0\340A\002\372A*\n(aiplatform.g"
+          + "oogleapis.com/NasTrialDetail\"}\n\032ListNasT"
+          + "rialDetailsRequest\0228\n\006parent\030\001 \001(\tB(\340A\002\372"
+          + "A\"\n aiplatform.googleapis.com/NasJob\022\021\n\t"
+          + "page_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"\202\001\n\033"
+          + "ListNasTrialDetailsResponse\022J\n\021nas_trial"
+          + "_details\030\001 \003(\0132/.google.cloud.aiplatform"
+          + ".v1beta1.NasTrialDetail\022\027\n\017next_page_tok"
+          + "en\030\002 \001(\t\"\264\001\n\037CreateBatchPredictionJobReq"
+          + "uest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations."
+          + "googleapis.com/Location\022V\n\024batch_predict"
+          + "ion_job\030\002 \001(\01323.google.cloud.aiplatform."
+          + "v1beta1.BatchPredictionJobB\003\340A\002\"b\n\034GetBa"
+          + "tchPredictionJobRequest\022B\n\004name\030\001 \001(\tB4\340"
+          + "A\002\372A.\n,aiplatform.googleapis.com/BatchPr"
+          + "edictionJob\"\301\001\n\036ListBatchPredictionJobsR"
+          + "equest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!location"
+          + "s.googleapis.com/Location\022\016\n\006filter\030\002 \001("
+          + "\t\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t"
+          + "\022-\n\tread_mask\030\005 \001(\0132\032.google.protobuf.Fi"
+          + "eldMask\"\216\001\n\037ListBatchPredictionJobsRespo"
+          + "nse\022R\n\025batch_prediction_jobs\030\001 \003(\01323.goo"
+          + "gle.cloud.aiplatform.v1beta1.BatchPredic"
+          + "tionJob\022\027\n\017next_page_token\030\002 \001(\t\"e\n\037Dele"
+          + "teBatchPredictionJobRequest\022B\n\004name\030\001 \001("
+          + "\tB4\340A\002\372A.\n,aiplatform.googleapis.com/Bat"
+          + "chPredictionJob\"e\n\037CancelBatchPrediction"
+          + "JobRequest\022B\n\004name\030\001 \001(\tB4\340A\002\372A.\n,aiplat"
+          + "form.googleapis.com/BatchPredictionJob\"\323"
+          + "\001\n)CreateModelDeploymentMonitoringJobReq"
+          + "uest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations."
+          + "googleapis.com/Location\022k\n\037model_deploym"
+          + "ent_monitoring_job\030\002 \001(\0132=.google.cloud."
+          + "aiplatform.v1beta1.ModelDeploymentMonito"
+          + "ringJobB\003\340A\002\"\371\004\n4SearchModelDeploymentMo"
+          + "nitoringStatsAnomaliesRequest\022g\n\037model_d"
+          + "eployment_monitoring_job\030\001 \001(\tB>\340A\002\372A8\n6"
+          + "aiplatform.googleapis.com/ModelDeploymen"
+          + "tMonitoringJob\022\036\n\021deployed_model_id\030\002 \001("
+          + "\tB\003\340A\002\022\034\n\024feature_display_name\030\003 \001(\t\022\206\001\n"
+          + "\nobjectives\030\004 \003(\0132m.google.cloud.aiplatf"
           + "orm.v1beta1.SearchModelDeploymentMonitor"
-          + "ingStatsAnomaliesRequest\032V.google.cloud."
-          + "aiplatform.v1beta1.SearchModelDeployment"
-          + "MonitoringStatsAnomaliesResponse\"\320\001\202\323\344\223\002"
-          + "\225\001\"\217\001/v1beta1/{model_deployment_monitori"
-          + "ng_job=projects/*/locations/*/modelDeplo"
-          + "ymentMonitoringJobs/*}:searchModelDeploy"
-          + "mentMonitoringStatsAnomalies:\001*\332A1model_"
-          + "deployment_monitoring_job,deployed_model"
-          + "_id\022\200\002\n\037GetModelDeploymentMonitoringJob\022"
-          + "G.google.cloud.aiplatform.v1beta1.GetMod"
-          + "elDeploymentMonitoringJobRequest\032=.googl"
-          + "e.cloud.aiplatform.v1beta1.ModelDeployme"
-          + "ntMonitoringJob\"U\202\323\344\223\002H\022F/v1beta1/{name="
-          + "projects/*/locations/*/modelDeploymentMo"
-          + "nitoringJobs/*}\332A\004name\022\223\002\n!ListModelDepl"
-          + "oymentMonitoringJobs\022I.google.cloud.aipl"
-          + "atform.v1beta1.ListModelDeploymentMonito"
-          + "ringJobsRequest\032J.google.cloud.aiplatfor"
-          + "m.v1beta1.ListModelDeploymentMonitoringJ"
-          + "obsResponse\"W\202\323\344\223\002H\022F/v1beta1/{parent=pr"
-          + "ojects/*/locations/*}/modelDeploymentMon"
-          + "itoringJobs\332A\006parent\022\246\003\n\"UpdateModelDepl"
-          + "oymentMonitoringJob\022J.google.cloud.aipla"
-          + "tform.v1beta1.UpdateModelDeploymentMonit"
-          + "oringJobRequest\032\035.google.longrunning.Ope"
-          + "ration\"\224\002\202\323\344\223\002\211\0012f/v1beta1/{model_deploy"
-          + "ment_monitoring_job.name=projects/*/loca"
-          + "tions/*/modelDeploymentMonitoringJobs/*}"
-          + ":\037model_deployment_monitoring_job\332A+mode"
-          + "l_deployment_monitoring_job,update_mask\312"
-          + "AS\n\034ModelDeploymentMonitoringJob\0223Update"
-          + "ModelDeploymentMonitoringJobOperationMet"
-          + "adata\022\232\002\n\"DeleteModelDeploymentMonitorin"
-          + "gJob\022J.google.cloud.aiplatform.v1beta1.D"
-          + "eleteModelDeploymentMonitoringJobRequest"
-          + "\032\035.google.longrunning.Operation\"\210\001\202\323\344\223\002H"
-          + "*F/v1beta1/{name=projects/*/locations/*/"
-          + "modelDeploymentMonitoringJobs/*}\332A\004name\312"
-          + "A0\n\025google.protobuf.Empty\022\027DeleteOperati"
-          + "onMetadata\022\346\001\n!PauseModelDeploymentMonit"
-          + "oringJob\022I.google.cloud.aiplatform.v1bet"
-          + "a1.PauseModelDeploymentMonitoringJobRequ"
-          + "est\032\026.google.protobuf.Empty\"^\202\323\344\223\002Q\"L/v1"
-          + "beta1/{name=projects/*/locations/*/model"
-          + "DeploymentMonitoringJobs/*}:pause:\001*\332A\004n"
-          + "ame\022\351\001\n\"ResumeModelDeploymentMonitoringJ"
-          + "ob\022J.google.cloud.aiplatform.v1beta1.Res"
-          + "umeModelDeploymentMonitoringJobRequest\032\026"
-          + ".google.protobuf.Empty\"_\202\323\344\223\002R\"M/v1beta1"
-          + "/{name=projects/*/locations/*/modelDeplo"
-          + "ymentMonitoringJobs/*}:resume:\001*\332A\004name\032"
-          + "M\312A\031aiplatform.googleapis.com\322A.https://"
-          + "www.googleapis.com/auth/cloud-platformB\346"
-          + "\001\n#com.google.cloud.aiplatform.v1beta1B\017"
-          + "JobServiceProtoP\001ZCcloud.google.com/go/a"
-          + "iplatform/apiv1beta1/aiplatformpb;aiplat"
-          + "formpb\252\002\037Google.Cloud.AIPlatform.V1Beta1"
-          + "\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Goo"
-          + "gle::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "ingStatsAnomaliesRequest.StatsAnomaliesO"
+          + "bjectiveB\003\340A\002\022\021\n\tpage_size\030\005 \001(\005\022\022\n\npage"
+          + "_token\030\006 \001(\t\022.\n\nstart_time\030\007 \001(\0132\032.googl"
+          + "e.protobuf.Timestamp\022,\n\010end_time\030\010 \001(\0132\032"
+          + ".google.protobuf.Timestamp\032\213\001\n\027StatsAnom"
+          + "aliesObjective\022U\n\004type\030\001 \001(\0162G.google.cl"
+          + "oud.aiplatform.v1beta1.ModelDeploymentMo"
+          + "nitoringObjectiveType\022\031\n\021top_feature_cou"
+          + "nt\030\004 \001(\005\"\252\001\n5SearchModelDeploymentMonito"
+          + "ringStatsAnomaliesResponse\022X\n\020monitoring"
+          + "_stats\030\001 \003(\0132>.google.cloud.aiplatform.v"
+          + "1beta1.ModelMonitoringStatsAnomalies\022\027\n\017"
+          + "next_page_token\030\002 \001(\t\"v\n&GetModelDeploym"
+          + "entMonitoringJobRequest\022L\n\004name\030\001 \001(\tB>\340"
+          + "A\002\372A8\n6aiplatform.googleapis.com/ModelDe"
+          + "ploymentMonitoringJob\"\313\001\n(ListModelDeplo"
+          + "ymentMonitoringJobsRequest\0229\n\006parent\030\001 \001"
+          + "(\tB)\340A\002\372A#\n!locations.googleapis.com/Loc"
+          + "ation\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005"
+          + "\022\022\n\npage_token\030\004 \001(\t\022-\n\tread_mask\030\005 \001(\0132"
+          + "\032.google.protobuf.FieldMask\"\255\001\n)ListMode"
+          + "lDeploymentMonitoringJobsResponse\022g\n mod"
+          + "el_deployment_monitoring_jobs\030\001 \003(\0132=.go"
+          + "ogle.cloud.aiplatform.v1beta1.ModelDeplo"
+          + "ymentMonitoringJob\022\027\n\017next_page_token\030\002 "
+          + "\001(\t\"\316\001\n)UpdateModelDeploymentMonitoringJ"
+          + "obRequest\022k\n\037model_deployment_monitoring"
+          + "_job\030\001 \001(\0132=.google.cloud.aiplatform.v1b"
+          + "eta1.ModelDeploymentMonitoringJobB\003\340A\002\0224"
+          + "\n\013update_mask\030\002 \001(\0132\032.google.protobuf.Fi"
+          + "eldMaskB\003\340A\002\"y\n)DeleteModelDeploymentMon"
+          + "itoringJobRequest\022L\n\004name\030\001 \001(\tB>\340A\002\372A8\n"
+          + "6aiplatform.googleapis.com/ModelDeployme"
+          + "ntMonitoringJob\"x\n(PauseModelDeploymentM"
+          + "onitoringJobRequest\022L\n\004name\030\001 \001(\tB>\340A\002\372A"
+          + "8\n6aiplatform.googleapis.com/ModelDeploy"
+          + "mentMonitoringJob\"y\n)ResumeModelDeployme"
+          + "ntMonitoringJobRequest\022L\n\004name\030\001 \001(\tB>\340A"
+          + "\002\372A8\n6aiplatform.googleapis.com/ModelDep"
+          + "loymentMonitoringJob\"\212\001\n3UpdateModelDepl"
+          + "oymentMonitoringJobOperationMetadata\022S\n\020"
+          + "generic_metadata\030\001 \001(\01329.google.cloud.ai"
+          + "platform.v1beta1.GenericOperationMetadat"
+          + "a2\270C\n\nJobService\022\323\001\n\017CreateCustomJob\0227.g"
+          + "oogle.cloud.aiplatform.v1beta1.CreateCus"
+          + "tomJobRequest\032*.google.cloud.aiplatform."
+          + "v1beta1.CustomJob\"[\202\323\344\223\002A\"3/v1beta1/{par"
+          + "ent=projects/*/locations/*}/customJobs:\n"
+          + "custom_job\332A\021parent,custom_job\022\264\001\n\014GetCu"
+          + "stomJob\0224.google.cloud.aiplatform.v1beta"
+          + "1.GetCustomJobRequest\032*.google.cloud.aip"
+          + "latform.v1beta1.CustomJob\"B\202\323\344\223\0025\0223/v1be"
+          + "ta1/{name=projects/*/locations/*/customJ"
+          + "obs/*}\332A\004name\022\307\001\n\016ListCustomJobs\0226.googl"
+          + "e.cloud.aiplatform.v1beta1.ListCustomJob"
+          + "sRequest\0327.google.cloud.aiplatform.v1bet"
+          + "a1.ListCustomJobsResponse\"D\202\323\344\223\0025\0223/v1be"
+          + "ta1/{parent=projects/*/locations/*}/cust"
+          + "omJobs\332A\006parent\022\340\001\n\017DeleteCustomJob\0227.go"
+          + "ogle.cloud.aiplatform.v1beta1.DeleteCust"
+          + "omJobRequest\032\035.google.longrunning.Operat"
+          + "ion\"u\202\323\344\223\0025*3/v1beta1/{name=projects/*/l"
+          + "ocations/*/customJobs/*}\332A\004name\312A0\n\025goog"
+          + "le.protobuf.Empty\022\027DeleteOperationMetada"
+          + "ta\022\260\001\n\017CancelCustomJob\0227.google.cloud.ai"
+          + "platform.v1beta1.CancelCustomJobRequest\032"
+          + "\026.google.protobuf.Empty\"L\202\323\344\223\002?\":/v1beta"
+          + "1/{name=projects/*/locations/*/customJob"
+          + "s/*}:cancel:\001*\332A\004name\022\371\001\n\025CreateDataLabe"
+          + "lingJob\022=.google.cloud.aiplatform.v1beta"
+          + "1.CreateDataLabelingJobRequest\0320.google."
+          + "cloud.aiplatform.v1beta1.DataLabelingJob"
+          + "\"o\202\323\344\223\002N\"9/v1beta1/{parent=projects/*/lo"
+          + "cations/*}/dataLabelingJobs:\021data_labeli"
+          + "ng_job\332A\030parent,data_labeling_job\022\314\001\n\022Ge"
+          + "tDataLabelingJob\022:.google.cloud.aiplatfo"
+          + "rm.v1beta1.GetDataLabelingJobRequest\0320.g"
+          + "oogle.cloud.aiplatform.v1beta1.DataLabel"
+          + "ingJob\"H\202\323\344\223\002;\0229/v1beta1/{name=projects/"
+          + "*/locations/*/dataLabelingJobs/*}\332A\004name"
+          + "\022\337\001\n\024ListDataLabelingJobs\022<.google.cloud"
+          + ".aiplatform.v1beta1.ListDataLabelingJobs"
+          + "Request\032=.google.cloud.aiplatform.v1beta"
+          + "1.ListDataLabelingJobsResponse\"J\202\323\344\223\002;\0229"
+          + "/v1beta1/{parent=projects/*/locations/*}"
+          + "/dataLabelingJobs\332A\006parent\022\362\001\n\025DeleteDat"
+          + "aLabelingJob\022=.google.cloud.aiplatform.v"
+          + "1beta1.DeleteDataLabelingJobRequest\032\035.go"
+          + "ogle.longrunning.Operation\"{\202\323\344\223\002;*9/v1b"
+          + "eta1/{name=projects/*/locations/*/dataLa"
+          + "belingJobs/*}\332A\004name\312A0\n\025google.protobuf"
+          + ".Empty\022\027DeleteOperationMetadata\022\302\001\n\025Canc"
+          + "elDataLabelingJob\022=.google.cloud.aiplatf"
+          + "orm.v1beta1.CancelDataLabelingJobRequest"
+          + "\032\026.google.protobuf.Empty\"R\202\323\344\223\002E\"@/v1bet"
+          + "a1/{name=projects/*/locations/*/dataLabe"
+          + "lingJobs/*}:cancel:\001*\332A\004name\022\252\002\n\035CreateH"
+          + "yperparameterTuningJob\022E.google.cloud.ai"
+          + "platform.v1beta1.CreateHyperparameterTun"
+          + "ingJobRequest\0328.google.cloud.aiplatform."
+          + "v1beta1.HyperparameterTuningJob\"\207\001\202\323\344\223\002^"
+          + "\"A/v1beta1/{parent=projects/*/locations/"
+          + "*}/hyperparameterTuningJobs:\031hyperparame"
+          + "ter_tuning_job\332A parent,hyperparameter_t"
+          + "uning_job\022\354\001\n\032GetHyperparameterTuningJob"
+          + "\022B.google.cloud.aiplatform.v1beta1.GetHy"
+          + "perparameterTuningJobRequest\0328.google.cl"
+          + "oud.aiplatform.v1beta1.HyperparameterTun"
+          + "ingJob\"P\202\323\344\223\002C\022A/v1beta1/{name=projects/"
+          + "*/locations/*/hyperparameterTuningJobs/*"
+          + "}\332A\004name\022\377\001\n\034ListHyperparameterTuningJob"
+          + "s\022D.google.cloud.aiplatform.v1beta1.List"
+          + "HyperparameterTuningJobsRequest\032E.google"
+          + ".cloud.aiplatform.v1beta1.ListHyperparam"
+          + "eterTuningJobsResponse\"R\202\323\344\223\002C\022A/v1beta1"
+          + "/{parent=projects/*/locations/*}/hyperpa"
+          + "rameterTuningJobs\332A\006parent\022\213\002\n\035DeleteHyp"
+          + "erparameterTuningJob\022E.google.cloud.aipl"
+          + "atform.v1beta1.DeleteHyperparameterTunin"
+          + "gJobRequest\032\035.google.longrunning.Operati"
+          + "on\"\203\001\202\323\344\223\002C*A/v1beta1/{name=projects/*/l"
+          + "ocations/*/hyperparameterTuningJobs/*}\332A"
+          + "\004name\312A0\n\025google.protobuf.Empty\022\027DeleteO"
+          + "perationMetadata\022\332\001\n\035CancelHyperparamete"
+          + "rTuningJob\022E.google.cloud.aiplatform.v1b"
+          + "eta1.CancelHyperparameterTuningJobReques"
+          + "t\032\026.google.protobuf.Empty\"Z\202\323\344\223\002M\"H/v1be"
+          + "ta1/{name=projects/*/locations/*/hyperpa"
+          + "rameterTuningJobs/*}:cancel:\001*\332A\004name\022\301\001"
+          + "\n\014CreateNasJob\0224.google.cloud.aiplatform"
+          + ".v1beta1.CreateNasJobRequest\032\'.google.cl"
+          + "oud.aiplatform.v1beta1.NasJob\"R\202\323\344\223\002;\"0/"
+          + "v1beta1/{parent=projects/*/locations/*}/"
+          + "nasJobs:\007nas_job\332A\016parent,nas_job\022\250\001\n\tGe"
+          + "tNasJob\0221.google.cloud.aiplatform.v1beta"
+          + "1.GetNasJobRequest\032\'.google.cloud.aiplat"
+          + "form.v1beta1.NasJob\"?\202\323\344\223\0022\0220/v1beta1/{n"
+          + "ame=projects/*/locations/*/nasJobs/*}\332A\004"
+          + "name\022\273\001\n\013ListNasJobs\0223.google.cloud.aipl"
+          + "atform.v1beta1.ListNasJobsRequest\0324.goog"
+          + "le.cloud.aiplatform.v1beta1.ListNasJobsR"
+          + "esponse\"A\202\323\344\223\0022\0220/v1beta1/{parent=projec"
+          + "ts/*/locations/*}/nasJobs\332A\006parent\022\327\001\n\014D"
+          + "eleteNasJob\0224.google.cloud.aiplatform.v1"
+          + "beta1.DeleteNasJobRequest\032\035.google.longr"
+          + "unning.Operation\"r\202\323\344\223\0022*0/v1beta1/{name"
+          + "=projects/*/locations/*/nasJobs/*}\332A\004nam"
+          + "e\312A0\n\025google.protobuf.Empty\022\027DeleteOpera"
+          + "tionMetadata\022\247\001\n\014CancelNasJob\0224.google.c"
+          + "loud.aiplatform.v1beta1.CancelNasJobRequ"
+          + "est\032\026.google.protobuf.Empty\"I\202\323\344\223\002<\"7/v1"
+          + "beta1/{name=projects/*/locations/*/nasJo"
+          + "bs/*}:cancel:\001*\332A\004name\022\322\001\n\021GetNasTrialDe"
+          + "tail\0229.google.cloud.aiplatform.v1beta1.G"
+          + "etNasTrialDetailRequest\032/.google.cloud.a"
+          + "iplatform.v1beta1.NasTrialDetail\"Q\202\323\344\223\002D"
+          + "\022B/v1beta1/{name=projects/*/locations/*/"
+          + "nasJobs/*/nasTrialDetails/*}\332A\004name\022\345\001\n\023"
+          + "ListNasTrialDetails\022;.google.cloud.aipla"
+          + "tform.v1beta1.ListNasTrialDetailsRequest"
+          + "\032<.google.cloud.aiplatform.v1beta1.ListN"
+          + "asTrialDetailsResponse\"S\202\323\344\223\002D\022B/v1beta1"
+          + "/{parent=projects/*/locations/*/nasJobs/"
+          + "*}/nasTrialDetails\332A\006parent\022\213\002\n\030CreateBa"
+          + "tchPredictionJob\022@.google.cloud.aiplatfo"
+          + "rm.v1beta1.CreateBatchPredictionJobReque"
+          + "st\0323.google.cloud.aiplatform.v1beta1.Bat"
+          + "chPredictionJob\"x\202\323\344\223\002T\"</v1beta1/{paren"
+          + "t=projects/*/locations/*}/batchPredictio"
+          + "nJobs:\024batch_prediction_job\332A\033parent,bat"
+          + "ch_prediction_job\022\330\001\n\025GetBatchPrediction"
+          + "Job\022=.google.cloud.aiplatform.v1beta1.Ge"
+          + "tBatchPredictionJobRequest\0323.google.clou"
+          + "d.aiplatform.v1beta1.BatchPredictionJob\""
+          + "K\202\323\344\223\002>\022</v1beta1/{name=projects/*/locat"
+          + "ions/*/batchPredictionJobs/*}\332A\004name\022\353\001\n"
+          + "\027ListBatchPredictionJobs\022?.google.cloud."
+          + "aiplatform.v1beta1.ListBatchPredictionJo"
+          + "bsRequest\032@.google.cloud.aiplatform.v1be"
+          + "ta1.ListBatchPredictionJobsResponse\"M\202\323\344"
+          + "\223\002>\022</v1beta1/{parent=projects/*/locatio"
+          + "ns/*}/batchPredictionJobs\332A\006parent\022\373\001\n\030D"
+          + "eleteBatchPredictionJob\022@.google.cloud.a"
+          + "iplatform.v1beta1.DeleteBatchPredictionJ"
+          + "obRequest\032\035.google.longrunning.Operation"
+          + "\"~\202\323\344\223\002>*</v1beta1/{name=projects/*/loca"
+          + "tions/*/batchPredictionJobs/*}\332A\004name\312A0"
+          + "\n\025google.protobuf.Empty\022\027DeleteOperation"
+          + "Metadata\022\313\001\n\030CancelBatchPredictionJob\022@."
+          + "google.cloud.aiplatform.v1beta1.CancelBa"
+          + "tchPredictionJobRequest\032\026.google.protobu"
+          + "f.Empty\"U\202\323\344\223\002H\"C/v1beta1/{name=projects"
+          + "/*/locations/*/batchPredictionJobs/*}:ca"
+          + "ncel:\001*\332A\004name\022\312\002\n\"CreateModelDeployment"
+          + "MonitoringJob\022J.google.cloud.aiplatform."
+          + "v1beta1.CreateModelDeploymentMonitoringJ"
+          + "obRequest\032=.google.cloud.aiplatform.v1be"
+          + "ta1.ModelDeploymentMonitoringJob\"\230\001\202\323\344\223\002"
+          + "i\"F/v1beta1/{parent=projects/*/locations"
+          + "/*}/modelDeploymentMonitoringJobs:\037model"
+          + "_deployment_monitoring_job\332A&parent,mode"
+          + "l_deployment_monitoring_job\022\261\003\n-SearchMo"
+          + "delDeploymentMonitoringStatsAnomalies\022U."
+          + "google.cloud.aiplatform.v1beta1.SearchMo"
+          + "delDeploymentMonitoringStatsAnomaliesReq"
+          + "uest\032V.google.cloud.aiplatform.v1beta1.S"
+          + "earchModelDeploymentMonitoringStatsAnoma"
+          + "liesResponse\"\320\001\202\323\344\223\002\225\001\"\217\001/v1beta1/{model"
+          + "_deployment_monitoring_job=projects/*/lo"
+          + "cations/*/modelDeploymentMonitoringJobs/"
+          + "*}:searchModelDeploymentMonitoringStatsA"
+          + "nomalies:\001*\332A1model_deployment_monitorin"
+          + "g_job,deployed_model_id\022\200\002\n\037GetModelDepl"
+          + "oymentMonitoringJob\022G.google.cloud.aipla"
+          + "tform.v1beta1.GetModelDeploymentMonitori"
+          + "ngJobRequest\032=.google.cloud.aiplatform.v"
+          + "1beta1.ModelDeploymentMonitoringJob\"U\202\323\344"
+          + "\223\002H\022F/v1beta1/{name=projects/*/locations"
+          + "/*/modelDeploymentMonitoringJobs/*}\332A\004na"
+          + "me\022\223\002\n!ListModelDeploymentMonitoringJobs"
+          + "\022I.google.cloud.aiplatform.v1beta1.ListM"
+          + "odelDeploymentMonitoringJobsRequest\032J.go"
+          + "ogle.cloud.aiplatform.v1beta1.ListModelD"
+          + "eploymentMonitoringJobsResponse\"W\202\323\344\223\002H\022"
+          + "F/v1beta1/{parent=projects/*/locations/*"
+          + "}/modelDeploymentMonitoringJobs\332A\006parent"
+          + "\022\246\003\n\"UpdateModelDeploymentMonitoringJob\022"
+          + "J.google.cloud.aiplatform.v1beta1.Update"
+          + "ModelDeploymentMonitoringJobRequest\032\035.go"
+          + "ogle.longrunning.Operation\"\224\002\202\323\344\223\002\211\0012f/v"
+          + "1beta1/{model_deployment_monitoring_job."
+          + "name=projects/*/locations/*/modelDeploym"
+          + "entMonitoringJobs/*}:\037model_deployment_m"
+          + "onitoring_job\332A+model_deployment_monitor"
+          + "ing_job,update_mask\312AS\n\034ModelDeploymentM"
+          + "onitoringJob\0223UpdateModelDeploymentMonit"
+          + "oringJobOperationMetadata\022\232\002\n\"DeleteMode"
+          + "lDeploymentMonitoringJob\022J.google.cloud."
+          + "aiplatform.v1beta1.DeleteModelDeployment"
+          + "MonitoringJobRequest\032\035.google.longrunnin"
+          + "g.Operation\"\210\001\202\323\344\223\002H*F/v1beta1/{name=pro"
+          + "jects/*/locations/*/modelDeploymentMonit"
+          + "oringJobs/*}\332A\004name\312A0\n\025google.protobuf."
+          + "Empty\022\027DeleteOperationMetadata\022\346\001\n!Pause"
+          + "ModelDeploymentMonitoringJob\022I.google.cl"
+          + "oud.aiplatform.v1beta1.PauseModelDeploym"
+          + "entMonitoringJobRequest\032\026.google.protobu"
+          + "f.Empty\"^\202\323\344\223\002Q\"L/v1beta1/{name=projects"
+          + "/*/locations/*/modelDeploymentMonitoring"
+          + "Jobs/*}:pause:\001*\332A\004name\022\351\001\n\"ResumeModelD"
+          + "eploymentMonitoringJob\022J.google.cloud.ai"
+          + "platform.v1beta1.ResumeModelDeploymentMo"
+          + "nitoringJobRequest\032\026.google.protobuf.Emp"
+          + "ty\"_\202\323\344\223\002R\"M/v1beta1/{name=projects/*/lo"
+          + "cations/*/modelDeploymentMonitoringJobs/"
+          + "*}:resume:\001*\332A\004name\032\206\001\312A\031aiplatform.goog"
+          + "leapis.com\322Aghttps://www.googleapis.com/"
+          + "auth/cloud-platform,https://www.googleap"
+          + "is.com/auth/cloud-platform.read-onlyB\346\001\n"
+          + "#com.google.cloud.aiplatform.v1beta1B\017Jo"
+          + "bServiceProtoP\001ZCcloud.google.com/go/aip"
+          + "latform/apiv1beta1/aiplatformpb;aiplatfo",
+      "rmpb\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002"
+          + "\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Googl"
+          + "e::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -534,6 +633,7 @@ public final class JobServiceProto {
               com.google.cloud.aiplatform.v1beta1.DataLabelingJobProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJobProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJobProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1beta1.NasJobProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.OperationProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
@@ -684,8 +784,80 @@ public final class JobServiceProto {
             new java.lang.String[] {
               "Name",
             });
-    internal_static_google_cloud_aiplatform_v1beta1_CreateBatchPredictionJobRequest_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_CreateNasJobRequest_descriptor =
         getDescriptor().getMessageTypes().get(18);
+    internal_static_google_cloud_aiplatform_v1beta1_CreateNasJobRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_CreateNasJobRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "NasJob",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_GetNasJobRequest_descriptor =
+        getDescriptor().getMessageTypes().get(19);
+    internal_static_google_cloud_aiplatform_v1beta1_GetNasJobRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_GetNasJobRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ListNasJobsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(20);
+    internal_static_google_cloud_aiplatform_v1beta1_ListNasJobsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ListNasJobsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Filter", "PageSize", "PageToken", "ReadMask",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ListNasJobsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(21);
+    internal_static_google_cloud_aiplatform_v1beta1_ListNasJobsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ListNasJobsResponse_descriptor,
+            new java.lang.String[] {
+              "NasJobs", "NextPageToken",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_DeleteNasJobRequest_descriptor =
+        getDescriptor().getMessageTypes().get(22);
+    internal_static_google_cloud_aiplatform_v1beta1_DeleteNasJobRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_DeleteNasJobRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_CancelNasJobRequest_descriptor =
+        getDescriptor().getMessageTypes().get(23);
+    internal_static_google_cloud_aiplatform_v1beta1_CancelNasJobRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_CancelNasJobRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_GetNasTrialDetailRequest_descriptor =
+        getDescriptor().getMessageTypes().get(24);
+    internal_static_google_cloud_aiplatform_v1beta1_GetNasTrialDetailRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_GetNasTrialDetailRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ListNasTrialDetailsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(25);
+    internal_static_google_cloud_aiplatform_v1beta1_ListNasTrialDetailsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ListNasTrialDetailsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ListNasTrialDetailsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(26);
+    internal_static_google_cloud_aiplatform_v1beta1_ListNasTrialDetailsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ListNasTrialDetailsResponse_descriptor,
+            new java.lang.String[] {
+              "NasTrialDetails", "NextPageToken",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_CreateBatchPredictionJobRequest_descriptor =
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_aiplatform_v1beta1_CreateBatchPredictionJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_CreateBatchPredictionJobRequest_descriptor,
@@ -693,7 +865,7 @@ public final class JobServiceProto {
               "Parent", "BatchPredictionJob",
             });
     internal_static_google_cloud_aiplatform_v1beta1_GetBatchPredictionJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_aiplatform_v1beta1_GetBatchPredictionJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_GetBatchPredictionJobRequest_descriptor,
@@ -701,7 +873,7 @@ public final class JobServiceProto {
               "Name",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ListBatchPredictionJobsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_aiplatform_v1beta1_ListBatchPredictionJobsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ListBatchPredictionJobsRequest_descriptor,
@@ -709,7 +881,7 @@ public final class JobServiceProto {
               "Parent", "Filter", "PageSize", "PageToken", "ReadMask",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ListBatchPredictionJobsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_aiplatform_v1beta1_ListBatchPredictionJobsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ListBatchPredictionJobsResponse_descriptor,
@@ -717,7 +889,7 @@ public final class JobServiceProto {
               "BatchPredictionJobs", "NextPageToken",
             });
     internal_static_google_cloud_aiplatform_v1beta1_DeleteBatchPredictionJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_aiplatform_v1beta1_DeleteBatchPredictionJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_DeleteBatchPredictionJobRequest_descriptor,
@@ -725,7 +897,7 @@ public final class JobServiceProto {
               "Name",
             });
     internal_static_google_cloud_aiplatform_v1beta1_CancelBatchPredictionJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_aiplatform_v1beta1_CancelBatchPredictionJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_CancelBatchPredictionJobRequest_descriptor,
@@ -733,7 +905,7 @@ public final class JobServiceProto {
               "Name",
             });
     internal_static_google_cloud_aiplatform_v1beta1_CreateModelDeploymentMonitoringJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_cloud_aiplatform_v1beta1_CreateModelDeploymentMonitoringJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_CreateModelDeploymentMonitoringJobRequest_descriptor,
@@ -741,7 +913,7 @@ public final class JobServiceProto {
               "Parent", "ModelDeploymentMonitoringJob",
             });
     internal_static_google_cloud_aiplatform_v1beta1_SearchModelDeploymentMonitoringStatsAnomaliesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_cloud_aiplatform_v1beta1_SearchModelDeploymentMonitoringStatsAnomaliesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_SearchModelDeploymentMonitoringStatsAnomaliesRequest_descriptor,
@@ -766,7 +938,7 @@ public final class JobServiceProto {
               "Type", "TopFeatureCount",
             });
     internal_static_google_cloud_aiplatform_v1beta1_SearchModelDeploymentMonitoringStatsAnomaliesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_cloud_aiplatform_v1beta1_SearchModelDeploymentMonitoringStatsAnomaliesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_SearchModelDeploymentMonitoringStatsAnomaliesResponse_descriptor,
@@ -774,7 +946,7 @@ public final class JobServiceProto {
               "MonitoringStats", "NextPageToken",
             });
     internal_static_google_cloud_aiplatform_v1beta1_GetModelDeploymentMonitoringJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_cloud_aiplatform_v1beta1_GetModelDeploymentMonitoringJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_GetModelDeploymentMonitoringJobRequest_descriptor,
@@ -782,7 +954,7 @@ public final class JobServiceProto {
               "Name",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ListModelDeploymentMonitoringJobsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_cloud_aiplatform_v1beta1_ListModelDeploymentMonitoringJobsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ListModelDeploymentMonitoringJobsRequest_descriptor,
@@ -790,7 +962,7 @@ public final class JobServiceProto {
               "Parent", "Filter", "PageSize", "PageToken", "ReadMask",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ListModelDeploymentMonitoringJobsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_cloud_aiplatform_v1beta1_ListModelDeploymentMonitoringJobsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ListModelDeploymentMonitoringJobsResponse_descriptor,
@@ -798,7 +970,7 @@ public final class JobServiceProto {
               "ModelDeploymentMonitoringJobs", "NextPageToken",
             });
     internal_static_google_cloud_aiplatform_v1beta1_UpdateModelDeploymentMonitoringJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(39);
     internal_static_google_cloud_aiplatform_v1beta1_UpdateModelDeploymentMonitoringJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_UpdateModelDeploymentMonitoringJobRequest_descriptor,
@@ -806,7 +978,7 @@ public final class JobServiceProto {
               "ModelDeploymentMonitoringJob", "UpdateMask",
             });
     internal_static_google_cloud_aiplatform_v1beta1_DeleteModelDeploymentMonitoringJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(40);
     internal_static_google_cloud_aiplatform_v1beta1_DeleteModelDeploymentMonitoringJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_DeleteModelDeploymentMonitoringJobRequest_descriptor,
@@ -814,7 +986,7 @@ public final class JobServiceProto {
               "Name",
             });
     internal_static_google_cloud_aiplatform_v1beta1_PauseModelDeploymentMonitoringJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(41);
     internal_static_google_cloud_aiplatform_v1beta1_PauseModelDeploymentMonitoringJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_PauseModelDeploymentMonitoringJobRequest_descriptor,
@@ -822,7 +994,7 @@ public final class JobServiceProto {
               "Name",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ResumeModelDeploymentMonitoringJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(42);
     internal_static_google_cloud_aiplatform_v1beta1_ResumeModelDeploymentMonitoringJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ResumeModelDeploymentMonitoringJobRequest_descriptor,
@@ -830,7 +1002,7 @@ public final class JobServiceProto {
               "Name",
             });
     internal_static_google_cloud_aiplatform_v1beta1_UpdateModelDeploymentMonitoringJobOperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(43);
     internal_static_google_cloud_aiplatform_v1beta1_UpdateModelDeploymentMonitoringJobOperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_UpdateModelDeploymentMonitoringJobOperationMetadata_descriptor,
@@ -857,6 +1029,7 @@ public final class JobServiceProto {
     com.google.cloud.aiplatform.v1beta1.DataLabelingJobProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJobProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJobProto.getDescriptor();
+    com.google.cloud.aiplatform.v1beta1.NasJobProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.OperationProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();

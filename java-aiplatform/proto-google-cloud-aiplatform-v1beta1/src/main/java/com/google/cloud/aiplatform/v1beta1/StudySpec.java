@@ -633,6 +633,51 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * @return The goal.
      */
     com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.GoalType getGoal();
+
+    /**
+     *
+     *
+     * <pre>
+     * Used for safe search. In the case, the metric will be a safety
+     * metric. You must provide a separate metric for objective metric.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig safety_config = 3;
+     * </code>
+     *
+     * @return Whether the safetyConfig field is set.
+     */
+    boolean hasSafetyConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Used for safe search. In the case, the metric will be a safety
+     * metric. You must provide a separate metric for objective metric.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig safety_config = 3;
+     * </code>
+     *
+     * @return The safetyConfig.
+     */
+    com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig getSafetyConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Used for safe search. In the case, the metric will be a safety
+     * metric. You must provide a separate metric for objective metric.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig safety_config = 3;
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfigOrBuilder
+        getSafetyConfigOrBuilder();
   }
   /**
    *
@@ -843,6 +888,796 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.GoalType)
     }
 
+    public interface SafetyMetricConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Safety threshold (boundary value between safe and unsafe). NOTE that if
+       * you leave SafetyMetricConfig unset, a default value of 0 will be used.
+       * </pre>
+       *
+       * <code>double safety_threshold = 1;</code>
+       *
+       * @return The safetyThreshold.
+       */
+      double getSafetyThreshold();
+
+      /**
+       *
+       *
+       * <pre>
+       * Desired minimum fraction of safe trials (over total number of trials)
+       * that should be targeted by the algorithm at any time during the
+       * study (best effort). This should be between 0.0 and 1.0 and a value of
+       * 0.0 means that there is no minimum and an algorithm proceeds without
+       * targeting any specific fraction. A value of 1.0 means that the
+       * algorithm attempts to only Suggest safe Trials.
+       * </pre>
+       *
+       * <code>optional double desired_min_safe_trials_fraction = 2;</code>
+       *
+       * @return Whether the desiredMinSafeTrialsFraction field is set.
+       */
+      boolean hasDesiredMinSafeTrialsFraction();
+      /**
+       *
+       *
+       * <pre>
+       * Desired minimum fraction of safe trials (over total number of trials)
+       * that should be targeted by the algorithm at any time during the
+       * study (best effort). This should be between 0.0 and 1.0 and a value of
+       * 0.0 means that there is no minimum and an algorithm proceeds without
+       * targeting any specific fraction. A value of 1.0 means that the
+       * algorithm attempts to only Suggest safe Trials.
+       * </pre>
+       *
+       * <code>optional double desired_min_safe_trials_fraction = 2;</code>
+       *
+       * @return The desiredMinSafeTrialsFraction.
+       */
+      double getDesiredMinSafeTrialsFraction();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Used in safe optimization to specify threshold levels and risk tolerance.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig}
+     */
+    public static final class SafetyMetricConfig extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig)
+        SafetyMetricConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use SafetyMetricConfig.newBuilder() to construct.
+      private SafetyMetricConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private SafetyMetricConfig() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new SafetyMetricConfig();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.StudyProto
+            .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_MetricSpec_SafetyMetricConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.StudyProto
+            .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_MetricSpec_SafetyMetricConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig.class,
+                com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig.Builder
+                    .class);
+      }
+
+      private int bitField0_;
+      public static final int SAFETY_THRESHOLD_FIELD_NUMBER = 1;
+      private double safetyThreshold_ = 0D;
+      /**
+       *
+       *
+       * <pre>
+       * Safety threshold (boundary value between safe and unsafe). NOTE that if
+       * you leave SafetyMetricConfig unset, a default value of 0 will be used.
+       * </pre>
+       *
+       * <code>double safety_threshold = 1;</code>
+       *
+       * @return The safetyThreshold.
+       */
+      @java.lang.Override
+      public double getSafetyThreshold() {
+        return safetyThreshold_;
+      }
+
+      public static final int DESIRED_MIN_SAFE_TRIALS_FRACTION_FIELD_NUMBER = 2;
+      private double desiredMinSafeTrialsFraction_ = 0D;
+      /**
+       *
+       *
+       * <pre>
+       * Desired minimum fraction of safe trials (over total number of trials)
+       * that should be targeted by the algorithm at any time during the
+       * study (best effort). This should be between 0.0 and 1.0 and a value of
+       * 0.0 means that there is no minimum and an algorithm proceeds without
+       * targeting any specific fraction. A value of 1.0 means that the
+       * algorithm attempts to only Suggest safe Trials.
+       * </pre>
+       *
+       * <code>optional double desired_min_safe_trials_fraction = 2;</code>
+       *
+       * @return Whether the desiredMinSafeTrialsFraction field is set.
+       */
+      @java.lang.Override
+      public boolean hasDesiredMinSafeTrialsFraction() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Desired minimum fraction of safe trials (over total number of trials)
+       * that should be targeted by the algorithm at any time during the
+       * study (best effort). This should be between 0.0 and 1.0 and a value of
+       * 0.0 means that there is no minimum and an algorithm proceeds without
+       * targeting any specific fraction. A value of 1.0 means that the
+       * algorithm attempts to only Suggest safe Trials.
+       * </pre>
+       *
+       * <code>optional double desired_min_safe_trials_fraction = 2;</code>
+       *
+       * @return The desiredMinSafeTrialsFraction.
+       */
+      @java.lang.Override
+      public double getDesiredMinSafeTrialsFraction() {
+        return desiredMinSafeTrialsFraction_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (java.lang.Double.doubleToRawLongBits(safetyThreshold_) != 0) {
+          output.writeDouble(1, safetyThreshold_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeDouble(2, desiredMinSafeTrialsFraction_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (java.lang.Double.doubleToRawLongBits(safetyThreshold_) != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, safetyThreshold_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeDoubleSize(
+                  2, desiredMinSafeTrialsFraction_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig other =
+            (com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig) obj;
+
+        if (java.lang.Double.doubleToLongBits(getSafetyThreshold())
+            != java.lang.Double.doubleToLongBits(other.getSafetyThreshold())) return false;
+        if (hasDesiredMinSafeTrialsFraction() != other.hasDesiredMinSafeTrialsFraction())
+          return false;
+        if (hasDesiredMinSafeTrialsFraction()) {
+          if (java.lang.Double.doubleToLongBits(getDesiredMinSafeTrialsFraction())
+              != java.lang.Double.doubleToLongBits(other.getDesiredMinSafeTrialsFraction()))
+            return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + SAFETY_THRESHOLD_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashLong(
+                    java.lang.Double.doubleToLongBits(getSafetyThreshold()));
+        if (hasDesiredMinSafeTrialsFraction()) {
+          hash = (37 * hash) + DESIRED_MIN_SAFE_TRIALS_FRACTION_FIELD_NUMBER;
+          hash =
+              (53 * hash)
+                  + com.google.protobuf.Internal.hashLong(
+                      java.lang.Double.doubleToLongBits(getDesiredMinSafeTrialsFraction()));
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Used in safe optimization to specify threshold levels and risk tolerance.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig)
+          com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1beta1.StudyProto
+              .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_MetricSpec_SafetyMetricConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1beta1.StudyProto
+              .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_MetricSpec_SafetyMetricConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig.class,
+                  com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          safetyThreshold_ = 0D;
+          desiredMinSafeTrialsFraction_ = 0D;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1beta1.StudyProto
+              .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_MetricSpec_SafetyMetricConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig
+            getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig build() {
+          com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig
+            buildPartial() {
+          com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig result =
+              new com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.safetyThreshold_ = safetyThreshold_;
+          }
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.desiredMinSafeTrialsFraction_ = desiredMinSafeTrialsFraction_;
+            to_bitField0_ |= 0x00000001;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig) {
+            return mergeFrom(
+                (com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig other) {
+          if (other
+              == com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig
+                  .getDefaultInstance()) return this;
+          if (other.getSafetyThreshold() != 0D) {
+            setSafetyThreshold(other.getSafetyThreshold());
+          }
+          if (other.hasDesiredMinSafeTrialsFraction()) {
+            setDesiredMinSafeTrialsFraction(other.getDesiredMinSafeTrialsFraction());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 9:
+                  {
+                    safetyThreshold_ = input.readDouble();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 9
+                case 17:
+                  {
+                    desiredMinSafeTrialsFraction_ = input.readDouble();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 17
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private double safetyThreshold_;
+        /**
+         *
+         *
+         * <pre>
+         * Safety threshold (boundary value between safe and unsafe). NOTE that if
+         * you leave SafetyMetricConfig unset, a default value of 0 will be used.
+         * </pre>
+         *
+         * <code>double safety_threshold = 1;</code>
+         *
+         * @return The safetyThreshold.
+         */
+        @java.lang.Override
+        public double getSafetyThreshold() {
+          return safetyThreshold_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Safety threshold (boundary value between safe and unsafe). NOTE that if
+         * you leave SafetyMetricConfig unset, a default value of 0 will be used.
+         * </pre>
+         *
+         * <code>double safety_threshold = 1;</code>
+         *
+         * @param value The safetyThreshold to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSafetyThreshold(double value) {
+
+          safetyThreshold_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Safety threshold (boundary value between safe and unsafe). NOTE that if
+         * you leave SafetyMetricConfig unset, a default value of 0 will be used.
+         * </pre>
+         *
+         * <code>double safety_threshold = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSafetyThreshold() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          safetyThreshold_ = 0D;
+          onChanged();
+          return this;
+        }
+
+        private double desiredMinSafeTrialsFraction_;
+        /**
+         *
+         *
+         * <pre>
+         * Desired minimum fraction of safe trials (over total number of trials)
+         * that should be targeted by the algorithm at any time during the
+         * study (best effort). This should be between 0.0 and 1.0 and a value of
+         * 0.0 means that there is no minimum and an algorithm proceeds without
+         * targeting any specific fraction. A value of 1.0 means that the
+         * algorithm attempts to only Suggest safe Trials.
+         * </pre>
+         *
+         * <code>optional double desired_min_safe_trials_fraction = 2;</code>
+         *
+         * @return Whether the desiredMinSafeTrialsFraction field is set.
+         */
+        @java.lang.Override
+        public boolean hasDesiredMinSafeTrialsFraction() {
+          return ((bitField0_ & 0x00000002) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Desired minimum fraction of safe trials (over total number of trials)
+         * that should be targeted by the algorithm at any time during the
+         * study (best effort). This should be between 0.0 and 1.0 and a value of
+         * 0.0 means that there is no minimum and an algorithm proceeds without
+         * targeting any specific fraction. A value of 1.0 means that the
+         * algorithm attempts to only Suggest safe Trials.
+         * </pre>
+         *
+         * <code>optional double desired_min_safe_trials_fraction = 2;</code>
+         *
+         * @return The desiredMinSafeTrialsFraction.
+         */
+        @java.lang.Override
+        public double getDesiredMinSafeTrialsFraction() {
+          return desiredMinSafeTrialsFraction_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Desired minimum fraction of safe trials (over total number of trials)
+         * that should be targeted by the algorithm at any time during the
+         * study (best effort). This should be between 0.0 and 1.0 and a value of
+         * 0.0 means that there is no minimum and an algorithm proceeds without
+         * targeting any specific fraction. A value of 1.0 means that the
+         * algorithm attempts to only Suggest safe Trials.
+         * </pre>
+         *
+         * <code>optional double desired_min_safe_trials_fraction = 2;</code>
+         *
+         * @param value The desiredMinSafeTrialsFraction to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDesiredMinSafeTrialsFraction(double value) {
+
+          desiredMinSafeTrialsFraction_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Desired minimum fraction of safe trials (over total number of trials)
+         * that should be targeted by the algorithm at any time during the
+         * study (best effort). This should be between 0.0 and 1.0 and a value of
+         * 0.0 means that there is no minimum and an algorithm proceeds without
+         * targeting any specific fraction. A value of 1.0 means that the
+         * algorithm attempts to only Suggest safe Trials.
+         * </pre>
+         *
+         * <code>optional double desired_min_safe_trials_fraction = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDesiredMinSafeTrialsFraction() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          desiredMinSafeTrialsFraction_ = 0D;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig)
+      private static final com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec
+              .SafetyMetricConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig();
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<SafetyMetricConfig> PARSER =
+          new com.google.protobuf.AbstractParser<SafetyMetricConfig>() {
+            @java.lang.Override
+            public SafetyMetricConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<SafetyMetricConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<SafetyMetricConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
     public static final int METRIC_ID_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
@@ -937,6 +1772,70 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           : result;
     }
 
+    public static final int SAFETY_CONFIG_FIELD_NUMBER = 3;
+    private com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig
+        safetyConfig_;
+    /**
+     *
+     *
+     * <pre>
+     * Used for safe search. In the case, the metric will be a safety
+     * metric. You must provide a separate metric for objective metric.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig safety_config = 3;
+     * </code>
+     *
+     * @return Whether the safetyConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasSafetyConfig() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Used for safe search. In the case, the metric will be a safety
+     * metric. You must provide a separate metric for objective metric.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig safety_config = 3;
+     * </code>
+     *
+     * @return The safetyConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig
+        getSafetyConfig() {
+      return safetyConfig_ == null
+          ? com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig
+              .getDefaultInstance()
+          : safetyConfig_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Used for safe search. In the case, the metric will be a safety
+     * metric. You must provide a separate metric for objective metric.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig safety_config = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfigOrBuilder
+        getSafetyConfigOrBuilder() {
+      return safetyConfig_ == null
+          ? com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig
+              .getDefaultInstance()
+          : safetyConfig_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -959,6 +1858,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               .getNumber()) {
         output.writeEnum(2, goal_);
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(3, getSafetyConfig());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -975,6 +1877,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           != com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.GoalType.GOAL_TYPE_UNSPECIFIED
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, goal_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getSafetyConfig());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -994,6 +1899,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
       if (!getMetricId().equals(other.getMetricId())) return false;
       if (goal_ != other.goal_) return false;
+      if (hasSafetyConfig() != other.hasSafetyConfig()) return false;
+      if (hasSafetyConfig()) {
+        if (!getSafetyConfig().equals(other.getSafetyConfig())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1009,6 +1918,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getMetricId().hashCode();
       hash = (37 * hash) + GOAL_FIELD_NUMBER;
       hash = (53 * hash) + goal_;
+      if (hasSafetyConfig()) {
+        hash = (37 * hash) + SAFETY_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getSafetyConfig().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1141,10 +2054,19 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getSafetyConfigFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -1153,6 +2075,11 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = 0;
         metricId_ = "";
         goal_ = 0;
+        safetyConfig_ = null;
+        if (safetyConfigBuilder_ != null) {
+          safetyConfigBuilder_.dispose();
+          safetyConfigBuilder_ = null;
+        }
         return this;
       }
 
@@ -1195,6 +2122,13 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.goal_ = goal_;
         }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.safetyConfig_ =
+              safetyConfigBuilder_ == null ? safetyConfig_ : safetyConfigBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -1253,6 +2187,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (other.goal_ != 0) {
           setGoalValue(other.getGoalValue());
         }
+        if (other.hasSafetyConfig()) {
+          mergeSafetyConfig(other.getSafetyConfig());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1291,6 +2228,12 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 16
+              case 26:
+                {
+                  input.readMessage(getSafetyConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1522,6 +2465,230 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         goal_ = 0;
         onChanged();
         return this;
+      }
+
+      private com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig
+          safetyConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig,
+              com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig.Builder,
+              com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfigOrBuilder>
+          safetyConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Used for safe search. In the case, the metric will be a safety
+       * metric. You must provide a separate metric for objective metric.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig safety_config = 3;
+       * </code>
+       *
+       * @return Whether the safetyConfig field is set.
+       */
+      public boolean hasSafetyConfig() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Used for safe search. In the case, the metric will be a safety
+       * metric. You must provide a separate metric for objective metric.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig safety_config = 3;
+       * </code>
+       *
+       * @return The safetyConfig.
+       */
+      public com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig
+          getSafetyConfig() {
+        if (safetyConfigBuilder_ == null) {
+          return safetyConfig_ == null
+              ? com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig
+                  .getDefaultInstance()
+              : safetyConfig_;
+        } else {
+          return safetyConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Used for safe search. In the case, the metric will be a safety
+       * metric. You must provide a separate metric for objective metric.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig safety_config = 3;
+       * </code>
+       */
+      public Builder setSafetyConfig(
+          com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig value) {
+        if (safetyConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          safetyConfig_ = value;
+        } else {
+          safetyConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Used for safe search. In the case, the metric will be a safety
+       * metric. You must provide a separate metric for objective metric.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig safety_config = 3;
+       * </code>
+       */
+      public Builder setSafetyConfig(
+          com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig.Builder
+              builderForValue) {
+        if (safetyConfigBuilder_ == null) {
+          safetyConfig_ = builderForValue.build();
+        } else {
+          safetyConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Used for safe search. In the case, the metric will be a safety
+       * metric. You must provide a separate metric for objective metric.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig safety_config = 3;
+       * </code>
+       */
+      public Builder mergeSafetyConfig(
+          com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig value) {
+        if (safetyConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && safetyConfig_ != null
+              && safetyConfig_
+                  != com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig
+                      .getDefaultInstance()) {
+            getSafetyConfigBuilder().mergeFrom(value);
+          } else {
+            safetyConfig_ = value;
+          }
+        } else {
+          safetyConfigBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Used for safe search. In the case, the metric will be a safety
+       * metric. You must provide a separate metric for objective metric.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig safety_config = 3;
+       * </code>
+       */
+      public Builder clearSafetyConfig() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        safetyConfig_ = null;
+        if (safetyConfigBuilder_ != null) {
+          safetyConfigBuilder_.dispose();
+          safetyConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Used for safe search. In the case, the metric will be a safety
+       * metric. You must provide a separate metric for objective metric.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig safety_config = 3;
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig.Builder
+          getSafetyConfigBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getSafetyConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Used for safe search. In the case, the metric will be a safety
+       * metric. You must provide a separate metric for objective metric.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig safety_config = 3;
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfigOrBuilder
+          getSafetyConfigOrBuilder() {
+        if (safetyConfigBuilder_ != null) {
+          return safetyConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return safetyConfig_ == null
+              ? com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig
+                  .getDefaultInstance()
+              : safetyConfig_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Used for safe search. In the case, the metric will be a safety
+       * metric. You must provide a separate metric for objective metric.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig safety_config = 3;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig,
+              com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig.Builder,
+              com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfigOrBuilder>
+          getSafetyConfigFieldBuilder() {
+        if (safetyConfigBuilder_ == null) {
+          safetyConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig,
+                  com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.SafetyMetricConfig
+                      .Builder,
+                  com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec
+                      .SafetyMetricConfigOrBuilder>(
+                  getSafetyConfig(), getParentForChildren(), isClean());
+          safetyConfig_ = null;
+        }
+        return safetyConfigBuilder_;
       }
 
       @java.lang.Override
@@ -18625,7 +19792,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/study.proto;l=588
+   *     google/cloud/aiplatform/v1beta1/study.proto;l=607
    * @return Whether the convexStopConfig field is set.
    */
   @java.lang.Override
@@ -18646,7 +19813,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/study.proto;l=588
+   *     google/cloud/aiplatform/v1beta1/study.proto;l=607
    * @return The convexStopConfig.
    */
   @java.lang.Override
@@ -20368,7 +21535,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/study.proto;l=588
+     *     google/cloud/aiplatform/v1beta1/study.proto;l=607
      * @return Whether the convexStopConfig field is set.
      */
     @java.lang.Override
@@ -20389,7 +21556,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/study.proto;l=588
+     *     google/cloud/aiplatform/v1beta1/study.proto;l=607
      * @return The convexStopConfig.
      */
     @java.lang.Override

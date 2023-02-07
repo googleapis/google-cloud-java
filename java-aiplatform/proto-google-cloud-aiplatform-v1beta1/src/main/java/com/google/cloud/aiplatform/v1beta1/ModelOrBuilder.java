@@ -1626,6 +1626,51 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
+   * Output only. If this Model is a copy of another Model, this contains info
+   * about the original.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo original_model_info = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the originalModelInfo field is set.
+   */
+  boolean hasOriginalModelInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If this Model is a copy of another Model, this contains info
+   * about the original.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo original_model_info = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The originalModelInfo.
+   */
+  com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo getOriginalModelInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If this Model is a copy of another Model, this contains info
+   * about the original.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Model.OriginalModelInfo original_model_info = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.Model.OriginalModelInfoOrBuilder
+      getOriginalModelInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The resource name of the Artifact that was created in
    * MetadataStore when creating the Model. The Artifact resource name pattern
    * is

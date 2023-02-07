@@ -22,6 +22,8 @@ import static com.google.cloud.aiplatform.v1.JobServiceClient.ListDataLabelingJo
 import static com.google.cloud.aiplatform.v1.JobServiceClient.ListHyperparameterTuningJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1.JobServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.aiplatform.v1.JobServiceClient.ListModelDeploymentMonitoringJobsPagedResponse;
+import static com.google.cloud.aiplatform.v1.JobServiceClient.ListNasJobsPagedResponse;
+import static com.google.cloud.aiplatform.v1.JobServiceClient.ListNasTrialDetailsPagedResponse;
 import static com.google.cloud.aiplatform.v1.JobServiceClient.SearchModelDeploymentMonitoringStatsAnomaliesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -200,6 +202,50 @@ public class JobServiceSettings extends ClientSettings<JobServiceSettings> {
   public UnaryCallSettings<CancelHyperparameterTuningJobRequest, Empty>
       cancelHyperparameterTuningJobSettings() {
     return ((JobServiceStubSettings) getStubSettings()).cancelHyperparameterTuningJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createNasJob. */
+  public UnaryCallSettings<CreateNasJobRequest, NasJob> createNasJobSettings() {
+    return ((JobServiceStubSettings) getStubSettings()).createNasJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getNasJob. */
+  public UnaryCallSettings<GetNasJobRequest, NasJob> getNasJobSettings() {
+    return ((JobServiceStubSettings) getStubSettings()).getNasJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listNasJobs. */
+  public PagedCallSettings<ListNasJobsRequest, ListNasJobsResponse, ListNasJobsPagedResponse>
+      listNasJobsSettings() {
+    return ((JobServiceStubSettings) getStubSettings()).listNasJobsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteNasJob. */
+  public UnaryCallSettings<DeleteNasJobRequest, Operation> deleteNasJobSettings() {
+    return ((JobServiceStubSettings) getStubSettings()).deleteNasJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteNasJob. */
+  public OperationCallSettings<DeleteNasJobRequest, Empty, DeleteOperationMetadata>
+      deleteNasJobOperationSettings() {
+    return ((JobServiceStubSettings) getStubSettings()).deleteNasJobOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to cancelNasJob. */
+  public UnaryCallSettings<CancelNasJobRequest, Empty> cancelNasJobSettings() {
+    return ((JobServiceStubSettings) getStubSettings()).cancelNasJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getNasTrialDetail. */
+  public UnaryCallSettings<GetNasTrialDetailRequest, NasTrialDetail> getNasTrialDetailSettings() {
+    return ((JobServiceStubSettings) getStubSettings()).getNasTrialDetailSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listNasTrialDetails. */
+  public PagedCallSettings<
+          ListNasTrialDetailsRequest, ListNasTrialDetailsResponse, ListNasTrialDetailsPagedResponse>
+      listNasTrialDetailsSettings() {
+    return ((JobServiceStubSettings) getStubSettings()).listNasTrialDetailsSettings();
   }
 
   /** Returns the object with the settings used for calls to createBatchPredictionJob. */
@@ -555,6 +601,54 @@ public class JobServiceSettings extends ClientSettings<JobServiceSettings> {
     public UnaryCallSettings.Builder<CancelHyperparameterTuningJobRequest, Empty>
         cancelHyperparameterTuningJobSettings() {
       return getStubSettingsBuilder().cancelHyperparameterTuningJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createNasJob. */
+    public UnaryCallSettings.Builder<CreateNasJobRequest, NasJob> createNasJobSettings() {
+      return getStubSettingsBuilder().createNasJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getNasJob. */
+    public UnaryCallSettings.Builder<GetNasJobRequest, NasJob> getNasJobSettings() {
+      return getStubSettingsBuilder().getNasJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listNasJobs. */
+    public PagedCallSettings.Builder<
+            ListNasJobsRequest, ListNasJobsResponse, ListNasJobsPagedResponse>
+        listNasJobsSettings() {
+      return getStubSettingsBuilder().listNasJobsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteNasJob. */
+    public UnaryCallSettings.Builder<DeleteNasJobRequest, Operation> deleteNasJobSettings() {
+      return getStubSettingsBuilder().deleteNasJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteNasJob. */
+    public OperationCallSettings.Builder<DeleteNasJobRequest, Empty, DeleteOperationMetadata>
+        deleteNasJobOperationSettings() {
+      return getStubSettingsBuilder().deleteNasJobOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelNasJob. */
+    public UnaryCallSettings.Builder<CancelNasJobRequest, Empty> cancelNasJobSettings() {
+      return getStubSettingsBuilder().cancelNasJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getNasTrialDetail. */
+    public UnaryCallSettings.Builder<GetNasTrialDetailRequest, NasTrialDetail>
+        getNasTrialDetailSettings() {
+      return getStubSettingsBuilder().getNasTrialDetailSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listNasTrialDetails. */
+    public PagedCallSettings.Builder<
+            ListNasTrialDetailsRequest,
+            ListNasTrialDetailsResponse,
+            ListNasTrialDetailsPagedResponse>
+        listNasTrialDetailsSettings() {
+      return getStubSettingsBuilder().listNasTrialDetailsSettings();
     }
 
     /** Returns the builder for the settings used for calls to createBatchPredictionJob. */
