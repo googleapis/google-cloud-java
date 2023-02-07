@@ -36,10 +36,6 @@ branchProtectionRules:
       - lint
       - OwlBot Post Processor
       - 'Kokoro - Test: Integration'
-      - 'Kokoro - Test: Java 17 GraalVM Native Image - AI Platform'
-      - 'Kokoro - Test: Java 17 GraalVM Native Image - Compute'
-      - 'Kokoro - Test: Java GraalVM Native Image - AI Platform'
-      - 'Kokoro - Test: Java GraalVM Native Image - Compute'
   - pattern: 1.0.x
     # Can admins overwrite branch protection.
     # Defaults to `true`
