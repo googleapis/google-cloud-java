@@ -13,7 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-excluded_modules=('gapic-libraries-bom' 'google-cloud-jar-parent' 'google-cloud-pom-parent')
+# TODO: remove java-core once we figure out how setup_cloud understands Maven's
+# "--also-make-dependents" option. https://github.com/googleapis/google-cloud-java/issues/9088
+excluded_modules=('gapic-libraries-bom' 'google-cloud-jar-parent' 'google-cloud-pom-parent' 'java-core')
 
 function retry_with_backoff {
   attempts_left=$1
@@ -124,9 +126,10 @@ function generate_modified_modules_list() {
 
 function run_integration_tests() {
   printf "Running Integration Tests for:\n%s\n" "$1"
+  # --also-make-dependents to run other modules that use the affected module
   mvn -B ${INTEGRATION_TEST_ARGS} \
     -pl "$1" \
-    -amd \
+    --also-make-dependents \
     -ntp \
     -Penable-integration-tests \
     -DtrimStackTrace=false \
@@ -151,7 +154,7 @@ function run_graalvm_tests() {
 
   mvn -B ${INTEGRATION_TEST_ARGS} \
     -pl "$1" \
-    -amd \
+    --also-make-dependents \
     -ntp \
     -DtrimStackTrace=false \
     -Dclirr.skip=true \
