@@ -21,6 +21,7 @@ import com.google.api.gax.rpc.InternalException;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StreamController;
+import com.google.common.base.Throwables;
 
 /**
  * This callable converts the "Received rst stream" exception into a retryable {@link ApiException}.
@@ -73,14 +74,29 @@ final class ConvertExceptionCallable<ReadRowsRequest, RowT>
   }
 
   private Throwable convertException(Throwable t) {
-    // Long lived connections sometimes are disconnected via an RST frame. This error is
-    // transient and should be retried.
-    if (t instanceof InternalException && t.getMessage() != null) {
-      String error = t.getMessage().toLowerCase();
-      if (error.contains("rst_stream") || error.contains("rst stream")) {
-        return new InternalException(t, ((InternalException) t).getStatusCode(), true);
-      }
+    // Long lived connections sometimes are disconnected via an RST frame or a goaway. These errors
+    // are transient and should be retried.
+    if (isRstStreamError(t) || isGoAway(t)) {
+      return new InternalException(t, ((InternalException) t).getStatusCode(), true);
     }
     return t;
+  }
+
+  private boolean isRstStreamError(Throwable t) {
+    if (t instanceof InternalException && t.getMessage() != null) {
+      String error = t.getMessage().toLowerCase();
+      return error.contains("rst_stream") || error.contains("rst stream");
+    }
+    return false;
+  }
+
+  private boolean isGoAway(Throwable t) {
+    if (t instanceof InternalException) {
+      Throwable rootCause = Throwables.getRootCause(t);
+      String rootCauseMessage = rootCause.getMessage();
+      return rootCauseMessage != null
+          && rootCauseMessage.contains("Stream closed before write could take place");
+    }
+    return false;
   }
 }
