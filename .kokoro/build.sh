@@ -64,34 +64,16 @@ case ${JOB_TYPE} in
       echo "No Integration Tests to run"
     fi
     ;;
-  graalvm-aiplatform-presubmit)
-    module_list=("java-aiplatform")
-    printf "Running GraalVM checks for:\n%s\n" "${module_list}"
-    setup_cloud "$module_list"
+  graalvm-presubmit)
+    if [ -n "${MAVEN_MODULES}" ]; then
+      echo "MAVEN_MODULES not defined in environment."
+      exit 1
+    fi
+    printf "Running GraalVM checks for:\n%s\n" "${MAVEN_MODULES}"
+    setup_cloud "$MAVEN_MODULES"
     install_modules
-    run_graalvm_tests "$module_list"
+    run_graalvm_tests "$MAVEN_MODULES"
     ;;
-   graalvm-compute-presubmit)
-     module_list=("java-compute")
-     printf "Running GraalVM checks for:\n%s\n" "${module_list}"
-     setup_cloud "$module_list"
-     install_modules
-     run_graalvm_tests "$module_list"
-     ;;
-   graalvm17-aiplatform-presubmit)
-     module_list=("java-aiplatform")
-     printf "Running GraalVM checks for:\n%s\n" "${module_list}"
-     setup_cloud "$module_list"
-     install_modules
-     run_graalvm_tests "$module_list"
-     ;;
-    graalvm17-compute-presubmit)
-      module_list=("java-compute")
-      printf "Running GraalVM checks for:\n%s\n" "${module_list}"
-      setup_cloud "$module_list"
-      install_modules
-      run_graalvm_tests "$module_list"
-      ;;
   graalvm)
     generate_graalvm_modules_list
     if [ ! -z "${module_list}" ]; then
