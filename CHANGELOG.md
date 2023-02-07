@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.14.3](https://github.com/googleapis/java-logging/compare/v3.14.2...v3.14.3) (2023-02-06)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.2.0 ([#1269](https://github.com/googleapis/java-logging/issues/1269)) ([e196a80](https://github.com/googleapis/java-logging/commit/e196a802d0d004dcec2ddfb352ed9aebebe68810))
+
 ## [3.14.2](https://github.com/googleapis/java-logging/compare/v3.14.1...v3.14.2) (2023-01-24)
 
 
