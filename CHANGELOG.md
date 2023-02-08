@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.22.0](https://github.com/googleapis/java-bigquery/compare/v2.21.0...v2.22.0) (2023-02-08)
+
+
+### Features
+
+* Add collation for Case sensitive string column ([#2490](https://github.com/googleapis/java-bigquery/issues/2490)) ([3257737](https://github.com/googleapis/java-bigquery/commit/325773757e811172236eb3221926025b82f5db64))
+
+
+### Dependencies
+
+* Update arrow.version to v11 (major) ([#2495](https://github.com/googleapis/java-bigquery/issues/2495)) ([94ed060](https://github.com/googleapis/java-bigquery/commit/94ed06089239a0df0ffebf7f8470a38c16be95bf))
+* Update dependency com.google.api.grpc:proto-google-cloud-bigqueryconnection-v1 to v2.11.0 ([#2482](https://github.com/googleapis/java-bigquery/issues/2482)) ([e6ffb9b](https://github.com/googleapis/java-bigquery/commit/e6ffb9b594e3bb680c4904f822c39653d626c4d3))
+* Update dependency com.google.api.grpc:proto-google-cloud-bigqueryconnection-v1 to v2.12.0 ([#2512](https://github.com/googleapis/java-bigquery/issues/2512)) ([09f280d](https://github.com/googleapis/java-bigquery/commit/09f280d15389838dcc7ff9d8c1f485041559051e))
+* Update dependency com.google.cloud:google-cloud-bigquerystorage-bom to v2.31.0 ([#2499](https://github.com/googleapis/java-bigquery/issues/2499)) ([c0a393c](https://github.com/googleapis/java-bigquery/commit/c0a393ca3aae372dd42477c9b54bd785fc17ab20))
+* Update dependency com.google.cloud:google-cloud-datacatalog-bom to v1.15.0 ([#2483](https://github.com/googleapis/java-bigquery/issues/2483)) ([5c2bf69](https://github.com/googleapis/java-bigquery/commit/5c2bf69b227ca4efb55b42c06a747426183f8ae5))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.2.0 ([#2513](https://github.com/googleapis/java-bigquery/issues/2513)) ([02832dd](https://github.com/googleapis/java-bigquery/commit/02832ddcb62d4701cd3568eae806586917b359b5))
+
 ## [2.21.0](https://github.com/googleapis/java-bigquery/compare/v2.20.2...v2.21.0) (2023-01-23)
 
 
