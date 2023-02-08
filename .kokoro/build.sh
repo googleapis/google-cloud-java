@@ -65,7 +65,7 @@ case ${JOB_TYPE} in
     fi
     ;;
   graalvm-presubmit)
-    if [ -n "${MAVEN_MODULES}" ]; then
+    if [ -z "${MAVEN_MODULES}" ]; then
       echo "MAVEN_MODULES not defined in environment."
       exit 1
     fi
