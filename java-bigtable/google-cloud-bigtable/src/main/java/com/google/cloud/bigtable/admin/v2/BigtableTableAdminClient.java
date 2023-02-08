@@ -1218,7 +1218,8 @@ public final class BigtableTableAdminClient implements AutoCloseable {
     awaitOptimizeRestoredTableAsync(token).get();
   }
 
-  /** Awaits a restored table is fully optimized asynchronously.
+  /**
+   * Awaits a restored table is fully optimized asynchronously.
    *
    * <p>Sample code
    *
@@ -1241,7 +1242,8 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    *   },
    *   MoreExecutors.directExecutor()
    * );
-   * */
+   * }</pre>
+   */
   public ApiFuture<Void> awaitOptimizeRestoredTableAsync(
       OptimizeRestoredTableOperationToken token) {
     return transformToVoid(
