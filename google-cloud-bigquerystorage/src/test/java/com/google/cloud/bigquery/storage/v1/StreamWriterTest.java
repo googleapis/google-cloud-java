@@ -1237,7 +1237,7 @@ public class StreamWriterTest {
             .build();
 
     writer.close();
-    assertTrue(writer.isDone());
+    assertTrue(writer.isClosed());
     ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
     ExecutionException ex =
         assertThrows(
@@ -1248,6 +1248,7 @@ public class StreamWriterTest {
     assertEquals(
         Status.Code.FAILED_PRECONDITION,
         ((StatusRuntimeException) ex.getCause()).getStatus().getCode());
+    assertTrue(writer.isUserClosed());
   }
 
   @Test(timeout = 10000)
@@ -1256,7 +1257,7 @@ public class StreamWriterTest {
         StreamWriter.newBuilder(TEST_STREAM_1, client).setWriterSchema(createProtoSchema()).build();
 
     writer.close();
-    assertTrue(writer.isDone());
+    assertTrue(writer.isClosed());
     ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
     ExecutionException ex =
         assertThrows(
@@ -1267,6 +1268,7 @@ public class StreamWriterTest {
     assertEquals(
         Status.Code.FAILED_PRECONDITION,
         ((StatusRuntimeException) ex.getCause()).getStatus().getCode());
+    assertTrue(writer.isUserClosed());
   }
 
   @Test(timeout = 10000)
@@ -1291,7 +1293,8 @@ public class StreamWriterTest {
               appendFuture2.get();
             });
     assertTrue(ex.getCause() instanceof InvalidArgumentException);
-    assertFalse(writer.isDone());
+    assertFalse(writer.isClosed());
+    assertFalse(writer.isUserClosed());
   }
 
   @Test(timeout = 10000)
@@ -1311,7 +1314,8 @@ public class StreamWriterTest {
             () -> {
               appendFuture2.get();
             });
-    assertTrue(writer.isDone());
+    assertTrue(writer.isClosed());
     assertTrue(ex.getCause() instanceof InvalidArgumentException);
+    assertFalse(writer.isUserClosed());
   }
 }

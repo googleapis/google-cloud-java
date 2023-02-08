@@ -1141,10 +1141,11 @@ public class JsonStreamWriterTest {
 
   @Test
   public void testIsDone() throws DescriptorValidationException, IOException, InterruptedException {
-    JsonStreamWriter writer1 = getTestJsonStreamWriterBuilder(TEST_STREAM, TABLE_SCHEMA).build();
-    Assert.assertFalse(writer1.isDone());
-    writer1.close();
-    Assert.assertTrue(writer1.isDone());
+    JsonStreamWriter writer = getTestJsonStreamWriterBuilder(TEST_STREAM, TABLE_SCHEMA).build();
+    Assert.assertFalse(writer.isClosed());
+    writer.close();
+    Assert.assertTrue(writer.isClosed());
+    Assert.assertTrue(writer.isUserClosed());
   }
 
   private AppendRowsResponse createAppendResponse(long offset) {

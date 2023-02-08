@@ -147,4 +147,15 @@
   <className>com/google/cloud/bigquery/storage/v1/ConnectionWorkerPool</className>
   <method>ConnectionWorkerPool(long, long, java.time.Duration, com.google.api.gax.batching.FlowController$LimitExceededBehavior, java.lang.String, com.google.cloud.bigquery.storage.v1.BigQueryWriteSettings)</method>
   </difference>
+  <difference>
+  <differenceType>7002</differenceType>
+  <className>com/google/cloud/bigquery/storage/v1/StreamWriter</className>
+  <method>boolean isDone()</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/JsonStreamWriter</className>
+    <method>boolean isDone()</method>
+  </difference>
 </differences>
+

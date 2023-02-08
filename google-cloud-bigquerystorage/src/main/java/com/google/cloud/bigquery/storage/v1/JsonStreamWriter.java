@@ -387,8 +387,13 @@ public class JsonStreamWriter implements AutoCloseable {
    *     JsonStreamWriter is explicitly closed or the underlying connection is broken when
    *     connection pool is not used. Client should recreate JsonStreamWriter in this case.
    */
-  public boolean isDone() {
-    return this.streamWriter.isDone();
+  public boolean isClosed() {
+    return this.streamWriter.isClosed();
+  }
+
+  /** @return if user explicitly closed the writer. */
+  public boolean isUserClosed() {
+    return this.streamWriter.isUserClosed();
   }
 
   public static final class Builder {
