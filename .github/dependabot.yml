@@ -1,7 +1,7 @@
 version: 2
 updates:
 # rules for the main branch
-- package-ecosystem: maven
+- package-ecosystem: pip
   directory: "/"
   schedule:
     interval: daily
