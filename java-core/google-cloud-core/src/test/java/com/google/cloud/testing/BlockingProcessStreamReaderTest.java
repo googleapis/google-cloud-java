@@ -16,6 +16,7 @@
 
 package com.google.cloud.testing;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 
 import com.google.api.client.util.Charsets;
@@ -53,6 +54,11 @@ public class BlockingProcessStreamReaderTest {
           + "[emulator] log line 2\n"
           + "[emulator] Nov 08, 2016 2:05:44 PM io.netty.buffer.PooledByteBufAllocator <clinit>\n"
           + "[emulator] FINE: log line 3\n";
+  private static final String LOG_LINES_WITHOUT_BLOCK_UNTIL_TEXT =
+      "INFO: log line 1\n"
+          + "log line 2\n"
+          + "FINE: log line 3\n";
+
 
   @Rule public Timeout globalTimeout = Timeout.seconds(10);
 
@@ -94,6 +100,19 @@ public class BlockingProcessStreamReaderTest {
         "[emulator] log line 1" + System.lineSeparator() + "[emulator] log line 2",
         logger.getLogs().get(Level.INFO).iterator().next());
     assertEquals("[emulator] log line 3", logger.getLogs().get(Level.FINE).iterator().next());
+    stream.close();
+  }
+
+  @Test
+  public void testStartUpLogs() throws IOException, InterruptedException {
+    TestLogger logger = new TestLogger();
+    InputStream stream = new ByteArrayInputStream(LOG_LINES_WITHOUT_BLOCK_UNTIL_TEXT.getBytes(Charsets.UTF_8));
+    BlockingProcessStreamReader.start("emulator", stream, BLOCK_UNTIL, logger).join();
+    assertThat(logger.logs.get(Level.INFO).iterator().next()).isEqualTo(
+        "log line 1" + System.lineSeparator() +
+            "log line 2" + System.lineSeparator() +
+            "log line 3" + System.lineSeparator()
+    );
     stream.close();
   }
 }
