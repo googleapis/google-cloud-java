@@ -43,7 +43,6 @@ class BlockingProcessStreamReader extends Thread {
   private boolean collectionMode;
   private final String emulatorTag;
   private final Pattern logLinePattern;
-  private final StartupLogAggregator logAggregator;
 
   private BlockingProcessStreamReader(
       String emulator, InputStream stream, String blockUntil, Logger logger) throws IOException {
@@ -53,20 +52,20 @@ class BlockingProcessStreamReader extends Thread {
     this.logger = logger;
     this.emulatorTag = "[" + emulator + "]";
     this.logLinePattern = Pattern.compile("(\\[" + emulator + "\\]\\s)?(\\w+):.*");
-    this.logAggregator = new StartupLogAggregator(logger);
+    StartupLogRecorder logAggregator = new StartupLogRecorder(logger);
     if (!Strings.isNullOrEmpty(blockUntil)) {
       String line;
       do {
         line = errorReader.readLine();
         if (line != null) {
-          logAggregator.process(line);
+          logAggregator.record(line);
         }
       } while (line != null && !line.contains(blockUntil));
     }
 
     boolean streamClosed = errorReader.read() == -1;
     if (streamClosed) {
-      logAggregator.writeLog();
+      logAggregator.flush();
     }
   }
 

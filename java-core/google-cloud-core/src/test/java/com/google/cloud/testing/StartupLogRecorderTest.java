@@ -24,28 +24,28 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.Test;
 
-public class StartupLogAggregatorTest {
+public class StartupLogRecorderTest {
 
   private static final String LOG_LINES =
-      "INFO: log line 1\n"
-          + "log line 2\n"
-          + "FINE: log line 3\n";
+      "INFO: log line 1\n" + "log line 2\n" + "FINE: log line 3\n";
   private final TestLogger testLogger = new TestLogger();
-  private StartupLogAggregator logAggregator = new StartupLogAggregator(testLogger);
-
+  private final StartupLogRecorder logRecorder = new StartupLogRecorder(testLogger);
 
   @Test
   public void shouldAggregateLogs() {
     for (String logLine : LOG_LINES.split("\n")) {
-      logAggregator.process(logLine);
+      logRecorder.record(logLine);
     }
-    logAggregator.writeLog();
+    logRecorder.flush();
 
-    assertThat(testLogger.logs.get(Level.INFO).iterator().next()).isEqualTo(
-        "log line 1" + System.lineSeparator() +
-            "log line 2" + System.lineSeparator() +
-            "log line 3" + System.lineSeparator()
-    );
+    assertThat(testLogger.logs.get(Level.INFO).iterator().next())
+        .isEqualTo(
+            "log line 1"
+                + System.lineSeparator()
+                + "log line 2"
+                + System.lineSeparator()
+                + "log line 3"
+                + System.lineSeparator());
   }
 
   private static final class TestLogger extends Logger {
@@ -64,5 +64,4 @@ public class StartupLogAggregatorTest {
       return logs;
     }
   }
-
 }

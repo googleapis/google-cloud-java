@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,18 +21,27 @@ import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class StartupLogAggregator {
+/**
+ * This class records the logs in memory and flush them onto the {@link java.util.logging.Logger}
+ * when {@link #flush()} method is called.
+ */
+class StartupLogRecorder {
 
   private final Pattern logLinePattern = Pattern.compile("([A-Z]+):.*");
   private final Logger logger;
   private final StringBuilder logs;
 
-  public StartupLogAggregator(Logger logger) {
+  public StartupLogRecorder(Logger logger) {
     this.logger = logger;
     this.logs = new StringBuilder();
   }
 
-  public void process(String logLine) {
+  /**
+   * Records a log line.
+   *
+   * @param logLine the log to record.
+   */
+  public void record(String logLine) {
     if (hasLevel(logLine)) {
       String stripLevel = logLine.split(":")[1].trim();
       this.logs.append(stripLevel);
@@ -42,7 +51,8 @@ public class StartupLogAggregator {
     this.logs.append(System.getProperty("line.separator"));
   }
 
-  public void writeLog() {
+  /** Flush all the logs to the underlying {@link java.util.logging.Logger}. */
+  public void flush() {
     logger.log(Level.INFO, this.logs.toString());
   }
 
