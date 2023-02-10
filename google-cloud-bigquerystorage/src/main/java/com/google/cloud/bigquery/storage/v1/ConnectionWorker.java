@@ -24,6 +24,7 @@ import com.google.cloud.bigquery.storage.v1.Exceptions.AppendSerializtionError;
 import com.google.cloud.bigquery.storage.v1.StreamConnection.DoneCallback;
 import com.google.cloud.bigquery.storage.v1.StreamConnection.RequestCallback;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.Uninterruptibles;
 import com.google.protobuf.Int64Value;
 import io.grpc.Status;
@@ -267,16 +268,19 @@ class ConnectionWorker implements AutoCloseable {
   }
 
   /** Schedules the writing of rows at given offset. */
-  ApiFuture<AppendRowsResponse> append(
-      String streamName, ProtoSchema writerSchema, ProtoRows rows, long offset) {
+  ApiFuture<AppendRowsResponse> append(StreamWriter streamWriter, ProtoRows rows, long offset) {
+    Preconditions.checkNotNull(streamWriter);
     AppendRowsRequest.Builder requestBuilder = AppendRowsRequest.newBuilder();
     requestBuilder.setProtoRows(
-        ProtoData.newBuilder().setWriterSchema(writerSchema).setRows(rows).build());
+        ProtoData.newBuilder()
+            .setWriterSchema(streamWriter.getProtoSchema())
+            .setRows(rows)
+            .build());
     if (offset >= 0) {
       requestBuilder.setOffset(Int64Value.of(offset));
     }
-    requestBuilder.setWriteStream(streamName);
-    return appendInternal(requestBuilder.build());
+    requestBuilder.setWriteStream(streamWriter.getStreamName());
+    return appendInternal(streamWriter, requestBuilder.build());
   }
 
   Boolean isUserClosed() {
@@ -288,8 +292,9 @@ class ConnectionWorker implements AutoCloseable {
     }
   }
 
-  private ApiFuture<AppendRowsResponse> appendInternal(AppendRowsRequest message) {
-    AppendRequestAndResponse requestWrapper = new AppendRequestAndResponse(message);
+  private ApiFuture<AppendRowsResponse> appendInternal(
+      StreamWriter streamWriter, AppendRowsRequest message) {
+    AppendRequestAndResponse requestWrapper = new AppendRequestAndResponse(message, streamWriter);
     if (requestWrapper.messageSize > getApiMaxRequestBytes()) {
       requestWrapper.appendResult.setException(
           new StatusRuntimeException(
@@ -840,10 +845,14 @@ class ConnectionWorker implements AutoCloseable {
     final AppendRowsRequest message;
     final long messageSize;
 
-    AppendRequestAndResponse(AppendRowsRequest message) {
+    // The writer that issues the call of the request.
+    final StreamWriter streamWriter;
+
+    AppendRequestAndResponse(AppendRowsRequest message, StreamWriter streamWriter) {
       this.appendResult = SettableApiFuture.create();
       this.message = message;
       this.messageSize = message.getProtoRows().getSerializedSize();
+      this.streamWriter = streamWriter;
     }
   }
 

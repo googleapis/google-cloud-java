@@ -145,8 +145,7 @@ public class StreamWriter implements AutoCloseable {
     public ApiFuture<AppendRowsResponse> append(
         StreamWriter streamWriter, ProtoRows protoRows, long offset) {
       if (getKind() == Kind.CONNECTION_WORKER) {
-        return connectionWorker()
-            .append(streamWriter.getStreamName(), streamWriter.getProtoSchema(), protoRows, offset);
+        return connectionWorker().append(streamWriter, protoRows, offset);
       } else {
         return connectionWorkerPool().append(streamWriter, protoRows, offset);
       }
@@ -376,7 +375,7 @@ public class StreamWriter implements AutoCloseable {
   public ApiFuture<AppendRowsResponse> append(ProtoRows rows, long offset) {
     if (userClosed.get()) {
       AppendRequestAndResponse requestWrapper =
-          new AppendRequestAndResponse(AppendRowsRequest.newBuilder().build());
+          new AppendRequestAndResponse(AppendRowsRequest.newBuilder().build(), this);
       requestWrapper.appendResult.setException(
           new Exceptions.StreamWriterClosedException(
               Status.fromCode(Status.Code.FAILED_PRECONDITION)
