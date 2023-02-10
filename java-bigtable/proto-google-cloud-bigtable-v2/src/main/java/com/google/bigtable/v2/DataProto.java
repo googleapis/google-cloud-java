@@ -103,6 +103,18 @@ public final class DataProto {
       internal_static_google_bigtable_v2_ReadModifyWriteRule_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_bigtable_v2_ReadModifyWriteRule_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_v2_StreamPartition_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_bigtable_v2_StreamPartition_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_v2_StreamContinuationTokens_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_bigtable_v2_StreamContinuationTokens_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_v2_StreamContinuationToken_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_bigtable_v2_StreamContinuationToken_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -182,12 +194,18 @@ public final class DataProto {
           + "tation\"\200\001\n\023ReadModifyWriteRule\022\023\n\013family"
           + "_name\030\001 \001(\t\022\030\n\020column_qualifier\030\002 \001(\014\022\026\n"
           + "\014append_value\030\003 \001(\014H\000\022\032\n\020increment_amoun"
-          + "t\030\004 \001(\003H\000B\006\n\004ruleB\265\001\n\026com.google.bigtabl"
-          + "e.v2B\tDataProtoP\001Z:google.golang.org/gen"
-          + "proto/googleapis/bigtable/v2;bigtable\252\002\030"
-          + "Google.Cloud.Bigtable.V2\312\002\030Google\\Cloud\\"
-          + "Bigtable\\V2\352\002\033Google::Cloud::Bigtable::V"
-          + "2b\006proto3"
+          + "t\030\004 \001(\003H\000B\006\n\004rule\"B\n\017StreamPartition\022/\n\t"
+          + "row_range\030\001 \001(\0132\034.google.bigtable.v2.Row"
+          + "Range\"W\n\030StreamContinuationTokens\022;\n\006tok"
+          + "ens\030\001 \003(\0132+.google.bigtable.v2.StreamCon"
+          + "tinuationToken\"`\n\027StreamContinuationToke"
+          + "n\0226\n\tpartition\030\001 \001(\0132#.google.bigtable.v"
+          + "2.StreamPartition\022\r\n\005token\030\002 \001(\tB\265\001\n\026com"
+          + ".google.bigtable.v2B\tDataProtoP\001Z:google"
+          + ".golang.org/genproto/googleapis/bigtable"
+          + "/v2;bigtable\252\002\030Google.Cloud.Bigtable.V2\312"
+          + "\002\030Google\\Cloud\\Bigtable\\V2\352\002\033Google::Clo"
+          + "ud::Bigtable::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -366,6 +384,30 @@ public final class DataProto {
             internal_static_google_bigtable_v2_ReadModifyWriteRule_descriptor,
             new java.lang.String[] {
               "FamilyName", "ColumnQualifier", "AppendValue", "IncrementAmount", "Rule",
+            });
+    internal_static_google_bigtable_v2_StreamPartition_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_bigtable_v2_StreamPartition_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_bigtable_v2_StreamPartition_descriptor,
+            new java.lang.String[] {
+              "RowRange",
+            });
+    internal_static_google_bigtable_v2_StreamContinuationTokens_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_bigtable_v2_StreamContinuationTokens_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_bigtable_v2_StreamContinuationTokens_descriptor,
+            new java.lang.String[] {
+              "Tokens",
+            });
+    internal_static_google_bigtable_v2_StreamContinuationToken_descriptor =
+        getDescriptor().getMessageTypes().get(14);
+    internal_static_google_bigtable_v2_StreamContinuationToken_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_bigtable_v2_StreamContinuationToken_descriptor,
+            new java.lang.String[] {
+              "Partition", "Token",
             });
   }
 

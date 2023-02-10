@@ -18,43 +18,45 @@
 
 package com.google.bigtable.v2;
 
-public interface PingAndWarmRequestOrBuilder
+public interface GenerateInitialChangeStreamPartitionsRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.bigtable.v2.PingAndWarmRequest)
+    // @@protoc_insertion_point(interface_extends:google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Required. The unique name of the instance to check permissions for as well
-   * as respond. Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * Required. The unique name of the table from which to get change stream
+   * partitions. Values are of the form
+   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+   * Change streaming must be enabled on the table.
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
-   * @return The name.
+   * @return The tableName.
    */
-  java.lang.String getName();
+  java.lang.String getTableName();
   /**
    *
    *
    * <pre>
-   * Required. The unique name of the instance to check permissions for as well
-   * as respond. Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * Required. The unique name of the table from which to get change stream
+   * partitions. Values are of the form
+   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+   * Change streaming must be enabled on the table.
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
-   * @return The bytes for name.
+   * @return The bytes for tableName.
    */
-  com.google.protobuf.ByteString getNameBytes();
+  com.google.protobuf.ByteString getTableNameBytes();
 
   /**
    *
@@ -62,6 +64,7 @@ public interface PingAndWarmRequestOrBuilder
    * <pre>
    * This value specifies routing for replication. If not specified, the
    * "default" application profile will be used.
+   * Single cluster routing must be configured on the profile.
    * </pre>
    *
    * <code>string app_profile_id = 2;</code>
@@ -75,6 +78,7 @@ public interface PingAndWarmRequestOrBuilder
    * <pre>
    * This value specifies routing for replication. If not specified, the
    * "default" application profile will be used.
+   * Single cluster routing must be configured on the profile.
    * </pre>
    *
    * <code>string app_profile_id = 2;</code>

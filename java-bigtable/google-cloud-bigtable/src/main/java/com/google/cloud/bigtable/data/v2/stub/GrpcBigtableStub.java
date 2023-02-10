@@ -28,18 +28,23 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.bigtable.v2.CheckAndMutateRowRequest;
 import com.google.bigtable.v2.CheckAndMutateRowResponse;
+import com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest;
+import com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsResponse;
 import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowResponse;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.MutateRowsResponse;
 import com.google.bigtable.v2.PingAndWarmRequest;
 import com.google.bigtable.v2.PingAndWarmResponse;
+import com.google.bigtable.v2.ReadChangeStreamRequest;
+import com.google.bigtable.v2.ReadChangeStreamResponse;
 import com.google.bigtable.v2.ReadModifyWriteRowRequest;
 import com.google.bigtable.v2.ReadModifyWriteRowResponse;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.SampleRowKeysResponse;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -122,6 +127,36 @@ public class GrpcBigtableStub extends BigtableStub {
                   ProtoUtils.marshaller(ReadModifyWriteRowResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          GenerateInitialChangeStreamPartitionsRequest,
+          GenerateInitialChangeStreamPartitionsResponse>
+      generateInitialChangeStreamPartitionsMethodDescriptor =
+          MethodDescriptor
+              .<GenerateInitialChangeStreamPartitionsRequest,
+                  GenerateInitialChangeStreamPartitionsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(
+                  "google.bigtable.v2.Bigtable/GenerateInitialChangeStreamPartitions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      GenerateInitialChangeStreamPartitionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      GenerateInitialChangeStreamPartitionsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ReadChangeStreamRequest, ReadChangeStreamResponse>
+      readChangeStreamMethodDescriptor =
+          MethodDescriptor.<ReadChangeStreamRequest, ReadChangeStreamResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName("google.bigtable.v2.Bigtable/ReadChangeStream")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ReadChangeStreamRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ReadChangeStreamResponse.getDefaultInstance()))
+              .build();
+
   private final ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> readRowsCallable;
   private final ServerStreamingCallable<SampleRowKeysRequest, SampleRowKeysResponse>
       sampleRowKeysCallable;
@@ -132,6 +167,12 @@ public class GrpcBigtableStub extends BigtableStub {
   private final UnaryCallable<PingAndWarmRequest, PingAndWarmResponse> pingAndWarmCallable;
   private final UnaryCallable<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>
       readModifyWriteRowCallable;
+  private final ServerStreamingCallable<
+          GenerateInitialChangeStreamPartitionsRequest,
+          GenerateInitialChangeStreamPartitionsResponse>
+      generateInitialChangeStreamPartitionsCallable;
+  private final ServerStreamingCallable<ReadChangeStreamRequest, ReadChangeStreamResponse>
+      readChangeStreamCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -298,6 +339,33 @@ public class GrpcBigtableStub extends BigtableStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<
+            GenerateInitialChangeStreamPartitionsRequest,
+            GenerateInitialChangeStreamPartitionsResponse>
+        generateInitialChangeStreamPartitionsTransportSettings =
+            GrpcCallSettings
+                .<GenerateInitialChangeStreamPartitionsRequest,
+                    GenerateInitialChangeStreamPartitionsResponse>
+                    newBuilder()
+                .setMethodDescriptor(generateInitialChangeStreamPartitionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("table_name", String.valueOf(request.getTableName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<ReadChangeStreamRequest, ReadChangeStreamResponse>
+        readChangeStreamTransportSettings =
+            GrpcCallSettings.<ReadChangeStreamRequest, ReadChangeStreamResponse>newBuilder()
+                .setMethodDescriptor(readChangeStreamMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("table_name", String.valueOf(request.getTableName()));
+                      return params.build();
+                    })
+                .build();
 
     this.readRowsCallable =
         callableFactory.createServerStreamingCallable(
@@ -324,6 +392,14 @@ public class GrpcBigtableStub extends BigtableStub {
             readModifyWriteRowTransportSettings,
             settings.readModifyWriteRowSettings(),
             clientContext);
+    this.generateInitialChangeStreamPartitionsCallable =
+        callableFactory.createServerStreamingCallable(
+            generateInitialChangeStreamPartitionsTransportSettings,
+            settings.generateInitialChangeStreamPartitionsSettings(),
+            clientContext);
+    this.readChangeStreamCallable =
+        callableFactory.createServerStreamingCallable(
+            readChangeStreamTransportSettings, settings.readChangeStreamSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -369,6 +445,20 @@ public class GrpcBigtableStub extends BigtableStub {
   public UnaryCallable<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>
       readModifyWriteRowCallable() {
     return readModifyWriteRowCallable;
+  }
+
+  @Override
+  public ServerStreamingCallable<
+          GenerateInitialChangeStreamPartitionsRequest,
+          GenerateInitialChangeStreamPartitionsResponse>
+      generateInitialChangeStreamPartitionsCallable() {
+    return generateInitialChangeStreamPartitionsCallable;
+  }
+
+  @Override
+  public ServerStreamingCallable<ReadChangeStreamRequest, ReadChangeStreamResponse>
+      readChangeStreamCallable() {
+    return readChangeStreamCallable;
   }
 
   @Override

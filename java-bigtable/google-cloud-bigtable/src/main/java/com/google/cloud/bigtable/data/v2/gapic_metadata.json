@@ -13,6 +13,9 @@
             "CheckAndMutateRow": {
               "methods": ["checkAndMutateRow", "checkAndMutateRow", "checkAndMutateRow", "checkAndMutateRow", "checkAndMutateRow", "checkAndMutateRowCallable"]
             },
+            "GenerateInitialChangeStreamPartitions": {
+              "methods": ["generateInitialChangeStreamPartitionsCallable"]
+            },
             "MutateRow": {
               "methods": ["mutateRow", "mutateRow", "mutateRow", "mutateRow", "mutateRow", "mutateRowCallable"]
             },
@@ -21,6 +24,9 @@
             },
             "PingAndWarm": {
               "methods": ["pingAndWarm", "pingAndWarm", "pingAndWarm", "pingAndWarm", "pingAndWarm", "pingAndWarmCallable"]
+            },
+            "ReadChangeStream": {
+              "methods": ["readChangeStreamCallable"]
             },
             "ReadModifyWriteRow": {
               "methods": ["readModifyWriteRow", "readModifyWriteRow", "readModifyWriteRow", "readModifyWriteRow", "readModifyWriteRow", "readModifyWriteRowCallable"]

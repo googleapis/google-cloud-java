@@ -35,12 +35,16 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.bigtable.v2.CheckAndMutateRowRequest;
 import com.google.bigtable.v2.CheckAndMutateRowResponse;
+import com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest;
+import com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsResponse;
 import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowResponse;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.MutateRowsResponse;
 import com.google.bigtable.v2.PingAndWarmRequest;
 import com.google.bigtable.v2.PingAndWarmResponse;
+import com.google.bigtable.v2.ReadChangeStreamRequest;
+import com.google.bigtable.v2.ReadChangeStreamResponse;
 import com.google.bigtable.v2.ReadModifyWriteRowRequest;
 import com.google.bigtable.v2.ReadModifyWriteRowResponse;
 import com.google.bigtable.v2.ReadRowsRequest;
@@ -83,6 +87,12 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
   private final UnaryCallSettings<PingAndWarmRequest, PingAndWarmResponse> pingAndWarmSettings;
   private final UnaryCallSettings<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>
       readModifyWriteRowSettings;
+  private final ServerStreamingCallSettings<
+          GenerateInitialChangeStreamPartitionsRequest,
+          GenerateInitialChangeStreamPartitionsResponse>
+      generateInitialChangeStreamPartitionsSettings;
+  private final ServerStreamingCallSettings<ReadChangeStreamRequest, ReadChangeStreamResponse>
+      readChangeStreamSettings;
 
   /** Returns the object with the settings used for calls to readRows. */
   public ServerStreamingCallSettings<ReadRowsRequest, ReadRowsResponse> readRowsSettings() {
@@ -120,6 +130,22 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
   public UnaryCallSettings<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>
       readModifyWriteRowSettings() {
     return readModifyWriteRowSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to generateInitialChangeStreamPartitions.
+   */
+  public ServerStreamingCallSettings<
+          GenerateInitialChangeStreamPartitionsRequest,
+          GenerateInitialChangeStreamPartitionsResponse>
+      generateInitialChangeStreamPartitionsSettings() {
+    return generateInitialChangeStreamPartitionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to readChangeStream. */
+  public ServerStreamingCallSettings<ReadChangeStreamRequest, ReadChangeStreamResponse>
+      readChangeStreamSettings() {
+    return readChangeStreamSettings;
   }
 
   public BigtableStub createStub() throws IOException {
@@ -203,6 +229,9 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
     checkAndMutateRowSettings = settingsBuilder.checkAndMutateRowSettings().build();
     pingAndWarmSettings = settingsBuilder.pingAndWarmSettings().build();
     readModifyWriteRowSettings = settingsBuilder.readModifyWriteRowSettings().build();
+    generateInitialChangeStreamPartitionsSettings =
+        settingsBuilder.generateInitialChangeStreamPartitionsSettings().build();
+    readChangeStreamSettings = settingsBuilder.readChangeStreamSettings().build();
   }
 
   /** Builder for BigtableStubSettings. */
@@ -221,6 +250,13 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
         pingAndWarmSettings;
     private final UnaryCallSettings.Builder<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>
         readModifyWriteRowSettings;
+    private final ServerStreamingCallSettings.Builder<
+            GenerateInitialChangeStreamPartitionsRequest,
+            GenerateInitialChangeStreamPartitionsResponse>
+        generateInitialChangeStreamPartitionsSettings;
+    private final ServerStreamingCallSettings.Builder<
+            ReadChangeStreamRequest, ReadChangeStreamResponse>
+        readChangeStreamSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -241,6 +277,10 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
       definitions.put(
           "no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_5_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_6_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -294,6 +334,22 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
       definitions.put("no_retry_0_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
       definitions.put("no_retry_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
+              .build();
+      definitions.put("no_retry_5_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(43200000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(43200000L))
+              .setTotalTimeout(Duration.ofMillis(43200000L))
+              .build();
+      definitions.put("no_retry_6_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -311,6 +367,8 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
       checkAndMutateRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       pingAndWarmSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       readModifyWriteRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      generateInitialChangeStreamPartitionsSettings = ServerStreamingCallSettings.newBuilder();
+      readChangeStreamSettings = ServerStreamingCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -331,6 +389,9 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
       checkAndMutateRowSettings = settings.checkAndMutateRowSettings.toBuilder();
       pingAndWarmSettings = settings.pingAndWarmSettings.toBuilder();
       readModifyWriteRowSettings = settings.readModifyWriteRowSettings.toBuilder();
+      generateInitialChangeStreamPartitionsSettings =
+          settings.generateInitialChangeStreamPartitionsSettings.toBuilder();
+      readChangeStreamSettings = settings.readChangeStreamSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -389,6 +450,16 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
+      builder
+          .generateInitialChangeStreamPartitionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
+
+      builder
+          .readChangeStreamSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
+
       return builder;
     }
 
@@ -446,6 +517,22 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
     public UnaryCallSettings.Builder<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>
         readModifyWriteRowSettings() {
       return readModifyWriteRowSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to generateInitialChangeStreamPartitions.
+     */
+    public ServerStreamingCallSettings.Builder<
+            GenerateInitialChangeStreamPartitionsRequest,
+            GenerateInitialChangeStreamPartitionsResponse>
+        generateInitialChangeStreamPartitionsSettings() {
+      return generateInitialChangeStreamPartitionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to readChangeStream. */
+    public ServerStreamingCallSettings.Builder<ReadChangeStreamRequest, ReadChangeStreamResponse>
+        readChangeStreamSettings() {
+      return readChangeStreamSettings;
     }
 
     @Override

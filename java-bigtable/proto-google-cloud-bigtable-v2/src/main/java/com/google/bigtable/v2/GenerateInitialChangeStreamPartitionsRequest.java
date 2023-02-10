@@ -22,30 +22,33 @@ package com.google.bigtable.v2;
  *
  *
  * <pre>
- * Request message for client connection keep-alive and warming.
+ * NOTE: This API is intended to be used by Apache Beam BigtableIO.
+ * Request message for Bigtable.GenerateInitialChangeStreamPartitions.
  * </pre>
  *
- * Protobuf type {@code google.bigtable.v2.PingAndWarmRequest}
+ * Protobuf type {@code google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest}
  */
-public final class PingAndWarmRequest extends com.google.protobuf.GeneratedMessageV3
+public final class GenerateInitialChangeStreamPartitionsRequest
+    extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.bigtable.v2.PingAndWarmRequest)
-    PingAndWarmRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest)
+    GenerateInitialChangeStreamPartitionsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use PingAndWarmRequest.newBuilder() to construct.
-  private PingAndWarmRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use GenerateInitialChangeStreamPartitionsRequest.newBuilder() to construct.
+  private GenerateInitialChangeStreamPartitionsRequest(
+      com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private PingAndWarmRequest() {
-    name_ = "";
+  private GenerateInitialChangeStreamPartitionsRequest() {
+    tableName_ = "";
     appProfileId_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new PingAndWarmRequest();
+    return new GenerateInitialChangeStreamPartitionsRequest();
   }
 
   @java.lang.Override
@@ -55,47 +58,48 @@ public final class PingAndWarmRequest extends com.google.protobuf.GeneratedMessa
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.v2.BigtableProto
-        .internal_static_google_bigtable_v2_PingAndWarmRequest_descriptor;
+        .internal_static_google_bigtable_v2_GenerateInitialChangeStreamPartitionsRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.bigtable.v2.BigtableProto
-        .internal_static_google_bigtable_v2_PingAndWarmRequest_fieldAccessorTable
+        .internal_static_google_bigtable_v2_GenerateInitialChangeStreamPartitionsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.bigtable.v2.PingAndWarmRequest.class,
-            com.google.bigtable.v2.PingAndWarmRequest.Builder.class);
+            com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest.class,
+            com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest.Builder.class);
   }
 
-  public static final int NAME_FIELD_NUMBER = 1;
+  public static final int TABLE_NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private volatile java.lang.Object name_ = "";
+  private volatile java.lang.Object tableName_ = "";
   /**
    *
    *
    * <pre>
-   * Required. The unique name of the instance to check permissions for as well
-   * as respond. Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * Required. The unique name of the table from which to get change stream
+   * partitions. Values are of the form
+   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+   * Change streaming must be enabled on the table.
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
-   * @return The name.
+   * @return The tableName.
    */
   @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
+  public java.lang.String getTableName() {
+    java.lang.Object ref = tableName_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      name_ = s;
+      tableName_ = s;
       return s;
     }
   }
@@ -103,24 +107,25 @@ public final class PingAndWarmRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The unique name of the instance to check permissions for as well
-   * as respond. Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * Required. The unique name of the table from which to get change stream
+   * partitions. Values are of the form
+   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+   * Change streaming must be enabled on the table.
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
-   * @return The bytes for name.
+   * @return The bytes for tableName.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getNameBytes() {
-    java.lang.Object ref = name_;
+  public com.google.protobuf.ByteString getTableNameBytes() {
+    java.lang.Object ref = tableName_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      name_ = b;
+      tableName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -137,6 +142,7 @@ public final class PingAndWarmRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * This value specifies routing for replication. If not specified, the
    * "default" application profile will be used.
+   * Single cluster routing must be configured on the profile.
    * </pre>
    *
    * <code>string app_profile_id = 2;</code>
@@ -161,6 +167,7 @@ public final class PingAndWarmRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * This value specifies routing for replication. If not specified, the
    * "default" application profile will be used.
+   * Single cluster routing must be configured on the profile.
    * </pre>
    *
    * <code>string app_profile_id = 2;</code>
@@ -194,8 +201,8 @@ public final class PingAndWarmRequest extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tableName_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appProfileId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, appProfileId_);
@@ -209,8 +216,8 @@ public final class PingAndWarmRequest extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tableName_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appProfileId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, appProfileId_);
@@ -225,13 +232,13 @@ public final class PingAndWarmRequest extends com.google.protobuf.GeneratedMessa
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.bigtable.v2.PingAndWarmRequest)) {
+    if (!(obj instanceof com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest)) {
       return super.equals(obj);
     }
-    com.google.bigtable.v2.PingAndWarmRequest other =
-        (com.google.bigtable.v2.PingAndWarmRequest) obj;
+    com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest other =
+        (com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest) obj;
 
-    if (!getName().equals(other.getName())) return false;
+    if (!getTableName().equals(other.getTableName())) return false;
     if (!getAppProfileId().equals(other.getAppProfileId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -244,8 +251,8 @@ public final class PingAndWarmRequest extends com.google.protobuf.GeneratedMessa
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + TABLE_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getTableName().hashCode();
     hash = (37 * hash) + APP_PROFILE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getAppProfileId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -253,71 +260,72 @@ public final class PingAndWarmRequest extends com.google.protobuf.GeneratedMessa
     return hash;
   }
 
-  public static com.google.bigtable.v2.PingAndWarmRequest parseFrom(java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest parseFrom(
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.bigtable.v2.PingAndWarmRequest parseFrom(
+  public static com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.bigtable.v2.PingAndWarmRequest parseFrom(
+  public static com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.bigtable.v2.PingAndWarmRequest parseFrom(
+  public static com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.bigtable.v2.PingAndWarmRequest parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.bigtable.v2.PingAndWarmRequest parseFrom(
+  public static com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.bigtable.v2.PingAndWarmRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
+  public static com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest parseFrom(
+      java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.bigtable.v2.PingAndWarmRequest parseFrom(
+  public static com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.bigtable.v2.PingAndWarmRequest parseDelimitedFrom(
-      java.io.InputStream input) throws java.io.IOException {
+  public static com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest
+      parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.bigtable.v2.PingAndWarmRequest parseDelimitedFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
+  public static com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest
+      parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.bigtable.v2.PingAndWarmRequest parseFrom(
+  public static com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.bigtable.v2.PingAndWarmRequest parseFrom(
+  public static com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -334,7 +342,8 @@ public final class PingAndWarmRequest extends com.google.protobuf.GeneratedMessa
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.bigtable.v2.PingAndWarmRequest prototype) {
+  public static Builder newBuilder(
+      com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -352,31 +361,33 @@ public final class PingAndWarmRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for client connection keep-alive and warming.
+   * NOTE: This API is intended to be used by Apache Beam BigtableIO.
+   * Request message for Bigtable.GenerateInitialChangeStreamPartitions.
    * </pre>
    *
-   * Protobuf type {@code google.bigtable.v2.PingAndWarmRequest}
+   * Protobuf type {@code google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.bigtable.v2.PingAndWarmRequest)
-      com.google.bigtable.v2.PingAndWarmRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest)
+      com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.bigtable.v2.BigtableProto
-          .internal_static_google_bigtable_v2_PingAndWarmRequest_descriptor;
+          .internal_static_google_bigtable_v2_GenerateInitialChangeStreamPartitionsRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.bigtable.v2.BigtableProto
-          .internal_static_google_bigtable_v2_PingAndWarmRequest_fieldAccessorTable
+          .internal_static_google_bigtable_v2_GenerateInitialChangeStreamPartitionsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.bigtable.v2.PingAndWarmRequest.class,
-              com.google.bigtable.v2.PingAndWarmRequest.Builder.class);
+              com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest.class,
+              com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest.Builder.class);
     }
 
-    // Construct using com.google.bigtable.v2.PingAndWarmRequest.newBuilder()
+    // Construct using
+    // com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -387,7 +398,7 @@ public final class PingAndWarmRequest extends com.google.protobuf.GeneratedMessa
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      name_ = "";
+      tableName_ = "";
       appProfileId_ = "";
       return this;
     }
@@ -395,17 +406,19 @@ public final class PingAndWarmRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.bigtable.v2.BigtableProto
-          .internal_static_google_bigtable_v2_PingAndWarmRequest_descriptor;
+          .internal_static_google_bigtable_v2_GenerateInitialChangeStreamPartitionsRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.bigtable.v2.PingAndWarmRequest getDefaultInstanceForType() {
-      return com.google.bigtable.v2.PingAndWarmRequest.getDefaultInstance();
+    public com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest
+        getDefaultInstanceForType() {
+      return com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest
+          .getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.bigtable.v2.PingAndWarmRequest build() {
-      com.google.bigtable.v2.PingAndWarmRequest result = buildPartial();
+    public com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest build() {
+      com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -413,9 +426,9 @@ public final class PingAndWarmRequest extends com.google.protobuf.GeneratedMessa
     }
 
     @java.lang.Override
-    public com.google.bigtable.v2.PingAndWarmRequest buildPartial() {
-      com.google.bigtable.v2.PingAndWarmRequest result =
-          new com.google.bigtable.v2.PingAndWarmRequest(this);
+    public com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest buildPartial() {
+      com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest result =
+          new com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest(this);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -423,10 +436,11 @@ public final class PingAndWarmRequest extends com.google.protobuf.GeneratedMessa
       return result;
     }
 
-    private void buildPartial0(com.google.bigtable.v2.PingAndWarmRequest result) {
+    private void buildPartial0(
+        com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.name_ = name_;
+        result.tableName_ = tableName_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.appProfileId_ = appProfileId_;
@@ -468,18 +482,22 @@ public final class PingAndWarmRequest extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.bigtable.v2.PingAndWarmRequest) {
-        return mergeFrom((com.google.bigtable.v2.PingAndWarmRequest) other);
+      if (other instanceof com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest) {
+        return mergeFrom(
+            (com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.bigtable.v2.PingAndWarmRequest other) {
-      if (other == com.google.bigtable.v2.PingAndWarmRequest.getDefaultInstance()) return this;
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
+    public Builder mergeFrom(
+        com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest other) {
+      if (other
+          == com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest
+              .getDefaultInstance()) return this;
+      if (!other.getTableName().isEmpty()) {
+        tableName_ = other.tableName_;
         bitField0_ |= 0x00000001;
         onChanged();
       }
@@ -516,7 +534,7 @@ public final class PingAndWarmRequest extends com.google.protobuf.GeneratedMessa
               break;
             case 10:
               {
-                name_ = input.readStringRequireUtf8();
+                tableName_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
@@ -545,28 +563,29 @@ public final class PingAndWarmRequest extends com.google.protobuf.GeneratedMessa
 
     private int bitField0_;
 
-    private java.lang.Object name_ = "";
+    private java.lang.Object tableName_ = "";
     /**
      *
      *
      * <pre>
-     * Required. The unique name of the instance to check permissions for as well
-     * as respond. Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+     * Required. The unique name of the table from which to get change stream
+     * partitions. Values are of the form
+     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+     * Change streaming must be enabled on the table.
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
-     * @return The name.
+     * @return The tableName.
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getTableName() {
+      java.lang.Object ref = tableName_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        tableName_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -576,23 +595,24 @@ public final class PingAndWarmRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The unique name of the instance to check permissions for as well
-     * as respond. Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+     * Required. The unique name of the table from which to get change stream
+     * partitions. Values are of the form
+     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+     * Change streaming must be enabled on the table.
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
-     * @return The bytes for name.
+     * @return The bytes for tableName.
      */
-    public com.google.protobuf.ByteString getNameBytes() {
-      java.lang.Object ref = name_;
+    public com.google.protobuf.ByteString getTableNameBytes() {
+      java.lang.Object ref = tableName_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        name_ = b;
+        tableName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -602,23 +622,24 @@ public final class PingAndWarmRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The unique name of the instance to check permissions for as well
-     * as respond. Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+     * Required. The unique name of the table from which to get change stream
+     * partitions. Values are of the form
+     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+     * Change streaming must be enabled on the table.
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
-     * @param value The name to set.
+     * @param value The tableName to set.
      * @return This builder for chaining.
      */
-    public Builder setName(java.lang.String value) {
+    public Builder setTableName(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      name_ = value;
+      tableName_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
@@ -627,19 +648,20 @@ public final class PingAndWarmRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The unique name of the instance to check permissions for as well
-     * as respond. Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+     * Required. The unique name of the table from which to get change stream
+     * partitions. Values are of the form
+     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+     * Change streaming must be enabled on the table.
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearName() {
-      name_ = getDefaultInstance().getName();
+    public Builder clearTableName() {
+      tableName_ = getDefaultInstance().getTableName();
       bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
@@ -648,24 +670,25 @@ public final class PingAndWarmRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The unique name of the instance to check permissions for as well
-     * as respond. Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+     * Required. The unique name of the table from which to get change stream
+     * partitions. Values are of the form
+     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
+     * Change streaming must be enabled on the table.
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
-     * @param value The bytes for name to set.
+     * @param value The bytes for tableName to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+    public Builder setTableNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      name_ = value;
+      tableName_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
@@ -678,6 +701,7 @@ public final class PingAndWarmRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * This value specifies routing for replication. If not specified, the
      * "default" application profile will be used.
+     * Single cluster routing must be configured on the profile.
      * </pre>
      *
      * <code>string app_profile_id = 2;</code>
@@ -701,6 +725,7 @@ public final class PingAndWarmRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * This value specifies routing for replication. If not specified, the
      * "default" application profile will be used.
+     * Single cluster routing must be configured on the profile.
      * </pre>
      *
      * <code>string app_profile_id = 2;</code>
@@ -724,6 +749,7 @@ public final class PingAndWarmRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * This value specifies routing for replication. If not specified, the
      * "default" application profile will be used.
+     * Single cluster routing must be configured on the profile.
      * </pre>
      *
      * <code>string app_profile_id = 2;</code>
@@ -746,6 +772,7 @@ public final class PingAndWarmRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * This value specifies routing for replication. If not specified, the
      * "default" application profile will be used.
+     * Single cluster routing must be configured on the profile.
      * </pre>
      *
      * <code>string app_profile_id = 2;</code>
@@ -764,6 +791,7 @@ public final class PingAndWarmRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * This value specifies routing for replication. If not specified, the
      * "default" application profile will be used.
+     * Single cluster routing must be configured on the profile.
      * </pre>
      *
      * <code>string app_profile_id = 2;</code>
@@ -793,53 +821,59 @@ public final class PingAndWarmRequest extends com.google.protobuf.GeneratedMessa
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.bigtable.v2.PingAndWarmRequest)
+    // @@protoc_insertion_point(builder_scope:google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.bigtable.v2.PingAndWarmRequest)
-  private static final com.google.bigtable.v2.PingAndWarmRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest)
+  private static final com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest
+      DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.bigtable.v2.PingAndWarmRequest();
+    DEFAULT_INSTANCE = new com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest();
   }
 
-  public static com.google.bigtable.v2.PingAndWarmRequest getDefaultInstance() {
+  public static com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<PingAndWarmRequest> PARSER =
-      new com.google.protobuf.AbstractParser<PingAndWarmRequest>() {
-        @java.lang.Override
-        public PingAndWarmRequest parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
-        }
-      };
+  private static final com.google.protobuf.Parser<GenerateInitialChangeStreamPartitionsRequest>
+      PARSER =
+          new com.google.protobuf.AbstractParser<GenerateInitialChangeStreamPartitionsRequest>() {
+            @java.lang.Override
+            public GenerateInitialChangeStreamPartitionsRequest parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
 
-  public static com.google.protobuf.Parser<PingAndWarmRequest> parser() {
+  public static com.google.protobuf.Parser<GenerateInitialChangeStreamPartitionsRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<PingAndWarmRequest> getParserForType() {
+  public com.google.protobuf.Parser<GenerateInitialChangeStreamPartitionsRequest>
+      getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.bigtable.v2.PingAndWarmRequest getDefaultInstanceForType() {
+  public com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }
