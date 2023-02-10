@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.19.0](https://github.com/googleapis/java-bigtable/compare/v2.18.4...v2.19.0) (2023-02-10)
+
+
+### Features
+
+* Support Cloud Bigtable Changestream ([#1569](https://github.com/googleapis/java-bigtable/issues/1569)) ([c7b4fdf](https://github.com/googleapis/java-bigtable/commit/c7b4fdf70f02b89f178a130d7fdcfcf8b2a6b790))
+
+
+### Bug Fixes
+
+* Modify ConvertExceptionCallable to retry on Goaway ([#1588](https://github.com/googleapis/java-bigtable/issues/1588)) ([cf752ea](https://github.com/googleapis/java-bigtable/commit/cf752eaf3b5fb2cddb11a2fbb5acb5a72c9862c2))
+
+
+### Documentation
+
+* Fix javadoc code example for awaitOptimizeRestoredTableAsync ([#1617](https://github.com/googleapis/java-bigtable/issues/1617)) ([8b23bb9](https://github.com/googleapis/java-bigtable/commit/8b23bb93d40dbfd9591c7d7546216e2543f9f418))
+
 ## [2.18.4](https://github.com/googleapis/java-bigtable/compare/v2.18.3...v2.18.4) (2023-02-06)
 
 
