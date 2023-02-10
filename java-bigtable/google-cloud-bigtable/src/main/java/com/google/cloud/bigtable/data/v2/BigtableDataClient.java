@@ -30,11 +30,14 @@ import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
+import com.google.cloud.bigtable.data.v2.models.ChangeStreamRecord;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.Filters;
 import com.google.cloud.bigtable.data.v2.models.Filters.Filter;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
+import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
+import com.google.cloud.bigtable.data.v2.models.ReadChangeStreamQuery;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
@@ -1487,6 +1490,298 @@ public class BigtableDataClient implements AutoCloseable {
    */
   public UnaryCallable<ReadModifyWriteRow, Row> readModifyWriteRowCallable() {
     return stub.readModifyWriteRowCallable();
+  }
+
+  /**
+   * Convenience method for synchronously streaming the partitions of a table. The returned
+   * ServerStream instance is not threadsafe, it can only be used from single thread.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   String tableId = "[TABLE]";
+   *
+   *   try {
+   *     ServerStream<ByteStringRange> stream = bigtableDataClient.generateInitialChangeStreamPartitions(tableId);
+   *     int count = 0;
+   *
+   *     // Iterator style
+   *     for (ByteStringRange partition : stream) {
+   *       if (++count > 10) {
+   *         stream.cancel();
+   *         break;
+   *       }
+   *       // Do something with partition
+   *     }
+   *   } catch (NotFoundException e) {
+   *     System.out.println("Tried to read a non-existent table");
+   *   } catch (RuntimeException e) {
+   *     e.printStackTrace();
+   *   }
+   * }
+   * }</pre>
+   *
+   * @see ServerStreamingCallable For call styles.
+   */
+  @InternalApi("Intended for use by the BigtableIO in apache/beam only.")
+  public ServerStream<ByteStringRange> generateInitialChangeStreamPartitions(String tableId) {
+    return generateInitialChangeStreamPartitionsCallable().call(tableId);
+  }
+
+  /**
+   * Convenience method for asynchronously streaming the partitions of a table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   String tableId = "[TABLE]";
+   *
+   *   bigtableDataClient.generateInitialChangeStreamPartitionsAsync(tableId, new ResponseObserver<RowRange>() {
+   *     StreamController controller;
+   *     int count = 0;
+   *
+   *     public void onStart(StreamController controller) {
+   *       this.controller = controller;
+   *     }
+   *     public void onResponse(ByteStringRange partition) {
+   *       if (++count > 10) {
+   *         controller.cancel();
+   *         return;
+   *       }
+   *       // Do something with partition
+   *     }
+   *     public void onError(Throwable t) {
+   *       if (t instanceof NotFoundException) {
+   *         System.out.println("Tried to read a non-existent table");
+   *       } else {
+   *         t.printStackTrace();
+   *       }
+   *     }
+   *     public void onComplete() {
+   *       // Handle stream completion
+   *     }
+   *   });
+   * }
+   * }</pre>
+   */
+  @InternalApi("Intended for use by the BigtableIO in apache/beam only.")
+  public void generateInitialChangeStreamPartitionsAsync(
+      String tableId, ResponseObserver<ByteStringRange> observer) {
+    generateInitialChangeStreamPartitionsCallable().call(tableId, observer);
+  }
+
+  /**
+   * Streams back the results of the query. The returned callable object allows for customization of
+   * api invocation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   String tableId = "[TABLE]";
+   *
+   *   // Iterator style
+   *   try {
+   *     for(ByteStringRange partition : bigtableDataClient.generateInitialChangeStreamPartitionsCallable().call(tableId)) {
+   *       // Do something with partition
+   *     }
+   *   } catch (NotFoundException e) {
+   *     System.out.println("Tried to read a non-existent table");
+   *   } catch (RuntimeException e) {
+   *     e.printStackTrace();
+   *   }
+   *
+   *   // Sync style
+   *   try {
+   *     List<ByteStringRange> partitions = bigtableDataClient.generateInitialChangeStreamPartitionsCallable().all().call(tableId);
+   *   } catch (NotFoundException e) {
+   *     System.out.println("Tried to read a non-existent table");
+   *   } catch (RuntimeException e) {
+   *     e.printStackTrace();
+   *   }
+   *
+   *   // Point look up
+   *   ApiFuture<ByteStringRange> partitionFuture =
+   *     bigtableDataClient.generateInitialChangeStreamPartitionsCallable().first().futureCall(tableId);
+   *
+   *   ApiFutures.addCallback(partitionFuture, new ApiFutureCallback<ByteStringRange>() {
+   *     public void onFailure(Throwable t) {
+   *       if (t instanceof NotFoundException) {
+   *         System.out.println("Tried to read a non-existent table");
+   *       } else {
+   *         t.printStackTrace();
+   *       }
+   *     }
+   *     public void onSuccess(RowRange result) {
+   *       System.out.println("Got partition: " + result);
+   *     }
+   *   }, MoreExecutors.directExecutor());
+   *
+   *   // etc
+   * }
+   * }</pre>
+   *
+   * @see ServerStreamingCallable For call styles.
+   */
+  @InternalApi("Intended for use by the BigtableIO in apache/beam only.")
+  public ServerStreamingCallable<String, ByteStringRange>
+      generateInitialChangeStreamPartitionsCallable() {
+    return stub.generateInitialChangeStreamPartitionsCallable();
+  }
+
+  /**
+   * Convenience method for synchronously streaming the results of a {@link ReadChangeStreamQuery}.
+   * The returned ServerStream instance is not threadsafe, it can only be used from single thread.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   String tableId = "[TABLE]";
+   *
+   *   ReadChangeStreamQuery query = ReadChangeStreamQuery.create(tableId)
+   *          .streamPartition("START_KEY", "END_KEY")
+   *          .startTime(Timestamp.newBuilder().setSeconds(100).build());
+   *
+   *   try {
+   *     ServerStream<ChangeStreamRecord> stream = bigtableDataClient.readChangeStream(query);
+   *     int count = 0;
+   *
+   *     // Iterator style
+   *     for (ChangeStreamRecord record : stream) {
+   *       if (++count > 10) {
+   *         stream.cancel();
+   *         break;
+   *       }
+   *       // Do something with the change stream record.
+   *     }
+   *   } catch (NotFoundException e) {
+   *     System.out.println("Tried to read a non-existent table");
+   *   } catch (RuntimeException e) {
+   *     e.printStackTrace();
+   *   }
+   * }
+   * }</pre>
+   *
+   * @see ServerStreamingCallable For call styles.
+   * @see ReadChangeStreamQuery For query options.
+   */
+  @InternalApi("Intended for use by the BigtableIO in apache/beam only.")
+  public ServerStream<ChangeStreamRecord> readChangeStream(ReadChangeStreamQuery query) {
+    return readChangeStreamCallable().call(query);
+  }
+
+  /**
+   * Convenience method for asynchronously streaming the results of a {@link ReadChangeStreamQuery}.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   String tableId = "[TABLE]";
+   *
+   *   ReadChangeStreamQuery query = ReadChangeStreamQuery.create(tableId)
+   *          .streamPartition("START_KEY", "END_KEY")
+   *          .startTime(Timestamp.newBuilder().setSeconds(100).build());
+   *
+   *   bigtableDataClient.readChangeStreamAsync(query, new ResponseObserver<ChangeStreamRecord>() {
+   *     StreamController controller;
+   *     int count = 0;
+   *
+   *     public void onStart(StreamController controller) {
+   *       this.controller = controller;
+   *     }
+   *     public void onResponse(ChangeStreamRecord record) {
+   *       if (++count > 10) {
+   *         controller.cancel();
+   *         return;
+   *       }
+   *       // Do something with the change stream record.
+   *     }
+   *     public void onError(Throwable t) {
+   *       if (t instanceof NotFoundException) {
+   *         System.out.println("Tried to read a non-existent table");
+   *       } else {
+   *         t.printStackTrace();
+   *       }
+   *     }
+   *     public void onComplete() {
+   *       // Handle stream completion
+   *     }
+   *   });
+   * }
+   * }</pre>
+   */
+  @InternalApi("Intended for use by the BigtableIO in apache/beam only.")
+  public void readChangeStreamAsync(
+      ReadChangeStreamQuery query, ResponseObserver<ChangeStreamRecord> observer) {
+    readChangeStreamCallable().call(query, observer);
+  }
+
+  /**
+   * Streams back the results of the query. The returned callable object allows for customization of
+   * api invocation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   String tableId = "[TABLE]";
+   *
+   *   ReadChangeStreamQuery query = ReadChangeStreamQuery.create(tableId)
+   *          .streamPartition("START_KEY", "END_KEY")
+   *          .startTime(Timestamp.newBuilder().setSeconds(100).build());
+   *
+   *   // Iterator style
+   *   try {
+   *     for(ChangeStreamRecord record : bigtableDataClient.readChangeStreamCallable().call(query)) {
+   *       // Do something with record
+   *     }
+   *   } catch (NotFoundException e) {
+   *     System.out.println("Tried to read a non-existent table");
+   *   } catch (RuntimeException e) {
+   *     e.printStackTrace();
+   *   }
+   *
+   *   // Sync style
+   *   try {
+   *     List<ChangeStreamRecord> records = bigtableDataClient.readChangeStreamCallable().all().call(query);
+   *   } catch (NotFoundException e) {
+   *     System.out.println("Tried to read a non-existent table");
+   *   } catch (RuntimeException e) {
+   *     e.printStackTrace();
+   *   }
+   *
+   *   // Point look up
+   *   ApiFuture<ChangeStreamRecord> recordFuture =
+   *     bigtableDataClient.readChangeStreamCallable().first().futureCall(query);
+   *
+   *   ApiFutures.addCallback(recordFuture, new ApiFutureCallback<ChangeStreamRecord>() {
+   *     public void onFailure(Throwable t) {
+   *       if (t instanceof NotFoundException) {
+   *         System.out.println("Tried to read a non-existent table");
+   *       } else {
+   *         t.printStackTrace();
+   *       }
+   *     }
+   *     public void onSuccess(ChangeStreamRecord result) {
+   *       System.out.println("Got record: " + result);
+   *     }
+   *   }, MoreExecutors.directExecutor());
+   *
+   *   // etc
+   * }
+   * }</pre>
+   *
+   * @see ServerStreamingCallable For call styles.
+   * @see ReadChangeStreamQuery For query options.
+   */
+  @InternalApi("Intended for use by the BigtableIO in apache/beam only.")
+  public ServerStreamingCallable<ReadChangeStreamQuery, ChangeStreamRecord>
+      readChangeStreamCallable() {
+    return stub.readChangeStreamCallable();
   }
 
   /** Close the clients and releases all associated resources. */

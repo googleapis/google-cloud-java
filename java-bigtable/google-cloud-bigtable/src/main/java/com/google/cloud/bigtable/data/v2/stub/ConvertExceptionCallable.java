@@ -26,28 +26,29 @@ import com.google.common.base.Throwables;
 /**
  * This callable converts the "Received rst stream" exception into a retryable {@link ApiException}.
  */
-final class ConvertExceptionCallable<ReadRowsRequest, RowT>
-    extends ServerStreamingCallable<ReadRowsRequest, RowT> {
+final class ConvertExceptionCallable<RequestT, ResponseT>
+    extends ServerStreamingCallable<RequestT, ResponseT> {
 
-  private final ServerStreamingCallable<ReadRowsRequest, RowT> innerCallable;
+  private final ServerStreamingCallable<RequestT, ResponseT> innerCallable;
 
-  public ConvertExceptionCallable(ServerStreamingCallable<ReadRowsRequest, RowT> innerCallable) {
+  public ConvertExceptionCallable(ServerStreamingCallable<RequestT, ResponseT> innerCallable) {
     this.innerCallable = innerCallable;
   }
 
   @Override
   public void call(
-      ReadRowsRequest request, ResponseObserver<RowT> responseObserver, ApiCallContext context) {
-    ReadRowsConvertExceptionResponseObserver<RowT> observer =
-        new ReadRowsConvertExceptionResponseObserver<>(responseObserver);
+      RequestT request, ResponseObserver<ResponseT> responseObserver, ApiCallContext context) {
+    ConvertExceptionResponseObserver<ResponseT> observer =
+        new ConvertExceptionResponseObserver<>(responseObserver);
     innerCallable.call(request, observer, context);
   }
 
-  private class ReadRowsConvertExceptionResponseObserver<RowT> extends SafeResponseObserver<RowT> {
+  private class ConvertExceptionResponseObserver<ResponseT>
+      extends SafeResponseObserver<ResponseT> {
 
-    private final ResponseObserver<RowT> outerObserver;
+    private final ResponseObserver<ResponseT> outerObserver;
 
-    ReadRowsConvertExceptionResponseObserver(ResponseObserver<RowT> outerObserver) {
+    ConvertExceptionResponseObserver(ResponseObserver<ResponseT> outerObserver) {
       super(outerObserver);
       this.outerObserver = outerObserver;
     }
@@ -58,7 +59,7 @@ final class ConvertExceptionCallable<ReadRowsRequest, RowT>
     }
 
     @Override
-    protected void onResponseImpl(RowT response) {
+    protected void onResponseImpl(ResponseT response) {
       outerObserver.onResponse(response);
     }
 

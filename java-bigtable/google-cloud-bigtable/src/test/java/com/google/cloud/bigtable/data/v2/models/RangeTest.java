@@ -21,6 +21,7 @@ import com.google.cloud.bigtable.data.v2.models.Range.BoundType;
 import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
 import com.google.cloud.bigtable.data.v2.models.Range.TimestampRange;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.InvalidProtocolBufferException;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -305,5 +306,15 @@ public class RangeTest {
 
     ByteStringRange actual = (ByteStringRange) ois.readObject();
     assertThat(actual).isEqualTo(expected);
+  }
+
+  @Test
+  public void byteStringRangeToByteStringTest() throws InvalidProtocolBufferException {
+    ByteStringRange expected = ByteStringRange.create("a", "z");
+
+    ByteString serialized = ByteStringRange.serializeToByteString(expected);
+    ByteStringRange deserialized = ByteStringRange.toByteStringRange(serialized);
+
+    assertThat(expected).isEqualTo(deserialized);
   }
 }

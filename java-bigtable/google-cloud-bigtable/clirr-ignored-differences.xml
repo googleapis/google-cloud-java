@@ -39,6 +39,11 @@
         <differenceType>8001</differenceType>
         <className>com/google/cloud/bigtable/data/v2/stub/metrics/CompositeTracerFactory</className>
     </difference>
+    <!-- InternalApi was renamed -->
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/readrows/ReadRowsConvertExceptionCallable</className>
+    </difference>
     <!-- InternalApi that was removed -->
     <difference>
         <differenceType>8001</differenceType>

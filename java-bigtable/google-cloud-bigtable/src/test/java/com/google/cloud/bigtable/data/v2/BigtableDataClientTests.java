@@ -25,11 +25,14 @@ import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
+import com.google.cloud.bigtable.data.v2.models.ChangeStreamRecord;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.Filters.Filter;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Mutation;
 import com.google.cloud.bigtable.data.v2.models.Query;
+import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
+import com.google.cloud.bigtable.data.v2.models.ReadChangeStreamQuery;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
@@ -78,6 +81,14 @@ public class BigtableDataClientTests {
   @Mock private UnaryCallable<BulkMutation, Void> mockBulkMutateRowsCallable;
   @Mock private Batcher<RowMutationEntry, Void> mockBulkMutationBatcher;
   @Mock private Batcher<ByteString, Row> mockBulkReadRowsBatcher;
+
+  @Mock(answer = Answers.RETURNS_DEEP_STUBS)
+  private ServerStreamingCallable<String, ByteStringRange>
+      mockGenerateInitialChangeStreamPartitionsCallable;
+
+  @Mock(answer = Answers.RETURNS_DEEP_STUBS)
+  private ServerStreamingCallable<ReadChangeStreamQuery, ChangeStreamRecord>
+      mockReadChangeStreamCallable;
 
   private BigtableDataClient bigtableDataClient;
 
@@ -151,6 +162,21 @@ public class BigtableDataClientTests {
   public void proxyReadRowsCallableTest() {
     Mockito.when(mockStub.readRowsCallable()).thenReturn(mockReadRowsCallable);
     assertThat(bigtableDataClient.readRowsCallable()).isSameInstanceAs(mockReadRowsCallable);
+  }
+
+  @Test
+  public void proxyGenerateInitialChangeStreamPartitionsCallableTest() {
+    Mockito.when(mockStub.generateInitialChangeStreamPartitionsCallable())
+        .thenReturn(mockGenerateInitialChangeStreamPartitionsCallable);
+    assertThat(bigtableDataClient.generateInitialChangeStreamPartitionsCallable())
+        .isSameInstanceAs(mockGenerateInitialChangeStreamPartitionsCallable);
+  }
+
+  @Test
+  public void proxyReadChangeStreamCallableTest() {
+    Mockito.when(mockStub.readChangeStreamCallable()).thenReturn(mockReadChangeStreamCallable);
+    assertThat(bigtableDataClient.readChangeStreamCallable())
+        .isSameInstanceAs(mockReadChangeStreamCallable);
   }
 
   @Test
@@ -298,6 +324,51 @@ public class BigtableDataClientTests {
     bigtableDataClient.readRowsAsync(query, mockObserver);
 
     Mockito.verify(mockReadRowsCallable).call(query, mockObserver);
+  }
+
+  @Test
+  public void proxyGenerateInitialChangeStreamPartitionsSyncTest() {
+    Mockito.when(mockStub.generateInitialChangeStreamPartitionsCallable())
+        .thenReturn(mockGenerateInitialChangeStreamPartitionsCallable);
+
+    bigtableDataClient.generateInitialChangeStreamPartitions("fake-table");
+
+    Mockito.verify(mockGenerateInitialChangeStreamPartitionsCallable).call("fake-table");
+  }
+
+  @Test
+  public void proxyGenerateInitialChangeStreamPartitionsAsyncTest() {
+    Mockito.when(mockStub.generateInitialChangeStreamPartitionsCallable())
+        .thenReturn(mockGenerateInitialChangeStreamPartitionsCallable);
+
+    @SuppressWarnings("unchecked")
+    ResponseObserver<ByteStringRange> mockObserver = Mockito.mock(ResponseObserver.class);
+    bigtableDataClient.generateInitialChangeStreamPartitionsAsync("fake-table", mockObserver);
+
+    Mockito.verify(mockGenerateInitialChangeStreamPartitionsCallable)
+        .call("fake-table", mockObserver);
+  }
+
+  @Test
+  public void proxyReadChangeStreamSyncTest() {
+    Mockito.when(mockStub.readChangeStreamCallable()).thenReturn(mockReadChangeStreamCallable);
+
+    ReadChangeStreamQuery query = ReadChangeStreamQuery.create("fake-table");
+    bigtableDataClient.readChangeStream(query);
+
+    Mockito.verify(mockReadChangeStreamCallable).call(query);
+  }
+
+  @Test
+  public void proxyReadChangeStreamAsyncTest() {
+    Mockito.when(mockStub.readChangeStreamCallable()).thenReturn(mockReadChangeStreamCallable);
+
+    @SuppressWarnings("unchecked")
+    ResponseObserver<ChangeStreamRecord> mockObserver = Mockito.mock(ResponseObserver.class);
+    ReadChangeStreamQuery query = ReadChangeStreamQuery.create("fake-table");
+    bigtableDataClient.readChangeStreamAsync(query, mockObserver);
+
+    Mockito.verify(mockReadChangeStreamCallable).call(query, mockObserver);
   }
 
   @Test
