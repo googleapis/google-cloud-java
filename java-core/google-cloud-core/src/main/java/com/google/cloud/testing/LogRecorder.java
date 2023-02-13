@@ -24,14 +24,19 @@ import java.util.regex.Pattern;
 /**
  * This class records the logs in memory and flush them onto the {@link java.util.logging.Logger}
  * when {@link #flush()} method is called.
+ *
+ * <p>This component is useful to hold logs for some time and flush them if needed. For example, we
+ * would want to ignore the trivial startup logs of a sub-process if it is started successfully, but
+ * <b>in case any error occurs</b>, these logs should be propagated to the user for the debugging
+ * purpose.
  */
-class StartupLogRecorder {
+class LogRecorder {
 
   private final Pattern logLinePattern = Pattern.compile("([A-Z]+):.*");
   private final Logger logger;
-  private final StringBuilder logs;
+  private StringBuilder logs;
 
-  public StartupLogRecorder(Logger logger) {
+  public LogRecorder(Logger logger) {
     this.logger = logger;
     this.logs = new StringBuilder();
   }
@@ -53,7 +58,10 @@ class StartupLogRecorder {
 
   /** Flush all the logs to the underlying {@link java.util.logging.Logger}. */
   public void flush() {
-    logger.log(Level.INFO, this.logs.toString());
+    if (this.logs.length() > 0) {
+      logger.log(Level.INFO, this.logs.toString());
+      this.logs = new StringBuilder();
+    }
   }
 
   private boolean hasLevel(String line) {

@@ -52,13 +52,13 @@ class BlockingProcessStreamReader extends Thread {
     this.logger = logger;
     this.emulatorTag = "[" + emulator + "]";
     this.logLinePattern = Pattern.compile("(\\[" + emulator + "\\]\\s)?(\\w+):.*");
-    StartupLogRecorder logAggregator = new StartupLogRecorder(logger);
+    LogRecorder logRecorder = new LogRecorder(logger);
     if (!Strings.isNullOrEmpty(blockUntil)) {
       String line;
       do {
         line = errorReader.readLine();
         if (line != null) {
-          logAggregator.record(line); // recording the logs as these might be the error logs.
+          logRecorder.record(line); // recording the logs as these might be the error logs.
         }
       } while (line != null && !line.contains(blockUntil));
     }
@@ -67,7 +67,7 @@ class BlockingProcessStreamReader extends Thread {
     should flush the recorded startup logs to help the user in debugging */
     boolean streamClosed = errorReader.read() == -1;
     if (streamClosed) {
-      logAggregator.flush();
+      logRecorder.flush();
     }
   }
 
