@@ -103,3 +103,16 @@ jobs:
           bash generation/consolidate_config.sh
       - name: Fail if there's any difference
         run: git --no-pager diff --exit-code
+
+  generate-readme:
+    # Ensure generate-readme.py runs fine
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v4
+      # These parameters should match ones in readme.yaml
+      with:
+        python-version: '3.7'
+        architecture: 'x64'
+    - run: python3 -m pip install --require-hashes -r .github/requirements.txt
+    - run: python3 generate-readme.py
