@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    # Disable version updates for Maven dependencies
+    open-pull-requests-limit: 0
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    # Disable version updates for pip dependencies
+    open-pull-requests-limit: 0
