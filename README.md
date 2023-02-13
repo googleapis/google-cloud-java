@@ -52,20 +52,20 @@ If you are using Maven without BOM, add this to your dependencies:
 If you are using Gradle 5.x or later, add this to your dependencies:
 
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:26.6.0')
+implementation platform('com.google.cloud:libraries-bom:26.7.0')
 
 implementation 'com.google.cloud:google-cloud-bigquery'
 ```
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-bigquery:2.21.0'
+implementation 'com.google.cloud:google-cloud-bigquery:2.22.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigquery" % "2.21.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigquery" % "2.22.0"
 ```
 
 ## Authentication
