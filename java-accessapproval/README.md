@@ -23,6 +23,7 @@ If you are using Maven, add this to your pom.xml file:
   <version>2.10.0</version>
 </dependency>
 ```
+<!--- {x-version-update-end} -->
 
 If you are using Gradle without BOM, add this to your dependencies:
 
@@ -36,7 +37,6 @@ If you are using SBT, add this to your dependencies:
 libraryDependencies += "com.google.cloud" % "google-cloud-accessapproval" % "2.10.0"
 ```
 
-<!--- {x-version-update-end} -->
 
 ## Authentication
 
