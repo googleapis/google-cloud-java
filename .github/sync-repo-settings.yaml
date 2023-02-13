@@ -17,8 +17,6 @@ branchProtectionRules:
       - 'Kokoro - Test: Integration'
       - cla/google
       - OwlBot Post Processor
-      - 'Kokoro - Test: Java GraalVM Native Image'
-      - 'Kokoro - Test: Java 17 GraalVM Native Image'
   - pattern: java7
     isAdminEnforced: true
     requiredApprovingReviewCount: 1
@@ -79,8 +77,6 @@ branchProtectionRules:
       - 'Kokoro - Test: Integration'
       - cla/google
       - OwlBot Post Processor
-      - 'Kokoro - Test: Java GraalVM Native Image'
-      - 'Kokoro - Test: Java 17 GraalVM Native Image'
 permissionRules:
   - team: yoshi-admins
     permission: admin
