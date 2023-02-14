@@ -112,26 +112,26 @@ import org.threeten.bp.Duration;
 public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-          ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
   private final UnaryCallSettings<RecognizeRequest, RecognizeResponse> recognizeSettings;
   private final UnaryCallSettings<LongRunningRecognizeRequest, Operation>
-          longRunningRecognizeSettings;
+      longRunningRecognizeSettings;
   private final OperationCallSettings<
           LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
-          longRunningRecognizeOperationSettings;
+      longRunningRecognizeOperationSettings;
   private final StreamingCallSettings<StreamingRecognizeRequest, StreamingRecognizeResponse>
-          streamingRecognizeSettings;
+      streamingRecognizeSettings;
   private final PagedCallSettings<
           ListOperationsRequest, ListOperationsResponse, ListOperationsPagedResponse>
-          listOperationsSettings;
+      listOperationsSettings;
   private final UnaryCallSettings<GetOperationRequest, Operation> getOperationSettings;
   private final UnaryCallSettings<DeleteOperationRequest, Empty> deleteOperationSettings;
   private final UnaryCallSettings<CancelOperationRequest, Empty> cancelOperationSettings;
   private final UnaryCallSettings<WaitOperationRequest, Operation> waitOperationSettings;
 
   private static final PagedListDescriptor<ListOperationsRequest, ListOperationsResponse, Operation>
-          LIST_OPERATIONS_PAGE_STR_DESC =
+      LIST_OPERATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListOperationsRequest, ListOperationsResponse, Operation>() {
             @Override
             public String emptyToken() {
@@ -145,7 +145,7 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
 
             @Override
             public ListOperationsRequest injectPageSize(
-                    ListOperationsRequest payload, int pageSize) {
+                ListOperationsRequest payload, int pageSize) {
               return ListOperationsRequest.newBuilder(payload).setPageSize(pageSize).build();
             }
 
@@ -162,24 +162,24 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
             @Override
             public Iterable<Operation> extractResources(ListOperationsResponse payload) {
               return payload.getOperationsList() == null
-                      ? ImmutableList.<Operation>of()
-                      : payload.getOperationsList();
+                  ? ImmutableList.<Operation>of()
+                  : payload.getOperationsList();
             }
           };
 
   private static final PagedListResponseFactory<
           ListOperationsRequest, ListOperationsResponse, ListOperationsPagedResponse>
-          LIST_OPERATIONS_PAGE_STR_FACT =
+      LIST_OPERATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-                  ListOperationsRequest, ListOperationsResponse, ListOperationsPagedResponse>() {
+              ListOperationsRequest, ListOperationsResponse, ListOperationsPagedResponse>() {
             @Override
             public ApiFuture<ListOperationsPagedResponse> getFuturePagedResponse(
-                    UnaryCallable<ListOperationsRequest, ListOperationsResponse> callable,
-                    ListOperationsRequest request,
-                    ApiCallContext context,
-                    ApiFuture<ListOperationsResponse> futureResponse) {
+                UnaryCallable<ListOperationsRequest, ListOperationsResponse> callable,
+                ListOperationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListOperationsResponse> futureResponse) {
               PageContext<ListOperationsRequest, ListOperationsResponse, Operation> pageContext =
-                      PageContext.create(callable, LIST_OPERATIONS_PAGE_STR_DESC, request, context);
+                  PageContext.create(callable, LIST_OPERATIONS_PAGE_STR_DESC, request, context);
               return ListOperationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
@@ -197,20 +197,20 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
   /** Returns the object with the settings used for calls to longRunningRecognize. */
   public OperationCallSettings<
           LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
-  longRunningRecognizeOperationSettings() {
+      longRunningRecognizeOperationSettings() {
     return longRunningRecognizeOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to streamingRecognize. */
   public StreamingCallSettings<StreamingRecognizeRequest, StreamingRecognizeResponse>
-  streamingRecognizeSettings() {
+      streamingRecognizeSettings() {
     return streamingRecognizeSettings;
   }
 
   /** Returns the object with the settings used for calls to listOperations. */
   public PagedCallSettings<
           ListOperationsRequest, ListOperationsResponse, ListOperationsPagedResponse>
-  listOperationsSettings() {
+      listOperationsSettings() {
     return listOperationsSettings;
   }
 
@@ -236,18 +236,18 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
 
   public SpeechStub createStub() throws IOException {
     if (getTransportChannelProvider()
-            .getTransportName()
-            .equals(GrpcTransportChannel.getGrpcTransportName())) {
+        .getTransportName()
+        .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcSpeechStub.create(this);
     }
     if (getTransportChannelProvider()
-            .getTransportName()
-            .equals(HttpJsonTransportChannel.getHttpJsonTransportName())) {
+        .getTransportName()
+        .equals(HttpJsonTransportChannel.getHttpJsonTransportName())) {
       return HttpJsonSpeechStub.create(this);
     }
     throw new UnsupportedOperationException(
-            String.format(
-                    "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -273,20 +273,20 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
   /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
     return GoogleCredentialsProvider.newBuilder()
-            .setScopesToApply(DEFAULT_SERVICE_SCOPES)
-            .setUseJwtAccessWithScope(true);
+        .setScopesToApply(DEFAULT_SERVICE_SCOPES)
+        .setUseJwtAccessWithScope(true);
   }
 
   /** Returns a builder for the default gRPC ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
     return InstantiatingGrpcChannelProvider.newBuilder()
-            .setMaxInboundMessageSize(Integer.MAX_VALUE);
+        .setMaxInboundMessageSize(Integer.MAX_VALUE);
   }
 
   /** Returns a builder for the default REST ChannelProvider for this service. */
   @BetaApi
   public static InstantiatingHttpJsonChannelProvider.Builder
-  defaultHttpJsonTransportProviderBuilder() {
+      defaultHttpJsonTransportProviderBuilder() {
     return InstantiatingHttpJsonChannelProvider.newBuilder();
   }
 
@@ -297,18 +297,18 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
   @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
-            .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(SpeechStubSettings.class))
-            .setTransportToken(
-                    GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
+        .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(SpeechStubSettings.class))
+        .setTransportToken(
+            GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
   @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
-            .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(SpeechStubSettings.class))
-            .setTransportToken(
-                    GaxHttpJsonProperties.getHttpJsonTokenName(),
-                    GaxHttpJsonProperties.getHttpJsonVersion());
+        .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(SpeechStubSettings.class))
+        .setTransportToken(
+            GaxHttpJsonProperties.getHttpJsonTokenName(),
+            GaxHttpJsonProperties.getHttpJsonVersion());
   }
 
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
@@ -341,7 +341,7 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
     recognizeSettings = settingsBuilder.recognizeSettings().build();
     longRunningRecognizeSettings = settingsBuilder.longRunningRecognizeSettings().build();
     longRunningRecognizeOperationSettings =
-            settingsBuilder.longRunningRecognizeOperationSettings().build();
+        settingsBuilder.longRunningRecognizeOperationSettings().build();
     streamingRecognizeSettings = settingsBuilder.streamingRecognizeSettings().build();
     listOperationsSettings = settingsBuilder.listOperationsSettings().build();
     getOperationSettings = settingsBuilder.getOperationSettings().build();
@@ -355,33 +355,33 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<RecognizeRequest, RecognizeResponse> recognizeSettings;
     private final UnaryCallSettings.Builder<LongRunningRecognizeRequest, Operation>
-            longRunningRecognizeSettings;
+        longRunningRecognizeSettings;
     private final OperationCallSettings.Builder<
             LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
-            longRunningRecognizeOperationSettings;
+        longRunningRecognizeOperationSettings;
     private final StreamingCallSettings.Builder<
             StreamingRecognizeRequest, StreamingRecognizeResponse>
-            streamingRecognizeSettings;
+        streamingRecognizeSettings;
     private final PagedCallSettings.Builder<
             ListOperationsRequest, ListOperationsResponse, ListOperationsPagedResponse>
-            listOperationsSettings;
+        listOperationsSettings;
     private final UnaryCallSettings.Builder<GetOperationRequest, Operation> getOperationSettings;
     private final UnaryCallSettings.Builder<DeleteOperationRequest, Empty> deleteOperationSettings;
     private final UnaryCallSettings.Builder<CancelOperationRequest, Empty> cancelOperationSettings;
     private final UnaryCallSettings.Builder<WaitOperationRequest, Operation> waitOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
-            RETRYABLE_CODE_DEFINITIONS;
+        RETRYABLE_CODE_DEFINITIONS;
 
     static {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
-              ImmutableMap.builder();
+          ImmutableMap.builder();
       definitions.put(
-              "retry_policy_0_codes",
-              ImmutableSet.copyOf(
-                      Lists.<StatusCode.Code>newArrayList(
-                              StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
+          "retry_policy_0_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
       definitions.put(
-              "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
@@ -392,23 +392,23 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
       settings =
-              RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(100L))
-                      .setRetryDelayMultiplier(1.3)
-                      .setMaxRetryDelay(Duration.ofMillis(60000L))
-                      .setInitialRpcTimeout(Duration.ofMillis(5000000L))
-                      .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ofMillis(5000000L))
-                      .setTotalTimeout(Duration.ofMillis(5000000L))
-                      .build();
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(5000000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(5000000L))
+              .setTotalTimeout(Duration.ofMillis(5000000L))
+              .build();
       definitions.put("retry_policy_0_params", settings);
       settings =
-              RetrySettings.newBuilder()
-                      .setInitialRpcTimeout(Duration.ofMillis(5000000L))
-                      .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ofMillis(5000000L))
-                      .setTotalTimeout(Duration.ofMillis(5000000L))
-                      .build();
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(5000000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(5000000L))
+              .setTotalTimeout(Duration.ofMillis(5000000L))
+              .build();
       definitions.put("no_retry_1_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
       definitions.put("no_retry_params", settings);
@@ -433,14 +433,14 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
       waitOperationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
-              ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-                      recognizeSettings,
-                      longRunningRecognizeSettings,
-                      listOperationsSettings,
-                      getOperationSettings,
-                      deleteOperationSettings,
-                      cancelOperationSettings,
-                      waitOperationSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              recognizeSettings,
+              longRunningRecognizeSettings,
+              listOperationsSettings,
+              getOperationSettings,
+              deleteOperationSettings,
+              cancelOperationSettings,
+              waitOperationSettings);
       initDefaults(this);
     }
 
@@ -450,7 +450,7 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
       recognizeSettings = settings.recognizeSettings.toBuilder();
       longRunningRecognizeSettings = settings.longRunningRecognizeSettings.toBuilder();
       longRunningRecognizeOperationSettings =
-              settings.longRunningRecognizeOperationSettings.toBuilder();
+          settings.longRunningRecognizeOperationSettings.toBuilder();
       streamingRecognizeSettings = settings.streamingRecognizeSettings.toBuilder();
       listOperationsSettings = settings.listOperationsSettings.toBuilder();
       getOperationSettings = settings.getOperationSettings.toBuilder();
@@ -459,14 +459,14 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
       waitOperationSettings = settings.waitOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-              ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-                      recognizeSettings,
-                      longRunningRecognizeSettings,
-                      listOperationsSettings,
-                      getOperationSettings,
-                      deleteOperationSettings,
-                      cancelOperationSettings,
-                      waitOperationSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              recognizeSettings,
+              longRunningRecognizeSettings,
+              listOperationsSettings,
+              getOperationSettings,
+              deleteOperationSettings,
+              cancelOperationSettings,
+              waitOperationSettings);
     }
 
     private static Builder createDefault() {
@@ -497,65 +497,65 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
 
     private static Builder initDefaults(Builder builder) {
       builder
-              .recognizeSettings()
-              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-              .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .recognizeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
-              .longRunningRecognizeSettings()
-              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-              .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .longRunningRecognizeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
-              .listOperationsSettings()
-              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-              .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .listOperationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
-              .getOperationSettings()
-              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-              .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .getOperationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
-              .deleteOperationSettings()
-              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-              .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .deleteOperationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
-              .cancelOperationSettings()
-              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-              .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .cancelOperationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
-              .waitOperationSettings()
-              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-              .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .waitOperationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
-              .longRunningRecognizeOperationSettings()
-              .setInitialCallSettings(
-                      UnaryCallSettings
-                              .<LongRunningRecognizeRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                              .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
-                              .build())
-              .setResponseTransformer(
-                      ProtoOperationTransformers.ResponseTransformer.create(
-                              LongRunningRecognizeResponse.class))
-              .setMetadataTransformer(
-                      ProtoOperationTransformers.MetadataTransformer.create(
-                              LongRunningRecognizeMetadata.class))
-              .setPollingAlgorithm(
-                      OperationTimedPollAlgorithm.create(
-                              RetrySettings.newBuilder()
-                                      .setInitialRetryDelay(Duration.ofMillis(5000L))
-                                      .setRetryDelayMultiplier(1.5)
-                                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                                      .setInitialRpcTimeout(Duration.ZERO)
-                                      .setRpcTimeoutMultiplier(1.0)
-                                      .setMaxRpcTimeout(Duration.ZERO)
-                                      .setTotalTimeout(Duration.ofMillis(300000L))
-                                      .build()));
+          .longRunningRecognizeOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<LongRunningRecognizeRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  LongRunningRecognizeResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  LongRunningRecognizeMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
 
       return builder;
     }
@@ -566,7 +566,7 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
      * <p>Note: This method does not support applying settings to streaming methods.
      */
     public Builder applyToAllUnaryMethods(
-            ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) {
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) {
       super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
       return this;
     }
@@ -582,29 +582,29 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
 
     /** Returns the builder for the settings used for calls to longRunningRecognize. */
     public UnaryCallSettings.Builder<LongRunningRecognizeRequest, Operation>
-    longRunningRecognizeSettings() {
+        longRunningRecognizeSettings() {
       return longRunningRecognizeSettings;
     }
 
     /** Returns the builder for the settings used for calls to longRunningRecognize. */
     @BetaApi(
-            "The surface for use by generated code is not stable yet and may change in the future.")
+        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
-    longRunningRecognizeOperationSettings() {
+        longRunningRecognizeOperationSettings() {
       return longRunningRecognizeOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to streamingRecognize. */
     public StreamingCallSettings.Builder<StreamingRecognizeRequest, StreamingRecognizeResponse>
-    streamingRecognizeSettings() {
+        streamingRecognizeSettings() {
       return streamingRecognizeSettings;
     }
 
     /** Returns the builder for the settings used for calls to listOperations. */
     public PagedCallSettings.Builder<
             ListOperationsRequest, ListOperationsResponse, ListOperationsPagedResponse>
-    listOperationsSettings() {
+        listOperationsSettings() {
       return listOperationsSettings;
     }
 

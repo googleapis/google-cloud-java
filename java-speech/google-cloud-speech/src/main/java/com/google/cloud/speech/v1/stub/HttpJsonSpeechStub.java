@@ -32,8 +32,6 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
-import com.google.api.gax.httpjson.longrunning.stub.OperationsStubSettings;
-import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.LongRunningClient;
@@ -73,228 +71,228 @@ import javax.annotation.Generated;
 @BetaApi
 public class HttpJsonSpeechStub extends SpeechStub {
   private static final TypeRegistry typeRegistry =
-          TypeRegistry.newBuilder()
-                  .add(LongRunningRecognizeResponse.getDescriptor())
-                  .add(LongRunningRecognizeMetadata.getDescriptor())
-                  .build();
+      TypeRegistry.newBuilder()
+          .add(LongRunningRecognizeResponse.getDescriptor())
+          .add(LongRunningRecognizeMetadata.getDescriptor())
+          .build();
 
   private static final ApiMethodDescriptor<RecognizeRequest, RecognizeResponse>
-          recognizeMethodDescriptor =
+      recognizeMethodDescriptor =
           ApiMethodDescriptor.<RecognizeRequest, RecognizeResponse>newBuilder()
-                  .setFullMethodName("google.cloud.speech.v1.Speech/Recognize")
-                  .setHttpMethod("POST")
-                  .setType(ApiMethodDescriptor.MethodType.UNARY)
-                  .setRequestFormatter(
-                          ProtoMessageRequestFormatter.<RecognizeRequest>newBuilder()
-                                  .setPath(
-                                          "/v1/speech:recognize",
-                                          request -> {
-                                            Map<String, String> fields = new HashMap<>();
-                                            ProtoRestSerializer<RecognizeRequest> serializer =
-                                                    ProtoRestSerializer.create();
-                                            return fields;
-                                          })
-                                  .setQueryParamsExtractor(
-                                          request -> {
-                                            Map<String, List<String>> fields = new HashMap<>();
-                                            ProtoRestSerializer<RecognizeRequest> serializer =
-                                                    ProtoRestSerializer.create();
-                                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                                            return fields;
-                                          })
-                                  .setRequestBodyExtractor(
-                                          request ->
-                                                  ProtoRestSerializer.create()
-                                                          .toBody("*", request.toBuilder().build(), true))
-                                  .build())
-                  .setResponseParser(
-                          ProtoMessageResponseParser.<RecognizeResponse>newBuilder()
-                                  .setDefaultInstance(RecognizeResponse.getDefaultInstance())
-                                  .setDefaultTypeRegistry(typeRegistry)
-                                  .build())
-                  .build();
+              .setFullMethodName("google.cloud.speech.v1.Speech/Recognize")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RecognizeRequest>newBuilder()
+                      .setPath(
+                          "/v1/speech:recognize",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RecognizeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RecognizeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RecognizeResponse>newBuilder()
+                      .setDefaultInstance(RecognizeResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<LongRunningRecognizeRequest, Operation>
-          longRunningRecognizeMethodDescriptor =
+      longRunningRecognizeMethodDescriptor =
           ApiMethodDescriptor.<LongRunningRecognizeRequest, Operation>newBuilder()
-                  .setFullMethodName("google.cloud.speech.v1.Speech/LongRunningRecognize")
-                  .setHttpMethod("POST")
-                  .setType(ApiMethodDescriptor.MethodType.UNARY)
-                  .setRequestFormatter(
-                          ProtoMessageRequestFormatter.<LongRunningRecognizeRequest>newBuilder()
-                                  .setPath(
-                                          "/v1/speech:longrunningrecognize",
-                                          request -> {
-                                            Map<String, String> fields = new HashMap<>();
-                                            ProtoRestSerializer<LongRunningRecognizeRequest> serializer =
-                                                    ProtoRestSerializer.create();
-                                            return fields;
-                                          })
-                                  .setQueryParamsExtractor(
-                                          request -> {
-                                            Map<String, List<String>> fields = new HashMap<>();
-                                            ProtoRestSerializer<LongRunningRecognizeRequest> serializer =
-                                                    ProtoRestSerializer.create();
-                                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                                            return fields;
-                                          })
-                                  .setRequestBodyExtractor(
-                                          request ->
-                                                  ProtoRestSerializer.create()
-                                                          .toBody("*", request.toBuilder().build(), true))
-                                  .build())
-                  .setResponseParser(
-                          ProtoMessageResponseParser.<Operation>newBuilder()
-                                  .setDefaultInstance(Operation.getDefaultInstance())
-                                  .setDefaultTypeRegistry(typeRegistry)
-                                  .build())
-                  .setOperationSnapshotFactory(
-                          (LongRunningRecognizeRequest request, Operation response) ->
-                                  HttpJsonOperationSnapshot.create(response))
-                  .build();
+              .setFullMethodName("google.cloud.speech.v1.Speech/LongRunningRecognize")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<LongRunningRecognizeRequest>newBuilder()
+                      .setPath(
+                          "/v1/speech:longrunningrecognize",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<LongRunningRecognizeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<LongRunningRecognizeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (LongRunningRecognizeRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
 
   private static final ApiMethodDescriptor<ListOperationsRequest, ListOperationsResponse>
-          listOperationsMethodDescriptor =
+      listOperationsMethodDescriptor =
           ApiMethodDescriptor.<ListOperationsRequest, ListOperationsResponse>newBuilder()
-                  .setFullMethodName("google.longrunning.Operations/ListOperations")
-                  .setHttpMethod("GET")
-                  .setType(ApiMethodDescriptor.MethodType.UNARY)
-                  .setRequestFormatter(
-                          ProtoMessageRequestFormatter.<ListOperationsRequest>newBuilder()
-                                  .setPath(
-                                          "/v1/operations",
-                                          request -> {
-                                            Map<String, String> fields = new HashMap<>();
-                                            ProtoRestSerializer<ListOperationsRequest> serializer =
-                                                    ProtoRestSerializer.create();
-                                            return fields;
-                                          })
-                                  .setQueryParamsExtractor(
-                                          request -> {
-                                            Map<String, List<String>> fields = new HashMap<>();
-                                            ProtoRestSerializer<ListOperationsRequest> serializer =
-                                                    ProtoRestSerializer.create();
-                                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                                            return fields;
-                                          })
-                                  .setRequestBodyExtractor(request -> null)
-                                  .build())
-                  .setResponseParser(
-                          ProtoMessageResponseParser.<ListOperationsResponse>newBuilder()
-                                  .setDefaultInstance(ListOperationsResponse.getDefaultInstance())
-                                  .setDefaultTypeRegistry(typeRegistry)
-                                  .build())
-                  .build();
+              .setFullMethodName("google.longrunning.Operations/ListOperations")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListOperationsRequest>newBuilder()
+                      .setPath(
+                          "/v1/operations",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListOperationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListOperationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListOperationsResponse>newBuilder()
+                      .setDefaultInstance(ListOperationsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<GetOperationRequest, Operation>
-          getOperationMethodDescriptor =
+      getOperationMethodDescriptor =
           ApiMethodDescriptor.<GetOperationRequest, Operation>newBuilder()
-                  .setFullMethodName("google.longrunning.Operations/GetOperation")
-                  .setHttpMethod(HttpMethods.GET)
-                  .setRequestFormatter(
-                          ProtoMessageRequestFormatter.<GetOperationRequest>newBuilder()
-                                  .setPath(
-                                          "/v1/operations/{name=**}",
-                                          request -> {
-                                            Map<String, String> fields = new HashMap<>();
-                                            ProtoRestSerializer<GetOperationRequest> serializer =
-                                                    ProtoRestSerializer.create();
-                                            serializer.putPathParam(fields, "name", request.getName());
-                                            return fields;
-                                          })
-                                  .setQueryParamsExtractor(request -> new HashMap<>())
-                                  .setRequestBodyExtractor(request -> null)
-                                  .build())
-                  .setResponseParser(
-                          ProtoMessageResponseParser.<Operation>newBuilder()
-                                  .setDefaultInstance(Operation.getDefaultInstance())
-                                  .build())
-                  .setOperationSnapshotFactory(
-                          (request, response) -> HttpJsonOperationSnapshot.create(response))
-                  .setPollingRequestFactory(
-                          compoundOperationId ->
-                                  GetOperationRequest.newBuilder().setName(compoundOperationId).build())
-                  .build();
+              .setFullMethodName("google.longrunning.Operations/GetOperation")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetOperationRequest>newBuilder()
+                      .setPath(
+                          "/v1/operations/{name=**}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetOperationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(request -> new HashMap<>())
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .build())
+              .setOperationSnapshotFactory(
+                  (request, response) -> HttpJsonOperationSnapshot.create(response))
+              .setPollingRequestFactory(
+                  compoundOperationId ->
+                      GetOperationRequest.newBuilder().setName(compoundOperationId).build())
+              .build();
 
   private static final ApiMethodDescriptor<DeleteOperationRequest, Empty>
-          deleteOperationMethodDescriptor =
+      deleteOperationMethodDescriptor =
           ApiMethodDescriptor.<DeleteOperationRequest, Empty>newBuilder()
-                  .setFullMethodName("google.longrunning.Operations/DeleteOperation")
-                  .setHttpMethod("DELETE")
-                  .setType(ApiMethodDescriptor.MethodType.UNARY)
-                  .setRequestFormatter(
-                          ProtoMessageRequestFormatter.<DeleteOperationRequest>newBuilder()
-                                  .setPath(
-                                          "/v1/{name=operations/**}",
-                                          request -> {
-                                            Map<String, String> fields = new HashMap<>();
-                                            ProtoRestSerializer<DeleteOperationRequest> serializer =
-                                                    ProtoRestSerializer.create();
-                                            serializer.putPathParam(fields, "name", request.getName());
-                                            return fields;
-                                          })
-                                  .setQueryParamsExtractor(
-                                          request -> {
-                                            Map<String, List<String>> fields = new HashMap<>();
-                                            ProtoRestSerializer<DeleteOperationRequest> serializer =
-                                                    ProtoRestSerializer.create();
-                                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                                            return fields;
-                                          })
-                                  .setRequestBodyExtractor(request -> null)
-                                  .build())
-                  .setResponseParser(
-                          ProtoMessageResponseParser.<Empty>newBuilder()
-                                  .setDefaultInstance(Empty.getDefaultInstance())
-                                  .setDefaultTypeRegistry(typeRegistry)
-                                  .build())
-                  .build();
+              .setFullMethodName("google.longrunning.Operations/DeleteOperation")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteOperationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=operations/**}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteOperationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteOperationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<CancelOperationRequest, Empty>
-          cancelOperationMethodDescriptor =
+      cancelOperationMethodDescriptor =
           ApiMethodDescriptor.<CancelOperationRequest, Empty>newBuilder()
-                  .setFullMethodName("google.longrunning.Operations/CancelOperation")
-                  .setHttpMethod("POST")
-                  .setType(ApiMethodDescriptor.MethodType.UNARY)
-                  .setRequestFormatter(
-                          ProtoMessageRequestFormatter.<CancelOperationRequest>newBuilder()
-                                  .setPath(
-                                          "/v1/{name=operations/**}:cancel",
-                                          request -> {
-                                            Map<String, String> fields = new HashMap<>();
-                                            ProtoRestSerializer<CancelOperationRequest> serializer =
-                                                    ProtoRestSerializer.create();
-                                            serializer.putPathParam(fields, "name", request.getName());
-                                            return fields;
-                                          })
-                                  .setQueryParamsExtractor(
-                                          request -> {
-                                            Map<String, List<String>> fields = new HashMap<>();
-                                            ProtoRestSerializer<CancelOperationRequest> serializer =
-                                                    ProtoRestSerializer.create();
-                                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                                            return fields;
-                                          })
-                                  .setRequestBodyExtractor(
-                                          request ->
-                                                  ProtoRestSerializer.create()
-                                                          .toBody("*", request.toBuilder().clearName().build(), true))
-                                  .build())
-                  .setResponseParser(
-                          ProtoMessageResponseParser.<Empty>newBuilder()
-                                  .setDefaultInstance(Empty.getDefaultInstance())
-                                  .setDefaultTypeRegistry(typeRegistry)
-                                  .build())
-                  .build();
+              .setFullMethodName("google.longrunning.Operations/CancelOperation")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CancelOperationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=operations/**}:cancel",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CancelOperationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CancelOperationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private final UnaryCallable<RecognizeRequest, RecognizeResponse> recognizeCallable;
   private final UnaryCallable<LongRunningRecognizeRequest, Operation> longRunningRecognizeCallable;
   private final OperationCallable<
           LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
-          longRunningRecognizeOperationCallable;
+      longRunningRecognizeOperationCallable;
   private final UnaryCallable<ListOperationsRequest, ListOperationsResponse> listOperationsCallable;
   private final UnaryCallable<ListOperationsRequest, ListOperationsPagedResponse>
-          listOperationsPagedCallable;
+      listOperationsPagedCallable;
   private final UnaryCallable<GetOperationRequest, Operation> getOperationCallable;
   private final UnaryCallable<DeleteOperationRequest, Empty> deleteOperationCallable;
   private final UnaryCallable<CancelOperationRequest, Empty> cancelOperationCallable;
@@ -312,9 +310,9 @@ public class HttpJsonSpeechStub extends SpeechStub {
   }
 
   public static final HttpJsonSpeechStub create(
-          ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
+      ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
     return new HttpJsonSpeechStub(
-            SpeechStubSettings.newHttpJsonBuilder().build(), clientContext, callableFactory);
+        SpeechStubSettings.newHttpJsonBuilder().build(), clientContext, callableFactory);
   }
 
   /**
@@ -323,7 +321,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
    * preferred.
    */
   protected HttpJsonSpeechStub(SpeechStubSettings settings, ClientContext clientContext)
-          throws IOException {
+      throws IOException {
     this(settings, clientContext, new HttpJsonSpeechCallableFactory());
   }
 
@@ -333,83 +331,87 @@ public class HttpJsonSpeechStub extends SpeechStub {
    * preferred.
    */
   protected HttpJsonSpeechStub(
-          SpeechStubSettings settings,
-          ClientContext clientContext,
-          HttpJsonStubCallableFactory callableFactory)
-          throws IOException {
+      SpeechStubSettings settings,
+      ClientContext clientContext,
+      HttpJsonStubCallableFactory callableFactory)
+      throws IOException {
     this.callableFactory = callableFactory;
     HttpJsonOperationsStub httpJsonOperationsStub =
         HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
 
     HttpJsonCallSettings<ListOperationsRequest, ListOperationsResponse>
-            listOperationsTransportSettings =
+        listOperationsTransportSettings =
             HttpJsonCallSettings.<ListOperationsRequest, ListOperationsResponse>newBuilder()
-                    .setMethodDescriptor(listOperationsMethodDescriptor)
-                    .setTypeRegistry(typeRegistry)
-                    .build();
+                .setMethodDescriptor(listOperationsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<GetOperationRequest, Operation> getOperationTransportSettings =
-            HttpJsonCallSettings.<GetOperationRequest, Operation>newBuilder()
-                    .setMethodDescriptor(getOperationMethodDescriptor)
-                    .setTypeRegistry(typeRegistry)
-                    .build();
+        HttpJsonCallSettings.<GetOperationRequest, Operation>newBuilder()
+            .setMethodDescriptor(getOperationMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
     HttpJsonCallSettings<DeleteOperationRequest, Empty> deleteOperationTransportSettings =
-            HttpJsonCallSettings.<DeleteOperationRequest, Empty>newBuilder()
-                    .setMethodDescriptor(deleteOperationMethodDescriptor)
-                    .setTypeRegistry(typeRegistry)
-                    .build();
+        HttpJsonCallSettings.<DeleteOperationRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteOperationMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
     HttpJsonCallSettings<CancelOperationRequest, Empty> cancelOperationTransportSettings =
-            HttpJsonCallSettings.<CancelOperationRequest, Empty>newBuilder()
-                    .setMethodDescriptor(cancelOperationMethodDescriptor)
-                    .setTypeRegistry(typeRegistry)
-                    .build();
+        HttpJsonCallSettings.<CancelOperationRequest, Empty>newBuilder()
+            .setMethodDescriptor(cancelOperationMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
 
     this.listOperationsCallable =
-            callableFactory.createUnaryCallable(
-                    listOperationsTransportSettings, settings.listOperationsSettings(), clientContext);
+        callableFactory.createUnaryCallable(
+            listOperationsTransportSettings, settings.listOperationsSettings(), clientContext);
     this.listOperationsPagedCallable =
-            callableFactory.createPagedCallable(
-                    listOperationsTransportSettings, settings.listOperationsSettings(), clientContext);
+        callableFactory.createPagedCallable(
+            listOperationsTransportSettings, settings.listOperationsSettings(), clientContext);
     this.getOperationCallable =
-            callableFactory.createUnaryCallable(
-                    getOperationTransportSettings, settings.getOperationSettings(), clientContext);
+        callableFactory.createUnaryCallable(
+            getOperationTransportSettings, settings.getOperationSettings(), clientContext);
     this.deleteOperationCallable =
-            callableFactory.createUnaryCallable(
-                    deleteOperationTransportSettings, settings.deleteOperationSettings(), clientContext);
+        callableFactory.createUnaryCallable(
+            deleteOperationTransportSettings, settings.deleteOperationSettings(), clientContext);
     this.cancelOperationCallable =
-            callableFactory.createUnaryCallable(
-                    cancelOperationTransportSettings, settings.cancelOperationSettings(), clientContext);
+        callableFactory.createUnaryCallable(
+            cancelOperationTransportSettings, settings.cancelOperationSettings(), clientContext);
 
-    LongRunningClient longRunningClient = new HttpJsonLongRunningClient(this.getOperationCallable, getOperationMethodDescriptor.getOperationSnapshotFactory(), getOperationMethodDescriptor.getPollingRequestFactory());
+    LongRunningClient longRunningClient =
+        new HttpJsonLongRunningClient(
+            this.getOperationCallable,
+            getOperationMethodDescriptor.getOperationSnapshotFactory(),
+            getOperationMethodDescriptor.getPollingRequestFactory());
 
     HttpJsonCallSettings<RecognizeRequest, RecognizeResponse> recognizeTransportSettings =
-            HttpJsonCallSettings.<RecognizeRequest, RecognizeResponse>newBuilder()
-                    .setMethodDescriptor(recognizeMethodDescriptor)
-                    .setTypeRegistry(typeRegistry)
-                    .build();
+        HttpJsonCallSettings.<RecognizeRequest, RecognizeResponse>newBuilder()
+            .setMethodDescriptor(recognizeMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
     HttpJsonCallSettings<LongRunningRecognizeRequest, Operation>
-            longRunningRecognizeTransportSettings =
+        longRunningRecognizeTransportSettings =
             HttpJsonCallSettings.<LongRunningRecognizeRequest, Operation>newBuilder()
-                    .setMethodDescriptor(longRunningRecognizeMethodDescriptor)
-                    .setTypeRegistry(typeRegistry)
-                    .build();
+                .setMethodDescriptor(longRunningRecognizeMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
 
     this.recognizeCallable =
-            callableFactory.createUnaryCallable(
-                    recognizeTransportSettings, settings.recognizeSettings(), clientContext);
+        callableFactory.createUnaryCallable(
+            recognizeTransportSettings, settings.recognizeSettings(), clientContext);
     this.longRunningRecognizeCallable =
-            callableFactory.createUnaryCallable(
-                    longRunningRecognizeTransportSettings,
-                    settings.longRunningRecognizeSettings(),
-                    clientContext);
+        callableFactory.createUnaryCallable(
+            longRunningRecognizeTransportSettings,
+            settings.longRunningRecognizeSettings(),
+            clientContext);
     this.longRunningRecognizeOperationCallable =
-            callableFactory.createOperationCallable(
-                    longRunningRecognizeTransportSettings,
-                    settings.longRunningRecognizeOperationSettings(),
-                    clientContext,
-                    longRunningClient);
+        callableFactory.createOperationCallable(
+            longRunningRecognizeTransportSettings,
+            settings.longRunningRecognizeOperationSettings(),
+            clientContext,
+            longRunningClient);
 
     this.backgroundResources =
-            new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
   @InternalApi
@@ -424,9 +426,9 @@ public class HttpJsonSpeechStub extends SpeechStub {
     return methodDescriptors;
   }
 
-//  public HttpJsonOperationsStub getHttpJsonOperationsStub() {
-//    return httpJsonOperationsStub;
-//  }
+  //  public HttpJsonOperationsStub getHttpJsonOperationsStub() {
+  //    return httpJsonOperationsStub;
+  //  }
 
   @Override
   public UnaryCallable<RecognizeRequest, RecognizeResponse> recognizeCallable() {
@@ -441,7 +443,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
   @Override
   public OperationCallable<
           LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
-  longRunningRecognizeOperationCallable() {
+      longRunningRecognizeOperationCallable() {
     return longRunningRecognizeOperationCallable;
   }
 
@@ -452,7 +454,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
 
   @Override
   public UnaryCallable<ListOperationsRequest, ListOperationsPagedResponse>
-  listOperationsPagedCallable() {
+      listOperationsPagedCallable() {
     return listOperationsPagedCallable;
   }
 
@@ -473,15 +475,15 @@ public class HttpJsonSpeechStub extends SpeechStub {
 
   @Override
   public BidiStreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
-  streamingRecognizeCallable() {
+      streamingRecognizeCallable() {
     throw new UnsupportedOperationException(
-            "Not implemented: streamingRecognizeCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: streamingRecognizeCallable(). REST transport is not implemented for this method yet.");
   }
 
   @Override
   public UnaryCallable<WaitOperationRequest, Operation> waitOperationCallable() {
     throw new UnsupportedOperationException(
-            "Not implemented: waitOperationCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: waitOperationCallable(). REST transport is not implemented for this method yet.");
   }
 
   @Override

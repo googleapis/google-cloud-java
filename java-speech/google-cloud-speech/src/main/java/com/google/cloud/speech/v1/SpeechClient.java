@@ -169,7 +169,7 @@ public class SpeechClient implements BackgroundResource {
     this.settings = settings;
     this.stub = ((SpeechStubSettings) settings.getStubSettings()).createStub();
     this.operationsClient =
-            com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
@@ -177,7 +177,7 @@ public class SpeechClient implements BackgroundResource {
     this.settings = null;
     this.stub = stub;
     this.operationsClient =
-            com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
@@ -233,7 +233,7 @@ public class SpeechClient implements BackgroundResource {
    */
   public final RecognizeResponse recognize(RecognitionConfig config, RecognitionAudio audio) {
     RecognizeRequest request =
-            RecognizeRequest.newBuilder().setConfig(config).setAudio(audio).build();
+        RecognizeRequest.newBuilder().setConfig(config).setAudio(audio).build();
     return recognize(request);
   }
 
@@ -325,9 +325,9 @@ public class SpeechClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
-  longRunningRecognizeAsync(RecognitionConfig config, RecognitionAudio audio) {
+      longRunningRecognizeAsync(RecognitionConfig config, RecognitionAudio audio) {
     LongRunningRecognizeRequest request =
-            LongRunningRecognizeRequest.newBuilder().setConfig(config).setAudio(audio).build();
+        LongRunningRecognizeRequest.newBuilder().setConfig(config).setAudio(audio).build();
     return longRunningRecognizeAsync(request);
   }
 
@@ -361,7 +361,7 @@ public class SpeechClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
-  longRunningRecognizeAsync(LongRunningRecognizeRequest request) {
+      longRunningRecognizeAsync(LongRunningRecognizeRequest request) {
     return longRunningRecognizeOperationCallable().futureCall(request);
   }
 
@@ -396,7 +396,7 @@ public class SpeechClient implements BackgroundResource {
    */
   public final OperationCallable<
           LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
-  longRunningRecognizeOperationCallable() {
+      longRunningRecognizeOperationCallable() {
     return stub.longRunningRecognizeOperationCallable();
   }
 
@@ -429,7 +429,7 @@ public class SpeechClient implements BackgroundResource {
    * }</pre>
    */
   public final UnaryCallable<LongRunningRecognizeRequest, Operation>
-  longRunningRecognizeCallable() {
+      longRunningRecognizeCallable() {
     return stub.longRunningRecognizeCallable();
   }
 
@@ -458,7 +458,7 @@ public class SpeechClient implements BackgroundResource {
    * }</pre>
    */
   public final BidiStreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
-  streamingRecognizeCallable() {
+      streamingRecognizeCallable() {
     return stub.streamingRecognizeCallable();
   }
 
@@ -497,7 +497,7 @@ public class SpeechClient implements BackgroundResource {
    */
   public final ListOperationsPagedResponse listOperations(String name, String filter) {
     ListOperationsRequest request =
-            ListOperationsRequest.newBuilder().setName(name).setFilter(filter).build();
+        ListOperationsRequest.newBuilder().setName(name).setFilter(filter).build();
     return listOperations(request);
   }
 
@@ -579,7 +579,7 @@ public class SpeechClient implements BackgroundResource {
    * }</pre>
    */
   public final UnaryCallable<ListOperationsRequest, ListOperationsPagedResponse>
-  listOperationsPagedCallable() {
+      listOperationsPagedCallable() {
     return stub.listOperationsPagedCallable();
   }
 
@@ -627,7 +627,7 @@ public class SpeechClient implements BackgroundResource {
    * }</pre>
    */
   public final UnaryCallable<ListOperationsRequest, ListOperationsResponse>
-  listOperationsCallable() {
+      listOperationsCallable() {
     return stub.listOperationsCallable();
   }
 
@@ -990,7 +990,7 @@ public class SpeechClient implements BackgroundResource {
   }
 
   public static class ListOperationsPagedResponse
-          extends AbstractPagedListResponse<
+      extends AbstractPagedListResponse<
           ListOperationsRequest,
           ListOperationsResponse,
           Operation,
@@ -998,14 +998,14 @@ public class SpeechClient implements BackgroundResource {
           ListOperationsFixedSizeCollection> {
 
     public static ApiFuture<ListOperationsPagedResponse> createAsync(
-            PageContext<ListOperationsRequest, ListOperationsResponse, Operation> context,
-            ApiFuture<ListOperationsResponse> futureResponse) {
+        PageContext<ListOperationsRequest, ListOperationsResponse, Operation> context,
+        ApiFuture<ListOperationsResponse> futureResponse) {
       ApiFuture<ListOperationsPage> futurePage =
-              ListOperationsPage.createEmptyPage().createPageAsync(context, futureResponse);
+          ListOperationsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-              futurePage,
-              input -> new ListOperationsPagedResponse(input),
-              MoreExecutors.directExecutor());
+          futurePage,
+          input -> new ListOperationsPagedResponse(input),
+          MoreExecutors.directExecutor());
     }
 
     private ListOperationsPagedResponse(ListOperationsPage page) {
@@ -1014,12 +1014,12 @@ public class SpeechClient implements BackgroundResource {
   }
 
   public static class ListOperationsPage
-          extends AbstractPage<
+      extends AbstractPage<
           ListOperationsRequest, ListOperationsResponse, Operation, ListOperationsPage> {
 
     private ListOperationsPage(
-            PageContext<ListOperationsRequest, ListOperationsResponse, Operation> context,
-            ListOperationsResponse response) {
+        PageContext<ListOperationsRequest, ListOperationsResponse, Operation> context,
+        ListOperationsResponse response) {
       super(context, response);
     }
 
@@ -1029,21 +1029,21 @@ public class SpeechClient implements BackgroundResource {
 
     @Override
     protected ListOperationsPage createPage(
-            PageContext<ListOperationsRequest, ListOperationsResponse, Operation> context,
-            ListOperationsResponse response) {
+        PageContext<ListOperationsRequest, ListOperationsResponse, Operation> context,
+        ListOperationsResponse response) {
       return new ListOperationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListOperationsPage> createPageAsync(
-            PageContext<ListOperationsRequest, ListOperationsResponse, Operation> context,
-            ApiFuture<ListOperationsResponse> futureResponse) {
+        PageContext<ListOperationsRequest, ListOperationsResponse, Operation> context,
+        ApiFuture<ListOperationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
   }
 
   public static class ListOperationsFixedSizeCollection
-          extends AbstractFixedSizeCollection<
+      extends AbstractFixedSizeCollection<
           ListOperationsRequest,
           ListOperationsResponse,
           Operation,
@@ -1060,7 +1060,7 @@ public class SpeechClient implements BackgroundResource {
 
     @Override
     protected ListOperationsFixedSizeCollection createCollection(
-            List<ListOperationsPage> pages, int collectionSize) {
+        List<ListOperationsPage> pages, int collectionSize) {
       return new ListOperationsFixedSizeCollection(pages, collectionSize);
     }
   }

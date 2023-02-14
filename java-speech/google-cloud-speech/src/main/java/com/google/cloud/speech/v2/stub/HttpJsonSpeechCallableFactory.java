@@ -95,7 +95,12 @@ public class HttpJsonSpeechCallableFactory
   }
 
   @Override
-  public <RequestT, ResponseT, MetadataT> OperationCallable<RequestT, ResponseT, MetadataT> createOperationCallable(HttpJsonCallSettings<RequestT, Operation> httpJsonCallSettings, OperationCallSettings<RequestT, ResponseT, MetadataT> operationCallSettings, ClientContext clientContext, LongRunningClient longRunningClient) {
+  public <RequestT, ResponseT, MetadataT>
+      OperationCallable<RequestT, ResponseT, MetadataT> createOperationCallable(
+          HttpJsonCallSettings<RequestT, Operation> httpJsonCallSettings,
+          OperationCallSettings<RequestT, ResponseT, MetadataT> operationCallSettings,
+          ClientContext clientContext,
+          LongRunningClient longRunningClient) {
     return null;
   }
 

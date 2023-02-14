@@ -63,9 +63,9 @@ public abstract class SpeechStub implements BackgroundResource {
 
   public OperationCallable<
           LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
-  longRunningRecognizeOperationCallable() {
+      longRunningRecognizeOperationCallable() {
     throw new UnsupportedOperationException(
-            "Not implemented: longRunningRecognizeOperationCallable()");
+        "Not implemented: longRunningRecognizeOperationCallable()");
   }
 
   public UnaryCallable<LongRunningRecognizeRequest, Operation> longRunningRecognizeCallable() {
@@ -73,12 +73,12 @@ public abstract class SpeechStub implements BackgroundResource {
   }
 
   public BidiStreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
-  streamingRecognizeCallable() {
+      streamingRecognizeCallable() {
     throw new UnsupportedOperationException("Not implemented: streamingRecognizeCallable()");
   }
 
   public UnaryCallable<ListOperationsRequest, ListOperationsPagedResponse>
-  listOperationsPagedCallable() {
+      listOperationsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listOperationsPagedCallable()");
   }
 
