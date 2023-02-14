@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.31.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.31.0...v2.31.1) (2023-02-14)
+
+
+### Bug Fixes
+
+* Refactor only, add StreamWriter to AppendRowsRequestResponse ([#1981](https://github.com/googleapis/java-bigquerystorage/issues/1981)) ([da06a46](https://github.com/googleapis/java-bigquerystorage/commit/da06a4623e89b5f3caf90f85dd87d8538fc7d312))
+* Support ByteString values on repeated fields ([#1996](https://github.com/googleapis/java-bigquerystorage/issues/1996)) ([0263b00](https://github.com/googleapis/java-bigquerystorage/commit/0263b0054fbb7d9f49157f507cfe11c5b5816b07))
+
 ## [2.31.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.30.0...v2.31.0) (2023-02-08)
 
 
