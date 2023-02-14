@@ -24,6 +24,7 @@ import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.longrunning.stub.OperationsStub;
 import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LongRunningClient;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -91,6 +92,11 @@ public class HttpJsonSpeechCallableFactory
             httpJsonCallSettings.getMethodDescriptor().getOperationSnapshotFactory());
     return HttpJsonCallableFactory.createOperationCallable(
         callSettings, clientContext, operationsStub.longRunningClient(), initialCallable);
+  }
+
+  @Override
+  public <RequestT, ResponseT, MetadataT> OperationCallable<RequestT, ResponseT, MetadataT> createOperationCallable(HttpJsonCallSettings<RequestT, Operation> httpJsonCallSettings, OperationCallSettings<RequestT, ResponseT, MetadataT> operationCallSettings, ClientContext clientContext, LongRunningClient longRunningClient) {
+    return null;
   }
 
   @Override

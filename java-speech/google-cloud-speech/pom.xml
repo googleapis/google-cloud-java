@@ -73,6 +73,7 @@
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax-httpjson</artifactId>
+      <version>0.110.110-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.threeten</groupId>
