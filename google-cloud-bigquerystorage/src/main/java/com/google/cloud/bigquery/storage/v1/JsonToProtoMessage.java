@@ -608,7 +608,9 @@ public class JsonToProtoMessage {
             }
           }
           if (!added) {
-            if (val instanceof byte[]) {
+            if (val instanceof ByteString) {
+              protoMsg.addRepeatedField(fieldDescriptor, ((ByteString) val).toByteArray());
+            } else if (val instanceof byte[]) {
               protoMsg.addRepeatedField(fieldDescriptor, val);
             } else if (val instanceof JSONArray) {
               try {

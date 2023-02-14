@@ -93,3 +93,12 @@ message FlexibleType {
   optional string col_dGVzdC3liJc = 1
   [(.google.cloud.bigquery.storage.v1.column_name) = "test-列"];
 }
+
+message RepetitionType {
+  required bytes a = 1;
+  required bytes b = 2;
+  required bytes c = 3;
+  repeated bytes aa = 4;
+  repeated bytes bb = 5;
+  repeated bytes cc = 6;
+}
