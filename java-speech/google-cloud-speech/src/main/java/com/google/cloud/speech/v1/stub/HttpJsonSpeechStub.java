@@ -365,19 +365,19 @@ public class HttpJsonSpeechStub extends SpeechStub {
 
     this.listOperationsCallable =
             callableFactory.createUnaryCallable(
-                    listOperationsTransportSettings, OperationsStubSettings.newBuilder().build().listOperationsSettings(), clientContext);
+                    listOperationsTransportSettings, settings.listOperationsSettings(), clientContext);
     this.listOperationsPagedCallable =
             callableFactory.createPagedCallable(
-                    listOperationsTransportSettings, OperationsStubSettings.newBuilder().build().listOperationsSettings(), clientContext);
+                    listOperationsTransportSettings, settings.listOperationsSettings(), clientContext);
     this.getOperationCallable =
             callableFactory.createUnaryCallable(
-                    getOperationTransportSettings, OperationsStubSettings.newBuilder().build().getOperationSettings(), clientContext);
+                    getOperationTransportSettings, settings.getOperationSettings(), clientContext);
     this.deleteOperationCallable =
             callableFactory.createUnaryCallable(
-                    deleteOperationTransportSettings, OperationsStubSettings.newBuilder().build().deleteOperationSettings(), clientContext);
+                    deleteOperationTransportSettings, settings.deleteOperationSettings(), clientContext);
     this.cancelOperationCallable =
             callableFactory.createUnaryCallable(
-                    cancelOperationTransportSettings, OperationsStubSettings.newBuilder().build().cancelOperationSettings(), clientContext);
+                    cancelOperationTransportSettings, settings.cancelOperationSettings(), clientContext);
 
     LongRunningClient longRunningClient = new HttpJsonLongRunningClient(this.getOperationCallable, getOperationMethodDescriptor.getOperationSnapshotFactory(), getOperationMethodDescriptor.getPollingRequestFactory());
 
