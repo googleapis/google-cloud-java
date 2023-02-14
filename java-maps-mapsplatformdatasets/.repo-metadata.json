@@ -10,7 +10,7 @@
   "repo": "googleapis/java-maps-mapsplatformdatasets",
   "repo_short": "java-maps-mapsplatformdatasets",
   "distribution_name": "com.google.maps:google-maps-mapsplatformdatasets",
-  "api_id": "maps-mapsplatformdatasets.googleapis.com",
+  "api_id": "mapsplatformdatasets.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true
 }
