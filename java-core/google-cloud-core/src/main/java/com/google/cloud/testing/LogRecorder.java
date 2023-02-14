@@ -56,7 +56,7 @@ class LogRecorder {
     this.logs.append(System.getProperty("line.separator"));
   }
 
-  /** Flush all the logs to the underlying {@link java.util.logging.Logger}. */
+  /** Flushes all the logs to the underlying {@link java.util.logging.Logger}. */
   public void flush() {
     if (this.logs.length() > 0) {
       logger.log(Level.INFO, this.logs.toString());
