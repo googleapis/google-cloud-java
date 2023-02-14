@@ -17,10 +17,10 @@ public class Main {
             .build();
     RecognitionAudio recognitionAudio = RecognitionAudio.newBuilder().setUri(gcsUri).build();
 
-    //    System.out.println("Running with gRPC...");
-    //    try (SpeechClient speechClient = SpeechClient.create()) {
-    //      testSpeechRecognize(speechClient, recognitionConfig, recognitionAudio);
-    //    }
+    System.out.println("Running with gRPC...");
+    try (SpeechClient speechClient = SpeechClient.create()) {
+      testSpeechRecognize(speechClient, recognitionConfig, recognitionAudio);
+    }
 
     System.out.println("Running with REST...");
     SpeechSettings speechSettings = SpeechSettings.newHttpJsonBuilder().build();

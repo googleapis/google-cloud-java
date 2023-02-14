@@ -207,11 +207,6 @@ public class HttpJsonSpeechStub extends SpeechStub {
                   ProtoMessageResponseParser.<Operation>newBuilder()
                       .setDefaultInstance(Operation.getDefaultInstance())
                       .build())
-              .setOperationSnapshotFactory(
-                  (request, response) -> HttpJsonOperationSnapshot.create(response))
-              .setPollingRequestFactory(
-                  compoundOperationId ->
-                      GetOperationRequest.newBuilder().setName(compoundOperationId).build())
               .build();
 
   private static final ApiMethodDescriptor<DeleteOperationRequest, Empty>
@@ -377,11 +372,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
         callableFactory.createUnaryCallable(
             cancelOperationTransportSettings, settings.cancelOperationSettings(), clientContext);
 
-    LongRunningClient longRunningClient =
-        new HttpJsonLongRunningClient(
-            this.getOperationCallable,
-            getOperationMethodDescriptor.getOperationSnapshotFactory(),
-            getOperationMethodDescriptor.getPollingRequestFactory());
+    LongRunningClient longRunningClient = HttpJsonLongRunningClient.create(getOperationCallable, cancelOperationCallable, deleteOperationCallable);
 
     HttpJsonCallSettings<RecognizeRequest, RecognizeResponse> recognizeTransportSettings =
         HttpJsonCallSettings.<RecognizeRequest, RecognizeResponse>newBuilder()
