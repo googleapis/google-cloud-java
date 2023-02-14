@@ -57,7 +57,7 @@ public class BaseEmulatorHelperTest {
 
     @Override
     protected Logger getLogger() {
-      return null;
+      return Logger.getLogger(TestEmulatorHelper.class.getName());
     }
 
     @Override
