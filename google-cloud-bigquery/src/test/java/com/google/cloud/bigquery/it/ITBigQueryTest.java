@@ -3655,6 +3655,56 @@ public class ITBigQueryTest {
     assertEquals(sessionId, statisticsWithSession.getSessionInfo().getSessionId());
   }
 
+  @Test
+  public void testLoadSessionSupport() throws InterruptedException {
+    // Start the session
+    TableId sessionTableId = TableId.of("_SESSION", "test_temp_destination_table");
+    LoadJobConfiguration configuration =
+        LoadJobConfiguration.newBuilder(
+                sessionTableId, "gs://" + BUCKET + "/" + JSON_LOAD_FILE, FormatOptions.json())
+            .setCreateDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
+            .setSchema(TABLE_SCHEMA)
+            .setCreateSession(true)
+            .build();
+    Job job = bigquery.create(JobInfo.of(configuration));
+    job = job.waitFor();
+    assertNull(job.getStatus().getError());
+
+    Job loadJob = bigquery.getJob(job.getJobId());
+    JobStatistics.LoadStatistics statistics = loadJob.getStatistics();
+    String sessionId = statistics.getSessionInfo().getSessionId();
+    assertNotNull(sessionId);
+
+    // Load job in the same session.
+    // Should load the data to a temp table.
+    ConnectionProperty sessionConnectionProperty =
+        ConnectionProperty.newBuilder().setKey("session_id").setValue(sessionId).build();
+    LoadJobConfiguration loadJobConfigurationWithSession =
+        LoadJobConfiguration.newBuilder(
+                sessionTableId, "gs://" + BUCKET + "/" + JSON_LOAD_FILE, FormatOptions.json())
+            .setCreateDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
+            .setSchema(TABLE_SCHEMA)
+            .setConnectionProperties(ImmutableList.of(sessionConnectionProperty))
+            .build();
+    Job remoteJobWithSession = bigquery.create(JobInfo.of(loadJobConfigurationWithSession));
+    remoteJobWithSession = remoteJobWithSession.waitFor();
+    assertNull(remoteJobWithSession.getStatus().getError());
+    Job queryJobWithSession = bigquery.getJob(remoteJobWithSession.getJobId());
+    LoadStatistics statisticsWithSession = queryJobWithSession.getStatistics();
+    assertNotNull(statisticsWithSession.getSessionInfo().getSessionId());
+
+    // Checking if the data loaded to the temp table in the session
+    String queryTempTable = "SELECT * FROM _SESSION.test_temp_destination_table;";
+    QueryJobConfiguration queryJobConfigurationWithSession =
+        QueryJobConfiguration.newBuilder(queryTempTable)
+            .setConnectionProperties(ImmutableList.of(sessionConnectionProperty))
+            .build();
+    Job queryTempTableJob = bigquery.create(JobInfo.of(queryJobConfigurationWithSession));
+    queryTempTableJob = queryTempTableJob.waitFor();
+    assertNull(queryTempTableJob.getStatus().getError());
+    assertNotNull(queryTempTableJob.getQueryResults());
+  }
+
   // TODO: uncomment this testcase when executeUpdate is implemented
   // @Test
   // public void testExecuteSelectWithSession() throws BigQuerySQLException {

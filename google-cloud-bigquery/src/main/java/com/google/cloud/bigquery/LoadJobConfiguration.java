@@ -22,6 +22,7 @@ import com.google.api.services.bigquery.model.JobConfigurationLoad;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
 import com.google.common.primitives.Ints;
 import java.util.List;
 import java.util.Map;
@@ -58,6 +59,10 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   private final HivePartitioningOptions hivePartitioningOptions;
   private final String referenceFileSchemaUri;
 
+  private final List<ConnectionProperty> connectionProperties;
+
+  private final Boolean createSession;
+
   public static final class Builder extends JobConfiguration.Builder<LoadJobConfiguration, Builder>
       implements LoadConfiguration.Builder {
 
@@ -83,6 +88,8 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     private RangePartitioning rangePartitioning;
     private HivePartitioningOptions hivePartitioningOptions;
     private String referenceFileSchemaUri;
+    private List<ConnectionProperty> connectionProperties;
+    private Boolean createSession;
 
     private Builder() {
       super(Type.LOAD);
@@ -112,6 +119,8 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       this.rangePartitioning = loadConfiguration.rangePartitioning;
       this.hivePartitioningOptions = loadConfiguration.hivePartitioningOptions;
       this.referenceFileSchemaUri = loadConfiguration.referenceFileSchemaUri;
+      this.connectionProperties = loadConfiguration.connectionProperties;
+      this.createSession = loadConfiguration.createSession;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -205,6 +214,13 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       if (loadConfigurationPb.getReferenceFileSchemaUri() != null) {
         this.referenceFileSchemaUri = loadConfigurationPb.getReferenceFileSchemaUri();
       }
+      if (loadConfigurationPb.getConnectionProperties() != null) {
+
+        this.connectionProperties =
+            Lists.transform(
+                loadConfigurationPb.getConnectionProperties(), ConnectionProperty.FROM_PB_FUNCTION);
+      }
+      createSession = loadConfigurationPb.getCreateSession();
     }
 
     @Override
@@ -368,6 +384,16 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       return this;
     }
 
+    public Builder setConnectionProperties(List<ConnectionProperty> connectionProperties) {
+      this.connectionProperties = ImmutableList.copyOf(connectionProperties);
+      return this;
+    }
+
+    public Builder setCreateSession(Boolean createSession) {
+      this.createSession = createSession;
+      return this;
+    }
+
     @Override
     public LoadJobConfiguration build() {
       return new LoadJobConfiguration(this);
@@ -397,6 +423,8 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     this.rangePartitioning = builder.rangePartitioning;
     this.hivePartitioningOptions = builder.hivePartitioningOptions;
     this.referenceFileSchemaUri = builder.referenceFileSchemaUri;
+    this.connectionProperties = builder.connectionProperties;
+    this.createSession = builder.createSession;
   }
 
   @Override
@@ -520,6 +548,14 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     return referenceFileSchemaUri;
   }
 
+  public List<ConnectionProperty> getConnectionProperties() {
+    return connectionProperties;
+  }
+
+  public Boolean getCreateSession() {
+    return createSession;
+  }
+
   @Override
   public Builder toBuilder() {
     return new Builder(this);
@@ -548,7 +584,9 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
         .add("jobTimeoutMs", jobTimeoutMs)
         .add("rangePartitioning", rangePartitioning)
         .add("hivePartitioningOptions", hivePartitioningOptions)
-        .add("referenceFileSchemaUri", referenceFileSchemaUri);
+        .add("referenceFileSchemaUri", referenceFileSchemaUri)
+        .add("connectionProperties", connectionProperties)
+        .add("createSession", createSession);
   }
 
   @Override
@@ -653,6 +691,13 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     }
     if (referenceFileSchemaUri != null) {
       loadConfigurationPb.setReferenceFileSchemaUri(referenceFileSchemaUri);
+    }
+    if (connectionProperties != null) {
+      loadConfigurationPb.setConnectionProperties(
+          Lists.transform(connectionProperties, ConnectionProperty.TO_PB_FUNCTION));
+    }
+    if (createSession != null) {
+      loadConfigurationPb.setCreateSession(createSession);
     }
 
     jobConfiguration.setLoad(loadConfigurationPb);
