@@ -58,6 +58,6 @@ public class SimpleAppIT {
   public void testQuickstart() throws Exception {
     SimpleApp.main();
     String got = bout.toString();
-    assertThat(got).contains("Repo name:");
+    assertThat(got).contains("https://stackoverflow.com/questions/");
   }
 }
