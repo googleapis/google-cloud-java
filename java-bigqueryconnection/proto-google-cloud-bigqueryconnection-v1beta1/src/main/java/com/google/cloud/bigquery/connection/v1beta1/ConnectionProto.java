@@ -134,7 +134,8 @@ public final class ConnectionProto {
    *
    *
    * <pre>
-   * The request for [ConnectionService.CreateConnection][google.cloud.bigquery.connection.v1beta1.ConnectionService.CreateConnection].
+   * The request for
+   * [ConnectionService.CreateConnection][google.cloud.bigquery.connection.v1beta1.ConnectionService.CreateConnection].
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.connection.v1beta1.CreateConnectionRequest}
@@ -559,7 +560,8 @@ public final class ConnectionProto {
      *
      *
      * <pre>
-     * The request for [ConnectionService.CreateConnection][google.cloud.bigquery.connection.v1beta1.ConnectionService.CreateConnection].
+     * The request for
+     * [ConnectionService.CreateConnection][google.cloud.bigquery.connection.v1beta1.ConnectionService.CreateConnection].
      * </pre>
      *
      * Protobuf type {@code google.cloud.bigquery.connection.v1beta1.CreateConnectionRequest}
@@ -1344,7 +1346,8 @@ public final class ConnectionProto {
    *
    *
    * <pre>
-   * The request for [ConnectionService.GetConnection][google.cloud.bigquery.connection.v1beta1.ConnectionService.GetConnection].
+   * The request for
+   * [ConnectionService.GetConnection][google.cloud.bigquery.connection.v1beta1.ConnectionService.GetConnection].
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.connection.v1beta1.GetConnectionRequest}
@@ -1622,7 +1625,8 @@ public final class ConnectionProto {
      *
      *
      * <pre>
-     * The request for [ConnectionService.GetConnection][google.cloud.bigquery.connection.v1beta1.ConnectionService.GetConnection].
+     * The request for
+     * [ConnectionService.GetConnection][google.cloud.bigquery.connection.v1beta1.ConnectionService.GetConnection].
      * </pre>
      *
      * Protobuf type {@code google.cloud.bigquery.connection.v1beta1.GetConnectionRequest}
@@ -2114,7 +2118,8 @@ public final class ConnectionProto {
    *
    *
    * <pre>
-   * The request for [ConnectionService.ListConnections][google.cloud.bigquery.connection.v1beta1.ConnectionService.ListConnections].
+   * The request for
+   * [ConnectionService.ListConnections][google.cloud.bigquery.connection.v1beta1.ConnectionService.ListConnections].
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.connection.v1beta1.ListConnectionsRequest}
@@ -2532,7 +2537,8 @@ public final class ConnectionProto {
      *
      *
      * <pre>
-     * The request for [ConnectionService.ListConnections][google.cloud.bigquery.connection.v1beta1.ConnectionService.ListConnections].
+     * The request for
+     * [ConnectionService.ListConnections][google.cloud.bigquery.connection.v1beta1.ConnectionService.ListConnections].
      * </pre>
      *
      * Protobuf type {@code google.cloud.bigquery.connection.v1beta1.ListConnectionsRequest}
@@ -3355,7 +3361,8 @@ public final class ConnectionProto {
    *
    *
    * <pre>
-   * The response for [ConnectionService.ListConnections][google.cloud.bigquery.connection.v1beta1.ConnectionService.ListConnections].
+   * The response for
+   * [ConnectionService.ListConnections][google.cloud.bigquery.connection.v1beta1.ConnectionService.ListConnections].
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.connection.v1beta1.ListConnectionsResponse}
@@ -3729,7 +3736,8 @@ public final class ConnectionProto {
      *
      *
      * <pre>
-     * The response for [ConnectionService.ListConnections][google.cloud.bigquery.connection.v1beta1.ConnectionService.ListConnections].
+     * The response for
+     * [ConnectionService.ListConnections][google.cloud.bigquery.connection.v1beta1.ConnectionService.ListConnections].
      * </pre>
      *
      * Protobuf type {@code google.cloud.bigquery.connection.v1beta1.ListConnectionsResponse}
@@ -4675,7 +4683,8 @@ public final class ConnectionProto {
    *
    *
    * <pre>
-   * The request for [ConnectionService.UpdateConnection][google.cloud.bigquery.connection.v1beta1.ConnectionService.UpdateConnection].
+   * The request for
+   * [ConnectionService.UpdateConnection][google.cloud.bigquery.connection.v1beta1.ConnectionService.UpdateConnection].
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.connection.v1beta1.UpdateConnectionRequest}
@@ -5102,7 +5111,8 @@ public final class ConnectionProto {
      *
      *
      * <pre>
-     * The request for [ConnectionService.UpdateConnection][google.cloud.bigquery.connection.v1beta1.ConnectionService.UpdateConnection].
+     * The request for
+     * [ConnectionService.UpdateConnection][google.cloud.bigquery.connection.v1beta1.ConnectionService.UpdateConnection].
      * </pre>
      *
      * Protobuf type {@code google.cloud.bigquery.connection.v1beta1.UpdateConnectionRequest}
@@ -6015,7 +6025,8 @@ public final class ConnectionProto {
    *
    *
    * <pre>
-   * The request for [ConnectionService.UpdateConnectionCredential][google.cloud.bigquery.connection.v1beta1.ConnectionService.UpdateConnectionCredential].
+   * The request for
+   * [ConnectionService.UpdateConnectionCredential][google.cloud.bigquery.connection.v1beta1.ConnectionService.UpdateConnectionCredential].
    * </pre>
    *
    * Protobuf type {@code
@@ -6385,7 +6396,8 @@ public final class ConnectionProto {
      *
      *
      * <pre>
-     * The request for [ConnectionService.UpdateConnectionCredential][google.cloud.bigquery.connection.v1beta1.ConnectionService.UpdateConnectionCredential].
+     * The request for
+     * [ConnectionService.UpdateConnectionCredential][google.cloud.bigquery.connection.v1beta1.ConnectionService.UpdateConnectionCredential].
      * </pre>
      *
      * Protobuf type {@code
@@ -10655,9 +10667,10 @@ public final class ConnectionProto {
      *
      *
      * <pre>
-     * Output only. The account ID of the service used for the purpose of this connection.
+     * Output only. The account ID of the service used for the purpose of this
+     * connection.
      * When the connection is used in the context of an operation in
-     * BigQuery, this service account will serve as identity being used for
+     * BigQuery, this service account will serve as the identity being used for
      * connecting to the CloudSQL instance specified in this connection.
      * </pre>
      *
@@ -10670,9 +10683,10 @@ public final class ConnectionProto {
      *
      *
      * <pre>
-     * Output only. The account ID of the service used for the purpose of this connection.
+     * Output only. The account ID of the service used for the purpose of this
+     * connection.
      * When the connection is used in the context of an operation in
-     * BigQuery, this service account will serve as identity being used for
+     * BigQuery, this service account will serve as the identity being used for
      * connecting to the CloudSQL instance specified in this connection.
      * </pre>
      *
@@ -11111,9 +11125,10 @@ public final class ConnectionProto {
      *
      *
      * <pre>
-     * Output only. The account ID of the service used for the purpose of this connection.
+     * Output only. The account ID of the service used for the purpose of this
+     * connection.
      * When the connection is used in the context of an operation in
-     * BigQuery, this service account will serve as identity being used for
+     * BigQuery, this service account will serve as the identity being used for
      * connecting to the CloudSQL instance specified in this connection.
      * </pre>
      *
@@ -11137,9 +11152,10 @@ public final class ConnectionProto {
      *
      *
      * <pre>
-     * Output only. The account ID of the service used for the purpose of this connection.
+     * Output only. The account ID of the service used for the purpose of this
+     * connection.
      * When the connection is used in the context of an operation in
-     * BigQuery, this service account will serve as identity being used for
+     * BigQuery, this service account will serve as the identity being used for
      * connecting to the CloudSQL instance specified in this connection.
      * </pre>
      *
@@ -12181,9 +12197,10 @@ public final class ConnectionProto {
        *
        *
        * <pre>
-       * Output only. The account ID of the service used for the purpose of this connection.
+       * Output only. The account ID of the service used for the purpose of this
+       * connection.
        * When the connection is used in the context of an operation in
-       * BigQuery, this service account will serve as identity being used for
+       * BigQuery, this service account will serve as the identity being used for
        * connecting to the CloudSQL instance specified in this connection.
        * </pre>
        *
@@ -12206,9 +12223,10 @@ public final class ConnectionProto {
        *
        *
        * <pre>
-       * Output only. The account ID of the service used for the purpose of this connection.
+       * Output only. The account ID of the service used for the purpose of this
+       * connection.
        * When the connection is used in the context of an operation in
-       * BigQuery, this service account will serve as identity being used for
+       * BigQuery, this service account will serve as the identity being used for
        * connecting to the CloudSQL instance specified in this connection.
        * </pre>
        *
@@ -12231,9 +12249,10 @@ public final class ConnectionProto {
        *
        *
        * <pre>
-       * Output only. The account ID of the service used for the purpose of this connection.
+       * Output only. The account ID of the service used for the purpose of this
+       * connection.
        * When the connection is used in the context of an operation in
-       * BigQuery, this service account will serve as identity being used for
+       * BigQuery, this service account will serve as the identity being used for
        * connecting to the CloudSQL instance specified in this connection.
        * </pre>
        *
@@ -12255,9 +12274,10 @@ public final class ConnectionProto {
        *
        *
        * <pre>
-       * Output only. The account ID of the service used for the purpose of this connection.
+       * Output only. The account ID of the service used for the purpose of this
+       * connection.
        * When the connection is used in the context of an operation in
-       * BigQuery, this service account will serve as identity being used for
+       * BigQuery, this service account will serve as the identity being used for
        * connecting to the CloudSQL instance specified in this connection.
        * </pre>
        *
@@ -12275,9 +12295,10 @@ public final class ConnectionProto {
        *
        *
        * <pre>
-       * Output only. The account ID of the service used for the purpose of this connection.
+       * Output only. The account ID of the service used for the purpose of this
+       * connection.
        * When the connection is used in the context of an operation in
-       * BigQuery, this service account will serve as identity being used for
+       * BigQuery, this service account will serve as the identity being used for
        * connecting to the CloudSQL instance specified in this connection.
        * </pre>
        *
