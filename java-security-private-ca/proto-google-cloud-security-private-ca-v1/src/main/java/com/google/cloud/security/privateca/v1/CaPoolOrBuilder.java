@@ -27,8 +27,9 @@ public interface CaPoolOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name for this [CaPool][google.cloud.security.privateca.v1.CaPool] in the
-   * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
+   * Output only. The resource name for this
+   * [CaPool][google.cloud.security.privateca.v1.CaPool] in the format
+   * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -40,8 +41,9 @@ public interface CaPoolOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name for this [CaPool][google.cloud.security.privateca.v1.CaPool] in the
-   * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
+   * Output only. The resource name for this
+   * [CaPool][google.cloud.security.privateca.v1.CaPool] in the format
+   * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -54,7 +56,9 @@ public interface CaPoolOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The [Tier][google.cloud.security.privateca.v1.CaPool.Tier] of this [CaPool][google.cloud.security.privateca.v1.CaPool].
+   * Required. Immutable. The
+   * [Tier][google.cloud.security.privateca.v1.CaPool.Tier] of this
+   * [CaPool][google.cloud.security.privateca.v1.CaPool].
    * </pre>
    *
    * <code>
@@ -68,7 +72,9 @@ public interface CaPoolOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The [Tier][google.cloud.security.privateca.v1.CaPool.Tier] of this [CaPool][google.cloud.security.privateca.v1.CaPool].
+   * Required. Immutable. The
+   * [Tier][google.cloud.security.privateca.v1.CaPool.Tier] of this
+   * [CaPool][google.cloud.security.privateca.v1.CaPool].
    * </pre>
    *
    * <code>
@@ -83,8 +89,11 @@ public interface CaPoolOrBuilder
    *
    *
    * <pre>
-   * Optional. The [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy] to control how [Certificates][google.cloud.security.privateca.v1.Certificate]
-   * will be issued from this [CaPool][google.cloud.security.privateca.v1.CaPool].
+   * Optional. The
+   * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+   * to control how
+   * [Certificates][google.cloud.security.privateca.v1.Certificate] will be
+   * issued from this [CaPool][google.cloud.security.privateca.v1.CaPool].
    * </pre>
    *
    * <code>
@@ -98,8 +107,11 @@ public interface CaPoolOrBuilder
    *
    *
    * <pre>
-   * Optional. The [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy] to control how [Certificates][google.cloud.security.privateca.v1.Certificate]
-   * will be issued from this [CaPool][google.cloud.security.privateca.v1.CaPool].
+   * Optional. The
+   * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+   * to control how
+   * [Certificates][google.cloud.security.privateca.v1.Certificate] will be
+   * issued from this [CaPool][google.cloud.security.privateca.v1.CaPool].
    * </pre>
    *
    * <code>
@@ -113,8 +125,11 @@ public interface CaPoolOrBuilder
    *
    *
    * <pre>
-   * Optional. The [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy] to control how [Certificates][google.cloud.security.privateca.v1.Certificate]
-   * will be issued from this [CaPool][google.cloud.security.privateca.v1.CaPool].
+   * Optional. The
+   * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+   * to control how
+   * [Certificates][google.cloud.security.privateca.v1.Certificate] will be
+   * issued from this [CaPool][google.cloud.security.privateca.v1.CaPool].
    * </pre>
    *
    * <code>
@@ -128,9 +143,12 @@ public interface CaPoolOrBuilder
    *
    *
    * <pre>
-   * Optional. The [PublishingOptions][google.cloud.security.privateca.v1.CaPool.PublishingOptions] to follow when issuing
-   * [Certificates][google.cloud.security.privateca.v1.Certificate] from any [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in this
-   * [CaPool][google.cloud.security.privateca.v1.CaPool].
+   * Optional. The
+   * [PublishingOptions][google.cloud.security.privateca.v1.CaPool.PublishingOptions]
+   * to follow when issuing
+   * [Certificates][google.cloud.security.privateca.v1.Certificate] from any
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * in this [CaPool][google.cloud.security.privateca.v1.CaPool].
    * </pre>
    *
    * <code>
@@ -144,9 +162,12 @@ public interface CaPoolOrBuilder
    *
    *
    * <pre>
-   * Optional. The [PublishingOptions][google.cloud.security.privateca.v1.CaPool.PublishingOptions] to follow when issuing
-   * [Certificates][google.cloud.security.privateca.v1.Certificate] from any [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in this
-   * [CaPool][google.cloud.security.privateca.v1.CaPool].
+   * Optional. The
+   * [PublishingOptions][google.cloud.security.privateca.v1.CaPool.PublishingOptions]
+   * to follow when issuing
+   * [Certificates][google.cloud.security.privateca.v1.Certificate] from any
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * in this [CaPool][google.cloud.security.privateca.v1.CaPool].
    * </pre>
    *
    * <code>
@@ -160,9 +181,12 @@ public interface CaPoolOrBuilder
    *
    *
    * <pre>
-   * Optional. The [PublishingOptions][google.cloud.security.privateca.v1.CaPool.PublishingOptions] to follow when issuing
-   * [Certificates][google.cloud.security.privateca.v1.Certificate] from any [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in this
-   * [CaPool][google.cloud.security.privateca.v1.CaPool].
+   * Optional. The
+   * [PublishingOptions][google.cloud.security.privateca.v1.CaPool.PublishingOptions]
+   * to follow when issuing
+   * [Certificates][google.cloud.security.privateca.v1.Certificate] from any
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * in this [CaPool][google.cloud.security.privateca.v1.CaPool].
    * </pre>
    *
    * <code>

@@ -22,11 +22,13 @@ package com.google.cloud.security.privateca.v1;
  *
  *
  * <pre>
- * A [RevocationReason][google.cloud.security.privateca.v1.RevocationReason] indicates whether a [Certificate][google.cloud.security.privateca.v1.Certificate] has been revoked,
- * and the reason for revocation. These correspond to standard revocation
- * reasons from RFC 5280. Note that the enum labels and values in this
- * definition are not the same ASN.1 values defined in RFC 5280. These values
- * will be translated to the correct ASN.1 values when a CRL is created.
+ * A [RevocationReason][google.cloud.security.privateca.v1.RevocationReason]
+ * indicates whether a
+ * [Certificate][google.cloud.security.privateca.v1.Certificate] has been
+ * revoked, and the reason for revocation. These correspond to standard
+ * revocation reasons from RFC 5280. Note that the enum labels and values in
+ * this definition are not the same ASN.1 values defined in RFC 5280. These
+ * values will be translated to the correct ASN.1 values when a CRL is created.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.security.privateca.v1.RevocationReason}
@@ -36,8 +38,9 @@ public enum RevocationReason implements com.google.protobuf.ProtocolMessageEnum 
    *
    *
    * <pre>
-   * Default unspecified value. This value does indicate that a [Certificate][google.cloud.security.privateca.v1.Certificate]
-   * has been revoked, but that a reason has not been recorded.
+   * Default unspecified value. This value does indicate that a
+   * [Certificate][google.cloud.security.privateca.v1.Certificate] has been
+   * revoked, but that a reason has not been recorded.
    * </pre>
    *
    * <code>REVOCATION_REASON_UNSPECIFIED = 0;</code>
@@ -47,7 +50,9 @@ public enum RevocationReason implements com.google.protobuf.ProtocolMessageEnum 
    *
    *
    * <pre>
-   * Key material for this [Certificate][google.cloud.security.privateca.v1.Certificate] may have leaked.
+   * Key material for this
+   * [Certificate][google.cloud.security.privateca.v1.Certificate] may have
+   * leaked.
    * </pre>
    *
    * <code>KEY_COMPROMISE = 1;</code>
@@ -68,7 +73,8 @@ public enum RevocationReason implements com.google.protobuf.ProtocolMessageEnum 
    *
    *
    * <pre>
-   * The subject or other attributes in this [Certificate][google.cloud.security.privateca.v1.Certificate] have changed.
+   * The subject or other attributes in this
+   * [Certificate][google.cloud.security.privateca.v1.Certificate] have changed.
    * </pre>
    *
    * <code>AFFILIATION_CHANGED = 3;</code>
@@ -78,7 +84,8 @@ public enum RevocationReason implements com.google.protobuf.ProtocolMessageEnum 
    *
    *
    * <pre>
-   * This [Certificate][google.cloud.security.privateca.v1.Certificate] has been superseded.
+   * This [Certificate][google.cloud.security.privateca.v1.Certificate] has been
+   * superseded.
    * </pre>
    *
    * <code>SUPERSEDED = 4;</code>
@@ -88,8 +95,8 @@ public enum RevocationReason implements com.google.protobuf.ProtocolMessageEnum 
    *
    *
    * <pre>
-   * This [Certificate][google.cloud.security.privateca.v1.Certificate] or entities in the issuing path have ceased to
-   * operate.
+   * This [Certificate][google.cloud.security.privateca.v1.Certificate] or
+   * entities in the issuing path have ceased to operate.
    * </pre>
    *
    * <code>CESSATION_OF_OPERATION = 5;</code>
@@ -99,8 +106,9 @@ public enum RevocationReason implements com.google.protobuf.ProtocolMessageEnum 
    *
    *
    * <pre>
-   * This [Certificate][google.cloud.security.privateca.v1.Certificate] should not be considered valid, it is expected that it
-   * may become valid in the future.
+   * This [Certificate][google.cloud.security.privateca.v1.Certificate] should
+   * not be considered valid, it is expected that it may become valid in the
+   * future.
    * </pre>
    *
    * <code>CERTIFICATE_HOLD = 6;</code>
@@ -110,8 +118,8 @@ public enum RevocationReason implements com.google.protobuf.ProtocolMessageEnum 
    *
    *
    * <pre>
-   * This [Certificate][google.cloud.security.privateca.v1.Certificate] no longer has permission to assert the listed
-   * attributes.
+   * This [Certificate][google.cloud.security.privateca.v1.Certificate] no
+   * longer has permission to assert the listed attributes.
    * </pre>
    *
    * <code>PRIVILEGE_WITHDRAWN = 7;</code>
@@ -121,8 +129,9 @@ public enum RevocationReason implements com.google.protobuf.ProtocolMessageEnum 
    *
    *
    * <pre>
-   * The authority which determines appropriate attributes for a [Certificate][google.cloud.security.privateca.v1.Certificate]
-   * may have been compromised.
+   * The authority which determines appropriate attributes for a
+   * [Certificate][google.cloud.security.privateca.v1.Certificate] may have been
+   * compromised.
    * </pre>
    *
    * <code>ATTRIBUTE_AUTHORITY_COMPROMISE = 8;</code>
@@ -135,8 +144,9 @@ public enum RevocationReason implements com.google.protobuf.ProtocolMessageEnum 
    *
    *
    * <pre>
-   * Default unspecified value. This value does indicate that a [Certificate][google.cloud.security.privateca.v1.Certificate]
-   * has been revoked, but that a reason has not been recorded.
+   * Default unspecified value. This value does indicate that a
+   * [Certificate][google.cloud.security.privateca.v1.Certificate] has been
+   * revoked, but that a reason has not been recorded.
    * </pre>
    *
    * <code>REVOCATION_REASON_UNSPECIFIED = 0;</code>
@@ -146,7 +156,9 @@ public enum RevocationReason implements com.google.protobuf.ProtocolMessageEnum 
    *
    *
    * <pre>
-   * Key material for this [Certificate][google.cloud.security.privateca.v1.Certificate] may have leaked.
+   * Key material for this
+   * [Certificate][google.cloud.security.privateca.v1.Certificate] may have
+   * leaked.
    * </pre>
    *
    * <code>KEY_COMPROMISE = 1;</code>
@@ -167,7 +179,8 @@ public enum RevocationReason implements com.google.protobuf.ProtocolMessageEnum 
    *
    *
    * <pre>
-   * The subject or other attributes in this [Certificate][google.cloud.security.privateca.v1.Certificate] have changed.
+   * The subject or other attributes in this
+   * [Certificate][google.cloud.security.privateca.v1.Certificate] have changed.
    * </pre>
    *
    * <code>AFFILIATION_CHANGED = 3;</code>
@@ -177,7 +190,8 @@ public enum RevocationReason implements com.google.protobuf.ProtocolMessageEnum 
    *
    *
    * <pre>
-   * This [Certificate][google.cloud.security.privateca.v1.Certificate] has been superseded.
+   * This [Certificate][google.cloud.security.privateca.v1.Certificate] has been
+   * superseded.
    * </pre>
    *
    * <code>SUPERSEDED = 4;</code>
@@ -187,8 +201,8 @@ public enum RevocationReason implements com.google.protobuf.ProtocolMessageEnum 
    *
    *
    * <pre>
-   * This [Certificate][google.cloud.security.privateca.v1.Certificate] or entities in the issuing path have ceased to
-   * operate.
+   * This [Certificate][google.cloud.security.privateca.v1.Certificate] or
+   * entities in the issuing path have ceased to operate.
    * </pre>
    *
    * <code>CESSATION_OF_OPERATION = 5;</code>
@@ -198,8 +212,9 @@ public enum RevocationReason implements com.google.protobuf.ProtocolMessageEnum 
    *
    *
    * <pre>
-   * This [Certificate][google.cloud.security.privateca.v1.Certificate] should not be considered valid, it is expected that it
-   * may become valid in the future.
+   * This [Certificate][google.cloud.security.privateca.v1.Certificate] should
+   * not be considered valid, it is expected that it may become valid in the
+   * future.
    * </pre>
    *
    * <code>CERTIFICATE_HOLD = 6;</code>
@@ -209,8 +224,8 @@ public enum RevocationReason implements com.google.protobuf.ProtocolMessageEnum 
    *
    *
    * <pre>
-   * This [Certificate][google.cloud.security.privateca.v1.Certificate] no longer has permission to assert the listed
-   * attributes.
+   * This [Certificate][google.cloud.security.privateca.v1.Certificate] no
+   * longer has permission to assert the listed attributes.
    * </pre>
    *
    * <code>PRIVILEGE_WITHDRAWN = 7;</code>
@@ -220,8 +235,9 @@ public enum RevocationReason implements com.google.protobuf.ProtocolMessageEnum 
    *
    *
    * <pre>
-   * The authority which determines appropriate attributes for a [Certificate][google.cloud.security.privateca.v1.Certificate]
-   * may have been compromised.
+   * The authority which determines appropriate attributes for a
+   * [Certificate][google.cloud.security.privateca.v1.Certificate] may have been
+   * compromised.
    * </pre>
    *
    * <code>ATTRIBUTE_AUTHORITY_COMPROMISE = 8;</code>

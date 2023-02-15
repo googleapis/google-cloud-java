@@ -23,10 +23,12 @@ package com.google.cloud.security.privateca.v1;
  *
  * <pre>
  * A [CaPool][google.cloud.security.privateca.v1.CaPool] represents a group of
- * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority] that form a trust anchor. A
- * [CaPool][google.cloud.security.privateca.v1.CaPool] can be used to manage issuance policies for one or more
- * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] resources and to rotate CA certificates in and out
- * of the trust anchor.
+ * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority]
+ * that form a trust anchor. A
+ * [CaPool][google.cloud.security.privateca.v1.CaPool] can be used to manage
+ * issuance policies for one or more
+ * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+ * resources and to rotate CA certificates in and out of the trust anchor.
  * </pre>
  *
  * Protobuf type {@code google.cloud.security.privateca.v1.CaPool}
@@ -87,8 +89,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The tier of a [CaPool][google.cloud.security.privateca.v1.CaPool], indicating its supported functionality and/or
-   * billing SKU.
+   * The tier of a [CaPool][google.cloud.security.privateca.v1.CaPool],
+   * indicating its supported functionality and/or billing SKU.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.security.privateca.v1.CaPool.Tier}
@@ -250,11 +252,13 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. When true, publishes each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate and
-     * includes its URL in the "Authority Information Access" X.509 extension
-     * in all issued [Certificates][google.cloud.security.privateca.v1.Certificate]. If this is false, the CA
-     * certificate will not be published and the corresponding X.509 extension
-     * will not be written in issued certificates.
+     * Optional. When true, publishes each
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CA certificate and includes its URL in the "Authority Information Access"
+     * X.509 extension in all issued
+     * [Certificates][google.cloud.security.privateca.v1.Certificate]. If this
+     * is false, the CA certificate will not be published and the corresponding
+     * X.509 extension will not be written in issued certificates.
      * </pre>
      *
      * <code>bool publish_ca_cert = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -267,13 +271,15 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. When true, publishes each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRL and includes its
-     * URL in the "CRL Distribution Points" X.509 extension in all issued
-     * [Certificates][google.cloud.security.privateca.v1.Certificate]. If this is false, CRLs will not be published
-     * and the corresponding X.509 extension will not be written in issued
-     * certificates.
-     * CRLs will expire 7 days from their creation. However, we will rebuild
-     * daily. CRLs are also rebuilt shortly after a certificate is revoked.
+     * Optional. When true, publishes each
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CRL and includes its URL in the "CRL Distribution Points" X.509 extension
+     * in all issued
+     * [Certificates][google.cloud.security.privateca.v1.Certificate]. If this
+     * is false, CRLs will not be published and the corresponding X.509
+     * extension will not be written in issued certificates. CRLs will expire 7
+     * days from their creation. However, we will rebuild daily. CRLs are also
+     * rebuilt shortly after a certificate is revoked.
      * </pre>
      *
      * <code>bool publish_crl = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -286,10 +292,13 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Options relating to the publication of each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA
-   * certificate and CRLs and their inclusion as extensions in issued
-   * [Certificates][google.cloud.security.privateca.v1.Certificate]. The options set here apply to certificates
-   * issued by any [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the [CaPool][google.cloud.security.privateca.v1.CaPool].
+   * Options relating to the publication of each
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * CA certificate and CRLs and their inclusion as extensions in issued
+   * [Certificates][google.cloud.security.privateca.v1.Certificate]. The options
+   * set here apply to certificates issued by any
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * in the [CaPool][google.cloud.security.privateca.v1.CaPool].
    * </pre>
    *
    * Protobuf type {@code google.cloud.security.privateca.v1.CaPool.PublishingOptions}
@@ -338,11 +347,13 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. When true, publishes each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate and
-     * includes its URL in the "Authority Information Access" X.509 extension
-     * in all issued [Certificates][google.cloud.security.privateca.v1.Certificate]. If this is false, the CA
-     * certificate will not be published and the corresponding X.509 extension
-     * will not be written in issued certificates.
+     * Optional. When true, publishes each
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CA certificate and includes its URL in the "Authority Information Access"
+     * X.509 extension in all issued
+     * [Certificates][google.cloud.security.privateca.v1.Certificate]. If this
+     * is false, the CA certificate will not be published and the corresponding
+     * X.509 extension will not be written in issued certificates.
      * </pre>
      *
      * <code>bool publish_ca_cert = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -360,13 +371,15 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. When true, publishes each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRL and includes its
-     * URL in the "CRL Distribution Points" X.509 extension in all issued
-     * [Certificates][google.cloud.security.privateca.v1.Certificate]. If this is false, CRLs will not be published
-     * and the corresponding X.509 extension will not be written in issued
-     * certificates.
-     * CRLs will expire 7 days from their creation. However, we will rebuild
-     * daily. CRLs are also rebuilt shortly after a certificate is revoked.
+     * Optional. When true, publishes each
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CRL and includes its URL in the "CRL Distribution Points" X.509 extension
+     * in all issued
+     * [Certificates][google.cloud.security.privateca.v1.Certificate]. If this
+     * is false, CRLs will not be published and the corresponding X.509
+     * extension will not be written in issued certificates. CRLs will expire 7
+     * days from their creation. However, we will rebuild daily. CRLs are also
+     * rebuilt shortly after a certificate is revoked.
      * </pre>
      *
      * <code>bool publish_crl = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -553,10 +566,13 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Options relating to the publication of each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA
-     * certificate and CRLs and their inclusion as extensions in issued
-     * [Certificates][google.cloud.security.privateca.v1.Certificate]. The options set here apply to certificates
-     * issued by any [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * Options relating to the publication of each
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CA certificate and CRLs and their inclusion as extensions in issued
+     * [Certificates][google.cloud.security.privateca.v1.Certificate]. The options
+     * set here apply to certificates issued by any
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * in the [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * Protobuf type {@code google.cloud.security.privateca.v1.CaPool.PublishingOptions}
@@ -759,11 +775,13 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. When true, publishes each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate and
-       * includes its URL in the "Authority Information Access" X.509 extension
-       * in all issued [Certificates][google.cloud.security.privateca.v1.Certificate]. If this is false, the CA
-       * certificate will not be published and the corresponding X.509 extension
-       * will not be written in issued certificates.
+       * Optional. When true, publishes each
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+       * CA certificate and includes its URL in the "Authority Information Access"
+       * X.509 extension in all issued
+       * [Certificates][google.cloud.security.privateca.v1.Certificate]. If this
+       * is false, the CA certificate will not be published and the corresponding
+       * X.509 extension will not be written in issued certificates.
        * </pre>
        *
        * <code>bool publish_ca_cert = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -778,11 +796,13 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. When true, publishes each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate and
-       * includes its URL in the "Authority Information Access" X.509 extension
-       * in all issued [Certificates][google.cloud.security.privateca.v1.Certificate]. If this is false, the CA
-       * certificate will not be published and the corresponding X.509 extension
-       * will not be written in issued certificates.
+       * Optional. When true, publishes each
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+       * CA certificate and includes its URL in the "Authority Information Access"
+       * X.509 extension in all issued
+       * [Certificates][google.cloud.security.privateca.v1.Certificate]. If this
+       * is false, the CA certificate will not be published and the corresponding
+       * X.509 extension will not be written in issued certificates.
        * </pre>
        *
        * <code>bool publish_ca_cert = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -801,11 +821,13 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. When true, publishes each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate and
-       * includes its URL in the "Authority Information Access" X.509 extension
-       * in all issued [Certificates][google.cloud.security.privateca.v1.Certificate]. If this is false, the CA
-       * certificate will not be published and the corresponding X.509 extension
-       * will not be written in issued certificates.
+       * Optional. When true, publishes each
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+       * CA certificate and includes its URL in the "Authority Information Access"
+       * X.509 extension in all issued
+       * [Certificates][google.cloud.security.privateca.v1.Certificate]. If this
+       * is false, the CA certificate will not be published and the corresponding
+       * X.509 extension will not be written in issued certificates.
        * </pre>
        *
        * <code>bool publish_ca_cert = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -824,13 +846,15 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. When true, publishes each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRL and includes its
-       * URL in the "CRL Distribution Points" X.509 extension in all issued
-       * [Certificates][google.cloud.security.privateca.v1.Certificate]. If this is false, CRLs will not be published
-       * and the corresponding X.509 extension will not be written in issued
-       * certificates.
-       * CRLs will expire 7 days from their creation. However, we will rebuild
-       * daily. CRLs are also rebuilt shortly after a certificate is revoked.
+       * Optional. When true, publishes each
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+       * CRL and includes its URL in the "CRL Distribution Points" X.509 extension
+       * in all issued
+       * [Certificates][google.cloud.security.privateca.v1.Certificate]. If this
+       * is false, CRLs will not be published and the corresponding X.509
+       * extension will not be written in issued certificates. CRLs will expire 7
+       * days from their creation. However, we will rebuild daily. CRLs are also
+       * rebuilt shortly after a certificate is revoked.
        * </pre>
        *
        * <code>bool publish_crl = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -845,13 +869,15 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. When true, publishes each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRL and includes its
-       * URL in the "CRL Distribution Points" X.509 extension in all issued
-       * [Certificates][google.cloud.security.privateca.v1.Certificate]. If this is false, CRLs will not be published
-       * and the corresponding X.509 extension will not be written in issued
-       * certificates.
-       * CRLs will expire 7 days from their creation. However, we will rebuild
-       * daily. CRLs are also rebuilt shortly after a certificate is revoked.
+       * Optional. When true, publishes each
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+       * CRL and includes its URL in the "CRL Distribution Points" X.509 extension
+       * in all issued
+       * [Certificates][google.cloud.security.privateca.v1.Certificate]. If this
+       * is false, CRLs will not be published and the corresponding X.509
+       * extension will not be written in issued certificates. CRLs will expire 7
+       * days from their creation. However, we will rebuild daily. CRLs are also
+       * rebuilt shortly after a certificate is revoked.
        * </pre>
        *
        * <code>bool publish_crl = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -870,13 +896,15 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. When true, publishes each [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRL and includes its
-       * URL in the "CRL Distribution Points" X.509 extension in all issued
-       * [Certificates][google.cloud.security.privateca.v1.Certificate]. If this is false, CRLs will not be published
-       * and the corresponding X.509 extension will not be written in issued
-       * certificates.
-       * CRLs will expire 7 days from their creation. However, we will rebuild
-       * daily. CRLs are also rebuilt shortly after a certificate is revoked.
+       * Optional. When true, publishes each
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+       * CRL and includes its URL in the "CRL Distribution Points" X.509 extension
+       * in all issued
+       * [Certificates][google.cloud.security.privateca.v1.Certificate]. If this
+       * is false, CRLs will not be published and the corresponding X.509
+       * extension will not be written in issued certificates. CRLs will expire 7
+       * days from their creation. However, we will rebuild daily. CRLs are also
+       * rebuilt shortly after a certificate is revoked.
        * </pre>
        *
        * <code>bool publish_crl = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -966,9 +994,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If any [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType] is specified, then the certificate request's
-     * public key must match one of the key types listed here. Otherwise,
-     * any key may be used.
+     * Optional. If any
+     * [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType]
+     * is specified, then the certificate request's public key must match one of
+     * the key types listed here. Otherwise, any key may be used.
      * </pre>
      *
      * <code>
@@ -981,9 +1010,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If any [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType] is specified, then the certificate request's
-     * public key must match one of the key types listed here. Otherwise,
-     * any key may be used.
+     * Optional. If any
+     * [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType]
+     * is specified, then the certificate request's public key must match one of
+     * the key types listed here. Otherwise, any key may be used.
      * </pre>
      *
      * <code>
@@ -996,9 +1026,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If any [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType] is specified, then the certificate request's
-     * public key must match one of the key types listed here. Otherwise,
-     * any key may be used.
+     * Optional. If any
+     * [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType]
+     * is specified, then the certificate request's public key must match one of
+     * the key types listed here. Otherwise, any key may be used.
      * </pre>
      *
      * <code>
@@ -1010,9 +1041,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If any [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType] is specified, then the certificate request's
-     * public key must match one of the key types listed here. Otherwise,
-     * any key may be used.
+     * Optional. If any
+     * [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType]
+     * is specified, then the certificate request's public key must match one of
+     * the key types listed here. Otherwise, any key may be used.
      * </pre>
      *
      * <code>
@@ -1028,9 +1060,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If any [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType] is specified, then the certificate request's
-     * public key must match one of the key types listed here. Otherwise,
-     * any key may be used.
+     * Optional. If any
+     * [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType]
+     * is specified, then the certificate request's public key must match one of
+     * the key types listed here. Otherwise, any key may be used.
      * </pre>
      *
      * <code>
@@ -1044,10 +1077,14 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The maximum lifetime allowed for issued [Certificates][google.cloud.security.privateca.v1.Certificate]. Note
-     * that if the issuing [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] expires before a
-     * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested maximum_lifetime, the effective lifetime will
-     * be explicitly truncated to match it.
+     * Optional. The maximum lifetime allowed for issued
+     * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
+     * if the issuing
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * expires before a
+     * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
+     * maximum_lifetime, the effective lifetime will be explicitly truncated to
+     * match it.
      * </pre>
      *
      * <code>
@@ -1061,10 +1098,14 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The maximum lifetime allowed for issued [Certificates][google.cloud.security.privateca.v1.Certificate]. Note
-     * that if the issuing [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] expires before a
-     * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested maximum_lifetime, the effective lifetime will
-     * be explicitly truncated to match it.
+     * Optional. The maximum lifetime allowed for issued
+     * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
+     * if the issuing
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * expires before a
+     * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
+     * maximum_lifetime, the effective lifetime will be explicitly truncated to
+     * match it.
      * </pre>
      *
      * <code>
@@ -1078,10 +1119,14 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The maximum lifetime allowed for issued [Certificates][google.cloud.security.privateca.v1.Certificate]. Note
-     * that if the issuing [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] expires before a
-     * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested maximum_lifetime, the effective lifetime will
-     * be explicitly truncated to match it.
+     * Optional. The maximum lifetime allowed for issued
+     * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
+     * if the issuing
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * expires before a
+     * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
+     * maximum_lifetime, the effective lifetime will be explicitly truncated to
+     * match it.
      * </pre>
      *
      * <code>
@@ -1094,8 +1139,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If specified, then only methods allowed in the [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes] may be
-     * used to issue [Certificates][google.cloud.security.privateca.v1.Certificate].
+     * Optional. If specified, then only methods allowed in the
+     * [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes]
+     * may be used to issue
+     * [Certificates][google.cloud.security.privateca.v1.Certificate].
      * </pre>
      *
      * <code>
@@ -1109,8 +1156,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If specified, then only methods allowed in the [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes] may be
-     * used to issue [Certificates][google.cloud.security.privateca.v1.Certificate].
+     * Optional. If specified, then only methods allowed in the
+     * [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes]
+     * may be used to issue
+     * [Certificates][google.cloud.security.privateca.v1.Certificate].
      * </pre>
      *
      * <code>
@@ -1125,8 +1174,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If specified, then only methods allowed in the [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes] may be
-     * used to issue [Certificates][google.cloud.security.privateca.v1.Certificate].
+     * Optional. If specified, then only methods allowed in the
+     * [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes]
+     * may be used to issue
+     * [Certificates][google.cloud.security.privateca.v1.Certificate].
      * </pre>
      *
      * <code>
@@ -1140,13 +1191,15 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of X.509 values that will be applied to all certificates issued
-     * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a certificate request includes conflicting
-     * values for the same properties, they will be overwritten by the values
-     * defined here. If a certificate request uses a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * Optional. A set of X.509 values that will be applied to all certificates
+     * issued through this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * If a certificate request includes conflicting values for the same
+     * properties, they will be overwritten by the values defined here. If a
+     * certificate request uses a
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
      * that defines conflicting
-     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values] for the same
-     * properties, the certificate issuance request will fail.
+     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values]
+     * for the same properties, the certificate issuance request will fail.
      * </pre>
      *
      * <code>
@@ -1160,13 +1213,15 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of X.509 values that will be applied to all certificates issued
-     * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a certificate request includes conflicting
-     * values for the same properties, they will be overwritten by the values
-     * defined here. If a certificate request uses a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * Optional. A set of X.509 values that will be applied to all certificates
+     * issued through this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * If a certificate request includes conflicting values for the same
+     * properties, they will be overwritten by the values defined here. If a
+     * certificate request uses a
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
      * that defines conflicting
-     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values] for the same
-     * properties, the certificate issuance request will fail.
+     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values]
+     * for the same properties, the certificate issuance request will fail.
      * </pre>
      *
      * <code>
@@ -1180,13 +1235,15 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of X.509 values that will be applied to all certificates issued
-     * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a certificate request includes conflicting
-     * values for the same properties, they will be overwritten by the values
-     * defined here. If a certificate request uses a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * Optional. A set of X.509 values that will be applied to all certificates
+     * issued through this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * If a certificate request includes conflicting values for the same
+     * properties, they will be overwritten by the values defined here. If a
+     * certificate request uses a
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
      * that defines conflicting
-     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values] for the same
-     * properties, the certificate issuance request will fail.
+     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values]
+     * for the same properties, the certificate issuance request will fail.
      * </pre>
      *
      * <code>
@@ -1200,9 +1257,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Describes constraints on identities that may appear in
-     * [Certificates][google.cloud.security.privateca.v1.Certificate] issued through this [CaPool][google.cloud.security.privateca.v1.CaPool].
-     * If this is omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool] will not add restrictions on a
-     * certificate's identity.
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] issued
+     * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If this
+     * is omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool]
+     * will not add restrictions on a certificate's identity.
      * </pre>
      *
      * <code>
@@ -1217,9 +1275,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Describes constraints on identities that may appear in
-     * [Certificates][google.cloud.security.privateca.v1.Certificate] issued through this [CaPool][google.cloud.security.privateca.v1.CaPool].
-     * If this is omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool] will not add restrictions on a
-     * certificate's identity.
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] issued
+     * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If this
+     * is omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool]
+     * will not add restrictions on a certificate's identity.
      * </pre>
      *
      * <code>
@@ -1234,9 +1293,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Describes constraints on identities that may appear in
-     * [Certificates][google.cloud.security.privateca.v1.Certificate] issued through this [CaPool][google.cloud.security.privateca.v1.CaPool].
-     * If this is omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool] will not add restrictions on a
-     * certificate's identity.
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] issued
+     * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If this
+     * is omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool]
+     * will not add restrictions on a certificate's identity.
      * </pre>
      *
      * <code>
@@ -1251,15 +1311,21 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Describes the set of X.509 extensions that may appear in a
-     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a certificate request
-     * sets extensions that don't appear in the [passthrough_extensions][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.passthrough_extensions],
+     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued
+     * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a
+     * certificate request sets extensions that don't appear in the
+     * [passthrough_extensions][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.passthrough_extensions],
      * those extensions will be dropped. If a certificate request uses a
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] with
-     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values] that don't
-     * appear here, the certificate issuance request will fail. If this is
-     * omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool] will not add restrictions on a
-     * certificate's X.509 extensions. These constraints do not apply to X.509
-     * extensions set in this [CaPool][google.cloud.security.privateca.v1.CaPool]'s [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values].
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * with
+     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values]
+     * that don't appear here, the certificate issuance request will fail. If
+     * this is omitted, then this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] will not add
+     * restrictions on a certificate's X.509 extensions. These constraints do
+     * not apply to X.509 extensions set in this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values].
      * </pre>
      *
      * <code>
@@ -1274,15 +1340,21 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Describes the set of X.509 extensions that may appear in a
-     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a certificate request
-     * sets extensions that don't appear in the [passthrough_extensions][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.passthrough_extensions],
+     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued
+     * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a
+     * certificate request sets extensions that don't appear in the
+     * [passthrough_extensions][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.passthrough_extensions],
      * those extensions will be dropped. If a certificate request uses a
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] with
-     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values] that don't
-     * appear here, the certificate issuance request will fail. If this is
-     * omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool] will not add restrictions on a
-     * certificate's X.509 extensions. These constraints do not apply to X.509
-     * extensions set in this [CaPool][google.cloud.security.privateca.v1.CaPool]'s [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values].
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * with
+     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values]
+     * that don't appear here, the certificate issuance request will fail. If
+     * this is omitted, then this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] will not add
+     * restrictions on a certificate's X.509 extensions. These constraints do
+     * not apply to X.509 extensions set in this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values].
      * </pre>
      *
      * <code>
@@ -1298,15 +1370,21 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Describes the set of X.509 extensions that may appear in a
-     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a certificate request
-     * sets extensions that don't appear in the [passthrough_extensions][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.passthrough_extensions],
+     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued
+     * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a
+     * certificate request sets extensions that don't appear in the
+     * [passthrough_extensions][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.passthrough_extensions],
      * those extensions will be dropped. If a certificate request uses a
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] with
-     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values] that don't
-     * appear here, the certificate issuance request will fail. If this is
-     * omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool] will not add restrictions on a
-     * certificate's X.509 extensions. These constraints do not apply to X.509
-     * extensions set in this [CaPool][google.cloud.security.privateca.v1.CaPool]'s [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values].
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * with
+     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values]
+     * that don't appear here, the certificate issuance request will fail. If
+     * this is omitted, then this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] will not add
+     * restrictions on a certificate's X.509 extensions. These constraints do
+     * not apply to X.509 extensions set in this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values].
      * </pre>
      *
      * <code>
@@ -1320,7 +1398,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines controls over all certificate issuance within a [CaPool][google.cloud.security.privateca.v1.CaPool].
+   * Defines controls over all certificate issuance within a
+   * [CaPool][google.cloud.security.privateca.v1.CaPool].
    * </pre>
    *
    * Protobuf type {@code google.cloud.security.privateca.v1.CaPool.IssuancePolicy}
@@ -1464,11 +1543,12 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describes a "type" of key that may be used in a [Certificate][google.cloud.security.privateca.v1.Certificate] issued
-     * from a [CaPool][google.cloud.security.privateca.v1.CaPool].
-     * Note that a single [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType] may refer to either a
-     * fully-qualified key algorithm, such as RSA 4096, or a family of key
-     * algorithms, such as any RSA key.
+     * Describes a "type" of key that may be used in a
+     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued from
+     * a [CaPool][google.cloud.security.privateca.v1.CaPool]. Note that a single
+     * [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType]
+     * may refer to either a fully-qualified key algorithm, such as RSA 4096, or
+     * a family of key algorithms, such as any RSA key.
      * </pre>
      *
      * Protobuf type {@code google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType}
@@ -1521,9 +1601,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The minimum allowed RSA modulus size (inclusive), in bits. If this is
-         * not set, or if set to zero, the service-level min RSA modulus size
-         * will continue to apply.
+         * Optional. The minimum allowed RSA modulus size (inclusive), in bits.
+         * If this is not set, or if set to zero, the service-level min RSA
+         * modulus size will continue to apply.
          * </pre>
          *
          * <code>int64 min_modulus_size = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1536,9 +1616,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The maximum allowed RSA modulus size (inclusive), in bits. If this is
-         * not set, or if set to zero, the service will not enforce an explicit
-         * upper bound on RSA modulus sizes.
+         * Optional. The maximum allowed RSA modulus size (inclusive), in bits.
+         * If this is not set, or if set to zero, the service will not enforce
+         * an explicit upper bound on RSA modulus sizes.
          * </pre>
          *
          * <code>int64 max_modulus_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1551,8 +1631,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describes an RSA key that may be used in a [Certificate][google.cloud.security.privateca.v1.Certificate] issued from
-       * a [CaPool][google.cloud.security.privateca.v1.CaPool].
+       * Describes an RSA key that may be used in a
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] issued
+       * from a [CaPool][google.cloud.security.privateca.v1.CaPool].
        * </pre>
        *
        * Protobuf type {@code
@@ -1604,9 +1685,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The minimum allowed RSA modulus size (inclusive), in bits. If this is
-         * not set, or if set to zero, the service-level min RSA modulus size
-         * will continue to apply.
+         * Optional. The minimum allowed RSA modulus size (inclusive), in bits.
+         * If this is not set, or if set to zero, the service-level min RSA
+         * modulus size will continue to apply.
          * </pre>
          *
          * <code>int64 min_modulus_size = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1624,9 +1705,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The maximum allowed RSA modulus size (inclusive), in bits. If this is
-         * not set, or if set to zero, the service will not enforce an explicit
-         * upper bound on RSA modulus sizes.
+         * Optional. The maximum allowed RSA modulus size (inclusive), in bits.
+         * If this is not set, or if set to zero, the service will not enforce
+         * an explicit upper bound on RSA modulus sizes.
          * </pre>
          *
          * <code>int64 max_modulus_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1842,8 +1923,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Describes an RSA key that may be used in a [Certificate][google.cloud.security.privateca.v1.Certificate] issued from
-         * a [CaPool][google.cloud.security.privateca.v1.CaPool].
+         * Describes an RSA key that may be used in a
+         * [Certificate][google.cloud.security.privateca.v1.Certificate] issued
+         * from a [CaPool][google.cloud.security.privateca.v1.CaPool].
          * </pre>
          *
          * Protobuf type {@code
@@ -2067,9 +2149,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. The minimum allowed RSA modulus size (inclusive), in bits. If this is
-           * not set, or if set to zero, the service-level min RSA modulus size
-           * will continue to apply.
+           * Optional. The minimum allowed RSA modulus size (inclusive), in bits.
+           * If this is not set, or if set to zero, the service-level min RSA
+           * modulus size will continue to apply.
            * </pre>
            *
            * <code>int64 min_modulus_size = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2084,9 +2166,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. The minimum allowed RSA modulus size (inclusive), in bits. If this is
-           * not set, or if set to zero, the service-level min RSA modulus size
-           * will continue to apply.
+           * Optional. The minimum allowed RSA modulus size (inclusive), in bits.
+           * If this is not set, or if set to zero, the service-level min RSA
+           * modulus size will continue to apply.
            * </pre>
            *
            * <code>int64 min_modulus_size = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2105,9 +2187,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. The minimum allowed RSA modulus size (inclusive), in bits. If this is
-           * not set, or if set to zero, the service-level min RSA modulus size
-           * will continue to apply.
+           * Optional. The minimum allowed RSA modulus size (inclusive), in bits.
+           * If this is not set, or if set to zero, the service-level min RSA
+           * modulus size will continue to apply.
            * </pre>
            *
            * <code>int64 min_modulus_size = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2126,9 +2208,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. The maximum allowed RSA modulus size (inclusive), in bits. If this is
-           * not set, or if set to zero, the service will not enforce an explicit
-           * upper bound on RSA modulus sizes.
+           * Optional. The maximum allowed RSA modulus size (inclusive), in bits.
+           * If this is not set, or if set to zero, the service will not enforce
+           * an explicit upper bound on RSA modulus sizes.
            * </pre>
            *
            * <code>int64 max_modulus_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2143,9 +2225,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. The maximum allowed RSA modulus size (inclusive), in bits. If this is
-           * not set, or if set to zero, the service will not enforce an explicit
-           * upper bound on RSA modulus sizes.
+           * Optional. The maximum allowed RSA modulus size (inclusive), in bits.
+           * If this is not set, or if set to zero, the service will not enforce
+           * an explicit upper bound on RSA modulus sizes.
            * </pre>
            *
            * <code>int64 max_modulus_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2164,9 +2246,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. The maximum allowed RSA modulus size (inclusive), in bits. If this is
-           * not set, or if set to zero, the service will not enforce an explicit
-           * upper bound on RSA modulus sizes.
+           * Optional. The maximum allowed RSA modulus size (inclusive), in bits.
+           * If this is not set, or if set to zero, the service will not enforce
+           * an explicit upper bound on RSA modulus sizes.
            * </pre>
            *
            * <code>int64 max_modulus_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2261,8 +2343,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. A signature algorithm that must be used. If this is omitted, any
-         * EC-based signature algorithm will be allowed.
+         * Optional. A signature algorithm that must be used. If this is
+         * omitted, any EC-based signature algorithm will be allowed.
          * </pre>
          *
          * <code>
@@ -2276,8 +2358,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. A signature algorithm that must be used. If this is omitted, any
-         * EC-based signature algorithm will be allowed.
+         * Optional. A signature algorithm that must be used. If this is
+         * omitted, any EC-based signature algorithm will be allowed.
          * </pre>
          *
          * <code>
@@ -2294,8 +2376,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describes an Elliptic Curve key that may be used in a [Certificate][google.cloud.security.privateca.v1.Certificate]
-       * issued from a [CaPool][google.cloud.security.privateca.v1.CaPool].
+       * Describes an Elliptic Curve key that may be used in a
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] issued
+       * from a [CaPool][google.cloud.security.privateca.v1.CaPool].
        * </pre>
        *
        * Protobuf type {@code
@@ -2348,7 +2431,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Describes an elliptic curve-based signature algorithm that may be
-         * used in a [Certificate][google.cloud.security.privateca.v1.Certificate] issued from a [CaPool][google.cloud.security.privateca.v1.CaPool].
+         * used in a
+         * [Certificate][google.cloud.security.privateca.v1.Certificate] issued
+         * from a [CaPool][google.cloud.security.privateca.v1.CaPool].
          * </pre>
          *
          * Protobuf enum {@code
@@ -2543,8 +2628,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. A signature algorithm that must be used. If this is omitted, any
-         * EC-based signature algorithm will be allowed.
+         * Optional. A signature algorithm that must be used. If this is
+         * omitted, any EC-based signature algorithm will be allowed.
          * </pre>
          *
          * <code>
@@ -2561,8 +2646,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. A signature algorithm that must be used. If this is omitted, any
-         * EC-based signature algorithm will be allowed.
+         * Optional. A signature algorithm that must be used. If this is
+         * omitted, any EC-based signature algorithm will be allowed.
          * </pre>
          *
          * <code>
@@ -2787,8 +2872,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Describes an Elliptic Curve key that may be used in a [Certificate][google.cloud.security.privateca.v1.Certificate]
-         * issued from a [CaPool][google.cloud.security.privateca.v1.CaPool].
+         * Describes an Elliptic Curve key that may be used in a
+         * [Certificate][google.cloud.security.privateca.v1.Certificate] issued
+         * from a [CaPool][google.cloud.security.privateca.v1.CaPool].
          * </pre>
          *
          * Protobuf type {@code
@@ -2999,8 +3085,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. A signature algorithm that must be used. If this is omitted, any
-           * EC-based signature algorithm will be allowed.
+           * Optional. A signature algorithm that must be used. If this is
+           * omitted, any EC-based signature algorithm will be allowed.
            * </pre>
            *
            * <code>
@@ -3017,8 +3103,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. A signature algorithm that must be used. If this is omitted, any
-           * EC-based signature algorithm will be allowed.
+           * Optional. A signature algorithm that must be used. If this is
+           * omitted, any EC-based signature algorithm will be allowed.
            * </pre>
            *
            * <code>
@@ -3038,8 +3124,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. A signature algorithm that must be used. If this is omitted, any
-           * EC-based signature algorithm will be allowed.
+           * Optional. A signature algorithm that must be used. If this is
+           * omitted, any EC-based signature algorithm will be allowed.
            * </pre>
            *
            * <code>
@@ -3066,8 +3152,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. A signature algorithm that must be used. If this is omitted, any
-           * EC-based signature algorithm will be allowed.
+           * Optional. A signature algorithm that must be used. If this is
+           * omitted, any EC-based signature algorithm will be allowed.
            * </pre>
            *
            * <code>
@@ -3093,8 +3179,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. A signature algorithm that must be used. If this is omitted, any
-           * EC-based signature algorithm will be allowed.
+           * Optional. A signature algorithm that must be used. If this is
+           * omitted, any EC-based signature algorithm will be allowed.
            * </pre>
            *
            * <code>
@@ -3579,11 +3665,12 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describes a "type" of key that may be used in a [Certificate][google.cloud.security.privateca.v1.Certificate] issued
-       * from a [CaPool][google.cloud.security.privateca.v1.CaPool].
-       * Note that a single [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType] may refer to either a
-       * fully-qualified key algorithm, such as RSA 4096, or a family of key
-       * algorithms, such as any RSA key.
+       * Describes a "type" of key that may be used in a
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] issued from
+       * a [CaPool][google.cloud.security.privateca.v1.CaPool]. Note that a single
+       * [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType]
+       * may refer to either a fully-qualified key algorithm, such as RSA 4096, or
+       * a family of key algorithms, such as any RSA key.
        * </pre>
        *
        * Protobuf type {@code
@@ -4433,7 +4520,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. When true, allows callers to create [Certificates][google.cloud.security.privateca.v1.Certificate] by
+       * Optional. When true, allows callers to create
+       * [Certificates][google.cloud.security.privateca.v1.Certificate] by
        * specifying a CSR.
        * </pre>
        *
@@ -4447,8 +4535,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. When true, allows callers to create [Certificates][google.cloud.security.privateca.v1.Certificate] by
-       * specifying a [CertificateConfig][google.cloud.security.privateca.v1.CertificateConfig].
+       * Optional. When true, allows callers to create
+       * [Certificates][google.cloud.security.privateca.v1.Certificate] by
+       * specifying a
+       * [CertificateConfig][google.cloud.security.privateca.v1.CertificateConfig].
        * </pre>
        *
        * <code>bool allow_config_based_issuance = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -4462,9 +4552,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes] specifies the allowed ways in which
-     * [Certificates][google.cloud.security.privateca.v1.Certificate] may be requested from this
-     * [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes]
+     * specifies the allowed ways in which
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] may be
+     * requested from this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * Protobuf type {@code google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes}
@@ -4514,7 +4605,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. When true, allows callers to create [Certificates][google.cloud.security.privateca.v1.Certificate] by
+       * Optional. When true, allows callers to create
+       * [Certificates][google.cloud.security.privateca.v1.Certificate] by
        * specifying a CSR.
        * </pre>
        *
@@ -4533,8 +4625,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. When true, allows callers to create [Certificates][google.cloud.security.privateca.v1.Certificate] by
-       * specifying a [CertificateConfig][google.cloud.security.privateca.v1.CertificateConfig].
+       * Optional. When true, allows callers to create
+       * [Certificates][google.cloud.security.privateca.v1.Certificate] by
+       * specifying a
+       * [CertificateConfig][google.cloud.security.privateca.v1.CertificateConfig].
        * </pre>
        *
        * <code>bool allow_config_based_issuance = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -4733,9 +4827,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes] specifies the allowed ways in which
-       * [Certificates][google.cloud.security.privateca.v1.Certificate] may be requested from this
-       * [CaPool][google.cloud.security.privateca.v1.CaPool].
+       * [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes]
+       * specifies the allowed ways in which
+       * [Certificates][google.cloud.security.privateca.v1.Certificate] may be
+       * requested from this [CaPool][google.cloud.security.privateca.v1.CaPool].
        * </pre>
        *
        * Protobuf type {@code
@@ -4946,7 +5041,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. When true, allows callers to create [Certificates][google.cloud.security.privateca.v1.Certificate] by
+         * Optional. When true, allows callers to create
+         * [Certificates][google.cloud.security.privateca.v1.Certificate] by
          * specifying a CSR.
          * </pre>
          *
@@ -4962,7 +5058,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. When true, allows callers to create [Certificates][google.cloud.security.privateca.v1.Certificate] by
+         * Optional. When true, allows callers to create
+         * [Certificates][google.cloud.security.privateca.v1.Certificate] by
          * specifying a CSR.
          * </pre>
          *
@@ -4982,7 +5079,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. When true, allows callers to create [Certificates][google.cloud.security.privateca.v1.Certificate] by
+         * Optional. When true, allows callers to create
+         * [Certificates][google.cloud.security.privateca.v1.Certificate] by
          * specifying a CSR.
          * </pre>
          *
@@ -5002,8 +5100,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. When true, allows callers to create [Certificates][google.cloud.security.privateca.v1.Certificate] by
-         * specifying a [CertificateConfig][google.cloud.security.privateca.v1.CertificateConfig].
+         * Optional. When true, allows callers to create
+         * [Certificates][google.cloud.security.privateca.v1.Certificate] by
+         * specifying a
+         * [CertificateConfig][google.cloud.security.privateca.v1.CertificateConfig].
          * </pre>
          *
          * <code>bool allow_config_based_issuance = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -5019,8 +5119,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. When true, allows callers to create [Certificates][google.cloud.security.privateca.v1.Certificate] by
-         * specifying a [CertificateConfig][google.cloud.security.privateca.v1.CertificateConfig].
+         * Optional. When true, allows callers to create
+         * [Certificates][google.cloud.security.privateca.v1.Certificate] by
+         * specifying a
+         * [CertificateConfig][google.cloud.security.privateca.v1.CertificateConfig].
          * </pre>
          *
          * <code>bool allow_config_based_issuance = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -5040,8 +5142,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. When true, allows callers to create [Certificates][google.cloud.security.privateca.v1.Certificate] by
-         * specifying a [CertificateConfig][google.cloud.security.privateca.v1.CertificateConfig].
+         * Optional. When true, allows callers to create
+         * [Certificates][google.cloud.security.privateca.v1.Certificate] by
+         * specifying a
+         * [CertificateConfig][google.cloud.security.privateca.v1.CertificateConfig].
          * </pre>
          *
          * <code>bool allow_config_based_issuance = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -5135,9 +5239,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If any [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType] is specified, then the certificate request's
-     * public key must match one of the key types listed here. Otherwise,
-     * any key may be used.
+     * Optional. If any
+     * [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType]
+     * is specified, then the certificate request's public key must match one of
+     * the key types listed here. Otherwise, any key may be used.
      * </pre>
      *
      * <code>
@@ -5154,9 +5259,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If any [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType] is specified, then the certificate request's
-     * public key must match one of the key types listed here. Otherwise,
-     * any key may be used.
+     * Optional. If any
+     * [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType]
+     * is specified, then the certificate request's public key must match one of
+     * the key types listed here. Otherwise, any key may be used.
      * </pre>
      *
      * <code>
@@ -5175,9 +5281,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If any [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType] is specified, then the certificate request's
-     * public key must match one of the key types listed here. Otherwise,
-     * any key may be used.
+     * Optional. If any
+     * [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType]
+     * is specified, then the certificate request's public key must match one of
+     * the key types listed here. Otherwise, any key may be used.
      * </pre>
      *
      * <code>
@@ -5192,9 +5299,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If any [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType] is specified, then the certificate request's
-     * public key must match one of the key types listed here. Otherwise,
-     * any key may be used.
+     * Optional. If any
+     * [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType]
+     * is specified, then the certificate request's public key must match one of
+     * the key types listed here. Otherwise, any key may be used.
      * </pre>
      *
      * <code>
@@ -5210,9 +5318,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If any [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType] is specified, then the certificate request's
-     * public key must match one of the key types listed here. Otherwise,
-     * any key may be used.
+     * Optional. If any
+     * [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType]
+     * is specified, then the certificate request's public key must match one of
+     * the key types listed here. Otherwise, any key may be used.
      * </pre>
      *
      * <code>
@@ -5231,10 +5340,14 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The maximum lifetime allowed for issued [Certificates][google.cloud.security.privateca.v1.Certificate]. Note
-     * that if the issuing [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] expires before a
-     * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested maximum_lifetime, the effective lifetime will
-     * be explicitly truncated to match it.
+     * Optional. The maximum lifetime allowed for issued
+     * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
+     * if the issuing
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * expires before a
+     * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
+     * maximum_lifetime, the effective lifetime will be explicitly truncated to
+     * match it.
      * </pre>
      *
      * <code>
@@ -5251,10 +5364,14 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The maximum lifetime allowed for issued [Certificates][google.cloud.security.privateca.v1.Certificate]. Note
-     * that if the issuing [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] expires before a
-     * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested maximum_lifetime, the effective lifetime will
-     * be explicitly truncated to match it.
+     * Optional. The maximum lifetime allowed for issued
+     * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
+     * if the issuing
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * expires before a
+     * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
+     * maximum_lifetime, the effective lifetime will be explicitly truncated to
+     * match it.
      * </pre>
      *
      * <code>
@@ -5273,10 +5390,14 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The maximum lifetime allowed for issued [Certificates][google.cloud.security.privateca.v1.Certificate]. Note
-     * that if the issuing [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] expires before a
-     * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested maximum_lifetime, the effective lifetime will
-     * be explicitly truncated to match it.
+     * Optional. The maximum lifetime allowed for issued
+     * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
+     * if the issuing
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * expires before a
+     * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
+     * maximum_lifetime, the effective lifetime will be explicitly truncated to
+     * match it.
      * </pre>
      *
      * <code>
@@ -5297,8 +5418,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If specified, then only methods allowed in the [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes] may be
-     * used to issue [Certificates][google.cloud.security.privateca.v1.Certificate].
+     * Optional. If specified, then only methods allowed in the
+     * [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes]
+     * may be used to issue
+     * [Certificates][google.cloud.security.privateca.v1.Certificate].
      * </pre>
      *
      * <code>
@@ -5315,8 +5438,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If specified, then only methods allowed in the [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes] may be
-     * used to issue [Certificates][google.cloud.security.privateca.v1.Certificate].
+     * Optional. If specified, then only methods allowed in the
+     * [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes]
+     * may be used to issue
+     * [Certificates][google.cloud.security.privateca.v1.Certificate].
      * </pre>
      *
      * <code>
@@ -5337,8 +5462,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If specified, then only methods allowed in the [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes] may be
-     * used to issue [Certificates][google.cloud.security.privateca.v1.Certificate].
+     * Optional. If specified, then only methods allowed in the
+     * [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes]
+     * may be used to issue
+     * [Certificates][google.cloud.security.privateca.v1.Certificate].
      * </pre>
      *
      * <code>
@@ -5360,13 +5487,15 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of X.509 values that will be applied to all certificates issued
-     * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a certificate request includes conflicting
-     * values for the same properties, they will be overwritten by the values
-     * defined here. If a certificate request uses a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * Optional. A set of X.509 values that will be applied to all certificates
+     * issued through this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * If a certificate request includes conflicting values for the same
+     * properties, they will be overwritten by the values defined here. If a
+     * certificate request uses a
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
      * that defines conflicting
-     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values] for the same
-     * properties, the certificate issuance request will fail.
+     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values]
+     * for the same properties, the certificate issuance request will fail.
      * </pre>
      *
      * <code>
@@ -5383,13 +5512,15 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of X.509 values that will be applied to all certificates issued
-     * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a certificate request includes conflicting
-     * values for the same properties, they will be overwritten by the values
-     * defined here. If a certificate request uses a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * Optional. A set of X.509 values that will be applied to all certificates
+     * issued through this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * If a certificate request includes conflicting values for the same
+     * properties, they will be overwritten by the values defined here. If a
+     * certificate request uses a
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
      * that defines conflicting
-     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values] for the same
-     * properties, the certificate issuance request will fail.
+     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values]
+     * for the same properties, the certificate issuance request will fail.
      * </pre>
      *
      * <code>
@@ -5408,13 +5539,15 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of X.509 values that will be applied to all certificates issued
-     * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a certificate request includes conflicting
-     * values for the same properties, they will be overwritten by the values
-     * defined here. If a certificate request uses a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * Optional. A set of X.509 values that will be applied to all certificates
+     * issued through this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * If a certificate request includes conflicting values for the same
+     * properties, they will be overwritten by the values defined here. If a
+     * certificate request uses a
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
      * that defines conflicting
-     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values] for the same
-     * properties, the certificate issuance request will fail.
+     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values]
+     * for the same properties, the certificate issuance request will fail.
      * </pre>
      *
      * <code>
@@ -5437,9 +5570,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Describes constraints on identities that may appear in
-     * [Certificates][google.cloud.security.privateca.v1.Certificate] issued through this [CaPool][google.cloud.security.privateca.v1.CaPool].
-     * If this is omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool] will not add restrictions on a
-     * certificate's identity.
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] issued
+     * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If this
+     * is omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool]
+     * will not add restrictions on a certificate's identity.
      * </pre>
      *
      * <code>
@@ -5457,9 +5591,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Describes constraints on identities that may appear in
-     * [Certificates][google.cloud.security.privateca.v1.Certificate] issued through this [CaPool][google.cloud.security.privateca.v1.CaPool].
-     * If this is omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool] will not add restrictions on a
-     * certificate's identity.
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] issued
+     * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If this
+     * is omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool]
+     * will not add restrictions on a certificate's identity.
      * </pre>
      *
      * <code>
@@ -5481,9 +5616,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Describes constraints on identities that may appear in
-     * [Certificates][google.cloud.security.privateca.v1.Certificate] issued through this [CaPool][google.cloud.security.privateca.v1.CaPool].
-     * If this is omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool] will not add restrictions on a
-     * certificate's identity.
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] issued
+     * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If this
+     * is omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool]
+     * will not add restrictions on a certificate's identity.
      * </pre>
      *
      * <code>
@@ -5507,15 +5643,21 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Describes the set of X.509 extensions that may appear in a
-     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a certificate request
-     * sets extensions that don't appear in the [passthrough_extensions][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.passthrough_extensions],
+     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued
+     * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a
+     * certificate request sets extensions that don't appear in the
+     * [passthrough_extensions][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.passthrough_extensions],
      * those extensions will be dropped. If a certificate request uses a
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] with
-     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values] that don't
-     * appear here, the certificate issuance request will fail. If this is
-     * omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool] will not add restrictions on a
-     * certificate's X.509 extensions. These constraints do not apply to X.509
-     * extensions set in this [CaPool][google.cloud.security.privateca.v1.CaPool]'s [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values].
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * with
+     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values]
+     * that don't appear here, the certificate issuance request will fail. If
+     * this is omitted, then this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] will not add
+     * restrictions on a certificate's X.509 extensions. These constraints do
+     * not apply to X.509 extensions set in this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values].
      * </pre>
      *
      * <code>
@@ -5533,15 +5675,21 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Describes the set of X.509 extensions that may appear in a
-     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a certificate request
-     * sets extensions that don't appear in the [passthrough_extensions][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.passthrough_extensions],
+     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued
+     * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a
+     * certificate request sets extensions that don't appear in the
+     * [passthrough_extensions][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.passthrough_extensions],
      * those extensions will be dropped. If a certificate request uses a
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] with
-     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values] that don't
-     * appear here, the certificate issuance request will fail. If this is
-     * omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool] will not add restrictions on a
-     * certificate's X.509 extensions. These constraints do not apply to X.509
-     * extensions set in this [CaPool][google.cloud.security.privateca.v1.CaPool]'s [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values].
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * with
+     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values]
+     * that don't appear here, the certificate issuance request will fail. If
+     * this is omitted, then this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] will not add
+     * restrictions on a certificate's X.509 extensions. These constraints do
+     * not apply to X.509 extensions set in this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values].
      * </pre>
      *
      * <code>
@@ -5563,15 +5711,21 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Describes the set of X.509 extensions that may appear in a
-     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a certificate request
-     * sets extensions that don't appear in the [passthrough_extensions][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.passthrough_extensions],
+     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued
+     * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a
+     * certificate request sets extensions that don't appear in the
+     * [passthrough_extensions][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.passthrough_extensions],
      * those extensions will be dropped. If a certificate request uses a
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] with
-     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values] that don't
-     * appear here, the certificate issuance request will fail. If this is
-     * omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool] will not add restrictions on a
-     * certificate's X.509 extensions. These constraints do not apply to X.509
-     * extensions set in this [CaPool][google.cloud.security.privateca.v1.CaPool]'s [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values].
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * with
+     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values]
+     * that don't appear here, the certificate issuance request will fail. If
+     * this is omitted, then this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] will not add
+     * restrictions on a certificate's X.509 extensions. These constraints do
+     * not apply to X.509 extensions set in this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values].
      * </pre>
      *
      * <code>
@@ -5828,7 +5982,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines controls over all certificate issuance within a [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * Defines controls over all certificate issuance within a
+     * [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * Protobuf type {@code google.cloud.security.privateca.v1.CaPool.IssuancePolicy}
@@ -6186,9 +6341,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If any [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType] is specified, then the certificate request's
-       * public key must match one of the key types listed here. Otherwise,
-       * any key may be used.
+       * Optional. If any
+       * [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType]
+       * is specified, then the certificate request's public key must match one of
+       * the key types listed here. Otherwise, any key may be used.
        * </pre>
        *
        * <code>
@@ -6208,9 +6364,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If any [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType] is specified, then the certificate request's
-       * public key must match one of the key types listed here. Otherwise,
-       * any key may be used.
+       * Optional. If any
+       * [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType]
+       * is specified, then the certificate request's public key must match one of
+       * the key types listed here. Otherwise, any key may be used.
        * </pre>
        *
        * <code>
@@ -6228,9 +6385,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If any [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType] is specified, then the certificate request's
-       * public key must match one of the key types listed here. Otherwise,
-       * any key may be used.
+       * Optional. If any
+       * [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType]
+       * is specified, then the certificate request's public key must match one of
+       * the key types listed here. Otherwise, any key may be used.
        * </pre>
        *
        * <code>
@@ -6249,9 +6407,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If any [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType] is specified, then the certificate request's
-       * public key must match one of the key types listed here. Otherwise,
-       * any key may be used.
+       * Optional. If any
+       * [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType]
+       * is specified, then the certificate request's public key must match one of
+       * the key types listed here. Otherwise, any key may be used.
        * </pre>
        *
        * <code>
@@ -6277,9 +6436,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If any [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType] is specified, then the certificate request's
-       * public key must match one of the key types listed here. Otherwise,
-       * any key may be used.
+       * Optional. If any
+       * [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType]
+       * is specified, then the certificate request's public key must match one of
+       * the key types listed here. Otherwise, any key may be used.
        * </pre>
        *
        * <code>
@@ -6303,9 +6463,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If any [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType] is specified, then the certificate request's
-       * public key must match one of the key types listed here. Otherwise,
-       * any key may be used.
+       * Optional. If any
+       * [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType]
+       * is specified, then the certificate request's public key must match one of
+       * the key types listed here. Otherwise, any key may be used.
        * </pre>
        *
        * <code>
@@ -6330,9 +6491,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If any [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType] is specified, then the certificate request's
-       * public key must match one of the key types listed here. Otherwise,
-       * any key may be used.
+       * Optional. If any
+       * [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType]
+       * is specified, then the certificate request's public key must match one of
+       * the key types listed here. Otherwise, any key may be used.
        * </pre>
        *
        * <code>
@@ -6358,9 +6520,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If any [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType] is specified, then the certificate request's
-       * public key must match one of the key types listed here. Otherwise,
-       * any key may be used.
+       * Optional. If any
+       * [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType]
+       * is specified, then the certificate request's public key must match one of
+       * the key types listed here. Otherwise, any key may be used.
        * </pre>
        *
        * <code>
@@ -6383,9 +6546,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If any [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType] is specified, then the certificate request's
-       * public key must match one of the key types listed here. Otherwise,
-       * any key may be used.
+       * Optional. If any
+       * [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType]
+       * is specified, then the certificate request's public key must match one of
+       * the key types listed here. Otherwise, any key may be used.
        * </pre>
        *
        * <code>
@@ -6409,9 +6573,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If any [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType] is specified, then the certificate request's
-       * public key must match one of the key types listed here. Otherwise,
-       * any key may be used.
+       * Optional. If any
+       * [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType]
+       * is specified, then the certificate request's public key must match one of
+       * the key types listed here. Otherwise, any key may be used.
        * </pre>
        *
        * <code>
@@ -6436,9 +6601,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If any [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType] is specified, then the certificate request's
-       * public key must match one of the key types listed here. Otherwise,
-       * any key may be used.
+       * Optional. If any
+       * [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType]
+       * is specified, then the certificate request's public key must match one of
+       * the key types listed here. Otherwise, any key may be used.
        * </pre>
        *
        * <code>
@@ -6459,9 +6625,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If any [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType] is specified, then the certificate request's
-       * public key must match one of the key types listed here. Otherwise,
-       * any key may be used.
+       * Optional. If any
+       * [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType]
+       * is specified, then the certificate request's public key must match one of
+       * the key types listed here. Otherwise, any key may be used.
        * </pre>
        *
        * <code>
@@ -6482,9 +6649,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If any [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType] is specified, then the certificate request's
-       * public key must match one of the key types listed here. Otherwise,
-       * any key may be used.
+       * Optional. If any
+       * [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType]
+       * is specified, then the certificate request's public key must match one of
+       * the key types listed here. Otherwise, any key may be used.
        * </pre>
        *
        * <code>
@@ -6499,9 +6667,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If any [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType] is specified, then the certificate request's
-       * public key must match one of the key types listed here. Otherwise,
-       * any key may be used.
+       * Optional. If any
+       * [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType]
+       * is specified, then the certificate request's public key must match one of
+       * the key types listed here. Otherwise, any key may be used.
        * </pre>
        *
        * <code>
@@ -6520,9 +6689,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If any [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType] is specified, then the certificate request's
-       * public key must match one of the key types listed here. Otherwise,
-       * any key may be used.
+       * Optional. If any
+       * [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType]
+       * is specified, then the certificate request's public key must match one of
+       * the key types listed here. Otherwise, any key may be used.
        * </pre>
        *
        * <code>
@@ -6544,9 +6714,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If any [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType] is specified, then the certificate request's
-       * public key must match one of the key types listed here. Otherwise,
-       * any key may be used.
+       * Optional. If any
+       * [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType]
+       * is specified, then the certificate request's public key must match one of
+       * the key types listed here. Otherwise, any key may be used.
        * </pre>
        *
        * <code>
@@ -6564,9 +6735,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If any [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType] is specified, then the certificate request's
-       * public key must match one of the key types listed here. Otherwise,
-       * any key may be used.
+       * Optional. If any
+       * [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType]
+       * is specified, then the certificate request's public key must match one of
+       * the key types listed here. Otherwise, any key may be used.
        * </pre>
        *
        * <code>
@@ -6585,9 +6757,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If any [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType] is specified, then the certificate request's
-       * public key must match one of the key types listed here. Otherwise,
-       * any key may be used.
+       * Optional. If any
+       * [AllowedKeyType][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType]
+       * is specified, then the certificate request's public key must match one of
+       * the key types listed here. Otherwise, any key may be used.
        * </pre>
        *
        * <code>
@@ -6632,10 +6805,14 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The maximum lifetime allowed for issued [Certificates][google.cloud.security.privateca.v1.Certificate]. Note
-       * that if the issuing [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] expires before a
-       * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested maximum_lifetime, the effective lifetime will
-       * be explicitly truncated to match it.
+       * Optional. The maximum lifetime allowed for issued
+       * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
+       * if the issuing
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+       * expires before a
+       * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
+       * maximum_lifetime, the effective lifetime will be explicitly truncated to
+       * match it.
        * </pre>
        *
        * <code>
@@ -6651,10 +6828,14 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The maximum lifetime allowed for issued [Certificates][google.cloud.security.privateca.v1.Certificate]. Note
-       * that if the issuing [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] expires before a
-       * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested maximum_lifetime, the effective lifetime will
-       * be explicitly truncated to match it.
+       * Optional. The maximum lifetime allowed for issued
+       * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
+       * if the issuing
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+       * expires before a
+       * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
+       * maximum_lifetime, the effective lifetime will be explicitly truncated to
+       * match it.
        * </pre>
        *
        * <code>
@@ -6676,10 +6857,14 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The maximum lifetime allowed for issued [Certificates][google.cloud.security.privateca.v1.Certificate]. Note
-       * that if the issuing [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] expires before a
-       * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested maximum_lifetime, the effective lifetime will
-       * be explicitly truncated to match it.
+       * Optional. The maximum lifetime allowed for issued
+       * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
+       * if the issuing
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+       * expires before a
+       * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
+       * maximum_lifetime, the effective lifetime will be explicitly truncated to
+       * match it.
        * </pre>
        *
        * <code>
@@ -6703,10 +6888,14 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The maximum lifetime allowed for issued [Certificates][google.cloud.security.privateca.v1.Certificate]. Note
-       * that if the issuing [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] expires before a
-       * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested maximum_lifetime, the effective lifetime will
-       * be explicitly truncated to match it.
+       * Optional. The maximum lifetime allowed for issued
+       * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
+       * if the issuing
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+       * expires before a
+       * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
+       * maximum_lifetime, the effective lifetime will be explicitly truncated to
+       * match it.
        * </pre>
        *
        * <code>
@@ -6727,10 +6916,14 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The maximum lifetime allowed for issued [Certificates][google.cloud.security.privateca.v1.Certificate]. Note
-       * that if the issuing [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] expires before a
-       * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested maximum_lifetime, the effective lifetime will
-       * be explicitly truncated to match it.
+       * Optional. The maximum lifetime allowed for issued
+       * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
+       * if the issuing
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+       * expires before a
+       * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
+       * maximum_lifetime, the effective lifetime will be explicitly truncated to
+       * match it.
        * </pre>
        *
        * <code>
@@ -6757,10 +6950,14 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The maximum lifetime allowed for issued [Certificates][google.cloud.security.privateca.v1.Certificate]. Note
-       * that if the issuing [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] expires before a
-       * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested maximum_lifetime, the effective lifetime will
-       * be explicitly truncated to match it.
+       * Optional. The maximum lifetime allowed for issued
+       * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
+       * if the issuing
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+       * expires before a
+       * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
+       * maximum_lifetime, the effective lifetime will be explicitly truncated to
+       * match it.
        * </pre>
        *
        * <code>
@@ -6781,10 +6978,14 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The maximum lifetime allowed for issued [Certificates][google.cloud.security.privateca.v1.Certificate]. Note
-       * that if the issuing [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] expires before a
-       * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested maximum_lifetime, the effective lifetime will
-       * be explicitly truncated to match it.
+       * Optional. The maximum lifetime allowed for issued
+       * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
+       * if the issuing
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+       * expires before a
+       * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
+       * maximum_lifetime, the effective lifetime will be explicitly truncated to
+       * match it.
        * </pre>
        *
        * <code>
@@ -6800,10 +7001,14 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The maximum lifetime allowed for issued [Certificates][google.cloud.security.privateca.v1.Certificate]. Note
-       * that if the issuing [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] expires before a
-       * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested maximum_lifetime, the effective lifetime will
-       * be explicitly truncated to match it.
+       * Optional. The maximum lifetime allowed for issued
+       * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
+       * if the issuing
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+       * expires before a
+       * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
+       * maximum_lifetime, the effective lifetime will be explicitly truncated to
+       * match it.
        * </pre>
        *
        * <code>
@@ -6823,10 +7028,14 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The maximum lifetime allowed for issued [Certificates][google.cloud.security.privateca.v1.Certificate]. Note
-       * that if the issuing [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] expires before a
-       * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested maximum_lifetime, the effective lifetime will
-       * be explicitly truncated to match it.
+       * Optional. The maximum lifetime allowed for issued
+       * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
+       * if the issuing
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+       * expires before a
+       * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
+       * maximum_lifetime, the effective lifetime will be explicitly truncated to
+       * match it.
        * </pre>
        *
        * <code>
@@ -6861,8 +7070,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If specified, then only methods allowed in the [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes] may be
-       * used to issue [Certificates][google.cloud.security.privateca.v1.Certificate].
+       * Optional. If specified, then only methods allowed in the
+       * [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes]
+       * may be used to issue
+       * [Certificates][google.cloud.security.privateca.v1.Certificate].
        * </pre>
        *
        * <code>
@@ -6878,8 +7089,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If specified, then only methods allowed in the [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes] may be
-       * used to issue [Certificates][google.cloud.security.privateca.v1.Certificate].
+       * Optional. If specified, then only methods allowed in the
+       * [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes]
+       * may be used to issue
+       * [Certificates][google.cloud.security.privateca.v1.Certificate].
        * </pre>
        *
        * <code>
@@ -6903,8 +7116,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If specified, then only methods allowed in the [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes] may be
-       * used to issue [Certificates][google.cloud.security.privateca.v1.Certificate].
+       * Optional. If specified, then only methods allowed in the
+       * [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes]
+       * may be used to issue
+       * [Certificates][google.cloud.security.privateca.v1.Certificate].
        * </pre>
        *
        * <code>
@@ -6929,8 +7144,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If specified, then only methods allowed in the [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes] may be
-       * used to issue [Certificates][google.cloud.security.privateca.v1.Certificate].
+       * Optional. If specified, then only methods allowed in the
+       * [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes]
+       * may be used to issue
+       * [Certificates][google.cloud.security.privateca.v1.Certificate].
        * </pre>
        *
        * <code>
@@ -6953,8 +7170,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If specified, then only methods allowed in the [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes] may be
-       * used to issue [Certificates][google.cloud.security.privateca.v1.Certificate].
+       * Optional. If specified, then only methods allowed in the
+       * [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes]
+       * may be used to issue
+       * [Certificates][google.cloud.security.privateca.v1.Certificate].
        * </pre>
        *
        * <code>
@@ -6984,8 +7203,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If specified, then only methods allowed in the [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes] may be
-       * used to issue [Certificates][google.cloud.security.privateca.v1.Certificate].
+       * Optional. If specified, then only methods allowed in the
+       * [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes]
+       * may be used to issue
+       * [Certificates][google.cloud.security.privateca.v1.Certificate].
        * </pre>
        *
        * <code>
@@ -7006,8 +7227,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If specified, then only methods allowed in the [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes] may be
-       * used to issue [Certificates][google.cloud.security.privateca.v1.Certificate].
+       * Optional. If specified, then only methods allowed in the
+       * [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes]
+       * may be used to issue
+       * [Certificates][google.cloud.security.privateca.v1.Certificate].
        * </pre>
        *
        * <code>
@@ -7024,8 +7247,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If specified, then only methods allowed in the [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes] may be
-       * used to issue [Certificates][google.cloud.security.privateca.v1.Certificate].
+       * Optional. If specified, then only methods allowed in the
+       * [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes]
+       * may be used to issue
+       * [Certificates][google.cloud.security.privateca.v1.Certificate].
        * </pre>
        *
        * <code>
@@ -7047,8 +7272,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If specified, then only methods allowed in the [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes] may be
-       * used to issue [Certificates][google.cloud.security.privateca.v1.Certificate].
+       * Optional. If specified, then only methods allowed in the
+       * [IssuanceModes][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes]
+       * may be used to issue
+       * [Certificates][google.cloud.security.privateca.v1.Certificate].
        * </pre>
        *
        * <code>
@@ -7084,13 +7311,15 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. A set of X.509 values that will be applied to all certificates issued
-       * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a certificate request includes conflicting
-       * values for the same properties, they will be overwritten by the values
-       * defined here. If a certificate request uses a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+       * Optional. A set of X.509 values that will be applied to all certificates
+       * issued through this [CaPool][google.cloud.security.privateca.v1.CaPool].
+       * If a certificate request includes conflicting values for the same
+       * properties, they will be overwritten by the values defined here. If a
+       * certificate request uses a
+       * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
        * that defines conflicting
-       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values] for the same
-       * properties, the certificate issuance request will fail.
+       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values]
+       * for the same properties, the certificate issuance request will fail.
        * </pre>
        *
        * <code>
@@ -7106,13 +7335,15 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. A set of X.509 values that will be applied to all certificates issued
-       * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a certificate request includes conflicting
-       * values for the same properties, they will be overwritten by the values
-       * defined here. If a certificate request uses a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+       * Optional. A set of X.509 values that will be applied to all certificates
+       * issued through this [CaPool][google.cloud.security.privateca.v1.CaPool].
+       * If a certificate request includes conflicting values for the same
+       * properties, they will be overwritten by the values defined here. If a
+       * certificate request uses a
+       * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
        * that defines conflicting
-       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values] for the same
-       * properties, the certificate issuance request will fail.
+       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values]
+       * for the same properties, the certificate issuance request will fail.
        * </pre>
        *
        * <code>
@@ -7134,13 +7365,15 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. A set of X.509 values that will be applied to all certificates issued
-       * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a certificate request includes conflicting
-       * values for the same properties, they will be overwritten by the values
-       * defined here. If a certificate request uses a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+       * Optional. A set of X.509 values that will be applied to all certificates
+       * issued through this [CaPool][google.cloud.security.privateca.v1.CaPool].
+       * If a certificate request includes conflicting values for the same
+       * properties, they will be overwritten by the values defined here. If a
+       * certificate request uses a
+       * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
        * that defines conflicting
-       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values] for the same
-       * properties, the certificate issuance request will fail.
+       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values]
+       * for the same properties, the certificate issuance request will fail.
        * </pre>
        *
        * <code>
@@ -7165,13 +7398,15 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. A set of X.509 values that will be applied to all certificates issued
-       * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a certificate request includes conflicting
-       * values for the same properties, they will be overwritten by the values
-       * defined here. If a certificate request uses a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+       * Optional. A set of X.509 values that will be applied to all certificates
+       * issued through this [CaPool][google.cloud.security.privateca.v1.CaPool].
+       * If a certificate request includes conflicting values for the same
+       * properties, they will be overwritten by the values defined here. If a
+       * certificate request uses a
+       * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
        * that defines conflicting
-       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values] for the same
-       * properties, the certificate issuance request will fail.
+       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values]
+       * for the same properties, the certificate issuance request will fail.
        * </pre>
        *
        * <code>
@@ -7193,13 +7428,15 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. A set of X.509 values that will be applied to all certificates issued
-       * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a certificate request includes conflicting
-       * values for the same properties, they will be overwritten by the values
-       * defined here. If a certificate request uses a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+       * Optional. A set of X.509 values that will be applied to all certificates
+       * issued through this [CaPool][google.cloud.security.privateca.v1.CaPool].
+       * If a certificate request includes conflicting values for the same
+       * properties, they will be overwritten by the values defined here. If a
+       * certificate request uses a
+       * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
        * that defines conflicting
-       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values] for the same
-       * properties, the certificate issuance request will fail.
+       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values]
+       * for the same properties, the certificate issuance request will fail.
        * </pre>
        *
        * <code>
@@ -7228,13 +7465,15 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. A set of X.509 values that will be applied to all certificates issued
-       * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a certificate request includes conflicting
-       * values for the same properties, they will be overwritten by the values
-       * defined here. If a certificate request uses a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+       * Optional. A set of X.509 values that will be applied to all certificates
+       * issued through this [CaPool][google.cloud.security.privateca.v1.CaPool].
+       * If a certificate request includes conflicting values for the same
+       * properties, they will be overwritten by the values defined here. If a
+       * certificate request uses a
+       * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
        * that defines conflicting
-       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values] for the same
-       * properties, the certificate issuance request will fail.
+       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values]
+       * for the same properties, the certificate issuance request will fail.
        * </pre>
        *
        * <code>
@@ -7255,13 +7494,15 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. A set of X.509 values that will be applied to all certificates issued
-       * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a certificate request includes conflicting
-       * values for the same properties, they will be overwritten by the values
-       * defined here. If a certificate request uses a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+       * Optional. A set of X.509 values that will be applied to all certificates
+       * issued through this [CaPool][google.cloud.security.privateca.v1.CaPool].
+       * If a certificate request includes conflicting values for the same
+       * properties, they will be overwritten by the values defined here. If a
+       * certificate request uses a
+       * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
        * that defines conflicting
-       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values] for the same
-       * properties, the certificate issuance request will fail.
+       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values]
+       * for the same properties, the certificate issuance request will fail.
        * </pre>
        *
        * <code>
@@ -7278,13 +7519,15 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. A set of X.509 values that will be applied to all certificates issued
-       * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a certificate request includes conflicting
-       * values for the same properties, they will be overwritten by the values
-       * defined here. If a certificate request uses a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+       * Optional. A set of X.509 values that will be applied to all certificates
+       * issued through this [CaPool][google.cloud.security.privateca.v1.CaPool].
+       * If a certificate request includes conflicting values for the same
+       * properties, they will be overwritten by the values defined here. If a
+       * certificate request uses a
+       * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
        * that defines conflicting
-       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values] for the same
-       * properties, the certificate issuance request will fail.
+       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values]
+       * for the same properties, the certificate issuance request will fail.
        * </pre>
        *
        * <code>
@@ -7305,13 +7548,15 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. A set of X.509 values that will be applied to all certificates issued
-       * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a certificate request includes conflicting
-       * values for the same properties, they will be overwritten by the values
-       * defined here. If a certificate request uses a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+       * Optional. A set of X.509 values that will be applied to all certificates
+       * issued through this [CaPool][google.cloud.security.privateca.v1.CaPool].
+       * If a certificate request includes conflicting values for the same
+       * properties, they will be overwritten by the values defined here. If a
+       * certificate request uses a
+       * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
        * that defines conflicting
-       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values] for the same
-       * properties, the certificate issuance request will fail.
+       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values]
+       * for the same properties, the certificate issuance request will fail.
        * </pre>
        *
        * <code>
@@ -7347,9 +7592,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Describes constraints on identities that may appear in
-       * [Certificates][google.cloud.security.privateca.v1.Certificate] issued through this [CaPool][google.cloud.security.privateca.v1.CaPool].
-       * If this is omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool] will not add restrictions on a
-       * certificate's identity.
+       * [Certificates][google.cloud.security.privateca.v1.Certificate] issued
+       * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If this
+       * is omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool]
+       * will not add restrictions on a certificate's identity.
        * </pre>
        *
        * <code>
@@ -7366,9 +7612,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Describes constraints on identities that may appear in
-       * [Certificates][google.cloud.security.privateca.v1.Certificate] issued through this [CaPool][google.cloud.security.privateca.v1.CaPool].
-       * If this is omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool] will not add restrictions on a
-       * certificate's identity.
+       * [Certificates][google.cloud.security.privateca.v1.Certificate] issued
+       * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If this
+       * is omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool]
+       * will not add restrictions on a certificate's identity.
        * </pre>
        *
        * <code>
@@ -7393,9 +7640,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Describes constraints on identities that may appear in
-       * [Certificates][google.cloud.security.privateca.v1.Certificate] issued through this [CaPool][google.cloud.security.privateca.v1.CaPool].
-       * If this is omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool] will not add restrictions on a
-       * certificate's identity.
+       * [Certificates][google.cloud.security.privateca.v1.Certificate] issued
+       * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If this
+       * is omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool]
+       * will not add restrictions on a certificate's identity.
        * </pre>
        *
        * <code>
@@ -7421,9 +7669,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Describes constraints on identities that may appear in
-       * [Certificates][google.cloud.security.privateca.v1.Certificate] issued through this [CaPool][google.cloud.security.privateca.v1.CaPool].
-       * If this is omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool] will not add restrictions on a
-       * certificate's identity.
+       * [Certificates][google.cloud.security.privateca.v1.Certificate] issued
+       * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If this
+       * is omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool]
+       * will not add restrictions on a certificate's identity.
        * </pre>
        *
        * <code>
@@ -7447,9 +7696,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Describes constraints on identities that may appear in
-       * [Certificates][google.cloud.security.privateca.v1.Certificate] issued through this [CaPool][google.cloud.security.privateca.v1.CaPool].
-       * If this is omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool] will not add restrictions on a
-       * certificate's identity.
+       * [Certificates][google.cloud.security.privateca.v1.Certificate] issued
+       * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If this
+       * is omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool]
+       * will not add restrictions on a certificate's identity.
        * </pre>
        *
        * <code>
@@ -7480,9 +7730,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Describes constraints on identities that may appear in
-       * [Certificates][google.cloud.security.privateca.v1.Certificate] issued through this [CaPool][google.cloud.security.privateca.v1.CaPool].
-       * If this is omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool] will not add restrictions on a
-       * certificate's identity.
+       * [Certificates][google.cloud.security.privateca.v1.Certificate] issued
+       * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If this
+       * is omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool]
+       * will not add restrictions on a certificate's identity.
        * </pre>
        *
        * <code>
@@ -7504,9 +7755,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Describes constraints on identities that may appear in
-       * [Certificates][google.cloud.security.privateca.v1.Certificate] issued through this [CaPool][google.cloud.security.privateca.v1.CaPool].
-       * If this is omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool] will not add restrictions on a
-       * certificate's identity.
+       * [Certificates][google.cloud.security.privateca.v1.Certificate] issued
+       * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If this
+       * is omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool]
+       * will not add restrictions on a certificate's identity.
        * </pre>
        *
        * <code>
@@ -7524,9 +7776,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Describes constraints on identities that may appear in
-       * [Certificates][google.cloud.security.privateca.v1.Certificate] issued through this [CaPool][google.cloud.security.privateca.v1.CaPool].
-       * If this is omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool] will not add restrictions on a
-       * certificate's identity.
+       * [Certificates][google.cloud.security.privateca.v1.Certificate] issued
+       * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If this
+       * is omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool]
+       * will not add restrictions on a certificate's identity.
        * </pre>
        *
        * <code>
@@ -7549,9 +7802,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Describes constraints on identities that may appear in
-       * [Certificates][google.cloud.security.privateca.v1.Certificate] issued through this [CaPool][google.cloud.security.privateca.v1.CaPool].
-       * If this is omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool] will not add restrictions on a
-       * certificate's identity.
+       * [Certificates][google.cloud.security.privateca.v1.Certificate] issued
+       * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If this
+       * is omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool]
+       * will not add restrictions on a certificate's identity.
        * </pre>
        *
        * <code>
@@ -7587,15 +7841,21 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Describes the set of X.509 extensions that may appear in a
-       * [Certificate][google.cloud.security.privateca.v1.Certificate] issued through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a certificate request
-       * sets extensions that don't appear in the [passthrough_extensions][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.passthrough_extensions],
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] issued
+       * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a
+       * certificate request sets extensions that don't appear in the
+       * [passthrough_extensions][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.passthrough_extensions],
        * those extensions will be dropped. If a certificate request uses a
-       * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] with
-       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values] that don't
-       * appear here, the certificate issuance request will fail. If this is
-       * omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool] will not add restrictions on a
-       * certificate's X.509 extensions. These constraints do not apply to X.509
-       * extensions set in this [CaPool][google.cloud.security.privateca.v1.CaPool]'s [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values].
+       * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+       * with
+       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values]
+       * that don't appear here, the certificate issuance request will fail. If
+       * this is omitted, then this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool] will not add
+       * restrictions on a certificate's X.509 extensions. These constraints do
+       * not apply to X.509 extensions set in this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+       * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values].
        * </pre>
        *
        * <code>
@@ -7612,15 +7872,21 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Describes the set of X.509 extensions that may appear in a
-       * [Certificate][google.cloud.security.privateca.v1.Certificate] issued through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a certificate request
-       * sets extensions that don't appear in the [passthrough_extensions][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.passthrough_extensions],
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] issued
+       * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a
+       * certificate request sets extensions that don't appear in the
+       * [passthrough_extensions][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.passthrough_extensions],
        * those extensions will be dropped. If a certificate request uses a
-       * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] with
-       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values] that don't
-       * appear here, the certificate issuance request will fail. If this is
-       * omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool] will not add restrictions on a
-       * certificate's X.509 extensions. These constraints do not apply to X.509
-       * extensions set in this [CaPool][google.cloud.security.privateca.v1.CaPool]'s [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values].
+       * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+       * with
+       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values]
+       * that don't appear here, the certificate issuance request will fail. If
+       * this is omitted, then this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool] will not add
+       * restrictions on a certificate's X.509 extensions. These constraints do
+       * not apply to X.509 extensions set in this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+       * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values].
        * </pre>
        *
        * <code>
@@ -7645,15 +7911,21 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Describes the set of X.509 extensions that may appear in a
-       * [Certificate][google.cloud.security.privateca.v1.Certificate] issued through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a certificate request
-       * sets extensions that don't appear in the [passthrough_extensions][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.passthrough_extensions],
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] issued
+       * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a
+       * certificate request sets extensions that don't appear in the
+       * [passthrough_extensions][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.passthrough_extensions],
        * those extensions will be dropped. If a certificate request uses a
-       * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] with
-       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values] that don't
-       * appear here, the certificate issuance request will fail. If this is
-       * omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool] will not add restrictions on a
-       * certificate's X.509 extensions. These constraints do not apply to X.509
-       * extensions set in this [CaPool][google.cloud.security.privateca.v1.CaPool]'s [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values].
+       * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+       * with
+       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values]
+       * that don't appear here, the certificate issuance request will fail. If
+       * this is omitted, then this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool] will not add
+       * restrictions on a certificate's X.509 extensions. These constraints do
+       * not apply to X.509 extensions set in this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+       * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values].
        * </pre>
        *
        * <code>
@@ -7679,15 +7951,21 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Describes the set of X.509 extensions that may appear in a
-       * [Certificate][google.cloud.security.privateca.v1.Certificate] issued through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a certificate request
-       * sets extensions that don't appear in the [passthrough_extensions][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.passthrough_extensions],
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] issued
+       * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a
+       * certificate request sets extensions that don't appear in the
+       * [passthrough_extensions][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.passthrough_extensions],
        * those extensions will be dropped. If a certificate request uses a
-       * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] with
-       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values] that don't
-       * appear here, the certificate issuance request will fail. If this is
-       * omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool] will not add restrictions on a
-       * certificate's X.509 extensions. These constraints do not apply to X.509
-       * extensions set in this [CaPool][google.cloud.security.privateca.v1.CaPool]'s [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values].
+       * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+       * with
+       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values]
+       * that don't appear here, the certificate issuance request will fail. If
+       * this is omitted, then this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool] will not add
+       * restrictions on a certificate's X.509 extensions. These constraints do
+       * not apply to X.509 extensions set in this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+       * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values].
        * </pre>
        *
        * <code>
@@ -7711,15 +7989,21 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Describes the set of X.509 extensions that may appear in a
-       * [Certificate][google.cloud.security.privateca.v1.Certificate] issued through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a certificate request
-       * sets extensions that don't appear in the [passthrough_extensions][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.passthrough_extensions],
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] issued
+       * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a
+       * certificate request sets extensions that don't appear in the
+       * [passthrough_extensions][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.passthrough_extensions],
        * those extensions will be dropped. If a certificate request uses a
-       * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] with
-       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values] that don't
-       * appear here, the certificate issuance request will fail. If this is
-       * omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool] will not add restrictions on a
-       * certificate's X.509 extensions. These constraints do not apply to X.509
-       * extensions set in this [CaPool][google.cloud.security.privateca.v1.CaPool]'s [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values].
+       * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+       * with
+       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values]
+       * that don't appear here, the certificate issuance request will fail. If
+       * this is omitted, then this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool] will not add
+       * restrictions on a certificate's X.509 extensions. These constraints do
+       * not apply to X.509 extensions set in this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+       * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values].
        * </pre>
        *
        * <code>
@@ -7750,15 +8034,21 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Describes the set of X.509 extensions that may appear in a
-       * [Certificate][google.cloud.security.privateca.v1.Certificate] issued through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a certificate request
-       * sets extensions that don't appear in the [passthrough_extensions][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.passthrough_extensions],
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] issued
+       * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a
+       * certificate request sets extensions that don't appear in the
+       * [passthrough_extensions][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.passthrough_extensions],
        * those extensions will be dropped. If a certificate request uses a
-       * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] with
-       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values] that don't
-       * appear here, the certificate issuance request will fail. If this is
-       * omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool] will not add restrictions on a
-       * certificate's X.509 extensions. These constraints do not apply to X.509
-       * extensions set in this [CaPool][google.cloud.security.privateca.v1.CaPool]'s [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values].
+       * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+       * with
+       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values]
+       * that don't appear here, the certificate issuance request will fail. If
+       * this is omitted, then this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool] will not add
+       * restrictions on a certificate's X.509 extensions. These constraints do
+       * not apply to X.509 extensions set in this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+       * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values].
        * </pre>
        *
        * <code>
@@ -7780,15 +8070,21 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Describes the set of X.509 extensions that may appear in a
-       * [Certificate][google.cloud.security.privateca.v1.Certificate] issued through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a certificate request
-       * sets extensions that don't appear in the [passthrough_extensions][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.passthrough_extensions],
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] issued
+       * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a
+       * certificate request sets extensions that don't appear in the
+       * [passthrough_extensions][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.passthrough_extensions],
        * those extensions will be dropped. If a certificate request uses a
-       * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] with
-       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values] that don't
-       * appear here, the certificate issuance request will fail. If this is
-       * omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool] will not add restrictions on a
-       * certificate's X.509 extensions. These constraints do not apply to X.509
-       * extensions set in this [CaPool][google.cloud.security.privateca.v1.CaPool]'s [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values].
+       * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+       * with
+       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values]
+       * that don't appear here, the certificate issuance request will fail. If
+       * this is omitted, then this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool] will not add
+       * restrictions on a certificate's X.509 extensions. These constraints do
+       * not apply to X.509 extensions set in this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+       * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values].
        * </pre>
        *
        * <code>
@@ -7806,15 +8102,21 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Describes the set of X.509 extensions that may appear in a
-       * [Certificate][google.cloud.security.privateca.v1.Certificate] issued through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a certificate request
-       * sets extensions that don't appear in the [passthrough_extensions][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.passthrough_extensions],
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] issued
+       * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a
+       * certificate request sets extensions that don't appear in the
+       * [passthrough_extensions][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.passthrough_extensions],
        * those extensions will be dropped. If a certificate request uses a
-       * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] with
-       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values] that don't
-       * appear here, the certificate issuance request will fail. If this is
-       * omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool] will not add restrictions on a
-       * certificate's X.509 extensions. These constraints do not apply to X.509
-       * extensions set in this [CaPool][google.cloud.security.privateca.v1.CaPool]'s [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values].
+       * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+       * with
+       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values]
+       * that don't appear here, the certificate issuance request will fail. If
+       * this is omitted, then this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool] will not add
+       * restrictions on a certificate's X.509 extensions. These constraints do
+       * not apply to X.509 extensions set in this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+       * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values].
        * </pre>
        *
        * <code>
@@ -7837,15 +8139,21 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Describes the set of X.509 extensions that may appear in a
-       * [Certificate][google.cloud.security.privateca.v1.Certificate] issued through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a certificate request
-       * sets extensions that don't appear in the [passthrough_extensions][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.passthrough_extensions],
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] issued
+       * through this [CaPool][google.cloud.security.privateca.v1.CaPool]. If a
+       * certificate request sets extensions that don't appear in the
+       * [passthrough_extensions][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.passthrough_extensions],
        * those extensions will be dropped. If a certificate request uses a
-       * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] with
-       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values] that don't
-       * appear here, the certificate issuance request will fail. If this is
-       * omitted, then this [CaPool][google.cloud.security.privateca.v1.CaPool] will not add restrictions on a
-       * certificate's X.509 extensions. These constraints do not apply to X.509
-       * extensions set in this [CaPool][google.cloud.security.privateca.v1.CaPool]'s [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values].
+       * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+       * with
+       * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values]
+       * that don't appear here, the certificate issuance request will fail. If
+       * this is omitted, then this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool] will not add
+       * restrictions on a certificate's X.509 extensions. These constraints do
+       * not apply to X.509 extensions set in this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+       * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values].
        * </pre>
        *
        * <code>
@@ -7944,8 +8252,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name for this [CaPool][google.cloud.security.privateca.v1.CaPool] in the
-   * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
+   * Output only. The resource name for this
+   * [CaPool][google.cloud.security.privateca.v1.CaPool] in the format
+   * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7968,8 +8277,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name for this [CaPool][google.cloud.security.privateca.v1.CaPool] in the
-   * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
+   * Output only. The resource name for this
+   * [CaPool][google.cloud.security.privateca.v1.CaPool] in the format
+   * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7995,7 +8305,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. The [Tier][google.cloud.security.privateca.v1.CaPool.Tier] of this [CaPool][google.cloud.security.privateca.v1.CaPool].
+   * Required. Immutable. The
+   * [Tier][google.cloud.security.privateca.v1.CaPool.Tier] of this
+   * [CaPool][google.cloud.security.privateca.v1.CaPool].
    * </pre>
    *
    * <code>
@@ -8012,7 +8324,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. The [Tier][google.cloud.security.privateca.v1.CaPool.Tier] of this [CaPool][google.cloud.security.privateca.v1.CaPool].
+   * Required. Immutable. The
+   * [Tier][google.cloud.security.privateca.v1.CaPool.Tier] of this
+   * [CaPool][google.cloud.security.privateca.v1.CaPool].
    * </pre>
    *
    * <code>
@@ -8036,8 +8350,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy] to control how [Certificates][google.cloud.security.privateca.v1.Certificate]
-   * will be issued from this [CaPool][google.cloud.security.privateca.v1.CaPool].
+   * Optional. The
+   * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+   * to control how
+   * [Certificates][google.cloud.security.privateca.v1.Certificate] will be
+   * issued from this [CaPool][google.cloud.security.privateca.v1.CaPool].
    * </pre>
    *
    * <code>
@@ -8054,8 +8371,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy] to control how [Certificates][google.cloud.security.privateca.v1.Certificate]
-   * will be issued from this [CaPool][google.cloud.security.privateca.v1.CaPool].
+   * Optional. The
+   * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+   * to control how
+   * [Certificates][google.cloud.security.privateca.v1.Certificate] will be
+   * issued from this [CaPool][google.cloud.security.privateca.v1.CaPool].
    * </pre>
    *
    * <code>
@@ -8074,8 +8394,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy] to control how [Certificates][google.cloud.security.privateca.v1.Certificate]
-   * will be issued from this [CaPool][google.cloud.security.privateca.v1.CaPool].
+   * Optional. The
+   * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+   * to control how
+   * [Certificates][google.cloud.security.privateca.v1.Certificate] will be
+   * issued from this [CaPool][google.cloud.security.privateca.v1.CaPool].
    * </pre>
    *
    * <code>
@@ -8096,9 +8419,12 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The [PublishingOptions][google.cloud.security.privateca.v1.CaPool.PublishingOptions] to follow when issuing
-   * [Certificates][google.cloud.security.privateca.v1.Certificate] from any [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in this
-   * [CaPool][google.cloud.security.privateca.v1.CaPool].
+   * Optional. The
+   * [PublishingOptions][google.cloud.security.privateca.v1.CaPool.PublishingOptions]
+   * to follow when issuing
+   * [Certificates][google.cloud.security.privateca.v1.Certificate] from any
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * in this [CaPool][google.cloud.security.privateca.v1.CaPool].
    * </pre>
    *
    * <code>
@@ -8115,9 +8441,12 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The [PublishingOptions][google.cloud.security.privateca.v1.CaPool.PublishingOptions] to follow when issuing
-   * [Certificates][google.cloud.security.privateca.v1.Certificate] from any [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in this
-   * [CaPool][google.cloud.security.privateca.v1.CaPool].
+   * Optional. The
+   * [PublishingOptions][google.cloud.security.privateca.v1.CaPool.PublishingOptions]
+   * to follow when issuing
+   * [Certificates][google.cloud.security.privateca.v1.Certificate] from any
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * in this [CaPool][google.cloud.security.privateca.v1.CaPool].
    * </pre>
    *
    * <code>
@@ -8136,9 +8465,12 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The [PublishingOptions][google.cloud.security.privateca.v1.CaPool.PublishingOptions] to follow when issuing
-   * [Certificates][google.cloud.security.privateca.v1.Certificate] from any [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in this
-   * [CaPool][google.cloud.security.privateca.v1.CaPool].
+   * Optional. The
+   * [PublishingOptions][google.cloud.security.privateca.v1.CaPool.PublishingOptions]
+   * to follow when issuing
+   * [Certificates][google.cloud.security.privateca.v1.Certificate] from any
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * in this [CaPool][google.cloud.security.privateca.v1.CaPool].
    * </pre>
    *
    * <code>
@@ -8473,10 +8805,12 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A [CaPool][google.cloud.security.privateca.v1.CaPool] represents a group of
-   * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority] that form a trust anchor. A
-   * [CaPool][google.cloud.security.privateca.v1.CaPool] can be used to manage issuance policies for one or more
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] resources and to rotate CA certificates in and out
-   * of the trust anchor.
+   * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority]
+   * that form a trust anchor. A
+   * [CaPool][google.cloud.security.privateca.v1.CaPool] can be used to manage
+   * issuance policies for one or more
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * resources and to rotate CA certificates in and out of the trust anchor.
    * </pre>
    *
    * Protobuf type {@code google.cloud.security.privateca.v1.CaPool}
@@ -8750,8 +9084,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name for this [CaPool][google.cloud.security.privateca.v1.CaPool] in the
-     * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
+     * Output only. The resource name for this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -8773,8 +9108,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name for this [CaPool][google.cloud.security.privateca.v1.CaPool] in the
-     * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
+     * Output only. The resource name for this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -8796,8 +9132,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name for this [CaPool][google.cloud.security.privateca.v1.CaPool] in the
-     * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
+     * Output only. The resource name for this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -8818,8 +9155,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name for this [CaPool][google.cloud.security.privateca.v1.CaPool] in the
-     * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
+     * Output only. The resource name for this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -8836,8 +9174,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name for this [CaPool][google.cloud.security.privateca.v1.CaPool] in the
-     * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
+     * Output only. The resource name for this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -8861,7 +9200,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The [Tier][google.cloud.security.privateca.v1.CaPool.Tier] of this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * Required. Immutable. The
+     * [Tier][google.cloud.security.privateca.v1.CaPool.Tier] of this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>
@@ -8878,7 +9219,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The [Tier][google.cloud.security.privateca.v1.CaPool.Tier] of this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * Required. Immutable. The
+     * [Tier][google.cloud.security.privateca.v1.CaPool.Tier] of this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>
@@ -8898,7 +9241,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The [Tier][google.cloud.security.privateca.v1.CaPool.Tier] of this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * Required. Immutable. The
+     * [Tier][google.cloud.security.privateca.v1.CaPool.Tier] of this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>
@@ -8919,7 +9264,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The [Tier][google.cloud.security.privateca.v1.CaPool.Tier] of this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * Required. Immutable. The
+     * [Tier][google.cloud.security.privateca.v1.CaPool.Tier] of this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>
@@ -8942,7 +9289,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The [Tier][google.cloud.security.privateca.v1.CaPool.Tier] of this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * Required. Immutable. The
+     * [Tier][google.cloud.security.privateca.v1.CaPool.Tier] of this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>
@@ -8968,8 +9317,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy] to control how [Certificates][google.cloud.security.privateca.v1.Certificate]
-     * will be issued from this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * Optional. The
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * to control how
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] will be
+     * issued from this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>
@@ -8985,8 +9337,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy] to control how [Certificates][google.cloud.security.privateca.v1.Certificate]
-     * will be issued from this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * Optional. The
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * to control how
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] will be
+     * issued from this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>
@@ -9008,8 +9363,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy] to control how [Certificates][google.cloud.security.privateca.v1.Certificate]
-     * will be issued from this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * Optional. The
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * to control how
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] will be
+     * issued from this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>
@@ -9034,8 +9392,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy] to control how [Certificates][google.cloud.security.privateca.v1.Certificate]
-     * will be issued from this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * Optional. The
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * to control how
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] will be
+     * issued from this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>
@@ -9057,8 +9418,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy] to control how [Certificates][google.cloud.security.privateca.v1.Certificate]
-     * will be issued from this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * Optional. The
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * to control how
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] will be
+     * issued from this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>
@@ -9088,8 +9452,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy] to control how [Certificates][google.cloud.security.privateca.v1.Certificate]
-     * will be issued from this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * Optional. The
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * to control how
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] will be
+     * issued from this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>
@@ -9110,8 +9477,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy] to control how [Certificates][google.cloud.security.privateca.v1.Certificate]
-     * will be issued from this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * Optional. The
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * to control how
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] will be
+     * issued from this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>
@@ -9128,8 +9498,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy] to control how [Certificates][google.cloud.security.privateca.v1.Certificate]
-     * will be issued from this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * Optional. The
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * to control how
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] will be
+     * issued from this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>
@@ -9150,8 +9523,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy] to control how [Certificates][google.cloud.security.privateca.v1.Certificate]
-     * will be issued from this [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * Optional. The
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * to control how
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] will be
+     * issued from this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>
@@ -9185,9 +9561,12 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The [PublishingOptions][google.cloud.security.privateca.v1.CaPool.PublishingOptions] to follow when issuing
-     * [Certificates][google.cloud.security.privateca.v1.Certificate] from any [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in this
-     * [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * Optional. The
+     * [PublishingOptions][google.cloud.security.privateca.v1.CaPool.PublishingOptions]
+     * to follow when issuing
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] from any
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>
@@ -9203,9 +9582,12 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The [PublishingOptions][google.cloud.security.privateca.v1.CaPool.PublishingOptions] to follow when issuing
-     * [Certificates][google.cloud.security.privateca.v1.Certificate] from any [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in this
-     * [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * Optional. The
+     * [PublishingOptions][google.cloud.security.privateca.v1.CaPool.PublishingOptions]
+     * to follow when issuing
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] from any
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>
@@ -9227,9 +9609,12 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The [PublishingOptions][google.cloud.security.privateca.v1.CaPool.PublishingOptions] to follow when issuing
-     * [Certificates][google.cloud.security.privateca.v1.Certificate] from any [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in this
-     * [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * Optional. The
+     * [PublishingOptions][google.cloud.security.privateca.v1.CaPool.PublishingOptions]
+     * to follow when issuing
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] from any
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>
@@ -9254,9 +9639,12 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The [PublishingOptions][google.cloud.security.privateca.v1.CaPool.PublishingOptions] to follow when issuing
-     * [Certificates][google.cloud.security.privateca.v1.Certificate] from any [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in this
-     * [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * Optional. The
+     * [PublishingOptions][google.cloud.security.privateca.v1.CaPool.PublishingOptions]
+     * to follow when issuing
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] from any
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>
@@ -9278,9 +9666,12 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The [PublishingOptions][google.cloud.security.privateca.v1.CaPool.PublishingOptions] to follow when issuing
-     * [Certificates][google.cloud.security.privateca.v1.Certificate] from any [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in this
-     * [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * Optional. The
+     * [PublishingOptions][google.cloud.security.privateca.v1.CaPool.PublishingOptions]
+     * to follow when issuing
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] from any
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>
@@ -9310,9 +9701,12 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The [PublishingOptions][google.cloud.security.privateca.v1.CaPool.PublishingOptions] to follow when issuing
-     * [Certificates][google.cloud.security.privateca.v1.Certificate] from any [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in this
-     * [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * Optional. The
+     * [PublishingOptions][google.cloud.security.privateca.v1.CaPool.PublishingOptions]
+     * to follow when issuing
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] from any
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>
@@ -9333,9 +9727,12 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The [PublishingOptions][google.cloud.security.privateca.v1.CaPool.PublishingOptions] to follow when issuing
-     * [Certificates][google.cloud.security.privateca.v1.Certificate] from any [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in this
-     * [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * Optional. The
+     * [PublishingOptions][google.cloud.security.privateca.v1.CaPool.PublishingOptions]
+     * to follow when issuing
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] from any
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>
@@ -9352,9 +9749,12 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The [PublishingOptions][google.cloud.security.privateca.v1.CaPool.PublishingOptions] to follow when issuing
-     * [Certificates][google.cloud.security.privateca.v1.Certificate] from any [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in this
-     * [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * Optional. The
+     * [PublishingOptions][google.cloud.security.privateca.v1.CaPool.PublishingOptions]
+     * to follow when issuing
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] from any
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>
@@ -9375,9 +9775,12 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The [PublishingOptions][google.cloud.security.privateca.v1.CaPool.PublishingOptions] to follow when issuing
-     * [Certificates][google.cloud.security.privateca.v1.Certificate] from any [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in this
-     * [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * Optional. The
+     * [PublishingOptions][google.cloud.security.privateca.v1.CaPool.PublishingOptions]
+     * to follow when issuing
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] from any
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * in this [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>

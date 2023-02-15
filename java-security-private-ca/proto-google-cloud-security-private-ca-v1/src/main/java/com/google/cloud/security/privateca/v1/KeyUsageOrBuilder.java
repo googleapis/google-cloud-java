@@ -106,7 +106,8 @@ public interface KeyUsageOrBuilder
    *
    * <pre>
    * Used to describe extended key usages that are not listed in the
-   * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions] message.
+   * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions]
+   * message.
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.ObjectId unknown_extended_key_usages = 3;
@@ -118,7 +119,8 @@ public interface KeyUsageOrBuilder
    *
    * <pre>
    * Used to describe extended key usages that are not listed in the
-   * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions] message.
+   * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions]
+   * message.
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.ObjectId unknown_extended_key_usages = 3;
@@ -130,7 +132,8 @@ public interface KeyUsageOrBuilder
    *
    * <pre>
    * Used to describe extended key usages that are not listed in the
-   * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions] message.
+   * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions]
+   * message.
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.ObjectId unknown_extended_key_usages = 3;
@@ -142,7 +145,8 @@ public interface KeyUsageOrBuilder
    *
    * <pre>
    * Used to describe extended key usages that are not listed in the
-   * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions] message.
+   * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions]
+   * message.
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.ObjectId unknown_extended_key_usages = 3;
@@ -155,7 +159,8 @@ public interface KeyUsageOrBuilder
    *
    * <pre>
    * Used to describe extended key usages that are not listed in the
-   * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions] message.
+   * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions]
+   * message.
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.ObjectId unknown_extended_key_usages = 3;

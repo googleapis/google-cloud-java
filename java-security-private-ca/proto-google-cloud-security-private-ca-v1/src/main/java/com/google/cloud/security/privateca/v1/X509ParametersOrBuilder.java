@@ -27,7 +27,8 @@ public interface X509ParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Indicates the intended use for keys that correspond to a certificate.
+   * Optional. Indicates the intended use for keys that correspond to a
+   * certificate.
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface X509ParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Indicates the intended use for keys that correspond to a certificate.
+   * Optional. Indicates the intended use for keys that correspond to a
+   * certificate.
    * </pre>
    *
    * <code>
@@ -55,7 +57,8 @@ public interface X509ParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Indicates the intended use for keys that correspond to a certificate.
+   * Optional. Indicates the intended use for keys that correspond to a
+   * certificate.
    * </pre>
    *
    * <code>
@@ -68,8 +71,9 @@ public interface X509ParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Describes options in this [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that are relevant in a CA
-   * certificate.
+   * Optional. Describes options in this
+   * [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that
+   * are relevant in a CA certificate.
    * </pre>
    *
    * <code>
@@ -83,8 +87,9 @@ public interface X509ParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Describes options in this [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that are relevant in a CA
-   * certificate.
+   * Optional. Describes options in this
+   * [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that
+   * are relevant in a CA certificate.
    * </pre>
    *
    * <code>
@@ -98,8 +103,9 @@ public interface X509ParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Describes options in this [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that are relevant in a CA
-   * certificate.
+   * Optional. Describes options in this
+   * [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that
+   * are relevant in a CA certificate.
    * </pre>
    *
    * <code>
@@ -179,9 +185,9 @@ public interface X509ParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint addresses
-   * that appear in the "Authority Information Access" extension in the
-   * certificate.
+   * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint
+   * addresses that appear in the "Authority Information Access" extension in
+   * the certificate.
    * </pre>
    *
    * <code>repeated string aia_ocsp_servers = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -193,9 +199,9 @@ public interface X509ParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint addresses
-   * that appear in the "Authority Information Access" extension in the
-   * certificate.
+   * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint
+   * addresses that appear in the "Authority Information Access" extension in
+   * the certificate.
    * </pre>
    *
    * <code>repeated string aia_ocsp_servers = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -207,9 +213,9 @@ public interface X509ParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint addresses
-   * that appear in the "Authority Information Access" extension in the
-   * certificate.
+   * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint
+   * addresses that appear in the "Authority Information Access" extension in
+   * the certificate.
    * </pre>
    *
    * <code>repeated string aia_ocsp_servers = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -222,9 +228,9 @@ public interface X509ParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint addresses
-   * that appear in the "Authority Information Access" extension in the
-   * certificate.
+   * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint
+   * addresses that appear in the "Authority Information Access" extension in
+   * the certificate.
    * </pre>
    *
    * <code>repeated string aia_ocsp_servers = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -233,6 +239,48 @@ public interface X509ParametersOrBuilder
    * @return The bytes of the aiaOcspServers at the given index.
    */
   com.google.protobuf.ByteString getAiaOcspServersBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the X.509 name constraints extension.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.security.privateca.v1.X509Parameters.NameConstraints name_constraints = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the nameConstraints field is set.
+   */
+  boolean hasNameConstraints();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the X.509 name constraints extension.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.security.privateca.v1.X509Parameters.NameConstraints name_constraints = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The nameConstraints.
+   */
+  com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints getNameConstraints();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the X.509 name constraints extension.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.security.privateca.v1.X509Parameters.NameConstraints name_constraints = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.security.privateca.v1.X509Parameters.NameConstraintsOrBuilder
+      getNameConstraintsOrBuilder();
 
   /**
    *

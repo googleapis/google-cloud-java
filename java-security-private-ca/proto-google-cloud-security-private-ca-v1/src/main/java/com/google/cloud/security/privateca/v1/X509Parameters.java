@@ -22,9 +22,10 @@ package com.google.cloud.security.privateca.v1;
  *
  *
  * <pre>
- * An [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] is used to describe certain fields of an
- * X.509 certificate, such as the key usage fields, fields specific to CA
- * certificates, certificate policy extensions and custom extensions.
+ * An [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] is
+ * used to describe certain fields of an X.509 certificate, such as the key
+ * usage fields, fields specific to CA certificates, certificate policy
+ * extensions and custom extensions.
  * </pre>
  *
  * Protobuf type {@code google.cloud.security.privateca.v1.X509Parameters}
@@ -80,8 +81,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Refers to the "CA" X.509 extension, which is a boolean value. When this
-     * value is missing, the extension will be omitted from the CA certificate.
+     * Optional. Refers to the "CA" X.509 extension, which is a boolean value.
+     * When this value is missing, the extension will be omitted from the CA
+     * certificate.
      * </pre>
      *
      * <code>optional bool is_ca = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -93,8 +95,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Refers to the "CA" X.509 extension, which is a boolean value. When this
-     * value is missing, the extension will be omitted from the CA certificate.
+     * Optional. Refers to the "CA" X.509 extension, which is a boolean value.
+     * When this value is missing, the extension will be omitted from the CA
+     * certificate.
      * </pre>
      *
      * <code>optional bool is_ca = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -194,8 +197,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Refers to the "CA" X.509 extension, which is a boolean value. When this
-     * value is missing, the extension will be omitted from the CA certificate.
+     * Optional. Refers to the "CA" X.509 extension, which is a boolean value.
+     * When this value is missing, the extension will be omitted from the CA
+     * certificate.
      * </pre>
      *
      * <code>optional bool is_ca = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -210,8 +214,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Refers to the "CA" X.509 extension, which is a boolean value. When this
-     * value is missing, the extension will be omitted from the CA certificate.
+     * Optional. Refers to the "CA" X.509 extension, which is a boolean value.
+     * When this value is missing, the extension will be omitted from the CA
+     * certificate.
      * </pre>
      *
      * <code>optional bool is_ca = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -660,8 +665,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Refers to the "CA" X.509 extension, which is a boolean value. When this
-       * value is missing, the extension will be omitted from the CA certificate.
+       * Optional. Refers to the "CA" X.509 extension, which is a boolean value.
+       * When this value is missing, the extension will be omitted from the CA
+       * certificate.
        * </pre>
        *
        * <code>optional bool is_ca = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -676,8 +682,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Refers to the "CA" X.509 extension, which is a boolean value. When this
-       * value is missing, the extension will be omitted from the CA certificate.
+       * Optional. Refers to the "CA" X.509 extension, which is a boolean value.
+       * When this value is missing, the extension will be omitted from the CA
+       * certificate.
        * </pre>
        *
        * <code>optional bool is_ca = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -692,8 +699,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Refers to the "CA" X.509 extension, which is a boolean value. When this
-       * value is missing, the extension will be omitted from the CA certificate.
+       * Optional. Refers to the "CA" X.509 extension, which is a boolean value.
+       * When this value is missing, the extension will be omitted from the CA
+       * certificate.
        * </pre>
        *
        * <code>optional bool is_ca = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -712,8 +720,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Refers to the "CA" X.509 extension, which is a boolean value. When this
-       * value is missing, the extension will be omitted from the CA certificate.
+       * Optional. Refers to the "CA" X.509 extension, which is a boolean value.
+       * When this value is missing, the extension will be omitted from the CA
+       * certificate.
        * </pre>
        *
        * <code>optional bool is_ca = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -886,13 +895,3580 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface NameConstraintsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.security.privateca.v1.X509Parameters.NameConstraints)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether or not the name constraints are marked critical.
+     * </pre>
+     *
+     * <code>bool critical = 1;</code>
+     *
+     * @return The critical.
+     */
+    boolean getCritical();
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains permitted DNS names. Any DNS name that can be
+     * constructed by simply adding zero or more labels to
+     * the left-hand side of the name satisfies the name constraint.
+     * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+     * would satisfy `example.com` while `example1.com` does not.
+     * </pre>
+     *
+     * <code>repeated string permitted_dns_names = 2;</code>
+     *
+     * @return A list containing the permittedDnsNames.
+     */
+    java.util.List<java.lang.String> getPermittedDnsNamesList();
+    /**
+     *
+     *
+     * <pre>
+     * Contains permitted DNS names. Any DNS name that can be
+     * constructed by simply adding zero or more labels to
+     * the left-hand side of the name satisfies the name constraint.
+     * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+     * would satisfy `example.com` while `example1.com` does not.
+     * </pre>
+     *
+     * <code>repeated string permitted_dns_names = 2;</code>
+     *
+     * @return The count of permittedDnsNames.
+     */
+    int getPermittedDnsNamesCount();
+    /**
+     *
+     *
+     * <pre>
+     * Contains permitted DNS names. Any DNS name that can be
+     * constructed by simply adding zero or more labels to
+     * the left-hand side of the name satisfies the name constraint.
+     * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+     * would satisfy `example.com` while `example1.com` does not.
+     * </pre>
+     *
+     * <code>repeated string permitted_dns_names = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The permittedDnsNames at the given index.
+     */
+    java.lang.String getPermittedDnsNames(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Contains permitted DNS names. Any DNS name that can be
+     * constructed by simply adding zero or more labels to
+     * the left-hand side of the name satisfies the name constraint.
+     * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+     * would satisfy `example.com` while `example1.com` does not.
+     * </pre>
+     *
+     * <code>repeated string permitted_dns_names = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the permittedDnsNames at the given index.
+     */
+    com.google.protobuf.ByteString getPermittedDnsNamesBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains excluded DNS names. Any DNS name that can be
+     * constructed by simply adding zero or more labels to
+     * the left-hand side of the name satisfies the name constraint.
+     * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+     * would satisfy `example.com` while `example1.com` does not.
+     * </pre>
+     *
+     * <code>repeated string excluded_dns_names = 3;</code>
+     *
+     * @return A list containing the excludedDnsNames.
+     */
+    java.util.List<java.lang.String> getExcludedDnsNamesList();
+    /**
+     *
+     *
+     * <pre>
+     * Contains excluded DNS names. Any DNS name that can be
+     * constructed by simply adding zero or more labels to
+     * the left-hand side of the name satisfies the name constraint.
+     * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+     * would satisfy `example.com` while `example1.com` does not.
+     * </pre>
+     *
+     * <code>repeated string excluded_dns_names = 3;</code>
+     *
+     * @return The count of excludedDnsNames.
+     */
+    int getExcludedDnsNamesCount();
+    /**
+     *
+     *
+     * <pre>
+     * Contains excluded DNS names. Any DNS name that can be
+     * constructed by simply adding zero or more labels to
+     * the left-hand side of the name satisfies the name constraint.
+     * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+     * would satisfy `example.com` while `example1.com` does not.
+     * </pre>
+     *
+     * <code>repeated string excluded_dns_names = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The excludedDnsNames at the given index.
+     */
+    java.lang.String getExcludedDnsNames(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Contains excluded DNS names. Any DNS name that can be
+     * constructed by simply adding zero or more labels to
+     * the left-hand side of the name satisfies the name constraint.
+     * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+     * would satisfy `example.com` while `example1.com` does not.
+     * </pre>
+     *
+     * <code>repeated string excluded_dns_names = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the excludedDnsNames at the given index.
+     */
+    com.google.protobuf.ByteString getExcludedDnsNamesBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains the permitted IP ranges. For IPv4 addresses, the ranges
+     * are expressed using CIDR notation as specified in RFC 4632.
+     * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+     * addresses.
+     * </pre>
+     *
+     * <code>repeated string permitted_ip_ranges = 4;</code>
+     *
+     * @return A list containing the permittedIpRanges.
+     */
+    java.util.List<java.lang.String> getPermittedIpRangesList();
+    /**
+     *
+     *
+     * <pre>
+     * Contains the permitted IP ranges. For IPv4 addresses, the ranges
+     * are expressed using CIDR notation as specified in RFC 4632.
+     * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+     * addresses.
+     * </pre>
+     *
+     * <code>repeated string permitted_ip_ranges = 4;</code>
+     *
+     * @return The count of permittedIpRanges.
+     */
+    int getPermittedIpRangesCount();
+    /**
+     *
+     *
+     * <pre>
+     * Contains the permitted IP ranges. For IPv4 addresses, the ranges
+     * are expressed using CIDR notation as specified in RFC 4632.
+     * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+     * addresses.
+     * </pre>
+     *
+     * <code>repeated string permitted_ip_ranges = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The permittedIpRanges at the given index.
+     */
+    java.lang.String getPermittedIpRanges(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Contains the permitted IP ranges. For IPv4 addresses, the ranges
+     * are expressed using CIDR notation as specified in RFC 4632.
+     * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+     * addresses.
+     * </pre>
+     *
+     * <code>repeated string permitted_ip_ranges = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the permittedIpRanges at the given index.
+     */
+    com.google.protobuf.ByteString getPermittedIpRangesBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains the excluded IP ranges. For IPv4 addresses, the ranges
+     * are expressed using CIDR notation as specified in RFC 4632.
+     * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+     * addresses.
+     * </pre>
+     *
+     * <code>repeated string excluded_ip_ranges = 5;</code>
+     *
+     * @return A list containing the excludedIpRanges.
+     */
+    java.util.List<java.lang.String> getExcludedIpRangesList();
+    /**
+     *
+     *
+     * <pre>
+     * Contains the excluded IP ranges. For IPv4 addresses, the ranges
+     * are expressed using CIDR notation as specified in RFC 4632.
+     * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+     * addresses.
+     * </pre>
+     *
+     * <code>repeated string excluded_ip_ranges = 5;</code>
+     *
+     * @return The count of excludedIpRanges.
+     */
+    int getExcludedIpRangesCount();
+    /**
+     *
+     *
+     * <pre>
+     * Contains the excluded IP ranges. For IPv4 addresses, the ranges
+     * are expressed using CIDR notation as specified in RFC 4632.
+     * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+     * addresses.
+     * </pre>
+     *
+     * <code>repeated string excluded_ip_ranges = 5;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The excludedIpRanges at the given index.
+     */
+    java.lang.String getExcludedIpRanges(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Contains the excluded IP ranges. For IPv4 addresses, the ranges
+     * are expressed using CIDR notation as specified in RFC 4632.
+     * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+     * addresses.
+     * </pre>
+     *
+     * <code>repeated string excluded_ip_ranges = 5;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the excludedIpRanges at the given index.
+     */
+    com.google.protobuf.ByteString getExcludedIpRangesBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains the permitted email addresses. The value can be a particular
+     * email address, a hostname to indicate all email addresses on that host or
+     * a domain with a leading period (e.g. `.example.com`) to indicate
+     * all email addresses in that domain.
+     * </pre>
+     *
+     * <code>repeated string permitted_email_addresses = 6;</code>
+     *
+     * @return A list containing the permittedEmailAddresses.
+     */
+    java.util.List<java.lang.String> getPermittedEmailAddressesList();
+    /**
+     *
+     *
+     * <pre>
+     * Contains the permitted email addresses. The value can be a particular
+     * email address, a hostname to indicate all email addresses on that host or
+     * a domain with a leading period (e.g. `.example.com`) to indicate
+     * all email addresses in that domain.
+     * </pre>
+     *
+     * <code>repeated string permitted_email_addresses = 6;</code>
+     *
+     * @return The count of permittedEmailAddresses.
+     */
+    int getPermittedEmailAddressesCount();
+    /**
+     *
+     *
+     * <pre>
+     * Contains the permitted email addresses. The value can be a particular
+     * email address, a hostname to indicate all email addresses on that host or
+     * a domain with a leading period (e.g. `.example.com`) to indicate
+     * all email addresses in that domain.
+     * </pre>
+     *
+     * <code>repeated string permitted_email_addresses = 6;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The permittedEmailAddresses at the given index.
+     */
+    java.lang.String getPermittedEmailAddresses(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Contains the permitted email addresses. The value can be a particular
+     * email address, a hostname to indicate all email addresses on that host or
+     * a domain with a leading period (e.g. `.example.com`) to indicate
+     * all email addresses in that domain.
+     * </pre>
+     *
+     * <code>repeated string permitted_email_addresses = 6;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the permittedEmailAddresses at the given index.
+     */
+    com.google.protobuf.ByteString getPermittedEmailAddressesBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains the excluded email addresses. The value can be a particular
+     * email address, a hostname to indicate all email addresses on that host or
+     * a domain with a leading period (e.g. `.example.com`) to indicate
+     * all email addresses in that domain.
+     * </pre>
+     *
+     * <code>repeated string excluded_email_addresses = 7;</code>
+     *
+     * @return A list containing the excludedEmailAddresses.
+     */
+    java.util.List<java.lang.String> getExcludedEmailAddressesList();
+    /**
+     *
+     *
+     * <pre>
+     * Contains the excluded email addresses. The value can be a particular
+     * email address, a hostname to indicate all email addresses on that host or
+     * a domain with a leading period (e.g. `.example.com`) to indicate
+     * all email addresses in that domain.
+     * </pre>
+     *
+     * <code>repeated string excluded_email_addresses = 7;</code>
+     *
+     * @return The count of excludedEmailAddresses.
+     */
+    int getExcludedEmailAddressesCount();
+    /**
+     *
+     *
+     * <pre>
+     * Contains the excluded email addresses. The value can be a particular
+     * email address, a hostname to indicate all email addresses on that host or
+     * a domain with a leading period (e.g. `.example.com`) to indicate
+     * all email addresses in that domain.
+     * </pre>
+     *
+     * <code>repeated string excluded_email_addresses = 7;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The excludedEmailAddresses at the given index.
+     */
+    java.lang.String getExcludedEmailAddresses(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Contains the excluded email addresses. The value can be a particular
+     * email address, a hostname to indicate all email addresses on that host or
+     * a domain with a leading period (e.g. `.example.com`) to indicate
+     * all email addresses in that domain.
+     * </pre>
+     *
+     * <code>repeated string excluded_email_addresses = 7;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the excludedEmailAddresses at the given index.
+     */
+    com.google.protobuf.ByteString getExcludedEmailAddressesBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains the permitted URIs that apply to the host part of the name.
+     * The value can be a hostname or a domain with a
+     * leading period (like `.example.com`)
+     * </pre>
+     *
+     * <code>repeated string permitted_uris = 8;</code>
+     *
+     * @return A list containing the permittedUris.
+     */
+    java.util.List<java.lang.String> getPermittedUrisList();
+    /**
+     *
+     *
+     * <pre>
+     * Contains the permitted URIs that apply to the host part of the name.
+     * The value can be a hostname or a domain with a
+     * leading period (like `.example.com`)
+     * </pre>
+     *
+     * <code>repeated string permitted_uris = 8;</code>
+     *
+     * @return The count of permittedUris.
+     */
+    int getPermittedUrisCount();
+    /**
+     *
+     *
+     * <pre>
+     * Contains the permitted URIs that apply to the host part of the name.
+     * The value can be a hostname or a domain with a
+     * leading period (like `.example.com`)
+     * </pre>
+     *
+     * <code>repeated string permitted_uris = 8;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The permittedUris at the given index.
+     */
+    java.lang.String getPermittedUris(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Contains the permitted URIs that apply to the host part of the name.
+     * The value can be a hostname or a domain with a
+     * leading period (like `.example.com`)
+     * </pre>
+     *
+     * <code>repeated string permitted_uris = 8;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the permittedUris at the given index.
+     */
+    com.google.protobuf.ByteString getPermittedUrisBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains the excluded URIs that apply to the host part of the name.
+     * The value can be a hostname or a domain with a
+     * leading period (like `.example.com`)
+     * </pre>
+     *
+     * <code>repeated string excluded_uris = 9;</code>
+     *
+     * @return A list containing the excludedUris.
+     */
+    java.util.List<java.lang.String> getExcludedUrisList();
+    /**
+     *
+     *
+     * <pre>
+     * Contains the excluded URIs that apply to the host part of the name.
+     * The value can be a hostname or a domain with a
+     * leading period (like `.example.com`)
+     * </pre>
+     *
+     * <code>repeated string excluded_uris = 9;</code>
+     *
+     * @return The count of excludedUris.
+     */
+    int getExcludedUrisCount();
+    /**
+     *
+     *
+     * <pre>
+     * Contains the excluded URIs that apply to the host part of the name.
+     * The value can be a hostname or a domain with a
+     * leading period (like `.example.com`)
+     * </pre>
+     *
+     * <code>repeated string excluded_uris = 9;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The excludedUris at the given index.
+     */
+    java.lang.String getExcludedUris(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Contains the excluded URIs that apply to the host part of the name.
+     * The value can be a hostname or a domain with a
+     * leading period (like `.example.com`)
+     * </pre>
+     *
+     * <code>repeated string excluded_uris = 9;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the excludedUris at the given index.
+     */
+    com.google.protobuf.ByteString getExcludedUrisBytes(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Describes the X.509 name constraints extension, per
+   * https://tools.ietf.org/html/rfc5280#section-4.2.1.10
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.security.privateca.v1.X509Parameters.NameConstraints}
+   */
+  public static final class NameConstraints extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.security.privateca.v1.X509Parameters.NameConstraints)
+      NameConstraintsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use NameConstraints.newBuilder() to construct.
+    private NameConstraints(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private NameConstraints() {
+      permittedDnsNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      excludedDnsNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      permittedIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      excludedIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      permittedEmailAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      excludedEmailAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      permittedUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      excludedUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new NameConstraints();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
+          .internal_static_google_cloud_security_privateca_v1_X509Parameters_NameConstraints_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
+          .internal_static_google_cloud_security_privateca_v1_X509Parameters_NameConstraints_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints.class,
+              com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints.Builder.class);
+    }
+
+    public static final int CRITICAL_FIELD_NUMBER = 1;
+    private boolean critical_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether or not the name constraints are marked critical.
+     * </pre>
+     *
+     * <code>bool critical = 1;</code>
+     *
+     * @return The critical.
+     */
+    @java.lang.Override
+    public boolean getCritical() {
+      return critical_;
+    }
+
+    public static final int PERMITTED_DNS_NAMES_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringList permittedDnsNames_;
+    /**
+     *
+     *
+     * <pre>
+     * Contains permitted DNS names. Any DNS name that can be
+     * constructed by simply adding zero or more labels to
+     * the left-hand side of the name satisfies the name constraint.
+     * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+     * would satisfy `example.com` while `example1.com` does not.
+     * </pre>
+     *
+     * <code>repeated string permitted_dns_names = 2;</code>
+     *
+     * @return A list containing the permittedDnsNames.
+     */
+    public com.google.protobuf.ProtocolStringList getPermittedDnsNamesList() {
+      return permittedDnsNames_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains permitted DNS names. Any DNS name that can be
+     * constructed by simply adding zero or more labels to
+     * the left-hand side of the name satisfies the name constraint.
+     * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+     * would satisfy `example.com` while `example1.com` does not.
+     * </pre>
+     *
+     * <code>repeated string permitted_dns_names = 2;</code>
+     *
+     * @return The count of permittedDnsNames.
+     */
+    public int getPermittedDnsNamesCount() {
+      return permittedDnsNames_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains permitted DNS names. Any DNS name that can be
+     * constructed by simply adding zero or more labels to
+     * the left-hand side of the name satisfies the name constraint.
+     * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+     * would satisfy `example.com` while `example1.com` does not.
+     * </pre>
+     *
+     * <code>repeated string permitted_dns_names = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The permittedDnsNames at the given index.
+     */
+    public java.lang.String getPermittedDnsNames(int index) {
+      return permittedDnsNames_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains permitted DNS names. Any DNS name that can be
+     * constructed by simply adding zero or more labels to
+     * the left-hand side of the name satisfies the name constraint.
+     * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+     * would satisfy `example.com` while `example1.com` does not.
+     * </pre>
+     *
+     * <code>repeated string permitted_dns_names = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the permittedDnsNames at the given index.
+     */
+    public com.google.protobuf.ByteString getPermittedDnsNamesBytes(int index) {
+      return permittedDnsNames_.getByteString(index);
+    }
+
+    public static final int EXCLUDED_DNS_NAMES_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringList excludedDnsNames_;
+    /**
+     *
+     *
+     * <pre>
+     * Contains excluded DNS names. Any DNS name that can be
+     * constructed by simply adding zero or more labels to
+     * the left-hand side of the name satisfies the name constraint.
+     * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+     * would satisfy `example.com` while `example1.com` does not.
+     * </pre>
+     *
+     * <code>repeated string excluded_dns_names = 3;</code>
+     *
+     * @return A list containing the excludedDnsNames.
+     */
+    public com.google.protobuf.ProtocolStringList getExcludedDnsNamesList() {
+      return excludedDnsNames_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains excluded DNS names. Any DNS name that can be
+     * constructed by simply adding zero or more labels to
+     * the left-hand side of the name satisfies the name constraint.
+     * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+     * would satisfy `example.com` while `example1.com` does not.
+     * </pre>
+     *
+     * <code>repeated string excluded_dns_names = 3;</code>
+     *
+     * @return The count of excludedDnsNames.
+     */
+    public int getExcludedDnsNamesCount() {
+      return excludedDnsNames_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains excluded DNS names. Any DNS name that can be
+     * constructed by simply adding zero or more labels to
+     * the left-hand side of the name satisfies the name constraint.
+     * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+     * would satisfy `example.com` while `example1.com` does not.
+     * </pre>
+     *
+     * <code>repeated string excluded_dns_names = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The excludedDnsNames at the given index.
+     */
+    public java.lang.String getExcludedDnsNames(int index) {
+      return excludedDnsNames_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains excluded DNS names. Any DNS name that can be
+     * constructed by simply adding zero or more labels to
+     * the left-hand side of the name satisfies the name constraint.
+     * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+     * would satisfy `example.com` while `example1.com` does not.
+     * </pre>
+     *
+     * <code>repeated string excluded_dns_names = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the excludedDnsNames at the given index.
+     */
+    public com.google.protobuf.ByteString getExcludedDnsNamesBytes(int index) {
+      return excludedDnsNames_.getByteString(index);
+    }
+
+    public static final int PERMITTED_IP_RANGES_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringList permittedIpRanges_;
+    /**
+     *
+     *
+     * <pre>
+     * Contains the permitted IP ranges. For IPv4 addresses, the ranges
+     * are expressed using CIDR notation as specified in RFC 4632.
+     * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+     * addresses.
+     * </pre>
+     *
+     * <code>repeated string permitted_ip_ranges = 4;</code>
+     *
+     * @return A list containing the permittedIpRanges.
+     */
+    public com.google.protobuf.ProtocolStringList getPermittedIpRangesList() {
+      return permittedIpRanges_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains the permitted IP ranges. For IPv4 addresses, the ranges
+     * are expressed using CIDR notation as specified in RFC 4632.
+     * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+     * addresses.
+     * </pre>
+     *
+     * <code>repeated string permitted_ip_ranges = 4;</code>
+     *
+     * @return The count of permittedIpRanges.
+     */
+    public int getPermittedIpRangesCount() {
+      return permittedIpRanges_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains the permitted IP ranges. For IPv4 addresses, the ranges
+     * are expressed using CIDR notation as specified in RFC 4632.
+     * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+     * addresses.
+     * </pre>
+     *
+     * <code>repeated string permitted_ip_ranges = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The permittedIpRanges at the given index.
+     */
+    public java.lang.String getPermittedIpRanges(int index) {
+      return permittedIpRanges_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains the permitted IP ranges. For IPv4 addresses, the ranges
+     * are expressed using CIDR notation as specified in RFC 4632.
+     * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+     * addresses.
+     * </pre>
+     *
+     * <code>repeated string permitted_ip_ranges = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the permittedIpRanges at the given index.
+     */
+    public com.google.protobuf.ByteString getPermittedIpRangesBytes(int index) {
+      return permittedIpRanges_.getByteString(index);
+    }
+
+    public static final int EXCLUDED_IP_RANGES_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringList excludedIpRanges_;
+    /**
+     *
+     *
+     * <pre>
+     * Contains the excluded IP ranges. For IPv4 addresses, the ranges
+     * are expressed using CIDR notation as specified in RFC 4632.
+     * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+     * addresses.
+     * </pre>
+     *
+     * <code>repeated string excluded_ip_ranges = 5;</code>
+     *
+     * @return A list containing the excludedIpRanges.
+     */
+    public com.google.protobuf.ProtocolStringList getExcludedIpRangesList() {
+      return excludedIpRanges_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains the excluded IP ranges. For IPv4 addresses, the ranges
+     * are expressed using CIDR notation as specified in RFC 4632.
+     * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+     * addresses.
+     * </pre>
+     *
+     * <code>repeated string excluded_ip_ranges = 5;</code>
+     *
+     * @return The count of excludedIpRanges.
+     */
+    public int getExcludedIpRangesCount() {
+      return excludedIpRanges_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains the excluded IP ranges. For IPv4 addresses, the ranges
+     * are expressed using CIDR notation as specified in RFC 4632.
+     * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+     * addresses.
+     * </pre>
+     *
+     * <code>repeated string excluded_ip_ranges = 5;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The excludedIpRanges at the given index.
+     */
+    public java.lang.String getExcludedIpRanges(int index) {
+      return excludedIpRanges_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains the excluded IP ranges. For IPv4 addresses, the ranges
+     * are expressed using CIDR notation as specified in RFC 4632.
+     * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+     * addresses.
+     * </pre>
+     *
+     * <code>repeated string excluded_ip_ranges = 5;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the excludedIpRanges at the given index.
+     */
+    public com.google.protobuf.ByteString getExcludedIpRangesBytes(int index) {
+      return excludedIpRanges_.getByteString(index);
+    }
+
+    public static final int PERMITTED_EMAIL_ADDRESSES_FIELD_NUMBER = 6;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringList permittedEmailAddresses_;
+    /**
+     *
+     *
+     * <pre>
+     * Contains the permitted email addresses. The value can be a particular
+     * email address, a hostname to indicate all email addresses on that host or
+     * a domain with a leading period (e.g. `.example.com`) to indicate
+     * all email addresses in that domain.
+     * </pre>
+     *
+     * <code>repeated string permitted_email_addresses = 6;</code>
+     *
+     * @return A list containing the permittedEmailAddresses.
+     */
+    public com.google.protobuf.ProtocolStringList getPermittedEmailAddressesList() {
+      return permittedEmailAddresses_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains the permitted email addresses. The value can be a particular
+     * email address, a hostname to indicate all email addresses on that host or
+     * a domain with a leading period (e.g. `.example.com`) to indicate
+     * all email addresses in that domain.
+     * </pre>
+     *
+     * <code>repeated string permitted_email_addresses = 6;</code>
+     *
+     * @return The count of permittedEmailAddresses.
+     */
+    public int getPermittedEmailAddressesCount() {
+      return permittedEmailAddresses_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains the permitted email addresses. The value can be a particular
+     * email address, a hostname to indicate all email addresses on that host or
+     * a domain with a leading period (e.g. `.example.com`) to indicate
+     * all email addresses in that domain.
+     * </pre>
+     *
+     * <code>repeated string permitted_email_addresses = 6;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The permittedEmailAddresses at the given index.
+     */
+    public java.lang.String getPermittedEmailAddresses(int index) {
+      return permittedEmailAddresses_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains the permitted email addresses. The value can be a particular
+     * email address, a hostname to indicate all email addresses on that host or
+     * a domain with a leading period (e.g. `.example.com`) to indicate
+     * all email addresses in that domain.
+     * </pre>
+     *
+     * <code>repeated string permitted_email_addresses = 6;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the permittedEmailAddresses at the given index.
+     */
+    public com.google.protobuf.ByteString getPermittedEmailAddressesBytes(int index) {
+      return permittedEmailAddresses_.getByteString(index);
+    }
+
+    public static final int EXCLUDED_EMAIL_ADDRESSES_FIELD_NUMBER = 7;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringList excludedEmailAddresses_;
+    /**
+     *
+     *
+     * <pre>
+     * Contains the excluded email addresses. The value can be a particular
+     * email address, a hostname to indicate all email addresses on that host or
+     * a domain with a leading period (e.g. `.example.com`) to indicate
+     * all email addresses in that domain.
+     * </pre>
+     *
+     * <code>repeated string excluded_email_addresses = 7;</code>
+     *
+     * @return A list containing the excludedEmailAddresses.
+     */
+    public com.google.protobuf.ProtocolStringList getExcludedEmailAddressesList() {
+      return excludedEmailAddresses_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains the excluded email addresses. The value can be a particular
+     * email address, a hostname to indicate all email addresses on that host or
+     * a domain with a leading period (e.g. `.example.com`) to indicate
+     * all email addresses in that domain.
+     * </pre>
+     *
+     * <code>repeated string excluded_email_addresses = 7;</code>
+     *
+     * @return The count of excludedEmailAddresses.
+     */
+    public int getExcludedEmailAddressesCount() {
+      return excludedEmailAddresses_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains the excluded email addresses. The value can be a particular
+     * email address, a hostname to indicate all email addresses on that host or
+     * a domain with a leading period (e.g. `.example.com`) to indicate
+     * all email addresses in that domain.
+     * </pre>
+     *
+     * <code>repeated string excluded_email_addresses = 7;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The excludedEmailAddresses at the given index.
+     */
+    public java.lang.String getExcludedEmailAddresses(int index) {
+      return excludedEmailAddresses_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains the excluded email addresses. The value can be a particular
+     * email address, a hostname to indicate all email addresses on that host or
+     * a domain with a leading period (e.g. `.example.com`) to indicate
+     * all email addresses in that domain.
+     * </pre>
+     *
+     * <code>repeated string excluded_email_addresses = 7;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the excludedEmailAddresses at the given index.
+     */
+    public com.google.protobuf.ByteString getExcludedEmailAddressesBytes(int index) {
+      return excludedEmailAddresses_.getByteString(index);
+    }
+
+    public static final int PERMITTED_URIS_FIELD_NUMBER = 8;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringList permittedUris_;
+    /**
+     *
+     *
+     * <pre>
+     * Contains the permitted URIs that apply to the host part of the name.
+     * The value can be a hostname or a domain with a
+     * leading period (like `.example.com`)
+     * </pre>
+     *
+     * <code>repeated string permitted_uris = 8;</code>
+     *
+     * @return A list containing the permittedUris.
+     */
+    public com.google.protobuf.ProtocolStringList getPermittedUrisList() {
+      return permittedUris_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains the permitted URIs that apply to the host part of the name.
+     * The value can be a hostname or a domain with a
+     * leading period (like `.example.com`)
+     * </pre>
+     *
+     * <code>repeated string permitted_uris = 8;</code>
+     *
+     * @return The count of permittedUris.
+     */
+    public int getPermittedUrisCount() {
+      return permittedUris_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains the permitted URIs that apply to the host part of the name.
+     * The value can be a hostname or a domain with a
+     * leading period (like `.example.com`)
+     * </pre>
+     *
+     * <code>repeated string permitted_uris = 8;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The permittedUris at the given index.
+     */
+    public java.lang.String getPermittedUris(int index) {
+      return permittedUris_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains the permitted URIs that apply to the host part of the name.
+     * The value can be a hostname or a domain with a
+     * leading period (like `.example.com`)
+     * </pre>
+     *
+     * <code>repeated string permitted_uris = 8;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the permittedUris at the given index.
+     */
+    public com.google.protobuf.ByteString getPermittedUrisBytes(int index) {
+      return permittedUris_.getByteString(index);
+    }
+
+    public static final int EXCLUDED_URIS_FIELD_NUMBER = 9;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringList excludedUris_;
+    /**
+     *
+     *
+     * <pre>
+     * Contains the excluded URIs that apply to the host part of the name.
+     * The value can be a hostname or a domain with a
+     * leading period (like `.example.com`)
+     * </pre>
+     *
+     * <code>repeated string excluded_uris = 9;</code>
+     *
+     * @return A list containing the excludedUris.
+     */
+    public com.google.protobuf.ProtocolStringList getExcludedUrisList() {
+      return excludedUris_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains the excluded URIs that apply to the host part of the name.
+     * The value can be a hostname or a domain with a
+     * leading period (like `.example.com`)
+     * </pre>
+     *
+     * <code>repeated string excluded_uris = 9;</code>
+     *
+     * @return The count of excludedUris.
+     */
+    public int getExcludedUrisCount() {
+      return excludedUris_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains the excluded URIs that apply to the host part of the name.
+     * The value can be a hostname or a domain with a
+     * leading period (like `.example.com`)
+     * </pre>
+     *
+     * <code>repeated string excluded_uris = 9;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The excludedUris at the given index.
+     */
+    public java.lang.String getExcludedUris(int index) {
+      return excludedUris_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains the excluded URIs that apply to the host part of the name.
+     * The value can be a hostname or a domain with a
+     * leading period (like `.example.com`)
+     * </pre>
+     *
+     * <code>repeated string excluded_uris = 9;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the excludedUris at the given index.
+     */
+    public com.google.protobuf.ByteString getExcludedUrisBytes(int index) {
+      return excludedUris_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (critical_ != false) {
+        output.writeBool(1, critical_);
+      }
+      for (int i = 0; i < permittedDnsNames_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, permittedDnsNames_.getRaw(i));
+      }
+      for (int i = 0; i < excludedDnsNames_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, excludedDnsNames_.getRaw(i));
+      }
+      for (int i = 0; i < permittedIpRanges_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, permittedIpRanges_.getRaw(i));
+      }
+      for (int i = 0; i < excludedIpRanges_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, excludedIpRanges_.getRaw(i));
+      }
+      for (int i = 0; i < permittedEmailAddresses_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(
+            output, 6, permittedEmailAddresses_.getRaw(i));
+      }
+      for (int i = 0; i < excludedEmailAddresses_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(
+            output, 7, excludedEmailAddresses_.getRaw(i));
+      }
+      for (int i = 0; i < permittedUris_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, permittedUris_.getRaw(i));
+      }
+      for (int i = 0; i < excludedUris_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, excludedUris_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (critical_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, critical_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < permittedDnsNames_.size(); i++) {
+          dataSize += computeStringSizeNoTag(permittedDnsNames_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getPermittedDnsNamesList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < excludedDnsNames_.size(); i++) {
+          dataSize += computeStringSizeNoTag(excludedDnsNames_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getExcludedDnsNamesList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < permittedIpRanges_.size(); i++) {
+          dataSize += computeStringSizeNoTag(permittedIpRanges_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getPermittedIpRangesList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < excludedIpRanges_.size(); i++) {
+          dataSize += computeStringSizeNoTag(excludedIpRanges_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getExcludedIpRangesList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < permittedEmailAddresses_.size(); i++) {
+          dataSize += computeStringSizeNoTag(permittedEmailAddresses_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getPermittedEmailAddressesList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < excludedEmailAddresses_.size(); i++) {
+          dataSize += computeStringSizeNoTag(excludedEmailAddresses_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getExcludedEmailAddressesList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < permittedUris_.size(); i++) {
+          dataSize += computeStringSizeNoTag(permittedUris_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getPermittedUrisList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < excludedUris_.size(); i++) {
+          dataSize += computeStringSizeNoTag(excludedUris_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getExcludedUrisList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints other =
+          (com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints) obj;
+
+      if (getCritical() != other.getCritical()) return false;
+      if (!getPermittedDnsNamesList().equals(other.getPermittedDnsNamesList())) return false;
+      if (!getExcludedDnsNamesList().equals(other.getExcludedDnsNamesList())) return false;
+      if (!getPermittedIpRangesList().equals(other.getPermittedIpRangesList())) return false;
+      if (!getExcludedIpRangesList().equals(other.getExcludedIpRangesList())) return false;
+      if (!getPermittedEmailAddressesList().equals(other.getPermittedEmailAddressesList()))
+        return false;
+      if (!getExcludedEmailAddressesList().equals(other.getExcludedEmailAddressesList()))
+        return false;
+      if (!getPermittedUrisList().equals(other.getPermittedUrisList())) return false;
+      if (!getExcludedUrisList().equals(other.getExcludedUrisList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CRITICAL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCritical());
+      if (getPermittedDnsNamesCount() > 0) {
+        hash = (37 * hash) + PERMITTED_DNS_NAMES_FIELD_NUMBER;
+        hash = (53 * hash) + getPermittedDnsNamesList().hashCode();
+      }
+      if (getExcludedDnsNamesCount() > 0) {
+        hash = (37 * hash) + EXCLUDED_DNS_NAMES_FIELD_NUMBER;
+        hash = (53 * hash) + getExcludedDnsNamesList().hashCode();
+      }
+      if (getPermittedIpRangesCount() > 0) {
+        hash = (37 * hash) + PERMITTED_IP_RANGES_FIELD_NUMBER;
+        hash = (53 * hash) + getPermittedIpRangesList().hashCode();
+      }
+      if (getExcludedIpRangesCount() > 0) {
+        hash = (37 * hash) + EXCLUDED_IP_RANGES_FIELD_NUMBER;
+        hash = (53 * hash) + getExcludedIpRangesList().hashCode();
+      }
+      if (getPermittedEmailAddressesCount() > 0) {
+        hash = (37 * hash) + PERMITTED_EMAIL_ADDRESSES_FIELD_NUMBER;
+        hash = (53 * hash) + getPermittedEmailAddressesList().hashCode();
+      }
+      if (getExcludedEmailAddressesCount() > 0) {
+        hash = (37 * hash) + EXCLUDED_EMAIL_ADDRESSES_FIELD_NUMBER;
+        hash = (53 * hash) + getExcludedEmailAddressesList().hashCode();
+      }
+      if (getPermittedUrisCount() > 0) {
+        hash = (37 * hash) + PERMITTED_URIS_FIELD_NUMBER;
+        hash = (53 * hash) + getPermittedUrisList().hashCode();
+      }
+      if (getExcludedUrisCount() > 0) {
+        hash = (37 * hash) + EXCLUDED_URIS_FIELD_NUMBER;
+        hash = (53 * hash) + getExcludedUrisList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes the X.509 name constraints extension, per
+     * https://tools.ietf.org/html/rfc5280#section-4.2.1.10
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.security.privateca.v1.X509Parameters.NameConstraints}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.security.privateca.v1.X509Parameters.NameConstraints)
+        com.google.cloud.security.privateca.v1.X509Parameters.NameConstraintsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
+            .internal_static_google_cloud_security_privateca_v1_X509Parameters_NameConstraints_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
+            .internal_static_google_cloud_security_privateca_v1_X509Parameters_NameConstraints_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints.class,
+                com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        critical_ = false;
+        permittedDnsNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        excludedDnsNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        permittedIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        excludedIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        permittedEmailAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        excludedEmailAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000040);
+        permittedUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000080);
+        excludedUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000100);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
+            .internal_static_google_cloud_security_privateca_v1_X509Parameters_NameConstraints_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints
+          getDefaultInstanceForType() {
+        return com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints build() {
+        com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints buildPartial() {
+        com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints result =
+            new com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          permittedDnsNames_ = permittedDnsNames_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.permittedDnsNames_ = permittedDnsNames_;
+        if (((bitField0_ & 0x00000004) != 0)) {
+          excludedDnsNames_ = excludedDnsNames_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.excludedDnsNames_ = excludedDnsNames_;
+        if (((bitField0_ & 0x00000008) != 0)) {
+          permittedIpRanges_ = permittedIpRanges_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.permittedIpRanges_ = permittedIpRanges_;
+        if (((bitField0_ & 0x00000010) != 0)) {
+          excludedIpRanges_ = excludedIpRanges_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.excludedIpRanges_ = excludedIpRanges_;
+        if (((bitField0_ & 0x00000020) != 0)) {
+          permittedEmailAddresses_ = permittedEmailAddresses_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.permittedEmailAddresses_ = permittedEmailAddresses_;
+        if (((bitField0_ & 0x00000040) != 0)) {
+          excludedEmailAddresses_ = excludedEmailAddresses_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000040);
+        }
+        result.excludedEmailAddresses_ = excludedEmailAddresses_;
+        if (((bitField0_ & 0x00000080) != 0)) {
+          permittedUris_ = permittedUris_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000080);
+        }
+        result.permittedUris_ = permittedUris_;
+        if (((bitField0_ & 0x00000100) != 0)) {
+          excludedUris_ = excludedUris_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000100);
+        }
+        result.excludedUris_ = excludedUris_;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.critical_ = critical_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints) {
+          return mergeFrom(
+              (com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints other) {
+        if (other
+            == com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints
+                .getDefaultInstance()) return this;
+        if (other.getCritical() != false) {
+          setCritical(other.getCritical());
+        }
+        if (!other.permittedDnsNames_.isEmpty()) {
+          if (permittedDnsNames_.isEmpty()) {
+            permittedDnsNames_ = other.permittedDnsNames_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensurePermittedDnsNamesIsMutable();
+            permittedDnsNames_.addAll(other.permittedDnsNames_);
+          }
+          onChanged();
+        }
+        if (!other.excludedDnsNames_.isEmpty()) {
+          if (excludedDnsNames_.isEmpty()) {
+            excludedDnsNames_ = other.excludedDnsNames_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureExcludedDnsNamesIsMutable();
+            excludedDnsNames_.addAll(other.excludedDnsNames_);
+          }
+          onChanged();
+        }
+        if (!other.permittedIpRanges_.isEmpty()) {
+          if (permittedIpRanges_.isEmpty()) {
+            permittedIpRanges_ = other.permittedIpRanges_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensurePermittedIpRangesIsMutable();
+            permittedIpRanges_.addAll(other.permittedIpRanges_);
+          }
+          onChanged();
+        }
+        if (!other.excludedIpRanges_.isEmpty()) {
+          if (excludedIpRanges_.isEmpty()) {
+            excludedIpRanges_ = other.excludedIpRanges_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureExcludedIpRangesIsMutable();
+            excludedIpRanges_.addAll(other.excludedIpRanges_);
+          }
+          onChanged();
+        }
+        if (!other.permittedEmailAddresses_.isEmpty()) {
+          if (permittedEmailAddresses_.isEmpty()) {
+            permittedEmailAddresses_ = other.permittedEmailAddresses_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensurePermittedEmailAddressesIsMutable();
+            permittedEmailAddresses_.addAll(other.permittedEmailAddresses_);
+          }
+          onChanged();
+        }
+        if (!other.excludedEmailAddresses_.isEmpty()) {
+          if (excludedEmailAddresses_.isEmpty()) {
+            excludedEmailAddresses_ = other.excludedEmailAddresses_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+          } else {
+            ensureExcludedEmailAddressesIsMutable();
+            excludedEmailAddresses_.addAll(other.excludedEmailAddresses_);
+          }
+          onChanged();
+        }
+        if (!other.permittedUris_.isEmpty()) {
+          if (permittedUris_.isEmpty()) {
+            permittedUris_ = other.permittedUris_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+          } else {
+            ensurePermittedUrisIsMutable();
+            permittedUris_.addAll(other.permittedUris_);
+          }
+          onChanged();
+        }
+        if (!other.excludedUris_.isEmpty()) {
+          if (excludedUris_.isEmpty()) {
+            excludedUris_ = other.excludedUris_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+          } else {
+            ensureExcludedUrisIsMutable();
+            excludedUris_.addAll(other.excludedUris_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  critical_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensurePermittedDnsNamesIsMutable();
+                  permittedDnsNames_.add(s);
+                  break;
+                } // case 18
+              case 26:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureExcludedDnsNamesIsMutable();
+                  excludedDnsNames_.add(s);
+                  break;
+                } // case 26
+              case 34:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensurePermittedIpRangesIsMutable();
+                  permittedIpRanges_.add(s);
+                  break;
+                } // case 34
+              case 42:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureExcludedIpRangesIsMutable();
+                  excludedIpRanges_.add(s);
+                  break;
+                } // case 42
+              case 50:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensurePermittedEmailAddressesIsMutable();
+                  permittedEmailAddresses_.add(s);
+                  break;
+                } // case 50
+              case 58:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureExcludedEmailAddressesIsMutable();
+                  excludedEmailAddresses_.add(s);
+                  break;
+                } // case 58
+              case 66:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensurePermittedUrisIsMutable();
+                  permittedUris_.add(s);
+                  break;
+                } // case 66
+              case 74:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureExcludedUrisIsMutable();
+                  excludedUris_.add(s);
+                  break;
+                } // case 74
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean critical_;
+      /**
+       *
+       *
+       * <pre>
+       * Indicates whether or not the name constraints are marked critical.
+       * </pre>
+       *
+       * <code>bool critical = 1;</code>
+       *
+       * @return The critical.
+       */
+      @java.lang.Override
+      public boolean getCritical() {
+        return critical_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates whether or not the name constraints are marked critical.
+       * </pre>
+       *
+       * <code>bool critical = 1;</code>
+       *
+       * @param value The critical to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCritical(boolean value) {
+
+        critical_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates whether or not the name constraints are marked critical.
+       * </pre>
+       *
+       * <code>bool critical = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCritical() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        critical_ = false;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList permittedDnsNames_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensurePermittedDnsNamesIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          permittedDnsNames_ = new com.google.protobuf.LazyStringArrayList(permittedDnsNames_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains permitted DNS names. Any DNS name that can be
+       * constructed by simply adding zero or more labels to
+       * the left-hand side of the name satisfies the name constraint.
+       * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+       * would satisfy `example.com` while `example1.com` does not.
+       * </pre>
+       *
+       * <code>repeated string permitted_dns_names = 2;</code>
+       *
+       * @return A list containing the permittedDnsNames.
+       */
+      public com.google.protobuf.ProtocolStringList getPermittedDnsNamesList() {
+        return permittedDnsNames_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains permitted DNS names. Any DNS name that can be
+       * constructed by simply adding zero or more labels to
+       * the left-hand side of the name satisfies the name constraint.
+       * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+       * would satisfy `example.com` while `example1.com` does not.
+       * </pre>
+       *
+       * <code>repeated string permitted_dns_names = 2;</code>
+       *
+       * @return The count of permittedDnsNames.
+       */
+      public int getPermittedDnsNamesCount() {
+        return permittedDnsNames_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains permitted DNS names. Any DNS name that can be
+       * constructed by simply adding zero or more labels to
+       * the left-hand side of the name satisfies the name constraint.
+       * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+       * would satisfy `example.com` while `example1.com` does not.
+       * </pre>
+       *
+       * <code>repeated string permitted_dns_names = 2;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The permittedDnsNames at the given index.
+       */
+      public java.lang.String getPermittedDnsNames(int index) {
+        return permittedDnsNames_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains permitted DNS names. Any DNS name that can be
+       * constructed by simply adding zero or more labels to
+       * the left-hand side of the name satisfies the name constraint.
+       * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+       * would satisfy `example.com` while `example1.com` does not.
+       * </pre>
+       *
+       * <code>repeated string permitted_dns_names = 2;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the permittedDnsNames at the given index.
+       */
+      public com.google.protobuf.ByteString getPermittedDnsNamesBytes(int index) {
+        return permittedDnsNames_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains permitted DNS names. Any DNS name that can be
+       * constructed by simply adding zero or more labels to
+       * the left-hand side of the name satisfies the name constraint.
+       * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+       * would satisfy `example.com` while `example1.com` does not.
+       * </pre>
+       *
+       * <code>repeated string permitted_dns_names = 2;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The permittedDnsNames to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPermittedDnsNames(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePermittedDnsNamesIsMutable();
+        permittedDnsNames_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains permitted DNS names. Any DNS name that can be
+       * constructed by simply adding zero or more labels to
+       * the left-hand side of the name satisfies the name constraint.
+       * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+       * would satisfy `example.com` while `example1.com` does not.
+       * </pre>
+       *
+       * <code>repeated string permitted_dns_names = 2;</code>
+       *
+       * @param value The permittedDnsNames to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPermittedDnsNames(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePermittedDnsNamesIsMutable();
+        permittedDnsNames_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains permitted DNS names. Any DNS name that can be
+       * constructed by simply adding zero or more labels to
+       * the left-hand side of the name satisfies the name constraint.
+       * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+       * would satisfy `example.com` while `example1.com` does not.
+       * </pre>
+       *
+       * <code>repeated string permitted_dns_names = 2;</code>
+       *
+       * @param values The permittedDnsNames to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllPermittedDnsNames(java.lang.Iterable<java.lang.String> values) {
+        ensurePermittedDnsNamesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, permittedDnsNames_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains permitted DNS names. Any DNS name that can be
+       * constructed by simply adding zero or more labels to
+       * the left-hand side of the name satisfies the name constraint.
+       * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+       * would satisfy `example.com` while `example1.com` does not.
+       * </pre>
+       *
+       * <code>repeated string permitted_dns_names = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPermittedDnsNames() {
+        permittedDnsNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains permitted DNS names. Any DNS name that can be
+       * constructed by simply adding zero or more labels to
+       * the left-hand side of the name satisfies the name constraint.
+       * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+       * would satisfy `example.com` while `example1.com` does not.
+       * </pre>
+       *
+       * <code>repeated string permitted_dns_names = 2;</code>
+       *
+       * @param value The bytes of the permittedDnsNames to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPermittedDnsNamesBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensurePermittedDnsNamesIsMutable();
+        permittedDnsNames_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList excludedDnsNames_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensureExcludedDnsNamesIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          excludedDnsNames_ = new com.google.protobuf.LazyStringArrayList(excludedDnsNames_);
+          bitField0_ |= 0x00000004;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains excluded DNS names. Any DNS name that can be
+       * constructed by simply adding zero or more labels to
+       * the left-hand side of the name satisfies the name constraint.
+       * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+       * would satisfy `example.com` while `example1.com` does not.
+       * </pre>
+       *
+       * <code>repeated string excluded_dns_names = 3;</code>
+       *
+       * @return A list containing the excludedDnsNames.
+       */
+      public com.google.protobuf.ProtocolStringList getExcludedDnsNamesList() {
+        return excludedDnsNames_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains excluded DNS names. Any DNS name that can be
+       * constructed by simply adding zero or more labels to
+       * the left-hand side of the name satisfies the name constraint.
+       * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+       * would satisfy `example.com` while `example1.com` does not.
+       * </pre>
+       *
+       * <code>repeated string excluded_dns_names = 3;</code>
+       *
+       * @return The count of excludedDnsNames.
+       */
+      public int getExcludedDnsNamesCount() {
+        return excludedDnsNames_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains excluded DNS names. Any DNS name that can be
+       * constructed by simply adding zero or more labels to
+       * the left-hand side of the name satisfies the name constraint.
+       * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+       * would satisfy `example.com` while `example1.com` does not.
+       * </pre>
+       *
+       * <code>repeated string excluded_dns_names = 3;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The excludedDnsNames at the given index.
+       */
+      public java.lang.String getExcludedDnsNames(int index) {
+        return excludedDnsNames_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains excluded DNS names. Any DNS name that can be
+       * constructed by simply adding zero or more labels to
+       * the left-hand side of the name satisfies the name constraint.
+       * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+       * would satisfy `example.com` while `example1.com` does not.
+       * </pre>
+       *
+       * <code>repeated string excluded_dns_names = 3;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the excludedDnsNames at the given index.
+       */
+      public com.google.protobuf.ByteString getExcludedDnsNamesBytes(int index) {
+        return excludedDnsNames_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains excluded DNS names. Any DNS name that can be
+       * constructed by simply adding zero or more labels to
+       * the left-hand side of the name satisfies the name constraint.
+       * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+       * would satisfy `example.com` while `example1.com` does not.
+       * </pre>
+       *
+       * <code>repeated string excluded_dns_names = 3;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The excludedDnsNames to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExcludedDnsNames(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExcludedDnsNamesIsMutable();
+        excludedDnsNames_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains excluded DNS names. Any DNS name that can be
+       * constructed by simply adding zero or more labels to
+       * the left-hand side of the name satisfies the name constraint.
+       * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+       * would satisfy `example.com` while `example1.com` does not.
+       * </pre>
+       *
+       * <code>repeated string excluded_dns_names = 3;</code>
+       *
+       * @param value The excludedDnsNames to add.
+       * @return This builder for chaining.
+       */
+      public Builder addExcludedDnsNames(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExcludedDnsNamesIsMutable();
+        excludedDnsNames_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains excluded DNS names. Any DNS name that can be
+       * constructed by simply adding zero or more labels to
+       * the left-hand side of the name satisfies the name constraint.
+       * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+       * would satisfy `example.com` while `example1.com` does not.
+       * </pre>
+       *
+       * <code>repeated string excluded_dns_names = 3;</code>
+       *
+       * @param values The excludedDnsNames to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllExcludedDnsNames(java.lang.Iterable<java.lang.String> values) {
+        ensureExcludedDnsNamesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludedDnsNames_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains excluded DNS names. Any DNS name that can be
+       * constructed by simply adding zero or more labels to
+       * the left-hand side of the name satisfies the name constraint.
+       * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+       * would satisfy `example.com` while `example1.com` does not.
+       * </pre>
+       *
+       * <code>repeated string excluded_dns_names = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearExcludedDnsNames() {
+        excludedDnsNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains excluded DNS names. Any DNS name that can be
+       * constructed by simply adding zero or more labels to
+       * the left-hand side of the name satisfies the name constraint.
+       * For example, `example.com`, `www.example.com`, `www.sub.example.com`
+       * would satisfy `example.com` while `example1.com` does not.
+       * </pre>
+       *
+       * <code>repeated string excluded_dns_names = 3;</code>
+       *
+       * @param value The bytes of the excludedDnsNames to add.
+       * @return This builder for chaining.
+       */
+      public Builder addExcludedDnsNamesBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureExcludedDnsNamesIsMutable();
+        excludedDnsNames_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList permittedIpRanges_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensurePermittedIpRangesIsMutable() {
+        if (!((bitField0_ & 0x00000008) != 0)) {
+          permittedIpRanges_ = new com.google.protobuf.LazyStringArrayList(permittedIpRanges_);
+          bitField0_ |= 0x00000008;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the permitted IP ranges. For IPv4 addresses, the ranges
+       * are expressed using CIDR notation as specified in RFC 4632.
+       * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+       * addresses.
+       * </pre>
+       *
+       * <code>repeated string permitted_ip_ranges = 4;</code>
+       *
+       * @return A list containing the permittedIpRanges.
+       */
+      public com.google.protobuf.ProtocolStringList getPermittedIpRangesList() {
+        return permittedIpRanges_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the permitted IP ranges. For IPv4 addresses, the ranges
+       * are expressed using CIDR notation as specified in RFC 4632.
+       * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+       * addresses.
+       * </pre>
+       *
+       * <code>repeated string permitted_ip_ranges = 4;</code>
+       *
+       * @return The count of permittedIpRanges.
+       */
+      public int getPermittedIpRangesCount() {
+        return permittedIpRanges_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the permitted IP ranges. For IPv4 addresses, the ranges
+       * are expressed using CIDR notation as specified in RFC 4632.
+       * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+       * addresses.
+       * </pre>
+       *
+       * <code>repeated string permitted_ip_ranges = 4;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The permittedIpRanges at the given index.
+       */
+      public java.lang.String getPermittedIpRanges(int index) {
+        return permittedIpRanges_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the permitted IP ranges. For IPv4 addresses, the ranges
+       * are expressed using CIDR notation as specified in RFC 4632.
+       * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+       * addresses.
+       * </pre>
+       *
+       * <code>repeated string permitted_ip_ranges = 4;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the permittedIpRanges at the given index.
+       */
+      public com.google.protobuf.ByteString getPermittedIpRangesBytes(int index) {
+        return permittedIpRanges_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the permitted IP ranges. For IPv4 addresses, the ranges
+       * are expressed using CIDR notation as specified in RFC 4632.
+       * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+       * addresses.
+       * </pre>
+       *
+       * <code>repeated string permitted_ip_ranges = 4;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The permittedIpRanges to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPermittedIpRanges(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePermittedIpRangesIsMutable();
+        permittedIpRanges_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the permitted IP ranges. For IPv4 addresses, the ranges
+       * are expressed using CIDR notation as specified in RFC 4632.
+       * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+       * addresses.
+       * </pre>
+       *
+       * <code>repeated string permitted_ip_ranges = 4;</code>
+       *
+       * @param value The permittedIpRanges to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPermittedIpRanges(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePermittedIpRangesIsMutable();
+        permittedIpRanges_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the permitted IP ranges. For IPv4 addresses, the ranges
+       * are expressed using CIDR notation as specified in RFC 4632.
+       * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+       * addresses.
+       * </pre>
+       *
+       * <code>repeated string permitted_ip_ranges = 4;</code>
+       *
+       * @param values The permittedIpRanges to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllPermittedIpRanges(java.lang.Iterable<java.lang.String> values) {
+        ensurePermittedIpRangesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, permittedIpRanges_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the permitted IP ranges. For IPv4 addresses, the ranges
+       * are expressed using CIDR notation as specified in RFC 4632.
+       * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+       * addresses.
+       * </pre>
+       *
+       * <code>repeated string permitted_ip_ranges = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPermittedIpRanges() {
+        permittedIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the permitted IP ranges. For IPv4 addresses, the ranges
+       * are expressed using CIDR notation as specified in RFC 4632.
+       * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+       * addresses.
+       * </pre>
+       *
+       * <code>repeated string permitted_ip_ranges = 4;</code>
+       *
+       * @param value The bytes of the permittedIpRanges to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPermittedIpRangesBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensurePermittedIpRangesIsMutable();
+        permittedIpRanges_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList excludedIpRanges_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensureExcludedIpRangesIsMutable() {
+        if (!((bitField0_ & 0x00000010) != 0)) {
+          excludedIpRanges_ = new com.google.protobuf.LazyStringArrayList(excludedIpRanges_);
+          bitField0_ |= 0x00000010;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the excluded IP ranges. For IPv4 addresses, the ranges
+       * are expressed using CIDR notation as specified in RFC 4632.
+       * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+       * addresses.
+       * </pre>
+       *
+       * <code>repeated string excluded_ip_ranges = 5;</code>
+       *
+       * @return A list containing the excludedIpRanges.
+       */
+      public com.google.protobuf.ProtocolStringList getExcludedIpRangesList() {
+        return excludedIpRanges_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the excluded IP ranges. For IPv4 addresses, the ranges
+       * are expressed using CIDR notation as specified in RFC 4632.
+       * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+       * addresses.
+       * </pre>
+       *
+       * <code>repeated string excluded_ip_ranges = 5;</code>
+       *
+       * @return The count of excludedIpRanges.
+       */
+      public int getExcludedIpRangesCount() {
+        return excludedIpRanges_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the excluded IP ranges. For IPv4 addresses, the ranges
+       * are expressed using CIDR notation as specified in RFC 4632.
+       * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+       * addresses.
+       * </pre>
+       *
+       * <code>repeated string excluded_ip_ranges = 5;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The excludedIpRanges at the given index.
+       */
+      public java.lang.String getExcludedIpRanges(int index) {
+        return excludedIpRanges_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the excluded IP ranges. For IPv4 addresses, the ranges
+       * are expressed using CIDR notation as specified in RFC 4632.
+       * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+       * addresses.
+       * </pre>
+       *
+       * <code>repeated string excluded_ip_ranges = 5;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the excludedIpRanges at the given index.
+       */
+      public com.google.protobuf.ByteString getExcludedIpRangesBytes(int index) {
+        return excludedIpRanges_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the excluded IP ranges. For IPv4 addresses, the ranges
+       * are expressed using CIDR notation as specified in RFC 4632.
+       * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+       * addresses.
+       * </pre>
+       *
+       * <code>repeated string excluded_ip_ranges = 5;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The excludedIpRanges to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExcludedIpRanges(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExcludedIpRangesIsMutable();
+        excludedIpRanges_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the excluded IP ranges. For IPv4 addresses, the ranges
+       * are expressed using CIDR notation as specified in RFC 4632.
+       * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+       * addresses.
+       * </pre>
+       *
+       * <code>repeated string excluded_ip_ranges = 5;</code>
+       *
+       * @param value The excludedIpRanges to add.
+       * @return This builder for chaining.
+       */
+      public Builder addExcludedIpRanges(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExcludedIpRangesIsMutable();
+        excludedIpRanges_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the excluded IP ranges. For IPv4 addresses, the ranges
+       * are expressed using CIDR notation as specified in RFC 4632.
+       * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+       * addresses.
+       * </pre>
+       *
+       * <code>repeated string excluded_ip_ranges = 5;</code>
+       *
+       * @param values The excludedIpRanges to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllExcludedIpRanges(java.lang.Iterable<java.lang.String> values) {
+        ensureExcludedIpRangesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludedIpRanges_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the excluded IP ranges. For IPv4 addresses, the ranges
+       * are expressed using CIDR notation as specified in RFC 4632.
+       * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+       * addresses.
+       * </pre>
+       *
+       * <code>repeated string excluded_ip_ranges = 5;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearExcludedIpRanges() {
+        excludedIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the excluded IP ranges. For IPv4 addresses, the ranges
+       * are expressed using CIDR notation as specified in RFC 4632.
+       * For IPv6 addresses, the ranges are expressed in similar encoding as IPv4
+       * addresses.
+       * </pre>
+       *
+       * <code>repeated string excluded_ip_ranges = 5;</code>
+       *
+       * @param value The bytes of the excludedIpRanges to add.
+       * @return This builder for chaining.
+       */
+      public Builder addExcludedIpRangesBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureExcludedIpRangesIsMutable();
+        excludedIpRanges_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList permittedEmailAddresses_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensurePermittedEmailAddressesIsMutable() {
+        if (!((bitField0_ & 0x00000020) != 0)) {
+          permittedEmailAddresses_ =
+              new com.google.protobuf.LazyStringArrayList(permittedEmailAddresses_);
+          bitField0_ |= 0x00000020;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the permitted email addresses. The value can be a particular
+       * email address, a hostname to indicate all email addresses on that host or
+       * a domain with a leading period (e.g. `.example.com`) to indicate
+       * all email addresses in that domain.
+       * </pre>
+       *
+       * <code>repeated string permitted_email_addresses = 6;</code>
+       *
+       * @return A list containing the permittedEmailAddresses.
+       */
+      public com.google.protobuf.ProtocolStringList getPermittedEmailAddressesList() {
+        return permittedEmailAddresses_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the permitted email addresses. The value can be a particular
+       * email address, a hostname to indicate all email addresses on that host or
+       * a domain with a leading period (e.g. `.example.com`) to indicate
+       * all email addresses in that domain.
+       * </pre>
+       *
+       * <code>repeated string permitted_email_addresses = 6;</code>
+       *
+       * @return The count of permittedEmailAddresses.
+       */
+      public int getPermittedEmailAddressesCount() {
+        return permittedEmailAddresses_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the permitted email addresses. The value can be a particular
+       * email address, a hostname to indicate all email addresses on that host or
+       * a domain with a leading period (e.g. `.example.com`) to indicate
+       * all email addresses in that domain.
+       * </pre>
+       *
+       * <code>repeated string permitted_email_addresses = 6;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The permittedEmailAddresses at the given index.
+       */
+      public java.lang.String getPermittedEmailAddresses(int index) {
+        return permittedEmailAddresses_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the permitted email addresses. The value can be a particular
+       * email address, a hostname to indicate all email addresses on that host or
+       * a domain with a leading period (e.g. `.example.com`) to indicate
+       * all email addresses in that domain.
+       * </pre>
+       *
+       * <code>repeated string permitted_email_addresses = 6;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the permittedEmailAddresses at the given index.
+       */
+      public com.google.protobuf.ByteString getPermittedEmailAddressesBytes(int index) {
+        return permittedEmailAddresses_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the permitted email addresses. The value can be a particular
+       * email address, a hostname to indicate all email addresses on that host or
+       * a domain with a leading period (e.g. `.example.com`) to indicate
+       * all email addresses in that domain.
+       * </pre>
+       *
+       * <code>repeated string permitted_email_addresses = 6;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The permittedEmailAddresses to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPermittedEmailAddresses(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePermittedEmailAddressesIsMutable();
+        permittedEmailAddresses_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the permitted email addresses. The value can be a particular
+       * email address, a hostname to indicate all email addresses on that host or
+       * a domain with a leading period (e.g. `.example.com`) to indicate
+       * all email addresses in that domain.
+       * </pre>
+       *
+       * <code>repeated string permitted_email_addresses = 6;</code>
+       *
+       * @param value The permittedEmailAddresses to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPermittedEmailAddresses(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePermittedEmailAddressesIsMutable();
+        permittedEmailAddresses_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the permitted email addresses. The value can be a particular
+       * email address, a hostname to indicate all email addresses on that host or
+       * a domain with a leading period (e.g. `.example.com`) to indicate
+       * all email addresses in that domain.
+       * </pre>
+       *
+       * <code>repeated string permitted_email_addresses = 6;</code>
+       *
+       * @param values The permittedEmailAddresses to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllPermittedEmailAddresses(java.lang.Iterable<java.lang.String> values) {
+        ensurePermittedEmailAddressesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, permittedEmailAddresses_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the permitted email addresses. The value can be a particular
+       * email address, a hostname to indicate all email addresses on that host or
+       * a domain with a leading period (e.g. `.example.com`) to indicate
+       * all email addresses in that domain.
+       * </pre>
+       *
+       * <code>repeated string permitted_email_addresses = 6;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPermittedEmailAddresses() {
+        permittedEmailAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the permitted email addresses. The value can be a particular
+       * email address, a hostname to indicate all email addresses on that host or
+       * a domain with a leading period (e.g. `.example.com`) to indicate
+       * all email addresses in that domain.
+       * </pre>
+       *
+       * <code>repeated string permitted_email_addresses = 6;</code>
+       *
+       * @param value The bytes of the permittedEmailAddresses to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPermittedEmailAddressesBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensurePermittedEmailAddressesIsMutable();
+        permittedEmailAddresses_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList excludedEmailAddresses_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensureExcludedEmailAddressesIsMutable() {
+        if (!((bitField0_ & 0x00000040) != 0)) {
+          excludedEmailAddresses_ =
+              new com.google.protobuf.LazyStringArrayList(excludedEmailAddresses_);
+          bitField0_ |= 0x00000040;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the excluded email addresses. The value can be a particular
+       * email address, a hostname to indicate all email addresses on that host or
+       * a domain with a leading period (e.g. `.example.com`) to indicate
+       * all email addresses in that domain.
+       * </pre>
+       *
+       * <code>repeated string excluded_email_addresses = 7;</code>
+       *
+       * @return A list containing the excludedEmailAddresses.
+       */
+      public com.google.protobuf.ProtocolStringList getExcludedEmailAddressesList() {
+        return excludedEmailAddresses_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the excluded email addresses. The value can be a particular
+       * email address, a hostname to indicate all email addresses on that host or
+       * a domain with a leading period (e.g. `.example.com`) to indicate
+       * all email addresses in that domain.
+       * </pre>
+       *
+       * <code>repeated string excluded_email_addresses = 7;</code>
+       *
+       * @return The count of excludedEmailAddresses.
+       */
+      public int getExcludedEmailAddressesCount() {
+        return excludedEmailAddresses_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the excluded email addresses. The value can be a particular
+       * email address, a hostname to indicate all email addresses on that host or
+       * a domain with a leading period (e.g. `.example.com`) to indicate
+       * all email addresses in that domain.
+       * </pre>
+       *
+       * <code>repeated string excluded_email_addresses = 7;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The excludedEmailAddresses at the given index.
+       */
+      public java.lang.String getExcludedEmailAddresses(int index) {
+        return excludedEmailAddresses_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the excluded email addresses. The value can be a particular
+       * email address, a hostname to indicate all email addresses on that host or
+       * a domain with a leading period (e.g. `.example.com`) to indicate
+       * all email addresses in that domain.
+       * </pre>
+       *
+       * <code>repeated string excluded_email_addresses = 7;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the excludedEmailAddresses at the given index.
+       */
+      public com.google.protobuf.ByteString getExcludedEmailAddressesBytes(int index) {
+        return excludedEmailAddresses_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the excluded email addresses. The value can be a particular
+       * email address, a hostname to indicate all email addresses on that host or
+       * a domain with a leading period (e.g. `.example.com`) to indicate
+       * all email addresses in that domain.
+       * </pre>
+       *
+       * <code>repeated string excluded_email_addresses = 7;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The excludedEmailAddresses to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExcludedEmailAddresses(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExcludedEmailAddressesIsMutable();
+        excludedEmailAddresses_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the excluded email addresses. The value can be a particular
+       * email address, a hostname to indicate all email addresses on that host or
+       * a domain with a leading period (e.g. `.example.com`) to indicate
+       * all email addresses in that domain.
+       * </pre>
+       *
+       * <code>repeated string excluded_email_addresses = 7;</code>
+       *
+       * @param value The excludedEmailAddresses to add.
+       * @return This builder for chaining.
+       */
+      public Builder addExcludedEmailAddresses(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExcludedEmailAddressesIsMutable();
+        excludedEmailAddresses_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the excluded email addresses. The value can be a particular
+       * email address, a hostname to indicate all email addresses on that host or
+       * a domain with a leading period (e.g. `.example.com`) to indicate
+       * all email addresses in that domain.
+       * </pre>
+       *
+       * <code>repeated string excluded_email_addresses = 7;</code>
+       *
+       * @param values The excludedEmailAddresses to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllExcludedEmailAddresses(java.lang.Iterable<java.lang.String> values) {
+        ensureExcludedEmailAddressesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludedEmailAddresses_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the excluded email addresses. The value can be a particular
+       * email address, a hostname to indicate all email addresses on that host or
+       * a domain with a leading period (e.g. `.example.com`) to indicate
+       * all email addresses in that domain.
+       * </pre>
+       *
+       * <code>repeated string excluded_email_addresses = 7;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearExcludedEmailAddresses() {
+        excludedEmailAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the excluded email addresses. The value can be a particular
+       * email address, a hostname to indicate all email addresses on that host or
+       * a domain with a leading period (e.g. `.example.com`) to indicate
+       * all email addresses in that domain.
+       * </pre>
+       *
+       * <code>repeated string excluded_email_addresses = 7;</code>
+       *
+       * @param value The bytes of the excludedEmailAddresses to add.
+       * @return This builder for chaining.
+       */
+      public Builder addExcludedEmailAddressesBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureExcludedEmailAddressesIsMutable();
+        excludedEmailAddresses_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList permittedUris_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensurePermittedUrisIsMutable() {
+        if (!((bitField0_ & 0x00000080) != 0)) {
+          permittedUris_ = new com.google.protobuf.LazyStringArrayList(permittedUris_);
+          bitField0_ |= 0x00000080;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the permitted URIs that apply to the host part of the name.
+       * The value can be a hostname or a domain with a
+       * leading period (like `.example.com`)
+       * </pre>
+       *
+       * <code>repeated string permitted_uris = 8;</code>
+       *
+       * @return A list containing the permittedUris.
+       */
+      public com.google.protobuf.ProtocolStringList getPermittedUrisList() {
+        return permittedUris_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the permitted URIs that apply to the host part of the name.
+       * The value can be a hostname or a domain with a
+       * leading period (like `.example.com`)
+       * </pre>
+       *
+       * <code>repeated string permitted_uris = 8;</code>
+       *
+       * @return The count of permittedUris.
+       */
+      public int getPermittedUrisCount() {
+        return permittedUris_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the permitted URIs that apply to the host part of the name.
+       * The value can be a hostname or a domain with a
+       * leading period (like `.example.com`)
+       * </pre>
+       *
+       * <code>repeated string permitted_uris = 8;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The permittedUris at the given index.
+       */
+      public java.lang.String getPermittedUris(int index) {
+        return permittedUris_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the permitted URIs that apply to the host part of the name.
+       * The value can be a hostname or a domain with a
+       * leading period (like `.example.com`)
+       * </pre>
+       *
+       * <code>repeated string permitted_uris = 8;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the permittedUris at the given index.
+       */
+      public com.google.protobuf.ByteString getPermittedUrisBytes(int index) {
+        return permittedUris_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the permitted URIs that apply to the host part of the name.
+       * The value can be a hostname or a domain with a
+       * leading period (like `.example.com`)
+       * </pre>
+       *
+       * <code>repeated string permitted_uris = 8;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The permittedUris to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPermittedUris(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePermittedUrisIsMutable();
+        permittedUris_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the permitted URIs that apply to the host part of the name.
+       * The value can be a hostname or a domain with a
+       * leading period (like `.example.com`)
+       * </pre>
+       *
+       * <code>repeated string permitted_uris = 8;</code>
+       *
+       * @param value The permittedUris to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPermittedUris(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePermittedUrisIsMutable();
+        permittedUris_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the permitted URIs that apply to the host part of the name.
+       * The value can be a hostname or a domain with a
+       * leading period (like `.example.com`)
+       * </pre>
+       *
+       * <code>repeated string permitted_uris = 8;</code>
+       *
+       * @param values The permittedUris to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllPermittedUris(java.lang.Iterable<java.lang.String> values) {
+        ensurePermittedUrisIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, permittedUris_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the permitted URIs that apply to the host part of the name.
+       * The value can be a hostname or a domain with a
+       * leading period (like `.example.com`)
+       * </pre>
+       *
+       * <code>repeated string permitted_uris = 8;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPermittedUris() {
+        permittedUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the permitted URIs that apply to the host part of the name.
+       * The value can be a hostname or a domain with a
+       * leading period (like `.example.com`)
+       * </pre>
+       *
+       * <code>repeated string permitted_uris = 8;</code>
+       *
+       * @param value The bytes of the permittedUris to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPermittedUrisBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensurePermittedUrisIsMutable();
+        permittedUris_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList excludedUris_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensureExcludedUrisIsMutable() {
+        if (!((bitField0_ & 0x00000100) != 0)) {
+          excludedUris_ = new com.google.protobuf.LazyStringArrayList(excludedUris_);
+          bitField0_ |= 0x00000100;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the excluded URIs that apply to the host part of the name.
+       * The value can be a hostname or a domain with a
+       * leading period (like `.example.com`)
+       * </pre>
+       *
+       * <code>repeated string excluded_uris = 9;</code>
+       *
+       * @return A list containing the excludedUris.
+       */
+      public com.google.protobuf.ProtocolStringList getExcludedUrisList() {
+        return excludedUris_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the excluded URIs that apply to the host part of the name.
+       * The value can be a hostname or a domain with a
+       * leading period (like `.example.com`)
+       * </pre>
+       *
+       * <code>repeated string excluded_uris = 9;</code>
+       *
+       * @return The count of excludedUris.
+       */
+      public int getExcludedUrisCount() {
+        return excludedUris_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the excluded URIs that apply to the host part of the name.
+       * The value can be a hostname or a domain with a
+       * leading period (like `.example.com`)
+       * </pre>
+       *
+       * <code>repeated string excluded_uris = 9;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The excludedUris at the given index.
+       */
+      public java.lang.String getExcludedUris(int index) {
+        return excludedUris_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the excluded URIs that apply to the host part of the name.
+       * The value can be a hostname or a domain with a
+       * leading period (like `.example.com`)
+       * </pre>
+       *
+       * <code>repeated string excluded_uris = 9;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the excludedUris at the given index.
+       */
+      public com.google.protobuf.ByteString getExcludedUrisBytes(int index) {
+        return excludedUris_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the excluded URIs that apply to the host part of the name.
+       * The value can be a hostname or a domain with a
+       * leading period (like `.example.com`)
+       * </pre>
+       *
+       * <code>repeated string excluded_uris = 9;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The excludedUris to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExcludedUris(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExcludedUrisIsMutable();
+        excludedUris_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the excluded URIs that apply to the host part of the name.
+       * The value can be a hostname or a domain with a
+       * leading period (like `.example.com`)
+       * </pre>
+       *
+       * <code>repeated string excluded_uris = 9;</code>
+       *
+       * @param value The excludedUris to add.
+       * @return This builder for chaining.
+       */
+      public Builder addExcludedUris(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExcludedUrisIsMutable();
+        excludedUris_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the excluded URIs that apply to the host part of the name.
+       * The value can be a hostname or a domain with a
+       * leading period (like `.example.com`)
+       * </pre>
+       *
+       * <code>repeated string excluded_uris = 9;</code>
+       *
+       * @param values The excludedUris to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllExcludedUris(java.lang.Iterable<java.lang.String> values) {
+        ensureExcludedUrisIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludedUris_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the excluded URIs that apply to the host part of the name.
+       * The value can be a hostname or a domain with a
+       * leading period (like `.example.com`)
+       * </pre>
+       *
+       * <code>repeated string excluded_uris = 9;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearExcludedUris() {
+        excludedUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains the excluded URIs that apply to the host part of the name.
+       * The value can be a hostname or a domain with a
+       * leading period (like `.example.com`)
+       * </pre>
+       *
+       * <code>repeated string excluded_uris = 9;</code>
+       *
+       * @param value The bytes of the excludedUris to add.
+       * @return This builder for chaining.
+       */
+      public Builder addExcludedUrisBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureExcludedUrisIsMutable();
+        excludedUris_.add(value);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.security.privateca.v1.X509Parameters.NameConstraints)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.security.privateca.v1.X509Parameters.NameConstraints)
+    private static final com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints();
+    }
+
+    public static com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<NameConstraints> PARSER =
+        new com.google.protobuf.AbstractParser<NameConstraints>() {
+          @java.lang.Override
+          public NameConstraints parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<NameConstraints> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<NameConstraints> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int KEY_USAGE_FIELD_NUMBER = 1;
   private com.google.cloud.security.privateca.v1.KeyUsage keyUsage_;
   /**
    *
    *
    * <pre>
-   * Optional. Indicates the intended use for keys that correspond to a certificate.
+   * Optional. Indicates the intended use for keys that correspond to a
+   * certificate.
    * </pre>
    *
    * <code>
@@ -909,7 +4485,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Indicates the intended use for keys that correspond to a certificate.
+   * Optional. Indicates the intended use for keys that correspond to a
+   * certificate.
    * </pre>
    *
    * <code>
@@ -928,7 +4505,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Indicates the intended use for keys that correspond to a certificate.
+   * Optional. Indicates the intended use for keys that correspond to a
+   * certificate.
    * </pre>
    *
    * <code>
@@ -948,8 +4526,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Describes options in this [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that are relevant in a CA
-   * certificate.
+   * Optional. Describes options in this
+   * [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that
+   * are relevant in a CA certificate.
    * </pre>
    *
    * <code>
@@ -966,8 +4545,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Describes options in this [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that are relevant in a CA
-   * certificate.
+   * Optional. Describes options in this
+   * [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that
+   * are relevant in a CA certificate.
    * </pre>
    *
    * <code>
@@ -986,8 +4566,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Describes options in this [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that are relevant in a CA
-   * certificate.
+   * Optional. Describes options in this
+   * [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that
+   * are relevant in a CA certificate.
    * </pre>
    *
    * <code>
@@ -1096,9 +4677,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint addresses
-   * that appear in the "Authority Information Access" extension in the
-   * certificate.
+   * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint
+   * addresses that appear in the "Authority Information Access" extension in
+   * the certificate.
    * </pre>
    *
    * <code>repeated string aia_ocsp_servers = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1112,9 +4693,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint addresses
-   * that appear in the "Authority Information Access" extension in the
-   * certificate.
+   * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint
+   * addresses that appear in the "Authority Information Access" extension in
+   * the certificate.
    * </pre>
    *
    * <code>repeated string aia_ocsp_servers = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1128,9 +4709,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint addresses
-   * that appear in the "Authority Information Access" extension in the
-   * certificate.
+   * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint
+   * addresses that appear in the "Authority Information Access" extension in
+   * the certificate.
    * </pre>
    *
    * <code>repeated string aia_ocsp_servers = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1145,9 +4726,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint addresses
-   * that appear in the "Authority Information Access" extension in the
-   * certificate.
+   * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint
+   * addresses that appear in the "Authority Information Access" extension in
+   * the certificate.
    * </pre>
    *
    * <code>repeated string aia_ocsp_servers = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1157,6 +4738,64 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
    */
   public com.google.protobuf.ByteString getAiaOcspServersBytes(int index) {
     return aiaOcspServers_.getByteString(index);
+  }
+
+  public static final int NAME_CONSTRAINTS_FIELD_NUMBER = 6;
+  private com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints nameConstraints_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the X.509 name constraints extension.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.security.privateca.v1.X509Parameters.NameConstraints name_constraints = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the nameConstraints field is set.
+   */
+  @java.lang.Override
+  public boolean hasNameConstraints() {
+    return nameConstraints_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the X.509 name constraints extension.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.security.privateca.v1.X509Parameters.NameConstraints name_constraints = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The nameConstraints.
+   */
+  @java.lang.Override
+  public com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints
+      getNameConstraints() {
+    return nameConstraints_ == null
+        ? com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints.getDefaultInstance()
+        : nameConstraints_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the X.509 name constraints extension.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.security.privateca.v1.X509Parameters.NameConstraints name_constraints = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.security.privateca.v1.X509Parameters.NameConstraintsOrBuilder
+      getNameConstraintsOrBuilder() {
+    return nameConstraints_ == null
+        ? com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints.getDefaultInstance()
+        : nameConstraints_;
   }
 
   public static final int ADDITIONAL_EXTENSIONS_FIELD_NUMBER = 5;
@@ -1272,6 +4911,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < additionalExtensions_.size(); i++) {
       output.writeMessage(5, additionalExtensions_.get(i));
     }
+    if (nameConstraints_ != null) {
+      output.writeMessage(6, getNameConstraints());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1302,6 +4944,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(5, additionalExtensions_.get(i));
     }
+    if (nameConstraints_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getNameConstraints());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1328,6 +4973,10 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getPolicyIdsList().equals(other.getPolicyIdsList())) return false;
     if (!getAiaOcspServersList().equals(other.getAiaOcspServersList())) return false;
+    if (hasNameConstraints() != other.hasNameConstraints()) return false;
+    if (hasNameConstraints()) {
+      if (!getNameConstraints().equals(other.getNameConstraints())) return false;
+    }
     if (!getAdditionalExtensionsList().equals(other.getAdditionalExtensionsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1355,6 +5004,10 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
     if (getAiaOcspServersCount() > 0) {
       hash = (37 * hash) + AIA_OCSP_SERVERS_FIELD_NUMBER;
       hash = (53 * hash) + getAiaOcspServersList().hashCode();
+    }
+    if (hasNameConstraints()) {
+      hash = (37 * hash) + NAME_CONSTRAINTS_FIELD_NUMBER;
+      hash = (53 * hash) + getNameConstraints().hashCode();
     }
     if (getAdditionalExtensionsCount() > 0) {
       hash = (37 * hash) + ADDITIONAL_EXTENSIONS_FIELD_NUMBER;
@@ -1465,9 +5118,10 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] is used to describe certain fields of an
-   * X.509 certificate, such as the key usage fields, fields specific to CA
-   * certificates, certificate policy extensions and custom extensions.
+   * An [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] is
+   * used to describe certain fields of an X.509 certificate, such as the key
+   * usage fields, fields specific to CA certificates, certificate policy
+   * extensions and custom extensions.
    * </pre>
    *
    * Protobuf type {@code google.cloud.security.privateca.v1.X509Parameters}
@@ -1521,13 +5175,18 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000004);
       aiaOcspServers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
+      nameConstraints_ = null;
+      if (nameConstraintsBuilder_ != null) {
+        nameConstraintsBuilder_.dispose();
+        nameConstraintsBuilder_ = null;
+      }
       if (additionalExtensionsBuilder_ == null) {
         additionalExtensions_ = java.util.Collections.emptyList();
       } else {
         additionalExtensions_ = null;
         additionalExtensionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -1580,9 +5239,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
       }
       result.aiaOcspServers_ = aiaOcspServers_;
       if (additionalExtensionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           additionalExtensions_ = java.util.Collections.unmodifiableList(additionalExtensions_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.additionalExtensions_ = additionalExtensions_;
       } else {
@@ -1597,6 +5256,10 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.caOptions_ = caOptionsBuilder_ == null ? caOptions_ : caOptionsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.nameConstraints_ =
+            nameConstraintsBuilder_ == null ? nameConstraints_ : nameConstraintsBuilder_.build();
       }
     }
 
@@ -1689,11 +5352,14 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
+      if (other.hasNameConstraints()) {
+        mergeNameConstraints(other.getNameConstraints());
+      }
       if (additionalExtensionsBuilder_ == null) {
         if (!other.additionalExtensions_.isEmpty()) {
           if (additionalExtensions_.isEmpty()) {
             additionalExtensions_ = other.additionalExtensions_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureAdditionalExtensionsIsMutable();
             additionalExtensions_.addAll(other.additionalExtensions_);
@@ -1706,7 +5372,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
             additionalExtensionsBuilder_.dispose();
             additionalExtensionsBuilder_ = null;
             additionalExtensions_ = other.additionalExtensions_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
             additionalExtensionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAdditionalExtensionsFieldBuilder()
@@ -1789,6 +5455,12 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(getNameConstraintsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1818,7 +5490,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicates the intended use for keys that correspond to a certificate.
+     * Optional. Indicates the intended use for keys that correspond to a
+     * certificate.
      * </pre>
      *
      * <code>
@@ -1834,7 +5507,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicates the intended use for keys that correspond to a certificate.
+     * Optional. Indicates the intended use for keys that correspond to a
+     * certificate.
      * </pre>
      *
      * <code>
@@ -1856,7 +5530,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicates the intended use for keys that correspond to a certificate.
+     * Optional. Indicates the intended use for keys that correspond to a
+     * certificate.
      * </pre>
      *
      * <code>
@@ -1880,7 +5555,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicates the intended use for keys that correspond to a certificate.
+     * Optional. Indicates the intended use for keys that correspond to a
+     * certificate.
      * </pre>
      *
      * <code>
@@ -1902,7 +5578,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicates the intended use for keys that correspond to a certificate.
+     * Optional. Indicates the intended use for keys that correspond to a
+     * certificate.
      * </pre>
      *
      * <code>
@@ -1929,7 +5606,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicates the intended use for keys that correspond to a certificate.
+     * Optional. Indicates the intended use for keys that correspond to a
+     * certificate.
      * </pre>
      *
      * <code>
@@ -1950,7 +5628,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicates the intended use for keys that correspond to a certificate.
+     * Optional. Indicates the intended use for keys that correspond to a
+     * certificate.
      * </pre>
      *
      * <code>
@@ -1966,7 +5645,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicates the intended use for keys that correspond to a certificate.
+     * Optional. Indicates the intended use for keys that correspond to a
+     * certificate.
      * </pre>
      *
      * <code>
@@ -1986,7 +5666,8 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicates the intended use for keys that correspond to a certificate.
+     * Optional. Indicates the intended use for keys that correspond to a
+     * certificate.
      * </pre>
      *
      * <code>
@@ -2020,8 +5701,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Describes options in this [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that are relevant in a CA
-     * certificate.
+     * Optional. Describes options in this
+     * [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that
+     * are relevant in a CA certificate.
      * </pre>
      *
      * <code>
@@ -2037,8 +5719,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Describes options in this [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that are relevant in a CA
-     * certificate.
+     * Optional. Describes options in this
+     * [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that
+     * are relevant in a CA certificate.
      * </pre>
      *
      * <code>
@@ -2060,8 +5743,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Describes options in this [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that are relevant in a CA
-     * certificate.
+     * Optional. Describes options in this
+     * [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that
+     * are relevant in a CA certificate.
      * </pre>
      *
      * <code>
@@ -2086,8 +5770,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Describes options in this [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that are relevant in a CA
-     * certificate.
+     * Optional. Describes options in this
+     * [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that
+     * are relevant in a CA certificate.
      * </pre>
      *
      * <code>
@@ -2109,8 +5794,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Describes options in this [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that are relevant in a CA
-     * certificate.
+     * Optional. Describes options in this
+     * [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that
+     * are relevant in a CA certificate.
      * </pre>
      *
      * <code>
@@ -2140,8 +5826,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Describes options in this [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that are relevant in a CA
-     * certificate.
+     * Optional. Describes options in this
+     * [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that
+     * are relevant in a CA certificate.
      * </pre>
      *
      * <code>
@@ -2162,8 +5849,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Describes options in this [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that are relevant in a CA
-     * certificate.
+     * Optional. Describes options in this
+     * [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that
+     * are relevant in a CA certificate.
      * </pre>
      *
      * <code>
@@ -2180,8 +5868,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Describes options in this [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that are relevant in a CA
-     * certificate.
+     * Optional. Describes options in this
+     * [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that
+     * are relevant in a CA certificate.
      * </pre>
      *
      * <code>
@@ -2202,8 +5891,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Describes options in this [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that are relevant in a CA
-     * certificate.
+     * Optional. Describes options in this
+     * [X509Parameters][google.cloud.security.privateca.v1.X509Parameters] that
+     * are relevant in a CA certificate.
      * </pre>
      *
      * <code>
@@ -2646,9 +6336,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint addresses
-     * that appear in the "Authority Information Access" extension in the
-     * certificate.
+     * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint
+     * addresses that appear in the "Authority Information Access" extension in
+     * the certificate.
      * </pre>
      *
      * <code>repeated string aia_ocsp_servers = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2662,9 +6352,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint addresses
-     * that appear in the "Authority Information Access" extension in the
-     * certificate.
+     * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint
+     * addresses that appear in the "Authority Information Access" extension in
+     * the certificate.
      * </pre>
      *
      * <code>repeated string aia_ocsp_servers = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2678,9 +6368,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint addresses
-     * that appear in the "Authority Information Access" extension in the
-     * certificate.
+     * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint
+     * addresses that appear in the "Authority Information Access" extension in
+     * the certificate.
      * </pre>
      *
      * <code>repeated string aia_ocsp_servers = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2695,9 +6385,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint addresses
-     * that appear in the "Authority Information Access" extension in the
-     * certificate.
+     * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint
+     * addresses that appear in the "Authority Information Access" extension in
+     * the certificate.
      * </pre>
      *
      * <code>repeated string aia_ocsp_servers = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2712,9 +6402,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint addresses
-     * that appear in the "Authority Information Access" extension in the
-     * certificate.
+     * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint
+     * addresses that appear in the "Authority Information Access" extension in
+     * the certificate.
      * </pre>
      *
      * <code>repeated string aia_ocsp_servers = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2736,9 +6426,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint addresses
-     * that appear in the "Authority Information Access" extension in the
-     * certificate.
+     * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint
+     * addresses that appear in the "Authority Information Access" extension in
+     * the certificate.
      * </pre>
      *
      * <code>repeated string aia_ocsp_servers = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2759,9 +6449,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint addresses
-     * that appear in the "Authority Information Access" extension in the
-     * certificate.
+     * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint
+     * addresses that appear in the "Authority Information Access" extension in
+     * the certificate.
      * </pre>
      *
      * <code>repeated string aia_ocsp_servers = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2779,9 +6469,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint addresses
-     * that appear in the "Authority Information Access" extension in the
-     * certificate.
+     * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint
+     * addresses that appear in the "Authority Information Access" extension in
+     * the certificate.
      * </pre>
      *
      * <code>repeated string aia_ocsp_servers = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2798,9 +6488,9 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint addresses
-     * that appear in the "Authority Information Access" extension in the
-     * certificate.
+     * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint
+     * addresses that appear in the "Authority Information Access" extension in
+     * the certificate.
      * </pre>
      *
      * <code>repeated string aia_ocsp_servers = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2819,15 +6509,227 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints nameConstraints_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints,
+            com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints.Builder,
+            com.google.cloud.security.privateca.v1.X509Parameters.NameConstraintsOrBuilder>
+        nameConstraintsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the X.509 name constraints extension.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.X509Parameters.NameConstraints name_constraints = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the nameConstraints field is set.
+     */
+    public boolean hasNameConstraints() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the X.509 name constraints extension.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.X509Parameters.NameConstraints name_constraints = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The nameConstraints.
+     */
+    public com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints
+        getNameConstraints() {
+      if (nameConstraintsBuilder_ == null) {
+        return nameConstraints_ == null
+            ? com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints
+                .getDefaultInstance()
+            : nameConstraints_;
+      } else {
+        return nameConstraintsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the X.509 name constraints extension.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.X509Parameters.NameConstraints name_constraints = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNameConstraints(
+        com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints value) {
+      if (nameConstraintsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        nameConstraints_ = value;
+      } else {
+        nameConstraintsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the X.509 name constraints extension.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.X509Parameters.NameConstraints name_constraints = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNameConstraints(
+        com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints.Builder
+            builderForValue) {
+      if (nameConstraintsBuilder_ == null) {
+        nameConstraints_ = builderForValue.build();
+      } else {
+        nameConstraintsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the X.509 name constraints extension.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.X509Parameters.NameConstraints name_constraints = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeNameConstraints(
+        com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints value) {
+      if (nameConstraintsBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && nameConstraints_ != null
+            && nameConstraints_
+                != com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints
+                    .getDefaultInstance()) {
+          getNameConstraintsBuilder().mergeFrom(value);
+        } else {
+          nameConstraints_ = value;
+        }
+      } else {
+        nameConstraintsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the X.509 name constraints extension.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.X509Parameters.NameConstraints name_constraints = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearNameConstraints() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      nameConstraints_ = null;
+      if (nameConstraintsBuilder_ != null) {
+        nameConstraintsBuilder_.dispose();
+        nameConstraintsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the X.509 name constraints extension.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.X509Parameters.NameConstraints name_constraints = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints.Builder
+        getNameConstraintsBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getNameConstraintsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the X.509 name constraints extension.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.X509Parameters.NameConstraints name_constraints = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.security.privateca.v1.X509Parameters.NameConstraintsOrBuilder
+        getNameConstraintsOrBuilder() {
+      if (nameConstraintsBuilder_ != null) {
+        return nameConstraintsBuilder_.getMessageOrBuilder();
+      } else {
+        return nameConstraints_ == null
+            ? com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints
+                .getDefaultInstance()
+            : nameConstraints_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the X.509 name constraints extension.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.X509Parameters.NameConstraints name_constraints = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints,
+            com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints.Builder,
+            com.google.cloud.security.privateca.v1.X509Parameters.NameConstraintsOrBuilder>
+        getNameConstraintsFieldBuilder() {
+      if (nameConstraintsBuilder_ == null) {
+        nameConstraintsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints,
+                com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints.Builder,
+                com.google.cloud.security.privateca.v1.X509Parameters.NameConstraintsOrBuilder>(
+                getNameConstraints(), getParentForChildren(), isClean());
+        nameConstraints_ = null;
+      }
+      return nameConstraintsBuilder_;
+    }
+
     private java.util.List<com.google.cloud.security.privateca.v1.X509Extension>
         additionalExtensions_ = java.util.Collections.emptyList();
 
     private void ensureAdditionalExtensionsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         additionalExtensions_ =
             new java.util.ArrayList<com.google.cloud.security.privateca.v1.X509Extension>(
                 additionalExtensions_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -3069,7 +6971,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAdditionalExtensions() {
       if (additionalExtensionsBuilder_ == null) {
         additionalExtensions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         additionalExtensionsBuilder_.clear();
@@ -3211,7 +7113,7 @@ public final class X509Parameters extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.security.privateca.v1.X509Extension.Builder,
                 com.google.cloud.security.privateca.v1.X509ExtensionOrBuilder>(
                 additionalExtensions_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         additionalExtensions_ = null;

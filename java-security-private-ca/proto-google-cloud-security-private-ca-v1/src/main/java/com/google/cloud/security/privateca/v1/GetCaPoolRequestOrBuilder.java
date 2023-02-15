@@ -27,7 +27,8 @@ public interface GetCaPoolRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.security.privateca.v1.CaPool.name] of the [CaPool][google.cloud.security.privateca.v1.CaPool] to get.
+   * Required. The [name][google.cloud.security.privateca.v1.CaPool.name] of the
+   * [CaPool][google.cloud.security.privateca.v1.CaPool] to get.
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface GetCaPoolRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.security.privateca.v1.CaPool.name] of the [CaPool][google.cloud.security.privateca.v1.CaPool] to get.
+   * Required. The [name][google.cloud.security.privateca.v1.CaPool.name] of the
+   * [CaPool][google.cloud.security.privateca.v1.CaPool] to get.
    * </pre>
    *
    * <code>

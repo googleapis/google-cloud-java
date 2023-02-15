@@ -22,8 +22,8 @@ package com.google.cloud.security.privateca.v1;
  *
  *
  * <pre>
- * [Subject][google.cloud.security.privateca.v1.Subject] describes parts of a distinguished name that, in turn,
- * describes the subject of the certificate.
+ * [Subject][google.cloud.security.privateca.v1.Subject] describes parts of a
+ * distinguished name that, in turn, describes the subject of the certificate.
  * </pre>
  *
  * Protobuf type {@code google.cloud.security.privateca.v1.Subject}
@@ -709,8 +709,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Subject][google.cloud.security.privateca.v1.Subject] describes parts of a distinguished name that, in turn,
-   * describes the subject of the certificate.
+   * [Subject][google.cloud.security.privateca.v1.Subject] describes parts of a
+   * distinguished name that, in turn, describes the subject of the certificate.
    * </pre>
    *
    * Protobuf type {@code google.cloud.security.privateca.v1.Subject}

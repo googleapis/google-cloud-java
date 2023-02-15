@@ -27,8 +27,8 @@ public interface ObjectIdOrBuilder
    *
    *
    * <pre>
-   * Required. The parts of an OID path. The most significant parts of the path come
-   * first.
+   * Required. The parts of an OID path. The most significant parts of the path
+   * come first.
    * </pre>
    *
    * <code>repeated int32 object_id_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -40,8 +40,8 @@ public interface ObjectIdOrBuilder
    *
    *
    * <pre>
-   * Required. The parts of an OID path. The most significant parts of the path come
-   * first.
+   * Required. The parts of an OID path. The most significant parts of the path
+   * come first.
    * </pre>
    *
    * <code>repeated int32 object_id_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -53,8 +53,8 @@ public interface ObjectIdOrBuilder
    *
    *
    * <pre>
-   * Required. The parts of an OID path. The most significant parts of the path come
-   * first.
+   * Required. The parts of an OID path. The most significant parts of the path
+   * come first.
    * </pre>
    *
    * <code>repeated int32 object_id_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>

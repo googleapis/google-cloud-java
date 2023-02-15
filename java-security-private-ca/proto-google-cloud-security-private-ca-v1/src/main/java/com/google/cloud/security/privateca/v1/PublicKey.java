@@ -22,7 +22,8 @@ package com.google.cloud.security.privateca.v1;
  *
  *
  * <pre>
- * A [PublicKey][google.cloud.security.privateca.v1.PublicKey] describes a public key.
+ * A [PublicKey][google.cloud.security.privateca.v1.PublicKey] describes a
+ * public key.
  * </pre>
  *
  * Protobuf type {@code google.cloud.security.privateca.v1.PublicKey}
@@ -464,7 +465,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A [PublicKey][google.cloud.security.privateca.v1.PublicKey] describes a public key.
+   * A [PublicKey][google.cloud.security.privateca.v1.PublicKey] describes a
+   * public key.
    * </pre>
    *
    * Protobuf type {@code google.cloud.security.privateca.v1.PublicKey}

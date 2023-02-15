@@ -22,9 +22,10 @@ package com.google.cloud.security.privateca.v1;
  *
  *
  * <pre>
- * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] corresponds to a more modern way of listing what
- * the asserted identity is in a certificate (i.e., compared to the "common
- * name" in the distinguished name).
+ * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames]
+ * corresponds to a more modern way of listing what the asserted identity is in
+ * a certificate (i.e., compared to the "common name" in the distinguished
+ * name).
  * </pre>
  *
  * Protobuf type {@code google.cloud.security.privateca.v1.SubjectAltNames}
@@ -637,9 +638,10 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] corresponds to a more modern way of listing what
-   * the asserted identity is in a certificate (i.e., compared to the "common
-   * name" in the distinguished name).
+   * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames]
+   * corresponds to a more modern way of listing what the asserted identity is in
+   * a certificate (i.e., compared to the "common name" in the distinguished
+   * name).
    * </pre>
    *
    * Protobuf type {@code google.cloud.security.privateca.v1.SubjectAltNames}
