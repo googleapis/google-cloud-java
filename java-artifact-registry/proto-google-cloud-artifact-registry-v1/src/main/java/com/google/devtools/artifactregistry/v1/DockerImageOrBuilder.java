@@ -27,8 +27,8 @@ public interface DockerImageOrBuilder
    *
    *
    * <pre>
-   * Required. registry_location, project_id, repository_name and image id forms a unique
-   * image
+   * Required. registry_location, project_id, repository_name and image id forms
+   * a unique image
    * name:`projects/&lt;project_id&gt;/locations/&lt;location&gt;/repository/&lt;repository_name&gt;/dockerImages/&lt;docker_image&gt;`.
    * For example,
    * "projects/test-project/locations/us-west4/repositories/test-repo/dockerImages/
@@ -48,8 +48,8 @@ public interface DockerImageOrBuilder
    *
    *
    * <pre>
-   * Required. registry_location, project_id, repository_name and image id forms a unique
-   * image
+   * Required. registry_location, project_id, repository_name and image id forms
+   * a unique image
    * name:`projects/&lt;project_id&gt;/locations/&lt;location&gt;/repository/&lt;repository_name&gt;/dockerImages/&lt;docker_image&gt;`.
    * For example,
    * "projects/test-project/locations/us-west4/repositories/test-repo/dockerImages/
@@ -273,4 +273,42 @@ public interface DockerImageOrBuilder
    * <code>.google.protobuf.Timestamp build_time = 7;</code>
    */
   com.google.protobuf.TimestampOrBuilder getBuildTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the docker image was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  boolean hasUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the docker image was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  com.google.protobuf.Timestamp getUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the docker image was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 }

@@ -219,10 +219,11 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time when the File was created.
+   * Output only. The time when the File was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -234,10 +235,11 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time when the File was created.
+   * Output only. The time when the File was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -249,10 +251,11 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time when the File was created.
+   * Output only. The time when the File was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
@@ -265,10 +268,11 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time when the File was last updated.
+   * Output only. The time when the File was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the updateTime field is set.
    */
@@ -280,10 +284,11 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time when the File was last updated.
+   * Output only. The time when the File was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The updateTime.
    */
@@ -295,10 +300,11 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time when the File was last updated.
+   * Output only. The time when the File was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
@@ -356,6 +362,58 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int FETCH_TIME_FIELD_NUMBER = 8;
+  private com.google.protobuf.Timestamp fetchTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the last attempt to refresh the file's data was
+   * made. Only set when the repository is remote.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp fetch_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the fetchTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasFetchTime() {
+    return fetchTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the last attempt to refresh the file's data was
+   * made. Only set when the repository is remote.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp fetch_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The fetchTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getFetchTime() {
+    return fetchTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : fetchTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the last attempt to refresh the file's data was
+   * made. Only set when the repository is remote.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp fetch_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getFetchTimeOrBuilder() {
+    return fetchTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : fetchTime_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -388,6 +446,9 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(owner_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, owner_);
     }
+    if (fetchTime_ != null) {
+      output.writeMessage(8, getFetchTime());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -414,6 +475,9 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(owner_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, owner_);
+    }
+    if (fetchTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getFetchTime());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -443,6 +507,10 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (!getOwner().equals(other.getOwner())) return false;
+    if (hasFetchTime() != other.hasFetchTime()) return false;
+    if (hasFetchTime()) {
+      if (!getFetchTime().equals(other.getFetchTime())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -472,6 +540,10 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + OWNER_FIELD_NUMBER;
     hash = (53 * hash) + getOwner().hashCode();
+    if (hasFetchTime()) {
+      hash = (37 * hash) + FETCH_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getFetchTime().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -631,6 +703,11 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_ = null;
       }
       owner_ = "";
+      fetchTime_ = null;
+      if (fetchTimeBuilder_ != null) {
+        fetchTimeBuilder_.dispose();
+        fetchTimeBuilder_ = null;
+      }
       return this;
     }
 
@@ -694,6 +771,9 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.owner_ = owner_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.fetchTime_ = fetchTimeBuilder_ == null ? fetchTime_ : fetchTimeBuilder_.build();
       }
     }
 
@@ -788,6 +868,9 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000020;
         onChanged();
       }
+      if (other.hasFetchTime()) {
+        mergeFetchTime(other.getFetchTime());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -857,6 +940,12 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 58
+            case 66:
+              {
+                input.readMessage(getFetchTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1404,10 +1493,12 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the File was created.
+     * Output only. The time when the File was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the createTime field is set.
      */
@@ -1418,10 +1509,12 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the File was created.
+     * Output only. The time when the File was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The createTime.
      */
@@ -1438,10 +1531,12 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the File was created.
+     * Output only. The time when the File was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -1460,10 +1555,12 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the File was created.
+     * Output only. The time when the File was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
@@ -1479,10 +1576,12 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the File was created.
+     * Output only. The time when the File was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -1504,10 +1603,12 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the File was created.
+     * Output only. The time when the File was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearCreateTime() {
       bitField0_ = (bitField0_ & ~0x00000008);
@@ -1523,10 +1624,12 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the File was created.
+     * Output only. The time when the File was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
       bitField0_ |= 0x00000008;
@@ -1537,10 +1640,12 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the File was created.
+     * Output only. The time when the File was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -1555,10 +1660,12 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the File was created.
+     * Output only. The time when the File was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1587,10 +1694,12 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the File was last updated.
+     * Output only. The time when the File was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the updateTime field is set.
      */
@@ -1601,10 +1710,12 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the File was last updated.
+     * Output only. The time when the File was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The updateTime.
      */
@@ -1621,10 +1732,12 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the File was last updated.
+     * Output only. The time when the File was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -1643,10 +1756,12 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the File was last updated.
+     * Output only. The time when the File was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
@@ -1662,10 +1777,12 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the File was last updated.
+     * Output only. The time when the File was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -1687,10 +1804,12 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the File was last updated.
+     * Output only. The time when the File was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearUpdateTime() {
       bitField0_ = (bitField0_ & ~0x00000010);
@@ -1706,10 +1825,12 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the File was last updated.
+     * Output only. The time when the File was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
       bitField0_ |= 0x00000010;
@@ -1720,10 +1841,12 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the File was last updated.
+     * Output only. The time when the File was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
       if (updateTimeBuilder_ != null) {
@@ -1738,10 +1861,12 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the File was last updated.
+     * Output only. The time when the File was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1864,6 +1989,203 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000020;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Timestamp fetchTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        fetchTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the last attempt to refresh the file's data was
+     * made. Only set when the repository is remote.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp fetch_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the fetchTime field is set.
+     */
+    public boolean hasFetchTime() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the last attempt to refresh the file's data was
+     * made. Only set when the repository is remote.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp fetch_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The fetchTime.
+     */
+    public com.google.protobuf.Timestamp getFetchTime() {
+      if (fetchTimeBuilder_ == null) {
+        return fetchTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : fetchTime_;
+      } else {
+        return fetchTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the last attempt to refresh the file's data was
+     * made. Only set when the repository is remote.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp fetch_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setFetchTime(com.google.protobuf.Timestamp value) {
+      if (fetchTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        fetchTime_ = value;
+      } else {
+        fetchTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the last attempt to refresh the file's data was
+     * made. Only set when the repository is remote.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp fetch_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setFetchTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (fetchTimeBuilder_ == null) {
+        fetchTime_ = builderForValue.build();
+      } else {
+        fetchTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the last attempt to refresh the file's data was
+     * made. Only set when the repository is remote.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp fetch_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeFetchTime(com.google.protobuf.Timestamp value) {
+      if (fetchTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && fetchTime_ != null
+            && fetchTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getFetchTimeBuilder().mergeFrom(value);
+        } else {
+          fetchTime_ = value;
+        }
+      } else {
+        fetchTimeBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the last attempt to refresh the file's data was
+     * made. Only set when the repository is remote.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp fetch_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearFetchTime() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      fetchTime_ = null;
+      if (fetchTimeBuilder_ != null) {
+        fetchTimeBuilder_.dispose();
+        fetchTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the last attempt to refresh the file's data was
+     * made. Only set when the repository is remote.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp fetch_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getFetchTimeBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getFetchTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the last attempt to refresh the file's data was
+     * made. Only set when the repository is remote.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp fetch_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getFetchTimeOrBuilder() {
+      if (fetchTimeBuilder_ != null) {
+        return fetchTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return fetchTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : fetchTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the last attempt to refresh the file's data was
+     * made. Only set when the repository is remote.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp fetch_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getFetchTimeFieldBuilder() {
+      if (fetchTimeBuilder_ == null) {
+        fetchTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getFetchTime(), getParentForChildren(), isClean());
+        fetchTime_ = null;
+      }
+      return fetchTimeBuilder_;
     }
 
     @java.lang.Override

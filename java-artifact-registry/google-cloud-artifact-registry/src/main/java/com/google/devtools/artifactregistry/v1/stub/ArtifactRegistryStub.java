@@ -19,7 +19,10 @@ package com.google.devtools.artifactregistry.v1.stub;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListDockerImagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListFilesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListLocationsPagedResponse;
+import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListMavenArtifactsPagedResponse;
+import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListNpmPackagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListPackagesPagedResponse;
+import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListPythonPackagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListRepositoriesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListTagsPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListVersionsPagedResponse;
@@ -41,10 +44,14 @@ import com.google.devtools.artifactregistry.v1.DockerImage;
 import com.google.devtools.artifactregistry.v1.File;
 import com.google.devtools.artifactregistry.v1.GetDockerImageRequest;
 import com.google.devtools.artifactregistry.v1.GetFileRequest;
+import com.google.devtools.artifactregistry.v1.GetMavenArtifactRequest;
+import com.google.devtools.artifactregistry.v1.GetNpmPackageRequest;
 import com.google.devtools.artifactregistry.v1.GetPackageRequest;
 import com.google.devtools.artifactregistry.v1.GetProjectSettingsRequest;
+import com.google.devtools.artifactregistry.v1.GetPythonPackageRequest;
 import com.google.devtools.artifactregistry.v1.GetRepositoryRequest;
 import com.google.devtools.artifactregistry.v1.GetTagRequest;
+import com.google.devtools.artifactregistry.v1.GetVPCSCConfigRequest;
 import com.google.devtools.artifactregistry.v1.GetVersionRequest;
 import com.google.devtools.artifactregistry.v1.ImportAptArtifactsMetadata;
 import com.google.devtools.artifactregistry.v1.ImportAptArtifactsRequest;
@@ -56,22 +63,33 @@ import com.google.devtools.artifactregistry.v1.ListDockerImagesRequest;
 import com.google.devtools.artifactregistry.v1.ListDockerImagesResponse;
 import com.google.devtools.artifactregistry.v1.ListFilesRequest;
 import com.google.devtools.artifactregistry.v1.ListFilesResponse;
+import com.google.devtools.artifactregistry.v1.ListMavenArtifactsRequest;
+import com.google.devtools.artifactregistry.v1.ListMavenArtifactsResponse;
+import com.google.devtools.artifactregistry.v1.ListNpmPackagesRequest;
+import com.google.devtools.artifactregistry.v1.ListNpmPackagesResponse;
 import com.google.devtools.artifactregistry.v1.ListPackagesRequest;
 import com.google.devtools.artifactregistry.v1.ListPackagesResponse;
+import com.google.devtools.artifactregistry.v1.ListPythonPackagesRequest;
+import com.google.devtools.artifactregistry.v1.ListPythonPackagesResponse;
 import com.google.devtools.artifactregistry.v1.ListRepositoriesRequest;
 import com.google.devtools.artifactregistry.v1.ListRepositoriesResponse;
 import com.google.devtools.artifactregistry.v1.ListTagsRequest;
 import com.google.devtools.artifactregistry.v1.ListTagsResponse;
 import com.google.devtools.artifactregistry.v1.ListVersionsRequest;
 import com.google.devtools.artifactregistry.v1.ListVersionsResponse;
+import com.google.devtools.artifactregistry.v1.MavenArtifact;
+import com.google.devtools.artifactregistry.v1.NpmPackage;
 import com.google.devtools.artifactregistry.v1.OperationMetadata;
 import com.google.devtools.artifactregistry.v1.Package;
 import com.google.devtools.artifactregistry.v1.ProjectSettings;
+import com.google.devtools.artifactregistry.v1.PythonPackage;
 import com.google.devtools.artifactregistry.v1.Repository;
 import com.google.devtools.artifactregistry.v1.Tag;
 import com.google.devtools.artifactregistry.v1.UpdateProjectSettingsRequest;
 import com.google.devtools.artifactregistry.v1.UpdateRepositoryRequest;
 import com.google.devtools.artifactregistry.v1.UpdateTagRequest;
+import com.google.devtools.artifactregistry.v1.UpdateVPCSCConfigRequest;
+import com.google.devtools.artifactregistry.v1.VPCSCConfig;
 import com.google.devtools.artifactregistry.v1.Version;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -112,6 +130,47 @@ public abstract class ArtifactRegistryStub implements BackgroundResource {
 
   public UnaryCallable<GetDockerImageRequest, DockerImage> getDockerImageCallable() {
     throw new UnsupportedOperationException("Not implemented: getDockerImageCallable()");
+  }
+
+  public UnaryCallable<ListMavenArtifactsRequest, ListMavenArtifactsPagedResponse>
+      listMavenArtifactsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listMavenArtifactsPagedCallable()");
+  }
+
+  public UnaryCallable<ListMavenArtifactsRequest, ListMavenArtifactsResponse>
+      listMavenArtifactsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listMavenArtifactsCallable()");
+  }
+
+  public UnaryCallable<GetMavenArtifactRequest, MavenArtifact> getMavenArtifactCallable() {
+    throw new UnsupportedOperationException("Not implemented: getMavenArtifactCallable()");
+  }
+
+  public UnaryCallable<ListNpmPackagesRequest, ListNpmPackagesPagedResponse>
+      listNpmPackagesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listNpmPackagesPagedCallable()");
+  }
+
+  public UnaryCallable<ListNpmPackagesRequest, ListNpmPackagesResponse> listNpmPackagesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listNpmPackagesCallable()");
+  }
+
+  public UnaryCallable<GetNpmPackageRequest, NpmPackage> getNpmPackageCallable() {
+    throw new UnsupportedOperationException("Not implemented: getNpmPackageCallable()");
+  }
+
+  public UnaryCallable<ListPythonPackagesRequest, ListPythonPackagesPagedResponse>
+      listPythonPackagesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listPythonPackagesPagedCallable()");
+  }
+
+  public UnaryCallable<ListPythonPackagesRequest, ListPythonPackagesResponse>
+      listPythonPackagesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listPythonPackagesCallable()");
+  }
+
+  public UnaryCallable<GetPythonPackageRequest, PythonPackage> getPythonPackageCallable() {
+    throw new UnsupportedOperationException("Not implemented: getPythonPackageCallable()");
   }
 
   public OperationCallable<
@@ -270,6 +329,14 @@ public abstract class ArtifactRegistryStub implements BackgroundResource {
   public UnaryCallable<UpdateProjectSettingsRequest, ProjectSettings>
       updateProjectSettingsCallable() {
     throw new UnsupportedOperationException("Not implemented: updateProjectSettingsCallable()");
+  }
+
+  public UnaryCallable<GetVPCSCConfigRequest, VPCSCConfig> getVPCSCConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: getVPCSCConfigCallable()");
+  }
+
+  public UnaryCallable<UpdateVPCSCConfigRequest, VPCSCConfig> updateVPCSCConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateVPCSCConfigCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

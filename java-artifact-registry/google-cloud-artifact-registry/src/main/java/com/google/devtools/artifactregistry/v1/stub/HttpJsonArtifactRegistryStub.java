@@ -19,7 +19,10 @@ package com.google.devtools.artifactregistry.v1.stub;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListDockerImagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListFilesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListLocationsPagedResponse;
+import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListMavenArtifactsPagedResponse;
+import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListNpmPackagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListPackagesPagedResponse;
+import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListPythonPackagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListRepositoriesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListTagsPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListVersionsPagedResponse;
@@ -53,10 +56,14 @@ import com.google.devtools.artifactregistry.v1.DockerImage;
 import com.google.devtools.artifactregistry.v1.File;
 import com.google.devtools.artifactregistry.v1.GetDockerImageRequest;
 import com.google.devtools.artifactregistry.v1.GetFileRequest;
+import com.google.devtools.artifactregistry.v1.GetMavenArtifactRequest;
+import com.google.devtools.artifactregistry.v1.GetNpmPackageRequest;
 import com.google.devtools.artifactregistry.v1.GetPackageRequest;
 import com.google.devtools.artifactregistry.v1.GetProjectSettingsRequest;
+import com.google.devtools.artifactregistry.v1.GetPythonPackageRequest;
 import com.google.devtools.artifactregistry.v1.GetRepositoryRequest;
 import com.google.devtools.artifactregistry.v1.GetTagRequest;
+import com.google.devtools.artifactregistry.v1.GetVPCSCConfigRequest;
 import com.google.devtools.artifactregistry.v1.GetVersionRequest;
 import com.google.devtools.artifactregistry.v1.ImportAptArtifactsMetadata;
 import com.google.devtools.artifactregistry.v1.ImportAptArtifactsRequest;
@@ -68,22 +75,33 @@ import com.google.devtools.artifactregistry.v1.ListDockerImagesRequest;
 import com.google.devtools.artifactregistry.v1.ListDockerImagesResponse;
 import com.google.devtools.artifactregistry.v1.ListFilesRequest;
 import com.google.devtools.artifactregistry.v1.ListFilesResponse;
+import com.google.devtools.artifactregistry.v1.ListMavenArtifactsRequest;
+import com.google.devtools.artifactregistry.v1.ListMavenArtifactsResponse;
+import com.google.devtools.artifactregistry.v1.ListNpmPackagesRequest;
+import com.google.devtools.artifactregistry.v1.ListNpmPackagesResponse;
 import com.google.devtools.artifactregistry.v1.ListPackagesRequest;
 import com.google.devtools.artifactregistry.v1.ListPackagesResponse;
+import com.google.devtools.artifactregistry.v1.ListPythonPackagesRequest;
+import com.google.devtools.artifactregistry.v1.ListPythonPackagesResponse;
 import com.google.devtools.artifactregistry.v1.ListRepositoriesRequest;
 import com.google.devtools.artifactregistry.v1.ListRepositoriesResponse;
 import com.google.devtools.artifactregistry.v1.ListTagsRequest;
 import com.google.devtools.artifactregistry.v1.ListTagsResponse;
 import com.google.devtools.artifactregistry.v1.ListVersionsRequest;
 import com.google.devtools.artifactregistry.v1.ListVersionsResponse;
+import com.google.devtools.artifactregistry.v1.MavenArtifact;
+import com.google.devtools.artifactregistry.v1.NpmPackage;
 import com.google.devtools.artifactregistry.v1.OperationMetadata;
 import com.google.devtools.artifactregistry.v1.Package;
 import com.google.devtools.artifactregistry.v1.ProjectSettings;
+import com.google.devtools.artifactregistry.v1.PythonPackage;
 import com.google.devtools.artifactregistry.v1.Repository;
 import com.google.devtools.artifactregistry.v1.Tag;
 import com.google.devtools.artifactregistry.v1.UpdateProjectSettingsRequest;
 import com.google.devtools.artifactregistry.v1.UpdateRepositoryRequest;
 import com.google.devtools.artifactregistry.v1.UpdateTagRequest;
+import com.google.devtools.artifactregistry.v1.UpdateVPCSCConfigRequest;
+import com.google.devtools.artifactregistry.v1.VPCSCConfig;
 import com.google.devtools.artifactregistry.v1.Version;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -144,6 +162,7 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListDockerImagesRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
@@ -189,6 +208,222 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<DockerImage>newBuilder()
                       .setDefaultInstance(DockerImage.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListMavenArtifactsRequest, ListMavenArtifactsResponse>
+      listMavenArtifactsMethodDescriptor =
+          ApiMethodDescriptor.<ListMavenArtifactsRequest, ListMavenArtifactsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/ListMavenArtifacts")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListMavenArtifactsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/repositories/*}/mavenArtifacts",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListMavenArtifactsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListMavenArtifactsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListMavenArtifactsResponse>newBuilder()
+                      .setDefaultInstance(ListMavenArtifactsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetMavenArtifactRequest, MavenArtifact>
+      getMavenArtifactMethodDescriptor =
+          ApiMethodDescriptor.<GetMavenArtifactRequest, MavenArtifact>newBuilder()
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/GetMavenArtifact")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetMavenArtifactRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/repositories/*/mavenArtifacts/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetMavenArtifactRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetMavenArtifactRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<MavenArtifact>newBuilder()
+                      .setDefaultInstance(MavenArtifact.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListNpmPackagesRequest, ListNpmPackagesResponse>
+      listNpmPackagesMethodDescriptor =
+          ApiMethodDescriptor.<ListNpmPackagesRequest, ListNpmPackagesResponse>newBuilder()
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/ListNpmPackages")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListNpmPackagesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/repositories/*}/npmPackages",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListNpmPackagesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListNpmPackagesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListNpmPackagesResponse>newBuilder()
+                      .setDefaultInstance(ListNpmPackagesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetNpmPackageRequest, NpmPackage>
+      getNpmPackageMethodDescriptor =
+          ApiMethodDescriptor.<GetNpmPackageRequest, NpmPackage>newBuilder()
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/GetNpmPackage")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetNpmPackageRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/repositories/*/npmPackages/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetNpmPackageRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetNpmPackageRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<NpmPackage>newBuilder()
+                      .setDefaultInstance(NpmPackage.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListPythonPackagesRequest, ListPythonPackagesResponse>
+      listPythonPackagesMethodDescriptor =
+          ApiMethodDescriptor.<ListPythonPackagesRequest, ListPythonPackagesResponse>newBuilder()
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/ListPythonPackages")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListPythonPackagesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/repositories/*}/pythonPackages",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListPythonPackagesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListPythonPackagesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListPythonPackagesResponse>newBuilder()
+                      .setDefaultInstance(ListPythonPackagesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetPythonPackageRequest, PythonPackage>
+      getPythonPackageMethodDescriptor =
+          ApiMethodDescriptor.<GetPythonPackageRequest, PythonPackage>newBuilder()
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/GetPythonPackage")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetPythonPackageRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/repositories/*/pythonPackages/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetPythonPackageRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetPythonPackageRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<PythonPackage>newBuilder()
+                      .setDefaultInstance(PythonPackage.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -1121,6 +1356,81 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<GetVPCSCConfigRequest, VPCSCConfig>
+      getVPCSCConfigMethodDescriptor =
+          ApiMethodDescriptor.<GetVPCSCConfigRequest, VPCSCConfig>newBuilder()
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/GetVPCSCConfig")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetVPCSCConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/vpcscConfig}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetVPCSCConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetVPCSCConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<VPCSCConfig>newBuilder()
+                      .setDefaultInstance(VPCSCConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateVPCSCConfigRequest, VPCSCConfig>
+      updateVPCSCConfigMethodDescriptor =
+          ApiMethodDescriptor.<UpdateVPCSCConfigRequest, VPCSCConfig>newBuilder()
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/UpdateVPCSCConfig")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateVPCSCConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{vpcscConfig.name=projects/*/locations/*/vpcscConfig}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateVPCSCConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "vpcscConfig.name", request.getVpcscConfig().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateVPCSCConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("vpcscConfig", request.getVpcscConfig(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<VPCSCConfig>newBuilder()
+                      .setDefaultInstance(VPCSCConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1194,6 +1504,21 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
   private final UnaryCallable<ListDockerImagesRequest, ListDockerImagesPagedResponse>
       listDockerImagesPagedCallable;
   private final UnaryCallable<GetDockerImageRequest, DockerImage> getDockerImageCallable;
+  private final UnaryCallable<ListMavenArtifactsRequest, ListMavenArtifactsResponse>
+      listMavenArtifactsCallable;
+  private final UnaryCallable<ListMavenArtifactsRequest, ListMavenArtifactsPagedResponse>
+      listMavenArtifactsPagedCallable;
+  private final UnaryCallable<GetMavenArtifactRequest, MavenArtifact> getMavenArtifactCallable;
+  private final UnaryCallable<ListNpmPackagesRequest, ListNpmPackagesResponse>
+      listNpmPackagesCallable;
+  private final UnaryCallable<ListNpmPackagesRequest, ListNpmPackagesPagedResponse>
+      listNpmPackagesPagedCallable;
+  private final UnaryCallable<GetNpmPackageRequest, NpmPackage> getNpmPackageCallable;
+  private final UnaryCallable<ListPythonPackagesRequest, ListPythonPackagesResponse>
+      listPythonPackagesCallable;
+  private final UnaryCallable<ListPythonPackagesRequest, ListPythonPackagesPagedResponse>
+      listPythonPackagesPagedCallable;
+  private final UnaryCallable<GetPythonPackageRequest, PythonPackage> getPythonPackageCallable;
   private final UnaryCallable<ImportAptArtifactsRequest, Operation> importAptArtifactsCallable;
   private final OperationCallable<
           ImportAptArtifactsRequest, ImportAptArtifactsResponse, ImportAptArtifactsMetadata>
@@ -1245,6 +1570,8 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
       getProjectSettingsCallable;
   private final UnaryCallable<UpdateProjectSettingsRequest, ProjectSettings>
       updateProjectSettingsCallable;
+  private final UnaryCallable<GetVPCSCConfigRequest, VPCSCConfig> getVPCSCConfigCallable;
+  private final UnaryCallable<UpdateVPCSCConfigRequest, VPCSCConfig> updateVPCSCConfigCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1304,6 +1631,39 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
     HttpJsonCallSettings<GetDockerImageRequest, DockerImage> getDockerImageTransportSettings =
         HttpJsonCallSettings.<GetDockerImageRequest, DockerImage>newBuilder()
             .setMethodDescriptor(getDockerImageMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<ListMavenArtifactsRequest, ListMavenArtifactsResponse>
+        listMavenArtifactsTransportSettings =
+            HttpJsonCallSettings.<ListMavenArtifactsRequest, ListMavenArtifactsResponse>newBuilder()
+                .setMethodDescriptor(listMavenArtifactsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<GetMavenArtifactRequest, MavenArtifact> getMavenArtifactTransportSettings =
+        HttpJsonCallSettings.<GetMavenArtifactRequest, MavenArtifact>newBuilder()
+            .setMethodDescriptor(getMavenArtifactMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<ListNpmPackagesRequest, ListNpmPackagesResponse>
+        listNpmPackagesTransportSettings =
+            HttpJsonCallSettings.<ListNpmPackagesRequest, ListNpmPackagesResponse>newBuilder()
+                .setMethodDescriptor(listNpmPackagesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<GetNpmPackageRequest, NpmPackage> getNpmPackageTransportSettings =
+        HttpJsonCallSettings.<GetNpmPackageRequest, NpmPackage>newBuilder()
+            .setMethodDescriptor(getNpmPackageMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<ListPythonPackagesRequest, ListPythonPackagesResponse>
+        listPythonPackagesTransportSettings =
+            HttpJsonCallSettings.<ListPythonPackagesRequest, ListPythonPackagesResponse>newBuilder()
+                .setMethodDescriptor(listPythonPackagesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<GetPythonPackageRequest, PythonPackage> getPythonPackageTransportSettings =
+        HttpJsonCallSettings.<GetPythonPackageRequest, PythonPackage>newBuilder()
+            .setMethodDescriptor(getPythonPackageMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ImportAptArtifactsRequest, Operation> importAptArtifactsTransportSettings =
@@ -1435,6 +1795,16 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                 .setMethodDescriptor(updateProjectSettingsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<GetVPCSCConfigRequest, VPCSCConfig> getVPCSCConfigTransportSettings =
+        HttpJsonCallSettings.<GetVPCSCConfigRequest, VPCSCConfig>newBuilder()
+            .setMethodDescriptor(getVPCSCConfigMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<UpdateVPCSCConfigRequest, VPCSCConfig> updateVPCSCConfigTransportSettings =
+        HttpJsonCallSettings.<UpdateVPCSCConfigRequest, VPCSCConfig>newBuilder()
+            .setMethodDescriptor(updateVPCSCConfigMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1456,6 +1826,41 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
     this.getDockerImageCallable =
         callableFactory.createUnaryCallable(
             getDockerImageTransportSettings, settings.getDockerImageSettings(), clientContext);
+    this.listMavenArtifactsCallable =
+        callableFactory.createUnaryCallable(
+            listMavenArtifactsTransportSettings,
+            settings.listMavenArtifactsSettings(),
+            clientContext);
+    this.listMavenArtifactsPagedCallable =
+        callableFactory.createPagedCallable(
+            listMavenArtifactsTransportSettings,
+            settings.listMavenArtifactsSettings(),
+            clientContext);
+    this.getMavenArtifactCallable =
+        callableFactory.createUnaryCallable(
+            getMavenArtifactTransportSettings, settings.getMavenArtifactSettings(), clientContext);
+    this.listNpmPackagesCallable =
+        callableFactory.createUnaryCallable(
+            listNpmPackagesTransportSettings, settings.listNpmPackagesSettings(), clientContext);
+    this.listNpmPackagesPagedCallable =
+        callableFactory.createPagedCallable(
+            listNpmPackagesTransportSettings, settings.listNpmPackagesSettings(), clientContext);
+    this.getNpmPackageCallable =
+        callableFactory.createUnaryCallable(
+            getNpmPackageTransportSettings, settings.getNpmPackageSettings(), clientContext);
+    this.listPythonPackagesCallable =
+        callableFactory.createUnaryCallable(
+            listPythonPackagesTransportSettings,
+            settings.listPythonPackagesSettings(),
+            clientContext);
+    this.listPythonPackagesPagedCallable =
+        callableFactory.createPagedCallable(
+            listPythonPackagesTransportSettings,
+            settings.listPythonPackagesSettings(),
+            clientContext);
+    this.getPythonPackageCallable =
+        callableFactory.createUnaryCallable(
+            getPythonPackageTransportSettings, settings.getPythonPackageSettings(), clientContext);
     this.importAptArtifactsCallable =
         callableFactory.createUnaryCallable(
             importAptArtifactsTransportSettings,
@@ -1592,6 +1997,14 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
             updateProjectSettingsTransportSettings,
             settings.updateProjectSettingsSettings(),
             clientContext);
+    this.getVPCSCConfigCallable =
+        callableFactory.createUnaryCallable(
+            getVPCSCConfigTransportSettings, settings.getVPCSCConfigSettings(), clientContext);
+    this.updateVPCSCConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateVPCSCConfigTransportSettings,
+            settings.updateVPCSCConfigSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1611,6 +2024,12 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(listDockerImagesMethodDescriptor);
     methodDescriptors.add(getDockerImageMethodDescriptor);
+    methodDescriptors.add(listMavenArtifactsMethodDescriptor);
+    methodDescriptors.add(getMavenArtifactMethodDescriptor);
+    methodDescriptors.add(listNpmPackagesMethodDescriptor);
+    methodDescriptors.add(getNpmPackageMethodDescriptor);
+    methodDescriptors.add(listPythonPackagesMethodDescriptor);
+    methodDescriptors.add(getPythonPackageMethodDescriptor);
     methodDescriptors.add(importAptArtifactsMethodDescriptor);
     methodDescriptors.add(importYumArtifactsMethodDescriptor);
     methodDescriptors.add(listRepositoriesMethodDescriptor);
@@ -1636,6 +2055,8 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
     methodDescriptors.add(getProjectSettingsMethodDescriptor);
     methodDescriptors.add(updateProjectSettingsMethodDescriptor);
+    methodDescriptors.add(getVPCSCConfigMethodDescriptor);
+    methodDescriptors.add(updateVPCSCConfigMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -1660,6 +2081,56 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
   @Override
   public UnaryCallable<GetDockerImageRequest, DockerImage> getDockerImageCallable() {
     return getDockerImageCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMavenArtifactsRequest, ListMavenArtifactsResponse>
+      listMavenArtifactsCallable() {
+    return listMavenArtifactsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMavenArtifactsRequest, ListMavenArtifactsPagedResponse>
+      listMavenArtifactsPagedCallable() {
+    return listMavenArtifactsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetMavenArtifactRequest, MavenArtifact> getMavenArtifactCallable() {
+    return getMavenArtifactCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListNpmPackagesRequest, ListNpmPackagesResponse> listNpmPackagesCallable() {
+    return listNpmPackagesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListNpmPackagesRequest, ListNpmPackagesPagedResponse>
+      listNpmPackagesPagedCallable() {
+    return listNpmPackagesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetNpmPackageRequest, NpmPackage> getNpmPackageCallable() {
+    return getNpmPackageCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListPythonPackagesRequest, ListPythonPackagesResponse>
+      listPythonPackagesCallable() {
+    return listPythonPackagesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListPythonPackagesRequest, ListPythonPackagesPagedResponse>
+      listPythonPackagesPagedCallable() {
+    return listPythonPackagesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetPythonPackageRequest, PythonPackage> getPythonPackageCallable() {
+    return getPythonPackageCallable;
   }
 
   @Override
@@ -1852,6 +2323,16 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
   public UnaryCallable<UpdateProjectSettingsRequest, ProjectSettings>
       updateProjectSettingsCallable() {
     return updateProjectSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetVPCSCConfigRequest, VPCSCConfig> getVPCSCConfigCallable() {
+    return getVPCSCConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateVPCSCConfigRequest, VPCSCConfig> updateVPCSCConfigCallable() {
+    return updateVPCSCConfigCallable;
   }
 
   @Override

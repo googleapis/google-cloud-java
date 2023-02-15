@@ -39,6 +39,7 @@ public class SyncListDockerImages {
               .setParent("parent-995424086")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setOrderBy("orderBy-1207110587")
               .build();
       for (DockerImage element : artifactRegistryClient.listDockerImages(request).iterateAll()) {
         // doThingsWith(element);

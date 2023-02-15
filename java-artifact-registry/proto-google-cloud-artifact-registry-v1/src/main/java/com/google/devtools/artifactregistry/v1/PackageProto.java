@@ -59,30 +59,39 @@ public final class PackageProto {
       "\n1google/devtools/artifactregistry/v1/pa"
           + "ckage.proto\022#google.devtools.artifactreg"
           + "istry.v1\032\037google/api/field_behavior.prot"
-          + "o\032\037google/protobuf/timestamp.proto\"\217\001\n\007P"
-          + "ackage\022\014\n\004name\030\001 \001(\t\022\024\n\014display_name\030\002 \001"
-          + "(\t\022/\n\013create_time\030\005 \001(\0132\032.google.protobu"
-          + "f.Timestamp\022/\n\013update_time\030\006 \001(\0132\032.googl"
-          + "e.protobuf.Timestamp\"Q\n\023ListPackagesRequ"
-          + "est\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022\021\n\tpage_size\030\002 "
-          + "\001(\005\022\022\n\npage_token\030\003 \001(\t\"o\n\024ListPackagesR"
-          + "esponse\022>\n\010packages\030\001 \003(\0132,.google.devto"
-          + "ols.artifactregistry.v1.Package\022\027\n\017next_"
-          + "page_token\030\002 \001(\t\"&\n\021GetPackageRequest\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\002\")\n\024DeletePackageRequest"
-          + "\022\021\n\004name\030\001 \001(\tB\003\340A\002B\372\001\n\'com.google.devto"
-          + "ols.artifactregistry.v1B\014PackageProtoP\001Z"
-          + "Sgoogle.golang.org/genproto/googleapis/d"
-          + "evtools/artifactregistry/v1;artifactregi"
-          + "stry\252\002 Google.Cloud.ArtifactRegistry.V1\312"
-          + "\002 Google\\Cloud\\ArtifactRegistry\\V1\352\002#Goo"
-          + "gle::Cloud::ArtifactRegistry::V1b\006proto3"
+          + "o\032\031google/api/resource.proto\032\037google/pro"
+          + "tobuf/timestamp.proto\"\224\002\n\007Package\022\014\n\004nam"
+          + "e\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\022/\n\013create_"
+          + "time\030\005 \001(\0132\032.google.protobuf.Timestamp\022/"
+          + "\n\013update_time\030\006 \001(\0132\032.google.protobuf.Ti"
+          + "mestamp:\202\001\352A\177\n\'artifactregistry.googleap"
+          + "is.com/Package\022Tprojects/{project}/locat"
+          + "ions/{location}/repositories/{repository"
+          + "}/packages/{package}\"}\n\023ListPackagesRequ"
+          + "est\022?\n\006parent\030\001 \001(\tB/\340A\002\372A)\022\'artifactreg"
+          + "istry.googleapis.com/Package\022\021\n\tpage_siz"
+          + "e\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"o\n\024ListPacka"
+          + "gesResponse\022>\n\010packages\030\001 \003(\0132,.google.d"
+          + "evtools.artifactregistry.v1.Package\022\027\n\017n"
+          + "ext_page_token\030\002 \001(\t\"R\n\021GetPackageReques"
+          + "t\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'artifactregistr"
+          + "y.googleapis.com/Package\"U\n\024DeletePackag"
+          + "eRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'artifact"
+          + "registry.googleapis.com/PackageB\372\001\n\'com."
+          + "google.devtools.artifactregistry.v1B\014Pac"
+          + "kageProtoP\001ZSgoogle.golang.org/genproto/"
+          + "googleapis/devtools/artifactregistry/v1;"
+          + "artifactregistry\252\002 Google.Cloud.Artifact"
+          + "Registry.V1\312\002 Google\\Cloud\\ArtifactRegis"
+          + "try\\V1\352\002#Google::Cloud::ArtifactRegistry"
+          + "::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_devtools_artifactregistry_v1_Package_descriptor =
@@ -128,9 +137,12 @@ public final class PackageProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

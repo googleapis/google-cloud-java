@@ -19,7 +19,10 @@ package com.google.devtools.artifactregistry.v1.stub;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListDockerImagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListFilesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListLocationsPagedResponse;
+import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListMavenArtifactsPagedResponse;
+import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListNpmPackagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListPackagesPagedResponse;
+import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListPythonPackagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListRepositoriesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListTagsPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListVersionsPagedResponse;
@@ -46,10 +49,14 @@ import com.google.devtools.artifactregistry.v1.DockerImage;
 import com.google.devtools.artifactregistry.v1.File;
 import com.google.devtools.artifactregistry.v1.GetDockerImageRequest;
 import com.google.devtools.artifactregistry.v1.GetFileRequest;
+import com.google.devtools.artifactregistry.v1.GetMavenArtifactRequest;
+import com.google.devtools.artifactregistry.v1.GetNpmPackageRequest;
 import com.google.devtools.artifactregistry.v1.GetPackageRequest;
 import com.google.devtools.artifactregistry.v1.GetProjectSettingsRequest;
+import com.google.devtools.artifactregistry.v1.GetPythonPackageRequest;
 import com.google.devtools.artifactregistry.v1.GetRepositoryRequest;
 import com.google.devtools.artifactregistry.v1.GetTagRequest;
+import com.google.devtools.artifactregistry.v1.GetVPCSCConfigRequest;
 import com.google.devtools.artifactregistry.v1.GetVersionRequest;
 import com.google.devtools.artifactregistry.v1.ImportAptArtifactsMetadata;
 import com.google.devtools.artifactregistry.v1.ImportAptArtifactsRequest;
@@ -61,22 +68,33 @@ import com.google.devtools.artifactregistry.v1.ListDockerImagesRequest;
 import com.google.devtools.artifactregistry.v1.ListDockerImagesResponse;
 import com.google.devtools.artifactregistry.v1.ListFilesRequest;
 import com.google.devtools.artifactregistry.v1.ListFilesResponse;
+import com.google.devtools.artifactregistry.v1.ListMavenArtifactsRequest;
+import com.google.devtools.artifactregistry.v1.ListMavenArtifactsResponse;
+import com.google.devtools.artifactregistry.v1.ListNpmPackagesRequest;
+import com.google.devtools.artifactregistry.v1.ListNpmPackagesResponse;
 import com.google.devtools.artifactregistry.v1.ListPackagesRequest;
 import com.google.devtools.artifactregistry.v1.ListPackagesResponse;
+import com.google.devtools.artifactregistry.v1.ListPythonPackagesRequest;
+import com.google.devtools.artifactregistry.v1.ListPythonPackagesResponse;
 import com.google.devtools.artifactregistry.v1.ListRepositoriesRequest;
 import com.google.devtools.artifactregistry.v1.ListRepositoriesResponse;
 import com.google.devtools.artifactregistry.v1.ListTagsRequest;
 import com.google.devtools.artifactregistry.v1.ListTagsResponse;
 import com.google.devtools.artifactregistry.v1.ListVersionsRequest;
 import com.google.devtools.artifactregistry.v1.ListVersionsResponse;
+import com.google.devtools.artifactregistry.v1.MavenArtifact;
+import com.google.devtools.artifactregistry.v1.NpmPackage;
 import com.google.devtools.artifactregistry.v1.OperationMetadata;
 import com.google.devtools.artifactregistry.v1.Package;
 import com.google.devtools.artifactregistry.v1.ProjectSettings;
+import com.google.devtools.artifactregistry.v1.PythonPackage;
 import com.google.devtools.artifactregistry.v1.Repository;
 import com.google.devtools.artifactregistry.v1.Tag;
 import com.google.devtools.artifactregistry.v1.UpdateProjectSettingsRequest;
 import com.google.devtools.artifactregistry.v1.UpdateRepositoryRequest;
 import com.google.devtools.artifactregistry.v1.UpdateTagRequest;
+import com.google.devtools.artifactregistry.v1.UpdateVPCSCConfigRequest;
+import com.google.devtools.artifactregistry.v1.VPCSCConfig;
 import com.google.devtools.artifactregistry.v1.Version;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -121,6 +139,75 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDockerImageRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DockerImage.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListMavenArtifactsRequest, ListMavenArtifactsResponse>
+      listMavenArtifactsMethodDescriptor =
+          MethodDescriptor.<ListMavenArtifactsRequest, ListMavenArtifactsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/ListMavenArtifacts")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListMavenArtifactsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListMavenArtifactsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetMavenArtifactRequest, MavenArtifact>
+      getMavenArtifactMethodDescriptor =
+          MethodDescriptor.<GetMavenArtifactRequest, MavenArtifact>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/GetMavenArtifact")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetMavenArtifactRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(MavenArtifact.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListNpmPackagesRequest, ListNpmPackagesResponse>
+      listNpmPackagesMethodDescriptor =
+          MethodDescriptor.<ListNpmPackagesRequest, ListNpmPackagesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/ListNpmPackages")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListNpmPackagesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListNpmPackagesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetNpmPackageRequest, NpmPackage>
+      getNpmPackageMethodDescriptor =
+          MethodDescriptor.<GetNpmPackageRequest, NpmPackage>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/GetNpmPackage")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetNpmPackageRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(NpmPackage.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListPythonPackagesRequest, ListPythonPackagesResponse>
+      listPythonPackagesMethodDescriptor =
+          MethodDescriptor.<ListPythonPackagesRequest, ListPythonPackagesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/ListPythonPackages")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListPythonPackagesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListPythonPackagesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetPythonPackageRequest, PythonPackage>
+      getPythonPackageMethodDescriptor =
+          MethodDescriptor.<GetPythonPackageRequest, PythonPackage>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/GetPythonPackage")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetPythonPackageRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(PythonPackage.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<ImportAptArtifactsRequest, Operation>
@@ -369,6 +456,28 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
               .setResponseMarshaller(ProtoUtils.marshaller(ProjectSettings.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetVPCSCConfigRequest, VPCSCConfig>
+      getVPCSCConfigMethodDescriptor =
+          MethodDescriptor.<GetVPCSCConfigRequest, VPCSCConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/GetVPCSCConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetVPCSCConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(VPCSCConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateVPCSCConfigRequest, VPCSCConfig>
+      updateVPCSCConfigMethodDescriptor =
+          MethodDescriptor.<UpdateVPCSCConfigRequest, VPCSCConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/UpdateVPCSCConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateVPCSCConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(VPCSCConfig.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -393,6 +502,21 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
   private final UnaryCallable<ListDockerImagesRequest, ListDockerImagesPagedResponse>
       listDockerImagesPagedCallable;
   private final UnaryCallable<GetDockerImageRequest, DockerImage> getDockerImageCallable;
+  private final UnaryCallable<ListMavenArtifactsRequest, ListMavenArtifactsResponse>
+      listMavenArtifactsCallable;
+  private final UnaryCallable<ListMavenArtifactsRequest, ListMavenArtifactsPagedResponse>
+      listMavenArtifactsPagedCallable;
+  private final UnaryCallable<GetMavenArtifactRequest, MavenArtifact> getMavenArtifactCallable;
+  private final UnaryCallable<ListNpmPackagesRequest, ListNpmPackagesResponse>
+      listNpmPackagesCallable;
+  private final UnaryCallable<ListNpmPackagesRequest, ListNpmPackagesPagedResponse>
+      listNpmPackagesPagedCallable;
+  private final UnaryCallable<GetNpmPackageRequest, NpmPackage> getNpmPackageCallable;
+  private final UnaryCallable<ListPythonPackagesRequest, ListPythonPackagesResponse>
+      listPythonPackagesCallable;
+  private final UnaryCallable<ListPythonPackagesRequest, ListPythonPackagesPagedResponse>
+      listPythonPackagesPagedCallable;
+  private final UnaryCallable<GetPythonPackageRequest, PythonPackage> getPythonPackageCallable;
   private final UnaryCallable<ImportAptArtifactsRequest, Operation> importAptArtifactsCallable;
   private final OperationCallable<
           ImportAptArtifactsRequest, ImportAptArtifactsResponse, ImportAptArtifactsMetadata>
@@ -444,6 +568,8 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
       getProjectSettingsCallable;
   private final UnaryCallable<UpdateProjectSettingsRequest, ProjectSettings>
       updateProjectSettingsCallable;
+  private final UnaryCallable<GetVPCSCConfigRequest, VPCSCConfig> getVPCSCConfigCallable;
+  private final UnaryCallable<UpdateVPCSCConfigRequest, VPCSCConfig> updateVPCSCConfigCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -507,6 +633,69 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
     GrpcCallSettings<GetDockerImageRequest, DockerImage> getDockerImageTransportSettings =
         GrpcCallSettings.<GetDockerImageRequest, DockerImage>newBuilder()
             .setMethodDescriptor(getDockerImageMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<ListMavenArtifactsRequest, ListMavenArtifactsResponse>
+        listMavenArtifactsTransportSettings =
+            GrpcCallSettings.<ListMavenArtifactsRequest, ListMavenArtifactsResponse>newBuilder()
+                .setMethodDescriptor(listMavenArtifactsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<GetMavenArtifactRequest, MavenArtifact> getMavenArtifactTransportSettings =
+        GrpcCallSettings.<GetMavenArtifactRequest, MavenArtifact>newBuilder()
+            .setMethodDescriptor(getMavenArtifactMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<ListNpmPackagesRequest, ListNpmPackagesResponse>
+        listNpmPackagesTransportSettings =
+            GrpcCallSettings.<ListNpmPackagesRequest, ListNpmPackagesResponse>newBuilder()
+                .setMethodDescriptor(listNpmPackagesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<GetNpmPackageRequest, NpmPackage> getNpmPackageTransportSettings =
+        GrpcCallSettings.<GetNpmPackageRequest, NpmPackage>newBuilder()
+            .setMethodDescriptor(getNpmPackageMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<ListPythonPackagesRequest, ListPythonPackagesResponse>
+        listPythonPackagesTransportSettings =
+            GrpcCallSettings.<ListPythonPackagesRequest, ListPythonPackagesResponse>newBuilder()
+                .setMethodDescriptor(listPythonPackagesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<GetPythonPackageRequest, PythonPackage> getPythonPackageTransportSettings =
+        GrpcCallSettings.<GetPythonPackageRequest, PythonPackage>newBuilder()
+            .setMethodDescriptor(getPythonPackageMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
@@ -770,6 +959,27 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<GetVPCSCConfigRequest, VPCSCConfig> getVPCSCConfigTransportSettings =
+        GrpcCallSettings.<GetVPCSCConfigRequest, VPCSCConfig>newBuilder()
+            .setMethodDescriptor(getVPCSCConfigMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateVPCSCConfigRequest, VPCSCConfig> updateVPCSCConfigTransportSettings =
+        GrpcCallSettings.<UpdateVPCSCConfigRequest, VPCSCConfig>newBuilder()
+            .setMethodDescriptor(updateVPCSCConfigMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put(
+                      "vpcsc_config.name", String.valueOf(request.getVpcscConfig().getName()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -800,6 +1010,41 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
     this.getDockerImageCallable =
         callableFactory.createUnaryCallable(
             getDockerImageTransportSettings, settings.getDockerImageSettings(), clientContext);
+    this.listMavenArtifactsCallable =
+        callableFactory.createUnaryCallable(
+            listMavenArtifactsTransportSettings,
+            settings.listMavenArtifactsSettings(),
+            clientContext);
+    this.listMavenArtifactsPagedCallable =
+        callableFactory.createPagedCallable(
+            listMavenArtifactsTransportSettings,
+            settings.listMavenArtifactsSettings(),
+            clientContext);
+    this.getMavenArtifactCallable =
+        callableFactory.createUnaryCallable(
+            getMavenArtifactTransportSettings, settings.getMavenArtifactSettings(), clientContext);
+    this.listNpmPackagesCallable =
+        callableFactory.createUnaryCallable(
+            listNpmPackagesTransportSettings, settings.listNpmPackagesSettings(), clientContext);
+    this.listNpmPackagesPagedCallable =
+        callableFactory.createPagedCallable(
+            listNpmPackagesTransportSettings, settings.listNpmPackagesSettings(), clientContext);
+    this.getNpmPackageCallable =
+        callableFactory.createUnaryCallable(
+            getNpmPackageTransportSettings, settings.getNpmPackageSettings(), clientContext);
+    this.listPythonPackagesCallable =
+        callableFactory.createUnaryCallable(
+            listPythonPackagesTransportSettings,
+            settings.listPythonPackagesSettings(),
+            clientContext);
+    this.listPythonPackagesPagedCallable =
+        callableFactory.createPagedCallable(
+            listPythonPackagesTransportSettings,
+            settings.listPythonPackagesSettings(),
+            clientContext);
+    this.getPythonPackageCallable =
+        callableFactory.createUnaryCallable(
+            getPythonPackageTransportSettings, settings.getPythonPackageSettings(), clientContext);
     this.importAptArtifactsCallable =
         callableFactory.createUnaryCallable(
             importAptArtifactsTransportSettings,
@@ -936,6 +1181,14 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
             updateProjectSettingsTransportSettings,
             settings.updateProjectSettingsSettings(),
             clientContext);
+    this.getVPCSCConfigCallable =
+        callableFactory.createUnaryCallable(
+            getVPCSCConfigTransportSettings, settings.getVPCSCConfigSettings(), clientContext);
+    this.updateVPCSCConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateVPCSCConfigTransportSettings,
+            settings.updateVPCSCConfigSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -969,6 +1222,56 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
   @Override
   public UnaryCallable<GetDockerImageRequest, DockerImage> getDockerImageCallable() {
     return getDockerImageCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMavenArtifactsRequest, ListMavenArtifactsResponse>
+      listMavenArtifactsCallable() {
+    return listMavenArtifactsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMavenArtifactsRequest, ListMavenArtifactsPagedResponse>
+      listMavenArtifactsPagedCallable() {
+    return listMavenArtifactsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetMavenArtifactRequest, MavenArtifact> getMavenArtifactCallable() {
+    return getMavenArtifactCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListNpmPackagesRequest, ListNpmPackagesResponse> listNpmPackagesCallable() {
+    return listNpmPackagesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListNpmPackagesRequest, ListNpmPackagesPagedResponse>
+      listNpmPackagesPagedCallable() {
+    return listNpmPackagesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetNpmPackageRequest, NpmPackage> getNpmPackageCallable() {
+    return getNpmPackageCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListPythonPackagesRequest, ListPythonPackagesResponse>
+      listPythonPackagesCallable() {
+    return listPythonPackagesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListPythonPackagesRequest, ListPythonPackagesPagedResponse>
+      listPythonPackagesPagedCallable() {
+    return listPythonPackagesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetPythonPackageRequest, PythonPackage> getPythonPackageCallable() {
+    return getPythonPackageCallable;
   }
 
   @Override
@@ -1161,6 +1464,16 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
   public UnaryCallable<UpdateProjectSettingsRequest, ProjectSettings>
       updateProjectSettingsCallable() {
     return updateProjectSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetVPCSCConfigRequest, VPCSCConfig> getVPCSCConfigCallable() {
+    return getVPCSCConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateVPCSCConfigRequest, VPCSCConfig> updateVPCSCConfigCallable() {
+    return updateVPCSCConfigCallable;
   }
 
   @Override

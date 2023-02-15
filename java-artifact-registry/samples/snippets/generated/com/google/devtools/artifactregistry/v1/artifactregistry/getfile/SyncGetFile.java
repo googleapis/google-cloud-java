@@ -19,6 +19,7 @@ package com.google.devtools.artifactregistry.v1.samples;
 // [START artifactregistry_v1_generated_ArtifactRegistry_GetFile_sync]
 import com.google.devtools.artifactregistry.v1.ArtifactRegistryClient;
 import com.google.devtools.artifactregistry.v1.File;
+import com.google.devtools.artifactregistry.v1.FileName;
 import com.google.devtools.artifactregistry.v1.GetFileRequest;
 
 public class SyncGetFile {
@@ -34,7 +35,10 @@ public class SyncGetFile {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
-      GetFileRequest request = GetFileRequest.newBuilder().setName("name3373707").build();
+      GetFileRequest request =
+          GetFileRequest.newBuilder()
+              .setName(FileName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[FILE]").toString())
+              .build();
       File response = artifactRegistryClient.getFile(request);
     }
   }

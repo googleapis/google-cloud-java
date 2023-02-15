@@ -27,11 +27,13 @@ public interface ListFilesRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the repository whose files will be listed. For example:
-   * "projects/p1/locations/us-central1/repositories/repo1
+   * Required. The name of the repository whose files will be listed. For
+   * example: "projects/p1/locations/us-central1/repositories/repo1
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -40,11 +42,13 @@ public interface ListFilesRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the repository whose files will be listed. For example:
-   * "projects/p1/locations/us-central1/repositories/repo1
+   * Required. The name of the repository whose files will be listed. For
+   * example: "projects/p1/locations/us-central1/repositories/repo1
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */

@@ -17,7 +17,7 @@
               "methods": ["createTag", "createTag", "createTagCallable"]
             },
             "DeletePackage": {
-              "methods": ["deletePackageAsync", "deletePackageAsync", "deletePackageOperationCallable", "deletePackageCallable"]
+              "methods": ["deletePackageAsync", "deletePackageAsync", "deletePackageAsync", "deletePackageOperationCallable", "deletePackageCallable"]
             },
             "DeleteRepository": {
               "methods": ["deleteRepositoryAsync", "deleteRepositoryAsync", "deleteRepositoryAsync", "deleteRepositoryOperationCallable", "deleteRepositoryCallable"]
@@ -32,7 +32,7 @@
               "methods": ["getDockerImage", "getDockerImage", "getDockerImage", "getDockerImageCallable"]
             },
             "GetFile": {
-              "methods": ["getFile", "getFile", "getFileCallable"]
+              "methods": ["getFile", "getFile", "getFile", "getFileCallable"]
             },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
@@ -40,17 +40,29 @@
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
             },
+            "GetMavenArtifact": {
+              "methods": ["getMavenArtifact", "getMavenArtifact", "getMavenArtifact", "getMavenArtifactCallable"]
+            },
+            "GetNpmPackage": {
+              "methods": ["getNpmPackage", "getNpmPackage", "getNpmPackage", "getNpmPackageCallable"]
+            },
             "GetPackage": {
-              "methods": ["getPackage", "getPackage", "getPackageCallable"]
+              "methods": ["getPackage", "getPackage", "getPackage", "getPackageCallable"]
             },
             "GetProjectSettings": {
               "methods": ["getProjectSettings", "getProjectSettings", "getProjectSettings", "getProjectSettingsCallable"]
+            },
+            "GetPythonPackage": {
+              "methods": ["getPythonPackage", "getPythonPackage", "getPythonPackage", "getPythonPackageCallable"]
             },
             "GetRepository": {
               "methods": ["getRepository", "getRepository", "getRepository", "getRepositoryCallable"]
             },
             "GetTag": {
               "methods": ["getTag", "getTag", "getTagCallable"]
+            },
+            "GetVPCSCConfig": {
+              "methods": ["getVPCSCConfig", "getVPCSCConfig", "getVPCSCConfig", "getVPCSCConfigCallable"]
             },
             "GetVersion": {
               "methods": ["getVersion", "getVersion", "getVersionCallable"]
@@ -65,13 +77,22 @@
               "methods": ["listDockerImages", "listDockerImages", "listDockerImagesPagedCallable", "listDockerImagesCallable"]
             },
             "ListFiles": {
-              "methods": ["listFiles", "listFiles", "listFilesPagedCallable", "listFilesCallable"]
+              "methods": ["listFiles", "listFiles", "listFiles", "listFilesPagedCallable", "listFilesCallable"]
             },
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
+            "ListMavenArtifacts": {
+              "methods": ["listMavenArtifacts", "listMavenArtifacts", "listMavenArtifacts", "listMavenArtifactsPagedCallable", "listMavenArtifactsCallable"]
+            },
+            "ListNpmPackages": {
+              "methods": ["listNpmPackages", "listNpmPackages", "listNpmPackages", "listNpmPackagesPagedCallable", "listNpmPackagesCallable"]
+            },
             "ListPackages": {
-              "methods": ["listPackages", "listPackages", "listPackagesPagedCallable", "listPackagesCallable"]
+              "methods": ["listPackages", "listPackages", "listPackages", "listPackagesPagedCallable", "listPackagesCallable"]
+            },
+            "ListPythonPackages": {
+              "methods": ["listPythonPackages", "listPythonPackages", "listPythonPackages", "listPythonPackagesPagedCallable", "listPythonPackagesCallable"]
             },
             "ListRepositories": {
               "methods": ["listRepositories", "listRepositories", "listRepositories", "listRepositoriesPagedCallable", "listRepositoriesCallable"]
@@ -96,6 +117,9 @@
             },
             "UpdateTag": {
               "methods": ["updateTag", "updateTag", "updateTagCallable"]
+            },
+            "UpdateVPCSCConfig": {
+              "methods": ["updateVPCSCConfig", "updateVPCSCConfig", "updateVPCSCConfigCallable"]
             }
           }
         }

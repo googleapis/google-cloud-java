@@ -139,6 +139,290 @@ public final class ArtifactRegistryGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.ListMavenArtifactsRequest,
+          com.google.devtools.artifactregistry.v1.ListMavenArtifactsResponse>
+      getListMavenArtifactsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMavenArtifacts",
+      requestType = com.google.devtools.artifactregistry.v1.ListMavenArtifactsRequest.class,
+      responseType = com.google.devtools.artifactregistry.v1.ListMavenArtifactsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.ListMavenArtifactsRequest,
+          com.google.devtools.artifactregistry.v1.ListMavenArtifactsResponse>
+      getListMavenArtifactsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devtools.artifactregistry.v1.ListMavenArtifactsRequest,
+            com.google.devtools.artifactregistry.v1.ListMavenArtifactsResponse>
+        getListMavenArtifactsMethod;
+    if ((getListMavenArtifactsMethod = ArtifactRegistryGrpc.getListMavenArtifactsMethod) == null) {
+      synchronized (ArtifactRegistryGrpc.class) {
+        if ((getListMavenArtifactsMethod = ArtifactRegistryGrpc.getListMavenArtifactsMethod)
+            == null) {
+          ArtifactRegistryGrpc.getListMavenArtifactsMethod =
+              getListMavenArtifactsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devtools.artifactregistry.v1.ListMavenArtifactsRequest,
+                          com.google.devtools.artifactregistry.v1.ListMavenArtifactsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMavenArtifacts"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.ListMavenArtifactsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.ListMavenArtifactsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ArtifactRegistryMethodDescriptorSupplier("ListMavenArtifacts"))
+                      .build();
+        }
+      }
+    }
+    return getListMavenArtifactsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.GetMavenArtifactRequest,
+          com.google.devtools.artifactregistry.v1.MavenArtifact>
+      getGetMavenArtifactMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetMavenArtifact",
+      requestType = com.google.devtools.artifactregistry.v1.GetMavenArtifactRequest.class,
+      responseType = com.google.devtools.artifactregistry.v1.MavenArtifact.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.GetMavenArtifactRequest,
+          com.google.devtools.artifactregistry.v1.MavenArtifact>
+      getGetMavenArtifactMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devtools.artifactregistry.v1.GetMavenArtifactRequest,
+            com.google.devtools.artifactregistry.v1.MavenArtifact>
+        getGetMavenArtifactMethod;
+    if ((getGetMavenArtifactMethod = ArtifactRegistryGrpc.getGetMavenArtifactMethod) == null) {
+      synchronized (ArtifactRegistryGrpc.class) {
+        if ((getGetMavenArtifactMethod = ArtifactRegistryGrpc.getGetMavenArtifactMethod) == null) {
+          ArtifactRegistryGrpc.getGetMavenArtifactMethod =
+              getGetMavenArtifactMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devtools.artifactregistry.v1.GetMavenArtifactRequest,
+                          com.google.devtools.artifactregistry.v1.MavenArtifact>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetMavenArtifact"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.GetMavenArtifactRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.MavenArtifact
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ArtifactRegistryMethodDescriptorSupplier("GetMavenArtifact"))
+                      .build();
+        }
+      }
+    }
+    return getGetMavenArtifactMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.ListNpmPackagesRequest,
+          com.google.devtools.artifactregistry.v1.ListNpmPackagesResponse>
+      getListNpmPackagesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListNpmPackages",
+      requestType = com.google.devtools.artifactregistry.v1.ListNpmPackagesRequest.class,
+      responseType = com.google.devtools.artifactregistry.v1.ListNpmPackagesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.ListNpmPackagesRequest,
+          com.google.devtools.artifactregistry.v1.ListNpmPackagesResponse>
+      getListNpmPackagesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devtools.artifactregistry.v1.ListNpmPackagesRequest,
+            com.google.devtools.artifactregistry.v1.ListNpmPackagesResponse>
+        getListNpmPackagesMethod;
+    if ((getListNpmPackagesMethod = ArtifactRegistryGrpc.getListNpmPackagesMethod) == null) {
+      synchronized (ArtifactRegistryGrpc.class) {
+        if ((getListNpmPackagesMethod = ArtifactRegistryGrpc.getListNpmPackagesMethod) == null) {
+          ArtifactRegistryGrpc.getListNpmPackagesMethod =
+              getListNpmPackagesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devtools.artifactregistry.v1.ListNpmPackagesRequest,
+                          com.google.devtools.artifactregistry.v1.ListNpmPackagesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListNpmPackages"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.ListNpmPackagesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.ListNpmPackagesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ArtifactRegistryMethodDescriptorSupplier("ListNpmPackages"))
+                      .build();
+        }
+      }
+    }
+    return getListNpmPackagesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.GetNpmPackageRequest,
+          com.google.devtools.artifactregistry.v1.NpmPackage>
+      getGetNpmPackageMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetNpmPackage",
+      requestType = com.google.devtools.artifactregistry.v1.GetNpmPackageRequest.class,
+      responseType = com.google.devtools.artifactregistry.v1.NpmPackage.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.GetNpmPackageRequest,
+          com.google.devtools.artifactregistry.v1.NpmPackage>
+      getGetNpmPackageMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devtools.artifactregistry.v1.GetNpmPackageRequest,
+            com.google.devtools.artifactregistry.v1.NpmPackage>
+        getGetNpmPackageMethod;
+    if ((getGetNpmPackageMethod = ArtifactRegistryGrpc.getGetNpmPackageMethod) == null) {
+      synchronized (ArtifactRegistryGrpc.class) {
+        if ((getGetNpmPackageMethod = ArtifactRegistryGrpc.getGetNpmPackageMethod) == null) {
+          ArtifactRegistryGrpc.getGetNpmPackageMethod =
+              getGetNpmPackageMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devtools.artifactregistry.v1.GetNpmPackageRequest,
+                          com.google.devtools.artifactregistry.v1.NpmPackage>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetNpmPackage"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.GetNpmPackageRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.NpmPackage
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ArtifactRegistryMethodDescriptorSupplier("GetNpmPackage"))
+                      .build();
+        }
+      }
+    }
+    return getGetNpmPackageMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.ListPythonPackagesRequest,
+          com.google.devtools.artifactregistry.v1.ListPythonPackagesResponse>
+      getListPythonPackagesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListPythonPackages",
+      requestType = com.google.devtools.artifactregistry.v1.ListPythonPackagesRequest.class,
+      responseType = com.google.devtools.artifactregistry.v1.ListPythonPackagesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.ListPythonPackagesRequest,
+          com.google.devtools.artifactregistry.v1.ListPythonPackagesResponse>
+      getListPythonPackagesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devtools.artifactregistry.v1.ListPythonPackagesRequest,
+            com.google.devtools.artifactregistry.v1.ListPythonPackagesResponse>
+        getListPythonPackagesMethod;
+    if ((getListPythonPackagesMethod = ArtifactRegistryGrpc.getListPythonPackagesMethod) == null) {
+      synchronized (ArtifactRegistryGrpc.class) {
+        if ((getListPythonPackagesMethod = ArtifactRegistryGrpc.getListPythonPackagesMethod)
+            == null) {
+          ArtifactRegistryGrpc.getListPythonPackagesMethod =
+              getListPythonPackagesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devtools.artifactregistry.v1.ListPythonPackagesRequest,
+                          com.google.devtools.artifactregistry.v1.ListPythonPackagesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListPythonPackages"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.ListPythonPackagesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.ListPythonPackagesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ArtifactRegistryMethodDescriptorSupplier("ListPythonPackages"))
+                      .build();
+        }
+      }
+    }
+    return getListPythonPackagesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.GetPythonPackageRequest,
+          com.google.devtools.artifactregistry.v1.PythonPackage>
+      getGetPythonPackageMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetPythonPackage",
+      requestType = com.google.devtools.artifactregistry.v1.GetPythonPackageRequest.class,
+      responseType = com.google.devtools.artifactregistry.v1.PythonPackage.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.GetPythonPackageRequest,
+          com.google.devtools.artifactregistry.v1.PythonPackage>
+      getGetPythonPackageMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devtools.artifactregistry.v1.GetPythonPackageRequest,
+            com.google.devtools.artifactregistry.v1.PythonPackage>
+        getGetPythonPackageMethod;
+    if ((getGetPythonPackageMethod = ArtifactRegistryGrpc.getGetPythonPackageMethod) == null) {
+      synchronized (ArtifactRegistryGrpc.class) {
+        if ((getGetPythonPackageMethod = ArtifactRegistryGrpc.getGetPythonPackageMethod) == null) {
+          ArtifactRegistryGrpc.getGetPythonPackageMethod =
+              getGetPythonPackageMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devtools.artifactregistry.v1.GetPythonPackageRequest,
+                          com.google.devtools.artifactregistry.v1.PythonPackage>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPythonPackage"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.GetPythonPackageRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.PythonPackage
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ArtifactRegistryMethodDescriptorSupplier("GetPythonPackage"))
+                      .build();
+        }
+      }
+    }
+    return getGetPythonPackageMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.devtools.artifactregistry.v1.ImportAptArtifactsRequest,
           com.google.longrunning.Operation>
       getImportAptArtifactsMethod;
@@ -1281,6 +1565,101 @@ public final class ArtifactRegistryGrpc {
     return getUpdateProjectSettingsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.GetVPCSCConfigRequest,
+          com.google.devtools.artifactregistry.v1.VPCSCConfig>
+      getGetVPCSCConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetVPCSCConfig",
+      requestType = com.google.devtools.artifactregistry.v1.GetVPCSCConfigRequest.class,
+      responseType = com.google.devtools.artifactregistry.v1.VPCSCConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.GetVPCSCConfigRequest,
+          com.google.devtools.artifactregistry.v1.VPCSCConfig>
+      getGetVPCSCConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devtools.artifactregistry.v1.GetVPCSCConfigRequest,
+            com.google.devtools.artifactregistry.v1.VPCSCConfig>
+        getGetVPCSCConfigMethod;
+    if ((getGetVPCSCConfigMethod = ArtifactRegistryGrpc.getGetVPCSCConfigMethod) == null) {
+      synchronized (ArtifactRegistryGrpc.class) {
+        if ((getGetVPCSCConfigMethod = ArtifactRegistryGrpc.getGetVPCSCConfigMethod) == null) {
+          ArtifactRegistryGrpc.getGetVPCSCConfigMethod =
+              getGetVPCSCConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devtools.artifactregistry.v1.GetVPCSCConfigRequest,
+                          com.google.devtools.artifactregistry.v1.VPCSCConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetVPCSCConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.GetVPCSCConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.VPCSCConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ArtifactRegistryMethodDescriptorSupplier("GetVPCSCConfig"))
+                      .build();
+        }
+      }
+    }
+    return getGetVPCSCConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.UpdateVPCSCConfigRequest,
+          com.google.devtools.artifactregistry.v1.VPCSCConfig>
+      getUpdateVPCSCConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateVPCSCConfig",
+      requestType = com.google.devtools.artifactregistry.v1.UpdateVPCSCConfigRequest.class,
+      responseType = com.google.devtools.artifactregistry.v1.VPCSCConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.UpdateVPCSCConfigRequest,
+          com.google.devtools.artifactregistry.v1.VPCSCConfig>
+      getUpdateVPCSCConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devtools.artifactregistry.v1.UpdateVPCSCConfigRequest,
+            com.google.devtools.artifactregistry.v1.VPCSCConfig>
+        getUpdateVPCSCConfigMethod;
+    if ((getUpdateVPCSCConfigMethod = ArtifactRegistryGrpc.getUpdateVPCSCConfigMethod) == null) {
+      synchronized (ArtifactRegistryGrpc.class) {
+        if ((getUpdateVPCSCConfigMethod = ArtifactRegistryGrpc.getUpdateVPCSCConfigMethod)
+            == null) {
+          ArtifactRegistryGrpc.getUpdateVPCSCConfigMethod =
+              getUpdateVPCSCConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devtools.artifactregistry.v1.UpdateVPCSCConfigRequest,
+                          com.google.devtools.artifactregistry.v1.VPCSCConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateVPCSCConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.UpdateVPCSCConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.VPCSCConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ArtifactRegistryMethodDescriptorSupplier("UpdateVPCSCConfig"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateVPCSCConfigMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ArtifactRegistryStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ArtifactRegistryStub> factory =
@@ -1369,6 +1748,98 @@ public final class ArtifactRegistryGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetDockerImageMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists maven artifacts.
+     * </pre>
+     */
+    public void listMavenArtifacts(
+        com.google.devtools.artifactregistry.v1.ListMavenArtifactsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.devtools.artifactregistry.v1.ListMavenArtifactsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListMavenArtifactsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a maven artifact.
+     * </pre>
+     */
+    public void getMavenArtifact(
+        com.google.devtools.artifactregistry.v1.GetMavenArtifactRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.MavenArtifact>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetMavenArtifactMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists npm packages.
+     * </pre>
+     */
+    public void listNpmPackages(
+        com.google.devtools.artifactregistry.v1.ListNpmPackagesRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.ListNpmPackagesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListNpmPackagesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a npm package.
+     * </pre>
+     */
+    public void getNpmPackage(
+        com.google.devtools.artifactregistry.v1.GetNpmPackageRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.NpmPackage>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetNpmPackageMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists python packages.
+     * </pre>
+     */
+    public void listPythonPackages(
+        com.google.devtools.artifactregistry.v1.ListPythonPackagesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.devtools.artifactregistry.v1.ListPythonPackagesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListPythonPackagesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a python package.
+     * </pre>
+     */
+    public void getPythonPackage(
+        com.google.devtools.artifactregistry.v1.GetPythonPackageRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.PythonPackage>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetPythonPackageMethod(), responseObserver);
     }
 
     /**
@@ -1737,6 +2208,36 @@ public final class ArtifactRegistryGrpc {
           getUpdateProjectSettingsMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the VPCSC Config for the Project.
+     * </pre>
+     */
+    public void getVPCSCConfig(
+        com.google.devtools.artifactregistry.v1.GetVPCSCConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.VPCSCConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetVPCSCConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the VPCSC Config for the Project.
+     * </pre>
+     */
+    public void updateVPCSCConfig(
+        com.google.devtools.artifactregistry.v1.UpdateVPCSCConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.VPCSCConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateVPCSCConfigMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -1754,6 +2255,48 @@ public final class ArtifactRegistryGrpc {
                       com.google.devtools.artifactregistry.v1.GetDockerImageRequest,
                       com.google.devtools.artifactregistry.v1.DockerImage>(
                       this, METHODID_GET_DOCKER_IMAGE)))
+          .addMethod(
+              getListMavenArtifactsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.devtools.artifactregistry.v1.ListMavenArtifactsRequest,
+                      com.google.devtools.artifactregistry.v1.ListMavenArtifactsResponse>(
+                      this, METHODID_LIST_MAVEN_ARTIFACTS)))
+          .addMethod(
+              getGetMavenArtifactMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.devtools.artifactregistry.v1.GetMavenArtifactRequest,
+                      com.google.devtools.artifactregistry.v1.MavenArtifact>(
+                      this, METHODID_GET_MAVEN_ARTIFACT)))
+          .addMethod(
+              getListNpmPackagesMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.devtools.artifactregistry.v1.ListNpmPackagesRequest,
+                      com.google.devtools.artifactregistry.v1.ListNpmPackagesResponse>(
+                      this, METHODID_LIST_NPM_PACKAGES)))
+          .addMethod(
+              getGetNpmPackageMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.devtools.artifactregistry.v1.GetNpmPackageRequest,
+                      com.google.devtools.artifactregistry.v1.NpmPackage>(
+                      this, METHODID_GET_NPM_PACKAGE)))
+          .addMethod(
+              getListPythonPackagesMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.devtools.artifactregistry.v1.ListPythonPackagesRequest,
+                      com.google.devtools.artifactregistry.v1.ListPythonPackagesResponse>(
+                      this, METHODID_LIST_PYTHON_PACKAGES)))
+          .addMethod(
+              getGetPythonPackageMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.devtools.artifactregistry.v1.GetPythonPackageRequest,
+                      com.google.devtools.artifactregistry.v1.PythonPackage>(
+                      this, METHODID_GET_PYTHON_PACKAGE)))
           .addMethod(
               getImportAptArtifactsMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1914,6 +2457,20 @@ public final class ArtifactRegistryGrpc {
                       com.google.devtools.artifactregistry.v1.UpdateProjectSettingsRequest,
                       com.google.devtools.artifactregistry.v1.ProjectSettings>(
                       this, METHODID_UPDATE_PROJECT_SETTINGS)))
+          .addMethod(
+              getGetVPCSCConfigMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.devtools.artifactregistry.v1.GetVPCSCConfigRequest,
+                      com.google.devtools.artifactregistry.v1.VPCSCConfig>(
+                      this, METHODID_GET_VPCSCCONFIG)))
+          .addMethod(
+              getUpdateVPCSCConfigMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.devtools.artifactregistry.v1.UpdateVPCSCConfigRequest,
+                      com.google.devtools.artifactregistry.v1.VPCSCConfig>(
+                      this, METHODID_UPDATE_VPCSCCONFIG)))
           .build();
     }
   }
@@ -1976,6 +2533,110 @@ public final class ArtifactRegistryGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetDockerImageMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists maven artifacts.
+     * </pre>
+     */
+    public void listMavenArtifacts(
+        com.google.devtools.artifactregistry.v1.ListMavenArtifactsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.devtools.artifactregistry.v1.ListMavenArtifactsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMavenArtifactsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a maven artifact.
+     * </pre>
+     */
+    public void getMavenArtifact(
+        com.google.devtools.artifactregistry.v1.GetMavenArtifactRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.MavenArtifact>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetMavenArtifactMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists npm packages.
+     * </pre>
+     */
+    public void listNpmPackages(
+        com.google.devtools.artifactregistry.v1.ListNpmPackagesRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.ListNpmPackagesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListNpmPackagesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a npm package.
+     * </pre>
+     */
+    public void getNpmPackage(
+        com.google.devtools.artifactregistry.v1.GetNpmPackageRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.NpmPackage>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetNpmPackageMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists python packages.
+     * </pre>
+     */
+    public void listPythonPackages(
+        com.google.devtools.artifactregistry.v1.ListPythonPackagesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.devtools.artifactregistry.v1.ListPythonPackagesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListPythonPackagesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a python package.
+     * </pre>
+     */
+    public void getPythonPackage(
+        com.google.devtools.artifactregistry.v1.GetPythonPackageRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.PythonPackage>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetPythonPackageMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2386,6 +3047,40 @@ public final class ArtifactRegistryGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the VPCSC Config for the Project.
+     * </pre>
+     */
+    public void getVPCSCConfig(
+        com.google.devtools.artifactregistry.v1.GetVPCSCConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.VPCSCConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetVPCSCConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the VPCSC Config for the Project.
+     * </pre>
+     */
+    public void updateVPCSCConfig(
+        com.google.devtools.artifactregistry.v1.UpdateVPCSCConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.VPCSCConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateVPCSCConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -2440,6 +3135,84 @@ public final class ArtifactRegistryGrpc {
         com.google.devtools.artifactregistry.v1.GetDockerImageRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetDockerImageMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists maven artifacts.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1.ListMavenArtifactsResponse listMavenArtifacts(
+        com.google.devtools.artifactregistry.v1.ListMavenArtifactsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMavenArtifactsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a maven artifact.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1.MavenArtifact getMavenArtifact(
+        com.google.devtools.artifactregistry.v1.GetMavenArtifactRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMavenArtifactMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists npm packages.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1.ListNpmPackagesResponse listNpmPackages(
+        com.google.devtools.artifactregistry.v1.ListNpmPackagesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListNpmPackagesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a npm package.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1.NpmPackage getNpmPackage(
+        com.google.devtools.artifactregistry.v1.GetNpmPackageRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetNpmPackageMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists python packages.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1.ListPythonPackagesResponse listPythonPackages(
+        com.google.devtools.artifactregistry.v1.ListPythonPackagesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPythonPackagesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a python package.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1.PythonPackage getPythonPackage(
+        com.google.devtools.artifactregistry.v1.GetPythonPackageRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPythonPackageMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2775,6 +3548,32 @@ public final class ArtifactRegistryGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateProjectSettingsMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the VPCSC Config for the Project.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1.VPCSCConfig getVPCSCConfig(
+        com.google.devtools.artifactregistry.v1.GetVPCSCConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetVPCSCConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the VPCSC Config for the Project.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1.VPCSCConfig updateVPCSCConfig(
+        com.google.devtools.artifactregistry.v1.UpdateVPCSCConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateVPCSCConfigMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -2831,6 +3630,92 @@ public final class ArtifactRegistryGrpc {
         getDockerImage(com.google.devtools.artifactregistry.v1.GetDockerImageRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetDockerImageMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists maven artifacts.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.devtools.artifactregistry.v1.ListMavenArtifactsResponse>
+        listMavenArtifacts(
+            com.google.devtools.artifactregistry.v1.ListMavenArtifactsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMavenArtifactsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a maven artifact.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.devtools.artifactregistry.v1.MavenArtifact>
+        getMavenArtifact(com.google.devtools.artifactregistry.v1.GetMavenArtifactRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetMavenArtifactMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists npm packages.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.devtools.artifactregistry.v1.ListNpmPackagesResponse>
+        listNpmPackages(com.google.devtools.artifactregistry.v1.ListNpmPackagesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListNpmPackagesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a npm package.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.devtools.artifactregistry.v1.NpmPackage>
+        getNpmPackage(com.google.devtools.artifactregistry.v1.GetNpmPackageRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetNpmPackageMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists python packages.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.devtools.artifactregistry.v1.ListPythonPackagesResponse>
+        listPythonPackages(
+            com.google.devtools.artifactregistry.v1.ListPythonPackagesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListPythonPackagesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a python package.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.devtools.artifactregistry.v1.PythonPackage>
+        getPythonPackage(com.google.devtools.artifactregistry.v1.GetPythonPackageRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetPythonPackageMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3188,35 +4073,72 @@ public final class ArtifactRegistryGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateProjectSettingsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the VPCSC Config for the Project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.devtools.artifactregistry.v1.VPCSCConfig>
+        getVPCSCConfig(com.google.devtools.artifactregistry.v1.GetVPCSCConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetVPCSCConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the VPCSC Config for the Project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.devtools.artifactregistry.v1.VPCSCConfig>
+        updateVPCSCConfig(
+            com.google.devtools.artifactregistry.v1.UpdateVPCSCConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateVPCSCConfigMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_DOCKER_IMAGES = 0;
   private static final int METHODID_GET_DOCKER_IMAGE = 1;
-  private static final int METHODID_IMPORT_APT_ARTIFACTS = 2;
-  private static final int METHODID_IMPORT_YUM_ARTIFACTS = 3;
-  private static final int METHODID_LIST_REPOSITORIES = 4;
-  private static final int METHODID_GET_REPOSITORY = 5;
-  private static final int METHODID_CREATE_REPOSITORY = 6;
-  private static final int METHODID_UPDATE_REPOSITORY = 7;
-  private static final int METHODID_DELETE_REPOSITORY = 8;
-  private static final int METHODID_LIST_PACKAGES = 9;
-  private static final int METHODID_GET_PACKAGE = 10;
-  private static final int METHODID_DELETE_PACKAGE = 11;
-  private static final int METHODID_LIST_VERSIONS = 12;
-  private static final int METHODID_GET_VERSION = 13;
-  private static final int METHODID_DELETE_VERSION = 14;
-  private static final int METHODID_LIST_FILES = 15;
-  private static final int METHODID_GET_FILE = 16;
-  private static final int METHODID_LIST_TAGS = 17;
-  private static final int METHODID_GET_TAG = 18;
-  private static final int METHODID_CREATE_TAG = 19;
-  private static final int METHODID_UPDATE_TAG = 20;
-  private static final int METHODID_DELETE_TAG = 21;
-  private static final int METHODID_SET_IAM_POLICY = 22;
-  private static final int METHODID_GET_IAM_POLICY = 23;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 24;
-  private static final int METHODID_GET_PROJECT_SETTINGS = 25;
-  private static final int METHODID_UPDATE_PROJECT_SETTINGS = 26;
+  private static final int METHODID_LIST_MAVEN_ARTIFACTS = 2;
+  private static final int METHODID_GET_MAVEN_ARTIFACT = 3;
+  private static final int METHODID_LIST_NPM_PACKAGES = 4;
+  private static final int METHODID_GET_NPM_PACKAGE = 5;
+  private static final int METHODID_LIST_PYTHON_PACKAGES = 6;
+  private static final int METHODID_GET_PYTHON_PACKAGE = 7;
+  private static final int METHODID_IMPORT_APT_ARTIFACTS = 8;
+  private static final int METHODID_IMPORT_YUM_ARTIFACTS = 9;
+  private static final int METHODID_LIST_REPOSITORIES = 10;
+  private static final int METHODID_GET_REPOSITORY = 11;
+  private static final int METHODID_CREATE_REPOSITORY = 12;
+  private static final int METHODID_UPDATE_REPOSITORY = 13;
+  private static final int METHODID_DELETE_REPOSITORY = 14;
+  private static final int METHODID_LIST_PACKAGES = 15;
+  private static final int METHODID_GET_PACKAGE = 16;
+  private static final int METHODID_DELETE_PACKAGE = 17;
+  private static final int METHODID_LIST_VERSIONS = 18;
+  private static final int METHODID_GET_VERSION = 19;
+  private static final int METHODID_DELETE_VERSION = 20;
+  private static final int METHODID_LIST_FILES = 21;
+  private static final int METHODID_GET_FILE = 22;
+  private static final int METHODID_LIST_TAGS = 23;
+  private static final int METHODID_GET_TAG = 24;
+  private static final int METHODID_CREATE_TAG = 25;
+  private static final int METHODID_UPDATE_TAG = 26;
+  private static final int METHODID_DELETE_TAG = 27;
+  private static final int METHODID_SET_IAM_POLICY = 28;
+  private static final int METHODID_GET_IAM_POLICY = 29;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 30;
+  private static final int METHODID_GET_PROJECT_SETTINGS = 31;
+  private static final int METHODID_UPDATE_PROJECT_SETTINGS = 32;
+  private static final int METHODID_GET_VPCSCCONFIG = 33;
+  private static final int METHODID_UPDATE_VPCSCCONFIG = 34;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3246,6 +4168,45 @@ public final class ArtifactRegistryGrpc {
           serviceImpl.getDockerImage(
               (com.google.devtools.artifactregistry.v1.GetDockerImageRequest) request,
               (io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.DockerImage>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_MAVEN_ARTIFACTS:
+          serviceImpl.listMavenArtifacts(
+              (com.google.devtools.artifactregistry.v1.ListMavenArtifactsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.devtools.artifactregistry.v1.ListMavenArtifactsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_MAVEN_ARTIFACT:
+          serviceImpl.getMavenArtifact(
+              (com.google.devtools.artifactregistry.v1.GetMavenArtifactRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.MavenArtifact>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_NPM_PACKAGES:
+          serviceImpl.listNpmPackages(
+              (com.google.devtools.artifactregistry.v1.ListNpmPackagesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.devtools.artifactregistry.v1.ListNpmPackagesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_NPM_PACKAGE:
+          serviceImpl.getNpmPackage(
+              (com.google.devtools.artifactregistry.v1.GetNpmPackageRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.NpmPackage>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_PYTHON_PACKAGES:
+          serviceImpl.listPythonPackages(
+              (com.google.devtools.artifactregistry.v1.ListPythonPackagesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.devtools.artifactregistry.v1.ListPythonPackagesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_PYTHON_PACKAGE:
+          serviceImpl.getPythonPackage(
+              (com.google.devtools.artifactregistry.v1.GetPythonPackageRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.PythonPackage>)
                   responseObserver);
           break;
         case METHODID_IMPORT_APT_ARTIFACTS:
@@ -3394,6 +4355,18 @@ public final class ArtifactRegistryGrpc {
               (io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.ProjectSettings>)
                   responseObserver);
           break;
+        case METHODID_GET_VPCSCCONFIG:
+          serviceImpl.getVPCSCConfig(
+              (com.google.devtools.artifactregistry.v1.GetVPCSCConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.VPCSCConfig>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_VPCSCCONFIG:
+          serviceImpl.updateVPCSCConfig(
+              (com.google.devtools.artifactregistry.v1.UpdateVPCSCConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.VPCSCConfig>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -3460,6 +4433,12 @@ public final class ArtifactRegistryGrpc {
                       .setSchemaDescriptor(new ArtifactRegistryFileDescriptorSupplier())
                       .addMethod(getListDockerImagesMethod())
                       .addMethod(getGetDockerImageMethod())
+                      .addMethod(getListMavenArtifactsMethod())
+                      .addMethod(getGetMavenArtifactMethod())
+                      .addMethod(getListNpmPackagesMethod())
+                      .addMethod(getGetNpmPackageMethod())
+                      .addMethod(getListPythonPackagesMethod())
+                      .addMethod(getGetPythonPackageMethod())
                       .addMethod(getImportAptArtifactsMethod())
                       .addMethod(getImportYumArtifactsMethod())
                       .addMethod(getListRepositoriesMethod())
@@ -3485,6 +4464,8 @@ public final class ArtifactRegistryGrpc {
                       .addMethod(getTestIamPermissionsMethod())
                       .addMethod(getGetProjectSettingsMethod())
                       .addMethod(getUpdateProjectSettingsMethod())
+                      .addMethod(getGetVPCSCConfigMethod())
+                      .addMethod(getUpdateVPCSCConfigMethod())
                       .build();
         }
       }
