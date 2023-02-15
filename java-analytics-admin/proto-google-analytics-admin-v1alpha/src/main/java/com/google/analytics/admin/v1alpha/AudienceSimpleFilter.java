@@ -115,7 +115,8 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Immutable. A logical expression of Audience dimension, metric, or event filters.
+   * Required. Immutable. A logical expression of Audience dimension, metric, or
+   * event filters.
    * </pre>
    *
    * <code>
@@ -132,7 +133,8 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Immutable. A logical expression of Audience dimension, metric, or event filters.
+   * Required. Immutable. A logical expression of Audience dimension, metric, or
+   * event filters.
    * </pre>
    *
    * <code>
@@ -151,7 +153,8 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Immutable. A logical expression of Audience dimension, metric, or event filters.
+   * Required. Immutable. A logical expression of Audience dimension, metric, or
+   * event filters.
    * </pre>
    *
    * <code>
@@ -657,7 +660,8 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. A logical expression of Audience dimension, metric, or event filters.
+     * Required. Immutable. A logical expression of Audience dimension, metric, or
+     * event filters.
      * </pre>
      *
      * <code>
@@ -673,7 +677,8 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. A logical expression of Audience dimension, metric, or event filters.
+     * Required. Immutable. A logical expression of Audience dimension, metric, or
+     * event filters.
      * </pre>
      *
      * <code>
@@ -695,7 +700,8 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. A logical expression of Audience dimension, metric, or event filters.
+     * Required. Immutable. A logical expression of Audience dimension, metric, or
+     * event filters.
      * </pre>
      *
      * <code>
@@ -720,7 +726,8 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. A logical expression of Audience dimension, metric, or event filters.
+     * Required. Immutable. A logical expression of Audience dimension, metric, or
+     * event filters.
      * </pre>
      *
      * <code>
@@ -742,7 +749,8 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. A logical expression of Audience dimension, metric, or event filters.
+     * Required. Immutable. A logical expression of Audience dimension, metric, or
+     * event filters.
      * </pre>
      *
      * <code>
@@ -772,7 +780,8 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. A logical expression of Audience dimension, metric, or event filters.
+     * Required. Immutable. A logical expression of Audience dimension, metric, or
+     * event filters.
      * </pre>
      *
      * <code>
@@ -793,7 +802,8 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. A logical expression of Audience dimension, metric, or event filters.
+     * Required. Immutable. A logical expression of Audience dimension, metric, or
+     * event filters.
      * </pre>
      *
      * <code>
@@ -810,7 +820,8 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. A logical expression of Audience dimension, metric, or event filters.
+     * Required. Immutable. A logical expression of Audience dimension, metric, or
+     * event filters.
      * </pre>
      *
      * <code>
@@ -831,7 +842,8 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. A logical expression of Audience dimension, metric, or event filters.
+     * Required. Immutable. A logical expression of Audience dimension, metric, or
+     * event filters.
      * </pre>
      *
      * <code>

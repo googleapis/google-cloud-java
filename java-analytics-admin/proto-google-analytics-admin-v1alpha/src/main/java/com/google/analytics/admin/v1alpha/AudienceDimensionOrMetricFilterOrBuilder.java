@@ -232,8 +232,8 @@ public interface AudienceDimensionOrMetricFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. Indicates whether this filter needs dynamic evaluation or not. If set to
-   * true, users join the Audience if they ever met the condition (static
+   * Optional. Indicates whether this filter needs dynamic evaluation or not. If
+   * set to true, users join the Audience if they ever met the condition (static
    * evaluation). If unset or set to false, user evaluation for an Audience is
    * dynamic; users are added to an Audience when they meet the conditions and
    * then removed when they no longer meet them.
@@ -250,9 +250,9 @@ public interface AudienceDimensionOrMetricFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. If set, specifies the time window for which to evaluate data in number of
-   * days. If not set, then audience data is evaluated against lifetime data
-   * (i.e., infinite time window).
+   * Optional. If set, specifies the time window for which to evaluate data in
+   * number of days. If not set, then audience data is evaluated against
+   * lifetime data (i.e., infinite time window).
    * For example, if set to 1 day, only the current day's data is evaluated. The
    * reference point is the current day when at_any_point_in_time is unset or
    * false.

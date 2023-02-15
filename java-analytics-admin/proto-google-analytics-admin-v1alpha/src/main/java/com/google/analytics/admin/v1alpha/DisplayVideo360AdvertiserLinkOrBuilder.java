@@ -27,8 +27,9 @@ public interface DisplayVideo360AdvertiserLinkOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name for this DisplayVideo360AdvertiserLink resource.
-   * Format: properties/{propertyId}/displayVideo360AdvertiserLinks/{linkId}
+   * Output only. The resource name for this DisplayVideo360AdvertiserLink
+   * resource. Format:
+   * properties/{propertyId}/displayVideo360AdvertiserLinks/{linkId}
    * Note: linkId is not the Display &amp; Video 360 Advertiser ID
    * </pre>
    *
@@ -41,8 +42,9 @@ public interface DisplayVideo360AdvertiserLinkOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name for this DisplayVideo360AdvertiserLink resource.
-   * Format: properties/{propertyId}/displayVideo360AdvertiserLinks/{linkId}
+   * Output only. The resource name for this DisplayVideo360AdvertiserLink
+   * resource. Format:
+   * properties/{propertyId}/displayVideo360AdvertiserLinks/{linkId}
    * Note: linkId is not the Display &amp; Video 360 Advertiser ID
    * </pre>
    *
@@ -144,10 +146,10 @@ public interface DisplayVideo360AdvertiserLinkOrBuilder
    *
    *
    * <pre>
-   * Immutable. Enables the import of campaign data from Display &amp; Video 360 into the GA4
-   * property. After link creation, this can only be updated from the Display &amp;
-   * Video 360 product.
-   * If this field is not set on create, it will be defaulted to true.
+   * Immutable. Enables the import of campaign data from Display &amp; Video 360
+   * into the GA4 property. After link creation, this can only be updated from
+   * the Display &amp; Video 360 product. If this field is not set on create, it
+   * will be defaulted to true.
    * </pre>
    *
    * <code>
@@ -161,10 +163,10 @@ public interface DisplayVideo360AdvertiserLinkOrBuilder
    *
    *
    * <pre>
-   * Immutable. Enables the import of campaign data from Display &amp; Video 360 into the GA4
-   * property. After link creation, this can only be updated from the Display &amp;
-   * Video 360 product.
-   * If this field is not set on create, it will be defaulted to true.
+   * Immutable. Enables the import of campaign data from Display &amp; Video 360
+   * into the GA4 property. After link creation, this can only be updated from
+   * the Display &amp; Video 360 product. If this field is not set on create, it
+   * will be defaulted to true.
    * </pre>
    *
    * <code>
@@ -178,10 +180,10 @@ public interface DisplayVideo360AdvertiserLinkOrBuilder
    *
    *
    * <pre>
-   * Immutable. Enables the import of campaign data from Display &amp; Video 360 into the GA4
-   * property. After link creation, this can only be updated from the Display &amp;
-   * Video 360 product.
-   * If this field is not set on create, it will be defaulted to true.
+   * Immutable. Enables the import of campaign data from Display &amp; Video 360
+   * into the GA4 property. After link creation, this can only be updated from
+   * the Display &amp; Video 360 product. If this field is not set on create, it
+   * will be defaulted to true.
    * </pre>
    *
    * <code>
@@ -194,11 +196,11 @@ public interface DisplayVideo360AdvertiserLinkOrBuilder
    *
    *
    * <pre>
-   * Immutable. Enables the import of cost data from Display &amp; Video 360 into the GA4
-   * property. This can only be enabled if campaign_data_sharing_enabled is
-   * enabled. After link creation, this can only be updated from the Display &amp;
-   * Video 360 product.
-   * If this field is not set on create, it will be defaulted to true.
+   * Immutable. Enables the import of cost data from Display &amp; Video 360 into
+   * the GA4 property. This can only be enabled if campaign_data_sharing_enabled
+   * is enabled. After link creation, this can only be updated from the Display
+   * &amp; Video 360 product. If this field is not set on create, it will be
+   * defaulted to true.
    * </pre>
    *
    * <code>
@@ -212,11 +214,11 @@ public interface DisplayVideo360AdvertiserLinkOrBuilder
    *
    *
    * <pre>
-   * Immutable. Enables the import of cost data from Display &amp; Video 360 into the GA4
-   * property. This can only be enabled if campaign_data_sharing_enabled is
-   * enabled. After link creation, this can only be updated from the Display &amp;
-   * Video 360 product.
-   * If this field is not set on create, it will be defaulted to true.
+   * Immutable. Enables the import of cost data from Display &amp; Video 360 into
+   * the GA4 property. This can only be enabled if campaign_data_sharing_enabled
+   * is enabled. After link creation, this can only be updated from the Display
+   * &amp; Video 360 product. If this field is not set on create, it will be
+   * defaulted to true.
    * </pre>
    *
    * <code>
@@ -230,11 +232,11 @@ public interface DisplayVideo360AdvertiserLinkOrBuilder
    *
    *
    * <pre>
-   * Immutable. Enables the import of cost data from Display &amp; Video 360 into the GA4
-   * property. This can only be enabled if campaign_data_sharing_enabled is
-   * enabled. After link creation, this can only be updated from the Display &amp;
-   * Video 360 product.
-   * If this field is not set on create, it will be defaulted to true.
+   * Immutable. Enables the import of cost data from Display &amp; Video 360 into
+   * the GA4 property. This can only be enabled if campaign_data_sharing_enabled
+   * is enabled. After link creation, this can only be updated from the Display
+   * &amp; Video 360 product. If this field is not set on create, it will be
+   * defaulted to true.
    * </pre>
    *
    * <code>

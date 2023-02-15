@@ -3841,6 +3841,266 @@ public final class AnalyticsAdminServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest,
+          com.google.analytics.admin.v1alpha.SearchAds360Link>
+      getGetSearchAds360LinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSearchAds360Link",
+      requestType = com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.SearchAds360Link.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest,
+          com.google.analytics.admin.v1alpha.SearchAds360Link>
+      getGetSearchAds360LinkMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest,
+            com.google.analytics.admin.v1alpha.SearchAds360Link>
+        getGetSearchAds360LinkMethod;
+    if ((getGetSearchAds360LinkMethod = AnalyticsAdminServiceGrpc.getGetSearchAds360LinkMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetSearchAds360LinkMethod = AnalyticsAdminServiceGrpc.getGetSearchAds360LinkMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getGetSearchAds360LinkMethod =
+              getGetSearchAds360LinkMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest,
+                          com.google.analytics.admin.v1alpha.SearchAds360Link>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetSearchAds360Link"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.SearchAds360Link
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("GetSearchAds360Link"))
+                      .build();
+        }
+      }
+    }
+    return getGetSearchAds360LinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest,
+          com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse>
+      getListSearchAds360LinksMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSearchAds360Links",
+      requestType = com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest,
+          com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse>
+      getListSearchAds360LinksMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest,
+            com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse>
+        getListSearchAds360LinksMethod;
+    if ((getListSearchAds360LinksMethod = AnalyticsAdminServiceGrpc.getListSearchAds360LinksMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getListSearchAds360LinksMethod =
+                AnalyticsAdminServiceGrpc.getListSearchAds360LinksMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getListSearchAds360LinksMethod =
+              getListSearchAds360LinksMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest,
+                          com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListSearchAds360Links"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "ListSearchAds360Links"))
+                      .build();
+        }
+      }
+    }
+    return getListSearchAds360LinksMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateSearchAds360LinkRequest,
+          com.google.analytics.admin.v1alpha.SearchAds360Link>
+      getCreateSearchAds360LinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateSearchAds360Link",
+      requestType = com.google.analytics.admin.v1alpha.CreateSearchAds360LinkRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.SearchAds360Link.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateSearchAds360LinkRequest,
+          com.google.analytics.admin.v1alpha.SearchAds360Link>
+      getCreateSearchAds360LinkMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.CreateSearchAds360LinkRequest,
+            com.google.analytics.admin.v1alpha.SearchAds360Link>
+        getCreateSearchAds360LinkMethod;
+    if ((getCreateSearchAds360LinkMethod =
+            AnalyticsAdminServiceGrpc.getCreateSearchAds360LinkMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getCreateSearchAds360LinkMethod =
+                AnalyticsAdminServiceGrpc.getCreateSearchAds360LinkMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getCreateSearchAds360LinkMethod =
+              getCreateSearchAds360LinkMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.CreateSearchAds360LinkRequest,
+                          com.google.analytics.admin.v1alpha.SearchAds360Link>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateSearchAds360Link"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CreateSearchAds360LinkRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.SearchAds360Link
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "CreateSearchAds360Link"))
+                      .build();
+        }
+      }
+    }
+    return getCreateSearchAds360LinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest,
+          com.google.protobuf.Empty>
+      getDeleteSearchAds360LinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteSearchAds360Link",
+      requestType = com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest,
+          com.google.protobuf.Empty>
+      getDeleteSearchAds360LinkMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest,
+            com.google.protobuf.Empty>
+        getDeleteSearchAds360LinkMethod;
+    if ((getDeleteSearchAds360LinkMethod =
+            AnalyticsAdminServiceGrpc.getDeleteSearchAds360LinkMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getDeleteSearchAds360LinkMethod =
+                AnalyticsAdminServiceGrpc.getDeleteSearchAds360LinkMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getDeleteSearchAds360LinkMethod =
+              getDeleteSearchAds360LinkMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteSearchAds360Link"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "DeleteSearchAds360Link"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteSearchAds360LinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest,
+          com.google.analytics.admin.v1alpha.SearchAds360Link>
+      getUpdateSearchAds360LinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSearchAds360Link",
+      requestType = com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.SearchAds360Link.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest,
+          com.google.analytics.admin.v1alpha.SearchAds360Link>
+      getUpdateSearchAds360LinkMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest,
+            com.google.analytics.admin.v1alpha.SearchAds360Link>
+        getUpdateSearchAds360LinkMethod;
+    if ((getUpdateSearchAds360LinkMethod =
+            AnalyticsAdminServiceGrpc.getUpdateSearchAds360LinkMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateSearchAds360LinkMethod =
+                AnalyticsAdminServiceGrpc.getUpdateSearchAds360LinkMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getUpdateSearchAds360LinkMethod =
+              getUpdateSearchAds360LinkMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest,
+                          com.google.analytics.admin.v1alpha.SearchAds360Link>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateSearchAds360Link"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.SearchAds360Link
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "UpdateSearchAds360Link"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateSearchAds360LinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest,
           com.google.analytics.admin.v1alpha.AttributionSettings>
       getGetAttributionSettingsMethod;
@@ -3992,6 +4252,220 @@ public final class AnalyticsAdminServiceGrpc {
       }
     }
     return getRunAccessReportMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest,
+          com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse>
+      getSetAutomatedGa4ConfigurationOptOutMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SetAutomatedGa4ConfigurationOptOut",
+      requestType =
+          com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest.class,
+      responseType =
+          com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest,
+          com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse>
+      getSetAutomatedGa4ConfigurationOptOutMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest,
+            com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse>
+        getSetAutomatedGa4ConfigurationOptOutMethod;
+    if ((getSetAutomatedGa4ConfigurationOptOutMethod =
+            AnalyticsAdminServiceGrpc.getSetAutomatedGa4ConfigurationOptOutMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getSetAutomatedGa4ConfigurationOptOutMethod =
+                AnalyticsAdminServiceGrpc.getSetAutomatedGa4ConfigurationOptOutMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getSetAutomatedGa4ConfigurationOptOutMethod =
+              getSetAutomatedGa4ConfigurationOptOutMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha
+                              .SetAutomatedGa4ConfigurationOptOutRequest,
+                          com.google.analytics.admin.v1alpha
+                              .SetAutomatedGa4ConfigurationOptOutResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "SetAutomatedGa4ConfigurationOptOut"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .SetAutomatedGa4ConfigurationOptOutRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .SetAutomatedGa4ConfigurationOptOutResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "SetAutomatedGa4ConfigurationOptOut"))
+                      .build();
+        }
+      }
+    }
+    return getSetAutomatedGa4ConfigurationOptOutMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest,
+          com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse>
+      getFetchAutomatedGa4ConfigurationOptOutMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchAutomatedGa4ConfigurationOptOut",
+      requestType =
+          com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest.class,
+      responseType =
+          com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest,
+          com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse>
+      getFetchAutomatedGa4ConfigurationOptOutMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest,
+            com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse>
+        getFetchAutomatedGa4ConfigurationOptOutMethod;
+    if ((getFetchAutomatedGa4ConfigurationOptOutMethod =
+            AnalyticsAdminServiceGrpc.getFetchAutomatedGa4ConfigurationOptOutMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getFetchAutomatedGa4ConfigurationOptOutMethod =
+                AnalyticsAdminServiceGrpc.getFetchAutomatedGa4ConfigurationOptOutMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getFetchAutomatedGa4ConfigurationOptOutMethod =
+              getFetchAutomatedGa4ConfigurationOptOutMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha
+                              .FetchAutomatedGa4ConfigurationOptOutRequest,
+                          com.google.analytics.admin.v1alpha
+                              .FetchAutomatedGa4ConfigurationOptOutResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "FetchAutomatedGa4ConfigurationOptOut"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .FetchAutomatedGa4ConfigurationOptOutRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .FetchAutomatedGa4ConfigurationOptOutResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "FetchAutomatedGa4ConfigurationOptOut"))
+                      .build();
+        }
+      }
+    }
+    return getFetchAutomatedGa4ConfigurationOptOutMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest,
+          com.google.analytics.admin.v1alpha.BigQueryLink>
+      getGetBigQueryLinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetBigQueryLink",
+      requestType = com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.BigQueryLink.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest,
+          com.google.analytics.admin.v1alpha.BigQueryLink>
+      getGetBigQueryLinkMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest,
+            com.google.analytics.admin.v1alpha.BigQueryLink>
+        getGetBigQueryLinkMethod;
+    if ((getGetBigQueryLinkMethod = AnalyticsAdminServiceGrpc.getGetBigQueryLinkMethod) == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetBigQueryLinkMethod = AnalyticsAdminServiceGrpc.getGetBigQueryLinkMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getGetBigQueryLinkMethod =
+              getGetBigQueryLinkMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest,
+                          com.google.analytics.admin.v1alpha.BigQueryLink>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetBigQueryLink"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.BigQueryLink.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("GetBigQueryLink"))
+                      .build();
+        }
+      }
+    }
+    return getGetBigQueryLinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest,
+          com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse>
+      getListBigQueryLinksMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListBigQueryLinks",
+      requestType = com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest,
+          com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse>
+      getListBigQueryLinksMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest,
+            com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse>
+        getListBigQueryLinksMethod;
+    if ((getListBigQueryLinksMethod = AnalyticsAdminServiceGrpc.getListBigQueryLinksMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getListBigQueryLinksMethod = AnalyticsAdminServiceGrpc.getListBigQueryLinksMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getListBigQueryLinksMethod =
+              getListBigQueryLinksMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest,
+                          com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListBigQueryLinks"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("ListBigQueryLinks"))
+                      .build();
+        }
+      }
+    }
+    return getListBigQueryLinksMethod;
   }
 
   /** Creates a new async stub that supports all call types for the service */
@@ -4199,7 +4673,7 @@ public final class AnalyticsAdminServiceGrpc {
      * and all child resources (eg: GoogleAdsLinks, Streams, UserLinks)
      * will be permanently purged.
      * https://support.google.com/analytics/answer/6154772
-     * Returns an error if the target is not found, or is not an GA4 Property.
+     * Returns an error if the target is not found, or is not a GA4 Property.
      * </pre>
      */
     public void deleteProperty(
@@ -5166,6 +5640,7 @@ public final class AnalyticsAdminServiceGrpc {
      * <pre>
      * Lookup for a single Audience.
      * Audiences created before 2020 may not be supported.
+     * Default audiences will not show filter definitions.
      * </pre>
      */
     public void getAudience(
@@ -5181,6 +5656,7 @@ public final class AnalyticsAdminServiceGrpc {
      * <pre>
      * Lists Audiences on a property.
      * Audiences created before 2020 may not be supported.
+     * Default audiences will not show filter definitions.
      * </pre>
      */
     public void listAudiences(
@@ -5237,6 +5713,81 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Look up a single SearchAds360Link
+     * </pre>
+     */
+    public void getSearchAds360Link(
+        com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SearchAds360Link>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetSearchAds360LinkMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all SearchAds360Links on a property.
+     * </pre>
+     */
+    public void listSearchAds360Links(
+        com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListSearchAds360LinksMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a SearchAds360Link.
+     * </pre>
+     */
+    public void createSearchAds360Link(
+        com.google.analytics.admin.v1alpha.CreateSearchAds360LinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SearchAds360Link>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateSearchAds360LinkMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a SearchAds360Link on a property.
+     * </pre>
+     */
+    public void deleteSearchAds360Link(
+        com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteSearchAds360LinkMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a SearchAds360Link on a property.
+     * </pre>
+     */
+    public void updateSearchAds360Link(
+        com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SearchAds360Link>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateSearchAds360LinkMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lookup for a AttributionSettings singleton.
      * </pre>
      */
@@ -5286,6 +5837,72 @@ public final class AnalyticsAdminServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getRunAccessReportMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the opt out status for the automated GA4 setup process for a UA
+     * property.
+     * Note: this has no effect on GA4 property.
+     * </pre>
+     */
+    public void setAutomatedGa4ConfigurationOptOut(
+        com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSetAutomatedGa4ConfigurationOptOutMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches the opt out status for the automated GA4 setup process for a UA
+     * property.
+     * Note: this has no effect on GA4 property.
+     * </pre>
+     */
+    public void fetchAutomatedGa4ConfigurationOptOut(
+        com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFetchAutomatedGa4ConfigurationOptOutMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single BigQuery Link.
+     * </pre>
+     */
+    public void getBigQueryLink(
+        com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BigQueryLink>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetBigQueryLinkMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BigQuery Links on a property.
+     * </pre>
+     */
+    public void listBigQueryLinks(
+        com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListBigQueryLinksMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -5813,6 +6430,40 @@ public final class AnalyticsAdminServiceGrpc {
                       com.google.analytics.admin.v1alpha.ArchiveAudienceRequest,
                       com.google.protobuf.Empty>(this, METHODID_ARCHIVE_AUDIENCE)))
           .addMethod(
+              getGetSearchAds360LinkMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest,
+                      com.google.analytics.admin.v1alpha.SearchAds360Link>(
+                      this, METHODID_GET_SEARCH_ADS360LINK)))
+          .addMethod(
+              getListSearchAds360LinksMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest,
+                      com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse>(
+                      this, METHODID_LIST_SEARCH_ADS360LINKS)))
+          .addMethod(
+              getCreateSearchAds360LinkMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.CreateSearchAds360LinkRequest,
+                      com.google.analytics.admin.v1alpha.SearchAds360Link>(
+                      this, METHODID_CREATE_SEARCH_ADS360LINK)))
+          .addMethod(
+              getDeleteSearchAds360LinkMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest,
+                      com.google.protobuf.Empty>(this, METHODID_DELETE_SEARCH_ADS360LINK)))
+          .addMethod(
+              getUpdateSearchAds360LinkMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest,
+                      com.google.analytics.admin.v1alpha.SearchAds360Link>(
+                      this, METHODID_UPDATE_SEARCH_ADS360LINK)))
+          .addMethod(
               getGetAttributionSettingsMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
@@ -5833,6 +6484,37 @@ public final class AnalyticsAdminServiceGrpc {
                       com.google.analytics.admin.v1alpha.RunAccessReportRequest,
                       com.google.analytics.admin.v1alpha.RunAccessReportResponse>(
                       this, METHODID_RUN_ACCESS_REPORT)))
+          .addMethod(
+              getSetAutomatedGa4ConfigurationOptOutMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest,
+                      com.google.analytics.admin.v1alpha
+                          .SetAutomatedGa4ConfigurationOptOutResponse>(
+                      this, METHODID_SET_AUTOMATED_GA4CONFIGURATION_OPT_OUT)))
+          .addMethod(
+              getFetchAutomatedGa4ConfigurationOptOutMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha
+                          .FetchAutomatedGa4ConfigurationOptOutRequest,
+                      com.google.analytics.admin.v1alpha
+                          .FetchAutomatedGa4ConfigurationOptOutResponse>(
+                      this, METHODID_FETCH_AUTOMATED_GA4CONFIGURATION_OPT_OUT)))
+          .addMethod(
+              getGetBigQueryLinkMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest,
+                      com.google.analytics.admin.v1alpha.BigQueryLink>(
+                      this, METHODID_GET_BIG_QUERY_LINK)))
+          .addMethod(
+              getListBigQueryLinksMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest,
+                      com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse>(
+                      this, METHODID_LIST_BIG_QUERY_LINKS)))
           .build();
     }
   }
@@ -6028,7 +6710,7 @@ public final class AnalyticsAdminServiceGrpc {
      * and all child resources (eg: GoogleAdsLinks, Streams, UserLinks)
      * will be permanently purged.
      * https://support.google.com/analytics/answer/6154772
-     * Returns an error if the target is not found, or is not an GA4 Property.
+     * Returns an error if the target is not found, or is not a GA4 Property.
      * </pre>
      */
     public void deleteProperty(
@@ -7125,6 +7807,7 @@ public final class AnalyticsAdminServiceGrpc {
      * <pre>
      * Lookup for a single Audience.
      * Audiences created before 2020 may not be supported.
+     * Default audiences will not show filter definitions.
      * </pre>
      */
     public void getAudience(
@@ -7142,6 +7825,7 @@ public final class AnalyticsAdminServiceGrpc {
      * <pre>
      * Lists Audiences on a property.
      * Audiences created before 2020 may not be supported.
+     * Default audiences will not show filter definitions.
      * </pre>
      */
     public void listAudiences(
@@ -7206,6 +7890,91 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Look up a single SearchAds360Link
+     * </pre>
+     */
+    public void getSearchAds360Link(
+        com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SearchAds360Link>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetSearchAds360LinkMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all SearchAds360Links on a property.
+     * </pre>
+     */
+    public void listSearchAds360Links(
+        com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListSearchAds360LinksMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a SearchAds360Link.
+     * </pre>
+     */
+    public void createSearchAds360Link(
+        com.google.analytics.admin.v1alpha.CreateSearchAds360LinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SearchAds360Link>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateSearchAds360LinkMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a SearchAds360Link on a property.
+     * </pre>
+     */
+    public void deleteSearchAds360Link(
+        com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteSearchAds360LinkMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a SearchAds360Link on a property.
+     * </pre>
+     */
+    public void updateSearchAds360Link(
+        com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SearchAds360Link>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateSearchAds360LinkMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lookup for a AttributionSettings singleton.
      * </pre>
      */
@@ -7259,6 +8028,80 @@ public final class AnalyticsAdminServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRunAccessReportMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the opt out status for the automated GA4 setup process for a UA
+     * property.
+     * Note: this has no effect on GA4 property.
+     * </pre>
+     */
+    public void setAutomatedGa4ConfigurationOptOut(
+        com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSetAutomatedGa4ConfigurationOptOutMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches the opt out status for the automated GA4 setup process for a UA
+     * property.
+     * Note: this has no effect on GA4 property.
+     * </pre>
+     */
+    public void fetchAutomatedGa4ConfigurationOptOut(
+        com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFetchAutomatedGa4ConfigurationOptOutMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single BigQuery Link.
+     * </pre>
+     */
+    public void getBigQueryLink(
+        com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BigQueryLink>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetBigQueryLinkMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BigQuery Links on a property.
+     * </pre>
+     */
+    public void listBigQueryLinks(
+        com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListBigQueryLinksMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -7426,7 +8269,7 @@ public final class AnalyticsAdminServiceGrpc {
      * and all child resources (eg: GoogleAdsLinks, Streams, UserLinks)
      * will be permanently purged.
      * https://support.google.com/analytics/answer/6154772
-     * Returns an error if the target is not found, or is not an GA4 Property.
+     * Returns an error if the target is not found, or is not a GA4 Property.
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.Property deleteProperty(
@@ -8305,6 +9148,7 @@ public final class AnalyticsAdminServiceGrpc {
      * <pre>
      * Lookup for a single Audience.
      * Audiences created before 2020 may not be supported.
+     * Default audiences will not show filter definitions.
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.Audience getAudience(
@@ -8319,6 +9163,7 @@ public final class AnalyticsAdminServiceGrpc {
      * <pre>
      * Lists Audiences on a property.
      * Audiences created before 2020 may not be supported.
+     * Default audiences will not show filter definitions.
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ListAudiencesResponse listAudiences(
@@ -8370,6 +9215,71 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Look up a single SearchAds360Link
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SearchAds360Link getSearchAds360Link(
+        com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSearchAds360LinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all SearchAds360Links on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse listSearchAds360Links(
+        com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSearchAds360LinksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a SearchAds360Link.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SearchAds360Link createSearchAds360Link(
+        com.google.analytics.admin.v1alpha.CreateSearchAds360LinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSearchAds360LinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a SearchAds360Link on a property.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSearchAds360Link(
+        com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSearchAds360LinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a SearchAds360Link on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SearchAds360Link updateSearchAds360Link(
+        com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSearchAds360LinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lookup for a AttributionSettings singleton.
      * </pre>
      */
@@ -8413,6 +9323,65 @@ public final class AnalyticsAdminServiceGrpc {
         com.google.analytics.admin.v1alpha.RunAccessReportRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRunAccessReportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the opt out status for the automated GA4 setup process for a UA
+     * property.
+     * Note: this has no effect on GA4 property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse
+        setAutomatedGa4ConfigurationOptOut(
+            com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetAutomatedGa4ConfigurationOptOutMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches the opt out status for the automated GA4 setup process for a UA
+     * property.
+     * Note: this has no effect on GA4 property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse
+        fetchAutomatedGa4ConfigurationOptOut(
+            com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchAutomatedGa4ConfigurationOptOutMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single BigQuery Link.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.BigQueryLink getBigQueryLink(
+        com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBigQueryLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BigQuery Links on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse listBigQueryLinks(
+        com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBigQueryLinksMethod(), getCallOptions(), request);
     }
   }
 
@@ -8588,7 +9557,7 @@ public final class AnalyticsAdminServiceGrpc {
      * and all child resources (eg: GoogleAdsLinks, Streams, UserLinks)
      * will be permanently purged.
      * https://support.google.com/analytics/answer/6154772
-     * Returns an error if the target is not found, or is not an GA4 Property.
+     * Returns an error if the target is not found, or is not a GA4 Property.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -9540,6 +10509,7 @@ public final class AnalyticsAdminServiceGrpc {
      * <pre>
      * Lookup for a single Audience.
      * Audiences created before 2020 may not be supported.
+     * Default audiences will not show filter definitions.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -9555,6 +10525,7 @@ public final class AnalyticsAdminServiceGrpc {
      * <pre>
      * Lists Audiences on a property.
      * Audiences created before 2020 may not be supported.
+     * Default audiences will not show filter definitions.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -9609,6 +10580,79 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Look up a single SearchAds360Link
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.SearchAds360Link>
+        getSearchAds360Link(com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSearchAds360LinkMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all SearchAds360Links on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse>
+        listSearchAds360Links(
+            com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListSearchAds360LinksMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a SearchAds360Link.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.SearchAds360Link>
+        createSearchAds360Link(
+            com.google.analytics.admin.v1alpha.CreateSearchAds360LinkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateSearchAds360LinkMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a SearchAds360Link on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteSearchAds360Link(
+            com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteSearchAds360LinkMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a SearchAds360Link on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.SearchAds360Link>
+        updateSearchAds360Link(
+            com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateSearchAds360LinkMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lookup for a AttributionSettings singleton.
      * </pre>
      */
@@ -9657,6 +10701,71 @@ public final class AnalyticsAdminServiceGrpc {
         runAccessReport(com.google.analytics.admin.v1alpha.RunAccessReportRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRunAccessReportMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the opt out status for the automated GA4 setup process for a UA
+     * property.
+     * Note: this has no effect on GA4 property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse>
+        setAutomatedGa4ConfigurationOptOut(
+            com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSetAutomatedGa4ConfigurationOptOutMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches the opt out status for the automated GA4 setup process for a UA
+     * property.
+     * Note: this has no effect on GA4 property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse>
+        fetchAutomatedGa4ConfigurationOptOut(
+            com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFetchAutomatedGa4ConfigurationOptOutMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single BigQuery Link.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.BigQueryLink>
+        getBigQueryLink(com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetBigQueryLinkMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BigQuery Links on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse>
+        listBigQueryLinks(com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListBigQueryLinksMethod(), getCallOptions()), request);
     }
   }
 
@@ -9736,9 +10845,18 @@ public final class AnalyticsAdminServiceGrpc {
   private static final int METHODID_CREATE_AUDIENCE = 73;
   private static final int METHODID_UPDATE_AUDIENCE = 74;
   private static final int METHODID_ARCHIVE_AUDIENCE = 75;
-  private static final int METHODID_GET_ATTRIBUTION_SETTINGS = 76;
-  private static final int METHODID_UPDATE_ATTRIBUTION_SETTINGS = 77;
-  private static final int METHODID_RUN_ACCESS_REPORT = 78;
+  private static final int METHODID_GET_SEARCH_ADS360LINK = 76;
+  private static final int METHODID_LIST_SEARCH_ADS360LINKS = 77;
+  private static final int METHODID_CREATE_SEARCH_ADS360LINK = 78;
+  private static final int METHODID_DELETE_SEARCH_ADS360LINK = 79;
+  private static final int METHODID_UPDATE_SEARCH_ADS360LINK = 80;
+  private static final int METHODID_GET_ATTRIBUTION_SETTINGS = 81;
+  private static final int METHODID_UPDATE_ATTRIBUTION_SETTINGS = 82;
+  private static final int METHODID_RUN_ACCESS_REPORT = 83;
+  private static final int METHODID_SET_AUTOMATED_GA4CONFIGURATION_OPT_OUT = 84;
+  private static final int METHODID_FETCH_AUTOMATED_GA4CONFIGURATION_OPT_OUT = 85;
+  private static final int METHODID_GET_BIG_QUERY_LINK = 86;
+  private static final int METHODID_LIST_BIG_QUERY_LINKS = 87;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -10251,6 +11369,36 @@ public final class AnalyticsAdminServiceGrpc {
               (com.google.analytics.admin.v1alpha.ArchiveAudienceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
+        case METHODID_GET_SEARCH_ADS360LINK:
+          serviceImpl.getSearchAds360Link(
+              (com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SearchAds360Link>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_SEARCH_ADS360LINKS:
+          serviceImpl.listSearchAds360Links(
+              (com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_SEARCH_ADS360LINK:
+          serviceImpl.createSearchAds360Link(
+              (com.google.analytics.admin.v1alpha.CreateSearchAds360LinkRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SearchAds360Link>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_SEARCH_ADS360LINK:
+          serviceImpl.deleteSearchAds360Link(
+              (com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_UPDATE_SEARCH_ADS360LINK:
+          serviceImpl.updateSearchAds360Link(
+              (com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SearchAds360Link>)
+                  responseObserver);
+          break;
         case METHODID_GET_ATTRIBUTION_SETTINGS:
           serviceImpl.getAttributionSettings(
               (com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest) request,
@@ -10268,6 +11416,37 @@ public final class AnalyticsAdminServiceGrpc {
               (com.google.analytics.admin.v1alpha.RunAccessReportRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.analytics.admin.v1alpha.RunAccessReportResponse>)
+                  responseObserver);
+          break;
+        case METHODID_SET_AUTOMATED_GA4CONFIGURATION_OPT_OUT:
+          serviceImpl.setAutomatedGa4ConfigurationOptOut(
+              (com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha
+                          .SetAutomatedGa4ConfigurationOptOutResponse>)
+                  responseObserver);
+          break;
+        case METHODID_FETCH_AUTOMATED_GA4CONFIGURATION_OPT_OUT:
+          serviceImpl.fetchAutomatedGa4ConfigurationOptOut(
+              (com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha
+                          .FetchAutomatedGa4ConfigurationOptOutResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_BIG_QUERY_LINK:
+          serviceImpl.getBigQueryLink(
+              (com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BigQueryLink>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_BIG_QUERY_LINKS:
+          serviceImpl.listBigQueryLinks(
+              (com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse>)
                   responseObserver);
           break;
         default:
@@ -10410,9 +11589,18 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getCreateAudienceMethod())
                       .addMethod(getUpdateAudienceMethod())
                       .addMethod(getArchiveAudienceMethod())
+                      .addMethod(getGetSearchAds360LinkMethod())
+                      .addMethod(getListSearchAds360LinksMethod())
+                      .addMethod(getCreateSearchAds360LinkMethod())
+                      .addMethod(getDeleteSearchAds360LinkMethod())
+                      .addMethod(getUpdateSearchAds360LinkMethod())
                       .addMethod(getGetAttributionSettingsMethod())
                       .addMethod(getUpdateAttributionSettingsMethod())
                       .addMethod(getRunAccessReportMethod())
+                      .addMethod(getSetAutomatedGa4ConfigurationOptOutMethod())
+                      .addMethod(getFetchAutomatedGa4ConfigurationOptOutMethod())
+                      .addMethod(getGetBigQueryLinkMethod())
+                      .addMethod(getListBigQueryLinksMethod())
                       .build();
         }
       }

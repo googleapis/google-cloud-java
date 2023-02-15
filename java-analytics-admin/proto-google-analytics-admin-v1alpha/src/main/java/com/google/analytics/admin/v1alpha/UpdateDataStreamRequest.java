@@ -121,9 +121,9 @@ public final class UpdateDataStreamRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The list of fields to be updated. Omitted fields will not be updated.
-   * To replace the entire entity, use one path with the string "*" to match
-   * all fields.
+   * Required. The list of fields to be updated. Omitted fields will not be
+   * updated. To replace the entire entity, use one path with the string "*" to
+   * match all fields.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -139,9 +139,9 @@ public final class UpdateDataStreamRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The list of fields to be updated. Omitted fields will not be updated.
-   * To replace the entire entity, use one path with the string "*" to match
-   * all fields.
+   * Required. The list of fields to be updated. Omitted fields will not be
+   * updated. To replace the entire entity, use one path with the string "*" to
+   * match all fields.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -157,9 +157,9 @@ public final class UpdateDataStreamRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The list of fields to be updated. Omitted fields will not be updated.
-   * To replace the entire entity, use one path with the string "*" to match
-   * all fields.
+   * Required. The list of fields to be updated. Omitted fields will not be
+   * updated. To replace the entire entity, use one path with the string "*" to
+   * match all fields.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -745,9 +745,9 @@ public final class UpdateDataStreamRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The list of fields to be updated. Omitted fields will not be updated.
-     * To replace the entire entity, use one path with the string "*" to match
-     * all fields.
+     * Required. The list of fields to be updated. Omitted fields will not be
+     * updated. To replace the entire entity, use one path with the string "*" to
+     * match all fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -762,9 +762,9 @@ public final class UpdateDataStreamRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The list of fields to be updated. Omitted fields will not be updated.
-     * To replace the entire entity, use one path with the string "*" to match
-     * all fields.
+     * Required. The list of fields to be updated. Omitted fields will not be
+     * updated. To replace the entire entity, use one path with the string "*" to
+     * match all fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -785,9 +785,9 @@ public final class UpdateDataStreamRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The list of fields to be updated. Omitted fields will not be updated.
-     * To replace the entire entity, use one path with the string "*" to match
-     * all fields.
+     * Required. The list of fields to be updated. Omitted fields will not be
+     * updated. To replace the entire entity, use one path with the string "*" to
+     * match all fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -810,9 +810,9 @@ public final class UpdateDataStreamRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The list of fields to be updated. Omitted fields will not be updated.
-     * To replace the entire entity, use one path with the string "*" to match
-     * all fields.
+     * Required. The list of fields to be updated. Omitted fields will not be
+     * updated. To replace the entire entity, use one path with the string "*" to
+     * match all fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -832,9 +832,9 @@ public final class UpdateDataStreamRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The list of fields to be updated. Omitted fields will not be updated.
-     * To replace the entire entity, use one path with the string "*" to match
-     * all fields.
+     * Required. The list of fields to be updated. Omitted fields will not be
+     * updated. To replace the entire entity, use one path with the string "*" to
+     * match all fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -860,9 +860,9 @@ public final class UpdateDataStreamRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The list of fields to be updated. Omitted fields will not be updated.
-     * To replace the entire entity, use one path with the string "*" to match
-     * all fields.
+     * Required. The list of fields to be updated. Omitted fields will not be
+     * updated. To replace the entire entity, use one path with the string "*" to
+     * match all fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -882,9 +882,9 @@ public final class UpdateDataStreamRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The list of fields to be updated. Omitted fields will not be updated.
-     * To replace the entire entity, use one path with the string "*" to match
-     * all fields.
+     * Required. The list of fields to be updated. Omitted fields will not be
+     * updated. To replace the entire entity, use one path with the string "*" to
+     * match all fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -899,9 +899,9 @@ public final class UpdateDataStreamRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The list of fields to be updated. Omitted fields will not be updated.
-     * To replace the entire entity, use one path with the string "*" to match
-     * all fields.
+     * Required. The list of fields to be updated. Omitted fields will not be
+     * updated. To replace the entire entity, use one path with the string "*" to
+     * match all fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -920,9 +920,9 @@ public final class UpdateDataStreamRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The list of fields to be updated. Omitted fields will not be updated.
-     * To replace the entire entity, use one path with the string "*" to match
-     * all fields.
+     * Required. The list of fields to be updated. Omitted fields will not be
+     * updated. To replace the entire entity, use one path with the string "*" to
+     * match all fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];

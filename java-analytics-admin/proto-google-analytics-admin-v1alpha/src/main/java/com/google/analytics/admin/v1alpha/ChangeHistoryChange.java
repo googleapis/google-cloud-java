@@ -534,6 +534,41 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     * A snapshot of a SearchAds360Link resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.SearchAds360Link search_ads_360_link = 16;</code>
+     *
+     * @return Whether the searchAds360Link field is set.
+     */
+    boolean hasSearchAds360Link();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a SearchAds360Link resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.SearchAds360Link search_ads_360_link = 16;</code>
+     *
+     * @return The searchAds360Link.
+     */
+    com.google.analytics.admin.v1alpha.SearchAds360Link getSearchAds360Link();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a SearchAds360Link resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.SearchAds360Link search_ads_360_link = 16;</code>
+     */
+    com.google.analytics.admin.v1alpha.SearchAds360LinkOrBuilder getSearchAds360LinkOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * A snapshot of a DataStream resource in change history.
      * </pre>
      *
@@ -600,6 +635,76 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      */
     com.google.analytics.admin.v1alpha.AttributionSettingsOrBuilder
         getAttributionSettingsOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of an ExpandedDataSet resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.ExpandedDataSet expanded_data_set = 21;</code>
+     *
+     * @return Whether the expandedDataSet field is set.
+     */
+    boolean hasExpandedDataSet();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of an ExpandedDataSet resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.ExpandedDataSet expanded_data_set = 21;</code>
+     *
+     * @return The expandedDataSet.
+     */
+    com.google.analytics.admin.v1alpha.ExpandedDataSet getExpandedDataSet();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of an ExpandedDataSet resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.ExpandedDataSet expanded_data_set = 21;</code>
+     */
+    com.google.analytics.admin.v1alpha.ExpandedDataSetOrBuilder getExpandedDataSetOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a BigQuery link resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.BigQueryLink bigquery_link = 23;</code>
+     *
+     * @return Whether the bigqueryLink field is set.
+     */
+    boolean hasBigqueryLink();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a BigQuery link resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.BigQueryLink bigquery_link = 23;</code>
+     *
+     * @return The bigqueryLink.
+     */
+    com.google.analytics.admin.v1alpha.BigQueryLink getBigqueryLink();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a BigQuery link resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.BigQueryLink bigquery_link = 23;</code>
+     */
+    com.google.analytics.admin.v1alpha.BigQueryLinkOrBuilder getBigqueryLinkOrBuilder();
 
     public com.google.analytics.admin.v1alpha.ChangeHistoryChange.ChangeHistoryResource.ResourceCase
         getResourceCase();
@@ -672,8 +777,11 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       CUSTOM_DIMENSION(13),
       CUSTOM_METRIC(14),
       DATA_RETENTION_SETTINGS(15),
+      SEARCH_ADS_360_LINK(16),
       DATA_STREAM(18),
       ATTRIBUTION_SETTINGS(20),
+      EXPANDED_DATA_SET(21),
+      BIGQUERY_LINK(23),
       RESOURCE_NOT_SET(0);
       private final int value;
 
@@ -716,10 +824,16 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             return CUSTOM_METRIC;
           case 15:
             return DATA_RETENTION_SETTINGS;
+          case 16:
+            return SEARCH_ADS_360_LINK;
           case 18:
             return DATA_STREAM;
           case 20:
             return ATTRIBUTION_SETTINGS;
+          case 21:
+            return EXPANDED_DATA_SET;
+          case 23:
+            return BIGQUERY_LINK;
           case 0:
             return RESOURCE_NOT_SET;
           default:
@@ -1390,6 +1504,58 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       return com.google.analytics.admin.v1alpha.DataRetentionSettings.getDefaultInstance();
     }
 
+    public static final int SEARCH_ADS_360_LINK_FIELD_NUMBER = 16;
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a SearchAds360Link resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.SearchAds360Link search_ads_360_link = 16;</code>
+     *
+     * @return Whether the searchAds360Link field is set.
+     */
+    @java.lang.Override
+    public boolean hasSearchAds360Link() {
+      return resourceCase_ == 16;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a SearchAds360Link resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.SearchAds360Link search_ads_360_link = 16;</code>
+     *
+     * @return The searchAds360Link.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.SearchAds360Link getSearchAds360Link() {
+      if (resourceCase_ == 16) {
+        return (com.google.analytics.admin.v1alpha.SearchAds360Link) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.SearchAds360Link.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a SearchAds360Link resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.SearchAds360Link search_ads_360_link = 16;</code>
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.SearchAds360LinkOrBuilder
+        getSearchAds360LinkOrBuilder() {
+      if (resourceCase_ == 16) {
+        return (com.google.analytics.admin.v1alpha.SearchAds360Link) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.SearchAds360Link.getDefaultInstance();
+    }
+
     public static final int DATA_STREAM_FIELD_NUMBER = 18;
     /**
      *
@@ -1493,6 +1659,109 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       return com.google.analytics.admin.v1alpha.AttributionSettings.getDefaultInstance();
     }
 
+    public static final int EXPANDED_DATA_SET_FIELD_NUMBER = 21;
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of an ExpandedDataSet resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.ExpandedDataSet expanded_data_set = 21;</code>
+     *
+     * @return Whether the expandedDataSet field is set.
+     */
+    @java.lang.Override
+    public boolean hasExpandedDataSet() {
+      return resourceCase_ == 21;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of an ExpandedDataSet resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.ExpandedDataSet expanded_data_set = 21;</code>
+     *
+     * @return The expandedDataSet.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.ExpandedDataSet getExpandedDataSet() {
+      if (resourceCase_ == 21) {
+        return (com.google.analytics.admin.v1alpha.ExpandedDataSet) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.ExpandedDataSet.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of an ExpandedDataSet resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.ExpandedDataSet expanded_data_set = 21;</code>
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.ExpandedDataSetOrBuilder
+        getExpandedDataSetOrBuilder() {
+      if (resourceCase_ == 21) {
+        return (com.google.analytics.admin.v1alpha.ExpandedDataSet) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.ExpandedDataSet.getDefaultInstance();
+    }
+
+    public static final int BIGQUERY_LINK_FIELD_NUMBER = 23;
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a BigQuery link resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.BigQueryLink bigquery_link = 23;</code>
+     *
+     * @return Whether the bigqueryLink field is set.
+     */
+    @java.lang.Override
+    public boolean hasBigqueryLink() {
+      return resourceCase_ == 23;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a BigQuery link resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.BigQueryLink bigquery_link = 23;</code>
+     *
+     * @return The bigqueryLink.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.BigQueryLink getBigqueryLink() {
+      if (resourceCase_ == 23) {
+        return (com.google.analytics.admin.v1alpha.BigQueryLink) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.BigQueryLink.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a BigQuery link resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.BigQueryLink bigquery_link = 23;</code>
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.BigQueryLinkOrBuilder getBigqueryLinkOrBuilder() {
+      if (resourceCase_ == 23) {
+        return (com.google.analytics.admin.v1alpha.BigQueryLink) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.BigQueryLink.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1549,11 +1818,20 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         output.writeMessage(
             15, (com.google.analytics.admin.v1alpha.DataRetentionSettings) resource_);
       }
+      if (resourceCase_ == 16) {
+        output.writeMessage(16, (com.google.analytics.admin.v1alpha.SearchAds360Link) resource_);
+      }
       if (resourceCase_ == 18) {
         output.writeMessage(18, (com.google.analytics.admin.v1alpha.DataStream) resource_);
       }
       if (resourceCase_ == 20) {
         output.writeMessage(20, (com.google.analytics.admin.v1alpha.AttributionSettings) resource_);
+      }
+      if (resourceCase_ == 21) {
+        output.writeMessage(21, (com.google.analytics.admin.v1alpha.ExpandedDataSet) resource_);
+      }
+      if (resourceCase_ == 23) {
+        output.writeMessage(23, (com.google.analytics.admin.v1alpha.BigQueryLink) resource_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1626,6 +1904,11 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 15, (com.google.analytics.admin.v1alpha.DataRetentionSettings) resource_);
       }
+      if (resourceCase_ == 16) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                16, (com.google.analytics.admin.v1alpha.SearchAds360Link) resource_);
+      }
       if (resourceCase_ == 18) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -1635,6 +1918,16 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 20, (com.google.analytics.admin.v1alpha.AttributionSettings) resource_);
+      }
+      if (resourceCase_ == 21) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                21, (com.google.analytics.admin.v1alpha.ExpandedDataSet) resource_);
+      }
+      if (resourceCase_ == 23) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                23, (com.google.analytics.admin.v1alpha.BigQueryLink) resource_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1695,11 +1988,20 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         case 15:
           if (!getDataRetentionSettings().equals(other.getDataRetentionSettings())) return false;
           break;
+        case 16:
+          if (!getSearchAds360Link().equals(other.getSearchAds360Link())) return false;
+          break;
         case 18:
           if (!getDataStream().equals(other.getDataStream())) return false;
           break;
         case 20:
           if (!getAttributionSettings().equals(other.getAttributionSettings())) return false;
+          break;
+        case 21:
+          if (!getExpandedDataSet().equals(other.getExpandedDataSet())) return false;
+          break;
+        case 23:
+          if (!getBigqueryLink().equals(other.getBigqueryLink())) return false;
           break;
         case 0:
         default:
@@ -1764,6 +2066,10 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           hash = (37 * hash) + DATA_RETENTION_SETTINGS_FIELD_NUMBER;
           hash = (53 * hash) + getDataRetentionSettings().hashCode();
           break;
+        case 16:
+          hash = (37 * hash) + SEARCH_ADS_360_LINK_FIELD_NUMBER;
+          hash = (53 * hash) + getSearchAds360Link().hashCode();
+          break;
         case 18:
           hash = (37 * hash) + DATA_STREAM_FIELD_NUMBER;
           hash = (53 * hash) + getDataStream().hashCode();
@@ -1771,6 +2077,14 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         case 20:
           hash = (37 * hash) + ATTRIBUTION_SETTINGS_FIELD_NUMBER;
           hash = (53 * hash) + getAttributionSettings().hashCode();
+          break;
+        case 21:
+          hash = (37 * hash) + EXPANDED_DATA_SET_FIELD_NUMBER;
+          hash = (53 * hash) + getExpandedDataSet().hashCode();
+          break;
+        case 23:
+          hash = (37 * hash) + BIGQUERY_LINK_FIELD_NUMBER;
+          hash = (53 * hash) + getBigqueryLink().hashCode();
           break;
         case 0:
         default:
@@ -1963,11 +2277,20 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         if (dataRetentionSettingsBuilder_ != null) {
           dataRetentionSettingsBuilder_.clear();
         }
+        if (searchAds360LinkBuilder_ != null) {
+          searchAds360LinkBuilder_.clear();
+        }
         if (dataStreamBuilder_ != null) {
           dataStreamBuilder_.clear();
         }
         if (attributionSettingsBuilder_ != null) {
           attributionSettingsBuilder_.clear();
+        }
+        if (expandedDataSetBuilder_ != null) {
+          expandedDataSetBuilder_.clear();
+        }
+        if (bigqueryLinkBuilder_ != null) {
+          bigqueryLinkBuilder_.clear();
         }
         resourceCase_ = 0;
         resource_ = null;
@@ -2055,11 +2378,20 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         if (resourceCase_ == 15 && dataRetentionSettingsBuilder_ != null) {
           result.resource_ = dataRetentionSettingsBuilder_.build();
         }
+        if (resourceCase_ == 16 && searchAds360LinkBuilder_ != null) {
+          result.resource_ = searchAds360LinkBuilder_.build();
+        }
         if (resourceCase_ == 18 && dataStreamBuilder_ != null) {
           result.resource_ = dataStreamBuilder_.build();
         }
         if (resourceCase_ == 20 && attributionSettingsBuilder_ != null) {
           result.resource_ = attributionSettingsBuilder_.build();
+        }
+        if (resourceCase_ == 21 && expandedDataSetBuilder_ != null) {
+          result.resource_ = expandedDataSetBuilder_.build();
+        }
+        if (resourceCase_ == 23 && bigqueryLinkBuilder_ != null) {
+          result.resource_ = bigqueryLinkBuilder_.build();
         }
       }
 
@@ -2178,6 +2510,11 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               mergeDataRetentionSettings(other.getDataRetentionSettings());
               break;
             }
+          case SEARCH_ADS_360_LINK:
+            {
+              mergeSearchAds360Link(other.getSearchAds360Link());
+              break;
+            }
           case DATA_STREAM:
             {
               mergeDataStream(other.getDataStream());
@@ -2186,6 +2523,16 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           case ATTRIBUTION_SETTINGS:
             {
               mergeAttributionSettings(other.getAttributionSettings());
+              break;
+            }
+          case EXPANDED_DATA_SET:
+            {
+              mergeExpandedDataSet(other.getExpandedDataSet());
+              break;
+            }
+          case BIGQUERY_LINK:
+            {
+              mergeBigqueryLink(other.getBigqueryLink());
               break;
             }
           case RESOURCE_NOT_SET:
@@ -2300,6 +2647,13 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
                   resourceCase_ = 15;
                   break;
                 } // case 122
+              case 130:
+                {
+                  input.readMessage(
+                      getSearchAds360LinkFieldBuilder().getBuilder(), extensionRegistry);
+                  resourceCase_ = 16;
+                  break;
+                } // case 130
               case 146:
                 {
                   input.readMessage(getDataStreamFieldBuilder().getBuilder(), extensionRegistry);
@@ -2313,6 +2667,19 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
                   resourceCase_ = 20;
                   break;
                 } // case 162
+              case 170:
+                {
+                  input.readMessage(
+                      getExpandedDataSetFieldBuilder().getBuilder(), extensionRegistry);
+                  resourceCase_ = 21;
+                  break;
+                } // case 170
+              case 186:
+                {
+                  input.readMessage(getBigqueryLinkFieldBuilder().getBuilder(), extensionRegistry);
+                  resourceCase_ = 23;
+                  break;
+                } // case 186
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5010,6 +5377,220 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.SearchAds360Link,
+              com.google.analytics.admin.v1alpha.SearchAds360Link.Builder,
+              com.google.analytics.admin.v1alpha.SearchAds360LinkOrBuilder>
+          searchAds360LinkBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a SearchAds360Link resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.SearchAds360Link search_ads_360_link = 16;</code>
+       *
+       * @return Whether the searchAds360Link field is set.
+       */
+      @java.lang.Override
+      public boolean hasSearchAds360Link() {
+        return resourceCase_ == 16;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a SearchAds360Link resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.SearchAds360Link search_ads_360_link = 16;</code>
+       *
+       * @return The searchAds360Link.
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.SearchAds360Link getSearchAds360Link() {
+        if (searchAds360LinkBuilder_ == null) {
+          if (resourceCase_ == 16) {
+            return (com.google.analytics.admin.v1alpha.SearchAds360Link) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.SearchAds360Link.getDefaultInstance();
+        } else {
+          if (resourceCase_ == 16) {
+            return searchAds360LinkBuilder_.getMessage();
+          }
+          return com.google.analytics.admin.v1alpha.SearchAds360Link.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a SearchAds360Link resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.SearchAds360Link search_ads_360_link = 16;</code>
+       */
+      public Builder setSearchAds360Link(
+          com.google.analytics.admin.v1alpha.SearchAds360Link value) {
+        if (searchAds360LinkBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          searchAds360LinkBuilder_.setMessage(value);
+        }
+        resourceCase_ = 16;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a SearchAds360Link resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.SearchAds360Link search_ads_360_link = 16;</code>
+       */
+      public Builder setSearchAds360Link(
+          com.google.analytics.admin.v1alpha.SearchAds360Link.Builder builderForValue) {
+        if (searchAds360LinkBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          searchAds360LinkBuilder_.setMessage(builderForValue.build());
+        }
+        resourceCase_ = 16;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a SearchAds360Link resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.SearchAds360Link search_ads_360_link = 16;</code>
+       */
+      public Builder mergeSearchAds360Link(
+          com.google.analytics.admin.v1alpha.SearchAds360Link value) {
+        if (searchAds360LinkBuilder_ == null) {
+          if (resourceCase_ == 16
+              && resource_
+                  != com.google.analytics.admin.v1alpha.SearchAds360Link.getDefaultInstance()) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.SearchAds360Link.newBuilder(
+                        (com.google.analytics.admin.v1alpha.SearchAds360Link) resource_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          if (resourceCase_ == 16) {
+            searchAds360LinkBuilder_.mergeFrom(value);
+          } else {
+            searchAds360LinkBuilder_.setMessage(value);
+          }
+        }
+        resourceCase_ = 16;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a SearchAds360Link resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.SearchAds360Link search_ads_360_link = 16;</code>
+       */
+      public Builder clearSearchAds360Link() {
+        if (searchAds360LinkBuilder_ == null) {
+          if (resourceCase_ == 16) {
+            resourceCase_ = 0;
+            resource_ = null;
+            onChanged();
+          }
+        } else {
+          if (resourceCase_ == 16) {
+            resourceCase_ = 0;
+            resource_ = null;
+          }
+          searchAds360LinkBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a SearchAds360Link resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.SearchAds360Link search_ads_360_link = 16;</code>
+       */
+      public com.google.analytics.admin.v1alpha.SearchAds360Link.Builder
+          getSearchAds360LinkBuilder() {
+        return getSearchAds360LinkFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a SearchAds360Link resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.SearchAds360Link search_ads_360_link = 16;</code>
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.SearchAds360LinkOrBuilder
+          getSearchAds360LinkOrBuilder() {
+        if ((resourceCase_ == 16) && (searchAds360LinkBuilder_ != null)) {
+          return searchAds360LinkBuilder_.getMessageOrBuilder();
+        } else {
+          if (resourceCase_ == 16) {
+            return (com.google.analytics.admin.v1alpha.SearchAds360Link) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.SearchAds360Link.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a SearchAds360Link resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.SearchAds360Link search_ads_360_link = 16;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.SearchAds360Link,
+              com.google.analytics.admin.v1alpha.SearchAds360Link.Builder,
+              com.google.analytics.admin.v1alpha.SearchAds360LinkOrBuilder>
+          getSearchAds360LinkFieldBuilder() {
+        if (searchAds360LinkBuilder_ == null) {
+          if (!(resourceCase_ == 16)) {
+            resource_ = com.google.analytics.admin.v1alpha.SearchAds360Link.getDefaultInstance();
+          }
+          searchAds360LinkBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.analytics.admin.v1alpha.SearchAds360Link,
+                  com.google.analytics.admin.v1alpha.SearchAds360Link.Builder,
+                  com.google.analytics.admin.v1alpha.SearchAds360LinkOrBuilder>(
+                  (com.google.analytics.admin.v1alpha.SearchAds360Link) resource_,
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        resourceCase_ = 16;
+        onChanged();
+        return searchAds360LinkBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
               com.google.analytics.admin.v1alpha.DataStream,
               com.google.analytics.admin.v1alpha.DataStream.Builder,
               com.google.analytics.admin.v1alpha.DataStreamOrBuilder>
@@ -5430,6 +6011,429 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 20;
         onChanged();
         return attributionSettingsBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.ExpandedDataSet,
+              com.google.analytics.admin.v1alpha.ExpandedDataSet.Builder,
+              com.google.analytics.admin.v1alpha.ExpandedDataSetOrBuilder>
+          expandedDataSetBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an ExpandedDataSet resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.ExpandedDataSet expanded_data_set = 21;</code>
+       *
+       * @return Whether the expandedDataSet field is set.
+       */
+      @java.lang.Override
+      public boolean hasExpandedDataSet() {
+        return resourceCase_ == 21;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an ExpandedDataSet resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.ExpandedDataSet expanded_data_set = 21;</code>
+       *
+       * @return The expandedDataSet.
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.ExpandedDataSet getExpandedDataSet() {
+        if (expandedDataSetBuilder_ == null) {
+          if (resourceCase_ == 21) {
+            return (com.google.analytics.admin.v1alpha.ExpandedDataSet) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.ExpandedDataSet.getDefaultInstance();
+        } else {
+          if (resourceCase_ == 21) {
+            return expandedDataSetBuilder_.getMessage();
+          }
+          return com.google.analytics.admin.v1alpha.ExpandedDataSet.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an ExpandedDataSet resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.ExpandedDataSet expanded_data_set = 21;</code>
+       */
+      public Builder setExpandedDataSet(com.google.analytics.admin.v1alpha.ExpandedDataSet value) {
+        if (expandedDataSetBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          expandedDataSetBuilder_.setMessage(value);
+        }
+        resourceCase_ = 21;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an ExpandedDataSet resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.ExpandedDataSet expanded_data_set = 21;</code>
+       */
+      public Builder setExpandedDataSet(
+          com.google.analytics.admin.v1alpha.ExpandedDataSet.Builder builderForValue) {
+        if (expandedDataSetBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          expandedDataSetBuilder_.setMessage(builderForValue.build());
+        }
+        resourceCase_ = 21;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an ExpandedDataSet resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.ExpandedDataSet expanded_data_set = 21;</code>
+       */
+      public Builder mergeExpandedDataSet(
+          com.google.analytics.admin.v1alpha.ExpandedDataSet value) {
+        if (expandedDataSetBuilder_ == null) {
+          if (resourceCase_ == 21
+              && resource_
+                  != com.google.analytics.admin.v1alpha.ExpandedDataSet.getDefaultInstance()) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.ExpandedDataSet.newBuilder(
+                        (com.google.analytics.admin.v1alpha.ExpandedDataSet) resource_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          if (resourceCase_ == 21) {
+            expandedDataSetBuilder_.mergeFrom(value);
+          } else {
+            expandedDataSetBuilder_.setMessage(value);
+          }
+        }
+        resourceCase_ = 21;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an ExpandedDataSet resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.ExpandedDataSet expanded_data_set = 21;</code>
+       */
+      public Builder clearExpandedDataSet() {
+        if (expandedDataSetBuilder_ == null) {
+          if (resourceCase_ == 21) {
+            resourceCase_ = 0;
+            resource_ = null;
+            onChanged();
+          }
+        } else {
+          if (resourceCase_ == 21) {
+            resourceCase_ = 0;
+            resource_ = null;
+          }
+          expandedDataSetBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an ExpandedDataSet resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.ExpandedDataSet expanded_data_set = 21;</code>
+       */
+      public com.google.analytics.admin.v1alpha.ExpandedDataSet.Builder
+          getExpandedDataSetBuilder() {
+        return getExpandedDataSetFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an ExpandedDataSet resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.ExpandedDataSet expanded_data_set = 21;</code>
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.ExpandedDataSetOrBuilder
+          getExpandedDataSetOrBuilder() {
+        if ((resourceCase_ == 21) && (expandedDataSetBuilder_ != null)) {
+          return expandedDataSetBuilder_.getMessageOrBuilder();
+        } else {
+          if (resourceCase_ == 21) {
+            return (com.google.analytics.admin.v1alpha.ExpandedDataSet) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.ExpandedDataSet.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an ExpandedDataSet resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.ExpandedDataSet expanded_data_set = 21;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.ExpandedDataSet,
+              com.google.analytics.admin.v1alpha.ExpandedDataSet.Builder,
+              com.google.analytics.admin.v1alpha.ExpandedDataSetOrBuilder>
+          getExpandedDataSetFieldBuilder() {
+        if (expandedDataSetBuilder_ == null) {
+          if (!(resourceCase_ == 21)) {
+            resource_ = com.google.analytics.admin.v1alpha.ExpandedDataSet.getDefaultInstance();
+          }
+          expandedDataSetBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.analytics.admin.v1alpha.ExpandedDataSet,
+                  com.google.analytics.admin.v1alpha.ExpandedDataSet.Builder,
+                  com.google.analytics.admin.v1alpha.ExpandedDataSetOrBuilder>(
+                  (com.google.analytics.admin.v1alpha.ExpandedDataSet) resource_,
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        resourceCase_ = 21;
+        onChanged();
+        return expandedDataSetBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.BigQueryLink,
+              com.google.analytics.admin.v1alpha.BigQueryLink.Builder,
+              com.google.analytics.admin.v1alpha.BigQueryLinkOrBuilder>
+          bigqueryLinkBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a BigQuery link resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.BigQueryLink bigquery_link = 23;</code>
+       *
+       * @return Whether the bigqueryLink field is set.
+       */
+      @java.lang.Override
+      public boolean hasBigqueryLink() {
+        return resourceCase_ == 23;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a BigQuery link resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.BigQueryLink bigquery_link = 23;</code>
+       *
+       * @return The bigqueryLink.
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.BigQueryLink getBigqueryLink() {
+        if (bigqueryLinkBuilder_ == null) {
+          if (resourceCase_ == 23) {
+            return (com.google.analytics.admin.v1alpha.BigQueryLink) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.BigQueryLink.getDefaultInstance();
+        } else {
+          if (resourceCase_ == 23) {
+            return bigqueryLinkBuilder_.getMessage();
+          }
+          return com.google.analytics.admin.v1alpha.BigQueryLink.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a BigQuery link resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.BigQueryLink bigquery_link = 23;</code>
+       */
+      public Builder setBigqueryLink(com.google.analytics.admin.v1alpha.BigQueryLink value) {
+        if (bigqueryLinkBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          bigqueryLinkBuilder_.setMessage(value);
+        }
+        resourceCase_ = 23;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a BigQuery link resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.BigQueryLink bigquery_link = 23;</code>
+       */
+      public Builder setBigqueryLink(
+          com.google.analytics.admin.v1alpha.BigQueryLink.Builder builderForValue) {
+        if (bigqueryLinkBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          bigqueryLinkBuilder_.setMessage(builderForValue.build());
+        }
+        resourceCase_ = 23;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a BigQuery link resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.BigQueryLink bigquery_link = 23;</code>
+       */
+      public Builder mergeBigqueryLink(com.google.analytics.admin.v1alpha.BigQueryLink value) {
+        if (bigqueryLinkBuilder_ == null) {
+          if (resourceCase_ == 23
+              && resource_
+                  != com.google.analytics.admin.v1alpha.BigQueryLink.getDefaultInstance()) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.BigQueryLink.newBuilder(
+                        (com.google.analytics.admin.v1alpha.BigQueryLink) resource_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          if (resourceCase_ == 23) {
+            bigqueryLinkBuilder_.mergeFrom(value);
+          } else {
+            bigqueryLinkBuilder_.setMessage(value);
+          }
+        }
+        resourceCase_ = 23;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a BigQuery link resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.BigQueryLink bigquery_link = 23;</code>
+       */
+      public Builder clearBigqueryLink() {
+        if (bigqueryLinkBuilder_ == null) {
+          if (resourceCase_ == 23) {
+            resourceCase_ = 0;
+            resource_ = null;
+            onChanged();
+          }
+        } else {
+          if (resourceCase_ == 23) {
+            resourceCase_ = 0;
+            resource_ = null;
+          }
+          bigqueryLinkBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a BigQuery link resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.BigQueryLink bigquery_link = 23;</code>
+       */
+      public com.google.analytics.admin.v1alpha.BigQueryLink.Builder getBigqueryLinkBuilder() {
+        return getBigqueryLinkFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a BigQuery link resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.BigQueryLink bigquery_link = 23;</code>
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.BigQueryLinkOrBuilder getBigqueryLinkOrBuilder() {
+        if ((resourceCase_ == 23) && (bigqueryLinkBuilder_ != null)) {
+          return bigqueryLinkBuilder_.getMessageOrBuilder();
+        } else {
+          if (resourceCase_ == 23) {
+            return (com.google.analytics.admin.v1alpha.BigQueryLink) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.BigQueryLink.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a BigQuery link resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.BigQueryLink bigquery_link = 23;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.BigQueryLink,
+              com.google.analytics.admin.v1alpha.BigQueryLink.Builder,
+              com.google.analytics.admin.v1alpha.BigQueryLinkOrBuilder>
+          getBigqueryLinkFieldBuilder() {
+        if (bigqueryLinkBuilder_ == null) {
+          if (!(resourceCase_ == 23)) {
+            resource_ = com.google.analytics.admin.v1alpha.BigQueryLink.getDefaultInstance();
+          }
+          bigqueryLinkBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.analytics.admin.v1alpha.BigQueryLink,
+                  com.google.analytics.admin.v1alpha.BigQueryLink.Builder,
+                  com.google.analytics.admin.v1alpha.BigQueryLinkOrBuilder>(
+                  (com.google.analytics.admin.v1alpha.BigQueryLink) resource_,
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        resourceCase_ = 23;
+        onChanged();
+        return bigqueryLinkBuilder_;
       }
 
       @java.lang.Override

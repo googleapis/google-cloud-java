@@ -1042,9 +1042,9 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Types of restricted data that this metric may contain. Required for metrics
-   * with CURRENCY measurement unit. Must be empty for metrics with a
-   * non-CURRENCY measurement unit.
+   * Optional. Types of restricted data that this metric may contain. Required
+   * for metrics with CURRENCY measurement unit. Must be empty for metrics with
+   * a non-CURRENCY measurement unit.
    * </pre>
    *
    * <code>
@@ -1064,9 +1064,9 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Types of restricted data that this metric may contain. Required for metrics
-   * with CURRENCY measurement unit. Must be empty for metrics with a
-   * non-CURRENCY measurement unit.
+   * Optional. Types of restricted data that this metric may contain. Required
+   * for metrics with CURRENCY measurement unit. Must be empty for metrics with
+   * a non-CURRENCY measurement unit.
    * </pre>
    *
    * <code>
@@ -1083,9 +1083,9 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Types of restricted data that this metric may contain. Required for metrics
-   * with CURRENCY measurement unit. Must be empty for metrics with a
-   * non-CURRENCY measurement unit.
+   * Optional. Types of restricted data that this metric may contain. Required
+   * for metrics with CURRENCY measurement unit. Must be empty for metrics with
+   * a non-CURRENCY measurement unit.
    * </pre>
    *
    * <code>
@@ -1104,9 +1104,9 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Types of restricted data that this metric may contain. Required for metrics
-   * with CURRENCY measurement unit. Must be empty for metrics with a
-   * non-CURRENCY measurement unit.
+   * Optional. Types of restricted data that this metric may contain. Required
+   * for metrics with CURRENCY measurement unit. Must be empty for metrics with
+   * a non-CURRENCY measurement unit.
    * </pre>
    *
    * <code>
@@ -1123,9 +1123,9 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Types of restricted data that this metric may contain. Required for metrics
-   * with CURRENCY measurement unit. Must be empty for metrics with a
-   * non-CURRENCY measurement unit.
+   * Optional. Types of restricted data that this metric may contain. Required
+   * for metrics with CURRENCY measurement unit. Must be empty for metrics with
+   * a non-CURRENCY measurement unit.
    * </pre>
    *
    * <code>
@@ -2381,9 +2381,9 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Types of restricted data that this metric may contain. Required for metrics
-     * with CURRENCY measurement unit. Must be empty for metrics with a
-     * non-CURRENCY measurement unit.
+     * Optional. Types of restricted data that this metric may contain. Required
+     * for metrics with CURRENCY measurement unit. Must be empty for metrics with
+     * a non-CURRENCY measurement unit.
      * </pre>
      *
      * <code>
@@ -2402,9 +2402,9 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Types of restricted data that this metric may contain. Required for metrics
-     * with CURRENCY measurement unit. Must be empty for metrics with a
-     * non-CURRENCY measurement unit.
+     * Optional. Types of restricted data that this metric may contain. Required
+     * for metrics with CURRENCY measurement unit. Must be empty for metrics with
+     * a non-CURRENCY measurement unit.
      * </pre>
      *
      * <code>
@@ -2420,9 +2420,9 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Types of restricted data that this metric may contain. Required for metrics
-     * with CURRENCY measurement unit. Must be empty for metrics with a
-     * non-CURRENCY measurement unit.
+     * Optional. Types of restricted data that this metric may contain. Required
+     * for metrics with CURRENCY measurement unit. Must be empty for metrics with
+     * a non-CURRENCY measurement unit.
      * </pre>
      *
      * <code>
@@ -2440,9 +2440,9 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Types of restricted data that this metric may contain. Required for metrics
-     * with CURRENCY measurement unit. Must be empty for metrics with a
-     * non-CURRENCY measurement unit.
+     * Optional. Types of restricted data that this metric may contain. Required
+     * for metrics with CURRENCY measurement unit. Must be empty for metrics with
+     * a non-CURRENCY measurement unit.
      * </pre>
      *
      * <code>
@@ -2467,9 +2467,9 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Types of restricted data that this metric may contain. Required for metrics
-     * with CURRENCY measurement unit. Must be empty for metrics with a
-     * non-CURRENCY measurement unit.
+     * Optional. Types of restricted data that this metric may contain. Required
+     * for metrics with CURRENCY measurement unit. Must be empty for metrics with
+     * a non-CURRENCY measurement unit.
      * </pre>
      *
      * <code>
@@ -2493,9 +2493,9 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Types of restricted data that this metric may contain. Required for metrics
-     * with CURRENCY measurement unit. Must be empty for metrics with a
-     * non-CURRENCY measurement unit.
+     * Optional. Types of restricted data that this metric may contain. Required
+     * for metrics with CURRENCY measurement unit. Must be empty for metrics with
+     * a non-CURRENCY measurement unit.
      * </pre>
      *
      * <code>
@@ -2520,9 +2520,9 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Types of restricted data that this metric may contain. Required for metrics
-     * with CURRENCY measurement unit. Must be empty for metrics with a
-     * non-CURRENCY measurement unit.
+     * Optional. Types of restricted data that this metric may contain. Required
+     * for metrics with CURRENCY measurement unit. Must be empty for metrics with
+     * a non-CURRENCY measurement unit.
      * </pre>
      *
      * <code>
@@ -2541,9 +2541,9 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Types of restricted data that this metric may contain. Required for metrics
-     * with CURRENCY measurement unit. Must be empty for metrics with a
-     * non-CURRENCY measurement unit.
+     * Optional. Types of restricted data that this metric may contain. Required
+     * for metrics with CURRENCY measurement unit. Must be empty for metrics with
+     * a non-CURRENCY measurement unit.
      * </pre>
      *
      * <code>
@@ -2559,9 +2559,9 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Types of restricted data that this metric may contain. Required for metrics
-     * with CURRENCY measurement unit. Must be empty for metrics with a
-     * non-CURRENCY measurement unit.
+     * Optional. Types of restricted data that this metric may contain. Required
+     * for metrics with CURRENCY measurement unit. Must be empty for metrics with
+     * a non-CURRENCY measurement unit.
      * </pre>
      *
      * <code>
@@ -2578,9 +2578,9 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Types of restricted data that this metric may contain. Required for metrics
-     * with CURRENCY measurement unit. Must be empty for metrics with a
-     * non-CURRENCY measurement unit.
+     * Optional. Types of restricted data that this metric may contain. Required
+     * for metrics with CURRENCY measurement unit. Must be empty for metrics with
+     * a non-CURRENCY measurement unit.
      * </pre>
      *
      * <code>
@@ -2601,9 +2601,9 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Types of restricted data that this metric may contain. Required for metrics
-     * with CURRENCY measurement unit. Must be empty for metrics with a
-     * non-CURRENCY measurement unit.
+     * Optional. Types of restricted data that this metric may contain. Required
+     * for metrics with CURRENCY measurement unit. Must be empty for metrics with
+     * a non-CURRENCY measurement unit.
      * </pre>
      *
      * <code>
@@ -2623,9 +2623,9 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Types of restricted data that this metric may contain. Required for metrics
-     * with CURRENCY measurement unit. Must be empty for metrics with a
-     * non-CURRENCY measurement unit.
+     * Optional. Types of restricted data that this metric may contain. Required
+     * for metrics with CURRENCY measurement unit. Must be empty for metrics with
+     * a non-CURRENCY measurement unit.
      * </pre>
      *
      * <code>
