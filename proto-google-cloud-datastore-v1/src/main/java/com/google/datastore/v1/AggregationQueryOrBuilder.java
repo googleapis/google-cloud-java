@@ -62,7 +62,8 @@ public interface AggregationQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Series of aggregations to apply over the results of the `nested_query`.
+   * Optional. Series of aggregations to apply over the results of the
+   * `nested_query`.
    * Requires:
    * * A minimum of one and maximum of five aggregations per query.
    * </pre>
@@ -76,7 +77,8 @@ public interface AggregationQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Series of aggregations to apply over the results of the `nested_query`.
+   * Optional. Series of aggregations to apply over the results of the
+   * `nested_query`.
    * Requires:
    * * A minimum of one and maximum of five aggregations per query.
    * </pre>
@@ -90,7 +92,8 @@ public interface AggregationQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Series of aggregations to apply over the results of the `nested_query`.
+   * Optional. Series of aggregations to apply over the results of the
+   * `nested_query`.
    * Requires:
    * * A minimum of one and maximum of five aggregations per query.
    * </pre>
@@ -104,7 +107,8 @@ public interface AggregationQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Series of aggregations to apply over the results of the `nested_query`.
+   * Optional. Series of aggregations to apply over the results of the
+   * `nested_query`.
    * Requires:
    * * A minimum of one and maximum of five aggregations per query.
    * </pre>
@@ -119,7 +123,8 @@ public interface AggregationQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. Series of aggregations to apply over the results of the `nested_query`.
+   * Optional. Series of aggregations to apply over the results of the
+   * `nested_query`.
    * Requires:
    * * A minimum of one and maximum of five aggregations per query.
    * </pre>

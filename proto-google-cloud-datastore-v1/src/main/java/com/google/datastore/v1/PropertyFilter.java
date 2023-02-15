@@ -178,6 +178,7 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * Limit the result set to the given entity and its descendants.
      * Requires:
      * * That `value` is an entity key.
+     * * No other `HAS_ANCESTOR` is in the same query.
      * </pre>
      *
      * <code>HAS_ANCESTOR = 11;</code>
@@ -301,6 +302,7 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * Limit the result set to the given entity and its descendants.
      * Requires:
      * * That `value` is an entity key.
+     * * No other `HAS_ANCESTOR` is in the same query.
      * </pre>
      *
      * <code>HAS_ANCESTOR = 11;</code>

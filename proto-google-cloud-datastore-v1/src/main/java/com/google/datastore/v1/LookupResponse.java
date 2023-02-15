@@ -320,7 +320,9 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The identifier of the transaction that was started as part of this Lookup
    * request.
-   * Set only when [ReadOptions.begin_transaction][] was set in
+   * Set only when
+   * [ReadOptions.new_transaction][google.datastore.v1.ReadOptions.new_transaction]
+   * was set in
    * [LookupRequest.read_options][google.datastore.v1.LookupRequest.read_options].
    * </pre>
    *
@@ -2108,7 +2110,9 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The identifier of the transaction that was started as part of this Lookup
      * request.
-     * Set only when [ReadOptions.begin_transaction][] was set in
+     * Set only when
+     * [ReadOptions.new_transaction][google.datastore.v1.ReadOptions.new_transaction]
+     * was set in
      * [LookupRequest.read_options][google.datastore.v1.LookupRequest.read_options].
      * </pre>
      *
@@ -2126,7 +2130,9 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The identifier of the transaction that was started as part of this Lookup
      * request.
-     * Set only when [ReadOptions.begin_transaction][] was set in
+     * Set only when
+     * [ReadOptions.new_transaction][google.datastore.v1.ReadOptions.new_transaction]
+     * was set in
      * [LookupRequest.read_options][google.datastore.v1.LookupRequest.read_options].
      * </pre>
      *
@@ -2150,7 +2156,9 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The identifier of the transaction that was started as part of this Lookup
      * request.
-     * Set only when [ReadOptions.begin_transaction][] was set in
+     * Set only when
+     * [ReadOptions.new_transaction][google.datastore.v1.ReadOptions.new_transaction]
+     * was set in
      * [LookupRequest.read_options][google.datastore.v1.LookupRequest.read_options].
      * </pre>
      *

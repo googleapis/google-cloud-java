@@ -82,6 +82,41 @@ public interface MutationResultOrBuilder
    *
    *
    * <pre>
+   * The create time of the entity. This field will not be set after a 'delete'.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  boolean hasCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * The create time of the entity. This field will not be set after a 'delete'.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   *
+   * @return The createTime.
+   */
+  com.google.protobuf.Timestamp getCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * The create time of the entity. This field will not be set after a 'delete'.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The update time of the entity on the server after processing the mutation.
    * If the mutation doesn't change anything on the server, then the timestamp
    * will be the update timestamp of the current entity. This field will not be

@@ -22,7 +22,8 @@ package com.google.datastore.v1;
  *
  *
  * <pre>
- * Datastore query for running an aggregation over a [Query][google.datastore.v1.Query].
+ * Datastore query for running an aggregation over a
+ * [Query][google.datastore.v1.Query].
  * </pre>
  *
  * Protobuf type {@code google.datastore.v1.AggregationQuery}
@@ -111,7 +112,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Optional name of the property to store the result of the aggregation.
+     * Optional. Optional name of the property to store the result of the
+     * aggregation.
      * If not provided, Datastore will pick a default name following the format
      * `property_&lt;incremental_id++&gt;`. For example:
      * ```
@@ -137,7 +139,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      * ```
      * Requires:
      * * Must be unique across all aggregation aliases.
-     * * Conform to [entity property name][google.datastore.v1.Entity.properties] limitations.
+     * * Conform to [entity property
+     * name][google.datastore.v1.Entity.properties] limitations.
      * </pre>
      *
      * <code>string alias = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -149,7 +152,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Optional name of the property to store the result of the aggregation.
+     * Optional. Optional name of the property to store the result of the
+     * aggregation.
      * If not provided, Datastore will pick a default name following the format
      * `property_&lt;incremental_id++&gt;`. For example:
      * ```
@@ -175,7 +179,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      * ```
      * Requires:
      * * Must be unique across all aggregation aliases.
-     * * Conform to [entity property name][google.datastore.v1.Entity.properties] limitations.
+     * * Conform to [entity property
+     * name][google.datastore.v1.Entity.properties] limitations.
      * </pre>
      *
      * <code>string alias = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -244,7 +249,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Optional constraint on the maximum number of entities to count.
+       * Optional. Optional constraint on the maximum number of entities to
+       * count.
        * This provides a way to set an upper bound on the number of entities
        * to scan, limiting latency and cost.
        * Unspecified is interpreted as no bound.
@@ -268,7 +274,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Optional constraint on the maximum number of entities to count.
+       * Optional. Optional constraint on the maximum number of entities to
+       * count.
        * This provides a way to set an upper bound on the number of entities
        * to scan, limiting latency and cost.
        * Unspecified is interpreted as no bound.
@@ -292,7 +299,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Optional constraint on the maximum number of entities to count.
+       * Optional. Optional constraint on the maximum number of entities to
+       * count.
        * This provides a way to set an upper bound on the number of entities
        * to scan, limiting latency and cost.
        * Unspecified is interpreted as no bound.
@@ -366,7 +374,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Optional constraint on the maximum number of entities to count.
+       * Optional. Optional constraint on the maximum number of entities to
+       * count.
        * This provides a way to set an upper bound on the number of entities
        * to scan, limiting latency and cost.
        * Unspecified is interpreted as no bound.
@@ -393,7 +402,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Optional constraint on the maximum number of entities to count.
+       * Optional. Optional constraint on the maximum number of entities to
+       * count.
        * This provides a way to set an upper bound on the number of entities
        * to scan, limiting latency and cost.
        * Unspecified is interpreted as no bound.
@@ -420,7 +430,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Optional constraint on the maximum number of entities to count.
+       * Optional. Optional constraint on the maximum number of entities to
+       * count.
        * This provides a way to set an upper bound on the number of entities
        * to scan, limiting latency and cost.
        * Unspecified is interpreted as no bound.
@@ -811,7 +822,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Optional constraint on the maximum number of entities to count.
+         * Optional. Optional constraint on the maximum number of entities to
+         * count.
          * This provides a way to set an upper bound on the number of entities
          * to scan, limiting latency and cost.
          * Unspecified is interpreted as no bound.
@@ -837,7 +849,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Optional constraint on the maximum number of entities to count.
+         * Optional. Optional constraint on the maximum number of entities to
+         * count.
          * This provides a way to set an upper bound on the number of entities
          * to scan, limiting latency and cost.
          * Unspecified is interpreted as no bound.
@@ -867,7 +880,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Optional constraint on the maximum number of entities to count.
+         * Optional. Optional constraint on the maximum number of entities to
+         * count.
          * This provides a way to set an upper bound on the number of entities
          * to scan, limiting latency and cost.
          * Unspecified is interpreted as no bound.
@@ -901,7 +915,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Optional constraint on the maximum number of entities to count.
+         * Optional. Optional constraint on the maximum number of entities to
+         * count.
          * This provides a way to set an upper bound on the number of entities
          * to scan, limiting latency and cost.
          * Unspecified is interpreted as no bound.
@@ -932,7 +947,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Optional constraint on the maximum number of entities to count.
+         * Optional. Optional constraint on the maximum number of entities to
+         * count.
          * This provides a way to set an upper bound on the number of entities
          * to scan, limiting latency and cost.
          * Unspecified is interpreted as no bound.
@@ -969,7 +985,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Optional constraint on the maximum number of entities to count.
+         * Optional. Optional constraint on the maximum number of entities to
+         * count.
          * This provides a way to set an upper bound on the number of entities
          * to scan, limiting latency and cost.
          * Unspecified is interpreted as no bound.
@@ -1000,7 +1017,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Optional constraint on the maximum number of entities to count.
+         * Optional. Optional constraint on the maximum number of entities to
+         * count.
          * This provides a way to set an upper bound on the number of entities
          * to scan, limiting latency and cost.
          * Unspecified is interpreted as no bound.
@@ -1026,7 +1044,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Optional constraint on the maximum number of entities to count.
+         * Optional. Optional constraint on the maximum number of entities to
+         * count.
          * This provides a way to set an upper bound on the number of entities
          * to scan, limiting latency and cost.
          * Unspecified is interpreted as no bound.
@@ -1054,7 +1073,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Optional. Optional constraint on the maximum number of entities to count.
+         * Optional. Optional constraint on the maximum number of entities to
+         * count.
          * This provides a way to set an upper bound on the number of entities
          * to scan, limiting latency and cost.
          * Unspecified is interpreted as no bound.
@@ -1258,7 +1278,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Optional name of the property to store the result of the aggregation.
+     * Optional. Optional name of the property to store the result of the
+     * aggregation.
      * If not provided, Datastore will pick a default name following the format
      * `property_&lt;incremental_id++&gt;`. For example:
      * ```
@@ -1284,7 +1305,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      * ```
      * Requires:
      * * Must be unique across all aggregation aliases.
-     * * Conform to [entity property name][google.datastore.v1.Entity.properties] limitations.
+     * * Conform to [entity property
+     * name][google.datastore.v1.Entity.properties] limitations.
      * </pre>
      *
      * <code>string alias = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1307,7 +1329,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Optional name of the property to store the result of the aggregation.
+     * Optional. Optional name of the property to store the result of the
+     * aggregation.
      * If not provided, Datastore will pick a default name following the format
      * `property_&lt;incremental_id++&gt;`. For example:
      * ```
@@ -1333,7 +1356,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      * ```
      * Requires:
      * * Must be unique across all aggregation aliases.
-     * * Conform to [entity property name][google.datastore.v1.Entity.properties] limitations.
+     * * Conform to [entity property
+     * name][google.datastore.v1.Entity.properties] limitations.
      * </pre>
      *
      * <code>string alias = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1988,7 +2012,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Optional name of the property to store the result of the aggregation.
+       * Optional. Optional name of the property to store the result of the
+       * aggregation.
        * If not provided, Datastore will pick a default name following the format
        * `property_&lt;incremental_id++&gt;`. For example:
        * ```
@@ -2014,7 +2039,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        * ```
        * Requires:
        * * Must be unique across all aggregation aliases.
-       * * Conform to [entity property name][google.datastore.v1.Entity.properties] limitations.
+       * * Conform to [entity property
+       * name][google.datastore.v1.Entity.properties] limitations.
        * </pre>
        *
        * <code>string alias = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2036,7 +2062,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Optional name of the property to store the result of the aggregation.
+       * Optional. Optional name of the property to store the result of the
+       * aggregation.
        * If not provided, Datastore will pick a default name following the format
        * `property_&lt;incremental_id++&gt;`. For example:
        * ```
@@ -2062,7 +2089,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        * ```
        * Requires:
        * * Must be unique across all aggregation aliases.
-       * * Conform to [entity property name][google.datastore.v1.Entity.properties] limitations.
+       * * Conform to [entity property
+       * name][google.datastore.v1.Entity.properties] limitations.
        * </pre>
        *
        * <code>string alias = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2084,7 +2112,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Optional name of the property to store the result of the aggregation.
+       * Optional. Optional name of the property to store the result of the
+       * aggregation.
        * If not provided, Datastore will pick a default name following the format
        * `property_&lt;incremental_id++&gt;`. For example:
        * ```
@@ -2110,7 +2139,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        * ```
        * Requires:
        * * Must be unique across all aggregation aliases.
-       * * Conform to [entity property name][google.datastore.v1.Entity.properties] limitations.
+       * * Conform to [entity property
+       * name][google.datastore.v1.Entity.properties] limitations.
        * </pre>
        *
        * <code>string alias = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2131,7 +2161,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Optional name of the property to store the result of the aggregation.
+       * Optional. Optional name of the property to store the result of the
+       * aggregation.
        * If not provided, Datastore will pick a default name following the format
        * `property_&lt;incremental_id++&gt;`. For example:
        * ```
@@ -2157,7 +2188,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        * ```
        * Requires:
        * * Must be unique across all aggregation aliases.
-       * * Conform to [entity property name][google.datastore.v1.Entity.properties] limitations.
+       * * Conform to [entity property
+       * name][google.datastore.v1.Entity.properties] limitations.
        * </pre>
        *
        * <code>string alias = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2174,7 +2206,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Optional name of the property to store the result of the aggregation.
+       * Optional. Optional name of the property to store the result of the
+       * aggregation.
        * If not provided, Datastore will pick a default name following the format
        * `property_&lt;incremental_id++&gt;`. For example:
        * ```
@@ -2200,7 +2233,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        * ```
        * Requires:
        * * Must be unique across all aggregation aliases.
-       * * Conform to [entity property name][google.datastore.v1.Entity.properties] limitations.
+       * * Conform to [entity property
+       * name][google.datastore.v1.Entity.properties] limitations.
        * </pre>
        *
        * <code>string alias = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2386,7 +2420,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Series of aggregations to apply over the results of the `nested_query`.
+   * Optional. Series of aggregations to apply over the results of the
+   * `nested_query`.
    * Requires:
    * * A minimum of one and maximum of five aggregations per query.
    * </pre>
@@ -2404,7 +2439,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Series of aggregations to apply over the results of the `nested_query`.
+   * Optional. Series of aggregations to apply over the results of the
+   * `nested_query`.
    * Requires:
    * * A minimum of one and maximum of five aggregations per query.
    * </pre>
@@ -2422,7 +2458,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Series of aggregations to apply over the results of the `nested_query`.
+   * Optional. Series of aggregations to apply over the results of the
+   * `nested_query`.
    * Requires:
    * * A minimum of one and maximum of five aggregations per query.
    * </pre>
@@ -2439,7 +2476,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Series of aggregations to apply over the results of the `nested_query`.
+   * Optional. Series of aggregations to apply over the results of the
+   * `nested_query`.
    * Requires:
    * * A minimum of one and maximum of five aggregations per query.
    * </pre>
@@ -2456,7 +2494,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Series of aggregations to apply over the results of the `nested_query`.
+   * Optional. Series of aggregations to apply over the results of the
+   * `nested_query`.
    * Requires:
    * * A minimum of one and maximum of five aggregations per query.
    * </pre>
@@ -2659,7 +2698,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Datastore query for running an aggregation over a [Query][google.datastore.v1.Query].
+   * Datastore query for running an aggregation over a
+   * [Query][google.datastore.v1.Query].
    * </pre>
    *
    * Protobuf type {@code google.datastore.v1.AggregationQuery}
@@ -3155,7 +3195,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Series of aggregations to apply over the results of the `nested_query`.
+     * Optional. Series of aggregations to apply over the results of the
+     * `nested_query`.
      * Requires:
      * * A minimum of one and maximum of five aggregations per query.
      * </pre>
@@ -3176,7 +3217,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Series of aggregations to apply over the results of the `nested_query`.
+     * Optional. Series of aggregations to apply over the results of the
+     * `nested_query`.
      * Requires:
      * * A minimum of one and maximum of five aggregations per query.
      * </pre>
@@ -3196,7 +3238,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Series of aggregations to apply over the results of the `nested_query`.
+     * Optional. Series of aggregations to apply over the results of the
+     * `nested_query`.
      * Requires:
      * * A minimum of one and maximum of five aggregations per query.
      * </pre>
@@ -3216,7 +3259,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Series of aggregations to apply over the results of the `nested_query`.
+     * Optional. Series of aggregations to apply over the results of the
+     * `nested_query`.
      * Requires:
      * * A minimum of one and maximum of five aggregations per query.
      * </pre>
@@ -3243,7 +3287,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Series of aggregations to apply over the results of the `nested_query`.
+     * Optional. Series of aggregations to apply over the results of the
+     * `nested_query`.
      * Requires:
      * * A minimum of one and maximum of five aggregations per query.
      * </pre>
@@ -3267,7 +3312,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Series of aggregations to apply over the results of the `nested_query`.
+     * Optional. Series of aggregations to apply over the results of the
+     * `nested_query`.
      * Requires:
      * * A minimum of one and maximum of five aggregations per query.
      * </pre>
@@ -3293,7 +3339,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Series of aggregations to apply over the results of the `nested_query`.
+     * Optional. Series of aggregations to apply over the results of the
+     * `nested_query`.
      * Requires:
      * * A minimum of one and maximum of five aggregations per query.
      * </pre>
@@ -3320,7 +3367,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Series of aggregations to apply over the results of the `nested_query`.
+     * Optional. Series of aggregations to apply over the results of the
+     * `nested_query`.
      * Requires:
      * * A minimum of one and maximum of five aggregations per query.
      * </pre>
@@ -3344,7 +3392,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Series of aggregations to apply over the results of the `nested_query`.
+     * Optional. Series of aggregations to apply over the results of the
+     * `nested_query`.
      * Requires:
      * * A minimum of one and maximum of five aggregations per query.
      * </pre>
@@ -3368,7 +3417,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Series of aggregations to apply over the results of the `nested_query`.
+     * Optional. Series of aggregations to apply over the results of the
+     * `nested_query`.
      * Requires:
      * * A minimum of one and maximum of five aggregations per query.
      * </pre>
@@ -3392,7 +3442,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Series of aggregations to apply over the results of the `nested_query`.
+     * Optional. Series of aggregations to apply over the results of the
+     * `nested_query`.
      * Requires:
      * * A minimum of one and maximum of five aggregations per query.
      * </pre>
@@ -3415,7 +3466,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Series of aggregations to apply over the results of the `nested_query`.
+     * Optional. Series of aggregations to apply over the results of the
+     * `nested_query`.
      * Requires:
      * * A minimum of one and maximum of five aggregations per query.
      * </pre>
@@ -3438,7 +3490,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Series of aggregations to apply over the results of the `nested_query`.
+     * Optional. Series of aggregations to apply over the results of the
+     * `nested_query`.
      * Requires:
      * * A minimum of one and maximum of five aggregations per query.
      * </pre>
@@ -3455,7 +3508,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Series of aggregations to apply over the results of the `nested_query`.
+     * Optional. Series of aggregations to apply over the results of the
+     * `nested_query`.
      * Requires:
      * * A minimum of one and maximum of five aggregations per query.
      * </pre>
@@ -3476,7 +3530,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Series of aggregations to apply over the results of the `nested_query`.
+     * Optional. Series of aggregations to apply over the results of the
+     * `nested_query`.
      * Requires:
      * * A minimum of one and maximum of five aggregations per query.
      * </pre>
@@ -3497,7 +3552,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Series of aggregations to apply over the results of the `nested_query`.
+     * Optional. Series of aggregations to apply over the results of the
+     * `nested_query`.
      * Requires:
      * * A minimum of one and maximum of five aggregations per query.
      * </pre>
@@ -3514,7 +3570,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Series of aggregations to apply over the results of the `nested_query`.
+     * Optional. Series of aggregations to apply over the results of the
+     * `nested_query`.
      * Requires:
      * * A minimum of one and maximum of five aggregations per query.
      * </pre>
@@ -3533,7 +3590,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Series of aggregations to apply over the results of the `nested_query`.
+     * Optional. Series of aggregations to apply over the results of the
+     * `nested_query`.
      * Requires:
      * * A minimum of one and maximum of five aggregations per query.
      * </pre>

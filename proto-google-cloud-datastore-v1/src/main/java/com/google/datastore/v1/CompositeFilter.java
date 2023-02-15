@@ -98,6 +98,16 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      * <code>AND = 1;</code>
      */
     AND(1),
+    /**
+     *
+     *
+     * <pre>
+     * Documents are required to satisfy at least one of the combined filters.
+     * </pre>
+     *
+     * <code>OR = 2;</code>
+     */
+    OR(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -121,6 +131,16 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      * <code>AND = 1;</code>
      */
     public static final int AND_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Documents are required to satisfy at least one of the combined filters.
+     * </pre>
+     *
+     * <code>OR = 2;</code>
+     */
+    public static final int OR_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -150,6 +170,8 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
           return OPERATOR_UNSPECIFIED;
         case 1:
           return AND;
+        case 2:
+          return OR;
         default:
           return null;
       }

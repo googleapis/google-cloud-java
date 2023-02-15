@@ -99,7 +99,9 @@ public interface RunQueryResponseOrBuilder
    * <pre>
    * The identifier of the transaction that was started as part of this
    * RunQuery request.
-   * Set only when [ReadOptions.begin_transaction][] was set in
+   * Set only when
+   * [ReadOptions.new_transaction][google.datastore.v1.ReadOptions.new_transaction]
+   * was set in
    * [RunQueryRequest.read_options][google.datastore.v1.RunQueryRequest.read_options].
    * </pre>
    *

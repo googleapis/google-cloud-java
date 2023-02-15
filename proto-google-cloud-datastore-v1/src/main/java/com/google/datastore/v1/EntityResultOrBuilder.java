@@ -64,11 +64,11 @@ public interface EntityResultOrBuilder
    * <pre>
    * The version of the entity, a strictly positive number that monotonically
    * increases with changes to the entity.
-   * This field is set for [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity
-   * results.
-   * For [missing][google.datastore.v1.LookupResponse.missing] entities in `LookupResponse`, this
-   * is the version of the snapshot that was used to look up the entity, and it
-   * is always set except for eventually consistent reads.
+   * This field is set for
+   * [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity results.
+   * For [missing][google.datastore.v1.LookupResponse.missing] entities in
+   * `LookupResponse`, this is the version of the snapshot that was used to look
+   * up the entity, and it is always set except for eventually consistent reads.
    * </pre>
    *
    * <code>int64 version = 4;</code>
@@ -81,9 +81,53 @@ public interface EntityResultOrBuilder
    *
    *
    * <pre>
+   * The time at which the entity was created.
+   * This field is set for
+   * [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity results.
+   * If this entity is missing, this field will not be set.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  boolean hasCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * The time at which the entity was created.
+   * This field is set for
+   * [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity results.
+   * If this entity is missing, this field will not be set.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   *
+   * @return The createTime.
+   */
+  com.google.protobuf.Timestamp getCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * The time at which the entity was created.
+   * This field is set for
+   * [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity results.
+   * If this entity is missing, this field will not be set.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The time at which the entity was last changed.
-   * This field is set for [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity
-   * results.
+   * This field is set for
+   * [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity results.
    * If this entity is missing, this field will not be set.
    * </pre>
    *
@@ -97,8 +141,8 @@ public interface EntityResultOrBuilder
    *
    * <pre>
    * The time at which the entity was last changed.
-   * This field is set for [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity
-   * results.
+   * This field is set for
+   * [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity results.
    * If this entity is missing, this field will not be set.
    * </pre>
    *
@@ -112,8 +156,8 @@ public interface EntityResultOrBuilder
    *
    * <pre>
    * The time at which the entity was last changed.
-   * This field is set for [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity
-   * results.
+   * This field is set for
+   * [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity results.
    * If this entity is missing, this field will not be set.
    * </pre>
    *
