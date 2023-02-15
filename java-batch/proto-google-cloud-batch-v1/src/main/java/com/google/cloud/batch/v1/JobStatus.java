@@ -385,6 +385,41 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * @return The taskPack.
      */
     long getTaskPack();
+
+    /**
+     *
+     *
+     * <pre>
+     * The VM boot disk.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.AllocationPolicy.Disk boot_disk = 4;</code>
+     *
+     * @return Whether the bootDisk field is set.
+     */
+    boolean hasBootDisk();
+    /**
+     *
+     *
+     * <pre>
+     * The VM boot disk.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.AllocationPolicy.Disk boot_disk = 4;</code>
+     *
+     * @return The bootDisk.
+     */
+    com.google.cloud.batch.v1.AllocationPolicy.Disk getBootDisk();
+    /**
+     *
+     *
+     * <pre>
+     * The VM boot disk.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.AllocationPolicy.Disk boot_disk = 4;</code>
+     */
+    com.google.cloud.batch.v1.AllocationPolicy.DiskOrBuilder getBootDiskOrBuilder();
   }
   /**
    *
@@ -545,6 +580,56 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       return taskPack_;
     }
 
+    public static final int BOOT_DISK_FIELD_NUMBER = 4;
+    private com.google.cloud.batch.v1.AllocationPolicy.Disk bootDisk_;
+    /**
+     *
+     *
+     * <pre>
+     * The VM boot disk.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.AllocationPolicy.Disk boot_disk = 4;</code>
+     *
+     * @return Whether the bootDisk field is set.
+     */
+    @java.lang.Override
+    public boolean hasBootDisk() {
+      return bootDisk_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The VM boot disk.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.AllocationPolicy.Disk boot_disk = 4;</code>
+     *
+     * @return The bootDisk.
+     */
+    @java.lang.Override
+    public com.google.cloud.batch.v1.AllocationPolicy.Disk getBootDisk() {
+      return bootDisk_ == null
+          ? com.google.cloud.batch.v1.AllocationPolicy.Disk.getDefaultInstance()
+          : bootDisk_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The VM boot disk.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.AllocationPolicy.Disk boot_disk = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.batch.v1.AllocationPolicy.DiskOrBuilder getBootDiskOrBuilder() {
+      return bootDisk_ == null
+          ? com.google.cloud.batch.v1.AllocationPolicy.Disk.getDefaultInstance()
+          : bootDisk_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -571,6 +656,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       if (taskPack_ != 0L) {
         output.writeInt64(3, taskPack_);
       }
+      if (bootDisk_ != null) {
+        output.writeMessage(4, getBootDisk());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -592,6 +680,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       if (taskPack_ != 0L) {
         size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, taskPack_);
       }
+      if (bootDisk_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getBootDisk());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -611,6 +702,10 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       if (!getMachineType().equals(other.getMachineType())) return false;
       if (provisioningModel_ != other.provisioningModel_) return false;
       if (getTaskPack() != other.getTaskPack()) return false;
+      if (hasBootDisk() != other.hasBootDisk()) return false;
+      if (hasBootDisk()) {
+        if (!getBootDisk().equals(other.getBootDisk())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -628,6 +723,10 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + provisioningModel_;
       hash = (37 * hash) + TASK_PACK_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTaskPack());
+      if (hasBootDisk()) {
+        hash = (37 * hash) + BOOT_DISK_FIELD_NUMBER;
+        hash = (53 * hash) + getBootDisk().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -772,6 +871,11 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         machineType_ = "";
         provisioningModel_ = 0;
         taskPack_ = 0L;
+        bootDisk_ = null;
+        if (bootDiskBuilder_ != null) {
+          bootDiskBuilder_.dispose();
+          bootDiskBuilder_ = null;
+        }
         return this;
       }
 
@@ -816,6 +920,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.taskPack_ = taskPack_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.bootDisk_ = bootDiskBuilder_ == null ? bootDisk_ : bootDiskBuilder_.build();
         }
       }
 
@@ -878,6 +985,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         if (other.getTaskPack() != 0L) {
           setTaskPack(other.getTaskPack());
         }
+        if (other.hasBootDisk()) {
+          mergeBootDisk(other.getBootDisk());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -922,6 +1032,12 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 24
+              case 34:
+                {
+                  input.readMessage(getBootDiskFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1197,6 +1313,191 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         taskPack_ = 0L;
         onChanged();
         return this;
+      }
+
+      private com.google.cloud.batch.v1.AllocationPolicy.Disk bootDisk_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.batch.v1.AllocationPolicy.Disk,
+              com.google.cloud.batch.v1.AllocationPolicy.Disk.Builder,
+              com.google.cloud.batch.v1.AllocationPolicy.DiskOrBuilder>
+          bootDiskBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The VM boot disk.
+       * </pre>
+       *
+       * <code>.google.cloud.batch.v1.AllocationPolicy.Disk boot_disk = 4;</code>
+       *
+       * @return Whether the bootDisk field is set.
+       */
+      public boolean hasBootDisk() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The VM boot disk.
+       * </pre>
+       *
+       * <code>.google.cloud.batch.v1.AllocationPolicy.Disk boot_disk = 4;</code>
+       *
+       * @return The bootDisk.
+       */
+      public com.google.cloud.batch.v1.AllocationPolicy.Disk getBootDisk() {
+        if (bootDiskBuilder_ == null) {
+          return bootDisk_ == null
+              ? com.google.cloud.batch.v1.AllocationPolicy.Disk.getDefaultInstance()
+              : bootDisk_;
+        } else {
+          return bootDiskBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The VM boot disk.
+       * </pre>
+       *
+       * <code>.google.cloud.batch.v1.AllocationPolicy.Disk boot_disk = 4;</code>
+       */
+      public Builder setBootDisk(com.google.cloud.batch.v1.AllocationPolicy.Disk value) {
+        if (bootDiskBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bootDisk_ = value;
+        } else {
+          bootDiskBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The VM boot disk.
+       * </pre>
+       *
+       * <code>.google.cloud.batch.v1.AllocationPolicy.Disk boot_disk = 4;</code>
+       */
+      public Builder setBootDisk(
+          com.google.cloud.batch.v1.AllocationPolicy.Disk.Builder builderForValue) {
+        if (bootDiskBuilder_ == null) {
+          bootDisk_ = builderForValue.build();
+        } else {
+          bootDiskBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The VM boot disk.
+       * </pre>
+       *
+       * <code>.google.cloud.batch.v1.AllocationPolicy.Disk boot_disk = 4;</code>
+       */
+      public Builder mergeBootDisk(com.google.cloud.batch.v1.AllocationPolicy.Disk value) {
+        if (bootDiskBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)
+              && bootDisk_ != null
+              && bootDisk_
+                  != com.google.cloud.batch.v1.AllocationPolicy.Disk.getDefaultInstance()) {
+            getBootDiskBuilder().mergeFrom(value);
+          } else {
+            bootDisk_ = value;
+          }
+        } else {
+          bootDiskBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The VM boot disk.
+       * </pre>
+       *
+       * <code>.google.cloud.batch.v1.AllocationPolicy.Disk boot_disk = 4;</code>
+       */
+      public Builder clearBootDisk() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        bootDisk_ = null;
+        if (bootDiskBuilder_ != null) {
+          bootDiskBuilder_.dispose();
+          bootDiskBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The VM boot disk.
+       * </pre>
+       *
+       * <code>.google.cloud.batch.v1.AllocationPolicy.Disk boot_disk = 4;</code>
+       */
+      public com.google.cloud.batch.v1.AllocationPolicy.Disk.Builder getBootDiskBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getBootDiskFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The VM boot disk.
+       * </pre>
+       *
+       * <code>.google.cloud.batch.v1.AllocationPolicy.Disk boot_disk = 4;</code>
+       */
+      public com.google.cloud.batch.v1.AllocationPolicy.DiskOrBuilder getBootDiskOrBuilder() {
+        if (bootDiskBuilder_ != null) {
+          return bootDiskBuilder_.getMessageOrBuilder();
+        } else {
+          return bootDisk_ == null
+              ? com.google.cloud.batch.v1.AllocationPolicy.Disk.getDefaultInstance()
+              : bootDisk_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The VM boot disk.
+       * </pre>
+       *
+       * <code>.google.cloud.batch.v1.AllocationPolicy.Disk boot_disk = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.batch.v1.AllocationPolicy.Disk,
+              com.google.cloud.batch.v1.AllocationPolicy.Disk.Builder,
+              com.google.cloud.batch.v1.AllocationPolicy.DiskOrBuilder>
+          getBootDiskFieldBuilder() {
+        if (bootDiskBuilder_ == null) {
+          bootDiskBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.batch.v1.AllocationPolicy.Disk,
+                  com.google.cloud.batch.v1.AllocationPolicy.Disk.Builder,
+                  com.google.cloud.batch.v1.AllocationPolicy.DiskOrBuilder>(
+                  getBootDisk(), getParentForChildren(), isClean());
+          bootDisk_ = null;
+        }
+        return bootDiskBuilder_;
       }
 
       @java.lang.Override
