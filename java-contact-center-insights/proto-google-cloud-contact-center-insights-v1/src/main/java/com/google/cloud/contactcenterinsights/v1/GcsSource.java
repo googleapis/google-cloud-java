@@ -129,8 +129,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. Cloud Storage URI that points to a file that contains the conversation
-   * transcript.
+   * Immutable. Cloud Storage URI that points to a file that contains the
+   * conversation transcript.
    * </pre>
    *
    * <code>string transcript_uri = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -153,8 +153,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. Cloud Storage URI that points to a file that contains the conversation
-   * transcript.
+   * Immutable. Cloud Storage URI that points to a file that contains the
+   * conversation transcript.
    * </pre>
    *
    * <code>string transcript_uri = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -656,8 +656,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Cloud Storage URI that points to a file that contains the conversation
-     * transcript.
+     * Immutable. Cloud Storage URI that points to a file that contains the
+     * conversation transcript.
      * </pre>
      *
      * <code>string transcript_uri = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -679,8 +679,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Cloud Storage URI that points to a file that contains the conversation
-     * transcript.
+     * Immutable. Cloud Storage URI that points to a file that contains the
+     * conversation transcript.
      * </pre>
      *
      * <code>string transcript_uri = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -702,8 +702,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Cloud Storage URI that points to a file that contains the conversation
-     * transcript.
+     * Immutable. Cloud Storage URI that points to a file that contains the
+     * conversation transcript.
      * </pre>
      *
      * <code>string transcript_uri = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -724,8 +724,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Cloud Storage URI that points to a file that contains the conversation
-     * transcript.
+     * Immutable. Cloud Storage URI that points to a file that contains the
+     * conversation transcript.
      * </pre>
      *
      * <code>string transcript_uri = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -742,8 +742,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Cloud Storage URI that points to a file that contains the conversation
-     * transcript.
+     * Immutable. Cloud Storage URI that points to a file that contains the
+     * conversation transcript.
      * </pre>
      *
      * <code>string transcript_uri = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>

@@ -146,8 +146,8 @@ public final class IssueAssignment extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Immutable. Display name of the assigned issue. This field is set at time of analyis
-   * and immutable since then.
+   * Immutable. Display name of the assigned issue. This field is set at time of
+   * analyis and immutable since then.
    * </pre>
    *
    * <code>string display_name = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -170,8 +170,8 @@ public final class IssueAssignment extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Immutable. Display name of the assigned issue. This field is set at time of analyis
-   * and immutable since then.
+   * Immutable. Display name of the assigned issue. This field is set at time of
+   * analyis and immutable since then.
    * </pre>
    *
    * <code>string display_name = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -750,8 +750,8 @@ public final class IssueAssignment extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Immutable. Display name of the assigned issue. This field is set at time of analyis
-     * and immutable since then.
+     * Immutable. Display name of the assigned issue. This field is set at time of
+     * analyis and immutable since then.
      * </pre>
      *
      * <code>string display_name = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -773,8 +773,8 @@ public final class IssueAssignment extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Immutable. Display name of the assigned issue. This field is set at time of analyis
-     * and immutable since then.
+     * Immutable. Display name of the assigned issue. This field is set at time of
+     * analyis and immutable since then.
      * </pre>
      *
      * <code>string display_name = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -796,8 +796,8 @@ public final class IssueAssignment extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Immutable. Display name of the assigned issue. This field is set at time of analyis
-     * and immutable since then.
+     * Immutable. Display name of the assigned issue. This field is set at time of
+     * analyis and immutable since then.
      * </pre>
      *
      * <code>string display_name = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -818,8 +818,8 @@ public final class IssueAssignment extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Immutable. Display name of the assigned issue. This field is set at time of analyis
-     * and immutable since then.
+     * Immutable. Display name of the assigned issue. This field is set at time of
+     * analyis and immutable since then.
      * </pre>
      *
      * <code>string display_name = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -836,8 +836,8 @@ public final class IssueAssignment extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Immutable. Display name of the assigned issue. This field is set at time of analyis
-     * and immutable since then.
+     * Immutable. Display name of the assigned issue. This field is set at time of
+     * analyis and immutable since then.
      * </pre>
      *
      * <code>string display_name = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>

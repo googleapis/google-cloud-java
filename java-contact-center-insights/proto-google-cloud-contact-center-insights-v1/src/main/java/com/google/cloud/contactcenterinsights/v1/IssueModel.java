@@ -315,7 +315,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=606
+     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=611
      * @return The enum numeric value on the wire for medium.
      */
     @java.lang.Deprecated
@@ -334,7 +334,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=606
+     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=611
      * @return The medium.
      */
     @java.lang.Deprecated
@@ -447,7 +447,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=606
+     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=611
      * @return The enum numeric value on the wire for medium.
      */
     @java.lang.Override
@@ -469,7 +469,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=606
+     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=611
      * @return The medium.
      */
     @java.lang.Override
@@ -974,7 +974,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=606
+       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=611
        * @return The enum numeric value on the wire for medium.
        */
       @java.lang.Override
@@ -996,7 +996,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=606
+       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=611
        * @param value The enum numeric value on the wire for medium to set.
        * @return This builder for chaining.
        */
@@ -1021,7 +1021,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=606
+       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=611
        * @return The medium.
        */
       @java.lang.Override
@@ -1047,7 +1047,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=606
+       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=611
        * @param value The medium to set.
        * @return This builder for chaining.
        */
@@ -1076,7 +1076,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=606
+       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=611
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -1525,6 +1525,24 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
+  public static final int ISSUE_COUNT_FIELD_NUMBER = 8;
+  private long issueCount_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of issues in this issue model.
+   * </pre>
+   *
+   * <code>int64 issue_count = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The issueCount.
+   */
+  @java.lang.Override
+  public long getIssueCount() {
+    return issueCount_;
+  }
+
   public static final int STATE_FIELD_NUMBER = 5;
   private int state_ = 0;
   /**
@@ -1626,7 +1644,8 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Immutable. The issue model's label statistics on its training data.
+   * Output only. Immutable. The issue model's label statistics on its training
+   * data.
    * </pre>
    *
    * <code>
@@ -1643,7 +1662,8 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Immutable. The issue model's label statistics on its training data.
+   * Output only. Immutable. The issue model's label statistics on its training
+   * data.
    * </pre>
    *
    * <code>
@@ -1662,7 +1682,8 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Immutable. The issue model's label statistics on its training data.
+   * Output only. Immutable. The issue model's label statistics on its training
+   * data.
    * </pre>
    *
    * <code>
@@ -1714,6 +1735,9 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
     if (trainingStats_ != null) {
       output.writeMessage(7, getTrainingStats());
     }
+    if (issueCount_ != 0L) {
+      output.writeInt64(8, issueCount_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1746,6 +1770,9 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
     if (trainingStats_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getTrainingStats());
     }
+    if (issueCount_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(8, issueCount_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1772,6 +1799,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
+    if (getIssueCount() != other.getIssueCount()) return false;
     if (state_ != other.state_) return false;
     if (hasInputDataConfig() != other.hasInputDataConfig()) return false;
     if (hasInputDataConfig()) {
@@ -1804,6 +1832,8 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
     }
+    hash = (37 * hash) + ISSUE_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getIssueCount());
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
     if (hasInputDataConfig()) {
@@ -1965,6 +1995,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
+      issueCount_ = 0L;
       state_ = 0;
       inputDataConfig_ = null;
       if (inputDataConfigBuilder_ != null) {
@@ -2025,13 +2056,16 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.state_ = state_;
+        result.issueCount_ = issueCount_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.inputDataConfig_ =
             inputDataConfigBuilder_ == null ? inputDataConfig_ : inputDataConfigBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.trainingStats_ =
             trainingStatsBuilder_ == null ? trainingStats_ : trainingStatsBuilder_.build();
       }
@@ -2099,6 +2133,9 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
       }
+      if (other.getIssueCount() != 0L) {
+        setIssueCount(other.getIssueCount());
+      }
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
       }
@@ -2161,21 +2198,27 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
             case 40:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 40
             case 50:
               {
                 input.readMessage(getInputDataConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getTrainingStatsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
+            case 64:
+              {
+                issueCount_ = input.readInt64();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 64
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2819,6 +2862,59 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       return updateTimeBuilder_;
     }
 
+    private long issueCount_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of issues in this issue model.
+     * </pre>
+     *
+     * <code>int64 issue_count = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The issueCount.
+     */
+    @java.lang.Override
+    public long getIssueCount() {
+      return issueCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of issues in this issue model.
+     * </pre>
+     *
+     * <code>int64 issue_count = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The issueCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIssueCount(long value) {
+
+      issueCount_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of issues in this issue model.
+     * </pre>
+     *
+     * <code>int64 issue_count = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIssueCount() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      issueCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
     private int state_ = 0;
     /**
      *
@@ -2853,7 +2949,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2896,7 +2992,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -2915,7 +3011,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       state_ = 0;
       onChanged();
       return this;
@@ -2941,7 +3037,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the inputDataConfig field is set.
      */
     public boolean hasInputDataConfig() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2988,7 +3084,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         inputDataConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3011,7 +3107,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         inputDataConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3029,7 +3125,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeInputDataConfig(
         com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig value) {
       if (inputDataConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && inputDataConfig_ != null
             && inputDataConfig_
                 != com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig
@@ -3041,7 +3137,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         inputDataConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3057,7 +3153,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearInputDataConfig() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       inputDataConfig_ = null;
       if (inputDataConfigBuilder_ != null) {
         inputDataConfigBuilder_.dispose();
@@ -3079,7 +3175,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.Builder
         getInputDataConfigBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getInputDataConfigFieldBuilder().getBuilder();
     }
@@ -3143,7 +3239,8 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Immutable. The issue model's label statistics on its training data.
+     * Output only. Immutable. The issue model's label statistics on its training
+     * data.
      * </pre>
      *
      * <code>
@@ -3153,13 +3250,14 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the trainingStats field is set.
      */
     public boolean hasTrainingStats() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Immutable. The issue model's label statistics on its training data.
+     * Output only. Immutable. The issue model's label statistics on its training
+     * data.
      * </pre>
      *
      * <code>
@@ -3181,7 +3279,8 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Immutable. The issue model's label statistics on its training data.
+     * Output only. Immutable. The issue model's label statistics on its training
+     * data.
      * </pre>
      *
      * <code>
@@ -3198,7 +3297,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         trainingStatsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3206,7 +3305,8 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Immutable. The issue model's label statistics on its training data.
+     * Output only. Immutable. The issue model's label statistics on its training
+     * data.
      * </pre>
      *
      * <code>
@@ -3220,7 +3320,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         trainingStatsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3228,7 +3328,8 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Immutable. The issue model's label statistics on its training data.
+     * Output only. Immutable. The issue model's label statistics on its training
+     * data.
      * </pre>
      *
      * <code>
@@ -3238,7 +3339,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeTrainingStats(
         com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats value) {
       if (trainingStatsBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && trainingStats_ != null
             && trainingStats_
                 != com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats
@@ -3250,7 +3351,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         trainingStatsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3258,7 +3359,8 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Immutable. The issue model's label statistics on its training data.
+     * Output only. Immutable. The issue model's label statistics on its training
+     * data.
      * </pre>
      *
      * <code>
@@ -3266,7 +3368,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearTrainingStats() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       trainingStats_ = null;
       if (trainingStatsBuilder_ != null) {
         trainingStatsBuilder_.dispose();
@@ -3279,7 +3381,8 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Immutable. The issue model's label statistics on its training data.
+     * Output only. Immutable. The issue model's label statistics on its training
+     * data.
      * </pre>
      *
      * <code>
@@ -3288,7 +3391,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.Builder
         getTrainingStatsBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getTrainingStatsFieldBuilder().getBuilder();
     }
@@ -3296,7 +3399,8 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Immutable. The issue model's label statistics on its training data.
+     * Output only. Immutable. The issue model's label statistics on its training
+     * data.
      * </pre>
      *
      * <code>
@@ -3317,7 +3421,8 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Immutable. The issue model's label statistics on its training data.
+     * Output only. Immutable. The issue model's label statistics on its training
+     * data.
      * </pre>
      *
      * <code>

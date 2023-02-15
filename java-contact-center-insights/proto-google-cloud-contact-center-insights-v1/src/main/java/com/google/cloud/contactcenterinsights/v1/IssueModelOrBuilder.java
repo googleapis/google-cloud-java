@@ -157,6 +157,19 @@ public interface IssueModelOrBuilder
    *
    *
    * <pre>
+   * Output only. Number of issues in this issue model.
+   * </pre>
+   *
+   * <code>int64 issue_count = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The issueCount.
+   */
+  long getIssueCount();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. State of the model.
    * </pre>
    *
@@ -225,7 +238,8 @@ public interface IssueModelOrBuilder
    *
    *
    * <pre>
-   * Output only. Immutable. The issue model's label statistics on its training data.
+   * Output only. Immutable. The issue model's label statistics on its training
+   * data.
    * </pre>
    *
    * <code>
@@ -239,7 +253,8 @@ public interface IssueModelOrBuilder
    *
    *
    * <pre>
-   * Output only. Immutable. The issue model's label statistics on its training data.
+   * Output only. Immutable. The issue model's label statistics on its training
+   * data.
    * </pre>
    *
    * <code>
@@ -253,7 +268,8 @@ public interface IssueModelOrBuilder
    *
    *
    * <pre>
-   * Output only. Immutable. The issue model's label statistics on its training data.
+   * Output only. Immutable. The issue model's label statistics on its training
+   * data.
    * </pre>
    *
    * <code>

@@ -157,7 +157,7 @@ public interface ViewOrBuilder
    *
    *
    * <pre>
-   * String with specific view properties.
+   * String with specific view properties, must be non-empty.
    * </pre>
    *
    * <code>string value = 5;</code>
@@ -169,7 +169,7 @@ public interface ViewOrBuilder
    *
    *
    * <pre>
-   * String with specific view properties.
+   * String with specific view properties, must be non-empty.
    * </pre>
    *
    * <code>string value = 5;</code>

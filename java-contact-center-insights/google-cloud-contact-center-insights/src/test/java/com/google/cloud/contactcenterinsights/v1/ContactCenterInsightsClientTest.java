@@ -1169,6 +1169,7 @@ public class ContactCenterInsightsClientTest {
             .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setIssueCount(1779144233)
             .setInputDataConfig(IssueModel.InputDataConfig.newBuilder().build())
             .setTrainingStats(IssueModelLabelStats.newBuilder().build())
             .build();
@@ -1223,6 +1224,7 @@ public class ContactCenterInsightsClientTest {
             .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setIssueCount(1779144233)
             .setInputDataConfig(IssueModel.InputDataConfig.newBuilder().build())
             .setTrainingStats(IssueModelLabelStats.newBuilder().build())
             .build();
@@ -1277,6 +1279,7 @@ public class ContactCenterInsightsClientTest {
             .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setIssueCount(1779144233)
             .setInputDataConfig(IssueModel.InputDataConfig.newBuilder().build())
             .setTrainingStats(IssueModelLabelStats.newBuilder().build())
             .build();
@@ -1323,6 +1326,7 @@ public class ContactCenterInsightsClientTest {
             .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setIssueCount(1779144233)
             .setInputDataConfig(IssueModel.InputDataConfig.newBuilder().build())
             .setTrainingStats(IssueModelLabelStats.newBuilder().build())
             .build();
@@ -1366,6 +1370,7 @@ public class ContactCenterInsightsClientTest {
             .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setIssueCount(1779144233)
             .setInputDataConfig(IssueModel.InputDataConfig.newBuilder().build())
             .setTrainingStats(IssueModelLabelStats.newBuilder().build())
             .build();
