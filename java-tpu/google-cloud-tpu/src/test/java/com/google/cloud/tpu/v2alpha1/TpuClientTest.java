@@ -207,6 +207,7 @@ public class TpuClientTest {
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
             .setQueuedResource("queuedResource94310049")
+            .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .build();
     mockTpu.addResponse(expectedResponse);
@@ -263,6 +264,7 @@ public class TpuClientTest {
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
             .setQueuedResource("queuedResource94310049")
+            .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .build();
     mockTpu.addResponse(expectedResponse);
@@ -319,6 +321,7 @@ public class TpuClientTest {
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
             .setQueuedResource("queuedResource94310049")
+            .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -389,6 +392,7 @@ public class TpuClientTest {
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
             .setQueuedResource("queuedResource94310049")
+            .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -543,6 +547,7 @@ public class TpuClientTest {
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
             .setQueuedResource("queuedResource94310049")
+            .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -613,6 +618,7 @@ public class TpuClientTest {
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
             .setQueuedResource("queuedResource94310049")
+            .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -683,6 +689,7 @@ public class TpuClientTest {
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
             .setQueuedResource("queuedResource94310049")
+            .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -1256,6 +1263,7 @@ public class TpuClientTest {
             .setName(
                 AcceleratorTypeName.of("[PROJECT]", "[LOCATION]", "[ACCELERATOR_TYPE]").toString())
             .setType("type3575610")
+            .addAllAcceleratorConfigs(new ArrayList<AcceleratorConfig>())
             .build();
     mockTpu.addResponse(expectedResponse);
 
@@ -1298,6 +1306,7 @@ public class TpuClientTest {
             .setName(
                 AcceleratorTypeName.of("[PROJECT]", "[LOCATION]", "[ACCELERATOR_TYPE]").toString())
             .setType("type3575610")
+            .addAllAcceleratorConfigs(new ArrayList<AcceleratorConfig>())
             .build();
     mockTpu.addResponse(expectedResponse);
 
@@ -1572,6 +1581,7 @@ public class TpuClientTest {
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
             .setQueuedResource("queuedResource94310049")
+            .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
