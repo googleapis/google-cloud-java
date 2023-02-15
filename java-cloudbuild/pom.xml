@@ -32,6 +32,16 @@
         <version>3.13.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-build-v1:current} -->
       </dependency>
       <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-build-v2</artifactId>
+        <version>3.13.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-build-v2:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-build-v2</artifactId>
+        <version>3.13.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-build-v2:current} -->
+      </dependency>
+      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-build</artifactId>
         <version>3.13.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-build:current} -->
@@ -47,7 +57,9 @@
   <modules>
     <module>google-cloud-build</module>
     <module>grpc-google-cloud-build-v1</module>
+    <module>grpc-google-cloud-build-v2</module>
     <module>proto-google-cloud-build-v1</module>
+    <module>proto-google-cloud-build-v2</module>
     <module>google-cloud-build-bom</module>
   </modules>
 
