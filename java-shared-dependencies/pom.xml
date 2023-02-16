@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-shared-dependencies</artifactId>
   <packaging>pom</packaging>
-  <version>3.3.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
+  <version>3.3.0</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
   <modules>
     <module>first-party-dependencies</module>
     <module>third-party-dependencies</module>
@@ -17,7 +17,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>1.5.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.5.0</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -31,14 +31,14 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>first-party-dependencies</artifactId>
-        <version>3.3.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
+        <version>3.3.0</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>third-party-dependencies</artifactId>
-        <version>3.3.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
+        <version>3.3.0</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
