@@ -34,7 +34,6 @@ import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Queues;
 import com.google.common.collect.Range;
 import com.google.common.truth.Truth;
 import com.google.protobuf.ByteString;
@@ -48,6 +47,7 @@ import io.grpc.testing.GrpcServerRule;
 import java.io.IOException;
 import java.util.List;
 import java.util.Queue;
+import java.util.concurrent.LinkedBlockingDeque;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -300,7 +300,7 @@ public class ReadRowsRetryTest {
   }
 
   private static class TestBigtableService extends BigtableGrpc.BigtableImplBase {
-    Queue<RpcExpectation> expectations = Queues.newArrayDeque();
+    Queue<RpcExpectation> expectations = new LinkedBlockingDeque<>();
     int i = -1;
 
     @Override
