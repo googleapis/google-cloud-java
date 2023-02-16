@@ -20,7 +20,7 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-accessapproval</artifactId>
-  <version>2.10.0</version>
+  <version>2.12.0</version>
 </dependency>
 ```
 <!--- {x-version-update-end} -->
