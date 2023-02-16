@@ -71,9 +71,6 @@ class BuiltinMetricsTracer extends BigtableTracer {
   private String zone = "global";
   private String cluster = "unspecified";
 
-  // gfe stats
-  private AtomicLong gfeMissingHeaders = new AtomicLong(0);
-
   @VisibleForTesting
   BuiltinMetricsTracer(
       OperationType operationType, SpanName spanName, StatsRecorderWrapper recorder) {
@@ -208,10 +205,10 @@ class BuiltinMetricsTracer extends BigtableTracer {
     // zone information
     if (latency != null) {
       recorder.putGfeLatencies(latency);
+      recorder.putGfeMissingHeaders(0);
     } else {
-      gfeMissingHeaders.incrementAndGet();
+      recorder.putGfeMissingHeaders(1);
     }
-    recorder.putGfeMissingHeaders(gfeMissingHeaders.get());
   }
 
   @Override

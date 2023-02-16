@@ -244,7 +244,7 @@ public class BuiltinMetricsTracerTest {
     // The first time the request was retried, it'll increment missing header counter
     verify(statsRecorderWrapper, times(fakeService.getAttemptCounter().get()))
         .putGfeMissingHeaders(gfeMissingHeaders.capture());
-    assertThat(gfeMissingHeaders.getValue()).isEqualTo(1);
+    assertThat(gfeMissingHeaders.getAllValues()).containsExactly(1L, 0L);
 
     assertThat(status.getAllValues()).containsExactly("UNAVAILABLE", "OK");
     assertThat(tableId.getAllValues()).containsExactly(TABLE_ID, TABLE_ID);
