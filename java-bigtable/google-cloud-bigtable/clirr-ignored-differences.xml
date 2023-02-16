@@ -86,4 +86,11 @@
         <className>com/google/cloud/bigtable/gaxx/reframing/ReframingResponseObserver</className>
         <to>com/google/api/gax/rpc/StateCheckingResponseObserver</to>
     </difference>
+    <!-- change method return type is ok because Heartbeat is InternalApi -->
+    <difference>
+        <differenceType>7006</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/Heartbeat</className>
+        <method>*getEstimatedLowWatermark*</method>
+        <to>long</to>
+    </difference>
 </differences>

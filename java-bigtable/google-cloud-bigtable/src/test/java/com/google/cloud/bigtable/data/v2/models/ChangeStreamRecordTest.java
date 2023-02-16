@@ -24,6 +24,7 @@ import com.google.bigtable.v2.StreamPartition;
 import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Timestamp;
+import com.google.protobuf.util.Timestamps;
 import com.google.rpc.Status;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -119,7 +120,8 @@ public class ChangeStreamRecordTest {
             .build();
     Heartbeat actualHeartbeat = Heartbeat.fromProto(heartbeatProto);
 
-    assertThat(actualHeartbeat.getEstimatedLowWatermark()).isEqualTo(lowWatermark);
+    assertThat(actualHeartbeat.getEstimatedLowWatermark())
+        .isEqualTo(Timestamps.toNanos(lowWatermark));
     assertThat(actualHeartbeat.getChangeStreamContinuationToken().getPartition())
         .isEqualTo(ByteStringRange.create(rowRange.getStartKeyClosed(), rowRange.getEndKeyOpen()));
     assertThat(actualHeartbeat.getChangeStreamContinuationToken().getToken()).isEqualTo(token);

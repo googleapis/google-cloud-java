@@ -32,6 +32,7 @@ import com.google.cloud.bigtable.gaxx.testing.FakeStreamingApi;
 import com.google.cloud.bigtable.gaxx.testing.FakeStreamingApi.ServerStreamingStashCallable;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Timestamp;
+import com.google.protobuf.util.Timestamps;
 import com.google.rpc.Status;
 import java.util.Collections;
 import java.util.List;
@@ -80,7 +81,7 @@ public class ChangeStreamRecordMergingCallableTest {
     assertThat(heartbeat.getChangeStreamContinuationToken().getToken())
         .isEqualTo(heartbeatProto.getContinuationToken().getToken());
     assertThat(heartbeat.getEstimatedLowWatermark())
-        .isEqualTo(heartbeatProto.getEstimatedLowWatermark());
+        .isEqualTo(Timestamps.toNanos(heartbeatProto.getEstimatedLowWatermark()));
   }
 
   @Test

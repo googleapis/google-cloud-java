@@ -141,7 +141,8 @@ public class ReadChangeStreamMergingAcceptanceTest {
                                   .build())
                           .setToken(heartbeat.getChangeStreamContinuationToken().getToken())
                           .build())
-                  .setEstimatedLowWatermark(heartbeat.getEstimatedLowWatermark())
+                  .setEstimatedLowWatermark(
+                      Timestamps.fromNanos(heartbeat.getEstimatedLowWatermark()))
                   .build();
           actualResults.add(
               ReadChangeStreamTest.Result.newBuilder()
