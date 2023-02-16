@@ -217,6 +217,8 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
 
     BigtableDataSettings.Builder settingsBuilder =
         BigtableDataSettings.newBuilder()
+            // disable channel refreshing when creating an emulator
+            .setRefreshingChannel(false)
             .setProjectId(request.getProjectId())
             .setInstanceId(request.getInstanceId())
             .setAppProfileId(request.getAppProfileId());

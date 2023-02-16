@@ -4,7 +4,7 @@
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
-//     https://www.apache.org/licenses/LICENSE-2.0
+//     http://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
@@ -14,152 +14,192 @@
 
 syntax = "proto3";
 
-package bigtable.client.test;
+package google.bigtable.testproxy;
 
+import "google/api/client.proto";
 import "google/bigtable/v2/bigtable.proto";
 import "google/bigtable/v2/data.proto";
 import "google/protobuf/duration.proto";
 import "google/rpc/status.proto";
 
+option go_package = "./testproxypb";
 option java_multiple_files = true;
 option java_package = "com.google.cloud.bigtable.testproxy";
-option go_package = "./testproxypb";
 
-// The `status` field of response messages always represents an error returned
-// by the client binding, e.g. never a problem in either the proxy logic or
-// test driver to proxy communication. After receiving a response from the
-// proxy, the test driver should always check its `status` field.
-//
-// [test driver] <--> [test proxy <--> client binding] <--> [Cloud Bigtable]
-//                                ^^^^
-//                                `status` represents success or errors
-//                                returned from the client binding.
-//
-// Status propagation design examples, assuming the C++ client:
-//
-//   // For CloudBigtableV2TestProxy.ReadRow
-//   StatusOr<std::pair<bool, Row>> result = table.ReadRow(row_key, filter);
-//
-// Set RowResult.status to OK iff result.status() is OK.
-// OK is required even if the bool is false, indicating the row wasn't found.
-//
-//   // For CloudBigtableV2TestProxy.BulkMutateRows
-//   std::vector<FailedMutation> failed = table.BulkApply(bulk_mutation);
-//
-// The semantics are less obvious for BulkApply(), because some mutations
-// failing doesn't indicate the overall RPC fails. In such case, test proxy
-// should disambiguate between RPC failure and individual entry failure, and
-// set MutateRowsResult.status according to the overall RPC status.
-//
-// The final decision regarding semantics must be documented for the
-// CloudBigtableV2TestProxy service in this file.
-
+// Request to test proxy service to create a client object.
 message CreateClientRequest {
+  // A unique ID associated with the client object to be created.
   string client_id = 1;
+
   // The "host:port" address of the data API endpoint (i.e. the backend being
   // proxied to). Example: 127.0.0.1:38543. If you want to connect to a local
   // emulator via BIGTABLE_EMULATOR_HOST environment variable, you can use
   // "emulator" instead of "host:port" for this field.
   string data_target = 2;
+
   // The project for all calls on this client.
   string project_id = 3;
+
   // The instance for all calls on this client.
   string instance_id = 4;
+
   // Optional app profile for all calls on this client.
   // Some client bindings allow specifying the app profile on a per-operation
   // basis. We don't yet support this in the proxy API, but may in the future.
   string app_profile_id = 5;
+
   // If provided, a custom timeout will be set for each API call conducted by
   // the created client. Otherwise, the default timeout from the client library
   // will be used. Note that the override applies to all the methods.
   google.protobuf.Duration per_operation_timeout = 6;
 }
 
+// Response from test proxy service for CreateClientRequest.
 message CreateClientResponse {}
 
+// Request to test proxy service to close a client object.
 message CloseClientRequest {
+  // The ID of the target client object.
   string client_id = 1;
 }
 
+// Response from test proxy service for CloseClientRequest.
 message CloseClientResponse {}
 
+// Request to test proxy service to remove a client object.
 message RemoveClientRequest {
+  // The ID of the target client object.
   string client_id = 1;
 }
 
+// Response from test proxy service for RemoveClientRequest.
 message RemoveClientResponse {}
 
+// Request to test proxy service to read a row.
 message ReadRowRequest {
+  // The ID of the target client object.
   string client_id = 1;
+
   // The unique name of the table from which to read the row.
   // Values are of the form
   // `projects/<project>/instances/<instance>/tables/<table>`.
   string table_name = 4;
+
+  // The row key of the target row.
   string row_key = 2;
+
+  // The row filter to be applied to the target row.
   google.bigtable.v2.RowFilter filter = 3;
 }
 
+// Response from test proxy service for ReadRowRequest or
+// ReadModifyWriteRowRequest.
 message RowResult {
+  // The RPC status from the client binding.
   google.rpc.Status status = 1;
+
+  // The contents of a single row.
   google.bigtable.v2.Row row = 2;
 }
 
+// Request to test proxy service to read rows.
 message ReadRowsRequest {
+  // The ID of the target client object.
   string client_id = 1;
+
+  // The raw request to the Bigtable server.
   google.bigtable.v2.ReadRowsRequest request = 2;
+
   // The streaming read can be canceled before all items are seen.
   // Has no effect if non-positive.
   int32 cancel_after_rows = 3;
 }
 
+// Response from test proxy service for ReadRowsRequest.
 message RowsResult {
+  // The RPC status from the client binding.
   google.rpc.Status status = 1;
+
+  // The contents of rows.
   repeated google.bigtable.v2.Row row = 2;
 }
 
+// Request to test proxy service to mutate a row.
 message MutateRowRequest {
+  // The ID of the target client object.
   string client_id = 1;
+
+  // The raw request to the Bigtable server.
   google.bigtable.v2.MutateRowRequest request = 2;
 }
 
+// Response from test proxy service for MutateRowRequest.
 message MutateRowResult {
+  // The RPC status from the client binding.
   google.rpc.Status status = 1;
 }
 
+// Request to test proxy service to mutate rows.
 message MutateRowsRequest {
+  // The ID of the target client object.
   string client_id = 1;
+
+  // The raw request to the Bigtable server.
   google.bigtable.v2.MutateRowsRequest request = 2;
 }
 
+// Response from test proxy service for MutateRowsRequest.
 message MutateRowsResult {
-  // Overall RPC status
+  // The RPC status from the client binding, corresponding to the
+  // whole operation.
   google.rpc.Status status = 1;
-  // To record individual entry failures
+
+  // The results corresponding to the failed rows.
   repeated google.bigtable.v2.MutateRowsResponse.Entry entry = 2;
 }
 
+// Request to test proxy service to check and mutate a row.
 message CheckAndMutateRowRequest {
+  // The ID of the target client object.
   string client_id = 1;
+
+  // The raw request to the Bigtable server.
   google.bigtable.v2.CheckAndMutateRowRequest request = 2;
 }
 
+// Response from test proxy service for CheckAndMutateRowRequest.
 message CheckAndMutateRowResult {
+  // The RPC status from the client binding.
   google.rpc.Status status = 1;
+
+  // The raw response from the Bigtable server.
   google.bigtable.v2.CheckAndMutateRowResponse result = 2;
 }
 
+// Request to test proxy service to sample row keys.
 message SampleRowKeysRequest {
+  // The ID of the target client object.
   string client_id = 1;
+
+  // The raw request to the Bigtable server.
   google.bigtable.v2.SampleRowKeysRequest request = 2;
 }
 
+// Response from test proxy service for SampleRowKeysRequest.
 message SampleRowKeysResult {
+  // The RPC status from the client binding.
   google.rpc.Status status = 1;
+
+  // The raw responses from the Bigtable server.
   repeated google.bigtable.v2.SampleRowKeysResponse sample = 2;
 }
 
+// Request to test proxy service to read modify write a row.
 message ReadModifyWriteRowRequest {
+  // The ID of the target client object.
   string client_id = 1;
+
+  // The raw request to the Bigtable server.
   google.bigtable.v2.ReadModifyWriteRowRequest request = 2;
 }
 
@@ -180,17 +220,22 @@ message ReadModifyWriteRowRequest {
 // understand that the underlying operation will continue to be executed even
 // after the deadline expires.
 service CloudBigtableV2TestProxy {
+  option (google.api.default_host) =
+      "bigtable-test-proxy-not-accessible.googleapis.com";
+
   // Client management:
   //
   // Creates a client in the proxy.
   // Each client has its own dedicated channel(s), and can be used concurrently
   // and independently with other clients.
-  rpc CreateClient(CreateClientRequest) returns (CreateClientResponse);
+  rpc CreateClient(CreateClientRequest) returns (CreateClientResponse) {}
+
   // Closes a client in the proxy, making it not accept new requests.
-  rpc CloseClient(CloseClientRequest) returns (CloseClientResponse);
+  rpc CloseClient(CloseClientRequest) returns (CloseClientResponse) {}
+
   // Removes a client in the proxy, making it inaccessible. Client closing
   // should be done by CloseClient() separately.
-  rpc RemoveClient(RemoveClientRequest) returns (RemoveClientResponse);
+  rpc RemoveClient(RemoveClientRequest) returns (RemoveClientResponse) {}
 
   // Bigtable operations: for each operation, you should use the synchronous or
   // asynchronous variant of the client method based on the `use_async_method`
@@ -200,24 +245,24 @@ service CloudBigtableV2TestProxy {
   // Reads a row with the client instance.
   // The result row may not be present in the response.
   // Callers should check for it (e.g. calling has_row() in C++).
-  rpc ReadRow(ReadRowRequest) returns (RowResult);
+  rpc ReadRow(ReadRowRequest) returns (RowResult) {}
 
   // Reads rows with the client instance.
-  rpc ReadRows(ReadRowsRequest) returns (RowsResult);
+  rpc ReadRows(ReadRowsRequest) returns (RowsResult) {}
 
   // Writes a row with the client instance.
-  rpc MutateRow(MutateRowRequest) returns (MutateRowResult);
+  rpc MutateRow(MutateRowRequest) returns (MutateRowResult) {}
 
   // Writes multiple rows with the client instance.
-  rpc BulkMutateRows(MutateRowsRequest) returns (MutateRowsResult);
+  rpc BulkMutateRows(MutateRowsRequest) returns (MutateRowsResult) {}
 
   // Performs a check-and-mutate-row operation with the client instance.
   rpc CheckAndMutateRow(CheckAndMutateRowRequest)
-      returns (CheckAndMutateRowResult);
+      returns (CheckAndMutateRowResult) {}
 
   // Obtains a row key sampling with the client instance.
-  rpc SampleRowKeys(SampleRowKeysRequest) returns (SampleRowKeysResult);
+  rpc SampleRowKeys(SampleRowKeysRequest) returns (SampleRowKeysResult) {}
 
   // Performs a read-modify-write operation with the client.
-  rpc ReadModifyWriteRow(ReadModifyWriteRowRequest) returns (RowResult);
+  rpc ReadModifyWriteRow(ReadModifyWriteRowRequest) returns (RowResult) {}
 }

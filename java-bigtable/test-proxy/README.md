@@ -24,13 +24,13 @@ mvn clean install
 Start the proxy on default port 9999
 
 ```
-java -jar target/google-cloud-bigtable-test-proxy-<proxy_version>.jar
+java -jar target/google-cloud-bigtable-test-proxy-0.0.1-SNAPSHOT.jar
 ```
 
 Start the proxy on a different port
 
 ```
-java -Dport=1 -jar target/google-cloud-bigtable-test-proxy-<proxy_version>.jar
+java -Dport=1 -jar target/google-cloud-bigtable-test-proxy-0.0.1-SNAPSHOT.jar
 ```
 
 ## Run the test cases
