@@ -4,6 +4,177 @@
     {
       "changes": [
         {
+          "type": "fix",
+          "sha": "0b7209ac1f38aa4005d619249a6f93f44aef7ca7",
+          "message": "enable java-bigqueryconnect ITSystemTest",
+          "issues": [
+            "9089"
+          ]
+        }
+      ],
+      "version": "1.5.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigqueryconnection",
+      "id": "21972904-7ebb-4621-aed5-fbbcd4310265",
+      "createTime": "2023-02-16T17:57:51.656Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "935443d917998991dc6af62bd594091164017117",
+          "message": "[documentai] Added EvaluationReference to evaluation.proto",
+          "issues": [
+            "9085"
+          ],
+          "breakingChangeNote": "The TrainProcessorVersion parent was incorrectly annotated."
+        }
+      ],
+      "version": "1.5.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-document-ai",
+      "id": "5cd8ca08-6371-4063-80a9-b14845fe7cf2",
+      "createTime": "2023-02-16T17:57:51.656Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "eaef8f978ec8d7666638a1fc581d56bc44c915a3",
+          "message": "[clouderrorreporting] removed link to the regionalization page",
+          "issues": [
+            "9079"
+          ]
+        }
+      ],
+      "version": "1.5.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-errorreporting",
+      "id": "bce9d482-5c47-4570-a922-0eef536141fa",
+      "createTime": "2023-02-16T17:57:51.656Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "6e35902716584603a61fe7253078188191c46d7d",
+          "message": "[artifactregistry] add format-specific resources `MavenArtifact`, `NpmPackage`, `KfpArtifact` and `PythonPackage`",
+          "issues": [
+            "9080"
+          ]
+        }
+      ],
+      "version": "1.5.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-artifact-registry",
+      "id": "c14a4d4d-e440-4827-9b69-01388f7f5c34",
+      "createTime": "2023-02-16T17:57:51.656Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "4175bea0d87c75feced2e43421b3a2575840df9d",
+          "message": "[contactcenterinsights] Add IngestConversationsStats",
+          "issues": [
+            "9081"
+          ]
+        }
+      ],
+      "version": "1.5.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-contact-center-insights",
+      "id": "e8184b1b-9ce8-435a-92db-447ba5aaeedc",
+      "createTime": "2023-02-16T17:57:51.655Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "37a574a11f78034d00e201ca6f8fecbc9cd6101c",
+          "message": "[batch] support custom scopes for service account in v1",
+          "issues": [
+            "9082"
+          ]
+        }
+      ],
+      "version": "1.5.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-batch",
+      "id": "4ac5eebe-b2a6-4e7d-b6c3-4a22af6a9118",
+      "createTime": "2023-02-16T17:57:51.655Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "146655ac1ae48b3741876740585395ca8d422041",
+          "message": "[privateca] add X.509 Name Constraints support",
+          "issues": [
+            "9117"
+          ]
+        }
+      ],
+      "version": "1.5.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-security-private-ca",
+      "id": "c28ea9b3-6bae-43fc-a5a4-e8a69c5f8c6e",
+      "createTime": "2023-02-16T17:57:51.655Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "2c7e04488fc26db34a1972871455863da0ba8ecd",
+          "message": "[analyticsadmin] add `GetSearchAds360Link`, `ListSearchAds360Links`, `CreateSearchAds360Link`, `DeleteSearchAds360Link`, `UpdateSearchAds360Link` methods to the Admin API v1alpha",
+          "issues": [
+            "9093"
+          ]
+        }
+      ],
+      "version": "1.5.0",
+      "language": "JAVA",
+      "artifactName": "com.google.analytics:google-analytics-admin",
+      "id": "e3342f98-93a3-4325-9342-80ac9769acfe",
+      "createTime": "2023-02-16T17:57:51.655Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "bfc6efb56d082e7b71e5977999f6ee4a7189e0b5",
+          "message": "[cloudbuild] remove empty v2.CloudBuild definition",
+          "issues": [
+            "9077"
+          ]
+        }
+      ],
+      "version": "1.5.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-build",
+      "id": "dfd967fd-d0b7-4e0e-8225-a36cd929bd12",
+      "createTime": "2023-02-16T17:57:51.655Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "aaf97a6bbc7302e69315fdb1c434d69322b21853",
+          "message": "[dialogflow] added support for AssistQueryParameters and SynthesizeSpeechConfig",
+          "issues": [
+            "9123"
+          ]
+        }
+      ],
+      "version": "1.5.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dialogflow",
+      "id": "e95dec10-8031-415b-a9d0-a27b5915de60",
+      "createTime": "2023-02-16T17:57:51.655Z"
+    },
+    {
+      "changes": [
+        {
           "type": "docs",
           "sha": "2c1bd383046e895f30a4c720ebbef7a7c78c9e0c",
           "message": "[dialogflow] Reformat some comments and documentation",
@@ -276,5 +447,5 @@
       "createTime": "2023-02-03T16:27:23.198Z"
     }
   ],
-  "updateTime": "2023-02-03T16:27:23.199Z"
+  "updateTime": "2023-02-16T17:57:51.656Z"
 }
