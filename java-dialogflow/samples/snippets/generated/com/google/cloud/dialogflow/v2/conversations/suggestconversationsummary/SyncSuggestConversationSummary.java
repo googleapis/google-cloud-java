@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.v2.samples;
 
 // [START dialogflow_v2_generated_Conversations_SuggestConversationSummary_sync]
+import com.google.cloud.dialogflow.v2.AssistQueryParameters;
 import com.google.cloud.dialogflow.v2.ConversationName;
 import com.google.cloud.dialogflow.v2.ConversationsClient;
 import com.google.cloud.dialogflow.v2.MessageName;
@@ -46,6 +47,7 @@ public class SyncSuggestConversationSummary {
                           "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
                       .toString())
               .setContextSize(1116903569)
+              .setAssistQueryParams(AssistQueryParameters.newBuilder().build())
               .build();
       SuggestConversationSummaryResponse response =
           conversationsClient.suggestConversationSummary(request);

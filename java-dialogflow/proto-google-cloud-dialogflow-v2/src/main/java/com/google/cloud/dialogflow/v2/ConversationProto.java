@@ -139,12 +139,14 @@ public final class ConversationProto {
           + "agesResponse\0225\n\010messages\030\001 \003(\0132#.google."
           + "cloud.dialogflow.v2.Message\022\027\n\017next_page"
           + "_token\030\002 \001(\t\"4\n\027ConversationPhoneNumber\022"
-          + "\031\n\014phone_number\030\003 \001(\tB\003\340A\003\"\277\001\n!SuggestCo"
+          + "\031\n\014phone_number\030\003 \001(\tB\003\340A\003\"\217\002\n!SuggestCo"
           + "nversationSummaryRequest\022D\n\014conversation"
           + "\030\001 \001(\tB.\340A\002\372A(\n&dialogflow.googleapis.co"
           + "m/Conversation\022>\n\016latest_message\030\003 \001(\tB&"
           + "\372A#\n!dialogflow.googleapis.com/Message\022\024"
-          + "\n\014context_size\030\004 \001(\005\"\327\003\n\"SuggestConversa"
+          + "\n\014context_size\030\004 \001(\005\022N\n\023assist_query_par"
+          + "ams\030\005 \001(\01321.google.cloud.dialogflow.v2.A"
+          + "ssistQueryParameters\"\327\003\n\"SuggestConversa"
           + "tionSummaryResponse\022W\n\007summary\030\001 \001(\0132F.g"
           + "oogle.cloud.dialogflow.v2.SuggestConvers"
           + "ationSummaryResponse.Summary\022>\n\016latest_m"
@@ -301,7 +303,7 @@ public final class ConversationProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2_SuggestConversationSummaryRequest_descriptor,
             new java.lang.String[] {
-              "Conversation", "LatestMessage", "ContextSize",
+              "Conversation", "LatestMessage", "ContextSize", "AssistQueryParams",
             });
     internal_static_google_cloud_dialogflow_v2_SuggestConversationSummaryResponse_descriptor =
         getDescriptor().getMessageTypes().get(10);
