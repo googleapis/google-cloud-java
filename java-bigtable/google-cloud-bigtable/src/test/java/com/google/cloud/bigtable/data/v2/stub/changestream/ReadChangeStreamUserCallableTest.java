@@ -25,6 +25,7 @@ import java.time.Duration;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.threeten.bp.Instant;
 
 @RunWith(JUnit4.class)
 public class ReadChangeStreamUserCallableTest {
@@ -40,8 +41,8 @@ public class ReadChangeStreamUserCallableTest {
     ReadChangeStreamQuery query =
         ReadChangeStreamQuery.create("fake-table")
             .streamPartition("begin", "end")
-            .startTime(1000L)
-            .endTime(2000L)
+            .startTime(Instant.ofEpochSecond(0L, 1000L))
+            .endTime(Instant.ofEpochSecond(0L, 2000L))
             .heartbeatDuration(Duration.ofSeconds(1));
     callable.call(query);
     Truth.assertThat(innerCallable.getActualRequest()).isEqualTo(query.toProto(REQUEST_CONTEXT));

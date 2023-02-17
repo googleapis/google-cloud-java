@@ -28,7 +28,7 @@ import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Duration;
-import com.google.protobuf.util.Timestamps;
+import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -36,6 +36,7 @@ import java.io.Serializable;
 import java.util.List;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import org.threeten.bp.Instant;
 
 /** A simple wrapper to construct a query for the ReadChangeStream RPC. */
 @InternalApi("Intended for use by the BigtableIO in apache/beam only.")
@@ -142,18 +143,26 @@ public final class ReadChangeStreamQuery implements Serializable, Cloneable {
     return streamPartition(rangeBuilder.build());
   }
 
-  /** Sets the startTime(Nanosecond) to read the change stream. */
-  public ReadChangeStreamQuery startTime(long value) {
+  /** Sets the startTime to read the change stream. */
+  public ReadChangeStreamQuery startTime(Instant value) {
     Preconditions.checkState(
         !builder.hasContinuationTokens(),
         "startTime and continuationTokens can't be specified together");
-    builder.setStartTime(Timestamps.fromNanos(value));
+    builder.setStartTime(
+        Timestamp.newBuilder()
+            .setSeconds(value.getEpochSecond())
+            .setNanos(value.getNano())
+            .build());
     return this;
   }
 
-  /** Sets the endTime(Nanosecond) to read the change stream. */
-  public ReadChangeStreamQuery endTime(long value) {
-    builder.setEndTime(Timestamps.fromNanos(value));
+  /** Sets the endTime to read the change stream. */
+  public ReadChangeStreamQuery endTime(Instant value) {
+    builder.setEndTime(
+        Timestamp.newBuilder()
+            .setSeconds(value.getEpochSecond())
+            .setNanos(value.getNano())
+            .build());
     return this;
   }
 

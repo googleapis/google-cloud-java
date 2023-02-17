@@ -22,6 +22,7 @@ import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import org.threeten.bp.Instant;
 
 /**
  * Default implementation of a {@link ChangeStreamRecordAdapter} that uses {@link
@@ -102,7 +103,7 @@ public class DefaultChangeStreamRecordAdapter
     public void startUserMutation(
         @Nonnull ByteString rowKey,
         @Nonnull String sourceClusterId,
-        long commitTimestamp,
+        Instant commitTimestamp,
         int tieBreaker) {
       this.changeStreamMutationBuilder =
           ChangeStreamMutation.createUserMutation(
@@ -111,7 +112,8 @@ public class DefaultChangeStreamRecordAdapter
 
     /** {@inheritDoc} */
     @Override
-    public void startGcMutation(@Nonnull ByteString rowKey, long commitTimestamp, int tieBreaker) {
+    public void startGcMutation(
+        @Nonnull ByteString rowKey, Instant commitTimestamp, int tieBreaker) {
       this.changeStreamMutationBuilder =
           ChangeStreamMutation.createGcMutation(rowKey, commitTimestamp, tieBreaker);
     }
@@ -156,7 +158,7 @@ public class DefaultChangeStreamRecordAdapter
     /** {@inheritDoc} */
     @Override
     public ChangeStreamRecord finishChangeStreamMutation(
-        @Nonnull String token, long estimatedLowWatermark) {
+        @Nonnull String token, Instant estimatedLowWatermark) {
       this.changeStreamMutationBuilder.setToken(token);
       this.changeStreamMutationBuilder.setEstimatedLowWatermark(estimatedLowWatermark);
       return this.changeStreamMutationBuilder.build();

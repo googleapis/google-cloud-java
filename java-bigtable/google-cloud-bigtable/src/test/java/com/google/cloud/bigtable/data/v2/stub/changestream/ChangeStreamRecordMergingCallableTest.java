@@ -32,7 +32,6 @@ import com.google.cloud.bigtable.gaxx.testing.FakeStreamingApi;
 import com.google.cloud.bigtable.gaxx.testing.FakeStreamingApi.ServerStreamingStashCallable;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Timestamp;
-import com.google.protobuf.util.Timestamps;
 import com.google.rpc.Status;
 import java.util.Collections;
 import java.util.List;
@@ -40,6 +39,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.threeten.bp.Instant;
 
 /**
  * Additional tests in addition to {@link ReadChangeStreamMergingAcceptanceTest}.
@@ -81,7 +81,10 @@ public class ChangeStreamRecordMergingCallableTest {
     assertThat(heartbeat.getChangeStreamContinuationToken().getToken())
         .isEqualTo(heartbeatProto.getContinuationToken().getToken());
     assertThat(heartbeat.getEstimatedLowWatermark())
-        .isEqualTo(Timestamps.toNanos(heartbeatProto.getEstimatedLowWatermark()));
+        .isEqualTo(
+            Instant.ofEpochSecond(
+                heartbeatProto.getEstimatedLowWatermark().getSeconds(),
+                heartbeatProto.getEstimatedLowWatermark().getNanos()));
   }
 
   @Test
@@ -116,7 +119,7 @@ public class ChangeStreamRecordMergingCallableTest {
     ChangeStreamRecord record = results.get(0);
     Assert.assertTrue(record instanceof CloseStream);
     CloseStream closeStream = (CloseStream) record;
-    assertThat(closeStream.getStatus()).isEqualTo(closeStreamProto.getStatus());
+    assertThat(closeStream.getStatus().toProto()).isEqualTo(closeStreamProto.getStatus());
     assertThat(closeStream.getChangeStreamContinuationTokens().size()).isEqualTo(1);
     ChangeStreamContinuationToken changeStreamContinuationToken =
         closeStream.getChangeStreamContinuationTokens().get(0);

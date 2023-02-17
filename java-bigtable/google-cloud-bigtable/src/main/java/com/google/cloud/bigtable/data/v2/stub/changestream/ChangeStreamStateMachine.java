@@ -21,7 +21,7 @@ import com.google.bigtable.v2.ReadChangeStreamResponse.DataChange.Type;
 import com.google.cloud.bigtable.data.v2.models.ChangeStreamRecordAdapter.ChangeStreamRecordBuilder;
 import com.google.cloud.bigtable.data.v2.models.Range.TimestampRange;
 import com.google.common.base.Preconditions;
-import com.google.protobuf.util.Timestamps;
+import org.threeten.bp.Instant;
 
 /**
  * A state machine to produce change stream records from a stream of {@link
@@ -338,7 +338,9 @@ final class ChangeStreamStateMachine<ChangeStreamRecordT> {
                 "AWAITING_NEW_STREAM_RECORD: GC mutation shouldn't have source cluster id.");
             builder.startGcMutation(
                 dataChange.getRowKey(),
-                Timestamps.toNanos(dataChange.getCommitTimestamp()),
+                Instant.ofEpochSecond(
+                    dataChange.getCommitTimestamp().getSeconds(),
+                    dataChange.getCommitTimestamp().getNanos()),
                 dataChange.getTiebreaker());
           } else if (dataChange.getType() == Type.USER) {
             validate(
@@ -347,7 +349,9 @@ final class ChangeStreamStateMachine<ChangeStreamRecordT> {
             builder.startUserMutation(
                 dataChange.getRowKey(),
                 dataChange.getSourceClusterId(),
-                Timestamps.toNanos(dataChange.getCommitTimestamp()),
+                Instant.ofEpochSecond(
+                    dataChange.getCommitTimestamp().getSeconds(),
+                    dataChange.getCommitTimestamp().getNanos()),
                 dataChange.getTiebreaker());
           } else {
             validate(false, "AWAITING_NEW_STREAM_RECORD: Unexpected type: " + dataChange.getType());
@@ -591,7 +595,10 @@ final class ChangeStreamStateMachine<ChangeStreamRecordT> {
       validate(dataChange.hasEstimatedLowWatermark(), "Last data change missing lowWatermark");
       completeChangeStreamRecord =
           builder.finishChangeStreamMutation(
-              dataChange.getToken(), Timestamps.toNanos(dataChange.getEstimatedLowWatermark()));
+              dataChange.getToken(),
+              Instant.ofEpochSecond(
+                  dataChange.getEstimatedLowWatermark().getSeconds(),
+                  dataChange.getEstimatedLowWatermark().getNanos()));
       return AWAITING_STREAM_RECORD_CONSUME;
     }
     // Case 2_2): The current DataChange itself is chunked, so wait for the next

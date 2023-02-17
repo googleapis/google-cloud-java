@@ -28,7 +28,7 @@ import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Duration;
-import com.google.protobuf.util.Timestamps;
+import com.google.protobuf.Timestamp;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -41,6 +41,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.threeten.bp.Instant;
 
 @RunWith(JUnit4.class)
 public class ReadChangeStreamQueryTest {
@@ -49,8 +50,8 @@ public class ReadChangeStreamQueryTest {
   private static final String TABLE_ID = "fake-table";
   private static final String APP_PROFILE_ID = "fake-profile-id";
   private RequestContext requestContext;
-  private static final long FAKE_START_TIME = 1000L;
-  private static final long FAKE_END_TIME = 2000L;
+  private static final Instant FAKE_START_TIME = Instant.ofEpochSecond(1L, 1000L);
+  private static final Instant FAKE_END_TIME = Instant.ofEpochSecond(1L, 2000L);
 
   @Rule public ExpectedException expect = ExpectedException.none();
 
@@ -123,7 +124,11 @@ public class ReadChangeStreamQueryTest {
     ReadChangeStreamQuery query = ReadChangeStreamQuery.create(TABLE_ID).startTime(FAKE_START_TIME);
 
     Builder expectedProto =
-        expectedProtoBuilder().setStartTime(Timestamps.fromNanos(FAKE_START_TIME));
+        expectedProtoBuilder()
+            .setStartTime(
+                Timestamp.newBuilder()
+                    .setSeconds(FAKE_START_TIME.getEpochSecond())
+                    .setNanos(FAKE_START_TIME.getNano()));
 
     ReadChangeStreamRequest actualProto = query.toProto(requestContext);
     assertThat(actualProto).isEqualTo(expectedProto.build());
@@ -133,7 +138,12 @@ public class ReadChangeStreamQueryTest {
   public void endTimeTest() {
     ReadChangeStreamQuery query = ReadChangeStreamQuery.create(TABLE_ID).endTime(FAKE_END_TIME);
 
-    Builder expectedProto = expectedProtoBuilder().setEndTime(Timestamps.fromNanos(FAKE_END_TIME));
+    Builder expectedProto =
+        expectedProtoBuilder()
+            .setEndTime(
+                Timestamp.newBuilder()
+                    .setSeconds(FAKE_END_TIME.getEpochSecond())
+                    .setNanos(FAKE_END_TIME.getNano()));
 
     ReadChangeStreamRequest actualProto = query.toProto(requestContext);
     assertThat(actualProto).isEqualTo(expectedProto.build());
@@ -267,7 +277,10 @@ public class ReadChangeStreamQueryTest {
                             .setEndKeyClosed(ByteString.copyFromUtf8(""))
                             .build()))
             .setContinuationTokens(StreamContinuationTokens.newBuilder().addTokens(token).build())
-            .setEndTime(Timestamps.fromNanos(FAKE_END_TIME))
+            .setEndTime(
+                Timestamp.newBuilder()
+                    .setSeconds(FAKE_END_TIME.getEpochSecond())
+                    .setNanos(FAKE_END_TIME.getNano()))
             .setHeartbeatDuration(Duration.newBuilder().setSeconds(5).build())
             .build();
     ReadChangeStreamQuery query = ReadChangeStreamQuery.fromProto(request);
@@ -304,9 +317,11 @@ public class ReadChangeStreamQueryTest {
     assertThat(ReadChangeStreamQuery.create(TABLE_ID).streamPartition("begin-1", "end-1"))
         .isNotEqualTo(ReadChangeStreamQuery.create(TABLE_ID).streamPartition("begin-2", "end-1"));
     assertThat(ReadChangeStreamQuery.create(TABLE_ID).startTime(FAKE_START_TIME))
-        .isNotEqualTo(ReadChangeStreamQuery.create(TABLE_ID).startTime(1001L));
+        .isNotEqualTo(
+            ReadChangeStreamQuery.create(TABLE_ID).startTime(Instant.ofEpochSecond(1L, 1001L)));
     assertThat(ReadChangeStreamQuery.create(TABLE_ID).endTime(FAKE_END_TIME))
-        .isNotEqualTo(ReadChangeStreamQuery.create(TABLE_ID).endTime(1001L));
+        .isNotEqualTo(
+            ReadChangeStreamQuery.create(TABLE_ID).endTime(Instant.ofEpochSecond(1L, 1001L)));
     assertThat(
             ReadChangeStreamQuery.create(TABLE_ID)
                 .heartbeatDuration(java.time.Duration.ofSeconds(5)))
@@ -349,7 +364,10 @@ public class ReadChangeStreamQueryTest {
                             .build()))
             .setContinuationTokens(
                 StreamContinuationTokens.newBuilder().addTokens(tokenProto).build())
-            .setEndTime(Timestamps.fromNanos(FAKE_END_TIME))
+            .setEndTime(
+                Timestamp.newBuilder()
+                    .setSeconds(FAKE_END_TIME.getEpochSecond())
+                    .setNanos(FAKE_END_TIME.getNano()))
             .setHeartbeatDuration(Duration.newBuilder().setSeconds(5).build())
             .build();
 

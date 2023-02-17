@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.common;
 
 import com.google.common.base.Objects;
+import java.io.Serializable;
 
 /**
  * The `Status` type defines a logical error model. Each `Status` message contains an error code and
@@ -23,7 +24,9 @@ import com.google.common.base.Objects;
  *
  * <p>This primarily wraps the protobuf {@link com.google.rpc.Status}.
  */
-public final class Status {
+public final class Status implements Serializable {
+  private static final long serialVersionUID = -5512896228725308380L;
+
   public enum Code {
     OK(com.google.rpc.Code.OK),
     CANCELLED(com.google.rpc.Code.CANCELLED),

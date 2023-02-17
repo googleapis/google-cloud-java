@@ -20,6 +20,7 @@ import com.google.bigtable.v2.ReadChangeStreamResponse;
 import com.google.cloud.bigtable.data.v2.models.Range.TimestampRange;
 import com.google.protobuf.ByteString;
 import javax.annotation.Nonnull;
+import org.threeten.bp.Instant;
 
 /**
  * An extension point that allows end users to plug in a custom implementation of logical change
@@ -115,7 +116,7 @@ public interface ChangeStreamRecordAdapter<ChangeStreamRecordT> {
     void startUserMutation(
         @Nonnull ByteString rowKey,
         @Nonnull String sourceClusterId,
-        long commitTimestamp,
+        Instant commitTimestamp,
         int tieBreaker);
 
     /**
@@ -123,7 +124,7 @@ public interface ChangeStreamRecordAdapter<ChangeStreamRecordT> {
      * once. If called, the current change stream record must not include any close stream message
      * or heartbeat.
      */
-    void startGcMutation(@Nonnull ByteString rowKey, long commitTimestamp, int tieBreaker);
+    void startGcMutation(@Nonnull ByteString rowKey, Instant commitTimestamp, int tieBreaker);
 
     /** Called to add a DeleteFamily mod. */
     void deleteFamily(@Nonnull String familyName);
@@ -164,7 +165,7 @@ public interface ChangeStreamRecordAdapter<ChangeStreamRecordT> {
 
     /** Called once per stream record to signal that all mods have been processed (unless reset). */
     ChangeStreamRecordT finishChangeStreamMutation(
-        @Nonnull String token, long estimatedLowWatermark);
+        @Nonnull String token, Instant estimatedLowWatermark);
 
     /** Called when the current in progress change stream record should be dropped */
     void reset();

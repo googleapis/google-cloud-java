@@ -24,7 +24,6 @@ import com.google.bigtable.v2.StreamPartition;
 import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Timestamp;
-import com.google.protobuf.util.Timestamps;
 import com.google.rpc.Status;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -34,6 +33,7 @@ import java.io.ObjectOutputStream;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.threeten.bp.Instant;
 
 @RunWith(JUnit4.class)
 public class ChangeStreamRecordTest {
@@ -121,7 +121,7 @@ public class ChangeStreamRecordTest {
     Heartbeat actualHeartbeat = Heartbeat.fromProto(heartbeatProto);
 
     assertThat(actualHeartbeat.getEstimatedLowWatermark())
-        .isEqualTo(Timestamps.toNanos(lowWatermark));
+        .isEqualTo(Instant.ofEpochSecond(lowWatermark.getSeconds(), lowWatermark.getNanos()));
     assertThat(actualHeartbeat.getChangeStreamContinuationToken().getPartition())
         .isEqualTo(ByteStringRange.create(rowRange.getStartKeyClosed(), rowRange.getEndKeyOpen()));
     assertThat(actualHeartbeat.getChangeStreamContinuationToken().getToken()).isEqualTo(token);
@@ -158,7 +158,7 @@ public class ChangeStreamRecordTest {
             .build();
     CloseStream actualCloseStream = CloseStream.fromProto(closeStreamProto);
 
-    assertThat(status).isEqualTo(actualCloseStream.getStatus());
+    assertThat(status).isEqualTo(actualCloseStream.getStatus().toProto());
     assertThat(actualCloseStream.getChangeStreamContinuationTokens().get(0).getPartition())
         .isEqualTo(
             ByteStringRange.create(rowRange1.getStartKeyClosed(), rowRange1.getEndKeyOpen()));

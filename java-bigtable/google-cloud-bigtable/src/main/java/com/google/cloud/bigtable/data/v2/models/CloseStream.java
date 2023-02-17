@@ -18,8 +18,8 @@ package com.google.cloud.bigtable.data.v2.models;
 import com.google.api.core.InternalApi;
 import com.google.auto.value.AutoValue;
 import com.google.bigtable.v2.ReadChangeStreamResponse;
+import com.google.cloud.bigtable.common.Status;
 import com.google.common.collect.ImmutableList;
-import com.google.rpc.Status;
 import java.io.Serializable;
 import java.util.List;
 import javax.annotation.Nonnull;
@@ -34,8 +34,9 @@ public abstract class CloseStream implements ChangeStreamRecord, Serializable {
   private static final long serialVersionUID = 7316215828353608505L;
 
   private static CloseStream create(
-      Status status, List<ChangeStreamContinuationToken> changeStreamContinuationTokens) {
-    return new AutoValue_CloseStream(status, changeStreamContinuationTokens);
+      com.google.rpc.Status status,
+      List<ChangeStreamContinuationToken> changeStreamContinuationTokens) {
+    return new AutoValue_CloseStream(Status.fromProto(status), changeStreamContinuationTokens);
   }
 
   /** Wraps the protobuf {@link ReadChangeStreamResponse.CloseStream}. */

@@ -43,8 +43,8 @@ import com.google.cloud.bigtable.gaxx.testing.FakeStreamingApi;
 import com.google.cloud.conformance.bigtable.v2.ChangeStreamTestDefinition.ChangeStreamTestFile;
 import com.google.cloud.conformance.bigtable.v2.ChangeStreamTestDefinition.ReadChangeStreamTest;
 import com.google.common.base.CaseFormat;
+import com.google.protobuf.Timestamp;
 import com.google.protobuf.util.JsonFormat;
-import com.google.protobuf.util.Timestamps;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -142,7 +142,10 @@ public class ReadChangeStreamMergingAcceptanceTest {
                           .setToken(heartbeat.getChangeStreamContinuationToken().getToken())
                           .build())
                   .setEstimatedLowWatermark(
-                      Timestamps.fromNanos(heartbeat.getEstimatedLowWatermark()))
+                      Timestamp.newBuilder()
+                          .setSeconds(heartbeat.getEstimatedLowWatermark().getEpochSecond())
+                          .setNanos(heartbeat.getEstimatedLowWatermark().getNano())
+                          .build())
                   .build();
           actualResults.add(
               ReadChangeStreamTest.Result.newBuilder()
@@ -154,7 +157,8 @@ public class ReadChangeStreamMergingAcceptanceTest {
         } else if (record instanceof CloseStream) {
           CloseStream closeStream = (CloseStream) record;
           ReadChangeStreamResponse.CloseStream.Builder builder =
-              ReadChangeStreamResponse.CloseStream.newBuilder().setStatus(closeStream.getStatus());
+              ReadChangeStreamResponse.CloseStream.newBuilder()
+                  .setStatus(closeStream.getStatus().toProto());
           for (ChangeStreamContinuationToken token :
               closeStream.getChangeStreamContinuationTokens()) {
             builder.addContinuationTokens(
@@ -194,11 +198,17 @@ public class ReadChangeStreamMergingAcceptanceTest {
             builder.setSourceClusterId(changeStreamMutation.getSourceClusterId());
           }
           builder.setCommitTimestamp(
-              Timestamps.fromNanos(changeStreamMutation.getCommitTimestamp()));
+              Timestamp.newBuilder()
+                  .setSeconds(changeStreamMutation.getCommitTimestamp().getEpochSecond())
+                  .setNanos(changeStreamMutation.getCommitTimestamp().getNano())
+                  .build());
           builder.setTiebreaker(changeStreamMutation.getTieBreaker());
           builder.setToken(changeStreamMutation.getToken());
           builder.setEstimatedLowWatermark(
-              Timestamps.fromNanos(changeStreamMutation.getEstimatedLowWatermark()));
+              Timestamp.newBuilder()
+                  .setSeconds(changeStreamMutation.getEstimatedLowWatermark().getEpochSecond())
+                  .setNanos(changeStreamMutation.getEstimatedLowWatermark().getNano())
+                  .build());
           for (Entry entry : changeStreamMutation.getEntries()) {
             if (entry instanceof DeleteFamily) {
               DeleteFamily deleteFamily = (DeleteFamily) entry;

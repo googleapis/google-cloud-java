@@ -19,6 +19,11 @@ import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
 
 import com.google.rpc.Code;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -88,5 +93,24 @@ public class StatusTest {
     assertThat(model.toProto()).isEqualTo(proto);
 
     assertThat(model.toString()).isEqualTo(proto.toString());
+  }
+
+  @Test
+  public void testSerialization() throws IOException, ClassNotFoundException {
+    com.google.rpc.Status proto =
+        com.google.rpc.Status.newBuilder()
+            .setCode(Code.UNAVAILABLE.getNumber())
+            .setMessage("some message")
+            .build();
+
+    Status model = Status.fromProto(proto);
+
+    ByteArrayOutputStream bos = new ByteArrayOutputStream();
+    ObjectOutputStream oos = new ObjectOutputStream(bos);
+    oos.writeObject(model);
+    oos.close();
+    ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(bos.toByteArray()));
+    Status actual = (Status) ois.readObject();
+    assertThat(actual).isEqualTo(model);
   }
 }

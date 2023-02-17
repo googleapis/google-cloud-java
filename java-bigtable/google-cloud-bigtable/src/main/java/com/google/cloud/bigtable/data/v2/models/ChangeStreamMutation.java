@@ -23,6 +23,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
 import java.io.Serializable;
 import javax.annotation.Nonnull;
+import org.threeten.bp.Instant;
 
 /**
  * A ChangeStreamMutation represents a list of mods(represented by List<{@link Entry}>) targeted at
@@ -72,7 +73,7 @@ public abstract class ChangeStreamMutation implements ChangeStreamRecord, Serial
   static Builder createUserMutation(
       @Nonnull ByteString rowKey,
       @Nonnull String sourceClusterId,
-      long commitTimestamp,
+      Instant commitTimestamp,
       int tieBreaker) {
     return builder()
         .setRowKey(rowKey)
@@ -88,7 +89,7 @@ public abstract class ChangeStreamMutation implements ChangeStreamRecord, Serial
    * mutation.
    */
   static Builder createGcMutation(
-      @Nonnull ByteString rowKey, long commitTimestamp, int tieBreaker) {
+      @Nonnull ByteString rowKey, Instant commitTimestamp, int tieBreaker) {
     return builder()
         .setRowKey(rowKey)
         .setType(MutationType.GARBAGE_COLLECTION)
@@ -110,7 +111,7 @@ public abstract class ChangeStreamMutation implements ChangeStreamRecord, Serial
   public abstract String getSourceClusterId();
 
   /** Get the commit timestamp of the current mutation. */
-  public abstract long getCommitTimestamp();
+  public abstract Instant getCommitTimestamp();
 
   /**
    * Get the tie breaker of the current mutation. This is used to resolve conflicts when multiple
@@ -123,7 +124,7 @@ public abstract class ChangeStreamMutation implements ChangeStreamRecord, Serial
   public abstract String getToken();
 
   /** Get the low watermark of the current mutation. */
-  public abstract long getEstimatedLowWatermark();
+  public abstract Instant getEstimatedLowWatermark();
 
   /** Get the list of mods of the current mutation. */
   @Nonnull
@@ -144,7 +145,7 @@ public abstract class ChangeStreamMutation implements ChangeStreamRecord, Serial
 
     abstract Builder setSourceClusterId(@Nonnull String sourceClusterId);
 
-    abstract Builder setCommitTimestamp(long commitTimestamp);
+    abstract Builder setCommitTimestamp(Instant commitTimestamp);
 
     abstract Builder setTieBreaker(int tieBreaker);
 
@@ -152,7 +153,7 @@ public abstract class ChangeStreamMutation implements ChangeStreamRecord, Serial
 
     abstract Builder setToken(@Nonnull String token);
 
-    abstract Builder setEstimatedLowWatermark(long estimatedLowWatermark);
+    abstract Builder setEstimatedLowWatermark(Instant estimatedLowWatermark);
 
     Builder setCell(
         @Nonnull String familyName,

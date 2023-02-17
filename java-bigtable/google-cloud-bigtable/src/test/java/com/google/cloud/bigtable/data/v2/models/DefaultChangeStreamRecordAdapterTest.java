@@ -23,7 +23,7 @@ import com.google.bigtable.v2.StreamContinuationToken;
 import com.google.bigtable.v2.TimestampRange;
 import com.google.cloud.bigtable.data.v2.models.ChangeStreamRecordAdapter.ChangeStreamRecordBuilder;
 import com.google.protobuf.ByteString;
-import com.google.protobuf.util.Timestamps;
+import com.google.protobuf.Timestamp;
 import com.google.rpc.Status;
 import org.junit.Assert;
 import org.junit.Before;
@@ -32,14 +32,15 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.threeten.bp.Instant;
 
 @RunWith(JUnit4.class)
 public class DefaultChangeStreamRecordAdapterTest {
 
   private final DefaultChangeStreamRecordAdapter adapter = new DefaultChangeStreamRecordAdapter();
   private ChangeStreamRecordBuilder<ChangeStreamRecord> changeStreamRecordBuilder;
-  private static final long FAKE_COMMIT_TIMESTAMP = 1000L;
-  private static final long FAKE_LOW_WATERMARK = 2000L;
+  private static final Instant FAKE_COMMIT_TIMESTAMP = Instant.ofEpochSecond(0L, 1000L);
+  private static final Instant FAKE_LOW_WATERMARK = Instant.ofEpochSecond(0L, 2000L);
 
   @Rule public ExpectedException expect = ExpectedException.none();
 
@@ -70,7 +71,10 @@ public class DefaultChangeStreamRecordAdapterTest {
     ChangeStreamRecord heartbeatRecord =
         Heartbeat.fromProto(
             ReadChangeStreamResponse.Heartbeat.newBuilder()
-                .setEstimatedLowWatermark(Timestamps.fromNanos(FAKE_LOW_WATERMARK))
+                .setEstimatedLowWatermark(
+                    Timestamp.newBuilder()
+                        .setSeconds(FAKE_LOW_WATERMARK.getEpochSecond())
+                        .setNanos(FAKE_LOW_WATERMARK.getNano()))
                 .setContinuationToken(
                     StreamContinuationToken.newBuilder().setToken("heartbeat-token").build())
                 .build());
@@ -127,7 +131,11 @@ public class DefaultChangeStreamRecordAdapterTest {
   public void heartbeatTest() {
     ReadChangeStreamResponse.Heartbeat expectedHeartbeat =
         ReadChangeStreamResponse.Heartbeat.newBuilder()
-            .setEstimatedLowWatermark(Timestamps.fromNanos(FAKE_LOW_WATERMARK))
+            .setEstimatedLowWatermark(
+                Timestamp.newBuilder()
+                    .setSeconds(FAKE_LOW_WATERMARK.getEpochSecond())
+                    .setNanos(FAKE_LOW_WATERMARK.getNano())
+                    .build())
             .setContinuationToken(
                 StreamContinuationToken.newBuilder().setToken("random-token").build())
             .build();

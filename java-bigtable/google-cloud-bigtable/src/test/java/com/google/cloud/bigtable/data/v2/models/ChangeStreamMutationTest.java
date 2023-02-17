@@ -32,6 +32,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.threeten.bp.Instant;
 
 @RunWith(JUnit4.class)
 public class ChangeStreamMutationTest {
@@ -41,8 +42,8 @@ public class ChangeStreamMutationTest {
   private static final String APP_PROFILE_ID = "fake-profile";
   private static final RequestContext REQUEST_CONTEXT =
       RequestContext.create(PROJECT_ID, INSTANCE_ID, APP_PROFILE_ID);
-  private static final long FAKE_COMMIT_TIMESTAMP = 1000L;
-  private static final long FAKE_LOW_WATERMARK = 2000L;
+  private static final Instant FAKE_COMMIT_TIMESTAMP = Instant.ofEpochSecond(0, 1000L);
+  private static final Instant FAKE_LOW_WATERMARK = Instant.ofEpochSecond(0, 2000L);
 
   @Test
   public void userInitiatedMutationTest() throws IOException, ClassNotFoundException {

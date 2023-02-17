@@ -18,9 +18,9 @@ package com.google.cloud.bigtable.data.v2.models;
 import com.google.api.core.InternalApi;
 import com.google.auto.value.AutoValue;
 import com.google.bigtable.v2.ReadChangeStreamResponse;
-import com.google.protobuf.util.Timestamps;
 import java.io.Serializable;
 import javax.annotation.Nonnull;
+import org.threeten.bp.Instant;
 
 /** A simple wrapper for {@link ReadChangeStreamResponse.Heartbeat}. */
 @InternalApi("Intended for use by the BigtableIO in apache/beam only.")
@@ -29,7 +29,7 @@ public abstract class Heartbeat implements ChangeStreamRecord, Serializable {
   private static final long serialVersionUID = 7316215828353608504L;
 
   private static Heartbeat create(
-      ChangeStreamContinuationToken changeStreamContinuationToken, long estimatedLowWatermark) {
+      ChangeStreamContinuationToken changeStreamContinuationToken, Instant estimatedLowWatermark) {
     return new AutoValue_Heartbeat(changeStreamContinuationToken, estimatedLowWatermark);
   }
 
@@ -37,12 +37,14 @@ public abstract class Heartbeat implements ChangeStreamRecord, Serializable {
   static Heartbeat fromProto(@Nonnull ReadChangeStreamResponse.Heartbeat heartbeat) {
     return create(
         ChangeStreamContinuationToken.fromProto(heartbeat.getContinuationToken()),
-        Timestamps.toNanos(heartbeat.getEstimatedLowWatermark()));
+        Instant.ofEpochSecond(
+            heartbeat.getEstimatedLowWatermark().getSeconds(),
+            heartbeat.getEstimatedLowWatermark().getNanos()));
   }
 
   @InternalApi("Intended for use by the BigtableIO in apache/beam only.")
   public abstract ChangeStreamContinuationToken getChangeStreamContinuationToken();
 
   @InternalApi("Intended for use by the BigtableIO in apache/beam only.")
-  public abstract long getEstimatedLowWatermark();
+  public abstract Instant getEstimatedLowWatermark();
 }
