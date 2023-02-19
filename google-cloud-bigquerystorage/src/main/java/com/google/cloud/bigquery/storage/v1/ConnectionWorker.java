@@ -581,7 +581,17 @@ class ConnectionWorker implements AutoCloseable {
       }
     }
 
-    log.fine("Cleanup starts. Stream: " + streamName + " id: " + writerId);
+    log.info(
+        "Cleanup starts. Stream: "
+            + streamName
+            + " id: "
+            + writerId
+            + " userClose: "
+            + userClosed
+            + " final exception: "
+            + (this.connectionFinalStatus == null
+                ? "null"
+                : this.connectionFinalStatus.toString()));
     // At this point, the waiting queue is drained, so no more requests.
     // We can close the stream connection and handle the remaining inflight requests.
     if (streamConnection != null) {
@@ -590,13 +600,13 @@ class ConnectionWorker implements AutoCloseable {
     }
 
     // At this point, there cannot be more callback. It is safe to clean up all inflight requests.
-    log.fine(
+    log.info(
         "Stream connection is fully closed. Cleaning up inflight requests. Stream: "
             + streamName
             + " id: "
             + writerId);
     cleanupInflightRequests();
-    log.fine("Append thread is done. Stream: " + streamName + " id: " + writerId);
+    log.info("Append thread is done. Stream: " + streamName + " id: " + writerId);
   }
 
   /*
@@ -809,7 +819,9 @@ class ConnectionWorker implements AutoCloseable {
                   + (maxRetryDuration.toMillis()
                       - (System.currentTimeMillis() - connectionRetryStartTime))
                   + ", for stream "
-                  + streamName);
+                  + streamName
+                  + " id:"
+                  + writerId);
         } else {
           Exceptions.StorageException storageException = Exceptions.toStorageException(finalStatus);
           this.connectionFinalStatus = storageException != null ? storageException : finalStatus;
