@@ -57,8 +57,12 @@ if [[ -z "${MODULE_LIST}" ]]; then
 else
   modules=($(echo "${MODULE_LIST}" | tr ',' ' '))
 fi
+excluded_modules=('gapic-libraries-bom' 'google-cloud-jar-parent' 'google-cloud-pom-parent')
 # TODO: Maps docs exclusion logic to be removed once we move to correct location on devsite. See b/262712184 and b/262600829
-excluded_modules=('gapic-libraries-bom' 'google-cloud-jar-parent' 'google-cloud-pom-parent' 'java-maps-addressvalidation' 'java-maps-routing', 'java-maps-mapsplatformdatasets')
+while IFS=  read -r -d $'\0'; do
+    excluded_modules+=("$REPLY")
+done < <(find java-maps-* -type d -maxdepth 0 -print0)
+echo "Excluded modules: ${excluded_modules[*]}"
 failed_modules=()
 
 for module in "${modules[@]}"; do
