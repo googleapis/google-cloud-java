@@ -12,11 +12,11 @@
   <parent>
     <artifactId>google-cloud-bigtable-parent</artifactId>
     <groupId>com.google.cloud</groupId>
-    <version>2.19.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+    <version>2.19.2</version><!-- {x-version-update:google-cloud-bigtable:current} -->
   </parent>
 
   <properties>
-    <bigtable.client.version>2.19.2-SNAPSHOT</bigtable.client.version><!-- {x-version-update:google-cloud-bigtable:current} -->
+    <bigtable.client.version>2.19.2</bigtable.client.version><!-- {x-version-update:google-cloud-bigtable:current} -->
   </properties>
 
   <dependencyManagement>
