@@ -275,6 +275,24 @@ public class JsonStreamWriter implements AutoCloseable {
     return streamWriter.getInflightWaitSeconds();
   }
 
+  /**
+   * Sets the missing value interpretation map for the JsonStreamWriter. The input
+   * missingValueInterpretationMap is used for all append requests unless otherwise changed.
+   *
+   * @param missingValueInterpretationMap the missing value interpretation map used by the
+   *     JsonStreamWriter.
+   */
+  public void setMissingValueInterpretationMap(
+      Map<String, AppendRowsRequest.MissingValueInterpretation> missingValueInterpretationMap) {
+    streamWriter.setMissingValueInterpretationMap(missingValueInterpretationMap);
+  }
+
+  /** @return the missing value interpretation map used for the writer. */
+  public Map<String, AppendRowsRequest.MissingValueInterpretation>
+      getMissingValueInterpretationMap() {
+    return streamWriter.getMissingValueInterpretationMap();
+  }
+
   /** Sets all StreamWriter settings. */
   private void setStreamWriterSettings(
       @Nullable TransportChannelProvider channelProvider,

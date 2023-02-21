@@ -32,6 +32,7 @@ import io.grpc.Status.Code;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Objects;
@@ -60,6 +61,11 @@ public class StreamWriter implements AutoCloseable {
 
   // Cache of location info for a given dataset.
   private static Map<String, String> projectAndDatasetToLocation = new ConcurrentHashMap<>();
+
+  // Map of fields to their MissingValueInterpretation, which dictates how a field should be
+  // populated when it is missing from an input user row.
+  private Map<String, AppendRowsRequest.MissingValueInterpretation> missingValueInterpretationMap =
+      new HashMap();
 
   /*
    * The identifier of stream to write to.
@@ -337,6 +343,18 @@ public class StreamWriter implements AutoCloseable {
   }
 
   /**
+   * Sets the missing value interpretation map for the stream writer. The input
+   * missingValueInterpretationMap is used for all write requests unless otherwise changed.
+   *
+   * @param missingValueInterpretationMap the missing value interpretation map used by stream
+   *     writer.
+   */
+  public void setMissingValueInterpretationMap(
+      Map<String, AppendRowsRequest.MissingValueInterpretation> missingValueInterpretationMap) {
+    this.missingValueInterpretationMap = missingValueInterpretationMap;
+  }
+
+  /**
    * Schedules the writing of rows at the end of current stream.
    *
    * @param rows the rows in serialized format to write to BigQuery.
@@ -417,6 +435,12 @@ public class StreamWriter implements AutoCloseable {
   /** @return the location of the destination. */
   public String getLocation() {
     return location;
+  }
+
+  /** @return the missing value interpretation map used for the writer. */
+  public Map<String, AppendRowsRequest.MissingValueInterpretation>
+      getMissingValueInterpretationMap() {
+    return missingValueInterpretationMap;
   }
 
   /**
