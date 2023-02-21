@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>google-cloud-logging-logback</artifactId>
-  <version>0.130.5-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging-logback:current} -->
+  <version>0.130.5-alpha</version><!-- {x-version-update:google-cloud-logging-logback:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Logging Logback Appender</name>
   <url>https://github.com/googleapis/java-logging-logback</url>
@@ -180,7 +180,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>3.5.0</version>
+        <version>3.4.1</version>
         <reportSets>
           <reportSet>
             <id>html</id>
