@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.32.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.31.1...v2.32.0) (2023-02-21)
+
+
+### Features
+
+* Add default_value_expression to TableFieldSchema ([#1988](https://github.com/googleapis/java-bigquerystorage/issues/1988)) ([89c767f](https://github.com/googleapis/java-bigquerystorage/commit/89c767f059ead3ce30842a478e395ac657f4b4ef))
+* Add functions to set missing value map in the stream writers ([#1966](https://github.com/googleapis/java-bigquerystorage/issues/1966)) ([98d7e44](https://github.com/googleapis/java-bigquerystorage/commit/98d7e446b75aba02ce27cdcb5e835c3fd0f3ad54))
+
+
+### Bug Fixes
+
+* Extra logging for investigation of the stuck case. ([#1999](https://github.com/googleapis/java-bigquerystorage/issues/1999)) ([e6ee13a](https://github.com/googleapis/java-bigquerystorage/commit/e6ee13a70304c2278d6b7a94dc19049a2b786a6e))
+
 ## [2.31.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.31.0...v2.31.1) (2023-02-14)
 
 

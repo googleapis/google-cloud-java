@@ -1,10 +1,10 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-bigquerystorage:2.31.1:2.31.2-SNAPSHOT
-grpc-google-cloud-bigquerystorage-v1beta1:0.155.1:0.155.2-SNAPSHOT
-grpc-google-cloud-bigquerystorage-v1beta2:0.155.1:0.155.2-SNAPSHOT
-grpc-google-cloud-bigquerystorage-v1:2.31.1:2.31.2-SNAPSHOT
-proto-google-cloud-bigquerystorage-v1beta1:0.155.1:0.155.2-SNAPSHOT
-proto-google-cloud-bigquerystorage-v1beta2:0.155.1:0.155.2-SNAPSHOT
-proto-google-cloud-bigquerystorage-v1:2.31.1:2.31.2-SNAPSHOT
+google-cloud-bigquerystorage:2.32.0:2.32.0
+grpc-google-cloud-bigquerystorage-v1beta1:0.156.0:0.156.0
+grpc-google-cloud-bigquerystorage-v1beta2:0.156.0:0.156.0
+grpc-google-cloud-bigquerystorage-v1:2.32.0:2.32.0
+proto-google-cloud-bigquerystorage-v1beta1:0.156.0:0.156.0
+proto-google-cloud-bigquerystorage-v1beta2:0.156.0:0.156.0
+proto-google-cloud-bigquerystorage-v1:2.32.0:2.32.0
