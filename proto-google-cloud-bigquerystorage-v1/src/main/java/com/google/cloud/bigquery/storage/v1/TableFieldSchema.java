@@ -43,6 +43,7 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
     mode_ = 0;
     fields_ = java.util.Collections.emptyList();
     description_ = "";
+    defaultValueExpression_ = "";
   }
 
   @java.lang.Override
@@ -991,6 +992,59 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
     return scale_;
   }
 
+  public static final int DEFAULT_VALUE_EXPRESSION_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object defaultValueExpression_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A SQL expression to specify the [default value]
+   * (https://cloud.google.com/bigquery/docs/default-values) for this field.
+   * </pre>
+   *
+   * <code>string default_value_expression = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The defaultValueExpression.
+   */
+  @java.lang.Override
+  public java.lang.String getDefaultValueExpression() {
+    java.lang.Object ref = defaultValueExpression_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      defaultValueExpression_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A SQL expression to specify the [default value]
+   * (https://cloud.google.com/bigquery/docs/default-values) for this field.
+   * </pre>
+   *
+   * <code>string default_value_expression = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for defaultValueExpression.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDefaultValueExpressionBytes() {
+    java.lang.Object ref = defaultValueExpression_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      defaultValueExpression_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1033,6 +1087,9 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
     if (scale_ != 0L) {
       output.writeInt64(9, scale_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultValueExpression_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, defaultValueExpression_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1070,6 +1127,9 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
     if (scale_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(9, scale_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultValueExpression_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, defaultValueExpression_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1094,6 +1154,7 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
     if (getMaxLength() != other.getMaxLength()) return false;
     if (getPrecision() != other.getPrecision()) return false;
     if (getScale() != other.getScale()) return false;
+    if (!getDefaultValueExpression().equals(other.getDefaultValueExpression())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1123,6 +1184,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getPrecision());
     hash = (37 * hash) + SCALE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getScale());
+    hash = (37 * hash) + DEFAULT_VALUE_EXPRESSION_FIELD_NUMBER;
+    hash = (53 * hash) + getDefaultValueExpression().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1277,6 +1340,7 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
       maxLength_ = 0L;
       precision_ = 0L;
       scale_ = 0L;
+      defaultValueExpression_ = "";
       return this;
     }
 
@@ -1347,6 +1411,9 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.scale_ = scale_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.defaultValueExpression_ = defaultValueExpression_;
       }
     }
 
@@ -1448,6 +1515,11 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
       if (other.getScale() != 0L) {
         setScale(other.getScale());
       }
+      if (!other.getDefaultValueExpression().isEmpty()) {
+        defaultValueExpression_ = other.defaultValueExpression_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1530,6 +1602,12 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000080;
                 break;
               } // case 72
+            case 82:
+              {
+                defaultValueExpression_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2629,6 +2707,117 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
     public Builder clearScale() {
       bitField0_ = (bitField0_ & ~0x00000080);
       scale_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object defaultValueExpression_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A SQL expression to specify the [default value]
+     * (https://cloud.google.com/bigquery/docs/default-values) for this field.
+     * </pre>
+     *
+     * <code>string default_value_expression = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The defaultValueExpression.
+     */
+    public java.lang.String getDefaultValueExpression() {
+      java.lang.Object ref = defaultValueExpression_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        defaultValueExpression_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A SQL expression to specify the [default value]
+     * (https://cloud.google.com/bigquery/docs/default-values) for this field.
+     * </pre>
+     *
+     * <code>string default_value_expression = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for defaultValueExpression.
+     */
+    public com.google.protobuf.ByteString getDefaultValueExpressionBytes() {
+      java.lang.Object ref = defaultValueExpression_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        defaultValueExpression_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A SQL expression to specify the [default value]
+     * (https://cloud.google.com/bigquery/docs/default-values) for this field.
+     * </pre>
+     *
+     * <code>string default_value_expression = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The defaultValueExpression to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDefaultValueExpression(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      defaultValueExpression_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A SQL expression to specify the [default value]
+     * (https://cloud.google.com/bigquery/docs/default-values) for this field.
+     * </pre>
+     *
+     * <code>string default_value_expression = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDefaultValueExpression() {
+      defaultValueExpression_ = getDefaultInstance().getDefaultValueExpression();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A SQL expression to specify the [default value]
+     * (https://cloud.google.com/bigquery/docs/default-values) for this field.
+     * </pre>
+     *
+     * <code>string default_value_expression = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for defaultValueExpression to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDefaultValueExpressionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      defaultValueExpression_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

@@ -48,7 +48,7 @@ public final class TableProto {
           + ".proto\022 google.cloud.bigquery.storage.v1"
           + "\032\037google/api/field_behavior.proto\"Q\n\013Tab"
           + "leSchema\022B\n\006fields\030\001 \003(\01322.google.cloud."
-          + "bigquery.storage.v1.TableFieldSchema\"\205\005\n"
+          + "bigquery.storage.v1.TableFieldSchema\"\254\005\n"
           + "\020TableFieldSchema\022\021\n\004name\030\001 \001(\tB\003\340A\002\022J\n\004"
           + "type\030\002 \001(\01627.google.cloud.bigquery.stora"
           + "ge.v1.TableFieldSchema.TypeB\003\340A\002\022J\n\004mode"
@@ -57,20 +57,20 @@ public final class TableProto {
           + " \003(\01322.google.cloud.bigquery.storage.v1."
           + "TableFieldSchemaB\003\340A\001\022\030\n\013description\030\006 \001"
           + "(\tB\003\340A\001\022\027\n\nmax_length\030\007 \001(\003B\003\340A\001\022\026\n\tprec"
-          + "ision\030\010 \001(\003B\003\340A\001\022\022\n\005scale\030\t \001(\003B\003\340A\001\"\325\001\n"
-          + "\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\n\n\006STRING\020\001\022"
-          + "\t\n\005INT64\020\002\022\n\n\006DOUBLE\020\003\022\n\n\006STRUCT\020\004\022\t\n\005BY"
-          + "TES\020\005\022\010\n\004BOOL\020\006\022\r\n\tTIMESTAMP\020\007\022\010\n\004DATE\020\010"
-          + "\022\010\n\004TIME\020\t\022\014\n\010DATETIME\020\n\022\r\n\tGEOGRAPHY\020\013\022"
-          + "\013\n\007NUMERIC\020\014\022\016\n\nBIGNUMERIC\020\r\022\014\n\010INTERVAL"
-          + "\020\016\022\010\n\004JSON\020\017\"F\n\004Mode\022\024\n\020MODE_UNSPECIFIED"
-          + "\020\000\022\014\n\010NULLABLE\020\001\022\014\n\010REQUIRED\020\002\022\014\n\010REPEAT"
-          + "ED\020\003B\272\001\n$com.google.cloud.bigquery.stora"
-          + "ge.v1B\nTableProtoP\001Z>cloud.google.com/go"
-          + "/bigquery/storage/apiv1/storagepb;storag"
-          + "epb\252\002 Google.Cloud.BigQuery.Storage.V1\312\002"
-          + " Google\\Cloud\\BigQuery\\Storage\\V1b\006proto"
-          + "3"
+          + "ision\030\010 \001(\003B\003\340A\001\022\022\n\005scale\030\t \001(\003B\003\340A\001\022%\n\030"
+          + "default_value_expression\030\n \001(\tB\003\340A\001\"\325\001\n\004"
+          + "Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\n\n\006STRING\020\001\022\t"
+          + "\n\005INT64\020\002\022\n\n\006DOUBLE\020\003\022\n\n\006STRUCT\020\004\022\t\n\005BYT"
+          + "ES\020\005\022\010\n\004BOOL\020\006\022\r\n\tTIMESTAMP\020\007\022\010\n\004DATE\020\010\022"
+          + "\010\n\004TIME\020\t\022\014\n\010DATETIME\020\n\022\r\n\tGEOGRAPHY\020\013\022\013"
+          + "\n\007NUMERIC\020\014\022\016\n\nBIGNUMERIC\020\r\022\014\n\010INTERVAL\020"
+          + "\016\022\010\n\004JSON\020\017\"F\n\004Mode\022\024\n\020MODE_UNSPECIFIED\020"
+          + "\000\022\014\n\010NULLABLE\020\001\022\014\n\010REQUIRED\020\002\022\014\n\010REPEATE"
+          + "D\020\003B\272\001\n$com.google.cloud.bigquery.storag"
+          + "e.v1B\nTableProtoP\001Z>cloud.google.com/go/"
+          + "bigquery/storage/apiv1/storagepb;storage"
+          + "pb\252\002 Google.Cloud.BigQuery.Storage.V1\312\002 "
+          + "Google\\Cloud\\BigQuery\\Storage\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -92,7 +92,15 @@ public final class TableProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_storage_v1_TableFieldSchema_descriptor,
             new java.lang.String[] {
-              "Name", "Type", "Mode", "Fields", "Description", "MaxLength", "Precision", "Scale",
+              "Name",
+              "Type",
+              "Mode",
+              "Fields",
+              "Description",
+              "MaxLength",
+              "Precision",
+              "Scale",
+              "DefaultValueExpression",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

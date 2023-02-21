@@ -269,4 +269,31 @@ public interface TableFieldSchemaOrBuilder
    * @return The scale.
    */
   long getScale();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A SQL expression to specify the [default value]
+   * (https://cloud.google.com/bigquery/docs/default-values) for this field.
+   * </pre>
+   *
+   * <code>string default_value_expression = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The defaultValueExpression.
+   */
+  java.lang.String getDefaultValueExpression();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A SQL expression to specify the [default value]
+   * (https://cloud.google.com/bigquery/docs/default-values) for this field.
+   * </pre>
+   *
+   * <code>string default_value_expression = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for defaultValueExpression.
+   */
+  com.google.protobuf.ByteString getDefaultValueExpressionBytes();
 }
