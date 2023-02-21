@@ -608,3 +608,6 @@ google-cloud-core:2.11.0:2.12.0-SNAPSHOT
 google-iam-policy:1.9.0:1.10.0-SNAPSHOT
 proto-google-cloud-build-v2:3.13.0:3.14.0-SNAPSHOT
 grpc-google-cloud-build-v2:3.13.0:3.14.0-SNAPSHOT
+google-cloud-advisorynotifications:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-advisorynotifications-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-advisorynotifications-v1:0.0.0:0.0.1-SNAPSHOT
