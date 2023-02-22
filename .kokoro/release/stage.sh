@@ -35,6 +35,7 @@ echo "Excluded modules: ${excludedMapsModule}"
 
 mvn clean deploy -B \
   -T 1C \
+  -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
   -DskipTests=true \
   -Dclirr.skip=true \
   --settings ${MAVEN_SETTINGS_FILE} \
