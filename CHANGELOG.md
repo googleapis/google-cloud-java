@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.23.0](https://github.com/googleapis/java-bigquery/compare/v2.22.0...v2.23.0) (2023-02-22)
+
+
+### Features
+
+* Add support for session_id in load jobs ([#2519](https://github.com/googleapis/java-bigquery/issues/2519)) ([e431c17](https://github.com/googleapis/java-bigquery/commit/e431c17efe0f69d084f119463ca8bdb25047a7fe))
+
+
+### Dependencies
+
+* Update cloud client dependencies ([#2526](https://github.com/googleapis/java-bigquery/issues/2526)) ([4d88ccc](https://github.com/googleapis/java-bigquery/commit/4d88ccc22b86ae83220324c53c2430f7878473bd))
+* Update dependency com.google.api.grpc:proto-google-cloud-bigqueryconnection-v1 to v2.13.0 ([#2533](https://github.com/googleapis/java-bigquery/issues/2533)) ([ed2cb74](https://github.com/googleapis/java-bigquery/commit/ed2cb7436c2ba38bdc4975abd12ba88d231087db))
+* Update dependency com.google.apis:google-api-services-bigquery to v2-rev20230210-2.0.0 ([#2530](https://github.com/googleapis/java-bigquery/issues/2530)) ([62ff092](https://github.com/googleapis/java-bigquery/commit/62ff092908bbc2cf26e8cb9426bdc0f45d1b2b9e))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.3.0 ([#2534](https://github.com/googleapis/java-bigquery/issues/2534)) ([f1bcc33](https://github.com/googleapis/java-bigquery/commit/f1bcc331d61f966f9c0c29dd3dccb122cafc874d))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.20 ([#2527](https://github.com/googleapis/java-bigquery/issues/2527)) ([5fe5e74](https://github.com/googleapis/java-bigquery/commit/5fe5e74afd4af873213455010b73dcf8240e008d))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.20 ([#2528](https://github.com/googleapis/java-bigquery/issues/2528)) ([554e75d](https://github.com/googleapis/java-bigquery/commit/554e75df92aa0dbd16d65d51a6c845c914062059))
+
 ## [2.22.0](https://github.com/googleapis/java-bigquery/compare/v2.21.0...v2.22.0) (2023-02-08)
 
 
