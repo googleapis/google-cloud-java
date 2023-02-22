@@ -34,6 +34,7 @@ excludedMapsModule=$(find java-maps-* -name 'pom.xml'  \
 echo "Excluded modules: ${excludedMapsModule}"
 
 mvn clean deploy -B \
+  -T 1C \
   -DskipTests=true \
   -Dclirr.skip=true \
   --settings ${MAVEN_SETTINGS_FILE} \
