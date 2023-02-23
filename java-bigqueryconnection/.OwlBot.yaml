@@ -21,8 +21,6 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-bigqueryconnection/google-cloud-bigqueryconnection/src/test/java/com/google/cloud/bigqueryconnection/v.*/it/ITSystemTest.java"
-- "/java-bigqueryconnection/proto-google-cloud-bigqueryconnection-v1/src/main/java/com/google/cloud/bigquery/connection/v1/ConnectionProto.java"
-- "/java-bigqueryconnection/proto-google-cloud-bigqueryconnection-v1/src/main/java/com/google/cloud/bigquery/connection/ConnectionProto.java"
 
 deep-copy-regex:
 - source: "/google/cloud/bigquery/connection/(v.*)/.*-java/proto-google-.*/src"
