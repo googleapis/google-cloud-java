@@ -25,7 +25,10 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.batching.FlowController;
+import com.google.api.gax.core.GoogleCredentialsProvider;
+import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.AbortedException;
@@ -1365,5 +1368,80 @@ public class StreamWriterTest {
     assertTrue(writer.isClosed());
     assertTrue(ex.getCause() instanceof InvalidArgumentException);
     assertFalse(writer.isUserClosed());
+  }
+
+  @Test(timeout = 10000)
+  public void testBuilderDefaultSetting() throws Exception {
+    StreamWriter.Builder writerBuilder = StreamWriter.newBuilder(TEST_STREAM_1);
+    BigQueryWriteSettings writeSettings = StreamWriter.getBigQueryWriteSettings(writerBuilder);
+    assertEquals(
+        BigQueryWriteSettings.defaultExecutorProviderBuilder().build().toString(),
+        writeSettings.getBackgroundExecutorProvider().toString());
+    assertEquals(
+        BigQueryWriteSettings.defaultCredentialsProviderBuilder().build().toString(),
+        writeSettings.getCredentialsProvider().toString());
+    assertTrue(
+        writeSettings.getTransportChannelProvider() instanceof InstantiatingGrpcChannelProvider);
+    assertEquals(
+        BigQueryWriteSettings.getDefaultEndpoint(), writeSettings.getEndpoint().toString());
+  }
+
+  @Test(timeout = 10000)
+  public void testBuilderExplicitSetting() throws Exception {
+    // Client has special seetings.
+    BigQueryWriteSettings clientSettings =
+        BigQueryWriteSettings.newBuilder()
+            .setEndpoint("xxx:345")
+            .setBackgroundExecutorProvider(
+                InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(4).build())
+            .setTransportChannelProvider(serviceHelper.createChannelProvider())
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .build();
+    BigQueryWriteClient client = BigQueryWriteClient.create(clientSettings);
+    StreamWriter.Builder writerWithClient = StreamWriter.newBuilder(TEST_STREAM_1, client);
+    BigQueryWriteSettings writerSettings = StreamWriter.getBigQueryWriteSettings(writerWithClient);
+    assertEquals("xxx:345", writerSettings.getEndpoint());
+    assertTrue(
+        writerSettings.getBackgroundExecutorProvider() instanceof InstantiatingExecutorProvider);
+    assertEquals(
+        4,
+        ((InstantiatingExecutorProvider) writerSettings.getBackgroundExecutorProvider())
+            .getExecutorThreadCount());
+
+    // Explicit setting on StreamWriter is respected.
+    StreamWriter.Builder writerWithClientWithOverrides =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setEndpoint("yyy:345")
+            .setExecutorProvider(
+                InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(14).build())
+            .setChannelProvider(
+                BigQueryWriteSettings.defaultGrpcTransportProviderBuilder()
+                    .setKeepAliveTimeout(Duration.ofSeconds(500))
+                    .build())
+            .setCredentialsProvider(
+                BigQueryWriteSettings.defaultCredentialsProviderBuilder()
+                    .setScopesToApply(Arrays.asList("A", "B"))
+                    .build());
+    BigQueryWriteSettings writerSettings2 =
+        StreamWriter.getBigQueryWriteSettings(writerWithClientWithOverrides);
+    assertEquals("yyy:345", writerSettings2.getEndpoint());
+    assertTrue(
+        writerSettings2.getBackgroundExecutorProvider() instanceof InstantiatingExecutorProvider);
+    assertEquals(
+        14,
+        ((InstantiatingExecutorProvider) writerSettings2.getBackgroundExecutorProvider())
+            .getExecutorThreadCount());
+    assertTrue(
+        writerSettings2.getTransportChannelProvider() instanceof InstantiatingGrpcChannelProvider);
+    assertEquals(
+        Duration.ofSeconds(500),
+        ((InstantiatingGrpcChannelProvider) writerSettings2.getTransportChannelProvider())
+            .getKeepAliveTimeout());
+    assertTrue(writerSettings2.getCredentialsProvider() instanceof GoogleCredentialsProvider);
+    assertEquals(
+        2,
+        ((GoogleCredentialsProvider) writerSettings2.getCredentialsProvider())
+            .getScopesToApply()
+            .size());
   }
 }

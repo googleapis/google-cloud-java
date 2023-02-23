@@ -308,17 +308,37 @@ public class StreamWriter implements AutoCloseable {
     return streamMatcher.find();
   }
 
-  private BigQueryWriteSettings getBigQueryWriteSettings(Builder builder) throws IOException {
+  static BigQueryWriteSettings getBigQueryWriteSettings(Builder builder) throws IOException {
+    BigQueryWriteSettings.Builder settingsBuilder = null;
     if (builder.client != null) {
-      return builder.client.getSettings();
+      settingsBuilder = builder.client.getSettings().toBuilder();
     } else {
-      return BigQueryWriteSettings.newBuilder()
-          .setCredentialsProvider(builder.credentialsProvider)
-          .setTransportChannelProvider(builder.channelProvider)
-          .setBackgroundExecutorProvider(builder.executorProvider)
-          .setEndpoint(builder.endpoint)
-          .build();
+      settingsBuilder =
+          new BigQueryWriteSettings.Builder()
+              .setTransportChannelProvider(
+                  BigQueryWriteSettings.defaultGrpcTransportProviderBuilder()
+                      .setChannelsPerCpu(1)
+                      .build())
+              .setCredentialsProvider(
+                  BigQueryWriteSettings.defaultCredentialsProviderBuilder().build())
+              .setBackgroundExecutorProvider(
+                  BigQueryWriteSettings.defaultExecutorProviderBuilder().build())
+              .setEndpoint(BigQueryWriteSettings.getDefaultEndpoint());
     }
+    if (builder.channelProvider != null) {
+      settingsBuilder.setTransportChannelProvider(builder.channelProvider);
+    }
+    if (builder.credentialsProvider != null) {
+      settingsBuilder.setCredentialsProvider(builder.credentialsProvider);
+    }
+    if (builder.executorProvider != null) {
+      settingsBuilder.setBackgroundExecutorProvider(builder.executorProvider);
+    }
+    if (builder.endpoint != null) {
+      settingsBuilder.setEndpoint(builder.endpoint);
+    }
+
+    return settingsBuilder.build();
   }
 
   // Validate whether the fetched connection pool matched certain properties.
@@ -542,16 +562,13 @@ public class StreamWriter implements AutoCloseable {
 
     private long maxInflightBytes = DEFAULT_MAX_INFLIGHT_BYTES;
 
-    private String endpoint = BigQueryWriteSettings.getDefaultEndpoint();
+    private String endpoint = null;
 
-    private TransportChannelProvider channelProvider =
-        BigQueryWriteSettings.defaultGrpcTransportProviderBuilder().setChannelsPerCpu(1).build();
+    private TransportChannelProvider channelProvider = null;
 
-    private CredentialsProvider credentialsProvider =
-        BigQueryWriteSettings.defaultCredentialsProviderBuilder().build();
+    private CredentialsProvider credentialsProvider = null;
 
-    private ExecutorProvider executorProvider =
-        BigQueryWriteSettings.defaultExecutorProviderBuilder().build();
+    private ExecutorProvider executorProvider = null;
 
     private FlowController.LimitExceededBehavior limitExceededBehavior =
         FlowController.LimitExceededBehavior.Block;
@@ -633,7 +650,8 @@ public class StreamWriter implements AutoCloseable {
 
     /** {@code ExecutorProvider} to use to create Executor to run background jobs. */
     public Builder setExecutorProvider(ExecutorProvider executorProvider) {
-      this.executorProvider = executorProvider;
+      this.executorProvider =
+          Preconditions.checkNotNull(executorProvider, "ExecutorProvider is null.");
       return this;
     }
 
