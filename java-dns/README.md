@@ -14,6 +14,7 @@ Java idiomatic client for [Cloud DNS][product-docs].
 If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
 
 ```xml
+<!--- {x-version-update-start:      <artifactId>libraries-bom:released} -->
 <dependencyManagement>
   <dependencies>
     <dependency>
@@ -64,6 +65,7 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-dns" % "1.2.8"
 ```
+<!--- {x-version-update-end} -->
 
 ## Authentication
 

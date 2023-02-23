@@ -17,6 +17,7 @@ Java idiomatic client for [Bare Metal Solution][product-docs].
 
 If you are using Maven, add this to your pom.xml file:
 
+<!--- {x-version-update-start:google-cloud-bare-metal-solution:released} -->
 
 ```xml
 <dependency>
@@ -37,6 +38,7 @@ If you are using SBT, add this to your dependencies:
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-bare-metal-solution" % "0.9.0"
 ```
+<!--- {x-version-update-end} -->
 
 ## Authentication
 

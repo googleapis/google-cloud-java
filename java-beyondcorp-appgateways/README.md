@@ -17,6 +17,7 @@ Java idiomatic client for [BeyondCorp AppGateways][product-docs].
 
 If you are using Maven, add this to your pom.xml file:
 
+<!--- {x-version-update-start:google-cloud-beyondcorp-appgateways:released} -->
 
 ```xml
 <dependency>
@@ -37,6 +38,7 @@ If you are using SBT, add this to your dependencies:
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-beyondcorp-appgateways" % "0.7.0"
 ```
+<!--- {x-version-update-end} -->
 
 ## Authentication
 

@@ -17,6 +17,7 @@ Java idiomatic client for [BigQuery DataPolicy API][product-docs].
 
 If you are using Maven, add this to your pom.xml file:
 
+<!--- {x-version-update-start:google-cloud-bigquerydatapolicy:released} -->
 
 ```xml
 <dependency>
@@ -37,6 +38,7 @@ If you are using SBT, add this to your dependencies:
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-bigquerydatapolicy" % "0.6.0"
 ```
+<!--- {x-version-update-end} -->
 
 ## Authentication
 

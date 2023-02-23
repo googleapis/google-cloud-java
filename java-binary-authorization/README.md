@@ -14,6 +14,7 @@ Java idiomatic client for [Binary Authorization][product-docs].
 
 If you are using Maven, add this to your pom.xml file:
 
+<!--- {x-version-update-start:google-cloud-binary-authorization:released} -->
 
 ```xml
 <dependency>
@@ -34,6 +35,7 @@ If you are using SBT, add this to your dependencies:
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-binary-authorization" % "1.8.0"
 ```
+<!--- {x-version-update-end} -->
 
 ## Authentication
 
