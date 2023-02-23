@@ -15,6 +15,11 @@
 
 set -eo pipefail
 
+# This stage-non-cloud.sh publishes the artifacts to oss.sonatype.org publishing
+# host, not google.oss.sonatype.org. A group ID of Maven artifact can belong to
+# one publishing host. As of February 2023, com.google.maps group
+# ID is not part of the google.oss.sonatype.org publishing host.
+
 # Start the releasetool reporter
 requirementsFile=$(realpath $(dirname "$0")/../../)/.kokoro/requirements.txt
 python3 -m pip install --require-hashes -r $requirementsFile
@@ -27,8 +32,9 @@ pushd $(dirname "$0")/../../
 setup_environment_secrets
 create_settings_xml_file "settings.xml"
 
-echo "Deploying artifacts to staging repositories"
+echo "Deploying non-Cloud artifacts to staging repositories in oss.sonatype.org"
 
+# Lists modules for Google Maps artifacts, including their submodules.
 includedMapsModule=$(find java-maps-* -name 'pom.xml'  \
     |sed -e 's|/pom.xml$||' |xargs  |sed -e 's/ /,/g')
 echo "Included modules: ${includedMapsModule}"

@@ -27,7 +27,7 @@ pushd $(dirname "$0")/../../
 setup_environment_secrets
 create_settings_xml_file "settings.xml"
 
-echo "Deploying artifacts to staging repositories"
+echo "Deploying artifacts to staging repositories in google.oss.sonatype.org"
 
 excludedMapsModule=$(find java-maps-* -name 'pom.xml'  \
     |sed -e 's/^/!/' -e 's|/pom.xml$||' |xargs  |sed -e 's/ /,/g')
