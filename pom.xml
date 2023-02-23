@@ -217,6 +217,8 @@
     </profile>
     <profile>
       <id>release-non-google-oss-sonatype</id>
+      <!-- Profile when releasing artifacts to oss.sonatype.org whereas normally
+        we publish artifacts to google.oss.sonatype.org -->
       <build>
         <plugins>
           <plugin>
