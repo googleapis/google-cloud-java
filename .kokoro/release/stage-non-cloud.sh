@@ -29,9 +29,9 @@ create_settings_xml_file "settings.xml"
 
 echo "Deploying artifacts to staging repositories"
 
-excludedMapsModule=$(find java-maps-* -name 'pom.xml'  \
-    |sed -e 's/^/!/' -e 's|/pom.xml$||' |xargs  |sed -e 's/ /,/g')
-echo "Excluded modules: ${excludedMapsModule}"
+includedMapsModule=$(find java-maps-* -name 'pom.xml'  \
+    |sed -e 's|/pom.xml$||' |xargs  |sed -e 's/ /,/g')
+echo "Included modules: ${includedMapsModule}"
 
 mvn clean deploy -B \
   -DskipTests=true \
@@ -40,8 +40,10 @@ mvn clean deploy -B \
   -Dgpg.executable=gpg \
   -Dgpg.passphrase=${GPG_PASSPHRASE} \
   -Dgpg.homedir=${GPG_HOMEDIR} \
-  --projects "${excludedMapsModule}" \
-  -P release
+  --projects "${includedMapsModule}" \
+  -P release \
+  -P release-non-google-oss-sonatype
+
 
 # The job triggered by Release Please (release-trigger) has this AUTORELEASE_PR
 # environment variable. Fusion also lets us to specify this variable.
