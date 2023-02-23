@@ -50,7 +50,8 @@ mvn clean deploy -B \
   -Dgpg.homedir=${GPG_HOMEDIR} \
   --projects "${includedMapsModule}" \
   -P release \
-  -P release-non-google-oss-sonatype
+  -DserverId=nexus \
+  -DnexusUrl=https://oss.sonatype.org/
 
 
 # The job triggered by Release Please (release-trigger) has this AUTORELEASE_PR
@@ -60,7 +61,9 @@ then
   echo "Releasing the staging repositories"
   mvn nexus-staging:release -B \
     -DperformRelease=true \
-    --settings=${MAVEN_SETTINGS_FILE}
+    --settings=${MAVEN_SETTINGS_FILE} \
+    -DserverId=nexus \
+    -DnexusUrl=https://oss.sonatype.org/
 else
   echo "AUTORELEASE_PR is not set. Not releasing."
 fi
