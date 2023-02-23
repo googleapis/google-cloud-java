@@ -359,13 +359,13 @@ def generate(
         cwd=monorepo_root,
     )
 
-     print("Adding annotations in readme")
-     subprocess.check_call(
+    print("Adding annotations in readme")
+    subprocess.check_call(
         [
-             "bash", "generation/readme_update.sh"
+            "bash", "generation/readme_update.sh"
         ],
         cwd=monorepo_root,
-     )
+    )
 
     print(f"Prepared new library in {workdir}")
     print(f"Please create a pull request:\n"
