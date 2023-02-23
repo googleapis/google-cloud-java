@@ -360,11 +360,11 @@ def generate(
     )
 
      print("Adding release-please annotations in readme files")
-        subprocess.check_call(
-            [
-                "bash", "generation/readme_update.sh"
-            ],
-            cwd=monorepo_root,
+     subprocess.check_call(
+        [
+             "bash", "generation/readme_update.sh"
+        ],
+        cwd=monorepo_root,
      )
 
     print(f"Prepared new library in {workdir}")
