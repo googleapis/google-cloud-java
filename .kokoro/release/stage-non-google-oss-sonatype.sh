@@ -15,10 +15,12 @@
 
 set -eo pipefail
 
-# This stage-non-cloud.sh publishes the artifacts to oss.sonatype.org publishing
+# This stage-non-google-oss-sonatype.sh publishes the artifacts to oss.sonatype.org publishing
 # host, not google.oss.sonatype.org. A group ID of Maven artifact can belong to
 # one publishing host. As of February 2023, com.google.maps group
-# ID is not part of the google.oss.sonatype.org publishing host.
+# ID is not part of the google.oss.sonatype.org publishing host. In future when
+# we move com.google.maps (and others) to the
+# google.oss.sonatype.org publishing host, we can stop this job separated.
 
 # Start the releasetool reporter
 requirementsFile=$(realpath $(dirname "$0")/../../)/.kokoro/requirements.txt
