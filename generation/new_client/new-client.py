@@ -359,7 +359,7 @@ def generate(
         cwd=monorepo_root,
     )
 
-     print("Adding release-please annotations in readme files")
+     print("Adding annotations in readme")
      subprocess.check_call(
         [
              "bash", "generation/readme_update.sh"

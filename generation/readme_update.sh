@@ -27,10 +27,10 @@ for module in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirn
     line_number_end=$(grep -n -m 1 "Scala" ${readme_file} | sed 's/\([0-9]*\).*/\1/')
     end_line=${line_number_end}+4
 
-    start_line_append="<!--- {x-version-update-start:${artifactId}:released} -->"
+    start_line_append="<!-- {x-version-update-start:${artifactId}:released} -->"
 
     printf '%s\n' H ${start_line}i "${start_line_append}" . w | ed -s ${readme_file}
-    printf '%s\n' H ${end_line}i "<!--- {x-version-update-end} -->" . w | ed -s ${readme_file}
+    printf '%s\n' H ${end_line}i "<!-- {x-version-update-end} -->" . w | ed -s ${readme_file}
 
   fi
 
