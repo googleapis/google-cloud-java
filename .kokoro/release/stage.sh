@@ -29,9 +29,12 @@ create_settings_xml_file "settings.xml"
 
 echo "Deploying artifacts to staging repositories in google.oss.sonatype.org"
 
-excludedMapsModule=$(find java-maps-* -name 'pom.xml'  \
+# Excluding modules that cannot be published to the google.oss.sonatype.org
+# publishing host.
+# https://github.com/googleapis/google-cloud-java/issues/9045
+excludedNonCloudModules=$(find java-maps-* -name 'pom.xml'  \
     |sed -e 's/^/!/' -e 's|/pom.xml$||' |xargs  |sed -e 's/ /,/g')
-echo "Excluded modules: ${excludedMapsModule}"
+echo "Excluded modules: ${excludedNonCloudModules}"
 
 mvn clean deploy -B \
   -DskipTests=true \
@@ -40,7 +43,7 @@ mvn clean deploy -B \
   -Dgpg.executable=gpg \
   -Dgpg.passphrase=${GPG_PASSPHRASE} \
   -Dgpg.homedir=${GPG_HOMEDIR} \
-  --projects "${excludedMapsModule}" \
+  --projects "${excludedNonCloudModules}" \
   -P release
 
 # The job triggered by Release Please (release-trigger) has this AUTORELEASE_PR
