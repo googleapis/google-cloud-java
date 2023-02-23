@@ -11,6 +11,34 @@ Java protobuf classes for IAM Policy.
 
 Java 7 or above is required for using this client.
 
+## Quickstart
+
+
+If you are using Maven, add this to your pom.xml file:
+<!--- {x-version-update-start:google-iam-policy:released} -->
+
+```xml
+<dependency>
+  <groupId>com.google.cloud</groupId>
+  <artifactId>google-iam-policy</artifactId>
+  <version>1.8.9</version>
+</dependency>
+```
+
+If you are using Gradle without BOM, add this to your dependencies:
+
+```Groovy
+implementation 'com.google.cloud:google-iam-policy:1.8.9'
+```
+
+If you are using SBT, add this to your dependencies:
+
+```Scala
+libraryDependencies += "com.google.cloud" % "google-iam-policy" % "1.8.9"
+```
+<!--- {x-version-update-end} -->
+
+
 ## Versioning
 
 This library follows [Semantic Versioning](http://semver.org/).

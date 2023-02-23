@@ -4,7 +4,7 @@
 
 for module in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirname); do
 
-  if [[ "${module}" = *java-core ]] || [[ "${module}" = *java-shared-dependencies ]] || [[ "${module}" = *java-iam ]]; then
+  if [[ "${module}" = *java-core ]] || [[ "${module}" = *java-shared-dependencies ]]; then
     continue
   fi
 

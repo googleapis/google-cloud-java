@@ -359,6 +359,14 @@ def generate(
         cwd=monorepo_root,
     )
 
+     print("Adding release-please annotations in readme files")
+        subprocess.check_call(
+            [
+                "bash", "generation/readme_update.sh"
+            ],
+            cwd=monorepo_root,
+     )
+
     print(f"Prepared new library in {workdir}")
     print(f"Please create a pull request:\n"
           f"  $ git checkout -b new_module_java-{output_name}\n"
