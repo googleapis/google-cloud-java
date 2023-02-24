@@ -172,11 +172,9 @@ final class ChangeStreamStateMachine<ChangeStreamRecordT> {
    * <dl>
    *   <dt>Valid states:
    *   <dd>{@link ChangeStreamStateMachine#AWAITING_NEW_STREAM_RECORD}
-   *   <dd>{@link ChangeStreamStateMachine#AWAITING_NEW_MOD}
-   *   <dd>{@link ChangeStreamStateMachine#AWAITING_CELL_VALUE}
+   *   <dd>{@link ChangeStreamStateMachine#AWAITING_NEW_DATA_CHANGE}
    *   <dt>Resulting states:
-   *   <dd>{@link ChangeStreamStateMachine#AWAITING_NEW_MOD}
-   *   <dd>{@link ChangeStreamStateMachine#AWAITING_CELL_VALUE}
+   *   <dd>{@link ChangeStreamStateMachine#AWAITING_NEW_DATA_CHANGE}
    *   <dd>{@link ChangeStreamStateMachine#AWAITING_STREAM_RECORD_CONSUME}
    * </dl>
    *
@@ -188,7 +186,7 @@ final class ChangeStreamStateMachine<ChangeStreamRecordT> {
   void handleDataChange(ReadChangeStreamResponse.DataChange dataChange) {
     try {
       numDataChanges++;
-      currentState = currentState.handleMod(dataChange, 0);
+      currentState = currentState.handleDataChange(dataChange);
     } catch (RuntimeException e) {
       currentState = ERROR;
       throw e;
@@ -268,18 +266,17 @@ final class ChangeStreamStateMachine<ChangeStreamRecordT> {
     }
 
     /**
-     * Accepts a new mod and transitions to the next state. A mod could be a DeleteFamily, a
-     * DeleteColumn, or a SetCell.
+     * Accepts a new DataChange and transitions to the next state. A DataChange can have multiple
+     * mods, where each mod could be a DeleteFamily, a DeleteColumn, or a SetCell.
      *
      * @param dataChange The DataChange that holds the new mod to process.
-     * @param index The index of the mod in the DataChange.
      * @return The next state.
-     * @throws IllegalStateException If the subclass can't handle the mod.
+     * @throws IllegalStateException If the subclass can't handle the DataChange.
      * @throws ChangeStreamStateMachine.InvalidInputException If the subclass determines that this
      *     dataChange is invalid.
      */
-    ChangeStreamStateMachine.State handleMod(
-        ReadChangeStreamResponse.DataChange dataChange, int index) {
+    ChangeStreamStateMachine.State handleDataChange(
+        ReadChangeStreamResponse.DataChange dataChange) {
       throw new IllegalStateException();
     }
   }
@@ -292,7 +289,8 @@ final class ChangeStreamStateMachine<ChangeStreamRecordT> {
    * <dl>
    *   <dd>{@link ChangeStreamStateMachine#AWAITING_STREAM_RECORD_CONSUME}, in case of a Heartbeat
    *       or a CloseStream.
-   *   <dd>Same as {@link ChangeStreamStateMachine#AWAITING_NEW_MOD}, depending on the DataChange.
+   *   <dd>Same as {@link ChangeStreamStateMachine#AWAITING_NEW_DATA_CHANGE}, depending on the
+   *       DataChange.
    * </dl>
    */
   private final State AWAITING_NEW_STREAM_RECORD =
@@ -316,7 +314,7 @@ final class ChangeStreamStateMachine<ChangeStreamRecordT> {
         }
 
         @Override
-        State handleMod(ReadChangeStreamResponse.DataChange dataChange, int index) {
+        State handleDataChange(ReadChangeStreamResponse.DataChange dataChange) {
           validate(
               completeChangeStreamRecord == null,
               "AWAITING_NEW_STREAM_RECORD: Existing ChangeStreamRecord not consumed yet.");
@@ -326,9 +324,6 @@ final class ChangeStreamStateMachine<ChangeStreamRecordT> {
           validate(
               dataChange.hasCommitTimestamp(),
               "AWAITING_NEW_STREAM_RECORD: First data change missing commit timestamp.");
-          validate(
-              index == 0,
-              "AWAITING_NEW_STREAM_RECORD: First data change should start with the first mod.");
           validate(
               dataChange.getChunksCount() > 0,
               "AWAITING_NEW_STREAM_RECORD: First data change missing mods.");
@@ -356,161 +351,138 @@ final class ChangeStreamStateMachine<ChangeStreamRecordT> {
           } else {
             validate(false, "AWAITING_NEW_STREAM_RECORD: Unexpected type: " + dataChange.getType());
           }
-          return AWAITING_NEW_MOD.handleMod(dataChange, index);
+          return AWAITING_NEW_DATA_CHANGE.handleDataChange(dataChange);
         }
       };
 
   /**
-   * A state to handle the next Mod.
+   * A state to handle the next DataChange.
    *
    * <dl>
    *   <dt>Valid exit states:
-   *   <dd>{@link ChangeStreamStateMachine#AWAITING_NEW_MOD}. Current mod is added, and we have more
-   *       mods to expect.
-   *   <dd>{@link ChangeStreamStateMachine#AWAITING_CELL_VALUE}. Current mod is the first chunk of a
-   *       chunked SetCell.
-   *   <dd>{@link ChangeStreamStateMachine#AWAITING_STREAM_RECORD_CONSUME}. Current mod is the last
-   *       mod of the current logical mutation.
+   *   <dd>{@link ChangeStreamStateMachine#AWAITING_NEW_DATA_CHANGE}. All mods from the current
+   *       DataChange are added, and we have more DataChange to expect.
+   *   <dd>{@link ChangeStreamStateMachine#AWAITING_STREAM_RECORD_CONSUME}. Current DataChange is
+   *       the last DataChange of the current logical mutation.
    * </dl>
    */
-  private final State AWAITING_NEW_MOD =
+  private final State AWAITING_NEW_DATA_CHANGE =
       new State() {
         @Override
         State handleHeartbeat(ReadChangeStreamResponse.Heartbeat heartbeat) {
           throw new IllegalStateException(
-              "AWAITING_NEW_MOD: Can't handle a Heartbeat in the middle of building a ChangeStreamMutation.");
+              "AWAITING_NEW_DATA_CHANGE: Can't handle a Heartbeat in the middle of building a ChangeStreamMutation.");
         }
 
         @Override
         State handleCloseStream(ReadChangeStreamResponse.CloseStream closeStream) {
           throw new IllegalStateException(
-              "AWAITING_NEW_MOD: Can't handle a CloseStream in the middle of building a ChangeStreamMutation.");
+              "AWAITING_NEW_DATA_CHANGE: Can't handle a CloseStream in the middle of building a ChangeStreamMutation.");
         }
 
         @Override
-        State handleMod(ReadChangeStreamResponse.DataChange dataChange, int index) {
-          validate(
-              0 <= index && index <= dataChange.getChunksCount() - 1,
-              "AWAITING_NEW_MOD: Index out of bound.");
-          ReadChangeStreamResponse.MutationChunk chunk = dataChange.getChunks(index);
-          Mutation mod = chunk.getMutation();
-          // Case 1: SetCell
-          if (mod.hasSetCell()) {
-            // Start the Cell and delegate to AWAITING_CELL_VALUE to add the cell value.
-            Mutation.SetCell setCell = chunk.getMutation().getSetCell();
-            if (chunk.hasChunkInfo()) {
-              // If it has chunk info, it must be the first chunk of a chunked SetCell.
-              validate(
-                  chunk.getChunkInfo().getChunkedValueOffset() == 0,
-                  "AWAITING_NEW_MOD: First chunk of a chunked cell must start with offset==0.");
-              validate(
-                  chunk.getChunkInfo().getChunkedValueSize() > 0,
-                  "AWAITING_NEW_MOD: First chunk of a chunked cell must have a positive chunked value size.");
-              expectedTotalSizeOfChunkedSetCell = chunk.getChunkInfo().getChunkedValueSize();
-              actualTotalSizeOfChunkedSetCell = 0;
+        State handleDataChange(ReadChangeStreamResponse.DataChange dataChange) {
+          // Iterate over all mods.
+          for (int index = 0; index < dataChange.getChunksCount(); ++index) {
+            ReadChangeStreamResponse.MutationChunk chunk = dataChange.getChunks(index);
+            Mutation mod = chunk.getMutation();
+            // Case 1: SetCell
+            if (mod.hasSetCell()) {
+              Mutation.SetCell setCell = chunk.getMutation().getSetCell();
+              // Case 1_1: Current SetCell is NOT chunked, in which case there is no ChunkInfo.
+              if (!chunk.hasChunkInfo()) {
+                builder.startCell(
+                    setCell.getFamilyName(),
+                    setCell.getColumnQualifier(),
+                    setCell.getTimestampMicros());
+                numCellChunks++;
+                builder.cellValue(setCell.getValue());
+                builder.finishCell();
+                continue;
+              } else {
+                // Case 1_2: This chunk is from a chunked SetCell, which must be one of the
+                // following:
+                // Case 1_2_1: The first chunk of a chunked SetCell. For example: SetCell_chunk_1
+                // in
+                // [ReadChangeStreamResponse1: {..., SetCell_chunk_1}, ReadChangeStreamResponse2:
+                // {SetCell_chunk_2, ...}].
+                // Case 1_2_2: A non-first chunk from a chunked SetCell. For example:
+                // SetCell_chunk_2 in
+                // [ReadChangeStreamResponse1: {..., SetCell_chunk_1}, ReadChangeStreamResponse2:
+                // {SetCell_chunk_2, ...}]. Note that in this case this chunk must be the first
+                // chunk for the current DataChange, because a SetCell can NOT be chunked within
+                // the same DataChange, i.e. there is no such DataChange as
+                // [ReadChangeStreamResponse: {SetCell_chunk_1, SetCell_chunk_2}].
+                if (chunk.getChunkInfo().getChunkedValueOffset() == 0) {
+                  // Case 1_2_1
+                  validate(
+                      chunk.getChunkInfo().getChunkedValueSize() > 0,
+                      "AWAITING_NEW_DATA_CHANGE: First chunk of a chunked cell must have a positive chunked value size.");
+                  expectedTotalSizeOfChunkedSetCell = chunk.getChunkInfo().getChunkedValueSize();
+                  actualTotalSizeOfChunkedSetCell = 0;
+                  builder.startCell(
+                      setCell.getFamilyName(),
+                      setCell.getColumnQualifier(),
+                      setCell.getTimestampMicros());
+                } else {
+                  // Case 1_2_2
+                  validate(
+                      index == 0,
+                      "AWAITING_NEW_DATA_CHANGE: Non-first chunked SetCell must be the first mod of a DataChange.");
+                }
+                // Concatenate the cell value of this mod into the builder.
+                validate(
+                    chunk.getChunkInfo().getChunkedValueSize() == expectedTotalSizeOfChunkedSetCell,
+                    "AWAITING_NEW_DATA_CHANGE: Chunked cell value size must be the same for all chunks.");
+                numCellChunks++;
+                builder.cellValue(setCell.getValue());
+                actualTotalSizeOfChunkedSetCell += setCell.getValue().size();
+                // If it's the last chunk of the chunked SetCell, finish the cell.
+                if (chunk.getChunkInfo().getLastChunk()) {
+                  builder.finishCell();
+                  validate(
+                      actualTotalSizeOfChunkedSetCell == expectedTotalSizeOfChunkedSetCell,
+                      "Chunked value size in ChunkInfo doesn't match the actual total size. "
+                          + "Expected total size: "
+                          + expectedTotalSizeOfChunkedSetCell
+                          + "; actual total size: "
+                          + actualTotalSizeOfChunkedSetCell);
+                  continue;
+                } else {
+                  // If this is not the last chunk of a chunked SetCell, then this must be the last
+                  // mod of the current response, and we're expecting the rest of the chunked cells
+                  // in the following ReadChangeStream response.
+                  validate(
+                      index == dataChange.getChunksCount() - 1,
+                      "AWAITING_NEW_DATA_CHANGE: Current mod is a chunked SetCell "
+                          + "but not the last chunk, but it's not the last mod of the current response.");
+                  return AWAITING_NEW_DATA_CHANGE;
+                }
+              }
             }
-            builder.startCell(
-                setCell.getFamilyName(),
-                setCell.getColumnQualifier(),
-                setCell.getTimestampMicros());
-            return AWAITING_CELL_VALUE.handleMod(dataChange, index);
-          }
-          // Case 2: DeleteFamily
-          if (mod.hasDeleteFromFamily()) {
-            numNonCellMods++;
-            builder.deleteFamily(mod.getDeleteFromFamily().getFamilyName());
-            return checkAndFinishMutationIfNeeded(dataChange, index + 1);
-          }
-          // Case 3: DeleteCell
-          if (mod.hasDeleteFromColumn()) {
-            numNonCellMods++;
-            builder.deleteCells(
-                mod.getDeleteFromColumn().getFamilyName(),
-                mod.getDeleteFromColumn().getColumnQualifier(),
-                TimestampRange.create(
-                    mod.getDeleteFromColumn().getTimeRange().getStartTimestampMicros(),
-                    mod.getDeleteFromColumn().getTimeRange().getEndTimestampMicros()));
-            return checkAndFinishMutationIfNeeded(dataChange, index + 1);
-          }
-          throw new IllegalStateException("AWAITING_NEW_MOD: Unexpected mod type");
-        }
-      };
-
-  /**
-   * A state that represents a cell's value continuation.
-   *
-   * <dl>
-   *   <dt>Valid exit states:
-   *   <dd>{@link ChangeStreamStateMachine#AWAITING_NEW_MOD}. Current chunked SetCell is added, and
-   *       we have more mods to expect.
-   *   <dd>{@link ChangeStreamStateMachine#AWAITING_CELL_VALUE}. Current chunked SetCell has more
-   *       cell values to expect.
-   *   <dd>{@link ChangeStreamStateMachine#AWAITING_STREAM_RECORD_CONSUME}. Current chunked SetCell
-   *       is the last mod of the current logical mutation.
-   * </dl>
-   */
-  private final State AWAITING_CELL_VALUE =
-      new State() {
-        @Override
-        State handleHeartbeat(ReadChangeStreamResponse.Heartbeat heartbeat) {
-          throw new IllegalStateException(
-              "AWAITING_CELL_VALUE: Can't handle a Heartbeat in the middle of building a SetCell.");
-        }
-
-        @Override
-        State handleCloseStream(ReadChangeStreamResponse.CloseStream closeStream) {
-          throw new IllegalStateException(
-              "AWAITING_CELL_VALUE: Can't handle a CloseStream in the middle of building a SetCell.");
-        }
-
-        @Override
-        State handleMod(ReadChangeStreamResponse.DataChange dataChange, int index) {
-          validate(
-              0 <= index && index <= dataChange.getChunksCount() - 1,
-              "AWAITING_CELL_VALUE: Index out of bound.");
-          ReadChangeStreamResponse.MutationChunk chunk = dataChange.getChunks(index);
-          validate(
-              chunk.getMutation().hasSetCell(),
-              "AWAITING_CELL_VALUE: Current mod is not a SetCell.");
-          Mutation.SetCell setCell = chunk.getMutation().getSetCell();
-          numCellChunks++;
-          builder.cellValue(setCell.getValue());
-          // Case 1: Current SetCell is chunked. For example: [ReadChangeStreamResponse1:
-          // {DeleteColumn, DeleteFamily, SetCell_1}, ReadChangeStreamResponse2: {SetCell_2,
-          // DeleteFamily}].
-          if (chunk.hasChunkInfo()) {
-            validate(
-                chunk.getChunkInfo().getChunkedValueSize() > 0,
-                "AWAITING_CELL_VALUE: Chunked value size must be positive.");
-            validate(
-                chunk.getChunkInfo().getChunkedValueSize() == expectedTotalSizeOfChunkedSetCell,
-                "AWAITING_CELL_VALUE: Chunked value size must be the same for all chunks.");
-            actualTotalSizeOfChunkedSetCell += setCell.getValue().size();
-            // If it's the last chunk of the chunked SetCell, finish the cell.
-            if (chunk.getChunkInfo().getLastChunk()) {
-              builder.finishCell();
-              validate(
-                  actualTotalSizeOfChunkedSetCell == expectedTotalSizeOfChunkedSetCell,
-                  "Chunked value size in ChunkInfo doesn't match the actual total size. "
-                      + "Expected total size: "
-                      + expectedTotalSizeOfChunkedSetCell
-                      + "; actual total size: "
-                      + actualTotalSizeOfChunkedSetCell);
-              return checkAndFinishMutationIfNeeded(dataChange, index + 1);
-            } else {
-              // If this is not the last chunk of a chunked SetCell, then this must be the last mod
-              // of the current response, and we're expecting the rest of the chunked cells in the
-              // following ReadChangeStream response.
-              validate(
-                  index == dataChange.getChunksCount() - 1,
-                  "AWAITING_CELL_VALUE: Current mod is a chunked SetCell "
-                      + "but not the last chunk, but it's not the last mod of the current response.");
-              return AWAITING_CELL_VALUE;
+            // Case 2: DeleteFamily
+            if (mod.hasDeleteFromFamily()) {
+              numNonCellMods++;
+              builder.deleteFamily(mod.getDeleteFromFamily().getFamilyName());
+              continue;
             }
+            // Case 3: DeleteCell
+            if (mod.hasDeleteFromColumn()) {
+              numNonCellMods++;
+              builder.deleteCells(
+                  mod.getDeleteFromColumn().getFamilyName(),
+                  mod.getDeleteFromColumn().getColumnQualifier(),
+                  TimestampRange.create(
+                      mod.getDeleteFromColumn().getTimeRange().getStartTimestampMicros(),
+                      mod.getDeleteFromColumn().getTimeRange().getEndTimestampMicros()));
+              continue;
+            }
+            throw new IllegalStateException("AWAITING_NEW_DATA_CHANGE: Unexpected mod type");
           }
-          // Case 2: Current SetCell is not chunked.
-          builder.finishCell();
-          return checkAndFinishMutationIfNeeded(dataChange, index + 1);
+
+          // After adding all mods from this DataChange to the state machine, finish the current
+          // logical mutation, or wait for the next DataChange response.
+          return checkAndFinishMutationIfNeeded(dataChange);
         }
       };
 
@@ -535,7 +507,7 @@ final class ChangeStreamStateMachine<ChangeStreamRecordT> {
         }
 
         @Override
-        State handleMod(ReadChangeStreamResponse.DataChange dataChange, int index) {
+        State handleDataChange(ReadChangeStreamResponse.DataChange dataChange) {
           throw new IllegalStateException(
               "AWAITING_STREAM_RECORD_CONSUME: Skipping completed change stream record.");
         }
@@ -558,39 +530,29 @@ final class ChangeStreamStateMachine<ChangeStreamRecordT> {
         }
 
         @Override
-        State handleMod(ReadChangeStreamResponse.DataChange dataChange, int index) {
+        State handleDataChange(ReadChangeStreamResponse.DataChange dataChange) {
           throw new IllegalStateException("ERROR: Failed to handle DataChange.");
         }
       };
 
   /**
-   * Check if we should continue handling mods in the current DataChange or wrap up. There are 3
-   * cases:
+   * Check if we should continue handling DataChanges in the following responses or wrap up. There
+   * are 2 cases:
    *
    * <ul>
-   *   <li>1) index < dataChange.getChunksCount() -> continue to handle the next mod.
-   *   <li>2_1) index == dataChange.getChunksCount() && dataChange.done == true -> current change
-   *       stream mutation is complete. Wrap it up and return {@link
-   *       ChangeStreamStateMachine#AWAITING_STREAM_RECORD_CONSUME}.
-   *   <li>2_2) index == dataChange.getChunksCount() && dataChange.done != true -> current change
-   *       stream mutation isn't complete. Return {@link ChangeStreamStateMachine#AWAITING_NEW_MOD}
-   *       to wait for more mods in the next ReadChangeStreamResponse.
+   *   <li>1) dataChange.done == true -> current change stream mutation is complete. Wrap it up and
+   *       return {@link ChangeStreamStateMachine#AWAITING_STREAM_RECORD_CONSUME}.
+   *   <li>2) dataChange.done != true -> current change stream mutation isn't complete. Return
+   *       {@link ChangeStreamStateMachine#AWAITING_NEW_DATA_CHANGE} to wait for more mods in the
+   *       next ReadChangeStreamResponse.
    * </ul>
    */
-  private State checkAndFinishMutationIfNeeded(
-      ReadChangeStreamResponse.DataChange dataChange, int index) {
-    validate(
-        0 <= index && index <= dataChange.getChunksCount(),
-        "checkAndFinishMutationIfNeeded: index out of bound.");
-    // Case 1): Handle the next mod.
-    if (index < dataChange.getChunksCount()) {
-      return AWAITING_NEW_MOD.handleMod(dataChange, index);
-    }
-    // If we reach here, it means that all the mods in this DataChange have been handled. We should
+  private State checkAndFinishMutationIfNeeded(ReadChangeStreamResponse.DataChange dataChange) {
+    // This function is called when all the mods in this DataChange have been handled. We should
     // finish up the logical mutation or wait for more mods in the next ReadChangeStreamResponse,
     // depending on whether the current response is the last response for the logical mutation.
     if (dataChange.getDone()) {
-      // Case 2_1): Current change stream mutation is complete.
+      // Case 1: Current change stream mutation is complete.
       validate(!dataChange.getToken().isEmpty(), "Last data change missing token");
       validate(dataChange.hasEstimatedLowWatermark(), "Last data change missing lowWatermark");
       completeChangeStreamRecord =
@@ -601,10 +563,10 @@ final class ChangeStreamStateMachine<ChangeStreamRecordT> {
                   dataChange.getEstimatedLowWatermark().getNanos()));
       return AWAITING_STREAM_RECORD_CONSUME;
     }
-    // Case 2_2): The current DataChange itself is chunked, so wait for the next
-    // ReadChangeStreamResponse. Note that we should wait for the new mods instead
+    // Case 2: The current DataChange itself is chunked, so wait for the next
+    // ReadChangeStreamResponse. Note that we should wait for the new data change instead
     // of for the new change stream record since the current record hasn't finished yet.
-    return AWAITING_NEW_MOD;
+    return AWAITING_NEW_DATA_CHANGE;
   }
 
   private void validate(boolean condition, String message) {
