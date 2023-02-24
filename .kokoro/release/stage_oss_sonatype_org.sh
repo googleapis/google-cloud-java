@@ -15,7 +15,7 @@
 
 set -eo pipefail
 
-# This stage-non-google-oss-sonatype.sh publishes the artifacts to oss.sonatype.org publishing
+# This stage_oss_sonatype_org.sh publishes the artifacts to oss.sonatype.org publishing
 # host, not google.oss.sonatype.org. A group ID of Maven artifact can belong to
 # one publishing host. As of February 2023, com.google.maps group
 # ID is not part of the google.oss.sonatype.org publishing host. In future when
