@@ -38,6 +38,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -349,6 +350,72 @@ public class ConnectionWorkerTest {
     for (int i = 0; i < appendCount - 1; i++) {
       assertEquals(i, futures.get(i).get().getAppendResult().getOffset().getValue());
     }
+  }
+
+  @Test
+  public void testThrowExceptionWhileWithinAppendLoop() throws Exception {
+    ProtoSchema schema1 = createProtoSchema("foo");
+    StreamWriter sw1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client).setWriterSchema(schema1).build();
+    ConnectionWorker connectionWorker =
+        new ConnectionWorker(
+            TEST_STREAM_1,
+            createProtoSchema("foo"),
+            100000,
+            100000,
+            Duration.ofSeconds(100),
+            FlowController.LimitExceededBehavior.Block,
+            TEST_TRACE_ID,
+            client.getSettings());
+    testBigQueryWrite.setResponseSleep(org.threeten.bp.Duration.ofSeconds(1));
+    ConnectionWorker.setMaxInflightQueueWaitTime(500);
+
+    long appendCount = 10;
+    for (int i = 0; i < appendCount; i++) {
+      testBigQueryWrite.addResponse(createAppendResponse(i));
+    }
+    connectionWorker.setTestOnlyRunTimeExceptionInAppendLoop(
+        new RuntimeException("Any exception can happen."));
+    // Sleep 1 second before erroring out.
+    connectionWorker.setTestOnlyAppendLoopSleepTime(1000L);
+
+    // In total insert 5 requests,
+    List<ApiFuture<AppendRowsResponse>> futures = new ArrayList<>();
+    for (int i = 0; i < appendCount; i++) {
+      futures.add(
+          sendTestMessage(
+              connectionWorker, sw1, createFooProtoRows(new String[] {String.valueOf(i)}), i));
+      assertEquals(connectionWorker.getLoad().inFlightRequestsCount(), i + 1);
+    }
+
+    for (int i = 0; i < appendCount; i++) {
+      int finalI = i;
+      ExecutionException ex =
+          assertThrows(
+              ExecutionException.class,
+              () -> futures.get(finalI).get().getAppendResult().getOffset().getValue());
+      assertThat(ex.getCause()).hasMessageThat().contains("Any exception can happen.");
+    }
+
+    // The future append will directly fail.
+    ExecutionException ex =
+        assertThrows(
+            ExecutionException.class,
+            () ->
+                sendTestMessage(
+                        connectionWorker,
+                        sw1,
+                        createFooProtoRows(new String[] {String.valueOf(100)}),
+                        100)
+                    .get());
+    assertThat(ex.getCause()).hasMessageThat().contains("Any exception can happen.");
+  }
+
+  @Test
+  public void testExponentialBackoff() throws Exception {
+    assertThat(ConnectionWorker.calculateSleepTimeMilli(0)).isEqualTo(1);
+    assertThat(ConnectionWorker.calculateSleepTimeMilli(5)).isEqualTo(32);
+    assertThat(ConnectionWorker.calculateSleepTimeMilli(100)).isEqualTo(60000);
   }
 
   private AppendRowsResponse createAppendResponse(long offset) {
