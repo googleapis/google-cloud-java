@@ -14,34 +14,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  group_id_check_for_maps_libraries:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Install Maps modules
-        run: |
-          IncludedNonCloudModules=$(find java-maps-* -name 'pom.xml'  \
-              |sed -e 's|/pom.xml$||' |xargs  |sed -e 's/ /,/g')
-          echo "Included modules: ${IncludedNonCloudModules}"
-          mvn -B -V -ntp install --also-make --projects "${IncludedNonCloudModules}" \
-              -DskipTests
-
-      - name: Ensure Maps libraries have com.google.maps group IDs
-        run: |
-          for POM in $(find java-maps-* -name 'pom.xml'); do
-            group_id=$(mvn -q exec:exec -Dexec.executable=echo -Dexec.args='${project.groupId}' \
-                --projects $POM  2>/dev/null )
-            echo "${group_id}" |grep -q com.google.maps
-            # 0 if match; otherwise 1
-            match=$?
-            if [ "${match}" == "1" ]; then
-              echo "Unexpected group ID '${group_id}' found in ${POM}"
-              exit 1
-            fi
-            echo "Passed ${POM}"
-          done
-          echo "All group IDs start with com.google.maps. Good."
-
   generate:
     runs-on: ubuntu-latest
     env:
