@@ -37,9 +37,9 @@ create_settings_xml_file "settings.xml"
 echo "Deploying non-Cloud artifacts to staging repositories in oss.sonatype.org"
 
 # Lists modules for Google Maps artifacts, including their submodules.
-includedMapsModule=$(find java-maps-* -name 'pom.xml'  \
+IncludedNonCloudModules=$(find java-maps-* -name 'pom.xml'  \
     |sed -e 's|/pom.xml$||' |xargs  |sed -e 's/ /,/g')
-echo "Included modules: ${includedMapsModule}"
+echo "Included modules: ${IncludedNonCloudModules}"
 
 mvn clean deploy -B \
   -DskipTests=true \
@@ -48,7 +48,7 @@ mvn clean deploy -B \
   -Dgpg.executable=gpg \
   -Dgpg.passphrase=${GPG_PASSPHRASE} \
   -Dgpg.homedir=${GPG_HOMEDIR} \
-  --projects "${includedMapsModule}" \
+  --projects "${IncludedNonCloudModules}" \
   -P release \
   -DserverId=nexus \
   -DnexusUrl=https://oss.sonatype.org/
