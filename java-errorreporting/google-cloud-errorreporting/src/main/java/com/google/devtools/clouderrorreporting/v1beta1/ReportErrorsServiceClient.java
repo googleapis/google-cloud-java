@@ -190,9 +190,6 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    * Cloud Logging and doesn't analyze logs stored in regional log buckets or logs routed to other
    * Google Cloud projects.
    *
-   * <p>For more information, see [Using Error Reporting with regionalized
-   * logs](/error-reporting/docs/regionalization).
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -245,9 +242,6 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    * Cloud Logging and doesn't analyze logs stored in regional log buckets or logs routed to other
    * Google Cloud projects.
    *
-   * <p>For more information, see [Using Error Reporting with regionalized
-   * logs](/error-reporting/docs/regionalization).
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -297,9 +291,6 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    * Cloud Logging and doesn't analyze logs stored in regional log buckets or logs routed to other
    * Google Cloud projects.
    *
-   * <p>For more information, see [Using Error Reporting with regionalized
-   * logs](/error-reporting/docs/regionalization).
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -343,9 +334,6 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    * <p>&#42;&#42;Note:&#42;&#42; [Error Reporting](/error-reporting) is a global service built on
    * Cloud Logging and doesn't analyze logs stored in regional log buckets or logs routed to other
    * Google Cloud projects.
-   *
-   * <p>For more information, see [Using Error Reporting with regionalized
-   * logs](/error-reporting/docs/regionalization).
    *
    * <p>Sample code:
    *

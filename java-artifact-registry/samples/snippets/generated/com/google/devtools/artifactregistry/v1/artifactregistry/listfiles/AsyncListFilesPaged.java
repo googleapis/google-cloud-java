@@ -22,6 +22,7 @@ import com.google.devtools.artifactregistry.v1.ArtifactRegistryClient;
 import com.google.devtools.artifactregistry.v1.File;
 import com.google.devtools.artifactregistry.v1.ListFilesRequest;
 import com.google.devtools.artifactregistry.v1.ListFilesResponse;
+import com.google.devtools.artifactregistry.v1.RepositoryName;
 
 public class AsyncListFilesPaged {
 
@@ -38,7 +39,7 @@ public class AsyncListFilesPaged {
     try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
       ListFilesRequest request =
           ListFilesRequest.newBuilder()
-              .setParent("parent-995424086")
+              .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
               .setFilter("filter-1274492040")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")

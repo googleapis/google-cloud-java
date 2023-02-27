@@ -20,6 +20,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Aud
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListBigQueryLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
@@ -30,6 +31,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
@@ -6592,6 +6594,460 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
   }
 
   @Test
+  public void getSearchAds360LinkTest() throws Exception {
+    SearchAds360Link expectedResponse =
+        SearchAds360Link.newBuilder()
+            .setName(SearchAds360LinkName.of("[PROPERTY]", "[SEARCH_ADS_360_LINK]").toString())
+            .setAdvertiserId("advertiserId550061990")
+            .setCampaignDataSharingEnabled(BoolValue.newBuilder().build())
+            .setCostDataSharingEnabled(BoolValue.newBuilder().build())
+            .setAdvertiserDisplayName("advertiserDisplayName1594116162")
+            .setAdsPersonalizationEnabled(BoolValue.newBuilder().build())
+            .setSiteStatsSharingEnabled(BoolValue.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SearchAds360LinkName name = SearchAds360LinkName.of("[PROPERTY]", "[SEARCH_ADS_360_LINK]");
+
+    SearchAds360Link actualResponse = client.getSearchAds360Link(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSearchAds360LinkExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SearchAds360LinkName name = SearchAds360LinkName.of("[PROPERTY]", "[SEARCH_ADS_360_LINK]");
+      client.getSearchAds360Link(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSearchAds360LinkTest2() throws Exception {
+    SearchAds360Link expectedResponse =
+        SearchAds360Link.newBuilder()
+            .setName(SearchAds360LinkName.of("[PROPERTY]", "[SEARCH_ADS_360_LINK]").toString())
+            .setAdvertiserId("advertiserId550061990")
+            .setCampaignDataSharingEnabled(BoolValue.newBuilder().build())
+            .setCostDataSharingEnabled(BoolValue.newBuilder().build())
+            .setAdvertiserDisplayName("advertiserDisplayName1594116162")
+            .setAdsPersonalizationEnabled(BoolValue.newBuilder().build())
+            .setSiteStatsSharingEnabled(BoolValue.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "properties/propertie-3689/searchAds360Links/searchAds360Link-3689";
+
+    SearchAds360Link actualResponse = client.getSearchAds360Link(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSearchAds360LinkExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "properties/propertie-3689/searchAds360Links/searchAds360Link-3689";
+      client.getSearchAds360Link(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSearchAds360LinksTest() throws Exception {
+    SearchAds360Link responsesElement = SearchAds360Link.newBuilder().build();
+    ListSearchAds360LinksResponse expectedResponse =
+        ListSearchAds360LinksResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSearchAds360Links(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+
+    ListSearchAds360LinksPagedResponse pagedListResponse = client.listSearchAds360Links(parent);
+
+    List<SearchAds360Link> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSearchAds360LinksList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listSearchAds360LinksExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      client.listSearchAds360Links(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSearchAds360LinksTest2() throws Exception {
+    SearchAds360Link responsesElement = SearchAds360Link.newBuilder().build();
+    ListSearchAds360LinksResponse expectedResponse =
+        ListSearchAds360LinksResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSearchAds360Links(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "properties/propertie-2024";
+
+    ListSearchAds360LinksPagedResponse pagedListResponse = client.listSearchAds360Links(parent);
+
+    List<SearchAds360Link> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSearchAds360LinksList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listSearchAds360LinksExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "properties/propertie-2024";
+      client.listSearchAds360Links(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createSearchAds360LinkTest() throws Exception {
+    SearchAds360Link expectedResponse =
+        SearchAds360Link.newBuilder()
+            .setName(SearchAds360LinkName.of("[PROPERTY]", "[SEARCH_ADS_360_LINK]").toString())
+            .setAdvertiserId("advertiserId550061990")
+            .setCampaignDataSharingEnabled(BoolValue.newBuilder().build())
+            .setCostDataSharingEnabled(BoolValue.newBuilder().build())
+            .setAdvertiserDisplayName("advertiserDisplayName1594116162")
+            .setAdsPersonalizationEnabled(BoolValue.newBuilder().build())
+            .setSiteStatsSharingEnabled(BoolValue.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+    SearchAds360Link searchAds360Link = SearchAds360Link.newBuilder().build();
+
+    SearchAds360Link actualResponse = client.createSearchAds360Link(parent, searchAds360Link);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createSearchAds360LinkExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      SearchAds360Link searchAds360Link = SearchAds360Link.newBuilder().build();
+      client.createSearchAds360Link(parent, searchAds360Link);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createSearchAds360LinkTest2() throws Exception {
+    SearchAds360Link expectedResponse =
+        SearchAds360Link.newBuilder()
+            .setName(SearchAds360LinkName.of("[PROPERTY]", "[SEARCH_ADS_360_LINK]").toString())
+            .setAdvertiserId("advertiserId550061990")
+            .setCampaignDataSharingEnabled(BoolValue.newBuilder().build())
+            .setCostDataSharingEnabled(BoolValue.newBuilder().build())
+            .setAdvertiserDisplayName("advertiserDisplayName1594116162")
+            .setAdsPersonalizationEnabled(BoolValue.newBuilder().build())
+            .setSiteStatsSharingEnabled(BoolValue.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "properties/propertie-2024";
+    SearchAds360Link searchAds360Link = SearchAds360Link.newBuilder().build();
+
+    SearchAds360Link actualResponse = client.createSearchAds360Link(parent, searchAds360Link);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createSearchAds360LinkExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "properties/propertie-2024";
+      SearchAds360Link searchAds360Link = SearchAds360Link.newBuilder().build();
+      client.createSearchAds360Link(parent, searchAds360Link);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteSearchAds360LinkTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    SearchAds360LinkName name = SearchAds360LinkName.of("[PROPERTY]", "[SEARCH_ADS_360_LINK]");
+
+    client.deleteSearchAds360Link(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteSearchAds360LinkExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SearchAds360LinkName name = SearchAds360LinkName.of("[PROPERTY]", "[SEARCH_ADS_360_LINK]");
+      client.deleteSearchAds360Link(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteSearchAds360LinkTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "properties/propertie-3689/searchAds360Links/searchAds360Link-3689";
+
+    client.deleteSearchAds360Link(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteSearchAds360LinkExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "properties/propertie-3689/searchAds360Links/searchAds360Link-3689";
+      client.deleteSearchAds360Link(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateSearchAds360LinkTest() throws Exception {
+    SearchAds360Link expectedResponse =
+        SearchAds360Link.newBuilder()
+            .setName(SearchAds360LinkName.of("[PROPERTY]", "[SEARCH_ADS_360_LINK]").toString())
+            .setAdvertiserId("advertiserId550061990")
+            .setCampaignDataSharingEnabled(BoolValue.newBuilder().build())
+            .setCostDataSharingEnabled(BoolValue.newBuilder().build())
+            .setAdvertiserDisplayName("advertiserDisplayName1594116162")
+            .setAdsPersonalizationEnabled(BoolValue.newBuilder().build())
+            .setSiteStatsSharingEnabled(BoolValue.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SearchAds360Link searchAds360Link =
+        SearchAds360Link.newBuilder()
+            .setName(SearchAds360LinkName.of("[PROPERTY]", "[SEARCH_ADS_360_LINK]").toString())
+            .setAdvertiserId("advertiserId550061990")
+            .setCampaignDataSharingEnabled(BoolValue.newBuilder().build())
+            .setCostDataSharingEnabled(BoolValue.newBuilder().build())
+            .setAdvertiserDisplayName("advertiserDisplayName1594116162")
+            .setAdsPersonalizationEnabled(BoolValue.newBuilder().build())
+            .setSiteStatsSharingEnabled(BoolValue.newBuilder().build())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    SearchAds360Link actualResponse = client.updateSearchAds360Link(searchAds360Link, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateSearchAds360LinkExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SearchAds360Link searchAds360Link =
+          SearchAds360Link.newBuilder()
+              .setName(SearchAds360LinkName.of("[PROPERTY]", "[SEARCH_ADS_360_LINK]").toString())
+              .setAdvertiserId("advertiserId550061990")
+              .setCampaignDataSharingEnabled(BoolValue.newBuilder().build())
+              .setCostDataSharingEnabled(BoolValue.newBuilder().build())
+              .setAdvertiserDisplayName("advertiserDisplayName1594116162")
+              .setAdsPersonalizationEnabled(BoolValue.newBuilder().build())
+              .setSiteStatsSharingEnabled(BoolValue.newBuilder().build())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateSearchAds360Link(searchAds360Link, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getAttributionSettingsTest() throws Exception {
     AttributionSettings expectedResponse =
         AttributionSettings.newBuilder()
@@ -6800,6 +7256,308 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
               .setReturnEntityQuota(true)
               .build();
       client.runAccessReport(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void setAutomatedGa4ConfigurationOptOutTest() throws Exception {
+    SetAutomatedGa4ConfigurationOptOutResponse expectedResponse =
+        SetAutomatedGa4ConfigurationOptOutResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    SetAutomatedGa4ConfigurationOptOutRequest request =
+        SetAutomatedGa4ConfigurationOptOutRequest.newBuilder()
+            .setProperty("property-993141291")
+            .setOptOut(true)
+            .build();
+
+    SetAutomatedGa4ConfigurationOptOutResponse actualResponse =
+        client.setAutomatedGa4ConfigurationOptOut(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void setAutomatedGa4ConfigurationOptOutExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SetAutomatedGa4ConfigurationOptOutRequest request =
+          SetAutomatedGa4ConfigurationOptOutRequest.newBuilder()
+              .setProperty("property-993141291")
+              .setOptOut(true)
+              .build();
+      client.setAutomatedGa4ConfigurationOptOut(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchAutomatedGa4ConfigurationOptOutTest() throws Exception {
+    FetchAutomatedGa4ConfigurationOptOutResponse expectedResponse =
+        FetchAutomatedGa4ConfigurationOptOutResponse.newBuilder().setOptOut(true).build();
+    mockService.addResponse(expectedResponse);
+
+    FetchAutomatedGa4ConfigurationOptOutRequest request =
+        FetchAutomatedGa4ConfigurationOptOutRequest.newBuilder()
+            .setProperty("property-993141291")
+            .build();
+
+    FetchAutomatedGa4ConfigurationOptOutResponse actualResponse =
+        client.fetchAutomatedGa4ConfigurationOptOut(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchAutomatedGa4ConfigurationOptOutExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      FetchAutomatedGa4ConfigurationOptOutRequest request =
+          FetchAutomatedGa4ConfigurationOptOutRequest.newBuilder()
+              .setProperty("property-993141291")
+              .build();
+      client.fetchAutomatedGa4ConfigurationOptOut(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBigQueryLinkTest() throws Exception {
+    BigQueryLink expectedResponse =
+        BigQueryLink.newBuilder()
+            .setName(BigQueryLinkName.of("[PROPERTY]", "[BIGQUERY_LINK]").toString())
+            .setProject("project-309310695")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDailyExportEnabled(true)
+            .setStreamingExportEnabled(true)
+            .setIncludeAdvertisingId(true)
+            .addAllExportStreams(new ArrayList<String>())
+            .addAllExcludedEvents(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    BigQueryLinkName name = BigQueryLinkName.of("[PROPERTY]", "[BIGQUERY_LINK]");
+
+    BigQueryLink actualResponse = client.getBigQueryLink(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getBigQueryLinkExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      BigQueryLinkName name = BigQueryLinkName.of("[PROPERTY]", "[BIGQUERY_LINK]");
+      client.getBigQueryLink(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBigQueryLinkTest2() throws Exception {
+    BigQueryLink expectedResponse =
+        BigQueryLink.newBuilder()
+            .setName(BigQueryLinkName.of("[PROPERTY]", "[BIGQUERY_LINK]").toString())
+            .setProject("project-309310695")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDailyExportEnabled(true)
+            .setStreamingExportEnabled(true)
+            .setIncludeAdvertisingId(true)
+            .addAllExportStreams(new ArrayList<String>())
+            .addAllExcludedEvents(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "properties/propertie-7430/bigQueryLinks/bigQueryLink-7430";
+
+    BigQueryLink actualResponse = client.getBigQueryLink(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getBigQueryLinkExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "properties/propertie-7430/bigQueryLinks/bigQueryLink-7430";
+      client.getBigQueryLink(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listBigQueryLinksTest() throws Exception {
+    BigQueryLink responsesElement = BigQueryLink.newBuilder().build();
+    ListBigQueryLinksResponse expectedResponse =
+        ListBigQueryLinksResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBigqueryLinks(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+
+    ListBigQueryLinksPagedResponse pagedListResponse = client.listBigQueryLinks(parent);
+
+    List<BigQueryLink> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBigqueryLinksList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listBigQueryLinksExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      client.listBigQueryLinks(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listBigQueryLinksTest2() throws Exception {
+    BigQueryLink responsesElement = BigQueryLink.newBuilder().build();
+    ListBigQueryLinksResponse expectedResponse =
+        ListBigQueryLinksResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBigqueryLinks(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "properties/propertie-2024";
+
+    ListBigQueryLinksPagedResponse pagedListResponse = client.listBigQueryLinks(parent);
+
+    List<BigQueryLink> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBigqueryLinksList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listBigQueryLinksExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "properties/propertie-2024";
+      client.listBigQueryLinks(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

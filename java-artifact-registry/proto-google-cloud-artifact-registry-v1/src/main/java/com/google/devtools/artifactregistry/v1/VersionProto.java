@@ -47,6 +47,10 @@ public final class VersionProto {
       internal_static_google_devtools_artifactregistry_v1_DeleteVersionRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_devtools_artifactregistry_v1_DeleteVersionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_artifactregistry_v1_BatchDeleteVersionsMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_artifactregistry_v1_BatchDeleteVersionsMetadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -83,15 +87,17 @@ public final class VersionProto {
           + "nRequest\022\014\n\004name\030\001 \001(\t\022>\n\004view\030\002 \001(\01620.g"
           + "oogle.devtools.artifactregistry.v1.Versi"
           + "onView\"3\n\024DeleteVersionRequest\022\014\n\004name\030\001"
-          + " \001(\t\022\r\n\005force\030\002 \001(\010*@\n\013VersionView\022\034\n\030VE"
-          + "RSION_VIEW_UNSPECIFIED\020\000\022\t\n\005BASIC\020\001\022\010\n\004F"
-          + "ULL\020\002B\372\001\n\'com.google.devtools.artifactre"
-          + "gistry.v1B\014VersionProtoP\001ZSgoogle.golang"
-          + ".org/genproto/googleapis/devtools/artifa"
-          + "ctregistry/v1;artifactregistry\252\002 Google."
-          + "Cloud.ArtifactRegistry.V1\312\002 Google\\Cloud"
-          + "\\ArtifactRegistry\\V1\352\002#Google::Cloud::Ar"
-          + "tifactRegistry::V1b\006proto3"
+          + " \001(\t\022\r\n\005force\030\002 \001(\010\"6\n\033BatchDeleteVersio"
+          + "nsMetadata\022\027\n\017failed_versions\030\002 \003(\t*@\n\013V"
+          + "ersionView\022\034\n\030VERSION_VIEW_UNSPECIFIED\020\000"
+          + "\022\t\n\005BASIC\020\001\022\010\n\004FULL\020\002B\372\001\n\'com.google.dev"
+          + "tools.artifactregistry.v1B\014VersionProtoP"
+          + "\001ZSgoogle.golang.org/genproto/googleapis"
+          + "/devtools/artifactregistry/v1;artifactre"
+          + "gistry\252\002 Google.Cloud.ArtifactRegistry.V"
+          + "1\312\002 Google\\Cloud\\ArtifactRegistry\\V1\352\002#G"
+          + "oogle::Cloud::ArtifactRegistry::V1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -142,6 +148,14 @@ public final class VersionProto {
             internal_static_google_devtools_artifactregistry_v1_DeleteVersionRequest_descriptor,
             new java.lang.String[] {
               "Name", "Force",
+            });
+    internal_static_google_devtools_artifactregistry_v1_BatchDeleteVersionsMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_devtools_artifactregistry_v1_BatchDeleteVersionsMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_artifactregistry_v1_BatchDeleteVersionsMetadata_descriptor,
+            new java.lang.String[] {
+              "FailedVersions",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

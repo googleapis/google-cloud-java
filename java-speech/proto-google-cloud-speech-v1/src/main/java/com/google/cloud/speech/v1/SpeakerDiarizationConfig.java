@@ -138,7 +138,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
    * </code>
    *
    * @deprecated google.cloud.speech.v1.SpeakerDiarizationConfig.speaker_tag is deprecated. See
-   *     google/cloud/speech/v1/cloud_speech.proto;l=456
+   *     google/cloud/speech/v1/cloud_speech.proto;l=480
    * @return The speakerTag.
    */
   @java.lang.Override
@@ -742,7 +742,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      * </code>
      *
      * @deprecated google.cloud.speech.v1.SpeakerDiarizationConfig.speaker_tag is deprecated. See
-     *     google/cloud/speech/v1/cloud_speech.proto;l=456
+     *     google/cloud/speech/v1/cloud_speech.proto;l=480
      * @return The speakerTag.
      */
     @java.lang.Override
@@ -761,7 +761,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      * </code>
      *
      * @deprecated google.cloud.speech.v1.SpeakerDiarizationConfig.speaker_tag is deprecated. See
-     *     google/cloud/speech/v1/cloud_speech.proto;l=456
+     *     google/cloud/speech/v1/cloud_speech.proto;l=480
      * @param value The speakerTag to set.
      * @return This builder for chaining.
      */
@@ -784,7 +784,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      * </code>
      *
      * @deprecated google.cloud.speech.v1.SpeakerDiarizationConfig.speaker_tag is deprecated. See
-     *     google/cloud/speech/v1/cloud_speech.proto;l=456
+     *     google/cloud/speech/v1/cloud_speech.proto;l=480
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

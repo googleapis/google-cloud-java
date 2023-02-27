@@ -118,8 +118,8 @@ public interface PhraseMatcherOrBuilder
    *
    *
    * <pre>
-   * Output only. The timestamp of when the revision was created. It is also the create time
-   * when a new matcher is added.
+   * Output only. The timestamp of when the revision was created. It is also the
+   * create time when a new matcher is added.
    * </pre>
    *
    * <code>
@@ -133,8 +133,8 @@ public interface PhraseMatcherOrBuilder
    *
    *
    * <pre>
-   * Output only. The timestamp of when the revision was created. It is also the create time
-   * when a new matcher is added.
+   * Output only. The timestamp of when the revision was created. It is also the
+   * create time when a new matcher is added.
    * </pre>
    *
    * <code>
@@ -148,8 +148,8 @@ public interface PhraseMatcherOrBuilder
    *
    *
    * <pre>
-   * Output only. The timestamp of when the revision was created. It is also the create time
-   * when a new matcher is added.
+   * Output only. The timestamp of when the revision was created. It is also the
+   * create time when a new matcher is added.
    * </pre>
    *
    * <code>
@@ -294,7 +294,8 @@ public interface PhraseMatcherOrBuilder
    *
    *
    * <pre>
-   * Output only. The most recent time at which the activation status was updated.
+   * Output only. The most recent time at which the activation status was
+   * updated.
    * </pre>
    *
    * <code>
@@ -308,7 +309,8 @@ public interface PhraseMatcherOrBuilder
    *
    *
    * <pre>
-   * Output only. The most recent time at which the activation status was updated.
+   * Output only. The most recent time at which the activation status was
+   * updated.
    * </pre>
    *
    * <code>
@@ -322,7 +324,8 @@ public interface PhraseMatcherOrBuilder
    *
    *
    * <pre>
-   * Output only. The most recent time at which the activation status was updated.
+   * Output only. The most recent time at which the activation status was
+   * updated.
    * </pre>
    *
    * <code>

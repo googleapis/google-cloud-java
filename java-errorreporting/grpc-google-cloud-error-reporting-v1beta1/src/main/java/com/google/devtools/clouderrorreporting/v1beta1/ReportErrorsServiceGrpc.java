@@ -148,9 +148,6 @@ public final class ReportErrorsServiceGrpc {
      * **Note:** [Error Reporting](/error-reporting) is a global service built
      * on Cloud Logging and doesn't analyze logs stored
      * in regional log buckets or logs routed to other Google Cloud projects.
-     * For more information, see
-     * [Using Error Reporting with regionalized
-     * logs](/error-reporting/docs/regionalization).
      * </pre>
      */
     public void reportErrorEvent(
@@ -209,9 +206,6 @@ public final class ReportErrorsServiceGrpc {
      * **Note:** [Error Reporting](/error-reporting) is a global service built
      * on Cloud Logging and doesn't analyze logs stored
      * in regional log buckets or logs routed to other Google Cloud projects.
-     * For more information, see
-     * [Using Error Reporting with regionalized
-     * logs](/error-reporting/docs/regionalization).
      * </pre>
      */
     public void reportErrorEvent(
@@ -260,9 +254,6 @@ public final class ReportErrorsServiceGrpc {
      * **Note:** [Error Reporting](/error-reporting) is a global service built
      * on Cloud Logging and doesn't analyze logs stored
      * in regional log buckets or logs routed to other Google Cloud projects.
-     * For more information, see
-     * [Using Error Reporting with regionalized
-     * logs](/error-reporting/docs/regionalization).
      * </pre>
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse
@@ -307,9 +298,6 @@ public final class ReportErrorsServiceGrpc {
      * **Note:** [Error Reporting](/error-reporting) is a global service built
      * on Cloud Logging and doesn't analyze logs stored
      * in regional log buckets or logs routed to other Google Cloud projects.
-     * For more information, see
-     * [Using Error Reporting with regionalized
-     * logs](/error-reporting/docs/regionalization).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

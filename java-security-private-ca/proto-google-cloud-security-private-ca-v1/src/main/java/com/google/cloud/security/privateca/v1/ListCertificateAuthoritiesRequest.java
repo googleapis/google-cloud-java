@@ -80,9 +80,10 @@ public final class ListCertificateAuthoritiesRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Required. The resource name of the [CaPool][google.cloud.security.privateca.v1.CaPool] associated with the
-   * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority], in the format
-   * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
+   * Required. The resource name of the
+   * [CaPool][google.cloud.security.privateca.v1.CaPool] associated with the
+   * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority],
+   * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
    * </pre>
    *
    * <code>
@@ -107,9 +108,10 @@ public final class ListCertificateAuthoritiesRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Required. The resource name of the [CaPool][google.cloud.security.privateca.v1.CaPool] associated with the
-   * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority], in the format
-   * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
+   * Required. The resource name of the
+   * [CaPool][google.cloud.security.privateca.v1.CaPool] associated with the
+   * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority],
+   * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
    * </pre>
    *
    * <code>
@@ -137,12 +139,14 @@ public final class ListCertificateAuthoritiesRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Optional. Limit on the number of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority] to
-   * include in the response.
-   * Further [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority] can subsequently be
-   * obtained by including the
-   * [ListCertificateAuthoritiesResponse.next_page_token][google.cloud.security.privateca.v1.ListCertificateAuthoritiesResponse.next_page_token] in a subsequent
-   * request. If unspecified, the server will pick an appropriate default.
+   * Optional. Limit on the number of
+   * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority]
+   * to include in the response. Further
+   * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority]
+   * can subsequently be obtained by including the
+   * [ListCertificateAuthoritiesResponse.next_page_token][google.cloud.security.privateca.v1.ListCertificateAuthoritiesResponse.next_page_token]
+   * in a subsequent request. If unspecified, the server will pick an
+   * appropriate default.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -764,9 +768,10 @@ public final class ListCertificateAuthoritiesRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. The resource name of the [CaPool][google.cloud.security.privateca.v1.CaPool] associated with the
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority], in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
+     * Required. The resource name of the
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] associated with the
+     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority],
+     * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
      * </pre>
      *
      * <code>
@@ -790,9 +795,10 @@ public final class ListCertificateAuthoritiesRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. The resource name of the [CaPool][google.cloud.security.privateca.v1.CaPool] associated with the
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority], in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
+     * Required. The resource name of the
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] associated with the
+     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority],
+     * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
      * </pre>
      *
      * <code>
@@ -816,9 +822,10 @@ public final class ListCertificateAuthoritiesRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. The resource name of the [CaPool][google.cloud.security.privateca.v1.CaPool] associated with the
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority], in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
+     * Required. The resource name of the
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] associated with the
+     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority],
+     * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
      * </pre>
      *
      * <code>
@@ -841,9 +848,10 @@ public final class ListCertificateAuthoritiesRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. The resource name of the [CaPool][google.cloud.security.privateca.v1.CaPool] associated with the
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority], in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
+     * Required. The resource name of the
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] associated with the
+     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority],
+     * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
      * </pre>
      *
      * <code>
@@ -862,9 +870,10 @@ public final class ListCertificateAuthoritiesRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. The resource name of the [CaPool][google.cloud.security.privateca.v1.CaPool] associated with the
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority], in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
+     * Required. The resource name of the
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] associated with the
+     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority],
+     * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
      * </pre>
      *
      * <code>
@@ -890,12 +899,14 @@ public final class ListCertificateAuthoritiesRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Optional. Limit on the number of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority] to
-     * include in the response.
-     * Further [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority] can subsequently be
-     * obtained by including the
-     * [ListCertificateAuthoritiesResponse.next_page_token][google.cloud.security.privateca.v1.ListCertificateAuthoritiesResponse.next_page_token] in a subsequent
-     * request. If unspecified, the server will pick an appropriate default.
+     * Optional. Limit on the number of
+     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority]
+     * to include in the response. Further
+     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority]
+     * can subsequently be obtained by including the
+     * [ListCertificateAuthoritiesResponse.next_page_token][google.cloud.security.privateca.v1.ListCertificateAuthoritiesResponse.next_page_token]
+     * in a subsequent request. If unspecified, the server will pick an
+     * appropriate default.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -910,12 +921,14 @@ public final class ListCertificateAuthoritiesRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Optional. Limit on the number of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority] to
-     * include in the response.
-     * Further [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority] can subsequently be
-     * obtained by including the
-     * [ListCertificateAuthoritiesResponse.next_page_token][google.cloud.security.privateca.v1.ListCertificateAuthoritiesResponse.next_page_token] in a subsequent
-     * request. If unspecified, the server will pick an appropriate default.
+     * Optional. Limit on the number of
+     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority]
+     * to include in the response. Further
+     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority]
+     * can subsequently be obtained by including the
+     * [ListCertificateAuthoritiesResponse.next_page_token][google.cloud.security.privateca.v1.ListCertificateAuthoritiesResponse.next_page_token]
+     * in a subsequent request. If unspecified, the server will pick an
+     * appropriate default.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -934,12 +947,14 @@ public final class ListCertificateAuthoritiesRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Optional. Limit on the number of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority] to
-     * include in the response.
-     * Further [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority] can subsequently be
-     * obtained by including the
-     * [ListCertificateAuthoritiesResponse.next_page_token][google.cloud.security.privateca.v1.ListCertificateAuthoritiesResponse.next_page_token] in a subsequent
-     * request. If unspecified, the server will pick an appropriate default.
+     * Optional. Limit on the number of
+     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority]
+     * to include in the response. Further
+     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority]
+     * can subsequently be obtained by including the
+     * [ListCertificateAuthoritiesResponse.next_page_token][google.cloud.security.privateca.v1.ListCertificateAuthoritiesResponse.next_page_token]
+     * in a subsequent request. If unspecified, the server will pick an
+     * appropriate default.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

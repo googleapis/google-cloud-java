@@ -56,8 +56,8 @@ public interface AttributionSettingsOrBuilder
    *
    *
    * <pre>
-   * Required. The lookback window configuration for acquisition conversion events.
-   * The default window size is 30 days.
+   * Required. The lookback window configuration for acquisition conversion
+   * events. The default window size is 30 days.
    * </pre>
    *
    * <code>
@@ -71,8 +71,8 @@ public interface AttributionSettingsOrBuilder
    *
    *
    * <pre>
-   * Required. The lookback window configuration for acquisition conversion events.
-   * The default window size is 30 days.
+   * Required. The lookback window configuration for acquisition conversion
+   * events. The default window size is 30 days.
    * </pre>
    *
    * <code>
@@ -88,8 +88,8 @@ public interface AttributionSettingsOrBuilder
    *
    *
    * <pre>
-   * Required. The lookback window for all other, non-acquisition conversion events.
-   * The default window size is 90 days.
+   * Required. The lookback window for all other, non-acquisition conversion
+   * events. The default window size is 90 days.
    * </pre>
    *
    * <code>
@@ -103,8 +103,8 @@ public interface AttributionSettingsOrBuilder
    *
    *
    * <pre>
-   * Required. The lookback window for all other, non-acquisition conversion events.
-   * The default window size is 90 days.
+   * Required. The lookback window for all other, non-acquisition conversion
+   * events. The default window size is 90 days.
    * </pre>
    *
    * <code>
@@ -120,8 +120,8 @@ public interface AttributionSettingsOrBuilder
    *
    *
    * <pre>
-   * Required. The reporting attribution model used to calculate conversion credit in this
-   * property's reports.
+   * Required. The reporting attribution model used to calculate conversion
+   * credit in this property's reports.
    * Changing the attribution model will apply to both historical and future
    * data. These changes will be reflected in reports with conversion and
    * revenue data. User and session data will be unaffected.
@@ -138,8 +138,8 @@ public interface AttributionSettingsOrBuilder
    *
    *
    * <pre>
-   * Required. The reporting attribution model used to calculate conversion credit in this
-   * property's reports.
+   * Required. The reporting attribution model used to calculate conversion
+   * credit in this property's reports.
    * Changing the attribution model will apply to both historical and future
    * data. These changes will be reflected in reports with conversion and
    * revenue data. User and session data will be unaffected.

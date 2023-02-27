@@ -188,7 +188,7 @@ public final class AccessReportProto {
           + "ionValue\022H\n\rmetric_values\030\002 \003(\01321.google"
           + ".analytics.admin.v1alpha.AccessMetricVal"
           + "ue\"%\n\024AccessDimensionValue\022\r\n\005value\030\001 \001("
-          + "\t\"\"\n\021AccessMetricValue\022\r\n\005value\030\001 \001(\t\"\323\002"
+          + "\t\"\"\n\021AccessMetricValue\022\r\n\005value\030\001 \001(\t\"\253\003"
           + "\n\013AccessQuota\022I\n\016tokens_per_day\030\001 \001(\01321."
           + "google.analytics.admin.v1alpha.AccessQuo"
           + "taStatus\022J\n\017tokens_per_hour\030\002 \001(\01321.goog"
@@ -197,12 +197,14 @@ public final class AccessReportProto {
           + "le.analytics.admin.v1alpha.AccessQuotaSt"
           + "atus\022]\n\"server_errors_per_project_per_ho"
           + "ur\030\004 \001(\01321.google.analytics.admin.v1alph"
-          + "a.AccessQuotaStatus\"8\n\021AccessQuotaStatus"
-          + "\022\020\n\010consumed\030\001 \001(\005\022\021\n\tremaining\030\002 \001(\005B~\n"
-          + "\"com.google.analytics.admin.v1alphaB\021Acc"
-          + "essReportProtoP\001ZCgoogle.golang.org/genp"
-          + "roto/googleapis/analytics/admin/v1alpha;"
-          + "adminb\006proto3"
+          + "a.AccessQuotaStatus\022V\n\033tokens_per_projec"
+          + "t_per_hour\030\005 \001(\01321.google.analytics.admi"
+          + "n.v1alpha.AccessQuotaStatus\"8\n\021AccessQuo"
+          + "taStatus\022\020\n\010consumed\030\001 \001(\005\022\021\n\tremaining\030"
+          + "\002 \001(\005B~\n\"com.google.analytics.admin.v1al"
+          + "phaB\021AccessReportProtoP\001ZCgoogle.golang."
+          + "org/genproto/googleapis/analytics/admin/"
+          + "v1alpha;adminb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -378,6 +380,7 @@ public final class AccessReportProto {
               "TokensPerHour",
               "ConcurrentRequests",
               "ServerErrorsPerProjectPerHour",
+              "TokensPerProjectPerHour",
             });
     internal_static_google_analytics_admin_v1alpha_AccessQuotaStatus_descriptor =
         getDescriptor().getMessageTypes().get(18);

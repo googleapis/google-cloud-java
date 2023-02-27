@@ -1681,6 +1681,112 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
   }
 
   @Override
+  public void getSearchAds360Link(
+      GetSearchAds360LinkRequest request, StreamObserver<SearchAds360Link> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SearchAds360Link) {
+      requests.add(request);
+      responseObserver.onNext(((SearchAds360Link) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetSearchAds360Link, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SearchAds360Link.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listSearchAds360Links(
+      ListSearchAds360LinksRequest request,
+      StreamObserver<ListSearchAds360LinksResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListSearchAds360LinksResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListSearchAds360LinksResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListSearchAds360Links, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListSearchAds360LinksResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createSearchAds360Link(
+      CreateSearchAds360LinkRequest request, StreamObserver<SearchAds360Link> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SearchAds360Link) {
+      requests.add(request);
+      responseObserver.onNext(((SearchAds360Link) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateSearchAds360Link, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SearchAds360Link.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteSearchAds360Link(
+      DeleteSearchAds360LinkRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteSearchAds360Link, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateSearchAds360Link(
+      UpdateSearchAds360LinkRequest request, StreamObserver<SearchAds360Link> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SearchAds360Link) {
+      requests.add(request);
+      responseObserver.onNext(((SearchAds360Link) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateSearchAds360Link, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SearchAds360Link.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getAttributionSettings(
       GetAttributionSettingsRequest request, StreamObserver<AttributionSettings> responseObserver) {
     Object response = responses.poll();
@@ -1740,6 +1846,93 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
                   "Unrecognized response type %s for method RunAccessReport, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   RunAccessReportResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void setAutomatedGa4ConfigurationOptOut(
+      SetAutomatedGa4ConfigurationOptOutRequest request,
+      StreamObserver<SetAutomatedGa4ConfigurationOptOutResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SetAutomatedGa4ConfigurationOptOutResponse) {
+      requests.add(request);
+      responseObserver.onNext(((SetAutomatedGa4ConfigurationOptOutResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SetAutomatedGa4ConfigurationOptOut, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SetAutomatedGa4ConfigurationOptOutResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void fetchAutomatedGa4ConfigurationOptOut(
+      FetchAutomatedGa4ConfigurationOptOutRequest request,
+      StreamObserver<FetchAutomatedGa4ConfigurationOptOutResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FetchAutomatedGa4ConfigurationOptOutResponse) {
+      requests.add(request);
+      responseObserver.onNext(((FetchAutomatedGa4ConfigurationOptOutResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FetchAutomatedGa4ConfigurationOptOut, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FetchAutomatedGa4ConfigurationOptOutResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getBigQueryLink(
+      GetBigQueryLinkRequest request, StreamObserver<BigQueryLink> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof BigQueryLink) {
+      requests.add(request);
+      responseObserver.onNext(((BigQueryLink) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetBigQueryLink, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  BigQueryLink.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listBigQueryLinks(
+      ListBigQueryLinksRequest request,
+      StreamObserver<ListBigQueryLinksResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListBigQueryLinksResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListBigQueryLinksResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListBigQueryLinks, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListBigQueryLinksResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

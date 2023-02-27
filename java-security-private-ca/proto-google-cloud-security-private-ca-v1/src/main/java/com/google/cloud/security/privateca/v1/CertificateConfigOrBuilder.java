@@ -27,8 +27,8 @@ public interface CertificateConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Specifies some of the values in a certificate that are related to the
-   * subject.
+   * Required. Specifies some of the values in a certificate that are related to
+   * the subject.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface CertificateConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Specifies some of the values in a certificate that are related to the
-   * subject.
+   * Required. Specifies some of the values in a certificate that are related to
+   * the subject.
    * </pre>
    *
    * <code>
@@ -57,8 +57,8 @@ public interface CertificateConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Specifies some of the values in a certificate that are related to the
-   * subject.
+   * Required. Specifies some of the values in a certificate that are related to
+   * the subject.
    * </pre>
    *
    * <code>
@@ -72,8 +72,8 @@ public interface CertificateConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Describes how some of the technical X.509 fields in a certificate should be
-   * populated.
+   * Required. Describes how some of the technical X.509 fields in a certificate
+   * should be populated.
    * </pre>
    *
    * <code>
@@ -87,8 +87,8 @@ public interface CertificateConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Describes how some of the technical X.509 fields in a certificate should be
-   * populated.
+   * Required. Describes how some of the technical X.509 fields in a certificate
+   * should be populated.
    * </pre>
    *
    * <code>
@@ -102,8 +102,8 @@ public interface CertificateConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Describes how some of the technical X.509 fields in a certificate should be
-   * populated.
+   * Required. Describes how some of the technical X.509 fields in a certificate
+   * should be populated.
    * </pre>
    *
    * <code>
@@ -116,9 +116,14 @@ public interface CertificateConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The public key that corresponds to this config. This is, for example, used
-   * when issuing [Certificates][google.cloud.security.privateca.v1.Certificate], but not when creating a
-   * self-signed [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] or [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] CSR.
+   * Optional. The public key that corresponds to this config. This is, for
+   * example, used when issuing
+   * [Certificates][google.cloud.security.privateca.v1.Certificate], but not
+   * when creating a self-signed
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * or
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * CSR.
    * </pre>
    *
    * <code>
@@ -132,9 +137,14 @@ public interface CertificateConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The public key that corresponds to this config. This is, for example, used
-   * when issuing [Certificates][google.cloud.security.privateca.v1.Certificate], but not when creating a
-   * self-signed [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] or [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] CSR.
+   * Optional. The public key that corresponds to this config. This is, for
+   * example, used when issuing
+   * [Certificates][google.cloud.security.privateca.v1.Certificate], but not
+   * when creating a self-signed
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * or
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * CSR.
    * </pre>
    *
    * <code>
@@ -148,9 +158,14 @@ public interface CertificateConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The public key that corresponds to this config. This is, for example, used
-   * when issuing [Certificates][google.cloud.security.privateca.v1.Certificate], but not when creating a
-   * self-signed [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] or [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] CSR.
+   * Optional. The public key that corresponds to this config. This is, for
+   * example, used when issuing
+   * [Certificates][google.cloud.security.privateca.v1.Certificate], but not
+   * when creating a self-signed
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * or
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * CSR.
    * </pre>
    *
    * <code>

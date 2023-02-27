@@ -281,7 +281,7 @@ public final class View extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * String with specific view properties.
+   * String with specific view properties, must be non-empty.
    * </pre>
    *
    * <code>string value = 5;</code>
@@ -304,7 +304,7 @@ public final class View extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * String with specific view properties.
+   * String with specific view properties, must be non-empty.
    * </pre>
    *
    * <code>string value = 5;</code>
@@ -1404,7 +1404,7 @@ public final class View extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * String with specific view properties.
+     * String with specific view properties, must be non-empty.
      * </pre>
      *
      * <code>string value = 5;</code>
@@ -1426,7 +1426,7 @@ public final class View extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * String with specific view properties.
+     * String with specific view properties, must be non-empty.
      * </pre>
      *
      * <code>string value = 5;</code>
@@ -1448,7 +1448,7 @@ public final class View extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * String with specific view properties.
+     * String with specific view properties, must be non-empty.
      * </pre>
      *
      * <code>string value = 5;</code>
@@ -1469,7 +1469,7 @@ public final class View extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * String with specific view properties.
+     * String with specific view properties, must be non-empty.
      * </pre>
      *
      * <code>string value = 5;</code>
@@ -1486,7 +1486,7 @@ public final class View extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * String with specific view properties.
+     * String with specific view properties, must be non-empty.
      * </pre>
      *
      * <code>string value = 5;</code>

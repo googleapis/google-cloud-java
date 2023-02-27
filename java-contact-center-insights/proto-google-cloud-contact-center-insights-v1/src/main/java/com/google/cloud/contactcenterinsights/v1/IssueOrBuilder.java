@@ -157,8 +157,8 @@ public interface IssueOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource names of the sample representative utterances that match to this
-   * issue.
+   * Output only. Resource names of the sample representative utterances that
+   * match to this issue.
    * </pre>
    *
    * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -171,8 +171,8 @@ public interface IssueOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource names of the sample representative utterances that match to this
-   * issue.
+   * Output only. Resource names of the sample representative utterances that
+   * match to this issue.
    * </pre>
    *
    * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -185,8 +185,8 @@ public interface IssueOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource names of the sample representative utterances that match to this
-   * issue.
+   * Output only. Resource names of the sample representative utterances that
+   * match to this issue.
    * </pre>
    *
    * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -200,8 +200,8 @@ public interface IssueOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource names of the sample representative utterances that match to this
-   * issue.
+   * Output only. Resource names of the sample representative utterances that
+   * match to this issue.
    * </pre>
    *
    * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];

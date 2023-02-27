@@ -543,8 +543,6 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * to identify valid sources or targets for network firewalls. Each tag within
    * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
    * Cannot be updated.
-   * This field is supported for Cloud Composer environments in versions
-   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>repeated string tags = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -562,8 +560,6 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * to identify valid sources or targets for network firewalls. Each tag within
    * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
    * Cannot be updated.
-   * This field is supported for Cloud Composer environments in versions
-   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>repeated string tags = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -581,8 +577,6 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * to identify valid sources or targets for network firewalls. Each tag within
    * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
    * Cannot be updated.
-   * This field is supported for Cloud Composer environments in versions
-   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>repeated string tags = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -601,8 +595,6 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * to identify valid sources or targets for network firewalls. Each tag within
    * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
    * Cannot be updated.
-   * This field is supported for Cloud Composer environments in versions
-   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>repeated string tags = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2426,8 +2418,6 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * to identify valid sources or targets for network firewalls. Each tag within
      * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Cannot be updated.
-     * This field is supported for Cloud Composer environments in versions
-     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>repeated string tags = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2445,8 +2435,6 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * to identify valid sources or targets for network firewalls. Each tag within
      * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Cannot be updated.
-     * This field is supported for Cloud Composer environments in versions
-     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>repeated string tags = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2464,8 +2452,6 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * to identify valid sources or targets for network firewalls. Each tag within
      * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Cannot be updated.
-     * This field is supported for Cloud Composer environments in versions
-     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>repeated string tags = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2484,8 +2470,6 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * to identify valid sources or targets for network firewalls. Each tag within
      * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Cannot be updated.
-     * This field is supported for Cloud Composer environments in versions
-     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>repeated string tags = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2504,8 +2488,6 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * to identify valid sources or targets for network firewalls. Each tag within
      * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Cannot be updated.
-     * This field is supported for Cloud Composer environments in versions
-     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>repeated string tags = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2531,8 +2513,6 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * to identify valid sources or targets for network firewalls. Each tag within
      * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Cannot be updated.
-     * This field is supported for Cloud Composer environments in versions
-     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>repeated string tags = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2557,8 +2537,6 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * to identify valid sources or targets for network firewalls. Each tag within
      * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Cannot be updated.
-     * This field is supported for Cloud Composer environments in versions
-     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>repeated string tags = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2580,8 +2558,6 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * to identify valid sources or targets for network firewalls. Each tag within
      * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Cannot be updated.
-     * This field is supported for Cloud Composer environments in versions
-     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>repeated string tags = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2602,8 +2578,6 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * to identify valid sources or targets for network firewalls. Each tag within
      * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Cannot be updated.
-     * This field is supported for Cloud Composer environments in versions
-     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>repeated string tags = 8 [(.google.api.field_behavior) = OPTIONAL];</code>

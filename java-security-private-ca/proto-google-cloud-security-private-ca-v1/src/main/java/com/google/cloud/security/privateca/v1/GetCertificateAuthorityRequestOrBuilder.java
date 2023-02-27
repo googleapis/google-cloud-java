@@ -27,8 +27,10 @@ public interface GetCertificateAuthorityRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] to
-   * get.
+   * Required. The
+   * [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * to get.
    * </pre>
    *
    * <code>
@@ -42,8 +44,10 @@ public interface GetCertificateAuthorityRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] to
-   * get.
+   * Required. The
+   * [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * to get.
    * </pre>
    *
    * <code>

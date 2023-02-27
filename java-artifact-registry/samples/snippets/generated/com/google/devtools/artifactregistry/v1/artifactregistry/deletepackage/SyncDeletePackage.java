@@ -19,6 +19,7 @@ package com.google.devtools.artifactregistry.v1.samples;
 // [START artifactregistry_v1_generated_ArtifactRegistry_DeletePackage_sync]
 import com.google.devtools.artifactregistry.v1.ArtifactRegistryClient;
 import com.google.devtools.artifactregistry.v1.DeletePackageRequest;
+import com.google.devtools.artifactregistry.v1.PackageName;
 import com.google.protobuf.Empty;
 
 public class SyncDeletePackage {
@@ -35,7 +36,10 @@ public class SyncDeletePackage {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
       DeletePackageRequest request =
-          DeletePackageRequest.newBuilder().setName("name3373707").build();
+          DeletePackageRequest.newBuilder()
+              .setName(
+                  PackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]").toString())
+              .build();
       artifactRegistryClient.deletePackageAsync(request).get();
     }
   }

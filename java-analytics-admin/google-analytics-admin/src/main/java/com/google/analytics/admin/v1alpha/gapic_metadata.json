@@ -76,6 +76,9 @@
             "CreateProperty": {
               "methods": ["createProperty", "createProperty", "createPropertyCallable"]
             },
+            "CreateSearchAds360Link": {
+              "methods": ["createSearchAds360Link", "createSearchAds360Link", "createSearchAds360Link", "createSearchAds360LinkCallable"]
+            },
             "CreateUserLink": {
               "methods": ["createUserLink", "createUserLink", "createUserLink", "createUserLink", "createUserLinkCallable"]
             },
@@ -106,8 +109,14 @@
             "DeleteProperty": {
               "methods": ["deleteProperty", "deleteProperty", "deleteProperty", "deletePropertyCallable"]
             },
+            "DeleteSearchAds360Link": {
+              "methods": ["deleteSearchAds360Link", "deleteSearchAds360Link", "deleteSearchAds360Link", "deleteSearchAds360LinkCallable"]
+            },
             "DeleteUserLink": {
               "methods": ["deleteUserLink", "deleteUserLink", "deleteUserLink", "deleteUserLinkCallable"]
+            },
+            "FetchAutomatedGa4ConfigurationOptOut": {
+              "methods": ["fetchAutomatedGa4ConfigurationOptOut", "fetchAutomatedGa4ConfigurationOptOutCallable"]
             },
             "GetAccount": {
               "methods": ["getAccount", "getAccount", "getAccount", "getAccountCallable"]
@@ -117,6 +126,9 @@
             },
             "GetAudience": {
               "methods": ["getAudience", "getAudience", "getAudience", "getAudienceCallable"]
+            },
+            "GetBigQueryLink": {
+              "methods": ["getBigQueryLink", "getBigQueryLink", "getBigQueryLink", "getBigQueryLinkCallable"]
             },
             "GetConversionEvent": {
               "methods": ["getConversionEvent", "getConversionEvent", "getConversionEvent", "getConversionEventCallable"]
@@ -154,6 +166,9 @@
             "GetProperty": {
               "methods": ["getProperty", "getProperty", "getProperty", "getPropertyCallable"]
             },
+            "GetSearchAds360Link": {
+              "methods": ["getSearchAds360Link", "getSearchAds360Link", "getSearchAds360Link", "getSearchAds360LinkCallable"]
+            },
             "GetUserLink": {
               "methods": ["getUserLink", "getUserLink", "getUserLink", "getUserLinkCallable"]
             },
@@ -165,6 +180,9 @@
             },
             "ListAudiences": {
               "methods": ["listAudiences", "listAudiences", "listAudiences", "listAudiencesPagedCallable", "listAudiencesCallable"]
+            },
+            "ListBigQueryLinks": {
+              "methods": ["listBigQueryLinks", "listBigQueryLinks", "listBigQueryLinks", "listBigQueryLinksPagedCallable", "listBigQueryLinksCallable"]
             },
             "ListConversionEvents": {
               "methods": ["listConversionEvents", "listConversionEvents", "listConversionEvents", "listConversionEventsPagedCallable", "listConversionEventsCallable"]
@@ -196,6 +214,9 @@
             "ListProperties": {
               "methods": ["listProperties", "listPropertiesPagedCallable", "listPropertiesCallable"]
             },
+            "ListSearchAds360Links": {
+              "methods": ["listSearchAds360Links", "listSearchAds360Links", "listSearchAds360Links", "listSearchAds360LinksPagedCallable", "listSearchAds360LinksCallable"]
+            },
             "ListUserLinks": {
               "methods": ["listUserLinks", "listUserLinks", "listUserLinks", "listUserLinks", "listUserLinksPagedCallable", "listUserLinksCallable"]
             },
@@ -207,6 +228,9 @@
             },
             "SearchChangeHistoryEvents": {
               "methods": ["searchChangeHistoryEvents", "searchChangeHistoryEventsPagedCallable", "searchChangeHistoryEventsCallable"]
+            },
+            "SetAutomatedGa4ConfigurationOptOut": {
+              "methods": ["setAutomatedGa4ConfigurationOptOut", "setAutomatedGa4ConfigurationOptOutCallable"]
             },
             "UpdateAccount": {
               "methods": ["updateAccount", "updateAccount", "updateAccountCallable"]
@@ -243,6 +267,9 @@
             },
             "UpdateProperty": {
               "methods": ["updateProperty", "updateProperty", "updatePropertyCallable"]
+            },
+            "UpdateSearchAds360Link": {
+              "methods": ["updateSearchAds360Link", "updateSearchAds360Link", "updateSearchAds360LinkCallable"]
             },
             "UpdateUserLink": {
               "methods": ["updateUserLink", "updateUserLink", "updateUserLinkCallable"]

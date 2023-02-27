@@ -23,7 +23,9 @@ package com.google.cloud.security.privateca.v1;
  *
  * <pre>
  * Describes a subordinate CA's issuers. This is either a resource name to a
- * known issuing [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], or a PEM issuer certificate chain.
+ * known issuing
+ * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+ * or a PEM issuer certificate chain.
  * </pre>
  *
  * Protobuf type {@code google.cloud.security.privateca.v1.SubordinateConfig}
@@ -929,9 +931,12 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. This can refer to a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] that was used to create a
-   * subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. This field is used for information
-   * and usability purposes only. The resource name is in the format
+   * Required. This can refer to a
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * that was used to create a subordinate
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+   * This field is used for information and usability purposes only. The
+   * resource name is in the format
    * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
    * </pre>
    *
@@ -948,9 +953,12 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. This can refer to a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] that was used to create a
-   * subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. This field is used for information
-   * and usability purposes only. The resource name is in the format
+   * Required. This can refer to a
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * that was used to create a subordinate
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+   * This field is used for information and usability purposes only. The
+   * resource name is in the format
    * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
    * </pre>
    *
@@ -980,9 +988,12 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. This can refer to a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] that was used to create a
-   * subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. This field is used for information
-   * and usability purposes only. The resource name is in the format
+   * Required. This can refer to a
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * that was used to create a subordinate
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+   * This field is used for information and usability purposes only. The
+   * resource name is in the format
    * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
    * </pre>
    *
@@ -1015,7 +1026,8 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. Contains the PEM certificate chain for the issuers of this
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], but not pem certificate for this CA itself.
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+   * but not pem certificate for this CA itself.
    * </pre>
    *
    * <code>
@@ -1033,7 +1045,8 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. Contains the PEM certificate chain for the issuers of this
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], but not pem certificate for this CA itself.
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+   * but not pem certificate for this CA itself.
    * </pre>
    *
    * <code>
@@ -1057,7 +1070,8 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. Contains the PEM certificate chain for the issuers of this
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], but not pem certificate for this CA itself.
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+   * but not pem certificate for this CA itself.
    * </pre>
    *
    * <code>
@@ -1273,7 +1287,9 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Describes a subordinate CA's issuers. This is either a resource name to a
-   * known issuing [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], or a PEM issuer certificate chain.
+   * known issuing
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+   * or a PEM issuer certificate chain.
    * </pre>
    *
    * Protobuf type {@code google.cloud.security.privateca.v1.SubordinateConfig}
@@ -1501,9 +1517,12 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. This can refer to a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] that was used to create a
-     * subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. This field is used for information
-     * and usability purposes only. The resource name is in the format
+     * Required. This can refer to a
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * that was used to create a subordinate
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * This field is used for information and usability purposes only. The
+     * resource name is in the format
      * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
@@ -1521,9 +1540,12 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. This can refer to a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] that was used to create a
-     * subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. This field is used for information
-     * and usability purposes only. The resource name is in the format
+     * Required. This can refer to a
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * that was used to create a subordinate
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * This field is used for information and usability purposes only. The
+     * resource name is in the format
      * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
@@ -1554,9 +1576,12 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. This can refer to a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] that was used to create a
-     * subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. This field is used for information
-     * and usability purposes only. The resource name is in the format
+     * Required. This can refer to a
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * that was used to create a subordinate
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * This field is used for information and usability purposes only. The
+     * resource name is in the format
      * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
@@ -1587,9 +1612,12 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. This can refer to a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] that was used to create a
-     * subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. This field is used for information
-     * and usability purposes only. The resource name is in the format
+     * Required. This can refer to a
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * that was used to create a subordinate
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * This field is used for information and usability purposes only. The
+     * resource name is in the format
      * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
@@ -1613,9 +1641,12 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. This can refer to a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] that was used to create a
-     * subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. This field is used for information
-     * and usability purposes only. The resource name is in the format
+     * Required. This can refer to a
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * that was used to create a subordinate
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * This field is used for information and usability purposes only. The
+     * resource name is in the format
      * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
@@ -1637,9 +1668,12 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. This can refer to a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] that was used to create a
-     * subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. This field is used for information
-     * and usability purposes only. The resource name is in the format
+     * Required. This can refer to a
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * that was used to create a subordinate
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * This field is used for information and usability purposes only. The
+     * resource name is in the format
      * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
@@ -1672,7 +1706,8 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. Contains the PEM certificate chain for the issuers of this
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], but not pem certificate for this CA itself.
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+     * but not pem certificate for this CA itself.
      * </pre>
      *
      * <code>
@@ -1690,7 +1725,8 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. Contains the PEM certificate chain for the issuers of this
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], but not pem certificate for this CA itself.
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+     * but not pem certificate for this CA itself.
      * </pre>
      *
      * <code>
@@ -1722,7 +1758,8 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. Contains the PEM certificate chain for the issuers of this
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], but not pem certificate for this CA itself.
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+     * but not pem certificate for this CA itself.
      * </pre>
      *
      * <code>
@@ -1748,7 +1785,8 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. Contains the PEM certificate chain for the issuers of this
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], but not pem certificate for this CA itself.
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+     * but not pem certificate for this CA itself.
      * </pre>
      *
      * <code>
@@ -1772,7 +1810,8 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. Contains the PEM certificate chain for the issuers of this
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], but not pem certificate for this CA itself.
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+     * but not pem certificate for this CA itself.
      * </pre>
      *
      * <code>
@@ -1813,7 +1852,8 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. Contains the PEM certificate chain for the issuers of this
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], but not pem certificate for this CA itself.
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+     * but not pem certificate for this CA itself.
      * </pre>
      *
      * <code>
@@ -1841,7 +1881,8 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. Contains the PEM certificate chain for the issuers of this
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], but not pem certificate for this CA itself.
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+     * but not pem certificate for this CA itself.
      * </pre>
      *
      * <code>
@@ -1857,7 +1898,8 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. Contains the PEM certificate chain for the issuers of this
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], but not pem certificate for this CA itself.
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+     * but not pem certificate for this CA itself.
      * </pre>
      *
      * <code>
@@ -1883,7 +1925,8 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. Contains the PEM certificate chain for the issuers of this
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], but not pem certificate for this CA itself.
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+     * but not pem certificate for this CA itself.
      * </pre>
      *
      * <code>

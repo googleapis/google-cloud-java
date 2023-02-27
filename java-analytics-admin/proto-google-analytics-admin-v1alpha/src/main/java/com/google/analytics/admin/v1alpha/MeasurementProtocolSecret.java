@@ -77,9 +77,8 @@ public final class MeasurementProtocolSecret extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. Resource name of this secret. This secret may be a child of any type of
-   * stream.
-   * Format:
+   * Output only. Resource name of this secret. This secret may be a child of
+   * any type of stream. Format:
    * properties/{property}/dataStreams/{dataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
    * </pre>
    *
@@ -103,9 +102,8 @@ public final class MeasurementProtocolSecret extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. Resource name of this secret. This secret may be a child of any type of
-   * stream.
-   * Format:
+   * Output only. Resource name of this secret. This secret may be a child of
+   * any type of stream. Format:
    * properties/{property}/dataStreams/{dataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
    * </pre>
    *
@@ -185,8 +183,8 @@ public final class MeasurementProtocolSecret extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. The measurement protocol secret value. Pass this value to the api_secret
-   * field of the Measurement Protocol API when sending hits to this
+   * Output only. The measurement protocol secret value. Pass this value to the
+   * api_secret field of the Measurement Protocol API when sending hits to this
    * secret's parent property.
    * </pre>
    *
@@ -210,8 +208,8 @@ public final class MeasurementProtocolSecret extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. The measurement protocol secret value. Pass this value to the api_secret
-   * field of the Measurement Protocol API when sending hits to this
+   * Output only. The measurement protocol secret value. Pass this value to the
+   * api_secret field of the Measurement Protocol API when sending hits to this
    * secret's parent property.
    * </pre>
    *
@@ -631,9 +629,8 @@ public final class MeasurementProtocolSecret extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. Resource name of this secret. This secret may be a child of any type of
-     * stream.
-     * Format:
+     * Output only. Resource name of this secret. This secret may be a child of
+     * any type of stream. Format:
      * properties/{property}/dataStreams/{dataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
      * </pre>
      *
@@ -656,9 +653,8 @@ public final class MeasurementProtocolSecret extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. Resource name of this secret. This secret may be a child of any type of
-     * stream.
-     * Format:
+     * Output only. Resource name of this secret. This secret may be a child of
+     * any type of stream. Format:
      * properties/{property}/dataStreams/{dataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
      * </pre>
      *
@@ -681,9 +677,8 @@ public final class MeasurementProtocolSecret extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. Resource name of this secret. This secret may be a child of any type of
-     * stream.
-     * Format:
+     * Output only. Resource name of this secret. This secret may be a child of
+     * any type of stream. Format:
      * properties/{property}/dataStreams/{dataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
      * </pre>
      *
@@ -705,9 +700,8 @@ public final class MeasurementProtocolSecret extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. Resource name of this secret. This secret may be a child of any type of
-     * stream.
-     * Format:
+     * Output only. Resource name of this secret. This secret may be a child of
+     * any type of stream. Format:
      * properties/{property}/dataStreams/{dataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
      * </pre>
      *
@@ -725,9 +719,8 @@ public final class MeasurementProtocolSecret extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. Resource name of this secret. This secret may be a child of any type of
-     * stream.
-     * Format:
+     * Output only. Resource name of this secret. This secret may be a child of
+     * any type of stream. Format:
      * properties/{property}/dataStreams/{dataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
      * </pre>
      *
@@ -858,8 +851,8 @@ public final class MeasurementProtocolSecret extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The measurement protocol secret value. Pass this value to the api_secret
-     * field of the Measurement Protocol API when sending hits to this
+     * Output only. The measurement protocol secret value. Pass this value to the
+     * api_secret field of the Measurement Protocol API when sending hits to this
      * secret's parent property.
      * </pre>
      *
@@ -882,8 +875,8 @@ public final class MeasurementProtocolSecret extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The measurement protocol secret value. Pass this value to the api_secret
-     * field of the Measurement Protocol API when sending hits to this
+     * Output only. The measurement protocol secret value. Pass this value to the
+     * api_secret field of the Measurement Protocol API when sending hits to this
      * secret's parent property.
      * </pre>
      *
@@ -906,8 +899,8 @@ public final class MeasurementProtocolSecret extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The measurement protocol secret value. Pass this value to the api_secret
-     * field of the Measurement Protocol API when sending hits to this
+     * Output only. The measurement protocol secret value. Pass this value to the
+     * api_secret field of the Measurement Protocol API when sending hits to this
      * secret's parent property.
      * </pre>
      *
@@ -929,8 +922,8 @@ public final class MeasurementProtocolSecret extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The measurement protocol secret value. Pass this value to the api_secret
-     * field of the Measurement Protocol API when sending hits to this
+     * Output only. The measurement protocol secret value. Pass this value to the
+     * api_secret field of the Measurement Protocol API when sending hits to this
      * secret's parent property.
      * </pre>
      *
@@ -948,8 +941,8 @@ public final class MeasurementProtocolSecret extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The measurement protocol secret value. Pass this value to the api_secret
-     * field of the Measurement Protocol API when sending hits to this
+     * Output only. The measurement protocol secret value. Pass this value to the
+     * api_secret field of the Measurement Protocol API when sending hits to this
      * secret's parent property.
      * </pre>
      *

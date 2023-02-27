@@ -277,6 +277,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   for (DockerImage element : artifactRegistryClient.listDockerImages(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -309,6 +310,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   ApiFuture<DockerImage> future =
    *       artifactRegistryClient.listDockerImagesPagedCallable().futureCall(request);
@@ -342,6 +344,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   while (true) {
    *     ListDockerImagesResponse response =
@@ -478,6 +481,855 @@ public class ArtifactRegistryClient implements BackgroundResource {
    */
   public final UnaryCallable<GetDockerImageRequest, DockerImage> getDockerImageCallable() {
     return stub.getDockerImageCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists maven artifacts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+   *   for (MavenArtifact element : artifactRegistryClient.listMavenArtifacts(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the parent resource whose maven artifacts will be listed.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMavenArtifactsPagedResponse listMavenArtifacts(RepositoryName parent) {
+    ListMavenArtifactsRequest request =
+        ListMavenArtifactsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listMavenArtifacts(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists maven artifacts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString();
+   *   for (MavenArtifact element : artifactRegistryClient.listMavenArtifacts(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the parent resource whose maven artifacts will be listed.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMavenArtifactsPagedResponse listMavenArtifacts(String parent) {
+    ListMavenArtifactsRequest request =
+        ListMavenArtifactsRequest.newBuilder().setParent(parent).build();
+    return listMavenArtifacts(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists maven artifacts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ListMavenArtifactsRequest request =
+   *       ListMavenArtifactsRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (MavenArtifact element :
+   *       artifactRegistryClient.listMavenArtifacts(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMavenArtifactsPagedResponse listMavenArtifacts(
+      ListMavenArtifactsRequest request) {
+    return listMavenArtifactsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists maven artifacts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ListMavenArtifactsRequest request =
+   *       ListMavenArtifactsRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<MavenArtifact> future =
+   *       artifactRegistryClient.listMavenArtifactsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (MavenArtifact element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListMavenArtifactsRequest, ListMavenArtifactsPagedResponse>
+      listMavenArtifactsPagedCallable() {
+    return stub.listMavenArtifactsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists maven artifacts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ListMavenArtifactsRequest request =
+   *       ListMavenArtifactsRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListMavenArtifactsResponse response =
+   *         artifactRegistryClient.listMavenArtifactsCallable().call(request);
+   *     for (MavenArtifact element : response.getMavenArtifactsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListMavenArtifactsRequest, ListMavenArtifactsResponse>
+      listMavenArtifactsCallable() {
+    return stub.listMavenArtifactsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a maven artifact.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   MavenArtifactName name =
+   *       MavenArtifactName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[MAVEN_ARTIFACT]");
+   *   MavenArtifact response = artifactRegistryClient.getMavenArtifact(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the maven artifact.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MavenArtifact getMavenArtifact(MavenArtifactName name) {
+    GetMavenArtifactRequest request =
+        GetMavenArtifactRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getMavenArtifact(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a maven artifact.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String name =
+   *       MavenArtifactName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[MAVEN_ARTIFACT]")
+   *           .toString();
+   *   MavenArtifact response = artifactRegistryClient.getMavenArtifact(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the maven artifact.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MavenArtifact getMavenArtifact(String name) {
+    GetMavenArtifactRequest request = GetMavenArtifactRequest.newBuilder().setName(name).build();
+    return getMavenArtifact(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a maven artifact.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   GetMavenArtifactRequest request =
+   *       GetMavenArtifactRequest.newBuilder()
+   *           .setName(
+   *               MavenArtifactName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[MAVEN_ARTIFACT]")
+   *                   .toString())
+   *           .build();
+   *   MavenArtifact response = artifactRegistryClient.getMavenArtifact(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MavenArtifact getMavenArtifact(GetMavenArtifactRequest request) {
+    return getMavenArtifactCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a maven artifact.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   GetMavenArtifactRequest request =
+   *       GetMavenArtifactRequest.newBuilder()
+   *           .setName(
+   *               MavenArtifactName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[MAVEN_ARTIFACT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<MavenArtifact> future =
+   *       artifactRegistryClient.getMavenArtifactCallable().futureCall(request);
+   *   // Do something.
+   *   MavenArtifact response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetMavenArtifactRequest, MavenArtifact> getMavenArtifactCallable() {
+    return stub.getMavenArtifactCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists npm packages.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+   *   for (NpmPackage element : artifactRegistryClient.listNpmPackages(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the parent resource whose npm packages will be listed.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNpmPackagesPagedResponse listNpmPackages(RepositoryName parent) {
+    ListNpmPackagesRequest request =
+        ListNpmPackagesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listNpmPackages(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists npm packages.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString();
+   *   for (NpmPackage element : artifactRegistryClient.listNpmPackages(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the parent resource whose npm packages will be listed.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNpmPackagesPagedResponse listNpmPackages(String parent) {
+    ListNpmPackagesRequest request = ListNpmPackagesRequest.newBuilder().setParent(parent).build();
+    return listNpmPackages(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists npm packages.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ListNpmPackagesRequest request =
+   *       ListNpmPackagesRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (NpmPackage element : artifactRegistryClient.listNpmPackages(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNpmPackagesPagedResponse listNpmPackages(ListNpmPackagesRequest request) {
+    return listNpmPackagesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists npm packages.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ListNpmPackagesRequest request =
+   *       ListNpmPackagesRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<NpmPackage> future =
+   *       artifactRegistryClient.listNpmPackagesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (NpmPackage element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListNpmPackagesRequest, ListNpmPackagesPagedResponse>
+      listNpmPackagesPagedCallable() {
+    return stub.listNpmPackagesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists npm packages.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ListNpmPackagesRequest request =
+   *       ListNpmPackagesRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListNpmPackagesResponse response =
+   *         artifactRegistryClient.listNpmPackagesCallable().call(request);
+   *     for (NpmPackage element : response.getNpmPackagesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListNpmPackagesRequest, ListNpmPackagesResponse>
+      listNpmPackagesCallable() {
+    return stub.listNpmPackagesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a npm package.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   NpmPackageName name =
+   *       NpmPackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[NPM_PACKAGE]");
+   *   NpmPackage response = artifactRegistryClient.getNpmPackage(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the npm package.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NpmPackage getNpmPackage(NpmPackageName name) {
+    GetNpmPackageRequest request =
+        GetNpmPackageRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getNpmPackage(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a npm package.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String name =
+   *       NpmPackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[NPM_PACKAGE]").toString();
+   *   NpmPackage response = artifactRegistryClient.getNpmPackage(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the npm package.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NpmPackage getNpmPackage(String name) {
+    GetNpmPackageRequest request = GetNpmPackageRequest.newBuilder().setName(name).build();
+    return getNpmPackage(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a npm package.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   GetNpmPackageRequest request =
+   *       GetNpmPackageRequest.newBuilder()
+   *           .setName(
+   *               NpmPackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[NPM_PACKAGE]")
+   *                   .toString())
+   *           .build();
+   *   NpmPackage response = artifactRegistryClient.getNpmPackage(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NpmPackage getNpmPackage(GetNpmPackageRequest request) {
+    return getNpmPackageCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a npm package.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   GetNpmPackageRequest request =
+   *       GetNpmPackageRequest.newBuilder()
+   *           .setName(
+   *               NpmPackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[NPM_PACKAGE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<NpmPackage> future =
+   *       artifactRegistryClient.getNpmPackageCallable().futureCall(request);
+   *   // Do something.
+   *   NpmPackage response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetNpmPackageRequest, NpmPackage> getNpmPackageCallable() {
+    return stub.getNpmPackageCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists python packages.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+   *   for (PythonPackage element : artifactRegistryClient.listPythonPackages(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the parent resource whose python packages will be listed.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPythonPackagesPagedResponse listPythonPackages(RepositoryName parent) {
+    ListPythonPackagesRequest request =
+        ListPythonPackagesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listPythonPackages(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists python packages.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString();
+   *   for (PythonPackage element : artifactRegistryClient.listPythonPackages(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the parent resource whose python packages will be listed.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPythonPackagesPagedResponse listPythonPackages(String parent) {
+    ListPythonPackagesRequest request =
+        ListPythonPackagesRequest.newBuilder().setParent(parent).build();
+    return listPythonPackages(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists python packages.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ListPythonPackagesRequest request =
+   *       ListPythonPackagesRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (PythonPackage element :
+   *       artifactRegistryClient.listPythonPackages(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPythonPackagesPagedResponse listPythonPackages(
+      ListPythonPackagesRequest request) {
+    return listPythonPackagesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists python packages.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ListPythonPackagesRequest request =
+   *       ListPythonPackagesRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<PythonPackage> future =
+   *       artifactRegistryClient.listPythonPackagesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (PythonPackage element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListPythonPackagesRequest, ListPythonPackagesPagedResponse>
+      listPythonPackagesPagedCallable() {
+    return stub.listPythonPackagesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists python packages.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ListPythonPackagesRequest request =
+   *       ListPythonPackagesRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListPythonPackagesResponse response =
+   *         artifactRegistryClient.listPythonPackagesCallable().call(request);
+   *     for (PythonPackage element : response.getPythonPackagesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListPythonPackagesRequest, ListPythonPackagesResponse>
+      listPythonPackagesCallable() {
+    return stub.listPythonPackagesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a python package.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   PythonPackageName name =
+   *       PythonPackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PYTHON_PACKAGE]");
+   *   PythonPackage response = artifactRegistryClient.getPythonPackage(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the python package.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PythonPackage getPythonPackage(PythonPackageName name) {
+    GetPythonPackageRequest request =
+        GetPythonPackageRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getPythonPackage(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a python package.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String name =
+   *       PythonPackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PYTHON_PACKAGE]")
+   *           .toString();
+   *   PythonPackage response = artifactRegistryClient.getPythonPackage(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the python package.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PythonPackage getPythonPackage(String name) {
+    GetPythonPackageRequest request = GetPythonPackageRequest.newBuilder().setName(name).build();
+    return getPythonPackage(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a python package.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   GetPythonPackageRequest request =
+   *       GetPythonPackageRequest.newBuilder()
+   *           .setName(
+   *               PythonPackageName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PYTHON_PACKAGE]")
+   *                   .toString())
+   *           .build();
+   *   PythonPackage response = artifactRegistryClient.getPythonPackage(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PythonPackage getPythonPackage(GetPythonPackageRequest request) {
+    return getPythonPackageCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a python package.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   GetPythonPackageRequest request =
+   *       GetPythonPackageRequest.newBuilder()
+   *           .setName(
+   *               PythonPackageName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PYTHON_PACKAGE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<PythonPackage> future =
+   *       artifactRegistryClient.getPythonPackageCallable().futureCall(request);
+   *   // Do something.
+   *   PythonPackage response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetPythonPackageRequest, PythonPackage> getPythonPackageCallable() {
+    return stub.getPythonPackageCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1355,7 +2207,38 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
-   *   String parent = "parent-995424086";
+   *   RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+   *   for (Package element : artifactRegistryClient.listPackages(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the parent resource whose packages will be listed.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPackagesPagedResponse listPackages(RepositoryName parent) {
+    ListPackagesRequest request =
+        ListPackagesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listPackages(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists packages.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString();
    *   for (Package element : artifactRegistryClient.listPackages(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -1385,7 +2268,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ListPackagesRequest request =
    *       ListPackagesRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1417,7 +2300,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ListPackagesRequest request =
    *       ListPackagesRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1450,7 +2333,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ListPackagesRequest request =
    *       ListPackagesRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1486,7 +2369,35 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
-   *   String name = "name3373707";
+   *   PackageName name = PackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]");
+   *   Package response = artifactRegistryClient.getPackage(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the package to retrieve.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Package getPackage(PackageName name) {
+    GetPackageRequest request =
+        GetPackageRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getPackage(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a package.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String name =
+   *       PackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]").toString();
    *   Package response = artifactRegistryClient.getPackage(name);
    * }
    * }</pre>
@@ -1512,7 +2423,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
-   *   GetPackageRequest request = GetPackageRequest.newBuilder().setName("name3373707").build();
+   *   GetPackageRequest request =
+   *       GetPackageRequest.newBuilder()
+   *           .setName(
+   *               PackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]").toString())
+   *           .build();
    *   Package response = artifactRegistryClient.getPackage(request);
    * }
    * }</pre>
@@ -1537,7 +2452,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
-   *   GetPackageRequest request = GetPackageRequest.newBuilder().setName("name3373707").build();
+   *   GetPackageRequest request =
+   *       GetPackageRequest.newBuilder()
+   *           .setName(
+   *               PackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]").toString())
+   *           .build();
    *   ApiFuture<Package> future = artifactRegistryClient.getPackageCallable().futureCall(request);
    *   // Do something.
    *   Package response = future.get();
@@ -1562,7 +2481,36 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
-   *   String name = "name3373707";
+   *   PackageName name = PackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]");
+   *   artifactRegistryClient.deletePackageAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the package to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deletePackageAsync(PackageName name) {
+    DeletePackageRequest request =
+        DeletePackageRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deletePackageAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a package and all of its versions and tags. The returned operation will complete once
+   * the package has been deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String name =
+   *       PackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]").toString();
    *   artifactRegistryClient.deletePackageAsync(name).get();
    * }
    * }</pre>
@@ -1590,7 +2538,10 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   DeletePackageRequest request =
-   *       DeletePackageRequest.newBuilder().setName("name3373707").build();
+   *       DeletePackageRequest.newBuilder()
+   *           .setName(
+   *               PackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]").toString())
+   *           .build();
    *   artifactRegistryClient.deletePackageAsync(request).get();
    * }
    * }</pre>
@@ -1618,7 +2569,10 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   DeletePackageRequest request =
-   *       DeletePackageRequest.newBuilder().setName("name3373707").build();
+   *       DeletePackageRequest.newBuilder()
+   *           .setName(
+   *               PackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]").toString())
+   *           .build();
    *   OperationFuture<Empty, OperationMetadata> future =
    *       artifactRegistryClient.deletePackageOperationCallable().futureCall(request);
    *   // Do something.
@@ -1646,7 +2600,10 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   DeletePackageRequest request =
-   *       DeletePackageRequest.newBuilder().setName("name3373707").build();
+   *       DeletePackageRequest.newBuilder()
+   *           .setName(
+   *               PackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]").toString())
+   *           .build();
    *   ApiFuture<Operation> future =
    *       artifactRegistryClient.deletePackageCallable().futureCall(request);
    *   // Do something.
@@ -2001,14 +2958,44 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
-   *   String parent = "parent-995424086";
+   *   RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
    *   for (File element : artifactRegistryClient.listFiles(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * }</pre>
    *
-   * @param parent The name of the repository whose files will be listed. For example:
+   * @param parent Required. The name of the repository whose files will be listed. For example:
+   *     "projects/p1/locations/us-central1/repositories/repo1
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListFilesPagedResponse listFiles(RepositoryName parent) {
+    ListFilesRequest request =
+        ListFilesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listFiles(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists files.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString();
+   *   for (File element : artifactRegistryClient.listFiles(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the repository whose files will be listed. For example:
    *     "projects/p1/locations/us-central1/repositories/repo1
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2032,7 +3019,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ListFilesRequest request =
    *       ListFilesRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -2066,7 +3053,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ListFilesRequest request =
    *       ListFilesRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -2099,7 +3086,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ListFilesRequest request =
    *       ListFilesRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -2137,12 +3124,39 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
-   *   String name = "name3373707";
+   *   FileName name = FileName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[FILE]");
    *   File response = artifactRegistryClient.getFile(name);
    * }
    * }</pre>
    *
-   * @param name The name of the file to retrieve.
+   * @param name Required. The name of the file to retrieve.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final File getFile(FileName name) {
+    GetFileRequest request =
+        GetFileRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getFile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a file.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String name = FileName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[FILE]").toString();
+   *   File response = artifactRegistryClient.getFile(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the file to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final File getFile(String name) {
@@ -2163,7 +3177,10 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
-   *   GetFileRequest request = GetFileRequest.newBuilder().setName("name3373707").build();
+   *   GetFileRequest request =
+   *       GetFileRequest.newBuilder()
+   *           .setName(FileName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[FILE]").toString())
+   *           .build();
    *   File response = artifactRegistryClient.getFile(request);
    * }
    * }</pre>
@@ -2188,7 +3205,10 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
-   *   GetFileRequest request = GetFileRequest.newBuilder().setName("name3373707").build();
+   *   GetFileRequest request =
+   *       GetFileRequest.newBuilder()
+   *           .setName(FileName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[FILE]").toString())
+   *           .build();
    *   ApiFuture<File> future = artifactRegistryClient.getFileCallable().futureCall(request);
    *   // Do something.
    *   File response = future.get();
@@ -3041,6 +4061,205 @@ public class ArtifactRegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Retrieves the VPCSC Config for the Project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   VpcscConfigName name = VpcscConfigName.of("[PROJECT]", "[LOCATION]");
+   *   VPCSCConfig response = artifactRegistryClient.getVPCSCConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the VPCSCConfig resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final VPCSCConfig getVPCSCConfig(VpcscConfigName name) {
+    GetVPCSCConfigRequest request =
+        GetVPCSCConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getVPCSCConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the VPCSC Config for the Project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String name = VpcscConfigName.of("[PROJECT]", "[LOCATION]").toString();
+   *   VPCSCConfig response = artifactRegistryClient.getVPCSCConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the VPCSCConfig resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final VPCSCConfig getVPCSCConfig(String name) {
+    GetVPCSCConfigRequest request = GetVPCSCConfigRequest.newBuilder().setName(name).build();
+    return getVPCSCConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the VPCSC Config for the Project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   GetVPCSCConfigRequest request =
+   *       GetVPCSCConfigRequest.newBuilder()
+   *           .setName(VpcscConfigName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   VPCSCConfig response = artifactRegistryClient.getVPCSCConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final VPCSCConfig getVPCSCConfig(GetVPCSCConfigRequest request) {
+    return getVPCSCConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the VPCSC Config for the Project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   GetVPCSCConfigRequest request =
+   *       GetVPCSCConfigRequest.newBuilder()
+   *           .setName(VpcscConfigName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   ApiFuture<VPCSCConfig> future =
+   *       artifactRegistryClient.getVPCSCConfigCallable().futureCall(request);
+   *   // Do something.
+   *   VPCSCConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetVPCSCConfigRequest, VPCSCConfig> getVPCSCConfigCallable() {
+    return stub.getVPCSCConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the VPCSC Config for the Project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   VPCSCConfig vpcscConfig = VPCSCConfig.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   VPCSCConfig response = artifactRegistryClient.updateVPCSCConfig(vpcscConfig, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param vpcscConfig The project config.
+   * @param updateMask Field mask to support partial updates.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final VPCSCConfig updateVPCSCConfig(VPCSCConfig vpcscConfig, FieldMask updateMask) {
+    UpdateVPCSCConfigRequest request =
+        UpdateVPCSCConfigRequest.newBuilder()
+            .setVpcscConfig(vpcscConfig)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateVPCSCConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the VPCSC Config for the Project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   UpdateVPCSCConfigRequest request =
+   *       UpdateVPCSCConfigRequest.newBuilder()
+   *           .setVpcscConfig(VPCSCConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   VPCSCConfig response = artifactRegistryClient.updateVPCSCConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final VPCSCConfig updateVPCSCConfig(UpdateVPCSCConfigRequest request) {
+    return updateVPCSCConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the VPCSC Config for the Project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   UpdateVPCSCConfigRequest request =
+   *       UpdateVPCSCConfigRequest.newBuilder()
+   *           .setVpcscConfig(VPCSCConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<VPCSCConfig> future =
+   *       artifactRegistryClient.updateVPCSCConfigCallable().futureCall(request);
+   *   // Do something.
+   *   VPCSCConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateVPCSCConfigRequest, VPCSCConfig> updateVPCSCConfigCallable() {
+    return stub.updateVPCSCConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:
@@ -3299,6 +4518,243 @@ public class ArtifactRegistryClient implements BackgroundResource {
     protected ListDockerImagesFixedSizeCollection createCollection(
         List<ListDockerImagesPage> pages, int collectionSize) {
       return new ListDockerImagesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListMavenArtifactsPagedResponse
+      extends AbstractPagedListResponse<
+          ListMavenArtifactsRequest,
+          ListMavenArtifactsResponse,
+          MavenArtifact,
+          ListMavenArtifactsPage,
+          ListMavenArtifactsFixedSizeCollection> {
+
+    public static ApiFuture<ListMavenArtifactsPagedResponse> createAsync(
+        PageContext<ListMavenArtifactsRequest, ListMavenArtifactsResponse, MavenArtifact> context,
+        ApiFuture<ListMavenArtifactsResponse> futureResponse) {
+      ApiFuture<ListMavenArtifactsPage> futurePage =
+          ListMavenArtifactsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListMavenArtifactsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListMavenArtifactsPagedResponse(ListMavenArtifactsPage page) {
+      super(page, ListMavenArtifactsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListMavenArtifactsPage
+      extends AbstractPage<
+          ListMavenArtifactsRequest,
+          ListMavenArtifactsResponse,
+          MavenArtifact,
+          ListMavenArtifactsPage> {
+
+    private ListMavenArtifactsPage(
+        PageContext<ListMavenArtifactsRequest, ListMavenArtifactsResponse, MavenArtifact> context,
+        ListMavenArtifactsResponse response) {
+      super(context, response);
+    }
+
+    private static ListMavenArtifactsPage createEmptyPage() {
+      return new ListMavenArtifactsPage(null, null);
+    }
+
+    @Override
+    protected ListMavenArtifactsPage createPage(
+        PageContext<ListMavenArtifactsRequest, ListMavenArtifactsResponse, MavenArtifact> context,
+        ListMavenArtifactsResponse response) {
+      return new ListMavenArtifactsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListMavenArtifactsPage> createPageAsync(
+        PageContext<ListMavenArtifactsRequest, ListMavenArtifactsResponse, MavenArtifact> context,
+        ApiFuture<ListMavenArtifactsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListMavenArtifactsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListMavenArtifactsRequest,
+          ListMavenArtifactsResponse,
+          MavenArtifact,
+          ListMavenArtifactsPage,
+          ListMavenArtifactsFixedSizeCollection> {
+
+    private ListMavenArtifactsFixedSizeCollection(
+        List<ListMavenArtifactsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListMavenArtifactsFixedSizeCollection createEmptyCollection() {
+      return new ListMavenArtifactsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListMavenArtifactsFixedSizeCollection createCollection(
+        List<ListMavenArtifactsPage> pages, int collectionSize) {
+      return new ListMavenArtifactsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListNpmPackagesPagedResponse
+      extends AbstractPagedListResponse<
+          ListNpmPackagesRequest,
+          ListNpmPackagesResponse,
+          NpmPackage,
+          ListNpmPackagesPage,
+          ListNpmPackagesFixedSizeCollection> {
+
+    public static ApiFuture<ListNpmPackagesPagedResponse> createAsync(
+        PageContext<ListNpmPackagesRequest, ListNpmPackagesResponse, NpmPackage> context,
+        ApiFuture<ListNpmPackagesResponse> futureResponse) {
+      ApiFuture<ListNpmPackagesPage> futurePage =
+          ListNpmPackagesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListNpmPackagesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListNpmPackagesPagedResponse(ListNpmPackagesPage page) {
+      super(page, ListNpmPackagesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListNpmPackagesPage
+      extends AbstractPage<
+          ListNpmPackagesRequest, ListNpmPackagesResponse, NpmPackage, ListNpmPackagesPage> {
+
+    private ListNpmPackagesPage(
+        PageContext<ListNpmPackagesRequest, ListNpmPackagesResponse, NpmPackage> context,
+        ListNpmPackagesResponse response) {
+      super(context, response);
+    }
+
+    private static ListNpmPackagesPage createEmptyPage() {
+      return new ListNpmPackagesPage(null, null);
+    }
+
+    @Override
+    protected ListNpmPackagesPage createPage(
+        PageContext<ListNpmPackagesRequest, ListNpmPackagesResponse, NpmPackage> context,
+        ListNpmPackagesResponse response) {
+      return new ListNpmPackagesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListNpmPackagesPage> createPageAsync(
+        PageContext<ListNpmPackagesRequest, ListNpmPackagesResponse, NpmPackage> context,
+        ApiFuture<ListNpmPackagesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListNpmPackagesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListNpmPackagesRequest,
+          ListNpmPackagesResponse,
+          NpmPackage,
+          ListNpmPackagesPage,
+          ListNpmPackagesFixedSizeCollection> {
+
+    private ListNpmPackagesFixedSizeCollection(
+        List<ListNpmPackagesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListNpmPackagesFixedSizeCollection createEmptyCollection() {
+      return new ListNpmPackagesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListNpmPackagesFixedSizeCollection createCollection(
+        List<ListNpmPackagesPage> pages, int collectionSize) {
+      return new ListNpmPackagesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListPythonPackagesPagedResponse
+      extends AbstractPagedListResponse<
+          ListPythonPackagesRequest,
+          ListPythonPackagesResponse,
+          PythonPackage,
+          ListPythonPackagesPage,
+          ListPythonPackagesFixedSizeCollection> {
+
+    public static ApiFuture<ListPythonPackagesPagedResponse> createAsync(
+        PageContext<ListPythonPackagesRequest, ListPythonPackagesResponse, PythonPackage> context,
+        ApiFuture<ListPythonPackagesResponse> futureResponse) {
+      ApiFuture<ListPythonPackagesPage> futurePage =
+          ListPythonPackagesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListPythonPackagesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListPythonPackagesPagedResponse(ListPythonPackagesPage page) {
+      super(page, ListPythonPackagesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListPythonPackagesPage
+      extends AbstractPage<
+          ListPythonPackagesRequest,
+          ListPythonPackagesResponse,
+          PythonPackage,
+          ListPythonPackagesPage> {
+
+    private ListPythonPackagesPage(
+        PageContext<ListPythonPackagesRequest, ListPythonPackagesResponse, PythonPackage> context,
+        ListPythonPackagesResponse response) {
+      super(context, response);
+    }
+
+    private static ListPythonPackagesPage createEmptyPage() {
+      return new ListPythonPackagesPage(null, null);
+    }
+
+    @Override
+    protected ListPythonPackagesPage createPage(
+        PageContext<ListPythonPackagesRequest, ListPythonPackagesResponse, PythonPackage> context,
+        ListPythonPackagesResponse response) {
+      return new ListPythonPackagesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListPythonPackagesPage> createPageAsync(
+        PageContext<ListPythonPackagesRequest, ListPythonPackagesResponse, PythonPackage> context,
+        ApiFuture<ListPythonPackagesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListPythonPackagesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListPythonPackagesRequest,
+          ListPythonPackagesResponse,
+          PythonPackage,
+          ListPythonPackagesPage,
+          ListPythonPackagesFixedSizeCollection> {
+
+    private ListPythonPackagesFixedSizeCollection(
+        List<ListPythonPackagesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListPythonPackagesFixedSizeCollection createEmptyCollection() {
+      return new ListPythonPackagesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListPythonPackagesFixedSizeCollection createCollection(
+        List<ListPythonPackagesPage> pages, int collectionSize) {
+      return new ListPythonPackagesFixedSizeCollection(pages, collectionSize);
     }
   }
 

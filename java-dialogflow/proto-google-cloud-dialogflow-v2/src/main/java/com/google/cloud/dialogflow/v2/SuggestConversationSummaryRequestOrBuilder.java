@@ -103,4 +103,39 @@ public interface SuggestConversationSummaryRequestOrBuilder
    * @return The contextSize.
    */
   int getContextSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for a human assist query.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 5;</code>
+   *
+   * @return Whether the assistQueryParams field is set.
+   */
+  boolean hasAssistQueryParams();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for a human assist query.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 5;</code>
+   *
+   * @return The assistQueryParams.
+   */
+  com.google.cloud.dialogflow.v2.AssistQueryParameters getAssistQueryParams();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for a human assist query.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 5;</code>
+   */
+  com.google.cloud.dialogflow.v2.AssistQueryParametersOrBuilder getAssistQueryParamsOrBuilder();
 }

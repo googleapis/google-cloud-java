@@ -107,8 +107,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. If true, the event satisfying this step must be the very next event
-     * after the event satisfying the last step. If unset or false, this
+     * Optional. If true, the event satisfying this step must be the very next
+     * event after the event satisfying the last step. If unset or false, this
      * step indirectly follows the prior step; for example, there may be
      * events between the prior step and this step. It is ignored for the
      * first step.
@@ -124,10 +124,10 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. When set, this step must be satisfied within the constraint_duration of
-     * the previous step (i.e., t[i] - t[i-1] &lt;= constraint_duration). If not
-     * set, there is no duration requirement (the duration is effectively
-     * unlimited). It is ignored for the first step.
+     * Optional. When set, this step must be satisfied within the
+     * constraint_duration of the previous step (i.e., t[i] - t[i-1] &lt;=
+     * constraint_duration). If not set, there is no duration requirement (the
+     * duration is effectively unlimited). It is ignored for the first step.
      * </pre>
      *
      * <code>
@@ -141,10 +141,10 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. When set, this step must be satisfied within the constraint_duration of
-     * the previous step (i.e., t[i] - t[i-1] &lt;= constraint_duration). If not
-     * set, there is no duration requirement (the duration is effectively
-     * unlimited). It is ignored for the first step.
+     * Optional. When set, this step must be satisfied within the
+     * constraint_duration of the previous step (i.e., t[i] - t[i-1] &lt;=
+     * constraint_duration). If not set, there is no duration requirement (the
+     * duration is effectively unlimited). It is ignored for the first step.
      * </pre>
      *
      * <code>
@@ -158,10 +158,10 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. When set, this step must be satisfied within the constraint_duration of
-     * the previous step (i.e., t[i] - t[i-1] &lt;= constraint_duration). If not
-     * set, there is no duration requirement (the duration is effectively
-     * unlimited). It is ignored for the first step.
+     * Optional. When set, this step must be satisfied within the
+     * constraint_duration of the previous step (i.e., t[i] - t[i-1] &lt;=
+     * constraint_duration). If not set, there is no duration requirement (the
+     * duration is effectively unlimited). It is ignored for the first step.
      * </pre>
      *
      * <code>
@@ -174,8 +174,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Immutable. A logical expression of Audience dimension, metric, or event filters in
-     * each step.
+     * Required. Immutable. A logical expression of Audience dimension, metric,
+     * or event filters in each step.
      * </pre>
      *
      * <code>
@@ -189,8 +189,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Immutable. A logical expression of Audience dimension, metric, or event filters in
-     * each step.
+     * Required. Immutable. A logical expression of Audience dimension, metric,
+     * or event filters in each step.
      * </pre>
      *
      * <code>
@@ -204,8 +204,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Immutable. A logical expression of Audience dimension, metric, or event filters in
-     * each step.
+     * Required. Immutable. A logical expression of Audience dimension, metric,
+     * or event filters in each step.
      * </pre>
      *
      * <code>
@@ -314,8 +314,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. If true, the event satisfying this step must be the very next event
-     * after the event satisfying the last step. If unset or false, this
+     * Optional. If true, the event satisfying this step must be the very next
+     * event after the event satisfying the last step. If unset or false, this
      * step indirectly follows the prior step; for example, there may be
      * events between the prior step and this step. It is ignored for the
      * first step.
@@ -336,10 +336,10 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. When set, this step must be satisfied within the constraint_duration of
-     * the previous step (i.e., t[i] - t[i-1] &lt;= constraint_duration). If not
-     * set, there is no duration requirement (the duration is effectively
-     * unlimited). It is ignored for the first step.
+     * Optional. When set, this step must be satisfied within the
+     * constraint_duration of the previous step (i.e., t[i] - t[i-1] &lt;=
+     * constraint_duration). If not set, there is no duration requirement (the
+     * duration is effectively unlimited). It is ignored for the first step.
      * </pre>
      *
      * <code>
@@ -356,10 +356,10 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. When set, this step must be satisfied within the constraint_duration of
-     * the previous step (i.e., t[i] - t[i-1] &lt;= constraint_duration). If not
-     * set, there is no duration requirement (the duration is effectively
-     * unlimited). It is ignored for the first step.
+     * Optional. When set, this step must be satisfied within the
+     * constraint_duration of the previous step (i.e., t[i] - t[i-1] &lt;=
+     * constraint_duration). If not set, there is no duration requirement (the
+     * duration is effectively unlimited). It is ignored for the first step.
      * </pre>
      *
      * <code>
@@ -378,10 +378,10 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. When set, this step must be satisfied within the constraint_duration of
-     * the previous step (i.e., t[i] - t[i-1] &lt;= constraint_duration). If not
-     * set, there is no duration requirement (the duration is effectively
-     * unlimited). It is ignored for the first step.
+     * Optional. When set, this step must be satisfied within the
+     * constraint_duration of the previous step (i.e., t[i] - t[i-1] &lt;=
+     * constraint_duration). If not set, there is no duration requirement (the
+     * duration is effectively unlimited). It is ignored for the first step.
      * </pre>
      *
      * <code>
@@ -401,8 +401,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Immutable. A logical expression of Audience dimension, metric, or event filters in
-     * each step.
+     * Required. Immutable. A logical expression of Audience dimension, metric,
+     * or event filters in each step.
      * </pre>
      *
      * <code>
@@ -419,8 +419,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Immutable. A logical expression of Audience dimension, metric, or event filters in
-     * each step.
+     * Required. Immutable. A logical expression of Audience dimension, metric,
+     * or event filters in each step.
      * </pre>
      *
      * <code>
@@ -439,8 +439,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Immutable. A logical expression of Audience dimension, metric, or event filters in
-     * each step.
+     * Required. Immutable. A logical expression of Audience dimension, metric,
+     * or event filters in each step.
      * </pre>
      *
      * <code>
@@ -1032,8 +1032,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. If true, the event satisfying this step must be the very next event
-       * after the event satisfying the last step. If unset or false, this
+       * Optional. If true, the event satisfying this step must be the very next
+       * event after the event satisfying the last step. If unset or false, this
        * step indirectly follows the prior step; for example, there may be
        * events between the prior step and this step. It is ignored for the
        * first step.
@@ -1051,8 +1051,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. If true, the event satisfying this step must be the very next event
-       * after the event satisfying the last step. If unset or false, this
+       * Optional. If true, the event satisfying this step must be the very next
+       * event after the event satisfying the last step. If unset or false, this
        * step indirectly follows the prior step; for example, there may be
        * events between the prior step and this step. It is ignored for the
        * first step.
@@ -1074,8 +1074,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. If true, the event satisfying this step must be the very next event
-       * after the event satisfying the last step. If unset or false, this
+       * Optional. If true, the event satisfying this step must be the very next
+       * event after the event satisfying the last step. If unset or false, this
        * step indirectly follows the prior step; for example, there may be
        * events between the prior step and this step. It is ignored for the
        * first step.
@@ -1102,10 +1102,10 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. When set, this step must be satisfied within the constraint_duration of
-       * the previous step (i.e., t[i] - t[i-1] &lt;= constraint_duration). If not
-       * set, there is no duration requirement (the duration is effectively
-       * unlimited). It is ignored for the first step.
+       * Optional. When set, this step must be satisfied within the
+       * constraint_duration of the previous step (i.e., t[i] - t[i-1] &lt;=
+       * constraint_duration). If not set, there is no duration requirement (the
+       * duration is effectively unlimited). It is ignored for the first step.
        * </pre>
        *
        * <code>
@@ -1121,10 +1121,10 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. When set, this step must be satisfied within the constraint_duration of
-       * the previous step (i.e., t[i] - t[i-1] &lt;= constraint_duration). If not
-       * set, there is no duration requirement (the duration is effectively
-       * unlimited). It is ignored for the first step.
+       * Optional. When set, this step must be satisfied within the
+       * constraint_duration of the previous step (i.e., t[i] - t[i-1] &lt;=
+       * constraint_duration). If not set, there is no duration requirement (the
+       * duration is effectively unlimited). It is ignored for the first step.
        * </pre>
        *
        * <code>
@@ -1146,10 +1146,10 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. When set, this step must be satisfied within the constraint_duration of
-       * the previous step (i.e., t[i] - t[i-1] &lt;= constraint_duration). If not
-       * set, there is no duration requirement (the duration is effectively
-       * unlimited). It is ignored for the first step.
+       * Optional. When set, this step must be satisfied within the
+       * constraint_duration of the previous step (i.e., t[i] - t[i-1] &lt;=
+       * constraint_duration). If not set, there is no duration requirement (the
+       * duration is effectively unlimited). It is ignored for the first step.
        * </pre>
        *
        * <code>
@@ -1173,10 +1173,10 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. When set, this step must be satisfied within the constraint_duration of
-       * the previous step (i.e., t[i] - t[i-1] &lt;= constraint_duration). If not
-       * set, there is no duration requirement (the duration is effectively
-       * unlimited). It is ignored for the first step.
+       * Optional. When set, this step must be satisfied within the
+       * constraint_duration of the previous step (i.e., t[i] - t[i-1] &lt;=
+       * constraint_duration). If not set, there is no duration requirement (the
+       * duration is effectively unlimited). It is ignored for the first step.
        * </pre>
        *
        * <code>
@@ -1197,10 +1197,10 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. When set, this step must be satisfied within the constraint_duration of
-       * the previous step (i.e., t[i] - t[i-1] &lt;= constraint_duration). If not
-       * set, there is no duration requirement (the duration is effectively
-       * unlimited). It is ignored for the first step.
+       * Optional. When set, this step must be satisfied within the
+       * constraint_duration of the previous step (i.e., t[i] - t[i-1] &lt;=
+       * constraint_duration). If not set, there is no duration requirement (the
+       * duration is effectively unlimited). It is ignored for the first step.
        * </pre>
        *
        * <code>
@@ -1227,10 +1227,10 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. When set, this step must be satisfied within the constraint_duration of
-       * the previous step (i.e., t[i] - t[i-1] &lt;= constraint_duration). If not
-       * set, there is no duration requirement (the duration is effectively
-       * unlimited). It is ignored for the first step.
+       * Optional. When set, this step must be satisfied within the
+       * constraint_duration of the previous step (i.e., t[i] - t[i-1] &lt;=
+       * constraint_duration). If not set, there is no duration requirement (the
+       * duration is effectively unlimited). It is ignored for the first step.
        * </pre>
        *
        * <code>
@@ -1251,10 +1251,10 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. When set, this step must be satisfied within the constraint_duration of
-       * the previous step (i.e., t[i] - t[i-1] &lt;= constraint_duration). If not
-       * set, there is no duration requirement (the duration is effectively
-       * unlimited). It is ignored for the first step.
+       * Optional. When set, this step must be satisfied within the
+       * constraint_duration of the previous step (i.e., t[i] - t[i-1] &lt;=
+       * constraint_duration). If not set, there is no duration requirement (the
+       * duration is effectively unlimited). It is ignored for the first step.
        * </pre>
        *
        * <code>
@@ -1270,10 +1270,10 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. When set, this step must be satisfied within the constraint_duration of
-       * the previous step (i.e., t[i] - t[i-1] &lt;= constraint_duration). If not
-       * set, there is no duration requirement (the duration is effectively
-       * unlimited). It is ignored for the first step.
+       * Optional. When set, this step must be satisfied within the
+       * constraint_duration of the previous step (i.e., t[i] - t[i-1] &lt;=
+       * constraint_duration). If not set, there is no duration requirement (the
+       * duration is effectively unlimited). It is ignored for the first step.
        * </pre>
        *
        * <code>
@@ -1293,10 +1293,10 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. When set, this step must be satisfied within the constraint_duration of
-       * the previous step (i.e., t[i] - t[i-1] &lt;= constraint_duration). If not
-       * set, there is no duration requirement (the duration is effectively
-       * unlimited). It is ignored for the first step.
+       * Optional. When set, this step must be satisfied within the
+       * constraint_duration of the previous step (i.e., t[i] - t[i-1] &lt;=
+       * constraint_duration). If not set, there is no duration requirement (the
+       * duration is effectively unlimited). It is ignored for the first step.
        * </pre>
        *
        * <code>
@@ -1330,8 +1330,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Required. Immutable. A logical expression of Audience dimension, metric, or event filters in
-       * each step.
+       * Required. Immutable. A logical expression of Audience dimension, metric,
+       * or event filters in each step.
        * </pre>
        *
        * <code>
@@ -1347,8 +1347,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Required. Immutable. A logical expression of Audience dimension, metric, or event filters in
-       * each step.
+       * Required. Immutable. A logical expression of Audience dimension, metric,
+       * or event filters in each step.
        * </pre>
        *
        * <code>
@@ -1370,8 +1370,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Required. Immutable. A logical expression of Audience dimension, metric, or event filters in
-       * each step.
+       * Required. Immutable. A logical expression of Audience dimension, metric,
+       * or event filters in each step.
        * </pre>
        *
        * <code>
@@ -1396,8 +1396,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Required. Immutable. A logical expression of Audience dimension, metric, or event filters in
-       * each step.
+       * Required. Immutable. A logical expression of Audience dimension, metric,
+       * or event filters in each step.
        * </pre>
        *
        * <code>
@@ -1419,8 +1419,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Required. Immutable. A logical expression of Audience dimension, metric, or event filters in
-       * each step.
+       * Required. Immutable. A logical expression of Audience dimension, metric,
+       * or event filters in each step.
        * </pre>
        *
        * <code>
@@ -1450,8 +1450,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Required. Immutable. A logical expression of Audience dimension, metric, or event filters in
-       * each step.
+       * Required. Immutable. A logical expression of Audience dimension, metric,
+       * or event filters in each step.
        * </pre>
        *
        * <code>
@@ -1472,8 +1472,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Required. Immutable. A logical expression of Audience dimension, metric, or event filters in
-       * each step.
+       * Required. Immutable. A logical expression of Audience dimension, metric,
+       * or event filters in each step.
        * </pre>
        *
        * <code>
@@ -1490,8 +1490,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Required. Immutable. A logical expression of Audience dimension, metric, or event filters in
-       * each step.
+       * Required. Immutable. A logical expression of Audience dimension, metric,
+       * or event filters in each step.
        * </pre>
        *
        * <code>
@@ -1512,8 +1512,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Required. Immutable. A logical expression of Audience dimension, metric, or event filters in
-       * each step.
+       * Required. Immutable. A logical expression of Audience dimension, metric,
+       * or event filters in each step.
        * </pre>
        *
        * <code>
@@ -1713,8 +1713,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. An ordered sequence of steps. A user must complete each step in order to
-   * join the sequence filter.
+   * Required. An ordered sequence of steps. A user must complete each step in
+   * order to join the sequence filter.
    * </pre>
    *
    * <code>
@@ -1731,8 +1731,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. An ordered sequence of steps. A user must complete each step in order to
-   * join the sequence filter.
+   * Required. An ordered sequence of steps. A user must complete each step in
+   * order to join the sequence filter.
    * </pre>
    *
    * <code>
@@ -1751,8 +1751,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. An ordered sequence of steps. A user must complete each step in order to
-   * join the sequence filter.
+   * Required. An ordered sequence of steps. A user must complete each step in
+   * order to join the sequence filter.
    * </pre>
    *
    * <code>
@@ -1767,8 +1767,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. An ordered sequence of steps. A user must complete each step in order to
-   * join the sequence filter.
+   * Required. An ordered sequence of steps. A user must complete each step in
+   * order to join the sequence filter.
    * </pre>
    *
    * <code>
@@ -1784,8 +1784,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. An ordered sequence of steps. A user must complete each step in order to
-   * join the sequence filter.
+   * Required. An ordered sequence of steps. A user must complete each step in
+   * order to join the sequence filter.
    * </pre>
    *
    * <code>
@@ -2582,8 +2582,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. An ordered sequence of steps. A user must complete each step in order to
-     * join the sequence filter.
+     * Required. An ordered sequence of steps. A user must complete each step in
+     * order to join the sequence filter.
      * </pre>
      *
      * <code>
@@ -2603,8 +2603,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. An ordered sequence of steps. A user must complete each step in order to
-     * join the sequence filter.
+     * Required. An ordered sequence of steps. A user must complete each step in
+     * order to join the sequence filter.
      * </pre>
      *
      * <code>
@@ -2622,8 +2622,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. An ordered sequence of steps. A user must complete each step in order to
-     * join the sequence filter.
+     * Required. An ordered sequence of steps. A user must complete each step in
+     * order to join the sequence filter.
      * </pre>
      *
      * <code>
@@ -2642,8 +2642,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. An ordered sequence of steps. A user must complete each step in order to
-     * join the sequence filter.
+     * Required. An ordered sequence of steps. A user must complete each step in
+     * order to join the sequence filter.
      * </pre>
      *
      * <code>
@@ -2669,8 +2669,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. An ordered sequence of steps. A user must complete each step in order to
-     * join the sequence filter.
+     * Required. An ordered sequence of steps. A user must complete each step in
+     * order to join the sequence filter.
      * </pre>
      *
      * <code>
@@ -2694,8 +2694,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. An ordered sequence of steps. A user must complete each step in order to
-     * join the sequence filter.
+     * Required. An ordered sequence of steps. A user must complete each step in
+     * order to join the sequence filter.
      * </pre>
      *
      * <code>
@@ -2720,8 +2720,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. An ordered sequence of steps. A user must complete each step in order to
-     * join the sequence filter.
+     * Required. An ordered sequence of steps. A user must complete each step in
+     * order to join the sequence filter.
      * </pre>
      *
      * <code>
@@ -2747,8 +2747,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. An ordered sequence of steps. A user must complete each step in order to
-     * join the sequence filter.
+     * Required. An ordered sequence of steps. A user must complete each step in
+     * order to join the sequence filter.
      * </pre>
      *
      * <code>
@@ -2771,8 +2771,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. An ordered sequence of steps. A user must complete each step in order to
-     * join the sequence filter.
+     * Required. An ordered sequence of steps. A user must complete each step in
+     * order to join the sequence filter.
      * </pre>
      *
      * <code>
@@ -2796,8 +2796,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. An ordered sequence of steps. A user must complete each step in order to
-     * join the sequence filter.
+     * Required. An ordered sequence of steps. A user must complete each step in
+     * order to join the sequence filter.
      * </pre>
      *
      * <code>
@@ -2822,8 +2822,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. An ordered sequence of steps. A user must complete each step in order to
-     * join the sequence filter.
+     * Required. An ordered sequence of steps. A user must complete each step in
+     * order to join the sequence filter.
      * </pre>
      *
      * <code>
@@ -2844,8 +2844,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. An ordered sequence of steps. A user must complete each step in order to
-     * join the sequence filter.
+     * Required. An ordered sequence of steps. A user must complete each step in
+     * order to join the sequence filter.
      * </pre>
      *
      * <code>
@@ -2866,8 +2866,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. An ordered sequence of steps. A user must complete each step in order to
-     * join the sequence filter.
+     * Required. An ordered sequence of steps. A user must complete each step in
+     * order to join the sequence filter.
      * </pre>
      *
      * <code>
@@ -2882,8 +2882,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. An ordered sequence of steps. A user must complete each step in order to
-     * join the sequence filter.
+     * Required. An ordered sequence of steps. A user must complete each step in
+     * order to join the sequence filter.
      * </pre>
      *
      * <code>
@@ -2902,8 +2902,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. An ordered sequence of steps. A user must complete each step in order to
-     * join the sequence filter.
+     * Required. An ordered sequence of steps. A user must complete each step in
+     * order to join the sequence filter.
      * </pre>
      *
      * <code>
@@ -2925,8 +2925,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. An ordered sequence of steps. A user must complete each step in order to
-     * join the sequence filter.
+     * Required. An ordered sequence of steps. A user must complete each step in
+     * order to join the sequence filter.
      * </pre>
      *
      * <code>
@@ -2944,8 +2944,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. An ordered sequence of steps. A user must complete each step in order to
-     * join the sequence filter.
+     * Required. An ordered sequence of steps. A user must complete each step in
+     * order to join the sequence filter.
      * </pre>
      *
      * <code>
@@ -2964,8 +2964,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. An ordered sequence of steps. A user must complete each step in order to
-     * join the sequence filter.
+     * Required. An ordered sequence of steps. A user must complete each step in
+     * order to join the sequence filter.
      * </pre>
      *
      * <code>

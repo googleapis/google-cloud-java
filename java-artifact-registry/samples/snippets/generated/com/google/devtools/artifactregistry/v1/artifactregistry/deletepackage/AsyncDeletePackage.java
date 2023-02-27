@@ -20,6 +20,7 @@ package com.google.devtools.artifactregistry.v1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.devtools.artifactregistry.v1.ArtifactRegistryClient;
 import com.google.devtools.artifactregistry.v1.DeletePackageRequest;
+import com.google.devtools.artifactregistry.v1.PackageName;
 import com.google.longrunning.Operation;
 
 public class AsyncDeletePackage {
@@ -36,7 +37,10 @@ public class AsyncDeletePackage {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
       DeletePackageRequest request =
-          DeletePackageRequest.newBuilder().setName("name3373707").build();
+          DeletePackageRequest.newBuilder()
+              .setName(
+                  PackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]").toString())
+              .build();
       ApiFuture<Operation> future =
           artifactRegistryClient.deletePackageCallable().futureCall(request);
       // Do something.

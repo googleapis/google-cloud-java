@@ -22,9 +22,10 @@ package com.google.cloud.security.privateca.v1;
  *
  *
  * <pre>
- * A [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] corresponds to a signed X.509 certificate
- * Revocation List (CRL). A CRL contains the serial numbers of certificates that
- * should no longer be trusted.
+ * A
+ * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+ * corresponds to a signed X.509 certificate Revocation List (CRL). A CRL
+ * contains the serial numbers of certificates that should no longer be trusted.
  * </pre>
  *
  * Protobuf type {@code google.cloud.security.privateca.v1.CertificateRevocationList}
@@ -89,7 +90,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The state of a [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList], indicating if it is current.
+   * The state of a
+   * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList],
+   * indicating if it is current.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.security.privateca.v1.CertificateRevocationList.State}
@@ -109,7 +112,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] is up to date.
+     * The
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+     * is up to date.
      * </pre>
      *
      * <code>ACTIVE = 1;</code>
@@ -119,7 +124,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] is no longer current.
+     * The
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+     * is no longer current.
      * </pre>
      *
      * <code>SUPERSEDED = 2;</code>
@@ -142,7 +149,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] is up to date.
+     * The
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+     * is up to date.
      * </pre>
      *
      * <code>ACTIVE = 1;</code>
@@ -152,7 +161,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] is no longer current.
+     * The
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+     * is no longer current.
      * </pre>
      *
      * <code>SUPERSEDED = 2;</code>
@@ -253,8 +264,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The resource name for the [Certificate][google.cloud.security.privateca.v1.Certificate] in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificates/&#42;`.
+     * The resource name for the
+     * [Certificate][google.cloud.security.privateca.v1.Certificate] in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificates/&#42;`.
      * </pre>
      *
      * <code>string certificate = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -266,8 +278,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The resource name for the [Certificate][google.cloud.security.privateca.v1.Certificate] in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificates/&#42;`.
+     * The resource name for the
+     * [Certificate][google.cloud.security.privateca.v1.Certificate] in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificates/&#42;`.
      * </pre>
      *
      * <code>string certificate = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -280,7 +293,8 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The serial number of the [Certificate][google.cloud.security.privateca.v1.Certificate].
+     * The serial number of the
+     * [Certificate][google.cloud.security.privateca.v1.Certificate].
      * </pre>
      *
      * <code>string hex_serial_number = 2;</code>
@@ -292,7 +306,8 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The serial number of the [Certificate][google.cloud.security.privateca.v1.Certificate].
+     * The serial number of the
+     * [Certificate][google.cloud.security.privateca.v1.Certificate].
      * </pre>
      *
      * <code>string hex_serial_number = 2;</code>
@@ -305,7 +320,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The reason the [Certificate][google.cloud.security.privateca.v1.Certificate] was revoked.
+     * The reason the
+     * [Certificate][google.cloud.security.privateca.v1.Certificate] was
+     * revoked.
      * </pre>
      *
      * <code>.google.cloud.security.privateca.v1.RevocationReason revocation_reason = 3;</code>
@@ -317,7 +334,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The reason the [Certificate][google.cloud.security.privateca.v1.Certificate] was revoked.
+     * The reason the
+     * [Certificate][google.cloud.security.privateca.v1.Certificate] was
+     * revoked.
      * </pre>
      *
      * <code>.google.cloud.security.privateca.v1.RevocationReason revocation_reason = 3;</code>
@@ -330,7 +349,8 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Describes a revoked [Certificate][google.cloud.security.privateca.v1.Certificate].
+   * Describes a revoked
+   * [Certificate][google.cloud.security.privateca.v1.Certificate].
    * </pre>
    *
    * Protobuf type {@code
@@ -388,8 +408,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The resource name for the [Certificate][google.cloud.security.privateca.v1.Certificate] in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificates/&#42;`.
+     * The resource name for the
+     * [Certificate][google.cloud.security.privateca.v1.Certificate] in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificates/&#42;`.
      * </pre>
      *
      * <code>string certificate = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -412,8 +433,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The resource name for the [Certificate][google.cloud.security.privateca.v1.Certificate] in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificates/&#42;`.
+     * The resource name for the
+     * [Certificate][google.cloud.security.privateca.v1.Certificate] in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificates/&#42;`.
      * </pre>
      *
      * <code>string certificate = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -441,7 +463,8 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The serial number of the [Certificate][google.cloud.security.privateca.v1.Certificate].
+     * The serial number of the
+     * [Certificate][google.cloud.security.privateca.v1.Certificate].
      * </pre>
      *
      * <code>string hex_serial_number = 2;</code>
@@ -464,7 +487,8 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The serial number of the [Certificate][google.cloud.security.privateca.v1.Certificate].
+     * The serial number of the
+     * [Certificate][google.cloud.security.privateca.v1.Certificate].
      * </pre>
      *
      * <code>string hex_serial_number = 2;</code>
@@ -490,7 +514,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The reason the [Certificate][google.cloud.security.privateca.v1.Certificate] was revoked.
+     * The reason the
+     * [Certificate][google.cloud.security.privateca.v1.Certificate] was
+     * revoked.
      * </pre>
      *
      * <code>.google.cloud.security.privateca.v1.RevocationReason revocation_reason = 3;</code>
@@ -505,7 +531,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The reason the [Certificate][google.cloud.security.privateca.v1.Certificate] was revoked.
+     * The reason the
+     * [Certificate][google.cloud.security.privateca.v1.Certificate] was
+     * revoked.
      * </pre>
      *
      * <code>.google.cloud.security.privateca.v1.RevocationReason revocation_reason = 3;</code>
@@ -729,7 +757,8 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Describes a revoked [Certificate][google.cloud.security.privateca.v1.Certificate].
+     * Describes a revoked
+     * [Certificate][google.cloud.security.privateca.v1.Certificate].
      * </pre>
      *
      * Protobuf type {@code
@@ -964,8 +993,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * The resource name for the [Certificate][google.cloud.security.privateca.v1.Certificate] in the format
-       * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificates/&#42;`.
+       * The resource name for the
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] in the
+       * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificates/&#42;`.
        * </pre>
        *
        * <code>string certificate = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -987,8 +1017,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * The resource name for the [Certificate][google.cloud.security.privateca.v1.Certificate] in the format
-       * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificates/&#42;`.
+       * The resource name for the
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] in the
+       * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificates/&#42;`.
        * </pre>
        *
        * <code>string certificate = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1010,8 +1041,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * The resource name for the [Certificate][google.cloud.security.privateca.v1.Certificate] in the format
-       * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificates/&#42;`.
+       * The resource name for the
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] in the
+       * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificates/&#42;`.
        * </pre>
        *
        * <code>string certificate = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1032,8 +1064,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * The resource name for the [Certificate][google.cloud.security.privateca.v1.Certificate] in the format
-       * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificates/&#42;`.
+       * The resource name for the
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] in the
+       * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificates/&#42;`.
        * </pre>
        *
        * <code>string certificate = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1050,8 +1083,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * The resource name for the [Certificate][google.cloud.security.privateca.v1.Certificate] in the format
-       * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificates/&#42;`.
+       * The resource name for the
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] in the
+       * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificates/&#42;`.
        * </pre>
        *
        * <code>string certificate = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1075,7 +1109,8 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * The serial number of the [Certificate][google.cloud.security.privateca.v1.Certificate].
+       * The serial number of the
+       * [Certificate][google.cloud.security.privateca.v1.Certificate].
        * </pre>
        *
        * <code>string hex_serial_number = 2;</code>
@@ -1097,7 +1132,8 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * The serial number of the [Certificate][google.cloud.security.privateca.v1.Certificate].
+       * The serial number of the
+       * [Certificate][google.cloud.security.privateca.v1.Certificate].
        * </pre>
        *
        * <code>string hex_serial_number = 2;</code>
@@ -1119,7 +1155,8 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * The serial number of the [Certificate][google.cloud.security.privateca.v1.Certificate].
+       * The serial number of the
+       * [Certificate][google.cloud.security.privateca.v1.Certificate].
        * </pre>
        *
        * <code>string hex_serial_number = 2;</code>
@@ -1140,7 +1177,8 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * The serial number of the [Certificate][google.cloud.security.privateca.v1.Certificate].
+       * The serial number of the
+       * [Certificate][google.cloud.security.privateca.v1.Certificate].
        * </pre>
        *
        * <code>string hex_serial_number = 2;</code>
@@ -1157,7 +1195,8 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * The serial number of the [Certificate][google.cloud.security.privateca.v1.Certificate].
+       * The serial number of the
+       * [Certificate][google.cloud.security.privateca.v1.Certificate].
        * </pre>
        *
        * <code>string hex_serial_number = 2;</code>
@@ -1181,7 +1220,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * The reason the [Certificate][google.cloud.security.privateca.v1.Certificate] was revoked.
+       * The reason the
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] was
+       * revoked.
        * </pre>
        *
        * <code>.google.cloud.security.privateca.v1.RevocationReason revocation_reason = 3;</code>
@@ -1196,7 +1237,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * The reason the [Certificate][google.cloud.security.privateca.v1.Certificate] was revoked.
+       * The reason the
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] was
+       * revoked.
        * </pre>
        *
        * <code>.google.cloud.security.privateca.v1.RevocationReason revocation_reason = 3;</code>
@@ -1214,7 +1257,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * The reason the [Certificate][google.cloud.security.privateca.v1.Certificate] was revoked.
+       * The reason the
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] was
+       * revoked.
        * </pre>
        *
        * <code>.google.cloud.security.privateca.v1.RevocationReason revocation_reason = 3;</code>
@@ -1233,7 +1278,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * The reason the [Certificate][google.cloud.security.privateca.v1.Certificate] was revoked.
+       * The reason the
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] was
+       * revoked.
        * </pre>
        *
        * <code>.google.cloud.security.privateca.v1.RevocationReason revocation_reason = 3;</code>
@@ -1255,7 +1302,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * The reason the [Certificate][google.cloud.security.privateca.v1.Certificate] was revoked.
+       * The reason the
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] was
+       * revoked.
        * </pre>
        *
        * <code>.google.cloud.security.privateca.v1.RevocationReason revocation_reason = 3;</code>
@@ -1347,9 +1396,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. The resource name for this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] in
-   * the format
-   * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;certificateAuthorities/&#42;&#47;
+   * Output only. The resource name for this
+   * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+   * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;certificateAuthorities/&#42;&#47;
    *    certificateRevocationLists/&#42;`.
    * </pre>
    *
@@ -1373,9 +1422,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. The resource name for this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] in
-   * the format
-   * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;certificateAuthorities/&#42;&#47;
+   * Output only. The resource name for this
+   * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+   * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;certificateAuthorities/&#42;&#47;
    *    certificateRevocationLists/&#42;`.
    * </pre>
    *
@@ -1613,7 +1662,10 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. The [State][google.cloud.security.privateca.v1.CertificateRevocationList.State] for this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
+   * Output only. The
+   * [State][google.cloud.security.privateca.v1.CertificateRevocationList.State]
+   * for this
+   * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
    * </pre>
    *
    * <code>
@@ -1630,7 +1682,10 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. The [State][google.cloud.security.privateca.v1.CertificateRevocationList.State] for this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
+   * Output only. The
+   * [State][google.cloud.security.privateca.v1.CertificateRevocationList.State]
+   * for this
+   * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
    * </pre>
    *
    * <code>
@@ -1654,7 +1709,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] was created.
+   * Output only. The time at which this
+   * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+   * was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1670,7 +1727,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] was created.
+   * Output only. The time at which this
+   * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+   * was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1686,7 +1745,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] was created.
+   * Output only. The time at which this
+   * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+   * was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1703,7 +1764,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] was updated.
+   * Output only. The time at which this
+   * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+   * was updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1719,7 +1782,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] was updated.
+   * Output only. The time at which this
+   * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+   * was updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1735,7 +1800,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] was updated.
+   * Output only. The time at which this
+   * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+   * was updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1754,9 +1821,10 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. The revision ID of this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]. A new revision is
-   * committed whenever a new CRL is published. The format is an 8-character
-   * hexadecimal string.
+   * Output only. The revision ID of this
+   * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
+   * A new revision is committed whenever a new CRL is published. The format is
+   * an 8-character hexadecimal string.
    * </pre>
    *
    * <code>string revision_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1779,9 +1847,10 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. The revision ID of this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]. A new revision is
-   * committed whenever a new CRL is published. The format is an 8-character
-   * hexadecimal string.
+   * Output only. The revision ID of this
+   * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
+   * A new revision is committed whenever a new CRL is published. The format is
+   * an 8-character hexadecimal string.
    * </pre>
    *
    * <code>string revision_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2173,9 +2242,10 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * A [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] corresponds to a signed X.509 certificate
-   * Revocation List (CRL). A CRL contains the serial numbers of certificates that
-   * should no longer be trusted.
+   * A
+   * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+   * corresponds to a signed X.509 certificate Revocation List (CRL). A CRL
+   * contains the serial numbers of certificates that should no longer be trusted.
    * </pre>
    *
    * Protobuf type {@code google.cloud.security.privateca.v1.CertificateRevocationList}
@@ -2571,9 +2641,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The resource name for this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] in
-     * the format
-     * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;certificateAuthorities/&#42;&#47;
+     * Output only. The resource name for this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+     * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;certificateAuthorities/&#42;&#47;
      *    certificateRevocationLists/&#42;`.
      * </pre>
      *
@@ -2596,9 +2666,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The resource name for this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] in
-     * the format
-     * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;certificateAuthorities/&#42;&#47;
+     * Output only. The resource name for this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+     * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;certificateAuthorities/&#42;&#47;
      *    certificateRevocationLists/&#42;`.
      * </pre>
      *
@@ -2621,9 +2691,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The resource name for this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] in
-     * the format
-     * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;certificateAuthorities/&#42;&#47;
+     * Output only. The resource name for this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+     * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;certificateAuthorities/&#42;&#47;
      *    certificateRevocationLists/&#42;`.
      * </pre>
      *
@@ -2645,9 +2715,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The resource name for this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] in
-     * the format
-     * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;certificateAuthorities/&#42;&#47;
+     * Output only. The resource name for this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+     * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;certificateAuthorities/&#42;&#47;
      *    certificateRevocationLists/&#42;`.
      * </pre>
      *
@@ -2665,9 +2735,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The resource name for this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] in
-     * the format
-     * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;certificateAuthorities/&#42;&#47;
+     * Output only. The resource name for this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+     * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;certificateAuthorities/&#42;&#47;
      *    certificateRevocationLists/&#42;`.
      * </pre>
      *
@@ -3391,7 +3461,10 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The [State][google.cloud.security.privateca.v1.CertificateRevocationList.State] for this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
+     * Output only. The
+     * [State][google.cloud.security.privateca.v1.CertificateRevocationList.State]
+     * for this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
      * </pre>
      *
      * <code>
@@ -3408,7 +3481,10 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The [State][google.cloud.security.privateca.v1.CertificateRevocationList.State] for this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
+     * Output only. The
+     * [State][google.cloud.security.privateca.v1.CertificateRevocationList.State]
+     * for this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
      * </pre>
      *
      * <code>
@@ -3428,7 +3504,10 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The [State][google.cloud.security.privateca.v1.CertificateRevocationList.State] for this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
+     * Output only. The
+     * [State][google.cloud.security.privateca.v1.CertificateRevocationList.State]
+     * for this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
      * </pre>
      *
      * <code>
@@ -3449,7 +3528,10 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The [State][google.cloud.security.privateca.v1.CertificateRevocationList.State] for this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
+     * Output only. The
+     * [State][google.cloud.security.privateca.v1.CertificateRevocationList.State]
+     * for this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
      * </pre>
      *
      * <code>
@@ -3473,7 +3555,10 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The [State][google.cloud.security.privateca.v1.CertificateRevocationList.State] for this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
+     * Output only. The
+     * [State][google.cloud.security.privateca.v1.CertificateRevocationList.State]
+     * for this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
      * </pre>
      *
      * <code>
@@ -3499,7 +3584,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] was created.
+     * Output only. The time at which this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+     * was created.
      * </pre>
      *
      * <code>
@@ -3515,7 +3602,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] was created.
+     * Output only. The time at which this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+     * was created.
      * </pre>
      *
      * <code>
@@ -3537,7 +3626,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] was created.
+     * Output only. The time at which this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+     * was created.
      * </pre>
      *
      * <code>
@@ -3561,7 +3652,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] was created.
+     * Output only. The time at which this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+     * was created.
      * </pre>
      *
      * <code>
@@ -3582,7 +3675,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] was created.
+     * Output only. The time at which this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+     * was created.
      * </pre>
      *
      * <code>
@@ -3609,7 +3704,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] was created.
+     * Output only. The time at which this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+     * was created.
      * </pre>
      *
      * <code>
@@ -3630,7 +3727,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] was created.
+     * Output only. The time at which this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+     * was created.
      * </pre>
      *
      * <code>
@@ -3646,7 +3745,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] was created.
+     * Output only. The time at which this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+     * was created.
      * </pre>
      *
      * <code>
@@ -3666,7 +3767,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] was created.
+     * Output only. The time at which this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+     * was created.
      * </pre>
      *
      * <code>
@@ -3700,7 +3803,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] was updated.
+     * Output only. The time at which this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+     * was updated.
      * </pre>
      *
      * <code>
@@ -3716,7 +3821,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] was updated.
+     * Output only. The time at which this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+     * was updated.
      * </pre>
      *
      * <code>
@@ -3738,7 +3845,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] was updated.
+     * Output only. The time at which this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+     * was updated.
      * </pre>
      *
      * <code>
@@ -3762,7 +3871,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] was updated.
+     * Output only. The time at which this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+     * was updated.
      * </pre>
      *
      * <code>
@@ -3783,7 +3894,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] was updated.
+     * Output only. The time at which this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+     * was updated.
      * </pre>
      *
      * <code>
@@ -3810,7 +3923,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] was updated.
+     * Output only. The time at which this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+     * was updated.
      * </pre>
      *
      * <code>
@@ -3831,7 +3946,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] was updated.
+     * Output only. The time at which this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+     * was updated.
      * </pre>
      *
      * <code>
@@ -3847,7 +3964,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] was updated.
+     * Output only. The time at which this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+     * was updated.
      * </pre>
      *
      * <code>
@@ -3867,7 +3986,9 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] was updated.
+     * Output only. The time at which this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+     * was updated.
      * </pre>
      *
      * <code>
@@ -3896,9 +4017,10 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The revision ID of this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]. A new revision is
-     * committed whenever a new CRL is published. The format is an 8-character
-     * hexadecimal string.
+     * Output only. The revision ID of this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
+     * A new revision is committed whenever a new CRL is published. The format is
+     * an 8-character hexadecimal string.
      * </pre>
      *
      * <code>string revision_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3920,9 +4042,10 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The revision ID of this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]. A new revision is
-     * committed whenever a new CRL is published. The format is an 8-character
-     * hexadecimal string.
+     * Output only. The revision ID of this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
+     * A new revision is committed whenever a new CRL is published. The format is
+     * an 8-character hexadecimal string.
      * </pre>
      *
      * <code>string revision_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3944,9 +4067,10 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The revision ID of this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]. A new revision is
-     * committed whenever a new CRL is published. The format is an 8-character
-     * hexadecimal string.
+     * Output only. The revision ID of this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
+     * A new revision is committed whenever a new CRL is published. The format is
+     * an 8-character hexadecimal string.
      * </pre>
      *
      * <code>string revision_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3967,9 +4091,10 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The revision ID of this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]. A new revision is
-     * committed whenever a new CRL is published. The format is an 8-character
-     * hexadecimal string.
+     * Output only. The revision ID of this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
+     * A new revision is committed whenever a new CRL is published. The format is
+     * an 8-character hexadecimal string.
      * </pre>
      *
      * <code>string revision_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3986,9 +4111,10 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The revision ID of this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]. A new revision is
-     * committed whenever a new CRL is published. The format is an 8-character
-     * hexadecimal string.
+     * Output only. The revision ID of this
+     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
+     * A new revision is committed whenever a new CRL is published. The format is
+     * an 8-character hexadecimal string.
      * </pre>
      *
      * <code>string revision_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

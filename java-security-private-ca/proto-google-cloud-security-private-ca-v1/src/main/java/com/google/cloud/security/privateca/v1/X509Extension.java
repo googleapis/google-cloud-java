@@ -22,8 +22,9 @@ package com.google.cloud.security.privateca.v1;
  *
  *
  * <pre>
- * An [X509Extension][google.cloud.security.privateca.v1.X509Extension] specifies an X.509 extension, which may be used in
- * different parts of X.509 objects like certificates, CSRs, and CRLs.
+ * An [X509Extension][google.cloud.security.privateca.v1.X509Extension]
+ * specifies an X.509 extension, which may be used in different parts of X.509
+ * objects like certificates, CSRs, and CRLs.
  * </pre>
  *
  * Protobuf type {@code google.cloud.security.privateca.v1.X509Extension}
@@ -130,9 +131,9 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Indicates whether or not this extension is critical (i.e., if the client
-   * does not know how to handle this extension, the client should consider this
-   * to be an error).
+   * Optional. Indicates whether or not this extension is critical (i.e., if the
+   * client does not know how to handle this extension, the client should
+   * consider this to be an error).
    * </pre>
    *
    * <code>bool critical = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -348,8 +349,9 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An [X509Extension][google.cloud.security.privateca.v1.X509Extension] specifies an X.509 extension, which may be used in
-   * different parts of X.509 objects like certificates, CSRs, and CRLs.
+   * An [X509Extension][google.cloud.security.privateca.v1.X509Extension]
+   * specifies an X.509 extension, which may be used in different parts of X.509
+   * objects like certificates, CSRs, and CRLs.
    * </pre>
    *
    * Protobuf type {@code google.cloud.security.privateca.v1.X509Extension}
@@ -763,9 +765,9 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicates whether or not this extension is critical (i.e., if the client
-     * does not know how to handle this extension, the client should consider this
-     * to be an error).
+     * Optional. Indicates whether or not this extension is critical (i.e., if the
+     * client does not know how to handle this extension, the client should
+     * consider this to be an error).
      * </pre>
      *
      * <code>bool critical = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -780,9 +782,9 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicates whether or not this extension is critical (i.e., if the client
-     * does not know how to handle this extension, the client should consider this
-     * to be an error).
+     * Optional. Indicates whether or not this extension is critical (i.e., if the
+     * client does not know how to handle this extension, the client should
+     * consider this to be an error).
      * </pre>
      *
      * <code>bool critical = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -801,9 +803,9 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicates whether or not this extension is critical (i.e., if the client
-     * does not know how to handle this extension, the client should consider this
-     * to be an error).
+     * Optional. Indicates whether or not this extension is critical (i.e., if the
+     * client does not know how to handle this extension, the client should
+     * consider this to be an error).
      * </pre>
      *
      * <code>bool critical = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

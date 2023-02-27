@@ -19,7 +19,10 @@ package com.google.devtools.artifactregistry.v1;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListDockerImagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListFilesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListLocationsPagedResponse;
+import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListMavenArtifactsPagedResponse;
+import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListNpmPackagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListPackagesPagedResponse;
+import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListPythonPackagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListRepositoriesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListTagsPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListVersionsPagedResponse;
@@ -104,6 +107,42 @@ public class ArtifactRegistrySettings extends ClientSettings<ArtifactRegistrySet
   /** Returns the object with the settings used for calls to getDockerImage. */
   public UnaryCallSettings<GetDockerImageRequest, DockerImage> getDockerImageSettings() {
     return ((ArtifactRegistryStubSettings) getStubSettings()).getDockerImageSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listMavenArtifacts. */
+  public PagedCallSettings<
+          ListMavenArtifactsRequest, ListMavenArtifactsResponse, ListMavenArtifactsPagedResponse>
+      listMavenArtifactsSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).listMavenArtifactsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getMavenArtifact. */
+  public UnaryCallSettings<GetMavenArtifactRequest, MavenArtifact> getMavenArtifactSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).getMavenArtifactSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listNpmPackages. */
+  public PagedCallSettings<
+          ListNpmPackagesRequest, ListNpmPackagesResponse, ListNpmPackagesPagedResponse>
+      listNpmPackagesSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).listNpmPackagesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getNpmPackage. */
+  public UnaryCallSettings<GetNpmPackageRequest, NpmPackage> getNpmPackageSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).getNpmPackageSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listPythonPackages. */
+  public PagedCallSettings<
+          ListPythonPackagesRequest, ListPythonPackagesResponse, ListPythonPackagesPagedResponse>
+      listPythonPackagesSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).listPythonPackagesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getPythonPackage. */
+  public UnaryCallSettings<GetPythonPackageRequest, PythonPackage> getPythonPackageSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).getPythonPackageSettings();
   }
 
   /** Returns the object with the settings used for calls to importAptArtifacts. */
@@ -278,6 +317,16 @@ public class ArtifactRegistrySettings extends ClientSettings<ArtifactRegistrySet
     return ((ArtifactRegistryStubSettings) getStubSettings()).updateProjectSettingsSettings();
   }
 
+  /** Returns the object with the settings used for calls to getVPCSCConfig. */
+  public UnaryCallSettings<GetVPCSCConfigRequest, VPCSCConfig> getVPCSCConfigSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).getVPCSCConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateVPCSCConfig. */
+  public UnaryCallSettings<UpdateVPCSCConfigRequest, VPCSCConfig> updateVPCSCConfigSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).updateVPCSCConfigSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -414,6 +463,44 @@ public class ArtifactRegistrySettings extends ClientSettings<ArtifactRegistrySet
     /** Returns the builder for the settings used for calls to getDockerImage. */
     public UnaryCallSettings.Builder<GetDockerImageRequest, DockerImage> getDockerImageSettings() {
       return getStubSettingsBuilder().getDockerImageSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listMavenArtifacts. */
+    public PagedCallSettings.Builder<
+            ListMavenArtifactsRequest, ListMavenArtifactsResponse, ListMavenArtifactsPagedResponse>
+        listMavenArtifactsSettings() {
+      return getStubSettingsBuilder().listMavenArtifactsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getMavenArtifact. */
+    public UnaryCallSettings.Builder<GetMavenArtifactRequest, MavenArtifact>
+        getMavenArtifactSettings() {
+      return getStubSettingsBuilder().getMavenArtifactSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listNpmPackages. */
+    public PagedCallSettings.Builder<
+            ListNpmPackagesRequest, ListNpmPackagesResponse, ListNpmPackagesPagedResponse>
+        listNpmPackagesSettings() {
+      return getStubSettingsBuilder().listNpmPackagesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getNpmPackage. */
+    public UnaryCallSettings.Builder<GetNpmPackageRequest, NpmPackage> getNpmPackageSettings() {
+      return getStubSettingsBuilder().getNpmPackageSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listPythonPackages. */
+    public PagedCallSettings.Builder<
+            ListPythonPackagesRequest, ListPythonPackagesResponse, ListPythonPackagesPagedResponse>
+        listPythonPackagesSettings() {
+      return getStubSettingsBuilder().listPythonPackagesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getPythonPackage. */
+    public UnaryCallSettings.Builder<GetPythonPackageRequest, PythonPackage>
+        getPythonPackageSettings() {
+      return getStubSettingsBuilder().getPythonPackageSettings();
     }
 
     /** Returns the builder for the settings used for calls to importAptArtifacts. */
@@ -593,6 +680,17 @@ public class ArtifactRegistrySettings extends ClientSettings<ArtifactRegistrySet
     public UnaryCallSettings.Builder<UpdateProjectSettingsRequest, ProjectSettings>
         updateProjectSettingsSettings() {
       return getStubSettingsBuilder().updateProjectSettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getVPCSCConfig. */
+    public UnaryCallSettings.Builder<GetVPCSCConfigRequest, VPCSCConfig> getVPCSCConfigSettings() {
+      return getStubSettingsBuilder().getVPCSCConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateVPCSCConfig. */
+    public UnaryCallSettings.Builder<UpdateVPCSCConfigRequest, VPCSCConfig>
+        updateVPCSCConfigSettings() {
+      return getStubSettingsBuilder().updateVPCSCConfigSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

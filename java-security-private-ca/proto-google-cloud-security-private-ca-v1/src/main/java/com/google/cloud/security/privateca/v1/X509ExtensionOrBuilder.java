@@ -68,9 +68,9 @@ public interface X509ExtensionOrBuilder
    *
    *
    * <pre>
-   * Optional. Indicates whether or not this extension is critical (i.e., if the client
-   * does not know how to handle this extension, the client should consider this
-   * to be an error).
+   * Optional. Indicates whether or not this extension is critical (i.e., if the
+   * client does not know how to handle this extension, the client should
+   * consider this to be an error).
    * </pre>
    *
    * <code>bool critical = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

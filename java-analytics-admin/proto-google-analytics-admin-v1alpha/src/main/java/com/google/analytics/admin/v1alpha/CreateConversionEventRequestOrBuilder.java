@@ -68,8 +68,8 @@ public interface CreateConversionEventRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the parent property where this conversion event will
-   * be created. Format: properties/123
+   * Required. The resource name of the parent property where this conversion
+   * event will be created. Format: properties/123
    * </pre>
    *
    * <code>
@@ -83,8 +83,8 @@ public interface CreateConversionEventRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the parent property where this conversion event will
-   * be created. Format: properties/123
+   * Required. The resource name of the parent property where this conversion
+   * event will be created. Format: properties/123
    * </pre>
    *
    * <code>

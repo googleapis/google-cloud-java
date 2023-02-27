@@ -27,9 +27,9 @@ public interface CertificateRevocationListOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name for this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] in
-   * the format
-   * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;certificateAuthorities/&#42;&#47;
+   * Output only. The resource name for this
+   * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+   * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;certificateAuthorities/&#42;&#47;
    *    certificateRevocationLists/&#42;`.
    * </pre>
    *
@@ -42,9 +42,9 @@ public interface CertificateRevocationListOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name for this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] in
-   * the format
-   * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;certificateAuthorities/&#42;&#47;
+   * Output only. The resource name for this
+   * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+   * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;certificateAuthorities/&#42;&#47;
    *    certificateRevocationLists/&#42;`.
    * </pre>
    *
@@ -190,7 +190,10 @@ public interface CertificateRevocationListOrBuilder
    *
    *
    * <pre>
-   * Output only. The [State][google.cloud.security.privateca.v1.CertificateRevocationList.State] for this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
+   * Output only. The
+   * [State][google.cloud.security.privateca.v1.CertificateRevocationList.State]
+   * for this
+   * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
    * </pre>
    *
    * <code>
@@ -204,7 +207,10 @@ public interface CertificateRevocationListOrBuilder
    *
    *
    * <pre>
-   * Output only. The [State][google.cloud.security.privateca.v1.CertificateRevocationList.State] for this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
+   * Output only. The
+   * [State][google.cloud.security.privateca.v1.CertificateRevocationList.State]
+   * for this
+   * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
    * </pre>
    *
    * <code>
@@ -219,7 +225,9 @@ public interface CertificateRevocationListOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] was created.
+   * Output only. The time at which this
+   * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+   * was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -232,7 +240,9 @@ public interface CertificateRevocationListOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] was created.
+   * Output only. The time at which this
+   * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+   * was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -245,7 +255,9 @@ public interface CertificateRevocationListOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] was created.
+   * Output only. The time at which this
+   * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+   * was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -257,7 +269,9 @@ public interface CertificateRevocationListOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] was updated.
+   * Output only. The time at which this
+   * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+   * was updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -270,7 +284,9 @@ public interface CertificateRevocationListOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] was updated.
+   * Output only. The time at which this
+   * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+   * was updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -283,7 +299,9 @@ public interface CertificateRevocationListOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList] was updated.
+   * Output only. The time at which this
+   * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
+   * was updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -295,9 +313,10 @@ public interface CertificateRevocationListOrBuilder
    *
    *
    * <pre>
-   * Output only. The revision ID of this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]. A new revision is
-   * committed whenever a new CRL is published. The format is an 8-character
-   * hexadecimal string.
+   * Output only. The revision ID of this
+   * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
+   * A new revision is committed whenever a new CRL is published. The format is
+   * an 8-character hexadecimal string.
    * </pre>
    *
    * <code>string revision_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -309,9 +328,10 @@ public interface CertificateRevocationListOrBuilder
    *
    *
    * <pre>
-   * Output only. The revision ID of this [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]. A new revision is
-   * committed whenever a new CRL is published. The format is an 8-character
-   * hexadecimal string.
+   * Output only. The revision ID of this
+   * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
+   * A new revision is committed whenever a new CRL is published. The format is
+   * an 8-character hexadecimal string.
    * </pre>
    *
    * <code>string revision_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

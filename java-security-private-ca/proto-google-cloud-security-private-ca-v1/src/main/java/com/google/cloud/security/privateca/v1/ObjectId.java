@@ -22,8 +22,9 @@ package com.google.cloud.security.privateca.v1;
  *
  *
  * <pre>
- * An [ObjectId][google.cloud.security.privateca.v1.ObjectId] specifies an object identifier (OID). These provide context
- * and describe types in ASN.1 messages.
+ * An [ObjectId][google.cloud.security.privateca.v1.ObjectId] specifies an
+ * object identifier (OID). These provide context and describe types in ASN.1
+ * messages.
  * </pre>
  *
  * Protobuf type {@code google.cloud.security.privateca.v1.ObjectId}
@@ -76,8 +77,8 @@ public final class ObjectId extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The parts of an OID path. The most significant parts of the path come
-   * first.
+   * Required. The parts of an OID path. The most significant parts of the path
+   * come first.
    * </pre>
    *
    * <code>repeated int32 object_id_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -92,8 +93,8 @@ public final class ObjectId extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The parts of an OID path. The most significant parts of the path come
-   * first.
+   * Required. The parts of an OID path. The most significant parts of the path
+   * come first.
    * </pre>
    *
    * <code>repeated int32 object_id_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -107,8 +108,8 @@ public final class ObjectId extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The parts of an OID path. The most significant parts of the path come
-   * first.
+   * Required. The parts of an OID path. The most significant parts of the path
+   * come first.
    * </pre>
    *
    * <code>repeated int32 object_id_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -302,8 +303,9 @@ public final class ObjectId extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An [ObjectId][google.cloud.security.privateca.v1.ObjectId] specifies an object identifier (OID). These provide context
-   * and describe types in ASN.1 messages.
+   * An [ObjectId][google.cloud.security.privateca.v1.ObjectId] specifies an
+   * object identifier (OID). These provide context and describe types in ASN.1
+   * messages.
    * </pre>
    *
    * Protobuf type {@code google.cloud.security.privateca.v1.ObjectId}
@@ -518,8 +520,8 @@ public final class ObjectId extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The parts of an OID path. The most significant parts of the path come
-     * first.
+     * Required. The parts of an OID path. The most significant parts of the path
+     * come first.
      * </pre>
      *
      * <code>repeated int32 object_id_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -535,8 +537,8 @@ public final class ObjectId extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The parts of an OID path. The most significant parts of the path come
-     * first.
+     * Required. The parts of an OID path. The most significant parts of the path
+     * come first.
      * </pre>
      *
      * <code>repeated int32 object_id_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -550,8 +552,8 @@ public final class ObjectId extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The parts of an OID path. The most significant parts of the path come
-     * first.
+     * Required. The parts of an OID path. The most significant parts of the path
+     * come first.
      * </pre>
      *
      * <code>repeated int32 object_id_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -566,8 +568,8 @@ public final class ObjectId extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The parts of an OID path. The most significant parts of the path come
-     * first.
+     * Required. The parts of an OID path. The most significant parts of the path
+     * come first.
      * </pre>
      *
      * <code>repeated int32 object_id_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -587,8 +589,8 @@ public final class ObjectId extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The parts of an OID path. The most significant parts of the path come
-     * first.
+     * Required. The parts of an OID path. The most significant parts of the path
+     * come first.
      * </pre>
      *
      * <code>repeated int32 object_id_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -607,8 +609,8 @@ public final class ObjectId extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The parts of an OID path. The most significant parts of the path come
-     * first.
+     * Required. The parts of an OID path. The most significant parts of the path
+     * come first.
      * </pre>
      *
      * <code>repeated int32 object_id_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -626,8 +628,8 @@ public final class ObjectId extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The parts of an OID path. The most significant parts of the path come
-     * first.
+     * Required. The parts of an OID path. The most significant parts of the path
+     * come first.
      * </pre>
      *
      * <code>repeated int32 object_id_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -108,6 +108,134 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
   }
 
   @Override
+  public void listMavenArtifacts(
+      ListMavenArtifactsRequest request,
+      StreamObserver<ListMavenArtifactsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListMavenArtifactsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListMavenArtifactsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListMavenArtifacts, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListMavenArtifactsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getMavenArtifact(
+      GetMavenArtifactRequest request, StreamObserver<MavenArtifact> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof MavenArtifact) {
+      requests.add(request);
+      responseObserver.onNext(((MavenArtifact) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetMavenArtifact, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  MavenArtifact.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listNpmPackages(
+      ListNpmPackagesRequest request, StreamObserver<ListNpmPackagesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListNpmPackagesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListNpmPackagesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListNpmPackages, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListNpmPackagesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getNpmPackage(
+      GetNpmPackageRequest request, StreamObserver<NpmPackage> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof NpmPackage) {
+      requests.add(request);
+      responseObserver.onNext(((NpmPackage) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetNpmPackage, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  NpmPackage.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listPythonPackages(
+      ListPythonPackagesRequest request,
+      StreamObserver<ListPythonPackagesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListPythonPackagesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListPythonPackagesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListPythonPackages, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListPythonPackagesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getPythonPackage(
+      GetPythonPackageRequest request, StreamObserver<PythonPackage> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof PythonPackage) {
+      requests.add(request);
+      responseObserver.onNext(((PythonPackage) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetPythonPackage, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  PythonPackage.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void importAptArtifacts(
       ImportAptArtifactsRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
@@ -619,6 +747,48 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
                   "Unrecognized response type %s for method UpdateProjectSettings, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ProjectSettings.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getVPCSCConfig(
+      GetVPCSCConfigRequest request, StreamObserver<VPCSCConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof VPCSCConfig) {
+      requests.add(request);
+      responseObserver.onNext(((VPCSCConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetVPCSCConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  VPCSCConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateVPCSCConfig(
+      UpdateVPCSCConfigRequest request, StreamObserver<VPCSCConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof VPCSCConfig) {
+      requests.add(request);
+      responseObserver.onNext(((VPCSCConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateVPCSCConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  VPCSCConfig.class.getName(),
                   Exception.class.getName())));
     }
   }

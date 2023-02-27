@@ -22,8 +22,8 @@ package com.google.cloud.security.privateca.v1;
  *
  *
  * <pre>
- * A [KeyUsage][google.cloud.security.privateca.v1.KeyUsage] describes key usage values that may appear in an X.509
- * certificate.
+ * A [KeyUsage][google.cloud.security.privateca.v1.KeyUsage] describes key usage
+ * values that may appear in an X.509 certificate.
  * </pre>
  *
  * Protobuf type {@code google.cloud.security.privateca.v1.KeyUsage}
@@ -195,8 +195,9 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [KeyUsage.KeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.KeyUsageOptions] corresponds to the key usage values
-   * described in https://tools.ietf.org/html/rfc5280#section-4.2.1.3.
+   * [KeyUsage.KeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.KeyUsageOptions]
+   * corresponds to the key usage values described in
+   * https://tools.ietf.org/html/rfc5280#section-4.2.1.3.
    * </pre>
    *
    * Protobuf type {@code google.cloud.security.privateca.v1.KeyUsage.KeyUsageOptions}
@@ -640,8 +641,9 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [KeyUsage.KeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.KeyUsageOptions] corresponds to the key usage values
-     * described in https://tools.ietf.org/html/rfc5280#section-4.2.1.3.
+     * [KeyUsage.KeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.KeyUsageOptions]
+     * corresponds to the key usage values described in
+     * https://tools.ietf.org/html/rfc5280#section-4.2.1.3.
      * </pre>
      *
      * Protobuf type {@code google.cloud.security.privateca.v1.KeyUsage.KeyUsageOptions}
@@ -1570,8 +1572,9 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions] has fields that correspond to
-   * certain common OIDs that could be specified as an extended key usage value.
+   * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions]
+   * has fields that correspond to certain common OIDs that could be specified
+   * as an extended key usage value.
    * </pre>
    *
    * Protobuf type {@code google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions}
@@ -1941,8 +1944,9 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions] has fields that correspond to
-     * certain common OIDs that could be specified as an extended key usage value.
+     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions]
+     * has fields that correspond to certain common OIDs that could be specified
+     * as an extended key usage value.
      * </pre>
      *
      * Protobuf type {@code google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions}
@@ -2722,7 +2726,8 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Used to describe extended key usages that are not listed in the
-   * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions] message.
+   * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions]
+   * message.
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.ObjectId unknown_extended_key_usages = 3;
@@ -2738,7 +2743,8 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Used to describe extended key usages that are not listed in the
-   * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions] message.
+   * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions]
+   * message.
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.ObjectId unknown_extended_key_usages = 3;
@@ -2754,7 +2760,8 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Used to describe extended key usages that are not listed in the
-   * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions] message.
+   * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions]
+   * message.
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.ObjectId unknown_extended_key_usages = 3;
@@ -2769,7 +2776,8 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Used to describe extended key usages that are not listed in the
-   * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions] message.
+   * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions]
+   * message.
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.ObjectId unknown_extended_key_usages = 3;
@@ -2784,7 +2792,8 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Used to describe extended key usages that are not listed in the
-   * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions] message.
+   * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions]
+   * message.
    * </pre>
    *
    * <code>repeated .google.cloud.security.privateca.v1.ObjectId unknown_extended_key_usages = 3;
@@ -2992,8 +3001,8 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A [KeyUsage][google.cloud.security.privateca.v1.KeyUsage] describes key usage values that may appear in an X.509
-   * certificate.
+   * A [KeyUsage][google.cloud.security.privateca.v1.KeyUsage] describes key usage
+   * values that may appear in an X.509 certificate.
    * </pre>
    *
    * Protobuf type {@code google.cloud.security.privateca.v1.KeyUsage}
@@ -3683,7 +3692,8 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Used to describe extended key usages that are not listed in the
-     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions] message.
+     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions]
+     * message.
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.ObjectId unknown_extended_key_usages = 3;
@@ -3702,7 +3712,8 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Used to describe extended key usages that are not listed in the
-     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions] message.
+     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions]
+     * message.
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.ObjectId unknown_extended_key_usages = 3;
@@ -3720,7 +3731,8 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Used to describe extended key usages that are not listed in the
-     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions] message.
+     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions]
+     * message.
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.ObjectId unknown_extended_key_usages = 3;
@@ -3738,7 +3750,8 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Used to describe extended key usages that are not listed in the
-     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions] message.
+     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions]
+     * message.
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.ObjectId unknown_extended_key_usages = 3;
@@ -3763,7 +3776,8 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Used to describe extended key usages that are not listed in the
-     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions] message.
+     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions]
+     * message.
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.ObjectId unknown_extended_key_usages = 3;
@@ -3785,7 +3799,8 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Used to describe extended key usages that are not listed in the
-     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions] message.
+     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions]
+     * message.
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.ObjectId unknown_extended_key_usages = 3;
@@ -3810,7 +3825,8 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Used to describe extended key usages that are not listed in the
-     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions] message.
+     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions]
+     * message.
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.ObjectId unknown_extended_key_usages = 3;
@@ -3835,7 +3851,8 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Used to describe extended key usages that are not listed in the
-     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions] message.
+     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions]
+     * message.
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.ObjectId unknown_extended_key_usages = 3;
@@ -3857,7 +3874,8 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Used to describe extended key usages that are not listed in the
-     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions] message.
+     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions]
+     * message.
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.ObjectId unknown_extended_key_usages = 3;
@@ -3879,7 +3897,8 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Used to describe extended key usages that are not listed in the
-     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions] message.
+     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions]
+     * message.
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.ObjectId unknown_extended_key_usages = 3;
@@ -3901,7 +3920,8 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Used to describe extended key usages that are not listed in the
-     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions] message.
+     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions]
+     * message.
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.ObjectId unknown_extended_key_usages = 3;
@@ -3922,7 +3942,8 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Used to describe extended key usages that are not listed in the
-     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions] message.
+     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions]
+     * message.
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.ObjectId unknown_extended_key_usages = 3;
@@ -3943,7 +3964,8 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Used to describe extended key usages that are not listed in the
-     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions] message.
+     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions]
+     * message.
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.ObjectId unknown_extended_key_usages = 3;
@@ -3958,7 +3980,8 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Used to describe extended key usages that are not listed in the
-     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions] message.
+     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions]
+     * message.
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.ObjectId unknown_extended_key_usages = 3;
@@ -3977,7 +4000,8 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Used to describe extended key usages that are not listed in the
-     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions] message.
+     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions]
+     * message.
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.ObjectId unknown_extended_key_usages = 3;
@@ -3996,7 +4020,8 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Used to describe extended key usages that are not listed in the
-     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions] message.
+     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions]
+     * message.
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.ObjectId unknown_extended_key_usages = 3;
@@ -4012,7 +4037,8 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Used to describe extended key usages that are not listed in the
-     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions] message.
+     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions]
+     * message.
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.ObjectId unknown_extended_key_usages = 3;
@@ -4028,7 +4054,8 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Used to describe extended key usages that are not listed in the
-     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions] message.
+     * [KeyUsage.ExtendedKeyUsageOptions][google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions]
+     * message.
      * </pre>
      *
      * <code>repeated .google.cloud.security.privateca.v1.ObjectId unknown_extended_key_usages = 3;

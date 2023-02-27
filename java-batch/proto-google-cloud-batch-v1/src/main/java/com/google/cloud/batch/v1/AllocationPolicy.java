@@ -1218,6 +1218,16 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Name of a public or custom image used as the data source.
+     * For example, the following are all valid URLs:
+     * (1) Specify the image by its family name:
+     * projects/{project}/global/images/family/{image_family}
+     * (2) Specify the image version:
+     * projects/{project}/global/images/{image_version}
+     * You can also use Batch customized image in short names.
+     * The following image values are supported for a boot disk:
+     * "batch-debian": use Batch Debian images.
+     * "batch-centos": use Batch CentOS images.
+     * "batch-cos": use Batch Container-Optimized images.
      * </pre>
      *
      * <code>string image = 4;</code>
@@ -1230,6 +1240,16 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Name of a public or custom image used as the data source.
+     * For example, the following are all valid URLs:
+     * (1) Specify the image by its family name:
+     * projects/{project}/global/images/family/{image_family}
+     * (2) Specify the image version:
+     * projects/{project}/global/images/{image_version}
+     * You can also use Batch customized image in short names.
+     * The following image values are supported for a boot disk:
+     * "batch-debian": use Batch Debian images.
+     * "batch-centos": use Batch CentOS images.
+     * "batch-cos": use Batch Container-Optimized images.
      * </pre>
      *
      * <code>string image = 4;</code>
@@ -1242,6 +1262,16 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Name of a public or custom image used as the data source.
+     * For example, the following are all valid URLs:
+     * (1) Specify the image by its family name:
+     * projects/{project}/global/images/family/{image_family}
+     * (2) Specify the image version:
+     * projects/{project}/global/images/{image_version}
+     * You can also use Batch customized image in short names.
+     * The following image values are supported for a boot disk:
+     * "batch-debian": use Batch Debian images.
+     * "batch-centos": use Batch CentOS images.
+     * "batch-cos": use Batch Container-Optimized images.
      * </pre>
      *
      * <code>string image = 4;</code>
@@ -1291,8 +1321,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Disk type as shown in `gcloud compute disk-types list`
-     * For example, "pd-ssd", "pd-standard", "pd-balanced", "local-ssd".
+     * Disk type as shown in `gcloud compute disk-types list`.
+     * For example, local SSD uses type "local-ssd".
+     * Persistent disks and boot disks use "pd-balanced", "pd-extreme", "pd-ssd"
+     * or "pd-standard".
      * </pre>
      *
      * <code>string type = 1;</code>
@@ -1304,8 +1336,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Disk type as shown in `gcloud compute disk-types list`
-     * For example, "pd-ssd", "pd-standard", "pd-balanced", "local-ssd".
+     * Disk type as shown in `gcloud compute disk-types list`.
+     * For example, local SSD uses type "local-ssd".
+     * Persistent disks and boot disks use "pd-balanced", "pd-extreme", "pd-ssd"
+     * or "pd-standard".
      * </pre>
      *
      * <code>string type = 1;</code>
@@ -1319,9 +1353,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Disk size in GB.
-     * This field is ignored if `data_source` is `disk` or `image`.
-     * If `type` is `local-ssd`, size_gb should be a multiple of 375GB,
+     * For persistent disk, this field is ignored if `data_source` is `image` or
+     * `snapshot`.
+     * For local SSD, size_gb should be a multiple of 375GB,
      * otherwise, the final size will be the next greater multiple of 375 GB.
+     * For boot disk, Batch will calculate the boot disk size based on source
+     * image and task requirements if you do not speicify the size.
+     * If both this field and the boot_disk_mib field in task spec's
+     * compute_resource are defined, Batch will only honor this field.
      * </pre>
      *
      * <code>int64 size_gb = 2;</code>
@@ -1467,6 +1506,16 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Name of a public or custom image used as the data source.
+     * For example, the following are all valid URLs:
+     * (1) Specify the image by its family name:
+     * projects/{project}/global/images/family/{image_family}
+     * (2) Specify the image version:
+     * projects/{project}/global/images/{image_version}
+     * You can also use Batch customized image in short names.
+     * The following image values are supported for a boot disk:
+     * "batch-debian": use Batch Debian images.
+     * "batch-centos": use Batch CentOS images.
+     * "batch-cos": use Batch Container-Optimized images.
      * </pre>
      *
      * <code>string image = 4;</code>
@@ -1481,6 +1530,16 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Name of a public or custom image used as the data source.
+     * For example, the following are all valid URLs:
+     * (1) Specify the image by its family name:
+     * projects/{project}/global/images/family/{image_family}
+     * (2) Specify the image version:
+     * projects/{project}/global/images/{image_version}
+     * You can also use Batch customized image in short names.
+     * The following image values are supported for a boot disk:
+     * "batch-debian": use Batch Debian images.
+     * "batch-centos": use Batch CentOS images.
+     * "batch-cos": use Batch Container-Optimized images.
      * </pre>
      *
      * <code>string image = 4;</code>
@@ -1508,6 +1567,16 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Name of a public or custom image used as the data source.
+     * For example, the following are all valid URLs:
+     * (1) Specify the image by its family name:
+     * projects/{project}/global/images/family/{image_family}
+     * (2) Specify the image version:
+     * projects/{project}/global/images/{image_version}
+     * You can also use Batch customized image in short names.
+     * The following image values are supported for a boot disk:
+     * "batch-debian": use Batch Debian images.
+     * "batch-centos": use Batch CentOS images.
+     * "batch-cos": use Batch Container-Optimized images.
      * </pre>
      *
      * <code>string image = 4;</code>
@@ -1609,8 +1678,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Disk type as shown in `gcloud compute disk-types list`
-     * For example, "pd-ssd", "pd-standard", "pd-balanced", "local-ssd".
+     * Disk type as shown in `gcloud compute disk-types list`.
+     * For example, local SSD uses type "local-ssd".
+     * Persistent disks and boot disks use "pd-balanced", "pd-extreme", "pd-ssd"
+     * or "pd-standard".
      * </pre>
      *
      * <code>string type = 1;</code>
@@ -1633,8 +1704,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Disk type as shown in `gcloud compute disk-types list`
-     * For example, "pd-ssd", "pd-standard", "pd-balanced", "local-ssd".
+     * Disk type as shown in `gcloud compute disk-types list`.
+     * For example, local SSD uses type "local-ssd".
+     * Persistent disks and boot disks use "pd-balanced", "pd-extreme", "pd-ssd"
+     * or "pd-standard".
      * </pre>
      *
      * <code>string type = 1;</code>
@@ -1661,9 +1734,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Disk size in GB.
-     * This field is ignored if `data_source` is `disk` or `image`.
-     * If `type` is `local-ssd`, size_gb should be a multiple of 375GB,
+     * For persistent disk, this field is ignored if `data_source` is `image` or
+     * `snapshot`.
+     * For local SSD, size_gb should be a multiple of 375GB,
      * otherwise, the final size will be the next greater multiple of 375 GB.
+     * For boot disk, Batch will calculate the boot disk size based on source
+     * image and task requirements if you do not speicify the size.
+     * If both this field and the boot_disk_mib field in task spec's
+     * compute_resource are defined, Batch will only honor this field.
      * </pre>
      *
      * <code>int64 size_gb = 2;</code>
@@ -2221,6 +2299,16 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Name of a public or custom image used as the data source.
+       * For example, the following are all valid URLs:
+       * (1) Specify the image by its family name:
+       * projects/{project}/global/images/family/{image_family}
+       * (2) Specify the image version:
+       * projects/{project}/global/images/{image_version}
+       * You can also use Batch customized image in short names.
+       * The following image values are supported for a boot disk:
+       * "batch-debian": use Batch Debian images.
+       * "batch-centos": use Batch CentOS images.
+       * "batch-cos": use Batch Container-Optimized images.
        * </pre>
        *
        * <code>string image = 4;</code>
@@ -2236,6 +2324,16 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Name of a public or custom image used as the data source.
+       * For example, the following are all valid URLs:
+       * (1) Specify the image by its family name:
+       * projects/{project}/global/images/family/{image_family}
+       * (2) Specify the image version:
+       * projects/{project}/global/images/{image_version}
+       * You can also use Batch customized image in short names.
+       * The following image values are supported for a boot disk:
+       * "batch-debian": use Batch Debian images.
+       * "batch-centos": use Batch CentOS images.
+       * "batch-cos": use Batch Container-Optimized images.
        * </pre>
        *
        * <code>string image = 4;</code>
@@ -2264,6 +2362,16 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Name of a public or custom image used as the data source.
+       * For example, the following are all valid URLs:
+       * (1) Specify the image by its family name:
+       * projects/{project}/global/images/family/{image_family}
+       * (2) Specify the image version:
+       * projects/{project}/global/images/{image_version}
+       * You can also use Batch customized image in short names.
+       * The following image values are supported for a boot disk:
+       * "batch-debian": use Batch Debian images.
+       * "batch-centos": use Batch CentOS images.
+       * "batch-cos": use Batch Container-Optimized images.
        * </pre>
        *
        * <code>string image = 4;</code>
@@ -2292,6 +2400,16 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Name of a public or custom image used as the data source.
+       * For example, the following are all valid URLs:
+       * (1) Specify the image by its family name:
+       * projects/{project}/global/images/family/{image_family}
+       * (2) Specify the image version:
+       * projects/{project}/global/images/{image_version}
+       * You can also use Batch customized image in short names.
+       * The following image values are supported for a boot disk:
+       * "batch-debian": use Batch Debian images.
+       * "batch-centos": use Batch CentOS images.
+       * "batch-cos": use Batch Container-Optimized images.
        * </pre>
        *
        * <code>string image = 4;</code>
@@ -2313,6 +2431,16 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Name of a public or custom image used as the data source.
+       * For example, the following are all valid URLs:
+       * (1) Specify the image by its family name:
+       * projects/{project}/global/images/family/{image_family}
+       * (2) Specify the image version:
+       * projects/{project}/global/images/{image_version}
+       * You can also use Batch customized image in short names.
+       * The following image values are supported for a boot disk:
+       * "batch-debian": use Batch Debian images.
+       * "batch-centos": use Batch CentOS images.
+       * "batch-cos": use Batch Container-Optimized images.
        * </pre>
        *
        * <code>string image = 4;</code>
@@ -2332,6 +2460,16 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Name of a public or custom image used as the data source.
+       * For example, the following are all valid URLs:
+       * (1) Specify the image by its family name:
+       * projects/{project}/global/images/family/{image_family}
+       * (2) Specify the image version:
+       * projects/{project}/global/images/{image_version}
+       * You can also use Batch customized image in short names.
+       * The following image values are supported for a boot disk:
+       * "batch-debian": use Batch Debian images.
+       * "batch-centos": use Batch CentOS images.
+       * "batch-cos": use Batch Container-Optimized images.
        * </pre>
        *
        * <code>string image = 4;</code>
@@ -2489,8 +2627,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Disk type as shown in `gcloud compute disk-types list`
-       * For example, "pd-ssd", "pd-standard", "pd-balanced", "local-ssd".
+       * Disk type as shown in `gcloud compute disk-types list`.
+       * For example, local SSD uses type "local-ssd".
+       * Persistent disks and boot disks use "pd-balanced", "pd-extreme", "pd-ssd"
+       * or "pd-standard".
        * </pre>
        *
        * <code>string type = 1;</code>
@@ -2512,8 +2652,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Disk type as shown in `gcloud compute disk-types list`
-       * For example, "pd-ssd", "pd-standard", "pd-balanced", "local-ssd".
+       * Disk type as shown in `gcloud compute disk-types list`.
+       * For example, local SSD uses type "local-ssd".
+       * Persistent disks and boot disks use "pd-balanced", "pd-extreme", "pd-ssd"
+       * or "pd-standard".
        * </pre>
        *
        * <code>string type = 1;</code>
@@ -2535,8 +2677,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Disk type as shown in `gcloud compute disk-types list`
-       * For example, "pd-ssd", "pd-standard", "pd-balanced", "local-ssd".
+       * Disk type as shown in `gcloud compute disk-types list`.
+       * For example, local SSD uses type "local-ssd".
+       * Persistent disks and boot disks use "pd-balanced", "pd-extreme", "pd-ssd"
+       * or "pd-standard".
        * </pre>
        *
        * <code>string type = 1;</code>
@@ -2557,8 +2701,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Disk type as shown in `gcloud compute disk-types list`
-       * For example, "pd-ssd", "pd-standard", "pd-balanced", "local-ssd".
+       * Disk type as shown in `gcloud compute disk-types list`.
+       * For example, local SSD uses type "local-ssd".
+       * Persistent disks and boot disks use "pd-balanced", "pd-extreme", "pd-ssd"
+       * or "pd-standard".
        * </pre>
        *
        * <code>string type = 1;</code>
@@ -2575,8 +2721,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Disk type as shown in `gcloud compute disk-types list`
-       * For example, "pd-ssd", "pd-standard", "pd-balanced", "local-ssd".
+       * Disk type as shown in `gcloud compute disk-types list`.
+       * For example, local SSD uses type "local-ssd".
+       * Persistent disks and boot disks use "pd-balanced", "pd-extreme", "pd-ssd"
+       * or "pd-standard".
        * </pre>
        *
        * <code>string type = 1;</code>
@@ -2601,9 +2749,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Disk size in GB.
-       * This field is ignored if `data_source` is `disk` or `image`.
-       * If `type` is `local-ssd`, size_gb should be a multiple of 375GB,
+       * For persistent disk, this field is ignored if `data_source` is `image` or
+       * `snapshot`.
+       * For local SSD, size_gb should be a multiple of 375GB,
        * otherwise, the final size will be the next greater multiple of 375 GB.
+       * For boot disk, Batch will calculate the boot disk size based on source
+       * image and task requirements if you do not speicify the size.
+       * If both this field and the boot_disk_mib field in task spec's
+       * compute_resource are defined, Batch will only honor this field.
        * </pre>
        *
        * <code>int64 size_gb = 2;</code>
@@ -2619,9 +2772,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Disk size in GB.
-       * This field is ignored if `data_source` is `disk` or `image`.
-       * If `type` is `local-ssd`, size_gb should be a multiple of 375GB,
+       * For persistent disk, this field is ignored if `data_source` is `image` or
+       * `snapshot`.
+       * For local SSD, size_gb should be a multiple of 375GB,
        * otherwise, the final size will be the next greater multiple of 375 GB.
+       * For boot disk, Batch will calculate the boot disk size based on source
+       * image and task requirements if you do not speicify the size.
+       * If both this field and the boot_disk_mib field in task spec's
+       * compute_resource are defined, Batch will only honor this field.
        * </pre>
        *
        * <code>int64 size_gb = 2;</code>
@@ -2641,9 +2799,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Disk size in GB.
-       * This field is ignored if `data_source` is `disk` or `image`.
-       * If `type` is `local-ssd`, size_gb should be a multiple of 375GB,
+       * For persistent disk, this field is ignored if `data_source` is `image` or
+       * `snapshot`.
+       * For local SSD, size_gb should be a multiple of 375GB,
        * otherwise, the final size will be the next greater multiple of 375 GB.
+       * For boot disk, Batch will calculate the boot disk size based on source
+       * image and task requirements if you do not speicify the size.
+       * If both this field and the boot_disk_mib field in task spec's
+       * compute_resource are defined, Batch will only honor this field.
        * </pre>
        *
        * <code>int64 size_gb = 2;</code>
@@ -4143,7 +4306,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-     *     deprecated. See google/cloud/batch/v1/job.proto;l=294
+     *     deprecated. See google/cloud/batch/v1/job.proto;l=314
      * @return The installGpuDrivers.
      */
     @java.lang.Deprecated
@@ -4281,7 +4444,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-     *     deprecated. See google/cloud/batch/v1/job.proto;l=294
+     *     deprecated. See google/cloud/batch/v1/job.proto;l=314
      * @return The installGpuDrivers.
      */
     @java.lang.Override
@@ -4856,7 +5019,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-       *     deprecated. See google/cloud/batch/v1/job.proto;l=294
+       *     deprecated. See google/cloud/batch/v1/job.proto;l=314
        * @return The installGpuDrivers.
        */
       @java.lang.Override
@@ -4874,7 +5037,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-       *     deprecated. See google/cloud/batch/v1/job.proto;l=294
+       *     deprecated. See google/cloud/batch/v1/job.proto;l=314
        * @param value The installGpuDrivers to set.
        * @return This builder for chaining.
        */
@@ -4896,7 +5059,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-       *     deprecated. See google/cloud/batch/v1/job.proto;l=294
+       *     deprecated. See google/cloud/batch/v1/job.proto;l=314
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -5111,6 +5274,44 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      */
     com.google.cloud.batch.v1.AllocationPolicy.AcceleratorOrBuilder getAcceleratorsOrBuilder(
         int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Book disk to be created and attached to each VM by this InstancePolicy.
+     * Boot disk will be deleted when the VM is deleted.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.AllocationPolicy.Disk boot_disk = 8;</code>
+     *
+     * @return Whether the bootDisk field is set.
+     */
+    boolean hasBootDisk();
+    /**
+     *
+     *
+     * <pre>
+     * Book disk to be created and attached to each VM by this InstancePolicy.
+     * Boot disk will be deleted when the VM is deleted.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.AllocationPolicy.Disk boot_disk = 8;</code>
+     *
+     * @return The bootDisk.
+     */
+    com.google.cloud.batch.v1.AllocationPolicy.Disk getBootDisk();
+    /**
+     *
+     *
+     * <pre>
+     * Book disk to be created and attached to each VM by this InstancePolicy.
+     * Boot disk will be deleted when the VM is deleted.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.AllocationPolicy.Disk boot_disk = 8;</code>
+     */
+    com.google.cloud.batch.v1.AllocationPolicy.DiskOrBuilder getBootDiskOrBuilder();
 
     /**
      *
@@ -5444,6 +5645,59 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       return accelerators_.get(index);
     }
 
+    public static final int BOOT_DISK_FIELD_NUMBER = 8;
+    private com.google.cloud.batch.v1.AllocationPolicy.Disk bootDisk_;
+    /**
+     *
+     *
+     * <pre>
+     * Book disk to be created and attached to each VM by this InstancePolicy.
+     * Boot disk will be deleted when the VM is deleted.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.AllocationPolicy.Disk boot_disk = 8;</code>
+     *
+     * @return Whether the bootDisk field is set.
+     */
+    @java.lang.Override
+    public boolean hasBootDisk() {
+      return bootDisk_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Book disk to be created and attached to each VM by this InstancePolicy.
+     * Boot disk will be deleted when the VM is deleted.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.AllocationPolicy.Disk boot_disk = 8;</code>
+     *
+     * @return The bootDisk.
+     */
+    @java.lang.Override
+    public com.google.cloud.batch.v1.AllocationPolicy.Disk getBootDisk() {
+      return bootDisk_ == null
+          ? com.google.cloud.batch.v1.AllocationPolicy.Disk.getDefaultInstance()
+          : bootDisk_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Book disk to be created and attached to each VM by this InstancePolicy.
+     * Boot disk will be deleted when the VM is deleted.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.AllocationPolicy.Disk boot_disk = 8;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.batch.v1.AllocationPolicy.DiskOrBuilder getBootDiskOrBuilder() {
+      return bootDisk_ == null
+          ? com.google.cloud.batch.v1.AllocationPolicy.Disk.getDefaultInstance()
+          : bootDisk_;
+    }
+
     public static final int DISKS_FIELD_NUMBER = 6;
 
     @SuppressWarnings("serial")
@@ -5554,6 +5808,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       for (int i = 0; i < disks_.size(); i++) {
         output.writeMessage(6, disks_.get(i));
       }
+      if (bootDisk_ != null) {
+        output.writeMessage(8, getBootDisk());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -5581,6 +5838,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       for (int i = 0; i < disks_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, disks_.get(i));
       }
+      if (bootDisk_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getBootDisk());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -5601,6 +5861,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (!getMinCpuPlatform().equals(other.getMinCpuPlatform())) return false;
       if (provisioningModel_ != other.provisioningModel_) return false;
       if (!getAcceleratorsList().equals(other.getAcceleratorsList())) return false;
+      if (hasBootDisk() != other.hasBootDisk()) return false;
+      if (hasBootDisk()) {
+        if (!getBootDisk().equals(other.getBootDisk())) return false;
+      }
       if (!getDisksList().equals(other.getDisksList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -5622,6 +5886,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (getAcceleratorsCount() > 0) {
         hash = (37 * hash) + ACCELERATORS_FIELD_NUMBER;
         hash = (53 * hash) + getAcceleratorsList().hashCode();
+      }
+      if (hasBootDisk()) {
+        hash = (37 * hash) + BOOT_DISK_FIELD_NUMBER;
+        hash = (53 * hash) + getBootDisk().hashCode();
       }
       if (getDisksCount() > 0) {
         hash = (37 * hash) + DISKS_FIELD_NUMBER;
@@ -5780,13 +6048,18 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           acceleratorsBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000008);
+        bootDisk_ = null;
+        if (bootDiskBuilder_ != null) {
+          bootDiskBuilder_.dispose();
+          bootDiskBuilder_ = null;
+        }
         if (disksBuilder_ == null) {
           disks_ = java.util.Collections.emptyList();
         } else {
           disks_ = null;
           disksBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -5834,9 +6107,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           result.accelerators_ = acceleratorsBuilder_.build();
         }
         if (disksBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)) {
+          if (((bitField0_ & 0x00000020) != 0)) {
             disks_ = java.util.Collections.unmodifiableList(disks_);
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           }
           result.disks_ = disks_;
         } else {
@@ -5854,6 +6127,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.provisioningModel_ = provisioningModel_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.bootDisk_ = bootDiskBuilder_ == null ? bootDisk_ : bootDiskBuilder_.build();
         }
       }
 
@@ -5945,11 +6221,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
             }
           }
         }
+        if (other.hasBootDisk()) {
+          mergeBootDisk(other.getBootDisk());
+        }
         if (disksBuilder_ == null) {
           if (!other.disks_.isEmpty()) {
             if (disks_.isEmpty()) {
               disks_ = other.disks_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000020);
             } else {
               ensureDisksIsMutable();
               disks_.addAll(other.disks_);
@@ -5962,7 +6241,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
               disksBuilder_.dispose();
               disksBuilder_ = null;
               disks_ = other.disks_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000020);
               disksBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getDisksFieldBuilder()
@@ -6044,6 +6323,12 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
                   }
                   break;
                 } // case 50
+              case 66:
+                {
+                  input.readMessage(getBootDiskFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 66
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6757,15 +7042,209 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         return acceleratorsBuilder_;
       }
 
+      private com.google.cloud.batch.v1.AllocationPolicy.Disk bootDisk_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.batch.v1.AllocationPolicy.Disk,
+              com.google.cloud.batch.v1.AllocationPolicy.Disk.Builder,
+              com.google.cloud.batch.v1.AllocationPolicy.DiskOrBuilder>
+          bootDiskBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Book disk to be created and attached to each VM by this InstancePolicy.
+       * Boot disk will be deleted when the VM is deleted.
+       * </pre>
+       *
+       * <code>.google.cloud.batch.v1.AllocationPolicy.Disk boot_disk = 8;</code>
+       *
+       * @return Whether the bootDisk field is set.
+       */
+      public boolean hasBootDisk() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Book disk to be created and attached to each VM by this InstancePolicy.
+       * Boot disk will be deleted when the VM is deleted.
+       * </pre>
+       *
+       * <code>.google.cloud.batch.v1.AllocationPolicy.Disk boot_disk = 8;</code>
+       *
+       * @return The bootDisk.
+       */
+      public com.google.cloud.batch.v1.AllocationPolicy.Disk getBootDisk() {
+        if (bootDiskBuilder_ == null) {
+          return bootDisk_ == null
+              ? com.google.cloud.batch.v1.AllocationPolicy.Disk.getDefaultInstance()
+              : bootDisk_;
+        } else {
+          return bootDiskBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Book disk to be created and attached to each VM by this InstancePolicy.
+       * Boot disk will be deleted when the VM is deleted.
+       * </pre>
+       *
+       * <code>.google.cloud.batch.v1.AllocationPolicy.Disk boot_disk = 8;</code>
+       */
+      public Builder setBootDisk(com.google.cloud.batch.v1.AllocationPolicy.Disk value) {
+        if (bootDiskBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bootDisk_ = value;
+        } else {
+          bootDiskBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Book disk to be created and attached to each VM by this InstancePolicy.
+       * Boot disk will be deleted when the VM is deleted.
+       * </pre>
+       *
+       * <code>.google.cloud.batch.v1.AllocationPolicy.Disk boot_disk = 8;</code>
+       */
+      public Builder setBootDisk(
+          com.google.cloud.batch.v1.AllocationPolicy.Disk.Builder builderForValue) {
+        if (bootDiskBuilder_ == null) {
+          bootDisk_ = builderForValue.build();
+        } else {
+          bootDiskBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Book disk to be created and attached to each VM by this InstancePolicy.
+       * Boot disk will be deleted when the VM is deleted.
+       * </pre>
+       *
+       * <code>.google.cloud.batch.v1.AllocationPolicy.Disk boot_disk = 8;</code>
+       */
+      public Builder mergeBootDisk(com.google.cloud.batch.v1.AllocationPolicy.Disk value) {
+        if (bootDiskBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)
+              && bootDisk_ != null
+              && bootDisk_
+                  != com.google.cloud.batch.v1.AllocationPolicy.Disk.getDefaultInstance()) {
+            getBootDiskBuilder().mergeFrom(value);
+          } else {
+            bootDisk_ = value;
+          }
+        } else {
+          bootDiskBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Book disk to be created and attached to each VM by this InstancePolicy.
+       * Boot disk will be deleted when the VM is deleted.
+       * </pre>
+       *
+       * <code>.google.cloud.batch.v1.AllocationPolicy.Disk boot_disk = 8;</code>
+       */
+      public Builder clearBootDisk() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        bootDisk_ = null;
+        if (bootDiskBuilder_ != null) {
+          bootDiskBuilder_.dispose();
+          bootDiskBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Book disk to be created and attached to each VM by this InstancePolicy.
+       * Boot disk will be deleted when the VM is deleted.
+       * </pre>
+       *
+       * <code>.google.cloud.batch.v1.AllocationPolicy.Disk boot_disk = 8;</code>
+       */
+      public com.google.cloud.batch.v1.AllocationPolicy.Disk.Builder getBootDiskBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getBootDiskFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Book disk to be created and attached to each VM by this InstancePolicy.
+       * Boot disk will be deleted when the VM is deleted.
+       * </pre>
+       *
+       * <code>.google.cloud.batch.v1.AllocationPolicy.Disk boot_disk = 8;</code>
+       */
+      public com.google.cloud.batch.v1.AllocationPolicy.DiskOrBuilder getBootDiskOrBuilder() {
+        if (bootDiskBuilder_ != null) {
+          return bootDiskBuilder_.getMessageOrBuilder();
+        } else {
+          return bootDisk_ == null
+              ? com.google.cloud.batch.v1.AllocationPolicy.Disk.getDefaultInstance()
+              : bootDisk_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Book disk to be created and attached to each VM by this InstancePolicy.
+       * Boot disk will be deleted when the VM is deleted.
+       * </pre>
+       *
+       * <code>.google.cloud.batch.v1.AllocationPolicy.Disk boot_disk = 8;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.batch.v1.AllocationPolicy.Disk,
+              com.google.cloud.batch.v1.AllocationPolicy.Disk.Builder,
+              com.google.cloud.batch.v1.AllocationPolicy.DiskOrBuilder>
+          getBootDiskFieldBuilder() {
+        if (bootDiskBuilder_ == null) {
+          bootDiskBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.batch.v1.AllocationPolicy.Disk,
+                  com.google.cloud.batch.v1.AllocationPolicy.Disk.Builder,
+                  com.google.cloud.batch.v1.AllocationPolicy.DiskOrBuilder>(
+                  getBootDisk(), getParentForChildren(), isClean());
+          bootDisk_ = null;
+        }
+        return bootDiskBuilder_;
+      }
+
       private java.util.List<com.google.cloud.batch.v1.AllocationPolicy.AttachedDisk> disks_ =
           java.util.Collections.emptyList();
 
       private void ensureDisksIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           disks_ =
               new java.util.ArrayList<com.google.cloud.batch.v1.AllocationPolicy.AttachedDisk>(
                   disks_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
         }
       }
 
@@ -6998,7 +7477,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       public Builder clearDisks() {
         if (disksBuilder_ == null) {
           disks_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
           onChanged();
         } else {
           disksBuilder_.clear();
@@ -7134,7 +7613,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
                   com.google.cloud.batch.v1.AllocationPolicy.AttachedDisk,
                   com.google.cloud.batch.v1.AllocationPolicy.AttachedDisk.Builder,
                   com.google.cloud.batch.v1.AllocationPolicy.AttachedDiskOrBuilder>(
-                  disks_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                  disks_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
           disks_ = null;
         }
         return disksBuilder_;

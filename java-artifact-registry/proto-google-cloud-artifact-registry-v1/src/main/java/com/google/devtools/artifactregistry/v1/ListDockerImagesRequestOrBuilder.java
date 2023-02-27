@@ -27,7 +27,8 @@ public interface ListDockerImagesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the parent resource whose docker images will be listed.
+   * Required. The name of the parent resource whose docker images will be
+   * listed.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -39,7 +40,8 @@ public interface ListDockerImagesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the parent resource whose docker images will be listed.
+   * Required. The name of the parent resource whose docker images will be
+   * listed.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -85,4 +87,29 @@ public interface ListDockerImagesRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The field to order the results by.
+   * </pre>
+   *
+   * <code>string order_by = 4;</code>
+   *
+   * @return The orderBy.
+   */
+  java.lang.String getOrderBy();
+  /**
+   *
+   *
+   * <pre>
+   * The field to order the results by.
+   * </pre>
+   *
+   * <code>string order_by = 4;</code>
+   *
+   * @return The bytes for orderBy.
+   */
+  com.google.protobuf.ByteString getOrderByBytes();
 }

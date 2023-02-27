@@ -74,8 +74,11 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Describes well-known X.509 extensions that can appear in a [Certificate][google.cloud.security.privateca.v1.Certificate],
-   * not including the [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] extension.
+   * Describes well-known X.509 extensions that can appear in a
+   * [Certificate][google.cloud.security.privateca.v1.Certificate], not
+   * including the
+   * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames]
+   * extension.
    * </pre>
    *
    * Protobuf enum {@code
@@ -98,7 +101,9 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      * <pre>
      * Refers to a certificate's Key Usage extension, as described in [RFC 5280
      * section 4.2.1.3](https://tools.ietf.org/html/rfc5280#section-4.2.1.3).
-     * This corresponds to the [KeyUsage.base_key_usage][google.cloud.security.privateca.v1.KeyUsage.base_key_usage] field.
+     * This corresponds to the
+     * [KeyUsage.base_key_usage][google.cloud.security.privateca.v1.KeyUsage.base_key_usage]
+     * field.
      * </pre>
      *
      * <code>BASE_KEY_USAGE = 1;</code>
@@ -111,7 +116,9 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      * Refers to a certificate's Extended Key Usage extension, as described in
      * [RFC 5280
      * section 4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.12).
-     * This corresponds to the [KeyUsage.extended_key_usage][google.cloud.security.privateca.v1.KeyUsage.extended_key_usage] message.
+     * This corresponds to the
+     * [KeyUsage.extended_key_usage][google.cloud.security.privateca.v1.KeyUsage.extended_key_usage]
+     * message.
      * </pre>
      *
      * <code>EXTENDED_KEY_USAGE = 2;</code>
@@ -124,7 +131,9 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      * Refers to a certificate's Basic Constraints extension, as described in
      * [RFC 5280
      * section 4.2.1.9](https://tools.ietf.org/html/rfc5280#section-4.2.1.9).
-     * This corresponds to the [X509Parameters.ca_options][google.cloud.security.privateca.v1.X509Parameters.ca_options] field.
+     * This corresponds to the
+     * [X509Parameters.ca_options][google.cloud.security.privateca.v1.X509Parameters.ca_options]
+     * field.
      * </pre>
      *
      * <code>CA_OPTIONS = 3;</code>
@@ -137,7 +146,9 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      * Refers to a certificate's Policy object identifiers, as described in
      * [RFC 5280
      * section 4.2.1.4](https://tools.ietf.org/html/rfc5280#section-4.2.1.4).
-     * This corresponds to the [X509Parameters.policy_ids][google.cloud.security.privateca.v1.X509Parameters.policy_ids] field.
+     * This corresponds to the
+     * [X509Parameters.policy_ids][google.cloud.security.privateca.v1.X509Parameters.policy_ids]
+     * field.
      * </pre>
      *
      * <code>POLICY_IDS = 4;</code>
@@ -151,12 +162,26 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      * extension, as described in
      * [RFC 5280
      * section 4.2.2.1](https://tools.ietf.org/html/rfc5280#section-4.2.2.1),
-     * This corresponds to the [X509Parameters.aia_ocsp_servers][google.cloud.security.privateca.v1.X509Parameters.aia_ocsp_servers] field.
+     * This corresponds to the
+     * [X509Parameters.aia_ocsp_servers][google.cloud.security.privateca.v1.X509Parameters.aia_ocsp_servers]
+     * field.
      * </pre>
      *
      * <code>AIA_OCSP_SERVERS = 5;</code>
      */
     AIA_OCSP_SERVERS(5),
+    /**
+     *
+     *
+     * <pre>
+     * Refers to Name Constraints extension as described in
+     * [RFC 5280
+     * section 4.2.1.10](https://tools.ietf.org/html/rfc5280#section-4.2.1.10)
+     * </pre>
+     *
+     * <code>NAME_CONSTRAINTS = 6;</code>
+     */
+    NAME_CONSTRAINTS(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -176,7 +201,9 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      * <pre>
      * Refers to a certificate's Key Usage extension, as described in [RFC 5280
      * section 4.2.1.3](https://tools.ietf.org/html/rfc5280#section-4.2.1.3).
-     * This corresponds to the [KeyUsage.base_key_usage][google.cloud.security.privateca.v1.KeyUsage.base_key_usage] field.
+     * This corresponds to the
+     * [KeyUsage.base_key_usage][google.cloud.security.privateca.v1.KeyUsage.base_key_usage]
+     * field.
      * </pre>
      *
      * <code>BASE_KEY_USAGE = 1;</code>
@@ -189,7 +216,9 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      * Refers to a certificate's Extended Key Usage extension, as described in
      * [RFC 5280
      * section 4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.12).
-     * This corresponds to the [KeyUsage.extended_key_usage][google.cloud.security.privateca.v1.KeyUsage.extended_key_usage] message.
+     * This corresponds to the
+     * [KeyUsage.extended_key_usage][google.cloud.security.privateca.v1.KeyUsage.extended_key_usage]
+     * message.
      * </pre>
      *
      * <code>EXTENDED_KEY_USAGE = 2;</code>
@@ -202,7 +231,9 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      * Refers to a certificate's Basic Constraints extension, as described in
      * [RFC 5280
      * section 4.2.1.9](https://tools.ietf.org/html/rfc5280#section-4.2.1.9).
-     * This corresponds to the [X509Parameters.ca_options][google.cloud.security.privateca.v1.X509Parameters.ca_options] field.
+     * This corresponds to the
+     * [X509Parameters.ca_options][google.cloud.security.privateca.v1.X509Parameters.ca_options]
+     * field.
      * </pre>
      *
      * <code>CA_OPTIONS = 3;</code>
@@ -215,7 +246,9 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      * Refers to a certificate's Policy object identifiers, as described in
      * [RFC 5280
      * section 4.2.1.4](https://tools.ietf.org/html/rfc5280#section-4.2.1.4).
-     * This corresponds to the [X509Parameters.policy_ids][google.cloud.security.privateca.v1.X509Parameters.policy_ids] field.
+     * This corresponds to the
+     * [X509Parameters.policy_ids][google.cloud.security.privateca.v1.X509Parameters.policy_ids]
+     * field.
      * </pre>
      *
      * <code>POLICY_IDS = 4;</code>
@@ -229,12 +262,26 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      * extension, as described in
      * [RFC 5280
      * section 4.2.2.1](https://tools.ietf.org/html/rfc5280#section-4.2.2.1),
-     * This corresponds to the [X509Parameters.aia_ocsp_servers][google.cloud.security.privateca.v1.X509Parameters.aia_ocsp_servers] field.
+     * This corresponds to the
+     * [X509Parameters.aia_ocsp_servers][google.cloud.security.privateca.v1.X509Parameters.aia_ocsp_servers]
+     * field.
      * </pre>
      *
      * <code>AIA_OCSP_SERVERS = 5;</code>
      */
     public static final int AIA_OCSP_SERVERS_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * Refers to Name Constraints extension as described in
+     * [RFC 5280
+     * section 4.2.1.10](https://tools.ietf.org/html/rfc5280#section-4.2.1.10)
+     * </pre>
+     *
+     * <code>NAME_CONSTRAINTS = 6;</code>
+     */
+    public static final int NAME_CONSTRAINTS_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -272,6 +319,8 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
           return POLICY_IDS;
         case 5:
           return AIA_OCSP_SERVERS;
+        case 6:
+          return NAME_CONSTRAINTS;
         default:
           return null;
       }
@@ -363,7 +412,8 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
    *
    * <pre>
    * Optional. A set of named X.509 extensions. Will be combined with
-   * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions] to determine the full set of X.509 extensions.
+   * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions]
+   * to determine the full set of X.509 extensions.
    * </pre>
    *
    * <code>
@@ -387,7 +437,8 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
    *
    * <pre>
    * Optional. A set of named X.509 extensions. Will be combined with
-   * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions] to determine the full set of X.509 extensions.
+   * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions]
+   * to determine the full set of X.509 extensions.
    * </pre>
    *
    * <code>
@@ -405,7 +456,8 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
    *
    * <pre>
    * Optional. A set of named X.509 extensions. Will be combined with
-   * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions] to determine the full set of X.509 extensions.
+   * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions]
+   * to determine the full set of X.509 extensions.
    * </pre>
    *
    * <code>
@@ -426,7 +478,8 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
    *
    * <pre>
    * Optional. A set of named X.509 extensions. Will be combined with
-   * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions] to determine the full set of X.509 extensions.
+   * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions]
+   * to determine the full set of X.509 extensions.
    * </pre>
    *
    * <code>
@@ -444,7 +497,8 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
    *
    * <pre>
    * Optional. A set of named X.509 extensions. Will be combined with
-   * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions] to determine the full set of X.509 extensions.
+   * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions]
+   * to determine the full set of X.509 extensions.
    * </pre>
    *
    * <code>
@@ -469,9 +523,10 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId] identifying custom X.509 extensions.
-   * Will be combined with [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions] to determine the full set of
-   * X.509 extensions.
+   * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId]
+   * identifying custom X.509 extensions. Will be combined with
+   * [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions]
+   * to determine the full set of X.509 extensions.
    * </pre>
    *
    * <code>
@@ -487,9 +542,10 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId] identifying custom X.509 extensions.
-   * Will be combined with [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions] to determine the full set of
-   * X.509 extensions.
+   * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId]
+   * identifying custom X.509 extensions. Will be combined with
+   * [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions]
+   * to determine the full set of X.509 extensions.
    * </pre>
    *
    * <code>
@@ -505,9 +561,10 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId] identifying custom X.509 extensions.
-   * Will be combined with [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions] to determine the full set of
-   * X.509 extensions.
+   * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId]
+   * identifying custom X.509 extensions. Will be combined with
+   * [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions]
+   * to determine the full set of X.509 extensions.
    * </pre>
    *
    * <code>
@@ -522,9 +579,10 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId] identifying custom X.509 extensions.
-   * Will be combined with [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions] to determine the full set of
-   * X.509 extensions.
+   * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId]
+   * identifying custom X.509 extensions. Will be combined with
+   * [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions]
+   * to determine the full set of X.509 extensions.
    * </pre>
    *
    * <code>
@@ -539,9 +597,10 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId] identifying custom X.509 extensions.
-   * Will be combined with [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions] to determine the full set of
-   * X.509 extensions.
+   * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId]
+   * identifying custom X.509 extensions. Will be combined with
+   * [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions]
+   * to determine the full set of X.509 extensions.
    * </pre>
    *
    * <code>
@@ -1032,7 +1091,8 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      *
      * <pre>
      * Optional. A set of named X.509 extensions. Will be combined with
-     * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions] to determine the full set of X.509 extensions.
+     * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions]
+     * to determine the full set of X.509 extensions.
      * </pre>
      *
      * <code>
@@ -1055,7 +1115,8 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      *
      * <pre>
      * Optional. A set of named X.509 extensions. Will be combined with
-     * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions] to determine the full set of X.509 extensions.
+     * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions]
+     * to determine the full set of X.509 extensions.
      * </pre>
      *
      * <code>
@@ -1072,7 +1133,8 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      *
      * <pre>
      * Optional. A set of named X.509 extensions. Will be combined with
-     * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions] to determine the full set of X.509 extensions.
+     * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions]
+     * to determine the full set of X.509 extensions.
      * </pre>
      *
      * <code>
@@ -1092,7 +1154,8 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      *
      * <pre>
      * Optional. A set of named X.509 extensions. Will be combined with
-     * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions] to determine the full set of X.509 extensions.
+     * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions]
+     * to determine the full set of X.509 extensions.
      * </pre>
      *
      * <code>
@@ -1121,7 +1184,8 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      *
      * <pre>
      * Optional. A set of named X.509 extensions. Will be combined with
-     * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions] to determine the full set of X.509 extensions.
+     * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions]
+     * to determine the full set of X.509 extensions.
      * </pre>
      *
      * <code>
@@ -1148,7 +1212,8 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      *
      * <pre>
      * Optional. A set of named X.509 extensions. Will be combined with
-     * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions] to determine the full set of X.509 extensions.
+     * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions]
+     * to determine the full set of X.509 extensions.
      * </pre>
      *
      * <code>
@@ -1178,7 +1243,8 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      *
      * <pre>
      * Optional. A set of named X.509 extensions. Will be combined with
-     * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions] to determine the full set of X.509 extensions.
+     * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions]
+     * to determine the full set of X.509 extensions.
      * </pre>
      *
      * <code>
@@ -1198,7 +1264,8 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      *
      * <pre>
      * Optional. A set of named X.509 extensions. Will be combined with
-     * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions] to determine the full set of X.509 extensions.
+     * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions]
+     * to determine the full set of X.509 extensions.
      * </pre>
      *
      * <code>
@@ -1215,7 +1282,8 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      *
      * <pre>
      * Optional. A set of named X.509 extensions. Will be combined with
-     * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions] to determine the full set of X.509 extensions.
+     * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions]
+     * to determine the full set of X.509 extensions.
      * </pre>
      *
      * <code>
@@ -1233,7 +1301,8 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      *
      * <pre>
      * Optional. A set of named X.509 extensions. Will be combined with
-     * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions] to determine the full set of X.509 extensions.
+     * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions]
+     * to determine the full set of X.509 extensions.
      * </pre>
      *
      * <code>
@@ -1255,7 +1324,8 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      *
      * <pre>
      * Optional. A set of named X.509 extensions. Will be combined with
-     * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions] to determine the full set of X.509 extensions.
+     * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions]
+     * to determine the full set of X.509 extensions.
      * </pre>
      *
      * <code>
@@ -1276,7 +1346,8 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      *
      * <pre>
      * Optional. A set of named X.509 extensions. Will be combined with
-     * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions] to determine the full set of X.509 extensions.
+     * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions]
+     * to determine the full set of X.509 extensions.
      * </pre>
      *
      * <code>
@@ -1317,9 +1388,10 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId] identifying custom X.509 extensions.
-     * Will be combined with [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions] to determine the full set of
-     * X.509 extensions.
+     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId]
+     * identifying custom X.509 extensions. Will be combined with
+     * [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions]
+     * to determine the full set of X.509 extensions.
      * </pre>
      *
      * <code>
@@ -1338,9 +1410,10 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId] identifying custom X.509 extensions.
-     * Will be combined with [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions] to determine the full set of
-     * X.509 extensions.
+     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId]
+     * identifying custom X.509 extensions. Will be combined with
+     * [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions]
+     * to determine the full set of X.509 extensions.
      * </pre>
      *
      * <code>
@@ -1358,9 +1431,10 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId] identifying custom X.509 extensions.
-     * Will be combined with [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions] to determine the full set of
-     * X.509 extensions.
+     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId]
+     * identifying custom X.509 extensions. Will be combined with
+     * [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions]
+     * to determine the full set of X.509 extensions.
      * </pre>
      *
      * <code>
@@ -1378,9 +1452,10 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId] identifying custom X.509 extensions.
-     * Will be combined with [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions] to determine the full set of
-     * X.509 extensions.
+     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId]
+     * identifying custom X.509 extensions. Will be combined with
+     * [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions]
+     * to determine the full set of X.509 extensions.
      * </pre>
      *
      * <code>
@@ -1405,9 +1480,10 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId] identifying custom X.509 extensions.
-     * Will be combined with [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions] to determine the full set of
-     * X.509 extensions.
+     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId]
+     * identifying custom X.509 extensions. Will be combined with
+     * [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions]
+     * to determine the full set of X.509 extensions.
      * </pre>
      *
      * <code>
@@ -1429,9 +1505,10 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId] identifying custom X.509 extensions.
-     * Will be combined with [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions] to determine the full set of
-     * X.509 extensions.
+     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId]
+     * identifying custom X.509 extensions. Will be combined with
+     * [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions]
+     * to determine the full set of X.509 extensions.
      * </pre>
      *
      * <code>
@@ -1455,9 +1532,10 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId] identifying custom X.509 extensions.
-     * Will be combined with [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions] to determine the full set of
-     * X.509 extensions.
+     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId]
+     * identifying custom X.509 extensions. Will be combined with
+     * [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions]
+     * to determine the full set of X.509 extensions.
      * </pre>
      *
      * <code>
@@ -1482,9 +1560,10 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId] identifying custom X.509 extensions.
-     * Will be combined with [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions] to determine the full set of
-     * X.509 extensions.
+     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId]
+     * identifying custom X.509 extensions. Will be combined with
+     * [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions]
+     * to determine the full set of X.509 extensions.
      * </pre>
      *
      * <code>
@@ -1506,9 +1585,10 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId] identifying custom X.509 extensions.
-     * Will be combined with [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions] to determine the full set of
-     * X.509 extensions.
+     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId]
+     * identifying custom X.509 extensions. Will be combined with
+     * [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions]
+     * to determine the full set of X.509 extensions.
      * </pre>
      *
      * <code>
@@ -1530,9 +1610,10 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId] identifying custom X.509 extensions.
-     * Will be combined with [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions] to determine the full set of
-     * X.509 extensions.
+     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId]
+     * identifying custom X.509 extensions. Will be combined with
+     * [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions]
+     * to determine the full set of X.509 extensions.
      * </pre>
      *
      * <code>
@@ -1554,9 +1635,10 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId] identifying custom X.509 extensions.
-     * Will be combined with [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions] to determine the full set of
-     * X.509 extensions.
+     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId]
+     * identifying custom X.509 extensions. Will be combined with
+     * [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions]
+     * to determine the full set of X.509 extensions.
      * </pre>
      *
      * <code>
@@ -1577,9 +1659,10 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId] identifying custom X.509 extensions.
-     * Will be combined with [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions] to determine the full set of
-     * X.509 extensions.
+     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId]
+     * identifying custom X.509 extensions. Will be combined with
+     * [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions]
+     * to determine the full set of X.509 extensions.
      * </pre>
      *
      * <code>
@@ -1600,9 +1683,10 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId] identifying custom X.509 extensions.
-     * Will be combined with [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions] to determine the full set of
-     * X.509 extensions.
+     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId]
+     * identifying custom X.509 extensions. Will be combined with
+     * [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions]
+     * to determine the full set of X.509 extensions.
      * </pre>
      *
      * <code>
@@ -1617,9 +1701,10 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId] identifying custom X.509 extensions.
-     * Will be combined with [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions] to determine the full set of
-     * X.509 extensions.
+     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId]
+     * identifying custom X.509 extensions. Will be combined with
+     * [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions]
+     * to determine the full set of X.509 extensions.
      * </pre>
      *
      * <code>
@@ -1638,9 +1723,10 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId] identifying custom X.509 extensions.
-     * Will be combined with [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions] to determine the full set of
-     * X.509 extensions.
+     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId]
+     * identifying custom X.509 extensions. Will be combined with
+     * [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions]
+     * to determine the full set of X.509 extensions.
      * </pre>
      *
      * <code>
@@ -1659,9 +1745,10 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId] identifying custom X.509 extensions.
-     * Will be combined with [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions] to determine the full set of
-     * X.509 extensions.
+     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId]
+     * identifying custom X.509 extensions. Will be combined with
+     * [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions]
+     * to determine the full set of X.509 extensions.
      * </pre>
      *
      * <code>
@@ -1677,9 +1764,10 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId] identifying custom X.509 extensions.
-     * Will be combined with [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions] to determine the full set of
-     * X.509 extensions.
+     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId]
+     * identifying custom X.509 extensions. Will be combined with
+     * [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions]
+     * to determine the full set of X.509 extensions.
      * </pre>
      *
      * <code>
@@ -1695,9 +1783,10 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId] identifying custom X.509 extensions.
-     * Will be combined with [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions] to determine the full set of
-     * X.509 extensions.
+     * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId]
+     * identifying custom X.509 extensions. Will be combined with
+     * [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions]
+     * to determine the full set of X.509 extensions.
      * </pre>
      *
      * <code>

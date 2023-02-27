@@ -19,7 +19,10 @@ package com.google.devtools.artifactregistry.v1.stub;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListDockerImagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListFilesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListLocationsPagedResponse;
+import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListMavenArtifactsPagedResponse;
+import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListNpmPackagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListPackagesPagedResponse;
+import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListPythonPackagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListRepositoriesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListTagsPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListVersionsPagedResponse;
@@ -71,10 +74,14 @@ import com.google.devtools.artifactregistry.v1.DockerImage;
 import com.google.devtools.artifactregistry.v1.File;
 import com.google.devtools.artifactregistry.v1.GetDockerImageRequest;
 import com.google.devtools.artifactregistry.v1.GetFileRequest;
+import com.google.devtools.artifactregistry.v1.GetMavenArtifactRequest;
+import com.google.devtools.artifactregistry.v1.GetNpmPackageRequest;
 import com.google.devtools.artifactregistry.v1.GetPackageRequest;
 import com.google.devtools.artifactregistry.v1.GetProjectSettingsRequest;
+import com.google.devtools.artifactregistry.v1.GetPythonPackageRequest;
 import com.google.devtools.artifactregistry.v1.GetRepositoryRequest;
 import com.google.devtools.artifactregistry.v1.GetTagRequest;
+import com.google.devtools.artifactregistry.v1.GetVPCSCConfigRequest;
 import com.google.devtools.artifactregistry.v1.GetVersionRequest;
 import com.google.devtools.artifactregistry.v1.ImportAptArtifactsMetadata;
 import com.google.devtools.artifactregistry.v1.ImportAptArtifactsRequest;
@@ -86,22 +93,33 @@ import com.google.devtools.artifactregistry.v1.ListDockerImagesRequest;
 import com.google.devtools.artifactregistry.v1.ListDockerImagesResponse;
 import com.google.devtools.artifactregistry.v1.ListFilesRequest;
 import com.google.devtools.artifactregistry.v1.ListFilesResponse;
+import com.google.devtools.artifactregistry.v1.ListMavenArtifactsRequest;
+import com.google.devtools.artifactregistry.v1.ListMavenArtifactsResponse;
+import com.google.devtools.artifactregistry.v1.ListNpmPackagesRequest;
+import com.google.devtools.artifactregistry.v1.ListNpmPackagesResponse;
 import com.google.devtools.artifactregistry.v1.ListPackagesRequest;
 import com.google.devtools.artifactregistry.v1.ListPackagesResponse;
+import com.google.devtools.artifactregistry.v1.ListPythonPackagesRequest;
+import com.google.devtools.artifactregistry.v1.ListPythonPackagesResponse;
 import com.google.devtools.artifactregistry.v1.ListRepositoriesRequest;
 import com.google.devtools.artifactregistry.v1.ListRepositoriesResponse;
 import com.google.devtools.artifactregistry.v1.ListTagsRequest;
 import com.google.devtools.artifactregistry.v1.ListTagsResponse;
 import com.google.devtools.artifactregistry.v1.ListVersionsRequest;
 import com.google.devtools.artifactregistry.v1.ListVersionsResponse;
+import com.google.devtools.artifactregistry.v1.MavenArtifact;
+import com.google.devtools.artifactregistry.v1.NpmPackage;
 import com.google.devtools.artifactregistry.v1.OperationMetadata;
 import com.google.devtools.artifactregistry.v1.Package;
 import com.google.devtools.artifactregistry.v1.ProjectSettings;
+import com.google.devtools.artifactregistry.v1.PythonPackage;
 import com.google.devtools.artifactregistry.v1.Repository;
 import com.google.devtools.artifactregistry.v1.Tag;
 import com.google.devtools.artifactregistry.v1.UpdateProjectSettingsRequest;
 import com.google.devtools.artifactregistry.v1.UpdateRepositoryRequest;
 import com.google.devtools.artifactregistry.v1.UpdateTagRequest;
+import com.google.devtools.artifactregistry.v1.UpdateVPCSCConfigRequest;
+import com.google.devtools.artifactregistry.v1.VPCSCConfig;
 import com.google.devtools.artifactregistry.v1.Version;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -166,6 +184,18 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
           ListDockerImagesRequest, ListDockerImagesResponse, ListDockerImagesPagedResponse>
       listDockerImagesSettings;
   private final UnaryCallSettings<GetDockerImageRequest, DockerImage> getDockerImageSettings;
+  private final PagedCallSettings<
+          ListMavenArtifactsRequest, ListMavenArtifactsResponse, ListMavenArtifactsPagedResponse>
+      listMavenArtifactsSettings;
+  private final UnaryCallSettings<GetMavenArtifactRequest, MavenArtifact> getMavenArtifactSettings;
+  private final PagedCallSettings<
+          ListNpmPackagesRequest, ListNpmPackagesResponse, ListNpmPackagesPagedResponse>
+      listNpmPackagesSettings;
+  private final UnaryCallSettings<GetNpmPackageRequest, NpmPackage> getNpmPackageSettings;
+  private final PagedCallSettings<
+          ListPythonPackagesRequest, ListPythonPackagesResponse, ListPythonPackagesPagedResponse>
+      listPythonPackagesSettings;
+  private final UnaryCallSettings<GetPythonPackageRequest, PythonPackage> getPythonPackageSettings;
   private final UnaryCallSettings<ImportAptArtifactsRequest, Operation> importAptArtifactsSettings;
   private final OperationCallSettings<
           ImportAptArtifactsRequest, ImportAptArtifactsResponse, ImportAptArtifactsMetadata>
@@ -216,6 +246,8 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
       getProjectSettingsSettings;
   private final UnaryCallSettings<UpdateProjectSettingsRequest, ProjectSettings>
       updateProjectSettingsSettings;
+  private final UnaryCallSettings<GetVPCSCConfigRequest, VPCSCConfig> getVPCSCConfigSettings;
+  private final UnaryCallSettings<UpdateVPCSCConfigRequest, VPCSCConfig> updateVPCSCConfigSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -258,6 +290,125 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
               return payload.getDockerImagesList() == null
                   ? ImmutableList.<DockerImage>of()
                   : payload.getDockerImagesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListMavenArtifactsRequest, ListMavenArtifactsResponse, MavenArtifact>
+      LIST_MAVEN_ARTIFACTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListMavenArtifactsRequest, ListMavenArtifactsResponse, MavenArtifact>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListMavenArtifactsRequest injectToken(
+                ListMavenArtifactsRequest payload, String token) {
+              return ListMavenArtifactsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListMavenArtifactsRequest injectPageSize(
+                ListMavenArtifactsRequest payload, int pageSize) {
+              return ListMavenArtifactsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListMavenArtifactsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListMavenArtifactsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<MavenArtifact> extractResources(ListMavenArtifactsResponse payload) {
+              return payload.getMavenArtifactsList() == null
+                  ? ImmutableList.<MavenArtifact>of()
+                  : payload.getMavenArtifactsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListNpmPackagesRequest, ListNpmPackagesResponse, NpmPackage>
+      LIST_NPM_PACKAGES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListNpmPackagesRequest, ListNpmPackagesResponse, NpmPackage>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListNpmPackagesRequest injectToken(
+                ListNpmPackagesRequest payload, String token) {
+              return ListNpmPackagesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListNpmPackagesRequest injectPageSize(
+                ListNpmPackagesRequest payload, int pageSize) {
+              return ListNpmPackagesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListNpmPackagesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListNpmPackagesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<NpmPackage> extractResources(ListNpmPackagesResponse payload) {
+              return payload.getNpmPackagesList() == null
+                  ? ImmutableList.<NpmPackage>of()
+                  : payload.getNpmPackagesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListPythonPackagesRequest, ListPythonPackagesResponse, PythonPackage>
+      LIST_PYTHON_PACKAGES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListPythonPackagesRequest, ListPythonPackagesResponse, PythonPackage>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListPythonPackagesRequest injectToken(
+                ListPythonPackagesRequest payload, String token) {
+              return ListPythonPackagesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListPythonPackagesRequest injectPageSize(
+                ListPythonPackagesRequest payload, int pageSize) {
+              return ListPythonPackagesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListPythonPackagesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListPythonPackagesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<PythonPackage> extractResources(ListPythonPackagesResponse payload) {
+              return payload.getPythonPackagesList() == null
+                  ? ImmutableList.<PythonPackage>of()
+                  : payload.getPythonPackagesList();
             }
           };
 
@@ -500,6 +651,65 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
           };
 
   private static final PagedListResponseFactory<
+          ListMavenArtifactsRequest, ListMavenArtifactsResponse, ListMavenArtifactsPagedResponse>
+      LIST_MAVEN_ARTIFACTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListMavenArtifactsRequest,
+              ListMavenArtifactsResponse,
+              ListMavenArtifactsPagedResponse>() {
+            @Override
+            public ApiFuture<ListMavenArtifactsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListMavenArtifactsRequest, ListMavenArtifactsResponse> callable,
+                ListMavenArtifactsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListMavenArtifactsResponse> futureResponse) {
+              PageContext<ListMavenArtifactsRequest, ListMavenArtifactsResponse, MavenArtifact>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_MAVEN_ARTIFACTS_PAGE_STR_DESC, request, context);
+              return ListMavenArtifactsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListNpmPackagesRequest, ListNpmPackagesResponse, ListNpmPackagesPagedResponse>
+      LIST_NPM_PACKAGES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListNpmPackagesRequest, ListNpmPackagesResponse, ListNpmPackagesPagedResponse>() {
+            @Override
+            public ApiFuture<ListNpmPackagesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListNpmPackagesRequest, ListNpmPackagesResponse> callable,
+                ListNpmPackagesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListNpmPackagesResponse> futureResponse) {
+              PageContext<ListNpmPackagesRequest, ListNpmPackagesResponse, NpmPackage> pageContext =
+                  PageContext.create(callable, LIST_NPM_PACKAGES_PAGE_STR_DESC, request, context);
+              return ListNpmPackagesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListPythonPackagesRequest, ListPythonPackagesResponse, ListPythonPackagesPagedResponse>
+      LIST_PYTHON_PACKAGES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListPythonPackagesRequest,
+              ListPythonPackagesResponse,
+              ListPythonPackagesPagedResponse>() {
+            @Override
+            public ApiFuture<ListPythonPackagesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListPythonPackagesRequest, ListPythonPackagesResponse> callable,
+                ListPythonPackagesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListPythonPackagesResponse> futureResponse) {
+              PageContext<ListPythonPackagesRequest, ListPythonPackagesResponse, PythonPackage>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_PYTHON_PACKAGES_PAGE_STR_DESC, request, context);
+              return ListPythonPackagesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListRepositoriesRequest, ListRepositoriesResponse, ListRepositoriesPagedResponse>
       LIST_REPOSITORIES_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -612,6 +822,42 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
   /** Returns the object with the settings used for calls to getDockerImage. */
   public UnaryCallSettings<GetDockerImageRequest, DockerImage> getDockerImageSettings() {
     return getDockerImageSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listMavenArtifacts. */
+  public PagedCallSettings<
+          ListMavenArtifactsRequest, ListMavenArtifactsResponse, ListMavenArtifactsPagedResponse>
+      listMavenArtifactsSettings() {
+    return listMavenArtifactsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getMavenArtifact. */
+  public UnaryCallSettings<GetMavenArtifactRequest, MavenArtifact> getMavenArtifactSettings() {
+    return getMavenArtifactSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listNpmPackages. */
+  public PagedCallSettings<
+          ListNpmPackagesRequest, ListNpmPackagesResponse, ListNpmPackagesPagedResponse>
+      listNpmPackagesSettings() {
+    return listNpmPackagesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getNpmPackage. */
+  public UnaryCallSettings<GetNpmPackageRequest, NpmPackage> getNpmPackageSettings() {
+    return getNpmPackageSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listPythonPackages. */
+  public PagedCallSettings<
+          ListPythonPackagesRequest, ListPythonPackagesResponse, ListPythonPackagesPagedResponse>
+      listPythonPackagesSettings() {
+    return listPythonPackagesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getPythonPackage. */
+  public UnaryCallSettings<GetPythonPackageRequest, PythonPackage> getPythonPackageSettings() {
+    return getPythonPackageSettings;
   }
 
   /** Returns the object with the settings used for calls to importAptArtifacts. */
@@ -786,6 +1032,16 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     return updateProjectSettingsSettings;
   }
 
+  /** Returns the object with the settings used for calls to getVPCSCConfig. */
+  public UnaryCallSettings<GetVPCSCConfigRequest, VPCSCConfig> getVPCSCConfigSettings() {
+    return getVPCSCConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateVPCSCConfig. */
+  public UnaryCallSettings<UpdateVPCSCConfigRequest, VPCSCConfig> updateVPCSCConfigSettings() {
+    return updateVPCSCConfigSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -905,6 +1161,12 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
 
     listDockerImagesSettings = settingsBuilder.listDockerImagesSettings().build();
     getDockerImageSettings = settingsBuilder.getDockerImageSettings().build();
+    listMavenArtifactsSettings = settingsBuilder.listMavenArtifactsSettings().build();
+    getMavenArtifactSettings = settingsBuilder.getMavenArtifactSettings().build();
+    listNpmPackagesSettings = settingsBuilder.listNpmPackagesSettings().build();
+    getNpmPackageSettings = settingsBuilder.getNpmPackageSettings().build();
+    listPythonPackagesSettings = settingsBuilder.listPythonPackagesSettings().build();
+    getPythonPackageSettings = settingsBuilder.getPythonPackageSettings().build();
     importAptArtifactsSettings = settingsBuilder.importAptArtifactsSettings().build();
     importAptArtifactsOperationSettings =
         settingsBuilder.importAptArtifactsOperationSettings().build();
@@ -938,6 +1200,8 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
     getProjectSettingsSettings = settingsBuilder.getProjectSettingsSettings().build();
     updateProjectSettingsSettings = settingsBuilder.updateProjectSettingsSettings().build();
+    getVPCSCConfigSettings = settingsBuilder.getVPCSCConfigSettings().build();
+    updateVPCSCConfigSettings = settingsBuilder.updateVPCSCConfigSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -950,6 +1214,20 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
         listDockerImagesSettings;
     private final UnaryCallSettings.Builder<GetDockerImageRequest, DockerImage>
         getDockerImageSettings;
+    private final PagedCallSettings.Builder<
+            ListMavenArtifactsRequest, ListMavenArtifactsResponse, ListMavenArtifactsPagedResponse>
+        listMavenArtifactsSettings;
+    private final UnaryCallSettings.Builder<GetMavenArtifactRequest, MavenArtifact>
+        getMavenArtifactSettings;
+    private final PagedCallSettings.Builder<
+            ListNpmPackagesRequest, ListNpmPackagesResponse, ListNpmPackagesPagedResponse>
+        listNpmPackagesSettings;
+    private final UnaryCallSettings.Builder<GetNpmPackageRequest, NpmPackage> getNpmPackageSettings;
+    private final PagedCallSettings.Builder<
+            ListPythonPackagesRequest, ListPythonPackagesResponse, ListPythonPackagesPagedResponse>
+        listPythonPackagesSettings;
+    private final UnaryCallSettings.Builder<GetPythonPackageRequest, PythonPackage>
+        getPythonPackageSettings;
     private final UnaryCallSettings.Builder<ImportAptArtifactsRequest, Operation>
         importAptArtifactsSettings;
     private final OperationCallSettings.Builder<
@@ -1008,6 +1286,10 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
         getProjectSettingsSettings;
     private final UnaryCallSettings.Builder<UpdateProjectSettingsRequest, ProjectSettings>
         updateProjectSettingsSettings;
+    private final UnaryCallSettings.Builder<GetVPCSCConfigRequest, VPCSCConfig>
+        getVPCSCConfigSettings;
+    private final UnaryCallSettings.Builder<UpdateVPCSCConfigRequest, VPCSCConfig>
+        updateVPCSCConfigSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -1048,6 +1330,12 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
 
       listDockerImagesSettings = PagedCallSettings.newBuilder(LIST_DOCKER_IMAGES_PAGE_STR_FACT);
       getDockerImageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listMavenArtifactsSettings = PagedCallSettings.newBuilder(LIST_MAVEN_ARTIFACTS_PAGE_STR_FACT);
+      getMavenArtifactSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listNpmPackagesSettings = PagedCallSettings.newBuilder(LIST_NPM_PACKAGES_PAGE_STR_FACT);
+      getNpmPackageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listPythonPackagesSettings = PagedCallSettings.newBuilder(LIST_PYTHON_PACKAGES_PAGE_STR_FACT);
+      getPythonPackageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       importAptArtifactsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       importAptArtifactsOperationSettings = OperationCallSettings.newBuilder();
       importYumArtifactsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1079,6 +1367,8 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getProjectSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateProjectSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getVPCSCConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateVPCSCConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -1086,6 +1376,12 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listDockerImagesSettings,
               getDockerImageSettings,
+              listMavenArtifactsSettings,
+              getMavenArtifactSettings,
+              listNpmPackagesSettings,
+              getNpmPackageSettings,
+              listPythonPackagesSettings,
+              getPythonPackageSettings,
               importAptArtifactsSettings,
               importYumArtifactsSettings,
               listRepositoriesSettings,
@@ -1111,6 +1407,8 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
               testIamPermissionsSettings,
               getProjectSettingsSettings,
               updateProjectSettingsSettings,
+              getVPCSCConfigSettings,
+              updateVPCSCConfigSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -1121,6 +1419,12 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
 
       listDockerImagesSettings = settings.listDockerImagesSettings.toBuilder();
       getDockerImageSettings = settings.getDockerImageSettings.toBuilder();
+      listMavenArtifactsSettings = settings.listMavenArtifactsSettings.toBuilder();
+      getMavenArtifactSettings = settings.getMavenArtifactSettings.toBuilder();
+      listNpmPackagesSettings = settings.listNpmPackagesSettings.toBuilder();
+      getNpmPackageSettings = settings.getNpmPackageSettings.toBuilder();
+      listPythonPackagesSettings = settings.listPythonPackagesSettings.toBuilder();
+      getPythonPackageSettings = settings.getPythonPackageSettings.toBuilder();
       importAptArtifactsSettings = settings.importAptArtifactsSettings.toBuilder();
       importAptArtifactsOperationSettings =
           settings.importAptArtifactsOperationSettings.toBuilder();
@@ -1154,6 +1458,8 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
       getProjectSettingsSettings = settings.getProjectSettingsSettings.toBuilder();
       updateProjectSettingsSettings = settings.updateProjectSettingsSettings.toBuilder();
+      getVPCSCConfigSettings = settings.getVPCSCConfigSettings.toBuilder();
+      updateVPCSCConfigSettings = settings.updateVPCSCConfigSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -1161,6 +1467,12 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listDockerImagesSettings,
               getDockerImageSettings,
+              listMavenArtifactsSettings,
+              getMavenArtifactSettings,
+              listNpmPackagesSettings,
+              getNpmPackageSettings,
+              listPythonPackagesSettings,
+              getPythonPackageSettings,
               importAptArtifactsSettings,
               importYumArtifactsSettings,
               listRepositoriesSettings,
@@ -1186,6 +1498,8 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
               testIamPermissionsSettings,
               getProjectSettingsSettings,
               updateProjectSettingsSettings,
+              getVPCSCConfigSettings,
+              updateVPCSCConfigSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -1224,6 +1538,36 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
 
       builder
           .getDockerImageSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listMavenArtifactsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getMavenArtifactSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listNpmPackagesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getNpmPackageSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listPythonPackagesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getPythonPackageSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -1349,6 +1693,16 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
 
       builder
           .updateProjectSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getVPCSCConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateVPCSCConfigSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -1540,6 +1894,44 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
       return getDockerImageSettings;
     }
 
+    /** Returns the builder for the settings used for calls to listMavenArtifacts. */
+    public PagedCallSettings.Builder<
+            ListMavenArtifactsRequest, ListMavenArtifactsResponse, ListMavenArtifactsPagedResponse>
+        listMavenArtifactsSettings() {
+      return listMavenArtifactsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getMavenArtifact. */
+    public UnaryCallSettings.Builder<GetMavenArtifactRequest, MavenArtifact>
+        getMavenArtifactSettings() {
+      return getMavenArtifactSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listNpmPackages. */
+    public PagedCallSettings.Builder<
+            ListNpmPackagesRequest, ListNpmPackagesResponse, ListNpmPackagesPagedResponse>
+        listNpmPackagesSettings() {
+      return listNpmPackagesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getNpmPackage. */
+    public UnaryCallSettings.Builder<GetNpmPackageRequest, NpmPackage> getNpmPackageSettings() {
+      return getNpmPackageSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listPythonPackages. */
+    public PagedCallSettings.Builder<
+            ListPythonPackagesRequest, ListPythonPackagesResponse, ListPythonPackagesPagedResponse>
+        listPythonPackagesSettings() {
+      return listPythonPackagesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getPythonPackage. */
+    public UnaryCallSettings.Builder<GetPythonPackageRequest, PythonPackage>
+        getPythonPackageSettings() {
+      return getPythonPackageSettings;
+    }
+
     /** Returns the builder for the settings used for calls to importAptArtifacts. */
     public UnaryCallSettings.Builder<ImportAptArtifactsRequest, Operation>
         importAptArtifactsSettings() {
@@ -1729,6 +2121,17 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     public UnaryCallSettings.Builder<UpdateProjectSettingsRequest, ProjectSettings>
         updateProjectSettingsSettings() {
       return updateProjectSettingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getVPCSCConfig. */
+    public UnaryCallSettings.Builder<GetVPCSCConfigRequest, VPCSCConfig> getVPCSCConfigSettings() {
+      return getVPCSCConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateVPCSCConfig. */
+    public UnaryCallSettings.Builder<UpdateVPCSCConfigRequest, VPCSCConfig>
+        updateVPCSCConfigSettings() {
+      return updateVPCSCConfigSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

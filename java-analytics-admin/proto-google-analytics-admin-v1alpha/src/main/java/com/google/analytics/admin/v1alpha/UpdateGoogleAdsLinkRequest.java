@@ -121,9 +121,10 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The list of fields to be updated. Field names must be in snake case
-   * (e.g., "field_to_update"). Omitted fields will not be updated. To replace
-   * the entire entity, use one path with the string "*" to match all fields.
+   * Required. The list of fields to be updated. Field names must be in snake
+   * case (e.g., "field_to_update"). Omitted fields will not be updated. To
+   * replace the entire entity, use one path with the string "*" to match all
+   * fields.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -139,9 +140,10 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The list of fields to be updated. Field names must be in snake case
-   * (e.g., "field_to_update"). Omitted fields will not be updated. To replace
-   * the entire entity, use one path with the string "*" to match all fields.
+   * Required. The list of fields to be updated. Field names must be in snake
+   * case (e.g., "field_to_update"). Omitted fields will not be updated. To
+   * replace the entire entity, use one path with the string "*" to match all
+   * fields.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -157,9 +159,10 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The list of fields to be updated. Field names must be in snake case
-   * (e.g., "field_to_update"). Omitted fields will not be updated. To replace
-   * the entire entity, use one path with the string "*" to match all fields.
+   * Required. The list of fields to be updated. Field names must be in snake
+   * case (e.g., "field_to_update"). Omitted fields will not be updated. To
+   * replace the entire entity, use one path with the string "*" to match all
+   * fields.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -750,9 +753,10 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The list of fields to be updated. Field names must be in snake case
-     * (e.g., "field_to_update"). Omitted fields will not be updated. To replace
-     * the entire entity, use one path with the string "*" to match all fields.
+     * Required. The list of fields to be updated. Field names must be in snake
+     * case (e.g., "field_to_update"). Omitted fields will not be updated. To
+     * replace the entire entity, use one path with the string "*" to match all
+     * fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -767,9 +771,10 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The list of fields to be updated. Field names must be in snake case
-     * (e.g., "field_to_update"). Omitted fields will not be updated. To replace
-     * the entire entity, use one path with the string "*" to match all fields.
+     * Required. The list of fields to be updated. Field names must be in snake
+     * case (e.g., "field_to_update"). Omitted fields will not be updated. To
+     * replace the entire entity, use one path with the string "*" to match all
+     * fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -790,9 +795,10 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The list of fields to be updated. Field names must be in snake case
-     * (e.g., "field_to_update"). Omitted fields will not be updated. To replace
-     * the entire entity, use one path with the string "*" to match all fields.
+     * Required. The list of fields to be updated. Field names must be in snake
+     * case (e.g., "field_to_update"). Omitted fields will not be updated. To
+     * replace the entire entity, use one path with the string "*" to match all
+     * fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -815,9 +821,10 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The list of fields to be updated. Field names must be in snake case
-     * (e.g., "field_to_update"). Omitted fields will not be updated. To replace
-     * the entire entity, use one path with the string "*" to match all fields.
+     * Required. The list of fields to be updated. Field names must be in snake
+     * case (e.g., "field_to_update"). Omitted fields will not be updated. To
+     * replace the entire entity, use one path with the string "*" to match all
+     * fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -837,9 +844,10 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The list of fields to be updated. Field names must be in snake case
-     * (e.g., "field_to_update"). Omitted fields will not be updated. To replace
-     * the entire entity, use one path with the string "*" to match all fields.
+     * Required. The list of fields to be updated. Field names must be in snake
+     * case (e.g., "field_to_update"). Omitted fields will not be updated. To
+     * replace the entire entity, use one path with the string "*" to match all
+     * fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -865,9 +873,10 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The list of fields to be updated. Field names must be in snake case
-     * (e.g., "field_to_update"). Omitted fields will not be updated. To replace
-     * the entire entity, use one path with the string "*" to match all fields.
+     * Required. The list of fields to be updated. Field names must be in snake
+     * case (e.g., "field_to_update"). Omitted fields will not be updated. To
+     * replace the entire entity, use one path with the string "*" to match all
+     * fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -887,9 +896,10 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The list of fields to be updated. Field names must be in snake case
-     * (e.g., "field_to_update"). Omitted fields will not be updated. To replace
-     * the entire entity, use one path with the string "*" to match all fields.
+     * Required. The list of fields to be updated. Field names must be in snake
+     * case (e.g., "field_to_update"). Omitted fields will not be updated. To
+     * replace the entire entity, use one path with the string "*" to match all
+     * fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -904,9 +914,10 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The list of fields to be updated. Field names must be in snake case
-     * (e.g., "field_to_update"). Omitted fields will not be updated. To replace
-     * the entire entity, use one path with the string "*" to match all fields.
+     * Required. The list of fields to be updated. Field names must be in snake
+     * case (e.g., "field_to_update"). Omitted fields will not be updated. To
+     * replace the entire entity, use one path with the string "*" to match all
+     * fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -925,9 +936,10 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The list of fields to be updated. Field names must be in snake case
-     * (e.g., "field_to_update"). Omitted fields will not be updated. To replace
-     * the entire entity, use one path with the string "*" to match all fields.
+     * Required. The list of fields to be updated. Field names must be in snake
+     * case (e.g., "field_to_update"). Omitted fields will not be updated. To
+     * replace the entire entity, use one path with the string "*" to match all
+     * fields.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
