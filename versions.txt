@@ -611,3 +611,6 @@ grpc-google-cloud-build-v2:3.13.0:3.14.0-SNAPSHOT
 google-cloud-advisorynotifications:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-advisorynotifications-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-advisorynotifications-v1:0.0.0:0.0.1-SNAPSHOT
+google-maps-mapsplatformdatasets:0.0.0:0.0.1-SNAPSHOT
+proto-google-maps-mapsplatformdatasets-v1alpha:0.0.0:0.0.1-SNAPSHOT
+grpc-google-maps-mapsplatformdatasets-v1alpha:0.0.0:0.0.1-SNAPSHOT
