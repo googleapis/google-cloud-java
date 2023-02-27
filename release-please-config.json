@@ -4,6 +4,8 @@
   "separate-pull-requests": false,
   "include-component-in-tag": false,
   "packages": {
-    ".": {}
+    ".": {
+      "extra-files": ["java-accessapproval/README.md"]
+    }
   }
 }

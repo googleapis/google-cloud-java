@@ -209,9 +209,9 @@ public interface CustomMetricOrBuilder
    *
    *
    * <pre>
-   * Optional. Types of restricted data that this metric may contain. Required for metrics
-   * with CURRENCY measurement unit. Must be empty for metrics with a
-   * non-CURRENCY measurement unit.
+   * Optional. Types of restricted data that this metric may contain. Required
+   * for metrics with CURRENCY measurement unit. Must be empty for metrics with
+   * a non-CURRENCY measurement unit.
    * </pre>
    *
    * <code>
@@ -226,9 +226,9 @@ public interface CustomMetricOrBuilder
    *
    *
    * <pre>
-   * Optional. Types of restricted data that this metric may contain. Required for metrics
-   * with CURRENCY measurement unit. Must be empty for metrics with a
-   * non-CURRENCY measurement unit.
+   * Optional. Types of restricted data that this metric may contain. Required
+   * for metrics with CURRENCY measurement unit. Must be empty for metrics with
+   * a non-CURRENCY measurement unit.
    * </pre>
    *
    * <code>
@@ -242,9 +242,9 @@ public interface CustomMetricOrBuilder
    *
    *
    * <pre>
-   * Optional. Types of restricted data that this metric may contain. Required for metrics
-   * with CURRENCY measurement unit. Must be empty for metrics with a
-   * non-CURRENCY measurement unit.
+   * Optional. Types of restricted data that this metric may contain. Required
+   * for metrics with CURRENCY measurement unit. Must be empty for metrics with
+   * a non-CURRENCY measurement unit.
    * </pre>
    *
    * <code>
@@ -260,9 +260,9 @@ public interface CustomMetricOrBuilder
    *
    *
    * <pre>
-   * Optional. Types of restricted data that this metric may contain. Required for metrics
-   * with CURRENCY measurement unit. Must be empty for metrics with a
-   * non-CURRENCY measurement unit.
+   * Optional. Types of restricted data that this metric may contain. Required
+   * for metrics with CURRENCY measurement unit. Must be empty for metrics with
+   * a non-CURRENCY measurement unit.
    * </pre>
    *
    * <code>
@@ -276,9 +276,9 @@ public interface CustomMetricOrBuilder
    *
    *
    * <pre>
-   * Optional. Types of restricted data that this metric may contain. Required for metrics
-   * with CURRENCY measurement unit. Must be empty for metrics with a
-   * non-CURRENCY measurement unit.
+   * Optional. Types of restricted data that this metric may contain. Required
+   * for metrics with CURRENCY measurement unit. Must be empty for metrics with
+   * a non-CURRENCY measurement unit.
    * </pre>
    *
    * <code>

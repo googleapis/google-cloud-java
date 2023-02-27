@@ -84,8 +84,8 @@ public final class DisplayVideo360AdvertiserLinkProposal
    *
    *
    * <pre>
-   * Output only. The resource name for this DisplayVideo360AdvertiserLinkProposal resource.
-   * Format:
+   * Output only. The resource name for this
+   * DisplayVideo360AdvertiserLinkProposal resource. Format:
    * properties/{propertyId}/displayVideo360AdvertiserLinkProposals/{proposalId}
    * Note: proposalId is not the Display &amp; Video 360 Advertiser ID
    * </pre>
@@ -110,8 +110,8 @@ public final class DisplayVideo360AdvertiserLinkProposal
    *
    *
    * <pre>
-   * Output only. The resource name for this DisplayVideo360AdvertiserLinkProposal resource.
-   * Format:
+   * Output only. The resource name for this
+   * DisplayVideo360AdvertiserLinkProposal resource. Format:
    * properties/{propertyId}/displayVideo360AdvertiserLinkProposals/{proposalId}
    * Note: proposalId is not the Display &amp; Video 360 Advertiser ID
    * </pre>
@@ -303,12 +303,12 @@ public final class DisplayVideo360AdvertiserLinkProposal
    *
    *
    * <pre>
-   * Input only. On a proposal being sent to Display &amp; Video 360, this field must be set to
-   * the email address of an admin on the target advertiser. This is used to
-   * verify that the Google Analytics admin is aware of at least one admin on
-   * the Display &amp; Video 360 Advertiser. This does not restrict approval of the
-   * proposal to a single user. Any admin on the Display &amp; Video 360 Advertiser
-   * may approve the proposal.
+   * Input only. On a proposal being sent to Display &amp; Video 360, this field
+   * must be set to the email address of an admin on the target advertiser. This
+   * is used to verify that the Google Analytics admin is aware of at least one
+   * admin on the Display &amp; Video 360 Advertiser. This does not restrict
+   * approval of the proposal to a single user. Any admin on the Display &amp; Video
+   * 360 Advertiser may approve the proposal.
    * </pre>
    *
    * <code>string validation_email = 5 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -331,12 +331,12 @@ public final class DisplayVideo360AdvertiserLinkProposal
    *
    *
    * <pre>
-   * Input only. On a proposal being sent to Display &amp; Video 360, this field must be set to
-   * the email address of an admin on the target advertiser. This is used to
-   * verify that the Google Analytics admin is aware of at least one admin on
-   * the Display &amp; Video 360 Advertiser. This does not restrict approval of the
-   * proposal to a single user. Any admin on the Display &amp; Video 360 Advertiser
-   * may approve the proposal.
+   * Input only. On a proposal being sent to Display &amp; Video 360, this field
+   * must be set to the email address of an admin on the target advertiser. This
+   * is used to verify that the Google Analytics admin is aware of at least one
+   * admin on the Display &amp; Video 360 Advertiser. This does not restrict
+   * approval of the proposal to a single user. Any admin on the Display &amp; Video
+   * 360 Advertiser may approve the proposal.
    * </pre>
    *
    * <code>string validation_email = 5 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1122,8 +1122,8 @@ public final class DisplayVideo360AdvertiserLinkProposal
      *
      *
      * <pre>
-     * Output only. The resource name for this DisplayVideo360AdvertiserLinkProposal resource.
-     * Format:
+     * Output only. The resource name for this
+     * DisplayVideo360AdvertiserLinkProposal resource. Format:
      * properties/{propertyId}/displayVideo360AdvertiserLinkProposals/{proposalId}
      * Note: proposalId is not the Display &amp; Video 360 Advertiser ID
      * </pre>
@@ -1147,8 +1147,8 @@ public final class DisplayVideo360AdvertiserLinkProposal
      *
      *
      * <pre>
-     * Output only. The resource name for this DisplayVideo360AdvertiserLinkProposal resource.
-     * Format:
+     * Output only. The resource name for this
+     * DisplayVideo360AdvertiserLinkProposal resource. Format:
      * properties/{propertyId}/displayVideo360AdvertiserLinkProposals/{proposalId}
      * Note: proposalId is not the Display &amp; Video 360 Advertiser ID
      * </pre>
@@ -1172,8 +1172,8 @@ public final class DisplayVideo360AdvertiserLinkProposal
      *
      *
      * <pre>
-     * Output only. The resource name for this DisplayVideo360AdvertiserLinkProposal resource.
-     * Format:
+     * Output only. The resource name for this
+     * DisplayVideo360AdvertiserLinkProposal resource. Format:
      * properties/{propertyId}/displayVideo360AdvertiserLinkProposals/{proposalId}
      * Note: proposalId is not the Display &amp; Video 360 Advertiser ID
      * </pre>
@@ -1196,8 +1196,8 @@ public final class DisplayVideo360AdvertiserLinkProposal
      *
      *
      * <pre>
-     * Output only. The resource name for this DisplayVideo360AdvertiserLinkProposal resource.
-     * Format:
+     * Output only. The resource name for this
+     * DisplayVideo360AdvertiserLinkProposal resource. Format:
      * properties/{propertyId}/displayVideo360AdvertiserLinkProposals/{proposalId}
      * Note: proposalId is not the Display &amp; Video 360 Advertiser ID
      * </pre>
@@ -1216,8 +1216,8 @@ public final class DisplayVideo360AdvertiserLinkProposal
      *
      *
      * <pre>
-     * Output only. The resource name for this DisplayVideo360AdvertiserLinkProposal resource.
-     * Format:
+     * Output only. The resource name for this
+     * DisplayVideo360AdvertiserLinkProposal resource. Format:
      * properties/{propertyId}/displayVideo360AdvertiserLinkProposals/{proposalId}
      * Note: proposalId is not the Display &amp; Video 360 Advertiser ID
      * </pre>
@@ -1669,12 +1669,12 @@ public final class DisplayVideo360AdvertiserLinkProposal
      *
      *
      * <pre>
-     * Input only. On a proposal being sent to Display &amp; Video 360, this field must be set to
-     * the email address of an admin on the target advertiser. This is used to
-     * verify that the Google Analytics admin is aware of at least one admin on
-     * the Display &amp; Video 360 Advertiser. This does not restrict approval of the
-     * proposal to a single user. Any admin on the Display &amp; Video 360 Advertiser
-     * may approve the proposal.
+     * Input only. On a proposal being sent to Display &amp; Video 360, this field
+     * must be set to the email address of an admin on the target advertiser. This
+     * is used to verify that the Google Analytics admin is aware of at least one
+     * admin on the Display &amp; Video 360 Advertiser. This does not restrict
+     * approval of the proposal to a single user. Any admin on the Display &amp; Video
+     * 360 Advertiser may approve the proposal.
      * </pre>
      *
      * <code>string validation_email = 5 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1696,12 +1696,12 @@ public final class DisplayVideo360AdvertiserLinkProposal
      *
      *
      * <pre>
-     * Input only. On a proposal being sent to Display &amp; Video 360, this field must be set to
-     * the email address of an admin on the target advertiser. This is used to
-     * verify that the Google Analytics admin is aware of at least one admin on
-     * the Display &amp; Video 360 Advertiser. This does not restrict approval of the
-     * proposal to a single user. Any admin on the Display &amp; Video 360 Advertiser
-     * may approve the proposal.
+     * Input only. On a proposal being sent to Display &amp; Video 360, this field
+     * must be set to the email address of an admin on the target advertiser. This
+     * is used to verify that the Google Analytics admin is aware of at least one
+     * admin on the Display &amp; Video 360 Advertiser. This does not restrict
+     * approval of the proposal to a single user. Any admin on the Display &amp; Video
+     * 360 Advertiser may approve the proposal.
      * </pre>
      *
      * <code>string validation_email = 5 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1723,12 +1723,12 @@ public final class DisplayVideo360AdvertiserLinkProposal
      *
      *
      * <pre>
-     * Input only. On a proposal being sent to Display &amp; Video 360, this field must be set to
-     * the email address of an admin on the target advertiser. This is used to
-     * verify that the Google Analytics admin is aware of at least one admin on
-     * the Display &amp; Video 360 Advertiser. This does not restrict approval of the
-     * proposal to a single user. Any admin on the Display &amp; Video 360 Advertiser
-     * may approve the proposal.
+     * Input only. On a proposal being sent to Display &amp; Video 360, this field
+     * must be set to the email address of an admin on the target advertiser. This
+     * is used to verify that the Google Analytics admin is aware of at least one
+     * admin on the Display &amp; Video 360 Advertiser. This does not restrict
+     * approval of the proposal to a single user. Any admin on the Display &amp; Video
+     * 360 Advertiser may approve the proposal.
      * </pre>
      *
      * <code>string validation_email = 5 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1749,12 +1749,12 @@ public final class DisplayVideo360AdvertiserLinkProposal
      *
      *
      * <pre>
-     * Input only. On a proposal being sent to Display &amp; Video 360, this field must be set to
-     * the email address of an admin on the target advertiser. This is used to
-     * verify that the Google Analytics admin is aware of at least one admin on
-     * the Display &amp; Video 360 Advertiser. This does not restrict approval of the
-     * proposal to a single user. Any admin on the Display &amp; Video 360 Advertiser
-     * may approve the proposal.
+     * Input only. On a proposal being sent to Display &amp; Video 360, this field
+     * must be set to the email address of an admin on the target advertiser. This
+     * is used to verify that the Google Analytics admin is aware of at least one
+     * admin on the Display &amp; Video 360 Advertiser. This does not restrict
+     * approval of the proposal to a single user. Any admin on the Display &amp; Video
+     * 360 Advertiser may approve the proposal.
      * </pre>
      *
      * <code>string validation_email = 5 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1771,12 +1771,12 @@ public final class DisplayVideo360AdvertiserLinkProposal
      *
      *
      * <pre>
-     * Input only. On a proposal being sent to Display &amp; Video 360, this field must be set to
-     * the email address of an admin on the target advertiser. This is used to
-     * verify that the Google Analytics admin is aware of at least one admin on
-     * the Display &amp; Video 360 Advertiser. This does not restrict approval of the
-     * proposal to a single user. Any admin on the Display &amp; Video 360 Advertiser
-     * may approve the proposal.
+     * Input only. On a proposal being sent to Display &amp; Video 360, this field
+     * must be set to the email address of an admin on the target advertiser. This
+     * is used to verify that the Google Analytics admin is aware of at least one
+     * admin on the Display &amp; Video 360 Advertiser. This does not restrict
+     * approval of the proposal to a single user. Any admin on the Display &amp; Video
+     * 360 Advertiser may approve the proposal.
      * </pre>
      *
      * <code>string validation_email = 5 [(.google.api.field_behavior) = INPUT_ONLY];</code>

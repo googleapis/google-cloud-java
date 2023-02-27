@@ -265,16 +265,6 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        * <code>FULL_REGEXP = 5;</code>
        */
       FULL_REGEXP(5),
-      /**
-       *
-       *
-       * <pre>
-       * Partial regular expression matches with the string value.
-       * </pre>
-       *
-       * <code>PARTIAL_REGEXP = 6;</code>
-       */
-      PARTIAL_REGEXP(6),
       UNRECOGNIZED(-1),
       ;
 
@@ -338,16 +328,6 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        * <code>FULL_REGEXP = 5;</code>
        */
       public static final int FULL_REGEXP_VALUE = 5;
-      /**
-       *
-       *
-       * <pre>
-       * Partial regular expression matches with the string value.
-       * </pre>
-       *
-       * <code>PARTIAL_REGEXP = 6;</code>
-       */
-      public static final int PARTIAL_REGEXP_VALUE = 6;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -385,8 +365,6 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
             return CONTAINS;
           case 5:
             return FULL_REGEXP;
-          case 6:
-            return PARTIAL_REGEXP;
           default:
             return null;
         }
@@ -1329,7 +1307,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The list of possible string values to match against. Must be non-empty.
+     * Required. The list of possible string values to match against. Must be
+     * non-empty.
      * </pre>
      *
      * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1341,7 +1320,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The list of possible string values to match against. Must be non-empty.
+     * Required. The list of possible string values to match against. Must be
+     * non-empty.
      * </pre>
      *
      * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1353,7 +1333,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The list of possible string values to match against. Must be non-empty.
+     * Required. The list of possible string values to match against. Must be
+     * non-empty.
      * </pre>
      *
      * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1366,7 +1347,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The list of possible string values to match against. Must be non-empty.
+     * Required. The list of possible string values to match against. Must be
+     * non-empty.
      * </pre>
      *
      * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1449,7 +1431,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The list of possible string values to match against. Must be non-empty.
+     * Required. The list of possible string values to match against. Must be
+     * non-empty.
      * </pre>
      *
      * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1463,7 +1446,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The list of possible string values to match against. Must be non-empty.
+     * Required. The list of possible string values to match against. Must be
+     * non-empty.
      * </pre>
      *
      * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1477,7 +1461,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The list of possible string values to match against. Must be non-empty.
+     * Required. The list of possible string values to match against. Must be
+     * non-empty.
      * </pre>
      *
      * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1492,7 +1477,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The list of possible string values to match against. Must be non-empty.
+     * Required. The list of possible string values to match against. Must be
+     * non-empty.
      * </pre>
      *
      * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1951,7 +1937,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        *
        *
        * <pre>
-       * Required. The list of possible string values to match against. Must be non-empty.
+       * Required. The list of possible string values to match against. Must be
+       * non-empty.
        * </pre>
        *
        * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1965,7 +1952,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        *
        *
        * <pre>
-       * Required. The list of possible string values to match against. Must be non-empty.
+       * Required. The list of possible string values to match against. Must be
+       * non-empty.
        * </pre>
        *
        * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1979,7 +1967,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        *
        *
        * <pre>
-       * Required. The list of possible string values to match against. Must be non-empty.
+       * Required. The list of possible string values to match against. Must be
+       * non-empty.
        * </pre>
        *
        * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1994,7 +1983,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        *
        *
        * <pre>
-       * Required. The list of possible string values to match against. Must be non-empty.
+       * Required. The list of possible string values to match against. Must be
+       * non-empty.
        * </pre>
        *
        * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2009,7 +1999,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        *
        *
        * <pre>
-       * Required. The list of possible string values to match against. Must be non-empty.
+       * Required. The list of possible string values to match against. Must be
+       * non-empty.
        * </pre>
        *
        * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2031,7 +2022,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        *
        *
        * <pre>
-       * Required. The list of possible string values to match against. Must be non-empty.
+       * Required. The list of possible string values to match against. Must be
+       * non-empty.
        * </pre>
        *
        * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2052,7 +2044,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        *
        *
        * <pre>
-       * Required. The list of possible string values to match against. Must be non-empty.
+       * Required. The list of possible string values to match against. Must be
+       * non-empty.
        * </pre>
        *
        * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2070,7 +2063,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        *
        *
        * <pre>
-       * Required. The list of possible string values to match against. Must be non-empty.
+       * Required. The list of possible string values to match against. Must be
+       * non-empty.
        * </pre>
        *
        * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2087,7 +2081,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        *
        *
        * <pre>
-       * Required. The list of possible string values to match against. Must be non-empty.
+       * Required. The list of possible string values to match against. Must be
+       * non-empty.
        * </pre>
        *
        * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3281,32 +3276,12 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        *
        *
        * <pre>
-       * Less than or equal.
-       * </pre>
-       *
-       * <code>LESS_THAN_OR_EQUAL = 3;</code>
-       */
-      LESS_THAN_OR_EQUAL(3),
-      /**
-       *
-       *
-       * <pre>
        * Greater than.
        * </pre>
        *
        * <code>GREATER_THAN = 4;</code>
        */
       GREATER_THAN(4),
-      /**
-       *
-       *
-       * <pre>
-       * Greater than or equal.
-       * </pre>
-       *
-       * <code>GREATER_THAN_OR_EQUAL = 5;</code>
-       */
-      GREATER_THAN_OR_EQUAL(5),
       UNRECOGNIZED(-1),
       ;
 
@@ -3344,32 +3319,12 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        *
        *
        * <pre>
-       * Less than or equal.
-       * </pre>
-       *
-       * <code>LESS_THAN_OR_EQUAL = 3;</code>
-       */
-      public static final int LESS_THAN_OR_EQUAL_VALUE = 3;
-      /**
-       *
-       *
-       * <pre>
        * Greater than.
        * </pre>
        *
        * <code>GREATER_THAN = 4;</code>
        */
       public static final int GREATER_THAN_VALUE = 4;
-      /**
-       *
-       *
-       * <pre>
-       * Greater than or equal.
-       * </pre>
-       *
-       * <code>GREATER_THAN_OR_EQUAL = 5;</code>
-       */
-      public static final int GREATER_THAN_OR_EQUAL_VALUE = 5;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -3401,12 +3356,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
             return EQUAL;
           case 2:
             return LESS_THAN;
-          case 3:
-            return LESS_THAN_OR_EQUAL;
           case 4:
             return GREATER_THAN;
-          case 5:
-            return GREATER_THAN_OR_EQUAL;
           default:
             return null;
         }
@@ -5927,8 +5878,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Optional. Indicates whether this filter needs dynamic evaluation or not. If set to
-   * true, users join the Audience if they ever met the condition (static
+   * Optional. Indicates whether this filter needs dynamic evaluation or not. If
+   * set to true, users join the Audience if they ever met the condition (static
    * evaluation). If unset or set to false, user evaluation for an Audience is
    * dynamic; users are added to an Audience when they meet the conditions and
    * then removed when they no longer meet them.
@@ -5950,9 +5901,9 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Optional. If set, specifies the time window for which to evaluate data in number of
-   * days. If not set, then audience data is evaluated against lifetime data
-   * (i.e., infinite time window).
+   * Optional. If set, specifies the time window for which to evaluate data in
+   * number of days. If not set, then audience data is evaluated against
+   * lifetime data (i.e., infinite time window).
    * For example, if set to 1 day, only the current day's data is evaluated. The
    * reference point is the current day when at_any_point_in_time is unset or
    * false.
@@ -7693,8 +7644,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Indicates whether this filter needs dynamic evaluation or not. If set to
-     * true, users join the Audience if they ever met the condition (static
+     * Optional. Indicates whether this filter needs dynamic evaluation or not. If
+     * set to true, users join the Audience if they ever met the condition (static
      * evaluation). If unset or set to false, user evaluation for an Audience is
      * dynamic; users are added to an Audience when they meet the conditions and
      * then removed when they no longer meet them.
@@ -7713,8 +7664,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Indicates whether this filter needs dynamic evaluation or not. If set to
-     * true, users join the Audience if they ever met the condition (static
+     * Optional. Indicates whether this filter needs dynamic evaluation or not. If
+     * set to true, users join the Audience if they ever met the condition (static
      * evaluation). If unset or set to false, user evaluation for an Audience is
      * dynamic; users are added to an Audience when they meet the conditions and
      * then removed when they no longer meet them.
@@ -7737,8 +7688,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Indicates whether this filter needs dynamic evaluation or not. If set to
-     * true, users join the Audience if they ever met the condition (static
+     * Optional. Indicates whether this filter needs dynamic evaluation or not. If
+     * set to true, users join the Audience if they ever met the condition (static
      * evaluation). If unset or set to false, user evaluation for an Audience is
      * dynamic; users are added to an Audience when they meet the conditions and
      * then removed when they no longer meet them.
@@ -7761,9 +7712,9 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. If set, specifies the time window for which to evaluate data in number of
-     * days. If not set, then audience data is evaluated against lifetime data
-     * (i.e., infinite time window).
+     * Optional. If set, specifies the time window for which to evaluate data in
+     * number of days. If not set, then audience data is evaluated against
+     * lifetime data (i.e., infinite time window).
      * For example, if set to 1 day, only the current day's data is evaluated. The
      * reference point is the current day when at_any_point_in_time is unset or
      * false.
@@ -7783,9 +7734,9 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. If set, specifies the time window for which to evaluate data in number of
-     * days. If not set, then audience data is evaluated against lifetime data
-     * (i.e., infinite time window).
+     * Optional. If set, specifies the time window for which to evaluate data in
+     * number of days. If not set, then audience data is evaluated against
+     * lifetime data (i.e., infinite time window).
      * For example, if set to 1 day, only the current day's data is evaluated. The
      * reference point is the current day when at_any_point_in_time is unset or
      * false.
@@ -7809,9 +7760,9 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. If set, specifies the time window for which to evaluate data in number of
-     * days. If not set, then audience data is evaluated against lifetime data
-     * (i.e., infinite time window).
+     * Optional. If set, specifies the time window for which to evaluate data in
+     * number of days. If not set, then audience data is evaluated against
+     * lifetime data (i.e., infinite time window).
      * For example, if set to 1 day, only the current day's data is evaluated. The
      * reference point is the current day when at_any_point_in_time is unset or
      * false.

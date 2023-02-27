@@ -22,6 +22,7 @@ import com.google.devtools.artifactregistry.v1.ArtifactRegistryClient;
 import com.google.devtools.artifactregistry.v1.ListPackagesRequest;
 import com.google.devtools.artifactregistry.v1.ListPackagesResponse;
 import com.google.devtools.artifactregistry.v1.Package;
+import com.google.devtools.artifactregistry.v1.RepositoryName;
 
 public class AsyncListPackagesPaged {
 
@@ -38,7 +39,7 @@ public class AsyncListPackagesPaged {
     try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
       ListPackagesRequest request =
           ListPackagesRequest.newBuilder()
-              .setParent("parent-995424086")
+              .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .build();

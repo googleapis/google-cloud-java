@@ -1148,7 +1148,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * resources (eg: GoogleAdsLinks, Streams, UserLinks) will be permanently purged.
    * https://support.google.com/analytics/answer/6154772
    *
-   * <p>Returns an error if the target is not found, or is not an GA4 Property.
+   * <p>Returns an error if the target is not found, or is not a GA4 Property.
    *
    * <p>Sample code:
    *
@@ -1186,7 +1186,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * resources (eg: GoogleAdsLinks, Streams, UserLinks) will be permanently purged.
    * https://support.google.com/analytics/answer/6154772
    *
-   * <p>Returns an error if the target is not found, or is not an GA4 Property.
+   * <p>Returns an error if the target is not found, or is not a GA4 Property.
    *
    * <p>Sample code:
    *
@@ -1223,7 +1223,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * resources (eg: GoogleAdsLinks, Streams, UserLinks) will be permanently purged.
    * https://support.google.com/analytics/answer/6154772
    *
-   * <p>Returns an error if the target is not found, or is not an GA4 Property.
+   * <p>Returns an error if the target is not found, or is not a GA4 Property.
    *
    * <p>Sample code:
    *
@@ -1261,7 +1261,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * resources (eg: GoogleAdsLinks, Streams, UserLinks) will be permanently purged.
    * https://support.google.com/analytics/answer/6154772
    *
-   * <p>Returns an error if the target is not found, or is not an GA4 Property.
+   * <p>Returns an error if the target is not found, or is not a GA4 Property.
    *
    * <p>Sample code:
    *
@@ -8876,7 +8876,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lookup for a single Audience. Audiences created before 2020 may not be supported.
+   * Lookup for a single Audience. Audiences created before 2020 may not be supported. Default
+   * audiences will not show filter definitions.
    *
    * <p>Sample code:
    *
@@ -8905,7 +8906,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lookup for a single Audience. Audiences created before 2020 may not be supported.
+   * Lookup for a single Audience. Audiences created before 2020 may not be supported. Default
+   * audiences will not show filter definitions.
    *
    * <p>Sample code:
    *
@@ -8933,7 +8935,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lookup for a single Audience. Audiences created before 2020 may not be supported.
+   * Lookup for a single Audience. Audiences created before 2020 may not be supported. Default
+   * audiences will not show filter definitions.
    *
    * <p>Sample code:
    *
@@ -8962,7 +8965,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lookup for a single Audience. Audiences created before 2020 may not be supported.
+   * Lookup for a single Audience. Audiences created before 2020 may not be supported. Default
+   * audiences will not show filter definitions.
    *
    * <p>Sample code:
    *
@@ -8991,7 +8995,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Audiences on a property. Audiences created before 2020 may not be supported.
+   * Lists Audiences on a property. Audiences created before 2020 may not be supported. Default
+   * audiences will not show filter definitions.
    *
    * <p>Sample code:
    *
@@ -9023,7 +9028,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Audiences on a property. Audiences created before 2020 may not be supported.
+   * Lists Audiences on a property. Audiences created before 2020 may not be supported. Default
+   * audiences will not show filter definitions.
    *
    * <p>Sample code:
    *
@@ -9052,7 +9058,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Audiences on a property. Audiences created before 2020 may not be supported.
+   * Lists Audiences on a property. Audiences created before 2020 may not be supported. Default
+   * audiences will not show filter definitions.
    *
    * <p>Sample code:
    *
@@ -9085,7 +9092,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Audiences on a property. Audiences created before 2020 may not be supported.
+   * Lists Audiences on a property. Audiences created before 2020 may not be supported. Default
+   * audiences will not show filter definitions.
    *
    * <p>Sample code:
    *
@@ -9119,7 +9127,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Audiences on a property. Audiences created before 2020 may not be supported.
+   * Lists Audiences on a property. Audiences created before 2020 may not be supported. Default
+   * audiences will not show filter definitions.
    *
    * <p>Sample code:
    *
@@ -9429,6 +9438,647 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ArchiveAudienceRequest, Empty> archiveAudienceCallable() {
     return stub.archiveAudienceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Look up a single SearchAds360Link
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   SearchAds360LinkName name = SearchAds360LinkName.of("[PROPERTY]", "[SEARCH_ADS_360_LINK]");
+   *   SearchAds360Link response = analyticsAdminServiceClient.getSearchAds360Link(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the SearchAds360Link to get. Example format:
+   *     properties/1234/SearchAds360Link/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchAds360Link getSearchAds360Link(SearchAds360LinkName name) {
+    GetSearchAds360LinkRequest request =
+        GetSearchAds360LinkRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getSearchAds360Link(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Look up a single SearchAds360Link
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = SearchAds360LinkName.of("[PROPERTY]", "[SEARCH_ADS_360_LINK]").toString();
+   *   SearchAds360Link response = analyticsAdminServiceClient.getSearchAds360Link(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the SearchAds360Link to get. Example format:
+   *     properties/1234/SearchAds360Link/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchAds360Link getSearchAds360Link(String name) {
+    GetSearchAds360LinkRequest request =
+        GetSearchAds360LinkRequest.newBuilder().setName(name).build();
+    return getSearchAds360Link(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Look up a single SearchAds360Link
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetSearchAds360LinkRequest request =
+   *       GetSearchAds360LinkRequest.newBuilder()
+   *           .setName(SearchAds360LinkName.of("[PROPERTY]", "[SEARCH_ADS_360_LINK]").toString())
+   *           .build();
+   *   SearchAds360Link response = analyticsAdminServiceClient.getSearchAds360Link(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchAds360Link getSearchAds360Link(GetSearchAds360LinkRequest request) {
+    return getSearchAds360LinkCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Look up a single SearchAds360Link
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetSearchAds360LinkRequest request =
+   *       GetSearchAds360LinkRequest.newBuilder()
+   *           .setName(SearchAds360LinkName.of("[PROPERTY]", "[SEARCH_ADS_360_LINK]").toString())
+   *           .build();
+   *   ApiFuture<SearchAds360Link> future =
+   *       analyticsAdminServiceClient.getSearchAds360LinkCallable().futureCall(request);
+   *   // Do something.
+   *   SearchAds360Link response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetSearchAds360LinkRequest, SearchAds360Link>
+      getSearchAds360LinkCallable() {
+    return stub.getSearchAds360LinkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all SearchAds360Links on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (SearchAds360Link element :
+   *       analyticsAdminServiceClient.listSearchAds360Links(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSearchAds360LinksPagedResponse listSearchAds360Links(PropertyName parent) {
+    ListSearchAds360LinksRequest request =
+        ListSearchAds360LinksRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listSearchAds360Links(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all SearchAds360Links on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   for (SearchAds360Link element :
+   *       analyticsAdminServiceClient.listSearchAds360Links(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSearchAds360LinksPagedResponse listSearchAds360Links(String parent) {
+    ListSearchAds360LinksRequest request =
+        ListSearchAds360LinksRequest.newBuilder().setParent(parent).build();
+    return listSearchAds360Links(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all SearchAds360Links on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListSearchAds360LinksRequest request =
+   *       ListSearchAds360LinksRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (SearchAds360Link element :
+   *       analyticsAdminServiceClient.listSearchAds360Links(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSearchAds360LinksPagedResponse listSearchAds360Links(
+      ListSearchAds360LinksRequest request) {
+    return listSearchAds360LinksPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all SearchAds360Links on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListSearchAds360LinksRequest request =
+   *       ListSearchAds360LinksRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<SearchAds360Link> future =
+   *       analyticsAdminServiceClient.listSearchAds360LinksPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (SearchAds360Link element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSearchAds360LinksRequest, ListSearchAds360LinksPagedResponse>
+      listSearchAds360LinksPagedCallable() {
+    return stub.listSearchAds360LinksPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all SearchAds360Links on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListSearchAds360LinksRequest request =
+   *       ListSearchAds360LinksRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListSearchAds360LinksResponse response =
+   *         analyticsAdminServiceClient.listSearchAds360LinksCallable().call(request);
+   *     for (SearchAds360Link element : response.getSearchAds360LinksList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSearchAds360LinksRequest, ListSearchAds360LinksResponse>
+      listSearchAds360LinksCallable() {
+    return stub.listSearchAds360LinksCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a SearchAds360Link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   SearchAds360Link searchAds360Link = SearchAds360Link.newBuilder().build();
+   *   SearchAds360Link response =
+   *       analyticsAdminServiceClient.createSearchAds360Link(parent, searchAds360Link);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @param searchAds360Link Required. The SearchAds360Link to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchAds360Link createSearchAds360Link(
+      PropertyName parent, SearchAds360Link searchAds360Link) {
+    CreateSearchAds360LinkRequest request =
+        CreateSearchAds360LinkRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setSearchAds360Link(searchAds360Link)
+            .build();
+    return createSearchAds360Link(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a SearchAds360Link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   SearchAds360Link searchAds360Link = SearchAds360Link.newBuilder().build();
+   *   SearchAds360Link response =
+   *       analyticsAdminServiceClient.createSearchAds360Link(parent, searchAds360Link);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @param searchAds360Link Required. The SearchAds360Link to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchAds360Link createSearchAds360Link(
+      String parent, SearchAds360Link searchAds360Link) {
+    CreateSearchAds360LinkRequest request =
+        CreateSearchAds360LinkRequest.newBuilder()
+            .setParent(parent)
+            .setSearchAds360Link(searchAds360Link)
+            .build();
+    return createSearchAds360Link(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a SearchAds360Link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateSearchAds360LinkRequest request =
+   *       CreateSearchAds360LinkRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setSearchAds360Link(SearchAds360Link.newBuilder().build())
+   *           .build();
+   *   SearchAds360Link response = analyticsAdminServiceClient.createSearchAds360Link(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchAds360Link createSearchAds360Link(CreateSearchAds360LinkRequest request) {
+    return createSearchAds360LinkCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a SearchAds360Link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateSearchAds360LinkRequest request =
+   *       CreateSearchAds360LinkRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setSearchAds360Link(SearchAds360Link.newBuilder().build())
+   *           .build();
+   *   ApiFuture<SearchAds360Link> future =
+   *       analyticsAdminServiceClient.createSearchAds360LinkCallable().futureCall(request);
+   *   // Do something.
+   *   SearchAds360Link response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateSearchAds360LinkRequest, SearchAds360Link>
+      createSearchAds360LinkCallable() {
+    return stub.createSearchAds360LinkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a SearchAds360Link on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   SearchAds360LinkName name = SearchAds360LinkName.of("[PROPERTY]", "[SEARCH_ADS_360_LINK]");
+   *   analyticsAdminServiceClient.deleteSearchAds360Link(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the SearchAds360Link to delete. Example format:
+   *     properties/1234/SearchAds360Links/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSearchAds360Link(SearchAds360LinkName name) {
+    DeleteSearchAds360LinkRequest request =
+        DeleteSearchAds360LinkRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteSearchAds360Link(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a SearchAds360Link on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = SearchAds360LinkName.of("[PROPERTY]", "[SEARCH_ADS_360_LINK]").toString();
+   *   analyticsAdminServiceClient.deleteSearchAds360Link(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the SearchAds360Link to delete. Example format:
+   *     properties/1234/SearchAds360Links/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSearchAds360Link(String name) {
+    DeleteSearchAds360LinkRequest request =
+        DeleteSearchAds360LinkRequest.newBuilder().setName(name).build();
+    deleteSearchAds360Link(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a SearchAds360Link on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteSearchAds360LinkRequest request =
+   *       DeleteSearchAds360LinkRequest.newBuilder()
+   *           .setName(SearchAds360LinkName.of("[PROPERTY]", "[SEARCH_ADS_360_LINK]").toString())
+   *           .build();
+   *   analyticsAdminServiceClient.deleteSearchAds360Link(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSearchAds360Link(DeleteSearchAds360LinkRequest request) {
+    deleteSearchAds360LinkCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a SearchAds360Link on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteSearchAds360LinkRequest request =
+   *       DeleteSearchAds360LinkRequest.newBuilder()
+   *           .setName(SearchAds360LinkName.of("[PROPERTY]", "[SEARCH_ADS_360_LINK]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.deleteSearchAds360LinkCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteSearchAds360LinkRequest, Empty>
+      deleteSearchAds360LinkCallable() {
+    return stub.deleteSearchAds360LinkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a SearchAds360Link on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   SearchAds360Link searchAds360Link = SearchAds360Link.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   SearchAds360Link response =
+   *       analyticsAdminServiceClient.updateSearchAds360Link(searchAds360Link, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param searchAds360Link The SearchAds360Link to update
+   * @param updateMask Required. The list of fields to be updated. Omitted fields will not be
+   *     updated. To replace the entire entity, use one path with the string "&#42;" to match all
+   *     fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchAds360Link updateSearchAds360Link(
+      SearchAds360Link searchAds360Link, FieldMask updateMask) {
+    UpdateSearchAds360LinkRequest request =
+        UpdateSearchAds360LinkRequest.newBuilder()
+            .setSearchAds360Link(searchAds360Link)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateSearchAds360Link(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a SearchAds360Link on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateSearchAds360LinkRequest request =
+   *       UpdateSearchAds360LinkRequest.newBuilder()
+   *           .setSearchAds360Link(SearchAds360Link.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   SearchAds360Link response = analyticsAdminServiceClient.updateSearchAds360Link(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchAds360Link updateSearchAds360Link(UpdateSearchAds360LinkRequest request) {
+    return updateSearchAds360LinkCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a SearchAds360Link on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateSearchAds360LinkRequest request =
+   *       UpdateSearchAds360LinkRequest.newBuilder()
+   *           .setSearchAds360Link(SearchAds360Link.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<SearchAds360Link> future =
+   *       analyticsAdminServiceClient.updateSearchAds360LinkCallable().futureCall(request);
+   *   // Do something.
+   *   SearchAds360Link response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateSearchAds360LinkRequest, SearchAds360Link>
+      updateSearchAds360LinkCallable() {
+    return stub.updateSearchAds360LinkCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -9747,6 +10397,432 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   public final UnaryCallable<RunAccessReportRequest, RunAccessReportResponse>
       runAccessReportCallable() {
     return stub.runAccessReportCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the opt out status for the automated GA4 setup process for a UA property. Note: this has
+   * no effect on GA4 property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   SetAutomatedGa4ConfigurationOptOutRequest request =
+   *       SetAutomatedGa4ConfigurationOptOutRequest.newBuilder()
+   *           .setProperty("property-993141291")
+   *           .setOptOut(true)
+   *           .build();
+   *   SetAutomatedGa4ConfigurationOptOutResponse response =
+   *       analyticsAdminServiceClient.setAutomatedGa4ConfigurationOptOut(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SetAutomatedGa4ConfigurationOptOutResponse setAutomatedGa4ConfigurationOptOut(
+      SetAutomatedGa4ConfigurationOptOutRequest request) {
+    return setAutomatedGa4ConfigurationOptOutCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the opt out status for the automated GA4 setup process for a UA property. Note: this has
+   * no effect on GA4 property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   SetAutomatedGa4ConfigurationOptOutRequest request =
+   *       SetAutomatedGa4ConfigurationOptOutRequest.newBuilder()
+   *           .setProperty("property-993141291")
+   *           .setOptOut(true)
+   *           .build();
+   *   ApiFuture<SetAutomatedGa4ConfigurationOptOutResponse> future =
+   *       analyticsAdminServiceClient
+   *           .setAutomatedGa4ConfigurationOptOutCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   SetAutomatedGa4ConfigurationOptOutResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
+      setAutomatedGa4ConfigurationOptOutCallable() {
+    return stub.setAutomatedGa4ConfigurationOptOutCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches the opt out status for the automated GA4 setup process for a UA property. Note: this
+   * has no effect on GA4 property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   FetchAutomatedGa4ConfigurationOptOutRequest request =
+   *       FetchAutomatedGa4ConfigurationOptOutRequest.newBuilder()
+   *           .setProperty("property-993141291")
+   *           .build();
+   *   FetchAutomatedGa4ConfigurationOptOutResponse response =
+   *       analyticsAdminServiceClient.fetchAutomatedGa4ConfigurationOptOut(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchAutomatedGa4ConfigurationOptOutResponse fetchAutomatedGa4ConfigurationOptOut(
+      FetchAutomatedGa4ConfigurationOptOutRequest request) {
+    return fetchAutomatedGa4ConfigurationOptOutCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches the opt out status for the automated GA4 setup process for a UA property. Note: this
+   * has no effect on GA4 property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   FetchAutomatedGa4ConfigurationOptOutRequest request =
+   *       FetchAutomatedGa4ConfigurationOptOutRequest.newBuilder()
+   *           .setProperty("property-993141291")
+   *           .build();
+   *   ApiFuture<FetchAutomatedGa4ConfigurationOptOutResponse> future =
+   *       analyticsAdminServiceClient
+   *           .fetchAutomatedGa4ConfigurationOptOutCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   FetchAutomatedGa4ConfigurationOptOutResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          FetchAutomatedGa4ConfigurationOptOutRequest, FetchAutomatedGa4ConfigurationOptOutResponse>
+      fetchAutomatedGa4ConfigurationOptOutCallable() {
+    return stub.fetchAutomatedGa4ConfigurationOptOutCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single BigQuery Link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   BigQueryLinkName name = BigQueryLinkName.of("[PROPERTY]", "[BIGQUERY_LINK]");
+   *   BigQueryLink response = analyticsAdminServiceClient.getBigQueryLink(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the BigQuery link to lookup. Format:
+   *     properties/{property_id}/bigQueryLinks/{bigquery_link_id} Example:
+   *     properties/123/bigQueryLinks/456
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BigQueryLink getBigQueryLink(BigQueryLinkName name) {
+    GetBigQueryLinkRequest request =
+        GetBigQueryLinkRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getBigQueryLink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single BigQuery Link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = BigQueryLinkName.of("[PROPERTY]", "[BIGQUERY_LINK]").toString();
+   *   BigQueryLink response = analyticsAdminServiceClient.getBigQueryLink(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the BigQuery link to lookup. Format:
+   *     properties/{property_id}/bigQueryLinks/{bigquery_link_id} Example:
+   *     properties/123/bigQueryLinks/456
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BigQueryLink getBigQueryLink(String name) {
+    GetBigQueryLinkRequest request = GetBigQueryLinkRequest.newBuilder().setName(name).build();
+    return getBigQueryLink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single BigQuery Link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetBigQueryLinkRequest request =
+   *       GetBigQueryLinkRequest.newBuilder()
+   *           .setName(BigQueryLinkName.of("[PROPERTY]", "[BIGQUERY_LINK]").toString())
+   *           .build();
+   *   BigQueryLink response = analyticsAdminServiceClient.getBigQueryLink(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BigQueryLink getBigQueryLink(GetBigQueryLinkRequest request) {
+    return getBigQueryLinkCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single BigQuery Link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetBigQueryLinkRequest request =
+   *       GetBigQueryLinkRequest.newBuilder()
+   *           .setName(BigQueryLinkName.of("[PROPERTY]", "[BIGQUERY_LINK]").toString())
+   *           .build();
+   *   ApiFuture<BigQueryLink> future =
+   *       analyticsAdminServiceClient.getBigQueryLinkCallable().futureCall(request);
+   *   // Do something.
+   *   BigQueryLink response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetBigQueryLinkRequest, BigQueryLink> getBigQueryLinkCallable() {
+    return stub.getBigQueryLinkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists BigQuery Links on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (BigQueryLink element :
+   *       analyticsAdminServiceClient.listBigQueryLinks(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the property to list BigQuery links under. Format:
+   *     properties/{property_id} Example: properties/1234
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBigQueryLinksPagedResponse listBigQueryLinks(PropertyName parent) {
+    ListBigQueryLinksRequest request =
+        ListBigQueryLinksRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listBigQueryLinks(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists BigQuery Links on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   for (BigQueryLink element :
+   *       analyticsAdminServiceClient.listBigQueryLinks(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the property to list BigQuery links under. Format:
+   *     properties/{property_id} Example: properties/1234
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBigQueryLinksPagedResponse listBigQueryLinks(String parent) {
+    ListBigQueryLinksRequest request =
+        ListBigQueryLinksRequest.newBuilder().setParent(parent).build();
+    return listBigQueryLinks(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists BigQuery Links on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListBigQueryLinksRequest request =
+   *       ListBigQueryLinksRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (BigQueryLink element :
+   *       analyticsAdminServiceClient.listBigQueryLinks(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBigQueryLinksPagedResponse listBigQueryLinks(ListBigQueryLinksRequest request) {
+    return listBigQueryLinksPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists BigQuery Links on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListBigQueryLinksRequest request =
+   *       ListBigQueryLinksRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<BigQueryLink> future =
+   *       analyticsAdminServiceClient.listBigQueryLinksPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (BigQueryLink element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListBigQueryLinksRequest, ListBigQueryLinksPagedResponse>
+      listBigQueryLinksPagedCallable() {
+    return stub.listBigQueryLinksPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists BigQuery Links on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListBigQueryLinksRequest request =
+   *       ListBigQueryLinksRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListBigQueryLinksResponse response =
+   *         analyticsAdminServiceClient.listBigQueryLinksCallable().call(request);
+   *     for (BigQueryLink element : response.getBigqueryLinksList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListBigQueryLinksRequest, ListBigQueryLinksResponse>
+      listBigQueryLinksCallable() {
+    return stub.listBigQueryLinksCallable();
   }
 
   @Override
@@ -11117,6 +12193,170 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     protected ListAudiencesFixedSizeCollection createCollection(
         List<ListAudiencesPage> pages, int collectionSize) {
       return new ListAudiencesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListSearchAds360LinksPagedResponse
+      extends AbstractPagedListResponse<
+          ListSearchAds360LinksRequest,
+          ListSearchAds360LinksResponse,
+          SearchAds360Link,
+          ListSearchAds360LinksPage,
+          ListSearchAds360LinksFixedSizeCollection> {
+
+    public static ApiFuture<ListSearchAds360LinksPagedResponse> createAsync(
+        PageContext<ListSearchAds360LinksRequest, ListSearchAds360LinksResponse, SearchAds360Link>
+            context,
+        ApiFuture<ListSearchAds360LinksResponse> futureResponse) {
+      ApiFuture<ListSearchAds360LinksPage> futurePage =
+          ListSearchAds360LinksPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListSearchAds360LinksPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListSearchAds360LinksPagedResponse(ListSearchAds360LinksPage page) {
+      super(page, ListSearchAds360LinksFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSearchAds360LinksPage
+      extends AbstractPage<
+          ListSearchAds360LinksRequest,
+          ListSearchAds360LinksResponse,
+          SearchAds360Link,
+          ListSearchAds360LinksPage> {
+
+    private ListSearchAds360LinksPage(
+        PageContext<ListSearchAds360LinksRequest, ListSearchAds360LinksResponse, SearchAds360Link>
+            context,
+        ListSearchAds360LinksResponse response) {
+      super(context, response);
+    }
+
+    private static ListSearchAds360LinksPage createEmptyPage() {
+      return new ListSearchAds360LinksPage(null, null);
+    }
+
+    @Override
+    protected ListSearchAds360LinksPage createPage(
+        PageContext<ListSearchAds360LinksRequest, ListSearchAds360LinksResponse, SearchAds360Link>
+            context,
+        ListSearchAds360LinksResponse response) {
+      return new ListSearchAds360LinksPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSearchAds360LinksPage> createPageAsync(
+        PageContext<ListSearchAds360LinksRequest, ListSearchAds360LinksResponse, SearchAds360Link>
+            context,
+        ApiFuture<ListSearchAds360LinksResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSearchAds360LinksFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSearchAds360LinksRequest,
+          ListSearchAds360LinksResponse,
+          SearchAds360Link,
+          ListSearchAds360LinksPage,
+          ListSearchAds360LinksFixedSizeCollection> {
+
+    private ListSearchAds360LinksFixedSizeCollection(
+        List<ListSearchAds360LinksPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSearchAds360LinksFixedSizeCollection createEmptyCollection() {
+      return new ListSearchAds360LinksFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSearchAds360LinksFixedSizeCollection createCollection(
+        List<ListSearchAds360LinksPage> pages, int collectionSize) {
+      return new ListSearchAds360LinksFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListBigQueryLinksPagedResponse
+      extends AbstractPagedListResponse<
+          ListBigQueryLinksRequest,
+          ListBigQueryLinksResponse,
+          BigQueryLink,
+          ListBigQueryLinksPage,
+          ListBigQueryLinksFixedSizeCollection> {
+
+    public static ApiFuture<ListBigQueryLinksPagedResponse> createAsync(
+        PageContext<ListBigQueryLinksRequest, ListBigQueryLinksResponse, BigQueryLink> context,
+        ApiFuture<ListBigQueryLinksResponse> futureResponse) {
+      ApiFuture<ListBigQueryLinksPage> futurePage =
+          ListBigQueryLinksPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListBigQueryLinksPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListBigQueryLinksPagedResponse(ListBigQueryLinksPage page) {
+      super(page, ListBigQueryLinksFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListBigQueryLinksPage
+      extends AbstractPage<
+          ListBigQueryLinksRequest,
+          ListBigQueryLinksResponse,
+          BigQueryLink,
+          ListBigQueryLinksPage> {
+
+    private ListBigQueryLinksPage(
+        PageContext<ListBigQueryLinksRequest, ListBigQueryLinksResponse, BigQueryLink> context,
+        ListBigQueryLinksResponse response) {
+      super(context, response);
+    }
+
+    private static ListBigQueryLinksPage createEmptyPage() {
+      return new ListBigQueryLinksPage(null, null);
+    }
+
+    @Override
+    protected ListBigQueryLinksPage createPage(
+        PageContext<ListBigQueryLinksRequest, ListBigQueryLinksResponse, BigQueryLink> context,
+        ListBigQueryLinksResponse response) {
+      return new ListBigQueryLinksPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListBigQueryLinksPage> createPageAsync(
+        PageContext<ListBigQueryLinksRequest, ListBigQueryLinksResponse, BigQueryLink> context,
+        ApiFuture<ListBigQueryLinksResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListBigQueryLinksFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListBigQueryLinksRequest,
+          ListBigQueryLinksResponse,
+          BigQueryLink,
+          ListBigQueryLinksPage,
+          ListBigQueryLinksFixedSizeCollection> {
+
+    private ListBigQueryLinksFixedSizeCollection(
+        List<ListBigQueryLinksPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListBigQueryLinksFixedSizeCollection createEmptyCollection() {
+      return new ListBigQueryLinksFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListBigQueryLinksFixedSizeCollection createCollection(
+        List<ListBigQueryLinksPage> pages, int collectionSize) {
+      return new ListBigQueryLinksFixedSizeCollection(pages, collectionSize);
     }
   }
 }

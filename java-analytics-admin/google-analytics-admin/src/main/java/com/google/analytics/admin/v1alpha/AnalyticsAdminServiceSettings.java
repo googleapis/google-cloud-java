@@ -20,6 +20,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Aud
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListBigQueryLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
@@ -30,6 +31,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
@@ -595,6 +597,38 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).archiveAudienceSettings();
   }
 
+  /** Returns the object with the settings used for calls to getSearchAds360Link. */
+  public UnaryCallSettings<GetSearchAds360LinkRequest, SearchAds360Link>
+      getSearchAds360LinkSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).getSearchAds360LinkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSearchAds360Links. */
+  public PagedCallSettings<
+          ListSearchAds360LinksRequest,
+          ListSearchAds360LinksResponse,
+          ListSearchAds360LinksPagedResponse>
+      listSearchAds360LinksSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).listSearchAds360LinksSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createSearchAds360Link. */
+  public UnaryCallSettings<CreateSearchAds360LinkRequest, SearchAds360Link>
+      createSearchAds360LinkSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).createSearchAds360LinkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSearchAds360Link. */
+  public UnaryCallSettings<DeleteSearchAds360LinkRequest, Empty> deleteSearchAds360LinkSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).deleteSearchAds360LinkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateSearchAds360Link. */
+  public UnaryCallSettings<UpdateSearchAds360LinkRequest, SearchAds360Link>
+      updateSearchAds360LinkSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).updateSearchAds360LinkSettings();
+  }
+
   /** Returns the object with the settings used for calls to getAttributionSettings. */
   public UnaryCallSettings<GetAttributionSettingsRequest, AttributionSettings>
       getAttributionSettingsSettings() {
@@ -612,6 +646,36 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
   public UnaryCallSettings<RunAccessReportRequest, RunAccessReportResponse>
       runAccessReportSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).runAccessReportSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setAutomatedGa4ConfigurationOptOut. */
+  public UnaryCallSettings<
+          SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
+      setAutomatedGa4ConfigurationOptOutSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .setAutomatedGa4ConfigurationOptOutSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to fetchAutomatedGa4ConfigurationOptOut.
+   */
+  public UnaryCallSettings<
+          FetchAutomatedGa4ConfigurationOptOutRequest, FetchAutomatedGa4ConfigurationOptOutResponse>
+      fetchAutomatedGa4ConfigurationOptOutSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .fetchAutomatedGa4ConfigurationOptOutSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getBigQueryLink. */
+  public UnaryCallSettings<GetBigQueryLinkRequest, BigQueryLink> getBigQueryLinkSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).getBigQueryLinkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listBigQueryLinks. */
+  public PagedCallSettings<
+          ListBigQueryLinksRequest, ListBigQueryLinksResponse, ListBigQueryLinksPagedResponse>
+      listBigQueryLinksSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).listBigQueryLinksSettings();
   }
 
   public static final AnalyticsAdminServiceSettings create(AnalyticsAdminServiceStubSettings stub)
@@ -1238,6 +1302,39 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
       return getStubSettingsBuilder().archiveAudienceSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getSearchAds360Link. */
+    public UnaryCallSettings.Builder<GetSearchAds360LinkRequest, SearchAds360Link>
+        getSearchAds360LinkSettings() {
+      return getStubSettingsBuilder().getSearchAds360LinkSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSearchAds360Links. */
+    public PagedCallSettings.Builder<
+            ListSearchAds360LinksRequest,
+            ListSearchAds360LinksResponse,
+            ListSearchAds360LinksPagedResponse>
+        listSearchAds360LinksSettings() {
+      return getStubSettingsBuilder().listSearchAds360LinksSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createSearchAds360Link. */
+    public UnaryCallSettings.Builder<CreateSearchAds360LinkRequest, SearchAds360Link>
+        createSearchAds360LinkSettings() {
+      return getStubSettingsBuilder().createSearchAds360LinkSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSearchAds360Link. */
+    public UnaryCallSettings.Builder<DeleteSearchAds360LinkRequest, Empty>
+        deleteSearchAds360LinkSettings() {
+      return getStubSettingsBuilder().deleteSearchAds360LinkSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateSearchAds360Link. */
+    public UnaryCallSettings.Builder<UpdateSearchAds360LinkRequest, SearchAds360Link>
+        updateSearchAds360LinkSettings() {
+      return getStubSettingsBuilder().updateSearchAds360LinkSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getAttributionSettings. */
     public UnaryCallSettings.Builder<GetAttributionSettingsRequest, AttributionSettings>
         getAttributionSettingsSettings() {
@@ -1254,6 +1351,38 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     public UnaryCallSettings.Builder<RunAccessReportRequest, RunAccessReportResponse>
         runAccessReportSettings() {
       return getStubSettingsBuilder().runAccessReportSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to setAutomatedGa4ConfigurationOptOut.
+     */
+    public UnaryCallSettings.Builder<
+            SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
+        setAutomatedGa4ConfigurationOptOutSettings() {
+      return getStubSettingsBuilder().setAutomatedGa4ConfigurationOptOutSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to fetchAutomatedGa4ConfigurationOptOut.
+     */
+    public UnaryCallSettings.Builder<
+            FetchAutomatedGa4ConfigurationOptOutRequest,
+            FetchAutomatedGa4ConfigurationOptOutResponse>
+        fetchAutomatedGa4ConfigurationOptOutSettings() {
+      return getStubSettingsBuilder().fetchAutomatedGa4ConfigurationOptOutSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getBigQueryLink. */
+    public UnaryCallSettings.Builder<GetBigQueryLinkRequest, BigQueryLink>
+        getBigQueryLinkSettings() {
+      return getStubSettingsBuilder().getBigQueryLinkSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listBigQueryLinks. */
+    public PagedCallSettings.Builder<
+            ListBigQueryLinksRequest, ListBigQueryLinksResponse, ListBigQueryLinksPagedResponse>
+        listBigQueryLinksSettings() {
+      return getStubSettingsBuilder().listBigQueryLinksSettings();
     }
 
     @Override

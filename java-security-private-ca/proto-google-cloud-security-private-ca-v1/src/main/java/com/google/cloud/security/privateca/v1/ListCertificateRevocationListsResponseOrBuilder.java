@@ -27,7 +27,8 @@ public interface ListCertificateRevocationListsResponseOrBuilder
    *
    *
    * <pre>
-   * The list of [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
+   * The list of
+   * [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
    * </pre>
    *
    * <code>
@@ -40,7 +41,8 @@ public interface ListCertificateRevocationListsResponseOrBuilder
    *
    *
    * <pre>
-   * The list of [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
+   * The list of
+   * [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
    * </pre>
    *
    * <code>
@@ -53,7 +55,8 @@ public interface ListCertificateRevocationListsResponseOrBuilder
    *
    *
    * <pre>
-   * The list of [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
+   * The list of
+   * [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
    * </pre>
    *
    * <code>
@@ -65,7 +68,8 @@ public interface ListCertificateRevocationListsResponseOrBuilder
    *
    *
    * <pre>
-   * The list of [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
+   * The list of
+   * [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
    * </pre>
    *
    * <code>
@@ -79,7 +83,8 @@ public interface ListCertificateRevocationListsResponseOrBuilder
    *
    *
    * <pre>
-   * The list of [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
+   * The list of
+   * [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
    * </pre>
    *
    * <code>

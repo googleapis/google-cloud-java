@@ -21,6 +21,7 @@ import com.google.api.core.ApiFuture;
 import com.google.devtools.artifactregistry.v1.ArtifactRegistryClient;
 import com.google.devtools.artifactregistry.v1.GetPackageRequest;
 import com.google.devtools.artifactregistry.v1.Package;
+import com.google.devtools.artifactregistry.v1.PackageName;
 
 public class AsyncGetPackage {
 
@@ -35,7 +36,11 @@ public class AsyncGetPackage {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
-      GetPackageRequest request = GetPackageRequest.newBuilder().setName("name3373707").build();
+      GetPackageRequest request =
+          GetPackageRequest.newBuilder()
+              .setName(
+                  PackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]").toString())
+              .build();
       ApiFuture<Package> future = artifactRegistryClient.getPackageCallable().futureCall(request);
       // Do something.
       Package response = future.get();

@@ -27,8 +27,9 @@ public interface FetchCertificateAuthorityCsrRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the
-   * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
+   * Required. The resource name for this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
    * </pre>
    *
    * <code>
@@ -42,8 +43,9 @@ public interface FetchCertificateAuthorityCsrRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the
-   * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
+   * Required. The resource name for this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
    * </pre>
    *
    * <code>

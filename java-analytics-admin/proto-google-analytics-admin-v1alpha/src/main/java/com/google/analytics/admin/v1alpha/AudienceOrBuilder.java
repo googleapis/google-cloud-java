@@ -104,8 +104,8 @@ public interface AudienceOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The duration a user should stay in an Audience. It cannot be set to more
-   * than 540 days.
+   * Required. Immutable. The duration a user should stay in an Audience. It
+   * cannot be set to more than 540 days.
    * </pre>
    *
    * <code>
@@ -120,8 +120,8 @@ public interface AudienceOrBuilder
    *
    *
    * <pre>
-   * Output only. It is automatically set by GA to false if this is an NPA Audience and is
-   * excluded from ads personalization.
+   * Output only. It is automatically set by GA to false if this is an NPA
+   * Audience and is excluded from ads personalization.
    * </pre>
    *
    * <code>bool ads_personalization_enabled = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -134,8 +134,8 @@ public interface AudienceOrBuilder
    *
    *
    * <pre>
-   * Optional. Specifies an event to log when a user joins the Audience. If not set, no
-   * event is logged when a user joins the Audience.
+   * Optional. Specifies an event to log when a user joins the Audience. If not
+   * set, no event is logged when a user joins the Audience.
    * </pre>
    *
    * <code>
@@ -149,8 +149,8 @@ public interface AudienceOrBuilder
    *
    *
    * <pre>
-   * Optional. Specifies an event to log when a user joins the Audience. If not set, no
-   * event is logged when a user joins the Audience.
+   * Optional. Specifies an event to log when a user joins the Audience. If not
+   * set, no event is logged when a user joins the Audience.
    * </pre>
    *
    * <code>
@@ -164,8 +164,8 @@ public interface AudienceOrBuilder
    *
    *
    * <pre>
-   * Optional. Specifies an event to log when a user joins the Audience. If not set, no
-   * event is logged when a user joins the Audience.
+   * Optional. Specifies an event to log when a user joins the Audience. If not
+   * set, no event is logged when a user joins the Audience.
    * </pre>
    *
    * <code>
@@ -178,9 +178,9 @@ public interface AudienceOrBuilder
    *
    *
    * <pre>
-   * Immutable. Specifies how long an exclusion lasts for users that meet the exclusion
-   * filter. It is applied to all EXCLUDE filter clauses and is ignored when
-   * there is no EXCLUDE filter clause in the Audience.
+   * Immutable. Specifies how long an exclusion lasts for users that meet the
+   * exclusion filter. It is applied to all EXCLUDE filter clauses and is
+   * ignored when there is no EXCLUDE filter clause in the Audience.
    * </pre>
    *
    * <code>
@@ -194,9 +194,9 @@ public interface AudienceOrBuilder
    *
    *
    * <pre>
-   * Immutable. Specifies how long an exclusion lasts for users that meet the exclusion
-   * filter. It is applied to all EXCLUDE filter clauses and is ignored when
-   * there is no EXCLUDE filter clause in the Audience.
+   * Immutable. Specifies how long an exclusion lasts for users that meet the
+   * exclusion filter. It is applied to all EXCLUDE filter clauses and is
+   * ignored when there is no EXCLUDE filter clause in the Audience.
    * </pre>
    *
    * <code>
@@ -212,8 +212,8 @@ public interface AudienceOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. null Filter clauses that define the Audience. All clauses will be AND’ed
-   * together.
+   * Required. Immutable. Unordered list. Filter clauses that define the
+   * Audience. All clauses will be AND’ed together.
    * </pre>
    *
    * <code>
@@ -225,8 +225,8 @@ public interface AudienceOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. null Filter clauses that define the Audience. All clauses will be AND’ed
-   * together.
+   * Required. Immutable. Unordered list. Filter clauses that define the
+   * Audience. All clauses will be AND’ed together.
    * </pre>
    *
    * <code>
@@ -238,8 +238,8 @@ public interface AudienceOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. null Filter clauses that define the Audience. All clauses will be AND’ed
-   * together.
+   * Required. Immutable. Unordered list. Filter clauses that define the
+   * Audience. All clauses will be AND’ed together.
    * </pre>
    *
    * <code>
@@ -251,8 +251,8 @@ public interface AudienceOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. null Filter clauses that define the Audience. All clauses will be AND’ed
-   * together.
+   * Required. Immutable. Unordered list. Filter clauses that define the
+   * Audience. All clauses will be AND’ed together.
    * </pre>
    *
    * <code>
@@ -265,8 +265,8 @@ public interface AudienceOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. null Filter clauses that define the Audience. All clauses will be AND’ed
-   * together.
+   * Required. Immutable. Unordered list. Filter clauses that define the
+   * Audience. All clauses will be AND’ed together.
    * </pre>
    *
    * <code>

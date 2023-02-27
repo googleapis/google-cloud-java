@@ -67,6 +67,957 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
             com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.Builder.class);
   }
 
+  public interface IngestConversationsStatsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.IngestConversationsStats)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of objects processed during the ingest operation.
+     * </pre>
+     *
+     * <code>int32 processed_object_count = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The processedObjectCount.
+     */
+    int getProcessedObjectCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of objects skipped because another conversation
+     * with the same transcript uri had already been ingested.
+     * </pre>
+     *
+     * <code>int32 duplicates_skipped_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The duplicatesSkippedCount.
+     */
+    int getDuplicatesSkippedCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of new conversations added during this ingest
+     * operation.
+     * </pre>
+     *
+     * <code>int32 successful_ingest_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The successfulIngestCount.
+     */
+    int getSuccessfulIngestCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of objects which were unable to be ingested due
+     * to errors. The errors are populated in the partial_errors field.
+     * </pre>
+     *
+     * <code>int32 failed_ingest_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The failedIngestCount.
+     */
+    int getFailedIngestCount();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Statistics for IngestConversations operation.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.IngestConversationsStats}
+   */
+  public static final class IngestConversationsStats extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.IngestConversationsStats)
+      IngestConversationsStatsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use IngestConversationsStats.newBuilder() to construct.
+    private IngestConversationsStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private IngestConversationsStats() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new IngestConversationsStats();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
+          .internal_static_google_cloud_contactcenterinsights_v1_IngestConversationsMetadata_IngestConversationsStats_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
+          .internal_static_google_cloud_contactcenterinsights_v1_IngestConversationsMetadata_IngestConversationsStats_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+                  .IngestConversationsStats.class,
+              com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+                  .IngestConversationsStats.Builder.class);
+    }
+
+    public static final int PROCESSED_OBJECT_COUNT_FIELD_NUMBER = 1;
+    private int processedObjectCount_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of objects processed during the ingest operation.
+     * </pre>
+     *
+     * <code>int32 processed_object_count = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The processedObjectCount.
+     */
+    @java.lang.Override
+    public int getProcessedObjectCount() {
+      return processedObjectCount_;
+    }
+
+    public static final int DUPLICATES_SKIPPED_COUNT_FIELD_NUMBER = 2;
+    private int duplicatesSkippedCount_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of objects skipped because another conversation
+     * with the same transcript uri had already been ingested.
+     * </pre>
+     *
+     * <code>int32 duplicates_skipped_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The duplicatesSkippedCount.
+     */
+    @java.lang.Override
+    public int getDuplicatesSkippedCount() {
+      return duplicatesSkippedCount_;
+    }
+
+    public static final int SUCCESSFUL_INGEST_COUNT_FIELD_NUMBER = 3;
+    private int successfulIngestCount_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of new conversations added during this ingest
+     * operation.
+     * </pre>
+     *
+     * <code>int32 successful_ingest_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The successfulIngestCount.
+     */
+    @java.lang.Override
+    public int getSuccessfulIngestCount() {
+      return successfulIngestCount_;
+    }
+
+    public static final int FAILED_INGEST_COUNT_FIELD_NUMBER = 4;
+    private int failedIngestCount_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of objects which were unable to be ingested due
+     * to errors. The errors are populated in the partial_errors field.
+     * </pre>
+     *
+     * <code>int32 failed_ingest_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The failedIngestCount.
+     */
+    @java.lang.Override
+    public int getFailedIngestCount() {
+      return failedIngestCount_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (processedObjectCount_ != 0) {
+        output.writeInt32(1, processedObjectCount_);
+      }
+      if (duplicatesSkippedCount_ != 0) {
+        output.writeInt32(2, duplicatesSkippedCount_);
+      }
+      if (successfulIngestCount_ != 0) {
+        output.writeInt32(3, successfulIngestCount_);
+      }
+      if (failedIngestCount_ != 0) {
+        output.writeInt32(4, failedIngestCount_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (processedObjectCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, processedObjectCount_);
+      }
+      if (duplicatesSkippedCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, duplicatesSkippedCount_);
+      }
+      if (successfulIngestCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, successfulIngestCount_);
+      }
+      if (failedIngestCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, failedIngestCount_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+              .IngestConversationsStats)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.IngestConversationsStats
+          other =
+              (com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+                      .IngestConversationsStats)
+                  obj;
+
+      if (getProcessedObjectCount() != other.getProcessedObjectCount()) return false;
+      if (getDuplicatesSkippedCount() != other.getDuplicatesSkippedCount()) return false;
+      if (getSuccessfulIngestCount() != other.getSuccessfulIngestCount()) return false;
+      if (getFailedIngestCount() != other.getFailedIngestCount()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PROCESSED_OBJECT_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getProcessedObjectCount();
+      hash = (37 * hash) + DUPLICATES_SKIPPED_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getDuplicatesSkippedCount();
+      hash = (37 * hash) + SUCCESSFUL_INGEST_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getSuccessfulIngestCount();
+      hash = (37 * hash) + FAILED_INGEST_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getFailedIngestCount();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+            .IngestConversationsStats
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+            .IngestConversationsStats
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+            .IngestConversationsStats
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+            .IngestConversationsStats
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+            .IngestConversationsStats
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+            .IngestConversationsStats
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+            .IngestConversationsStats
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+            .IngestConversationsStats
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+            .IngestConversationsStats
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+            .IngestConversationsStats
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+            .IngestConversationsStats
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+            .IngestConversationsStats
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+                .IngestConversationsStats
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Statistics for IngestConversations operation.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.IngestConversationsStats}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.IngestConversationsStats)
+        com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+            .IngestConversationsStatsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
+            .internal_static_google_cloud_contactcenterinsights_v1_IngestConversationsMetadata_IngestConversationsStats_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
+            .internal_static_google_cloud_contactcenterinsights_v1_IngestConversationsMetadata_IngestConversationsStats_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+                    .IngestConversationsStats.class,
+                com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+                    .IngestConversationsStats.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.IngestConversationsStats.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        processedObjectCount_ = 0;
+        duplicatesSkippedCount_ = 0;
+        successfulIngestCount_ = 0;
+        failedIngestCount_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
+            .internal_static_google_cloud_contactcenterinsights_v1_IngestConversationsMetadata_IngestConversationsStats_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+              .IngestConversationsStats
+          getDefaultInstanceForType() {
+        return com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+            .IngestConversationsStats.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+              .IngestConversationsStats
+          build() {
+        com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+                .IngestConversationsStats
+            result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+              .IngestConversationsStats
+          buildPartial() {
+        com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+                .IngestConversationsStats
+            result =
+                new com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+                    .IngestConversationsStats(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+                  .IngestConversationsStats
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.processedObjectCount_ = processedObjectCount_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.duplicatesSkippedCount_ = duplicatesSkippedCount_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.successfulIngestCount_ = successfulIngestCount_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.failedIngestCount_ = failedIngestCount_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+                .IngestConversationsStats) {
+          return mergeFrom(
+              (com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+                      .IngestConversationsStats)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+                  .IngestConversationsStats
+              other) {
+        if (other
+            == com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+                .IngestConversationsStats.getDefaultInstance()) return this;
+        if (other.getProcessedObjectCount() != 0) {
+          setProcessedObjectCount(other.getProcessedObjectCount());
+        }
+        if (other.getDuplicatesSkippedCount() != 0) {
+          setDuplicatesSkippedCount(other.getDuplicatesSkippedCount());
+        }
+        if (other.getSuccessfulIngestCount() != 0) {
+          setSuccessfulIngestCount(other.getSuccessfulIngestCount());
+        }
+        if (other.getFailedIngestCount() != 0) {
+          setFailedIngestCount(other.getFailedIngestCount());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  processedObjectCount_ = input.readInt32();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  duplicatesSkippedCount_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 24:
+                {
+                  successfulIngestCount_ = input.readInt32();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              case 32:
+                {
+                  failedIngestCount_ = input.readInt32();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int processedObjectCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of objects processed during the ingest operation.
+       * </pre>
+       *
+       * <code>int32 processed_object_count = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The processedObjectCount.
+       */
+      @java.lang.Override
+      public int getProcessedObjectCount() {
+        return processedObjectCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of objects processed during the ingest operation.
+       * </pre>
+       *
+       * <code>int32 processed_object_count = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The processedObjectCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProcessedObjectCount(int value) {
+
+        processedObjectCount_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of objects processed during the ingest operation.
+       * </pre>
+       *
+       * <code>int32 processed_object_count = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearProcessedObjectCount() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        processedObjectCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int duplicatesSkippedCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of objects skipped because another conversation
+       * with the same transcript uri had already been ingested.
+       * </pre>
+       *
+       * <code>int32 duplicates_skipped_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The duplicatesSkippedCount.
+       */
+      @java.lang.Override
+      public int getDuplicatesSkippedCount() {
+        return duplicatesSkippedCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of objects skipped because another conversation
+       * with the same transcript uri had already been ingested.
+       * </pre>
+       *
+       * <code>int32 duplicates_skipped_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The duplicatesSkippedCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDuplicatesSkippedCount(int value) {
+
+        duplicatesSkippedCount_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of objects skipped because another conversation
+       * with the same transcript uri had already been ingested.
+       * </pre>
+       *
+       * <code>int32 duplicates_skipped_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDuplicatesSkippedCount() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        duplicatesSkippedCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int successfulIngestCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of new conversations added during this ingest
+       * operation.
+       * </pre>
+       *
+       * <code>int32 successful_ingest_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The successfulIngestCount.
+       */
+      @java.lang.Override
+      public int getSuccessfulIngestCount() {
+        return successfulIngestCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of new conversations added during this ingest
+       * operation.
+       * </pre>
+       *
+       * <code>int32 successful_ingest_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The successfulIngestCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSuccessfulIngestCount(int value) {
+
+        successfulIngestCount_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of new conversations added during this ingest
+       * operation.
+       * </pre>
+       *
+       * <code>int32 successful_ingest_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSuccessfulIngestCount() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        successfulIngestCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int failedIngestCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of objects which were unable to be ingested due
+       * to errors. The errors are populated in the partial_errors field.
+       * </pre>
+       *
+       * <code>int32 failed_ingest_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The failedIngestCount.
+       */
+      @java.lang.Override
+      public int getFailedIngestCount() {
+        return failedIngestCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of objects which were unable to be ingested due
+       * to errors. The errors are populated in the partial_errors field.
+       * </pre>
+       *
+       * <code>int32 failed_ingest_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The failedIngestCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFailedIngestCount(int value) {
+
+        failedIngestCount_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of objects which were unable to be ingested due
+       * to errors. The errors are populated in the partial_errors field.
+       * </pre>
+       *
+       * <code>int32 failed_ingest_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFailedIngestCount() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        failedIngestCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.IngestConversationsStats)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.IngestConversationsStats)
+    private static final com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+            .IngestConversationsStats
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+              .IngestConversationsStats();
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+            .IngestConversationsStats
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<IngestConversationsStats> PARSER =
+        new com.google.protobuf.AbstractParser<IngestConversationsStats>() {
+          @java.lang.Override
+          public IngestConversationsStats parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<IngestConversationsStats> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<IngestConversationsStats> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+            .IngestConversationsStats
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int CREATE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp createTime_;
   /**
@@ -230,8 +1181,8 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Output only. Partial errors during ingest operation that might cause the operation
-   * output to be incomplete.
+   * Output only. Partial errors during ingest operation that might cause the
+   * operation output to be incomplete.
    * </pre>
    *
    * <code>
@@ -246,8 +1197,8 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Output only. Partial errors during ingest operation that might cause the operation
-   * output to be incomplete.
+   * Output only. Partial errors during ingest operation that might cause the
+   * operation output to be incomplete.
    * </pre>
    *
    * <code>
@@ -262,8 +1213,8 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Output only. Partial errors during ingest operation that might cause the operation
-   * output to be incomplete.
+   * Output only. Partial errors during ingest operation that might cause the
+   * operation output to be incomplete.
    * </pre>
    *
    * <code>
@@ -278,8 +1229,8 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Output only. Partial errors during ingest operation that might cause the operation
-   * output to be incomplete.
+   * Output only. Partial errors during ingest operation that might cause the
+   * operation output to be incomplete.
    * </pre>
    *
    * <code>
@@ -294,8 +1245,8 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Output only. Partial errors during ingest operation that might cause the operation
-   * output to be incomplete.
+   * Output only. Partial errors during ingest operation that might cause the
+   * operation output to be incomplete.
    * </pre>
    *
    * <code>
@@ -305,6 +1256,70 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getPartialErrorsOrBuilder(int index) {
     return partialErrors_.get(index);
+  }
+
+  public static final int INGEST_CONVERSATIONS_STATS_FIELD_NUMBER = 5;
+  private com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+          .IngestConversationsStats
+      ingestConversationsStats_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Statistics for IngestConversations operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.IngestConversationsStats ingest_conversations_stats = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the ingestConversationsStats field is set.
+   */
+  @java.lang.Override
+  public boolean hasIngestConversationsStats() {
+    return ingestConversationsStats_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Statistics for IngestConversations operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.IngestConversationsStats ingest_conversations_stats = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The ingestConversationsStats.
+   */
+  @java.lang.Override
+  public com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+          .IngestConversationsStats
+      getIngestConversationsStats() {
+    return ingestConversationsStats_ == null
+        ? com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+            .IngestConversationsStats.getDefaultInstance()
+        : ingestConversationsStats_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Statistics for IngestConversations operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.IngestConversationsStats ingest_conversations_stats = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+          .IngestConversationsStatsOrBuilder
+      getIngestConversationsStatsOrBuilder() {
+    return ingestConversationsStats_ == null
+        ? com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+            .IngestConversationsStats.getDefaultInstance()
+        : ingestConversationsStats_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -333,6 +1348,9 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
     for (int i = 0; i < partialErrors_.size(); i++) {
       output.writeMessage(4, partialErrors_.get(i));
     }
+    if (ingestConversationsStats_ != null) {
+      output.writeMessage(5, getIngestConversationsStats());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -353,6 +1371,11 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
     }
     for (int i = 0; i < partialErrors_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, partialErrors_.get(i));
+    }
+    if (ingestConversationsStats_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, getIngestConversationsStats());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -383,6 +1406,10 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       if (!getRequest().equals(other.getRequest())) return false;
     }
     if (!getPartialErrorsList().equals(other.getPartialErrorsList())) return false;
+    if (hasIngestConversationsStats() != other.hasIngestConversationsStats()) return false;
+    if (hasIngestConversationsStats()) {
+      if (!getIngestConversationsStats().equals(other.getIngestConversationsStats())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -409,6 +1436,10 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
     if (getPartialErrorsCount() > 0) {
       hash = (37 * hash) + PARTIAL_ERRORS_FIELD_NUMBER;
       hash = (53 * hash) + getPartialErrorsList().hashCode();
+    }
+    if (hasIngestConversationsStats()) {
+      hash = (37 * hash) + INGEST_CONVERSATIONS_STATS_FIELD_NUMBER;
+      hash = (53 * hash) + getIngestConversationsStats().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -574,6 +1605,11 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
         partialErrorsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000008);
+      ingestConversationsStats_ = null;
+      if (ingestConversationsStatsBuilder_ != null) {
+        ingestConversationsStatsBuilder_.dispose();
+        ingestConversationsStatsBuilder_ = null;
+      }
       return this;
     }
 
@@ -635,6 +1671,12 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.request_ = requestBuilder_ == null ? request_ : requestBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.ingestConversationsStats_ =
+            ingestConversationsStatsBuilder_ == null
+                ? ingestConversationsStats_
+                : ingestConversationsStatsBuilder_.build();
       }
     }
 
@@ -723,6 +1765,9 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
           }
         }
       }
+      if (other.hasIngestConversationsStats()) {
+        mergeIngestConversationsStats(other.getIngestConversationsStats());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -779,6 +1824,13 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
                 }
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getIngestConversationsStatsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1416,8 +2468,8 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. Partial errors during ingest operation that might cause the operation
-     * output to be incomplete.
+     * Output only. Partial errors during ingest operation that might cause the
+     * operation output to be incomplete.
      * </pre>
      *
      * <code>
@@ -1435,8 +2487,8 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. Partial errors during ingest operation that might cause the operation
-     * output to be incomplete.
+     * Output only. Partial errors during ingest operation that might cause the
+     * operation output to be incomplete.
      * </pre>
      *
      * <code>
@@ -1454,8 +2506,8 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. Partial errors during ingest operation that might cause the operation
-     * output to be incomplete.
+     * Output only. Partial errors during ingest operation that might cause the
+     * operation output to be incomplete.
      * </pre>
      *
      * <code>
@@ -1473,8 +2525,8 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. Partial errors during ingest operation that might cause the operation
-     * output to be incomplete.
+     * Output only. Partial errors during ingest operation that might cause the
+     * operation output to be incomplete.
      * </pre>
      *
      * <code>
@@ -1498,8 +2550,8 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. Partial errors during ingest operation that might cause the operation
-     * output to be incomplete.
+     * Output only. Partial errors during ingest operation that might cause the
+     * operation output to be incomplete.
      * </pre>
      *
      * <code>
@@ -1520,8 +2572,8 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. Partial errors during ingest operation that might cause the operation
-     * output to be incomplete.
+     * Output only. Partial errors during ingest operation that might cause the
+     * operation output to be incomplete.
      * </pre>
      *
      * <code>
@@ -1545,8 +2597,8 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. Partial errors during ingest operation that might cause the operation
-     * output to be incomplete.
+     * Output only. Partial errors during ingest operation that might cause the
+     * operation output to be incomplete.
      * </pre>
      *
      * <code>
@@ -1570,8 +2622,8 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. Partial errors during ingest operation that might cause the operation
-     * output to be incomplete.
+     * Output only. Partial errors during ingest operation that might cause the
+     * operation output to be incomplete.
      * </pre>
      *
      * <code>
@@ -1592,8 +2644,8 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. Partial errors during ingest operation that might cause the operation
-     * output to be incomplete.
+     * Output only. Partial errors during ingest operation that might cause the
+     * operation output to be incomplete.
      * </pre>
      *
      * <code>
@@ -1614,8 +2666,8 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. Partial errors during ingest operation that might cause the operation
-     * output to be incomplete.
+     * Output only. Partial errors during ingest operation that might cause the
+     * operation output to be incomplete.
      * </pre>
      *
      * <code>
@@ -1636,8 +2688,8 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. Partial errors during ingest operation that might cause the operation
-     * output to be incomplete.
+     * Output only. Partial errors during ingest operation that might cause the
+     * operation output to be incomplete.
      * </pre>
      *
      * <code>
@@ -1658,8 +2710,8 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. Partial errors during ingest operation that might cause the operation
-     * output to be incomplete.
+     * Output only. Partial errors during ingest operation that might cause the
+     * operation output to be incomplete.
      * </pre>
      *
      * <code>
@@ -1680,8 +2732,8 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. Partial errors during ingest operation that might cause the operation
-     * output to be incomplete.
+     * Output only. Partial errors during ingest operation that might cause the
+     * operation output to be incomplete.
      * </pre>
      *
      * <code>
@@ -1695,8 +2747,8 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. Partial errors during ingest operation that might cause the operation
-     * output to be incomplete.
+     * Output only. Partial errors during ingest operation that might cause the
+     * operation output to be incomplete.
      * </pre>
      *
      * <code>
@@ -1714,8 +2766,8 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. Partial errors during ingest operation that might cause the operation
-     * output to be incomplete.
+     * Output only. Partial errors during ingest operation that might cause the
+     * operation output to be incomplete.
      * </pre>
      *
      * <code>
@@ -1734,8 +2786,8 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. Partial errors during ingest operation that might cause the operation
-     * output to be incomplete.
+     * Output only. Partial errors during ingest operation that might cause the
+     * operation output to be incomplete.
      * </pre>
      *
      * <code>
@@ -1749,8 +2801,8 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. Partial errors during ingest operation that might cause the operation
-     * output to be incomplete.
+     * Output only. Partial errors during ingest operation that might cause the
+     * operation output to be incomplete.
      * </pre>
      *
      * <code>
@@ -1765,8 +2817,8 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. Partial errors during ingest operation that might cause the operation
-     * output to be incomplete.
+     * Output only. Partial errors during ingest operation that might cause the
+     * operation output to be incomplete.
      * </pre>
      *
      * <code>
@@ -1793,6 +2845,237 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
         partialErrors_ = null;
       }
       return partialErrorsBuilder_;
+    }
+
+    private com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+            .IngestConversationsStats
+        ingestConversationsStats_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+                .IngestConversationsStats,
+            com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+                .IngestConversationsStats.Builder,
+            com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+                .IngestConversationsStatsOrBuilder>
+        ingestConversationsStatsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics for IngestConversations operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.IngestConversationsStats ingest_conversations_stats = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the ingestConversationsStats field is set.
+     */
+    public boolean hasIngestConversationsStats() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics for IngestConversations operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.IngestConversationsStats ingest_conversations_stats = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The ingestConversationsStats.
+     */
+    public com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+            .IngestConversationsStats
+        getIngestConversationsStats() {
+      if (ingestConversationsStatsBuilder_ == null) {
+        return ingestConversationsStats_ == null
+            ? com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+                .IngestConversationsStats.getDefaultInstance()
+            : ingestConversationsStats_;
+      } else {
+        return ingestConversationsStatsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics for IngestConversations operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.IngestConversationsStats ingest_conversations_stats = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setIngestConversationsStats(
+        com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+                .IngestConversationsStats
+            value) {
+      if (ingestConversationsStatsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ingestConversationsStats_ = value;
+      } else {
+        ingestConversationsStatsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics for IngestConversations operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.IngestConversationsStats ingest_conversations_stats = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setIngestConversationsStats(
+        com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+                .IngestConversationsStats.Builder
+            builderForValue) {
+      if (ingestConversationsStatsBuilder_ == null) {
+        ingestConversationsStats_ = builderForValue.build();
+      } else {
+        ingestConversationsStatsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics for IngestConversations operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.IngestConversationsStats ingest_conversations_stats = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeIngestConversationsStats(
+        com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+                .IngestConversationsStats
+            value) {
+      if (ingestConversationsStatsBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && ingestConversationsStats_ != null
+            && ingestConversationsStats_
+                != com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+                    .IngestConversationsStats.getDefaultInstance()) {
+          getIngestConversationsStatsBuilder().mergeFrom(value);
+        } else {
+          ingestConversationsStats_ = value;
+        }
+      } else {
+        ingestConversationsStatsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics for IngestConversations operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.IngestConversationsStats ingest_conversations_stats = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearIngestConversationsStats() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      ingestConversationsStats_ = null;
+      if (ingestConversationsStatsBuilder_ != null) {
+        ingestConversationsStatsBuilder_.dispose();
+        ingestConversationsStatsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics for IngestConversations operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.IngestConversationsStats ingest_conversations_stats = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+            .IngestConversationsStats.Builder
+        getIngestConversationsStatsBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getIngestConversationsStatsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics for IngestConversations operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.IngestConversationsStats ingest_conversations_stats = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+            .IngestConversationsStatsOrBuilder
+        getIngestConversationsStatsOrBuilder() {
+      if (ingestConversationsStatsBuilder_ != null) {
+        return ingestConversationsStatsBuilder_.getMessageOrBuilder();
+      } else {
+        return ingestConversationsStats_ == null
+            ? com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+                .IngestConversationsStats.getDefaultInstance()
+            : ingestConversationsStats_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics for IngestConversations operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.IngestConversationsStats ingest_conversations_stats = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+                .IngestConversationsStats,
+            com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+                .IngestConversationsStats.Builder,
+            com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+                .IngestConversationsStatsOrBuilder>
+        getIngestConversationsStatsFieldBuilder() {
+      if (ingestConversationsStatsBuilder_ == null) {
+        ingestConversationsStatsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+                    .IngestConversationsStats,
+                com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+                    .IngestConversationsStats.Builder,
+                com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+                    .IngestConversationsStatsOrBuilder>(
+                getIngestConversationsStats(), getParentForChildren(), isClean());
+        ingestConversationsStats_ = null;
+      }
+      return ingestConversationsStatsBuilder_;
     }
 
     @java.lang.Override

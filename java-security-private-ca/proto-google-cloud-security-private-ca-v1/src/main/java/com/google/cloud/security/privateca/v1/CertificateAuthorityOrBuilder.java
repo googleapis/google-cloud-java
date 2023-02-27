@@ -27,8 +27,9 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the
-   * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
+   * Output only. The resource name for this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -40,8 +41,9 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the
-   * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
+   * Output only. The resource name for this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -54,7 +56,10 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The [Type][google.cloud.security.privateca.v1.CertificateAuthority.Type] of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+   * Required. Immutable. The
+   * [Type][google.cloud.security.privateca.v1.CertificateAuthority.Type] of
+   * this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
    * </pre>
    *
    * <code>
@@ -68,7 +73,10 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The [Type][google.cloud.security.privateca.v1.CertificateAuthority.Type] of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+   * Required. Immutable. The
+   * [Type][google.cloud.security.privateca.v1.CertificateAuthority.Type] of
+   * this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
    * </pre>
    *
    * <code>
@@ -83,7 +91,8 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The config used to create a self-signed X.509 certificate or CSR.
+   * Required. Immutable. The config used to create a self-signed X.509
+   * certificate or CSR.
    * </pre>
    *
    * <code>
@@ -97,7 +106,8 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The config used to create a self-signed X.509 certificate or CSR.
+   * Required. Immutable. The config used to create a self-signed X.509
+   * certificate or CSR.
    * </pre>
    *
    * <code>
@@ -111,7 +121,8 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The config used to create a self-signed X.509 certificate or CSR.
+   * Required. Immutable. The config used to create a self-signed X.509
+   * certificate or CSR.
    * </pre>
    *
    * <code>
@@ -124,8 +135,8 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The desired lifetime of the CA certificate. Used to create the
-   * "not_before_time" and "not_after_time" fields inside an X.509
+   * Required. Immutable. The desired lifetime of the CA certificate. Used to
+   * create the "not_before_time" and "not_after_time" fields inside an X.509
    * certificate.
    * </pre>
    *
@@ -140,8 +151,8 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The desired lifetime of the CA certificate. Used to create the
-   * "not_before_time" and "not_after_time" fields inside an X.509
+   * Required. Immutable. The desired lifetime of the CA certificate. Used to
+   * create the "not_before_time" and "not_after_time" fields inside an X.509
    * certificate.
    * </pre>
    *
@@ -156,8 +167,8 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The desired lifetime of the CA certificate. Used to create the
-   * "not_before_time" and "not_after_time" fields inside an X.509
+   * Required. Immutable. The desired lifetime of the CA certificate. Used to
+   * create the "not_before_time" and "not_after_time" fields inside an X.509
    * certificate.
    * </pre>
    *
@@ -171,10 +182,12 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. Used when issuing certificates for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. If this
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] is a self-signed CertificateAuthority, this key
-   * is also used to sign the self-signed CA certificate. Otherwise, it
-   * is used to sign a CSR.
+   * Required. Immutable. Used when issuing certificates for this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+   * If this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * is a self-signed CertificateAuthority, this key is also used to sign the
+   * self-signed CA certificate. Otherwise, it is used to sign a CSR.
    * </pre>
    *
    * <code>
@@ -188,10 +201,12 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. Used when issuing certificates for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. If this
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] is a self-signed CertificateAuthority, this key
-   * is also used to sign the self-signed CA certificate. Otherwise, it
-   * is used to sign a CSR.
+   * Required. Immutable. Used when issuing certificates for this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+   * If this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * is a self-signed CertificateAuthority, this key is also used to sign the
+   * self-signed CA certificate. Otherwise, it is used to sign a CSR.
    * </pre>
    *
    * <code>
@@ -205,10 +220,12 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. Used when issuing certificates for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. If this
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] is a self-signed CertificateAuthority, this key
-   * is also used to sign the self-signed CA certificate. Otherwise, it
-   * is used to sign a CSR.
+   * Required. Immutable. Used when issuing certificates for this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+   * If this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * is a self-signed CertificateAuthority, this key is also used to sign the
+   * self-signed CA certificate. Otherwise, it is used to sign a CSR.
    * </pre>
    *
    * <code>
@@ -222,9 +239,12 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Optional. If this is a subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], this field will be set
-   * with the subordinate configuration, which describes its issuers. This may
-   * be updated, but this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] must continue to validate.
+   * Optional. If this is a subordinate
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+   * this field will be set with the subordinate configuration, which describes
+   * its issuers. This may be updated, but this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * must continue to validate.
    * </pre>
    *
    * <code>
@@ -238,9 +258,12 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Optional. If this is a subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], this field will be set
-   * with the subordinate configuration, which describes its issuers. This may
-   * be updated, but this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] must continue to validate.
+   * Optional. If this is a subordinate
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+   * this field will be set with the subordinate configuration, which describes
+   * its issuers. This may be updated, but this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * must continue to validate.
    * </pre>
    *
    * <code>
@@ -254,9 +277,12 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Optional. If this is a subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], this field will be set
-   * with the subordinate configuration, which describes its issuers. This may
-   * be updated, but this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] must continue to validate.
+   * Optional. If this is a subordinate
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+   * this field will be set with the subordinate configuration, which describes
+   * its issuers. This may be updated, but this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * must continue to validate.
    * </pre>
    *
    * <code>
@@ -269,7 +295,9 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. The [CaPool.Tier][google.cloud.security.privateca.v1.CaPool.Tier] of the [CaPool][google.cloud.security.privateca.v1.CaPool] that includes this
+   * Output only. The
+   * [CaPool.Tier][google.cloud.security.privateca.v1.CaPool.Tier] of the
+   * [CaPool][google.cloud.security.privateca.v1.CaPool] that includes this
    * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
    * </pre>
    *
@@ -284,7 +312,9 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. The [CaPool.Tier][google.cloud.security.privateca.v1.CaPool.Tier] of the [CaPool][google.cloud.security.privateca.v1.CaPool] that includes this
+   * Output only. The
+   * [CaPool.Tier][google.cloud.security.privateca.v1.CaPool.Tier] of the
+   * [CaPool][google.cloud.security.privateca.v1.CaPool] that includes this
    * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
    * </pre>
    *
@@ -300,7 +330,10 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. The [State][google.cloud.security.privateca.v1.CertificateAuthority.State] for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+   * Output only. The
+   * [State][google.cloud.security.privateca.v1.CertificateAuthority.State] for
+   * this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
    * </pre>
    *
    * <code>
@@ -314,7 +347,10 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. The [State][google.cloud.security.privateca.v1.CertificateAuthority.State] for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+   * Output only. The
+   * [State][google.cloud.security.privateca.v1.CertificateAuthority.State] for
+   * this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
    * </pre>
    *
    * <code>
@@ -329,10 +365,15 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. This [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate chain, including the current
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate. Ordered such that the root issuer
-   * is the final element (consistent with RFC 5246). For a self-signed CA, this
-   * will only list the current [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate.
+   * Output only. This
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * certificate chain, including the current
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * certificate. Ordered such that the root issuer is the final element
+   * (consistent with RFC 5246). For a self-signed CA, this will only list the
+   * current
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * certificate.
    * </pre>
    *
    * <code>repeated string pem_ca_certificates = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -345,10 +386,15 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. This [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate chain, including the current
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate. Ordered such that the root issuer
-   * is the final element (consistent with RFC 5246). For a self-signed CA, this
-   * will only list the current [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate.
+   * Output only. This
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * certificate chain, including the current
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * certificate. Ordered such that the root issuer is the final element
+   * (consistent with RFC 5246). For a self-signed CA, this will only list the
+   * current
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * certificate.
    * </pre>
    *
    * <code>repeated string pem_ca_certificates = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -361,10 +407,15 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. This [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate chain, including the current
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate. Ordered such that the root issuer
-   * is the final element (consistent with RFC 5246). For a self-signed CA, this
-   * will only list the current [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate.
+   * Output only. This
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * certificate chain, including the current
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * certificate. Ordered such that the root issuer is the final element
+   * (consistent with RFC 5246). For a self-signed CA, this will only list the
+   * current
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * certificate.
    * </pre>
    *
    * <code>repeated string pem_ca_certificates = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -378,10 +429,15 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. This [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate chain, including the current
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate. Ordered such that the root issuer
-   * is the final element (consistent with RFC 5246). For a self-signed CA, this
-   * will only list the current [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate.
+   * Output only. This
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * certificate chain, including the current
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * certificate. Ordered such that the root issuer is the final element
+   * (consistent with RFC 5246). For a self-signed CA, this will only list the
+   * current
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * certificate.
    * </pre>
    *
    * <code>repeated string pem_ca_certificates = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -396,8 +452,9 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. A structured description of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate
-   * and its issuers. Ordered as self-to-root.
+   * Output only. A structured description of this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * CA certificate and its issuers. Ordered as self-to-root.
    * </pre>
    *
    * <code>
@@ -410,8 +467,9 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. A structured description of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate
-   * and its issuers. Ordered as self-to-root.
+   * Output only. A structured description of this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * CA certificate and its issuers. Ordered as self-to-root.
    * </pre>
    *
    * <code>
@@ -424,8 +482,9 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. A structured description of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate
-   * and its issuers. Ordered as self-to-root.
+   * Output only. A structured description of this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * CA certificate and its issuers. Ordered as self-to-root.
    * </pre>
    *
    * <code>
@@ -437,8 +496,9 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. A structured description of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate
-   * and its issuers. Ordered as self-to-root.
+   * Output only. A structured description of this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * CA certificate and its issuers. Ordered as self-to-root.
    * </pre>
    *
    * <code>
@@ -451,8 +511,9 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. A structured description of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate
-   * and its issuers. Ordered as self-to-root.
+   * Output only. A structured description of this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * CA certificate and its issuers. Ordered as self-to-root.
    * </pre>
    *
    * <code>
@@ -466,9 +527,10 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Immutable. The name of a Cloud Storage bucket where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] will
-   * publish content, such as the CA certificate and CRLs. This must be a bucket
-   * name, without any prefixes (such as `gs://`) or suffixes (such as
+   * Immutable. The name of a Cloud Storage bucket where this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * will publish content, such as the CA certificate and CRLs. This must be a
+   * bucket name, without any prefixes (such as `gs://`) or suffixes (such as
    * `.googleapis.com`). For example, to use a bucket named `my-bucket`, you
    * would simply specify `my-bucket`. If not specified, a managed bucket will
    * be created.
@@ -483,9 +545,10 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Immutable. The name of a Cloud Storage bucket where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] will
-   * publish content, such as the CA certificate and CRLs. This must be a bucket
-   * name, without any prefixes (such as `gs://`) or suffixes (such as
+   * Immutable. The name of a Cloud Storage bucket where this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * will publish content, such as the CA certificate and CRLs. This must be a
+   * bucket name, without any prefixes (such as `gs://`) or suffixes (such as
    * `.googleapis.com`). For example, to use a bucket named `my-bucket`, you
    * would simply specify `my-bucket`. If not specified, a managed bucket will
    * be created.
@@ -501,8 +564,8 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. URLs for accessing content published by this CA, such as the CA certificate
-   * and CRLs.
+   * Output only. URLs for accessing content published by this CA, such as the
+   * CA certificate and CRLs.
    * </pre>
    *
    * <code>
@@ -516,8 +579,8 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. URLs for accessing content published by this CA, such as the CA certificate
-   * and CRLs.
+   * Output only. URLs for accessing content published by this CA, such as the
+   * CA certificate and CRLs.
    * </pre>
    *
    * <code>
@@ -531,8 +594,8 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. URLs for accessing content published by this CA, such as the CA certificate
-   * and CRLs.
+   * Output only. URLs for accessing content published by this CA, such as the
+   * CA certificate and CRLs.
    * </pre>
    *
    * <code>
@@ -546,7 +609,9 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was created.
+   * Output only. The time at which this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -559,7 +624,9 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was created.
+   * Output only. The time at which this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -572,7 +639,9 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was created.
+   * Output only. The time at which this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -584,7 +653,9 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was last updated.
+   * Output only. The time at which this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * was last updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -597,7 +668,9 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was last updated.
+   * Output only. The time at which this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * was last updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -610,7 +683,9 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was last updated.
+   * Output only. The time at which this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * was last updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -622,8 +697,11 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was soft deleted, if
-   * it is in the [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED] state.
+   * Output only. The time at which this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * was soft deleted, if it is in the
+   * [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED]
+   * state.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -636,8 +714,11 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was soft deleted, if
-   * it is in the [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED] state.
+   * Output only. The time at which this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * was soft deleted, if it is in the
+   * [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED]
+   * state.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -650,8 +731,11 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was soft deleted, if
-   * it is in the [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED] state.
+   * Output only. The time at which this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * was soft deleted, if it is in the
+   * [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED]
+   * state.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -663,8 +747,11 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] will be permanently purged,
-   * if it is in the [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED] state.
+   * Output only. The time at which this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * will be permanently purged, if it is in the
+   * [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED]
+   * state.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -677,8 +764,11 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] will be permanently purged,
-   * if it is in the [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED] state.
+   * Output only. The time at which this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * will be permanently purged, if it is in the
+   * [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED]
+   * state.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -691,8 +781,11 @@ public interface CertificateAuthorityOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] will be permanently purged,
-   * if it is in the [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED] state.
+   * Output only. The time at which this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * will be permanently purged, if it is in the
+   * [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED]
+   * state.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];

@@ -54,8 +54,8 @@ public interface GcsSourceOrBuilder
    *
    *
    * <pre>
-   * Immutable. Cloud Storage URI that points to a file that contains the conversation
-   * transcript.
+   * Immutable. Cloud Storage URI that points to a file that contains the
+   * conversation transcript.
    * </pre>
    *
    * <code>string transcript_uri = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -67,8 +67,8 @@ public interface GcsSourceOrBuilder
    *
    *
    * <pre>
-   * Immutable. Cloud Storage URI that points to a file that contains the conversation
-   * transcript.
+   * Immutable. Cloud Storage URI that points to a file that contains the
+   * conversation transcript.
    * </pre>
    *
    * <code>string transcript_uri = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>

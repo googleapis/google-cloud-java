@@ -22,8 +22,10 @@ package com.google.cloud.security.privateca.v1;
  *
  *
  * <pre>
- * A [CertificateDescription][google.cloud.security.privateca.v1.CertificateDescription] describes an X.509 certificate or CSR that has
- * been issued, as an alternative to using ASN.1 / X.509.
+ * A
+ * [CertificateDescription][google.cloud.security.privateca.v1.CertificateDescription]
+ * describes an X.509 certificate or CSR that has been issued, as an alternative
+ * to using ASN.1 / X.509.
  * </pre>
  *
  * Protobuf type {@code google.cloud.security.privateca.v1.CertificateDescription}
@@ -2320,8 +2322,8 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The value of this KeyId encoded in lowercase hexadecimal. This is most
-     * likely the 160 bit SHA-1 hash of the public key.
+     * Optional. The value of this KeyId encoded in lowercase hexadecimal. This
+     * is most likely the 160 bit SHA-1 hash of the public key.
      * </pre>
      *
      * <code>string key_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2333,8 +2335,8 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The value of this KeyId encoded in lowercase hexadecimal. This is most
-     * likely the 160 bit SHA-1 hash of the public key.
+     * Optional. The value of this KeyId encoded in lowercase hexadecimal. This
+     * is most likely the 160 bit SHA-1 hash of the public key.
      * </pre>
      *
      * <code>string key_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2401,8 +2403,8 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The value of this KeyId encoded in lowercase hexadecimal. This is most
-     * likely the 160 bit SHA-1 hash of the public key.
+     * Optional. The value of this KeyId encoded in lowercase hexadecimal. This
+     * is most likely the 160 bit SHA-1 hash of the public key.
      * </pre>
      *
      * <code>string key_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2425,8 +2427,8 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The value of this KeyId encoded in lowercase hexadecimal. This is most
-     * likely the 160 bit SHA-1 hash of the public key.
+     * Optional. The value of this KeyId encoded in lowercase hexadecimal. This
+     * is most likely the 160 bit SHA-1 hash of the public key.
      * </pre>
      *
      * <code>string key_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2807,8 +2809,8 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. The value of this KeyId encoded in lowercase hexadecimal. This is most
-       * likely the 160 bit SHA-1 hash of the public key.
+       * Optional. The value of this KeyId encoded in lowercase hexadecimal. This
+       * is most likely the 160 bit SHA-1 hash of the public key.
        * </pre>
        *
        * <code>string key_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2830,8 +2832,8 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. The value of this KeyId encoded in lowercase hexadecimal. This is most
-       * likely the 160 bit SHA-1 hash of the public key.
+       * Optional. The value of this KeyId encoded in lowercase hexadecimal. This
+       * is most likely the 160 bit SHA-1 hash of the public key.
        * </pre>
        *
        * <code>string key_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2853,8 +2855,8 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. The value of this KeyId encoded in lowercase hexadecimal. This is most
-       * likely the 160 bit SHA-1 hash of the public key.
+       * Optional. The value of this KeyId encoded in lowercase hexadecimal. This
+       * is most likely the 160 bit SHA-1 hash of the public key.
        * </pre>
        *
        * <code>string key_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2875,8 +2877,8 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. The value of this KeyId encoded in lowercase hexadecimal. This is most
-       * likely the 160 bit SHA-1 hash of the public key.
+       * Optional. The value of this KeyId encoded in lowercase hexadecimal. This
+       * is most likely the 160 bit SHA-1 hash of the public key.
        * </pre>
        *
        * <code>string key_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2893,8 +2895,8 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. The value of this KeyId encoded in lowercase hexadecimal. This is most
-       * likely the 160 bit SHA-1 hash of the public key.
+       * Optional. The value of this KeyId encoded in lowercase hexadecimal. This
+       * is most likely the 160 bit SHA-1 hash of the public key.
        * </pre>
        *
        * <code>string key_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4433,8 +4435,10 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * A [CertificateDescription][google.cloud.security.privateca.v1.CertificateDescription] describes an X.509 certificate or CSR that has
-   * been issued, as an alternative to using ASN.1 / X.509.
+   * A
+   * [CertificateDescription][google.cloud.security.privateca.v1.CertificateDescription]
+   * describes an X.509 certificate or CSR that has been issued, as an alternative
+   * to using ASN.1 / X.509.
    * </pre>
    *
    * Protobuf type {@code google.cloud.security.privateca.v1.CertificateDescription}

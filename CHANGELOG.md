@@ -1,5 +1,38 @@
 # Changelog
 
+## [1.5.0](https://github.com/googleapis/google-cloud-java/compare/v1.4.0...v1.5.0) (2023-02-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* The TrainProcessorVersion parent was incorrectly annotated.
+
+### Features
+
+* [analyticsadmin] add `GetSearchAds360Link`, `ListSearchAds360Links`, `CreateSearchAds360Link`, `DeleteSearchAds360Link`, `UpdateSearchAds360Link` methods to the Admin API v1alpha ([#9093](https://github.com/googleapis/google-cloud-java/issues/9093)) ([2c7e044](https://github.com/googleapis/google-cloud-java/commit/2c7e04488fc26db34a1972871455863da0ba8ecd))
+* [artifactregistry] add format-specific resources `MavenArtifact`, `NpmPackage`, `KfpArtifact` and `PythonPackage` ([#9080](https://github.com/googleapis/google-cloud-java/issues/9080)) ([6e35902](https://github.com/googleapis/google-cloud-java/commit/6e35902716584603a61fe7253078188191c46d7d))
+* [batch] support custom scopes for service account in v1 ([#9082](https://github.com/googleapis/google-cloud-java/issues/9082)) ([37a574a](https://github.com/googleapis/google-cloud-java/commit/37a574a11f78034d00e201ca6f8fecbc9cd6101c))
+* [contactcenterinsights] Add IngestConversationsStats ([#9081](https://github.com/googleapis/google-cloud-java/issues/9081)) ([4175bea](https://github.com/googleapis/google-cloud-java/commit/4175bea0d87c75feced2e43421b3a2575840df9d))
+* [dialogflow] added support for AssistQueryParameters and SynthesizeSpeechConfig ([#9123](https://github.com/googleapis/google-cloud-java/issues/9123)) ([aaf97a6](https://github.com/googleapis/google-cloud-java/commit/aaf97a6bbc7302e69315fdb1c434d69322b21853))
+* [documentai] Added EvaluationReference to evaluation.proto ([#9085](https://github.com/googleapis/google-cloud-java/issues/9085)) ([935443d](https://github.com/googleapis/google-cloud-java/commit/935443d917998991dc6af62bd594091164017117))
+* [privateca] add X.509 Name Constraints support ([#9117](https://github.com/googleapis/google-cloud-java/issues/9117)) ([146655a](https://github.com/googleapis/google-cloud-java/commit/146655ac1ae48b3741876740585395ca8d422041))
+
+
+### Bug Fixes
+
+* [cloudbuild] remove empty v2.CloudBuild definition ([#9077](https://github.com/googleapis/google-cloud-java/issues/9077)) ([bfc6efb](https://github.com/googleapis/google-cloud-java/commit/bfc6efb56d082e7b71e5977999f6ee4a7189e0b5))
+* **deps:** update dependency com.google.api:gapic-generator-java-bom to v2.15.1 ([#9122](https://github.com/googleapis/google-cloud-java/issues/9122)) ([d00a849](https://github.com/googleapis/google-cloud-java/commit/d00a8493b7e18aa1792db8449f78d02258184668))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.123.2 ([#9084](https://github.com/googleapis/google-cloud-java/issues/9084)) ([5ca2b77](https://github.com/googleapis/google-cloud-java/commit/5ca2b7753d5ba8c5483759b74a499dfdbd805fcd))
+* **deps:** update dependency com.google.cloud:google-cloud-storage to v2.18.0 ([#9086](https://github.com/googleapis/google-cloud-java/issues/9086)) ([6dee1ae](https://github.com/googleapis/google-cloud-java/commit/6dee1ae1f7d913a78930700ba6d910d5b2d01dbb))
+* **deps:** update dependency com.google.cloud:grpc-gcp to v1.4.1 ([#9059](https://github.com/googleapis/google-cloud-java/issues/9059)) ([78d0522](https://github.com/googleapis/google-cloud-java/commit/78d05227d7b910aa0a514c1aef05a0b5fa1cbad9))
+* enable java-bigqueryconnect ITSystemTest ([#9089](https://github.com/googleapis/google-cloud-java/issues/9089)) ([0b7209a](https://github.com/googleapis/google-cloud-java/commit/0b7209ac1f38aa4005d619249a6f93f44aef7ca7))
+* **java-core:** capturing startup logs and writing them to the logger incase end of stream reached ([#9108](https://github.com/googleapis/google-cloud-java/issues/9108)) ([def8637](https://github.com/googleapis/google-cloud-java/commit/def8637962f82dfa6c9bbbc88951d1ae4777270b))
+
+
+### Documentation
+
+* [clouderrorreporting] removed link to the regionalization page ([#9079](https://github.com/googleapis/google-cloud-java/issues/9079)) ([eaef8f9](https://github.com/googleapis/google-cloud-java/commit/eaef8f978ec8d7666638a1fc581d56bc44c915a3))
+
 ## [1.4.0](https://github.com/googleapis/google-cloud-java/compare/v1.3.0...v1.4.0) (2023-02-03)
 
 

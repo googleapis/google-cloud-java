@@ -112,4 +112,67 @@ public interface StreamingRecognitionConfigOrBuilder
    * @return The interimResults.
    */
   boolean getInterimResults();
+
+  /**
+   *
+   *
+   * <pre>
+   * If `true`, responses with voice activity speech events will be returned as
+   * they are detected.
+   * </pre>
+   *
+   * <code>bool enable_voice_activity_events = 5;</code>
+   *
+   * @return The enableVoiceActivityEvents.
+   */
+  boolean getEnableVoiceActivityEvents();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, the server will automatically close the stream after the specified
+   * duration has elapsed after the last VOICE_ACTIVITY speech event has been
+   * sent. The field `voice_activity_events` must also be set to true.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v1.StreamingRecognitionConfig.VoiceActivityTimeout voice_activity_timeout = 6;
+   * </code>
+   *
+   * @return Whether the voiceActivityTimeout field is set.
+   */
+  boolean hasVoiceActivityTimeout();
+  /**
+   *
+   *
+   * <pre>
+   * If set, the server will automatically close the stream after the specified
+   * duration has elapsed after the last VOICE_ACTIVITY speech event has been
+   * sent. The field `voice_activity_events` must also be set to true.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v1.StreamingRecognitionConfig.VoiceActivityTimeout voice_activity_timeout = 6;
+   * </code>
+   *
+   * @return The voiceActivityTimeout.
+   */
+  com.google.cloud.speech.v1.StreamingRecognitionConfig.VoiceActivityTimeout
+      getVoiceActivityTimeout();
+  /**
+   *
+   *
+   * <pre>
+   * If set, the server will automatically close the stream after the specified
+   * duration has elapsed after the last VOICE_ACTIVITY speech event has been
+   * sent. The field `voice_activity_events` must also be set to true.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v1.StreamingRecognitionConfig.VoiceActivityTimeout voice_activity_timeout = 6;
+   * </code>
+   */
+  com.google.cloud.speech.v1.StreamingRecognitionConfig.VoiceActivityTimeoutOrBuilder
+      getVoiceActivityTimeoutOrBuilder();
 }

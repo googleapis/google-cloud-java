@@ -212,8 +212,9 @@ public interface VersionOrBuilder
    * <pre>
    * Output only. Repository-specific Metadata stored against this version.
    * The fields returned are defined by the underlying repository-specific
-   * resource. Currently, the only resource in use is
+   * resource. Currently, the resources could be:
    * [DockerImage][google.devtools.artifactregistry.v1.DockerImage]
+   * [MavenArtifact][google.devtools.artifactregistry.v1.MavenArtifact]
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -227,8 +228,9 @@ public interface VersionOrBuilder
    * <pre>
    * Output only. Repository-specific Metadata stored against this version.
    * The fields returned are defined by the underlying repository-specific
-   * resource. Currently, the only resource in use is
+   * resource. Currently, the resources could be:
    * [DockerImage][google.devtools.artifactregistry.v1.DockerImage]
+   * [MavenArtifact][google.devtools.artifactregistry.v1.MavenArtifact]
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -242,8 +244,9 @@ public interface VersionOrBuilder
    * <pre>
    * Output only. Repository-specific Metadata stored against this version.
    * The fields returned are defined by the underlying repository-specific
-   * resource. Currently, the only resource in use is
+   * resource. Currently, the resources could be:
    * [DockerImage][google.devtools.artifactregistry.v1.DockerImage]
+   * [MavenArtifact][google.devtools.artifactregistry.v1.MavenArtifact]
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

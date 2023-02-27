@@ -95,7 +95,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * an `AudioEncoding` when you send  send `FLAC` or `WAV` audio, the
    * encoding configuration must match the encoding described in the audio
    * header; otherwise the request returns an
-   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error code.
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error
+   * code.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding}
@@ -460,7 +461,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Encoding of audio data sent in all `RecognitionAudio` messages.
    * This field is optional for `FLAC` and `WAV` audio files and required
-   * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+   * for all other audio formats. For details, see
+   * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -477,7 +479,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Encoding of audio data sent in all `RecognitionAudio` messages.
    * This field is optional for `FLAC` and `WAV` audio files and required
-   * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+   * for all other audio formats. For details, see
+   * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -505,7 +508,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * source to 16000 Hz. If that's not possible, use the native sample rate of
    * the audio source (instead of re-sampling).
    * This field is optional for FLAC and WAV audio files, but is
-   * required for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+   * required for all other audio formats. For details, see
+   * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>int32 sample_rate_hertz = 2;</code>
@@ -1201,7 +1205,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
    *
    * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.enable_speaker_diarization is
-   *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=377
+   *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=401
    * @return The enableSpeakerDiarization.
    */
   @java.lang.Override
@@ -1224,7 +1228,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
    *
    * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.diarization_speaker_count is
-   *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=382
+   *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=406
    * @return The diarizationSpeakerCount.
    */
   @java.lang.Override
@@ -2499,7 +2503,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -2516,7 +2521,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -2536,7 +2542,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -2557,7 +2564,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -2581,7 +2589,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -2606,7 +2615,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * source to 16000 Hz. If that's not possible, use the native sample rate of
      * the audio source (instead of re-sampling).
      * This field is optional for FLAC and WAV audio files, but is
-     * required for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * required for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -2627,7 +2637,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * source to 16000 Hz. If that's not possible, use the native sample rate of
      * the audio source (instead of re-sampling).
      * This field is optional for FLAC and WAV audio files, but is
-     * required for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * required for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -2652,7 +2663,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * source to 16000 Hz. If that's not possible, use the native sample rate of
      * the audio source (instead of re-sampling).
      * This field is optional for FLAC and WAV audio files, but is
-     * required for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * required for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -4869,7 +4881,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.enable_speaker_diarization is
-     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=377
+     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=401
      * @return The enableSpeakerDiarization.
      */
     @java.lang.Override
@@ -4890,7 +4902,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.enable_speaker_diarization is
-     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=377
+     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=401
      * @param value The enableSpeakerDiarization to set.
      * @return This builder for chaining.
      */
@@ -4915,7 +4927,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.enable_speaker_diarization is
-     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=377
+     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=401
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4939,7 +4951,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.diarization_speaker_count is
-     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=382
+     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=406
      * @return The diarizationSpeakerCount.
      */
     @java.lang.Override
@@ -4959,7 +4971,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.diarization_speaker_count is
-     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=382
+     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=406
      * @param value The diarizationSpeakerCount to set.
      * @return This builder for chaining.
      */
@@ -4983,7 +4995,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.diarization_speaker_count is
-     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=382
+     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=406
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

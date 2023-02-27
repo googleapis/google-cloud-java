@@ -97,8 +97,8 @@ public interface AudienceSequenceFilterOrBuilder
    *
    *
    * <pre>
-   * Required. An ordered sequence of steps. A user must complete each step in order to
-   * join the sequence filter.
+   * Required. An ordered sequence of steps. A user must complete each step in
+   * order to join the sequence filter.
    * </pre>
    *
    * <code>
@@ -111,8 +111,8 @@ public interface AudienceSequenceFilterOrBuilder
    *
    *
    * <pre>
-   * Required. An ordered sequence of steps. A user must complete each step in order to
-   * join the sequence filter.
+   * Required. An ordered sequence of steps. A user must complete each step in
+   * order to join the sequence filter.
    * </pre>
    *
    * <code>
@@ -125,8 +125,8 @@ public interface AudienceSequenceFilterOrBuilder
    *
    *
    * <pre>
-   * Required. An ordered sequence of steps. A user must complete each step in order to
-   * join the sequence filter.
+   * Required. An ordered sequence of steps. A user must complete each step in
+   * order to join the sequence filter.
    * </pre>
    *
    * <code>
@@ -138,8 +138,8 @@ public interface AudienceSequenceFilterOrBuilder
    *
    *
    * <pre>
-   * Required. An ordered sequence of steps. A user must complete each step in order to
-   * join the sequence filter.
+   * Required. An ordered sequence of steps. A user must complete each step in
+   * order to join the sequence filter.
    * </pre>
    *
    * <code>
@@ -155,8 +155,8 @@ public interface AudienceSequenceFilterOrBuilder
    *
    *
    * <pre>
-   * Required. An ordered sequence of steps. A user must complete each step in order to
-   * join the sequence filter.
+   * Required. An ordered sequence of steps. A user must complete each step in
+   * order to join the sequence filter.
    * </pre>
    *
    * <code>

@@ -66,8 +66,8 @@ public interface AccessQuotaOrBuilder
    *
    * <pre>
    * Properties can use 50,000 tokens per hour. An API request consumes a single
-   * number of tokens, and that number is deducted from both the hourly and
-   * daily quotas.
+   * number of tokens, and that number is deducted from all of the hourly,
+   * daily, and per project hourly quotas.
    * </pre>
    *
    * <code>.google.analytics.admin.v1alpha.AccessQuotaStatus tokens_per_hour = 2;</code>
@@ -80,8 +80,8 @@ public interface AccessQuotaOrBuilder
    *
    * <pre>
    * Properties can use 50,000 tokens per hour. An API request consumes a single
-   * number of tokens, and that number is deducted from both the hourly and
-   * daily quotas.
+   * number of tokens, and that number is deducted from all of the hourly,
+   * daily, and per project hourly quotas.
    * </pre>
    *
    * <code>.google.analytics.admin.v1alpha.AccessQuotaStatus tokens_per_hour = 2;</code>
@@ -94,8 +94,8 @@ public interface AccessQuotaOrBuilder
    *
    * <pre>
    * Properties can use 50,000 tokens per hour. An API request consumes a single
-   * number of tokens, and that number is deducted from both the hourly and
-   * daily quotas.
+   * number of tokens, and that number is deducted from all of the hourly,
+   * daily, and per project hourly quotas.
    * </pre>
    *
    * <code>.google.analytics.admin.v1alpha.AccessQuotaStatus tokens_per_hour = 2;</code>
@@ -178,4 +178,49 @@ public interface AccessQuotaOrBuilder
    */
   com.google.analytics.admin.v1alpha.AccessQuotaStatusOrBuilder
       getServerErrorsPerProjectPerHourOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Properties can use up to 25% of their tokens per project per hour. This
+   * amounts to Analytics 360 Properties can use 12,500 tokens per project per
+   * hour. An API request consumes a single number of tokens, and that number is
+   * deducted from all of the hourly, daily, and per project hourly quotas.
+   * </pre>
+   *
+   * <code>.google.analytics.admin.v1alpha.AccessQuotaStatus tokens_per_project_per_hour = 5;</code>
+   *
+   * @return Whether the tokensPerProjectPerHour field is set.
+   */
+  boolean hasTokensPerProjectPerHour();
+  /**
+   *
+   *
+   * <pre>
+   * Properties can use up to 25% of their tokens per project per hour. This
+   * amounts to Analytics 360 Properties can use 12,500 tokens per project per
+   * hour. An API request consumes a single number of tokens, and that number is
+   * deducted from all of the hourly, daily, and per project hourly quotas.
+   * </pre>
+   *
+   * <code>.google.analytics.admin.v1alpha.AccessQuotaStatus tokens_per_project_per_hour = 5;</code>
+   *
+   * @return The tokensPerProjectPerHour.
+   */
+  com.google.analytics.admin.v1alpha.AccessQuotaStatus getTokensPerProjectPerHour();
+  /**
+   *
+   *
+   * <pre>
+   * Properties can use up to 25% of their tokens per project per hour. This
+   * amounts to Analytics 360 Properties can use 12,500 tokens per project per
+   * hour. An API request consumes a single number of tokens, and that number is
+   * deducted from all of the hourly, daily, and per project hourly quotas.
+   * </pre>
+   *
+   * <code>.google.analytics.admin.v1alpha.AccessQuotaStatus tokens_per_project_per_hour = 5;</code>
+   */
+  com.google.analytics.admin.v1alpha.AccessQuotaStatusOrBuilder
+      getTokensPerProjectPerHourOrBuilder();
 }

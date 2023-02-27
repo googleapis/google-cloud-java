@@ -145,8 +145,8 @@ public interface IngestConversationsMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Partial errors during ingest operation that might cause the operation
-   * output to be incomplete.
+   * Output only. Partial errors during ingest operation that might cause the
+   * operation output to be incomplete.
    * </pre>
    *
    * <code>
@@ -158,8 +158,8 @@ public interface IngestConversationsMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Partial errors during ingest operation that might cause the operation
-   * output to be incomplete.
+   * Output only. Partial errors during ingest operation that might cause the
+   * operation output to be incomplete.
    * </pre>
    *
    * <code>
@@ -171,8 +171,8 @@ public interface IngestConversationsMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Partial errors during ingest operation that might cause the operation
-   * output to be incomplete.
+   * Output only. Partial errors during ingest operation that might cause the
+   * operation output to be incomplete.
    * </pre>
    *
    * <code>
@@ -184,8 +184,8 @@ public interface IngestConversationsMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Partial errors during ingest operation that might cause the operation
-   * output to be incomplete.
+   * Output only. Partial errors during ingest operation that might cause the
+   * operation output to be incomplete.
    * </pre>
    *
    * <code>
@@ -197,8 +197,8 @@ public interface IngestConversationsMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Partial errors during ingest operation that might cause the operation
-   * output to be incomplete.
+   * Output only. Partial errors during ingest operation that might cause the
+   * operation output to be incomplete.
    * </pre>
    *
    * <code>
@@ -206,4 +206,48 @@ public interface IngestConversationsMetadataOrBuilder
    * </code>
    */
   com.google.rpc.StatusOrBuilder getPartialErrorsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Statistics for IngestConversations operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.IngestConversationsStats ingest_conversations_stats = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the ingestConversationsStats field is set.
+   */
+  boolean hasIngestConversationsStats();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Statistics for IngestConversations operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.IngestConversationsStats ingest_conversations_stats = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The ingestConversationsStats.
+   */
+  com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.IngestConversationsStats
+      getIngestConversationsStats();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Statistics for IngestConversations operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.IngestConversationsStats ingest_conversations_stats = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
+          .IngestConversationsStatsOrBuilder
+      getIngestConversationsStatsOrBuilder();
 }

@@ -66,6 +66,1087 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
             com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.Builder.class);
   }
 
+  public interface VoiceActivityTimeoutOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Duration to timeout the stream if no speech begins.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration speech_start_timeout = 1;</code>
+     *
+     * @return Whether the speechStartTimeout field is set.
+     */
+    boolean hasSpeechStartTimeout();
+    /**
+     *
+     *
+     * <pre>
+     * Duration to timeout the stream if no speech begins.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration speech_start_timeout = 1;</code>
+     *
+     * @return The speechStartTimeout.
+     */
+    com.google.protobuf.Duration getSpeechStartTimeout();
+    /**
+     *
+     *
+     * <pre>
+     * Duration to timeout the stream if no speech begins.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration speech_start_timeout = 1;</code>
+     */
+    com.google.protobuf.DurationOrBuilder getSpeechStartTimeoutOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Duration to timeout the stream after speech ends.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration speech_end_timeout = 2;</code>
+     *
+     * @return Whether the speechEndTimeout field is set.
+     */
+    boolean hasSpeechEndTimeout();
+    /**
+     *
+     *
+     * <pre>
+     * Duration to timeout the stream after speech ends.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration speech_end_timeout = 2;</code>
+     *
+     * @return The speechEndTimeout.
+     */
+    com.google.protobuf.Duration getSpeechEndTimeout();
+    /**
+     *
+     *
+     * <pre>
+     * Duration to timeout the stream after speech ends.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration speech_end_timeout = 2;</code>
+     */
+    com.google.protobuf.DurationOrBuilder getSpeechEndTimeoutOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Events that a timeout can be set on for voice activity.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout}
+   */
+  public static final class VoiceActivityTimeout extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout)
+      VoiceActivityTimeoutOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use VoiceActivityTimeout.newBuilder() to construct.
+    private VoiceActivityTimeout(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private VoiceActivityTimeout() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new VoiceActivityTimeout();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.speech.v1p1beta1.SpeechProto
+          .internal_static_google_cloud_speech_v1p1beta1_StreamingRecognitionConfig_VoiceActivityTimeout_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.speech.v1p1beta1.SpeechProto
+          .internal_static_google_cloud_speech_v1p1beta1_StreamingRecognitionConfig_VoiceActivityTimeout_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+                  .class,
+              com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+                  .Builder.class);
+    }
+
+    public static final int SPEECH_START_TIMEOUT_FIELD_NUMBER = 1;
+    private com.google.protobuf.Duration speechStartTimeout_;
+    /**
+     *
+     *
+     * <pre>
+     * Duration to timeout the stream if no speech begins.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration speech_start_timeout = 1;</code>
+     *
+     * @return Whether the speechStartTimeout field is set.
+     */
+    @java.lang.Override
+    public boolean hasSpeechStartTimeout() {
+      return speechStartTimeout_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Duration to timeout the stream if no speech begins.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration speech_start_timeout = 1;</code>
+     *
+     * @return The speechStartTimeout.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getSpeechStartTimeout() {
+      return speechStartTimeout_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : speechStartTimeout_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Duration to timeout the stream if no speech begins.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration speech_start_timeout = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getSpeechStartTimeoutOrBuilder() {
+      return speechStartTimeout_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : speechStartTimeout_;
+    }
+
+    public static final int SPEECH_END_TIMEOUT_FIELD_NUMBER = 2;
+    private com.google.protobuf.Duration speechEndTimeout_;
+    /**
+     *
+     *
+     * <pre>
+     * Duration to timeout the stream after speech ends.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration speech_end_timeout = 2;</code>
+     *
+     * @return Whether the speechEndTimeout field is set.
+     */
+    @java.lang.Override
+    public boolean hasSpeechEndTimeout() {
+      return speechEndTimeout_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Duration to timeout the stream after speech ends.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration speech_end_timeout = 2;</code>
+     *
+     * @return The speechEndTimeout.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getSpeechEndTimeout() {
+      return speechEndTimeout_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : speechEndTimeout_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Duration to timeout the stream after speech ends.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration speech_end_timeout = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getSpeechEndTimeoutOrBuilder() {
+      return speechEndTimeout_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : speechEndTimeout_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (speechStartTimeout_ != null) {
+        output.writeMessage(1, getSpeechStartTimeout());
+      }
+      if (speechEndTimeout_ != null) {
+        output.writeMessage(2, getSpeechEndTimeout());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (speechStartTimeout_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(1, getSpeechStartTimeout());
+      }
+      if (speechEndTimeout_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getSpeechEndTimeout());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout other =
+          (com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout) obj;
+
+      if (hasSpeechStartTimeout() != other.hasSpeechStartTimeout()) return false;
+      if (hasSpeechStartTimeout()) {
+        if (!getSpeechStartTimeout().equals(other.getSpeechStartTimeout())) return false;
+      }
+      if (hasSpeechEndTimeout() != other.hasSpeechEndTimeout()) return false;
+      if (hasSpeechEndTimeout()) {
+        if (!getSpeechEndTimeout().equals(other.getSpeechEndTimeout())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasSpeechStartTimeout()) {
+        hash = (37 * hash) + SPEECH_START_TIMEOUT_FIELD_NUMBER;
+        hash = (53 * hash) + getSpeechStartTimeout().hashCode();
+      }
+      if (hasSpeechEndTimeout()) {
+        hash = (37 * hash) + SPEECH_END_TIMEOUT_FIELD_NUMBER;
+        hash = (53 * hash) + getSpeechEndTimeout().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Events that a timeout can be set on for voice activity.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout)
+        com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeoutOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.speech.v1p1beta1.SpeechProto
+            .internal_static_google_cloud_speech_v1p1beta1_StreamingRecognitionConfig_VoiceActivityTimeout_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.speech.v1p1beta1.SpeechProto
+            .internal_static_google_cloud_speech_v1p1beta1_StreamingRecognitionConfig_VoiceActivityTimeout_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+                    .class,
+                com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        speechStartTimeout_ = null;
+        if (speechStartTimeoutBuilder_ != null) {
+          speechStartTimeoutBuilder_.dispose();
+          speechStartTimeoutBuilder_ = null;
+        }
+        speechEndTimeout_ = null;
+        if (speechEndTimeoutBuilder_ != null) {
+          speechEndTimeoutBuilder_.dispose();
+          speechEndTimeoutBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.speech.v1p1beta1.SpeechProto
+            .internal_static_google_cloud_speech_v1p1beta1_StreamingRecognitionConfig_VoiceActivityTimeout_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+          getDefaultInstanceForType() {
+        return com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+          build() {
+        com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+          buildPartial() {
+        com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout result =
+            new com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout(
+                this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.speechStartTimeout_ =
+              speechStartTimeoutBuilder_ == null
+                  ? speechStartTimeout_
+                  : speechStartTimeoutBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.speechEndTimeout_ =
+              speechEndTimeoutBuilder_ == null
+                  ? speechEndTimeout_
+                  : speechEndTimeoutBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout) {
+          return mergeFrom(
+              (com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout other) {
+        if (other
+            == com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+                .getDefaultInstance()) return this;
+        if (other.hasSpeechStartTimeout()) {
+          mergeSpeechStartTimeout(other.getSpeechStartTimeout());
+        }
+        if (other.hasSpeechEndTimeout()) {
+          mergeSpeechEndTimeout(other.getSpeechEndTimeout());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getSpeechStartTimeoutFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getSpeechEndTimeoutFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.Duration speechStartTimeout_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          speechStartTimeoutBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Duration to timeout the stream if no speech begins.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration speech_start_timeout = 1;</code>
+       *
+       * @return Whether the speechStartTimeout field is set.
+       */
+      public boolean hasSpeechStartTimeout() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration to timeout the stream if no speech begins.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration speech_start_timeout = 1;</code>
+       *
+       * @return The speechStartTimeout.
+       */
+      public com.google.protobuf.Duration getSpeechStartTimeout() {
+        if (speechStartTimeoutBuilder_ == null) {
+          return speechStartTimeout_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : speechStartTimeout_;
+        } else {
+          return speechStartTimeoutBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration to timeout the stream if no speech begins.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration speech_start_timeout = 1;</code>
+       */
+      public Builder setSpeechStartTimeout(com.google.protobuf.Duration value) {
+        if (speechStartTimeoutBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          speechStartTimeout_ = value;
+        } else {
+          speechStartTimeoutBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration to timeout the stream if no speech begins.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration speech_start_timeout = 1;</code>
+       */
+      public Builder setSpeechStartTimeout(com.google.protobuf.Duration.Builder builderForValue) {
+        if (speechStartTimeoutBuilder_ == null) {
+          speechStartTimeout_ = builderForValue.build();
+        } else {
+          speechStartTimeoutBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration to timeout the stream if no speech begins.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration speech_start_timeout = 1;</code>
+       */
+      public Builder mergeSpeechStartTimeout(com.google.protobuf.Duration value) {
+        if (speechStartTimeoutBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && speechStartTimeout_ != null
+              && speechStartTimeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getSpeechStartTimeoutBuilder().mergeFrom(value);
+          } else {
+            speechStartTimeout_ = value;
+          }
+        } else {
+          speechStartTimeoutBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration to timeout the stream if no speech begins.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration speech_start_timeout = 1;</code>
+       */
+      public Builder clearSpeechStartTimeout() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        speechStartTimeout_ = null;
+        if (speechStartTimeoutBuilder_ != null) {
+          speechStartTimeoutBuilder_.dispose();
+          speechStartTimeoutBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration to timeout the stream if no speech begins.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration speech_start_timeout = 1;</code>
+       */
+      public com.google.protobuf.Duration.Builder getSpeechStartTimeoutBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getSpeechStartTimeoutFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration to timeout the stream if no speech begins.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration speech_start_timeout = 1;</code>
+       */
+      public com.google.protobuf.DurationOrBuilder getSpeechStartTimeoutOrBuilder() {
+        if (speechStartTimeoutBuilder_ != null) {
+          return speechStartTimeoutBuilder_.getMessageOrBuilder();
+        } else {
+          return speechStartTimeout_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : speechStartTimeout_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration to timeout the stream if no speech begins.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration speech_start_timeout = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          getSpeechStartTimeoutFieldBuilder() {
+        if (speechStartTimeoutBuilder_ == null) {
+          speechStartTimeoutBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>(
+                  getSpeechStartTimeout(), getParentForChildren(), isClean());
+          speechStartTimeout_ = null;
+        }
+        return speechStartTimeoutBuilder_;
+      }
+
+      private com.google.protobuf.Duration speechEndTimeout_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          speechEndTimeoutBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Duration to timeout the stream after speech ends.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration speech_end_timeout = 2;</code>
+       *
+       * @return Whether the speechEndTimeout field is set.
+       */
+      public boolean hasSpeechEndTimeout() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration to timeout the stream after speech ends.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration speech_end_timeout = 2;</code>
+       *
+       * @return The speechEndTimeout.
+       */
+      public com.google.protobuf.Duration getSpeechEndTimeout() {
+        if (speechEndTimeoutBuilder_ == null) {
+          return speechEndTimeout_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : speechEndTimeout_;
+        } else {
+          return speechEndTimeoutBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration to timeout the stream after speech ends.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration speech_end_timeout = 2;</code>
+       */
+      public Builder setSpeechEndTimeout(com.google.protobuf.Duration value) {
+        if (speechEndTimeoutBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          speechEndTimeout_ = value;
+        } else {
+          speechEndTimeoutBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration to timeout the stream after speech ends.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration speech_end_timeout = 2;</code>
+       */
+      public Builder setSpeechEndTimeout(com.google.protobuf.Duration.Builder builderForValue) {
+        if (speechEndTimeoutBuilder_ == null) {
+          speechEndTimeout_ = builderForValue.build();
+        } else {
+          speechEndTimeoutBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration to timeout the stream after speech ends.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration speech_end_timeout = 2;</code>
+       */
+      public Builder mergeSpeechEndTimeout(com.google.protobuf.Duration value) {
+        if (speechEndTimeoutBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && speechEndTimeout_ != null
+              && speechEndTimeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getSpeechEndTimeoutBuilder().mergeFrom(value);
+          } else {
+            speechEndTimeout_ = value;
+          }
+        } else {
+          speechEndTimeoutBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration to timeout the stream after speech ends.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration speech_end_timeout = 2;</code>
+       */
+      public Builder clearSpeechEndTimeout() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        speechEndTimeout_ = null;
+        if (speechEndTimeoutBuilder_ != null) {
+          speechEndTimeoutBuilder_.dispose();
+          speechEndTimeoutBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration to timeout the stream after speech ends.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration speech_end_timeout = 2;</code>
+       */
+      public com.google.protobuf.Duration.Builder getSpeechEndTimeoutBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getSpeechEndTimeoutFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration to timeout the stream after speech ends.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration speech_end_timeout = 2;</code>
+       */
+      public com.google.protobuf.DurationOrBuilder getSpeechEndTimeoutOrBuilder() {
+        if (speechEndTimeoutBuilder_ != null) {
+          return speechEndTimeoutBuilder_.getMessageOrBuilder();
+        } else {
+          return speechEndTimeout_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : speechEndTimeout_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration to timeout the stream after speech ends.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration speech_end_timeout = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          getSpeechEndTimeoutFieldBuilder() {
+        if (speechEndTimeoutBuilder_ == null) {
+          speechEndTimeoutBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>(
+                  getSpeechEndTimeout(), getParentForChildren(), isClean());
+          speechEndTimeout_ = null;
+        }
+        return speechEndTimeoutBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout)
+    private static final com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig
+            .VoiceActivityTimeout
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout();
+    }
+
+    public static com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<VoiceActivityTimeout> PARSER =
+        new com.google.protobuf.AbstractParser<VoiceActivityTimeout>() {
+          @java.lang.Override
+          public VoiceActivityTimeout parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<VoiceActivityTimeout> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<VoiceActivityTimeout> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.speech.v1p1beta1.RecognitionConfig config_;
   /**
@@ -181,6 +1262,92 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     return interimResults_;
   }
 
+  public static final int ENABLE_VOICE_ACTIVITY_EVENTS_FIELD_NUMBER = 5;
+  private boolean enableVoiceActivityEvents_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * If `true`, responses with voice activity speech events will be returned as
+   * they are detected.
+   * </pre>
+   *
+   * <code>bool enable_voice_activity_events = 5;</code>
+   *
+   * @return The enableVoiceActivityEvents.
+   */
+  @java.lang.Override
+  public boolean getEnableVoiceActivityEvents() {
+    return enableVoiceActivityEvents_;
+  }
+
+  public static final int VOICE_ACTIVITY_TIMEOUT_FIELD_NUMBER = 6;
+  private com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+      voiceActivityTimeout_;
+  /**
+   *
+   *
+   * <pre>
+   * If set, the server will automatically close the stream after the specified
+   * duration has elapsed after the last VOICE_ACTIVITY speech event has been
+   * sent. The field `voice_activity_events` must also be set to true.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout voice_activity_timeout = 6;
+   * </code>
+   *
+   * @return Whether the voiceActivityTimeout field is set.
+   */
+  @java.lang.Override
+  public boolean hasVoiceActivityTimeout() {
+    return voiceActivityTimeout_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If set, the server will automatically close the stream after the specified
+   * duration has elapsed after the last VOICE_ACTIVITY speech event has been
+   * sent. The field `voice_activity_events` must also be set to true.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout voice_activity_timeout = 6;
+   * </code>
+   *
+   * @return The voiceActivityTimeout.
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+      getVoiceActivityTimeout() {
+    return voiceActivityTimeout_ == null
+        ? com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+            .getDefaultInstance()
+        : voiceActivityTimeout_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If set, the server will automatically close the stream after the specified
+   * duration has elapsed after the last VOICE_ACTIVITY speech event has been
+   * sent. The field `voice_activity_events` must also be set to true.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout voice_activity_timeout = 6;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeoutOrBuilder
+      getVoiceActivityTimeoutOrBuilder() {
+    return voiceActivityTimeout_ == null
+        ? com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+            .getDefaultInstance()
+        : voiceActivityTimeout_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -204,6 +1371,12 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     if (interimResults_ != false) {
       output.writeBool(3, interimResults_);
     }
+    if (enableVoiceActivityEvents_ != false) {
+      output.writeBool(5, enableVoiceActivityEvents_);
+    }
+    if (voiceActivityTimeout_ != null) {
+      output.writeMessage(6, getVoiceActivityTimeout());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -221,6 +1394,13 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     }
     if (interimResults_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, interimResults_);
+    }
+    if (enableVoiceActivityEvents_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, enableVoiceActivityEvents_);
+    }
+    if (voiceActivityTimeout_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(6, getVoiceActivityTimeout());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -244,6 +1424,11 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     }
     if (getSingleUtterance() != other.getSingleUtterance()) return false;
     if (getInterimResults() != other.getInterimResults()) return false;
+    if (getEnableVoiceActivityEvents() != other.getEnableVoiceActivityEvents()) return false;
+    if (hasVoiceActivityTimeout() != other.hasVoiceActivityTimeout()) return false;
+    if (hasVoiceActivityTimeout()) {
+      if (!getVoiceActivityTimeout().equals(other.getVoiceActivityTimeout())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -263,6 +1448,12 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSingleUtterance());
     hash = (37 * hash) + INTERIM_RESULTS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getInterimResults());
+    hash = (37 * hash) + ENABLE_VOICE_ACTIVITY_EVENTS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableVoiceActivityEvents());
+    if (hasVoiceActivityTimeout()) {
+      hash = (37 * hash) + VOICE_ACTIVITY_TIMEOUT_FIELD_NUMBER;
+      hash = (53 * hash) + getVoiceActivityTimeout().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -411,6 +1602,12 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       }
       singleUtterance_ = false;
       interimResults_ = false;
+      enableVoiceActivityEvents_ = false;
+      voiceActivityTimeout_ = null;
+      if (voiceActivityTimeoutBuilder_ != null) {
+        voiceActivityTimeoutBuilder_.dispose();
+        voiceActivityTimeoutBuilder_ = null;
+      }
       return this;
     }
 
@@ -457,6 +1654,15 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.interimResults_ = interimResults_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.enableVoiceActivityEvents_ = enableVoiceActivityEvents_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.voiceActivityTimeout_ =
+            voiceActivityTimeoutBuilder_ == null
+                ? voiceActivityTimeout_
+                : voiceActivityTimeoutBuilder_.build();
       }
     }
 
@@ -516,6 +1722,12 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       if (other.getInterimResults() != false) {
         setInterimResults(other.getInterimResults());
       }
+      if (other.getEnableVoiceActivityEvents() != false) {
+        setEnableVoiceActivityEvents(other.getEnableVoiceActivityEvents());
+      }
+      if (other.hasVoiceActivityTimeout()) {
+        mergeVoiceActivityTimeout(other.getVoiceActivityTimeout());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -560,6 +1772,19 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
+            case 40:
+              {
+                enableVoiceActivityEvents_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 40
+            case 50:
+              {
+                input.readMessage(
+                    getVoiceActivityTimeoutFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -955,6 +2180,300 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       interimResults_ = false;
       onChanged();
       return this;
+    }
+
+    private boolean enableVoiceActivityEvents_;
+    /**
+     *
+     *
+     * <pre>
+     * If `true`, responses with voice activity speech events will be returned as
+     * they are detected.
+     * </pre>
+     *
+     * <code>bool enable_voice_activity_events = 5;</code>
+     *
+     * @return The enableVoiceActivityEvents.
+     */
+    @java.lang.Override
+    public boolean getEnableVoiceActivityEvents() {
+      return enableVoiceActivityEvents_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If `true`, responses with voice activity speech events will be returned as
+     * they are detected.
+     * </pre>
+     *
+     * <code>bool enable_voice_activity_events = 5;</code>
+     *
+     * @param value The enableVoiceActivityEvents to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableVoiceActivityEvents(boolean value) {
+
+      enableVoiceActivityEvents_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If `true`, responses with voice activity speech events will be returned as
+     * they are detected.
+     * </pre>
+     *
+     * <code>bool enable_voice_activity_events = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableVoiceActivityEvents() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      enableVoiceActivityEvents_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+        voiceActivityTimeout_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout,
+            com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+                .Builder,
+            com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig
+                .VoiceActivityTimeoutOrBuilder>
+        voiceActivityTimeoutBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * If set, the server will automatically close the stream after the specified
+     * duration has elapsed after the last VOICE_ACTIVITY speech event has been
+     * sent. The field `voice_activity_events` must also be set to true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout voice_activity_timeout = 6;
+     * </code>
+     *
+     * @return Whether the voiceActivityTimeout field is set.
+     */
+    public boolean hasVoiceActivityTimeout() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, the server will automatically close the stream after the specified
+     * duration has elapsed after the last VOICE_ACTIVITY speech event has been
+     * sent. The field `voice_activity_events` must also be set to true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout voice_activity_timeout = 6;
+     * </code>
+     *
+     * @return The voiceActivityTimeout.
+     */
+    public com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+        getVoiceActivityTimeout() {
+      if (voiceActivityTimeoutBuilder_ == null) {
+        return voiceActivityTimeout_ == null
+            ? com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+                .getDefaultInstance()
+            : voiceActivityTimeout_;
+      } else {
+        return voiceActivityTimeoutBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, the server will automatically close the stream after the specified
+     * duration has elapsed after the last VOICE_ACTIVITY speech event has been
+     * sent. The field `voice_activity_events` must also be set to true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout voice_activity_timeout = 6;
+     * </code>
+     */
+    public Builder setVoiceActivityTimeout(
+        com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout value) {
+      if (voiceActivityTimeoutBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        voiceActivityTimeout_ = value;
+      } else {
+        voiceActivityTimeoutBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, the server will automatically close the stream after the specified
+     * duration has elapsed after the last VOICE_ACTIVITY speech event has been
+     * sent. The field `voice_activity_events` must also be set to true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout voice_activity_timeout = 6;
+     * </code>
+     */
+    public Builder setVoiceActivityTimeout(
+        com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout.Builder
+            builderForValue) {
+      if (voiceActivityTimeoutBuilder_ == null) {
+        voiceActivityTimeout_ = builderForValue.build();
+      } else {
+        voiceActivityTimeoutBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, the server will automatically close the stream after the specified
+     * duration has elapsed after the last VOICE_ACTIVITY speech event has been
+     * sent. The field `voice_activity_events` must also be set to true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout voice_activity_timeout = 6;
+     * </code>
+     */
+    public Builder mergeVoiceActivityTimeout(
+        com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout value) {
+      if (voiceActivityTimeoutBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && voiceActivityTimeout_ != null
+            && voiceActivityTimeout_
+                != com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+                    .getDefaultInstance()) {
+          getVoiceActivityTimeoutBuilder().mergeFrom(value);
+        } else {
+          voiceActivityTimeout_ = value;
+        }
+      } else {
+        voiceActivityTimeoutBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, the server will automatically close the stream after the specified
+     * duration has elapsed after the last VOICE_ACTIVITY speech event has been
+     * sent. The field `voice_activity_events` must also be set to true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout voice_activity_timeout = 6;
+     * </code>
+     */
+    public Builder clearVoiceActivityTimeout() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      voiceActivityTimeout_ = null;
+      if (voiceActivityTimeoutBuilder_ != null) {
+        voiceActivityTimeoutBuilder_.dispose();
+        voiceActivityTimeoutBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, the server will automatically close the stream after the specified
+     * duration has elapsed after the last VOICE_ACTIVITY speech event has been
+     * sent. The field `voice_activity_events` must also be set to true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout voice_activity_timeout = 6;
+     * </code>
+     */
+    public com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout.Builder
+        getVoiceActivityTimeoutBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getVoiceActivityTimeoutFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, the server will automatically close the stream after the specified
+     * duration has elapsed after the last VOICE_ACTIVITY speech event has been
+     * sent. The field `voice_activity_events` must also be set to true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout voice_activity_timeout = 6;
+     * </code>
+     */
+    public com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig
+            .VoiceActivityTimeoutOrBuilder
+        getVoiceActivityTimeoutOrBuilder() {
+      if (voiceActivityTimeoutBuilder_ != null) {
+        return voiceActivityTimeoutBuilder_.getMessageOrBuilder();
+      } else {
+        return voiceActivityTimeout_ == null
+            ? com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+                .getDefaultInstance()
+            : voiceActivityTimeout_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, the server will automatically close the stream after the specified
+     * duration has elapsed after the last VOICE_ACTIVITY speech event has been
+     * sent. The field `voice_activity_events` must also be set to true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout voice_activity_timeout = 6;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout,
+            com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+                .Builder,
+            com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig
+                .VoiceActivityTimeoutOrBuilder>
+        getVoiceActivityTimeoutFieldBuilder() {
+      if (voiceActivityTimeoutBuilder_ == null) {
+        voiceActivityTimeoutBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout,
+                com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
+                    .Builder,
+                com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig
+                    .VoiceActivityTimeoutOrBuilder>(
+                getVoiceActivityTimeout(), getParentForChildren(), isClean());
+        voiceActivityTimeout_ = null;
+      }
+      return voiceActivityTimeoutBuilder_;
     }
 
     @java.lang.Override

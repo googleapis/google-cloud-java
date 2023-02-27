@@ -28,7 +28,8 @@ public interface CertificateExtensionConstraintsOrBuilder
    *
    * <pre>
    * Optional. A set of named X.509 extensions. Will be combined with
-   * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions] to determine the full set of X.509 extensions.
+   * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions]
+   * to determine the full set of X.509 extensions.
    * </pre>
    *
    * <code>
@@ -46,7 +47,8 @@ public interface CertificateExtensionConstraintsOrBuilder
    *
    * <pre>
    * Optional. A set of named X.509 extensions. Will be combined with
-   * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions] to determine the full set of X.509 extensions.
+   * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions]
+   * to determine the full set of X.509 extensions.
    * </pre>
    *
    * <code>
@@ -61,7 +63,8 @@ public interface CertificateExtensionConstraintsOrBuilder
    *
    * <pre>
    * Optional. A set of named X.509 extensions. Will be combined with
-   * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions] to determine the full set of X.509 extensions.
+   * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions]
+   * to determine the full set of X.509 extensions.
    * </pre>
    *
    * <code>
@@ -78,7 +81,8 @@ public interface CertificateExtensionConstraintsOrBuilder
    *
    * <pre>
    * Optional. A set of named X.509 extensions. Will be combined with
-   * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions] to determine the full set of X.509 extensions.
+   * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions]
+   * to determine the full set of X.509 extensions.
    * </pre>
    *
    * <code>
@@ -93,7 +97,8 @@ public interface CertificateExtensionConstraintsOrBuilder
    *
    * <pre>
    * Optional. A set of named X.509 extensions. Will be combined with
-   * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions] to determine the full set of X.509 extensions.
+   * [additional_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.additional_extensions]
+   * to determine the full set of X.509 extensions.
    * </pre>
    *
    * <code>
@@ -109,9 +114,10 @@ public interface CertificateExtensionConstraintsOrBuilder
    *
    *
    * <pre>
-   * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId] identifying custom X.509 extensions.
-   * Will be combined with [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions] to determine the full set of
-   * X.509 extensions.
+   * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId]
+   * identifying custom X.509 extensions. Will be combined with
+   * [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions]
+   * to determine the full set of X.509 extensions.
    * </pre>
    *
    * <code>
@@ -123,9 +129,10 @@ public interface CertificateExtensionConstraintsOrBuilder
    *
    *
    * <pre>
-   * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId] identifying custom X.509 extensions.
-   * Will be combined with [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions] to determine the full set of
-   * X.509 extensions.
+   * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId]
+   * identifying custom X.509 extensions. Will be combined with
+   * [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions]
+   * to determine the full set of X.509 extensions.
    * </pre>
    *
    * <code>
@@ -137,9 +144,10 @@ public interface CertificateExtensionConstraintsOrBuilder
    *
    *
    * <pre>
-   * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId] identifying custom X.509 extensions.
-   * Will be combined with [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions] to determine the full set of
-   * X.509 extensions.
+   * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId]
+   * identifying custom X.509 extensions. Will be combined with
+   * [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions]
+   * to determine the full set of X.509 extensions.
    * </pre>
    *
    * <code>
@@ -151,9 +159,10 @@ public interface CertificateExtensionConstraintsOrBuilder
    *
    *
    * <pre>
-   * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId] identifying custom X.509 extensions.
-   * Will be combined with [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions] to determine the full set of
-   * X.509 extensions.
+   * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId]
+   * identifying custom X.509 extensions. Will be combined with
+   * [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions]
+   * to determine the full set of X.509 extensions.
    * </pre>
    *
    * <code>
@@ -166,9 +175,10 @@ public interface CertificateExtensionConstraintsOrBuilder
    *
    *
    * <pre>
-   * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId] identifying custom X.509 extensions.
-   * Will be combined with [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions] to determine the full set of
-   * X.509 extensions.
+   * Optional. A set of [ObjectIds][google.cloud.security.privateca.v1.ObjectId]
+   * identifying custom X.509 extensions. Will be combined with
+   * [known_extensions][google.cloud.security.privateca.v1.CertificateExtensionConstraints.known_extensions]
+   * to determine the full set of X.509 extensions.
    * </pre>
    *
    * <code>

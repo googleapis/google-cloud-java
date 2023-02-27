@@ -27,7 +27,8 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name for this [Certificate][google.cloud.security.privateca.v1.Certificate] in the format
+   * Output only. The resource name for this
+   * [Certificate][google.cloud.security.privateca.v1.Certificate] in the format
    * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificates/&#42;`.
    * </pre>
    *
@@ -42,7 +43,8 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name for this [Certificate][google.cloud.security.privateca.v1.Certificate] in the format
+   * Output only. The resource name for this
+   * [Certificate][google.cloud.security.privateca.v1.Certificate] in the format
    * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificates/&#42;`.
    * </pre>
    *
@@ -95,8 +97,8 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Immutable. A description of the certificate and key that does not require X.509 or
-   * ASN.1.
+   * Immutable. A description of the certificate and key that does not require
+   * X.509 or ASN.1.
    * </pre>
    *
    * <code>
@@ -110,8 +112,8 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Immutable. A description of the certificate and key that does not require X.509 or
-   * ASN.1.
+   * Immutable. A description of the certificate and key that does not require
+   * X.509 or ASN.1.
    * </pre>
    *
    * <code>
@@ -125,8 +127,8 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Immutable. A description of the certificate and key that does not require X.509 or
-   * ASN.1.
+   * Immutable. A description of the certificate and key that does not require
+   * X.509 or ASN.1.
    * </pre>
    *
    * <code>
@@ -139,8 +141,9 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the issuing [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the format
-   * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
+   * Output only. The resource name of the issuing
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
    * </pre>
    *
    * <code>
@@ -154,8 +157,9 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the issuing [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the format
-   * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
+   * Output only. The resource name of the issuing
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
    * </pre>
    *
    * <code>
@@ -170,8 +174,8 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The desired lifetime of a certificate. Used to create the
-   * "not_before_time" and "not_after_time" fields inside an X.509
+   * Required. Immutable. The desired lifetime of a certificate. Used to create
+   * the "not_before_time" and "not_after_time" fields inside an X.509
    * certificate. Note that the lifetime may be truncated if it would extend
    * past the life of any certificate authority in the issuing chain.
    * </pre>
@@ -187,8 +191,8 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The desired lifetime of a certificate. Used to create the
-   * "not_before_time" and "not_after_time" fields inside an X.509
+   * Required. Immutable. The desired lifetime of a certificate. Used to create
+   * the "not_before_time" and "not_after_time" fields inside an X.509
    * certificate. Note that the lifetime may be truncated if it would extend
    * past the life of any certificate authority in the issuing chain.
    * </pre>
@@ -204,8 +208,8 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The desired lifetime of a certificate. Used to create the
-   * "not_before_time" and "not_after_time" fields inside an X.509
+   * Required. Immutable. The desired lifetime of a certificate. Used to create
+   * the "not_before_time" and "not_after_time" fields inside an X.509
    * certificate. Note that the lifetime may be truncated if it would extend
    * past the life of any certificate authority in the issuing chain.
    * </pre>
@@ -220,12 +224,14 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Immutable. The resource name for a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] used to issue this
-   * certificate, in the format
+   * Immutable. The resource name for a
+   * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+   * used to issue this certificate, in the format
    * `projects/&#42;&#47;locations/&#42;&#47;certificateTemplates/&#42;`.
    * If this is specified, the caller must have the necessary permission to
    * use this template. If this is omitted, no template will be used.
-   * This template must be in the same location as the [Certificate][google.cloud.security.privateca.v1.Certificate].
+   * This template must be in the same location as the
+   * [Certificate][google.cloud.security.privateca.v1.Certificate].
    * </pre>
    *
    * <code>
@@ -239,12 +245,14 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Immutable. The resource name for a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] used to issue this
-   * certificate, in the format
+   * Immutable. The resource name for a
+   * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+   * used to issue this certificate, in the format
    * `projects/&#42;&#47;locations/&#42;&#47;certificateTemplates/&#42;`.
    * If this is specified, the caller must have the necessary permission to
    * use this template. If this is omitted, no template will be used.
-   * This template must be in the same location as the [Certificate][google.cloud.security.privateca.v1.Certificate].
+   * This template must be in the same location as the
+   * [Certificate][google.cloud.security.privateca.v1.Certificate].
    * </pre>
    *
    * <code>
@@ -259,8 +267,10 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Immutable. Specifies how the [Certificate][google.cloud.security.privateca.v1.Certificate]'s identity fields are to be decided.
-   * If this is omitted, the `DEFAULT` subject mode will be used.
+   * Immutable. Specifies how the
+   * [Certificate][google.cloud.security.privateca.v1.Certificate]'s identity
+   * fields are to be decided. If this is omitted, the `DEFAULT` subject mode
+   * will be used.
    * </pre>
    *
    * <code>
@@ -274,8 +284,10 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Immutable. Specifies how the [Certificate][google.cloud.security.privateca.v1.Certificate]'s identity fields are to be decided.
-   * If this is omitted, the `DEFAULT` subject mode will be used.
+   * Immutable. Specifies how the
+   * [Certificate][google.cloud.security.privateca.v1.Certificate]'s identity
+   * fields are to be decided. If this is omitted, the `DEFAULT` subject mode
+   * will be used.
    * </pre>
    *
    * <code>
@@ -290,8 +302,10 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Output only. Details regarding the revocation of this [Certificate][google.cloud.security.privateca.v1.Certificate]. This
-   * [Certificate][google.cloud.security.privateca.v1.Certificate] is considered revoked if and only if this field is present.
+   * Output only. Details regarding the revocation of this
+   * [Certificate][google.cloud.security.privateca.v1.Certificate]. This
+   * [Certificate][google.cloud.security.privateca.v1.Certificate] is considered
+   * revoked if and only if this field is present.
    * </pre>
    *
    * <code>
@@ -305,8 +319,10 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Output only. Details regarding the revocation of this [Certificate][google.cloud.security.privateca.v1.Certificate]. This
-   * [Certificate][google.cloud.security.privateca.v1.Certificate] is considered revoked if and only if this field is present.
+   * Output only. Details regarding the revocation of this
+   * [Certificate][google.cloud.security.privateca.v1.Certificate]. This
+   * [Certificate][google.cloud.security.privateca.v1.Certificate] is considered
+   * revoked if and only if this field is present.
    * </pre>
    *
    * <code>
@@ -320,8 +336,10 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Output only. Details regarding the revocation of this [Certificate][google.cloud.security.privateca.v1.Certificate]. This
-   * [Certificate][google.cloud.security.privateca.v1.Certificate] is considered revoked if and only if this field is present.
+   * Output only. Details regarding the revocation of this
+   * [Certificate][google.cloud.security.privateca.v1.Certificate]. This
+   * [Certificate][google.cloud.security.privateca.v1.Certificate] is considered
+   * revoked if and only if this field is present.
    * </pre>
    *
    * <code>
@@ -402,8 +420,8 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Output only. The chain that may be used to verify the X.509 certificate. Expected to be
-   * in issuer-to-root order according to RFC 5246.
+   * Output only. The chain that may be used to verify the X.509 certificate.
+   * Expected to be in issuer-to-root order according to RFC 5246.
    * </pre>
    *
    * <code>repeated string pem_certificate_chain = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -416,8 +434,8 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Output only. The chain that may be used to verify the X.509 certificate. Expected to be
-   * in issuer-to-root order according to RFC 5246.
+   * Output only. The chain that may be used to verify the X.509 certificate.
+   * Expected to be in issuer-to-root order according to RFC 5246.
    * </pre>
    *
    * <code>repeated string pem_certificate_chain = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -430,8 +448,8 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Output only. The chain that may be used to verify the X.509 certificate. Expected to be
-   * in issuer-to-root order according to RFC 5246.
+   * Output only. The chain that may be used to verify the X.509 certificate.
+   * Expected to be in issuer-to-root order according to RFC 5246.
    * </pre>
    *
    * <code>repeated string pem_certificate_chain = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -445,8 +463,8 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Output only. The chain that may be used to verify the X.509 certificate. Expected to be
-   * in issuer-to-root order according to RFC 5246.
+   * Output only. The chain that may be used to verify the X.509 certificate.
+   * Expected to be in issuer-to-root order according to RFC 5246.
    * </pre>
    *
    * <code>repeated string pem_certificate_chain = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -461,7 +479,8 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [Certificate][google.cloud.security.privateca.v1.Certificate] was created.
+   * Output only. The time at which this
+   * [Certificate][google.cloud.security.privateca.v1.Certificate] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -474,7 +493,8 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [Certificate][google.cloud.security.privateca.v1.Certificate] was created.
+   * Output only. The time at which this
+   * [Certificate][google.cloud.security.privateca.v1.Certificate] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -487,7 +507,8 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [Certificate][google.cloud.security.privateca.v1.Certificate] was created.
+   * Output only. The time at which this
+   * [Certificate][google.cloud.security.privateca.v1.Certificate] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -499,7 +520,8 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [Certificate][google.cloud.security.privateca.v1.Certificate] was updated.
+   * Output only. The time at which this
+   * [Certificate][google.cloud.security.privateca.v1.Certificate] was updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -512,7 +534,8 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [Certificate][google.cloud.security.privateca.v1.Certificate] was updated.
+   * Output only. The time at which this
+   * [Certificate][google.cloud.security.privateca.v1.Certificate] was updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -525,7 +548,8 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [Certificate][google.cloud.security.privateca.v1.Certificate] was updated.
+   * Output only. The time at which this
+   * [Certificate][google.cloud.security.privateca.v1.Certificate] was updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];

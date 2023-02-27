@@ -22,8 +22,9 @@ package com.google.cloud.security.privateca.v1;
  *
  *
  * <pre>
- * A [CertificateConfig][google.cloud.security.privateca.v1.CertificateConfig] describes an X.509 certificate or CSR that is to be
- * created, as an alternative to using ASN.1.
+ * A [CertificateConfig][google.cloud.security.privateca.v1.CertificateConfig]
+ * describes an X.509 certificate or CSR that is to be created, as an
+ * alternative to using ASN.1.
  * </pre>
  *
  * Protobuf type {@code google.cloud.security.privateca.v1.CertificateConfig}
@@ -75,8 +76,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Contains distinguished name fields such as the common name, location and
-     * organization.
+     * Required. Contains distinguished name fields such as the common name,
+     * location and organization.
      * </pre>
      *
      * <code>
@@ -90,8 +91,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Contains distinguished name fields such as the common name, location and
-     * organization.
+     * Required. Contains distinguished name fields such as the common name,
+     * location and organization.
      * </pre>
      *
      * <code>
@@ -105,8 +106,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Contains distinguished name fields such as the common name, location and
-     * organization.
+     * Required. Contains distinguished name fields such as the common name,
+     * location and organization.
      * </pre>
      *
      * <code>
@@ -210,8 +211,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Contains distinguished name fields such as the common name, location and
-     * organization.
+     * Required. Contains distinguished name fields such as the common name,
+     * location and organization.
      * </pre>
      *
      * <code>
@@ -228,8 +229,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Contains distinguished name fields such as the common name, location and
-     * organization.
+     * Required. Contains distinguished name fields such as the common name,
+     * location and organization.
      * </pre>
      *
      * <code>
@@ -248,8 +249,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Contains distinguished name fields such as the common name, location and
-     * organization.
+     * Required. Contains distinguished name fields such as the common name,
+     * location and organization.
      * </pre>
      *
      * <code>
@@ -730,8 +731,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Contains distinguished name fields such as the common name, location and
-       * organization.
+       * Required. Contains distinguished name fields such as the common name,
+       * location and organization.
        * </pre>
        *
        * <code>
@@ -747,8 +748,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Contains distinguished name fields such as the common name, location and
-       * organization.
+       * Required. Contains distinguished name fields such as the common name,
+       * location and organization.
        * </pre>
        *
        * <code>
@@ -770,8 +771,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Contains distinguished name fields such as the common name, location and
-       * organization.
+       * Required. Contains distinguished name fields such as the common name,
+       * location and organization.
        * </pre>
        *
        * <code>
@@ -795,8 +796,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Contains distinguished name fields such as the common name, location and
-       * organization.
+       * Required. Contains distinguished name fields such as the common name,
+       * location and organization.
        * </pre>
        *
        * <code>
@@ -818,8 +819,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Contains distinguished name fields such as the common name, location and
-       * organization.
+       * Required. Contains distinguished name fields such as the common name,
+       * location and organization.
        * </pre>
        *
        * <code>
@@ -846,8 +847,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Contains distinguished name fields such as the common name, location and
-       * organization.
+       * Required. Contains distinguished name fields such as the common name,
+       * location and organization.
        * </pre>
        *
        * <code>
@@ -868,8 +869,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Contains distinguished name fields such as the common name, location and
-       * organization.
+       * Required. Contains distinguished name fields such as the common name,
+       * location and organization.
        * </pre>
        *
        * <code>
@@ -885,8 +886,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Contains distinguished name fields such as the common name, location and
-       * organization.
+       * Required. Contains distinguished name fields such as the common name,
+       * location and organization.
        * </pre>
        *
        * <code>
@@ -906,8 +907,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Contains distinguished name fields such as the common name, location and
-       * organization.
+       * Required. Contains distinguished name fields such as the common name,
+       * location and organization.
        * </pre>
        *
        * <code>
@@ -1212,8 +1213,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. Specifies some of the values in a certificate that are related to the
-   * subject.
+   * Required. Specifies some of the values in a certificate that are related to
+   * the subject.
    * </pre>
    *
    * <code>
@@ -1230,8 +1231,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. Specifies some of the values in a certificate that are related to the
-   * subject.
+   * Required. Specifies some of the values in a certificate that are related to
+   * the subject.
    * </pre>
    *
    * <code>
@@ -1251,8 +1252,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. Specifies some of the values in a certificate that are related to the
-   * subject.
+   * Required. Specifies some of the values in a certificate that are related to
+   * the subject.
    * </pre>
    *
    * <code>
@@ -1274,8 +1275,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. Describes how some of the technical X.509 fields in a certificate should be
-   * populated.
+   * Required. Describes how some of the technical X.509 fields in a certificate
+   * should be populated.
    * </pre>
    *
    * <code>
@@ -1292,8 +1293,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. Describes how some of the technical X.509 fields in a certificate should be
-   * populated.
+   * Required. Describes how some of the technical X.509 fields in a certificate
+   * should be populated.
    * </pre>
    *
    * <code>
@@ -1312,8 +1313,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. Describes how some of the technical X.509 fields in a certificate should be
-   * populated.
+   * Required. Describes how some of the technical X.509 fields in a certificate
+   * should be populated.
    * </pre>
    *
    * <code>
@@ -1333,9 +1334,14 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. The public key that corresponds to this config. This is, for example, used
-   * when issuing [Certificates][google.cloud.security.privateca.v1.Certificate], but not when creating a
-   * self-signed [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] or [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] CSR.
+   * Optional. The public key that corresponds to this config. This is, for
+   * example, used when issuing
+   * [Certificates][google.cloud.security.privateca.v1.Certificate], but not
+   * when creating a self-signed
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * or
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * CSR.
    * </pre>
    *
    * <code>
@@ -1352,9 +1358,14 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. The public key that corresponds to this config. This is, for example, used
-   * when issuing [Certificates][google.cloud.security.privateca.v1.Certificate], but not when creating a
-   * self-signed [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] or [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] CSR.
+   * Optional. The public key that corresponds to this config. This is, for
+   * example, used when issuing
+   * [Certificates][google.cloud.security.privateca.v1.Certificate], but not
+   * when creating a self-signed
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * or
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * CSR.
    * </pre>
    *
    * <code>
@@ -1373,9 +1384,14 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. The public key that corresponds to this config. This is, for example, used
-   * when issuing [Certificates][google.cloud.security.privateca.v1.Certificate], but not when creating a
-   * self-signed [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] or [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] CSR.
+   * Optional. The public key that corresponds to this config. This is, for
+   * example, used when issuing
+   * [Certificates][google.cloud.security.privateca.v1.Certificate], but not
+   * when creating a self-signed
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * or
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * CSR.
    * </pre>
    *
    * <code>
@@ -1586,8 +1602,9 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A [CertificateConfig][google.cloud.security.privateca.v1.CertificateConfig] describes an X.509 certificate or CSR that is to be
-   * created, as an alternative to using ASN.1.
+   * A [CertificateConfig][google.cloud.security.privateca.v1.CertificateConfig]
+   * describes an X.509 certificate or CSR that is to be created, as an
+   * alternative to using ASN.1.
    * </pre>
    *
    * Protobuf type {@code google.cloud.security.privateca.v1.CertificateConfig}
@@ -1813,8 +1830,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Specifies some of the values in a certificate that are related to the
-     * subject.
+     * Required. Specifies some of the values in a certificate that are related to
+     * the subject.
      * </pre>
      *
      * <code>
@@ -1830,8 +1847,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Specifies some of the values in a certificate that are related to the
-     * subject.
+     * Required. Specifies some of the values in a certificate that are related to
+     * the subject.
      * </pre>
      *
      * <code>
@@ -1855,8 +1872,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Specifies some of the values in a certificate that are related to the
-     * subject.
+     * Required. Specifies some of the values in a certificate that are related to
+     * the subject.
      * </pre>
      *
      * <code>
@@ -1881,8 +1898,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Specifies some of the values in a certificate that are related to the
-     * subject.
+     * Required. Specifies some of the values in a certificate that are related to
+     * the subject.
      * </pre>
      *
      * <code>
@@ -1905,8 +1922,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Specifies some of the values in a certificate that are related to the
-     * subject.
+     * Required. Specifies some of the values in a certificate that are related to
+     * the subject.
      * </pre>
      *
      * <code>
@@ -1936,8 +1953,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Specifies some of the values in a certificate that are related to the
-     * subject.
+     * Required. Specifies some of the values in a certificate that are related to
+     * the subject.
      * </pre>
      *
      * <code>
@@ -1958,8 +1975,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Specifies some of the values in a certificate that are related to the
-     * subject.
+     * Required. Specifies some of the values in a certificate that are related to
+     * the subject.
      * </pre>
      *
      * <code>
@@ -1976,8 +1993,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Specifies some of the values in a certificate that are related to the
-     * subject.
+     * Required. Specifies some of the values in a certificate that are related to
+     * the subject.
      * </pre>
      *
      * <code>
@@ -1999,8 +2016,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Specifies some of the values in a certificate that are related to the
-     * subject.
+     * Required. Specifies some of the values in a certificate that are related to
+     * the subject.
      * </pre>
      *
      * <code>
@@ -2034,8 +2051,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Describes how some of the technical X.509 fields in a certificate should be
-     * populated.
+     * Required. Describes how some of the technical X.509 fields in a certificate
+     * should be populated.
      * </pre>
      *
      * <code>
@@ -2051,8 +2068,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Describes how some of the technical X.509 fields in a certificate should be
-     * populated.
+     * Required. Describes how some of the technical X.509 fields in a certificate
+     * should be populated.
      * </pre>
      *
      * <code>
@@ -2074,8 +2091,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Describes how some of the technical X.509 fields in a certificate should be
-     * populated.
+     * Required. Describes how some of the technical X.509 fields in a certificate
+     * should be populated.
      * </pre>
      *
      * <code>
@@ -2099,8 +2116,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Describes how some of the technical X.509 fields in a certificate should be
-     * populated.
+     * Required. Describes how some of the technical X.509 fields in a certificate
+     * should be populated.
      * </pre>
      *
      * <code>
@@ -2122,8 +2139,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Describes how some of the technical X.509 fields in a certificate should be
-     * populated.
+     * Required. Describes how some of the technical X.509 fields in a certificate
+     * should be populated.
      * </pre>
      *
      * <code>
@@ -2151,8 +2168,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Describes how some of the technical X.509 fields in a certificate should be
-     * populated.
+     * Required. Describes how some of the technical X.509 fields in a certificate
+     * should be populated.
      * </pre>
      *
      * <code>
@@ -2173,8 +2190,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Describes how some of the technical X.509 fields in a certificate should be
-     * populated.
+     * Required. Describes how some of the technical X.509 fields in a certificate
+     * should be populated.
      * </pre>
      *
      * <code>
@@ -2190,8 +2207,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Describes how some of the technical X.509 fields in a certificate should be
-     * populated.
+     * Required. Describes how some of the technical X.509 fields in a certificate
+     * should be populated.
      * </pre>
      *
      * <code>
@@ -2211,8 +2228,8 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Describes how some of the technical X.509 fields in a certificate should be
-     * populated.
+     * Required. Describes how some of the technical X.509 fields in a certificate
+     * should be populated.
      * </pre>
      *
      * <code>
@@ -2246,9 +2263,14 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The public key that corresponds to this config. This is, for example, used
-     * when issuing [Certificates][google.cloud.security.privateca.v1.Certificate], but not when creating a
-     * self-signed [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] or [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] CSR.
+     * Optional. The public key that corresponds to this config. This is, for
+     * example, used when issuing
+     * [Certificates][google.cloud.security.privateca.v1.Certificate], but not
+     * when creating a self-signed
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * or
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * CSR.
      * </pre>
      *
      * <code>
@@ -2264,9 +2286,14 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The public key that corresponds to this config. This is, for example, used
-     * when issuing [Certificates][google.cloud.security.privateca.v1.Certificate], but not when creating a
-     * self-signed [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] or [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] CSR.
+     * Optional. The public key that corresponds to this config. This is, for
+     * example, used when issuing
+     * [Certificates][google.cloud.security.privateca.v1.Certificate], but not
+     * when creating a self-signed
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * or
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * CSR.
      * </pre>
      *
      * <code>
@@ -2288,9 +2315,14 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The public key that corresponds to this config. This is, for example, used
-     * when issuing [Certificates][google.cloud.security.privateca.v1.Certificate], but not when creating a
-     * self-signed [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] or [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] CSR.
+     * Optional. The public key that corresponds to this config. This is, for
+     * example, used when issuing
+     * [Certificates][google.cloud.security.privateca.v1.Certificate], but not
+     * when creating a self-signed
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * or
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * CSR.
      * </pre>
      *
      * <code>
@@ -2314,9 +2346,14 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The public key that corresponds to this config. This is, for example, used
-     * when issuing [Certificates][google.cloud.security.privateca.v1.Certificate], but not when creating a
-     * self-signed [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] or [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] CSR.
+     * Optional. The public key that corresponds to this config. This is, for
+     * example, used when issuing
+     * [Certificates][google.cloud.security.privateca.v1.Certificate], but not
+     * when creating a self-signed
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * or
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * CSR.
      * </pre>
      *
      * <code>
@@ -2338,9 +2375,14 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The public key that corresponds to this config. This is, for example, used
-     * when issuing [Certificates][google.cloud.security.privateca.v1.Certificate], but not when creating a
-     * self-signed [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] or [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] CSR.
+     * Optional. The public key that corresponds to this config. This is, for
+     * example, used when issuing
+     * [Certificates][google.cloud.security.privateca.v1.Certificate], but not
+     * when creating a self-signed
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * or
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * CSR.
      * </pre>
      *
      * <code>
@@ -2368,9 +2410,14 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The public key that corresponds to this config. This is, for example, used
-     * when issuing [Certificates][google.cloud.security.privateca.v1.Certificate], but not when creating a
-     * self-signed [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] or [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] CSR.
+     * Optional. The public key that corresponds to this config. This is, for
+     * example, used when issuing
+     * [Certificates][google.cloud.security.privateca.v1.Certificate], but not
+     * when creating a self-signed
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * or
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * CSR.
      * </pre>
      *
      * <code>
@@ -2391,9 +2438,14 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The public key that corresponds to this config. This is, for example, used
-     * when issuing [Certificates][google.cloud.security.privateca.v1.Certificate], but not when creating a
-     * self-signed [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] or [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] CSR.
+     * Optional. The public key that corresponds to this config. This is, for
+     * example, used when issuing
+     * [Certificates][google.cloud.security.privateca.v1.Certificate], but not
+     * when creating a self-signed
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * or
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * CSR.
      * </pre>
      *
      * <code>
@@ -2409,9 +2461,14 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The public key that corresponds to this config. This is, for example, used
-     * when issuing [Certificates][google.cloud.security.privateca.v1.Certificate], but not when creating a
-     * self-signed [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] or [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] CSR.
+     * Optional. The public key that corresponds to this config. This is, for
+     * example, used when issuing
+     * [Certificates][google.cloud.security.privateca.v1.Certificate], but not
+     * when creating a self-signed
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * or
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * CSR.
      * </pre>
      *
      * <code>
@@ -2431,9 +2488,14 @@ public final class CertificateConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The public key that corresponds to this config. This is, for example, used
-     * when issuing [Certificates][google.cloud.security.privateca.v1.Certificate], but not when creating a
-     * self-signed [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] or [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] CSR.
+     * Optional. The public key that corresponds to this config. This is, for
+     * example, used when issuing
+     * [Certificates][google.cloud.security.privateca.v1.Certificate], but not
+     * when creating a self-signed
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * or
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * CSR.
      * </pre>
      *
      * <code>

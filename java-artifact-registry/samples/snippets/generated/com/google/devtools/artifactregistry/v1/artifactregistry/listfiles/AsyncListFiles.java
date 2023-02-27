@@ -21,6 +21,7 @@ import com.google.api.core.ApiFuture;
 import com.google.devtools.artifactregistry.v1.ArtifactRegistryClient;
 import com.google.devtools.artifactregistry.v1.File;
 import com.google.devtools.artifactregistry.v1.ListFilesRequest;
+import com.google.devtools.artifactregistry.v1.RepositoryName;
 
 public class AsyncListFiles {
 
@@ -37,7 +38,7 @@ public class AsyncListFiles {
     try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
       ListFilesRequest request =
           ListFilesRequest.newBuilder()
-              .setParent("parent-995424086")
+              .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
               .setFilter("filter-1274492040")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")

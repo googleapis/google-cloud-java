@@ -19,6 +19,7 @@ package com.google.devtools.artifactregistry.v1.samples;
 // [START artifactregistry_v1_generated_ArtifactRegistry_GetPackage_String_sync]
 import com.google.devtools.artifactregistry.v1.ArtifactRegistryClient;
 import com.google.devtools.artifactregistry.v1.Package;
+import com.google.devtools.artifactregistry.v1.PackageName;
 
 public class SyncGetPackageString {
 
@@ -33,7 +34,8 @@ public class SyncGetPackageString {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
-      String name = "name3373707";
+      String name =
+          PackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]").toString();
       Package response = artifactRegistryClient.getPackage(name);
     }
   }

@@ -22,7 +22,8 @@ package com.google.cloud.security.privateca.v1;
  *
  *
  * <pre>
- * Request message for [CertificateAuthorityService.GetCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.GetCertificateAuthority].
+ * Request message for
+ * [CertificateAuthorityService.GetCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.GetCertificateAuthority].
  * </pre>
  *
  * Protobuf type {@code google.cloud.security.privateca.v1.GetCertificateAuthorityRequest}
@@ -76,8 +77,10 @@ public final class GetCertificateAuthorityRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] to
-   * get.
+   * Required. The
+   * [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * to get.
    * </pre>
    *
    * <code>
@@ -102,8 +105,10 @@ public final class GetCertificateAuthorityRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] to
-   * get.
+   * Required. The
+   * [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * to get.
    * </pre>
    *
    * <code>
@@ -290,7 +295,8 @@ public final class GetCertificateAuthorityRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Request message for [CertificateAuthorityService.GetCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.GetCertificateAuthority].
+   * Request message for
+   * [CertificateAuthorityService.GetCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.GetCertificateAuthority].
    * </pre>
    *
    * Protobuf type {@code google.cloud.security.privateca.v1.GetCertificateAuthorityRequest}
@@ -481,8 +487,10 @@ public final class GetCertificateAuthorityRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] to
-     * get.
+     * Required. The
+     * [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * to get.
      * </pre>
      *
      * <code>
@@ -506,8 +514,10 @@ public final class GetCertificateAuthorityRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] to
-     * get.
+     * Required. The
+     * [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * to get.
      * </pre>
      *
      * <code>
@@ -531,8 +541,10 @@ public final class GetCertificateAuthorityRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] to
-     * get.
+     * Required. The
+     * [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * to get.
      * </pre>
      *
      * <code>
@@ -555,8 +567,10 @@ public final class GetCertificateAuthorityRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] to
-     * get.
+     * Required. The
+     * [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * to get.
      * </pre>
      *
      * <code>
@@ -575,8 +589,10 @@ public final class GetCertificateAuthorityRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] to
-     * get.
+     * Required. The
+     * [name][google.cloud.security.privateca.v1.CertificateAuthority.name] of the
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * to get.
      * </pre>
      *
      * <code>

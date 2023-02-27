@@ -22,8 +22,9 @@ package com.google.cloud.security.privateca.v1;
  *
  *
  * <pre>
- * A [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] refers to a managed template for certificate
- * issuance.
+ * A
+ * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+ * refers to a managed template for certificate issuance.
  * </pre>
  *
  * Protobuf type {@code google.cloud.security.privateca.v1.CertificateTemplate}
@@ -88,8 +89,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The resource name for this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] in the format
-   * `projects/&#42;&#47;locations/&#42;&#47;certificateTemplates/&#42;`.
+   * Output only. The resource name for this
+   * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+   * in the format `projects/&#42;&#47;locations/&#42;&#47;certificateTemplates/&#42;`.
    * </pre>
    *
    * <code>
@@ -114,8 +116,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The resource name for this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] in the format
-   * `projects/&#42;&#47;locations/&#42;&#47;certificateTemplates/&#42;`.
+   * Output only. The resource name for this
+   * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+   * in the format `projects/&#42;&#47;locations/&#42;&#47;certificateTemplates/&#42;`.
    * </pre>
    *
    * <code>
@@ -143,13 +146,15 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. A set of X.509 values that will be applied to all issued certificates that
-   * use this template. If the certificate request includes conflicting values
-   * for the same properties, they will be overwritten by the values defined
-   * here. If the issuing [CaPool][google.cloud.security.privateca.v1.CaPool]'s [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+   * Optional. A set of X.509 values that will be applied to all issued
+   * certificates that use this template. If the certificate request includes
+   * conflicting values for the same properties, they will be overwritten by the
+   * values defined here. If the issuing
+   * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+   * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
    * defines conflicting
-   * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values] for the same
-   * properties, the certificate issuance request will fail.
+   * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values]
+   * for the same properties, the certificate issuance request will fail.
    * </pre>
    *
    * <code>
@@ -166,13 +171,15 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. A set of X.509 values that will be applied to all issued certificates that
-   * use this template. If the certificate request includes conflicting values
-   * for the same properties, they will be overwritten by the values defined
-   * here. If the issuing [CaPool][google.cloud.security.privateca.v1.CaPool]'s [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+   * Optional. A set of X.509 values that will be applied to all issued
+   * certificates that use this template. If the certificate request includes
+   * conflicting values for the same properties, they will be overwritten by the
+   * values defined here. If the issuing
+   * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+   * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
    * defines conflicting
-   * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values] for the same
-   * properties, the certificate issuance request will fail.
+   * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values]
+   * for the same properties, the certificate issuance request will fail.
    * </pre>
    *
    * <code>
@@ -191,13 +198,15 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. A set of X.509 values that will be applied to all issued certificates that
-   * use this template. If the certificate request includes conflicting values
-   * for the same properties, they will be overwritten by the values defined
-   * here. If the issuing [CaPool][google.cloud.security.privateca.v1.CaPool]'s [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+   * Optional. A set of X.509 values that will be applied to all issued
+   * certificates that use this template. If the certificate request includes
+   * conflicting values for the same properties, they will be overwritten by the
+   * values defined here. If the issuing
+   * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+   * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
    * defines conflicting
-   * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values] for the same
-   * properties, the certificate issuance request will fail.
+   * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values]
+   * for the same properties, the certificate issuance request will fail.
    * </pre>
    *
    * <code>
@@ -220,8 +229,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Optional. Describes constraints on identities that may be appear in
-   * [Certificates][google.cloud.security.privateca.v1.Certificate] issued using this template. If this is omitted,
-   * then this template will not add restrictions on a certificate's identity.
+   * [Certificates][google.cloud.security.privateca.v1.Certificate] issued using
+   * this template. If this is omitted, then this template will not add
+   * restrictions on a certificate's identity.
    * </pre>
    *
    * <code>
@@ -239,8 +249,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Optional. Describes constraints on identities that may be appear in
-   * [Certificates][google.cloud.security.privateca.v1.Certificate] issued using this template. If this is omitted,
-   * then this template will not add restrictions on a certificate's identity.
+   * [Certificates][google.cloud.security.privateca.v1.Certificate] issued using
+   * this template. If this is omitted, then this template will not add
+   * restrictions on a certificate's identity.
    * </pre>
    *
    * <code>
@@ -261,8 +272,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Optional. Describes constraints on identities that may be appear in
-   * [Certificates][google.cloud.security.privateca.v1.Certificate] issued using this template. If this is omitted,
-   * then this template will not add restrictions on a certificate's identity.
+   * [Certificates][google.cloud.security.privateca.v1.Certificate] issued using
+   * this template. If this is omitted, then this template will not add
+   * restrictions on a certificate's identity.
    * </pre>
    *
    * <code>
@@ -285,15 +297,22 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Optional. Describes the set of X.509 extensions that may appear in a
-   * [Certificate][google.cloud.security.privateca.v1.Certificate] issued using this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]. If a certificate
-   * request sets extensions that don't appear in the
-   * [passthrough_extensions][google.cloud.security.privateca.v1.CertificateTemplate.passthrough_extensions], those extensions will be dropped. If the
-   * issuing [CaPool][google.cloud.security.privateca.v1.CaPool]'s [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy] defines
-   * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values] that don't appear
-   * here, the certificate issuance request will fail. If this is omitted, then
-   * this template will not add restrictions on a certificate's X.509
-   * extensions. These constraints do not apply to X.509 extensions set in this
-   * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]'s [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values].
+   * [Certificate][google.cloud.security.privateca.v1.Certificate] issued using
+   * this
+   * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
+   * If a certificate request sets extensions that don't appear in the
+   * [passthrough_extensions][google.cloud.security.privateca.v1.CertificateTemplate.passthrough_extensions],
+   * those extensions will be dropped. If the issuing
+   * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+   * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+   * defines
+   * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values]
+   * that don't appear here, the certificate issuance request will fail. If this
+   * is omitted, then this template will not add restrictions on a certificate's
+   * X.509 extensions. These constraints do not apply to X.509 extensions set in
+   * this
+   * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]'s
+   * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values].
    * </pre>
    *
    * <code>
@@ -311,15 +330,22 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Optional. Describes the set of X.509 extensions that may appear in a
-   * [Certificate][google.cloud.security.privateca.v1.Certificate] issued using this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]. If a certificate
-   * request sets extensions that don't appear in the
-   * [passthrough_extensions][google.cloud.security.privateca.v1.CertificateTemplate.passthrough_extensions], those extensions will be dropped. If the
-   * issuing [CaPool][google.cloud.security.privateca.v1.CaPool]'s [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy] defines
-   * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values] that don't appear
-   * here, the certificate issuance request will fail. If this is omitted, then
-   * this template will not add restrictions on a certificate's X.509
-   * extensions. These constraints do not apply to X.509 extensions set in this
-   * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]'s [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values].
+   * [Certificate][google.cloud.security.privateca.v1.Certificate] issued using
+   * this
+   * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
+   * If a certificate request sets extensions that don't appear in the
+   * [passthrough_extensions][google.cloud.security.privateca.v1.CertificateTemplate.passthrough_extensions],
+   * those extensions will be dropped. If the issuing
+   * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+   * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+   * defines
+   * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values]
+   * that don't appear here, the certificate issuance request will fail. If this
+   * is omitted, then this template will not add restrictions on a certificate's
+   * X.509 extensions. These constraints do not apply to X.509 extensions set in
+   * this
+   * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]'s
+   * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values].
    * </pre>
    *
    * <code>
@@ -341,15 +367,22 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Optional. Describes the set of X.509 extensions that may appear in a
-   * [Certificate][google.cloud.security.privateca.v1.Certificate] issued using this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]. If a certificate
-   * request sets extensions that don't appear in the
-   * [passthrough_extensions][google.cloud.security.privateca.v1.CertificateTemplate.passthrough_extensions], those extensions will be dropped. If the
-   * issuing [CaPool][google.cloud.security.privateca.v1.CaPool]'s [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy] defines
-   * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values] that don't appear
-   * here, the certificate issuance request will fail. If this is omitted, then
-   * this template will not add restrictions on a certificate's X.509
-   * extensions. These constraints do not apply to X.509 extensions set in this
-   * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]'s [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values].
+   * [Certificate][google.cloud.security.privateca.v1.Certificate] issued using
+   * this
+   * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
+   * If a certificate request sets extensions that don't appear in the
+   * [passthrough_extensions][google.cloud.security.privateca.v1.CertificateTemplate.passthrough_extensions],
+   * those extensions will be dropped. If the issuing
+   * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+   * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+   * defines
+   * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values]
+   * that don't appear here, the certificate issuance request will fail. If this
+   * is omitted, then this template will not add restrictions on a certificate's
+   * X.509 extensions. These constraints do not apply to X.509 extensions set in
+   * this
+   * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]'s
+   * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values].
    * </pre>
    *
    * <code>
@@ -373,7 +406,8 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. A human-readable description of scenarios this template is intended for.
+   * Optional. A human-readable description of scenarios this template is
+   * intended for.
    * </pre>
    *
    * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -396,7 +430,8 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. A human-readable description of scenarios this template is intended for.
+   * Optional. A human-readable description of scenarios this template is
+   * intended for.
    * </pre>
    *
    * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -422,7 +457,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] was created.
+   * Output only. The time at which this
+   * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+   * was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -438,7 +475,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] was created.
+   * Output only. The time at which this
+   * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+   * was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -454,7 +493,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] was created.
+   * Output only. The time at which this
+   * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+   * was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -471,7 +512,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] was updated.
+   * Output only. The time at which this
+   * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+   * was updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -487,7 +530,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] was updated.
+   * Output only. The time at which this
+   * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+   * was updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -503,7 +548,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] was updated.
+   * Output only. The time at which this
+   * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+   * was updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -877,8 +924,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * A [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] refers to a managed template for certificate
-   * issuance.
+   * A
+   * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+   * refers to a managed template for certificate issuance.
    * </pre>
    *
    * Protobuf type {@code google.cloud.security.privateca.v1.CertificateTemplate}
@@ -1211,8 +1259,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The resource name for this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;certificateTemplates/&#42;`.
+     * Output only. The resource name for this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * in the format `projects/&#42;&#47;locations/&#42;&#47;certificateTemplates/&#42;`.
      * </pre>
      *
      * <code>
@@ -1236,8 +1285,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The resource name for this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;certificateTemplates/&#42;`.
+     * Output only. The resource name for this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * in the format `projects/&#42;&#47;locations/&#42;&#47;certificateTemplates/&#42;`.
      * </pre>
      *
      * <code>
@@ -1261,8 +1311,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The resource name for this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;certificateTemplates/&#42;`.
+     * Output only. The resource name for this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * in the format `projects/&#42;&#47;locations/&#42;&#47;certificateTemplates/&#42;`.
      * </pre>
      *
      * <code>
@@ -1285,8 +1336,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The resource name for this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;certificateTemplates/&#42;`.
+     * Output only. The resource name for this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * in the format `projects/&#42;&#47;locations/&#42;&#47;certificateTemplates/&#42;`.
      * </pre>
      *
      * <code>
@@ -1305,8 +1357,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The resource name for this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;certificateTemplates/&#42;`.
+     * Output only. The resource name for this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * in the format `projects/&#42;&#47;locations/&#42;&#47;certificateTemplates/&#42;`.
      * </pre>
      *
      * <code>
@@ -1337,13 +1390,15 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. A set of X.509 values that will be applied to all issued certificates that
-     * use this template. If the certificate request includes conflicting values
-     * for the same properties, they will be overwritten by the values defined
-     * here. If the issuing [CaPool][google.cloud.security.privateca.v1.CaPool]'s [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * Optional. A set of X.509 values that will be applied to all issued
+     * certificates that use this template. If the certificate request includes
+     * conflicting values for the same properties, they will be overwritten by the
+     * values defined here. If the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
      * defines conflicting
-     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values] for the same
-     * properties, the certificate issuance request will fail.
+     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values]
+     * for the same properties, the certificate issuance request will fail.
      * </pre>
      *
      * <code>
@@ -1359,13 +1414,15 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. A set of X.509 values that will be applied to all issued certificates that
-     * use this template. If the certificate request includes conflicting values
-     * for the same properties, they will be overwritten by the values defined
-     * here. If the issuing [CaPool][google.cloud.security.privateca.v1.CaPool]'s [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * Optional. A set of X.509 values that will be applied to all issued
+     * certificates that use this template. If the certificate request includes
+     * conflicting values for the same properties, they will be overwritten by the
+     * values defined here. If the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
      * defines conflicting
-     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values] for the same
-     * properties, the certificate issuance request will fail.
+     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values]
+     * for the same properties, the certificate issuance request will fail.
      * </pre>
      *
      * <code>
@@ -1387,13 +1444,15 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. A set of X.509 values that will be applied to all issued certificates that
-     * use this template. If the certificate request includes conflicting values
-     * for the same properties, they will be overwritten by the values defined
-     * here. If the issuing [CaPool][google.cloud.security.privateca.v1.CaPool]'s [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * Optional. A set of X.509 values that will be applied to all issued
+     * certificates that use this template. If the certificate request includes
+     * conflicting values for the same properties, they will be overwritten by the
+     * values defined here. If the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
      * defines conflicting
-     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values] for the same
-     * properties, the certificate issuance request will fail.
+     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values]
+     * for the same properties, the certificate issuance request will fail.
      * </pre>
      *
      * <code>
@@ -1418,13 +1477,15 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. A set of X.509 values that will be applied to all issued certificates that
-     * use this template. If the certificate request includes conflicting values
-     * for the same properties, they will be overwritten by the values defined
-     * here. If the issuing [CaPool][google.cloud.security.privateca.v1.CaPool]'s [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * Optional. A set of X.509 values that will be applied to all issued
+     * certificates that use this template. If the certificate request includes
+     * conflicting values for the same properties, they will be overwritten by the
+     * values defined here. If the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
      * defines conflicting
-     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values] for the same
-     * properties, the certificate issuance request will fail.
+     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values]
+     * for the same properties, the certificate issuance request will fail.
      * </pre>
      *
      * <code>
@@ -1446,13 +1507,15 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. A set of X.509 values that will be applied to all issued certificates that
-     * use this template. If the certificate request includes conflicting values
-     * for the same properties, they will be overwritten by the values defined
-     * here. If the issuing [CaPool][google.cloud.security.privateca.v1.CaPool]'s [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * Optional. A set of X.509 values that will be applied to all issued
+     * certificates that use this template. If the certificate request includes
+     * conflicting values for the same properties, they will be overwritten by the
+     * values defined here. If the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
      * defines conflicting
-     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values] for the same
-     * properties, the certificate issuance request will fail.
+     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values]
+     * for the same properties, the certificate issuance request will fail.
      * </pre>
      *
      * <code>
@@ -1481,13 +1544,15 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. A set of X.509 values that will be applied to all issued certificates that
-     * use this template. If the certificate request includes conflicting values
-     * for the same properties, they will be overwritten by the values defined
-     * here. If the issuing [CaPool][google.cloud.security.privateca.v1.CaPool]'s [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * Optional. A set of X.509 values that will be applied to all issued
+     * certificates that use this template. If the certificate request includes
+     * conflicting values for the same properties, they will be overwritten by the
+     * values defined here. If the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
      * defines conflicting
-     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values] for the same
-     * properties, the certificate issuance request will fail.
+     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values]
+     * for the same properties, the certificate issuance request will fail.
      * </pre>
      *
      * <code>
@@ -1508,13 +1573,15 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. A set of X.509 values that will be applied to all issued certificates that
-     * use this template. If the certificate request includes conflicting values
-     * for the same properties, they will be overwritten by the values defined
-     * here. If the issuing [CaPool][google.cloud.security.privateca.v1.CaPool]'s [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * Optional. A set of X.509 values that will be applied to all issued
+     * certificates that use this template. If the certificate request includes
+     * conflicting values for the same properties, they will be overwritten by the
+     * values defined here. If the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
      * defines conflicting
-     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values] for the same
-     * properties, the certificate issuance request will fail.
+     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values]
+     * for the same properties, the certificate issuance request will fail.
      * </pre>
      *
      * <code>
@@ -1531,13 +1598,15 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. A set of X.509 values that will be applied to all issued certificates that
-     * use this template. If the certificate request includes conflicting values
-     * for the same properties, they will be overwritten by the values defined
-     * here. If the issuing [CaPool][google.cloud.security.privateca.v1.CaPool]'s [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * Optional. A set of X.509 values that will be applied to all issued
+     * certificates that use this template. If the certificate request includes
+     * conflicting values for the same properties, they will be overwritten by the
+     * values defined here. If the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
      * defines conflicting
-     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values] for the same
-     * properties, the certificate issuance request will fail.
+     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values]
+     * for the same properties, the certificate issuance request will fail.
      * </pre>
      *
      * <code>
@@ -1558,13 +1627,15 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. A set of X.509 values that will be applied to all issued certificates that
-     * use this template. If the certificate request includes conflicting values
-     * for the same properties, they will be overwritten by the values defined
-     * here. If the issuing [CaPool][google.cloud.security.privateca.v1.CaPool]'s [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * Optional. A set of X.509 values that will be applied to all issued
+     * certificates that use this template. If the certificate request includes
+     * conflicting values for the same properties, they will be overwritten by the
+     * values defined here. If the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
      * defines conflicting
-     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values] for the same
-     * properties, the certificate issuance request will fail.
+     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values]
+     * for the same properties, the certificate issuance request will fail.
      * </pre>
      *
      * <code>
@@ -1600,8 +1671,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Describes constraints on identities that may be appear in
-     * [Certificates][google.cloud.security.privateca.v1.Certificate] issued using this template. If this is omitted,
-     * then this template will not add restrictions on a certificate's identity.
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] issued using
+     * this template. If this is omitted, then this template will not add
+     * restrictions on a certificate's identity.
      * </pre>
      *
      * <code>
@@ -1618,8 +1690,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Describes constraints on identities that may be appear in
-     * [Certificates][google.cloud.security.privateca.v1.Certificate] issued using this template. If this is omitted,
-     * then this template will not add restrictions on a certificate's identity.
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] issued using
+     * this template. If this is omitted, then this template will not add
+     * restrictions on a certificate's identity.
      * </pre>
      *
      * <code>
@@ -1644,8 +1717,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Describes constraints on identities that may be appear in
-     * [Certificates][google.cloud.security.privateca.v1.Certificate] issued using this template. If this is omitted,
-     * then this template will not add restrictions on a certificate's identity.
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] issued using
+     * this template. If this is omitted, then this template will not add
+     * restrictions on a certificate's identity.
      * </pre>
      *
      * <code>
@@ -1671,8 +1745,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Describes constraints on identities that may be appear in
-     * [Certificates][google.cloud.security.privateca.v1.Certificate] issued using this template. If this is omitted,
-     * then this template will not add restrictions on a certificate's identity.
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] issued using
+     * this template. If this is omitted, then this template will not add
+     * restrictions on a certificate's identity.
      * </pre>
      *
      * <code>
@@ -1696,8 +1771,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Describes constraints on identities that may be appear in
-     * [Certificates][google.cloud.security.privateca.v1.Certificate] issued using this template. If this is omitted,
-     * then this template will not add restrictions on a certificate's identity.
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] issued using
+     * this template. If this is omitted, then this template will not add
+     * restrictions on a certificate's identity.
      * </pre>
      *
      * <code>
@@ -1728,8 +1804,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Describes constraints on identities that may be appear in
-     * [Certificates][google.cloud.security.privateca.v1.Certificate] issued using this template. If this is omitted,
-     * then this template will not add restrictions on a certificate's identity.
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] issued using
+     * this template. If this is omitted, then this template will not add
+     * restrictions on a certificate's identity.
      * </pre>
      *
      * <code>
@@ -1751,8 +1828,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Describes constraints on identities that may be appear in
-     * [Certificates][google.cloud.security.privateca.v1.Certificate] issued using this template. If this is omitted,
-     * then this template will not add restrictions on a certificate's identity.
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] issued using
+     * this template. If this is omitted, then this template will not add
+     * restrictions on a certificate's identity.
      * </pre>
      *
      * <code>
@@ -1770,8 +1848,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Describes constraints on identities that may be appear in
-     * [Certificates][google.cloud.security.privateca.v1.Certificate] issued using this template. If this is omitted,
-     * then this template will not add restrictions on a certificate's identity.
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] issued using
+     * this template. If this is omitted, then this template will not add
+     * restrictions on a certificate's identity.
      * </pre>
      *
      * <code>
@@ -1794,8 +1873,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Describes constraints on identities that may be appear in
-     * [Certificates][google.cloud.security.privateca.v1.Certificate] issued using this template. If this is omitted,
-     * then this template will not add restrictions on a certificate's identity.
+     * [Certificates][google.cloud.security.privateca.v1.Certificate] issued using
+     * this template. If this is omitted, then this template will not add
+     * restrictions on a certificate's identity.
      * </pre>
      *
      * <code>
@@ -1831,15 +1911,22 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Describes the set of X.509 extensions that may appear in a
-     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued using this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]. If a certificate
-     * request sets extensions that don't appear in the
-     * [passthrough_extensions][google.cloud.security.privateca.v1.CertificateTemplate.passthrough_extensions], those extensions will be dropped. If the
-     * issuing [CaPool][google.cloud.security.privateca.v1.CaPool]'s [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy] defines
-     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values] that don't appear
-     * here, the certificate issuance request will fail. If this is omitted, then
-     * this template will not add restrictions on a certificate's X.509
-     * extensions. These constraints do not apply to X.509 extensions set in this
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]'s [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values].
+     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued using
+     * this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
+     * If a certificate request sets extensions that don't appear in the
+     * [passthrough_extensions][google.cloud.security.privateca.v1.CertificateTemplate.passthrough_extensions],
+     * those extensions will be dropped. If the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * defines
+     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values]
+     * that don't appear here, the certificate issuance request will fail. If this
+     * is omitted, then this template will not add restrictions on a certificate's
+     * X.509 extensions. These constraints do not apply to X.509 extensions set in
+     * this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]'s
+     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values].
      * </pre>
      *
      * <code>
@@ -1856,15 +1943,22 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Describes the set of X.509 extensions that may appear in a
-     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued using this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]. If a certificate
-     * request sets extensions that don't appear in the
-     * [passthrough_extensions][google.cloud.security.privateca.v1.CertificateTemplate.passthrough_extensions], those extensions will be dropped. If the
-     * issuing [CaPool][google.cloud.security.privateca.v1.CaPool]'s [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy] defines
-     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values] that don't appear
-     * here, the certificate issuance request will fail. If this is omitted, then
-     * this template will not add restrictions on a certificate's X.509
-     * extensions. These constraints do not apply to X.509 extensions set in this
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]'s [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values].
+     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued using
+     * this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
+     * If a certificate request sets extensions that don't appear in the
+     * [passthrough_extensions][google.cloud.security.privateca.v1.CertificateTemplate.passthrough_extensions],
+     * those extensions will be dropped. If the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * defines
+     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values]
+     * that don't appear here, the certificate issuance request will fail. If this
+     * is omitted, then this template will not add restrictions on a certificate's
+     * X.509 extensions. These constraints do not apply to X.509 extensions set in
+     * this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]'s
+     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values].
      * </pre>
      *
      * <code>
@@ -1889,15 +1983,22 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Describes the set of X.509 extensions that may appear in a
-     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued using this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]. If a certificate
-     * request sets extensions that don't appear in the
-     * [passthrough_extensions][google.cloud.security.privateca.v1.CertificateTemplate.passthrough_extensions], those extensions will be dropped. If the
-     * issuing [CaPool][google.cloud.security.privateca.v1.CaPool]'s [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy] defines
-     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values] that don't appear
-     * here, the certificate issuance request will fail. If this is omitted, then
-     * this template will not add restrictions on a certificate's X.509
-     * extensions. These constraints do not apply to X.509 extensions set in this
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]'s [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values].
+     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued using
+     * this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
+     * If a certificate request sets extensions that don't appear in the
+     * [passthrough_extensions][google.cloud.security.privateca.v1.CertificateTemplate.passthrough_extensions],
+     * those extensions will be dropped. If the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * defines
+     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values]
+     * that don't appear here, the certificate issuance request will fail. If this
+     * is omitted, then this template will not add restrictions on a certificate's
+     * X.509 extensions. These constraints do not apply to X.509 extensions set in
+     * this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]'s
+     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values].
      * </pre>
      *
      * <code>
@@ -1923,15 +2024,22 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Describes the set of X.509 extensions that may appear in a
-     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued using this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]. If a certificate
-     * request sets extensions that don't appear in the
-     * [passthrough_extensions][google.cloud.security.privateca.v1.CertificateTemplate.passthrough_extensions], those extensions will be dropped. If the
-     * issuing [CaPool][google.cloud.security.privateca.v1.CaPool]'s [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy] defines
-     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values] that don't appear
-     * here, the certificate issuance request will fail. If this is omitted, then
-     * this template will not add restrictions on a certificate's X.509
-     * extensions. These constraints do not apply to X.509 extensions set in this
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]'s [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values].
+     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued using
+     * this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
+     * If a certificate request sets extensions that don't appear in the
+     * [passthrough_extensions][google.cloud.security.privateca.v1.CertificateTemplate.passthrough_extensions],
+     * those extensions will be dropped. If the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * defines
+     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values]
+     * that don't appear here, the certificate issuance request will fail. If this
+     * is omitted, then this template will not add restrictions on a certificate's
+     * X.509 extensions. These constraints do not apply to X.509 extensions set in
+     * this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]'s
+     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values].
      * </pre>
      *
      * <code>
@@ -1955,15 +2063,22 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Describes the set of X.509 extensions that may appear in a
-     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued using this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]. If a certificate
-     * request sets extensions that don't appear in the
-     * [passthrough_extensions][google.cloud.security.privateca.v1.CertificateTemplate.passthrough_extensions], those extensions will be dropped. If the
-     * issuing [CaPool][google.cloud.security.privateca.v1.CaPool]'s [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy] defines
-     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values] that don't appear
-     * here, the certificate issuance request will fail. If this is omitted, then
-     * this template will not add restrictions on a certificate's X.509
-     * extensions. These constraints do not apply to X.509 extensions set in this
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]'s [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values].
+     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued using
+     * this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
+     * If a certificate request sets extensions that don't appear in the
+     * [passthrough_extensions][google.cloud.security.privateca.v1.CertificateTemplate.passthrough_extensions],
+     * those extensions will be dropped. If the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * defines
+     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values]
+     * that don't appear here, the certificate issuance request will fail. If this
+     * is omitted, then this template will not add restrictions on a certificate's
+     * X.509 extensions. These constraints do not apply to X.509 extensions set in
+     * this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]'s
+     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values].
      * </pre>
      *
      * <code>
@@ -1994,15 +2109,22 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Describes the set of X.509 extensions that may appear in a
-     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued using this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]. If a certificate
-     * request sets extensions that don't appear in the
-     * [passthrough_extensions][google.cloud.security.privateca.v1.CertificateTemplate.passthrough_extensions], those extensions will be dropped. If the
-     * issuing [CaPool][google.cloud.security.privateca.v1.CaPool]'s [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy] defines
-     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values] that don't appear
-     * here, the certificate issuance request will fail. If this is omitted, then
-     * this template will not add restrictions on a certificate's X.509
-     * extensions. These constraints do not apply to X.509 extensions set in this
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]'s [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values].
+     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued using
+     * this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
+     * If a certificate request sets extensions that don't appear in the
+     * [passthrough_extensions][google.cloud.security.privateca.v1.CertificateTemplate.passthrough_extensions],
+     * those extensions will be dropped. If the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * defines
+     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values]
+     * that don't appear here, the certificate issuance request will fail. If this
+     * is omitted, then this template will not add restrictions on a certificate's
+     * X.509 extensions. These constraints do not apply to X.509 extensions set in
+     * this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]'s
+     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values].
      * </pre>
      *
      * <code>
@@ -2024,15 +2146,22 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Describes the set of X.509 extensions that may appear in a
-     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued using this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]. If a certificate
-     * request sets extensions that don't appear in the
-     * [passthrough_extensions][google.cloud.security.privateca.v1.CertificateTemplate.passthrough_extensions], those extensions will be dropped. If the
-     * issuing [CaPool][google.cloud.security.privateca.v1.CaPool]'s [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy] defines
-     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values] that don't appear
-     * here, the certificate issuance request will fail. If this is omitted, then
-     * this template will not add restrictions on a certificate's X.509
-     * extensions. These constraints do not apply to X.509 extensions set in this
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]'s [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values].
+     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued using
+     * this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
+     * If a certificate request sets extensions that don't appear in the
+     * [passthrough_extensions][google.cloud.security.privateca.v1.CertificateTemplate.passthrough_extensions],
+     * those extensions will be dropped. If the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * defines
+     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values]
+     * that don't appear here, the certificate issuance request will fail. If this
+     * is omitted, then this template will not add restrictions on a certificate's
+     * X.509 extensions. These constraints do not apply to X.509 extensions set in
+     * this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]'s
+     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values].
      * </pre>
      *
      * <code>
@@ -2050,15 +2179,22 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Describes the set of X.509 extensions that may appear in a
-     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued using this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]. If a certificate
-     * request sets extensions that don't appear in the
-     * [passthrough_extensions][google.cloud.security.privateca.v1.CertificateTemplate.passthrough_extensions], those extensions will be dropped. If the
-     * issuing [CaPool][google.cloud.security.privateca.v1.CaPool]'s [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy] defines
-     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values] that don't appear
-     * here, the certificate issuance request will fail. If this is omitted, then
-     * this template will not add restrictions on a certificate's X.509
-     * extensions. These constraints do not apply to X.509 extensions set in this
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]'s [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values].
+     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued using
+     * this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
+     * If a certificate request sets extensions that don't appear in the
+     * [passthrough_extensions][google.cloud.security.privateca.v1.CertificateTemplate.passthrough_extensions],
+     * those extensions will be dropped. If the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * defines
+     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values]
+     * that don't appear here, the certificate issuance request will fail. If this
+     * is omitted, then this template will not add restrictions on a certificate's
+     * X.509 extensions. These constraints do not apply to X.509 extensions set in
+     * this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]'s
+     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values].
      * </pre>
      *
      * <code>
@@ -2081,15 +2217,22 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Describes the set of X.509 extensions that may appear in a
-     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued using this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]. If a certificate
-     * request sets extensions that don't appear in the
-     * [passthrough_extensions][google.cloud.security.privateca.v1.CertificateTemplate.passthrough_extensions], those extensions will be dropped. If the
-     * issuing [CaPool][google.cloud.security.privateca.v1.CaPool]'s [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy] defines
-     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values] that don't appear
-     * here, the certificate issuance request will fail. If this is omitted, then
-     * this template will not add restrictions on a certificate's X.509
-     * extensions. These constraints do not apply to X.509 extensions set in this
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]'s [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values].
+     * [Certificate][google.cloud.security.privateca.v1.Certificate] issued using
+     * this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
+     * If a certificate request sets extensions that don't appear in the
+     * [passthrough_extensions][google.cloud.security.privateca.v1.CertificateTemplate.passthrough_extensions],
+     * those extensions will be dropped. If the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+     * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+     * defines
+     * [baseline_values][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.baseline_values]
+     * that don't appear here, the certificate issuance request will fail. If this
+     * is omitted, then this template will not add restrictions on a certificate's
+     * X.509 extensions. These constraints do not apply to X.509 extensions set in
+     * this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]'s
+     * [predefined_values][google.cloud.security.privateca.v1.CertificateTemplate.predefined_values].
      * </pre>
      *
      * <code>
@@ -2118,7 +2261,8 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. A human-readable description of scenarios this template is intended for.
+     * Optional. A human-readable description of scenarios this template is
+     * intended for.
      * </pre>
      *
      * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2140,7 +2284,8 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. A human-readable description of scenarios this template is intended for.
+     * Optional. A human-readable description of scenarios this template is
+     * intended for.
      * </pre>
      *
      * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2162,7 +2307,8 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. A human-readable description of scenarios this template is intended for.
+     * Optional. A human-readable description of scenarios this template is
+     * intended for.
      * </pre>
      *
      * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2183,7 +2329,8 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. A human-readable description of scenarios this template is intended for.
+     * Optional. A human-readable description of scenarios this template is
+     * intended for.
      * </pre>
      *
      * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2200,7 +2347,8 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. A human-readable description of scenarios this template is intended for.
+     * Optional. A human-readable description of scenarios this template is
+     * intended for.
      * </pre>
      *
      * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2229,7 +2377,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] was created.
+     * Output only. The time at which this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * was created.
      * </pre>
      *
      * <code>
@@ -2245,7 +2395,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] was created.
+     * Output only. The time at which this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * was created.
      * </pre>
      *
      * <code>
@@ -2267,7 +2419,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] was created.
+     * Output only. The time at which this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * was created.
      * </pre>
      *
      * <code>
@@ -2291,7 +2445,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] was created.
+     * Output only. The time at which this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * was created.
      * </pre>
      *
      * <code>
@@ -2312,7 +2468,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] was created.
+     * Output only. The time at which this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * was created.
      * </pre>
      *
      * <code>
@@ -2339,7 +2497,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] was created.
+     * Output only. The time at which this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * was created.
      * </pre>
      *
      * <code>
@@ -2360,7 +2520,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] was created.
+     * Output only. The time at which this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * was created.
      * </pre>
      *
      * <code>
@@ -2376,7 +2538,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] was created.
+     * Output only. The time at which this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * was created.
      * </pre>
      *
      * <code>
@@ -2396,7 +2560,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] was created.
+     * Output only. The time at which this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * was created.
      * </pre>
      *
      * <code>
@@ -2430,7 +2596,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] was updated.
+     * Output only. The time at which this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * was updated.
      * </pre>
      *
      * <code>
@@ -2446,7 +2614,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] was updated.
+     * Output only. The time at which this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * was updated.
      * </pre>
      *
      * <code>
@@ -2468,7 +2638,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] was updated.
+     * Output only. The time at which this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * was updated.
      * </pre>
      *
      * <code>
@@ -2492,7 +2664,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] was updated.
+     * Output only. The time at which this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * was updated.
      * </pre>
      *
      * <code>
@@ -2513,7 +2687,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] was updated.
+     * Output only. The time at which this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * was updated.
      * </pre>
      *
      * <code>
@@ -2540,7 +2716,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] was updated.
+     * Output only. The time at which this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * was updated.
      * </pre>
      *
      * <code>
@@ -2561,7 +2739,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] was updated.
+     * Output only. The time at which this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * was updated.
      * </pre>
      *
      * <code>
@@ -2577,7 +2757,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] was updated.
+     * Output only. The time at which this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * was updated.
      * </pre>
      *
      * <code>
@@ -2597,7 +2779,9 @@ public final class CertificateTemplate extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] was updated.
+     * Output only. The time at which this
+     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
+     * was updated.
      * </pre>
      *
      * <code>

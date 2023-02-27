@@ -56,8 +56,8 @@ public interface GlobalSiteTagOrBuilder
    *
    *
    * <pre>
-   * Immutable. JavaScript code snippet to be pasted as the first item into the head tag of
-   * every webpage to measure.
+   * Immutable. JavaScript code snippet to be pasted as the first item into the
+   * head tag of every webpage to measure.
    * </pre>
    *
    * <code>string snippet = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -69,8 +69,8 @@ public interface GlobalSiteTagOrBuilder
    *
    *
    * <pre>
-   * Immutable. JavaScript code snippet to be pasted as the first item into the head tag of
-   * every webpage to measure.
+   * Immutable. JavaScript code snippet to be pasted as the first item into the
+   * head tag of every webpage to measure.
    * </pre>
    *
    * <code>string snippet = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>

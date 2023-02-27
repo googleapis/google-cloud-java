@@ -20,6 +20,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Aud
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListBigQueryLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
@@ -30,6 +31,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
@@ -54,6 +56,7 @@ import com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse;
+import com.google.analytics.admin.v1alpha.BigQueryLink;
 import com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ChangeHistoryEvent;
 import com.google.analytics.admin.v1alpha.ConversionEvent;
@@ -68,6 +71,7 @@ import com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.CreatePropertyRequest;
+import com.google.analytics.admin.v1alpha.CreateSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.CreateUserLinkRequest;
 import com.google.analytics.admin.v1alpha.CustomDimension;
 import com.google.analytics.admin.v1alpha.CustomMetric;
@@ -83,13 +87,17 @@ import com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.DeletePropertyRequest;
+import com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal;
+import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest;
+import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse;
 import com.google.analytics.admin.v1alpha.FirebaseLink;
 import com.google.analytics.admin.v1alpha.GetAccountRequest;
 import com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetAudienceRequest;
+import com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest;
 import com.google.analytics.admin.v1alpha.GetConversionEventRequest;
 import com.google.analytics.admin.v1alpha.GetCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.GetCustomMetricRequest;
@@ -102,6 +110,7 @@ import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
 import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.GetPropertyRequest;
+import com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.GetUserLinkRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
@@ -112,6 +121,8 @@ import com.google.analytics.admin.v1alpha.ListAccountsRequest;
 import com.google.analytics.admin.v1alpha.ListAccountsResponse;
 import com.google.analytics.admin.v1alpha.ListAudiencesRequest;
 import com.google.analytics.admin.v1alpha.ListAudiencesResponse;
+import com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest;
+import com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse;
 import com.google.analytics.admin.v1alpha.ListConversionEventsRequest;
 import com.google.analytics.admin.v1alpha.ListConversionEventsResponse;
 import com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest;
@@ -132,6 +143,8 @@ import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest;
 import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse;
 import com.google.analytics.admin.v1alpha.ListPropertiesRequest;
 import com.google.analytics.admin.v1alpha.ListPropertiesResponse;
+import com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest;
+import com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse;
 import com.google.analytics.admin.v1alpha.ListUserLinksRequest;
 import com.google.analytics.admin.v1alpha.ListUserLinksResponse;
 import com.google.analytics.admin.v1alpha.MeasurementProtocolSecret;
@@ -140,8 +153,11 @@ import com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse;
 import com.google.analytics.admin.v1alpha.RunAccessReportRequest;
 import com.google.analytics.admin.v1alpha.RunAccessReportResponse;
+import com.google.analytics.admin.v1alpha.SearchAds360Link;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
+import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest;
+import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateAudienceRequest;
@@ -154,6 +170,7 @@ import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.UpdatePropertyRequest;
+import com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateUserLinkRequest;
 import com.google.analytics.admin.v1alpha.UserLink;
 import com.google.api.core.ApiFunction;
@@ -409,12 +426,35 @@ public class AnalyticsAdminServiceStubSettings
   private final UnaryCallSettings<CreateAudienceRequest, Audience> createAudienceSettings;
   private final UnaryCallSettings<UpdateAudienceRequest, Audience> updateAudienceSettings;
   private final UnaryCallSettings<ArchiveAudienceRequest, Empty> archiveAudienceSettings;
+  private final UnaryCallSettings<GetSearchAds360LinkRequest, SearchAds360Link>
+      getSearchAds360LinkSettings;
+  private final PagedCallSettings<
+          ListSearchAds360LinksRequest,
+          ListSearchAds360LinksResponse,
+          ListSearchAds360LinksPagedResponse>
+      listSearchAds360LinksSettings;
+  private final UnaryCallSettings<CreateSearchAds360LinkRequest, SearchAds360Link>
+      createSearchAds360LinkSettings;
+  private final UnaryCallSettings<DeleteSearchAds360LinkRequest, Empty>
+      deleteSearchAds360LinkSettings;
+  private final UnaryCallSettings<UpdateSearchAds360LinkRequest, SearchAds360Link>
+      updateSearchAds360LinkSettings;
   private final UnaryCallSettings<GetAttributionSettingsRequest, AttributionSettings>
       getAttributionSettingsSettings;
   private final UnaryCallSettings<UpdateAttributionSettingsRequest, AttributionSettings>
       updateAttributionSettingsSettings;
   private final UnaryCallSettings<RunAccessReportRequest, RunAccessReportResponse>
       runAccessReportSettings;
+  private final UnaryCallSettings<
+          SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
+      setAutomatedGa4ConfigurationOptOutSettings;
+  private final UnaryCallSettings<
+          FetchAutomatedGa4ConfigurationOptOutRequest, FetchAutomatedGa4ConfigurationOptOutResponse>
+      fetchAutomatedGa4ConfigurationOptOutSettings;
+  private final UnaryCallSettings<GetBigQueryLinkRequest, BigQueryLink> getBigQueryLinkSettings;
+  private final PagedCallSettings<
+          ListBigQueryLinksRequest, ListBigQueryLinksResponse, ListBigQueryLinksPagedResponse>
+      listBigQueryLinksSettings;
 
   private static final PagedListDescriptor<ListAccountsRequest, ListAccountsResponse, Account>
       LIST_ACCOUNTS_PAGE_STR_DESC =
@@ -1076,6 +1116,87 @@ public class AnalyticsAdminServiceStubSettings
             }
           };
 
+  private static final PagedListDescriptor<
+          ListSearchAds360LinksRequest, ListSearchAds360LinksResponse, SearchAds360Link>
+      LIST_SEARCH_ADS360_LINKS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListSearchAds360LinksRequest, ListSearchAds360LinksResponse, SearchAds360Link>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSearchAds360LinksRequest injectToken(
+                ListSearchAds360LinksRequest payload, String token) {
+              return ListSearchAds360LinksRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListSearchAds360LinksRequest injectPageSize(
+                ListSearchAds360LinksRequest payload, int pageSize) {
+              return ListSearchAds360LinksRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSearchAds360LinksRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSearchAds360LinksResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<SearchAds360Link> extractResources(
+                ListSearchAds360LinksResponse payload) {
+              return payload.getSearchAds360LinksList() == null
+                  ? ImmutableList.<SearchAds360Link>of()
+                  : payload.getSearchAds360LinksList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListBigQueryLinksRequest, ListBigQueryLinksResponse, BigQueryLink>
+      LIST_BIG_QUERY_LINKS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListBigQueryLinksRequest, ListBigQueryLinksResponse, BigQueryLink>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListBigQueryLinksRequest injectToken(
+                ListBigQueryLinksRequest payload, String token) {
+              return ListBigQueryLinksRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListBigQueryLinksRequest injectPageSize(
+                ListBigQueryLinksRequest payload, int pageSize) {
+              return ListBigQueryLinksRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBigQueryLinksRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListBigQueryLinksResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<BigQueryLink> extractResources(ListBigQueryLinksResponse payload) {
+              return payload.getBigqueryLinksList() == null
+                  ? ImmutableList.<BigQueryLink>of()
+                  : payload.getBigqueryLinksList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListAccountsRequest, ListAccountsResponse, ListAccountsPagedResponse>
       LIST_ACCOUNTS_PAGE_STR_FACT =
@@ -1440,6 +1561,51 @@ public class AnalyticsAdminServiceStubSettings
               PageContext<ListAudiencesRequest, ListAudiencesResponse, Audience> pageContext =
                   PageContext.create(callable, LIST_AUDIENCES_PAGE_STR_DESC, request, context);
               return ListAudiencesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListSearchAds360LinksRequest,
+          ListSearchAds360LinksResponse,
+          ListSearchAds360LinksPagedResponse>
+      LIST_SEARCH_ADS360_LINKS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSearchAds360LinksRequest,
+              ListSearchAds360LinksResponse,
+              ListSearchAds360LinksPagedResponse>() {
+            @Override
+            public ApiFuture<ListSearchAds360LinksPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSearchAds360LinksRequest, ListSearchAds360LinksResponse> callable,
+                ListSearchAds360LinksRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSearchAds360LinksResponse> futureResponse) {
+              PageContext<
+                      ListSearchAds360LinksRequest, ListSearchAds360LinksResponse, SearchAds360Link>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_SEARCH_ADS360_LINKS_PAGE_STR_DESC, request, context);
+              return ListSearchAds360LinksPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListBigQueryLinksRequest, ListBigQueryLinksResponse, ListBigQueryLinksPagedResponse>
+      LIST_BIG_QUERY_LINKS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBigQueryLinksRequest,
+              ListBigQueryLinksResponse,
+              ListBigQueryLinksPagedResponse>() {
+            @Override
+            public ApiFuture<ListBigQueryLinksPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListBigQueryLinksRequest, ListBigQueryLinksResponse> callable,
+                ListBigQueryLinksRequest request,
+                ApiCallContext context,
+                ApiFuture<ListBigQueryLinksResponse> futureResponse) {
+              PageContext<ListBigQueryLinksRequest, ListBigQueryLinksResponse, BigQueryLink>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_BIG_QUERY_LINKS_PAGE_STR_DESC, request, context);
+              return ListBigQueryLinksPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -1922,6 +2088,38 @@ public class AnalyticsAdminServiceStubSettings
     return archiveAudienceSettings;
   }
 
+  /** Returns the object with the settings used for calls to getSearchAds360Link. */
+  public UnaryCallSettings<GetSearchAds360LinkRequest, SearchAds360Link>
+      getSearchAds360LinkSettings() {
+    return getSearchAds360LinkSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listSearchAds360Links. */
+  public PagedCallSettings<
+          ListSearchAds360LinksRequest,
+          ListSearchAds360LinksResponse,
+          ListSearchAds360LinksPagedResponse>
+      listSearchAds360LinksSettings() {
+    return listSearchAds360LinksSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createSearchAds360Link. */
+  public UnaryCallSettings<CreateSearchAds360LinkRequest, SearchAds360Link>
+      createSearchAds360LinkSettings() {
+    return createSearchAds360LinkSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteSearchAds360Link. */
+  public UnaryCallSettings<DeleteSearchAds360LinkRequest, Empty> deleteSearchAds360LinkSettings() {
+    return deleteSearchAds360LinkSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateSearchAds360Link. */
+  public UnaryCallSettings<UpdateSearchAds360LinkRequest, SearchAds360Link>
+      updateSearchAds360LinkSettings() {
+    return updateSearchAds360LinkSettings;
+  }
+
   /** Returns the object with the settings used for calls to getAttributionSettings. */
   public UnaryCallSettings<GetAttributionSettingsRequest, AttributionSettings>
       getAttributionSettingsSettings() {
@@ -1938,6 +2136,34 @@ public class AnalyticsAdminServiceStubSettings
   public UnaryCallSettings<RunAccessReportRequest, RunAccessReportResponse>
       runAccessReportSettings() {
     return runAccessReportSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setAutomatedGa4ConfigurationOptOut. */
+  public UnaryCallSettings<
+          SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
+      setAutomatedGa4ConfigurationOptOutSettings() {
+    return setAutomatedGa4ConfigurationOptOutSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to fetchAutomatedGa4ConfigurationOptOut.
+   */
+  public UnaryCallSettings<
+          FetchAutomatedGa4ConfigurationOptOutRequest, FetchAutomatedGa4ConfigurationOptOutResponse>
+      fetchAutomatedGa4ConfigurationOptOutSettings() {
+    return fetchAutomatedGa4ConfigurationOptOutSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getBigQueryLink. */
+  public UnaryCallSettings<GetBigQueryLinkRequest, BigQueryLink> getBigQueryLinkSettings() {
+    return getBigQueryLinkSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listBigQueryLinks. */
+  public PagedCallSettings<
+          ListBigQueryLinksRequest, ListBigQueryLinksResponse, ListBigQueryLinksPagedResponse>
+      listBigQueryLinksSettings() {
+    return listBigQueryLinksSettings;
   }
 
   public AnalyticsAdminServiceStub createStub() throws IOException {
@@ -2141,9 +2367,20 @@ public class AnalyticsAdminServiceStubSettings
     createAudienceSettings = settingsBuilder.createAudienceSettings().build();
     updateAudienceSettings = settingsBuilder.updateAudienceSettings().build();
     archiveAudienceSettings = settingsBuilder.archiveAudienceSettings().build();
+    getSearchAds360LinkSettings = settingsBuilder.getSearchAds360LinkSettings().build();
+    listSearchAds360LinksSettings = settingsBuilder.listSearchAds360LinksSettings().build();
+    createSearchAds360LinkSettings = settingsBuilder.createSearchAds360LinkSettings().build();
+    deleteSearchAds360LinkSettings = settingsBuilder.deleteSearchAds360LinkSettings().build();
+    updateSearchAds360LinkSettings = settingsBuilder.updateSearchAds360LinkSettings().build();
     getAttributionSettingsSettings = settingsBuilder.getAttributionSettingsSettings().build();
     updateAttributionSettingsSettings = settingsBuilder.updateAttributionSettingsSettings().build();
     runAccessReportSettings = settingsBuilder.runAccessReportSettings().build();
+    setAutomatedGa4ConfigurationOptOutSettings =
+        settingsBuilder.setAutomatedGa4ConfigurationOptOutSettings().build();
+    fetchAutomatedGa4ConfigurationOptOutSettings =
+        settingsBuilder.fetchAutomatedGa4ConfigurationOptOutSettings().build();
+    getBigQueryLinkSettings = settingsBuilder.getBigQueryLinkSettings().build();
+    listBigQueryLinksSettings = settingsBuilder.listBigQueryLinksSettings().build();
   }
 
   /** Builder for AnalyticsAdminServiceStubSettings. */
@@ -2336,18 +2573,45 @@ public class AnalyticsAdminServiceStubSettings
     private final UnaryCallSettings.Builder<CreateAudienceRequest, Audience> createAudienceSettings;
     private final UnaryCallSettings.Builder<UpdateAudienceRequest, Audience> updateAudienceSettings;
     private final UnaryCallSettings.Builder<ArchiveAudienceRequest, Empty> archiveAudienceSettings;
+    private final UnaryCallSettings.Builder<GetSearchAds360LinkRequest, SearchAds360Link>
+        getSearchAds360LinkSettings;
+    private final PagedCallSettings.Builder<
+            ListSearchAds360LinksRequest,
+            ListSearchAds360LinksResponse,
+            ListSearchAds360LinksPagedResponse>
+        listSearchAds360LinksSettings;
+    private final UnaryCallSettings.Builder<CreateSearchAds360LinkRequest, SearchAds360Link>
+        createSearchAds360LinkSettings;
+    private final UnaryCallSettings.Builder<DeleteSearchAds360LinkRequest, Empty>
+        deleteSearchAds360LinkSettings;
+    private final UnaryCallSettings.Builder<UpdateSearchAds360LinkRequest, SearchAds360Link>
+        updateSearchAds360LinkSettings;
     private final UnaryCallSettings.Builder<GetAttributionSettingsRequest, AttributionSettings>
         getAttributionSettingsSettings;
     private final UnaryCallSettings.Builder<UpdateAttributionSettingsRequest, AttributionSettings>
         updateAttributionSettingsSettings;
     private final UnaryCallSettings.Builder<RunAccessReportRequest, RunAccessReportResponse>
         runAccessReportSettings;
+    private final UnaryCallSettings.Builder<
+            SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
+        setAutomatedGa4ConfigurationOptOutSettings;
+    private final UnaryCallSettings.Builder<
+            FetchAutomatedGa4ConfigurationOptOutRequest,
+            FetchAutomatedGa4ConfigurationOptOutResponse>
+        fetchAutomatedGa4ConfigurationOptOutSettings;
+    private final UnaryCallSettings.Builder<GetBigQueryLinkRequest, BigQueryLink>
+        getBigQueryLinkSettings;
+    private final PagedCallSettings.Builder<
+            ListBigQueryLinksRequest, ListBigQueryLinksResponse, ListBigQueryLinksPagedResponse>
+        listBigQueryLinksSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
     static {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(
@@ -2361,6 +2625,14 @@ public class AnalyticsAdminServiceStubSettings
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(1000L))
@@ -2472,9 +2744,20 @@ public class AnalyticsAdminServiceStubSettings
       createAudienceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateAudienceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       archiveAudienceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getSearchAds360LinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listSearchAds360LinksSettings =
+          PagedCallSettings.newBuilder(LIST_SEARCH_ADS360_LINKS_PAGE_STR_FACT);
+      createSearchAds360LinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteSearchAds360LinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateSearchAds360LinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getAttributionSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateAttributionSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       runAccessReportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setAutomatedGa4ConfigurationOptOutSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      fetchAutomatedGa4ConfigurationOptOutSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getBigQueryLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listBigQueryLinksSettings = PagedCallSettings.newBuilder(LIST_BIG_QUERY_LINKS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -2554,9 +2837,18 @@ public class AnalyticsAdminServiceStubSettings
               createAudienceSettings,
               updateAudienceSettings,
               archiveAudienceSettings,
+              getSearchAds360LinkSettings,
+              listSearchAds360LinksSettings,
+              createSearchAds360LinkSettings,
+              deleteSearchAds360LinkSettings,
+              updateSearchAds360LinkSettings,
               getAttributionSettingsSettings,
               updateAttributionSettingsSettings,
-              runAccessReportSettings);
+              runAccessReportSettings,
+              setAutomatedGa4ConfigurationOptOutSettings,
+              fetchAutomatedGa4ConfigurationOptOutSettings,
+              getBigQueryLinkSettings,
+              listBigQueryLinksSettings);
       initDefaults(this);
     }
 
@@ -2658,9 +2950,20 @@ public class AnalyticsAdminServiceStubSettings
       createAudienceSettings = settings.createAudienceSettings.toBuilder();
       updateAudienceSettings = settings.updateAudienceSettings.toBuilder();
       archiveAudienceSettings = settings.archiveAudienceSettings.toBuilder();
+      getSearchAds360LinkSettings = settings.getSearchAds360LinkSettings.toBuilder();
+      listSearchAds360LinksSettings = settings.listSearchAds360LinksSettings.toBuilder();
+      createSearchAds360LinkSettings = settings.createSearchAds360LinkSettings.toBuilder();
+      deleteSearchAds360LinkSettings = settings.deleteSearchAds360LinkSettings.toBuilder();
+      updateSearchAds360LinkSettings = settings.updateSearchAds360LinkSettings.toBuilder();
       getAttributionSettingsSettings = settings.getAttributionSettingsSettings.toBuilder();
       updateAttributionSettingsSettings = settings.updateAttributionSettingsSettings.toBuilder();
       runAccessReportSettings = settings.runAccessReportSettings.toBuilder();
+      setAutomatedGa4ConfigurationOptOutSettings =
+          settings.setAutomatedGa4ConfigurationOptOutSettings.toBuilder();
+      fetchAutomatedGa4ConfigurationOptOutSettings =
+          settings.fetchAutomatedGa4ConfigurationOptOutSettings.toBuilder();
+      getBigQueryLinkSettings = settings.getBigQueryLinkSettings.toBuilder();
+      listBigQueryLinksSettings = settings.listBigQueryLinksSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -2740,9 +3043,18 @@ public class AnalyticsAdminServiceStubSettings
               createAudienceSettings,
               updateAudienceSettings,
               archiveAudienceSettings,
+              getSearchAds360LinkSettings,
+              listSearchAds360LinksSettings,
+              createSearchAds360LinkSettings,
+              deleteSearchAds360LinkSettings,
+              updateSearchAds360LinkSettings,
               getAttributionSettingsSettings,
               updateAttributionSettingsSettings,
-              runAccessReportSettings);
+              runAccessReportSettings,
+              setAutomatedGa4ConfigurationOptOutSettings,
+              fetchAutomatedGa4ConfigurationOptOutSettings,
+              getBigQueryLinkSettings,
+              listBigQueryLinksSettings);
     }
 
     private static Builder createDefault() {
@@ -2774,28 +3086,28 @@ public class AnalyticsAdminServiceStubSettings
     private static Builder initDefaults(Builder builder) {
       builder
           .getAccountSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .listAccountsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .deleteAccountSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .updateAccountSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .provisionAccountTicketSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .listAccountSummariesSettings()
@@ -2804,118 +3116,118 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .getPropertySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .listPropertiesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .createPropertySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .deletePropertySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .updatePropertySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .getUserLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .batchGetUserLinksSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .listUserLinksSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .auditUserLinksSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .createUserLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .batchCreateUserLinksSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .updateUserLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .batchUpdateUserLinksSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .deleteUserLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .batchDeleteUserLinksSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .createFirebaseLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .deleteFirebaseLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .listFirebaseLinksSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .getGlobalSiteTagSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .createGoogleAdsLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .updateGoogleAdsLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .deleteGoogleAdsLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .listGoogleAdsLinksSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .getDataSharingSettingsSettings()
@@ -3153,6 +3465,31 @@ public class AnalyticsAdminServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .getSearchAds360LinkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listSearchAds360LinksSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createSearchAds360LinkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteSearchAds360LinkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateSearchAds360LinkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .getAttributionSettingsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -3164,6 +3501,26 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .runAccessReportSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .setAutomatedGa4ConfigurationOptOutSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .fetchAutomatedGa4ConfigurationOptOutSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getBigQueryLinkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listBigQueryLinksSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -3693,6 +4050,39 @@ public class AnalyticsAdminServiceStubSettings
       return archiveAudienceSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getSearchAds360Link. */
+    public UnaryCallSettings.Builder<GetSearchAds360LinkRequest, SearchAds360Link>
+        getSearchAds360LinkSettings() {
+      return getSearchAds360LinkSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listSearchAds360Links. */
+    public PagedCallSettings.Builder<
+            ListSearchAds360LinksRequest,
+            ListSearchAds360LinksResponse,
+            ListSearchAds360LinksPagedResponse>
+        listSearchAds360LinksSettings() {
+      return listSearchAds360LinksSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createSearchAds360Link. */
+    public UnaryCallSettings.Builder<CreateSearchAds360LinkRequest, SearchAds360Link>
+        createSearchAds360LinkSettings() {
+      return createSearchAds360LinkSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSearchAds360Link. */
+    public UnaryCallSettings.Builder<DeleteSearchAds360LinkRequest, Empty>
+        deleteSearchAds360LinkSettings() {
+      return deleteSearchAds360LinkSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateSearchAds360Link. */
+    public UnaryCallSettings.Builder<UpdateSearchAds360LinkRequest, SearchAds360Link>
+        updateSearchAds360LinkSettings() {
+      return updateSearchAds360LinkSettings;
+    }
+
     /** Returns the builder for the settings used for calls to getAttributionSettings. */
     public UnaryCallSettings.Builder<GetAttributionSettingsRequest, AttributionSettings>
         getAttributionSettingsSettings() {
@@ -3709,6 +4099,38 @@ public class AnalyticsAdminServiceStubSettings
     public UnaryCallSettings.Builder<RunAccessReportRequest, RunAccessReportResponse>
         runAccessReportSettings() {
       return runAccessReportSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to setAutomatedGa4ConfigurationOptOut.
+     */
+    public UnaryCallSettings.Builder<
+            SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
+        setAutomatedGa4ConfigurationOptOutSettings() {
+      return setAutomatedGa4ConfigurationOptOutSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to fetchAutomatedGa4ConfigurationOptOut.
+     */
+    public UnaryCallSettings.Builder<
+            FetchAutomatedGa4ConfigurationOptOutRequest,
+            FetchAutomatedGa4ConfigurationOptOutResponse>
+        fetchAutomatedGa4ConfigurationOptOutSettings() {
+      return fetchAutomatedGa4ConfigurationOptOutSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getBigQueryLink. */
+    public UnaryCallSettings.Builder<GetBigQueryLinkRequest, BigQueryLink>
+        getBigQueryLinkSettings() {
+      return getBigQueryLinkSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listBigQueryLinks. */
+    public PagedCallSettings.Builder<
+            ListBigQueryLinksRequest, ListBigQueryLinksResponse, ListBigQueryLinksPagedResponse>
+        listBigQueryLinksSettings() {
+      return listBigQueryLinksSettings;
     }
 
     @Override

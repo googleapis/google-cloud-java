@@ -22,8 +22,12 @@ package com.google.cloud.security.privateca.v1;
  *
  *
  * <pre>
- * A [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] represents an individual Certificate Authority.
- * A [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] can be used to create [Certificates][google.cloud.security.privateca.v1.Certificate].
+ * A
+ * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+ * represents an individual Certificate Authority. A
+ * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+ * can be used to create
+ * [Certificates][google.cloud.security.privateca.v1.Certificate].
  * </pre>
  *
  * Protobuf type {@code google.cloud.security.privateca.v1.CertificateAuthority}
@@ -89,7 +93,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The type of a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], indicating its issuing chain.
+   * The type of a
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+   * indicating its issuing chain.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.security.privateca.v1.CertificateAuthority.Type}
@@ -119,7 +125,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Subordinate CA. Could be issued by a Private CA [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * Subordinate CA. Could be issued by a Private CA
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * or an unmanaged CA.
      * </pre>
      *
@@ -153,7 +160,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Subordinate CA. Could be issued by a Private CA [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * Subordinate CA. Could be issued by a Private CA
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * or an unmanaged CA.
      * </pre>
      *
@@ -250,7 +258,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The state of a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], indicating if it can be used.
+   * The state of a
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+   * indicating if it can be used.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.security.privateca.v1.CertificateAuthority.State}
@@ -271,8 +281,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Certificates can be issued from this CA. CRLs will be generated for this
-     * CA. The CA will be part of the [CaPool][google.cloud.security.privateca.v1.CaPool]'s trust anchor, and will be
-     * used to issue certificates from the [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * CA. The CA will be part of the
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s trust anchor, and
+     * will be used to issue certificates from the
+     * [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>ENABLED = 1;</code>
@@ -283,8 +295,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Certificates cannot be issued from this CA. CRLs will still be generated.
-     * The CA will be part of the [CaPool][google.cloud.security.privateca.v1.CaPool]'s trust anchor, but will not be
-     * used to issue certificates from the [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * The CA will be part of the
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s trust anchor, but
+     * will not be used to issue certificates from the
+     * [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>DISABLED = 2;</code>
@@ -295,8 +309,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Certificates can be issued from this CA. CRLs will be generated for this
-     * CA. The CA will be part of the [CaPool][google.cloud.security.privateca.v1.CaPool]'s trust anchor, but will not
-     * be used to issue certificates from the [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * CA. The CA will be part of the
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s trust anchor, but
+     * will not be used to issue certificates from the
+     * [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>STAGED = 3;</code>
@@ -307,8 +323,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Certificates cannot be issued from this CA. CRLs will not be generated.
-     * The CA will not be part of the [CaPool][google.cloud.security.privateca.v1.CaPool]'s trust anchor, and will not be
-     * used to issue certificates from the [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * The CA will not be part of the
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s trust anchor, and
+     * will not be used to issue certificates from the
+     * [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>AWAITING_USER_ACTIVATION = 4;</code>
@@ -320,10 +338,13 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      * <pre>
      * Certificates cannot be issued from this CA. CRLs will not be generated.
      * The CA may still be recovered by calling
-     * [CertificateAuthorityService.UndeleteCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.UndeleteCertificateAuthority] before
+     * [CertificateAuthorityService.UndeleteCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.UndeleteCertificateAuthority]
+     * before
      * [expire_time][google.cloud.security.privateca.v1.CertificateAuthority.expire_time].
-     * The CA will not be part of the [CaPool][google.cloud.security.privateca.v1.CaPool]'s trust anchor, and will not be
-     * used to issue certificates from the [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * The CA will not be part of the
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s trust anchor, and
+     * will not be used to issue certificates from the
+     * [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>DELETED = 5;</code>
@@ -347,8 +368,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Certificates can be issued from this CA. CRLs will be generated for this
-     * CA. The CA will be part of the [CaPool][google.cloud.security.privateca.v1.CaPool]'s trust anchor, and will be
-     * used to issue certificates from the [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * CA. The CA will be part of the
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s trust anchor, and
+     * will be used to issue certificates from the
+     * [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>ENABLED = 1;</code>
@@ -359,8 +382,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Certificates cannot be issued from this CA. CRLs will still be generated.
-     * The CA will be part of the [CaPool][google.cloud.security.privateca.v1.CaPool]'s trust anchor, but will not be
-     * used to issue certificates from the [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * The CA will be part of the
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s trust anchor, but
+     * will not be used to issue certificates from the
+     * [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>DISABLED = 2;</code>
@@ -371,8 +396,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Certificates can be issued from this CA. CRLs will be generated for this
-     * CA. The CA will be part of the [CaPool][google.cloud.security.privateca.v1.CaPool]'s trust anchor, but will not
-     * be used to issue certificates from the [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * CA. The CA will be part of the
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s trust anchor, but
+     * will not be used to issue certificates from the
+     * [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>STAGED = 3;</code>
@@ -383,8 +410,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Certificates cannot be issued from this CA. CRLs will not be generated.
-     * The CA will not be part of the [CaPool][google.cloud.security.privateca.v1.CaPool]'s trust anchor, and will not be
-     * used to issue certificates from the [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * The CA will not be part of the
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s trust anchor, and
+     * will not be used to issue certificates from the
+     * [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>AWAITING_USER_ACTIVATION = 4;</code>
@@ -396,10 +425,13 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      * <pre>
      * Certificates cannot be issued from this CA. CRLs will not be generated.
      * The CA may still be recovered by calling
-     * [CertificateAuthorityService.UndeleteCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.UndeleteCertificateAuthority] before
+     * [CertificateAuthorityService.UndeleteCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.UndeleteCertificateAuthority]
+     * before
      * [expire_time][google.cloud.security.privateca.v1.CertificateAuthority.expire_time].
-     * The CA will not be part of the [CaPool][google.cloud.security.privateca.v1.CaPool]'s trust anchor, and will not be
-     * used to issue certificates from the [CaPool][google.cloud.security.privateca.v1.CaPool].
+     * The CA will not be part of the
+     * [CaPool][google.cloud.security.privateca.v1.CaPool]'s trust anchor, and
+     * will not be used to issue certificates from the
+     * [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      *
      * <code>DELETED = 5;</code>
@@ -808,8 +840,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The URL where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate is
-     * published. This will only be set for CAs that have been activated.
+     * The URL where this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CA certificate is published. This will only be set for CAs that have been
+     * activated.
      * </pre>
      *
      * <code>string ca_certificate_access_url = 1;</code>
@@ -821,8 +855,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The URL where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate is
-     * published. This will only be set for CAs that have been activated.
+     * The URL where this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CA certificate is published. This will only be set for CAs that have been
+     * activated.
      * </pre>
      *
      * <code>string ca_certificate_access_url = 1;</code>
@@ -835,8 +871,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The URLs where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRLs are published. This
-     * will only be set for CAs that have been activated.
+     * The URLs where this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CRLs are published. This will only be set for CAs that have been
+     * activated.
      * </pre>
      *
      * <code>repeated string crl_access_urls = 2;</code>
@@ -848,8 +886,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The URLs where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRLs are published. This
-     * will only be set for CAs that have been activated.
+     * The URLs where this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CRLs are published. This will only be set for CAs that have been
+     * activated.
      * </pre>
      *
      * <code>repeated string crl_access_urls = 2;</code>
@@ -861,8 +901,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The URLs where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRLs are published. This
-     * will only be set for CAs that have been activated.
+     * The URLs where this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CRLs are published. This will only be set for CAs that have been
+     * activated.
      * </pre>
      *
      * <code>repeated string crl_access_urls = 2;</code>
@@ -875,8 +917,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The URLs where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRLs are published. This
-     * will only be set for CAs that have been activated.
+     * The URLs where this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CRLs are published. This will only be set for CAs that have been
+     * activated.
      * </pre>
      *
      * <code>repeated string crl_access_urls = 2;</code>
@@ -890,7 +934,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * URLs where a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] will publish content.
+   * URLs where a
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * will publish content.
    * </pre>
    *
    * Protobuf type {@code google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls}
@@ -944,8 +990,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The URL where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate is
-     * published. This will only be set for CAs that have been activated.
+     * The URL where this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CA certificate is published. This will only be set for CAs that have been
+     * activated.
      * </pre>
      *
      * <code>string ca_certificate_access_url = 1;</code>
@@ -968,8 +1016,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The URL where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate is
-     * published. This will only be set for CAs that have been activated.
+     * The URL where this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CA certificate is published. This will only be set for CAs that have been
+     * activated.
      * </pre>
      *
      * <code>string ca_certificate_access_url = 1;</code>
@@ -997,8 +1047,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The URLs where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRLs are published. This
-     * will only be set for CAs that have been activated.
+     * The URLs where this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CRLs are published. This will only be set for CAs that have been
+     * activated.
      * </pre>
      *
      * <code>repeated string crl_access_urls = 2;</code>
@@ -1012,8 +1064,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The URLs where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRLs are published. This
-     * will only be set for CAs that have been activated.
+     * The URLs where this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CRLs are published. This will only be set for CAs that have been
+     * activated.
      * </pre>
      *
      * <code>repeated string crl_access_urls = 2;</code>
@@ -1027,8 +1081,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The URLs where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRLs are published. This
-     * will only be set for CAs that have been activated.
+     * The URLs where this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CRLs are published. This will only be set for CAs that have been
+     * activated.
      * </pre>
      *
      * <code>repeated string crl_access_urls = 2;</code>
@@ -1043,8 +1099,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The URLs where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRLs are published. This
-     * will only be set for CAs that have been activated.
+     * The URLs where this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CRLs are published. This will only be set for CAs that have been
+     * activated.
      * </pre>
      *
      * <code>repeated string crl_access_urls = 2;</code>
@@ -1240,7 +1298,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * URLs where a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] will publish content.
+     * URLs where a
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * will publish content.
      * </pre>
      *
      * Protobuf type {@code google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls}
@@ -1466,8 +1526,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The URL where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate is
-       * published. This will only be set for CAs that have been activated.
+       * The URL where this
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+       * CA certificate is published. This will only be set for CAs that have been
+       * activated.
        * </pre>
        *
        * <code>string ca_certificate_access_url = 1;</code>
@@ -1489,8 +1551,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The URL where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate is
-       * published. This will only be set for CAs that have been activated.
+       * The URL where this
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+       * CA certificate is published. This will only be set for CAs that have been
+       * activated.
        * </pre>
        *
        * <code>string ca_certificate_access_url = 1;</code>
@@ -1512,8 +1576,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The URL where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate is
-       * published. This will only be set for CAs that have been activated.
+       * The URL where this
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+       * CA certificate is published. This will only be set for CAs that have been
+       * activated.
        * </pre>
        *
        * <code>string ca_certificate_access_url = 1;</code>
@@ -1534,8 +1600,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The URL where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate is
-       * published. This will only be set for CAs that have been activated.
+       * The URL where this
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+       * CA certificate is published. This will only be set for CAs that have been
+       * activated.
        * </pre>
        *
        * <code>string ca_certificate_access_url = 1;</code>
@@ -1552,8 +1620,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The URL where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate is
-       * published. This will only be set for CAs that have been activated.
+       * The URL where this
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+       * CA certificate is published. This will only be set for CAs that have been
+       * activated.
        * </pre>
        *
        * <code>string ca_certificate_access_url = 1;</code>
@@ -1585,8 +1655,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The URLs where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRLs are published. This
-       * will only be set for CAs that have been activated.
+       * The URLs where this
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+       * CRLs are published. This will only be set for CAs that have been
+       * activated.
        * </pre>
        *
        * <code>repeated string crl_access_urls = 2;</code>
@@ -1600,8 +1672,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The URLs where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRLs are published. This
-       * will only be set for CAs that have been activated.
+       * The URLs where this
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+       * CRLs are published. This will only be set for CAs that have been
+       * activated.
        * </pre>
        *
        * <code>repeated string crl_access_urls = 2;</code>
@@ -1615,8 +1689,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The URLs where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRLs are published. This
-       * will only be set for CAs that have been activated.
+       * The URLs where this
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+       * CRLs are published. This will only be set for CAs that have been
+       * activated.
        * </pre>
        *
        * <code>repeated string crl_access_urls = 2;</code>
@@ -1631,8 +1707,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The URLs where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRLs are published. This
-       * will only be set for CAs that have been activated.
+       * The URLs where this
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+       * CRLs are published. This will only be set for CAs that have been
+       * activated.
        * </pre>
        *
        * <code>repeated string crl_access_urls = 2;</code>
@@ -1647,8 +1725,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The URLs where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRLs are published. This
-       * will only be set for CAs that have been activated.
+       * The URLs where this
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+       * CRLs are published. This will only be set for CAs that have been
+       * activated.
        * </pre>
        *
        * <code>repeated string crl_access_urls = 2;</code>
@@ -1670,8 +1750,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The URLs where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRLs are published. This
-       * will only be set for CAs that have been activated.
+       * The URLs where this
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+       * CRLs are published. This will only be set for CAs that have been
+       * activated.
        * </pre>
        *
        * <code>repeated string crl_access_urls = 2;</code>
@@ -1692,8 +1774,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The URLs where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRLs are published. This
-       * will only be set for CAs that have been activated.
+       * The URLs where this
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+       * CRLs are published. This will only be set for CAs that have been
+       * activated.
        * </pre>
        *
        * <code>repeated string crl_access_urls = 2;</code>
@@ -1711,8 +1795,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The URLs where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRLs are published. This
-       * will only be set for CAs that have been activated.
+       * The URLs where this
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+       * CRLs are published. This will only be set for CAs that have been
+       * activated.
        * </pre>
        *
        * <code>repeated string crl_access_urls = 2;</code>
@@ -1729,8 +1815,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The URLs where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CRLs are published. This
-       * will only be set for CAs that have been activated.
+       * The URLs where this
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+       * CRLs are published. This will only be set for CAs that have been
+       * activated.
        * </pre>
        *
        * <code>repeated string crl_access_urls = 2;</code>
@@ -1927,7 +2015,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * A Cloud KMS key configuration that a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] will use.
+   * A Cloud KMS key configuration that a
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * will use.
    * </pre>
    *
    * Protobuf type {@code google.cloud.security.privateca.v1.CertificateAuthority.KeyVersionSpec}
@@ -2370,7 +2460,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A Cloud KMS key configuration that a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] will use.
+     * A Cloud KMS key configuration that a
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * will use.
      * </pre>
      *
      * Protobuf type {@code google.cloud.security.privateca.v1.CertificateAuthority.KeyVersionSpec}
@@ -2980,8 +3072,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. The resource name for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the
-   * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
+   * Output only. The resource name for this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3004,8 +3097,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. The resource name for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the
-   * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
+   * Output only. The resource name for this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3031,7 +3125,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Immutable. The [Type][google.cloud.security.privateca.v1.CertificateAuthority.Type] of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+   * Required. Immutable. The
+   * [Type][google.cloud.security.privateca.v1.CertificateAuthority.Type] of
+   * this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
    * </pre>
    *
    * <code>
@@ -3048,7 +3145,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Immutable. The [Type][google.cloud.security.privateca.v1.CertificateAuthority.Type] of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+   * Required. Immutable. The
+   * [Type][google.cloud.security.privateca.v1.CertificateAuthority.Type] of
+   * this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
    * </pre>
    *
    * <code>
@@ -3072,7 +3172,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Immutable. The config used to create a self-signed X.509 certificate or CSR.
+   * Required. Immutable. The config used to create a self-signed X.509
+   * certificate or CSR.
    * </pre>
    *
    * <code>
@@ -3089,7 +3190,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Immutable. The config used to create a self-signed X.509 certificate or CSR.
+   * Required. Immutable. The config used to create a self-signed X.509
+   * certificate or CSR.
    * </pre>
    *
    * <code>
@@ -3108,7 +3210,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Immutable. The config used to create a self-signed X.509 certificate or CSR.
+   * Required. Immutable. The config used to create a self-signed X.509
+   * certificate or CSR.
    * </pre>
    *
    * <code>
@@ -3128,8 +3231,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Immutable. The desired lifetime of the CA certificate. Used to create the
-   * "not_before_time" and "not_after_time" fields inside an X.509
+   * Required. Immutable. The desired lifetime of the CA certificate. Used to
+   * create the "not_before_time" and "not_after_time" fields inside an X.509
    * certificate.
    * </pre>
    *
@@ -3147,8 +3250,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Immutable. The desired lifetime of the CA certificate. Used to create the
-   * "not_before_time" and "not_after_time" fields inside an X.509
+   * Required. Immutable. The desired lifetime of the CA certificate. Used to
+   * create the "not_before_time" and "not_after_time" fields inside an X.509
    * certificate.
    * </pre>
    *
@@ -3166,8 +3269,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Immutable. The desired lifetime of the CA certificate. Used to create the
-   * "not_before_time" and "not_after_time" fields inside an X.509
+   * Required. Immutable. The desired lifetime of the CA certificate. Used to
+   * create the "not_before_time" and "not_after_time" fields inside an X.509
    * certificate.
    * </pre>
    *
@@ -3186,10 +3289,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Immutable. Used when issuing certificates for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. If this
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] is a self-signed CertificateAuthority, this key
-   * is also used to sign the self-signed CA certificate. Otherwise, it
-   * is used to sign a CSR.
+   * Required. Immutable. Used when issuing certificates for this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+   * If this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * is a self-signed CertificateAuthority, this key is also used to sign the
+   * self-signed CA certificate. Otherwise, it is used to sign a CSR.
    * </pre>
    *
    * <code>
@@ -3206,10 +3311,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Immutable. Used when issuing certificates for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. If this
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] is a self-signed CertificateAuthority, this key
-   * is also used to sign the self-signed CA certificate. Otherwise, it
-   * is used to sign a CSR.
+   * Required. Immutable. Used when issuing certificates for this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+   * If this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * is a self-signed CertificateAuthority, this key is also used to sign the
+   * self-signed CA certificate. Otherwise, it is used to sign a CSR.
    * </pre>
    *
    * <code>
@@ -3229,10 +3336,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Immutable. Used when issuing certificates for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. If this
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] is a self-signed CertificateAuthority, this key
-   * is also used to sign the self-signed CA certificate. Otherwise, it
-   * is used to sign a CSR.
+   * Required. Immutable. Used when issuing certificates for this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+   * If this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * is a self-signed CertificateAuthority, this key is also used to sign the
+   * self-signed CA certificate. Otherwise, it is used to sign a CSR.
    * </pre>
    *
    * <code>
@@ -3254,9 +3363,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. If this is a subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], this field will be set
-   * with the subordinate configuration, which describes its issuers. This may
-   * be updated, but this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] must continue to validate.
+   * Optional. If this is a subordinate
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+   * this field will be set with the subordinate configuration, which describes
+   * its issuers. This may be updated, but this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * must continue to validate.
    * </pre>
    *
    * <code>
@@ -3273,9 +3385,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. If this is a subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], this field will be set
-   * with the subordinate configuration, which describes its issuers. This may
-   * be updated, but this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] must continue to validate.
+   * Optional. If this is a subordinate
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+   * this field will be set with the subordinate configuration, which describes
+   * its issuers. This may be updated, but this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * must continue to validate.
    * </pre>
    *
    * <code>
@@ -3294,9 +3409,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. If this is a subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], this field will be set
-   * with the subordinate configuration, which describes its issuers. This may
-   * be updated, but this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] must continue to validate.
+   * Optional. If this is a subordinate
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+   * this field will be set with the subordinate configuration, which describes
+   * its issuers. This may be updated, but this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * must continue to validate.
    * </pre>
    *
    * <code>
@@ -3317,7 +3435,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. The [CaPool.Tier][google.cloud.security.privateca.v1.CaPool.Tier] of the [CaPool][google.cloud.security.privateca.v1.CaPool] that includes this
+   * Output only. The
+   * [CaPool.Tier][google.cloud.security.privateca.v1.CaPool.Tier] of the
+   * [CaPool][google.cloud.security.privateca.v1.CaPool] that includes this
    * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
    * </pre>
    *
@@ -3335,7 +3455,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. The [CaPool.Tier][google.cloud.security.privateca.v1.CaPool.Tier] of the [CaPool][google.cloud.security.privateca.v1.CaPool] that includes this
+   * Output only. The
+   * [CaPool.Tier][google.cloud.security.privateca.v1.CaPool.Tier] of the
+   * [CaPool][google.cloud.security.privateca.v1.CaPool] that includes this
    * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
    * </pre>
    *
@@ -3360,7 +3482,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. The [State][google.cloud.security.privateca.v1.CertificateAuthority.State] for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+   * Output only. The
+   * [State][google.cloud.security.privateca.v1.CertificateAuthority.State] for
+   * this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
    * </pre>
    *
    * <code>
@@ -3377,7 +3502,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. The [State][google.cloud.security.privateca.v1.CertificateAuthority.State] for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+   * Output only. The
+   * [State][google.cloud.security.privateca.v1.CertificateAuthority.State] for
+   * this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
    * </pre>
    *
    * <code>
@@ -3403,10 +3531,15 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. This [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate chain, including the current
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate. Ordered such that the root issuer
-   * is the final element (consistent with RFC 5246). For a self-signed CA, this
-   * will only list the current [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate.
+   * Output only. This
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * certificate chain, including the current
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * certificate. Ordered such that the root issuer is the final element
+   * (consistent with RFC 5246). For a self-signed CA, this will only list the
+   * current
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * certificate.
    * </pre>
    *
    * <code>repeated string pem_ca_certificates = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3421,10 +3554,15 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. This [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate chain, including the current
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate. Ordered such that the root issuer
-   * is the final element (consistent with RFC 5246). For a self-signed CA, this
-   * will only list the current [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate.
+   * Output only. This
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * certificate chain, including the current
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * certificate. Ordered such that the root issuer is the final element
+   * (consistent with RFC 5246). For a self-signed CA, this will only list the
+   * current
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * certificate.
    * </pre>
    *
    * <code>repeated string pem_ca_certificates = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3439,10 +3577,15 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. This [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate chain, including the current
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate. Ordered such that the root issuer
-   * is the final element (consistent with RFC 5246). For a self-signed CA, this
-   * will only list the current [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate.
+   * Output only. This
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * certificate chain, including the current
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * certificate. Ordered such that the root issuer is the final element
+   * (consistent with RFC 5246). For a self-signed CA, this will only list the
+   * current
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * certificate.
    * </pre>
    *
    * <code>repeated string pem_ca_certificates = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3458,10 +3601,15 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. This [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate chain, including the current
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate. Ordered such that the root issuer
-   * is the final element (consistent with RFC 5246). For a self-signed CA, this
-   * will only list the current [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate.
+   * Output only. This
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * certificate chain, including the current
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * certificate. Ordered such that the root issuer is the final element
+   * (consistent with RFC 5246). For a self-signed CA, this will only list the
+   * current
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * certificate.
    * </pre>
    *
    * <code>repeated string pem_ca_certificates = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3483,8 +3631,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. A structured description of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate
-   * and its issuers. Ordered as self-to-root.
+   * Output only. A structured description of this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * CA certificate and its issuers. Ordered as self-to-root.
    * </pre>
    *
    * <code>
@@ -3500,8 +3649,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. A structured description of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate
-   * and its issuers. Ordered as self-to-root.
+   * Output only. A structured description of this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * CA certificate and its issuers. Ordered as self-to-root.
    * </pre>
    *
    * <code>
@@ -3518,8 +3668,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. A structured description of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate
-   * and its issuers. Ordered as self-to-root.
+   * Output only. A structured description of this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * CA certificate and its issuers. Ordered as self-to-root.
    * </pre>
    *
    * <code>
@@ -3534,8 +3685,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. A structured description of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate
-   * and its issuers. Ordered as self-to-root.
+   * Output only. A structured description of this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * CA certificate and its issuers. Ordered as self-to-root.
    * </pre>
    *
    * <code>
@@ -3551,8 +3703,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. A structured description of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate
-   * and its issuers. Ordered as self-to-root.
+   * Output only. A structured description of this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+   * CA certificate and its issuers. Ordered as self-to-root.
    * </pre>
    *
    * <code>
@@ -3573,9 +3726,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Immutable. The name of a Cloud Storage bucket where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] will
-   * publish content, such as the CA certificate and CRLs. This must be a bucket
-   * name, without any prefixes (such as `gs://`) or suffixes (such as
+   * Immutable. The name of a Cloud Storage bucket where this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * will publish content, such as the CA certificate and CRLs. This must be a
+   * bucket name, without any prefixes (such as `gs://`) or suffixes (such as
    * `.googleapis.com`). For example, to use a bucket named `my-bucket`, you
    * would simply specify `my-bucket`. If not specified, a managed bucket will
    * be created.
@@ -3601,9 +3755,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Immutable. The name of a Cloud Storage bucket where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] will
-   * publish content, such as the CA certificate and CRLs. This must be a bucket
-   * name, without any prefixes (such as `gs://`) or suffixes (such as
+   * Immutable. The name of a Cloud Storage bucket where this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * will publish content, such as the CA certificate and CRLs. This must be a
+   * bucket name, without any prefixes (such as `gs://`) or suffixes (such as
    * `.googleapis.com`). For example, to use a bucket named `my-bucket`, you
    * would simply specify `my-bucket`. If not specified, a managed bucket will
    * be created.
@@ -3632,8 +3787,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. URLs for accessing content published by this CA, such as the CA certificate
-   * and CRLs.
+   * Output only. URLs for accessing content published by this CA, such as the
+   * CA certificate and CRLs.
    * </pre>
    *
    * <code>
@@ -3650,8 +3805,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. URLs for accessing content published by this CA, such as the CA certificate
-   * and CRLs.
+   * Output only. URLs for accessing content published by this CA, such as the
+   * CA certificate and CRLs.
    * </pre>
    *
    * <code>
@@ -3671,8 +3826,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. URLs for accessing content published by this CA, such as the CA certificate
-   * and CRLs.
+   * Output only. URLs for accessing content published by this CA, such as the
+   * CA certificate and CRLs.
    * </pre>
    *
    * <code>
@@ -3694,7 +3849,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was created.
+   * Output only. The time at which this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3710,7 +3867,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was created.
+   * Output only. The time at which this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3726,7 +3885,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was created.
+   * Output only. The time at which this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3743,7 +3904,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was last updated.
+   * Output only. The time at which this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * was last updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3759,7 +3922,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was last updated.
+   * Output only. The time at which this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * was last updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3775,7 +3940,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was last updated.
+   * Output only. The time at which this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * was last updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3792,8 +3959,11 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was soft deleted, if
-   * it is in the [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED] state.
+   * Output only. The time at which this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * was soft deleted, if it is in the
+   * [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED]
+   * state.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3809,8 +3979,11 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was soft deleted, if
-   * it is in the [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED] state.
+   * Output only. The time at which this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * was soft deleted, if it is in the
+   * [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED]
+   * state.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3826,8 +3999,11 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was soft deleted, if
-   * it is in the [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED] state.
+   * Output only. The time at which this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * was soft deleted, if it is in the
+   * [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED]
+   * state.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3844,8 +4020,11 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] will be permanently purged,
-   * if it is in the [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED] state.
+   * Output only. The time at which this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * will be permanently purged, if it is in the
+   * [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED]
+   * state.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3861,8 +4040,11 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] will be permanently purged,
-   * if it is in the [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED] state.
+   * Output only. The time at which this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * will be permanently purged, if it is in the
+   * [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED]
+   * state.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3878,8 +4060,11 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] will be permanently purged,
-   * if it is in the [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED] state.
+   * Output only. The time at which this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * will be permanently purged, if it is in the
+   * [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED]
+   * state.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -4373,8 +4558,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * A [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] represents an individual Certificate Authority.
-   * A [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] can be used to create [Certificates][google.cloud.security.privateca.v1.Certificate].
+   * A
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * represents an individual Certificate Authority. A
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * can be used to create
+   * [Certificates][google.cloud.security.privateca.v1.Certificate].
    * </pre>
    *
    * Protobuf type {@code google.cloud.security.privateca.v1.CertificateAuthority}
@@ -4895,8 +5084,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The resource name for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the
-     * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
+     * Output only. The resource name for this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4918,8 +5108,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The resource name for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the
-     * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
+     * Output only. The resource name for this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4941,8 +5132,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The resource name for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the
-     * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
+     * Output only. The resource name for this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4963,8 +5155,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The resource name for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the
-     * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
+     * Output only. The resource name for this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4981,8 +5174,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The resource name for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the
-     * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
+     * Output only. The resource name for this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5006,7 +5200,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. The [Type][google.cloud.security.privateca.v1.CertificateAuthority.Type] of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Required. Immutable. The
+     * [Type][google.cloud.security.privateca.v1.CertificateAuthority.Type] of
+     * this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>
@@ -5023,7 +5220,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. The [Type][google.cloud.security.privateca.v1.CertificateAuthority.Type] of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Required. Immutable. The
+     * [Type][google.cloud.security.privateca.v1.CertificateAuthority.Type] of
+     * this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>
@@ -5043,7 +5243,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. The [Type][google.cloud.security.privateca.v1.CertificateAuthority.Type] of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Required. Immutable. The
+     * [Type][google.cloud.security.privateca.v1.CertificateAuthority.Type] of
+     * this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>
@@ -5064,7 +5267,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. The [Type][google.cloud.security.privateca.v1.CertificateAuthority.Type] of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Required. Immutable. The
+     * [Type][google.cloud.security.privateca.v1.CertificateAuthority.Type] of
+     * this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>
@@ -5087,7 +5293,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. The [Type][google.cloud.security.privateca.v1.CertificateAuthority.Type] of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Required. Immutable. The
+     * [Type][google.cloud.security.privateca.v1.CertificateAuthority.Type] of
+     * this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>
@@ -5113,7 +5322,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. The config used to create a self-signed X.509 certificate or CSR.
+     * Required. Immutable. The config used to create a self-signed X.509
+     * certificate or CSR.
      * </pre>
      *
      * <code>
@@ -5129,7 +5339,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. The config used to create a self-signed X.509 certificate or CSR.
+     * Required. Immutable. The config used to create a self-signed X.509
+     * certificate or CSR.
      * </pre>
      *
      * <code>
@@ -5151,7 +5362,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. The config used to create a self-signed X.509 certificate or CSR.
+     * Required. Immutable. The config used to create a self-signed X.509
+     * certificate or CSR.
      * </pre>
      *
      * <code>
@@ -5175,7 +5387,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. The config used to create a self-signed X.509 certificate or CSR.
+     * Required. Immutable. The config used to create a self-signed X.509
+     * certificate or CSR.
      * </pre>
      *
      * <code>
@@ -5197,7 +5410,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. The config used to create a self-signed X.509 certificate or CSR.
+     * Required. Immutable. The config used to create a self-signed X.509
+     * certificate or CSR.
      * </pre>
      *
      * <code>
@@ -5225,7 +5439,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. The config used to create a self-signed X.509 certificate or CSR.
+     * Required. Immutable. The config used to create a self-signed X.509
+     * certificate or CSR.
      * </pre>
      *
      * <code>
@@ -5246,7 +5461,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. The config used to create a self-signed X.509 certificate or CSR.
+     * Required. Immutable. The config used to create a self-signed X.509
+     * certificate or CSR.
      * </pre>
      *
      * <code>
@@ -5262,7 +5478,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. The config used to create a self-signed X.509 certificate or CSR.
+     * Required. Immutable. The config used to create a self-signed X.509
+     * certificate or CSR.
      * </pre>
      *
      * <code>
@@ -5282,7 +5499,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. The config used to create a self-signed X.509 certificate or CSR.
+     * Required. Immutable. The config used to create a self-signed X.509
+     * certificate or CSR.
      * </pre>
      *
      * <code>
@@ -5316,8 +5534,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. The desired lifetime of the CA certificate. Used to create the
-     * "not_before_time" and "not_after_time" fields inside an X.509
+     * Required. Immutable. The desired lifetime of the CA certificate. Used to
+     * create the "not_before_time" and "not_after_time" fields inside an X.509
      * certificate.
      * </pre>
      *
@@ -5334,8 +5552,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. The desired lifetime of the CA certificate. Used to create the
-     * "not_before_time" and "not_after_time" fields inside an X.509
+     * Required. Immutable. The desired lifetime of the CA certificate. Used to
+     * create the "not_before_time" and "not_after_time" fields inside an X.509
      * certificate.
      * </pre>
      *
@@ -5356,8 +5574,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. The desired lifetime of the CA certificate. Used to create the
-     * "not_before_time" and "not_after_time" fields inside an X.509
+     * Required. Immutable. The desired lifetime of the CA certificate. Used to
+     * create the "not_before_time" and "not_after_time" fields inside an X.509
      * certificate.
      * </pre>
      *
@@ -5382,8 +5600,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. The desired lifetime of the CA certificate. Used to create the
-     * "not_before_time" and "not_after_time" fields inside an X.509
+     * Required. Immutable. The desired lifetime of the CA certificate. Used to
+     * create the "not_before_time" and "not_after_time" fields inside an X.509
      * certificate.
      * </pre>
      *
@@ -5405,8 +5623,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. The desired lifetime of the CA certificate. Used to create the
-     * "not_before_time" and "not_after_time" fields inside an X.509
+     * Required. Immutable. The desired lifetime of the CA certificate. Used to
+     * create the "not_before_time" and "not_after_time" fields inside an X.509
      * certificate.
      * </pre>
      *
@@ -5434,8 +5652,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. The desired lifetime of the CA certificate. Used to create the
-     * "not_before_time" and "not_after_time" fields inside an X.509
+     * Required. Immutable. The desired lifetime of the CA certificate. Used to
+     * create the "not_before_time" and "not_after_time" fields inside an X.509
      * certificate.
      * </pre>
      *
@@ -5457,8 +5675,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. The desired lifetime of the CA certificate. Used to create the
-     * "not_before_time" and "not_after_time" fields inside an X.509
+     * Required. Immutable. The desired lifetime of the CA certificate. Used to
+     * create the "not_before_time" and "not_after_time" fields inside an X.509
      * certificate.
      * </pre>
      *
@@ -5475,8 +5693,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. The desired lifetime of the CA certificate. Used to create the
-     * "not_before_time" and "not_after_time" fields inside an X.509
+     * Required. Immutable. The desired lifetime of the CA certificate. Used to
+     * create the "not_before_time" and "not_after_time" fields inside an X.509
      * certificate.
      * </pre>
      *
@@ -5495,8 +5713,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. The desired lifetime of the CA certificate. Used to create the
-     * "not_before_time" and "not_after_time" fields inside an X.509
+     * Required. Immutable. The desired lifetime of the CA certificate. Used to
+     * create the "not_before_time" and "not_after_time" fields inside an X.509
      * certificate.
      * </pre>
      *
@@ -5531,10 +5749,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. Used when issuing certificates for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. If this
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] is a self-signed CertificateAuthority, this key
-     * is also used to sign the self-signed CA certificate. Otherwise, it
-     * is used to sign a CSR.
+     * Required. Immutable. Used when issuing certificates for this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * If this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * is a self-signed CertificateAuthority, this key is also used to sign the
+     * self-signed CA certificate. Otherwise, it is used to sign a CSR.
      * </pre>
      *
      * <code>
@@ -5550,10 +5770,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. Used when issuing certificates for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. If this
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] is a self-signed CertificateAuthority, this key
-     * is also used to sign the self-signed CA certificate. Otherwise, it
-     * is used to sign a CSR.
+     * Required. Immutable. Used when issuing certificates for this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * If this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * is a self-signed CertificateAuthority, this key is also used to sign the
+     * self-signed CA certificate. Otherwise, it is used to sign a CSR.
      * </pre>
      *
      * <code>
@@ -5576,10 +5798,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. Used when issuing certificates for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. If this
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] is a self-signed CertificateAuthority, this key
-     * is also used to sign the self-signed CA certificate. Otherwise, it
-     * is used to sign a CSR.
+     * Required. Immutable. Used when issuing certificates for this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * If this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * is a self-signed CertificateAuthority, this key is also used to sign the
+     * self-signed CA certificate. Otherwise, it is used to sign a CSR.
      * </pre>
      *
      * <code>
@@ -5604,10 +5828,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. Used when issuing certificates for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. If this
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] is a self-signed CertificateAuthority, this key
-     * is also used to sign the self-signed CA certificate. Otherwise, it
-     * is used to sign a CSR.
+     * Required. Immutable. Used when issuing certificates for this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * If this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * is a self-signed CertificateAuthority, this key is also used to sign the
+     * self-signed CA certificate. Otherwise, it is used to sign a CSR.
      * </pre>
      *
      * <code>
@@ -5630,10 +5856,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. Used when issuing certificates for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. If this
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] is a self-signed CertificateAuthority, this key
-     * is also used to sign the self-signed CA certificate. Otherwise, it
-     * is used to sign a CSR.
+     * Required. Immutable. Used when issuing certificates for this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * If this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * is a self-signed CertificateAuthority, this key is also used to sign the
+     * self-signed CA certificate. Otherwise, it is used to sign a CSR.
      * </pre>
      *
      * <code>
@@ -5663,10 +5891,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. Used when issuing certificates for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. If this
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] is a self-signed CertificateAuthority, this key
-     * is also used to sign the self-signed CA certificate. Otherwise, it
-     * is used to sign a CSR.
+     * Required. Immutable. Used when issuing certificates for this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * If this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * is a self-signed CertificateAuthority, this key is also used to sign the
+     * self-signed CA certificate. Otherwise, it is used to sign a CSR.
      * </pre>
      *
      * <code>
@@ -5687,10 +5917,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. Used when issuing certificates for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. If this
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] is a self-signed CertificateAuthority, this key
-     * is also used to sign the self-signed CA certificate. Otherwise, it
-     * is used to sign a CSR.
+     * Required. Immutable. Used when issuing certificates for this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * If this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * is a self-signed CertificateAuthority, this key is also used to sign the
+     * self-signed CA certificate. Otherwise, it is used to sign a CSR.
      * </pre>
      *
      * <code>
@@ -5707,10 +5939,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. Used when issuing certificates for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. If this
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] is a self-signed CertificateAuthority, this key
-     * is also used to sign the self-signed CA certificate. Otherwise, it
-     * is used to sign a CSR.
+     * Required. Immutable. Used when issuing certificates for this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * If this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * is a self-signed CertificateAuthority, this key is also used to sign the
+     * self-signed CA certificate. Otherwise, it is used to sign a CSR.
      * </pre>
      *
      * <code>
@@ -5732,10 +5966,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Immutable. Used when issuing certificates for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]. If this
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] is a self-signed CertificateAuthority, this key
-     * is also used to sign the self-signed CA certificate. Otherwise, it
-     * is used to sign a CSR.
+     * Required. Immutable. Used when issuing certificates for this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * If this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * is a self-signed CertificateAuthority, this key is also used to sign the
+     * self-signed CA certificate. Otherwise, it is used to sign a CSR.
      * </pre>
      *
      * <code>
@@ -5769,9 +6005,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. If this is a subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], this field will be set
-     * with the subordinate configuration, which describes its issuers. This may
-     * be updated, but this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] must continue to validate.
+     * Optional. If this is a subordinate
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+     * this field will be set with the subordinate configuration, which describes
+     * its issuers. This may be updated, but this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * must continue to validate.
      * </pre>
      *
      * <code>
@@ -5787,9 +6026,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. If this is a subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], this field will be set
-     * with the subordinate configuration, which describes its issuers. This may
-     * be updated, but this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] must continue to validate.
+     * Optional. If this is a subordinate
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+     * this field will be set with the subordinate configuration, which describes
+     * its issuers. This may be updated, but this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * must continue to validate.
      * </pre>
      *
      * <code>
@@ -5811,9 +6053,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. If this is a subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], this field will be set
-     * with the subordinate configuration, which describes its issuers. This may
-     * be updated, but this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] must continue to validate.
+     * Optional. If this is a subordinate
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+     * this field will be set with the subordinate configuration, which describes
+     * its issuers. This may be updated, but this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * must continue to validate.
      * </pre>
      *
      * <code>
@@ -5838,9 +6083,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. If this is a subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], this field will be set
-     * with the subordinate configuration, which describes its issuers. This may
-     * be updated, but this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] must continue to validate.
+     * Optional. If this is a subordinate
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+     * this field will be set with the subordinate configuration, which describes
+     * its issuers. This may be updated, but this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * must continue to validate.
      * </pre>
      *
      * <code>
@@ -5862,9 +6110,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. If this is a subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], this field will be set
-     * with the subordinate configuration, which describes its issuers. This may
-     * be updated, but this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] must continue to validate.
+     * Optional. If this is a subordinate
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+     * this field will be set with the subordinate configuration, which describes
+     * its issuers. This may be updated, but this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * must continue to validate.
      * </pre>
      *
      * <code>
@@ -5893,9 +6144,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. If this is a subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], this field will be set
-     * with the subordinate configuration, which describes its issuers. This may
-     * be updated, but this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] must continue to validate.
+     * Optional. If this is a subordinate
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+     * this field will be set with the subordinate configuration, which describes
+     * its issuers. This may be updated, but this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * must continue to validate.
      * </pre>
      *
      * <code>
@@ -5916,9 +6170,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. If this is a subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], this field will be set
-     * with the subordinate configuration, which describes its issuers. This may
-     * be updated, but this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] must continue to validate.
+     * Optional. If this is a subordinate
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+     * this field will be set with the subordinate configuration, which describes
+     * its issuers. This may be updated, but this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * must continue to validate.
      * </pre>
      *
      * <code>
@@ -5935,9 +6192,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. If this is a subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], this field will be set
-     * with the subordinate configuration, which describes its issuers. This may
-     * be updated, but this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] must continue to validate.
+     * Optional. If this is a subordinate
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+     * this field will be set with the subordinate configuration, which describes
+     * its issuers. This may be updated, but this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * must continue to validate.
      * </pre>
      *
      * <code>
@@ -5958,9 +6218,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. If this is a subordinate [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority], this field will be set
-     * with the subordinate configuration, which describes its issuers. This may
-     * be updated, but this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] must continue to validate.
+     * Optional. If this is a subordinate
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority],
+     * this field will be set with the subordinate configuration, which describes
+     * its issuers. This may be updated, but this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * must continue to validate.
      * </pre>
      *
      * <code>
@@ -5989,7 +6252,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The [CaPool.Tier][google.cloud.security.privateca.v1.CaPool.Tier] of the [CaPool][google.cloud.security.privateca.v1.CaPool] that includes this
+     * Output only. The
+     * [CaPool.Tier][google.cloud.security.privateca.v1.CaPool.Tier] of the
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] that includes this
      * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
@@ -6007,7 +6272,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The [CaPool.Tier][google.cloud.security.privateca.v1.CaPool.Tier] of the [CaPool][google.cloud.security.privateca.v1.CaPool] that includes this
+     * Output only. The
+     * [CaPool.Tier][google.cloud.security.privateca.v1.CaPool.Tier] of the
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] that includes this
      * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
@@ -6028,7 +6295,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The [CaPool.Tier][google.cloud.security.privateca.v1.CaPool.Tier] of the [CaPool][google.cloud.security.privateca.v1.CaPool] that includes this
+     * Output only. The
+     * [CaPool.Tier][google.cloud.security.privateca.v1.CaPool.Tier] of the
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] that includes this
      * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
@@ -6050,7 +6319,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The [CaPool.Tier][google.cloud.security.privateca.v1.CaPool.Tier] of the [CaPool][google.cloud.security.privateca.v1.CaPool] that includes this
+     * Output only. The
+     * [CaPool.Tier][google.cloud.security.privateca.v1.CaPool.Tier] of the
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] that includes this
      * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
@@ -6074,7 +6345,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The [CaPool.Tier][google.cloud.security.privateca.v1.CaPool.Tier] of the [CaPool][google.cloud.security.privateca.v1.CaPool] that includes this
+     * Output only. The
+     * [CaPool.Tier][google.cloud.security.privateca.v1.CaPool.Tier] of the
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] that includes this
      * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
@@ -6096,7 +6369,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The [State][google.cloud.security.privateca.v1.CertificateAuthority.State] for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Output only. The
+     * [State][google.cloud.security.privateca.v1.CertificateAuthority.State] for
+     * this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>
@@ -6113,7 +6389,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The [State][google.cloud.security.privateca.v1.CertificateAuthority.State] for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Output only. The
+     * [State][google.cloud.security.privateca.v1.CertificateAuthority.State] for
+     * this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>
@@ -6133,7 +6412,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The [State][google.cloud.security.privateca.v1.CertificateAuthority.State] for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Output only. The
+     * [State][google.cloud.security.privateca.v1.CertificateAuthority.State] for
+     * this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>
@@ -6154,7 +6436,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The [State][google.cloud.security.privateca.v1.CertificateAuthority.State] for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Output only. The
+     * [State][google.cloud.security.privateca.v1.CertificateAuthority.State] for
+     * this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>
@@ -6178,7 +6463,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The [State][google.cloud.security.privateca.v1.CertificateAuthority.State] for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Output only. The
+     * [State][google.cloud.security.privateca.v1.CertificateAuthority.State] for
+     * this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>
@@ -6207,10 +6495,15 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. This [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate chain, including the current
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate. Ordered such that the root issuer
-     * is the final element (consistent with RFC 5246). For a self-signed CA, this
-     * will only list the current [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate.
+     * Output only. This
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * certificate chain, including the current
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * certificate. Ordered such that the root issuer is the final element
+     * (consistent with RFC 5246). For a self-signed CA, this will only list the
+     * current
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * certificate.
      * </pre>
      *
      * <code>repeated string pem_ca_certificates = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -6225,10 +6518,15 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. This [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate chain, including the current
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate. Ordered such that the root issuer
-     * is the final element (consistent with RFC 5246). For a self-signed CA, this
-     * will only list the current [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate.
+     * Output only. This
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * certificate chain, including the current
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * certificate. Ordered such that the root issuer is the final element
+     * (consistent with RFC 5246). For a self-signed CA, this will only list the
+     * current
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * certificate.
      * </pre>
      *
      * <code>repeated string pem_ca_certificates = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -6243,10 +6541,15 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. This [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate chain, including the current
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate. Ordered such that the root issuer
-     * is the final element (consistent with RFC 5246). For a self-signed CA, this
-     * will only list the current [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate.
+     * Output only. This
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * certificate chain, including the current
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * certificate. Ordered such that the root issuer is the final element
+     * (consistent with RFC 5246). For a self-signed CA, this will only list the
+     * current
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * certificate.
      * </pre>
      *
      * <code>repeated string pem_ca_certificates = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -6262,10 +6565,15 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. This [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate chain, including the current
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate. Ordered such that the root issuer
-     * is the final element (consistent with RFC 5246). For a self-signed CA, this
-     * will only list the current [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate.
+     * Output only. This
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * certificate chain, including the current
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * certificate. Ordered such that the root issuer is the final element
+     * (consistent with RFC 5246). For a self-signed CA, this will only list the
+     * current
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * certificate.
      * </pre>
      *
      * <code>repeated string pem_ca_certificates = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -6281,10 +6589,15 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. This [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate chain, including the current
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate. Ordered such that the root issuer
-     * is the final element (consistent with RFC 5246). For a self-signed CA, this
-     * will only list the current [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate.
+     * Output only. This
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * certificate chain, including the current
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * certificate. Ordered such that the root issuer is the final element
+     * (consistent with RFC 5246). For a self-signed CA, this will only list the
+     * current
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * certificate.
      * </pre>
      *
      * <code>repeated string pem_ca_certificates = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -6307,10 +6620,15 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. This [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate chain, including the current
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate. Ordered such that the root issuer
-     * is the final element (consistent with RFC 5246). For a self-signed CA, this
-     * will only list the current [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate.
+     * Output only. This
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * certificate chain, including the current
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * certificate. Ordered such that the root issuer is the final element
+     * (consistent with RFC 5246). For a self-signed CA, this will only list the
+     * current
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * certificate.
      * </pre>
      *
      * <code>repeated string pem_ca_certificates = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -6332,10 +6650,15 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. This [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate chain, including the current
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate. Ordered such that the root issuer
-     * is the final element (consistent with RFC 5246). For a self-signed CA, this
-     * will only list the current [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate.
+     * Output only. This
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * certificate chain, including the current
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * certificate. Ordered such that the root issuer is the final element
+     * (consistent with RFC 5246). For a self-signed CA, this will only list the
+     * current
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * certificate.
      * </pre>
      *
      * <code>repeated string pem_ca_certificates = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -6354,10 +6677,15 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. This [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate chain, including the current
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate. Ordered such that the root issuer
-     * is the final element (consistent with RFC 5246). For a self-signed CA, this
-     * will only list the current [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate.
+     * Output only. This
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * certificate chain, including the current
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * certificate. Ordered such that the root issuer is the final element
+     * (consistent with RFC 5246). For a self-signed CA, this will only list the
+     * current
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * certificate.
      * </pre>
      *
      * <code>repeated string pem_ca_certificates = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -6375,10 +6703,15 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. This [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate chain, including the current
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate. Ordered such that the root issuer
-     * is the final element (consistent with RFC 5246). For a self-signed CA, this
-     * will only list the current [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s certificate.
+     * Output only. This
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * certificate chain, including the current
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * certificate. Ordered such that the root issuer is the final element
+     * (consistent with RFC 5246). For a self-signed CA, this will only list the
+     * current
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * certificate.
      * </pre>
      *
      * <code>repeated string pem_ca_certificates = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -6420,8 +6753,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. A structured description of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate
-     * and its issuers. Ordered as self-to-root.
+     * Output only. A structured description of this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CA certificate and its issuers. Ordered as self-to-root.
      * </pre>
      *
      * <code>
@@ -6440,8 +6774,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. A structured description of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate
-     * and its issuers. Ordered as self-to-root.
+     * Output only. A structured description of this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CA certificate and its issuers. Ordered as self-to-root.
      * </pre>
      *
      * <code>
@@ -6459,8 +6794,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. A structured description of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate
-     * and its issuers. Ordered as self-to-root.
+     * Output only. A structured description of this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CA certificate and its issuers. Ordered as self-to-root.
      * </pre>
      *
      * <code>
@@ -6479,8 +6815,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. A structured description of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate
-     * and its issuers. Ordered as self-to-root.
+     * Output only. A structured description of this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CA certificate and its issuers. Ordered as self-to-root.
      * </pre>
      *
      * <code>
@@ -6505,8 +6842,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. A structured description of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate
-     * and its issuers. Ordered as self-to-root.
+     * Output only. A structured description of this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CA certificate and its issuers. Ordered as self-to-root.
      * </pre>
      *
      * <code>
@@ -6529,8 +6867,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. A structured description of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate
-     * and its issuers. Ordered as self-to-root.
+     * Output only. A structured description of this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CA certificate and its issuers. Ordered as self-to-root.
      * </pre>
      *
      * <code>
@@ -6555,8 +6894,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. A structured description of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate
-     * and its issuers. Ordered as self-to-root.
+     * Output only. A structured description of this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CA certificate and its issuers. Ordered as self-to-root.
      * </pre>
      *
      * <code>
@@ -6581,8 +6921,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. A structured description of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate
-     * and its issuers. Ordered as self-to-root.
+     * Output only. A structured description of this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CA certificate and its issuers. Ordered as self-to-root.
      * </pre>
      *
      * <code>
@@ -6604,8 +6945,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. A structured description of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate
-     * and its issuers. Ordered as self-to-root.
+     * Output only. A structured description of this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CA certificate and its issuers. Ordered as self-to-root.
      * </pre>
      *
      * <code>
@@ -6628,8 +6970,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. A structured description of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate
-     * and its issuers. Ordered as self-to-root.
+     * Output only. A structured description of this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CA certificate and its issuers. Ordered as self-to-root.
      * </pre>
      *
      * <code>
@@ -6652,8 +6995,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. A structured description of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate
-     * and its issuers. Ordered as self-to-root.
+     * Output only. A structured description of this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CA certificate and its issuers. Ordered as self-to-root.
      * </pre>
      *
      * <code>
@@ -6674,8 +7018,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. A structured description of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate
-     * and its issuers. Ordered as self-to-root.
+     * Output only. A structured description of this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CA certificate and its issuers. Ordered as self-to-root.
      * </pre>
      *
      * <code>
@@ -6696,8 +7041,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. A structured description of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate
-     * and its issuers. Ordered as self-to-root.
+     * Output only. A structured description of this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CA certificate and its issuers. Ordered as self-to-root.
      * </pre>
      *
      * <code>
@@ -6712,8 +7058,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. A structured description of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate
-     * and its issuers. Ordered as self-to-root.
+     * Output only. A structured description of this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CA certificate and its issuers. Ordered as self-to-root.
      * </pre>
      *
      * <code>
@@ -6732,8 +7079,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. A structured description of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate
-     * and its issuers. Ordered as self-to-root.
+     * Output only. A structured description of this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CA certificate and its issuers. Ordered as self-to-root.
      * </pre>
      *
      * <code>
@@ -6753,8 +7101,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. A structured description of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate
-     * and its issuers. Ordered as self-to-root.
+     * Output only. A structured description of this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CA certificate and its issuers. Ordered as self-to-root.
      * </pre>
      *
      * <code>
@@ -6771,8 +7120,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. A structured description of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate
-     * and its issuers. Ordered as self-to-root.
+     * Output only. A structured description of this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CA certificate and its issuers. Ordered as self-to-root.
      * </pre>
      *
      * <code>
@@ -6790,8 +7140,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. A structured description of this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s CA certificate
-     * and its issuers. Ordered as self-to-root.
+     * Output only. A structured description of this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+     * CA certificate and its issuers. Ordered as self-to-root.
      * </pre>
      *
      * <code>
@@ -6828,9 +7179,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Immutable. The name of a Cloud Storage bucket where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] will
-     * publish content, such as the CA certificate and CRLs. This must be a bucket
-     * name, without any prefixes (such as `gs://`) or suffixes (such as
+     * Immutable. The name of a Cloud Storage bucket where this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * will publish content, such as the CA certificate and CRLs. This must be a
+     * bucket name, without any prefixes (such as `gs://`) or suffixes (such as
      * `.googleapis.com`). For example, to use a bucket named `my-bucket`, you
      * would simply specify `my-bucket`. If not specified, a managed bucket will
      * be created.
@@ -6855,9 +7207,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Immutable. The name of a Cloud Storage bucket where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] will
-     * publish content, such as the CA certificate and CRLs. This must be a bucket
-     * name, without any prefixes (such as `gs://`) or suffixes (such as
+     * Immutable. The name of a Cloud Storage bucket where this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * will publish content, such as the CA certificate and CRLs. This must be a
+     * bucket name, without any prefixes (such as `gs://`) or suffixes (such as
      * `.googleapis.com`). For example, to use a bucket named `my-bucket`, you
      * would simply specify `my-bucket`. If not specified, a managed bucket will
      * be created.
@@ -6882,9 +7235,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Immutable. The name of a Cloud Storage bucket where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] will
-     * publish content, such as the CA certificate and CRLs. This must be a bucket
-     * name, without any prefixes (such as `gs://`) or suffixes (such as
+     * Immutable. The name of a Cloud Storage bucket where this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * will publish content, such as the CA certificate and CRLs. This must be a
+     * bucket name, without any prefixes (such as `gs://`) or suffixes (such as
      * `.googleapis.com`). For example, to use a bucket named `my-bucket`, you
      * would simply specify `my-bucket`. If not specified, a managed bucket will
      * be created.
@@ -6908,9 +7262,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Immutable. The name of a Cloud Storage bucket where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] will
-     * publish content, such as the CA certificate and CRLs. This must be a bucket
-     * name, without any prefixes (such as `gs://`) or suffixes (such as
+     * Immutable. The name of a Cloud Storage bucket where this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * will publish content, such as the CA certificate and CRLs. This must be a
+     * bucket name, without any prefixes (such as `gs://`) or suffixes (such as
      * `.googleapis.com`). For example, to use a bucket named `my-bucket`, you
      * would simply specify `my-bucket`. If not specified, a managed bucket will
      * be created.
@@ -6930,9 +7285,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Immutable. The name of a Cloud Storage bucket where this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] will
-     * publish content, such as the CA certificate and CRLs. This must be a bucket
-     * name, without any prefixes (such as `gs://`) or suffixes (such as
+     * Immutable. The name of a Cloud Storage bucket where this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * will publish content, such as the CA certificate and CRLs. This must be a
+     * bucket name, without any prefixes (such as `gs://`) or suffixes (such as
      * `.googleapis.com`). For example, to use a bucket named `my-bucket`, you
      * would simply specify `my-bucket`. If not specified, a managed bucket will
      * be created.
@@ -6964,8 +7320,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. URLs for accessing content published by this CA, such as the CA certificate
-     * and CRLs.
+     * Output only. URLs for accessing content published by this CA, such as the
+     * CA certificate and CRLs.
      * </pre>
      *
      * <code>
@@ -6981,8 +7337,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. URLs for accessing content published by this CA, such as the CA certificate
-     * and CRLs.
+     * Output only. URLs for accessing content published by this CA, such as the
+     * CA certificate and CRLs.
      * </pre>
      *
      * <code>
@@ -7005,8 +7361,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. URLs for accessing content published by this CA, such as the CA certificate
-     * and CRLs.
+     * Output only. URLs for accessing content published by this CA, such as the
+     * CA certificate and CRLs.
      * </pre>
      *
      * <code>
@@ -7031,8 +7387,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. URLs for accessing content published by this CA, such as the CA certificate
-     * and CRLs.
+     * Output only. URLs for accessing content published by this CA, such as the
+     * CA certificate and CRLs.
      * </pre>
      *
      * <code>
@@ -7055,8 +7411,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. URLs for accessing content published by this CA, such as the CA certificate
-     * and CRLs.
+     * Output only. URLs for accessing content published by this CA, such as the
+     * CA certificate and CRLs.
      * </pre>
      *
      * <code>
@@ -7086,8 +7442,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. URLs for accessing content published by this CA, such as the CA certificate
-     * and CRLs.
+     * Output only. URLs for accessing content published by this CA, such as the
+     * CA certificate and CRLs.
      * </pre>
      *
      * <code>
@@ -7108,8 +7464,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. URLs for accessing content published by this CA, such as the CA certificate
-     * and CRLs.
+     * Output only. URLs for accessing content published by this CA, such as the
+     * CA certificate and CRLs.
      * </pre>
      *
      * <code>
@@ -7126,8 +7482,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. URLs for accessing content published by this CA, such as the CA certificate
-     * and CRLs.
+     * Output only. URLs for accessing content published by this CA, such as the
+     * CA certificate and CRLs.
      * </pre>
      *
      * <code>
@@ -7149,8 +7505,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. URLs for accessing content published by this CA, such as the CA certificate
-     * and CRLs.
+     * Output only. URLs for accessing content published by this CA, such as the
+     * CA certificate and CRLs.
      * </pre>
      *
      * <code>
@@ -7184,7 +7540,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was created.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * was created.
      * </pre>
      *
      * <code>
@@ -7200,7 +7558,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was created.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * was created.
      * </pre>
      *
      * <code>
@@ -7222,7 +7582,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was created.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * was created.
      * </pre>
      *
      * <code>
@@ -7246,7 +7608,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was created.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * was created.
      * </pre>
      *
      * <code>
@@ -7267,7 +7631,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was created.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * was created.
      * </pre>
      *
      * <code>
@@ -7294,7 +7660,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was created.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * was created.
      * </pre>
      *
      * <code>
@@ -7315,7 +7683,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was created.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * was created.
      * </pre>
      *
      * <code>
@@ -7331,7 +7701,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was created.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * was created.
      * </pre>
      *
      * <code>
@@ -7351,7 +7723,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was created.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * was created.
      * </pre>
      *
      * <code>
@@ -7385,7 +7759,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was last updated.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * was last updated.
      * </pre>
      *
      * <code>
@@ -7401,7 +7777,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was last updated.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * was last updated.
      * </pre>
      *
      * <code>
@@ -7423,7 +7801,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was last updated.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * was last updated.
      * </pre>
      *
      * <code>
@@ -7447,7 +7827,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was last updated.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * was last updated.
      * </pre>
      *
      * <code>
@@ -7468,7 +7850,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was last updated.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * was last updated.
      * </pre>
      *
      * <code>
@@ -7495,7 +7879,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was last updated.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * was last updated.
      * </pre>
      *
      * <code>
@@ -7516,7 +7902,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was last updated.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * was last updated.
      * </pre>
      *
      * <code>
@@ -7532,7 +7920,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was last updated.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * was last updated.
      * </pre>
      *
      * <code>
@@ -7552,7 +7942,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was last updated.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * was last updated.
      * </pre>
      *
      * <code>
@@ -7586,8 +7978,11 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was soft deleted, if
-     * it is in the [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED] state.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * was soft deleted, if it is in the
+     * [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED]
+     * state.
      * </pre>
      *
      * <code>
@@ -7603,8 +7998,11 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was soft deleted, if
-     * it is in the [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED] state.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * was soft deleted, if it is in the
+     * [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED]
+     * state.
      * </pre>
      *
      * <code>
@@ -7626,8 +8024,11 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was soft deleted, if
-     * it is in the [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED] state.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * was soft deleted, if it is in the
+     * [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED]
+     * state.
      * </pre>
      *
      * <code>
@@ -7651,8 +8052,11 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was soft deleted, if
-     * it is in the [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED] state.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * was soft deleted, if it is in the
+     * [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED]
+     * state.
      * </pre>
      *
      * <code>
@@ -7673,8 +8077,11 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was soft deleted, if
-     * it is in the [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED] state.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * was soft deleted, if it is in the
+     * [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED]
+     * state.
      * </pre>
      *
      * <code>
@@ -7701,8 +8108,11 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was soft deleted, if
-     * it is in the [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED] state.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * was soft deleted, if it is in the
+     * [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED]
+     * state.
      * </pre>
      *
      * <code>
@@ -7723,8 +8133,11 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was soft deleted, if
-     * it is in the [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED] state.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * was soft deleted, if it is in the
+     * [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED]
+     * state.
      * </pre>
      *
      * <code>
@@ -7740,8 +8153,11 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was soft deleted, if
-     * it is in the [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED] state.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * was soft deleted, if it is in the
+     * [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED]
+     * state.
      * </pre>
      *
      * <code>
@@ -7761,8 +8177,11 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] was soft deleted, if
-     * it is in the [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED] state.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * was soft deleted, if it is in the
+     * [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED]
+     * state.
      * </pre>
      *
      * <code>
@@ -7796,8 +8215,11 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] will be permanently purged,
-     * if it is in the [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED] state.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * will be permanently purged, if it is in the
+     * [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED]
+     * state.
      * </pre>
      *
      * <code>
@@ -7813,8 +8235,11 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] will be permanently purged,
-     * if it is in the [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED] state.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * will be permanently purged, if it is in the
+     * [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED]
+     * state.
      * </pre>
      *
      * <code>
@@ -7836,8 +8261,11 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] will be permanently purged,
-     * if it is in the [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED] state.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * will be permanently purged, if it is in the
+     * [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED]
+     * state.
      * </pre>
      *
      * <code>
@@ -7861,8 +8289,11 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] will be permanently purged,
-     * if it is in the [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED] state.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * will be permanently purged, if it is in the
+     * [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED]
+     * state.
      * </pre>
      *
      * <code>
@@ -7883,8 +8314,11 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] will be permanently purged,
-     * if it is in the [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED] state.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * will be permanently purged, if it is in the
+     * [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED]
+     * state.
      * </pre>
      *
      * <code>
@@ -7911,8 +8345,11 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] will be permanently purged,
-     * if it is in the [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED] state.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * will be permanently purged, if it is in the
+     * [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED]
+     * state.
      * </pre>
      *
      * <code>
@@ -7933,8 +8370,11 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] will be permanently purged,
-     * if it is in the [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED] state.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * will be permanently purged, if it is in the
+     * [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED]
+     * state.
      * </pre>
      *
      * <code>
@@ -7950,8 +8390,11 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] will be permanently purged,
-     * if it is in the [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED] state.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * will be permanently purged, if it is in the
+     * [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED]
+     * state.
      * </pre>
      *
      * <code>
@@ -7971,8 +8414,11 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The time at which this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] will be permanently purged,
-     * if it is in the [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED] state.
+     * Output only. The time at which this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * will be permanently purged, if it is in the
+     * [DELETED][google.cloud.security.privateca.v1.CertificateAuthority.State.DELETED]
+     * state.
      * </pre>
      *
      * <code>

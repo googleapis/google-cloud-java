@@ -115,8 +115,9 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
      * Redirection is enabled, and has been finalized so cannot be reverted.
      * </pre>
      *
-     * <code>REDIRECTION_FROM_GCR_IO_FINALIZED = 3;</code>
+     * <code>REDIRECTION_FROM_GCR_IO_FINALIZED = 3 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     REDIRECTION_FROM_GCR_IO_FINALIZED(3),
     UNRECOGNIZED(-1),
     ;
@@ -158,9 +159,9 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
      * Redirection is enabled, and has been finalized so cannot be reverted.
      * </pre>
      *
-     * <code>REDIRECTION_FROM_GCR_IO_FINALIZED = 3;</code>
+     * <code>REDIRECTION_FROM_GCR_IO_FINALIZED = 3 [deprecated = true];</code>
      */
-    public static final int REDIRECTION_FROM_GCR_IO_FINALIZED_VALUE = 3;
+    @java.lang.Deprecated public static final int REDIRECTION_FROM_GCR_IO_FINALIZED_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {

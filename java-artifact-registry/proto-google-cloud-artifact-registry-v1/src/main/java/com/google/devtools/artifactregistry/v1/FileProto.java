@@ -58,38 +58,44 @@ public final class FileProto {
     java.lang.String[] descriptorData = {
       "\n.google/devtools/artifactregistry/v1/fi"
           + "le.proto\022#google.devtools.artifactregist"
-          + "ry.v1\032\031google/api/resource.proto\032\037google"
-          + "/protobuf/timestamp.proto\"\223\001\n\004Hash\022@\n\004ty"
-          + "pe\030\001 \001(\01622.google.devtools.artifactregis"
-          + "try.v1.Hash.HashType\022\r\n\005value\030\002 \001(\014\":\n\010H"
-          + "ashType\022\031\n\025HASH_TYPE_UNSPECIFIED\020\000\022\n\n\006SH"
-          + "A256\020\001\022\007\n\003MD5\020\002\"\317\002\n\004File\022\014\n\004name\030\001 \001(\t\022\022"
-          + "\n\nsize_bytes\030\003 \001(\003\0229\n\006hashes\030\004 \003(\0132).goo"
-          + "gle.devtools.artifactregistry.v1.Hash\022/\n"
-          + "\013create_time\030\005 \001(\0132\032.google.protobuf.Tim"
-          + "estamp\022/\n\013update_time\030\006 \001(\0132\032.google.pro"
-          + "tobuf.Timestamp\022\r\n\005owner\030\007 \001(\t:y\352Av\n$art"
-          + "ifactregistry.googleapis.com/File\022Nproje"
-          + "cts/{project}/locations/{location}/repos"
-          + "itories/{repository}/files/{file}\"k\n\020Lis"
-          + "tFilesRequest\022\016\n\006parent\030\001 \001(\t\022\016\n\006filter\030"
-          + "\004 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003"
-          + " \001(\t\022\020\n\010order_by\030\005 \001(\t\"f\n\021ListFilesRespo"
-          + "nse\0228\n\005files\030\001 \003(\0132).google.devtools.art"
-          + "ifactregistry.v1.File\022\027\n\017next_page_token"
-          + "\030\002 \001(\t\"\036\n\016GetFileRequest\022\014\n\004name\030\001 \001(\tB\367"
-          + "\001\n\'com.google.devtools.artifactregistry."
-          + "v1B\tFileProtoP\001ZSgoogle.golang.org/genpr"
-          + "oto/googleapis/devtools/artifactregistry"
-          + "/v1;artifactregistry\252\002 Google.Cloud.Arti"
-          + "factRegistry.V1\312\002 Google\\Cloud\\ArtifactR"
-          + "egistry\\V1\352\002#Google::Cloud::ArtifactRegi"
-          + "stry::V1b\006proto3"
+          + "ry.v1\032\037google/api/field_behavior.proto\032\031"
+          + "google/api/resource.proto\032\037google/protob"
+          + "uf/timestamp.proto\"\223\001\n\004Hash\022@\n\004type\030\001 \001("
+          + "\01622.google.devtools.artifactregistry.v1."
+          + "Hash.HashType\022\r\n\005value\030\002 \001(\014\":\n\010HashType"
+          + "\022\031\n\025HASH_TYPE_UNSPECIFIED\020\000\022\n\n\006SHA256\020\001\022"
+          + "\007\n\003MD5\020\002\"\216\003\n\004File\022\014\n\004name\030\001 \001(\t\022\022\n\nsize_"
+          + "bytes\030\003 \001(\003\0229\n\006hashes\030\004 \003(\0132).google.dev"
+          + "tools.artifactregistry.v1.Hash\0224\n\013create"
+          + "_time\030\005 \001(\0132\032.google.protobuf.TimestampB"
+          + "\003\340A\003\0224\n\013update_time\030\006 \001(\0132\032.google.proto"
+          + "buf.TimestampB\003\340A\003\022\r\n\005owner\030\007 \001(\t\0223\n\nfet"
+          + "ch_time\030\010 \001(\0132\032.google.protobuf.Timestam"
+          + "pB\003\340A\003:y\352Av\n$artifactregistry.googleapis"
+          + ".com/File\022Nprojects/{project}/locations/"
+          + "{location}/repositories/{repository}/fil"
+          + "es/{file}\"\231\001\n\020ListFilesRequest\022<\n\006parent"
+          + "\030\001 \001(\tB,\340A\002\372A&\022$artifactregistry.googlea"
+          + "pis.com/File\022\016\n\006filter\030\004 \001(\t\022\021\n\tpage_siz"
+          + "e\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\020\n\010order_by\030"
+          + "\005 \001(\t\"f\n\021ListFilesResponse\0228\n\005files\030\001 \003("
+          + "\0132).google.devtools.artifactregistry.v1."
+          + "File\022\027\n\017next_page_token\030\002 \001(\t\"L\n\016GetFile"
+          + "Request\022:\n\004name\030\001 \001(\tB,\340A\002\372A&\n$artifactr"
+          + "egistry.googleapis.com/FileB\367\001\n\'com.goog"
+          + "le.devtools.artifactregistry.v1B\tFilePro"
+          + "toP\001ZSgoogle.golang.org/genproto/googlea"
+          + "pis/devtools/artifactregistry/v1;artifac"
+          + "tregistry\252\002 Google.Cloud.ArtifactRegistr"
+          + "y.V1\312\002 Google\\Cloud\\ArtifactRegistry\\V1\352"
+          + "\002#Google::Cloud::ArtifactRegistry::V1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -107,7 +113,7 @@ public final class FileProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_File_descriptor,
             new java.lang.String[] {
-              "Name", "SizeBytes", "Hashes", "CreateTime", "UpdateTime", "Owner",
+              "Name", "SizeBytes", "Hashes", "CreateTime", "UpdateTime", "Owner", "FetchTime",
             });
     internal_static_google_devtools_artifactregistry_v1_ListFilesRequest_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -135,9 +141,12 @@ public final class FileProto {
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

@@ -20,6 +20,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Aud
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListBigQueryLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
@@ -30,6 +31,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
@@ -52,6 +54,7 @@ import com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse;
+import com.google.analytics.admin.v1alpha.BigQueryLink;
 import com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ConversionEvent;
 import com.google.analytics.admin.v1alpha.CreateAudienceRequest;
@@ -65,6 +68,7 @@ import com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.CreatePropertyRequest;
+import com.google.analytics.admin.v1alpha.CreateSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.CreateUserLinkRequest;
 import com.google.analytics.admin.v1alpha.CustomDimension;
 import com.google.analytics.admin.v1alpha.CustomMetric;
@@ -80,13 +84,17 @@ import com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.DeletePropertyRequest;
+import com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal;
+import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest;
+import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse;
 import com.google.analytics.admin.v1alpha.FirebaseLink;
 import com.google.analytics.admin.v1alpha.GetAccountRequest;
 import com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetAudienceRequest;
+import com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest;
 import com.google.analytics.admin.v1alpha.GetConversionEventRequest;
 import com.google.analytics.admin.v1alpha.GetCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.GetCustomMetricRequest;
@@ -99,6 +107,7 @@ import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
 import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.GetPropertyRequest;
+import com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.GetUserLinkRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
@@ -109,6 +118,8 @@ import com.google.analytics.admin.v1alpha.ListAccountsRequest;
 import com.google.analytics.admin.v1alpha.ListAccountsResponse;
 import com.google.analytics.admin.v1alpha.ListAudiencesRequest;
 import com.google.analytics.admin.v1alpha.ListAudiencesResponse;
+import com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest;
+import com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse;
 import com.google.analytics.admin.v1alpha.ListConversionEventsRequest;
 import com.google.analytics.admin.v1alpha.ListConversionEventsResponse;
 import com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest;
@@ -129,6 +140,8 @@ import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest;
 import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse;
 import com.google.analytics.admin.v1alpha.ListPropertiesRequest;
 import com.google.analytics.admin.v1alpha.ListPropertiesResponse;
+import com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest;
+import com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse;
 import com.google.analytics.admin.v1alpha.ListUserLinksRequest;
 import com.google.analytics.admin.v1alpha.ListUserLinksResponse;
 import com.google.analytics.admin.v1alpha.MeasurementProtocolSecret;
@@ -137,8 +150,11 @@ import com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse;
 import com.google.analytics.admin.v1alpha.RunAccessReportRequest;
 import com.google.analytics.admin.v1alpha.RunAccessReportResponse;
+import com.google.analytics.admin.v1alpha.SearchAds360Link;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
+import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest;
+import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateAudienceRequest;
@@ -151,6 +167,7 @@ import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.UpdatePropertyRequest;
+import com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateUserLinkRequest;
 import com.google.analytics.admin.v1alpha.UserLink;
 import com.google.api.core.BetaApi;
@@ -625,6 +642,35 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: archiveAudienceCallable()");
   }
 
+  public UnaryCallable<GetSearchAds360LinkRequest, SearchAds360Link> getSearchAds360LinkCallable() {
+    throw new UnsupportedOperationException("Not implemented: getSearchAds360LinkCallable()");
+  }
+
+  public UnaryCallable<ListSearchAds360LinksRequest, ListSearchAds360LinksPagedResponse>
+      listSearchAds360LinksPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listSearchAds360LinksPagedCallable()");
+  }
+
+  public UnaryCallable<ListSearchAds360LinksRequest, ListSearchAds360LinksResponse>
+      listSearchAds360LinksCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSearchAds360LinksCallable()");
+  }
+
+  public UnaryCallable<CreateSearchAds360LinkRequest, SearchAds360Link>
+      createSearchAds360LinkCallable() {
+    throw new UnsupportedOperationException("Not implemented: createSearchAds360LinkCallable()");
+  }
+
+  public UnaryCallable<DeleteSearchAds360LinkRequest, Empty> deleteSearchAds360LinkCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteSearchAds360LinkCallable()");
+  }
+
+  public UnaryCallable<UpdateSearchAds360LinkRequest, SearchAds360Link>
+      updateSearchAds360LinkCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateSearchAds360LinkCallable()");
+  }
+
   public UnaryCallable<GetAttributionSettingsRequest, AttributionSettings>
       getAttributionSettingsCallable() {
     throw new UnsupportedOperationException("Not implemented: getAttributionSettingsCallable()");
@@ -637,6 +683,34 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
 
   public UnaryCallable<RunAccessReportRequest, RunAccessReportResponse> runAccessReportCallable() {
     throw new UnsupportedOperationException("Not implemented: runAccessReportCallable()");
+  }
+
+  public UnaryCallable<
+          SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
+      setAutomatedGa4ConfigurationOptOutCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setAutomatedGa4ConfigurationOptOutCallable()");
+  }
+
+  public UnaryCallable<
+          FetchAutomatedGa4ConfigurationOptOutRequest, FetchAutomatedGa4ConfigurationOptOutResponse>
+      fetchAutomatedGa4ConfigurationOptOutCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: fetchAutomatedGa4ConfigurationOptOutCallable()");
+  }
+
+  public UnaryCallable<GetBigQueryLinkRequest, BigQueryLink> getBigQueryLinkCallable() {
+    throw new UnsupportedOperationException("Not implemented: getBigQueryLinkCallable()");
+  }
+
+  public UnaryCallable<ListBigQueryLinksRequest, ListBigQueryLinksPagedResponse>
+      listBigQueryLinksPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBigQueryLinksPagedCallable()");
+  }
+
+  public UnaryCallable<ListBigQueryLinksRequest, ListBigQueryLinksResponse>
+      listBigQueryLinksCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBigQueryLinksCallable()");
   }
 
   @Override

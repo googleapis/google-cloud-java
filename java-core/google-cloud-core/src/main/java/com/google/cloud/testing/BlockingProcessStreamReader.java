@@ -52,11 +52,22 @@ class BlockingProcessStreamReader extends Thread {
     this.logger = logger;
     this.emulatorTag = "[" + emulator + "]";
     this.logLinePattern = Pattern.compile("(\\[" + emulator + "\\]\\s)?(\\w+):.*");
+    LogRecorder logRecorder = new LogRecorder(logger);
     if (!Strings.isNullOrEmpty(blockUntil)) {
       String line;
       do {
         line = errorReader.readLine();
+        if (line != null) {
+          logRecorder.record(line); // recording the logs as these might be the error logs.
+        }
       } while (line != null && !line.contains(blockUntil));
+    }
+
+    /* If the stream is closed here, that means subprocess has been failed to start. In that case, we
+    should flush the recorded startup logs to help the user in debugging */
+    boolean streamClosed = errorReader.read() == -1;
+    if (streamClosed) {
+      logRecorder.flush();
     }
   }
 

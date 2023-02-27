@@ -134,8 +134,8 @@ public final class CreateUserLinkRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. If set, then email the new user notifying them that they've been granted
-   * permissions to the resource.
+   * Optional. If set, then email the new user notifying them that they've been
+   * granted permissions to the resource.
    * </pre>
    *
    * <code>bool notify_new_user = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -726,8 +726,8 @@ public final class CreateUserLinkRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. If set, then email the new user notifying them that they've been granted
-     * permissions to the resource.
+     * Optional. If set, then email the new user notifying them that they've been
+     * granted permissions to the resource.
      * </pre>
      *
      * <code>bool notify_new_user = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -742,8 +742,8 @@ public final class CreateUserLinkRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. If set, then email the new user notifying them that they've been granted
-     * permissions to the resource.
+     * Optional. If set, then email the new user notifying them that they've been
+     * granted permissions to the resource.
      * </pre>
      *
      * <code>bool notify_new_user = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -762,8 +762,8 @@ public final class CreateUserLinkRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. If set, then email the new user notifying them that they've been granted
-     * permissions to the resource.
+     * Optional. If set, then email the new user notifying them that they've been
+     * granted permissions to the resource.
      * </pre>
      *
      * <code>bool notify_new_user = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

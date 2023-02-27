@@ -261,6 +261,7 @@ public class ConversationProfilesClientHttpJsonTest {
             .setLanguageCode("languageCode-2092349083")
             .setTimeZone("timeZone-2077180903")
             .setSecuritySettings("securitySettings-1062971517")
+            .setTtsConfig(SynthesizeSpeechConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -325,6 +326,7 @@ public class ConversationProfilesClientHttpJsonTest {
             .setLanguageCode("languageCode-2092349083")
             .setTimeZone("timeZone-2077180903")
             .setSecuritySettings("securitySettings-1062971517")
+            .setTtsConfig(SynthesizeSpeechConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -385,6 +387,7 @@ public class ConversationProfilesClientHttpJsonTest {
             .setLanguageCode("languageCode-2092349083")
             .setTimeZone("timeZone-2077180903")
             .setSecuritySettings("securitySettings-1062971517")
+            .setTtsConfig(SynthesizeSpeechConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -448,6 +451,7 @@ public class ConversationProfilesClientHttpJsonTest {
             .setLanguageCode("languageCode-2092349083")
             .setTimeZone("timeZone-2077180903")
             .setSecuritySettings("securitySettings-1062971517")
+            .setTtsConfig(SynthesizeSpeechConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -511,6 +515,7 @@ public class ConversationProfilesClientHttpJsonTest {
             .setLanguageCode("languageCode-2092349083")
             .setTimeZone("timeZone-2077180903")
             .setSecuritySettings("securitySettings-1062971517")
+            .setTtsConfig(SynthesizeSpeechConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -574,6 +579,7 @@ public class ConversationProfilesClientHttpJsonTest {
             .setLanguageCode("languageCode-2092349083")
             .setTimeZone("timeZone-2077180903")
             .setSecuritySettings("securitySettings-1062971517")
+            .setTtsConfig(SynthesizeSpeechConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -596,6 +602,7 @@ public class ConversationProfilesClientHttpJsonTest {
             .setLanguageCode("languageCode-2092349083")
             .setTimeZone("timeZone-2077180903")
             .setSecuritySettings("securitySettings-1062971517")
+            .setTtsConfig(SynthesizeSpeechConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -645,6 +652,7 @@ public class ConversationProfilesClientHttpJsonTest {
               .setLanguageCode("languageCode-2092349083")
               .setTimeZone("timeZone-2077180903")
               .setSecuritySettings("securitySettings-1062971517")
+              .setTtsConfig(SynthesizeSpeechConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateConversationProfile(conversationProfile, updateMask);
@@ -759,6 +767,7 @@ public class ConversationProfilesClientHttpJsonTest {
             .setLanguageCode("languageCode-2092349083")
             .setTimeZone("timeZone-2077180903")
             .setSecuritySettings("securitySettings-1062971517")
+            .setTtsConfig(SynthesizeSpeechConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -827,6 +836,7 @@ public class ConversationProfilesClientHttpJsonTest {
             .setLanguageCode("languageCode-2092349083")
             .setTimeZone("timeZone-2077180903")
             .setSecuritySettings("securitySettings-1062971517")
+            .setTtsConfig(SynthesizeSpeechConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

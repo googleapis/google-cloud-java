@@ -121,10 +121,11 @@ public interface FileOrBuilder
    *
    *
    * <pre>
-   * The time when the File was created.
+   * Output only. The time when the File was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -133,10 +134,11 @@ public interface FileOrBuilder
    *
    *
    * <pre>
-   * The time when the File was created.
+   * Output only. The time when the File was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -145,10 +147,11 @@ public interface FileOrBuilder
    *
    *
    * <pre>
-   * The time when the File was created.
+   * Output only. The time when the File was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -156,10 +159,11 @@ public interface FileOrBuilder
    *
    *
    * <pre>
-   * The time when the File was last updated.
+   * Output only. The time when the File was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the updateTime field is set.
    */
@@ -168,10 +172,11 @@ public interface FileOrBuilder
    *
    *
    * <pre>
-   * The time when the File was last updated.
+   * Output only. The time when the File was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The updateTime.
    */
@@ -180,10 +185,11 @@ public interface FileOrBuilder
    *
    *
    * <pre>
-   * The time when the File was last updated.
+   * Output only. The time when the File was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
@@ -211,4 +217,45 @@ public interface FileOrBuilder
    * @return The bytes for owner.
    */
   com.google.protobuf.ByteString getOwnerBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the last attempt to refresh the file's data was
+   * made. Only set when the repository is remote.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp fetch_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the fetchTime field is set.
+   */
+  boolean hasFetchTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the last attempt to refresh the file's data was
+   * made. Only set when the repository is remote.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp fetch_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The fetchTime.
+   */
+  com.google.protobuf.Timestamp getFetchTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the last attempt to refresh the file's data was
+   * made. Only set when the repository is remote.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp fetch_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getFetchTimeOrBuilder();
 }

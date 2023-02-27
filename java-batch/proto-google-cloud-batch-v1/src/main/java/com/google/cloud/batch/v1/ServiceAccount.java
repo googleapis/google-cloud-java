@@ -39,6 +39,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
 
   private ServiceAccount() {
     email_ = "";
+    scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -124,6 +125,73 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SCOPES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringList scopes_;
+  /**
+   *
+   *
+   * <pre>
+   * List of scopes to be enabled for this service account on the VM, in
+   * addition to the cloud-platform API scope that will be added by default.
+   * </pre>
+   *
+   * <code>repeated string scopes = 2;</code>
+   *
+   * @return A list containing the scopes.
+   */
+  public com.google.protobuf.ProtocolStringList getScopesList() {
+    return scopes_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of scopes to be enabled for this service account on the VM, in
+   * addition to the cloud-platform API scope that will be added by default.
+   * </pre>
+   *
+   * <code>repeated string scopes = 2;</code>
+   *
+   * @return The count of scopes.
+   */
+  public int getScopesCount() {
+    return scopes_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of scopes to be enabled for this service account on the VM, in
+   * addition to the cloud-platform API scope that will be added by default.
+   * </pre>
+   *
+   * <code>repeated string scopes = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The scopes at the given index.
+   */
+  public java.lang.String getScopes(int index) {
+    return scopes_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of scopes to be enabled for this service account on the VM, in
+   * addition to the cloud-platform API scope that will be added by default.
+   * </pre>
+   *
+   * <code>repeated string scopes = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the scopes at the given index.
+   */
+  public com.google.protobuf.ByteString getScopesBytes(int index) {
+    return scopes_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -141,6 +209,9 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, email_);
     }
+    for (int i = 0; i < scopes_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, scopes_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -152,6 +223,14 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, email_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < scopes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(scopes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getScopesList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -169,6 +248,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.batch.v1.ServiceAccount other = (com.google.cloud.batch.v1.ServiceAccount) obj;
 
     if (!getEmail().equals(other.getEmail())) return false;
+    if (!getScopesList().equals(other.getScopesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -182,6 +262,10 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + EMAIL_FIELD_NUMBER;
     hash = (53 * hash) + getEmail().hashCode();
+    if (getScopesCount() > 0) {
+      hash = (37 * hash) + SCOPES_FIELD_NUMBER;
+      hash = (53 * hash) + getScopesList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -322,6 +406,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       email_ = "";
+      scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -349,11 +435,20 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.batch.v1.ServiceAccount buildPartial() {
       com.google.cloud.batch.v1.ServiceAccount result =
           new com.google.cloud.batch.v1.ServiceAccount(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.batch.v1.ServiceAccount result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        scopes_ = scopes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.scopes_ = scopes_;
     }
 
     private void buildPartial0(com.google.cloud.batch.v1.ServiceAccount result) {
@@ -413,6 +508,16 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.scopes_.isEmpty()) {
+        if (scopes_.isEmpty()) {
+          scopes_ = other.scopes_;
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ensureScopesIsMutable();
+          scopes_.addAll(other.scopes_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -445,6 +550,13 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureScopesIsMutable();
+                scopes_.add(s);
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -581,6 +693,183 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       email_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList scopes_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureScopesIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        scopes_ = new com.google.protobuf.LazyStringArrayList(scopes_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of scopes to be enabled for this service account on the VM, in
+     * addition to the cloud-platform API scope that will be added by default.
+     * </pre>
+     *
+     * <code>repeated string scopes = 2;</code>
+     *
+     * @return A list containing the scopes.
+     */
+    public com.google.protobuf.ProtocolStringList getScopesList() {
+      return scopes_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of scopes to be enabled for this service account on the VM, in
+     * addition to the cloud-platform API scope that will be added by default.
+     * </pre>
+     *
+     * <code>repeated string scopes = 2;</code>
+     *
+     * @return The count of scopes.
+     */
+    public int getScopesCount() {
+      return scopes_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of scopes to be enabled for this service account on the VM, in
+     * addition to the cloud-platform API scope that will be added by default.
+     * </pre>
+     *
+     * <code>repeated string scopes = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The scopes at the given index.
+     */
+    public java.lang.String getScopes(int index) {
+      return scopes_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of scopes to be enabled for this service account on the VM, in
+     * addition to the cloud-platform API scope that will be added by default.
+     * </pre>
+     *
+     * <code>repeated string scopes = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the scopes at the given index.
+     */
+    public com.google.protobuf.ByteString getScopesBytes(int index) {
+      return scopes_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of scopes to be enabled for this service account on the VM, in
+     * addition to the cloud-platform API scope that will be added by default.
+     * </pre>
+     *
+     * <code>repeated string scopes = 2;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The scopes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setScopes(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureScopesIsMutable();
+      scopes_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of scopes to be enabled for this service account on the VM, in
+     * addition to the cloud-platform API scope that will be added by default.
+     * </pre>
+     *
+     * <code>repeated string scopes = 2;</code>
+     *
+     * @param value The scopes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addScopes(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureScopesIsMutable();
+      scopes_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of scopes to be enabled for this service account on the VM, in
+     * addition to the cloud-platform API scope that will be added by default.
+     * </pre>
+     *
+     * <code>repeated string scopes = 2;</code>
+     *
+     * @param values The scopes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllScopes(java.lang.Iterable<java.lang.String> values) {
+      ensureScopesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, scopes_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of scopes to be enabled for this service account on the VM, in
+     * addition to the cloud-platform API scope that will be added by default.
+     * </pre>
+     *
+     * <code>repeated string scopes = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearScopes() {
+      scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of scopes to be enabled for this service account on the VM, in
+     * addition to the cloud-platform API scope that will be added by default.
+     * </pre>
+     *
+     * <code>repeated string scopes = 2;</code>
+     *
+     * @param value The bytes of the scopes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addScopesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureScopesIsMutable();
+      scopes_.add(value);
       onChanged();
       return this;
     }

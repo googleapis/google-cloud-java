@@ -22,8 +22,11 @@ package com.google.cloud.security.privateca.v1;
  *
  *
  * <pre>
- * Describes the way in which a [Certificate][google.cloud.security.privateca.v1.Certificate]'s [Subject][google.cloud.security.privateca.v1.Subject] and/or
- * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] will be resolved.
+ * Describes the way in which a
+ * [Certificate][google.cloud.security.privateca.v1.Certificate]'s
+ * [Subject][google.cloud.security.privateca.v1.Subject] and/or
+ * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] will be
+ * resolved.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.security.privateca.v1.SubjectRequestMode}
@@ -44,9 +47,10 @@ public enum SubjectRequestMode implements com.google.protobuf.ProtocolMessageEnu
    *
    * <pre>
    * The default mode used in most cases. Indicates that the certificate's
-   * [Subject][google.cloud.security.privateca.v1.Subject] and/or [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] are specified in the certificate
-   * request. This mode requires the caller to have the
-   * `privateca.certificates.create` permission.
+   * [Subject][google.cloud.security.privateca.v1.Subject] and/or
+   * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] are
+   * specified in the certificate request. This mode requires the caller to have
+   * the `privateca.certificates.create` permission.
    * </pre>
    *
    * <code>DEFAULT = 1;</code>
@@ -57,10 +61,13 @@ public enum SubjectRequestMode implements com.google.protobuf.ProtocolMessageEnu
    *
    * <pre>
    * A mode reserved for special cases. Indicates that the certificate should
-   * have one or more SPIFFE [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] set by the service based
-   * on the caller's identity. This mode will ignore any explicitly specified
-   * [Subject][google.cloud.security.privateca.v1.Subject] and/or [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] in the certificate request.
-   * This mode requires the caller to have the
+   * have one or more SPIFFE
+   * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] set
+   * by the service based on the caller's identity. This mode will ignore any
+   * explicitly specified [Subject][google.cloud.security.privateca.v1.Subject]
+   * and/or
+   * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] in
+   * the certificate request. This mode requires the caller to have the
    * `privateca.certificates.createForSelf` permission.
    * </pre>
    *
@@ -85,9 +92,10 @@ public enum SubjectRequestMode implements com.google.protobuf.ProtocolMessageEnu
    *
    * <pre>
    * The default mode used in most cases. Indicates that the certificate's
-   * [Subject][google.cloud.security.privateca.v1.Subject] and/or [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] are specified in the certificate
-   * request. This mode requires the caller to have the
-   * `privateca.certificates.create` permission.
+   * [Subject][google.cloud.security.privateca.v1.Subject] and/or
+   * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] are
+   * specified in the certificate request. This mode requires the caller to have
+   * the `privateca.certificates.create` permission.
    * </pre>
    *
    * <code>DEFAULT = 1;</code>
@@ -98,10 +106,13 @@ public enum SubjectRequestMode implements com.google.protobuf.ProtocolMessageEnu
    *
    * <pre>
    * A mode reserved for special cases. Indicates that the certificate should
-   * have one or more SPIFFE [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] set by the service based
-   * on the caller's identity. This mode will ignore any explicitly specified
-   * [Subject][google.cloud.security.privateca.v1.Subject] and/or [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] in the certificate request.
-   * This mode requires the caller to have the
+   * have one or more SPIFFE
+   * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] set
+   * by the service based on the caller's identity. This mode will ignore any
+   * explicitly specified [Subject][google.cloud.security.privateca.v1.Subject]
+   * and/or
+   * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] in
+   * the certificate request. This mode requires the caller to have the
    * `privateca.certificates.createForSelf` permission.
    * </pre>
    *

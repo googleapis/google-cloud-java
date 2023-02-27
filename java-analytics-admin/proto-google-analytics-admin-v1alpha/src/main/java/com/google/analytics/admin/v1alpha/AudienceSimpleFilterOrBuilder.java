@@ -56,7 +56,8 @@ public interface AudienceSimpleFilterOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. A logical expression of Audience dimension, metric, or event filters.
+   * Required. Immutable. A logical expression of Audience dimension, metric, or
+   * event filters.
    * </pre>
    *
    * <code>
@@ -70,7 +71,8 @@ public interface AudienceSimpleFilterOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. A logical expression of Audience dimension, metric, or event filters.
+   * Required. Immutable. A logical expression of Audience dimension, metric, or
+   * event filters.
    * </pre>
    *
    * <code>
@@ -84,7 +86,8 @@ public interface AudienceSimpleFilterOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. A logical expression of Audience dimension, metric, or event filters.
+   * Required. Immutable. A logical expression of Audience dimension, metric, or
+   * event filters.
    * </pre>
    *
    * <code>

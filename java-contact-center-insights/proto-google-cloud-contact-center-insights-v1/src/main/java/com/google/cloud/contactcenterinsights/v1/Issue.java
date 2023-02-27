@@ -281,8 +281,8 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Resource names of the sample representative utterances that match to this
-   * issue.
+   * Output only. Resource names of the sample representative utterances that
+   * match to this issue.
    * </pre>
    *
    * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -297,8 +297,8 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Resource names of the sample representative utterances that match to this
-   * issue.
+   * Output only. Resource names of the sample representative utterances that
+   * match to this issue.
    * </pre>
    *
    * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -313,8 +313,8 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Resource names of the sample representative utterances that match to this
-   * issue.
+   * Output only. Resource names of the sample representative utterances that
+   * match to this issue.
    * </pre>
    *
    * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -330,8 +330,8 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Resource names of the sample representative utterances that match to this
-   * issue.
+   * Output only. Resource names of the sample representative utterances that
+   * match to this issue.
    * </pre>
    *
    * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1454,8 +1454,8 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Resource names of the sample representative utterances that match to this
-     * issue.
+     * Output only. Resource names of the sample representative utterances that
+     * match to this issue.
      * </pre>
      *
      * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1470,8 +1470,8 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Resource names of the sample representative utterances that match to this
-     * issue.
+     * Output only. Resource names of the sample representative utterances that
+     * match to this issue.
      * </pre>
      *
      * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1486,8 +1486,8 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Resource names of the sample representative utterances that match to this
-     * issue.
+     * Output only. Resource names of the sample representative utterances that
+     * match to this issue.
      * </pre>
      *
      * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1503,8 +1503,8 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Resource names of the sample representative utterances that match to this
-     * issue.
+     * Output only. Resource names of the sample representative utterances that
+     * match to this issue.
      * </pre>
      *
      * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1520,8 +1520,8 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Resource names of the sample representative utterances that match to this
-     * issue.
+     * Output only. Resource names of the sample representative utterances that
+     * match to this issue.
      * </pre>
      *
      * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1544,8 +1544,8 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Resource names of the sample representative utterances that match to this
-     * issue.
+     * Output only. Resource names of the sample representative utterances that
+     * match to this issue.
      * </pre>
      *
      * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1567,8 +1567,8 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Resource names of the sample representative utterances that match to this
-     * issue.
+     * Output only. Resource names of the sample representative utterances that
+     * match to this issue.
      * </pre>
      *
      * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1587,8 +1587,8 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Resource names of the sample representative utterances that match to this
-     * issue.
+     * Output only. Resource names of the sample representative utterances that
+     * match to this issue.
      * </pre>
      *
      * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1606,8 +1606,8 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Resource names of the sample representative utterances that match to this
-     * issue.
+     * Output only. Resource names of the sample representative utterances that
+     * match to this issue.
      * </pre>
      *
      * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];

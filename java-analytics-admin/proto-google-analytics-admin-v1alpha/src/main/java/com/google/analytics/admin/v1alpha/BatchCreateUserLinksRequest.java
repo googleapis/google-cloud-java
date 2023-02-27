@@ -76,8 +76,8 @@ public final class BatchCreateUserLinksRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The account or property that all user links in the request are for.
-   * This field is required. The parent field in the CreateUserLinkRequest
+   * Required. The account or property that all user links in the request are
+   * for. This field is required. The parent field in the CreateUserLinkRequest
    * messages must either be empty or match this field.
    * Example format: accounts/1234
    * </pre>
@@ -104,8 +104,8 @@ public final class BatchCreateUserLinksRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The account or property that all user links in the request are for.
-   * This field is required. The parent field in the CreateUserLinkRequest
+   * Required. The account or property that all user links in the request are
+   * for. This field is required. The parent field in the CreateUserLinkRequest
    * messages must either be empty or match this field.
    * Example format: accounts/1234
    * </pre>
@@ -135,9 +135,9 @@ public final class BatchCreateUserLinksRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. If set, then email the new users notifying them that they've been granted
-   * permissions to the resource. Regardless of whether this is set or not,
-   * notify_new_user field inside each individual request is ignored.
+   * Optional. If set, then email the new users notifying them that they've been
+   * granted permissions to the resource. Regardless of whether this is set or
+   * not, notify_new_user field inside each individual request is ignored.
    * </pre>
    *
    * <code>bool notify_new_users = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -683,8 +683,8 @@ public final class BatchCreateUserLinksRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The account or property that all user links in the request are for.
-     * This field is required. The parent field in the CreateUserLinkRequest
+     * Required. The account or property that all user links in the request are
+     * for. This field is required. The parent field in the CreateUserLinkRequest
      * messages must either be empty or match this field.
      * Example format: accounts/1234
      * </pre>
@@ -710,8 +710,8 @@ public final class BatchCreateUserLinksRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The account or property that all user links in the request are for.
-     * This field is required. The parent field in the CreateUserLinkRequest
+     * Required. The account or property that all user links in the request are
+     * for. This field is required. The parent field in the CreateUserLinkRequest
      * messages must either be empty or match this field.
      * Example format: accounts/1234
      * </pre>
@@ -737,8 +737,8 @@ public final class BatchCreateUserLinksRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The account or property that all user links in the request are for.
-     * This field is required. The parent field in the CreateUserLinkRequest
+     * Required. The account or property that all user links in the request are
+     * for. This field is required. The parent field in the CreateUserLinkRequest
      * messages must either be empty or match this field.
      * Example format: accounts/1234
      * </pre>
@@ -763,8 +763,8 @@ public final class BatchCreateUserLinksRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The account or property that all user links in the request are for.
-     * This field is required. The parent field in the CreateUserLinkRequest
+     * Required. The account or property that all user links in the request are
+     * for. This field is required. The parent field in the CreateUserLinkRequest
      * messages must either be empty or match this field.
      * Example format: accounts/1234
      * </pre>
@@ -785,8 +785,8 @@ public final class BatchCreateUserLinksRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The account or property that all user links in the request are for.
-     * This field is required. The parent field in the CreateUserLinkRequest
+     * Required. The account or property that all user links in the request are
+     * for. This field is required. The parent field in the CreateUserLinkRequest
      * messages must either be empty or match this field.
      * Example format: accounts/1234
      * </pre>
@@ -814,9 +814,9 @@ public final class BatchCreateUserLinksRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. If set, then email the new users notifying them that they've been granted
-     * permissions to the resource. Regardless of whether this is set or not,
-     * notify_new_user field inside each individual request is ignored.
+     * Optional. If set, then email the new users notifying them that they've been
+     * granted permissions to the resource. Regardless of whether this is set or
+     * not, notify_new_user field inside each individual request is ignored.
      * </pre>
      *
      * <code>bool notify_new_users = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -831,9 +831,9 @@ public final class BatchCreateUserLinksRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. If set, then email the new users notifying them that they've been granted
-     * permissions to the resource. Regardless of whether this is set or not,
-     * notify_new_user field inside each individual request is ignored.
+     * Optional. If set, then email the new users notifying them that they've been
+     * granted permissions to the resource. Regardless of whether this is set or
+     * not, notify_new_user field inside each individual request is ignored.
      * </pre>
      *
      * <code>bool notify_new_users = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -852,9 +852,9 @@ public final class BatchCreateUserLinksRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. If set, then email the new users notifying them that they've been granted
-     * permissions to the resource. Regardless of whether this is set or not,
-     * notify_new_user field inside each individual request is ignored.
+     * Optional. If set, then email the new users notifying them that they've been
+     * granted permissions to the resource. Regardless of whether this is set or
+     * not, notify_new_user field inside each individual request is ignored.
      * </pre>
      *
      * <code>bool notify_new_users = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

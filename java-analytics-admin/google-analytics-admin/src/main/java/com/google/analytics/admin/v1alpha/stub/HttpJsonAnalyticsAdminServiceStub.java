@@ -20,6 +20,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Aud
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListBigQueryLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
@@ -30,6 +31,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
@@ -52,6 +54,7 @@ import com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse;
+import com.google.analytics.admin.v1alpha.BigQueryLink;
 import com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ConversionEvent;
 import com.google.analytics.admin.v1alpha.CreateAudienceRequest;
@@ -65,6 +68,7 @@ import com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.CreatePropertyRequest;
+import com.google.analytics.admin.v1alpha.CreateSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.CreateUserLinkRequest;
 import com.google.analytics.admin.v1alpha.CustomDimension;
 import com.google.analytics.admin.v1alpha.CustomMetric;
@@ -80,13 +84,17 @@ import com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.DeletePropertyRequest;
+import com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal;
+import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest;
+import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse;
 import com.google.analytics.admin.v1alpha.FirebaseLink;
 import com.google.analytics.admin.v1alpha.GetAccountRequest;
 import com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetAudienceRequest;
+import com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest;
 import com.google.analytics.admin.v1alpha.GetConversionEventRequest;
 import com.google.analytics.admin.v1alpha.GetCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.GetCustomMetricRequest;
@@ -99,6 +107,7 @@ import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
 import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.GetPropertyRequest;
+import com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.GetUserLinkRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
@@ -109,6 +118,8 @@ import com.google.analytics.admin.v1alpha.ListAccountsRequest;
 import com.google.analytics.admin.v1alpha.ListAccountsResponse;
 import com.google.analytics.admin.v1alpha.ListAudiencesRequest;
 import com.google.analytics.admin.v1alpha.ListAudiencesResponse;
+import com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest;
+import com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse;
 import com.google.analytics.admin.v1alpha.ListConversionEventsRequest;
 import com.google.analytics.admin.v1alpha.ListConversionEventsResponse;
 import com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest;
@@ -129,6 +140,8 @@ import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest;
 import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse;
 import com.google.analytics.admin.v1alpha.ListPropertiesRequest;
 import com.google.analytics.admin.v1alpha.ListPropertiesResponse;
+import com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest;
+import com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse;
 import com.google.analytics.admin.v1alpha.ListUserLinksRequest;
 import com.google.analytics.admin.v1alpha.ListUserLinksResponse;
 import com.google.analytics.admin.v1alpha.MeasurementProtocolSecret;
@@ -137,8 +150,11 @@ import com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse;
 import com.google.analytics.admin.v1alpha.RunAccessReportRequest;
 import com.google.analytics.admin.v1alpha.RunAccessReportResponse;
+import com.google.analytics.admin.v1alpha.SearchAds360Link;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
+import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest;
+import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateAudienceRequest;
@@ -151,6 +167,7 @@ import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.UpdatePropertyRequest;
+import com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateUserLinkRequest;
 import com.google.analytics.admin.v1alpha.UserLink;
 import com.google.api.core.BetaApi;
@@ -3131,6 +3148,195 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<GetSearchAds360LinkRequest, SearchAds360Link>
+      getSearchAds360LinkMethodDescriptor =
+          ApiMethodDescriptor.<GetSearchAds360LinkRequest, SearchAds360Link>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetSearchAds360Link")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetSearchAds360LinkRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=properties/*/searchAds360Links/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSearchAds360LinkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSearchAds360LinkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SearchAds360Link>newBuilder()
+                      .setDefaultInstance(SearchAds360Link.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListSearchAds360LinksRequest, ListSearchAds360LinksResponse>
+      listSearchAds360LinksMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListSearchAds360LinksRequest, ListSearchAds360LinksResponse>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListSearchAds360Links")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListSearchAds360LinksRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=properties/*}/searchAds360Links",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSearchAds360LinksRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSearchAds360LinksRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListSearchAds360LinksResponse>newBuilder()
+                      .setDefaultInstance(ListSearchAds360LinksResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateSearchAds360LinkRequest, SearchAds360Link>
+      createSearchAds360LinkMethodDescriptor =
+          ApiMethodDescriptor.<CreateSearchAds360LinkRequest, SearchAds360Link>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateSearchAds360Link")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateSearchAds360LinkRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=properties/*}/searchAds360Links",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateSearchAds360LinkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateSearchAds360LinkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("searchAds360Link", request.getSearchAds360Link(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SearchAds360Link>newBuilder()
+                      .setDefaultInstance(SearchAds360Link.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteSearchAds360LinkRequest, Empty>
+      deleteSearchAds360LinkMethodDescriptor =
+          ApiMethodDescriptor.<DeleteSearchAds360LinkRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteSearchAds360Link")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteSearchAds360LinkRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=properties/*/searchAds360Links/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteSearchAds360LinkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteSearchAds360LinkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateSearchAds360LinkRequest, SearchAds360Link>
+      updateSearchAds360LinkMethodDescriptor =
+          ApiMethodDescriptor.<UpdateSearchAds360LinkRequest, SearchAds360Link>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateSearchAds360Link")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateSearchAds360LinkRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{searchAds360Link.name=properties/*/searchAds360Links/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSearchAds360LinkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "searchAds360Link.name",
+                                request.getSearchAds360Link().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSearchAds360LinkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("searchAds360Link", request.getSearchAds360Link(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SearchAds360Link>newBuilder()
+                      .setDefaultInstance(SearchAds360Link.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<GetAttributionSettingsRequest, AttributionSettings>
       getAttributionSettingsMethodDescriptor =
           ApiMethodDescriptor.<GetAttributionSettingsRequest, AttributionSettings>newBuilder()
@@ -3245,6 +3451,166 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
               .setResponseParser(
                   ProtoMessageResponseParser.<RunAccessReportResponse>newBuilder()
                       .setDefaultInstance(RunAccessReportResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
+      setAutomatedGa4ConfigurationOptOutMethodDescriptor =
+          ApiMethodDescriptor
+              .<SetAutomatedGa4ConfigurationOptOutRequest,
+                  SetAutomatedGa4ConfigurationOptOutResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/SetAutomatedGa4ConfigurationOptOut")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<SetAutomatedGa4ConfigurationOptOutRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/properties:setAutomatedGa4ConfigurationOptOut",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetAutomatedGa4ConfigurationOptOutRequest>
+                                serializer = ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetAutomatedGa4ConfigurationOptOutRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser
+                      .<SetAutomatedGa4ConfigurationOptOutResponse>newBuilder()
+                      .setDefaultInstance(
+                          SetAutomatedGa4ConfigurationOptOutResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          FetchAutomatedGa4ConfigurationOptOutRequest, FetchAutomatedGa4ConfigurationOptOutResponse>
+      fetchAutomatedGa4ConfigurationOptOutMethodDescriptor =
+          ApiMethodDescriptor
+              .<FetchAutomatedGa4ConfigurationOptOutRequest,
+                  FetchAutomatedGa4ConfigurationOptOutResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/FetchAutomatedGa4ConfigurationOptOut")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<FetchAutomatedGa4ConfigurationOptOutRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/properties:fetchAutomatedGa4ConfigurationOptOut",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchAutomatedGa4ConfigurationOptOutRequest>
+                                serializer = ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchAutomatedGa4ConfigurationOptOutRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser
+                      .<FetchAutomatedGa4ConfigurationOptOutResponse>newBuilder()
+                      .setDefaultInstance(
+                          FetchAutomatedGa4ConfigurationOptOutResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetBigQueryLinkRequest, BigQueryLink>
+      getBigQueryLinkMethodDescriptor =
+          ApiMethodDescriptor.<GetBigQueryLinkRequest, BigQueryLink>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetBigQueryLink")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetBigQueryLinkRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=properties/*/bigQueryLinks/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetBigQueryLinkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetBigQueryLinkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BigQueryLink>newBuilder()
+                      .setDefaultInstance(BigQueryLink.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListBigQueryLinksRequest, ListBigQueryLinksResponse>
+      listBigQueryLinksMethodDescriptor =
+          ApiMethodDescriptor.<ListBigQueryLinksRequest, ListBigQueryLinksResponse>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListBigQueryLinks")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListBigQueryLinksRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=properties/*}/bigQueryLinks",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBigQueryLinksRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBigQueryLinksRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListBigQueryLinksResponse>newBuilder()
+                      .setDefaultInstance(ListBigQueryLinksResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -3417,12 +3783,34 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
   private final UnaryCallable<CreateAudienceRequest, Audience> createAudienceCallable;
   private final UnaryCallable<UpdateAudienceRequest, Audience> updateAudienceCallable;
   private final UnaryCallable<ArchiveAudienceRequest, Empty> archiveAudienceCallable;
+  private final UnaryCallable<GetSearchAds360LinkRequest, SearchAds360Link>
+      getSearchAds360LinkCallable;
+  private final UnaryCallable<ListSearchAds360LinksRequest, ListSearchAds360LinksResponse>
+      listSearchAds360LinksCallable;
+  private final UnaryCallable<ListSearchAds360LinksRequest, ListSearchAds360LinksPagedResponse>
+      listSearchAds360LinksPagedCallable;
+  private final UnaryCallable<CreateSearchAds360LinkRequest, SearchAds360Link>
+      createSearchAds360LinkCallable;
+  private final UnaryCallable<DeleteSearchAds360LinkRequest, Empty> deleteSearchAds360LinkCallable;
+  private final UnaryCallable<UpdateSearchAds360LinkRequest, SearchAds360Link>
+      updateSearchAds360LinkCallable;
   private final UnaryCallable<GetAttributionSettingsRequest, AttributionSettings>
       getAttributionSettingsCallable;
   private final UnaryCallable<UpdateAttributionSettingsRequest, AttributionSettings>
       updateAttributionSettingsCallable;
   private final UnaryCallable<RunAccessReportRequest, RunAccessReportResponse>
       runAccessReportCallable;
+  private final UnaryCallable<
+          SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
+      setAutomatedGa4ConfigurationOptOutCallable;
+  private final UnaryCallable<
+          FetchAutomatedGa4ConfigurationOptOutRequest, FetchAutomatedGa4ConfigurationOptOutResponse>
+      fetchAutomatedGa4ConfigurationOptOutCallable;
+  private final UnaryCallable<GetBigQueryLinkRequest, BigQueryLink> getBigQueryLinkCallable;
+  private final UnaryCallable<ListBigQueryLinksRequest, ListBigQueryLinksResponse>
+      listBigQueryLinksCallable;
+  private final UnaryCallable<ListBigQueryLinksRequest, ListBigQueryLinksPagedResponse>
+      listBigQueryLinksPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -3953,6 +4341,37 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
             .setMethodDescriptor(archiveAudienceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<GetSearchAds360LinkRequest, SearchAds360Link>
+        getSearchAds360LinkTransportSettings =
+            HttpJsonCallSettings.<GetSearchAds360LinkRequest, SearchAds360Link>newBuilder()
+                .setMethodDescriptor(getSearchAds360LinkMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<ListSearchAds360LinksRequest, ListSearchAds360LinksResponse>
+        listSearchAds360LinksTransportSettings =
+            HttpJsonCallSettings
+                .<ListSearchAds360LinksRequest, ListSearchAds360LinksResponse>newBuilder()
+                .setMethodDescriptor(listSearchAds360LinksMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<CreateSearchAds360LinkRequest, SearchAds360Link>
+        createSearchAds360LinkTransportSettings =
+            HttpJsonCallSettings.<CreateSearchAds360LinkRequest, SearchAds360Link>newBuilder()
+                .setMethodDescriptor(createSearchAds360LinkMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<DeleteSearchAds360LinkRequest, Empty>
+        deleteSearchAds360LinkTransportSettings =
+            HttpJsonCallSettings.<DeleteSearchAds360LinkRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteSearchAds360LinkMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<UpdateSearchAds360LinkRequest, SearchAds360Link>
+        updateSearchAds360LinkTransportSettings =
+            HttpJsonCallSettings.<UpdateSearchAds360LinkRequest, SearchAds360Link>newBuilder()
+                .setMethodDescriptor(updateSearchAds360LinkMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<GetAttributionSettingsRequest, AttributionSettings>
         getAttributionSettingsTransportSettings =
             HttpJsonCallSettings.<GetAttributionSettingsRequest, AttributionSettings>newBuilder()
@@ -3969,6 +4388,38 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
         runAccessReportTransportSettings =
             HttpJsonCallSettings.<RunAccessReportRequest, RunAccessReportResponse>newBuilder()
                 .setMethodDescriptor(runAccessReportMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<
+            SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
+        setAutomatedGa4ConfigurationOptOutTransportSettings =
+            HttpJsonCallSettings
+                .<SetAutomatedGa4ConfigurationOptOutRequest,
+                    SetAutomatedGa4ConfigurationOptOutResponse>
+                    newBuilder()
+                .setMethodDescriptor(setAutomatedGa4ConfigurationOptOutMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<
+            FetchAutomatedGa4ConfigurationOptOutRequest,
+            FetchAutomatedGa4ConfigurationOptOutResponse>
+        fetchAutomatedGa4ConfigurationOptOutTransportSettings =
+            HttpJsonCallSettings
+                .<FetchAutomatedGa4ConfigurationOptOutRequest,
+                    FetchAutomatedGa4ConfigurationOptOutResponse>
+                    newBuilder()
+                .setMethodDescriptor(fetchAutomatedGa4ConfigurationOptOutMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<GetBigQueryLinkRequest, BigQueryLink> getBigQueryLinkTransportSettings =
+        HttpJsonCallSettings.<GetBigQueryLinkRequest, BigQueryLink>newBuilder()
+            .setMethodDescriptor(getBigQueryLinkMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<ListBigQueryLinksRequest, ListBigQueryLinksResponse>
+        listBigQueryLinksTransportSettings =
+            HttpJsonCallSettings.<ListBigQueryLinksRequest, ListBigQueryLinksResponse>newBuilder()
+                .setMethodDescriptor(listBigQueryLinksMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
 
@@ -4366,6 +4817,36 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
     this.archiveAudienceCallable =
         callableFactory.createUnaryCallable(
             archiveAudienceTransportSettings, settings.archiveAudienceSettings(), clientContext);
+    this.getSearchAds360LinkCallable =
+        callableFactory.createUnaryCallable(
+            getSearchAds360LinkTransportSettings,
+            settings.getSearchAds360LinkSettings(),
+            clientContext);
+    this.listSearchAds360LinksCallable =
+        callableFactory.createUnaryCallable(
+            listSearchAds360LinksTransportSettings,
+            settings.listSearchAds360LinksSettings(),
+            clientContext);
+    this.listSearchAds360LinksPagedCallable =
+        callableFactory.createPagedCallable(
+            listSearchAds360LinksTransportSettings,
+            settings.listSearchAds360LinksSettings(),
+            clientContext);
+    this.createSearchAds360LinkCallable =
+        callableFactory.createUnaryCallable(
+            createSearchAds360LinkTransportSettings,
+            settings.createSearchAds360LinkSettings(),
+            clientContext);
+    this.deleteSearchAds360LinkCallable =
+        callableFactory.createUnaryCallable(
+            deleteSearchAds360LinkTransportSettings,
+            settings.deleteSearchAds360LinkSettings(),
+            clientContext);
+    this.updateSearchAds360LinkCallable =
+        callableFactory.createUnaryCallable(
+            updateSearchAds360LinkTransportSettings,
+            settings.updateSearchAds360LinkSettings(),
+            clientContext);
     this.getAttributionSettingsCallable =
         callableFactory.createUnaryCallable(
             getAttributionSettingsTransportSettings,
@@ -4379,6 +4860,29 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
     this.runAccessReportCallable =
         callableFactory.createUnaryCallable(
             runAccessReportTransportSettings, settings.runAccessReportSettings(), clientContext);
+    this.setAutomatedGa4ConfigurationOptOutCallable =
+        callableFactory.createUnaryCallable(
+            setAutomatedGa4ConfigurationOptOutTransportSettings,
+            settings.setAutomatedGa4ConfigurationOptOutSettings(),
+            clientContext);
+    this.fetchAutomatedGa4ConfigurationOptOutCallable =
+        callableFactory.createUnaryCallable(
+            fetchAutomatedGa4ConfigurationOptOutTransportSettings,
+            settings.fetchAutomatedGa4ConfigurationOptOutSettings(),
+            clientContext);
+    this.getBigQueryLinkCallable =
+        callableFactory.createUnaryCallable(
+            getBigQueryLinkTransportSettings, settings.getBigQueryLinkSettings(), clientContext);
+    this.listBigQueryLinksCallable =
+        callableFactory.createUnaryCallable(
+            listBigQueryLinksTransportSettings,
+            settings.listBigQueryLinksSettings(),
+            clientContext);
+    this.listBigQueryLinksPagedCallable =
+        callableFactory.createPagedCallable(
+            listBigQueryLinksTransportSettings,
+            settings.listBigQueryLinksSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -4463,9 +4967,18 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
     methodDescriptors.add(createAudienceMethodDescriptor);
     methodDescriptors.add(updateAudienceMethodDescriptor);
     methodDescriptors.add(archiveAudienceMethodDescriptor);
+    methodDescriptors.add(getSearchAds360LinkMethodDescriptor);
+    methodDescriptors.add(listSearchAds360LinksMethodDescriptor);
+    methodDescriptors.add(createSearchAds360LinkMethodDescriptor);
+    methodDescriptors.add(deleteSearchAds360LinkMethodDescriptor);
+    methodDescriptors.add(updateSearchAds360LinkMethodDescriptor);
     methodDescriptors.add(getAttributionSettingsMethodDescriptor);
     methodDescriptors.add(updateAttributionSettingsMethodDescriptor);
     methodDescriptors.add(runAccessReportMethodDescriptor);
+    methodDescriptors.add(setAutomatedGa4ConfigurationOptOutMethodDescriptor);
+    methodDescriptors.add(fetchAutomatedGa4ConfigurationOptOutMethodDescriptor);
+    methodDescriptors.add(getBigQueryLinkMethodDescriptor);
+    methodDescriptors.add(listBigQueryLinksMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -4995,6 +5508,40 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
   }
 
   @Override
+  public UnaryCallable<GetSearchAds360LinkRequest, SearchAds360Link> getSearchAds360LinkCallable() {
+    return getSearchAds360LinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSearchAds360LinksRequest, ListSearchAds360LinksResponse>
+      listSearchAds360LinksCallable() {
+    return listSearchAds360LinksCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSearchAds360LinksRequest, ListSearchAds360LinksPagedResponse>
+      listSearchAds360LinksPagedCallable() {
+    return listSearchAds360LinksPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateSearchAds360LinkRequest, SearchAds360Link>
+      createSearchAds360LinkCallable() {
+    return createSearchAds360LinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSearchAds360LinkRequest, Empty> deleteSearchAds360LinkCallable() {
+    return deleteSearchAds360LinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSearchAds360LinkRequest, SearchAds360Link>
+      updateSearchAds360LinkCallable() {
+    return updateSearchAds360LinkCallable;
+  }
+
+  @Override
   public UnaryCallable<GetAttributionSettingsRequest, AttributionSettings>
       getAttributionSettingsCallable() {
     return getAttributionSettingsCallable;
@@ -5009,6 +5556,37 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
   @Override
   public UnaryCallable<RunAccessReportRequest, RunAccessReportResponse> runAccessReportCallable() {
     return runAccessReportCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
+      setAutomatedGa4ConfigurationOptOutCallable() {
+    return setAutomatedGa4ConfigurationOptOutCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          FetchAutomatedGa4ConfigurationOptOutRequest, FetchAutomatedGa4ConfigurationOptOutResponse>
+      fetchAutomatedGa4ConfigurationOptOutCallable() {
+    return fetchAutomatedGa4ConfigurationOptOutCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetBigQueryLinkRequest, BigQueryLink> getBigQueryLinkCallable() {
+    return getBigQueryLinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBigQueryLinksRequest, ListBigQueryLinksResponse>
+      listBigQueryLinksCallable() {
+    return listBigQueryLinksCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBigQueryLinksRequest, ListBigQueryLinksPagedResponse>
+      listBigQueryLinksPagedCallable() {
+    return listBigQueryLinksPagedCallable;
   }
 
   @Override

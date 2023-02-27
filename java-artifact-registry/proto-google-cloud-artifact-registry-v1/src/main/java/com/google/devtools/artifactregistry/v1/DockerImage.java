@@ -83,8 +83,8 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. registry_location, project_id, repository_name and image id forms a unique
-   * image
+   * Required. registry_location, project_id, repository_name and image id forms
+   * a unique image
    * name:`projects/&lt;project_id&gt;/locations/&lt;location&gt;/repository/&lt;repository_name&gt;/dockerImages/&lt;docker_image&gt;`.
    * For example,
    * "projects/test-project/locations/us-west4/repositories/test-repo/dockerImages/
@@ -115,8 +115,8 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. registry_location, project_id, repository_name and image id forms a unique
-   * image
+   * Required. registry_location, project_id, repository_name and image id forms
+   * a unique image
    * name:`projects/&lt;project_id&gt;/locations/&lt;location&gt;/repository/&lt;repository_name&gt;/dockerImages/&lt;docker_image&gt;`.
    * For example,
    * "projects/test-project/locations/us-west4/repositories/test-repo/dockerImages/
@@ -443,6 +443,55 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     return buildTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : buildTime_;
   }
 
+  public static final int UPDATE_TIME_FIELD_NUMBER = 8;
+  private com.google.protobuf.Timestamp updateTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the docker image was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateTime() {
+    return updateTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the docker image was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getUpdateTime() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the docker image was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -477,6 +526,9 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     }
     if (buildTime_ != null) {
       output.writeMessage(7, getBuildTime());
+    }
+    if (updateTime_ != null) {
+      output.writeMessage(8, getUpdateTime());
     }
     getUnknownFields().writeTo(output);
   }
@@ -513,6 +565,9 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     if (buildTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getBuildTime());
     }
+    if (updateTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getUpdateTime());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -541,6 +596,10 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     if (hasBuildTime() != other.hasBuildTime()) return false;
     if (hasBuildTime()) {
       if (!getBuildTime().equals(other.getBuildTime())) return false;
+    }
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
+    if (hasUpdateTime()) {
+      if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -572,6 +631,10 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     if (hasBuildTime()) {
       hash = (37 * hash) + BUILD_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getBuildTime().hashCode();
+    }
+    if (hasUpdateTime()) {
+      hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateTime().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -733,6 +796,11 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
         buildTimeBuilder_.dispose();
         buildTimeBuilder_ = null;
       }
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
+        updateTimeBuilder_ = null;
+      }
       return this;
     }
 
@@ -796,6 +864,9 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.buildTime_ = buildTimeBuilder_ == null ? buildTime_ : buildTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
       }
     }
 
@@ -879,6 +950,9 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       if (other.hasBuildTime()) {
         mergeBuildTime(other.getBuildTime());
       }
+      if (other.hasUpdateTime()) {
+        mergeUpdateTime(other.getUpdateTime());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -948,6 +1022,12 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 66:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -972,8 +1052,8 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. registry_location, project_id, repository_name and image id forms a unique
-     * image
+     * Required. registry_location, project_id, repository_name and image id forms
+     * a unique image
      * name:`projects/&lt;project_id&gt;/locations/&lt;location&gt;/repository/&lt;repository_name&gt;/dockerImages/&lt;docker_image&gt;`.
      * For example,
      * "projects/test-project/locations/us-west4/repositories/test-repo/dockerImages/
@@ -1003,8 +1083,8 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. registry_location, project_id, repository_name and image id forms a unique
-     * image
+     * Required. registry_location, project_id, repository_name and image id forms
+     * a unique image
      * name:`projects/&lt;project_id&gt;/locations/&lt;location&gt;/repository/&lt;repository_name&gt;/dockerImages/&lt;docker_image&gt;`.
      * For example,
      * "projects/test-project/locations/us-west4/repositories/test-repo/dockerImages/
@@ -1034,8 +1114,8 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. registry_location, project_id, repository_name and image id forms a unique
-     * image
+     * Required. registry_location, project_id, repository_name and image id forms
+     * a unique image
      * name:`projects/&lt;project_id&gt;/locations/&lt;location&gt;/repository/&lt;repository_name&gt;/dockerImages/&lt;docker_image&gt;`.
      * For example,
      * "projects/test-project/locations/us-west4/repositories/test-repo/dockerImages/
@@ -1064,8 +1144,8 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. registry_location, project_id, repository_name and image id forms a unique
-     * image
+     * Required. registry_location, project_id, repository_name and image id forms
+     * a unique image
      * name:`projects/&lt;project_id&gt;/locations/&lt;location&gt;/repository/&lt;repository_name&gt;/dockerImages/&lt;docker_image&gt;`.
      * For example,
      * "projects/test-project/locations/us-west4/repositories/test-repo/dockerImages/
@@ -1090,8 +1170,8 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. registry_location, project_id, repository_name and image id forms a unique
-     * image
+     * Required. registry_location, project_id, repository_name and image id forms
+     * a unique image
      * name:`projects/&lt;project_id&gt;/locations/&lt;location&gt;/repository/&lt;repository_name&gt;/dockerImages/&lt;docker_image&gt;`.
      * For example,
      * "projects/test-project/locations/us-west4/repositories/test-repo/dockerImages/
@@ -1978,6 +2058,207 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
         buildTime_ = null;
       }
       return buildTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp updateTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the docker image was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the updateTime field is set.
+     */
+    public boolean hasUpdateTime() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the docker image was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The updateTime.
+     */
+    public com.google.protobuf.Timestamp getUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      } else {
+        return updateTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the docker image was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateTime_ = value;
+      } else {
+        updateTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the docker image was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = builderForValue.build();
+      } else {
+        updateTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the docker image was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
+        } else {
+          updateTime_ = value;
+        }
+      } else {
+        updateTimeBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the docker image was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearUpdateTime() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
+        updateTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the docker image was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getUpdateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the docker image was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+      if (updateTimeBuilder_ != null) {
+        return updateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the docker image was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getUpdateTimeFieldBuilder() {
+      if (updateTimeBuilder_ == null) {
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
+        updateTime_ = null;
+      }
+      return updateTimeBuilder_;
     }
 
     @java.lang.Override
