@@ -159,6 +159,41 @@ public interface StreamingRecognizeResponseOrBuilder
    *
    *
    * <pre>
+   * Time offset between the beginning of the audio and event emission.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration speech_event_time = 8;</code>
+   *
+   * @return Whether the speechEventTime field is set.
+   */
+  boolean hasSpeechEventTime();
+  /**
+   *
+   *
+   * <pre>
+   * Time offset between the beginning of the audio and event emission.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration speech_event_time = 8;</code>
+   *
+   * @return The speechEventTime.
+   */
+  com.google.protobuf.Duration getSpeechEventTime();
+  /**
+   *
+   *
+   * <pre>
+   * Time offset between the beginning of the audio and event emission.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration speech_event_time = 8;</code>
+   */
+  com.google.protobuf.DurationOrBuilder getSpeechEventTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * When available, billed audio seconds for the stream.
    * Set only if this is the last response in the stream.
    * </pre>

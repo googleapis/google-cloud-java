@@ -244,9 +244,9 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag
-   * of the language in this result. This language code was detected to have
-   * the most likelihood of being spoken in the audio.
+   * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt)
+   * language tag of the language in this result. This language code was
+   * detected to have the most likelihood of being spoken in the audio.
    * </pre>
    *
    * <code>string language_code = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -269,9 +269,9 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag
-   * of the language in this result. This language code was detected to have
-   * the most likelihood of being spoken in the audio.
+   * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt)
+   * language tag of the language in this result. This language code was
+   * detected to have the most likelihood of being spoken in the audio.
    * </pre>
    *
    * <code>string language_code = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1457,9 +1457,9 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag
-     * of the language in this result. This language code was detected to have
-     * the most likelihood of being spoken in the audio.
+     * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt)
+     * language tag of the language in this result. This language code was
+     * detected to have the most likelihood of being spoken in the audio.
      * </pre>
      *
      * <code>string language_code = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1481,9 +1481,9 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag
-     * of the language in this result. This language code was detected to have
-     * the most likelihood of being spoken in the audio.
+     * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt)
+     * language tag of the language in this result. This language code was
+     * detected to have the most likelihood of being spoken in the audio.
      * </pre>
      *
      * <code>string language_code = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1505,9 +1505,9 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag
-     * of the language in this result. This language code was detected to have
-     * the most likelihood of being spoken in the audio.
+     * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt)
+     * language tag of the language in this result. This language code was
+     * detected to have the most likelihood of being spoken in the audio.
      * </pre>
      *
      * <code>string language_code = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1528,9 +1528,9 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag
-     * of the language in this result. This language code was detected to have
-     * the most likelihood of being spoken in the audio.
+     * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt)
+     * language tag of the language in this result. This language code was
+     * detected to have the most likelihood of being spoken in the audio.
      * </pre>
      *
      * <code>string language_code = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1547,9 +1547,9 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag
-     * of the language in this result. This language code was detected to have
-     * the most likelihood of being spoken in the audio.
+     * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt)
+     * language tag of the language in this result. This language code was
+     * detected to have the most likelihood of being spoken in the audio.
      * </pre>
      *
      * <code>string language_code = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

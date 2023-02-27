@@ -191,6 +191,7 @@ public class SpeechClientTest {
         StreamingRecognizeResponse.newBuilder()
             .setError(Status.newBuilder().build())
             .addAllResults(new ArrayList<StreamingRecognitionResult>())
+            .setSpeechEventTime(Duration.newBuilder().build())
             .setTotalBilledTime(Duration.newBuilder().build())
             .setSpeechAdaptationInfo(SpeechAdaptationInfo.newBuilder().build())
             .setRequestId(37109963)

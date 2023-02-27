@@ -29,7 +29,8 @@ public interface RecognitionConfigOrBuilder
    * <pre>
    * Encoding of audio data sent in all `RecognitionAudio` messages.
    * This field is optional for `FLAC` and `WAV` audio files and required
-   * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
+   * for all other audio formats. For details, see
+   * [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>.google.cloud.speech.v1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -43,7 +44,8 @@ public interface RecognitionConfigOrBuilder
    * <pre>
    * Encoding of audio data sent in all `RecognitionAudio` messages.
    * This field is optional for `FLAC` and `WAV` audio files and required
-   * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
+   * for all other audio formats. For details, see
+   * [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>.google.cloud.speech.v1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -62,7 +64,8 @@ public interface RecognitionConfigOrBuilder
    * source to 16000 Hz. If that's not possible, use the native sample rate of
    * the audio source (instead of re-sampling).
    * This field is optional for FLAC and WAV audio files, but is
-   * required for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
+   * required for all other audio formats. For details, see
+   * [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>int32 sample_rate_hertz = 2;</code>

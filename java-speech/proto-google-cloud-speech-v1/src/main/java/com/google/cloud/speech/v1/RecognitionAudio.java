@@ -24,8 +24,8 @@ package com.google.cloud.speech.v1;
  * <pre>
  * Contains audio data in the encoding specified in the `RecognitionConfig`.
  * Either `content` or `uri` must be supplied. Supplying both or neither
- * returns [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. See
- * [content limits](https://cloud.google.com/speech-to-text/quotas#content).
+ * returns [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+ * See [content limits](https://cloud.google.com/speech-to-text/quotas#content).
  * </pre>
  *
  * Protobuf type {@code google.cloud.speech.v1.RecognitionAudio}
@@ -164,8 +164,9 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
    * Currently, only Google Cloud Storage URIs are
    * supported, which must be specified in the following format:
    * `gs://bucket_name/object_name` (other URI formats return
-   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-   * [Request URIs](https://cloud.google.com/storage/docs/reference-uris).
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]).
+   * For more information, see [Request
+   * URIs](https://cloud.google.com/storage/docs/reference-uris).
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -184,8 +185,9 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
    * Currently, only Google Cloud Storage URIs are
    * supported, which must be specified in the following format:
    * `gs://bucket_name/object_name` (other URI formats return
-   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-   * [Request URIs](https://cloud.google.com/storage/docs/reference-uris).
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]).
+   * For more information, see [Request
+   * URIs](https://cloud.google.com/storage/docs/reference-uris).
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -217,8 +219,9 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
    * Currently, only Google Cloud Storage URIs are
    * supported, which must be specified in the following format:
    * `gs://bucket_name/object_name` (other URI formats return
-   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-   * [Request URIs](https://cloud.google.com/storage/docs/reference-uris).
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]).
+   * For more information, see [Request
+   * URIs](https://cloud.google.com/storage/docs/reference-uris).
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -435,8 +438,8 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Contains audio data in the encoding specified in the `RecognitionConfig`.
    * Either `content` or `uri` must be supplied. Supplying both or neither
-   * returns [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. See
-   * [content limits](https://cloud.google.com/speech-to-text/quotas#content).
+   * returns [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+   * See [content limits](https://cloud.google.com/speech-to-text/quotas#content).
    * </pre>
    *
    * Protobuf type {@code google.cloud.speech.v1.RecognitionAudio}
@@ -741,8 +744,9 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
      * Currently, only Google Cloud Storage URIs are
      * supported, which must be specified in the following format:
      * `gs://bucket_name/object_name` (other URI formats return
-     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-     * [Request URIs](https://cloud.google.com/storage/docs/reference-uris).
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]).
+     * For more information, see [Request
+     * URIs](https://cloud.google.com/storage/docs/reference-uris).
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -762,8 +766,9 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
      * Currently, only Google Cloud Storage URIs are
      * supported, which must be specified in the following format:
      * `gs://bucket_name/object_name` (other URI formats return
-     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-     * [Request URIs](https://cloud.google.com/storage/docs/reference-uris).
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]).
+     * For more information, see [Request
+     * URIs](https://cloud.google.com/storage/docs/reference-uris).
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -796,8 +801,9 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
      * Currently, only Google Cloud Storage URIs are
      * supported, which must be specified in the following format:
      * `gs://bucket_name/object_name` (other URI formats return
-     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-     * [Request URIs](https://cloud.google.com/storage/docs/reference-uris).
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]).
+     * For more information, see [Request
+     * URIs](https://cloud.google.com/storage/docs/reference-uris).
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -830,8 +836,9 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
      * Currently, only Google Cloud Storage URIs are
      * supported, which must be specified in the following format:
      * `gs://bucket_name/object_name` (other URI formats return
-     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-     * [Request URIs](https://cloud.google.com/storage/docs/reference-uris).
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]).
+     * For more information, see [Request
+     * URIs](https://cloud.google.com/storage/docs/reference-uris).
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -857,8 +864,9 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
      * Currently, only Google Cloud Storage URIs are
      * supported, which must be specified in the following format:
      * `gs://bucket_name/object_name` (other URI formats return
-     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-     * [Request URIs](https://cloud.google.com/storage/docs/reference-uris).
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]).
+     * For more information, see [Request
+     * URIs](https://cloud.google.com/storage/docs/reference-uris).
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -882,8 +890,9 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
      * Currently, only Google Cloud Storage URIs are
      * supported, which must be specified in the following format:
      * `gs://bucket_name/object_name` (other URI formats return
-     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-     * [Request URIs](https://cloud.google.com/storage/docs/reference-uris).
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]).
+     * For more information, see [Request
+     * URIs](https://cloud.google.com/storage/docs/reference-uris).
      * </pre>
      *
      * <code>string uri = 2;</code>
