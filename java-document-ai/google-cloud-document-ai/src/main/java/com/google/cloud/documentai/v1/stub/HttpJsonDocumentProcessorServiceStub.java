@@ -16,6 +16,7 @@
 
 package com.google.cloud.documentai.v1.stub;
 
+import static com.google.cloud.documentai.v1.DocumentProcessorServiceClient.ListEvaluationsPagedResponse;
 import static com.google.cloud.documentai.v1.DocumentProcessorServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.documentai.v1.DocumentProcessorServiceClient.ListProcessorTypesPagedResponse;
 import static com.google.cloud.documentai.v1.DocumentProcessorServiceClient.ListProcessorVersionsPagedResponse;
@@ -53,11 +54,18 @@ import com.google.cloud.documentai.v1.DisableProcessorResponse;
 import com.google.cloud.documentai.v1.EnableProcessorMetadata;
 import com.google.cloud.documentai.v1.EnableProcessorRequest;
 import com.google.cloud.documentai.v1.EnableProcessorResponse;
+import com.google.cloud.documentai.v1.EvaluateProcessorVersionMetadata;
+import com.google.cloud.documentai.v1.EvaluateProcessorVersionRequest;
+import com.google.cloud.documentai.v1.EvaluateProcessorVersionResponse;
+import com.google.cloud.documentai.v1.Evaluation;
 import com.google.cloud.documentai.v1.FetchProcessorTypesRequest;
 import com.google.cloud.documentai.v1.FetchProcessorTypesResponse;
+import com.google.cloud.documentai.v1.GetEvaluationRequest;
 import com.google.cloud.documentai.v1.GetProcessorRequest;
 import com.google.cloud.documentai.v1.GetProcessorTypeRequest;
 import com.google.cloud.documentai.v1.GetProcessorVersionRequest;
+import com.google.cloud.documentai.v1.ListEvaluationsRequest;
+import com.google.cloud.documentai.v1.ListEvaluationsResponse;
 import com.google.cloud.documentai.v1.ListProcessorTypesRequest;
 import com.google.cloud.documentai.v1.ListProcessorTypesResponse;
 import com.google.cloud.documentai.v1.ListProcessorVersionsRequest;
@@ -75,6 +83,9 @@ import com.google.cloud.documentai.v1.ReviewDocumentResponse;
 import com.google.cloud.documentai.v1.SetDefaultProcessorVersionMetadata;
 import com.google.cloud.documentai.v1.SetDefaultProcessorVersionRequest;
 import com.google.cloud.documentai.v1.SetDefaultProcessorVersionResponse;
+import com.google.cloud.documentai.v1.TrainProcessorVersionMetadata;
+import com.google.cloud.documentai.v1.TrainProcessorVersionRequest;
+import com.google.cloud.documentai.v1.TrainProcessorVersionResponse;
 import com.google.cloud.documentai.v1.UndeployProcessorVersionMetadata;
 import com.google.cloud.documentai.v1.UndeployProcessorVersionRequest;
 import com.google.cloud.documentai.v1.UndeployProcessorVersionResponse;
@@ -107,6 +118,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
           .add(UndeployProcessorVersionResponse.getDescriptor())
           .add(EnableProcessorResponse.getDescriptor())
           .add(SetDefaultProcessorVersionMetadata.getDescriptor())
+          .add(EvaluateProcessorVersionResponse.getDescriptor())
           .add(EnableProcessorMetadata.getDescriptor())
           .add(ReviewDocumentOperationMetadata.getDescriptor())
           .add(SetDefaultProcessorVersionResponse.getDescriptor())
@@ -117,10 +129,13 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
           .add(DeployProcessorVersionResponse.getDescriptor())
           .add(DisableProcessorResponse.getDescriptor())
           .add(BatchProcessResponse.getDescriptor())
+          .add(TrainProcessorVersionResponse.getDescriptor())
           .add(ReviewDocumentResponse.getDescriptor())
+          .add(EvaluateProcessorVersionMetadata.getDescriptor())
           .add(UndeployProcessorVersionMetadata.getDescriptor())
           .add(DeployProcessorVersionMetadata.getDescriptor())
           .add(DisableProcessorMetadata.getDescriptor())
+          .add(TrainProcessorVersionMetadata.getDescriptor())
           .build();
 
   private static final ApiMethodDescriptor<ProcessRequest, ProcessResponse>
@@ -382,6 +397,47 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                       .setDefaultInstance(Processor.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .build();
+
+  private static final ApiMethodDescriptor<TrainProcessorVersionRequest, Operation>
+      trainProcessorVersionMethodDescriptor =
+          ApiMethodDescriptor.<TrainProcessorVersionRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.documentai.v1.DocumentProcessorService/TrainProcessorVersion")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TrainProcessorVersionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/processors/*}/processorVersions:train",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TrainProcessorVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TrainProcessorVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (TrainProcessorVersionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
               .build();
 
   private static final ApiMethodDescriptor<GetProcessorVersionRequest, ProcessorVersion>
@@ -822,6 +878,123 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<EvaluateProcessorVersionRequest, Operation>
+      evaluateProcessorVersionMethodDescriptor =
+          ApiMethodDescriptor.<EvaluateProcessorVersionRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.documentai.v1.DocumentProcessorService/EvaluateProcessorVersion")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<EvaluateProcessorVersionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{processorVersion=projects/*/locations/*/processors/*/processorVersions/*}:evaluateProcessorVersion",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<EvaluateProcessorVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "processorVersion", request.getProcessorVersion());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<EvaluateProcessorVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*",
+                                      request.toBuilder().clearProcessorVersion().build(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (EvaluateProcessorVersionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<GetEvaluationRequest, Evaluation>
+      getEvaluationMethodDescriptor =
+          ApiMethodDescriptor.<GetEvaluationRequest, Evaluation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.documentai.v1.DocumentProcessorService/GetEvaluation")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetEvaluationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/processors/*/processorVersions/*/evaluations/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetEvaluationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetEvaluationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Evaluation>newBuilder()
+                      .setDefaultInstance(Evaluation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListEvaluationsRequest, ListEvaluationsResponse>
+      listEvaluationsMethodDescriptor =
+          ApiMethodDescriptor.<ListEvaluationsRequest, ListEvaluationsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.documentai.v1.DocumentProcessorService/ListEvaluations")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListEvaluationsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/processors/*/processorVersions/*}/evaluations",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListEvaluationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListEvaluationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListEvaluationsResponse>newBuilder()
+                      .setDefaultInstance(ListEvaluationsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -907,6 +1080,13 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
   private final UnaryCallable<ListProcessorsRequest, ListProcessorsPagedResponse>
       listProcessorsPagedCallable;
   private final UnaryCallable<GetProcessorRequest, Processor> getProcessorCallable;
+  private final UnaryCallable<TrainProcessorVersionRequest, Operation>
+      trainProcessorVersionCallable;
+  private final OperationCallable<
+          TrainProcessorVersionRequest,
+          TrainProcessorVersionResponse,
+          TrainProcessorVersionMetadata>
+      trainProcessorVersionOperationCallable;
   private final UnaryCallable<GetProcessorVersionRequest, ProcessorVersion>
       getProcessorVersionCallable;
   private final UnaryCallable<ListProcessorVersionsRequest, ListProcessorVersionsResponse>
@@ -955,6 +1135,18 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
   private final OperationCallable<
           ReviewDocumentRequest, ReviewDocumentResponse, ReviewDocumentOperationMetadata>
       reviewDocumentOperationCallable;
+  private final UnaryCallable<EvaluateProcessorVersionRequest, Operation>
+      evaluateProcessorVersionCallable;
+  private final OperationCallable<
+          EvaluateProcessorVersionRequest,
+          EvaluateProcessorVersionResponse,
+          EvaluateProcessorVersionMetadata>
+      evaluateProcessorVersionOperationCallable;
+  private final UnaryCallable<GetEvaluationRequest, Evaluation> getEvaluationCallable;
+  private final UnaryCallable<ListEvaluationsRequest, ListEvaluationsResponse>
+      listEvaluationsCallable;
+  private final UnaryCallable<ListEvaluationsRequest, ListEvaluationsPagedResponse>
+      listEvaluationsPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1047,6 +1239,12 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
             .setMethodDescriptor(getProcessorMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<TrainProcessorVersionRequest, Operation>
+        trainProcessorVersionTransportSettings =
+            HttpJsonCallSettings.<TrainProcessorVersionRequest, Operation>newBuilder()
+                .setMethodDescriptor(trainProcessorVersionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<GetProcessorVersionRequest, ProcessorVersion>
         getProcessorVersionTransportSettings =
             HttpJsonCallSettings.<GetProcessorVersionRequest, ProcessorVersion>newBuilder()
@@ -1109,6 +1307,23 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
             .setMethodDescriptor(reviewDocumentMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<EvaluateProcessorVersionRequest, Operation>
+        evaluateProcessorVersionTransportSettings =
+            HttpJsonCallSettings.<EvaluateProcessorVersionRequest, Operation>newBuilder()
+                .setMethodDescriptor(evaluateProcessorVersionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<GetEvaluationRequest, Evaluation> getEvaluationTransportSettings =
+        HttpJsonCallSettings.<GetEvaluationRequest, Evaluation>newBuilder()
+            .setMethodDescriptor(getEvaluationMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<ListEvaluationsRequest, ListEvaluationsResponse>
+        listEvaluationsTransportSettings =
+            HttpJsonCallSettings.<ListEvaluationsRequest, ListEvaluationsResponse>newBuilder()
+                .setMethodDescriptor(listEvaluationsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1162,6 +1377,17 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
     this.getProcessorCallable =
         callableFactory.createUnaryCallable(
             getProcessorTransportSettings, settings.getProcessorSettings(), clientContext);
+    this.trainProcessorVersionCallable =
+        callableFactory.createUnaryCallable(
+            trainProcessorVersionTransportSettings,
+            settings.trainProcessorVersionSettings(),
+            clientContext);
+    this.trainProcessorVersionOperationCallable =
+        callableFactory.createOperationCallable(
+            trainProcessorVersionTransportSettings,
+            settings.trainProcessorVersionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getProcessorVersionCallable =
         callableFactory.createUnaryCallable(
             getProcessorVersionTransportSettings,
@@ -1260,6 +1486,26 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
             settings.reviewDocumentOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.evaluateProcessorVersionCallable =
+        callableFactory.createUnaryCallable(
+            evaluateProcessorVersionTransportSettings,
+            settings.evaluateProcessorVersionSettings(),
+            clientContext);
+    this.evaluateProcessorVersionOperationCallable =
+        callableFactory.createOperationCallable(
+            evaluateProcessorVersionTransportSettings,
+            settings.evaluateProcessorVersionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getEvaluationCallable =
+        callableFactory.createUnaryCallable(
+            getEvaluationTransportSettings, settings.getEvaluationSettings(), clientContext);
+    this.listEvaluationsCallable =
+        callableFactory.createUnaryCallable(
+            listEvaluationsTransportSettings, settings.listEvaluationsSettings(), clientContext);
+    this.listEvaluationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listEvaluationsTransportSettings, settings.listEvaluationsSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1284,6 +1530,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
     methodDescriptors.add(getProcessorTypeMethodDescriptor);
     methodDescriptors.add(listProcessorsMethodDescriptor);
     methodDescriptors.add(getProcessorMethodDescriptor);
+    methodDescriptors.add(trainProcessorVersionMethodDescriptor);
     methodDescriptors.add(getProcessorVersionMethodDescriptor);
     methodDescriptors.add(listProcessorVersionsMethodDescriptor);
     methodDescriptors.add(deleteProcessorVersionMethodDescriptor);
@@ -1295,6 +1542,9 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
     methodDescriptors.add(disableProcessorMethodDescriptor);
     methodDescriptors.add(setDefaultProcessorVersionMethodDescriptor);
     methodDescriptors.add(reviewDocumentMethodDescriptor);
+    methodDescriptors.add(evaluateProcessorVersionMethodDescriptor);
+    methodDescriptors.add(getEvaluationMethodDescriptor);
+    methodDescriptors.add(listEvaluationsMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -1357,6 +1607,20 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
   @Override
   public UnaryCallable<GetProcessorRequest, Processor> getProcessorCallable() {
     return getProcessorCallable;
+  }
+
+  @Override
+  public UnaryCallable<TrainProcessorVersionRequest, Operation> trainProcessorVersionCallable() {
+    return trainProcessorVersionCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          TrainProcessorVersionRequest,
+          TrainProcessorVersionResponse,
+          TrainProcessorVersionMetadata>
+      trainProcessorVersionOperationCallable() {
+    return trainProcessorVersionOperationCallable;
   }
 
   @Override
@@ -1480,6 +1744,37 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
           ReviewDocumentRequest, ReviewDocumentResponse, ReviewDocumentOperationMetadata>
       reviewDocumentOperationCallable() {
     return reviewDocumentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<EvaluateProcessorVersionRequest, Operation>
+      evaluateProcessorVersionCallable() {
+    return evaluateProcessorVersionCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          EvaluateProcessorVersionRequest,
+          EvaluateProcessorVersionResponse,
+          EvaluateProcessorVersionMetadata>
+      evaluateProcessorVersionOperationCallable() {
+    return evaluateProcessorVersionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetEvaluationRequest, Evaluation> getEvaluationCallable() {
+    return getEvaluationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListEvaluationsRequest, ListEvaluationsResponse> listEvaluationsCallable() {
+    return listEvaluationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListEvaluationsRequest, ListEvaluationsPagedResponse>
+      listEvaluationsPagedCallable() {
+    return listEvaluationsPagedCallable;
   }
 
   @Override

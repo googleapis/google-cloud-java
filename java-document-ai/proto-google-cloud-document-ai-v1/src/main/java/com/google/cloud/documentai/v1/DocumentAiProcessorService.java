@@ -180,6 +180,26 @@ public final class DocumentAiProcessorService {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_documentai_v1_SetDefaultProcessorVersionMetadata_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1_TrainProcessorVersionRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1_TrainProcessorVersionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1_TrainProcessorVersionRequest_InputData_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1_TrainProcessorVersionRequest_InputData_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1_TrainProcessorVersionResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1_TrainProcessorVersionResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1_TrainProcessorVersionMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1_TrainProcessorVersionMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1_TrainProcessorVersionMetadata_DatasetValidation_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1_TrainProcessorVersionMetadata_DatasetValidation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_documentai_v1_ReviewDocumentRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_documentai_v1_ReviewDocumentRequest_fieldAccessorTable;
@@ -191,6 +211,30 @@ public final class DocumentAiProcessorService {
       internal_static_google_cloud_documentai_v1_ReviewDocumentOperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_documentai_v1_ReviewDocumentOperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1_EvaluateProcessorVersionRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1_EvaluateProcessorVersionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1_EvaluateProcessorVersionMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1_EvaluateProcessorVersionMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1_EvaluateProcessorVersionResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1_EvaluateProcessorVersionResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1_GetEvaluationRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1_GetEvaluationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1_ListEvaluationsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1_ListEvaluationsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1_ListEvaluationsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1_ListEvaluationsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -208,268 +252,341 @@ public final class DocumentAiProcessorService {
           + "roto\032)google/cloud/documentai/v1/documen"
           + "t.proto\032,google/cloud/documentai/v1/docu"
           + "ment_io.proto\0320google/cloud/documentai/v"
-          + "1/document_schema.proto\0323google/cloud/do"
-          + "cumentai/v1/operation_metadata.proto\032*go"
-          + "ogle/cloud/documentai/v1/processor.proto"
-          + "\032/google/cloud/documentai/v1/processor_t"
-          + "ype.proto\032#google/longrunning/operations"
-          + ".proto\032 google/protobuf/field_mask.proto"
-          + "\032\037google/protobuf/timestamp.proto\032\027googl"
-          + "e/rpc/status.proto\"\200\002\n\016ProcessRequest\022?\n"
-          + "\017inline_document\030\004 \001(\0132$.google.cloud.do"
-          + "cumentai.v1.DocumentH\000\022?\n\014raw_document\030\005"
-          + " \001(\0132\'.google.cloud.documentai.v1.RawDoc"
-          + "umentH\000\022\027\n\004name\030\001 \001(\tB\t\340A\002\372A\003\n\001*\022\031\n\021skip"
-          + "_human_review\030\003 \001(\010\022.\n\nfield_mask\030\006 \001(\0132"
-          + "\032.google.protobuf.FieldMaskB\010\n\006source\"\356\001"
-          + "\n\021HumanReviewStatus\022B\n\005state\030\001 \001(\01623.goo"
-          + "gle.cloud.documentai.v1.HumanReviewStatu"
-          + "s.State\022\025\n\rstate_message\030\002 \001(\t\022\036\n\026human_"
-          + "review_operation\030\003 \001(\t\"^\n\005State\022\025\n\021STATE"
-          + "_UNSPECIFIED\020\000\022\013\n\007SKIPPED\020\001\022\025\n\021VALIDATIO"
-          + "N_PASSED\020\002\022\017\n\013IN_PROGRESS\020\003\022\t\n\005ERROR\020\004\"\225"
-          + "\001\n\017ProcessResponse\0226\n\010document\030\001 \001(\0132$.g"
-          + "oogle.cloud.documentai.v1.Document\022J\n\023hu"
-          + "man_review_status\030\003 \001(\0132-.google.cloud.d"
-          + "ocumentai.v1.HumanReviewStatus\"\353\001\n\023Batch"
-          + "ProcessRequest\022\027\n\004name\030\001 \001(\tB\t\340A\002\372A\003\n\001*\022"
-          + "N\n\017input_documents\030\005 \001(\01325.google.cloud."
-          + "documentai.v1.BatchDocumentsInputConfig\022"
-          + "P\n\026document_output_config\030\006 \001(\01320.google"
-          + ".cloud.documentai.v1.DocumentOutputConfi"
-          + "g\022\031\n\021skip_human_review\030\004 \001(\010\"\026\n\024BatchPro"
-          + "cessResponse\"\377\004\n\024BatchProcessMetadata\022E\n"
-          + "\005state\030\001 \001(\01626.google.cloud.documentai.v"
-          + "1.BatchProcessMetadata.State\022\025\n\rstate_me"
-          + "ssage\030\002 \001(\t\022/\n\013create_time\030\003 \001(\0132\032.googl"
-          + "e.protobuf.Timestamp\022/\n\013update_time\030\004 \001("
-          + "\0132\032.google.protobuf.Timestamp\022m\n\033individ"
-          + "ual_process_statuses\030\005 \003(\0132H.google.clou"
-          + "d.documentai.v1.BatchProcessMetadata.Ind"
-          + "ividualProcessStatus\032\303\001\n\027IndividualProce"
-          + "ssStatus\022\030\n\020input_gcs_source\030\001 \001(\t\022\"\n\006st"
-          + "atus\030\002 \001(\0132\022.google.rpc.Status\022\036\n\026output"
-          + "_gcs_destination\030\003 \001(\t\022J\n\023human_review_s"
-          + "tatus\030\005 \001(\0132-.google.cloud.documentai.v1"
-          + ".HumanReviewStatus\"r\n\005State\022\025\n\021STATE_UNS"
-          + "PECIFIED\020\000\022\013\n\007WAITING\020\001\022\013\n\007RUNNING\020\002\022\r\n\t"
-          + "SUCCEEDED\020\003\022\016\n\nCANCELLING\020\004\022\r\n\tCANCELLED"
-          + "\020\005\022\n\n\006FAILED\020\006\"]\n\032FetchProcessorTypesReq"
-          + "uest\022?\n\006parent\030\001 \001(\tB/\340A\002\372A)\022\'documentai"
-          + ".googleapis.com/ProcessorType\"a\n\033FetchPr"
-          + "ocessorTypesResponse\022B\n\017processor_types\030"
-          + "\001 \003(\0132).google.cloud.documentai.v1.Proce"
-          + "ssorType\"\203\001\n\031ListProcessorTypesRequest\022?"
+          + "1/document_schema.proto\032+google/cloud/do"
+          + "cumentai/v1/evaluation.proto\0323google/clo"
+          + "ud/documentai/v1/operation_metadata.prot"
+          + "o\032*google/cloud/documentai/v1/processor."
+          + "proto\032/google/cloud/documentai/v1/proces"
+          + "sor_type.proto\032#google/longrunning/opera"
+          + "tions.proto\032\033google/protobuf/empty.proto"
+          + "\032 google/protobuf/field_mask.proto\032\037goog"
+          + "le/protobuf/timestamp.proto\032\027google/rpc/"
+          + "status.proto\"\200\002\n\016ProcessRequest\022?\n\017inlin"
+          + "e_document\030\004 \001(\0132$.google.cloud.document"
+          + "ai.v1.DocumentH\000\022?\n\014raw_document\030\005 \001(\0132\'"
+          + ".google.cloud.documentai.v1.RawDocumentH"
+          + "\000\022\027\n\004name\030\001 \001(\tB\t\340A\002\372A\003\n\001*\022\031\n\021skip_human"
+          + "_review\030\003 \001(\010\022.\n\nfield_mask\030\006 \001(\0132\032.goog"
+          + "le.protobuf.FieldMaskB\010\n\006source\"\356\001\n\021Huma"
+          + "nReviewStatus\022B\n\005state\030\001 \001(\01623.google.cl"
+          + "oud.documentai.v1.HumanReviewStatus.Stat"
+          + "e\022\025\n\rstate_message\030\002 \001(\t\022\036\n\026human_review"
+          + "_operation\030\003 \001(\t\"^\n\005State\022\025\n\021STATE_UNSPE"
+          + "CIFIED\020\000\022\013\n\007SKIPPED\020\001\022\025\n\021VALIDATION_PASS"
+          + "ED\020\002\022\017\n\013IN_PROGRESS\020\003\022\t\n\005ERROR\020\004\"\225\001\n\017Pro"
+          + "cessResponse\0226\n\010document\030\001 \001(\0132$.google."
+          + "cloud.documentai.v1.Document\022J\n\023human_re"
+          + "view_status\030\003 \001(\0132-.google.cloud.documen"
+          + "tai.v1.HumanReviewStatus\"\353\001\n\023BatchProces"
+          + "sRequest\022\027\n\004name\030\001 \001(\tB\t\340A\002\372A\003\n\001*\022N\n\017inp"
+          + "ut_documents\030\005 \001(\01325.google.cloud.docume"
+          + "ntai.v1.BatchDocumentsInputConfig\022P\n\026doc"
+          + "ument_output_config\030\006 \001(\01320.google.cloud"
+          + ".documentai.v1.DocumentOutputConfig\022\031\n\021s"
+          + "kip_human_review\030\004 \001(\010\"\026\n\024BatchProcessRe"
+          + "sponse\"\377\004\n\024BatchProcessMetadata\022E\n\005state"
+          + "\030\001 \001(\01626.google.cloud.documentai.v1.Batc"
+          + "hProcessMetadata.State\022\025\n\rstate_message\030"
+          + "\002 \001(\t\022/\n\013create_time\030\003 \001(\0132\032.google.prot"
+          + "obuf.Timestamp\022/\n\013update_time\030\004 \001(\0132\032.go"
+          + "ogle.protobuf.Timestamp\022m\n\033individual_pr"
+          + "ocess_statuses\030\005 \003(\0132H.google.cloud.docu"
+          + "mentai.v1.BatchProcessMetadata.Individua"
+          + "lProcessStatus\032\303\001\n\027IndividualProcessStat"
+          + "us\022\030\n\020input_gcs_source\030\001 \001(\t\022\"\n\006status\030\002"
+          + " \001(\0132\022.google.rpc.Status\022\036\n\026output_gcs_d"
+          + "estination\030\003 \001(\t\022J\n\023human_review_status\030"
+          + "\005 \001(\0132-.google.cloud.documentai.v1.Human"
+          + "ReviewStatus\"r\n\005State\022\025\n\021STATE_UNSPECIFI"
+          + "ED\020\000\022\013\n\007WAITING\020\001\022\013\n\007RUNNING\020\002\022\r\n\tSUCCEE"
+          + "DED\020\003\022\016\n\nCANCELLING\020\004\022\r\n\tCANCELLED\020\005\022\n\n\006"
+          + "FAILED\020\006\"]\n\032FetchProcessorTypesRequest\022?"
           + "\n\006parent\030\001 \001(\tB/\340A\002\372A)\022\'documentai.googl"
-          + "eapis.com/ProcessorType\022\021\n\tpage_size\030\002 \001"
-          + "(\005\022\022\n\npage_token\030\003 \001(\t\"y\n\032ListProcessorT"
-          + "ypesResponse\022B\n\017processor_types\030\001 \003(\0132)."
-          + "google.cloud.documentai.v1.ProcessorType"
-          + "\022\027\n\017next_page_token\030\002 \001(\t\"{\n\025ListProcess"
-          + "orsRequest\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\022#docu"
-          + "mentai.googleapis.com/Processor\022\021\n\tpage_"
-          + "size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"l\n\026ListPr"
-          + "ocessorsResponse\0229\n\nprocessors\030\001 \003(\0132%.g"
-          + "oogle.cloud.documentai.v1.Processor\022\027\n\017n"
-          + "ext_page_token\030\002 \001(\t\"X\n\027GetProcessorType"
-          + "Request\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'documenta"
-          + "i.googleapis.com/ProcessorType\"P\n\023GetPro"
-          + "cessorRequest\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#doc"
-          + "umentai.googleapis.com/Processor\"^\n\032GetP"
-          + "rocessorVersionRequest\022@\n\004name\030\001 \001(\tB2\340A"
-          + "\002\372A,\n*documentai.googleapis.com/Processo"
-          + "rVersion\"\211\001\n\034ListProcessorVersionsReques"
-          + "t\022B\n\006parent\030\001 \001(\tB2\340A\002\372A,\022*documentai.go"
-          + "ogleapis.com/ProcessorVersion\022\021\n\tpage_si"
-          + "ze\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"\202\001\n\035ListPro"
-          + "cessorVersionsResponse\022H\n\022processor_vers"
-          + "ions\030\001 \003(\0132,.google.cloud.documentai.v1."
-          + "ProcessorVersion\022\027\n\017next_page_token\030\002 \001("
-          + "\t\"a\n\035DeleteProcessorVersionRequest\022@\n\004na"
-          + "me\030\001 \001(\tB2\340A\002\372A,\n*documentai.googleapis."
-          + "com/ProcessorVersion\"n\n\036DeleteProcessorV"
-          + "ersionMetadata\022L\n\017common_metadata\030\001 \001(\0132"
-          + "3.google.cloud.documentai.v1.CommonOpera"
-          + "tionMetadata\"a\n\035DeployProcessorVersionRe"
-          + "quest\022@\n\004name\030\001 \001(\tB2\340A\002\372A,\n*documentai."
-          + "googleapis.com/ProcessorVersion\" \n\036Deplo"
-          + "yProcessorVersionResponse\"n\n\036DeployProce"
-          + "ssorVersionMetadata\022L\n\017common_metadata\030\001"
-          + " \001(\01323.google.cloud.documentai.v1.Common"
-          + "OperationMetadata\"c\n\037UndeployProcessorVe"
-          + "rsionRequest\022@\n\004name\030\001 \001(\tB2\340A\002\372A,\n*docu"
-          + "mentai.googleapis.com/ProcessorVersion\"\""
-          + "\n UndeployProcessorVersionResponse\"p\n Un"
-          + "deployProcessorVersionMetadata\022L\n\017common"
-          + "_metadata\030\001 \001(\01323.google.cloud.documenta"
-          + "i.v1.CommonOperationMetadata\"\224\001\n\026CreateP"
-          + "rocessorRequest\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\022"
-          + "#documentai.googleapis.com/Processor\022=\n\t"
-          + "processor\030\002 \001(\0132%.google.cloud.documenta"
-          + "i.v1.ProcessorB\003\340A\002\"S\n\026DeleteProcessorRe"
-          + "quest\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#documentai."
-          + "googleapis.com/Processor\"g\n\027DeleteProces"
-          + "sorMetadata\022L\n\017common_metadata\030\005 \001(\01323.g"
-          + "oogle.cloud.documentai.v1.CommonOperatio"
-          + "nMetadata\"S\n\026EnableProcessorRequest\0229\n\004n"
-          + "ame\030\001 \001(\tB+\340A\002\372A%\n#documentai.googleapis"
-          + ".com/Processor\"\031\n\027EnableProcessorRespons"
-          + "e\"g\n\027EnableProcessorMetadata\022L\n\017common_m"
-          + "etadata\030\005 \001(\01323.google.cloud.documentai."
-          + "v1.CommonOperationMetadata\"T\n\027DisablePro"
-          + "cessorRequest\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#doc"
-          + "umentai.googleapis.com/Processor\"\032\n\030Disa"
-          + "bleProcessorResponse\"h\n\030DisableProcessor"
-          + "Metadata\022L\n\017common_metadata\030\005 \001(\01323.goog"
+          + "eapis.com/ProcessorType\"a\n\033FetchProcesso"
+          + "rTypesResponse\022B\n\017processor_types\030\001 \003(\0132"
+          + ").google.cloud.documentai.v1.ProcessorTy"
+          + "pe\"\203\001\n\031ListProcessorTypesRequest\022?\n\006pare"
+          + "nt\030\001 \001(\tB/\340A\002\372A)\022\'documentai.googleapis."
+          + "com/ProcessorType\022\021\n\tpage_size\030\002 \001(\005\022\022\n\n"
+          + "page_token\030\003 \001(\t\"y\n\032ListProcessorTypesRe"
+          + "sponse\022B\n\017processor_types\030\001 \003(\0132).google"
+          + ".cloud.documentai.v1.ProcessorType\022\027\n\017ne"
+          + "xt_page_token\030\002 \001(\t\"{\n\025ListProcessorsReq"
+          + "uest\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\022#documentai"
+          + ".googleapis.com/Processor\022\021\n\tpage_size\030\002"
+          + " \001(\005\022\022\n\npage_token\030\003 \001(\t\"l\n\026ListProcesso"
+          + "rsResponse\0229\n\nprocessors\030\001 \003(\0132%.google."
+          + "cloud.documentai.v1.Processor\022\027\n\017next_pa"
+          + "ge_token\030\002 \001(\t\"X\n\027GetProcessorTypeReques"
+          + "t\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'documentai.goog"
+          + "leapis.com/ProcessorType\"P\n\023GetProcessor"
+          + "Request\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#documenta"
+          + "i.googleapis.com/Processor\"^\n\032GetProcess"
+          + "orVersionRequest\022@\n\004name\030\001 \001(\tB2\340A\002\372A,\n*"
+          + "documentai.googleapis.com/ProcessorVersi"
+          + "on\"\211\001\n\034ListProcessorVersionsRequest\022B\n\006p"
+          + "arent\030\001 \001(\tB2\340A\002\372A,\022*documentai.googleap"
+          + "is.com/ProcessorVersion\022\021\n\tpage_size\030\002 \001"
+          + "(\005\022\022\n\npage_token\030\003 \001(\t\"\202\001\n\035ListProcessor"
+          + "VersionsResponse\022H\n\022processor_versions\030\001"
+          + " \003(\0132,.google.cloud.documentai.v1.Proces"
+          + "sorVersion\022\027\n\017next_page_token\030\002 \001(\t\"a\n\035D"
+          + "eleteProcessorVersionRequest\022@\n\004name\030\001 \001"
+          + "(\tB2\340A\002\372A,\n*documentai.googleapis.com/Pr"
+          + "ocessorVersion\"n\n\036DeleteProcessorVersion"
+          + "Metadata\022L\n\017common_metadata\030\001 \001(\01323.goog"
           + "le.cloud.documentai.v1.CommonOperationMe"
-          + "tadata\"\272\001\n!SetDefaultProcessorVersionReq"
-          + "uest\022>\n\tprocessor\030\001 \001(\tB+\340A\002\372A%\n#documen"
-          + "tai.googleapis.com/Processor\022U\n\031default_"
-          + "processor_version\030\002 \001(\tB2\340A\002\372A,\n*documen"
-          + "tai.googleapis.com/ProcessorVersion\"$\n\"S"
-          + "etDefaultProcessorVersionResponse\"r\n\"Set"
-          + "DefaultProcessorVersionMetadata\022L\n\017commo"
-          + "n_metadata\030\001 \001(\01323.google.cloud.document"
-          + "ai.v1.CommonOperationMetadata\"\216\003\n\025Review"
-          + "DocumentRequest\022?\n\017inline_document\030\004 \001(\013"
-          + "2$.google.cloud.documentai.v1.DocumentH\000"
-          + "\022P\n\023human_review_config\030\001 \001(\tB3\340A\002\372A-\n+d"
-          + "ocumentai.googleapis.com/HumanReviewConf"
-          + "ig\022 \n\030enable_schema_validation\030\003 \001(\010\022L\n\010"
-          + "priority\030\005 \001(\0162:.google.cloud.documentai"
-          + ".v1.ReviewDocumentRequest.Priority\022C\n\017do"
-          + "cument_schema\030\006 \001(\0132*.google.cloud.docum"
-          + "entai.v1.DocumentSchema\"#\n\010Priority\022\013\n\007D"
-          + "EFAULT\020\000\022\n\n\006URGENT\020\001B\010\n\006source\"\321\001\n\026Revie"
-          + "wDocumentResponse\022\027\n\017gcs_destination\030\001 \001"
-          + "(\t\022G\n\005state\030\002 \001(\01628.google.cloud.documen"
-          + "tai.v1.ReviewDocumentResponse.State\022\030\n\020r"
-          + "ejection_reason\030\003 \001(\t\";\n\005State\022\025\n\021STATE_"
-          + "UNSPECIFIED\020\000\022\014\n\010REJECTED\020\001\022\r\n\tSUCCEEDED"
-          + "\020\002\"\204\001\n\037ReviewDocumentOperationMetadata\022L"
-          + "\n\017common_metadata\030\005 \001(\01323.google.cloud.d"
-          + "ocumentai.v1.CommonOperationMetadata\022\023\n\013"
-          + "question_id\030\006 \001(\t2\200\"\n\030DocumentProcessorS"
-          + "ervice\022\207\002\n\017ProcessDocument\022*.google.clou"
-          + "d.documentai.v1.ProcessRequest\032+.google."
-          + "cloud.documentai.v1.ProcessResponse\"\232\001\202\323"
-          + "\344\223\002\214\001\"6/v1/{name=projects/*/locations/*/"
-          + "processors/*}:process:\001*ZO\"J/v1/{name=pr"
-          + "ojects/*/locations/*/processors/*/proces"
-          + "sorVersions/*}:process:\001*\332A\004name\022\275\002\n\025Bat"
-          + "chProcessDocuments\022/.google.cloud.docume"
-          + "ntai.v1.BatchProcessRequest\032\035.google.lon"
-          + "grunning.Operation\"\323\001\202\323\344\223\002\226\001\";/v1/{name="
-          + "projects/*/locations/*/processors/*}:bat"
-          + "chProcess:\001*ZT\"O/v1/{name=projects/*/loc"
-          + "ations/*/processors/*/processorVersions/"
-          + "*}:batchProcess:\001*\332A\004name\312A,\n\024BatchProce"
-          + "ssResponse\022\024BatchProcessMetadata\022\320\001\n\023Fet"
-          + "chProcessorTypes\0226.google.cloud.document"
-          + "ai.v1.FetchProcessorTypesRequest\0327.googl"
-          + "e.cloud.documentai.v1.FetchProcessorType"
-          + "sResponse\"H\202\323\344\223\0029\0227/v1/{parent=projects/"
-          + "*/locations/*}:fetchProcessorTypes\332A\006par"
-          + "ent\022\310\001\n\022ListProcessorTypes\0225.google.clou"
-          + "d.documentai.v1.ListProcessorTypesReques"
-          + "t\0326.google.cloud.documentai.v1.ListProce"
-          + "ssorTypesResponse\"C\202\323\344\223\0024\0222/v1/{parent=p"
-          + "rojects/*/locations/*}/processorTypes\332A\006"
-          + "parent\022\265\001\n\020GetProcessorType\0223.google.clo"
-          + "ud.documentai.v1.GetProcessorTypeRequest"
-          + "\032).google.cloud.documentai.v1.ProcessorT"
-          + "ype\"A\202\323\344\223\0024\0222/v1/{name=projects/*/locati"
-          + "ons/*/processorTypes/*}\332A\004name\022\270\001\n\016ListP"
-          + "rocessors\0221.google.cloud.documentai.v1.L"
-          + "istProcessorsRequest\0322.google.cloud.docu"
-          + "mentai.v1.ListProcessorsResponse\"?\202\323\344\223\0020"
-          + "\022./v1/{parent=projects/*/locations/*}/pr"
-          + "ocessors\332A\006parent\022\245\001\n\014GetProcessor\022/.goo"
-          + "gle.cloud.documentai.v1.GetProcessorRequ"
-          + "est\032%.google.cloud.documentai.v1.Process"
-          + "or\"=\202\323\344\223\0020\022./v1/{name=projects/*/locatio"
-          + "ns/*/processors/*}\332A\004name\022\316\001\n\023GetProcess"
-          + "orVersion\0226.google.cloud.documentai.v1.G"
-          + "etProcessorVersionRequest\032,.google.cloud"
-          + ".documentai.v1.ProcessorVersion\"Q\202\323\344\223\002D\022"
-          + "B/v1/{name=projects/*/locations/*/proces"
-          + "sors/*/processorVersions/*}\332A\004name\022\341\001\n\025L"
-          + "istProcessorVersions\0228.google.cloud.docu"
-          + "mentai.v1.ListProcessorVersionsRequest\0329"
+          + "tadata\"a\n\035DeployProcessorVersionRequest\022"
+          + "@\n\004name\030\001 \001(\tB2\340A\002\372A,\n*documentai.google"
+          + "apis.com/ProcessorVersion\" \n\036DeployProce"
+          + "ssorVersionResponse\"n\n\036DeployProcessorVe"
+          + "rsionMetadata\022L\n\017common_metadata\030\001 \001(\01323"
+          + ".google.cloud.documentai.v1.CommonOperat"
+          + "ionMetadata\"c\n\037UndeployProcessorVersionR"
+          + "equest\022@\n\004name\030\001 \001(\tB2\340A\002\372A,\n*documentai"
+          + ".googleapis.com/ProcessorVersion\"\"\n Unde"
+          + "ployProcessorVersionResponse\"p\n Undeploy"
+          + "ProcessorVersionMetadata\022L\n\017common_metad"
+          + "ata\030\001 \001(\01323.google.cloud.documentai.v1.C"
+          + "ommonOperationMetadata\"\224\001\n\026CreateProcess"
+          + "orRequest\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\022#docum"
+          + "entai.googleapis.com/Processor\022=\n\tproces"
+          + "sor\030\002 \001(\0132%.google.cloud.documentai.v1.P"
+          + "rocessorB\003\340A\002\"S\n\026DeleteProcessorRequest\022"
+          + "9\n\004name\030\001 \001(\tB+\340A\002\372A%\n#documentai.google"
+          + "apis.com/Processor\"g\n\027DeleteProcessorMet"
+          + "adata\022L\n\017common_metadata\030\005 \001(\01323.google."
+          + "cloud.documentai.v1.CommonOperationMetad"
+          + "ata\"S\n\026EnableProcessorRequest\0229\n\004name\030\001 "
+          + "\001(\tB+\340A\002\372A%\n#documentai.googleapis.com/P"
+          + "rocessor\"\031\n\027EnableProcessorResponse\"g\n\027E"
+          + "nableProcessorMetadata\022L\n\017common_metadat"
+          + "a\030\005 \001(\01323.google.cloud.documentai.v1.Com"
+          + "monOperationMetadata\"T\n\027DisableProcessor"
+          + "Request\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#documenta"
+          + "i.googleapis.com/Processor\"\032\n\030DisablePro"
+          + "cessorResponse\"h\n\030DisableProcessorMetada"
+          + "ta\022L\n\017common_metadata\030\005 \001(\01323.google.clo"
+          + "ud.documentai.v1.CommonOperationMetadata"
+          + "\"\272\001\n!SetDefaultProcessorVersionRequest\022>"
+          + "\n\tprocessor\030\001 \001(\tB+\340A\002\372A%\n#documentai.go"
+          + "ogleapis.com/Processor\022U\n\031default_proces"
+          + "sor_version\030\002 \001(\tB2\340A\002\372A,\n*documentai.go"
+          + "ogleapis.com/ProcessorVersion\"$\n\"SetDefa"
+          + "ultProcessorVersionResponse\"r\n\"SetDefaul"
+          + "tProcessorVersionMetadata\022L\n\017common_meta"
+          + "data\030\001 \001(\01323.google.cloud.documentai.v1."
+          + "CommonOperationMetadata\"\245\004\n\034TrainProcess"
+          + "orVersionRequest\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%"
+          + "\n#documentai.googleapis.com/Processor\022L\n"
+          + "\021processor_version\030\002 \001(\0132,.google.cloud."
+          + "documentai.v1.ProcessorVersionB\003\340A\002\022H\n\017d"
+          + "ocument_schema\030\n \001(\0132*.google.cloud.docu"
+          + "mentai.v1.DocumentSchemaB\003\340A\001\022[\n\ninput_d"
+          + "ata\030\004 \001(\0132B.google.cloud.documentai.v1.T"
+          + "rainProcessorVersionRequest.InputDataB\003\340"
+          + "A\001\022#\n\026base_processor_version\030\010 \001(\tB\003\340A\001\032"
+          + "\255\001\n\tInputData\022Q\n\022training_documents\030\003 \001("
+          + "\01325.google.cloud.documentai.v1.BatchDocu"
+          + "mentsInputConfig\022M\n\016test_documents\030\004 \001(\013"
+          + "25.google.cloud.documentai.v1.BatchDocum"
+          + "entsInputConfig\":\n\035TrainProcessorVersion"
+          + "Response\022\031\n\021processor_version\030\001 \001(\t\"\367\003\n\035"
+          + "TrainProcessorVersionMetadata\022L\n\017common_"
+          + "metadata\030\001 \001(\01323.google.cloud.documentai"
+          + ".v1.CommonOperationMetadata\022p\n\033training_"
+          + "dataset_validation\030\002 \001(\0132K.google.cloud."
+          + "documentai.v1.TrainProcessorVersionMetad"
+          + "ata.DatasetValidation\022l\n\027test_dataset_va"
+          + "lidation\030\003 \001(\0132K.google.cloud.documentai"
+          + ".v1.TrainProcessorVersionMetadata.Datase"
+          + "tValidation\032\247\001\n\021DatasetValidation\022\034\n\024doc"
+          + "ument_error_count\030\003 \001(\005\022\033\n\023dataset_error"
+          + "_count\030\004 \001(\005\022+\n\017document_errors\030\001 \003(\0132\022."
+          + "google.rpc.Status\022*\n\016dataset_errors\030\002 \003("
+          + "\0132\022.google.rpc.Status\"\216\003\n\025ReviewDocument"
+          + "Request\022?\n\017inline_document\030\004 \001(\0132$.googl"
+          + "e.cloud.documentai.v1.DocumentH\000\022P\n\023huma"
+          + "n_review_config\030\001 \001(\tB3\340A\002\372A-\n+documenta"
+          + "i.googleapis.com/HumanReviewConfig\022 \n\030en"
+          + "able_schema_validation\030\003 \001(\010\022L\n\010priority"
+          + "\030\005 \001(\0162:.google.cloud.documentai.v1.Revi"
+          + "ewDocumentRequest.Priority\022C\n\017document_s"
+          + "chema\030\006 \001(\0132*.google.cloud.documentai.v1"
+          + ".DocumentSchema\"#\n\010Priority\022\013\n\007DEFAULT\020\000"
+          + "\022\n\n\006URGENT\020\001B\010\n\006source\"\321\001\n\026ReviewDocumen"
+          + "tResponse\022\027\n\017gcs_destination\030\001 \001(\t\022G\n\005st"
+          + "ate\030\002 \001(\01628.google.cloud.documentai.v1.R"
+          + "eviewDocumentResponse.State\022\030\n\020rejection"
+          + "_reason\030\003 \001(\t\";\n\005State\022\025\n\021STATE_UNSPECIF"
+          + "IED\020\000\022\014\n\010REJECTED\020\001\022\r\n\tSUCCEEDED\020\002\"\204\001\n\037R"
+          + "eviewDocumentOperationMetadata\022L\n\017common"
+          + "_metadata\030\005 \001(\01323.google.cloud.documenta"
+          + "i.v1.CommonOperationMetadata\022\023\n\013question"
+          + "_id\030\006 \001(\t\"\312\001\n\037EvaluateProcessorVersionRe"
+          + "quest\022M\n\021processor_version\030\001 \001(\tB2\340A\002\372A,"
+          + "\n*documentai.googleapis.com/ProcessorVer"
+          + "sion\022X\n\024evaluation_documents\030\003 \001(\01325.goo"
+          + "gle.cloud.documentai.v1.BatchDocumentsIn"
+          + "putConfigB\003\340A\001\"p\n EvaluateProcessorVersi"
+          + "onMetadata\022L\n\017common_metadata\030\001 \001(\01323.go"
+          + "ogle.cloud.documentai.v1.CommonOperation"
+          + "Metadata\"6\n EvaluateProcessorVersionResp"
+          + "onse\022\022\n\nevaluation\030\002 \001(\t\"R\n\024GetEvaluatio"
+          + "nRequest\022:\n\004name\030\001 \001(\tB,\340A\002\372A&\n$document"
+          + "ai.googleapis.com/Evaluation\"\203\001\n\026ListEva"
+          + "luationsRequest\022B\n\006parent\030\001 \001(\tB2\340A\002\372A,\n"
+          + "*documentai.googleapis.com/ProcessorVers"
+          + "ion\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001"
+          + "(\t\"o\n\027ListEvaluationsResponse\022;\n\013evaluat"
+          + "ions\030\001 \003(\0132&.google.cloud.documentai.v1."
+          + "Evaluation\022\027\n\017next_page_token\030\002 \001(\t2\234*\n\030"
+          + "DocumentProcessorService\022\207\002\n\017ProcessDocu"
+          + "ment\022*.google.cloud.documentai.v1.Proces"
+          + "sRequest\032+.google.cloud.documentai.v1.Pr"
+          + "ocessResponse\"\232\001\202\323\344\223\002\214\001\"6/v1/{name=proje"
+          + "cts/*/locations/*/processors/*}:process:"
+          + "\001*ZO\"J/v1/{name=projects/*/locations/*/p"
+          + "rocessors/*/processorVersions/*}:process"
+          + ":\001*\332A\004name\022\275\002\n\025BatchProcessDocuments\022/.g"
+          + "oogle.cloud.documentai.v1.BatchProcessRe"
+          + "quest\032\035.google.longrunning.Operation\"\323\001\202"
+          + "\323\344\223\002\226\001\";/v1/{name=projects/*/locations/*"
+          + "/processors/*}:batchProcess:\001*ZT\"O/v1/{n"
+          + "ame=projects/*/locations/*/processors/*/"
+          + "processorVersions/*}:batchProcess:\001*\332A\004n"
+          + "ame\312A,\n\024BatchProcessResponse\022\024BatchProce"
+          + "ssMetadata\022\320\001\n\023FetchProcessorTypes\0226.goo"
+          + "gle.cloud.documentai.v1.FetchProcessorTy"
+          + "pesRequest\0327.google.cloud.documentai.v1."
+          + "FetchProcessorTypesResponse\"H\202\323\344\223\0029\0227/v1"
+          + "/{parent=projects/*/locations/*}:fetchPr"
+          + "ocessorTypes\332A\006parent\022\310\001\n\022ListProcessorT"
+          + "ypes\0225.google.cloud.documentai.v1.ListPr"
+          + "ocessorTypesRequest\0326.google.cloud.docum"
+          + "entai.v1.ListProcessorTypesResponse\"C\202\323\344"
+          + "\223\0024\0222/v1/{parent=projects/*/locations/*}"
+          + "/processorTypes\332A\006parent\022\265\001\n\020GetProcesso"
+          + "rType\0223.google.cloud.documentai.v1.GetPr"
+          + "ocessorTypeRequest\032).google.cloud.docume"
+          + "ntai.v1.ProcessorType\"A\202\323\344\223\0024\0222/v1/{name"
+          + "=projects/*/locations/*/processorTypes/*"
+          + "}\332A\004name\022\270\001\n\016ListProcessors\0221.google.clo"
+          + "ud.documentai.v1.ListProcessorsRequest\0322"
           + ".google.cloud.documentai.v1.ListProcesso"
-          + "rVersionsResponse\"S\202\323\344\223\002D\022B/v1/{parent=p"
-          + "rojects/*/locations/*/processors/*}/proc"
-          + "essorVersions\332A\006parent\022\200\002\n\026DeleteProcess"
-          + "orVersion\0229.google.cloud.documentai.v1.D"
-          + "eleteProcessorVersionRequest\032\035.google.lo"
-          + "ngrunning.Operation\"\213\001\202\323\344\223\002D*B/v1/{name="
-          + "projects/*/locations/*/processors/*/proc"
-          + "essorVersions/*}\332A\004name\312A7\n\025google.proto"
-          + "buf.Empty\022\036DeleteProcessorVersionMetadat"
-          + "a\022\223\002\n\026DeployProcessorVersion\0229.google.cl"
-          + "oud.documentai.v1.DeployProcessorVersion"
-          + "Request\032\035.google.longrunning.Operation\"\236"
-          + "\001\202\323\344\223\002N\"I/v1/{name=projects/*/locations/"
-          + "*/processors/*/processorVersions/*}:depl"
-          + "oy:\001*\332A\004name\312A@\n\036DeployProcessorVersionR"
-          + "esponse\022\036DeployProcessorVersionMetadata\022"
-          + "\235\002\n\030UndeployProcessorVersion\022;.google.cl"
-          + "oud.documentai.v1.UndeployProcessorVersi"
-          + "onRequest\032\035.google.longrunning.Operation"
-          + "\"\244\001\202\323\344\223\002P\"K/v1/{name=projects/*/location"
-          + "s/*/processors/*/processorVersions/*}:un"
-          + "deploy:\001*\332A\004name\312AD\n UndeployProcessorVe"
-          + "rsionResponse\022 UndeployProcessorVersionM"
-          + "etadata\022\302\001\n\017CreateProcessor\0222.google.clo"
-          + "ud.documentai.v1.CreateProcessorRequest\032"
-          + "%.google.cloud.documentai.v1.Processor\"T"
-          + "\202\323\344\223\002;\"./v1/{parent=projects/*/locations"
-          + "/*}/processors:\tprocessor\332A\020parent,proce"
-          + "ssor\022\326\001\n\017DeleteProcessor\0222.google.cloud."
-          + "documentai.v1.DeleteProcessorRequest\032\035.g"
-          + "oogle.longrunning.Operation\"p\202\323\344\223\0020*./v1"
-          + "/{name=projects/*/locations/*/processors"
-          + "/*}\332A\004name\312A0\n\025google.protobuf.Empty\022\027De"
-          + "leteProcessorMetadata\022\333\001\n\017EnableProcesso"
-          + "r\0222.google.cloud.documentai.v1.EnablePro"
-          + "cessorRequest\032\035.google.longrunning.Opera"
-          + "tion\"u\202\323\344\223\002:\"5/v1/{name=projects/*/locat"
-          + "ions/*/processors/*}:enable:\001*\312A2\n\027Enabl"
-          + "eProcessorResponse\022\027EnableProcessorMetad"
-          + "ata\022\340\001\n\020DisableProcessor\0223.google.cloud."
-          + "documentai.v1.DisableProcessorRequest\032\035."
-          + "google.longrunning.Operation\"x\202\323\344\223\002;\"6/v"
-          + "1/{name=projects/*/locations/*/processor"
-          + "s/*}:disable:\001*\312A4\n\030DisableProcessorResp"
-          + "onse\022\030DisableProcessorMetadata\022\241\002\n\032SetDe"
-          + "faultProcessorVersion\022=.google.cloud.doc"
-          + "umentai.v1.SetDefaultProcessorVersionReq"
-          + "uest\032\035.google.longrunning.Operation\"\244\001\202\323"
-          + "\344\223\002S\"N/v1/{processor=projects/*/location"
-          + "s/*/processors/*}:setDefaultProcessorVer"
-          + "sion:\001*\312AH\n\"SetDefaultProcessorVersionRe"
-          + "sponse\022\"SetDefaultProcessorVersionMetada"
-          + "ta\022\240\002\n\016ReviewDocument\0221.google.cloud.doc"
-          + "umentai.v1.ReviewDocumentRequest\032\035.googl"
-          + "e.longrunning.Operation\"\273\001\202\323\344\223\002c\"^/v1/{h"
-          + "uman_review_config=projects/*/locations/"
-          + "*/processors/*/humanReviewConfig}:review"
-          + "Document:\001*\332A\023human_review_config\312A9\n\026Re"
-          + "viewDocumentResponse\022\037ReviewDocumentOper"
-          + "ationMetadata\032M\312A\031documentai.googleapis."
-          + "com\322A.https://www.googleapis.com/auth/cl"
-          + "oud-platformB\252\003\n\036com.google.cloud.docume"
-          + "ntai.v1B\032DocumentAiProcessorServiceP\001Z>c"
-          + "loud.google.com/go/documentai/apiv1/docu"
-          + "mentaipb;documentaipb\252\002\032Google.Cloud.Doc"
-          + "umentAI.V1\312\002\032Google\\Cloud\\DocumentAI\\V1\352"
-          + "\002\035Google::Cloud::DocumentAI::V1\352A\177\n+docu"
-          + "mentai.googleapis.com/HumanReviewConfig\022"
-          + "Pprojects/{project}/locations/{location}"
-          + "/processors/{processor}/humanReviewConfi"
-          + "g\352AM\n\"documentai.googleapis.com/Location"
-          + "\022\'projects/{project}/locations/{location"
-          + "}b\006proto3"
+          + "rsResponse\"?\202\323\344\223\0020\022./v1/{parent=projects"
+          + "/*/locations/*}/processors\332A\006parent\022\245\001\n\014"
+          + "GetProcessor\022/.google.cloud.documentai.v"
+          + "1.GetProcessorRequest\032%.google.cloud.doc"
+          + "umentai.v1.Processor\"=\202\323\344\223\0020\022./v1/{name="
+          + "projects/*/locations/*/processors/*}\332A\004n"
+          + "ame\022\242\002\n\025TrainProcessorVersion\0228.google.c"
+          + "loud.documentai.v1.TrainProcessorVersion"
+          + "Request\032\035.google.longrunning.Operation\"\257"
+          + "\001\202\323\344\223\002M\"H/v1/{parent=projects/*/location"
+          + "s/*/processors/*}/processorVersions:trai"
+          + "n:\001*\332A\030parent,processor_version\312A>\n\035Trai"
+          + "nProcessorVersionResponse\022\035TrainProcesso"
+          + "rVersionMetadata\022\316\001\n\023GetProcessorVersion"
+          + "\0226.google.cloud.documentai.v1.GetProcess"
+          + "orVersionRequest\032,.google.cloud.document"
+          + "ai.v1.ProcessorVersion\"Q\202\323\344\223\002D\022B/v1/{nam"
+          + "e=projects/*/locations/*/processors/*/pr"
+          + "ocessorVersions/*}\332A\004name\022\341\001\n\025ListProces"
+          + "sorVersions\0228.google.cloud.documentai.v1"
+          + ".ListProcessorVersionsRequest\0329.google.c"
+          + "loud.documentai.v1.ListProcessorVersions"
+          + "Response\"S\202\323\344\223\002D\022B/v1/{parent=projects/*"
+          + "/locations/*/processors/*}/processorVers"
+          + "ions\332A\006parent\022\200\002\n\026DeleteProcessorVersion"
+          + "\0229.google.cloud.documentai.v1.DeleteProc"
+          + "essorVersionRequest\032\035.google.longrunning"
+          + ".Operation\"\213\001\202\323\344\223\002D*B/v1/{name=projects/"
+          + "*/locations/*/processors/*/processorVers"
+          + "ions/*}\332A\004name\312A7\n\025google.protobuf.Empty"
+          + "\022\036DeleteProcessorVersionMetadata\022\223\002\n\026Dep"
+          + "loyProcessorVersion\0229.google.cloud.docum"
+          + "entai.v1.DeployProcessorVersionRequest\032\035"
+          + ".google.longrunning.Operation\"\236\001\202\323\344\223\002N\"I"
+          + "/v1/{name=projects/*/locations/*/process"
+          + "ors/*/processorVersions/*}:deploy:\001*\332A\004n"
+          + "ame\312A@\n\036DeployProcessorVersionResponse\022\036"
+          + "DeployProcessorVersionMetadata\022\235\002\n\030Undep"
+          + "loyProcessorVersion\022;.google.cloud.docum"
+          + "entai.v1.UndeployProcessorVersionRequest"
+          + "\032\035.google.longrunning.Operation\"\244\001\202\323\344\223\002P"
+          + "\"K/v1/{name=projects/*/locations/*/proce"
+          + "ssors/*/processorVersions/*}:undeploy:\001*"
+          + "\332A\004name\312AD\n UndeployProcessorVersionResp"
+          + "onse\022 UndeployProcessorVersionMetadata\022\302"
+          + "\001\n\017CreateProcessor\0222.google.cloud.docume"
+          + "ntai.v1.CreateProcessorRequest\032%.google."
+          + "cloud.documentai.v1.Processor\"T\202\323\344\223\002;\"./"
+          + "v1/{parent=projects/*/locations/*}/proce"
+          + "ssors:\tprocessor\332A\020parent,processor\022\326\001\n\017"
+          + "DeleteProcessor\0222.google.cloud.documenta"
+          + "i.v1.DeleteProcessorRequest\032\035.google.lon"
+          + "grunning.Operation\"p\202\323\344\223\0020*./v1/{name=pr"
+          + "ojects/*/locations/*/processors/*}\332A\004nam"
+          + "e\312A0\n\025google.protobuf.Empty\022\027DeleteProce"
+          + "ssorMetadata\022\333\001\n\017EnableProcessor\0222.googl"
+          + "e.cloud.documentai.v1.EnableProcessorReq"
+          + "uest\032\035.google.longrunning.Operation\"u\202\323\344"
+          + "\223\002:\"5/v1/{name=projects/*/locations/*/pr"
+          + "ocessors/*}:enable:\001*\312A2\n\027EnableProcesso"
+          + "rResponse\022\027EnableProcessorMetadata\022\340\001\n\020D"
+          + "isableProcessor\0223.google.cloud.documenta"
+          + "i.v1.DisableProcessorRequest\032\035.google.lo"
+          + "ngrunning.Operation\"x\202\323\344\223\002;\"6/v1/{name=p"
+          + "rojects/*/locations/*/processors/*}:disa"
+          + "ble:\001*\312A4\n\030DisableProcessorResponse\022\030Dis"
+          + "ableProcessorMetadata\022\241\002\n\032SetDefaultProc"
+          + "essorVersion\022=.google.cloud.documentai.v"
+          + "1.SetDefaultProcessorVersionRequest\032\035.go"
+          + "ogle.longrunning.Operation\"\244\001\202\323\344\223\002S\"N/v1"
+          + "/{processor=projects/*/locations/*/proce"
+          + "ssors/*}:setDefaultProcessorVersion:\001*\312A"
+          + "H\n\"SetDefaultProcessorVersionResponse\022\"S"
+          + "etDefaultProcessorVersionMetadata\022\240\002\n\016Re"
+          + "viewDocument\0221.google.cloud.documentai.v"
+          + "1.ReviewDocumentRequest\032\035.google.longrun"
+          + "ning.Operation\"\273\001\202\323\344\223\002c\"^/v1/{human_revi"
+          + "ew_config=projects/*/locations/*/process"
+          + "ors/*/humanReviewConfig}:reviewDocument:"
+          + "\001*\332A\023human_review_config\312A9\n\026ReviewDocum"
+          + "entResponse\022\037ReviewDocumentOperationMeta"
+          + "data\022\307\002\n\030EvaluateProcessorVersion\022;.goog"
+          + "le.cloud.documentai.v1.EvaluateProcessor"
+          + "VersionRequest\032\035.google.longrunning.Oper"
+          + "ation\"\316\001\202\323\344\223\002m\"h/v1/{processor_version=p"
+          + "rojects/*/locations/*/processors/*/proce"
+          + "ssorVersions/*}:evaluateProcessorVersion"
+          + ":\001*\332A\021processor_version\312AD\n EvaluateProc"
+          + "essorVersionResponse\022 EvaluateProcessorV"
+          + "ersionMetadata\022\312\001\n\rGetEvaluation\0220.googl"
+          + "e.cloud.documentai.v1.GetEvaluationReque"
+          + "st\032&.google.cloud.documentai.v1.Evaluati"
+          + "on\"_\202\323\344\223\002R\022P/v1/{name=projects/*/locatio"
+          + "ns/*/processors/*/processorVersions/*/ev"
+          + "aluations/*}\332A\004name\022\335\001\n\017ListEvaluations\022"
+          + "2.google.cloud.documentai.v1.ListEvaluat"
+          + "ionsRequest\0323.google.cloud.documentai.v1"
+          + ".ListEvaluationsResponse\"a\202\323\344\223\002R\022P/v1/{p"
+          + "arent=projects/*/locations/*/processors/"
+          + "*/processorVersions/*}/evaluations\332A\006par"
+          + "ent\032M\312A\031documentai.googleapis.com\322A.http"
+          + "s://www.googleapis.com/auth/cloud-platfo"
+          + "rmB\252\003\n\036com.google.cloud.documentai.v1B\032D"
+          + "ocumentAiProcessorServiceP\001Z>cloud.googl"
+          + "e.com/go/documentai/apiv1/documentaipb;d"
+          + "ocumentaipb\252\002\032Google.Cloud.DocumentAI.V1"
+          + "\312\002\032Google\\Cloud\\DocumentAI\\V1\352\002\035Google::"
+          + "Cloud::DocumentAI::V1\352A\177\n+documentai.goo"
+          + "gleapis.com/HumanReviewConfig\022Pprojects/"
+          + "{project}/locations/{location}/processor"
+          + "s/{processor}/humanReviewConfig\352AM\n\"docu"
+          + "mentai.googleapis.com/Location\022\'projects"
+          + "/{project}/locations/{location}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -482,10 +599,12 @@ public final class DocumentAiProcessorService {
               com.google.cloud.documentai.v1.DocumentProto.getDescriptor(),
               com.google.cloud.documentai.v1.DocumentIoProto.getDescriptor(),
               com.google.cloud.documentai.v1.DocumentAiDocumentSchema.getDescriptor(),
+              com.google.cloud.documentai.v1.DocumentAiEvaluation.getDescriptor(),
               com.google.cloud.documentai.v1.OperationMetadataProto.getDescriptor(),
               com.google.cloud.documentai.v1.DocumentAiProcessor.getDescriptor(),
               com.google.cloud.documentai.v1.DocumentAiProcessorType.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
+              com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
@@ -784,8 +903,52 @@ public final class DocumentAiProcessorService {
             new java.lang.String[] {
               "CommonMetadata",
             });
-    internal_static_google_cloud_documentai_v1_ReviewDocumentRequest_descriptor =
+    internal_static_google_cloud_documentai_v1_TrainProcessorVersionRequest_descriptor =
         getDescriptor().getMessageTypes().get(37);
+    internal_static_google_cloud_documentai_v1_TrainProcessorVersionRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1_TrainProcessorVersionRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "ProcessorVersion", "DocumentSchema", "InputData", "BaseProcessorVersion",
+            });
+    internal_static_google_cloud_documentai_v1_TrainProcessorVersionRequest_InputData_descriptor =
+        internal_static_google_cloud_documentai_v1_TrainProcessorVersionRequest_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_documentai_v1_TrainProcessorVersionRequest_InputData_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1_TrainProcessorVersionRequest_InputData_descriptor,
+            new java.lang.String[] {
+              "TrainingDocuments", "TestDocuments",
+            });
+    internal_static_google_cloud_documentai_v1_TrainProcessorVersionResponse_descriptor =
+        getDescriptor().getMessageTypes().get(38);
+    internal_static_google_cloud_documentai_v1_TrainProcessorVersionResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1_TrainProcessorVersionResponse_descriptor,
+            new java.lang.String[] {
+              "ProcessorVersion",
+            });
+    internal_static_google_cloud_documentai_v1_TrainProcessorVersionMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(39);
+    internal_static_google_cloud_documentai_v1_TrainProcessorVersionMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1_TrainProcessorVersionMetadata_descriptor,
+            new java.lang.String[] {
+              "CommonMetadata", "TrainingDatasetValidation", "TestDatasetValidation",
+            });
+    internal_static_google_cloud_documentai_v1_TrainProcessorVersionMetadata_DatasetValidation_descriptor =
+        internal_static_google_cloud_documentai_v1_TrainProcessorVersionMetadata_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_documentai_v1_TrainProcessorVersionMetadata_DatasetValidation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1_TrainProcessorVersionMetadata_DatasetValidation_descriptor,
+            new java.lang.String[] {
+              "DocumentErrorCount", "DatasetErrorCount", "DocumentErrors", "DatasetErrors",
+            });
+    internal_static_google_cloud_documentai_v1_ReviewDocumentRequest_descriptor =
+        getDescriptor().getMessageTypes().get(40);
     internal_static_google_cloud_documentai_v1_ReviewDocumentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1_ReviewDocumentRequest_descriptor,
@@ -798,7 +961,7 @@ public final class DocumentAiProcessorService {
               "Source",
             });
     internal_static_google_cloud_documentai_v1_ReviewDocumentResponse_descriptor =
-        getDescriptor().getMessageTypes().get(38);
+        getDescriptor().getMessageTypes().get(41);
     internal_static_google_cloud_documentai_v1_ReviewDocumentResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1_ReviewDocumentResponse_descriptor,
@@ -806,12 +969,60 @@ public final class DocumentAiProcessorService {
               "GcsDestination", "State", "RejectionReason",
             });
     internal_static_google_cloud_documentai_v1_ReviewDocumentOperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(39);
+        getDescriptor().getMessageTypes().get(42);
     internal_static_google_cloud_documentai_v1_ReviewDocumentOperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1_ReviewDocumentOperationMetadata_descriptor,
             new java.lang.String[] {
               "CommonMetadata", "QuestionId",
+            });
+    internal_static_google_cloud_documentai_v1_EvaluateProcessorVersionRequest_descriptor =
+        getDescriptor().getMessageTypes().get(43);
+    internal_static_google_cloud_documentai_v1_EvaluateProcessorVersionRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1_EvaluateProcessorVersionRequest_descriptor,
+            new java.lang.String[] {
+              "ProcessorVersion", "EvaluationDocuments",
+            });
+    internal_static_google_cloud_documentai_v1_EvaluateProcessorVersionMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(44);
+    internal_static_google_cloud_documentai_v1_EvaluateProcessorVersionMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1_EvaluateProcessorVersionMetadata_descriptor,
+            new java.lang.String[] {
+              "CommonMetadata",
+            });
+    internal_static_google_cloud_documentai_v1_EvaluateProcessorVersionResponse_descriptor =
+        getDescriptor().getMessageTypes().get(45);
+    internal_static_google_cloud_documentai_v1_EvaluateProcessorVersionResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1_EvaluateProcessorVersionResponse_descriptor,
+            new java.lang.String[] {
+              "Evaluation",
+            });
+    internal_static_google_cloud_documentai_v1_GetEvaluationRequest_descriptor =
+        getDescriptor().getMessageTypes().get(46);
+    internal_static_google_cloud_documentai_v1_GetEvaluationRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1_GetEvaluationRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_documentai_v1_ListEvaluationsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(47);
+    internal_static_google_cloud_documentai_v1_ListEvaluationsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1_ListEvaluationsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_documentai_v1_ListEvaluationsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(48);
+    internal_static_google_cloud_documentai_v1_ListEvaluationsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1_ListEvaluationsResponse_descriptor,
+            new java.lang.String[] {
+              "Evaluations", "NextPageToken",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -832,10 +1043,12 @@ public final class DocumentAiProcessorService {
     com.google.cloud.documentai.v1.DocumentProto.getDescriptor();
     com.google.cloud.documentai.v1.DocumentIoProto.getDescriptor();
     com.google.cloud.documentai.v1.DocumentAiDocumentSchema.getDescriptor();
+    com.google.cloud.documentai.v1.DocumentAiEvaluation.getDescriptor();
     com.google.cloud.documentai.v1.OperationMetadataProto.getDescriptor();
     com.google.cloud.documentai.v1.DocumentAiProcessor.getDescriptor();
     com.google.cloud.documentai.v1.DocumentAiProcessorType.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
+    com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();

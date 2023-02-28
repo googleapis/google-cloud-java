@@ -258,7 +258,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describing the nested structure, or composition of an entity.
+     * Description the nested structure, or composition of an entity.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.DocumentSchema.EntityType.Property properties = 6;
@@ -270,7 +270,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describing the nested structure, or composition of an entity.
+     * Description the nested structure, or composition of an entity.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.DocumentSchema.EntityType.Property properties = 6;
@@ -281,7 +281,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describing the nested structure, or composition of an entity.
+     * Description the nested structure, or composition of an entity.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.DocumentSchema.EntityType.Property properties = 6;
@@ -292,7 +292,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describing the nested structure, or composition of an entity.
+     * Description the nested structure, or composition of an entity.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.DocumentSchema.EntityType.Property properties = 6;
@@ -305,7 +305,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describing the nested structure, or composition of an entity.
+     * Description the nested structure, or composition of an entity.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.DocumentSchema.EntityType.Property properties = 6;
@@ -1301,9 +1301,15 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Types of occurrences of the entity type in the document.  Note: this
-       * represents the number of instances of an entity types, not number of
-       * mentions of a given entity instance.
+       * Types of occurrences of the entity type in the document.  This
+       * represents the number of instances of instances of an entity, not
+       * number of mentions of an entity.  For example, a bank statement may
+       * only have one `account_number`, but this account number may be
+       * mentioned in several places on the document.  In this case the
+       * 'account_number' would be considered a `REQUIRED_ONCE` entity type. If,
+       * on the other hand, we expect a bank statement to contain the status of
+       * multiple different accounts for the customers, the occurrence type will
+       * be set to `REQUIRED_MULTIPLE`.
        * </pre>
        *
        * Protobuf enum {@code
@@ -1324,7 +1330,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * There will be zero or one instance of this entity type.
+         * There will be zero or one instance of this entity type.  The same
+         * entity instance may be mentioned multiple times.
          * </pre>
          *
          * <code>OPTIONAL_ONCE = 1;</code>
@@ -1344,7 +1351,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The entity type will only appear exactly once.
+         * The entity type will only appear exactly once.  The same
+         * entity instance may be mentioned multiple times.
          * </pre>
          *
          * <code>REQUIRED_ONCE = 3;</code>
@@ -1377,7 +1385,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * There will be zero or one instance of this entity type.
+         * There will be zero or one instance of this entity type.  The same
+         * entity instance may be mentioned multiple times.
          * </pre>
          *
          * <code>OPTIONAL_ONCE = 1;</code>
@@ -1397,7 +1406,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The entity type will only appear exactly once.
+         * The entity type will only appear exactly once.  The same
+         * entity instance may be mentioned multiple times.
          * </pre>
          *
          * <code>REQUIRED_ONCE = 3;</code>
@@ -2783,7 +2793,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describing the nested structure, or composition of an entity.
+     * Description the nested structure, or composition of an entity.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.DocumentSchema.EntityType.Property properties = 6;
@@ -2798,7 +2808,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describing the nested structure, or composition of an entity.
+     * Description the nested structure, or composition of an entity.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.DocumentSchema.EntityType.Property properties = 6;
@@ -2814,7 +2824,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describing the nested structure, or composition of an entity.
+     * Description the nested structure, or composition of an entity.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.DocumentSchema.EntityType.Property properties = 6;
@@ -2828,7 +2838,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describing the nested structure, or composition of an entity.
+     * Description the nested structure, or composition of an entity.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.DocumentSchema.EntityType.Property properties = 6;
@@ -2843,7 +2853,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describing the nested structure, or composition of an entity.
+     * Description the nested structure, or composition of an entity.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.DocumentSchema.EntityType.Property properties = 6;
@@ -4155,7 +4165,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4174,7 +4184,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4192,7 +4202,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4211,7 +4221,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4236,7 +4246,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4260,7 +4270,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4285,7 +4295,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4310,7 +4320,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4333,7 +4343,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4357,7 +4367,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4381,7 +4391,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4402,7 +4412,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4423,7 +4433,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4438,7 +4448,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4457,7 +4467,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4477,7 +4487,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4495,7 +4505,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>
@@ -4514,7 +4524,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Describing the nested structure, or composition of an entity.
+       * Description the nested structure, or composition of an entity.
        * </pre>
        *
        * <code>

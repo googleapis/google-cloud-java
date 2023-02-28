@@ -16,6 +16,7 @@
 
 package com.google.cloud.documentai.v1.stub;
 
+import static com.google.cloud.documentai.v1.DocumentProcessorServiceClient.ListEvaluationsPagedResponse;
 import static com.google.cloud.documentai.v1.DocumentProcessorServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.documentai.v1.DocumentProcessorServiceClient.ListProcessorTypesPagedResponse;
 import static com.google.cloud.documentai.v1.DocumentProcessorServiceClient.ListProcessorVersionsPagedResponse;
@@ -41,11 +42,18 @@ import com.google.cloud.documentai.v1.DisableProcessorResponse;
 import com.google.cloud.documentai.v1.EnableProcessorMetadata;
 import com.google.cloud.documentai.v1.EnableProcessorRequest;
 import com.google.cloud.documentai.v1.EnableProcessorResponse;
+import com.google.cloud.documentai.v1.EvaluateProcessorVersionMetadata;
+import com.google.cloud.documentai.v1.EvaluateProcessorVersionRequest;
+import com.google.cloud.documentai.v1.EvaluateProcessorVersionResponse;
+import com.google.cloud.documentai.v1.Evaluation;
 import com.google.cloud.documentai.v1.FetchProcessorTypesRequest;
 import com.google.cloud.documentai.v1.FetchProcessorTypesResponse;
+import com.google.cloud.documentai.v1.GetEvaluationRequest;
 import com.google.cloud.documentai.v1.GetProcessorRequest;
 import com.google.cloud.documentai.v1.GetProcessorTypeRequest;
 import com.google.cloud.documentai.v1.GetProcessorVersionRequest;
+import com.google.cloud.documentai.v1.ListEvaluationsRequest;
+import com.google.cloud.documentai.v1.ListEvaluationsResponse;
 import com.google.cloud.documentai.v1.ListProcessorTypesRequest;
 import com.google.cloud.documentai.v1.ListProcessorTypesResponse;
 import com.google.cloud.documentai.v1.ListProcessorVersionsRequest;
@@ -63,6 +71,9 @@ import com.google.cloud.documentai.v1.ReviewDocumentResponse;
 import com.google.cloud.documentai.v1.SetDefaultProcessorVersionMetadata;
 import com.google.cloud.documentai.v1.SetDefaultProcessorVersionRequest;
 import com.google.cloud.documentai.v1.SetDefaultProcessorVersionResponse;
+import com.google.cloud.documentai.v1.TrainProcessorVersionMetadata;
+import com.google.cloud.documentai.v1.TrainProcessorVersionRequest;
+import com.google.cloud.documentai.v1.TrainProcessorVersionResponse;
 import com.google.cloud.documentai.v1.UndeployProcessorVersionMetadata;
 import com.google.cloud.documentai.v1.UndeployProcessorVersionRequest;
 import com.google.cloud.documentai.v1.UndeployProcessorVersionResponse;
@@ -136,6 +147,19 @@ public abstract class DocumentProcessorServiceStub implements BackgroundResource
 
   public UnaryCallable<GetProcessorRequest, Processor> getProcessorCallable() {
     throw new UnsupportedOperationException("Not implemented: getProcessorCallable()");
+  }
+
+  public OperationCallable<
+          TrainProcessorVersionRequest,
+          TrainProcessorVersionResponse,
+          TrainProcessorVersionMetadata>
+      trainProcessorVersionOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: trainProcessorVersionOperationCallable()");
+  }
+
+  public UnaryCallable<TrainProcessorVersionRequest, Operation> trainProcessorVersionCallable() {
+    throw new UnsupportedOperationException("Not implemented: trainProcessorVersionCallable()");
   }
 
   public UnaryCallable<GetProcessorVersionRequest, ProcessorVersion> getProcessorVersionCallable() {
@@ -245,6 +269,33 @@ public abstract class DocumentProcessorServiceStub implements BackgroundResource
 
   public UnaryCallable<ReviewDocumentRequest, Operation> reviewDocumentCallable() {
     throw new UnsupportedOperationException("Not implemented: reviewDocumentCallable()");
+  }
+
+  public OperationCallable<
+          EvaluateProcessorVersionRequest,
+          EvaluateProcessorVersionResponse,
+          EvaluateProcessorVersionMetadata>
+      evaluateProcessorVersionOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: evaluateProcessorVersionOperationCallable()");
+  }
+
+  public UnaryCallable<EvaluateProcessorVersionRequest, Operation>
+      evaluateProcessorVersionCallable() {
+    throw new UnsupportedOperationException("Not implemented: evaluateProcessorVersionCallable()");
+  }
+
+  public UnaryCallable<GetEvaluationRequest, Evaluation> getEvaluationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getEvaluationCallable()");
+  }
+
+  public UnaryCallable<ListEvaluationsRequest, ListEvaluationsPagedResponse>
+      listEvaluationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listEvaluationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListEvaluationsRequest, ListEvaluationsResponse> listEvaluationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listEvaluationsCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
