@@ -27,10 +27,10 @@ public interface KubernetesClusterConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. A namespace within the Kubernetes cluster to deploy into. If this namespace
-   * does not exist, it is created. If it exists, Dataproc
-   * verifies that another Dataproc VirtualCluster is not installed
-   * into it. If not specified, the name of the Dataproc Cluster is used.
+   * Optional. A namespace within the Kubernetes cluster to deploy into. If this
+   * namespace does not exist, it is created. If it exists, Dataproc verifies
+   * that another Dataproc VirtualCluster is not installed into it. If not
+   * specified, the name of the Dataproc Cluster is used.
    * </pre>
    *
    * <code>string kubernetes_namespace = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -42,10 +42,10 @@ public interface KubernetesClusterConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. A namespace within the Kubernetes cluster to deploy into. If this namespace
-   * does not exist, it is created. If it exists, Dataproc
-   * verifies that another Dataproc VirtualCluster is not installed
-   * into it. If not specified, the name of the Dataproc Cluster is used.
+   * Optional. A namespace within the Kubernetes cluster to deploy into. If this
+   * namespace does not exist, it is created. If it exists, Dataproc verifies
+   * that another Dataproc VirtualCluster is not installed into it. If not
+   * specified, the name of the Dataproc Cluster is used.
    * </pre>
    *
    * <code>string kubernetes_namespace = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -99,7 +99,8 @@ public interface KubernetesClusterConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The software configuration for this Dataproc cluster running on Kubernetes.
+   * Optional. The software configuration for this Dataproc cluster running on
+   * Kubernetes.
    * </pre>
    *
    * <code>
@@ -113,7 +114,8 @@ public interface KubernetesClusterConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The software configuration for this Dataproc cluster running on Kubernetes.
+   * Optional. The software configuration for this Dataproc cluster running on
+   * Kubernetes.
    * </pre>
    *
    * <code>
@@ -127,7 +129,8 @@ public interface KubernetesClusterConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The software configuration for this Dataproc cluster running on Kubernetes.
+   * Optional. The software configuration for this Dataproc cluster running on
+   * Kubernetes.
    * </pre>
    *
    * <code>

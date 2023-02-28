@@ -209,7 +209,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The YARN metrics.
+   * YARN metrics.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; yarn_metrics = 2;</code>
@@ -231,7 +231,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The YARN metrics.
+   * YARN metrics.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; yarn_metrics = 2;</code>
@@ -244,7 +244,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The YARN metrics.
+   * YARN metrics.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; yarn_metrics = 2;</code>
@@ -261,7 +261,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The YARN metrics.
+   * YARN metrics.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; yarn_metrics = 2;</code>
@@ -886,7 +886,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The YARN metrics.
+     * YARN metrics.
      * </pre>
      *
      * <code>map&lt;string, int64&gt; yarn_metrics = 2;</code>
@@ -908,7 +908,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The YARN metrics.
+     * YARN metrics.
      * </pre>
      *
      * <code>map&lt;string, int64&gt; yarn_metrics = 2;</code>
@@ -921,7 +921,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The YARN metrics.
+     * YARN metrics.
      * </pre>
      *
      * <code>map&lt;string, int64&gt; yarn_metrics = 2;</code>
@@ -938,7 +938,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The YARN metrics.
+     * YARN metrics.
      * </pre>
      *
      * <code>map&lt;string, int64&gt; yarn_metrics = 2;</code>
@@ -964,7 +964,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The YARN metrics.
+     * YARN metrics.
      * </pre>
      *
      * <code>map&lt;string, int64&gt; yarn_metrics = 2;</code>
@@ -986,7 +986,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The YARN metrics.
+     * YARN metrics.
      * </pre>
      *
      * <code>map&lt;string, int64&gt; yarn_metrics = 2;</code>
@@ -1004,7 +1004,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The YARN metrics.
+     * YARN metrics.
      * </pre>
      *
      * <code>map&lt;string, int64&gt; yarn_metrics = 2;</code>

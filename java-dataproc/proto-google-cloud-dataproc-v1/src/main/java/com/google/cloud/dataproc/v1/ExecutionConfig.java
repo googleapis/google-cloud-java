@@ -41,6 +41,7 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
     serviceAccount_ = "";
     networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     kmsKey_ = "";
+    stagingBucket_ = "";
   }
 
   @java.lang.Override
@@ -421,6 +422,144 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int TTL_FIELD_NUMBER = 9;
+  private com.google.protobuf.Duration ttl_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The duration after which the workload will be terminated.
+   * When the workload passes this ttl, it will be unconditionally killed
+   * without waiting for ongoing work to finish.
+   * Minimum value is 10 minutes; maximum value is 14 days (see JSON
+   * representation of
+   * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   * If both ttl and idle_ttl are specified, the conditions are treated as
+   * and OR: the workload will be terminated when it has been idle for idle_ttl
+   * or when the ttl has passed, whichever comes first.
+   * If ttl is not specified for a session, it defaults to 24h.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration ttl = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the ttl field is set.
+   */
+  @java.lang.Override
+  public boolean hasTtl() {
+    return ttl_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The duration after which the workload will be terminated.
+   * When the workload passes this ttl, it will be unconditionally killed
+   * without waiting for ongoing work to finish.
+   * Minimum value is 10 minutes; maximum value is 14 days (see JSON
+   * representation of
+   * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   * If both ttl and idle_ttl are specified, the conditions are treated as
+   * and OR: the workload will be terminated when it has been idle for idle_ttl
+   * or when the ttl has passed, whichever comes first.
+   * If ttl is not specified for a session, it defaults to 24h.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration ttl = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The ttl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getTtl() {
+    return ttl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : ttl_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The duration after which the workload will be terminated.
+   * When the workload passes this ttl, it will be unconditionally killed
+   * without waiting for ongoing work to finish.
+   * Minimum value is 10 minutes; maximum value is 14 days (see JSON
+   * representation of
+   * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   * If both ttl and idle_ttl are specified, the conditions are treated as
+   * and OR: the workload will be terminated when it has been idle for idle_ttl
+   * or when the ttl has passed, whichever comes first.
+   * If ttl is not specified for a session, it defaults to 24h.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration ttl = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getTtlOrBuilder() {
+    return ttl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : ttl_;
+  }
+
+  public static final int STAGING_BUCKET_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object stagingBucket_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Cloud Storage bucket used to stage workload dependencies,
+   * config files, and store workload output and other ephemeral data, such as
+   * Spark history files. If you do not specify a staging bucket, Cloud Dataproc
+   * will determine a Cloud Storage location according to the region where your
+   * workload is running, and then create and manage project-level, per-location
+   * staging and temporary buckets.
+   * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
+   * a Cloud Storage bucket.**
+   * </pre>
+   *
+   * <code>string staging_bucket = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The stagingBucket.
+   */
+  @java.lang.Override
+  public java.lang.String getStagingBucket() {
+    java.lang.Object ref = stagingBucket_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      stagingBucket_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Cloud Storage bucket used to stage workload dependencies,
+   * config files, and store workload output and other ephemeral data, such as
+   * Spark history files. If you do not specify a staging bucket, Cloud Dataproc
+   * will determine a Cloud Storage location according to the region where your
+   * workload is running, and then create and manage project-level, per-location
+   * staging and temporary buckets.
+   * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
+   * a Cloud Storage bucket.**
+   * </pre>
+   *
+   * <code>string staging_bucket = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for stagingBucket.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getStagingBucketBytes() {
+    java.lang.Object ref = stagingBucket_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      stagingBucket_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -449,6 +588,12 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKey_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, kmsKey_);
+    }
+    if (ttl_ != null) {
+      output.writeMessage(9, getTtl());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stagingBucket_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, stagingBucket_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -479,6 +624,12 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKey_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, kmsKey_);
     }
+    if (ttl_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getTtl());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stagingBucket_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, stagingBucket_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -498,6 +649,11 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
     if (!getServiceAccount().equals(other.getServiceAccount())) return false;
     if (!getNetworkTagsList().equals(other.getNetworkTagsList())) return false;
     if (!getKmsKey().equals(other.getKmsKey())) return false;
+    if (hasTtl() != other.hasTtl()) return false;
+    if (hasTtl()) {
+      if (!getTtl().equals(other.getTtl())) return false;
+    }
+    if (!getStagingBucket().equals(other.getStagingBucket())) return false;
     if (!getNetworkCase().equals(other.getNetworkCase())) return false;
     switch (networkCase_) {
       case 4:
@@ -528,6 +684,12 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
     }
     hash = (37 * hash) + KMS_KEY_FIELD_NUMBER;
     hash = (53 * hash) + getKmsKey().hashCode();
+    if (hasTtl()) {
+      hash = (37 * hash) + TTL_FIELD_NUMBER;
+      hash = (53 * hash) + getTtl().hashCode();
+    }
+    hash = (37 * hash) + STAGING_BUCKET_FIELD_NUMBER;
+    hash = (53 * hash) + getStagingBucket().hashCode();
     switch (networkCase_) {
       case 4:
         hash = (37 * hash) + NETWORK_URI_FIELD_NUMBER;
@@ -683,6 +845,12 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
       kmsKey_ = "";
+      ttl_ = null;
+      if (ttlBuilder_ != null) {
+        ttlBuilder_.dispose();
+        ttlBuilder_ = null;
+      }
+      stagingBucket_ = "";
       networkCase_ = 0;
       network_ = null;
       return this;
@@ -736,6 +904,12 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.kmsKey_ = kmsKey_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.ttl_ = ttlBuilder_ == null ? ttl_ : ttlBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.stagingBucket_ = stagingBucket_;
       }
     }
 
@@ -807,6 +981,14 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       if (!other.getKmsKey().isEmpty()) {
         kmsKey_ = other.kmsKey_;
         bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      if (other.hasTtl()) {
+        mergeTtl(other.getTtl());
+      }
+      if (!other.getStagingBucket().isEmpty()) {
+        stagingBucket_ = other.stagingBucket_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       switch (other.getNetworkCase()) {
@@ -888,6 +1070,18 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000010;
                 break;
               } // case 58
+            case 74:
+              {
+                input.readMessage(getTtlFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 74
+            case 82:
+              {
+                stagingBucket_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1565,6 +1759,406 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       kmsKey_ = value;
       bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Duration ttl_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        ttlBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration after which the workload will be terminated.
+     * When the workload passes this ttl, it will be unconditionally killed
+     * without waiting for ongoing work to finish.
+     * Minimum value is 10 minutes; maximum value is 14 days (see JSON
+     * representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * If both ttl and idle_ttl are specified, the conditions are treated as
+     * and OR: the workload will be terminated when it has been idle for idle_ttl
+     * or when the ttl has passed, whichever comes first.
+     * If ttl is not specified for a session, it defaults to 24h.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the ttl field is set.
+     */
+    public boolean hasTtl() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration after which the workload will be terminated.
+     * When the workload passes this ttl, it will be unconditionally killed
+     * without waiting for ongoing work to finish.
+     * Minimum value is 10 minutes; maximum value is 14 days (see JSON
+     * representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * If both ttl and idle_ttl are specified, the conditions are treated as
+     * and OR: the workload will be terminated when it has been idle for idle_ttl
+     * or when the ttl has passed, whichever comes first.
+     * If ttl is not specified for a session, it defaults to 24h.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The ttl.
+     */
+    public com.google.protobuf.Duration getTtl() {
+      if (ttlBuilder_ == null) {
+        return ttl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : ttl_;
+      } else {
+        return ttlBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration after which the workload will be terminated.
+     * When the workload passes this ttl, it will be unconditionally killed
+     * without waiting for ongoing work to finish.
+     * Minimum value is 10 minutes; maximum value is 14 days (see JSON
+     * representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * If both ttl and idle_ttl are specified, the conditions are treated as
+     * and OR: the workload will be terminated when it has been idle for idle_ttl
+     * or when the ttl has passed, whichever comes first.
+     * If ttl is not specified for a session, it defaults to 24h.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setTtl(com.google.protobuf.Duration value) {
+      if (ttlBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ttl_ = value;
+      } else {
+        ttlBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration after which the workload will be terminated.
+     * When the workload passes this ttl, it will be unconditionally killed
+     * without waiting for ongoing work to finish.
+     * Minimum value is 10 minutes; maximum value is 14 days (see JSON
+     * representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * If both ttl and idle_ttl are specified, the conditions are treated as
+     * and OR: the workload will be terminated when it has been idle for idle_ttl
+     * or when the ttl has passed, whichever comes first.
+     * If ttl is not specified for a session, it defaults to 24h.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setTtl(com.google.protobuf.Duration.Builder builderForValue) {
+      if (ttlBuilder_ == null) {
+        ttl_ = builderForValue.build();
+      } else {
+        ttlBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration after which the workload will be terminated.
+     * When the workload passes this ttl, it will be unconditionally killed
+     * without waiting for ongoing work to finish.
+     * Minimum value is 10 minutes; maximum value is 14 days (see JSON
+     * representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * If both ttl and idle_ttl are specified, the conditions are treated as
+     * and OR: the workload will be terminated when it has been idle for idle_ttl
+     * or when the ttl has passed, whichever comes first.
+     * If ttl is not specified for a session, it defaults to 24h.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder mergeTtl(com.google.protobuf.Duration value) {
+      if (ttlBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && ttl_ != null
+            && ttl_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTtlBuilder().mergeFrom(value);
+        } else {
+          ttl_ = value;
+        }
+      } else {
+        ttlBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration after which the workload will be terminated.
+     * When the workload passes this ttl, it will be unconditionally killed
+     * without waiting for ongoing work to finish.
+     * Minimum value is 10 minutes; maximum value is 14 days (see JSON
+     * representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * If both ttl and idle_ttl are specified, the conditions are treated as
+     * and OR: the workload will be terminated when it has been idle for idle_ttl
+     * or when the ttl has passed, whichever comes first.
+     * If ttl is not specified for a session, it defaults to 24h.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearTtl() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      ttl_ = null;
+      if (ttlBuilder_ != null) {
+        ttlBuilder_.dispose();
+        ttlBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration after which the workload will be terminated.
+     * When the workload passes this ttl, it will be unconditionally killed
+     * without waiting for ongoing work to finish.
+     * Minimum value is 10 minutes; maximum value is 14 days (see JSON
+     * representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * If both ttl and idle_ttl are specified, the conditions are treated as
+     * and OR: the workload will be terminated when it has been idle for idle_ttl
+     * or when the ttl has passed, whichever comes first.
+     * If ttl is not specified for a session, it defaults to 24h.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.protobuf.Duration.Builder getTtlBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getTtlFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration after which the workload will be terminated.
+     * When the workload passes this ttl, it will be unconditionally killed
+     * without waiting for ongoing work to finish.
+     * Minimum value is 10 minutes; maximum value is 14 days (see JSON
+     * representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * If both ttl and idle_ttl are specified, the conditions are treated as
+     * and OR: the workload will be terminated when it has been idle for idle_ttl
+     * or when the ttl has passed, whichever comes first.
+     * If ttl is not specified for a session, it defaults to 24h.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.protobuf.DurationOrBuilder getTtlOrBuilder() {
+      if (ttlBuilder_ != null) {
+        return ttlBuilder_.getMessageOrBuilder();
+      } else {
+        return ttl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : ttl_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration after which the workload will be terminated.
+     * When the workload passes this ttl, it will be unconditionally killed
+     * without waiting for ongoing work to finish.
+     * Minimum value is 10 minutes; maximum value is 14 days (see JSON
+     * representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * If both ttl and idle_ttl are specified, the conditions are treated as
+     * and OR: the workload will be terminated when it has been idle for idle_ttl
+     * or when the ttl has passed, whichever comes first.
+     * If ttl is not specified for a session, it defaults to 24h.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        getTtlFieldBuilder() {
+      if (ttlBuilder_ == null) {
+        ttlBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(getTtl(), getParentForChildren(), isClean());
+        ttl_ = null;
+      }
+      return ttlBuilder_;
+    }
+
+    private java.lang.Object stagingBucket_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Cloud Storage bucket used to stage workload dependencies,
+     * config files, and store workload output and other ephemeral data, such as
+     * Spark history files. If you do not specify a staging bucket, Cloud Dataproc
+     * will determine a Cloud Storage location according to the region where your
+     * workload is running, and then create and manage project-level, per-location
+     * staging and temporary buckets.
+     * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
+     * a Cloud Storage bucket.**
+     * </pre>
+     *
+     * <code>string staging_bucket = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The stagingBucket.
+     */
+    public java.lang.String getStagingBucket() {
+      java.lang.Object ref = stagingBucket_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        stagingBucket_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Cloud Storage bucket used to stage workload dependencies,
+     * config files, and store workload output and other ephemeral data, such as
+     * Spark history files. If you do not specify a staging bucket, Cloud Dataproc
+     * will determine a Cloud Storage location according to the region where your
+     * workload is running, and then create and manage project-level, per-location
+     * staging and temporary buckets.
+     * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
+     * a Cloud Storage bucket.**
+     * </pre>
+     *
+     * <code>string staging_bucket = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for stagingBucket.
+     */
+    public com.google.protobuf.ByteString getStagingBucketBytes() {
+      java.lang.Object ref = stagingBucket_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        stagingBucket_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Cloud Storage bucket used to stage workload dependencies,
+     * config files, and store workload output and other ephemeral data, such as
+     * Spark history files. If you do not specify a staging bucket, Cloud Dataproc
+     * will determine a Cloud Storage location according to the region where your
+     * workload is running, and then create and manage project-level, per-location
+     * staging and temporary buckets.
+     * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
+     * a Cloud Storage bucket.**
+     * </pre>
+     *
+     * <code>string staging_bucket = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The stagingBucket to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStagingBucket(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      stagingBucket_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Cloud Storage bucket used to stage workload dependencies,
+     * config files, and store workload output and other ephemeral data, such as
+     * Spark history files. If you do not specify a staging bucket, Cloud Dataproc
+     * will determine a Cloud Storage location according to the region where your
+     * workload is running, and then create and manage project-level, per-location
+     * staging and temporary buckets.
+     * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
+     * a Cloud Storage bucket.**
+     * </pre>
+     *
+     * <code>string staging_bucket = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStagingBucket() {
+      stagingBucket_ = getDefaultInstance().getStagingBucket();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Cloud Storage bucket used to stage workload dependencies,
+     * config files, and store workload output and other ephemeral data, such as
+     * Spark history files. If you do not specify a staging bucket, Cloud Dataproc
+     * will determine a Cloud Storage location according to the region where your
+     * workload is running, and then create and manage project-level, per-location
+     * staging and temporary buckets.
+     * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
+     * a Cloud Storage bucket.**
+     * </pre>
+     *
+     * <code>string staging_bucket = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for stagingBucket to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStagingBucketBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      stagingBucket_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

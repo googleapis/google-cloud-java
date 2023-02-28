@@ -27,7 +27,7 @@ public interface GkeNodePoolTargetOrBuilder
    *
    *
    * <pre>
-   * Required. The target GKE NodePool.
+   * Required. The target GKE node pool.
    * Format:
    * 'projects/{project}/locations/{location}/clusters/{cluster}/nodePools/{node_pool}'
    * </pre>
@@ -41,7 +41,7 @@ public interface GkeNodePoolTargetOrBuilder
    *
    *
    * <pre>
-   * Required. The target GKE NodePool.
+   * Required. The target GKE node pool.
    * Format:
    * 'projects/{project}/locations/{location}/clusters/{cluster}/nodePools/{node_pool}'
    * </pre>
@@ -56,7 +56,7 @@ public interface GkeNodePoolTargetOrBuilder
    *
    *
    * <pre>
-   * Required. The types of role for a GKE NodePool
+   * Required. The roles associated with the GKE node pool.
    * </pre>
    *
    * <code>
@@ -70,7 +70,7 @@ public interface GkeNodePoolTargetOrBuilder
    *
    *
    * <pre>
-   * Required. The types of role for a GKE NodePool
+   * Required. The roles associated with the GKE node pool.
    * </pre>
    *
    * <code>
@@ -84,7 +84,7 @@ public interface GkeNodePoolTargetOrBuilder
    *
    *
    * <pre>
-   * Required. The types of role for a GKE NodePool
+   * Required. The roles associated with the GKE node pool.
    * </pre>
    *
    * <code>
@@ -99,7 +99,7 @@ public interface GkeNodePoolTargetOrBuilder
    *
    *
    * <pre>
-   * Required. The types of role for a GKE NodePool
+   * Required. The roles associated with the GKE node pool.
    * </pre>
    *
    * <code>
@@ -113,7 +113,7 @@ public interface GkeNodePoolTargetOrBuilder
    *
    *
    * <pre>
-   * Required. The types of role for a GKE NodePool
+   * Required. The roles associated with the GKE node pool.
    * </pre>
    *
    * <code>
@@ -129,18 +129,19 @@ public interface GkeNodePoolTargetOrBuilder
    *
    *
    * <pre>
-   * Optional. The configuration for the GKE NodePool.
-   * If specified, Dataproc attempts to create a NodePool with the
+   * Input only. The configuration for the GKE node pool.
+   * If specified, Dataproc attempts to create a node pool with the
    * specified shape. If one with the same name already exists, it is
    * verified against all specified fields. If a field differs, the
    * virtual cluster creation will fail.
-   * If omitted, any NodePool with the specified name is used. If a
-   * NodePool with the specified name does not exist, Dataproc create a NodePool
-   * with default values.
+   * If omitted, any node pool with the specified name is used. If a
+   * node pool with the specified name does not exist, Dataproc create a
+   * node pool with default values.
+   * This is an input only field. It will not be returned by the API.
    * </pre>
    *
    * <code>
-   * .google.cloud.dataproc.v1.GkeNodePoolConfig node_pool_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.dataproc.v1.GkeNodePoolConfig node_pool_config = 3 [(.google.api.field_behavior) = INPUT_ONLY];
    * </code>
    *
    * @return Whether the nodePoolConfig field is set.
@@ -150,18 +151,19 @@ public interface GkeNodePoolTargetOrBuilder
    *
    *
    * <pre>
-   * Optional. The configuration for the GKE NodePool.
-   * If specified, Dataproc attempts to create a NodePool with the
+   * Input only. The configuration for the GKE node pool.
+   * If specified, Dataproc attempts to create a node pool with the
    * specified shape. If one with the same name already exists, it is
    * verified against all specified fields. If a field differs, the
    * virtual cluster creation will fail.
-   * If omitted, any NodePool with the specified name is used. If a
-   * NodePool with the specified name does not exist, Dataproc create a NodePool
-   * with default values.
+   * If omitted, any node pool with the specified name is used. If a
+   * node pool with the specified name does not exist, Dataproc create a
+   * node pool with default values.
+   * This is an input only field. It will not be returned by the API.
    * </pre>
    *
    * <code>
-   * .google.cloud.dataproc.v1.GkeNodePoolConfig node_pool_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.dataproc.v1.GkeNodePoolConfig node_pool_config = 3 [(.google.api.field_behavior) = INPUT_ONLY];
    * </code>
    *
    * @return The nodePoolConfig.
@@ -171,18 +173,19 @@ public interface GkeNodePoolTargetOrBuilder
    *
    *
    * <pre>
-   * Optional. The configuration for the GKE NodePool.
-   * If specified, Dataproc attempts to create a NodePool with the
+   * Input only. The configuration for the GKE node pool.
+   * If specified, Dataproc attempts to create a node pool with the
    * specified shape. If one with the same name already exists, it is
    * verified against all specified fields. If a field differs, the
    * virtual cluster creation will fail.
-   * If omitted, any NodePool with the specified name is used. If a
-   * NodePool with the specified name does not exist, Dataproc create a NodePool
-   * with default values.
+   * If omitted, any node pool with the specified name is used. If a
+   * node pool with the specified name does not exist, Dataproc create a
+   * node pool with default values.
+   * This is an input only field. It will not be returned by the API.
    * </pre>
    *
    * <code>
-   * .google.cloud.dataproc.v1.GkeNodePoolConfig node_pool_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.dataproc.v1.GkeNodePoolConfig node_pool_config = 3 [(.google.api.field_behavior) = INPUT_ONLY];
    * </code>
    */
   com.google.cloud.dataproc.v1.GkeNodePoolConfigOrBuilder getNodePoolConfigOrBuilder();

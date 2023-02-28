@@ -54,9 +54,9 @@ public interface SparkRBatchOrBuilder
    *
    *
    * <pre>
-   * Optional. The arguments to pass to the Spark driver. Do not include arguments
-   * that can be set as batch properties, such as `--conf`, since a collision
-   * can occur that causes an incorrect batch submission.
+   * Optional. The arguments to pass to the Spark driver. Do not include
+   * arguments that can be set as batch properties, such as `--conf`, since a
+   * collision can occur that causes an incorrect batch submission.
    * </pre>
    *
    * <code>repeated string args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -68,9 +68,9 @@ public interface SparkRBatchOrBuilder
    *
    *
    * <pre>
-   * Optional. The arguments to pass to the Spark driver. Do not include arguments
-   * that can be set as batch properties, such as `--conf`, since a collision
-   * can occur that causes an incorrect batch submission.
+   * Optional. The arguments to pass to the Spark driver. Do not include
+   * arguments that can be set as batch properties, such as `--conf`, since a
+   * collision can occur that causes an incorrect batch submission.
    * </pre>
    *
    * <code>repeated string args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -82,9 +82,9 @@ public interface SparkRBatchOrBuilder
    *
    *
    * <pre>
-   * Optional. The arguments to pass to the Spark driver. Do not include arguments
-   * that can be set as batch properties, such as `--conf`, since a collision
-   * can occur that causes an incorrect batch submission.
+   * Optional. The arguments to pass to the Spark driver. Do not include
+   * arguments that can be set as batch properties, such as `--conf`, since a
+   * collision can occur that causes an incorrect batch submission.
    * </pre>
    *
    * <code>repeated string args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -97,9 +97,9 @@ public interface SparkRBatchOrBuilder
    *
    *
    * <pre>
-   * Optional. The arguments to pass to the Spark driver. Do not include arguments
-   * that can be set as batch properties, such as `--conf`, since a collision
-   * can occur that causes an incorrect batch submission.
+   * Optional. The arguments to pass to the Spark driver. Do not include
+   * arguments that can be set as batch properties, such as `--conf`, since a
+   * collision can occur that causes an incorrect batch submission.
    * </pre>
    *
    * <code>repeated string args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

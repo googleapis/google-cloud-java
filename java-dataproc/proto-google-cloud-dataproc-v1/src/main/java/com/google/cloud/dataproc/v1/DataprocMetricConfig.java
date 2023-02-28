@@ -152,6 +152,16 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      * <code>HIVESERVER2 = 6;</code>
      */
     HIVESERVER2(6),
+    /**
+     *
+     *
+     * <pre>
+     * hivemetastore metric source
+     * </pre>
+     *
+     * <code>HIVEMETASTORE = 7;</code>
+     */
+    HIVEMETASTORE(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -228,6 +238,16 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      * <code>HIVESERVER2 = 6;</code>
      */
     public static final int HIVESERVER2_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * hivemetastore metric source
+     * </pre>
+     *
+     * <code>HIVEMETASTORE = 7;</code>
+     */
+    public static final int HIVEMETASTORE_VALUE = 7;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -267,6 +287,8 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
           return SPARK_HISTORY_SERVER;
         case 6:
           return HIVESERVER2;
+        case 7:
+          return HIVEMETASTORE;
         default:
           return null;
       }

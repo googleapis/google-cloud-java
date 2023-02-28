@@ -113,6 +113,24 @@
         }
       }
     },
+    "NodeGroupController": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "NodeGroupControllerClient",
+          "rpcs": {
+            "CreateNodeGroup": {
+              "methods": ["createNodeGroupAsync", "createNodeGroupAsync", "createNodeGroupAsync", "createNodeGroupOperationCallable", "createNodeGroupCallable"]
+            },
+            "GetNodeGroup": {
+              "methods": ["getNodeGroup", "getNodeGroup", "getNodeGroup", "getNodeGroupCallable"]
+            },
+            "ResizeNodeGroup": {
+              "methods": ["resizeNodeGroupAsync", "resizeNodeGroupAsync", "resizeNodeGroupOperationCallable", "resizeNodeGroupCallable"]
+            }
+          }
+        }
+      }
+    },
     "WorkflowTemplateService": {
       "clients": {
         "grpc": {
@@ -138,24 +156,6 @@
             },
             "UpdateWorkflowTemplate": {
               "methods": ["updateWorkflowTemplate", "updateWorkflowTemplate", "updateWorkflowTemplateCallable"]
-            }
-          }
-        }
-      }
-    },
-    "NodeGroupController": {
-      "clients": {
-        "grpc": {
-          "libraryClient": "NodeGroupControllerClient",
-          "rpcs": {
-            "CreateNodeGroup": {
-              "methods": ["createNodeGroupAsync", "createNodeGroupAsync", "createNodeGroupAsync", "createNodeGroupOperationCallable", "createNodeGroupCallable"]
-            },
-            "GetNodeGroup": {
-              "methods": ["getNodeGroup", "getNodeGroup", "getNodeGroup", "getNodeGroupCallable"]
-            },
-            "ResizeNodeGroup": {
-              "methods": ["resizeNodeGroupAsync", "resizeNodeGroupAsync", "resizeNodeGroupOperationCallable", "resizeNodeGroupCallable"]
             }
           }
         }

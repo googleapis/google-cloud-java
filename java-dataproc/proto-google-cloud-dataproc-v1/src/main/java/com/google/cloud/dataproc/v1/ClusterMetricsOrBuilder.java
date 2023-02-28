@@ -81,7 +81,7 @@ public interface ClusterMetricsOrBuilder
    *
    *
    * <pre>
-   * The YARN metrics.
+   * YARN metrics.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; yarn_metrics = 2;</code>
@@ -91,7 +91,7 @@ public interface ClusterMetricsOrBuilder
    *
    *
    * <pre>
-   * The YARN metrics.
+   * YARN metrics.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; yarn_metrics = 2;</code>
@@ -104,7 +104,7 @@ public interface ClusterMetricsOrBuilder
    *
    *
    * <pre>
-   * The YARN metrics.
+   * YARN metrics.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; yarn_metrics = 2;</code>
@@ -114,7 +114,7 @@ public interface ClusterMetricsOrBuilder
    *
    *
    * <pre>
-   * The YARN metrics.
+   * YARN metrics.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; yarn_metrics = 2;</code>
@@ -124,7 +124,7 @@ public interface ClusterMetricsOrBuilder
    *
    *
    * <pre>
-   * The YARN metrics.
+   * YARN metrics.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; yarn_metrics = 2;</code>

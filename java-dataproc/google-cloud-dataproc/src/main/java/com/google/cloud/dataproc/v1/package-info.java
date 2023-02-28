@@ -97,6 +97,25 @@
  * }
  * }</pre>
  *
+ * <p>======================= NodeGroupControllerClient =======================
+ *
+ * <p>Service Description: The `NodeGroupControllerService` provides methods to manage node groups
+ * of Compute Engine managed instances.
+ *
+ * <p>Sample for NodeGroupControllerClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (NodeGroupControllerClient nodeGroupControllerClient = NodeGroupControllerClient.create()) {
+ *   NodeGroupName name = NodeGroupName.of("[PROJECT]", "[REGION]", "[CLUSTER]", "[NODE_GROUP]");
+ *   NodeGroup response = nodeGroupControllerClient.getNodeGroup(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= WorkflowTemplateServiceClient =======================
  *
  * <p>Service Description: The API interface for managing Workflow Templates in the Dataproc API.
@@ -115,25 +134,6 @@
  *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
  *   WorkflowTemplate response =
  *       workflowTemplateServiceClient.createWorkflowTemplate(parent, template);
- * }
- * }</pre>
- *
- * <p>======================= NodeGroupControllerClient =======================
- *
- * <p>Service Description: The `NodeGroupControllerService` provides methods to manage node groups
- * of Compute Engine managed instances.
- *
- * <p>Sample for NodeGroupControllerClient:
- *
- * <pre>{@code
- * // This snippet has been automatically generated and should be regarded as a code template only.
- * // It will require modifications to work:
- * // - It may require correct/in-range values for request initialization.
- * // - It may require specifying regional endpoints when creating the service client as shown in
- * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * try (NodeGroupControllerClient nodeGroupControllerClient = NodeGroupControllerClient.create()) {
- *   NodeGroupName name = NodeGroupName.of("[PROJECT]", "[REGION]", "[CLUSTER]", "[NODE_GROUP]");
- *   NodeGroup response = nodeGroupControllerClient.getNodeGroup(name);
  * }
  * }</pre>
  */

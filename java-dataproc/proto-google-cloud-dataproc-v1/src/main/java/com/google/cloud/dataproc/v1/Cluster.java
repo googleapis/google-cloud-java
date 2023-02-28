@@ -199,6 +199,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * Optional. The cluster config for a cluster of Compute Engine Instances.
    * Note that Dataproc may set default values, and values may change
    * when clusters are updated.
+   * Exactly one of ClusterConfig or VirtualClusterConfig must be specified.
    * </pre>
    *
    * <code>
@@ -218,6 +219,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * Optional. The cluster config for a cluster of Compute Engine Instances.
    * Note that Dataproc may set default values, and values may change
    * when clusters are updated.
+   * Exactly one of ClusterConfig or VirtualClusterConfig must be specified.
    * </pre>
    *
    * <code>
@@ -239,6 +241,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * Optional. The cluster config for a cluster of Compute Engine Instances.
    * Note that Dataproc may set default values, and values may change
    * when clusters are updated.
+   * Exactly one of ClusterConfig or VirtualClusterConfig must be specified.
    * </pre>
    *
    * <code>
@@ -261,7 +264,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * Optional. The virtual cluster config is used when creating a Dataproc
    * cluster that does not directly control the underlying compute resources,
    * for example, when creating a [Dataproc-on-GKE
-   * cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke).
+   * cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-overview).
    * Dataproc may set default values, and values may change when
    * clusters are updated. Exactly one of
    * [config][google.cloud.dataproc.v1.Cluster.config] or
@@ -286,7 +289,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * Optional. The virtual cluster config is used when creating a Dataproc
    * cluster that does not directly control the underlying compute resources,
    * for example, when creating a [Dataproc-on-GKE
-   * cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke).
+   * cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-overview).
    * Dataproc may set default values, and values may change when
    * clusters are updated. Exactly one of
    * [config][google.cloud.dataproc.v1.Cluster.config] or
@@ -313,7 +316,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * Optional. The virtual cluster config is used when creating a Dataproc
    * cluster that does not directly control the underlying compute resources,
    * for example, when creating a [Dataproc-on-GKE
-   * cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke).
+   * cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-overview).
    * Dataproc may set default values, and values may change when
    * clusters are updated. Exactly one of
    * [config][google.cloud.dataproc.v1.Cluster.config] or
@@ -1594,6 +1597,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Optional. The cluster config for a cluster of Compute Engine Instances.
      * Note that Dataproc may set default values, and values may change
      * when clusters are updated.
+     * Exactly one of ClusterConfig or VirtualClusterConfig must be specified.
      * </pre>
      *
      * <code>
@@ -1612,6 +1616,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Optional. The cluster config for a cluster of Compute Engine Instances.
      * Note that Dataproc may set default values, and values may change
      * when clusters are updated.
+     * Exactly one of ClusterConfig or VirtualClusterConfig must be specified.
      * </pre>
      *
      * <code>
@@ -1636,6 +1641,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Optional. The cluster config for a cluster of Compute Engine Instances.
      * Note that Dataproc may set default values, and values may change
      * when clusters are updated.
+     * Exactly one of ClusterConfig or VirtualClusterConfig must be specified.
      * </pre>
      *
      * <code>
@@ -1662,6 +1668,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Optional. The cluster config for a cluster of Compute Engine Instances.
      * Note that Dataproc may set default values, and values may change
      * when clusters are updated.
+     * Exactly one of ClusterConfig or VirtualClusterConfig must be specified.
      * </pre>
      *
      * <code>
@@ -1685,6 +1692,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Optional. The cluster config for a cluster of Compute Engine Instances.
      * Note that Dataproc may set default values, and values may change
      * when clusters are updated.
+     * Exactly one of ClusterConfig or VirtualClusterConfig must be specified.
      * </pre>
      *
      * <code>
@@ -1714,6 +1722,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Optional. The cluster config for a cluster of Compute Engine Instances.
      * Note that Dataproc may set default values, and values may change
      * when clusters are updated.
+     * Exactly one of ClusterConfig or VirtualClusterConfig must be specified.
      * </pre>
      *
      * <code>
@@ -1737,6 +1746,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Optional. The cluster config for a cluster of Compute Engine Instances.
      * Note that Dataproc may set default values, and values may change
      * when clusters are updated.
+     * Exactly one of ClusterConfig or VirtualClusterConfig must be specified.
      * </pre>
      *
      * <code>
@@ -1755,6 +1765,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Optional. The cluster config for a cluster of Compute Engine Instances.
      * Note that Dataproc may set default values, and values may change
      * when clusters are updated.
+     * Exactly one of ClusterConfig or VirtualClusterConfig must be specified.
      * </pre>
      *
      * <code>
@@ -1777,6 +1788,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Optional. The cluster config for a cluster of Compute Engine Instances.
      * Note that Dataproc may set default values, and values may change
      * when clusters are updated.
+     * Exactly one of ClusterConfig or VirtualClusterConfig must be specified.
      * </pre>
      *
      * <code>
@@ -1813,7 +1825,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Optional. The virtual cluster config is used when creating a Dataproc
      * cluster that does not directly control the underlying compute resources,
      * for example, when creating a [Dataproc-on-GKE
-     * cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke).
+     * cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-overview).
      * Dataproc may set default values, and values may change when
      * clusters are updated. Exactly one of
      * [config][google.cloud.dataproc.v1.Cluster.config] or
@@ -1837,7 +1849,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Optional. The virtual cluster config is used when creating a Dataproc
      * cluster that does not directly control the underlying compute resources,
      * for example, when creating a [Dataproc-on-GKE
-     * cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke).
+     * cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-overview).
      * Dataproc may set default values, and values may change when
      * clusters are updated. Exactly one of
      * [config][google.cloud.dataproc.v1.Cluster.config] or
@@ -1867,7 +1879,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Optional. The virtual cluster config is used when creating a Dataproc
      * cluster that does not directly control the underlying compute resources,
      * for example, when creating a [Dataproc-on-GKE
-     * cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke).
+     * cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-overview).
      * Dataproc may set default values, and values may change when
      * clusters are updated. Exactly one of
      * [config][google.cloud.dataproc.v1.Cluster.config] or
@@ -1900,7 +1912,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Optional. The virtual cluster config is used when creating a Dataproc
      * cluster that does not directly control the underlying compute resources,
      * for example, when creating a [Dataproc-on-GKE
-     * cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke).
+     * cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-overview).
      * Dataproc may set default values, and values may change when
      * clusters are updated. Exactly one of
      * [config][google.cloud.dataproc.v1.Cluster.config] or
@@ -1930,7 +1942,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Optional. The virtual cluster config is used when creating a Dataproc
      * cluster that does not directly control the underlying compute resources,
      * for example, when creating a [Dataproc-on-GKE
-     * cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke).
+     * cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-overview).
      * Dataproc may set default values, and values may change when
      * clusters are updated. Exactly one of
      * [config][google.cloud.dataproc.v1.Cluster.config] or
@@ -1967,7 +1979,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Optional. The virtual cluster config is used when creating a Dataproc
      * cluster that does not directly control the underlying compute resources,
      * for example, when creating a [Dataproc-on-GKE
-     * cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke).
+     * cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-overview).
      * Dataproc may set default values, and values may change when
      * clusters are updated. Exactly one of
      * [config][google.cloud.dataproc.v1.Cluster.config] or
@@ -1996,7 +2008,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Optional. The virtual cluster config is used when creating a Dataproc
      * cluster that does not directly control the underlying compute resources,
      * for example, when creating a [Dataproc-on-GKE
-     * cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke).
+     * cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-overview).
      * Dataproc may set default values, and values may change when
      * clusters are updated. Exactly one of
      * [config][google.cloud.dataproc.v1.Cluster.config] or
@@ -2021,7 +2033,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Optional. The virtual cluster config is used when creating a Dataproc
      * cluster that does not directly control the underlying compute resources,
      * for example, when creating a [Dataproc-on-GKE
-     * cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke).
+     * cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-overview).
      * Dataproc may set default values, and values may change when
      * clusters are updated. Exactly one of
      * [config][google.cloud.dataproc.v1.Cluster.config] or
@@ -2050,7 +2062,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Optional. The virtual cluster config is used when creating a Dataproc
      * cluster that does not directly control the underlying compute resources,
      * for example, when creating a [Dataproc-on-GKE
-     * cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke).
+     * cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-overview).
      * Dataproc may set default values, and values may change when
      * clusters are updated. Exactly one of
      * [config][google.cloud.dataproc.v1.Cluster.config] or

@@ -27,7 +27,9 @@ public interface DeleteBatchRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the batch resource to delete.
+   * Required. The fully qualified name of the batch to retrieve
+   * in the format
+   * "projects/PROJECT_ID/locations/DATAPROC_REGION/batches/BATCH_ID"
    * </pre>
    *
    * <code>
@@ -41,7 +43,9 @@ public interface DeleteBatchRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the batch resource to delete.
+   * Required. The fully qualified name of the batch to retrieve
+   * in the format
+   * "projects/PROJECT_ID/locations/DATAPROC_REGION/batches/BATCH_ID"
    * </pre>
    *
    * <code>

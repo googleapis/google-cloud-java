@@ -52,8 +52,8 @@ public interface RuntimeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional custom container image for the job runtime environment. If
-   * not specified, a default container image will be used.
+   * Optional. Optional custom container image for the job runtime environment.
+   * If not specified, a default container image will be used.
    * </pre>
    *
    * <code>string container_image = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -65,8 +65,8 @@ public interface RuntimeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional custom container image for the job runtime environment. If
-   * not specified, a default container image will be used.
+   * Optional. Optional custom container image for the job runtime environment.
+   * If not specified, a default container image will be used.
    * </pre>
    *
    * <code>string container_image = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -79,8 +79,8 @@ public interface RuntimeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. A mapping of property names to values, which are used to configure workload
-   * execution.
+   * Optional. A mapping of property names to values, which are used to
+   * configure workload execution.
    * </pre>
    *
    * <code>map&lt;string, string&gt; properties = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -91,8 +91,8 @@ public interface RuntimeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. A mapping of property names to values, which are used to configure workload
-   * execution.
+   * Optional. A mapping of property names to values, which are used to
+   * configure workload execution.
    * </pre>
    *
    * <code>map&lt;string, string&gt; properties = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -106,8 +106,8 @@ public interface RuntimeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. A mapping of property names to values, which are used to configure workload
-   * execution.
+   * Optional. A mapping of property names to values, which are used to
+   * configure workload execution.
    * </pre>
    *
    * <code>map&lt;string, string&gt; properties = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -118,8 +118,8 @@ public interface RuntimeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. A mapping of property names to values, which are used to configure workload
-   * execution.
+   * Optional. A mapping of property names to values, which are used to
+   * configure workload execution.
    * </pre>
    *
    * <code>map&lt;string, string&gt; properties = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -134,8 +134,8 @@ public interface RuntimeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. A mapping of property names to values, which are used to configure workload
-   * execution.
+   * Optional. A mapping of property names to values, which are used to
+   * configure workload execution.
    * </pre>
    *
    * <code>map&lt;string, string&gt; properties = 3 [(.google.api.field_behavior) = OPTIONAL];

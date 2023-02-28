@@ -27,8 +27,8 @@ public interface RuntimeInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. Map of remote access endpoints (such as web interfaces and APIs) to their
-   * URIs.
+   * Output only. Map of remote access endpoints (such as web interfaces and
+   * APIs) to their URIs.
    * </pre>
    *
    * <code>map&lt;string, string&gt; endpoints = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -39,8 +39,8 @@ public interface RuntimeInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. Map of remote access endpoints (such as web interfaces and APIs) to their
-   * URIs.
+   * Output only. Map of remote access endpoints (such as web interfaces and
+   * APIs) to their URIs.
    * </pre>
    *
    * <code>map&lt;string, string&gt; endpoints = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -54,8 +54,8 @@ public interface RuntimeInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. Map of remote access endpoints (such as web interfaces and APIs) to their
-   * URIs.
+   * Output only. Map of remote access endpoints (such as web interfaces and
+   * APIs) to their URIs.
    * </pre>
    *
    * <code>map&lt;string, string&gt; endpoints = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -66,8 +66,8 @@ public interface RuntimeInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. Map of remote access endpoints (such as web interfaces and APIs) to their
-   * URIs.
+   * Output only. Map of remote access endpoints (such as web interfaces and
+   * APIs) to their URIs.
    * </pre>
    *
    * <code>map&lt;string, string&gt; endpoints = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -82,8 +82,8 @@ public interface RuntimeInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. Map of remote access endpoints (such as web interfaces and APIs) to their
-   * URIs.
+   * Output only. Map of remote access endpoints (such as web interfaces and
+   * APIs) to their URIs.
    * </pre>
    *
    * <code>map&lt;string, string&gt; endpoints = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -95,7 +95,8 @@ public interface RuntimeInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. A URI pointing to the location of the stdout and stderr of the workload.
+   * Output only. A URI pointing to the location of the stdout and stderr of the
+   * workload.
    * </pre>
    *
    * <code>string output_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -107,7 +108,8 @@ public interface RuntimeInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. A URI pointing to the location of the stdout and stderr of the workload.
+   * Output only. A URI pointing to the location of the stdout and stderr of the
+   * workload.
    * </pre>
    *
    * <code>string output_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -140,4 +142,92 @@ public interface RuntimeInfoOrBuilder
    * @return The bytes for diagnosticOutputUri.
    */
   com.google.protobuf.ByteString getDiagnosticOutputUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Approximate workload resource usage calculated after workload
+   * finishes (see [Dataproc Serverless pricing]
+   * (https://cloud.google.com/dataproc-serverless/pricing)).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.UsageMetrics approximate_usage = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the approximateUsage field is set.
+   */
+  boolean hasApproximateUsage();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Approximate workload resource usage calculated after workload
+   * finishes (see [Dataproc Serverless pricing]
+   * (https://cloud.google.com/dataproc-serverless/pricing)).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.UsageMetrics approximate_usage = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The approximateUsage.
+   */
+  com.google.cloud.dataproc.v1.UsageMetrics getApproximateUsage();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Approximate workload resource usage calculated after workload
+   * finishes (see [Dataproc Serverless pricing]
+   * (https://cloud.google.com/dataproc-serverless/pricing)).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.UsageMetrics approximate_usage = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.UsageMetricsOrBuilder getApproximateUsageOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Snapshot of current workload resource usage.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.UsageSnapshot current_usage = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the currentUsage field is set.
+   */
+  boolean hasCurrentUsage();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Snapshot of current workload resource usage.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.UsageSnapshot current_usage = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The currentUsage.
+   */
+  com.google.cloud.dataproc.v1.UsageSnapshot getCurrentUsage();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Snapshot of current workload resource usage.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.UsageSnapshot current_usage = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.UsageSnapshotOrBuilder getCurrentUsageOrBuilder();
 }

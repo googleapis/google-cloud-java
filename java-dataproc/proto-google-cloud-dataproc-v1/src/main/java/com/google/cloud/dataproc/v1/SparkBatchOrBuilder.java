@@ -64,8 +64,8 @@ public interface SparkBatchOrBuilder
    *
    *
    * <pre>
-   * Optional. The name of the driver main class. The jar file that contains the class
-   * must be in the classpath or specified in `jar_file_uris`.
+   * Optional. The name of the driver main class. The jar file that contains
+   * the class must be in the classpath or specified in `jar_file_uris`.
    * </pre>
    *
    * <code>string main_class = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -77,8 +77,8 @@ public interface SparkBatchOrBuilder
    *
    *
    * <pre>
-   * Optional. The name of the driver main class. The jar file that contains the class
-   * must be in the classpath or specified in `jar_file_uris`.
+   * Optional. The name of the driver main class. The jar file that contains
+   * the class must be in the classpath or specified in `jar_file_uris`.
    * </pre>
    *
    * <code>string main_class = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -90,8 +90,8 @@ public interface SparkBatchOrBuilder
    *
    *
    * <pre>
-   * Optional. The name of the driver main class. The jar file that contains the class
-   * must be in the classpath or specified in `jar_file_uris`.
+   * Optional. The name of the driver main class. The jar file that contains
+   * the class must be in the classpath or specified in `jar_file_uris`.
    * </pre>
    *
    * <code>string main_class = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

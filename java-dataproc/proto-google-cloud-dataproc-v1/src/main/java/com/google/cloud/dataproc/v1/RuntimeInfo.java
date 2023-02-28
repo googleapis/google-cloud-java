@@ -109,8 +109,8 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Map of remote access endpoints (such as web interfaces and APIs) to their
-   * URIs.
+   * Output only. Map of remote access endpoints (such as web interfaces and
+   * APIs) to their URIs.
    * </pre>
    *
    * <code>map&lt;string, string&gt; endpoints = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -133,8 +133,8 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Map of remote access endpoints (such as web interfaces and APIs) to their
-   * URIs.
+   * Output only. Map of remote access endpoints (such as web interfaces and
+   * APIs) to their URIs.
    * </pre>
    *
    * <code>map&lt;string, string&gt; endpoints = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -148,8 +148,8 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Map of remote access endpoints (such as web interfaces and APIs) to their
-   * URIs.
+   * Output only. Map of remote access endpoints (such as web interfaces and
+   * APIs) to their URIs.
    * </pre>
    *
    * <code>map&lt;string, string&gt; endpoints = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -170,8 +170,8 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Map of remote access endpoints (such as web interfaces and APIs) to their
-   * URIs.
+   * Output only. Map of remote access endpoints (such as web interfaces and
+   * APIs) to their URIs.
    * </pre>
    *
    * <code>map&lt;string, string&gt; endpoints = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -197,7 +197,8 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A URI pointing to the location of the stdout and stderr of the workload.
+   * Output only. A URI pointing to the location of the stdout and stderr of the
+   * workload.
    * </pre>
    *
    * <code>string output_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -220,7 +221,8 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A URI pointing to the location of the stdout and stderr of the workload.
+   * Output only. A URI pointing to the location of the stdout and stderr of the
+   * workload.
    * </pre>
    *
    * <code>string output_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -291,6 +293,124 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int APPROXIMATE_USAGE_FIELD_NUMBER = 6;
+  private com.google.cloud.dataproc.v1.UsageMetrics approximateUsage_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Approximate workload resource usage calculated after workload
+   * finishes (see [Dataproc Serverless pricing]
+   * (https://cloud.google.com/dataproc-serverless/pricing)).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.UsageMetrics approximate_usage = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the approximateUsage field is set.
+   */
+  @java.lang.Override
+  public boolean hasApproximateUsage() {
+    return approximateUsage_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Approximate workload resource usage calculated after workload
+   * finishes (see [Dataproc Serverless pricing]
+   * (https://cloud.google.com/dataproc-serverless/pricing)).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.UsageMetrics approximate_usage = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The approximateUsage.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.UsageMetrics getApproximateUsage() {
+    return approximateUsage_ == null
+        ? com.google.cloud.dataproc.v1.UsageMetrics.getDefaultInstance()
+        : approximateUsage_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Approximate workload resource usage calculated after workload
+   * finishes (see [Dataproc Serverless pricing]
+   * (https://cloud.google.com/dataproc-serverless/pricing)).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.UsageMetrics approximate_usage = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.UsageMetricsOrBuilder getApproximateUsageOrBuilder() {
+    return approximateUsage_ == null
+        ? com.google.cloud.dataproc.v1.UsageMetrics.getDefaultInstance()
+        : approximateUsage_;
+  }
+
+  public static final int CURRENT_USAGE_FIELD_NUMBER = 7;
+  private com.google.cloud.dataproc.v1.UsageSnapshot currentUsage_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Snapshot of current workload resource usage.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.UsageSnapshot current_usage = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the currentUsage field is set.
+   */
+  @java.lang.Override
+  public boolean hasCurrentUsage() {
+    return currentUsage_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Snapshot of current workload resource usage.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.UsageSnapshot current_usage = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The currentUsage.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.UsageSnapshot getCurrentUsage() {
+    return currentUsage_ == null
+        ? com.google.cloud.dataproc.v1.UsageSnapshot.getDefaultInstance()
+        : currentUsage_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Snapshot of current workload resource usage.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.UsageSnapshot current_usage = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.UsageSnapshotOrBuilder getCurrentUsageOrBuilder() {
+    return currentUsage_ == null
+        ? com.google.cloud.dataproc.v1.UsageSnapshot.getDefaultInstance()
+        : currentUsage_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -312,6 +432,12 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(diagnosticOutputUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, diagnosticOutputUri_);
+    }
+    if (approximateUsage_ != null) {
+      output.writeMessage(6, getApproximateUsage());
+    }
+    if (currentUsage_ != null) {
+      output.writeMessage(7, getCurrentUsage());
     }
     getUnknownFields().writeTo(output);
   }
@@ -338,6 +464,12 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(diagnosticOutputUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, diagnosticOutputUri_);
     }
+    if (approximateUsage_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getApproximateUsage());
+    }
+    if (currentUsage_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getCurrentUsage());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -356,6 +488,14 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetEndpoints().equals(other.internalGetEndpoints())) return false;
     if (!getOutputUri().equals(other.getOutputUri())) return false;
     if (!getDiagnosticOutputUri().equals(other.getDiagnosticOutputUri())) return false;
+    if (hasApproximateUsage() != other.hasApproximateUsage()) return false;
+    if (hasApproximateUsage()) {
+      if (!getApproximateUsage().equals(other.getApproximateUsage())) return false;
+    }
+    if (hasCurrentUsage() != other.hasCurrentUsage()) return false;
+    if (hasCurrentUsage()) {
+      if (!getCurrentUsage().equals(other.getCurrentUsage())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -375,6 +515,14 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getOutputUri().hashCode();
     hash = (37 * hash) + DIAGNOSTIC_OUTPUT_URI_FIELD_NUMBER;
     hash = (53 * hash) + getDiagnosticOutputUri().hashCode();
+    if (hasApproximateUsage()) {
+      hash = (37 * hash) + APPROXIMATE_USAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getApproximateUsage().hashCode();
+    }
+    if (hasCurrentUsage()) {
+      hash = (37 * hash) + CURRENT_USAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getCurrentUsage().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -537,6 +685,16 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableEndpoints().clear();
       outputUri_ = "";
       diagnosticOutputUri_ = "";
+      approximateUsage_ = null;
+      if (approximateUsageBuilder_ != null) {
+        approximateUsageBuilder_.dispose();
+        approximateUsageBuilder_ = null;
+      }
+      currentUsage_ = null;
+      if (currentUsageBuilder_ != null) {
+        currentUsageBuilder_.dispose();
+        currentUsageBuilder_ = null;
+      }
       return this;
     }
 
@@ -582,6 +740,14 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.diagnosticOutputUri_ = diagnosticOutputUri_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.approximateUsage_ =
+            approximateUsageBuilder_ == null ? approximateUsage_ : approximateUsageBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.currentUsage_ =
+            currentUsageBuilder_ == null ? currentUsage_ : currentUsageBuilder_.build();
       }
     }
 
@@ -642,6 +808,12 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (other.hasApproximateUsage()) {
+        mergeApproximateUsage(other.getApproximateUsage());
+      }
+      if (other.hasCurrentUsage()) {
+        mergeCurrentUsage(other.getCurrentUsage());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -692,6 +864,19 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 50:
+              {
+                input.readMessage(
+                    getApproximateUsageFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getCurrentUsageFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -742,8 +927,8 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map of remote access endpoints (such as web interfaces and APIs) to their
-     * URIs.
+     * Output only. Map of remote access endpoints (such as web interfaces and
+     * APIs) to their URIs.
      * </pre>
      *
      * <code>map&lt;string, string&gt; endpoints = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -766,8 +951,8 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map of remote access endpoints (such as web interfaces and APIs) to their
-     * URIs.
+     * Output only. Map of remote access endpoints (such as web interfaces and
+     * APIs) to their URIs.
      * </pre>
      *
      * <code>map&lt;string, string&gt; endpoints = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -781,8 +966,8 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map of remote access endpoints (such as web interfaces and APIs) to their
-     * URIs.
+     * Output only. Map of remote access endpoints (such as web interfaces and
+     * APIs) to their URIs.
      * </pre>
      *
      * <code>map&lt;string, string&gt; endpoints = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -803,8 +988,8 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map of remote access endpoints (such as web interfaces and APIs) to their
-     * URIs.
+     * Output only. Map of remote access endpoints (such as web interfaces and
+     * APIs) to their URIs.
      * </pre>
      *
      * <code>map&lt;string, string&gt; endpoints = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -831,8 +1016,8 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map of remote access endpoints (such as web interfaces and APIs) to their
-     * URIs.
+     * Output only. Map of remote access endpoints (such as web interfaces and
+     * APIs) to their URIs.
      * </pre>
      *
      * <code>map&lt;string, string&gt; endpoints = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -855,8 +1040,8 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map of remote access endpoints (such as web interfaces and APIs) to their
-     * URIs.
+     * Output only. Map of remote access endpoints (such as web interfaces and
+     * APIs) to their URIs.
      * </pre>
      *
      * <code>map&lt;string, string&gt; endpoints = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -877,8 +1062,8 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map of remote access endpoints (such as web interfaces and APIs) to their
-     * URIs.
+     * Output only. Map of remote access endpoints (such as web interfaces and
+     * APIs) to their URIs.
      * </pre>
      *
      * <code>map&lt;string, string&gt; endpoints = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -895,7 +1080,8 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A URI pointing to the location of the stdout and stderr of the workload.
+     * Output only. A URI pointing to the location of the stdout and stderr of the
+     * workload.
      * </pre>
      *
      * <code>string output_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -917,7 +1103,8 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A URI pointing to the location of the stdout and stderr of the workload.
+     * Output only. A URI pointing to the location of the stdout and stderr of the
+     * workload.
      * </pre>
      *
      * <code>string output_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -939,7 +1126,8 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A URI pointing to the location of the stdout and stderr of the workload.
+     * Output only. A URI pointing to the location of the stdout and stderr of the
+     * workload.
      * </pre>
      *
      * <code>string output_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -960,7 +1148,8 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A URI pointing to the location of the stdout and stderr of the workload.
+     * Output only. A URI pointing to the location of the stdout and stderr of the
+     * workload.
      * </pre>
      *
      * <code>string output_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -977,7 +1166,8 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A URI pointing to the location of the stdout and stderr of the workload.
+     * Output only. A URI pointing to the location of the stdout and stderr of the
+     * workload.
      * </pre>
      *
      * <code>string output_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1100,6 +1290,429 @@ public final class RuntimeInfo extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.dataproc.v1.UsageMetrics approximateUsage_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.UsageMetrics,
+            com.google.cloud.dataproc.v1.UsageMetrics.Builder,
+            com.google.cloud.dataproc.v1.UsageMetricsOrBuilder>
+        approximateUsageBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Approximate workload resource usage calculated after workload
+     * finishes (see [Dataproc Serverless pricing]
+     * (https://cloud.google.com/dataproc-serverless/pricing)).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.UsageMetrics approximate_usage = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the approximateUsage field is set.
+     */
+    public boolean hasApproximateUsage() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Approximate workload resource usage calculated after workload
+     * finishes (see [Dataproc Serverless pricing]
+     * (https://cloud.google.com/dataproc-serverless/pricing)).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.UsageMetrics approximate_usage = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The approximateUsage.
+     */
+    public com.google.cloud.dataproc.v1.UsageMetrics getApproximateUsage() {
+      if (approximateUsageBuilder_ == null) {
+        return approximateUsage_ == null
+            ? com.google.cloud.dataproc.v1.UsageMetrics.getDefaultInstance()
+            : approximateUsage_;
+      } else {
+        return approximateUsageBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Approximate workload resource usage calculated after workload
+     * finishes (see [Dataproc Serverless pricing]
+     * (https://cloud.google.com/dataproc-serverless/pricing)).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.UsageMetrics approximate_usage = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setApproximateUsage(com.google.cloud.dataproc.v1.UsageMetrics value) {
+      if (approximateUsageBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        approximateUsage_ = value;
+      } else {
+        approximateUsageBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Approximate workload resource usage calculated after workload
+     * finishes (see [Dataproc Serverless pricing]
+     * (https://cloud.google.com/dataproc-serverless/pricing)).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.UsageMetrics approximate_usage = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setApproximateUsage(
+        com.google.cloud.dataproc.v1.UsageMetrics.Builder builderForValue) {
+      if (approximateUsageBuilder_ == null) {
+        approximateUsage_ = builderForValue.build();
+      } else {
+        approximateUsageBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Approximate workload resource usage calculated after workload
+     * finishes (see [Dataproc Serverless pricing]
+     * (https://cloud.google.com/dataproc-serverless/pricing)).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.UsageMetrics approximate_usage = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeApproximateUsage(com.google.cloud.dataproc.v1.UsageMetrics value) {
+      if (approximateUsageBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && approximateUsage_ != null
+            && approximateUsage_
+                != com.google.cloud.dataproc.v1.UsageMetrics.getDefaultInstance()) {
+          getApproximateUsageBuilder().mergeFrom(value);
+        } else {
+          approximateUsage_ = value;
+        }
+      } else {
+        approximateUsageBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Approximate workload resource usage calculated after workload
+     * finishes (see [Dataproc Serverless pricing]
+     * (https://cloud.google.com/dataproc-serverless/pricing)).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.UsageMetrics approximate_usage = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearApproximateUsage() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      approximateUsage_ = null;
+      if (approximateUsageBuilder_ != null) {
+        approximateUsageBuilder_.dispose();
+        approximateUsageBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Approximate workload resource usage calculated after workload
+     * finishes (see [Dataproc Serverless pricing]
+     * (https://cloud.google.com/dataproc-serverless/pricing)).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.UsageMetrics approximate_usage = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.UsageMetrics.Builder getApproximateUsageBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getApproximateUsageFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Approximate workload resource usage calculated after workload
+     * finishes (see [Dataproc Serverless pricing]
+     * (https://cloud.google.com/dataproc-serverless/pricing)).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.UsageMetrics approximate_usage = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.UsageMetricsOrBuilder getApproximateUsageOrBuilder() {
+      if (approximateUsageBuilder_ != null) {
+        return approximateUsageBuilder_.getMessageOrBuilder();
+      } else {
+        return approximateUsage_ == null
+            ? com.google.cloud.dataproc.v1.UsageMetrics.getDefaultInstance()
+            : approximateUsage_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Approximate workload resource usage calculated after workload
+     * finishes (see [Dataproc Serverless pricing]
+     * (https://cloud.google.com/dataproc-serverless/pricing)).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.UsageMetrics approximate_usage = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.UsageMetrics,
+            com.google.cloud.dataproc.v1.UsageMetrics.Builder,
+            com.google.cloud.dataproc.v1.UsageMetricsOrBuilder>
+        getApproximateUsageFieldBuilder() {
+      if (approximateUsageBuilder_ == null) {
+        approximateUsageBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1.UsageMetrics,
+                com.google.cloud.dataproc.v1.UsageMetrics.Builder,
+                com.google.cloud.dataproc.v1.UsageMetricsOrBuilder>(
+                getApproximateUsage(), getParentForChildren(), isClean());
+        approximateUsage_ = null;
+      }
+      return approximateUsageBuilder_;
+    }
+
+    private com.google.cloud.dataproc.v1.UsageSnapshot currentUsage_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.UsageSnapshot,
+            com.google.cloud.dataproc.v1.UsageSnapshot.Builder,
+            com.google.cloud.dataproc.v1.UsageSnapshotOrBuilder>
+        currentUsageBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Snapshot of current workload resource usage.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.UsageSnapshot current_usage = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the currentUsage field is set.
+     */
+    public boolean hasCurrentUsage() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Snapshot of current workload resource usage.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.UsageSnapshot current_usage = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The currentUsage.
+     */
+    public com.google.cloud.dataproc.v1.UsageSnapshot getCurrentUsage() {
+      if (currentUsageBuilder_ == null) {
+        return currentUsage_ == null
+            ? com.google.cloud.dataproc.v1.UsageSnapshot.getDefaultInstance()
+            : currentUsage_;
+      } else {
+        return currentUsageBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Snapshot of current workload resource usage.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.UsageSnapshot current_usage = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCurrentUsage(com.google.cloud.dataproc.v1.UsageSnapshot value) {
+      if (currentUsageBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        currentUsage_ = value;
+      } else {
+        currentUsageBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Snapshot of current workload resource usage.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.UsageSnapshot current_usage = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCurrentUsage(
+        com.google.cloud.dataproc.v1.UsageSnapshot.Builder builderForValue) {
+      if (currentUsageBuilder_ == null) {
+        currentUsage_ = builderForValue.build();
+      } else {
+        currentUsageBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Snapshot of current workload resource usage.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.UsageSnapshot current_usage = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCurrentUsage(com.google.cloud.dataproc.v1.UsageSnapshot value) {
+      if (currentUsageBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && currentUsage_ != null
+            && currentUsage_ != com.google.cloud.dataproc.v1.UsageSnapshot.getDefaultInstance()) {
+          getCurrentUsageBuilder().mergeFrom(value);
+        } else {
+          currentUsage_ = value;
+        }
+      } else {
+        currentUsageBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Snapshot of current workload resource usage.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.UsageSnapshot current_usage = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCurrentUsage() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      currentUsage_ = null;
+      if (currentUsageBuilder_ != null) {
+        currentUsageBuilder_.dispose();
+        currentUsageBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Snapshot of current workload resource usage.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.UsageSnapshot current_usage = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.UsageSnapshot.Builder getCurrentUsageBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getCurrentUsageFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Snapshot of current workload resource usage.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.UsageSnapshot current_usage = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.UsageSnapshotOrBuilder getCurrentUsageOrBuilder() {
+      if (currentUsageBuilder_ != null) {
+        return currentUsageBuilder_.getMessageOrBuilder();
+      } else {
+        return currentUsage_ == null
+            ? com.google.cloud.dataproc.v1.UsageSnapshot.getDefaultInstance()
+            : currentUsage_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Snapshot of current workload resource usage.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.UsageSnapshot current_usage = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.UsageSnapshot,
+            com.google.cloud.dataproc.v1.UsageSnapshot.Builder,
+            com.google.cloud.dataproc.v1.UsageSnapshotOrBuilder>
+        getCurrentUsageFieldBuilder() {
+      if (currentUsageBuilder_ == null) {
+        currentUsageBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1.UsageSnapshot,
+                com.google.cloud.dataproc.v1.UsageSnapshot.Builder,
+                com.google.cloud.dataproc.v1.UsageSnapshotOrBuilder>(
+                getCurrentUsage(), getParentForChildren(), isClean());
+        currentUsage_ = null;
+      }
+      return currentUsageBuilder_;
     }
 
     @java.lang.Override

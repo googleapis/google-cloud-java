@@ -142,7 +142,7 @@ public interface UpdateClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Timeout for graceful YARN decomissioning. Graceful
+   * Optional. Timeout for graceful YARN decommissioning. Graceful
    * decommissioning allows removing nodes from the cluster without
    * interrupting jobs in progress. Timeout specifies how long to wait for jobs
    * in progress to finish before forcefully removing nodes (and potentially
@@ -163,7 +163,7 @@ public interface UpdateClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Timeout for graceful YARN decomissioning. Graceful
+   * Optional. Timeout for graceful YARN decommissioning. Graceful
    * decommissioning allows removing nodes from the cluster without
    * interrupting jobs in progress. Timeout specifies how long to wait for jobs
    * in progress to finish before forcefully removing nodes (and potentially
@@ -184,7 +184,7 @@ public interface UpdateClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Timeout for graceful YARN decomissioning. Graceful
+   * Optional. Timeout for graceful YARN decommissioning. Graceful
    * decommissioning allows removing nodes from the cluster without
    * interrupting jobs in progress. Timeout specifies how long to wait for jobs
    * in progress to finish before forcefully removing nodes (and potentially

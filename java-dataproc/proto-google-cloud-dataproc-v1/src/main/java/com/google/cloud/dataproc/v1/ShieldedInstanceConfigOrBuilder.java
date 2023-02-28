@@ -30,7 +30,19 @@ public interface ShieldedInstanceConfigOrBuilder
    * Optional. Defines whether instances have Secure Boot enabled.
    * </pre>
    *
-   * <code>bool enable_secure_boot = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional bool enable_secure_boot = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the enableSecureBoot field is set.
+   */
+  boolean hasEnableSecureBoot();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines whether instances have Secure Boot enabled.
+   * </pre>
+   *
+   * <code>optional bool enable_secure_boot = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The enableSecureBoot.
    */
@@ -43,7 +55,19 @@ public interface ShieldedInstanceConfigOrBuilder
    * Optional. Defines whether instances have the vTPM enabled.
    * </pre>
    *
-   * <code>bool enable_vtpm = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional bool enable_vtpm = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the enableVtpm field is set.
+   */
+  boolean hasEnableVtpm();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines whether instances have the vTPM enabled.
+   * </pre>
+   *
+   * <code>optional bool enable_vtpm = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The enableVtpm.
    */
@@ -56,7 +80,21 @@ public interface ShieldedInstanceConfigOrBuilder
    * Optional. Defines whether instances have integrity monitoring enabled.
    * </pre>
    *
-   * <code>bool enable_integrity_monitoring = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional bool enable_integrity_monitoring = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the enableIntegrityMonitoring field is set.
+   */
+  boolean hasEnableIntegrityMonitoring();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines whether instances have integrity monitoring enabled.
+   * </pre>
+   *
+   * <code>optional bool enable_integrity_monitoring = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enableIntegrityMonitoring.
    */

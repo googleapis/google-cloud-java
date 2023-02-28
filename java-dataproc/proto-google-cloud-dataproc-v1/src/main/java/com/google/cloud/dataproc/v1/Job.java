@@ -96,6 +96,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     SPARK_R_JOB(21),
     SPARK_SQL_JOB(12),
     PRESTO_JOB(23),
+    TRINO_JOB(28),
     TYPEJOB_NOT_SET(0);
     private final int value;
 
@@ -130,6 +131,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           return SPARK_SQL_JOB;
         case 23:
           return PRESTO_JOB;
+        case 28:
+          return TRINO_JOB;
         case 0:
           return TYPEJOB_NOT_SET;
         default:
@@ -718,6 +721,63 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.dataproc.v1.PrestoJob) typeJob_;
     }
     return com.google.cloud.dataproc.v1.PrestoJob.getDefaultInstance();
+  }
+
+  public static final int TRINO_JOB_FIELD_NUMBER = 28;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a Trino job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.TrinoJob trino_job = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the trinoJob field is set.
+   */
+  @java.lang.Override
+  public boolean hasTrinoJob() {
+    return typeJobCase_ == 28;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a Trino job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.TrinoJob trino_job = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The trinoJob.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.TrinoJob getTrinoJob() {
+    if (typeJobCase_ == 28) {
+      return (com.google.cloud.dataproc.v1.TrinoJob) typeJob_;
+    }
+    return com.google.cloud.dataproc.v1.TrinoJob.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a Trino job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.TrinoJob trino_job = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.TrinoJobOrBuilder getTrinoJobOrBuilder() {
+    if (typeJobCase_ == 28) {
+      return (com.google.cloud.dataproc.v1.TrinoJob) typeJob_;
+    }
+    return com.google.cloud.dataproc.v1.TrinoJob.getDefaultInstance();
   }
 
   public static final int STATUS_FIELD_NUMBER = 8;
@@ -1449,6 +1509,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (driverSchedulingConfig_ != null) {
       output.writeMessage(27, getDriverSchedulingConfig());
     }
+    if (typeJobCase_ == 28) {
+      output.writeMessage(28, (com.google.cloud.dataproc.v1.TrinoJob) typeJob_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1543,6 +1606,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(27, getDriverSchedulingConfig());
     }
+    if (typeJobCase_ == 28) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              28, (com.google.cloud.dataproc.v1.TrinoJob) typeJob_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1610,6 +1678,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         break;
       case 23:
         if (!getPrestoJob().equals(other.getPrestoJob())) return false;
+        break;
+      case 28:
+        if (!getTrinoJob().equals(other.getTrinoJob())) return false;
         break;
       case 0:
       default:
@@ -1697,6 +1768,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       case 23:
         hash = (37 * hash) + PRESTO_JOB_FIELD_NUMBER;
         hash = (53 * hash) + getPrestoJob().hashCode();
+        break;
+      case 28:
+        hash = (37 * hash) + TRINO_JOB_FIELD_NUMBER;
+        hash = (53 * hash) + getTrinoJob().hashCode();
         break;
       case 0:
       default:
@@ -1893,6 +1968,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (prestoJobBuilder_ != null) {
         prestoJobBuilder_.clear();
       }
+      if (trinoJobBuilder_ != null) {
+        trinoJobBuilder_.clear();
+      }
       status_ = null;
       if (statusBuilder_ != null) {
         statusBuilder_.dispose();
@@ -1904,14 +1982,14 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         statusHistory_ = null;
         statusHistoryBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       if (yarnApplicationsBuilder_ == null) {
         yarnApplications_ = java.util.Collections.emptyList();
       } else {
         yarnApplications_ = null;
         yarnApplicationsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       driverOutputResourceUri_ = "";
       driverControlFilesUri_ = "";
       internalGetMutableLabels().clear();
@@ -1966,18 +2044,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.dataproc.v1.Job result) {
       if (statusHistoryBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)) {
+        if (((bitField0_ & 0x00001000) != 0)) {
           statusHistory_ = java.util.Collections.unmodifiableList(statusHistory_);
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.statusHistory_ = statusHistory_;
       } else {
         result.statusHistory_ = statusHistoryBuilder_.build();
       }
       if (yarnApplicationsBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           yarnApplications_ = java.util.Collections.unmodifiableList(yarnApplications_);
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.yarnApplications_ = yarnApplications_;
       } else {
@@ -1993,29 +2071,29 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.placement_ = placementBuilder_ == null ? placement_ : placementBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.driverOutputResourceUri_ = driverOutputResourceUri_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.driverControlFilesUri_ = driverControlFilesUri_;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.scheduling_ = schedulingBuilder_ == null ? scheduling_ : schedulingBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.jobUuid_ = jobUuid_;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.done_ = done_;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.driverSchedulingConfig_ =
             driverSchedulingConfigBuilder_ == null
                 ? driverSchedulingConfig_
@@ -2049,6 +2127,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       if (typeJobCase_ == 23 && prestoJobBuilder_ != null) {
         result.typeJob_ = prestoJobBuilder_.build();
+      }
+      if (typeJobCase_ == 28 && trinoJobBuilder_ != null) {
+        result.typeJob_ = trinoJobBuilder_.build();
       }
     }
 
@@ -2110,7 +2191,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         if (!other.statusHistory_.isEmpty()) {
           if (statusHistory_.isEmpty()) {
             statusHistory_ = other.statusHistory_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensureStatusHistoryIsMutable();
             statusHistory_.addAll(other.statusHistory_);
@@ -2123,7 +2204,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             statusHistoryBuilder_.dispose();
             statusHistoryBuilder_ = null;
             statusHistory_ = other.statusHistory_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
             statusHistoryBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getStatusHistoryFieldBuilder()
@@ -2137,7 +2218,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         if (!other.yarnApplications_.isEmpty()) {
           if (yarnApplications_.isEmpty()) {
             yarnApplications_ = other.yarnApplications_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensureYarnApplicationsIsMutable();
             yarnApplications_.addAll(other.yarnApplications_);
@@ -2150,7 +2231,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             yarnApplicationsBuilder_.dispose();
             yarnApplicationsBuilder_ = null;
             yarnApplications_ = other.yarnApplications_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
             yarnApplicationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getYarnApplicationsFieldBuilder()
@@ -2162,22 +2243,22 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDriverOutputResourceUri().isEmpty()) {
         driverOutputResourceUri_ = other.driverOutputResourceUri_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (!other.getDriverControlFilesUri().isEmpty()) {
         driverControlFilesUri_ = other.driverControlFilesUri_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       if (other.hasScheduling()) {
         mergeScheduling(other.getScheduling());
       }
       if (!other.getJobUuid().isEmpty()) {
         jobUuid_ = other.jobUuid_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (other.getDone() != false) {
@@ -2225,6 +2306,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         case PRESTO_JOB:
           {
             mergePrestoJob(other.getPrestoJob());
+            break;
+          }
+        case TRINO_JOB:
+          {
+            mergeTrinoJob(other.getTrinoJob());
             break;
           }
         case TYPEJOB_NOT_SET:
@@ -2303,7 +2389,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             case 66:
               {
                 input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 66
             case 74:
@@ -2341,13 +2427,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             case 122:
               {
                 driverControlFilesUri_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 122
             case 138:
               {
                 driverOutputResourceUri_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 138
             case 146:
@@ -2359,13 +2445,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 146
             case 162:
               {
                 input.readMessage(getSchedulingFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 162
             case 170:
@@ -2377,7 +2463,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             case 178:
               {
                 jobUuid_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 178
             case 186:
@@ -2389,16 +2475,22 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             case 192:
               {
                 done_ = input.readBool();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 192
             case 218:
               {
                 input.readMessage(
                     getDriverSchedulingConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 218
+            case 226:
+              {
+                input.readMessage(getTrinoJobFieldBuilder().getBuilder(), extensionRegistry);
+                typeJobCase_ = 28;
+                break;
+              } // case 226
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4666,6 +4758,232 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       return prestoJobBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.TrinoJob,
+            com.google.cloud.dataproc.v1.TrinoJob.Builder,
+            com.google.cloud.dataproc.v1.TrinoJobOrBuilder>
+        trinoJobBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Trino job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.TrinoJob trino_job = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the trinoJob field is set.
+     */
+    @java.lang.Override
+    public boolean hasTrinoJob() {
+      return typeJobCase_ == 28;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Trino job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.TrinoJob trino_job = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The trinoJob.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataproc.v1.TrinoJob getTrinoJob() {
+      if (trinoJobBuilder_ == null) {
+        if (typeJobCase_ == 28) {
+          return (com.google.cloud.dataproc.v1.TrinoJob) typeJob_;
+        }
+        return com.google.cloud.dataproc.v1.TrinoJob.getDefaultInstance();
+      } else {
+        if (typeJobCase_ == 28) {
+          return trinoJobBuilder_.getMessage();
+        }
+        return com.google.cloud.dataproc.v1.TrinoJob.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Trino job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.TrinoJob trino_job = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTrinoJob(com.google.cloud.dataproc.v1.TrinoJob value) {
+      if (trinoJobBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        typeJob_ = value;
+        onChanged();
+      } else {
+        trinoJobBuilder_.setMessage(value);
+      }
+      typeJobCase_ = 28;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Trino job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.TrinoJob trino_job = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTrinoJob(com.google.cloud.dataproc.v1.TrinoJob.Builder builderForValue) {
+      if (trinoJobBuilder_ == null) {
+        typeJob_ = builderForValue.build();
+        onChanged();
+      } else {
+        trinoJobBuilder_.setMessage(builderForValue.build());
+      }
+      typeJobCase_ = 28;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Trino job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.TrinoJob trino_job = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeTrinoJob(com.google.cloud.dataproc.v1.TrinoJob value) {
+      if (trinoJobBuilder_ == null) {
+        if (typeJobCase_ == 28
+            && typeJob_ != com.google.cloud.dataproc.v1.TrinoJob.getDefaultInstance()) {
+          typeJob_ =
+              com.google.cloud.dataproc.v1.TrinoJob.newBuilder(
+                      (com.google.cloud.dataproc.v1.TrinoJob) typeJob_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          typeJob_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeJobCase_ == 28) {
+          trinoJobBuilder_.mergeFrom(value);
+        } else {
+          trinoJobBuilder_.setMessage(value);
+        }
+      }
+      typeJobCase_ = 28;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Trino job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.TrinoJob trino_job = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearTrinoJob() {
+      if (trinoJobBuilder_ == null) {
+        if (typeJobCase_ == 28) {
+          typeJobCase_ = 0;
+          typeJob_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeJobCase_ == 28) {
+          typeJobCase_ = 0;
+          typeJob_ = null;
+        }
+        trinoJobBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Trino job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.TrinoJob trino_job = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.TrinoJob.Builder getTrinoJobBuilder() {
+      return getTrinoJobFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Trino job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.TrinoJob trino_job = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataproc.v1.TrinoJobOrBuilder getTrinoJobOrBuilder() {
+      if ((typeJobCase_ == 28) && (trinoJobBuilder_ != null)) {
+        return trinoJobBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeJobCase_ == 28) {
+          return (com.google.cloud.dataproc.v1.TrinoJob) typeJob_;
+        }
+        return com.google.cloud.dataproc.v1.TrinoJob.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Job is a Trino job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.TrinoJob trino_job = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.TrinoJob,
+            com.google.cloud.dataproc.v1.TrinoJob.Builder,
+            com.google.cloud.dataproc.v1.TrinoJobOrBuilder>
+        getTrinoJobFieldBuilder() {
+      if (trinoJobBuilder_ == null) {
+        if (!(typeJobCase_ == 28)) {
+          typeJob_ = com.google.cloud.dataproc.v1.TrinoJob.getDefaultInstance();
+        }
+        trinoJobBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1.TrinoJob,
+                com.google.cloud.dataproc.v1.TrinoJob.Builder,
+                com.google.cloud.dataproc.v1.TrinoJobOrBuilder>(
+                (com.google.cloud.dataproc.v1.TrinoJob) typeJob_,
+                getParentForChildren(),
+                isClean());
+        typeJob_ = null;
+      }
+      typeJobCase_ = 28;
+      onChanged();
+      return trinoJobBuilder_;
+    }
+
     private com.google.cloud.dataproc.v1.JobStatus status_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.JobStatus,
@@ -4688,7 +5006,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -4736,7 +5054,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       } else {
         statusBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4759,7 +5077,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       } else {
         statusBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4778,7 +5096,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStatus(com.google.cloud.dataproc.v1.JobStatus value) {
       if (statusBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && status_ != null
             && status_ != com.google.cloud.dataproc.v1.JobStatus.getDefaultInstance()) {
           getStatusBuilder().mergeFrom(value);
@@ -4788,7 +5106,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       } else {
         statusBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4806,7 +5124,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       status_ = null;
       if (statusBuilder_ != null) {
         statusBuilder_.dispose();
@@ -4829,7 +5147,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.dataproc.v1.JobStatus.Builder getStatusBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
@@ -4889,10 +5207,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureStatusHistoryIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         statusHistory_ =
             new java.util.ArrayList<com.google.cloud.dataproc.v1.JobStatus>(statusHistory_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
       }
     }
 
@@ -5130,7 +5448,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder clearStatusHistory() {
       if (statusHistoryBuilder_ == null) {
         statusHistory_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         statusHistoryBuilder_.clear();
@@ -5267,7 +5585,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dataproc.v1.JobStatus.Builder,
                 com.google.cloud.dataproc.v1.JobStatusOrBuilder>(
                 statusHistory_,
-                ((bitField0_ & 0x00000800) != 0),
+                ((bitField0_ & 0x00001000) != 0),
                 getParentForChildren(),
                 isClean());
         statusHistory_ = null;
@@ -5279,11 +5597,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureYarnApplicationsIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         yarnApplications_ =
             new java.util.ArrayList<com.google.cloud.dataproc.v1.YarnApplication>(
                 yarnApplications_);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
       }
     }
 
@@ -5545,7 +5863,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder clearYarnApplications() {
       if (yarnApplicationsBuilder_ == null) {
         yarnApplications_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         yarnApplicationsBuilder_.clear();
@@ -5699,7 +6017,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dataproc.v1.YarnApplication.Builder,
                 com.google.cloud.dataproc.v1.YarnApplicationOrBuilder>(
                 yarnApplications_,
-                ((bitField0_ & 0x00001000) != 0),
+                ((bitField0_ & 0x00002000) != 0),
                 getParentForChildren(),
                 isClean());
         yarnApplications_ = null;
@@ -5775,7 +6093,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       driverOutputResourceUri_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5794,7 +6112,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDriverOutputResourceUri() {
       driverOutputResourceUri_ = getDefaultInstance().getDriverOutputResourceUri();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -5818,7 +6136,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       driverOutputResourceUri_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5894,7 +6212,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       driverControlFilesUri_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5914,7 +6232,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDriverControlFilesUri() {
       driverControlFilesUri_ = getDefaultInstance().getDriverControlFilesUri();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -5939,7 +6257,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       driverControlFilesUri_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5961,7 +6279,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return labels_;
     }
@@ -6070,7 +6388,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -6099,7 +6417,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -6125,7 +6443,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       return this;
     }
     /**
@@ -6145,7 +6463,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       return this;
     }
 
@@ -6169,7 +6487,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the scheduling field is set.
      */
     public boolean hasScheduling() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -6213,7 +6531,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       } else {
         schedulingBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6235,7 +6553,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       } else {
         schedulingBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6252,7 +6570,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeScheduling(com.google.cloud.dataproc.v1.JobScheduling value) {
       if (schedulingBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00020000) != 0)
             && scheduling_ != null
             && scheduling_ != com.google.cloud.dataproc.v1.JobScheduling.getDefaultInstance()) {
           getSchedulingBuilder().mergeFrom(value);
@@ -6262,7 +6580,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       } else {
         schedulingBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6278,7 +6596,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearScheduling() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       scheduling_ = null;
       if (schedulingBuilder_ != null) {
         schedulingBuilder_.dispose();
@@ -6299,7 +6617,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.dataproc.v1.JobScheduling.Builder getSchedulingBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return getSchedulingFieldBuilder().getBuilder();
     }
@@ -6419,7 +6737,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       jobUuid_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6438,7 +6756,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearJobUuid() {
       jobUuid_ = getDefaultInstance().getJobUuid();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -6462,7 +6780,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       jobUuid_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6504,7 +6822,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder setDone(boolean value) {
 
       done_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6523,7 +6841,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDone() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       done_ = false;
       onChanged();
       return this;
@@ -6549,7 +6867,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the driverSchedulingConfig field is set.
      */
     public boolean hasDriverSchedulingConfig() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
     /**
      *
@@ -6594,7 +6912,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       } else {
         driverSchedulingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6616,7 +6934,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       } else {
         driverSchedulingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6634,7 +6952,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeDriverSchedulingConfig(
         com.google.cloud.dataproc.v1.DriverSchedulingConfig value) {
       if (driverSchedulingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && driverSchedulingConfig_ != null
             && driverSchedulingConfig_
                 != com.google.cloud.dataproc.v1.DriverSchedulingConfig.getDefaultInstance()) {
@@ -6645,7 +6963,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       } else {
         driverSchedulingConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6661,7 +6979,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDriverSchedulingConfig() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       driverSchedulingConfig_ = null;
       if (driverSchedulingConfigBuilder_ != null) {
         driverSchedulingConfigBuilder_.dispose();
@@ -6683,7 +7001,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dataproc.v1.DriverSchedulingConfig.Builder
         getDriverSchedulingConfigBuilder() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return getDriverSchedulingConfigFieldBuilder().getBuilder();
     }

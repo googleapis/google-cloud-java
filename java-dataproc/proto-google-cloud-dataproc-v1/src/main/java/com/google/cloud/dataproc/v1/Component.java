@@ -106,6 +106,16 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * Hudi.
+   * </pre>
+   *
+   * <code>HUDI = 18;</code>
+   */
+  HUDI(18),
+  /**
+   *
+   *
+   * <pre>
    * The Jupyter Notebook.
    * </pre>
    *
@@ -122,6 +132,16 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PRESTO = 6;</code>
    */
   PRESTO(6),
+  /**
+   *
+   *
+   * <pre>
+   * The Trino query engine.
+   * </pre>
+   *
+   * <code>TRINO = 17;</code>
+   */
+  TRINO(17),
   /**
    *
    *
@@ -243,6 +263,16 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * Hudi.
+   * </pre>
+   *
+   * <code>HUDI = 18;</code>
+   */
+  public static final int HUDI_VALUE = 18;
+  /**
+   *
+   *
+   * <pre>
    * The Jupyter Notebook.
    * </pre>
    *
@@ -259,6 +289,16 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PRESTO = 6;</code>
    */
   public static final int PRESTO_VALUE = 6;
+  /**
+   *
+   *
+   * <pre>
+   * The Trino query engine.
+   * </pre>
+   *
+   * <code>TRINO = 17;</code>
+   */
+  public static final int TRINO_VALUE = 17;
   /**
    *
    *
@@ -338,10 +378,14 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
         return HBASE;
       case 3:
         return HIVE_WEBHCAT;
+      case 18:
+        return HUDI;
       case 1:
         return JUPYTER;
       case 6:
         return PRESTO;
+      case 17:
+        return TRINO;
       case 12:
         return RANGER;
       case 10:

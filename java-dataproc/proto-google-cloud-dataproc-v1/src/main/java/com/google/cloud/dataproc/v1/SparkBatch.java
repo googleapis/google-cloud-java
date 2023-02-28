@@ -22,7 +22,7 @@ package com.google.cloud.dataproc.v1;
  *
  *
  * <pre>
- * A configuration for running an [Apache Spark](http://spark.apache.org/)
+ * A configuration for running an [Apache Spark](https://spark.apache.org/)
  * batch workload.
  * </pre>
  *
@@ -193,8 +193,8 @@ public final class SparkBatch extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The name of the driver main class. The jar file that contains the class
-   * must be in the classpath or specified in `jar_file_uris`.
+   * Optional. The name of the driver main class. The jar file that contains
+   * the class must be in the classpath or specified in `jar_file_uris`.
    * </pre>
    *
    * <code>string main_class = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -208,8 +208,8 @@ public final class SparkBatch extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The name of the driver main class. The jar file that contains the class
-   * must be in the classpath or specified in `jar_file_uris`.
+   * Optional. The name of the driver main class. The jar file that contains
+   * the class must be in the classpath or specified in `jar_file_uris`.
    * </pre>
    *
    * <code>string main_class = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -236,8 +236,8 @@ public final class SparkBatch extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The name of the driver main class. The jar file that contains the class
-   * must be in the classpath or specified in `jar_file_uris`.
+   * Optional. The name of the driver main class. The jar file that contains
+   * the class must be in the classpath or specified in `jar_file_uris`.
    * </pre>
    *
    * <code>string main_class = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -789,7 +789,7 @@ public final class SparkBatch extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A configuration for running an [Apache Spark](http://spark.apache.org/)
+   * A configuration for running an [Apache Spark](https://spark.apache.org/)
    * batch workload.
    * </pre>
    *
@@ -1247,8 +1247,8 @@ public final class SparkBatch extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The name of the driver main class. The jar file that contains the class
-     * must be in the classpath or specified in `jar_file_uris`.
+     * Optional. The name of the driver main class. The jar file that contains
+     * the class must be in the classpath or specified in `jar_file_uris`.
      * </pre>
      *
      * <code>string main_class = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1263,8 +1263,8 @@ public final class SparkBatch extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The name of the driver main class. The jar file that contains the class
-     * must be in the classpath or specified in `jar_file_uris`.
+     * Optional. The name of the driver main class. The jar file that contains
+     * the class must be in the classpath or specified in `jar_file_uris`.
      * </pre>
      *
      * <code>string main_class = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1292,8 +1292,8 @@ public final class SparkBatch extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The name of the driver main class. The jar file that contains the class
-     * must be in the classpath or specified in `jar_file_uris`.
+     * Optional. The name of the driver main class. The jar file that contains
+     * the class must be in the classpath or specified in `jar_file_uris`.
      * </pre>
      *
      * <code>string main_class = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1321,8 +1321,8 @@ public final class SparkBatch extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The name of the driver main class. The jar file that contains the class
-     * must be in the classpath or specified in `jar_file_uris`.
+     * Optional. The name of the driver main class. The jar file that contains
+     * the class must be in the classpath or specified in `jar_file_uris`.
      * </pre>
      *
      * <code>string main_class = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1343,8 +1343,8 @@ public final class SparkBatch extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The name of the driver main class. The jar file that contains the class
-     * must be in the classpath or specified in `jar_file_uris`.
+     * Optional. The name of the driver main class. The jar file that contains
+     * the class must be in the classpath or specified in `jar_file_uris`.
      * </pre>
      *
      * <code>string main_class = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1363,8 +1363,8 @@ public final class SparkBatch extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The name of the driver main class. The jar file that contains the class
-     * must be in the classpath or specified in `jar_file_uris`.
+     * Optional. The name of the driver main class. The jar file that contains
+     * the class must be in the classpath or specified in `jar_file_uris`.
      * </pre>
      *
      * <code>string main_class = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

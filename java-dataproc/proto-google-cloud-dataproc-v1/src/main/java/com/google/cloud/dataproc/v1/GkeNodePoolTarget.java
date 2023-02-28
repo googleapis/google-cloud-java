@@ -22,7 +22,7 @@ package com.google.cloud.dataproc.v1;
  *
  *
  * <pre>
- * GKE NodePools that Dataproc workloads run on.
+ * GKE node pools that Dataproc workloads run on.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1.GkeNodePoolTarget}
@@ -72,10 +72,11 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * `Role` specifies whose tasks will run on the NodePool. The roles can be
-   * specific to workloads. Exactly one GkeNodePoolTarget within the
-   * VirtualCluster must have 'default' role, which is used to run all workloads
-   * that are not associated with a NodePool.
+   * `Role` specifies the tasks that will run on the node pool. Roles can be
+   * specific to workloads. Exactly one
+   * [GkeNodePoolTarget][google.cloud.dataproc.v1.GkeNodePoolTarget] within the
+   * virtual cluster must have the `DEFAULT` role, which is used to run all
+   * workloads that are not associated with a node pool.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.dataproc.v1.GkeNodePoolTarget.Role}
@@ -95,8 +96,11 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Any roles that are not directly assigned to a NodePool run on the
-     * `default` role's NodePool.
+     * At least one node pool must have the `DEFAULT` role.
+     * Work assigned to a role that is not associated with a node pool
+     * is assigned to the node pool with the `DEFAULT` role. For example,
+     * work assigned to the `CONTROLLER` role will be assigned to the node pool
+     * with the `DEFAULT` role if no node pool has the `CONTROLLER` role.
      * </pre>
      *
      * <code>DEFAULT = 1;</code>
@@ -106,7 +110,8 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Run controllers and webhooks.
+     * Run work associated with the Dataproc control plane (for example,
+     * controllers and webhooks). Very low resource requirements.
      * </pre>
      *
      * <code>CONTROLLER = 2;</code>
@@ -116,7 +121,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Run spark driver.
+     * Run work associated with a Spark driver of a job.
      * </pre>
      *
      * <code>SPARK_DRIVER = 3;</code>
@@ -126,7 +131,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Run spark executors.
+     * Run work associated with a Spark executor of a job.
      * </pre>
      *
      * <code>SPARK_EXECUTOR = 4;</code>
@@ -149,8 +154,11 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Any roles that are not directly assigned to a NodePool run on the
-     * `default` role's NodePool.
+     * At least one node pool must have the `DEFAULT` role.
+     * Work assigned to a role that is not associated with a node pool
+     * is assigned to the node pool with the `DEFAULT` role. For example,
+     * work assigned to the `CONTROLLER` role will be assigned to the node pool
+     * with the `DEFAULT` role if no node pool has the `CONTROLLER` role.
      * </pre>
      *
      * <code>DEFAULT = 1;</code>
@@ -160,7 +168,8 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Run controllers and webhooks.
+     * Run work associated with the Dataproc control plane (for example,
+     * controllers and webhooks). Very low resource requirements.
      * </pre>
      *
      * <code>CONTROLLER = 2;</code>
@@ -170,7 +179,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Run spark driver.
+     * Run work associated with a Spark driver of a job.
      * </pre>
      *
      * <code>SPARK_DRIVER = 3;</code>
@@ -180,7 +189,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Run spark executors.
+     * Run work associated with a Spark executor of a job.
      * </pre>
      *
      * <code>SPARK_EXECUTOR = 4;</code>
@@ -282,7 +291,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The target GKE NodePool.
+   * Required. The target GKE node pool.
    * Format:
    * 'projects/{project}/locations/{location}/clusters/{cluster}/nodePools/{node_pool}'
    * </pre>
@@ -307,7 +316,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The target GKE NodePool.
+   * Required. The target GKE node pool.
    * Format:
    * 'projects/{project}/locations/{location}/clusters/{cluster}/nodePools/{node_pool}'
    * </pre>
@@ -352,7 +361,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The types of role for a GKE NodePool
+   * Required. The roles associated with the GKE node pool.
    * </pre>
    *
    * <code>
@@ -371,7 +380,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The types of role for a GKE NodePool
+   * Required. The roles associated with the GKE node pool.
    * </pre>
    *
    * <code>
@@ -388,7 +397,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The types of role for a GKE NodePool
+   * Required. The roles associated with the GKE node pool.
    * </pre>
    *
    * <code>
@@ -406,7 +415,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The types of role for a GKE NodePool
+   * Required. The roles associated with the GKE node pool.
    * </pre>
    *
    * <code>
@@ -423,7 +432,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The types of role for a GKE NodePool
+   * Required. The roles associated with the GKE node pool.
    * </pre>
    *
    * <code>
@@ -446,18 +455,19 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. The configuration for the GKE NodePool.
-   * If specified, Dataproc attempts to create a NodePool with the
+   * Input only. The configuration for the GKE node pool.
+   * If specified, Dataproc attempts to create a node pool with the
    * specified shape. If one with the same name already exists, it is
    * verified against all specified fields. If a field differs, the
    * virtual cluster creation will fail.
-   * If omitted, any NodePool with the specified name is used. If a
-   * NodePool with the specified name does not exist, Dataproc create a NodePool
-   * with default values.
+   * If omitted, any node pool with the specified name is used. If a
+   * node pool with the specified name does not exist, Dataproc create a
+   * node pool with default values.
+   * This is an input only field. It will not be returned by the API.
    * </pre>
    *
    * <code>
-   * .google.cloud.dataproc.v1.GkeNodePoolConfig node_pool_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.dataproc.v1.GkeNodePoolConfig node_pool_config = 3 [(.google.api.field_behavior) = INPUT_ONLY];
    * </code>
    *
    * @return Whether the nodePoolConfig field is set.
@@ -470,18 +480,19 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. The configuration for the GKE NodePool.
-   * If specified, Dataproc attempts to create a NodePool with the
+   * Input only. The configuration for the GKE node pool.
+   * If specified, Dataproc attempts to create a node pool with the
    * specified shape. If one with the same name already exists, it is
    * verified against all specified fields. If a field differs, the
    * virtual cluster creation will fail.
-   * If omitted, any NodePool with the specified name is used. If a
-   * NodePool with the specified name does not exist, Dataproc create a NodePool
-   * with default values.
+   * If omitted, any node pool with the specified name is used. If a
+   * node pool with the specified name does not exist, Dataproc create a
+   * node pool with default values.
+   * This is an input only field. It will not be returned by the API.
    * </pre>
    *
    * <code>
-   * .google.cloud.dataproc.v1.GkeNodePoolConfig node_pool_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.dataproc.v1.GkeNodePoolConfig node_pool_config = 3 [(.google.api.field_behavior) = INPUT_ONLY];
    * </code>
    *
    * @return The nodePoolConfig.
@@ -496,18 +507,19 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. The configuration for the GKE NodePool.
-   * If specified, Dataproc attempts to create a NodePool with the
+   * Input only. The configuration for the GKE node pool.
+   * If specified, Dataproc attempts to create a node pool with the
    * specified shape. If one with the same name already exists, it is
    * verified against all specified fields. If a field differs, the
    * virtual cluster creation will fail.
-   * If omitted, any NodePool with the specified name is used. If a
-   * NodePool with the specified name does not exist, Dataproc create a NodePool
-   * with default values.
+   * If omitted, any node pool with the specified name is used. If a
+   * node pool with the specified name does not exist, Dataproc create a
+   * node pool with default values.
+   * This is an input only field. It will not be returned by the API.
    * </pre>
    *
    * <code>
-   * .google.cloud.dataproc.v1.GkeNodePoolConfig node_pool_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.dataproc.v1.GkeNodePoolConfig node_pool_config = 3 [(.google.api.field_behavior) = INPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -719,7 +731,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * GKE NodePools that Dataproc workloads run on.
+   * GKE node pools that Dataproc workloads run on.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1.GkeNodePoolTarget}
@@ -960,7 +972,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The target GKE NodePool.
+     * Required. The target GKE node pool.
      * Format:
      * 'projects/{project}/locations/{location}/clusters/{cluster}/nodePools/{node_pool}'
      * </pre>
@@ -984,7 +996,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The target GKE NodePool.
+     * Required. The target GKE node pool.
      * Format:
      * 'projects/{project}/locations/{location}/clusters/{cluster}/nodePools/{node_pool}'
      * </pre>
@@ -1008,7 +1020,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The target GKE NodePool.
+     * Required. The target GKE node pool.
      * Format:
      * 'projects/{project}/locations/{location}/clusters/{cluster}/nodePools/{node_pool}'
      * </pre>
@@ -1031,7 +1043,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The target GKE NodePool.
+     * Required. The target GKE node pool.
      * Format:
      * 'projects/{project}/locations/{location}/clusters/{cluster}/nodePools/{node_pool}'
      * </pre>
@@ -1050,7 +1062,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The target GKE NodePool.
+     * Required. The target GKE node pool.
      * Format:
      * 'projects/{project}/locations/{location}/clusters/{cluster}/nodePools/{node_pool}'
      * </pre>
@@ -1083,7 +1095,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The types of role for a GKE NodePool
+     * Required. The roles associated with the GKE node pool.
      * </pre>
      *
      * <code>
@@ -1101,7 +1113,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The types of role for a GKE NodePool
+     * Required. The roles associated with the GKE node pool.
      * </pre>
      *
      * <code>
@@ -1117,7 +1129,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The types of role for a GKE NodePool
+     * Required. The roles associated with the GKE node pool.
      * </pre>
      *
      * <code>
@@ -1134,7 +1146,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The types of role for a GKE NodePool
+     * Required. The roles associated with the GKE node pool.
      * </pre>
      *
      * <code>
@@ -1158,7 +1170,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The types of role for a GKE NodePool
+     * Required. The roles associated with the GKE node pool.
      * </pre>
      *
      * <code>
@@ -1181,7 +1193,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The types of role for a GKE NodePool
+     * Required. The roles associated with the GKE node pool.
      * </pre>
      *
      * <code>
@@ -1204,7 +1216,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The types of role for a GKE NodePool
+     * Required. The roles associated with the GKE node pool.
      * </pre>
      *
      * <code>
@@ -1223,7 +1235,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The types of role for a GKE NodePool
+     * Required. The roles associated with the GKE node pool.
      * </pre>
      *
      * <code>
@@ -1239,7 +1251,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The types of role for a GKE NodePool
+     * Required. The roles associated with the GKE node pool.
      * </pre>
      *
      * <code>
@@ -1256,7 +1268,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The types of role for a GKE NodePool
+     * Required. The roles associated with the GKE node pool.
      * </pre>
      *
      * <code>
@@ -1277,7 +1289,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The types of role for a GKE NodePool
+     * Required. The roles associated with the GKE node pool.
      * </pre>
      *
      * <code>
@@ -1297,7 +1309,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The types of role for a GKE NodePool
+     * Required. The roles associated with the GKE node pool.
      * </pre>
      *
      * <code>
@@ -1326,18 +1338,19 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The configuration for the GKE NodePool.
-     * If specified, Dataproc attempts to create a NodePool with the
+     * Input only. The configuration for the GKE node pool.
+     * If specified, Dataproc attempts to create a node pool with the
      * specified shape. If one with the same name already exists, it is
      * verified against all specified fields. If a field differs, the
      * virtual cluster creation will fail.
-     * If omitted, any NodePool with the specified name is used. If a
-     * NodePool with the specified name does not exist, Dataproc create a NodePool
-     * with default values.
+     * If omitted, any node pool with the specified name is used. If a
+     * node pool with the specified name does not exist, Dataproc create a
+     * node pool with default values.
+     * This is an input only field. It will not be returned by the API.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1.GkeNodePoolConfig node_pool_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.dataproc.v1.GkeNodePoolConfig node_pool_config = 3 [(.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      *
      * @return Whether the nodePoolConfig field is set.
@@ -1349,18 +1362,19 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The configuration for the GKE NodePool.
-     * If specified, Dataproc attempts to create a NodePool with the
+     * Input only. The configuration for the GKE node pool.
+     * If specified, Dataproc attempts to create a node pool with the
      * specified shape. If one with the same name already exists, it is
      * verified against all specified fields. If a field differs, the
      * virtual cluster creation will fail.
-     * If omitted, any NodePool with the specified name is used. If a
-     * NodePool with the specified name does not exist, Dataproc create a NodePool
-     * with default values.
+     * If omitted, any node pool with the specified name is used. If a
+     * node pool with the specified name does not exist, Dataproc create a
+     * node pool with default values.
+     * This is an input only field. It will not be returned by the API.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1.GkeNodePoolConfig node_pool_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.dataproc.v1.GkeNodePoolConfig node_pool_config = 3 [(.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      *
      * @return The nodePoolConfig.
@@ -1378,18 +1392,19 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The configuration for the GKE NodePool.
-     * If specified, Dataproc attempts to create a NodePool with the
+     * Input only. The configuration for the GKE node pool.
+     * If specified, Dataproc attempts to create a node pool with the
      * specified shape. If one with the same name already exists, it is
      * verified against all specified fields. If a field differs, the
      * virtual cluster creation will fail.
-     * If omitted, any NodePool with the specified name is used. If a
-     * NodePool with the specified name does not exist, Dataproc create a NodePool
-     * with default values.
+     * If omitted, any node pool with the specified name is used. If a
+     * node pool with the specified name does not exist, Dataproc create a
+     * node pool with default values.
+     * This is an input only field. It will not be returned by the API.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1.GkeNodePoolConfig node_pool_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.dataproc.v1.GkeNodePoolConfig node_pool_config = 3 [(.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      */
     public Builder setNodePoolConfig(com.google.cloud.dataproc.v1.GkeNodePoolConfig value) {
@@ -1409,18 +1424,19 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The configuration for the GKE NodePool.
-     * If specified, Dataproc attempts to create a NodePool with the
+     * Input only. The configuration for the GKE node pool.
+     * If specified, Dataproc attempts to create a node pool with the
      * specified shape. If one with the same name already exists, it is
      * verified against all specified fields. If a field differs, the
      * virtual cluster creation will fail.
-     * If omitted, any NodePool with the specified name is used. If a
-     * NodePool with the specified name does not exist, Dataproc create a NodePool
-     * with default values.
+     * If omitted, any node pool with the specified name is used. If a
+     * node pool with the specified name does not exist, Dataproc create a
+     * node pool with default values.
+     * This is an input only field. It will not be returned by the API.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1.GkeNodePoolConfig node_pool_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.dataproc.v1.GkeNodePoolConfig node_pool_config = 3 [(.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      */
     public Builder setNodePoolConfig(
@@ -1438,18 +1454,19 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The configuration for the GKE NodePool.
-     * If specified, Dataproc attempts to create a NodePool with the
+     * Input only. The configuration for the GKE node pool.
+     * If specified, Dataproc attempts to create a node pool with the
      * specified shape. If one with the same name already exists, it is
      * verified against all specified fields. If a field differs, the
      * virtual cluster creation will fail.
-     * If omitted, any NodePool with the specified name is used. If a
-     * NodePool with the specified name does not exist, Dataproc create a NodePool
-     * with default values.
+     * If omitted, any node pool with the specified name is used. If a
+     * node pool with the specified name does not exist, Dataproc create a
+     * node pool with default values.
+     * This is an input only field. It will not be returned by the API.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1.GkeNodePoolConfig node_pool_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.dataproc.v1.GkeNodePoolConfig node_pool_config = 3 [(.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      */
     public Builder mergeNodePoolConfig(com.google.cloud.dataproc.v1.GkeNodePoolConfig value) {
@@ -1473,18 +1490,19 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The configuration for the GKE NodePool.
-     * If specified, Dataproc attempts to create a NodePool with the
+     * Input only. The configuration for the GKE node pool.
+     * If specified, Dataproc attempts to create a node pool with the
      * specified shape. If one with the same name already exists, it is
      * verified against all specified fields. If a field differs, the
      * virtual cluster creation will fail.
-     * If omitted, any NodePool with the specified name is used. If a
-     * NodePool with the specified name does not exist, Dataproc create a NodePool
-     * with default values.
+     * If omitted, any node pool with the specified name is used. If a
+     * node pool with the specified name does not exist, Dataproc create a
+     * node pool with default values.
+     * This is an input only field. It will not be returned by the API.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1.GkeNodePoolConfig node_pool_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.dataproc.v1.GkeNodePoolConfig node_pool_config = 3 [(.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      */
     public Builder clearNodePoolConfig() {
@@ -1501,18 +1519,19 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The configuration for the GKE NodePool.
-     * If specified, Dataproc attempts to create a NodePool with the
+     * Input only. The configuration for the GKE node pool.
+     * If specified, Dataproc attempts to create a node pool with the
      * specified shape. If one with the same name already exists, it is
      * verified against all specified fields. If a field differs, the
      * virtual cluster creation will fail.
-     * If omitted, any NodePool with the specified name is used. If a
-     * NodePool with the specified name does not exist, Dataproc create a NodePool
-     * with default values.
+     * If omitted, any node pool with the specified name is used. If a
+     * node pool with the specified name does not exist, Dataproc create a
+     * node pool with default values.
+     * This is an input only field. It will not be returned by the API.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1.GkeNodePoolConfig node_pool_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.dataproc.v1.GkeNodePoolConfig node_pool_config = 3 [(.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      */
     public com.google.cloud.dataproc.v1.GkeNodePoolConfig.Builder getNodePoolConfigBuilder() {
@@ -1524,18 +1543,19 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The configuration for the GKE NodePool.
-     * If specified, Dataproc attempts to create a NodePool with the
+     * Input only. The configuration for the GKE node pool.
+     * If specified, Dataproc attempts to create a node pool with the
      * specified shape. If one with the same name already exists, it is
      * verified against all specified fields. If a field differs, the
      * virtual cluster creation will fail.
-     * If omitted, any NodePool with the specified name is used. If a
-     * NodePool with the specified name does not exist, Dataproc create a NodePool
-     * with default values.
+     * If omitted, any node pool with the specified name is used. If a
+     * node pool with the specified name does not exist, Dataproc create a
+     * node pool with default values.
+     * This is an input only field. It will not be returned by the API.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1.GkeNodePoolConfig node_pool_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.dataproc.v1.GkeNodePoolConfig node_pool_config = 3 [(.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      */
     public com.google.cloud.dataproc.v1.GkeNodePoolConfigOrBuilder getNodePoolConfigOrBuilder() {
@@ -1551,18 +1571,19 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The configuration for the GKE NodePool.
-     * If specified, Dataproc attempts to create a NodePool with the
+     * Input only. The configuration for the GKE node pool.
+     * If specified, Dataproc attempts to create a node pool with the
      * specified shape. If one with the same name already exists, it is
      * verified against all specified fields. If a field differs, the
      * virtual cluster creation will fail.
-     * If omitted, any NodePool with the specified name is used. If a
-     * NodePool with the specified name does not exist, Dataproc create a NodePool
-     * with default values.
+     * If omitted, any node pool with the specified name is used. If a
+     * node pool with the specified name does not exist, Dataproc create a
+     * node pool with default values.
+     * This is an input only field. It will not be returned by the API.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1.GkeNodePoolConfig node_pool_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.dataproc.v1.GkeNodePoolConfig node_pool_config = 3 [(.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

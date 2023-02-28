@@ -27,7 +27,8 @@ public interface SparkSqlBatchOrBuilder
    *
    *
    * <pre>
-   * Required. The HCFS URI of the script that contains Spark SQL queries to execute.
+   * Required. The HCFS URI of the script that contains Spark SQL queries to
+   * execute.
    * </pre>
    *
    * <code>string query_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -39,7 +40,8 @@ public interface SparkSqlBatchOrBuilder
    *
    *
    * <pre>
-   * Required. The HCFS URI of the script that contains Spark SQL queries to execute.
+   * Required. The HCFS URI of the script that contains Spark SQL queries to
+   * execute.
    * </pre>
    *
    * <code>string query_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>

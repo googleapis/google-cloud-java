@@ -181,8 +181,8 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The ID to use for the batch, which will become the final component of
-   * the batch's resource name.
+   * Optional. The ID to use for the batch, which will become the final
+   * component of the batch's resource name.
    * This value must be 4-63 characters. Valid characters are `/[a-z][0-9]-/`.
    * </pre>
    *
@@ -206,8 +206,8 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The ID to use for the batch, which will become the final component of
-   * the batch's resource name.
+   * Optional. The ID to use for the batch, which will become the final
+   * component of the batch's resource name.
    * This value must be 4-63 characters. Valid characters are `/[a-z][0-9]-/`.
    * </pre>
    *
@@ -1027,8 +1027,8 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The ID to use for the batch, which will become the final component of
-     * the batch's resource name.
+     * Optional. The ID to use for the batch, which will become the final
+     * component of the batch's resource name.
      * This value must be 4-63 characters. Valid characters are `/[a-z][0-9]-/`.
      * </pre>
      *
@@ -1051,8 +1051,8 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The ID to use for the batch, which will become the final component of
-     * the batch's resource name.
+     * Optional. The ID to use for the batch, which will become the final
+     * component of the batch's resource name.
      * This value must be 4-63 characters. Valid characters are `/[a-z][0-9]-/`.
      * </pre>
      *
@@ -1075,8 +1075,8 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The ID to use for the batch, which will become the final component of
-     * the batch's resource name.
+     * Optional. The ID to use for the batch, which will become the final
+     * component of the batch's resource name.
      * This value must be 4-63 characters. Valid characters are `/[a-z][0-9]-/`.
      * </pre>
      *
@@ -1098,8 +1098,8 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The ID to use for the batch, which will become the final component of
-     * the batch's resource name.
+     * Optional. The ID to use for the batch, which will become the final
+     * component of the batch's resource name.
      * This value must be 4-63 characters. Valid characters are `/[a-z][0-9]-/`.
      * </pre>
      *
@@ -1117,8 +1117,8 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The ID to use for the batch, which will become the final component of
-     * the batch's resource name.
+     * Optional. The ID to use for the batch, which will become the final
+     * component of the batch's resource name.
      * This value must be 4-63 characters. Valid characters are `/[a-z][0-9]-/`.
      * </pre>
      *

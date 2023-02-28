@@ -24,7 +24,7 @@ package com.google.cloud.dataproc.v1;
  * <pre>
  * The Dataproc cluster config for a cluster that does not directly control the
  * underlying compute resources, such as a [Dataproc-on-GKE
- * cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke).
+ * cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-overview).
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1.VirtualClusterConfig}
@@ -507,7 +507,7 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
    * <pre>
    * The Dataproc cluster config for a cluster that does not directly control the
    * underlying compute resources, such as a [Dataproc-on-GKE
-   * cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke).
+   * cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-overview).
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1.VirtualClusterConfig}

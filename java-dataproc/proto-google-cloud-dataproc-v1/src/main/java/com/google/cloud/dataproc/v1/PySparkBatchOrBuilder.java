@@ -27,8 +27,8 @@ public interface PySparkBatchOrBuilder
    *
    *
    * <pre>
-   * Required. The HCFS URI of the main Python file to use as the Spark driver. Must
-   * be a .py file.
+   * Required. The HCFS URI of the main Python file to use as the Spark driver.
+   * Must be a .py file.
    * </pre>
    *
    * <code>string main_python_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -40,8 +40,8 @@ public interface PySparkBatchOrBuilder
    *
    *
    * <pre>
-   * Required. The HCFS URI of the main Python file to use as the Spark driver. Must
-   * be a .py file.
+   * Required. The HCFS URI of the main Python file to use as the Spark driver.
+   * Must be a .py file.
    * </pre>
    *
    * <code>string main_python_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>

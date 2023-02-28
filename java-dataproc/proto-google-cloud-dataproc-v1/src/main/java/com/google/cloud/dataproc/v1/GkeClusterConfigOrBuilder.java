@@ -27,12 +27,15 @@ public interface GkeClusterConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. A target GKE cluster to deploy to. It must be in the same project and
-   * region as the Dataproc cluster (the GKE cluster can be zonal or regional).
-   * Format: 'projects/{project}/locations/{location}/clusters/{cluster_id}'
+   * Optional. A target GKE cluster to deploy to. It must be in the same project
+   * and region as the Dataproc cluster (the GKE cluster can be zonal or
+   * regional). Format:
+   * 'projects/{project}/locations/{location}/clusters/{cluster_id}'
    * </pre>
    *
-   * <code>string gke_cluster_target = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string gke_cluster_target = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The gkeClusterTarget.
    */
@@ -41,12 +44,15 @@ public interface GkeClusterConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. A target GKE cluster to deploy to. It must be in the same project and
-   * region as the Dataproc cluster (the GKE cluster can be zonal or regional).
-   * Format: 'projects/{project}/locations/{location}/clusters/{cluster_id}'
+   * Optional. A target GKE cluster to deploy to. It must be in the same project
+   * and region as the Dataproc cluster (the GKE cluster can be zonal or
+   * regional). Format:
+   * 'projects/{project}/locations/{location}/clusters/{cluster_id}'
    * </pre>
    *
-   * <code>string gke_cluster_target = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string gke_cluster_target = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for gkeClusterTarget.
    */
@@ -56,11 +62,12 @@ public interface GkeClusterConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. GKE NodePools where workloads will be scheduled. At least one node pool
-   * must be assigned the 'default' role. Each role can be given to only a
-   * single NodePoolTarget. All NodePools must have the same location settings.
-   * If a nodePoolTarget is not specified, Dataproc constructs a default
-   * nodePoolTarget.
+   * Optional. GKE node pools where workloads will be scheduled. At least one
+   * node pool must be assigned the `DEFAULT`
+   * [GkeNodePoolTarget.Role][google.cloud.dataproc.v1.GkeNodePoolTarget.Role].
+   * If a `GkeNodePoolTarget` is not specified, Dataproc constructs a `DEFAULT`
+   * `GkeNodePoolTarget`. Each role can be given to only one
+   * `GkeNodePoolTarget`. All node pools must have the same location settings.
    * </pre>
    *
    * <code>
@@ -72,11 +79,12 @@ public interface GkeClusterConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. GKE NodePools where workloads will be scheduled. At least one node pool
-   * must be assigned the 'default' role. Each role can be given to only a
-   * single NodePoolTarget. All NodePools must have the same location settings.
-   * If a nodePoolTarget is not specified, Dataproc constructs a default
-   * nodePoolTarget.
+   * Optional. GKE node pools where workloads will be scheduled. At least one
+   * node pool must be assigned the `DEFAULT`
+   * [GkeNodePoolTarget.Role][google.cloud.dataproc.v1.GkeNodePoolTarget.Role].
+   * If a `GkeNodePoolTarget` is not specified, Dataproc constructs a `DEFAULT`
+   * `GkeNodePoolTarget`. Each role can be given to only one
+   * `GkeNodePoolTarget`. All node pools must have the same location settings.
    * </pre>
    *
    * <code>
@@ -88,11 +96,12 @@ public interface GkeClusterConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. GKE NodePools where workloads will be scheduled. At least one node pool
-   * must be assigned the 'default' role. Each role can be given to only a
-   * single NodePoolTarget. All NodePools must have the same location settings.
-   * If a nodePoolTarget is not specified, Dataproc constructs a default
-   * nodePoolTarget.
+   * Optional. GKE node pools where workloads will be scheduled. At least one
+   * node pool must be assigned the `DEFAULT`
+   * [GkeNodePoolTarget.Role][google.cloud.dataproc.v1.GkeNodePoolTarget.Role].
+   * If a `GkeNodePoolTarget` is not specified, Dataproc constructs a `DEFAULT`
+   * `GkeNodePoolTarget`. Each role can be given to only one
+   * `GkeNodePoolTarget`. All node pools must have the same location settings.
    * </pre>
    *
    * <code>
@@ -104,11 +113,12 @@ public interface GkeClusterConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. GKE NodePools where workloads will be scheduled. At least one node pool
-   * must be assigned the 'default' role. Each role can be given to only a
-   * single NodePoolTarget. All NodePools must have the same location settings.
-   * If a nodePoolTarget is not specified, Dataproc constructs a default
-   * nodePoolTarget.
+   * Optional. GKE node pools where workloads will be scheduled. At least one
+   * node pool must be assigned the `DEFAULT`
+   * [GkeNodePoolTarget.Role][google.cloud.dataproc.v1.GkeNodePoolTarget.Role].
+   * If a `GkeNodePoolTarget` is not specified, Dataproc constructs a `DEFAULT`
+   * `GkeNodePoolTarget`. Each role can be given to only one
+   * `GkeNodePoolTarget`. All node pools must have the same location settings.
    * </pre>
    *
    * <code>
@@ -121,11 +131,12 @@ public interface GkeClusterConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. GKE NodePools where workloads will be scheduled. At least one node pool
-   * must be assigned the 'default' role. Each role can be given to only a
-   * single NodePoolTarget. All NodePools must have the same location settings.
-   * If a nodePoolTarget is not specified, Dataproc constructs a default
-   * nodePoolTarget.
+   * Optional. GKE node pools where workloads will be scheduled. At least one
+   * node pool must be assigned the `DEFAULT`
+   * [GkeNodePoolTarget.Role][google.cloud.dataproc.v1.GkeNodePoolTarget.Role].
+   * If a `GkeNodePoolTarget` is not specified, Dataproc constructs a `DEFAULT`
+   * `GkeNodePoolTarget`. Each role can be given to only one
+   * `GkeNodePoolTarget`. All node pools must have the same location settings.
    * </pre>
    *
    * <code>

@@ -40,6 +40,8 @@ public final class ListBatchesRequest extends com.google.protobuf.GeneratedMessa
   private ListBatchesRequest() {
     parent_ = "";
     pageToken_ = "";
+    filter_ = "";
+    orderBy_ = "";
   }
 
   @java.lang.Override
@@ -196,6 +198,130 @@ public final class ListBatchesRequest extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int FILTER_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A filter for the batches to return in the response.
+   * A filter is a logical expression constraining the values of various fields
+   * in each batch resource. Filters are case sensitive, and may contain
+   * multiple clauses combined with logical operators (AND/OR).
+   * Supported fields are `batch_id`, `batch_uuid`, `state`, and `create_time`.
+   * e.g. `state = RUNNING and create_time &lt; "2023-01-01T00:00:00Z"`
+   * filters for batches in state RUNNING that were created before 2023-01-01
+   * See https://google.aip.dev/assets/misc/ebnf-filtering.txt for a detailed
+   * description of the filter syntax and a list of supported comparisons.
+   * </pre>
+   *
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  @java.lang.Override
+  public java.lang.String getFilter() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filter_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A filter for the batches to return in the response.
+   * A filter is a logical expression constraining the values of various fields
+   * in each batch resource. Filters are case sensitive, and may contain
+   * multiple clauses combined with logical operators (AND/OR).
+   * Supported fields are `batch_id`, `batch_uuid`, `state`, and `create_time`.
+   * e.g. `state = RUNNING and create_time &lt; "2023-01-01T00:00:00Z"`
+   * filters for batches in state RUNNING that were created before 2023-01-01
+   * See https://google.aip.dev/assets/misc/ebnf-filtering.txt for a detailed
+   * description of the filter syntax and a list of supported comparisons.
+   * </pre>
+   *
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getFilterBytes() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      filter_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ORDER_BY_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object orderBy_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Field(s) on which to sort the list of batches.
+   * Currently the only supported sort orders are unspecified (empty) and
+   * `create_time desc` to sort by most recently created batches first.
+   * See https://google.aip.dev/132#ordering for more details.
+   * </pre>
+   *
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The orderBy.
+   */
+  @java.lang.Override
+  public java.lang.String getOrderBy() {
+    java.lang.Object ref = orderBy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      orderBy_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Field(s) on which to sort the list of batches.
+   * Currently the only supported sort orders are unspecified (empty) and
+   * `create_time desc` to sort by most recently created batches first.
+   * See https://google.aip.dev/132#ordering for more details.
+   * </pre>
+   *
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for orderBy.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getOrderByBytes() {
+    java.lang.Object ref = orderBy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      orderBy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -219,6 +345,12 @@ public final class ListBatchesRequest extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, filter_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, orderBy_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -236,6 +368,12 @@ public final class ListBatchesRequest extends com.google.protobuf.GeneratedMessa
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, filter_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, orderBy_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -256,6 +394,8 @@ public final class ListBatchesRequest extends com.google.protobuf.GeneratedMessa
     if (!getParent().equals(other.getParent())) return false;
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
+    if (!getFilter().equals(other.getFilter())) return false;
+    if (!getOrderBy().equals(other.getOrderBy())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -273,6 +413,10 @@ public final class ListBatchesRequest extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
+    hash = (37 * hash) + FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + getFilter().hashCode();
+    hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
+    hash = (53 * hash) + getOrderBy().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -415,6 +559,8 @@ public final class ListBatchesRequest extends com.google.protobuf.GeneratedMessa
       parent_ = "";
       pageSize_ = 0;
       pageToken_ = "";
+      filter_ = "";
+      orderBy_ = "";
       return this;
     }
 
@@ -459,6 +605,12 @@ public final class ListBatchesRequest extends com.google.protobuf.GeneratedMessa
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.filter_ = filter_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.orderBy_ = orderBy_;
       }
     }
 
@@ -521,6 +673,16 @@ public final class ListBatchesRequest extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (!other.getFilter().isEmpty()) {
+        filter_ = other.filter_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (!other.getOrderBy().isEmpty()) {
+        orderBy_ = other.orderBy_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -565,6 +727,18 @@ public final class ListBatchesRequest extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                filter_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+            case 42:
+              {
+                orderBy_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -866,6 +1040,273 @@ public final class ListBatchesRequest extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       pageToken_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object filter_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A filter for the batches to return in the response.
+     * A filter is a logical expression constraining the values of various fields
+     * in each batch resource. Filters are case sensitive, and may contain
+     * multiple clauses combined with logical operators (AND/OR).
+     * Supported fields are `batch_id`, `batch_uuid`, `state`, and `create_time`.
+     * e.g. `state = RUNNING and create_time &lt; "2023-01-01T00:00:00Z"`
+     * filters for batches in state RUNNING that were created before 2023-01-01
+     * See https://google.aip.dev/assets/misc/ebnf-filtering.txt for a detailed
+     * description of the filter syntax and a list of supported comparisons.
+     * </pre>
+     *
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The filter.
+     */
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A filter for the batches to return in the response.
+     * A filter is a logical expression constraining the values of various fields
+     * in each batch resource. Filters are case sensitive, and may contain
+     * multiple clauses combined with logical operators (AND/OR).
+     * Supported fields are `batch_id`, `batch_uuid`, `state`, and `create_time`.
+     * e.g. `state = RUNNING and create_time &lt; "2023-01-01T00:00:00Z"`
+     * filters for batches in state RUNNING that were created before 2023-01-01
+     * See https://google.aip.dev/assets/misc/ebnf-filtering.txt for a detailed
+     * description of the filter syntax and a list of supported comparisons.
+     * </pre>
+     *
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for filter.
+     */
+    public com.google.protobuf.ByteString getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A filter for the batches to return in the response.
+     * A filter is a logical expression constraining the values of various fields
+     * in each batch resource. Filters are case sensitive, and may contain
+     * multiple clauses combined with logical operators (AND/OR).
+     * Supported fields are `batch_id`, `batch_uuid`, `state`, and `create_time`.
+     * e.g. `state = RUNNING and create_time &lt; "2023-01-01T00:00:00Z"`
+     * filters for batches in state RUNNING that were created before 2023-01-01
+     * See https://google.aip.dev/assets/misc/ebnf-filtering.txt for a detailed
+     * description of the filter syntax and a list of supported comparisons.
+     * </pre>
+     *
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilter(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      filter_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A filter for the batches to return in the response.
+     * A filter is a logical expression constraining the values of various fields
+     * in each batch resource. Filters are case sensitive, and may contain
+     * multiple clauses combined with logical operators (AND/OR).
+     * Supported fields are `batch_id`, `batch_uuid`, `state`, and `create_time`.
+     * e.g. `state = RUNNING and create_time &lt; "2023-01-01T00:00:00Z"`
+     * filters for batches in state RUNNING that were created before 2023-01-01
+     * See https://google.aip.dev/assets/misc/ebnf-filtering.txt for a detailed
+     * description of the filter syntax and a list of supported comparisons.
+     * </pre>
+     *
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFilter() {
+      filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A filter for the batches to return in the response.
+     * A filter is a logical expression constraining the values of various fields
+     * in each batch resource. Filters are case sensitive, and may contain
+     * multiple clauses combined with logical operators (AND/OR).
+     * Supported fields are `batch_id`, `batch_uuid`, `state`, and `create_time`.
+     * e.g. `state = RUNNING and create_time &lt; "2023-01-01T00:00:00Z"`
+     * filters for batches in state RUNNING that were created before 2023-01-01
+     * See https://google.aip.dev/assets/misc/ebnf-filtering.txt for a detailed
+     * description of the filter syntax and a list of supported comparisons.
+     * </pre>
+     *
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      filter_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object orderBy_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Field(s) on which to sort the list of batches.
+     * Currently the only supported sort orders are unspecified (empty) and
+     * `create_time desc` to sort by most recently created batches first.
+     * See https://google.aip.dev/132#ordering for more details.
+     * </pre>
+     *
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The orderBy.
+     */
+    public java.lang.String getOrderBy() {
+      java.lang.Object ref = orderBy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        orderBy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Field(s) on which to sort the list of batches.
+     * Currently the only supported sort orders are unspecified (empty) and
+     * `create_time desc` to sort by most recently created batches first.
+     * See https://google.aip.dev/132#ordering for more details.
+     * </pre>
+     *
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for orderBy.
+     */
+    public com.google.protobuf.ByteString getOrderByBytes() {
+      java.lang.Object ref = orderBy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        orderBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Field(s) on which to sort the list of batches.
+     * Currently the only supported sort orders are unspecified (empty) and
+     * `create_time desc` to sort by most recently created batches first.
+     * See https://google.aip.dev/132#ordering for more details.
+     * </pre>
+     *
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The orderBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrderBy(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      orderBy_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Field(s) on which to sort the list of batches.
+     * Currently the only supported sort orders are unspecified (empty) and
+     * `create_time desc` to sort by most recently created batches first.
+     * See https://google.aip.dev/132#ordering for more details.
+     * </pre>
+     *
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOrderBy() {
+      orderBy_ = getDefaultInstance().getOrderBy();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Field(s) on which to sort the list of batches.
+     * Currently the only supported sort orders are unspecified (empty) and
+     * `create_time desc` to sort by most recently created batches first.
+     * See https://google.aip.dev/132#ordering for more details.
+     * </pre>
+     *
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for orderBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrderByBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      orderBy_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

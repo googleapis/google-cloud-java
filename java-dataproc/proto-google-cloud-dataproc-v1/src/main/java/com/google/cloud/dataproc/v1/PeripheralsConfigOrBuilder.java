@@ -32,7 +32,9 @@ public interface PeripheralsConfigOrBuilder
    * * `projects/[project_id]/locations/[region]/services/[service_id]`
    * </pre>
    *
-   * <code>string metastore_service = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string metastore_service = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The metastoreService.
    */
@@ -46,7 +48,9 @@ public interface PeripheralsConfigOrBuilder
    * * `projects/[project_id]/locations/[region]/services/[service_id]`
    * </pre>
    *
-   * <code>string metastore_service = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string metastore_service = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for metastoreService.
    */

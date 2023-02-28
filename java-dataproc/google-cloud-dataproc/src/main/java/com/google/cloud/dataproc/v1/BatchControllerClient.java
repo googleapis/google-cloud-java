@@ -394,7 +394,8 @@ public class BatchControllerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the batch to retrieve.
+   * @param name Required. The fully qualified name of the batch to retrieve in the format
+   *     "projects/PROJECT_ID/locations/DATAPROC_REGION/batches/BATCH_ID"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Batch getBatch(BatchName name) {
@@ -421,7 +422,8 @@ public class BatchControllerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the batch to retrieve.
+   * @param name Required. The fully qualified name of the batch to retrieve in the format
+   *     "projects/PROJECT_ID/locations/DATAPROC_REGION/batches/BATCH_ID"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Batch getBatch(String name) {
@@ -561,6 +563,8 @@ public class BatchControllerClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   for (Batch element : batchControllerClient.listBatches(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -593,6 +597,8 @@ public class BatchControllerClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   ApiFuture<Batch> future =
    *       batchControllerClient.listBatchesPagedCallable().futureCall(request);
@@ -626,6 +632,8 @@ public class BatchControllerClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   while (true) {
    *     ListBatchesResponse response = batchControllerClient.listBatchesCallable().call(request);
@@ -665,7 +673,8 @@ public class BatchControllerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the batch resource to delete.
+   * @param name Required. The fully qualified name of the batch to retrieve in the format
+   *     "projects/PROJECT_ID/locations/DATAPROC_REGION/batches/BATCH_ID"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteBatch(BatchName name) {
@@ -693,7 +702,8 @@ public class BatchControllerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the batch resource to delete.
+   * @param name Required. The fully qualified name of the batch to retrieve in the format
+   *     "projects/PROJECT_ID/locations/DATAPROC_REGION/batches/BATCH_ID"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteBatch(String name) {

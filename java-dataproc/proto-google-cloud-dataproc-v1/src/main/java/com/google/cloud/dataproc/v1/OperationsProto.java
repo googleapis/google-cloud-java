@@ -86,7 +86,7 @@ public final class OperationsProto {
           + "s\030\003 \001(\tB\003\340A\003\0229\n\020state_start_time\030\004 \001(\0132\032"
           + ".google.protobuf.TimestampB\003\340A\003\"8\n\005State"
           + "\022\013\n\007UNKNOWN\020\000\022\013\n\007PENDING\020\001\022\013\n\007RUNNING\020\002\022"
-          + "\010\n\004DONE\020\003\"\270\003\n\030ClusterOperationMetadata\022\031"
+          + "\010\n\004DONE\020\003\"\332\003\n\030ClusterOperationMetadata\022\031"
           + "\n\014cluster_name\030\007 \001(\tB\003\340A\003\022\031\n\014cluster_uui"
           + "d\030\010 \001(\tB\003\340A\003\022E\n\006status\030\t \001(\01320.google.cl"
           + "oud.dataproc.v1.ClusterOperationStatusB\003"
@@ -96,27 +96,27 @@ public final class OperationsProto {
           + "iption\030\014 \001(\tB\003\340A\003\022S\n\006labels\030\r \003(\0132>.goog"
           + "le.cloud.dataproc.v1.ClusterOperationMet"
           + "adata.LabelsEntryB\003\340A\003\022\025\n\010warnings\030\016 \003(\t"
-          + "B\003\340A\003\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val"
-          + "ue\030\002 \001(\t:\0028\001\"\372\004\n\032NodeGroupOperationMetad"
-          + "ata\022\032\n\rnode_group_id\030\001 \001(\tB\003\340A\003\022\031\n\014clust"
-          + "er_uuid\030\002 \001(\tB\003\340A\003\022E\n\006status\030\003 \001(\01320.goo"
-          + "gle.cloud.dataproc.v1.ClusterOperationSt"
-          + "atusB\003\340A\003\022M\n\016status_history\030\004 \003(\01320.goog"
-          + "le.cloud.dataproc.v1.ClusterOperationSta"
-          + "tusB\003\340A\003\022c\n\016operation_type\030\005 \001(\0162K.googl"
-          + "e.cloud.dataproc.v1.NodeGroupOperationMe"
-          + "tadata.NodeGroupOperationType\022\030\n\013descrip"
-          + "tion\030\006 \001(\tB\003\340A\003\022U\n\006labels\030\007 \003(\0132@.google"
-          + ".cloud.dataproc.v1.NodeGroupOperationMet"
-          + "adata.LabelsEntryB\003\340A\003\022\025\n\010warnings\030\010 \003(\t"
-          + "B\003\340A\003\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val"
-          + "ue\030\002 \001(\t:\0028\001\"s\n\026NodeGroupOperationType\022)"
-          + "\n%NODE_GROUP_OPERATION_TYPE_UNSPECIFIED\020"
-          + "\000\022\n\n\006CREATE\020\001\022\n\n\006UPDATE\020\002\022\n\n\006DELETE\020\003\022\n\n"
-          + "\006RESIZE\020\004Bk\n\034com.google.cloud.dataproc.v"
-          + "1B\017OperationsProtoP\001Z8cloud.google.com/g"
-          + "o/dataproc/apiv1/dataprocpb;dataprocpbb\006"
-          + "proto3"
+          + "B\003\340A\003\022 \n\023child_operation_ids\030\017 \003(\tB\003\340A\003\032"
+          + "-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001"
+          + "(\t:\0028\001\"\372\004\n\032NodeGroupOperationMetadata\022\032\n"
+          + "\rnode_group_id\030\001 \001(\tB\003\340A\003\022\031\n\014cluster_uui"
+          + "d\030\002 \001(\tB\003\340A\003\022E\n\006status\030\003 \001(\01320.google.cl"
+          + "oud.dataproc.v1.ClusterOperationStatusB\003"
+          + "\340A\003\022M\n\016status_history\030\004 \003(\01320.google.clo"
+          + "ud.dataproc.v1.ClusterOperationStatusB\003\340"
+          + "A\003\022c\n\016operation_type\030\005 \001(\0162K.google.clou"
+          + "d.dataproc.v1.NodeGroupOperationMetadata"
+          + ".NodeGroupOperationType\022\030\n\013description\030\006"
+          + " \001(\tB\003\340A\003\022U\n\006labels\030\007 \003(\0132@.google.cloud"
+          + ".dataproc.v1.NodeGroupOperationMetadata."
+          + "LabelsEntryB\003\340A\003\022\025\n\010warnings\030\010 \003(\tB\003\340A\003\032"
+          + "-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001"
+          + "(\t:\0028\001\"s\n\026NodeGroupOperationType\022)\n%NODE"
+          + "_GROUP_OPERATION_TYPE_UNSPECIFIED\020\000\022\n\n\006C"
+          + "REATE\020\001\022\n\n\006UPDATE\020\002\022\n\n\006DELETE\020\003\022\n\n\006RESIZ"
+          + "E\020\004Bk\n\034com.google.cloud.dataproc.v1B\017Ope"
+          + "rationsProtoP\001Z8cloud.google.com/go/data"
+          + "proc/apiv1/dataprocpb;dataprocpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -172,6 +172,7 @@ public final class OperationsProto {
               "Description",
               "Labels",
               "Warnings",
+              "ChildOperationIds",
             });
     internal_static_google_cloud_dataproc_v1_ClusterOperationMetadata_LabelsEntry_descriptor =
         internal_static_google_cloud_dataproc_v1_ClusterOperationMetadata_descriptor

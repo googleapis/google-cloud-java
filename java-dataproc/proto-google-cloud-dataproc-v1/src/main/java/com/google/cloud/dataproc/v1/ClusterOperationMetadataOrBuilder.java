@@ -339,4 +339,59 @@ public interface ClusterOperationMetadataOrBuilder
    * @return The bytes of the warnings at the given index.
    */
   com.google.protobuf.ByteString getWarningsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Child operation ids
+   * </pre>
+   *
+   * <code>repeated string child_operation_ids = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the childOperationIds.
+   */
+  java.util.List<java.lang.String> getChildOperationIdsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Child operation ids
+   * </pre>
+   *
+   * <code>repeated string child_operation_ids = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of childOperationIds.
+   */
+  int getChildOperationIdsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Child operation ids
+   * </pre>
+   *
+   * <code>repeated string child_operation_ids = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The childOperationIds at the given index.
+   */
+  java.lang.String getChildOperationIds(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Child operation ids
+   * </pre>
+   *
+   * <code>repeated string child_operation_ids = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the childOperationIds at the given index.
+   */
+  com.google.protobuf.ByteString getChildOperationIdsBytes(int index);
 }

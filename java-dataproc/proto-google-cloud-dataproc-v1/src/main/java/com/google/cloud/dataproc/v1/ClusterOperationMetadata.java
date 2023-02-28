@@ -44,6 +44,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     operationType_ = "";
     description_ = "";
     warnings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    childOperationIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -595,6 +596,73 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     return warnings_.getByteString(index);
   }
 
+  public static final int CHILD_OPERATION_IDS_FIELD_NUMBER = 15;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringList childOperationIds_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Child operation ids
+   * </pre>
+   *
+   * <code>repeated string child_operation_ids = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the childOperationIds.
+   */
+  public com.google.protobuf.ProtocolStringList getChildOperationIdsList() {
+    return childOperationIds_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Child operation ids
+   * </pre>
+   *
+   * <code>repeated string child_operation_ids = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of childOperationIds.
+   */
+  public int getChildOperationIdsCount() {
+    return childOperationIds_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Child operation ids
+   * </pre>
+   *
+   * <code>repeated string child_operation_ids = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The childOperationIds at the given index.
+   */
+  public java.lang.String getChildOperationIds(int index) {
+    return childOperationIds_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Child operation ids
+   * </pre>
+   *
+   * <code>repeated string child_operation_ids = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the childOperationIds at the given index.
+   */
+  public com.google.protobuf.ByteString getChildOperationIdsBytes(int index) {
+    return childOperationIds_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -631,6 +699,9 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 13);
     for (int i = 0; i < warnings_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, warnings_.getRaw(i));
+    }
+    for (int i = 0; i < childOperationIds_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, childOperationIds_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -677,6 +748,14 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       size += dataSize;
       size += 1 * getWarningsList().size();
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < childOperationIds_.size(); i++) {
+        dataSize += computeStringSizeNoTag(childOperationIds_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getChildOperationIdsList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -704,6 +783,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     if (!getDescription().equals(other.getDescription())) return false;
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getWarningsList().equals(other.getWarningsList())) return false;
+    if (!getChildOperationIdsList().equals(other.getChildOperationIdsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -738,6 +818,10 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     if (getWarningsCount() > 0) {
       hash = (37 * hash) + WARNINGS_FIELD_NUMBER;
       hash = (53 * hash) + getWarningsList().hashCode();
+    }
+    if (getChildOperationIdsCount() > 0) {
+      hash = (37 * hash) + CHILD_OPERATION_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getChildOperationIdsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -918,6 +1002,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       internalGetMutableLabels().clear();
       warnings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000080);
+      childOperationIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -969,6 +1055,11 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         bitField0_ = (bitField0_ & ~0x00000080);
       }
       result.warnings_ = warnings_;
+      if (((bitField0_ & 0x00000100) != 0)) {
+        childOperationIds_ = childOperationIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000100);
+      }
+      result.childOperationIds_ = childOperationIds_;
     }
 
     private void buildPartial0(com.google.cloud.dataproc.v1.ClusterOperationMetadata result) {
@@ -1102,6 +1193,16 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         }
         onChanged();
       }
+      if (!other.childOperationIds_.isEmpty()) {
+        if (childOperationIds_.isEmpty()) {
+          childOperationIds_ = other.childOperationIds_;
+          bitField0_ = (bitField0_ & ~0x00000100);
+        } else {
+          ensureChildOperationIdsIsMutable();
+          childOperationIds_.addAll(other.childOperationIds_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1191,6 +1292,13 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
                 warnings_.add(s);
                 break;
               } // case 114
+            case 122:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureChildOperationIdsIsMutable();
+                childOperationIds_.add(s);
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2569,6 +2677,183 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       checkByteStringIsUtf8(value);
       ensureWarningsIsMutable();
       warnings_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList childOperationIds_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureChildOperationIdsIsMutable() {
+      if (!((bitField0_ & 0x00000100) != 0)) {
+        childOperationIds_ = new com.google.protobuf.LazyStringArrayList(childOperationIds_);
+        bitField0_ |= 0x00000100;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Child operation ids
+     * </pre>
+     *
+     * <code>repeated string child_operation_ids = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the childOperationIds.
+     */
+    public com.google.protobuf.ProtocolStringList getChildOperationIdsList() {
+      return childOperationIds_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Child operation ids
+     * </pre>
+     *
+     * <code>repeated string child_operation_ids = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of childOperationIds.
+     */
+    public int getChildOperationIdsCount() {
+      return childOperationIds_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Child operation ids
+     * </pre>
+     *
+     * <code>repeated string child_operation_ids = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The childOperationIds at the given index.
+     */
+    public java.lang.String getChildOperationIds(int index) {
+      return childOperationIds_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Child operation ids
+     * </pre>
+     *
+     * <code>repeated string child_operation_ids = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the childOperationIds at the given index.
+     */
+    public com.google.protobuf.ByteString getChildOperationIdsBytes(int index) {
+      return childOperationIds_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Child operation ids
+     * </pre>
+     *
+     * <code>repeated string child_operation_ids = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The childOperationIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setChildOperationIds(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureChildOperationIdsIsMutable();
+      childOperationIds_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Child operation ids
+     * </pre>
+     *
+     * <code>repeated string child_operation_ids = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The childOperationIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addChildOperationIds(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureChildOperationIdsIsMutable();
+      childOperationIds_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Child operation ids
+     * </pre>
+     *
+     * <code>repeated string child_operation_ids = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The childOperationIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllChildOperationIds(java.lang.Iterable<java.lang.String> values) {
+      ensureChildOperationIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, childOperationIds_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Child operation ids
+     * </pre>
+     *
+     * <code>repeated string child_operation_ids = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearChildOperationIds() {
+      childOperationIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Child operation ids
+     * </pre>
+     *
+     * <code>repeated string child_operation_ids = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes of the childOperationIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addChildOperationIdsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureChildOperationIdsIsMutable();
+      childOperationIds_.add(value);
       onChanged();
       return this;
     }

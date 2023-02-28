@@ -80,7 +80,9 @@ public final class PeripheralsConfig extends com.google.protobuf.GeneratedMessag
    * * `projects/[project_id]/locations/[region]/services/[service_id]`
    * </pre>
    *
-   * <code>string metastore_service = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string metastore_service = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The metastoreService.
    */
@@ -105,7 +107,9 @@ public final class PeripheralsConfig extends com.google.protobuf.GeneratedMessag
    * * `projects/[project_id]/locations/[region]/services/[service_id]`
    * </pre>
    *
-   * <code>string metastore_service = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string metastore_service = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for metastoreService.
    */
@@ -567,7 +571,9 @@ public final class PeripheralsConfig extends com.google.protobuf.GeneratedMessag
      * * `projects/[project_id]/locations/[region]/services/[service_id]`
      * </pre>
      *
-     * <code>string metastore_service = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string metastore_service = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The metastoreService.
      */
@@ -591,7 +597,9 @@ public final class PeripheralsConfig extends com.google.protobuf.GeneratedMessag
      * * `projects/[project_id]/locations/[region]/services/[service_id]`
      * </pre>
      *
-     * <code>string metastore_service = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string metastore_service = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for metastoreService.
      */
@@ -615,7 +623,9 @@ public final class PeripheralsConfig extends com.google.protobuf.GeneratedMessag
      * * `projects/[project_id]/locations/[region]/services/[service_id]`
      * </pre>
      *
-     * <code>string metastore_service = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string metastore_service = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The metastoreService to set.
      * @return This builder for chaining.
@@ -638,7 +648,9 @@ public final class PeripheralsConfig extends com.google.protobuf.GeneratedMessag
      * * `projects/[project_id]/locations/[region]/services/[service_id]`
      * </pre>
      *
-     * <code>string metastore_service = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string metastore_service = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -657,7 +669,9 @@ public final class PeripheralsConfig extends com.google.protobuf.GeneratedMessag
      * * `projects/[project_id]/locations/[region]/services/[service_id]`
      * </pre>
      *
-     * <code>string metastore_service = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string metastore_service = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for metastoreService to set.
      * @return This builder for chaining.

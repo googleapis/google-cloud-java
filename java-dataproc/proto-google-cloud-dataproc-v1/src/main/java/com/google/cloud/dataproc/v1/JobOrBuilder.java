@@ -443,6 +443,47 @@ public interface JobOrBuilder
    *
    *
    * <pre>
+   * Optional. Job is a Trino job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.TrinoJob trino_job = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the trinoJob field is set.
+   */
+  boolean hasTrinoJob();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a Trino job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.TrinoJob trino_job = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The trinoJob.
+   */
+  com.google.cloud.dataproc.v1.TrinoJob getTrinoJob();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a Trino job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.TrinoJob trino_job = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.TrinoJobOrBuilder getTrinoJobOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The job status. Additional application-specific
    * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
    * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.

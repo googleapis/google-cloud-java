@@ -22,7 +22,7 @@ package com.google.cloud.dataproc.v1;
  *
  *
  * <pre>
- * The configuration of a GKE NodePool used by a [Dataproc-on-GKE
+ * The configuration of a GKE node pool used by a [Dataproc-on-GKE
  * cluster](https://cloud.google.com/dataproc/docs/concepts/jobs/dataproc-gke#create-a-dataproc-on-gke-cluster).
  * </pre>
  *
@@ -104,23 +104,9 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Whether the nodes are created as [preemptible VM
-     * instances](https://cloud.google.com/compute/docs/instances/preemptible).
-     * </pre>
-     *
-     * <code>bool preemptible = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The preemptible.
-     */
-    boolean getPreemptible();
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The number of local SSD disks to attach to the node, which is limited by
-     * the maximum number of disks allowable per zone (see [Adding Local
-     * SSDs](https://cloud.google.com/compute/docs/disks/local-ssd)).
+     * Optional. The number of local SSD disks to attach to the node, which is
+     * limited by the maximum number of disks allowable per zone (see [Adding
+     * Local SSDs](https://cloud.google.com/compute/docs/disks/local-ssd)).
      * </pre>
      *
      * <code>int32 local_ssd_count = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -128,6 +114,28 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * @return The localSsdCount.
      */
     int getLocalSsdCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the nodes are created as legacy [preemptible VM
+     * instances] (https://cloud.google.com/compute/docs/instances/preemptible).
+     * Also see
+     * [Spot][google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodeConfig.spot]
+     * VMs, preemptible VM instances without a maximum lifetime. Legacy and Spot
+     * preemptible nodes cannot be used in a node pool with the `CONTROLLER`
+     * [role]
+     * (/dataproc/docs/reference/rest/v1/projects.regions.clusters#role)
+     * or in the DEFAULT node pool if the CONTROLLER role is not assigned (the
+     * DEFAULT node pool will assume the CONTROLLER role).
+     * </pre>
+     *
+     * <code>bool preemptible = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The preemptible.
+     */
+    boolean getPreemptible();
 
     /**
      *
@@ -239,6 +247,61 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * @return The bytes for minCpuPlatform.
      */
     com.google.protobuf.ByteString getMinCpuPlatformBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The [Customer Managed Encryption Key (CMEK)]
+     * (https://cloud.google.com/kubernetes-engine/docs/how-to/using-cmek)
+     * used to encrypt the boot disk attached to each node in the node pool.
+     * Specify the key using the following format:
+     * &lt;code&gt;projects/&lt;var&gt;KEY_PROJECT_ID&lt;/var&gt;/locations/&lt;var&gt;LOCATION&lt;/var&gt;/keyRings/&lt;var&gt;RING_NAME&lt;/var&gt;/cryptoKeys/&lt;var&gt;KEY_NAME&lt;/var&gt;&lt;/code&gt;.
+     * </pre>
+     *
+     * <code>string boot_disk_kms_key = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bootDiskKmsKey.
+     */
+    java.lang.String getBootDiskKmsKey();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The [Customer Managed Encryption Key (CMEK)]
+     * (https://cloud.google.com/kubernetes-engine/docs/how-to/using-cmek)
+     * used to encrypt the boot disk attached to each node in the node pool.
+     * Specify the key using the following format:
+     * &lt;code&gt;projects/&lt;var&gt;KEY_PROJECT_ID&lt;/var&gt;/locations/&lt;var&gt;LOCATION&lt;/var&gt;/keyRings/&lt;var&gt;RING_NAME&lt;/var&gt;/cryptoKeys/&lt;var&gt;KEY_NAME&lt;/var&gt;&lt;/code&gt;.
+     * </pre>
+     *
+     * <code>string boot_disk_kms_key = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for bootDiskKmsKey.
+     */
+    com.google.protobuf.ByteString getBootDiskKmsKeyBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the nodes are created as [Spot VM instances]
+     * (https://cloud.google.com/compute/docs/instances/spot).
+     * Spot VMs are the latest update to legacy
+     * [preemptible
+     * VMs][google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodeConfig.preemptible].
+     * Spot VMs do not have a maximum lifetime. Legacy and Spot preemptible
+     * nodes cannot be used in a node pool with the `CONTROLLER`
+     * [role](/dataproc/docs/reference/rest/v1/projects.regions.clusters#role)
+     * or in the DEFAULT node pool if the CONTROLLER role is not assigned (the
+     * DEFAULT node pool will assume the CONTROLLER role).
+     * </pre>
+     *
+     * <code>bool spot = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The spot.
+     */
+    boolean getSpot();
   }
   /**
    *
@@ -263,6 +326,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       machineType_ = "";
       accelerators_ = java.util.Collections.emptyList();
       minCpuPlatform_ = "";
+      bootDiskKmsKey_ = "";
     }
 
     @java.lang.Override
@@ -344,34 +408,15 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       }
     }
 
-    public static final int PREEMPTIBLE_FIELD_NUMBER = 10;
-    private boolean preemptible_ = false;
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Whether the nodes are created as [preemptible VM
-     * instances](https://cloud.google.com/compute/docs/instances/preemptible).
-     * </pre>
-     *
-     * <code>bool preemptible = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The preemptible.
-     */
-    @java.lang.Override
-    public boolean getPreemptible() {
-      return preemptible_;
-    }
-
     public static final int LOCAL_SSD_COUNT_FIELD_NUMBER = 7;
     private int localSsdCount_ = 0;
     /**
      *
      *
      * <pre>
-     * Optional. The number of local SSD disks to attach to the node, which is limited by
-     * the maximum number of disks allowable per zone (see [Adding Local
-     * SSDs](https://cloud.google.com/compute/docs/disks/local-ssd)).
+     * Optional. The number of local SSD disks to attach to the node, which is
+     * limited by the maximum number of disks allowable per zone (see [Adding
+     * Local SSDs](https://cloud.google.com/compute/docs/disks/local-ssd)).
      * </pre>
      *
      * <code>int32 local_ssd_count = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -381,6 +426,33 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public int getLocalSsdCount() {
       return localSsdCount_;
+    }
+
+    public static final int PREEMPTIBLE_FIELD_NUMBER = 10;
+    private boolean preemptible_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the nodes are created as legacy [preemptible VM
+     * instances] (https://cloud.google.com/compute/docs/instances/preemptible).
+     * Also see
+     * [Spot][google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodeConfig.spot]
+     * VMs, preemptible VM instances without a maximum lifetime. Legacy and Spot
+     * preemptible nodes cannot be used in a node pool with the `CONTROLLER`
+     * [role]
+     * (/dataproc/docs/reference/rest/v1/projects.regions.clusters#role)
+     * or in the DEFAULT node pool if the CONTROLLER role is not assigned (the
+     * DEFAULT node pool will assume the CONTROLLER role).
+     * </pre>
+     *
+     * <code>bool preemptible = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The preemptible.
+     */
+    @java.lang.Override
+    public boolean getPreemptible() {
+      return preemptible_;
     }
 
     public static final int ACCELERATORS_FIELD_NUMBER = 11;
@@ -542,6 +614,92 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       }
     }
 
+    public static final int BOOT_DISK_KMS_KEY_FIELD_NUMBER = 23;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object bootDiskKmsKey_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The [Customer Managed Encryption Key (CMEK)]
+     * (https://cloud.google.com/kubernetes-engine/docs/how-to/using-cmek)
+     * used to encrypt the boot disk attached to each node in the node pool.
+     * Specify the key using the following format:
+     * &lt;code&gt;projects/&lt;var&gt;KEY_PROJECT_ID&lt;/var&gt;/locations/&lt;var&gt;LOCATION&lt;/var&gt;/keyRings/&lt;var&gt;RING_NAME&lt;/var&gt;/cryptoKeys/&lt;var&gt;KEY_NAME&lt;/var&gt;&lt;/code&gt;.
+     * </pre>
+     *
+     * <code>string boot_disk_kms_key = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bootDiskKmsKey.
+     */
+    @java.lang.Override
+    public java.lang.String getBootDiskKmsKey() {
+      java.lang.Object ref = bootDiskKmsKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bootDiskKmsKey_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The [Customer Managed Encryption Key (CMEK)]
+     * (https://cloud.google.com/kubernetes-engine/docs/how-to/using-cmek)
+     * used to encrypt the boot disk attached to each node in the node pool.
+     * Specify the key using the following format:
+     * &lt;code&gt;projects/&lt;var&gt;KEY_PROJECT_ID&lt;/var&gt;/locations/&lt;var&gt;LOCATION&lt;/var&gt;/keyRings/&lt;var&gt;RING_NAME&lt;/var&gt;/cryptoKeys/&lt;var&gt;KEY_NAME&lt;/var&gt;&lt;/code&gt;.
+     * </pre>
+     *
+     * <code>string boot_disk_kms_key = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for bootDiskKmsKey.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getBootDiskKmsKeyBytes() {
+      java.lang.Object ref = bootDiskKmsKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        bootDiskKmsKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SPOT_FIELD_NUMBER = 32;
+    private boolean spot_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the nodes are created as [Spot VM instances]
+     * (https://cloud.google.com/compute/docs/instances/spot).
+     * Spot VMs are the latest update to legacy
+     * [preemptible
+     * VMs][google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodeConfig.preemptible].
+     * Spot VMs do not have a maximum lifetime. Legacy and Spot preemptible
+     * nodes cannot be used in a node pool with the `CONTROLLER`
+     * [role](/dataproc/docs/reference/rest/v1/projects.regions.clusters#role)
+     * or in the DEFAULT node pool if the CONTROLLER role is not assigned (the
+     * DEFAULT node pool will assume the CONTROLLER role).
+     * </pre>
+     *
+     * <code>bool spot = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The spot.
+     */
+    @java.lang.Override
+    public boolean getSpot() {
+      return spot_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -571,6 +729,12 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(minCpuPlatform_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 13, minCpuPlatform_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bootDiskKmsKey_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 23, bootDiskKmsKey_);
+      }
+      if (spot_ != false) {
+        output.writeBool(32, spot_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -595,6 +759,12 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(minCpuPlatform_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, minCpuPlatform_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bootDiskKmsKey_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, bootDiskKmsKey_);
+      }
+      if (spot_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(32, spot_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -612,10 +782,12 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
           (com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodeConfig) obj;
 
       if (!getMachineType().equals(other.getMachineType())) return false;
-      if (getPreemptible() != other.getPreemptible()) return false;
       if (getLocalSsdCount() != other.getLocalSsdCount()) return false;
+      if (getPreemptible() != other.getPreemptible()) return false;
       if (!getAcceleratorsList().equals(other.getAcceleratorsList())) return false;
       if (!getMinCpuPlatform().equals(other.getMinCpuPlatform())) return false;
+      if (!getBootDiskKmsKey().equals(other.getBootDiskKmsKey())) return false;
+      if (getSpot() != other.getSpot()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -629,16 +801,20 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MACHINE_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getMachineType().hashCode();
-      hash = (37 * hash) + PREEMPTIBLE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPreemptible());
       hash = (37 * hash) + LOCAL_SSD_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getLocalSsdCount();
+      hash = (37 * hash) + PREEMPTIBLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPreemptible());
       if (getAcceleratorsCount() > 0) {
         hash = (37 * hash) + ACCELERATORS_FIELD_NUMBER;
         hash = (53 * hash) + getAcceleratorsList().hashCode();
       }
       hash = (37 * hash) + MIN_CPU_PLATFORM_FIELD_NUMBER;
       hash = (53 * hash) + getMinCpuPlatform().hashCode();
+      hash = (37 * hash) + BOOT_DISK_KMS_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getBootDiskKmsKey().hashCode();
+      hash = (37 * hash) + SPOT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSpot());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -782,8 +958,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
         super.clear();
         bitField0_ = 0;
         machineType_ = "";
-        preemptible_ = false;
         localSsdCount_ = 0;
+        preemptible_ = false;
         if (acceleratorsBuilder_ == null) {
           accelerators_ = java.util.Collections.emptyList();
         } else {
@@ -792,6 +968,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
         }
         bitField0_ = (bitField0_ & ~0x00000008);
         minCpuPlatform_ = "";
+        bootDiskKmsKey_ = "";
+        spot_ = false;
         return this;
       }
 
@@ -848,13 +1026,19 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
           result.machineType_ = machineType_;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.preemptible_ = preemptible_;
+          result.localSsdCount_ = localSsdCount_;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.localSsdCount_ = localSsdCount_;
+          result.preemptible_ = preemptible_;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
           result.minCpuPlatform_ = minCpuPlatform_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.bootDiskKmsKey_ = bootDiskKmsKey_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.spot_ = spot_;
         }
       }
 
@@ -912,11 +1096,11 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
           bitField0_ |= 0x00000001;
           onChanged();
         }
-        if (other.getPreemptible() != false) {
-          setPreemptible(other.getPreemptible());
-        }
         if (other.getLocalSsdCount() != 0) {
           setLocalSsdCount(other.getLocalSsdCount());
+        }
+        if (other.getPreemptible() != false) {
+          setPreemptible(other.getPreemptible());
         }
         if (acceleratorsBuilder_ == null) {
           if (!other.accelerators_.isEmpty()) {
@@ -949,6 +1133,14 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
           minCpuPlatform_ = other.minCpuPlatform_;
           bitField0_ |= 0x00000010;
           onChanged();
+        }
+        if (!other.getBootDiskKmsKey().isEmpty()) {
+          bootDiskKmsKey_ = other.bootDiskKmsKey_;
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        if (other.getSpot() != false) {
+          setSpot(other.getSpot());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -985,13 +1177,13 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
               case 56:
                 {
                   localSsdCount_ = input.readInt32();
-                  bitField0_ |= 0x00000004;
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 56
               case 80:
                 {
                   preemptible_ = input.readBool();
-                  bitField0_ |= 0x00000002;
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 80
               case 90:
@@ -1015,6 +1207,18 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
                   bitField0_ |= 0x00000010;
                   break;
                 } // case 106
+              case 186:
+                {
+                  bootDiskKmsKey_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 186
+              case 256:
+                {
+                  spot_ = input.readBool();
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 256
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1145,70 +1349,14 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
         return this;
       }
 
-      private boolean preemptible_;
-      /**
-       *
-       *
-       * <pre>
-       * Optional. Whether the nodes are created as [preemptible VM
-       * instances](https://cloud.google.com/compute/docs/instances/preemptible).
-       * </pre>
-       *
-       * <code>bool preemptible = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @return The preemptible.
-       */
-      @java.lang.Override
-      public boolean getPreemptible() {
-        return preemptible_;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. Whether the nodes are created as [preemptible VM
-       * instances](https://cloud.google.com/compute/docs/instances/preemptible).
-       * </pre>
-       *
-       * <code>bool preemptible = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @param value The preemptible to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPreemptible(boolean value) {
-
-        preemptible_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. Whether the nodes are created as [preemptible VM
-       * instances](https://cloud.google.com/compute/docs/instances/preemptible).
-       * </pre>
-       *
-       * <code>bool preemptible = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearPreemptible() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        preemptible_ = false;
-        onChanged();
-        return this;
-      }
-
       private int localSsdCount_;
       /**
        *
        *
        * <pre>
-       * Optional. The number of local SSD disks to attach to the node, which is limited by
-       * the maximum number of disks allowable per zone (see [Adding Local
-       * SSDs](https://cloud.google.com/compute/docs/disks/local-ssd)).
+       * Optional. The number of local SSD disks to attach to the node, which is
+       * limited by the maximum number of disks allowable per zone (see [Adding
+       * Local SSDs](https://cloud.google.com/compute/docs/disks/local-ssd)).
        * </pre>
        *
        * <code>int32 local_ssd_count = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1223,9 +1371,9 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Optional. The number of local SSD disks to attach to the node, which is limited by
-       * the maximum number of disks allowable per zone (see [Adding Local
-       * SSDs](https://cloud.google.com/compute/docs/disks/local-ssd)).
+       * Optional. The number of local SSD disks to attach to the node, which is
+       * limited by the maximum number of disks allowable per zone (see [Adding
+       * Local SSDs](https://cloud.google.com/compute/docs/disks/local-ssd)).
        * </pre>
        *
        * <code>int32 local_ssd_count = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1236,6 +1384,79 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       public Builder setLocalSsdCount(int value) {
 
         localSsdCount_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The number of local SSD disks to attach to the node, which is
+       * limited by the maximum number of disks allowable per zone (see [Adding
+       * Local SSDs](https://cloud.google.com/compute/docs/disks/local-ssd)).
+       * </pre>
+       *
+       * <code>int32 local_ssd_count = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearLocalSsdCount() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        localSsdCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean preemptible_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether the nodes are created as legacy [preemptible VM
+       * instances] (https://cloud.google.com/compute/docs/instances/preemptible).
+       * Also see
+       * [Spot][google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodeConfig.spot]
+       * VMs, preemptible VM instances without a maximum lifetime. Legacy and Spot
+       * preemptible nodes cannot be used in a node pool with the `CONTROLLER`
+       * [role]
+       * (/dataproc/docs/reference/rest/v1/projects.regions.clusters#role)
+       * or in the DEFAULT node pool if the CONTROLLER role is not assigned (the
+       * DEFAULT node pool will assume the CONTROLLER role).
+       * </pre>
+       *
+       * <code>bool preemptible = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The preemptible.
+       */
+      @java.lang.Override
+      public boolean getPreemptible() {
+        return preemptible_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether the nodes are created as legacy [preemptible VM
+       * instances] (https://cloud.google.com/compute/docs/instances/preemptible).
+       * Also see
+       * [Spot][google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodeConfig.spot]
+       * VMs, preemptible VM instances without a maximum lifetime. Legacy and Spot
+       * preemptible nodes cannot be used in a node pool with the `CONTROLLER`
+       * [role]
+       * (/dataproc/docs/reference/rest/v1/projects.regions.clusters#role)
+       * or in the DEFAULT node pool if the CONTROLLER role is not assigned (the
+       * DEFAULT node pool will assume the CONTROLLER role).
+       * </pre>
+       *
+       * <code>bool preemptible = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The preemptible to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPreemptible(boolean value) {
+
+        preemptible_ = value;
         bitField0_ |= 0x00000004;
         onChanged();
         return this;
@@ -1244,18 +1465,25 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Optional. The number of local SSD disks to attach to the node, which is limited by
-       * the maximum number of disks allowable per zone (see [Adding Local
-       * SSDs](https://cloud.google.com/compute/docs/disks/local-ssd)).
+       * Optional. Whether the nodes are created as legacy [preemptible VM
+       * instances] (https://cloud.google.com/compute/docs/instances/preemptible).
+       * Also see
+       * [Spot][google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodeConfig.spot]
+       * VMs, preemptible VM instances without a maximum lifetime. Legacy and Spot
+       * preemptible nodes cannot be used in a node pool with the `CONTROLLER`
+       * [role]
+       * (/dataproc/docs/reference/rest/v1/projects.regions.clusters#role)
+       * or in the DEFAULT node pool if the CONTROLLER role is not assigned (the
+       * DEFAULT node pool will assume the CONTROLLER role).
        * </pre>
        *
-       * <code>int32 local_ssd_count = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>bool preemptible = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
-      public Builder clearLocalSsdCount() {
+      public Builder clearPreemptible() {
         bitField0_ = (bitField0_ & ~0x00000004);
-        localSsdCount_ = 0;
+        preemptible_ = false;
         onChanged();
         return this;
       }
@@ -1846,6 +2074,212 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
         return this;
       }
 
+      private java.lang.Object bootDiskKmsKey_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The [Customer Managed Encryption Key (CMEK)]
+       * (https://cloud.google.com/kubernetes-engine/docs/how-to/using-cmek)
+       * used to encrypt the boot disk attached to each node in the node pool.
+       * Specify the key using the following format:
+       * &lt;code&gt;projects/&lt;var&gt;KEY_PROJECT_ID&lt;/var&gt;/locations/&lt;var&gt;LOCATION&lt;/var&gt;/keyRings/&lt;var&gt;RING_NAME&lt;/var&gt;/cryptoKeys/&lt;var&gt;KEY_NAME&lt;/var&gt;&lt;/code&gt;.
+       * </pre>
+       *
+       * <code>string boot_disk_kms_key = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bootDiskKmsKey.
+       */
+      public java.lang.String getBootDiskKmsKey() {
+        java.lang.Object ref = bootDiskKmsKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          bootDiskKmsKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The [Customer Managed Encryption Key (CMEK)]
+       * (https://cloud.google.com/kubernetes-engine/docs/how-to/using-cmek)
+       * used to encrypt the boot disk attached to each node in the node pool.
+       * Specify the key using the following format:
+       * &lt;code&gt;projects/&lt;var&gt;KEY_PROJECT_ID&lt;/var&gt;/locations/&lt;var&gt;LOCATION&lt;/var&gt;/keyRings/&lt;var&gt;RING_NAME&lt;/var&gt;/cryptoKeys/&lt;var&gt;KEY_NAME&lt;/var&gt;&lt;/code&gt;.
+       * </pre>
+       *
+       * <code>string boot_disk_kms_key = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for bootDiskKmsKey.
+       */
+      public com.google.protobuf.ByteString getBootDiskKmsKeyBytes() {
+        java.lang.Object ref = bootDiskKmsKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          bootDiskKmsKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The [Customer Managed Encryption Key (CMEK)]
+       * (https://cloud.google.com/kubernetes-engine/docs/how-to/using-cmek)
+       * used to encrypt the boot disk attached to each node in the node pool.
+       * Specify the key using the following format:
+       * &lt;code&gt;projects/&lt;var&gt;KEY_PROJECT_ID&lt;/var&gt;/locations/&lt;var&gt;LOCATION&lt;/var&gt;/keyRings/&lt;var&gt;RING_NAME&lt;/var&gt;/cryptoKeys/&lt;var&gt;KEY_NAME&lt;/var&gt;&lt;/code&gt;.
+       * </pre>
+       *
+       * <code>string boot_disk_kms_key = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bootDiskKmsKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBootDiskKmsKey(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bootDiskKmsKey_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The [Customer Managed Encryption Key (CMEK)]
+       * (https://cloud.google.com/kubernetes-engine/docs/how-to/using-cmek)
+       * used to encrypt the boot disk attached to each node in the node pool.
+       * Specify the key using the following format:
+       * &lt;code&gt;projects/&lt;var&gt;KEY_PROJECT_ID&lt;/var&gt;/locations/&lt;var&gt;LOCATION&lt;/var&gt;/keyRings/&lt;var&gt;RING_NAME&lt;/var&gt;/cryptoKeys/&lt;var&gt;KEY_NAME&lt;/var&gt;&lt;/code&gt;.
+       * </pre>
+       *
+       * <code>string boot_disk_kms_key = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearBootDiskKmsKey() {
+        bootDiskKmsKey_ = getDefaultInstance().getBootDiskKmsKey();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The [Customer Managed Encryption Key (CMEK)]
+       * (https://cloud.google.com/kubernetes-engine/docs/how-to/using-cmek)
+       * used to encrypt the boot disk attached to each node in the node pool.
+       * Specify the key using the following format:
+       * &lt;code&gt;projects/&lt;var&gt;KEY_PROJECT_ID&lt;/var&gt;/locations/&lt;var&gt;LOCATION&lt;/var&gt;/keyRings/&lt;var&gt;RING_NAME&lt;/var&gt;/cryptoKeys/&lt;var&gt;KEY_NAME&lt;/var&gt;&lt;/code&gt;.
+       * </pre>
+       *
+       * <code>string boot_disk_kms_key = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for bootDiskKmsKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBootDiskKmsKeyBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        bootDiskKmsKey_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      private boolean spot_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether the nodes are created as [Spot VM instances]
+       * (https://cloud.google.com/compute/docs/instances/spot).
+       * Spot VMs are the latest update to legacy
+       * [preemptible
+       * VMs][google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodeConfig.preemptible].
+       * Spot VMs do not have a maximum lifetime. Legacy and Spot preemptible
+       * nodes cannot be used in a node pool with the `CONTROLLER`
+       * [role](/dataproc/docs/reference/rest/v1/projects.regions.clusters#role)
+       * or in the DEFAULT node pool if the CONTROLLER role is not assigned (the
+       * DEFAULT node pool will assume the CONTROLLER role).
+       * </pre>
+       *
+       * <code>bool spot = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The spot.
+       */
+      @java.lang.Override
+      public boolean getSpot() {
+        return spot_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether the nodes are created as [Spot VM instances]
+       * (https://cloud.google.com/compute/docs/instances/spot).
+       * Spot VMs are the latest update to legacy
+       * [preemptible
+       * VMs][google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodeConfig.preemptible].
+       * Spot VMs do not have a maximum lifetime. Legacy and Spot preemptible
+       * nodes cannot be used in a node pool with the `CONTROLLER`
+       * [role](/dataproc/docs/reference/rest/v1/projects.regions.clusters#role)
+       * or in the DEFAULT node pool if the CONTROLLER role is not assigned (the
+       * DEFAULT node pool will assume the CONTROLLER role).
+       * </pre>
+       *
+       * <code>bool spot = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The spot to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpot(boolean value) {
+
+        spot_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether the nodes are created as [Spot VM instances]
+       * (https://cloud.google.com/compute/docs/instances/spot).
+       * Spot VMs are the latest update to legacy
+       * [preemptible
+       * VMs][google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodeConfig.preemptible].
+       * Spot VMs do not have a maximum lifetime. Legacy and Spot preemptible
+       * nodes cannot be used in a node pool with the `CONTROLLER`
+       * [role](/dataproc/docs/reference/rest/v1/projects.regions.clusters#role)
+       * or in the DEFAULT node pool if the CONTROLLER role is not assigned (the
+       * DEFAULT node pool will assume the CONTROLLER role).
+       * </pre>
+       *
+       * <code>bool spot = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSpot() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        spot_ = false;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1955,13 +2389,42 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * @return The bytes for acceleratorType.
      */
     com.google.protobuf.ByteString getAcceleratorTypeBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Size of partitions to create on the GPU. Valid values are described in
+     * the NVIDIA [mig user
+     * guide](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/#partitioning).
+     * </pre>
+     *
+     * <code>string gpu_partition_size = 3;</code>
+     *
+     * @return The gpuPartitionSize.
+     */
+    java.lang.String getGpuPartitionSize();
+    /**
+     *
+     *
+     * <pre>
+     * Size of partitions to create on the GPU. Valid values are described in
+     * the NVIDIA [mig user
+     * guide](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/#partitioning).
+     * </pre>
+     *
+     * <code>string gpu_partition_size = 3;</code>
+     *
+     * @return The bytes for gpuPartitionSize.
+     */
+    com.google.protobuf.ByteString getGpuPartitionSizeBytes();
   }
   /**
    *
    *
    * <pre>
    * A GkeNodeConfigAcceleratorConfig represents a Hardware Accelerator request
-   * for a NodePool.
+   * for a node pool.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodePoolAcceleratorConfig}
@@ -1980,6 +2443,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
 
     private GkeNodePoolAcceleratorConfig() {
       acceleratorType_ = "";
+      gpuPartitionSize_ = "";
     }
 
     @java.lang.Override
@@ -2078,6 +2542,61 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       }
     }
 
+    public static final int GPU_PARTITION_SIZE_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object gpuPartitionSize_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Size of partitions to create on the GPU. Valid values are described in
+     * the NVIDIA [mig user
+     * guide](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/#partitioning).
+     * </pre>
+     *
+     * <code>string gpu_partition_size = 3;</code>
+     *
+     * @return The gpuPartitionSize.
+     */
+    @java.lang.Override
+    public java.lang.String getGpuPartitionSize() {
+      java.lang.Object ref = gpuPartitionSize_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        gpuPartitionSize_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Size of partitions to create on the GPU. Valid values are described in
+     * the NVIDIA [mig user
+     * guide](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/#partitioning).
+     * </pre>
+     *
+     * <code>string gpu_partition_size = 3;</code>
+     *
+     * @return The bytes for gpuPartitionSize.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getGpuPartitionSizeBytes() {
+      java.lang.Object ref = gpuPartitionSize_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        gpuPartitionSize_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2098,6 +2617,9 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(acceleratorType_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, acceleratorType_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gpuPartitionSize_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, gpuPartitionSize_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2112,6 +2634,9 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(acceleratorType_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, acceleratorType_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gpuPartitionSize_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, gpuPartitionSize_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2132,6 +2657,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
 
       if (getAcceleratorCount() != other.getAcceleratorCount()) return false;
       if (!getAcceleratorType().equals(other.getAcceleratorType())) return false;
+      if (!getGpuPartitionSize().equals(other.getGpuPartitionSize())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2147,6 +2673,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getAcceleratorCount());
       hash = (37 * hash) + ACCELERATOR_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getAcceleratorType().hashCode();
+      hash = (37 * hash) + GPU_PARTITION_SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + getGpuPartitionSize().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2260,7 +2788,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A GkeNodeConfigAcceleratorConfig represents a Hardware Accelerator request
-     * for a NodePool.
+     * for a node pool.
      * </pre>
      *
      * Protobuf type {@code google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodePoolAcceleratorConfig}
@@ -2300,6 +2828,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
         bitField0_ = 0;
         acceleratorCount_ = 0L;
         acceleratorType_ = "";
+        gpuPartitionSize_ = "";
         return this;
       }
 
@@ -2346,6 +2875,9 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.acceleratorType_ = acceleratorType_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.gpuPartitionSize_ = gpuPartitionSize_;
         }
       }
 
@@ -2410,6 +2942,11 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
           bitField0_ |= 0x00000002;
           onChanged();
         }
+        if (!other.getGpuPartitionSize().isEmpty()) {
+          gpuPartitionSize_ = other.gpuPartitionSize_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2448,6 +2985,12 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+              case 26:
+                {
+                  gpuPartitionSize_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2626,6 +3169,122 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
         return this;
       }
 
+      private java.lang.Object gpuPartitionSize_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Size of partitions to create on the GPU. Valid values are described in
+       * the NVIDIA [mig user
+       * guide](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/#partitioning).
+       * </pre>
+       *
+       * <code>string gpu_partition_size = 3;</code>
+       *
+       * @return The gpuPartitionSize.
+       */
+      public java.lang.String getGpuPartitionSize() {
+        java.lang.Object ref = gpuPartitionSize_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          gpuPartitionSize_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Size of partitions to create on the GPU. Valid values are described in
+       * the NVIDIA [mig user
+       * guide](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/#partitioning).
+       * </pre>
+       *
+       * <code>string gpu_partition_size = 3;</code>
+       *
+       * @return The bytes for gpuPartitionSize.
+       */
+      public com.google.protobuf.ByteString getGpuPartitionSizeBytes() {
+        java.lang.Object ref = gpuPartitionSize_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          gpuPartitionSize_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Size of partitions to create on the GPU. Valid values are described in
+       * the NVIDIA [mig user
+       * guide](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/#partitioning).
+       * </pre>
+       *
+       * <code>string gpu_partition_size = 3;</code>
+       *
+       * @param value The gpuPartitionSize to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGpuPartitionSize(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gpuPartitionSize_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Size of partitions to create on the GPU. Valid values are described in
+       * the NVIDIA [mig user
+       * guide](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/#partitioning).
+       * </pre>
+       *
+       * <code>string gpu_partition_size = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearGpuPartitionSize() {
+        gpuPartitionSize_ = getDefaultInstance().getGpuPartitionSize();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Size of partitions to create on the GPU. Valid values are described in
+       * the NVIDIA [mig user
+       * guide](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/#partitioning).
+       * </pre>
+       *
+       * <code>string gpu_partition_size = 3;</code>
+       *
+       * @param value The bytes for gpuPartitionSize to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGpuPartitionSizeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        gpuPartitionSize_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2703,7 +3362,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The minimum number of nodes in the NodePool. Must be &gt;= 0 and &lt;=
+     * The minimum number of nodes in the node pool. Must be &gt;= 0 and &lt;=
      * max_node_count.
      * </pre>
      *
@@ -2717,7 +3376,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The maximum number of nodes in the NodePool. Must be &gt;= min_node_count.
+     * The maximum number of nodes in the node pool. Must be &gt;= min_node_count,
+     * and must be &gt; 0.
      * **Note:** Quota must be sufficient to scale up the cluster.
      * </pre>
      *
@@ -2784,7 +3444,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The minimum number of nodes in the NodePool. Must be &gt;= 0 and &lt;=
+     * The minimum number of nodes in the node pool. Must be &gt;= 0 and &lt;=
      * max_node_count.
      * </pre>
      *
@@ -2803,7 +3463,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The maximum number of nodes in the NodePool. Must be &gt;= min_node_count.
+     * The maximum number of nodes in the node pool. Must be &gt;= min_node_count,
+     * and must be &gt; 0.
      * **Note:** Quota must be sufficient to scale up the cluster.
      * </pre>
      *
@@ -3208,7 +3869,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The minimum number of nodes in the NodePool. Must be &gt;= 0 and &lt;=
+       * The minimum number of nodes in the node pool. Must be &gt;= 0 and &lt;=
        * max_node_count.
        * </pre>
        *
@@ -3224,7 +3885,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The minimum number of nodes in the NodePool. Must be &gt;= 0 and &lt;=
+       * The minimum number of nodes in the node pool. Must be &gt;= 0 and &lt;=
        * max_node_count.
        * </pre>
        *
@@ -3244,7 +3905,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The minimum number of nodes in the NodePool. Must be &gt;= 0 and &lt;=
+       * The minimum number of nodes in the node pool. Must be &gt;= 0 and &lt;=
        * max_node_count.
        * </pre>
        *
@@ -3264,7 +3925,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The maximum number of nodes in the NodePool. Must be &gt;= min_node_count.
+       * The maximum number of nodes in the node pool. Must be &gt;= min_node_count,
+       * and must be &gt; 0.
        * **Note:** Quota must be sufficient to scale up the cluster.
        * </pre>
        *
@@ -3280,7 +3942,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The maximum number of nodes in the NodePool. Must be &gt;= min_node_count.
+       * The maximum number of nodes in the node pool. Must be &gt;= min_node_count,
+       * and must be &gt; 0.
        * **Note:** Quota must be sufficient to scale up the cluster.
        * </pre>
        *
@@ -3300,7 +3963,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The maximum number of nodes in the NodePool. Must be &gt;= min_node_count.
+       * The maximum number of nodes in the node pool. Must be &gt;= min_node_count,
+       * and must be &gt; 0.
        * **Note:** Quota must be sufficient to scale up the cluster.
        * </pre>
        *
@@ -3450,10 +4114,13 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Optional. The list of Compute Engine
    * [zones](https://cloud.google.com/compute/docs/zones#available) where
-   * NodePool's nodes will be located.
-   * **Note:** Currently, only one zone may be specified.
-   * If a location is not specified during NodePool creation, Dataproc will
-   * choose a location.
+   * node pool nodes associated with a Dataproc on GKE virtual cluster
+   * will be located.
+   * **Note:** All node pools associated with a virtual cluster
+   * must be located in the same region as the virtual cluster, and they must
+   * be located in the same zone within that region.
+   * If a location is not specified during node pool creation, Dataproc on GKE
+   * will choose the zone.
    * </pre>
    *
    * <code>repeated string locations = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3469,10 +4136,13 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Optional. The list of Compute Engine
    * [zones](https://cloud.google.com/compute/docs/zones#available) where
-   * NodePool's nodes will be located.
-   * **Note:** Currently, only one zone may be specified.
-   * If a location is not specified during NodePool creation, Dataproc will
-   * choose a location.
+   * node pool nodes associated with a Dataproc on GKE virtual cluster
+   * will be located.
+   * **Note:** All node pools associated with a virtual cluster
+   * must be located in the same region as the virtual cluster, and they must
+   * be located in the same zone within that region.
+   * If a location is not specified during node pool creation, Dataproc on GKE
+   * will choose the zone.
    * </pre>
    *
    * <code>repeated string locations = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3488,10 +4158,13 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Optional. The list of Compute Engine
    * [zones](https://cloud.google.com/compute/docs/zones#available) where
-   * NodePool's nodes will be located.
-   * **Note:** Currently, only one zone may be specified.
-   * If a location is not specified during NodePool creation, Dataproc will
-   * choose a location.
+   * node pool nodes associated with a Dataproc on GKE virtual cluster
+   * will be located.
+   * **Note:** All node pools associated with a virtual cluster
+   * must be located in the same region as the virtual cluster, and they must
+   * be located in the same zone within that region.
+   * If a location is not specified during node pool creation, Dataproc on GKE
+   * will choose the zone.
    * </pre>
    *
    * <code>repeated string locations = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3508,10 +4181,13 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Optional. The list of Compute Engine
    * [zones](https://cloud.google.com/compute/docs/zones#available) where
-   * NodePool's nodes will be located.
-   * **Note:** Currently, only one zone may be specified.
-   * If a location is not specified during NodePool creation, Dataproc will
-   * choose a location.
+   * node pool nodes associated with a Dataproc on GKE virtual cluster
+   * will be located.
+   * **Note:** All node pools associated with a virtual cluster
+   * must be located in the same region as the virtual cluster, and they must
+   * be located in the same zone within that region.
+   * If a location is not specified during node pool creation, Dataproc on GKE
+   * will choose the zone.
    * </pre>
    *
    * <code>repeated string locations = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3529,8 +4205,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. The autoscaler configuration for this NodePool. The autoscaler is enabled
-   * only when a valid configuration is present.
+   * Optional. The autoscaler configuration for this node pool. The autoscaler
+   * is enabled only when a valid configuration is present.
    * </pre>
    *
    * <code>
@@ -3547,8 +4223,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. The autoscaler configuration for this NodePool. The autoscaler is enabled
-   * only when a valid configuration is present.
+   * Optional. The autoscaler configuration for this node pool. The autoscaler
+   * is enabled only when a valid configuration is present.
    * </pre>
    *
    * <code>
@@ -3569,8 +4245,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. The autoscaler configuration for this NodePool. The autoscaler is enabled
-   * only when a valid configuration is present.
+   * Optional. The autoscaler configuration for this node pool. The autoscaler
+   * is enabled only when a valid configuration is present.
    * </pre>
    *
    * <code>
@@ -3784,7 +4460,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The configuration of a GKE NodePool used by a [Dataproc-on-GKE
+   * The configuration of a GKE node pool used by a [Dataproc-on-GKE
    * cluster](https://cloud.google.com/dataproc/docs/concepts/jobs/dataproc-gke#create-a-dataproc-on-gke-cluster).
    * </pre>
    *
@@ -4231,10 +4907,13 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. The list of Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) where
-     * NodePool's nodes will be located.
-     * **Note:** Currently, only one zone may be specified.
-     * If a location is not specified during NodePool creation, Dataproc will
-     * choose a location.
+     * node pool nodes associated with a Dataproc on GKE virtual cluster
+     * will be located.
+     * **Note:** All node pools associated with a virtual cluster
+     * must be located in the same region as the virtual cluster, and they must
+     * be located in the same zone within that region.
+     * If a location is not specified during node pool creation, Dataproc on GKE
+     * will choose the zone.
      * </pre>
      *
      * <code>repeated string locations = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4250,10 +4929,13 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. The list of Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) where
-     * NodePool's nodes will be located.
-     * **Note:** Currently, only one zone may be specified.
-     * If a location is not specified during NodePool creation, Dataproc will
-     * choose a location.
+     * node pool nodes associated with a Dataproc on GKE virtual cluster
+     * will be located.
+     * **Note:** All node pools associated with a virtual cluster
+     * must be located in the same region as the virtual cluster, and they must
+     * be located in the same zone within that region.
+     * If a location is not specified during node pool creation, Dataproc on GKE
+     * will choose the zone.
      * </pre>
      *
      * <code>repeated string locations = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4269,10 +4951,13 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. The list of Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) where
-     * NodePool's nodes will be located.
-     * **Note:** Currently, only one zone may be specified.
-     * If a location is not specified during NodePool creation, Dataproc will
-     * choose a location.
+     * node pool nodes associated with a Dataproc on GKE virtual cluster
+     * will be located.
+     * **Note:** All node pools associated with a virtual cluster
+     * must be located in the same region as the virtual cluster, and they must
+     * be located in the same zone within that region.
+     * If a location is not specified during node pool creation, Dataproc on GKE
+     * will choose the zone.
      * </pre>
      *
      * <code>repeated string locations = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4289,10 +4974,13 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. The list of Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) where
-     * NodePool's nodes will be located.
-     * **Note:** Currently, only one zone may be specified.
-     * If a location is not specified during NodePool creation, Dataproc will
-     * choose a location.
+     * node pool nodes associated with a Dataproc on GKE virtual cluster
+     * will be located.
+     * **Note:** All node pools associated with a virtual cluster
+     * must be located in the same region as the virtual cluster, and they must
+     * be located in the same zone within that region.
+     * If a location is not specified during node pool creation, Dataproc on GKE
+     * will choose the zone.
      * </pre>
      *
      * <code>repeated string locations = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4309,10 +4997,13 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. The list of Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) where
-     * NodePool's nodes will be located.
-     * **Note:** Currently, only one zone may be specified.
-     * If a location is not specified during NodePool creation, Dataproc will
-     * choose a location.
+     * node pool nodes associated with a Dataproc on GKE virtual cluster
+     * will be located.
+     * **Note:** All node pools associated with a virtual cluster
+     * must be located in the same region as the virtual cluster, and they must
+     * be located in the same zone within that region.
+     * If a location is not specified during node pool creation, Dataproc on GKE
+     * will choose the zone.
      * </pre>
      *
      * <code>repeated string locations = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4336,10 +5027,13 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. The list of Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) where
-     * NodePool's nodes will be located.
-     * **Note:** Currently, only one zone may be specified.
-     * If a location is not specified during NodePool creation, Dataproc will
-     * choose a location.
+     * node pool nodes associated with a Dataproc on GKE virtual cluster
+     * will be located.
+     * **Note:** All node pools associated with a virtual cluster
+     * must be located in the same region as the virtual cluster, and they must
+     * be located in the same zone within that region.
+     * If a location is not specified during node pool creation, Dataproc on GKE
+     * will choose the zone.
      * </pre>
      *
      * <code>repeated string locations = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4362,10 +5056,13 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. The list of Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) where
-     * NodePool's nodes will be located.
-     * **Note:** Currently, only one zone may be specified.
-     * If a location is not specified during NodePool creation, Dataproc will
-     * choose a location.
+     * node pool nodes associated with a Dataproc on GKE virtual cluster
+     * will be located.
+     * **Note:** All node pools associated with a virtual cluster
+     * must be located in the same region as the virtual cluster, and they must
+     * be located in the same zone within that region.
+     * If a location is not specified during node pool creation, Dataproc on GKE
+     * will choose the zone.
      * </pre>
      *
      * <code>repeated string locations = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4385,10 +5082,13 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. The list of Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) where
-     * NodePool's nodes will be located.
-     * **Note:** Currently, only one zone may be specified.
-     * If a location is not specified during NodePool creation, Dataproc will
-     * choose a location.
+     * node pool nodes associated with a Dataproc on GKE virtual cluster
+     * will be located.
+     * **Note:** All node pools associated with a virtual cluster
+     * must be located in the same region as the virtual cluster, and they must
+     * be located in the same zone within that region.
+     * If a location is not specified during node pool creation, Dataproc on GKE
+     * will choose the zone.
      * </pre>
      *
      * <code>repeated string locations = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4407,10 +5107,13 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. The list of Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) where
-     * NodePool's nodes will be located.
-     * **Note:** Currently, only one zone may be specified.
-     * If a location is not specified during NodePool creation, Dataproc will
-     * choose a location.
+     * node pool nodes associated with a Dataproc on GKE virtual cluster
+     * will be located.
+     * **Note:** All node pools associated with a virtual cluster
+     * must be located in the same region as the virtual cluster, and they must
+     * be located in the same zone within that region.
+     * If a location is not specified during node pool creation, Dataproc on GKE
+     * will choose the zone.
      * </pre>
      *
      * <code>repeated string locations = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4440,8 +5143,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The autoscaler configuration for this NodePool. The autoscaler is enabled
-     * only when a valid configuration is present.
+     * Optional. The autoscaler configuration for this node pool. The autoscaler
+     * is enabled only when a valid configuration is present.
      * </pre>
      *
      * <code>
@@ -4457,8 +5160,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The autoscaler configuration for this NodePool. The autoscaler is enabled
-     * only when a valid configuration is present.
+     * Optional. The autoscaler configuration for this node pool. The autoscaler
+     * is enabled only when a valid configuration is present.
      * </pre>
      *
      * <code>
@@ -4482,8 +5185,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The autoscaler configuration for this NodePool. The autoscaler is enabled
-     * only when a valid configuration is present.
+     * Optional. The autoscaler configuration for this node pool. The autoscaler
+     * is enabled only when a valid configuration is present.
      * </pre>
      *
      * <code>
@@ -4508,8 +5211,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The autoscaler configuration for this NodePool. The autoscaler is enabled
-     * only when a valid configuration is present.
+     * Optional. The autoscaler configuration for this node pool. The autoscaler
+     * is enabled only when a valid configuration is present.
      * </pre>
      *
      * <code>
@@ -4532,8 +5235,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The autoscaler configuration for this NodePool. The autoscaler is enabled
-     * only when a valid configuration is present.
+     * Optional. The autoscaler configuration for this node pool. The autoscaler
+     * is enabled only when a valid configuration is present.
      * </pre>
      *
      * <code>
@@ -4563,8 +5266,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The autoscaler configuration for this NodePool. The autoscaler is enabled
-     * only when a valid configuration is present.
+     * Optional. The autoscaler configuration for this node pool. The autoscaler
+     * is enabled only when a valid configuration is present.
      * </pre>
      *
      * <code>
@@ -4585,8 +5288,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The autoscaler configuration for this NodePool. The autoscaler is enabled
-     * only when a valid configuration is present.
+     * Optional. The autoscaler configuration for this node pool. The autoscaler
+     * is enabled only when a valid configuration is present.
      * </pre>
      *
      * <code>
@@ -4603,8 +5306,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The autoscaler configuration for this NodePool. The autoscaler is enabled
-     * only when a valid configuration is present.
+     * Optional. The autoscaler configuration for this node pool. The autoscaler
+     * is enabled only when a valid configuration is present.
      * </pre>
      *
      * <code>
@@ -4626,8 +5329,8 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The autoscaler configuration for this NodePool. The autoscaler is enabled
-     * only when a valid configuration is present.
+     * Optional. The autoscaler configuration for this node pool. The autoscaler
+     * is enabled only when a valid configuration is present.
      * </pre>
      *
      * <code>

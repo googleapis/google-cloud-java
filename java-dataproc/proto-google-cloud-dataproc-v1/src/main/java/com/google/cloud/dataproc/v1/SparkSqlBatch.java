@@ -23,7 +23,8 @@ package com.google.cloud.dataproc.v1;
  *
  * <pre>
  * A configuration for running
- * [Apache Spark SQL](http://spark.apache.org/sql/) queries as a batch workload.
+ * [Apache Spark SQL](https://spark.apache.org/sql/) queries as a batch
+ * workload.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1.SparkSqlBatch}
@@ -88,7 +89,8 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The HCFS URI of the script that contains Spark SQL queries to execute.
+   * Required. The HCFS URI of the script that contains Spark SQL queries to
+   * execute.
    * </pre>
    *
    * <code>string query_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -111,7 +113,8 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The HCFS URI of the script that contains Spark SQL queries to execute.
+   * Required. The HCFS URI of the script that contains Spark SQL queries to
+   * execute.
    * </pre>
    *
    * <code>string query_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -503,7 +506,8 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A configuration for running
-   * [Apache Spark SQL](http://spark.apache.org/sql/) queries as a batch workload.
+   * [Apache Spark SQL](https://spark.apache.org/sql/) queries as a batch
+   * workload.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1.SparkSqlBatch}
@@ -753,7 +757,8 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The HCFS URI of the script that contains Spark SQL queries to execute.
+     * Required. The HCFS URI of the script that contains Spark SQL queries to
+     * execute.
      * </pre>
      *
      * <code>string query_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -775,7 +780,8 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The HCFS URI of the script that contains Spark SQL queries to execute.
+     * Required. The HCFS URI of the script that contains Spark SQL queries to
+     * execute.
      * </pre>
      *
      * <code>string query_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -797,7 +803,8 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The HCFS URI of the script that contains Spark SQL queries to execute.
+     * Required. The HCFS URI of the script that contains Spark SQL queries to
+     * execute.
      * </pre>
      *
      * <code>string query_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -818,7 +825,8 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The HCFS URI of the script that contains Spark SQL queries to execute.
+     * Required. The HCFS URI of the script that contains Spark SQL queries to
+     * execute.
      * </pre>
      *
      * <code>string query_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -835,7 +843,8 @@ public final class SparkSqlBatch extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The HCFS URI of the script that contains Spark SQL queries to execute.
+     * Required. The HCFS URI of the script that contains Spark SQL queries to
+     * execute.
      * </pre>
      *
      * <code>string query_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
