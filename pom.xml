@@ -97,6 +97,7 @@
     <module>java-iam</module>
     <module>java-ids</module>
     <module>java-iot</module>
+    <module>java-kmsinventory</module>
     <module>java-kms</module>
     <module>java-language</module>
     <module>java-life-sciences</module>

@@ -614,3 +614,6 @@ grpc-google-cloud-advisorynotifications-v1:0.0.0:0.0.1-SNAPSHOT
 google-maps-mapsplatformdatasets:0.0.0:0.0.1-SNAPSHOT
 proto-google-maps-mapsplatformdatasets-v1alpha:0.0.0:0.0.1-SNAPSHOT
 grpc-google-maps-mapsplatformdatasets-v1alpha:0.0.0:0.0.1-SNAPSHOT
+google-cloud-kmsinventory:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-kmsinventory-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-kmsinventory-v1:0.0.0:0.0.1-SNAPSHOT
