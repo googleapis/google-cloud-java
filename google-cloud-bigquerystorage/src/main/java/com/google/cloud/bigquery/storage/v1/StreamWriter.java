@@ -208,6 +208,7 @@ public class StreamWriter implements AutoCloseable {
           SingleConnectionOrConnectionPool.ofSingleConnection(
               new ConnectionWorker(
                   builder.streamName,
+                  builder.location,
                   builder.writerSchema,
                   builder.maxInflightRequest,
                   builder.maxInflightBytes,

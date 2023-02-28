@@ -430,6 +430,7 @@ public class ConnectionWorkerPoolTest {
     return StreamWriter.newBuilder(streamName)
         .setWriterSchema(createProtoSchema())
         .setTraceId(TEST_TRACE_ID)
+        .setLocation("us")
         .setCredentialsProvider(NoCredentialsProvider.create())
         .setChannelProvider(serviceHelper.createChannelProvider())
         .build();

@@ -39,6 +39,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import java.util.logging.Logger;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -46,6 +47,7 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class ConnectionWorkerTest {
+  private static final Logger log = Logger.getLogger(StreamWriter.class.getName());
   private static final String TEST_STREAM_1 = "projects/p1/datasets/d1/tables/t1/streams/s1";
   private static final String TEST_STREAM_2 = "projects/p2/datasets/d2/tables/t2/streams/s2";
   private static final String TEST_TRACE_ID = "DATAFLOW:job_id";
@@ -84,10 +86,12 @@ public class ConnectionWorkerTest {
       StreamWriter sw1 =
           StreamWriter.newBuilder(TEST_STREAM_1, client)
               .setWriterSchema(createProtoSchema("foo"))
+              .setLocation("us")
               .build();
       StreamWriter sw2 =
           StreamWriter.newBuilder(TEST_STREAM_2, client)
               .setWriterSchema(createProtoSchema("complicate"))
+              .setLocation("us")
               .build();
       // We do a pattern of:
       // send to stream1, string1
@@ -205,11 +209,20 @@ public class ConnectionWorkerTest {
       // send to stream1, schema1
       // ...
       StreamWriter sw1 =
-          StreamWriter.newBuilder(TEST_STREAM_1, client).setWriterSchema(schema1).build();
+          StreamWriter.newBuilder(TEST_STREAM_1, client)
+              .setLocation("us")
+              .setWriterSchema(schema1)
+              .build();
       StreamWriter sw2 =
-          StreamWriter.newBuilder(TEST_STREAM_1, client).setWriterSchema(schema2).build();
+          StreamWriter.newBuilder(TEST_STREAM_1, client)
+              .setLocation("us")
+              .setWriterSchema(schema2)
+              .build();
       StreamWriter sw3 =
-          StreamWriter.newBuilder(TEST_STREAM_1, client).setWriterSchema(schema3).build();
+          StreamWriter.newBuilder(TEST_STREAM_1, client)
+              .setLocation("us")
+              .setWriterSchema(schema3)
+              .build();
       for (long i = 0; i < appendCount; i++) {
         switch ((int) i % 4) {
           case 0:
@@ -305,10 +318,14 @@ public class ConnectionWorkerTest {
   public void testAppendButInflightQueueFull() throws Exception {
     ProtoSchema schema1 = createProtoSchema("foo");
     StreamWriter sw1 =
-        StreamWriter.newBuilder(TEST_STREAM_1, client).setWriterSchema(schema1).build();
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setLocation("us")
+            .setWriterSchema(schema1)
+            .build();
     ConnectionWorker connectionWorker =
         new ConnectionWorker(
             TEST_STREAM_1,
+            "us",
             createProtoSchema("foo"),
             6,
             100000,
@@ -356,10 +373,14 @@ public class ConnectionWorkerTest {
   public void testThrowExceptionWhileWithinAppendLoop() throws Exception {
     ProtoSchema schema1 = createProtoSchema("foo");
     StreamWriter sw1 =
-        StreamWriter.newBuilder(TEST_STREAM_1, client).setWriterSchema(schema1).build();
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setLocation("us")
+            .setWriterSchema(schema1)
+            .build();
     ConnectionWorker connectionWorker =
         new ConnectionWorker(
             TEST_STREAM_1,
+            "us",
             createProtoSchema("foo"),
             100000,
             100000,
@@ -412,6 +433,69 @@ public class ConnectionWorkerTest {
   }
 
   @Test
+  public void testLocationMismatch() throws Exception {
+    ProtoSchema schema1 = createProtoSchema("foo");
+    StreamWriter sw1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setWriterSchema(schema1)
+            .setLocation("eu")
+            .build();
+    ConnectionWorker connectionWorker =
+        new ConnectionWorker(
+            TEST_STREAM_1,
+            "us",
+            createProtoSchema("foo"),
+            100000,
+            100000,
+            Duration.ofSeconds(100),
+            FlowController.LimitExceededBehavior.Block,
+            TEST_TRACE_ID,
+            client.getSettings());
+    StatusRuntimeException ex =
+        assertThrows(
+            StatusRuntimeException.class,
+            () ->
+                sendTestMessage(
+                    connectionWorker,
+                    sw1,
+                    createFooProtoRows(new String[] {String.valueOf(0)}),
+                    0));
+    assertEquals(
+        "INVALID_ARGUMENT: StreamWriter with location eu is scheduled to use a connection with location us",
+        ex.getMessage());
+  }
+
+  @Test
+  public void testStreamNameMismatch() throws Exception {
+    ProtoSchema schema1 = createProtoSchema("foo");
+    StreamWriter sw1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client).setWriterSchema(schema1).build();
+    ConnectionWorker connectionWorker =
+        new ConnectionWorker(
+            TEST_STREAM_2,
+            null,
+            createProtoSchema("foo"),
+            100000,
+            100000,
+            Duration.ofSeconds(100),
+            FlowController.LimitExceededBehavior.Block,
+            TEST_TRACE_ID,
+            client.getSettings());
+    StatusRuntimeException ex =
+        assertThrows(
+            StatusRuntimeException.class,
+            () ->
+                sendTestMessage(
+                    connectionWorker,
+                    sw1,
+                    createFooProtoRows(new String[] {String.valueOf(0)}),
+                    0));
+    assertEquals(
+        "INVALID_ARGUMENT: StreamWriter with stream name projects/p1/datasets/d1/tables/t1/streams/s1 is scheduled to use a connection with stream name projects/p2/datasets/d2/tables/t2/streams/s2",
+        ex.getMessage());
+  }
+
+  @Test
   public void testExponentialBackoff() throws Exception {
     assertThat(ConnectionWorker.calculateSleepTimeMilli(0)).isEqualTo(1);
     assertThat(ConnectionWorker.calculateSleepTimeMilli(5)).isEqualTo(32);
@@ -440,6 +524,7 @@ public class ConnectionWorkerTest {
       throws IOException {
     return new ConnectionWorker(
         streamName,
+        "us",
         createProtoSchema("foo"),
         maxRequests,
         maxBytes,
