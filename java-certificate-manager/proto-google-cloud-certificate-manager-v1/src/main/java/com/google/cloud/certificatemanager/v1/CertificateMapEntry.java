@@ -714,7 +714,7 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * A set of Certificates defines for the given `hostname`. There can be
-   * defined up to fifteen certificates in each Certificate Map Entry. Each
+   * defined up to four certificates in each Certificate Map Entry. Each
    * certificate must match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
    * </pre>
    *
@@ -730,7 +730,7 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * A set of Certificates defines for the given `hostname`. There can be
-   * defined up to fifteen certificates in each Certificate Map Entry. Each
+   * defined up to four certificates in each Certificate Map Entry. Each
    * certificate must match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
    * </pre>
    *
@@ -746,7 +746,7 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * A set of Certificates defines for the given `hostname`. There can be
-   * defined up to fifteen certificates in each Certificate Map Entry. Each
+   * defined up to four certificates in each Certificate Map Entry. Each
    * certificate must match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
    * </pre>
    *
@@ -763,7 +763,7 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * A set of Certificates defines for the given `hostname`. There can be
-   * defined up to fifteen certificates in each Certificate Map Entry. Each
+   * defined up to four certificates in each Certificate Map Entry. Each
    * certificate must match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
    * </pre>
    *
@@ -2527,7 +2527,7 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A set of Certificates defines for the given `hostname`. There can be
-     * defined up to fifteen certificates in each Certificate Map Entry. Each
+     * defined up to four certificates in each Certificate Map Entry. Each
      * certificate must match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
      * </pre>
      *
@@ -2543,7 +2543,7 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A set of Certificates defines for the given `hostname`. There can be
-     * defined up to fifteen certificates in each Certificate Map Entry. Each
+     * defined up to four certificates in each Certificate Map Entry. Each
      * certificate must match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
      * </pre>
      *
@@ -2559,7 +2559,7 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A set of Certificates defines for the given `hostname`. There can be
-     * defined up to fifteen certificates in each Certificate Map Entry. Each
+     * defined up to four certificates in each Certificate Map Entry. Each
      * certificate must match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
      * </pre>
      *
@@ -2576,7 +2576,7 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A set of Certificates defines for the given `hostname`. There can be
-     * defined up to fifteen certificates in each Certificate Map Entry. Each
+     * defined up to four certificates in each Certificate Map Entry. Each
      * certificate must match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
      * </pre>
      *
@@ -2593,7 +2593,7 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A set of Certificates defines for the given `hostname`. There can be
-     * defined up to fifteen certificates in each Certificate Map Entry. Each
+     * defined up to four certificates in each Certificate Map Entry. Each
      * certificate must match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
      * </pre>
      *
@@ -2617,7 +2617,7 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A set of Certificates defines for the given `hostname`. There can be
-     * defined up to fifteen certificates in each Certificate Map Entry. Each
+     * defined up to four certificates in each Certificate Map Entry. Each
      * certificate must match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
      * </pre>
      *
@@ -2640,7 +2640,7 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A set of Certificates defines for the given `hostname`. There can be
-     * defined up to fifteen certificates in each Certificate Map Entry. Each
+     * defined up to four certificates in each Certificate Map Entry. Each
      * certificate must match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
      * </pre>
      *
@@ -2660,7 +2660,7 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A set of Certificates defines for the given `hostname`. There can be
-     * defined up to fifteen certificates in each Certificate Map Entry. Each
+     * defined up to four certificates in each Certificate Map Entry. Each
      * certificate must match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
      * </pre>
      *
@@ -2679,7 +2679,7 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A set of Certificates defines for the given `hostname`. There can be
-     * defined up to fifteen certificates in each Certificate Map Entry. Each
+     * defined up to four certificates in each Certificate Map Entry. Each
      * certificate must match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
      * </pre>
      *
