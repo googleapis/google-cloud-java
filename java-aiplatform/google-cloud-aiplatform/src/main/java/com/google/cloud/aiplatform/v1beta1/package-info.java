@@ -172,6 +172,32 @@
  * }
  * }</pre>
  *
+ * <p>======================= MatchServiceClient =======================
+ *
+ * <p>Service Description: MatchService is a Google managed service for efficient vector similarity
+ * search at scale.
+ *
+ * <p>Sample for MatchServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (MatchServiceClient matchServiceClient = MatchServiceClient.create()) {
+ *   FindNeighborsRequest request =
+ *       FindNeighborsRequest.newBuilder()
+ *           .setIndexEndpoint(
+ *               IndexEndpointName.of("[PROJECT]", "[LOCATION]", "[INDEX_ENDPOINT]").toString())
+ *           .setDeployedIndexId("deployedIndexId-1101212953")
+ *           .addAllQueries(new ArrayList<FindNeighborsRequest.Query>())
+ *           .setReturnFullDatapoint(true)
+ *           .build();
+ *   FindNeighborsResponse response = matchServiceClient.findNeighbors(request);
+ * }
+ * }</pre>
+ *
  * <p>======================= MetadataServiceClient =======================
  *
  * <p>Service Description: Service for reading and writing metadata entries.
