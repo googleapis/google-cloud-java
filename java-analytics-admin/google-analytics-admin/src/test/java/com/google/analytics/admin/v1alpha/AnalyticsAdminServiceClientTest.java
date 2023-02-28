@@ -17,6 +17,7 @@
 package com.google.analytics.admin.v1alpha;
 
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.AuditUserLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccessBindingsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
@@ -27,6 +28,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinkProposalsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListExpandedDataSetsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
@@ -6344,6 +6346,1045 @@ public class AnalyticsAdminServiceClientTest {
               .setReturnEntityQuota(true)
               .build();
       client.runAccessReport(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAccessBindingTest() throws Exception {
+    AccessBinding expectedResponse =
+        AccessBinding.newBuilder()
+            .setName(
+                AccessBindingName.ofAccountAccessBindingName("[ACCOUNT]", "[ACCESS_BINDING]")
+                    .toString())
+            .addAllRoles(new ArrayList<String>())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    AccountName parent = AccountName.of("[ACCOUNT]");
+    AccessBinding accessBinding = AccessBinding.newBuilder().build();
+
+    AccessBinding actualResponse = client.createAccessBinding(parent, accessBinding);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateAccessBindingRequest actualRequest = ((CreateAccessBindingRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(accessBinding, actualRequest.getAccessBinding());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createAccessBindingExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      AccountName parent = AccountName.of("[ACCOUNT]");
+      AccessBinding accessBinding = AccessBinding.newBuilder().build();
+      client.createAccessBinding(parent, accessBinding);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAccessBindingTest2() throws Exception {
+    AccessBinding expectedResponse =
+        AccessBinding.newBuilder()
+            .setName(
+                AccessBindingName.ofAccountAccessBindingName("[ACCOUNT]", "[ACCESS_BINDING]")
+                    .toString())
+            .addAllRoles(new ArrayList<String>())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+    AccessBinding accessBinding = AccessBinding.newBuilder().build();
+
+    AccessBinding actualResponse = client.createAccessBinding(parent, accessBinding);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateAccessBindingRequest actualRequest = ((CreateAccessBindingRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(accessBinding, actualRequest.getAccessBinding());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createAccessBindingExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      AccessBinding accessBinding = AccessBinding.newBuilder().build();
+      client.createAccessBinding(parent, accessBinding);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAccessBindingTest3() throws Exception {
+    AccessBinding expectedResponse =
+        AccessBinding.newBuilder()
+            .setName(
+                AccessBindingName.ofAccountAccessBindingName("[ACCOUNT]", "[ACCESS_BINDING]")
+                    .toString())
+            .addAllRoles(new ArrayList<String>())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    AccessBinding accessBinding = AccessBinding.newBuilder().build();
+
+    AccessBinding actualResponse = client.createAccessBinding(parent, accessBinding);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateAccessBindingRequest actualRequest = ((CreateAccessBindingRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(accessBinding, actualRequest.getAccessBinding());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createAccessBindingExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      AccessBinding accessBinding = AccessBinding.newBuilder().build();
+      client.createAccessBinding(parent, accessBinding);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAccessBindingTest() throws Exception {
+    AccessBinding expectedResponse =
+        AccessBinding.newBuilder()
+            .setName(
+                AccessBindingName.ofAccountAccessBindingName("[ACCOUNT]", "[ACCESS_BINDING]")
+                    .toString())
+            .addAllRoles(new ArrayList<String>())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    AccessBindingName name =
+        AccessBindingName.ofAccountAccessBindingName("[ACCOUNT]", "[ACCESS_BINDING]");
+
+    AccessBinding actualResponse = client.getAccessBinding(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAccessBindingRequest actualRequest = ((GetAccessBindingRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAccessBindingExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      AccessBindingName name =
+          AccessBindingName.ofAccountAccessBindingName("[ACCOUNT]", "[ACCESS_BINDING]");
+      client.getAccessBinding(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAccessBindingTest2() throws Exception {
+    AccessBinding expectedResponse =
+        AccessBinding.newBuilder()
+            .setName(
+                AccessBindingName.ofAccountAccessBindingName("[ACCOUNT]", "[ACCESS_BINDING]")
+                    .toString())
+            .addAllRoles(new ArrayList<String>())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    AccessBinding actualResponse = client.getAccessBinding(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAccessBindingRequest actualRequest = ((GetAccessBindingRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAccessBindingExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAccessBinding(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateAccessBindingTest() throws Exception {
+    AccessBinding expectedResponse =
+        AccessBinding.newBuilder()
+            .setName(
+                AccessBindingName.ofAccountAccessBindingName("[ACCOUNT]", "[ACCESS_BINDING]")
+                    .toString())
+            .addAllRoles(new ArrayList<String>())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    AccessBinding accessBinding = AccessBinding.newBuilder().build();
+
+    AccessBinding actualResponse = client.updateAccessBinding(accessBinding);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateAccessBindingRequest actualRequest = ((UpdateAccessBindingRequest) actualRequests.get(0));
+
+    Assert.assertEquals(accessBinding, actualRequest.getAccessBinding());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateAccessBindingExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      AccessBinding accessBinding = AccessBinding.newBuilder().build();
+      client.updateAccessBinding(accessBinding);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteAccessBindingTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    AccessBindingName name =
+        AccessBindingName.ofAccountAccessBindingName("[ACCOUNT]", "[ACCESS_BINDING]");
+
+    client.deleteAccessBinding(name);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAccessBindingRequest actualRequest = ((DeleteAccessBindingRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteAccessBindingExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      AccessBindingName name =
+          AccessBindingName.ofAccountAccessBindingName("[ACCOUNT]", "[ACCESS_BINDING]");
+      client.deleteAccessBinding(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteAccessBindingTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteAccessBinding(name);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAccessBindingRequest actualRequest = ((DeleteAccessBindingRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteAccessBindingExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteAccessBinding(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAccessBindingsTest() throws Exception {
+    AccessBinding responsesElement = AccessBinding.newBuilder().build();
+    ListAccessBindingsResponse expectedResponse =
+        ListAccessBindingsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAccessBindings(Arrays.asList(responsesElement))
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    AccountName parent = AccountName.of("[ACCOUNT]");
+
+    ListAccessBindingsPagedResponse pagedListResponse = client.listAccessBindings(parent);
+
+    List<AccessBinding> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAccessBindingsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAccessBindingsRequest actualRequest = ((ListAccessBindingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAccessBindingsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      AccountName parent = AccountName.of("[ACCOUNT]");
+      client.listAccessBindings(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAccessBindingsTest2() throws Exception {
+    AccessBinding responsesElement = AccessBinding.newBuilder().build();
+    ListAccessBindingsResponse expectedResponse =
+        ListAccessBindingsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAccessBindings(Arrays.asList(responsesElement))
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+
+    ListAccessBindingsPagedResponse pagedListResponse = client.listAccessBindings(parent);
+
+    List<AccessBinding> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAccessBindingsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAccessBindingsRequest actualRequest = ((ListAccessBindingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAccessBindingsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      client.listAccessBindings(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAccessBindingsTest3() throws Exception {
+    AccessBinding responsesElement = AccessBinding.newBuilder().build();
+    ListAccessBindingsResponse expectedResponse =
+        ListAccessBindingsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAccessBindings(Arrays.asList(responsesElement))
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListAccessBindingsPagedResponse pagedListResponse = client.listAccessBindings(parent);
+
+    List<AccessBinding> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAccessBindingsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAccessBindingsRequest actualRequest = ((ListAccessBindingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAccessBindingsExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listAccessBindings(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchCreateAccessBindingsTest() throws Exception {
+    BatchCreateAccessBindingsResponse expectedResponse =
+        BatchCreateAccessBindingsResponse.newBuilder()
+            .addAllAccessBindings(new ArrayList<AccessBinding>())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    BatchCreateAccessBindingsRequest request =
+        BatchCreateAccessBindingsRequest.newBuilder()
+            .setParent(AccountName.of("[ACCOUNT]").toString())
+            .addAllRequests(new ArrayList<CreateAccessBindingRequest>())
+            .build();
+
+    BatchCreateAccessBindingsResponse actualResponse = client.batchCreateAccessBindings(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchCreateAccessBindingsRequest actualRequest =
+        ((BatchCreateAccessBindingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getRequestsList(), actualRequest.getRequestsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchCreateAccessBindingsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      BatchCreateAccessBindingsRequest request =
+          BatchCreateAccessBindingsRequest.newBuilder()
+              .setParent(AccountName.of("[ACCOUNT]").toString())
+              .addAllRequests(new ArrayList<CreateAccessBindingRequest>())
+              .build();
+      client.batchCreateAccessBindings(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchGetAccessBindingsTest() throws Exception {
+    BatchGetAccessBindingsResponse expectedResponse =
+        BatchGetAccessBindingsResponse.newBuilder()
+            .addAllAccessBindings(new ArrayList<AccessBinding>())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    BatchGetAccessBindingsRequest request =
+        BatchGetAccessBindingsRequest.newBuilder()
+            .setParent(AccountName.of("[ACCOUNT]").toString())
+            .addAllNames(new ArrayList<String>())
+            .build();
+
+    BatchGetAccessBindingsResponse actualResponse = client.batchGetAccessBindings(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchGetAccessBindingsRequest actualRequest =
+        ((BatchGetAccessBindingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getNamesList(), actualRequest.getNamesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchGetAccessBindingsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      BatchGetAccessBindingsRequest request =
+          BatchGetAccessBindingsRequest.newBuilder()
+              .setParent(AccountName.of("[ACCOUNT]").toString())
+              .addAllNames(new ArrayList<String>())
+              .build();
+      client.batchGetAccessBindings(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchUpdateAccessBindingsTest() throws Exception {
+    BatchUpdateAccessBindingsResponse expectedResponse =
+        BatchUpdateAccessBindingsResponse.newBuilder()
+            .addAllAccessBindings(new ArrayList<AccessBinding>())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    BatchUpdateAccessBindingsRequest request =
+        BatchUpdateAccessBindingsRequest.newBuilder()
+            .setParent(AccountName.of("[ACCOUNT]").toString())
+            .addAllRequests(new ArrayList<UpdateAccessBindingRequest>())
+            .build();
+
+    BatchUpdateAccessBindingsResponse actualResponse = client.batchUpdateAccessBindings(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchUpdateAccessBindingsRequest actualRequest =
+        ((BatchUpdateAccessBindingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getRequestsList(), actualRequest.getRequestsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchUpdateAccessBindingsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      BatchUpdateAccessBindingsRequest request =
+          BatchUpdateAccessBindingsRequest.newBuilder()
+              .setParent(AccountName.of("[ACCOUNT]").toString())
+              .addAllRequests(new ArrayList<UpdateAccessBindingRequest>())
+              .build();
+      client.batchUpdateAccessBindings(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchDeleteAccessBindingsTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    BatchDeleteAccessBindingsRequest request =
+        BatchDeleteAccessBindingsRequest.newBuilder()
+            .setParent(AccountName.of("[ACCOUNT]").toString())
+            .addAllRequests(new ArrayList<DeleteAccessBindingRequest>())
+            .build();
+
+    client.batchDeleteAccessBindings(request);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchDeleteAccessBindingsRequest actualRequest =
+        ((BatchDeleteAccessBindingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getRequestsList(), actualRequest.getRequestsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchDeleteAccessBindingsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      BatchDeleteAccessBindingsRequest request =
+          BatchDeleteAccessBindingsRequest.newBuilder()
+              .setParent(AccountName.of("[ACCOUNT]").toString())
+              .addAllRequests(new ArrayList<DeleteAccessBindingRequest>())
+              .build();
+      client.batchDeleteAccessBindings(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getExpandedDataSetTest() throws Exception {
+    ExpandedDataSet expectedResponse =
+        ExpandedDataSet.newBuilder()
+            .setName(ExpandedDataSetName.of("[PROPERTY]", "[EXPANDED_DATA_SET]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .addAllDimensionNames(new ArrayList<String>())
+            .addAllMetricNames(new ArrayList<String>())
+            .setDimensionFilterExpression(ExpandedDataSetFilterExpression.newBuilder().build())
+            .setDataCollectionStartTime(Timestamp.newBuilder().build())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    ExpandedDataSetName name = ExpandedDataSetName.of("[PROPERTY]", "[EXPANDED_DATA_SET]");
+
+    ExpandedDataSet actualResponse = client.getExpandedDataSet(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetExpandedDataSetRequest actualRequest = ((GetExpandedDataSetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getExpandedDataSetExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      ExpandedDataSetName name = ExpandedDataSetName.of("[PROPERTY]", "[EXPANDED_DATA_SET]");
+      client.getExpandedDataSet(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getExpandedDataSetTest2() throws Exception {
+    ExpandedDataSet expectedResponse =
+        ExpandedDataSet.newBuilder()
+            .setName(ExpandedDataSetName.of("[PROPERTY]", "[EXPANDED_DATA_SET]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .addAllDimensionNames(new ArrayList<String>())
+            .addAllMetricNames(new ArrayList<String>())
+            .setDimensionFilterExpression(ExpandedDataSetFilterExpression.newBuilder().build())
+            .setDataCollectionStartTime(Timestamp.newBuilder().build())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ExpandedDataSet actualResponse = client.getExpandedDataSet(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetExpandedDataSetRequest actualRequest = ((GetExpandedDataSetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getExpandedDataSetExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getExpandedDataSet(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listExpandedDataSetsTest() throws Exception {
+    ExpandedDataSet responsesElement = ExpandedDataSet.newBuilder().build();
+    ListExpandedDataSetsResponse expectedResponse =
+        ListExpandedDataSetsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllExpandedDataSets(Arrays.asList(responsesElement))
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+
+    ListExpandedDataSetsPagedResponse pagedListResponse = client.listExpandedDataSets(parent);
+
+    List<ExpandedDataSet> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getExpandedDataSetsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListExpandedDataSetsRequest actualRequest =
+        ((ListExpandedDataSetsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listExpandedDataSetsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      client.listExpandedDataSets(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listExpandedDataSetsTest2() throws Exception {
+    ExpandedDataSet responsesElement = ExpandedDataSet.newBuilder().build();
+    ListExpandedDataSetsResponse expectedResponse =
+        ListExpandedDataSetsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllExpandedDataSets(Arrays.asList(responsesElement))
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListExpandedDataSetsPagedResponse pagedListResponse = client.listExpandedDataSets(parent);
+
+    List<ExpandedDataSet> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getExpandedDataSetsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListExpandedDataSetsRequest actualRequest =
+        ((ListExpandedDataSetsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listExpandedDataSetsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listExpandedDataSets(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createExpandedDataSetTest() throws Exception {
+    ExpandedDataSet expectedResponse =
+        ExpandedDataSet.newBuilder()
+            .setName(ExpandedDataSetName.of("[PROPERTY]", "[EXPANDED_DATA_SET]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .addAllDimensionNames(new ArrayList<String>())
+            .addAllMetricNames(new ArrayList<String>())
+            .setDimensionFilterExpression(ExpandedDataSetFilterExpression.newBuilder().build())
+            .setDataCollectionStartTime(Timestamp.newBuilder().build())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+    ExpandedDataSet expandedDataSet = ExpandedDataSet.newBuilder().build();
+
+    ExpandedDataSet actualResponse = client.createExpandedDataSet(parent, expandedDataSet);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateExpandedDataSetRequest actualRequest =
+        ((CreateExpandedDataSetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(expandedDataSet, actualRequest.getExpandedDataSet());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createExpandedDataSetExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      ExpandedDataSet expandedDataSet = ExpandedDataSet.newBuilder().build();
+      client.createExpandedDataSet(parent, expandedDataSet);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createExpandedDataSetTest2() throws Exception {
+    ExpandedDataSet expectedResponse =
+        ExpandedDataSet.newBuilder()
+            .setName(ExpandedDataSetName.of("[PROPERTY]", "[EXPANDED_DATA_SET]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .addAllDimensionNames(new ArrayList<String>())
+            .addAllMetricNames(new ArrayList<String>())
+            .setDimensionFilterExpression(ExpandedDataSetFilterExpression.newBuilder().build())
+            .setDataCollectionStartTime(Timestamp.newBuilder().build())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    ExpandedDataSet expandedDataSet = ExpandedDataSet.newBuilder().build();
+
+    ExpandedDataSet actualResponse = client.createExpandedDataSet(parent, expandedDataSet);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateExpandedDataSetRequest actualRequest =
+        ((CreateExpandedDataSetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(expandedDataSet, actualRequest.getExpandedDataSet());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createExpandedDataSetExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      ExpandedDataSet expandedDataSet = ExpandedDataSet.newBuilder().build();
+      client.createExpandedDataSet(parent, expandedDataSet);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateExpandedDataSetTest() throws Exception {
+    ExpandedDataSet expectedResponse =
+        ExpandedDataSet.newBuilder()
+            .setName(ExpandedDataSetName.of("[PROPERTY]", "[EXPANDED_DATA_SET]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .addAllDimensionNames(new ArrayList<String>())
+            .addAllMetricNames(new ArrayList<String>())
+            .setDimensionFilterExpression(ExpandedDataSetFilterExpression.newBuilder().build())
+            .setDataCollectionStartTime(Timestamp.newBuilder().build())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    ExpandedDataSet expandedDataSet = ExpandedDataSet.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ExpandedDataSet actualResponse = client.updateExpandedDataSet(expandedDataSet, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateExpandedDataSetRequest actualRequest =
+        ((UpdateExpandedDataSetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(expandedDataSet, actualRequest.getExpandedDataSet());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateExpandedDataSetExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      ExpandedDataSet expandedDataSet = ExpandedDataSet.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateExpandedDataSet(expandedDataSet, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteExpandedDataSetTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    ExpandedDataSetName name = ExpandedDataSetName.of("[PROPERTY]", "[EXPANDED_DATA_SET]");
+
+    client.deleteExpandedDataSet(name);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteExpandedDataSetRequest actualRequest =
+        ((DeleteExpandedDataSetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteExpandedDataSetExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      ExpandedDataSetName name = ExpandedDataSetName.of("[PROPERTY]", "[EXPANDED_DATA_SET]");
+      client.deleteExpandedDataSet(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteExpandedDataSetTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteExpandedDataSet(name);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteExpandedDataSetRequest actualRequest =
+        ((DeleteExpandedDataSetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteExpandedDataSetExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteExpandedDataSet(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

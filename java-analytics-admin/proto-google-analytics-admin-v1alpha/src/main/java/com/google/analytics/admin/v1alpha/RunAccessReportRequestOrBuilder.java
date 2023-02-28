@@ -242,7 +242,7 @@ public interface RunAccessReportRequestOrBuilder
    *
    *
    * <pre>
-   * Dimension filters allow you to restrict report response to specific
+   * Dimension filters let you restrict report response to specific
    * dimension values which match the filter. For example, filtering on access
    * records of a single user. To learn more, see [Fundamentals of Dimension
    * Filters](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#dimension_filters)
@@ -258,7 +258,7 @@ public interface RunAccessReportRequestOrBuilder
    *
    *
    * <pre>
-   * Dimension filters allow you to restrict report response to specific
+   * Dimension filters let you restrict report response to specific
    * dimension values which match the filter. For example, filtering on access
    * records of a single user. To learn more, see [Fundamentals of Dimension
    * Filters](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#dimension_filters)
@@ -274,7 +274,7 @@ public interface RunAccessReportRequestOrBuilder
    *
    *
    * <pre>
-   * Dimension filters allow you to restrict report response to specific
+   * Dimension filters let you restrict report response to specific
    * dimension values which match the filter. For example, filtering on access
    * records of a single user. To learn more, see [Fundamentals of Dimension
    * Filters](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#dimension_filters)

@@ -17,6 +17,7 @@
 package com.google.analytics.admin.v1alpha.stub;
 
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.AuditUserLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccessBindingsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
@@ -27,6 +28,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinkProposalsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListExpandedDataSetsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
@@ -35,6 +37,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
+import com.google.analytics.admin.v1alpha.AccessBinding;
 import com.google.analytics.admin.v1alpha.Account;
 import com.google.analytics.admin.v1alpha.AccountSummary;
 import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest;
@@ -49,17 +52,25 @@ import com.google.analytics.admin.v1alpha.Audience;
 import com.google.analytics.admin.v1alpha.AuditUserLink;
 import com.google.analytics.admin.v1alpha.AuditUserLinksRequest;
 import com.google.analytics.admin.v1alpha.AuditUserLinksResponse;
+import com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsRequest;
+import com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsResponse;
 import com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse;
+import com.google.analytics.admin.v1alpha.BatchDeleteAccessBindingsRequest;
 import com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest;
+import com.google.analytics.admin.v1alpha.BatchGetAccessBindingsRequest;
+import com.google.analytics.admin.v1alpha.BatchGetAccessBindingsResponse;
 import com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse;
+import com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsRequest;
+import com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsResponse;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BigQueryLink;
 import com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ChangeHistoryEvent;
 import com.google.analytics.admin.v1alpha.ConversionEvent;
+import com.google.analytics.admin.v1alpha.CreateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.CreateAudienceRequest;
 import com.google.analytics.admin.v1alpha.CreateConversionEventRequest;
 import com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest;
@@ -67,6 +78,7 @@ import com.google.analytics.admin.v1alpha.CreateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.CreateDataStreamRequest;
 import com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest;
+import com.google.analytics.admin.v1alpha.CreateExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest;
@@ -78,11 +90,13 @@ import com.google.analytics.admin.v1alpha.CustomMetric;
 import com.google.analytics.admin.v1alpha.DataRetentionSettings;
 import com.google.analytics.admin.v1alpha.DataSharingSettings;
 import com.google.analytics.admin.v1alpha.DataStream;
+import com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
 import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
 import com.google.analytics.admin.v1alpha.DeleteDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest;
+import com.google.analytics.admin.v1alpha.DeleteExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest;
@@ -91,9 +105,11 @@ import com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal;
+import com.google.analytics.admin.v1alpha.ExpandedDataSet;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse;
 import com.google.analytics.admin.v1alpha.FirebaseLink;
+import com.google.analytics.admin.v1alpha.GetAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.GetAccountRequest;
 import com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetAudienceRequest;
@@ -106,6 +122,7 @@ import com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetDataStreamRequest;
 import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest;
+import com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
 import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest;
@@ -115,6 +132,8 @@ import com.google.analytics.admin.v1alpha.GetUserLinkRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
 import com.google.analytics.admin.v1alpha.GoogleSignalsSettings;
+import com.google.analytics.admin.v1alpha.ListAccessBindingsRequest;
+import com.google.analytics.admin.v1alpha.ListAccessBindingsResponse;
 import com.google.analytics.admin.v1alpha.ListAccountSummariesRequest;
 import com.google.analytics.admin.v1alpha.ListAccountSummariesResponse;
 import com.google.analytics.admin.v1alpha.ListAccountsRequest;
@@ -135,6 +154,8 @@ import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkPropo
 import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsResponse;
 import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequest;
 import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksResponse;
+import com.google.analytics.admin.v1alpha.ListExpandedDataSetsRequest;
+import com.google.analytics.admin.v1alpha.ListExpandedDataSetsResponse;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse;
 import com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest;
@@ -158,6 +179,7 @@ import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest;
 import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse;
+import com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateAudienceRequest;
@@ -166,6 +188,7 @@ import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest;
+import com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest;
@@ -445,6 +468,38 @@ public class AnalyticsAdminServiceStubSettings
       updateAttributionSettingsSettings;
   private final UnaryCallSettings<RunAccessReportRequest, RunAccessReportResponse>
       runAccessReportSettings;
+  private final UnaryCallSettings<CreateAccessBindingRequest, AccessBinding>
+      createAccessBindingSettings;
+  private final UnaryCallSettings<GetAccessBindingRequest, AccessBinding> getAccessBindingSettings;
+  private final UnaryCallSettings<UpdateAccessBindingRequest, AccessBinding>
+      updateAccessBindingSettings;
+  private final UnaryCallSettings<DeleteAccessBindingRequest, Empty> deleteAccessBindingSettings;
+  private final PagedCallSettings<
+          ListAccessBindingsRequest, ListAccessBindingsResponse, ListAccessBindingsPagedResponse>
+      listAccessBindingsSettings;
+  private final UnaryCallSettings<
+          BatchCreateAccessBindingsRequest, BatchCreateAccessBindingsResponse>
+      batchCreateAccessBindingsSettings;
+  private final UnaryCallSettings<BatchGetAccessBindingsRequest, BatchGetAccessBindingsResponse>
+      batchGetAccessBindingsSettings;
+  private final UnaryCallSettings<
+          BatchUpdateAccessBindingsRequest, BatchUpdateAccessBindingsResponse>
+      batchUpdateAccessBindingsSettings;
+  private final UnaryCallSettings<BatchDeleteAccessBindingsRequest, Empty>
+      batchDeleteAccessBindingsSettings;
+  private final UnaryCallSettings<GetExpandedDataSetRequest, ExpandedDataSet>
+      getExpandedDataSetSettings;
+  private final PagedCallSettings<
+          ListExpandedDataSetsRequest,
+          ListExpandedDataSetsResponse,
+          ListExpandedDataSetsPagedResponse>
+      listExpandedDataSetsSettings;
+  private final UnaryCallSettings<CreateExpandedDataSetRequest, ExpandedDataSet>
+      createExpandedDataSetSettings;
+  private final UnaryCallSettings<UpdateExpandedDataSetRequest, ExpandedDataSet>
+      updateExpandedDataSetSettings;
+  private final UnaryCallSettings<DeleteExpandedDataSetRequest, Empty>
+      deleteExpandedDataSetSettings;
   private final UnaryCallSettings<
           SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
       setAutomatedGa4ConfigurationOptOutSettings;
@@ -1158,6 +1213,87 @@ public class AnalyticsAdminServiceStubSettings
           };
 
   private static final PagedListDescriptor<
+          ListAccessBindingsRequest, ListAccessBindingsResponse, AccessBinding>
+      LIST_ACCESS_BINDINGS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListAccessBindingsRequest, ListAccessBindingsResponse, AccessBinding>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAccessBindingsRequest injectToken(
+                ListAccessBindingsRequest payload, String token) {
+              return ListAccessBindingsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAccessBindingsRequest injectPageSize(
+                ListAccessBindingsRequest payload, int pageSize) {
+              return ListAccessBindingsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAccessBindingsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAccessBindingsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AccessBinding> extractResources(ListAccessBindingsResponse payload) {
+              return payload.getAccessBindingsList() == null
+                  ? ImmutableList.<AccessBinding>of()
+                  : payload.getAccessBindingsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListExpandedDataSetsRequest, ListExpandedDataSetsResponse, ExpandedDataSet>
+      LIST_EXPANDED_DATA_SETS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListExpandedDataSetsRequest, ListExpandedDataSetsResponse, ExpandedDataSet>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListExpandedDataSetsRequest injectToken(
+                ListExpandedDataSetsRequest payload, String token) {
+              return ListExpandedDataSetsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListExpandedDataSetsRequest injectPageSize(
+                ListExpandedDataSetsRequest payload, int pageSize) {
+              return ListExpandedDataSetsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListExpandedDataSetsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListExpandedDataSetsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ExpandedDataSet> extractResources(
+                ListExpandedDataSetsResponse payload) {
+              return payload.getExpandedDataSetsList() == null
+                  ? ImmutableList.<ExpandedDataSet>of()
+                  : payload.getExpandedDataSetsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
           ListBigQueryLinksRequest, ListBigQueryLinksResponse, BigQueryLink>
       LIST_BIG_QUERY_LINKS_PAGE_STR_DESC =
           new PagedListDescriptor<
@@ -1585,6 +1721,51 @@ public class AnalyticsAdminServiceStubSettings
                       PageContext.create(
                           callable, LIST_SEARCH_ADS360_LINKS_PAGE_STR_DESC, request, context);
               return ListSearchAds360LinksPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAccessBindingsRequest, ListAccessBindingsResponse, ListAccessBindingsPagedResponse>
+      LIST_ACCESS_BINDINGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAccessBindingsRequest,
+              ListAccessBindingsResponse,
+              ListAccessBindingsPagedResponse>() {
+            @Override
+            public ApiFuture<ListAccessBindingsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAccessBindingsRequest, ListAccessBindingsResponse> callable,
+                ListAccessBindingsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAccessBindingsResponse> futureResponse) {
+              PageContext<ListAccessBindingsRequest, ListAccessBindingsResponse, AccessBinding>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_ACCESS_BINDINGS_PAGE_STR_DESC, request, context);
+              return ListAccessBindingsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListExpandedDataSetsRequest,
+          ListExpandedDataSetsResponse,
+          ListExpandedDataSetsPagedResponse>
+      LIST_EXPANDED_DATA_SETS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListExpandedDataSetsRequest,
+              ListExpandedDataSetsResponse,
+              ListExpandedDataSetsPagedResponse>() {
+            @Override
+            public ApiFuture<ListExpandedDataSetsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListExpandedDataSetsRequest, ListExpandedDataSetsResponse> callable,
+                ListExpandedDataSetsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListExpandedDataSetsResponse> futureResponse) {
+              PageContext<
+                      ListExpandedDataSetsRequest, ListExpandedDataSetsResponse, ExpandedDataSet>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_EXPANDED_DATA_SETS_PAGE_STR_DESC, request, context);
+              return ListExpandedDataSetsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -2138,6 +2319,91 @@ public class AnalyticsAdminServiceStubSettings
     return runAccessReportSettings;
   }
 
+  /** Returns the object with the settings used for calls to createAccessBinding. */
+  public UnaryCallSettings<CreateAccessBindingRequest, AccessBinding>
+      createAccessBindingSettings() {
+    return createAccessBindingSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAccessBinding. */
+  public UnaryCallSettings<GetAccessBindingRequest, AccessBinding> getAccessBindingSettings() {
+    return getAccessBindingSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAccessBinding. */
+  public UnaryCallSettings<UpdateAccessBindingRequest, AccessBinding>
+      updateAccessBindingSettings() {
+    return updateAccessBindingSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAccessBinding. */
+  public UnaryCallSettings<DeleteAccessBindingRequest, Empty> deleteAccessBindingSettings() {
+    return deleteAccessBindingSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAccessBindings. */
+  public PagedCallSettings<
+          ListAccessBindingsRequest, ListAccessBindingsResponse, ListAccessBindingsPagedResponse>
+      listAccessBindingsSettings() {
+    return listAccessBindingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateAccessBindings. */
+  public UnaryCallSettings<BatchCreateAccessBindingsRequest, BatchCreateAccessBindingsResponse>
+      batchCreateAccessBindingsSettings() {
+    return batchCreateAccessBindingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchGetAccessBindings. */
+  public UnaryCallSettings<BatchGetAccessBindingsRequest, BatchGetAccessBindingsResponse>
+      batchGetAccessBindingsSettings() {
+    return batchGetAccessBindingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateAccessBindings. */
+  public UnaryCallSettings<BatchUpdateAccessBindingsRequest, BatchUpdateAccessBindingsResponse>
+      batchUpdateAccessBindingsSettings() {
+    return batchUpdateAccessBindingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteAccessBindings. */
+  public UnaryCallSettings<BatchDeleteAccessBindingsRequest, Empty>
+      batchDeleteAccessBindingsSettings() {
+    return batchDeleteAccessBindingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getExpandedDataSet. */
+  public UnaryCallSettings<GetExpandedDataSetRequest, ExpandedDataSet>
+      getExpandedDataSetSettings() {
+    return getExpandedDataSetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listExpandedDataSets. */
+  public PagedCallSettings<
+          ListExpandedDataSetsRequest,
+          ListExpandedDataSetsResponse,
+          ListExpandedDataSetsPagedResponse>
+      listExpandedDataSetsSettings() {
+    return listExpandedDataSetsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createExpandedDataSet. */
+  public UnaryCallSettings<CreateExpandedDataSetRequest, ExpandedDataSet>
+      createExpandedDataSetSettings() {
+    return createExpandedDataSetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateExpandedDataSet. */
+  public UnaryCallSettings<UpdateExpandedDataSetRequest, ExpandedDataSet>
+      updateExpandedDataSetSettings() {
+    return updateExpandedDataSetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteExpandedDataSet. */
+  public UnaryCallSettings<DeleteExpandedDataSetRequest, Empty> deleteExpandedDataSetSettings() {
+    return deleteExpandedDataSetSettings;
+  }
+
   /** Returns the object with the settings used for calls to setAutomatedGa4ConfigurationOptOut. */
   public UnaryCallSettings<
           SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
@@ -2375,6 +2641,20 @@ public class AnalyticsAdminServiceStubSettings
     getAttributionSettingsSettings = settingsBuilder.getAttributionSettingsSettings().build();
     updateAttributionSettingsSettings = settingsBuilder.updateAttributionSettingsSettings().build();
     runAccessReportSettings = settingsBuilder.runAccessReportSettings().build();
+    createAccessBindingSettings = settingsBuilder.createAccessBindingSettings().build();
+    getAccessBindingSettings = settingsBuilder.getAccessBindingSettings().build();
+    updateAccessBindingSettings = settingsBuilder.updateAccessBindingSettings().build();
+    deleteAccessBindingSettings = settingsBuilder.deleteAccessBindingSettings().build();
+    listAccessBindingsSettings = settingsBuilder.listAccessBindingsSettings().build();
+    batchCreateAccessBindingsSettings = settingsBuilder.batchCreateAccessBindingsSettings().build();
+    batchGetAccessBindingsSettings = settingsBuilder.batchGetAccessBindingsSettings().build();
+    batchUpdateAccessBindingsSettings = settingsBuilder.batchUpdateAccessBindingsSettings().build();
+    batchDeleteAccessBindingsSettings = settingsBuilder.batchDeleteAccessBindingsSettings().build();
+    getExpandedDataSetSettings = settingsBuilder.getExpandedDataSetSettings().build();
+    listExpandedDataSetsSettings = settingsBuilder.listExpandedDataSetsSettings().build();
+    createExpandedDataSetSettings = settingsBuilder.createExpandedDataSetSettings().build();
+    updateExpandedDataSetSettings = settingsBuilder.updateExpandedDataSetSettings().build();
+    deleteExpandedDataSetSettings = settingsBuilder.deleteExpandedDataSetSettings().build();
     setAutomatedGa4ConfigurationOptOutSettings =
         settingsBuilder.setAutomatedGa4ConfigurationOptOutSettings().build();
     fetchAutomatedGa4ConfigurationOptOutSettings =
@@ -2592,6 +2872,41 @@ public class AnalyticsAdminServiceStubSettings
         updateAttributionSettingsSettings;
     private final UnaryCallSettings.Builder<RunAccessReportRequest, RunAccessReportResponse>
         runAccessReportSettings;
+    private final UnaryCallSettings.Builder<CreateAccessBindingRequest, AccessBinding>
+        createAccessBindingSettings;
+    private final UnaryCallSettings.Builder<GetAccessBindingRequest, AccessBinding>
+        getAccessBindingSettings;
+    private final UnaryCallSettings.Builder<UpdateAccessBindingRequest, AccessBinding>
+        updateAccessBindingSettings;
+    private final UnaryCallSettings.Builder<DeleteAccessBindingRequest, Empty>
+        deleteAccessBindingSettings;
+    private final PagedCallSettings.Builder<
+            ListAccessBindingsRequest, ListAccessBindingsResponse, ListAccessBindingsPagedResponse>
+        listAccessBindingsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchCreateAccessBindingsRequest, BatchCreateAccessBindingsResponse>
+        batchCreateAccessBindingsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchGetAccessBindingsRequest, BatchGetAccessBindingsResponse>
+        batchGetAccessBindingsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchUpdateAccessBindingsRequest, BatchUpdateAccessBindingsResponse>
+        batchUpdateAccessBindingsSettings;
+    private final UnaryCallSettings.Builder<BatchDeleteAccessBindingsRequest, Empty>
+        batchDeleteAccessBindingsSettings;
+    private final UnaryCallSettings.Builder<GetExpandedDataSetRequest, ExpandedDataSet>
+        getExpandedDataSetSettings;
+    private final PagedCallSettings.Builder<
+            ListExpandedDataSetsRequest,
+            ListExpandedDataSetsResponse,
+            ListExpandedDataSetsPagedResponse>
+        listExpandedDataSetsSettings;
+    private final UnaryCallSettings.Builder<CreateExpandedDataSetRequest, ExpandedDataSet>
+        createExpandedDataSetSettings;
+    private final UnaryCallSettings.Builder<UpdateExpandedDataSetRequest, ExpandedDataSet>
+        updateExpandedDataSetSettings;
+    private final UnaryCallSettings.Builder<DeleteExpandedDataSetRequest, Empty>
+        deleteExpandedDataSetSettings;
     private final UnaryCallSettings.Builder<
             SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
         setAutomatedGa4ConfigurationOptOutSettings;
@@ -2753,6 +3068,21 @@ public class AnalyticsAdminServiceStubSettings
       getAttributionSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateAttributionSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       runAccessReportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createAccessBindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getAccessBindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAccessBindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteAccessBindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listAccessBindingsSettings = PagedCallSettings.newBuilder(LIST_ACCESS_BINDINGS_PAGE_STR_FACT);
+      batchCreateAccessBindingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchGetAccessBindingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchUpdateAccessBindingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchDeleteAccessBindingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getExpandedDataSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listExpandedDataSetsSettings =
+          PagedCallSettings.newBuilder(LIST_EXPANDED_DATA_SETS_PAGE_STR_FACT);
+      createExpandedDataSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateExpandedDataSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteExpandedDataSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setAutomatedGa4ConfigurationOptOutSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       fetchAutomatedGa4ConfigurationOptOutSettings =
           UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -2845,6 +3175,20 @@ public class AnalyticsAdminServiceStubSettings
               getAttributionSettingsSettings,
               updateAttributionSettingsSettings,
               runAccessReportSettings,
+              createAccessBindingSettings,
+              getAccessBindingSettings,
+              updateAccessBindingSettings,
+              deleteAccessBindingSettings,
+              listAccessBindingsSettings,
+              batchCreateAccessBindingsSettings,
+              batchGetAccessBindingsSettings,
+              batchUpdateAccessBindingsSettings,
+              batchDeleteAccessBindingsSettings,
+              getExpandedDataSetSettings,
+              listExpandedDataSetsSettings,
+              createExpandedDataSetSettings,
+              updateExpandedDataSetSettings,
+              deleteExpandedDataSetSettings,
               setAutomatedGa4ConfigurationOptOutSettings,
               fetchAutomatedGa4ConfigurationOptOutSettings,
               getBigQueryLinkSettings,
@@ -2958,6 +3302,20 @@ public class AnalyticsAdminServiceStubSettings
       getAttributionSettingsSettings = settings.getAttributionSettingsSettings.toBuilder();
       updateAttributionSettingsSettings = settings.updateAttributionSettingsSettings.toBuilder();
       runAccessReportSettings = settings.runAccessReportSettings.toBuilder();
+      createAccessBindingSettings = settings.createAccessBindingSettings.toBuilder();
+      getAccessBindingSettings = settings.getAccessBindingSettings.toBuilder();
+      updateAccessBindingSettings = settings.updateAccessBindingSettings.toBuilder();
+      deleteAccessBindingSettings = settings.deleteAccessBindingSettings.toBuilder();
+      listAccessBindingsSettings = settings.listAccessBindingsSettings.toBuilder();
+      batchCreateAccessBindingsSettings = settings.batchCreateAccessBindingsSettings.toBuilder();
+      batchGetAccessBindingsSettings = settings.batchGetAccessBindingsSettings.toBuilder();
+      batchUpdateAccessBindingsSettings = settings.batchUpdateAccessBindingsSettings.toBuilder();
+      batchDeleteAccessBindingsSettings = settings.batchDeleteAccessBindingsSettings.toBuilder();
+      getExpandedDataSetSettings = settings.getExpandedDataSetSettings.toBuilder();
+      listExpandedDataSetsSettings = settings.listExpandedDataSetsSettings.toBuilder();
+      createExpandedDataSetSettings = settings.createExpandedDataSetSettings.toBuilder();
+      updateExpandedDataSetSettings = settings.updateExpandedDataSetSettings.toBuilder();
+      deleteExpandedDataSetSettings = settings.deleteExpandedDataSetSettings.toBuilder();
       setAutomatedGa4ConfigurationOptOutSettings =
           settings.setAutomatedGa4ConfigurationOptOutSettings.toBuilder();
       fetchAutomatedGa4ConfigurationOptOutSettings =
@@ -3051,6 +3409,20 @@ public class AnalyticsAdminServiceStubSettings
               getAttributionSettingsSettings,
               updateAttributionSettingsSettings,
               runAccessReportSettings,
+              createAccessBindingSettings,
+              getAccessBindingSettings,
+              updateAccessBindingSettings,
+              deleteAccessBindingSettings,
+              listAccessBindingsSettings,
+              batchCreateAccessBindingsSettings,
+              batchGetAccessBindingsSettings,
+              batchUpdateAccessBindingsSettings,
+              batchDeleteAccessBindingsSettings,
+              getExpandedDataSetSettings,
+              listExpandedDataSetsSettings,
+              createExpandedDataSetSettings,
+              updateExpandedDataSetSettings,
+              deleteExpandedDataSetSettings,
               setAutomatedGa4ConfigurationOptOutSettings,
               fetchAutomatedGa4ConfigurationOptOutSettings,
               getBigQueryLinkSettings,
@@ -3501,6 +3873,76 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .runAccessReportSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createAccessBindingSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getAccessBindingSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateAccessBindingSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteAccessBindingSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listAccessBindingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchCreateAccessBindingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchGetAccessBindingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchUpdateAccessBindingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchDeleteAccessBindingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getExpandedDataSetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listExpandedDataSetsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createExpandedDataSetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateExpandedDataSetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteExpandedDataSetSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -4099,6 +4541,96 @@ public class AnalyticsAdminServiceStubSettings
     public UnaryCallSettings.Builder<RunAccessReportRequest, RunAccessReportResponse>
         runAccessReportSettings() {
       return runAccessReportSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAccessBinding. */
+    public UnaryCallSettings.Builder<CreateAccessBindingRequest, AccessBinding>
+        createAccessBindingSettings() {
+      return createAccessBindingSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAccessBinding. */
+    public UnaryCallSettings.Builder<GetAccessBindingRequest, AccessBinding>
+        getAccessBindingSettings() {
+      return getAccessBindingSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAccessBinding. */
+    public UnaryCallSettings.Builder<UpdateAccessBindingRequest, AccessBinding>
+        updateAccessBindingSettings() {
+      return updateAccessBindingSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAccessBinding. */
+    public UnaryCallSettings.Builder<DeleteAccessBindingRequest, Empty>
+        deleteAccessBindingSettings() {
+      return deleteAccessBindingSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAccessBindings. */
+    public PagedCallSettings.Builder<
+            ListAccessBindingsRequest, ListAccessBindingsResponse, ListAccessBindingsPagedResponse>
+        listAccessBindingsSettings() {
+      return listAccessBindingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateAccessBindings. */
+    public UnaryCallSettings.Builder<
+            BatchCreateAccessBindingsRequest, BatchCreateAccessBindingsResponse>
+        batchCreateAccessBindingsSettings() {
+      return batchCreateAccessBindingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchGetAccessBindings. */
+    public UnaryCallSettings.Builder<BatchGetAccessBindingsRequest, BatchGetAccessBindingsResponse>
+        batchGetAccessBindingsSettings() {
+      return batchGetAccessBindingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateAccessBindings. */
+    public UnaryCallSettings.Builder<
+            BatchUpdateAccessBindingsRequest, BatchUpdateAccessBindingsResponse>
+        batchUpdateAccessBindingsSettings() {
+      return batchUpdateAccessBindingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteAccessBindings. */
+    public UnaryCallSettings.Builder<BatchDeleteAccessBindingsRequest, Empty>
+        batchDeleteAccessBindingsSettings() {
+      return batchDeleteAccessBindingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getExpandedDataSet. */
+    public UnaryCallSettings.Builder<GetExpandedDataSetRequest, ExpandedDataSet>
+        getExpandedDataSetSettings() {
+      return getExpandedDataSetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listExpandedDataSets. */
+    public PagedCallSettings.Builder<
+            ListExpandedDataSetsRequest,
+            ListExpandedDataSetsResponse,
+            ListExpandedDataSetsPagedResponse>
+        listExpandedDataSetsSettings() {
+      return listExpandedDataSetsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createExpandedDataSet. */
+    public UnaryCallSettings.Builder<CreateExpandedDataSetRequest, ExpandedDataSet>
+        createExpandedDataSetSettings() {
+      return createExpandedDataSetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateExpandedDataSet. */
+    public UnaryCallSettings.Builder<UpdateExpandedDataSetRequest, ExpandedDataSet>
+        updateExpandedDataSetSettings() {
+      return updateExpandedDataSetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteExpandedDataSet. */
+    public UnaryCallSettings.Builder<DeleteExpandedDataSetRequest, Empty>
+        deleteExpandedDataSetSettings() {
+      return deleteExpandedDataSetSettings;
     }
 
     /**

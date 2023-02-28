@@ -17,6 +17,7 @@
 package com.google.analytics.admin.v1alpha.stub;
 
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.AuditUserLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccessBindingsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
@@ -27,6 +28,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinkProposalsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListExpandedDataSetsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
@@ -35,6 +37,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
+import com.google.analytics.admin.v1alpha.AccessBinding;
 import com.google.analytics.admin.v1alpha.Account;
 import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest;
 import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse;
@@ -47,16 +50,24 @@ import com.google.analytics.admin.v1alpha.AttributionSettings;
 import com.google.analytics.admin.v1alpha.Audience;
 import com.google.analytics.admin.v1alpha.AuditUserLinksRequest;
 import com.google.analytics.admin.v1alpha.AuditUserLinksResponse;
+import com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsRequest;
+import com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsResponse;
 import com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse;
+import com.google.analytics.admin.v1alpha.BatchDeleteAccessBindingsRequest;
 import com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest;
+import com.google.analytics.admin.v1alpha.BatchGetAccessBindingsRequest;
+import com.google.analytics.admin.v1alpha.BatchGetAccessBindingsResponse;
 import com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse;
+import com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsRequest;
+import com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsResponse;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BigQueryLink;
 import com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ConversionEvent;
+import com.google.analytics.admin.v1alpha.CreateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.CreateAudienceRequest;
 import com.google.analytics.admin.v1alpha.CreateConversionEventRequest;
 import com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest;
@@ -64,6 +75,7 @@ import com.google.analytics.admin.v1alpha.CreateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.CreateDataStreamRequest;
 import com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest;
+import com.google.analytics.admin.v1alpha.CreateExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest;
@@ -75,11 +87,13 @@ import com.google.analytics.admin.v1alpha.CustomMetric;
 import com.google.analytics.admin.v1alpha.DataRetentionSettings;
 import com.google.analytics.admin.v1alpha.DataSharingSettings;
 import com.google.analytics.admin.v1alpha.DataStream;
+import com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
 import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
 import com.google.analytics.admin.v1alpha.DeleteDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest;
+import com.google.analytics.admin.v1alpha.DeleteExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest;
@@ -88,9 +102,11 @@ import com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal;
+import com.google.analytics.admin.v1alpha.ExpandedDataSet;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse;
 import com.google.analytics.admin.v1alpha.FirebaseLink;
+import com.google.analytics.admin.v1alpha.GetAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.GetAccountRequest;
 import com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetAudienceRequest;
@@ -103,6 +119,7 @@ import com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetDataStreamRequest;
 import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest;
+import com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
 import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest;
@@ -112,6 +129,8 @@ import com.google.analytics.admin.v1alpha.GetUserLinkRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
 import com.google.analytics.admin.v1alpha.GoogleSignalsSettings;
+import com.google.analytics.admin.v1alpha.ListAccessBindingsRequest;
+import com.google.analytics.admin.v1alpha.ListAccessBindingsResponse;
 import com.google.analytics.admin.v1alpha.ListAccountSummariesRequest;
 import com.google.analytics.admin.v1alpha.ListAccountSummariesResponse;
 import com.google.analytics.admin.v1alpha.ListAccountsRequest;
@@ -132,6 +151,8 @@ import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkPropo
 import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsResponse;
 import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequest;
 import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksResponse;
+import com.google.analytics.admin.v1alpha.ListExpandedDataSetsRequest;
+import com.google.analytics.admin.v1alpha.ListExpandedDataSetsResponse;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse;
 import com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest;
@@ -155,6 +176,7 @@ import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest;
 import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse;
+import com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateAudienceRequest;
@@ -163,6 +185,7 @@ import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest;
+import com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest;
@@ -1211,6 +1234,171 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(RunAccessReportResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CreateAccessBindingRequest, AccessBinding>
+      createAccessBindingMethodDescriptor =
+          MethodDescriptor.<CreateAccessBindingRequest, AccessBinding>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateAccessBinding")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateAccessBindingRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AccessBinding.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetAccessBindingRequest, AccessBinding>
+      getAccessBindingMethodDescriptor =
+          MethodDescriptor.<GetAccessBindingRequest, AccessBinding>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetAccessBinding")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAccessBindingRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AccessBinding.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateAccessBindingRequest, AccessBinding>
+      updateAccessBindingMethodDescriptor =
+          MethodDescriptor.<UpdateAccessBindingRequest, AccessBinding>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateAccessBinding")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateAccessBindingRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AccessBinding.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteAccessBindingRequest, Empty>
+      deleteAccessBindingMethodDescriptor =
+          MethodDescriptor.<DeleteAccessBindingRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteAccessBinding")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteAccessBindingRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListAccessBindingsRequest, ListAccessBindingsResponse>
+      listAccessBindingsMethodDescriptor =
+          MethodDescriptor.<ListAccessBindingsRequest, ListAccessBindingsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListAccessBindings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAccessBindingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAccessBindingsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          BatchCreateAccessBindingsRequest, BatchCreateAccessBindingsResponse>
+      batchCreateAccessBindingsMethodDescriptor =
+          MethodDescriptor
+              .<BatchCreateAccessBindingsRequest, BatchCreateAccessBindingsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/BatchCreateAccessBindings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchCreateAccessBindingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(BatchCreateAccessBindingsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          BatchGetAccessBindingsRequest, BatchGetAccessBindingsResponse>
+      batchGetAccessBindingsMethodDescriptor =
+          MethodDescriptor
+              .<BatchGetAccessBindingsRequest, BatchGetAccessBindingsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/BatchGetAccessBindings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchGetAccessBindingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(BatchGetAccessBindingsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          BatchUpdateAccessBindingsRequest, BatchUpdateAccessBindingsResponse>
+      batchUpdateAccessBindingsMethodDescriptor =
+          MethodDescriptor
+              .<BatchUpdateAccessBindingsRequest, BatchUpdateAccessBindingsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/BatchUpdateAccessBindings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchUpdateAccessBindingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(BatchUpdateAccessBindingsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<BatchDeleteAccessBindingsRequest, Empty>
+      batchDeleteAccessBindingsMethodDescriptor =
+          MethodDescriptor.<BatchDeleteAccessBindingsRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/BatchDeleteAccessBindings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchDeleteAccessBindingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetExpandedDataSetRequest, ExpandedDataSet>
+      getExpandedDataSetMethodDescriptor =
+          MethodDescriptor.<GetExpandedDataSetRequest, ExpandedDataSet>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetExpandedDataSet")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetExpandedDataSetRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ExpandedDataSet.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListExpandedDataSetsRequest, ListExpandedDataSetsResponse>
+      listExpandedDataSetsMethodDescriptor =
+          MethodDescriptor.<ListExpandedDataSetsRequest, ListExpandedDataSetsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListExpandedDataSets")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListExpandedDataSetsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListExpandedDataSetsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateExpandedDataSetRequest, ExpandedDataSet>
+      createExpandedDataSetMethodDescriptor =
+          MethodDescriptor.<CreateExpandedDataSetRequest, ExpandedDataSet>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateExpandedDataSet")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateExpandedDataSetRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ExpandedDataSet.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateExpandedDataSetRequest, ExpandedDataSet>
+      updateExpandedDataSetMethodDescriptor =
+          MethodDescriptor.<UpdateExpandedDataSetRequest, ExpandedDataSet>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateExpandedDataSet")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateExpandedDataSetRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ExpandedDataSet.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteExpandedDataSetRequest, Empty>
+      deleteExpandedDataSetMethodDescriptor =
+          MethodDescriptor.<DeleteExpandedDataSetRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteExpandedDataSet")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteExpandedDataSetRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<
           SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
       setAutomatedGa4ConfigurationOptOutMethodDescriptor =
@@ -1455,6 +1643,35 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
       updateAttributionSettingsCallable;
   private final UnaryCallable<RunAccessReportRequest, RunAccessReportResponse>
       runAccessReportCallable;
+  private final UnaryCallable<CreateAccessBindingRequest, AccessBinding>
+      createAccessBindingCallable;
+  private final UnaryCallable<GetAccessBindingRequest, AccessBinding> getAccessBindingCallable;
+  private final UnaryCallable<UpdateAccessBindingRequest, AccessBinding>
+      updateAccessBindingCallable;
+  private final UnaryCallable<DeleteAccessBindingRequest, Empty> deleteAccessBindingCallable;
+  private final UnaryCallable<ListAccessBindingsRequest, ListAccessBindingsResponse>
+      listAccessBindingsCallable;
+  private final UnaryCallable<ListAccessBindingsRequest, ListAccessBindingsPagedResponse>
+      listAccessBindingsPagedCallable;
+  private final UnaryCallable<BatchCreateAccessBindingsRequest, BatchCreateAccessBindingsResponse>
+      batchCreateAccessBindingsCallable;
+  private final UnaryCallable<BatchGetAccessBindingsRequest, BatchGetAccessBindingsResponse>
+      batchGetAccessBindingsCallable;
+  private final UnaryCallable<BatchUpdateAccessBindingsRequest, BatchUpdateAccessBindingsResponse>
+      batchUpdateAccessBindingsCallable;
+  private final UnaryCallable<BatchDeleteAccessBindingsRequest, Empty>
+      batchDeleteAccessBindingsCallable;
+  private final UnaryCallable<GetExpandedDataSetRequest, ExpandedDataSet>
+      getExpandedDataSetCallable;
+  private final UnaryCallable<ListExpandedDataSetsRequest, ListExpandedDataSetsResponse>
+      listExpandedDataSetsCallable;
+  private final UnaryCallable<ListExpandedDataSetsRequest, ListExpandedDataSetsPagedResponse>
+      listExpandedDataSetsPagedCallable;
+  private final UnaryCallable<CreateExpandedDataSetRequest, ExpandedDataSet>
+      createExpandedDataSetCallable;
+  private final UnaryCallable<UpdateExpandedDataSetRequest, ExpandedDataSet>
+      updateExpandedDataSetCallable;
+  private final UnaryCallable<DeleteExpandedDataSetRequest, Empty> deleteExpandedDataSetCallable;
   private final UnaryCallable<
           SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
       setAutomatedGa4ConfigurationOptOutCallable;
@@ -2432,6 +2649,164 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<CreateAccessBindingRequest, AccessBinding>
+        createAccessBindingTransportSettings =
+            GrpcCallSettings.<CreateAccessBindingRequest, AccessBinding>newBuilder()
+                .setMethodDescriptor(createAccessBindingMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<GetAccessBindingRequest, AccessBinding> getAccessBindingTransportSettings =
+        GrpcCallSettings.<GetAccessBindingRequest, AccessBinding>newBuilder()
+            .setMethodDescriptor(getAccessBindingMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateAccessBindingRequest, AccessBinding>
+        updateAccessBindingTransportSettings =
+            GrpcCallSettings.<UpdateAccessBindingRequest, AccessBinding>newBuilder()
+                .setMethodDescriptor(updateAccessBindingMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "access_binding.name",
+                          String.valueOf(request.getAccessBinding().getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteAccessBindingRequest, Empty> deleteAccessBindingTransportSettings =
+        GrpcCallSettings.<DeleteAccessBindingRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteAccessBindingMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<ListAccessBindingsRequest, ListAccessBindingsResponse>
+        listAccessBindingsTransportSettings =
+            GrpcCallSettings.<ListAccessBindingsRequest, ListAccessBindingsResponse>newBuilder()
+                .setMethodDescriptor(listAccessBindingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<BatchCreateAccessBindingsRequest, BatchCreateAccessBindingsResponse>
+        batchCreateAccessBindingsTransportSettings =
+            GrpcCallSettings
+                .<BatchCreateAccessBindingsRequest, BatchCreateAccessBindingsResponse>newBuilder()
+                .setMethodDescriptor(batchCreateAccessBindingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<BatchGetAccessBindingsRequest, BatchGetAccessBindingsResponse>
+        batchGetAccessBindingsTransportSettings =
+            GrpcCallSettings
+                .<BatchGetAccessBindingsRequest, BatchGetAccessBindingsResponse>newBuilder()
+                .setMethodDescriptor(batchGetAccessBindingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<BatchUpdateAccessBindingsRequest, BatchUpdateAccessBindingsResponse>
+        batchUpdateAccessBindingsTransportSettings =
+            GrpcCallSettings
+                .<BatchUpdateAccessBindingsRequest, BatchUpdateAccessBindingsResponse>newBuilder()
+                .setMethodDescriptor(batchUpdateAccessBindingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<BatchDeleteAccessBindingsRequest, Empty>
+        batchDeleteAccessBindingsTransportSettings =
+            GrpcCallSettings.<BatchDeleteAccessBindingsRequest, Empty>newBuilder()
+                .setMethodDescriptor(batchDeleteAccessBindingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<GetExpandedDataSetRequest, ExpandedDataSet>
+        getExpandedDataSetTransportSettings =
+            GrpcCallSettings.<GetExpandedDataSetRequest, ExpandedDataSet>newBuilder()
+                .setMethodDescriptor(getExpandedDataSetMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<ListExpandedDataSetsRequest, ListExpandedDataSetsResponse>
+        listExpandedDataSetsTransportSettings =
+            GrpcCallSettings.<ListExpandedDataSetsRequest, ListExpandedDataSetsResponse>newBuilder()
+                .setMethodDescriptor(listExpandedDataSetsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateExpandedDataSetRequest, ExpandedDataSet>
+        createExpandedDataSetTransportSettings =
+            GrpcCallSettings.<CreateExpandedDataSetRequest, ExpandedDataSet>newBuilder()
+                .setMethodDescriptor(createExpandedDataSetMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateExpandedDataSetRequest, ExpandedDataSet>
+        updateExpandedDataSetTransportSettings =
+            GrpcCallSettings.<UpdateExpandedDataSetRequest, ExpandedDataSet>newBuilder()
+                .setMethodDescriptor(updateExpandedDataSetMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "expanded_data_set.name",
+                          String.valueOf(request.getExpandedDataSet().getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteExpandedDataSetRequest, Empty> deleteExpandedDataSetTransportSettings =
+        GrpcCallSettings.<DeleteExpandedDataSetRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteExpandedDataSetMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<
             SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
         setAutomatedGa4ConfigurationOptOutTransportSettings =
@@ -2910,6 +3285,84 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
     this.runAccessReportCallable =
         callableFactory.createUnaryCallable(
             runAccessReportTransportSettings, settings.runAccessReportSettings(), clientContext);
+    this.createAccessBindingCallable =
+        callableFactory.createUnaryCallable(
+            createAccessBindingTransportSettings,
+            settings.createAccessBindingSettings(),
+            clientContext);
+    this.getAccessBindingCallable =
+        callableFactory.createUnaryCallable(
+            getAccessBindingTransportSettings, settings.getAccessBindingSettings(), clientContext);
+    this.updateAccessBindingCallable =
+        callableFactory.createUnaryCallable(
+            updateAccessBindingTransportSettings,
+            settings.updateAccessBindingSettings(),
+            clientContext);
+    this.deleteAccessBindingCallable =
+        callableFactory.createUnaryCallable(
+            deleteAccessBindingTransportSettings,
+            settings.deleteAccessBindingSettings(),
+            clientContext);
+    this.listAccessBindingsCallable =
+        callableFactory.createUnaryCallable(
+            listAccessBindingsTransportSettings,
+            settings.listAccessBindingsSettings(),
+            clientContext);
+    this.listAccessBindingsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAccessBindingsTransportSettings,
+            settings.listAccessBindingsSettings(),
+            clientContext);
+    this.batchCreateAccessBindingsCallable =
+        callableFactory.createUnaryCallable(
+            batchCreateAccessBindingsTransportSettings,
+            settings.batchCreateAccessBindingsSettings(),
+            clientContext);
+    this.batchGetAccessBindingsCallable =
+        callableFactory.createUnaryCallable(
+            batchGetAccessBindingsTransportSettings,
+            settings.batchGetAccessBindingsSettings(),
+            clientContext);
+    this.batchUpdateAccessBindingsCallable =
+        callableFactory.createUnaryCallable(
+            batchUpdateAccessBindingsTransportSettings,
+            settings.batchUpdateAccessBindingsSettings(),
+            clientContext);
+    this.batchDeleteAccessBindingsCallable =
+        callableFactory.createUnaryCallable(
+            batchDeleteAccessBindingsTransportSettings,
+            settings.batchDeleteAccessBindingsSettings(),
+            clientContext);
+    this.getExpandedDataSetCallable =
+        callableFactory.createUnaryCallable(
+            getExpandedDataSetTransportSettings,
+            settings.getExpandedDataSetSettings(),
+            clientContext);
+    this.listExpandedDataSetsCallable =
+        callableFactory.createUnaryCallable(
+            listExpandedDataSetsTransportSettings,
+            settings.listExpandedDataSetsSettings(),
+            clientContext);
+    this.listExpandedDataSetsPagedCallable =
+        callableFactory.createPagedCallable(
+            listExpandedDataSetsTransportSettings,
+            settings.listExpandedDataSetsSettings(),
+            clientContext);
+    this.createExpandedDataSetCallable =
+        callableFactory.createUnaryCallable(
+            createExpandedDataSetTransportSettings,
+            settings.createExpandedDataSetSettings(),
+            clientContext);
+    this.updateExpandedDataSetCallable =
+        callableFactory.createUnaryCallable(
+            updateExpandedDataSetTransportSettings,
+            settings.updateExpandedDataSetSettings(),
+            clientContext);
+    this.deleteExpandedDataSetCallable =
+        callableFactory.createUnaryCallable(
+            deleteExpandedDataSetTransportSettings,
+            settings.deleteExpandedDataSetSettings(),
+            clientContext);
     this.setAutomatedGa4ConfigurationOptOutCallable =
         callableFactory.createUnaryCallable(
             setAutomatedGa4ConfigurationOptOutTransportSettings,
@@ -3516,6 +3969,96 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   @Override
   public UnaryCallable<RunAccessReportRequest, RunAccessReportResponse> runAccessReportCallable() {
     return runAccessReportCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAccessBindingRequest, AccessBinding> createAccessBindingCallable() {
+    return createAccessBindingCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAccessBindingRequest, AccessBinding> getAccessBindingCallable() {
+    return getAccessBindingCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAccessBindingRequest, AccessBinding> updateAccessBindingCallable() {
+    return updateAccessBindingCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAccessBindingRequest, Empty> deleteAccessBindingCallable() {
+    return deleteAccessBindingCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAccessBindingsRequest, ListAccessBindingsResponse>
+      listAccessBindingsCallable() {
+    return listAccessBindingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAccessBindingsRequest, ListAccessBindingsPagedResponse>
+      listAccessBindingsPagedCallable() {
+    return listAccessBindingsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchCreateAccessBindingsRequest, BatchCreateAccessBindingsResponse>
+      batchCreateAccessBindingsCallable() {
+    return batchCreateAccessBindingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchGetAccessBindingsRequest, BatchGetAccessBindingsResponse>
+      batchGetAccessBindingsCallable() {
+    return batchGetAccessBindingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchUpdateAccessBindingsRequest, BatchUpdateAccessBindingsResponse>
+      batchUpdateAccessBindingsCallable() {
+    return batchUpdateAccessBindingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchDeleteAccessBindingsRequest, Empty>
+      batchDeleteAccessBindingsCallable() {
+    return batchDeleteAccessBindingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetExpandedDataSetRequest, ExpandedDataSet> getExpandedDataSetCallable() {
+    return getExpandedDataSetCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListExpandedDataSetsRequest, ListExpandedDataSetsResponse>
+      listExpandedDataSetsCallable() {
+    return listExpandedDataSetsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListExpandedDataSetsRequest, ListExpandedDataSetsPagedResponse>
+      listExpandedDataSetsPagedCallable() {
+    return listExpandedDataSetsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateExpandedDataSetRequest, ExpandedDataSet>
+      createExpandedDataSetCallable() {
+    return createExpandedDataSetCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateExpandedDataSetRequest, ExpandedDataSet>
+      updateExpandedDataSetCallable() {
+    return updateExpandedDataSetCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteExpandedDataSetRequest, Empty> deleteExpandedDataSetCallable() {
+    return deleteExpandedDataSetCallable;
   }
 
   @Override

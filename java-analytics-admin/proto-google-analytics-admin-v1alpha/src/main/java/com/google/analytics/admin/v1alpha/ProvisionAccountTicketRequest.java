@@ -126,7 +126,7 @@ public final class ProvisionAccountTicketRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Redirect URI where the user will be sent after accepting Terms of Service.
-   * Must be configured in Developers Console as a Redirect URI
+   * Must be configured in Developers Console as a Redirect URI.
    * </pre>
    *
    * <code>string redirect_uri = 2;</code>
@@ -150,7 +150,7 @@ public final class ProvisionAccountTicketRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Redirect URI where the user will be sent after accepting Terms of Service.
-   * Must be configured in Developers Console as a Redirect URI
+   * Must be configured in Developers Console as a Redirect URI.
    * </pre>
    *
    * <code>string redirect_uri = 2;</code>
@@ -737,7 +737,7 @@ public final class ProvisionAccountTicketRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Redirect URI where the user will be sent after accepting Terms of Service.
-     * Must be configured in Developers Console as a Redirect URI
+     * Must be configured in Developers Console as a Redirect URI.
      * </pre>
      *
      * <code>string redirect_uri = 2;</code>
@@ -760,7 +760,7 @@ public final class ProvisionAccountTicketRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Redirect URI where the user will be sent after accepting Terms of Service.
-     * Must be configured in Developers Console as a Redirect URI
+     * Must be configured in Developers Console as a Redirect URI.
      * </pre>
      *
      * <code>string redirect_uri = 2;</code>
@@ -783,7 +783,7 @@ public final class ProvisionAccountTicketRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Redirect URI where the user will be sent after accepting Terms of Service.
-     * Must be configured in Developers Console as a Redirect URI
+     * Must be configured in Developers Console as a Redirect URI.
      * </pre>
      *
      * <code>string redirect_uri = 2;</code>
@@ -805,7 +805,7 @@ public final class ProvisionAccountTicketRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Redirect URI where the user will be sent after accepting Terms of Service.
-     * Must be configured in Developers Console as a Redirect URI
+     * Must be configured in Developers Console as a Redirect URI.
      * </pre>
      *
      * <code>string redirect_uri = 2;</code>
@@ -823,7 +823,7 @@ public final class ProvisionAccountTicketRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Redirect URI where the user will be sent after accepting Terms of Service.
-     * Must be configured in Developers Console as a Redirect URI
+     * Must be configured in Developers Console as a Redirect URI.
      * </pre>
      *
      * <code>string redirect_uri = 2;</code>

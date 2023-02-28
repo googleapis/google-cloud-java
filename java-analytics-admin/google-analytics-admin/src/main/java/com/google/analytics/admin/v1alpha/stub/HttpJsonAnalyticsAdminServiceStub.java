@@ -17,6 +17,7 @@
 package com.google.analytics.admin.v1alpha.stub;
 
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.AuditUserLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccessBindingsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
@@ -27,6 +28,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinkProposalsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListExpandedDataSetsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
@@ -35,6 +37,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
+import com.google.analytics.admin.v1alpha.AccessBinding;
 import com.google.analytics.admin.v1alpha.Account;
 import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest;
 import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse;
@@ -47,16 +50,24 @@ import com.google.analytics.admin.v1alpha.AttributionSettings;
 import com.google.analytics.admin.v1alpha.Audience;
 import com.google.analytics.admin.v1alpha.AuditUserLinksRequest;
 import com.google.analytics.admin.v1alpha.AuditUserLinksResponse;
+import com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsRequest;
+import com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsResponse;
 import com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse;
+import com.google.analytics.admin.v1alpha.BatchDeleteAccessBindingsRequest;
 import com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest;
+import com.google.analytics.admin.v1alpha.BatchGetAccessBindingsRequest;
+import com.google.analytics.admin.v1alpha.BatchGetAccessBindingsResponse;
 import com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse;
+import com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsRequest;
+import com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsResponse;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BigQueryLink;
 import com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ConversionEvent;
+import com.google.analytics.admin.v1alpha.CreateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.CreateAudienceRequest;
 import com.google.analytics.admin.v1alpha.CreateConversionEventRequest;
 import com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest;
@@ -64,6 +75,7 @@ import com.google.analytics.admin.v1alpha.CreateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.CreateDataStreamRequest;
 import com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest;
+import com.google.analytics.admin.v1alpha.CreateExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest;
@@ -75,11 +87,13 @@ import com.google.analytics.admin.v1alpha.CustomMetric;
 import com.google.analytics.admin.v1alpha.DataRetentionSettings;
 import com.google.analytics.admin.v1alpha.DataSharingSettings;
 import com.google.analytics.admin.v1alpha.DataStream;
+import com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
 import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
 import com.google.analytics.admin.v1alpha.DeleteDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest;
+import com.google.analytics.admin.v1alpha.DeleteExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest;
@@ -88,9 +102,11 @@ import com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal;
+import com.google.analytics.admin.v1alpha.ExpandedDataSet;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse;
 import com.google.analytics.admin.v1alpha.FirebaseLink;
+import com.google.analytics.admin.v1alpha.GetAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.GetAccountRequest;
 import com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetAudienceRequest;
@@ -103,6 +119,7 @@ import com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetDataStreamRequest;
 import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest;
+import com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
 import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest;
@@ -112,6 +129,8 @@ import com.google.analytics.admin.v1alpha.GetUserLinkRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
 import com.google.analytics.admin.v1alpha.GoogleSignalsSettings;
+import com.google.analytics.admin.v1alpha.ListAccessBindingsRequest;
+import com.google.analytics.admin.v1alpha.ListAccessBindingsResponse;
 import com.google.analytics.admin.v1alpha.ListAccountSummariesRequest;
 import com.google.analytics.admin.v1alpha.ListAccountSummariesResponse;
 import com.google.analytics.admin.v1alpha.ListAccountsRequest;
@@ -132,6 +151,8 @@ import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkPropo
 import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsResponse;
 import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequest;
 import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksResponse;
+import com.google.analytics.admin.v1alpha.ListExpandedDataSetsRequest;
+import com.google.analytics.admin.v1alpha.ListExpandedDataSetsResponse;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse;
 import com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest;
@@ -155,6 +176,7 @@ import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest;
 import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse;
+import com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateAudienceRequest;
@@ -163,6 +185,7 @@ import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest;
+import com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest;
@@ -3455,6 +3478,548 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreateAccessBindingRequest, AccessBinding>
+      createAccessBindingMethodDescriptor =
+          ApiMethodDescriptor.<CreateAccessBindingRequest, AccessBinding>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateAccessBinding")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateAccessBindingRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=accounts/*}/accessBindings",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAccessBindingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths("/v1alpha/{parent=properties/*}/accessBindings")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAccessBindingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("accessBinding", request.getAccessBinding(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AccessBinding>newBuilder()
+                      .setDefaultInstance(AccessBinding.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetAccessBindingRequest, AccessBinding>
+      getAccessBindingMethodDescriptor =
+          ApiMethodDescriptor.<GetAccessBindingRequest, AccessBinding>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetAccessBinding")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAccessBindingRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=accounts/*/accessBindings/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAccessBindingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths("/v1alpha/{name=properties/*/accessBindings/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAccessBindingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AccessBinding>newBuilder()
+                      .setDefaultInstance(AccessBinding.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateAccessBindingRequest, AccessBinding>
+      updateAccessBindingMethodDescriptor =
+          ApiMethodDescriptor.<UpdateAccessBindingRequest, AccessBinding>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateAccessBinding")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateAccessBindingRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{accessBinding.name=accounts/*/accessBindings/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAccessBindingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "accessBinding.name", request.getAccessBinding().getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1alpha/{accessBinding.name=properties/*/accessBindings/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAccessBindingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("accessBinding", request.getAccessBinding(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AccessBinding>newBuilder()
+                      .setDefaultInstance(AccessBinding.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteAccessBindingRequest, Empty>
+      deleteAccessBindingMethodDescriptor =
+          ApiMethodDescriptor.<DeleteAccessBindingRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteAccessBinding")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteAccessBindingRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=accounts/*/accessBindings/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAccessBindingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths("/v1alpha/{name=properties/*/accessBindings/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAccessBindingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListAccessBindingsRequest, ListAccessBindingsResponse>
+      listAccessBindingsMethodDescriptor =
+          ApiMethodDescriptor.<ListAccessBindingsRequest, ListAccessBindingsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListAccessBindings")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAccessBindingsRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=accounts/*}/accessBindings",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAccessBindingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths("/v1alpha/{parent=properties/*}/accessBindings")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAccessBindingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAccessBindingsResponse>newBuilder()
+                      .setDefaultInstance(ListAccessBindingsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchCreateAccessBindingsRequest, BatchCreateAccessBindingsResponse>
+      batchCreateAccessBindingsMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchCreateAccessBindingsRequest, BatchCreateAccessBindingsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/BatchCreateAccessBindings")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchCreateAccessBindingsRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=accounts/*}/accessBindings:batchCreate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchCreateAccessBindingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1alpha/{parent=properties/*}/accessBindings:batchCreate")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchCreateAccessBindingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchCreateAccessBindingsResponse>newBuilder()
+                      .setDefaultInstance(BatchCreateAccessBindingsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchGetAccessBindingsRequest, BatchGetAccessBindingsResponse>
+      batchGetAccessBindingsMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchGetAccessBindingsRequest, BatchGetAccessBindingsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/BatchGetAccessBindings")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchGetAccessBindingsRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=accounts/*}/accessBindings:batchGet",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchGetAccessBindingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths("/v1alpha/{parent=properties/*}/accessBindings:batchGet")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchGetAccessBindingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "names", request.getNamesList());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchGetAccessBindingsResponse>newBuilder()
+                      .setDefaultInstance(BatchGetAccessBindingsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchUpdateAccessBindingsRequest, BatchUpdateAccessBindingsResponse>
+      batchUpdateAccessBindingsMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchUpdateAccessBindingsRequest, BatchUpdateAccessBindingsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/BatchUpdateAccessBindings")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchUpdateAccessBindingsRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=accounts/*}/accessBindings:batchUpdate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchUpdateAccessBindingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1alpha/{parent=properties/*}/accessBindings:batchUpdate")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchUpdateAccessBindingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchUpdateAccessBindingsResponse>newBuilder()
+                      .setDefaultInstance(BatchUpdateAccessBindingsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<BatchDeleteAccessBindingsRequest, Empty>
+      batchDeleteAccessBindingsMethodDescriptor =
+          ApiMethodDescriptor.<BatchDeleteAccessBindingsRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/BatchDeleteAccessBindings")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchDeleteAccessBindingsRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=accounts/*}/accessBindings:batchDelete",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchDeleteAccessBindingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1alpha/{parent=properties/*}/accessBindings:batchDelete")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchDeleteAccessBindingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetExpandedDataSetRequest, ExpandedDataSet>
+      getExpandedDataSetMethodDescriptor =
+          ApiMethodDescriptor.<GetExpandedDataSetRequest, ExpandedDataSet>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetExpandedDataSet")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetExpandedDataSetRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=properties/*/expandedDataSets/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetExpandedDataSetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetExpandedDataSetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ExpandedDataSet>newBuilder()
+                      .setDefaultInstance(ExpandedDataSet.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListExpandedDataSetsRequest, ListExpandedDataSetsResponse>
+      listExpandedDataSetsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListExpandedDataSetsRequest, ListExpandedDataSetsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListExpandedDataSets")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListExpandedDataSetsRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=properties/*}/expandedDataSets",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListExpandedDataSetsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListExpandedDataSetsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListExpandedDataSetsResponse>newBuilder()
+                      .setDefaultInstance(ListExpandedDataSetsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateExpandedDataSetRequest, ExpandedDataSet>
+      createExpandedDataSetMethodDescriptor =
+          ApiMethodDescriptor.<CreateExpandedDataSetRequest, ExpandedDataSet>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateExpandedDataSet")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateExpandedDataSetRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=properties/*}/expandedDataSets",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateExpandedDataSetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateExpandedDataSetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("expandedDataSet", request.getExpandedDataSet(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ExpandedDataSet>newBuilder()
+                      .setDefaultInstance(ExpandedDataSet.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateExpandedDataSetRequest, ExpandedDataSet>
+      updateExpandedDataSetMethodDescriptor =
+          ApiMethodDescriptor.<UpdateExpandedDataSetRequest, ExpandedDataSet>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateExpandedDataSet")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateExpandedDataSetRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{expandedDataSet.name=properties/*/expandedDataSets/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateExpandedDataSetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "expandedDataSet.name",
+                                request.getExpandedDataSet().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateExpandedDataSetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("expandedDataSet", request.getExpandedDataSet(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ExpandedDataSet>newBuilder()
+                      .setDefaultInstance(ExpandedDataSet.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteExpandedDataSetRequest, Empty>
+      deleteExpandedDataSetMethodDescriptor =
+          ApiMethodDescriptor.<DeleteExpandedDataSetRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteExpandedDataSet")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteExpandedDataSetRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=properties/*/expandedDataSets/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteExpandedDataSetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteExpandedDataSetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<
           SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
       setAutomatedGa4ConfigurationOptOutMethodDescriptor =
@@ -3800,6 +4365,35 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
       updateAttributionSettingsCallable;
   private final UnaryCallable<RunAccessReportRequest, RunAccessReportResponse>
       runAccessReportCallable;
+  private final UnaryCallable<CreateAccessBindingRequest, AccessBinding>
+      createAccessBindingCallable;
+  private final UnaryCallable<GetAccessBindingRequest, AccessBinding> getAccessBindingCallable;
+  private final UnaryCallable<UpdateAccessBindingRequest, AccessBinding>
+      updateAccessBindingCallable;
+  private final UnaryCallable<DeleteAccessBindingRequest, Empty> deleteAccessBindingCallable;
+  private final UnaryCallable<ListAccessBindingsRequest, ListAccessBindingsResponse>
+      listAccessBindingsCallable;
+  private final UnaryCallable<ListAccessBindingsRequest, ListAccessBindingsPagedResponse>
+      listAccessBindingsPagedCallable;
+  private final UnaryCallable<BatchCreateAccessBindingsRequest, BatchCreateAccessBindingsResponse>
+      batchCreateAccessBindingsCallable;
+  private final UnaryCallable<BatchGetAccessBindingsRequest, BatchGetAccessBindingsResponse>
+      batchGetAccessBindingsCallable;
+  private final UnaryCallable<BatchUpdateAccessBindingsRequest, BatchUpdateAccessBindingsResponse>
+      batchUpdateAccessBindingsCallable;
+  private final UnaryCallable<BatchDeleteAccessBindingsRequest, Empty>
+      batchDeleteAccessBindingsCallable;
+  private final UnaryCallable<GetExpandedDataSetRequest, ExpandedDataSet>
+      getExpandedDataSetCallable;
+  private final UnaryCallable<ListExpandedDataSetsRequest, ListExpandedDataSetsResponse>
+      listExpandedDataSetsCallable;
+  private final UnaryCallable<ListExpandedDataSetsRequest, ListExpandedDataSetsPagedResponse>
+      listExpandedDataSetsPagedCallable;
+  private final UnaryCallable<CreateExpandedDataSetRequest, ExpandedDataSet>
+      createExpandedDataSetCallable;
+  private final UnaryCallable<UpdateExpandedDataSetRequest, ExpandedDataSet>
+      updateExpandedDataSetCallable;
+  private final UnaryCallable<DeleteExpandedDataSetRequest, Empty> deleteExpandedDataSetCallable;
   private final UnaryCallable<
           SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
       setAutomatedGa4ConfigurationOptOutCallable;
@@ -4390,6 +4984,92 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                 .setMethodDescriptor(runAccessReportMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<CreateAccessBindingRequest, AccessBinding>
+        createAccessBindingTransportSettings =
+            HttpJsonCallSettings.<CreateAccessBindingRequest, AccessBinding>newBuilder()
+                .setMethodDescriptor(createAccessBindingMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<GetAccessBindingRequest, AccessBinding> getAccessBindingTransportSettings =
+        HttpJsonCallSettings.<GetAccessBindingRequest, AccessBinding>newBuilder()
+            .setMethodDescriptor(getAccessBindingMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<UpdateAccessBindingRequest, AccessBinding>
+        updateAccessBindingTransportSettings =
+            HttpJsonCallSettings.<UpdateAccessBindingRequest, AccessBinding>newBuilder()
+                .setMethodDescriptor(updateAccessBindingMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<DeleteAccessBindingRequest, Empty> deleteAccessBindingTransportSettings =
+        HttpJsonCallSettings.<DeleteAccessBindingRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteAccessBindingMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<ListAccessBindingsRequest, ListAccessBindingsResponse>
+        listAccessBindingsTransportSettings =
+            HttpJsonCallSettings.<ListAccessBindingsRequest, ListAccessBindingsResponse>newBuilder()
+                .setMethodDescriptor(listAccessBindingsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<BatchCreateAccessBindingsRequest, BatchCreateAccessBindingsResponse>
+        batchCreateAccessBindingsTransportSettings =
+            HttpJsonCallSettings
+                .<BatchCreateAccessBindingsRequest, BatchCreateAccessBindingsResponse>newBuilder()
+                .setMethodDescriptor(batchCreateAccessBindingsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<BatchGetAccessBindingsRequest, BatchGetAccessBindingsResponse>
+        batchGetAccessBindingsTransportSettings =
+            HttpJsonCallSettings
+                .<BatchGetAccessBindingsRequest, BatchGetAccessBindingsResponse>newBuilder()
+                .setMethodDescriptor(batchGetAccessBindingsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<BatchUpdateAccessBindingsRequest, BatchUpdateAccessBindingsResponse>
+        batchUpdateAccessBindingsTransportSettings =
+            HttpJsonCallSettings
+                .<BatchUpdateAccessBindingsRequest, BatchUpdateAccessBindingsResponse>newBuilder()
+                .setMethodDescriptor(batchUpdateAccessBindingsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<BatchDeleteAccessBindingsRequest, Empty>
+        batchDeleteAccessBindingsTransportSettings =
+            HttpJsonCallSettings.<BatchDeleteAccessBindingsRequest, Empty>newBuilder()
+                .setMethodDescriptor(batchDeleteAccessBindingsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<GetExpandedDataSetRequest, ExpandedDataSet>
+        getExpandedDataSetTransportSettings =
+            HttpJsonCallSettings.<GetExpandedDataSetRequest, ExpandedDataSet>newBuilder()
+                .setMethodDescriptor(getExpandedDataSetMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<ListExpandedDataSetsRequest, ListExpandedDataSetsResponse>
+        listExpandedDataSetsTransportSettings =
+            HttpJsonCallSettings
+                .<ListExpandedDataSetsRequest, ListExpandedDataSetsResponse>newBuilder()
+                .setMethodDescriptor(listExpandedDataSetsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<CreateExpandedDataSetRequest, ExpandedDataSet>
+        createExpandedDataSetTransportSettings =
+            HttpJsonCallSettings.<CreateExpandedDataSetRequest, ExpandedDataSet>newBuilder()
+                .setMethodDescriptor(createExpandedDataSetMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<UpdateExpandedDataSetRequest, ExpandedDataSet>
+        updateExpandedDataSetTransportSettings =
+            HttpJsonCallSettings.<UpdateExpandedDataSetRequest, ExpandedDataSet>newBuilder()
+                .setMethodDescriptor(updateExpandedDataSetMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<DeleteExpandedDataSetRequest, Empty>
+        deleteExpandedDataSetTransportSettings =
+            HttpJsonCallSettings.<DeleteExpandedDataSetRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteExpandedDataSetMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<
             SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
         setAutomatedGa4ConfigurationOptOutTransportSettings =
@@ -4860,6 +5540,84 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
     this.runAccessReportCallable =
         callableFactory.createUnaryCallable(
             runAccessReportTransportSettings, settings.runAccessReportSettings(), clientContext);
+    this.createAccessBindingCallable =
+        callableFactory.createUnaryCallable(
+            createAccessBindingTransportSettings,
+            settings.createAccessBindingSettings(),
+            clientContext);
+    this.getAccessBindingCallable =
+        callableFactory.createUnaryCallable(
+            getAccessBindingTransportSettings, settings.getAccessBindingSettings(), clientContext);
+    this.updateAccessBindingCallable =
+        callableFactory.createUnaryCallable(
+            updateAccessBindingTransportSettings,
+            settings.updateAccessBindingSettings(),
+            clientContext);
+    this.deleteAccessBindingCallable =
+        callableFactory.createUnaryCallable(
+            deleteAccessBindingTransportSettings,
+            settings.deleteAccessBindingSettings(),
+            clientContext);
+    this.listAccessBindingsCallable =
+        callableFactory.createUnaryCallable(
+            listAccessBindingsTransportSettings,
+            settings.listAccessBindingsSettings(),
+            clientContext);
+    this.listAccessBindingsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAccessBindingsTransportSettings,
+            settings.listAccessBindingsSettings(),
+            clientContext);
+    this.batchCreateAccessBindingsCallable =
+        callableFactory.createUnaryCallable(
+            batchCreateAccessBindingsTransportSettings,
+            settings.batchCreateAccessBindingsSettings(),
+            clientContext);
+    this.batchGetAccessBindingsCallable =
+        callableFactory.createUnaryCallable(
+            batchGetAccessBindingsTransportSettings,
+            settings.batchGetAccessBindingsSettings(),
+            clientContext);
+    this.batchUpdateAccessBindingsCallable =
+        callableFactory.createUnaryCallable(
+            batchUpdateAccessBindingsTransportSettings,
+            settings.batchUpdateAccessBindingsSettings(),
+            clientContext);
+    this.batchDeleteAccessBindingsCallable =
+        callableFactory.createUnaryCallable(
+            batchDeleteAccessBindingsTransportSettings,
+            settings.batchDeleteAccessBindingsSettings(),
+            clientContext);
+    this.getExpandedDataSetCallable =
+        callableFactory.createUnaryCallable(
+            getExpandedDataSetTransportSettings,
+            settings.getExpandedDataSetSettings(),
+            clientContext);
+    this.listExpandedDataSetsCallable =
+        callableFactory.createUnaryCallable(
+            listExpandedDataSetsTransportSettings,
+            settings.listExpandedDataSetsSettings(),
+            clientContext);
+    this.listExpandedDataSetsPagedCallable =
+        callableFactory.createPagedCallable(
+            listExpandedDataSetsTransportSettings,
+            settings.listExpandedDataSetsSettings(),
+            clientContext);
+    this.createExpandedDataSetCallable =
+        callableFactory.createUnaryCallable(
+            createExpandedDataSetTransportSettings,
+            settings.createExpandedDataSetSettings(),
+            clientContext);
+    this.updateExpandedDataSetCallable =
+        callableFactory.createUnaryCallable(
+            updateExpandedDataSetTransportSettings,
+            settings.updateExpandedDataSetSettings(),
+            clientContext);
+    this.deleteExpandedDataSetCallable =
+        callableFactory.createUnaryCallable(
+            deleteExpandedDataSetTransportSettings,
+            settings.deleteExpandedDataSetSettings(),
+            clientContext);
     this.setAutomatedGa4ConfigurationOptOutCallable =
         callableFactory.createUnaryCallable(
             setAutomatedGa4ConfigurationOptOutTransportSettings,
@@ -4975,6 +5733,20 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
     methodDescriptors.add(getAttributionSettingsMethodDescriptor);
     methodDescriptors.add(updateAttributionSettingsMethodDescriptor);
     methodDescriptors.add(runAccessReportMethodDescriptor);
+    methodDescriptors.add(createAccessBindingMethodDescriptor);
+    methodDescriptors.add(getAccessBindingMethodDescriptor);
+    methodDescriptors.add(updateAccessBindingMethodDescriptor);
+    methodDescriptors.add(deleteAccessBindingMethodDescriptor);
+    methodDescriptors.add(listAccessBindingsMethodDescriptor);
+    methodDescriptors.add(batchCreateAccessBindingsMethodDescriptor);
+    methodDescriptors.add(batchGetAccessBindingsMethodDescriptor);
+    methodDescriptors.add(batchUpdateAccessBindingsMethodDescriptor);
+    methodDescriptors.add(batchDeleteAccessBindingsMethodDescriptor);
+    methodDescriptors.add(getExpandedDataSetMethodDescriptor);
+    methodDescriptors.add(listExpandedDataSetsMethodDescriptor);
+    methodDescriptors.add(createExpandedDataSetMethodDescriptor);
+    methodDescriptors.add(updateExpandedDataSetMethodDescriptor);
+    methodDescriptors.add(deleteExpandedDataSetMethodDescriptor);
     methodDescriptors.add(setAutomatedGa4ConfigurationOptOutMethodDescriptor);
     methodDescriptors.add(fetchAutomatedGa4ConfigurationOptOutMethodDescriptor);
     methodDescriptors.add(getBigQueryLinkMethodDescriptor);
@@ -5556,6 +6328,96 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
   @Override
   public UnaryCallable<RunAccessReportRequest, RunAccessReportResponse> runAccessReportCallable() {
     return runAccessReportCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAccessBindingRequest, AccessBinding> createAccessBindingCallable() {
+    return createAccessBindingCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAccessBindingRequest, AccessBinding> getAccessBindingCallable() {
+    return getAccessBindingCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAccessBindingRequest, AccessBinding> updateAccessBindingCallable() {
+    return updateAccessBindingCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAccessBindingRequest, Empty> deleteAccessBindingCallable() {
+    return deleteAccessBindingCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAccessBindingsRequest, ListAccessBindingsResponse>
+      listAccessBindingsCallable() {
+    return listAccessBindingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAccessBindingsRequest, ListAccessBindingsPagedResponse>
+      listAccessBindingsPagedCallable() {
+    return listAccessBindingsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchCreateAccessBindingsRequest, BatchCreateAccessBindingsResponse>
+      batchCreateAccessBindingsCallable() {
+    return batchCreateAccessBindingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchGetAccessBindingsRequest, BatchGetAccessBindingsResponse>
+      batchGetAccessBindingsCallable() {
+    return batchGetAccessBindingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchUpdateAccessBindingsRequest, BatchUpdateAccessBindingsResponse>
+      batchUpdateAccessBindingsCallable() {
+    return batchUpdateAccessBindingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchDeleteAccessBindingsRequest, Empty>
+      batchDeleteAccessBindingsCallable() {
+    return batchDeleteAccessBindingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetExpandedDataSetRequest, ExpandedDataSet> getExpandedDataSetCallable() {
+    return getExpandedDataSetCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListExpandedDataSetsRequest, ListExpandedDataSetsResponse>
+      listExpandedDataSetsCallable() {
+    return listExpandedDataSetsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListExpandedDataSetsRequest, ListExpandedDataSetsPagedResponse>
+      listExpandedDataSetsPagedCallable() {
+    return listExpandedDataSetsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateExpandedDataSetRequest, ExpandedDataSet>
+      createExpandedDataSetCallable() {
+    return createExpandedDataSetCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateExpandedDataSetRequest, ExpandedDataSet>
+      updateExpandedDataSetCallable() {
+    return updateExpandedDataSetCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteExpandedDataSetRequest, Empty> deleteExpandedDataSetCallable() {
+    return deleteExpandedDataSetCallable;
   }
 
   @Override

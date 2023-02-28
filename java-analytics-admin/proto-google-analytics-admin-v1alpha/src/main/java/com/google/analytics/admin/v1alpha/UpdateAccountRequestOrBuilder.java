@@ -72,8 +72,8 @@ public interface UpdateAccountRequestOrBuilder
    *
    * <pre>
    * Required. The list of fields to be updated. Field names must be in snake
-   * case (e.g., "field_to_update"). Omitted fields will not be updated. To
-   * replace the entire entity, use one path with the string "*" to match all
+   * case (for example, "field_to_update"). Omitted fields will not be updated.
+   * To replace the entire entity, use one path with the string "*" to match all
    * fields.
    * </pre>
    *
@@ -88,8 +88,8 @@ public interface UpdateAccountRequestOrBuilder
    *
    * <pre>
    * Required. The list of fields to be updated. Field names must be in snake
-   * case (e.g., "field_to_update"). Omitted fields will not be updated. To
-   * replace the entire entity, use one path with the string "*" to match all
+   * case (for example, "field_to_update"). Omitted fields will not be updated.
+   * To replace the entire entity, use one path with the string "*" to match all
    * fields.
    * </pre>
    *
@@ -104,8 +104,8 @@ public interface UpdateAccountRequestOrBuilder
    *
    * <pre>
    * Required. The list of fields to be updated. Field names must be in snake
-   * case (e.g., "field_to_update"). Omitted fields will not be updated. To
-   * replace the entire entity, use one path with the string "*" to match all
+   * case (for example, "field_to_update"). Omitted fields will not be updated.
+   * To replace the entire entity, use one path with the string "*" to match all
    * fields.
    * </pre>
    *

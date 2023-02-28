@@ -17,6 +17,7 @@
 package com.google.analytics.admin.v1alpha;
 
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.AuditUserLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccessBindingsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
@@ -27,6 +28,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinkProposalsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListExpandedDataSetsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
@@ -646,6 +648,94 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
   public UnaryCallSettings<RunAccessReportRequest, RunAccessReportResponse>
       runAccessReportSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).runAccessReportSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAccessBinding. */
+  public UnaryCallSettings<CreateAccessBindingRequest, AccessBinding>
+      createAccessBindingSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).createAccessBindingSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAccessBinding. */
+  public UnaryCallSettings<GetAccessBindingRequest, AccessBinding> getAccessBindingSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).getAccessBindingSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAccessBinding. */
+  public UnaryCallSettings<UpdateAccessBindingRequest, AccessBinding>
+      updateAccessBindingSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).updateAccessBindingSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAccessBinding. */
+  public UnaryCallSettings<DeleteAccessBindingRequest, Empty> deleteAccessBindingSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).deleteAccessBindingSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAccessBindings. */
+  public PagedCallSettings<
+          ListAccessBindingsRequest, ListAccessBindingsResponse, ListAccessBindingsPagedResponse>
+      listAccessBindingsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).listAccessBindingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateAccessBindings. */
+  public UnaryCallSettings<BatchCreateAccessBindingsRequest, BatchCreateAccessBindingsResponse>
+      batchCreateAccessBindingsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .batchCreateAccessBindingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchGetAccessBindings. */
+  public UnaryCallSettings<BatchGetAccessBindingsRequest, BatchGetAccessBindingsResponse>
+      batchGetAccessBindingsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).batchGetAccessBindingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateAccessBindings. */
+  public UnaryCallSettings<BatchUpdateAccessBindingsRequest, BatchUpdateAccessBindingsResponse>
+      batchUpdateAccessBindingsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .batchUpdateAccessBindingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteAccessBindings. */
+  public UnaryCallSettings<BatchDeleteAccessBindingsRequest, Empty>
+      batchDeleteAccessBindingsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .batchDeleteAccessBindingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getExpandedDataSet. */
+  public UnaryCallSettings<GetExpandedDataSetRequest, ExpandedDataSet>
+      getExpandedDataSetSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).getExpandedDataSetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listExpandedDataSets. */
+  public PagedCallSettings<
+          ListExpandedDataSetsRequest,
+          ListExpandedDataSetsResponse,
+          ListExpandedDataSetsPagedResponse>
+      listExpandedDataSetsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).listExpandedDataSetsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createExpandedDataSet. */
+  public UnaryCallSettings<CreateExpandedDataSetRequest, ExpandedDataSet>
+      createExpandedDataSetSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).createExpandedDataSetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateExpandedDataSet. */
+  public UnaryCallSettings<UpdateExpandedDataSetRequest, ExpandedDataSet>
+      updateExpandedDataSetSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).updateExpandedDataSetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteExpandedDataSet. */
+  public UnaryCallSettings<DeleteExpandedDataSetRequest, Empty> deleteExpandedDataSetSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).deleteExpandedDataSetSettings();
   }
 
   /** Returns the object with the settings used for calls to setAutomatedGa4ConfigurationOptOut. */
@@ -1351,6 +1441,96 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     public UnaryCallSettings.Builder<RunAccessReportRequest, RunAccessReportResponse>
         runAccessReportSettings() {
       return getStubSettingsBuilder().runAccessReportSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAccessBinding. */
+    public UnaryCallSettings.Builder<CreateAccessBindingRequest, AccessBinding>
+        createAccessBindingSettings() {
+      return getStubSettingsBuilder().createAccessBindingSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAccessBinding. */
+    public UnaryCallSettings.Builder<GetAccessBindingRequest, AccessBinding>
+        getAccessBindingSettings() {
+      return getStubSettingsBuilder().getAccessBindingSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAccessBinding. */
+    public UnaryCallSettings.Builder<UpdateAccessBindingRequest, AccessBinding>
+        updateAccessBindingSettings() {
+      return getStubSettingsBuilder().updateAccessBindingSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAccessBinding. */
+    public UnaryCallSettings.Builder<DeleteAccessBindingRequest, Empty>
+        deleteAccessBindingSettings() {
+      return getStubSettingsBuilder().deleteAccessBindingSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAccessBindings. */
+    public PagedCallSettings.Builder<
+            ListAccessBindingsRequest, ListAccessBindingsResponse, ListAccessBindingsPagedResponse>
+        listAccessBindingsSettings() {
+      return getStubSettingsBuilder().listAccessBindingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateAccessBindings. */
+    public UnaryCallSettings.Builder<
+            BatchCreateAccessBindingsRequest, BatchCreateAccessBindingsResponse>
+        batchCreateAccessBindingsSettings() {
+      return getStubSettingsBuilder().batchCreateAccessBindingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchGetAccessBindings. */
+    public UnaryCallSettings.Builder<BatchGetAccessBindingsRequest, BatchGetAccessBindingsResponse>
+        batchGetAccessBindingsSettings() {
+      return getStubSettingsBuilder().batchGetAccessBindingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateAccessBindings. */
+    public UnaryCallSettings.Builder<
+            BatchUpdateAccessBindingsRequest, BatchUpdateAccessBindingsResponse>
+        batchUpdateAccessBindingsSettings() {
+      return getStubSettingsBuilder().batchUpdateAccessBindingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteAccessBindings. */
+    public UnaryCallSettings.Builder<BatchDeleteAccessBindingsRequest, Empty>
+        batchDeleteAccessBindingsSettings() {
+      return getStubSettingsBuilder().batchDeleteAccessBindingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getExpandedDataSet. */
+    public UnaryCallSettings.Builder<GetExpandedDataSetRequest, ExpandedDataSet>
+        getExpandedDataSetSettings() {
+      return getStubSettingsBuilder().getExpandedDataSetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listExpandedDataSets. */
+    public PagedCallSettings.Builder<
+            ListExpandedDataSetsRequest,
+            ListExpandedDataSetsResponse,
+            ListExpandedDataSetsPagedResponse>
+        listExpandedDataSetsSettings() {
+      return getStubSettingsBuilder().listExpandedDataSetsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createExpandedDataSet. */
+    public UnaryCallSettings.Builder<CreateExpandedDataSetRequest, ExpandedDataSet>
+        createExpandedDataSetSettings() {
+      return getStubSettingsBuilder().createExpandedDataSetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateExpandedDataSet. */
+    public UnaryCallSettings.Builder<UpdateExpandedDataSetRequest, ExpandedDataSet>
+        updateExpandedDataSetSettings() {
+      return getStubSettingsBuilder().updateExpandedDataSetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteExpandedDataSet. */
+    public UnaryCallSettings.Builder<DeleteExpandedDataSetRequest, Empty>
+        deleteExpandedDataSetSettings() {
+      return getStubSettingsBuilder().deleteExpandedDataSetSettings();
     }
 
     /**

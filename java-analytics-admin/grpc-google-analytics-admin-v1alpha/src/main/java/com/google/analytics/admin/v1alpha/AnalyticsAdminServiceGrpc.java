@@ -4255,6 +4255,716 @@ public final class AnalyticsAdminServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateAccessBindingRequest,
+          com.google.analytics.admin.v1alpha.AccessBinding>
+      getCreateAccessBindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateAccessBinding",
+      requestType = com.google.analytics.admin.v1alpha.CreateAccessBindingRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.AccessBinding.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateAccessBindingRequest,
+          com.google.analytics.admin.v1alpha.AccessBinding>
+      getCreateAccessBindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.CreateAccessBindingRequest,
+            com.google.analytics.admin.v1alpha.AccessBinding>
+        getCreateAccessBindingMethod;
+    if ((getCreateAccessBindingMethod = AnalyticsAdminServiceGrpc.getCreateAccessBindingMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getCreateAccessBindingMethod = AnalyticsAdminServiceGrpc.getCreateAccessBindingMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getCreateAccessBindingMethod =
+              getCreateAccessBindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.CreateAccessBindingRequest,
+                          com.google.analytics.admin.v1alpha.AccessBinding>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateAccessBinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CreateAccessBindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.AccessBinding
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("CreateAccessBinding"))
+                      .build();
+        }
+      }
+    }
+    return getCreateAccessBindingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetAccessBindingRequest,
+          com.google.analytics.admin.v1alpha.AccessBinding>
+      getGetAccessBindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAccessBinding",
+      requestType = com.google.analytics.admin.v1alpha.GetAccessBindingRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.AccessBinding.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetAccessBindingRequest,
+          com.google.analytics.admin.v1alpha.AccessBinding>
+      getGetAccessBindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetAccessBindingRequest,
+            com.google.analytics.admin.v1alpha.AccessBinding>
+        getGetAccessBindingMethod;
+    if ((getGetAccessBindingMethod = AnalyticsAdminServiceGrpc.getGetAccessBindingMethod) == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetAccessBindingMethod = AnalyticsAdminServiceGrpc.getGetAccessBindingMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getGetAccessBindingMethod =
+              getGetAccessBindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetAccessBindingRequest,
+                          com.google.analytics.admin.v1alpha.AccessBinding>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAccessBinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GetAccessBindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.AccessBinding
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("GetAccessBinding"))
+                      .build();
+        }
+      }
+    }
+    return getGetAccessBindingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest,
+          com.google.analytics.admin.v1alpha.AccessBinding>
+      getUpdateAccessBindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateAccessBinding",
+      requestType = com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.AccessBinding.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest,
+          com.google.analytics.admin.v1alpha.AccessBinding>
+      getUpdateAccessBindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest,
+            com.google.analytics.admin.v1alpha.AccessBinding>
+        getUpdateAccessBindingMethod;
+    if ((getUpdateAccessBindingMethod = AnalyticsAdminServiceGrpc.getUpdateAccessBindingMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateAccessBindingMethod = AnalyticsAdminServiceGrpc.getUpdateAccessBindingMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getUpdateAccessBindingMethod =
+              getUpdateAccessBindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest,
+                          com.google.analytics.admin.v1alpha.AccessBinding>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateAccessBinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.AccessBinding
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("UpdateAccessBinding"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateAccessBindingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest, com.google.protobuf.Empty>
+      getDeleteAccessBindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteAccessBinding",
+      requestType = com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest, com.google.protobuf.Empty>
+      getDeleteAccessBindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest,
+            com.google.protobuf.Empty>
+        getDeleteAccessBindingMethod;
+    if ((getDeleteAccessBindingMethod = AnalyticsAdminServiceGrpc.getDeleteAccessBindingMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getDeleteAccessBindingMethod = AnalyticsAdminServiceGrpc.getDeleteAccessBindingMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getDeleteAccessBindingMethod =
+              getDeleteAccessBindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteAccessBinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("DeleteAccessBinding"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteAccessBindingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListAccessBindingsRequest,
+          com.google.analytics.admin.v1alpha.ListAccessBindingsResponse>
+      getListAccessBindingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAccessBindings",
+      requestType = com.google.analytics.admin.v1alpha.ListAccessBindingsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ListAccessBindingsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListAccessBindingsRequest,
+          com.google.analytics.admin.v1alpha.ListAccessBindingsResponse>
+      getListAccessBindingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ListAccessBindingsRequest,
+            com.google.analytics.admin.v1alpha.ListAccessBindingsResponse>
+        getListAccessBindingsMethod;
+    if ((getListAccessBindingsMethod = AnalyticsAdminServiceGrpc.getListAccessBindingsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getListAccessBindingsMethod = AnalyticsAdminServiceGrpc.getListAccessBindingsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getListAccessBindingsMethod =
+              getListAccessBindingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ListAccessBindingsRequest,
+                          com.google.analytics.admin.v1alpha.ListAccessBindingsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAccessBindings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListAccessBindingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListAccessBindingsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("ListAccessBindings"))
+                      .build();
+        }
+      }
+    }
+    return getListAccessBindingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsRequest,
+          com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsResponse>
+      getBatchCreateAccessBindingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchCreateAccessBindings",
+      requestType = com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsRequest,
+          com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsResponse>
+      getBatchCreateAccessBindingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsRequest,
+            com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsResponse>
+        getBatchCreateAccessBindingsMethod;
+    if ((getBatchCreateAccessBindingsMethod =
+            AnalyticsAdminServiceGrpc.getBatchCreateAccessBindingsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getBatchCreateAccessBindingsMethod =
+                AnalyticsAdminServiceGrpc.getBatchCreateAccessBindingsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getBatchCreateAccessBindingsMethod =
+              getBatchCreateAccessBindingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsRequest,
+                          com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "BatchCreateAccessBindings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "BatchCreateAccessBindings"))
+                      .build();
+        }
+      }
+    }
+    return getBatchCreateAccessBindingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.BatchGetAccessBindingsRequest,
+          com.google.analytics.admin.v1alpha.BatchGetAccessBindingsResponse>
+      getBatchGetAccessBindingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchGetAccessBindings",
+      requestType = com.google.analytics.admin.v1alpha.BatchGetAccessBindingsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.BatchGetAccessBindingsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.BatchGetAccessBindingsRequest,
+          com.google.analytics.admin.v1alpha.BatchGetAccessBindingsResponse>
+      getBatchGetAccessBindingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.BatchGetAccessBindingsRequest,
+            com.google.analytics.admin.v1alpha.BatchGetAccessBindingsResponse>
+        getBatchGetAccessBindingsMethod;
+    if ((getBatchGetAccessBindingsMethod =
+            AnalyticsAdminServiceGrpc.getBatchGetAccessBindingsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getBatchGetAccessBindingsMethod =
+                AnalyticsAdminServiceGrpc.getBatchGetAccessBindingsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getBatchGetAccessBindingsMethod =
+              getBatchGetAccessBindingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.BatchGetAccessBindingsRequest,
+                          com.google.analytics.admin.v1alpha.BatchGetAccessBindingsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "BatchGetAccessBindings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.BatchGetAccessBindingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.BatchGetAccessBindingsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "BatchGetAccessBindings"))
+                      .build();
+        }
+      }
+    }
+    return getBatchGetAccessBindingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsRequest,
+          com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsResponse>
+      getBatchUpdateAccessBindingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchUpdateAccessBindings",
+      requestType = com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsRequest,
+          com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsResponse>
+      getBatchUpdateAccessBindingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsRequest,
+            com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsResponse>
+        getBatchUpdateAccessBindingsMethod;
+    if ((getBatchUpdateAccessBindingsMethod =
+            AnalyticsAdminServiceGrpc.getBatchUpdateAccessBindingsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getBatchUpdateAccessBindingsMethod =
+                AnalyticsAdminServiceGrpc.getBatchUpdateAccessBindingsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getBatchUpdateAccessBindingsMethod =
+              getBatchUpdateAccessBindingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsRequest,
+                          com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "BatchUpdateAccessBindings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "BatchUpdateAccessBindings"))
+                      .build();
+        }
+      }
+    }
+    return getBatchUpdateAccessBindingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.BatchDeleteAccessBindingsRequest,
+          com.google.protobuf.Empty>
+      getBatchDeleteAccessBindingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchDeleteAccessBindings",
+      requestType = com.google.analytics.admin.v1alpha.BatchDeleteAccessBindingsRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.BatchDeleteAccessBindingsRequest,
+          com.google.protobuf.Empty>
+      getBatchDeleteAccessBindingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.BatchDeleteAccessBindingsRequest,
+            com.google.protobuf.Empty>
+        getBatchDeleteAccessBindingsMethod;
+    if ((getBatchDeleteAccessBindingsMethod =
+            AnalyticsAdminServiceGrpc.getBatchDeleteAccessBindingsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getBatchDeleteAccessBindingsMethod =
+                AnalyticsAdminServiceGrpc.getBatchDeleteAccessBindingsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getBatchDeleteAccessBindingsMethod =
+              getBatchDeleteAccessBindingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.BatchDeleteAccessBindingsRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "BatchDeleteAccessBindings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.BatchDeleteAccessBindingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "BatchDeleteAccessBindings"))
+                      .build();
+        }
+      }
+    }
+    return getBatchDeleteAccessBindingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest,
+          com.google.analytics.admin.v1alpha.ExpandedDataSet>
+      getGetExpandedDataSetMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetExpandedDataSet",
+      requestType = com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ExpandedDataSet.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest,
+          com.google.analytics.admin.v1alpha.ExpandedDataSet>
+      getGetExpandedDataSetMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest,
+            com.google.analytics.admin.v1alpha.ExpandedDataSet>
+        getGetExpandedDataSetMethod;
+    if ((getGetExpandedDataSetMethod = AnalyticsAdminServiceGrpc.getGetExpandedDataSetMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetExpandedDataSetMethod = AnalyticsAdminServiceGrpc.getGetExpandedDataSetMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getGetExpandedDataSetMethod =
+              getGetExpandedDataSetMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest,
+                          com.google.analytics.admin.v1alpha.ExpandedDataSet>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetExpandedDataSet"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ExpandedDataSet
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("GetExpandedDataSet"))
+                      .build();
+        }
+      }
+    }
+    return getGetExpandedDataSetMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListExpandedDataSetsRequest,
+          com.google.analytics.admin.v1alpha.ListExpandedDataSetsResponse>
+      getListExpandedDataSetsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListExpandedDataSets",
+      requestType = com.google.analytics.admin.v1alpha.ListExpandedDataSetsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ListExpandedDataSetsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListExpandedDataSetsRequest,
+          com.google.analytics.admin.v1alpha.ListExpandedDataSetsResponse>
+      getListExpandedDataSetsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ListExpandedDataSetsRequest,
+            com.google.analytics.admin.v1alpha.ListExpandedDataSetsResponse>
+        getListExpandedDataSetsMethod;
+    if ((getListExpandedDataSetsMethod = AnalyticsAdminServiceGrpc.getListExpandedDataSetsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getListExpandedDataSetsMethod =
+                AnalyticsAdminServiceGrpc.getListExpandedDataSetsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getListExpandedDataSetsMethod =
+              getListExpandedDataSetsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ListExpandedDataSetsRequest,
+                          com.google.analytics.admin.v1alpha.ListExpandedDataSetsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListExpandedDataSets"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListExpandedDataSetsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListExpandedDataSetsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("ListExpandedDataSets"))
+                      .build();
+        }
+      }
+    }
+    return getListExpandedDataSetsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateExpandedDataSetRequest,
+          com.google.analytics.admin.v1alpha.ExpandedDataSet>
+      getCreateExpandedDataSetMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateExpandedDataSet",
+      requestType = com.google.analytics.admin.v1alpha.CreateExpandedDataSetRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ExpandedDataSet.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateExpandedDataSetRequest,
+          com.google.analytics.admin.v1alpha.ExpandedDataSet>
+      getCreateExpandedDataSetMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.CreateExpandedDataSetRequest,
+            com.google.analytics.admin.v1alpha.ExpandedDataSet>
+        getCreateExpandedDataSetMethod;
+    if ((getCreateExpandedDataSetMethod = AnalyticsAdminServiceGrpc.getCreateExpandedDataSetMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getCreateExpandedDataSetMethod =
+                AnalyticsAdminServiceGrpc.getCreateExpandedDataSetMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getCreateExpandedDataSetMethod =
+              getCreateExpandedDataSetMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.CreateExpandedDataSetRequest,
+                          com.google.analytics.admin.v1alpha.ExpandedDataSet>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateExpandedDataSet"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CreateExpandedDataSetRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ExpandedDataSet
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "CreateExpandedDataSet"))
+                      .build();
+        }
+      }
+    }
+    return getCreateExpandedDataSetMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest,
+          com.google.analytics.admin.v1alpha.ExpandedDataSet>
+      getUpdateExpandedDataSetMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateExpandedDataSet",
+      requestType = com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ExpandedDataSet.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest,
+          com.google.analytics.admin.v1alpha.ExpandedDataSet>
+      getUpdateExpandedDataSetMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest,
+            com.google.analytics.admin.v1alpha.ExpandedDataSet>
+        getUpdateExpandedDataSetMethod;
+    if ((getUpdateExpandedDataSetMethod = AnalyticsAdminServiceGrpc.getUpdateExpandedDataSetMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateExpandedDataSetMethod =
+                AnalyticsAdminServiceGrpc.getUpdateExpandedDataSetMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getUpdateExpandedDataSetMethod =
+              getUpdateExpandedDataSetMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest,
+                          com.google.analytics.admin.v1alpha.ExpandedDataSet>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateExpandedDataSet"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ExpandedDataSet
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "UpdateExpandedDataSet"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateExpandedDataSetMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteExpandedDataSetRequest,
+          com.google.protobuf.Empty>
+      getDeleteExpandedDataSetMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteExpandedDataSet",
+      requestType = com.google.analytics.admin.v1alpha.DeleteExpandedDataSetRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteExpandedDataSetRequest,
+          com.google.protobuf.Empty>
+      getDeleteExpandedDataSetMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.DeleteExpandedDataSetRequest,
+            com.google.protobuf.Empty>
+        getDeleteExpandedDataSetMethod;
+    if ((getDeleteExpandedDataSetMethod = AnalyticsAdminServiceGrpc.getDeleteExpandedDataSetMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getDeleteExpandedDataSetMethod =
+                AnalyticsAdminServiceGrpc.getDeleteExpandedDataSetMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getDeleteExpandedDataSetMethod =
+              getDeleteExpandedDataSetMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.DeleteExpandedDataSetRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteExpandedDataSet"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.DeleteExpandedDataSetRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "DeleteExpandedDataSet"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteExpandedDataSetMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest,
           com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse>
       getSetAutomatedGa4ConfigurationOptOutMethod;
@@ -5073,7 +5783,8 @@ public final class AnalyticsAdminServiceGrpc {
      * <pre>
      * Acknowledges the terms of user data collection for the specified property.
      * This acknowledgement must be completed (either in the Google Analytics UI
-     * or via this API) before MeasurementProtocolSecret resources may be created.
+     * or through this API) before MeasurementProtocolSecret resources may be
+     * created.
      * </pre>
      */
     public void acknowledgeUserDataCollection(
@@ -5843,6 +6554,220 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Creates an access binding on an account or property.
+     * </pre>
+     */
+    public void createAccessBinding(
+        com.google.analytics.admin.v1alpha.CreateAccessBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AccessBinding>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateAccessBindingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about an access binding.
+     * </pre>
+     */
+    public void getAccessBinding(
+        com.google.analytics.admin.v1alpha.GetAccessBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AccessBinding>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAccessBindingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an access binding on an account or property.
+     * </pre>
+     */
+    public void updateAccessBinding(
+        com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AccessBinding>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateAccessBindingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an access binding on an account or property.
+     * </pre>
+     */
+    public void deleteAccessBinding(
+        com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteAccessBindingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all access bindings on an account or property.
+     * </pre>
+     */
+    public void listAccessBindings(
+        com.google.analytics.admin.v1alpha.ListAccessBindingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListAccessBindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAccessBindingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates information about multiple access bindings to an account or
+     * property.
+     * This method is transactional. If any AccessBinding cannot be created, none
+     * of the AccessBindings will be created.
+     * </pre>
+     */
+    public void batchCreateAccessBindings(
+        com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchCreateAccessBindingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about multiple access bindings to an account or property.
+     * </pre>
+     */
+    public void batchGetAccessBindings(
+        com.google.analytics.admin.v1alpha.BatchGetAccessBindingsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.BatchGetAccessBindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchGetAccessBindingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates information about multiple access bindings to an account or
+     * property.
+     * </pre>
+     */
+    public void batchUpdateAccessBindings(
+        com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchUpdateAccessBindingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes information about multiple users' links to an account or property.
+     * </pre>
+     */
+    public void batchDeleteAccessBindings(
+        com.google.analytics.admin.v1alpha.BatchDeleteAccessBindingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchDeleteAccessBindingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single ExpandedDataSet.
+     * </pre>
+     */
+    public void getExpandedDataSet(
+        com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ExpandedDataSet>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetExpandedDataSetMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ExpandedDataSets on a property.
+     * </pre>
+     */
+    public void listExpandedDataSets(
+        com.google.analytics.admin.v1alpha.ListExpandedDataSetsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListExpandedDataSetsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListExpandedDataSetsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a ExpandedDataSet.
+     * </pre>
+     */
+    public void createExpandedDataSet(
+        com.google.analytics.admin.v1alpha.CreateExpandedDataSetRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ExpandedDataSet>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateExpandedDataSetMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a ExpandedDataSet on a property.
+     * </pre>
+     */
+    public void updateExpandedDataSet(
+        com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ExpandedDataSet>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateExpandedDataSetMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a ExpandedDataSet on a property.
+     * </pre>
+     */
+    public void deleteExpandedDataSet(
+        com.google.analytics.admin.v1alpha.DeleteExpandedDataSetRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteExpandedDataSetMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Sets the opt out status for the automated GA4 setup process for a UA
      * property.
      * Note: this has no effect on GA4 property.
@@ -6484,6 +7409,101 @@ public final class AnalyticsAdminServiceGrpc {
                       com.google.analytics.admin.v1alpha.RunAccessReportRequest,
                       com.google.analytics.admin.v1alpha.RunAccessReportResponse>(
                       this, METHODID_RUN_ACCESS_REPORT)))
+          .addMethod(
+              getCreateAccessBindingMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.CreateAccessBindingRequest,
+                      com.google.analytics.admin.v1alpha.AccessBinding>(
+                      this, METHODID_CREATE_ACCESS_BINDING)))
+          .addMethod(
+              getGetAccessBindingMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.GetAccessBindingRequest,
+                      com.google.analytics.admin.v1alpha.AccessBinding>(
+                      this, METHODID_GET_ACCESS_BINDING)))
+          .addMethod(
+              getUpdateAccessBindingMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest,
+                      com.google.analytics.admin.v1alpha.AccessBinding>(
+                      this, METHODID_UPDATE_ACCESS_BINDING)))
+          .addMethod(
+              getDeleteAccessBindingMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest,
+                      com.google.protobuf.Empty>(this, METHODID_DELETE_ACCESS_BINDING)))
+          .addMethod(
+              getListAccessBindingsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.ListAccessBindingsRequest,
+                      com.google.analytics.admin.v1alpha.ListAccessBindingsResponse>(
+                      this, METHODID_LIST_ACCESS_BINDINGS)))
+          .addMethod(
+              getBatchCreateAccessBindingsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsRequest,
+                      com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsResponse>(
+                      this, METHODID_BATCH_CREATE_ACCESS_BINDINGS)))
+          .addMethod(
+              getBatchGetAccessBindingsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.BatchGetAccessBindingsRequest,
+                      com.google.analytics.admin.v1alpha.BatchGetAccessBindingsResponse>(
+                      this, METHODID_BATCH_GET_ACCESS_BINDINGS)))
+          .addMethod(
+              getBatchUpdateAccessBindingsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsRequest,
+                      com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsResponse>(
+                      this, METHODID_BATCH_UPDATE_ACCESS_BINDINGS)))
+          .addMethod(
+              getBatchDeleteAccessBindingsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.BatchDeleteAccessBindingsRequest,
+                      com.google.protobuf.Empty>(this, METHODID_BATCH_DELETE_ACCESS_BINDINGS)))
+          .addMethod(
+              getGetExpandedDataSetMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest,
+                      com.google.analytics.admin.v1alpha.ExpandedDataSet>(
+                      this, METHODID_GET_EXPANDED_DATA_SET)))
+          .addMethod(
+              getListExpandedDataSetsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.ListExpandedDataSetsRequest,
+                      com.google.analytics.admin.v1alpha.ListExpandedDataSetsResponse>(
+                      this, METHODID_LIST_EXPANDED_DATA_SETS)))
+          .addMethod(
+              getCreateExpandedDataSetMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.CreateExpandedDataSetRequest,
+                      com.google.analytics.admin.v1alpha.ExpandedDataSet>(
+                      this, METHODID_CREATE_EXPANDED_DATA_SET)))
+          .addMethod(
+              getUpdateExpandedDataSetMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest,
+                      com.google.analytics.admin.v1alpha.ExpandedDataSet>(
+                      this, METHODID_UPDATE_EXPANDED_DATA_SET)))
+          .addMethod(
+              getDeleteExpandedDataSetMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.DeleteExpandedDataSetRequest,
+                      com.google.protobuf.Empty>(this, METHODID_DELETE_EXPANDED_DATA_SET)))
           .addMethod(
               getSetAutomatedGa4ConfigurationOptOutMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -7162,7 +8182,8 @@ public final class AnalyticsAdminServiceGrpc {
      * <pre>
      * Acknowledges the terms of user data collection for the specified property.
      * This acknowledgement must be completed (either in the Google Analytics UI
-     * or via this API) before MeasurementProtocolSecret resources may be created.
+     * or through this API) before MeasurementProtocolSecret resources may be
+     * created.
      * </pre>
      */
     public void acknowledgeUserDataCollection(
@@ -8036,6 +9057,248 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Creates an access binding on an account or property.
+     * </pre>
+     */
+    public void createAccessBinding(
+        com.google.analytics.admin.v1alpha.CreateAccessBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AccessBinding>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateAccessBindingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about an access binding.
+     * </pre>
+     */
+    public void getAccessBinding(
+        com.google.analytics.admin.v1alpha.GetAccessBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AccessBinding>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAccessBindingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an access binding on an account or property.
+     * </pre>
+     */
+    public void updateAccessBinding(
+        com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AccessBinding>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateAccessBindingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an access binding on an account or property.
+     * </pre>
+     */
+    public void deleteAccessBinding(
+        com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteAccessBindingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all access bindings on an account or property.
+     * </pre>
+     */
+    public void listAccessBindings(
+        com.google.analytics.admin.v1alpha.ListAccessBindingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListAccessBindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAccessBindingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates information about multiple access bindings to an account or
+     * property.
+     * This method is transactional. If any AccessBinding cannot be created, none
+     * of the AccessBindings will be created.
+     * </pre>
+     */
+    public void batchCreateAccessBindings(
+        com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchCreateAccessBindingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about multiple access bindings to an account or property.
+     * </pre>
+     */
+    public void batchGetAccessBindings(
+        com.google.analytics.admin.v1alpha.BatchGetAccessBindingsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.BatchGetAccessBindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchGetAccessBindingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates information about multiple access bindings to an account or
+     * property.
+     * </pre>
+     */
+    public void batchUpdateAccessBindings(
+        com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchUpdateAccessBindingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes information about multiple users' links to an account or property.
+     * </pre>
+     */
+    public void batchDeleteAccessBindings(
+        com.google.analytics.admin.v1alpha.BatchDeleteAccessBindingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchDeleteAccessBindingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single ExpandedDataSet.
+     * </pre>
+     */
+    public void getExpandedDataSet(
+        com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ExpandedDataSet>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetExpandedDataSetMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ExpandedDataSets on a property.
+     * </pre>
+     */
+    public void listExpandedDataSets(
+        com.google.analytics.admin.v1alpha.ListExpandedDataSetsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListExpandedDataSetsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListExpandedDataSetsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a ExpandedDataSet.
+     * </pre>
+     */
+    public void createExpandedDataSet(
+        com.google.analytics.admin.v1alpha.CreateExpandedDataSetRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ExpandedDataSet>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateExpandedDataSetMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a ExpandedDataSet on a property.
+     * </pre>
+     */
+    public void updateExpandedDataSet(
+        com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ExpandedDataSet>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateExpandedDataSetMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a ExpandedDataSet on a property.
+     * </pre>
+     */
+    public void deleteExpandedDataSet(
+        com.google.analytics.admin.v1alpha.DeleteExpandedDataSetRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteExpandedDataSetMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Sets the opt out status for the automated GA4 setup process for a UA
      * property.
      * Note: this has no effect on GA4 property.
@@ -8630,7 +9893,8 @@ public final class AnalyticsAdminServiceGrpc {
      * <pre>
      * Acknowledges the terms of user data collection for the specified property.
      * This acknowledgement must be completed (either in the Google Analytics UI
-     * or via this API) before MeasurementProtocolSecret resources may be created.
+     * or through this API) before MeasurementProtocolSecret resources may be
+     * created.
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse
@@ -9329,6 +10593,194 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Creates an access binding on an account or property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.AccessBinding createAccessBinding(
+        com.google.analytics.admin.v1alpha.CreateAccessBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAccessBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about an access binding.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.AccessBinding getAccessBinding(
+        com.google.analytics.admin.v1alpha.GetAccessBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAccessBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an access binding on an account or property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.AccessBinding updateAccessBinding(
+        com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAccessBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an access binding on an account or property.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAccessBinding(
+        com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAccessBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all access bindings on an account or property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListAccessBindingsResponse listAccessBindings(
+        com.google.analytics.admin.v1alpha.ListAccessBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAccessBindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates information about multiple access bindings to an account or
+     * property.
+     * This method is transactional. If any AccessBinding cannot be created, none
+     * of the AccessBindings will be created.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsResponse
+        batchCreateAccessBindings(
+            com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchCreateAccessBindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about multiple access bindings to an account or property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.BatchGetAccessBindingsResponse batchGetAccessBindings(
+        com.google.analytics.admin.v1alpha.BatchGetAccessBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchGetAccessBindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates information about multiple access bindings to an account or
+     * property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsResponse
+        batchUpdateAccessBindings(
+            com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchUpdateAccessBindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes information about multiple users' links to an account or property.
+     * </pre>
+     */
+    public com.google.protobuf.Empty batchDeleteAccessBindings(
+        com.google.analytics.admin.v1alpha.BatchDeleteAccessBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchDeleteAccessBindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single ExpandedDataSet.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ExpandedDataSet getExpandedDataSet(
+        com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetExpandedDataSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ExpandedDataSets on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListExpandedDataSetsResponse listExpandedDataSets(
+        com.google.analytics.admin.v1alpha.ListExpandedDataSetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListExpandedDataSetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a ExpandedDataSet.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ExpandedDataSet createExpandedDataSet(
+        com.google.analytics.admin.v1alpha.CreateExpandedDataSetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateExpandedDataSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a ExpandedDataSet on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ExpandedDataSet updateExpandedDataSet(
+        com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateExpandedDataSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a ExpandedDataSet on a property.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteExpandedDataSet(
+        com.google.analytics.admin.v1alpha.DeleteExpandedDataSetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteExpandedDataSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Sets the opt out status for the automated GA4 setup process for a UA
      * property.
      * Note: this has no effect on GA4 property.
@@ -9948,7 +11400,8 @@ public final class AnalyticsAdminServiceGrpc {
      * <pre>
      * Acknowledges the terms of user data collection for the specified property.
      * This acknowledgement must be completed (either in the Google Analytics UI
-     * or via this API) before MeasurementProtocolSecret resources may be created.
+     * or through this API) before MeasurementProtocolSecret resources may be
+     * created.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -10707,6 +12160,211 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Creates an access binding on an account or property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.AccessBinding>
+        createAccessBinding(com.google.analytics.admin.v1alpha.CreateAccessBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateAccessBindingMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about an access binding.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.AccessBinding>
+        getAccessBinding(com.google.analytics.admin.v1alpha.GetAccessBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAccessBindingMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an access binding on an account or property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.AccessBinding>
+        updateAccessBinding(com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateAccessBindingMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an access binding on an account or property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteAccessBinding(com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteAccessBindingMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all access bindings on an account or property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ListAccessBindingsResponse>
+        listAccessBindings(com.google.analytics.admin.v1alpha.ListAccessBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAccessBindingsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates information about multiple access bindings to an account or
+     * property.
+     * This method is transactional. If any AccessBinding cannot be created, none
+     * of the AccessBindings will be created.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsResponse>
+        batchCreateAccessBindings(
+            com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchCreateAccessBindingsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about multiple access bindings to an account or property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.BatchGetAccessBindingsResponse>
+        batchGetAccessBindings(
+            com.google.analytics.admin.v1alpha.BatchGetAccessBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchGetAccessBindingsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates information about multiple access bindings to an account or
+     * property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsResponse>
+        batchUpdateAccessBindings(
+            com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchUpdateAccessBindingsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes information about multiple users' links to an account or property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        batchDeleteAccessBindings(
+            com.google.analytics.admin.v1alpha.BatchDeleteAccessBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchDeleteAccessBindingsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single ExpandedDataSet.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ExpandedDataSet>
+        getExpandedDataSet(com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetExpandedDataSetMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ExpandedDataSets on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ListExpandedDataSetsResponse>
+        listExpandedDataSets(
+            com.google.analytics.admin.v1alpha.ListExpandedDataSetsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListExpandedDataSetsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a ExpandedDataSet.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ExpandedDataSet>
+        createExpandedDataSet(
+            com.google.analytics.admin.v1alpha.CreateExpandedDataSetRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateExpandedDataSetMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a ExpandedDataSet on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ExpandedDataSet>
+        updateExpandedDataSet(
+            com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateExpandedDataSetMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a ExpandedDataSet on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteExpandedDataSet(
+            com.google.analytics.admin.v1alpha.DeleteExpandedDataSetRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteExpandedDataSetMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Sets the opt out status for the automated GA4 setup process for a UA
      * property.
      * Note: this has no effect on GA4 property.
@@ -10853,10 +12511,24 @@ public final class AnalyticsAdminServiceGrpc {
   private static final int METHODID_GET_ATTRIBUTION_SETTINGS = 81;
   private static final int METHODID_UPDATE_ATTRIBUTION_SETTINGS = 82;
   private static final int METHODID_RUN_ACCESS_REPORT = 83;
-  private static final int METHODID_SET_AUTOMATED_GA4CONFIGURATION_OPT_OUT = 84;
-  private static final int METHODID_FETCH_AUTOMATED_GA4CONFIGURATION_OPT_OUT = 85;
-  private static final int METHODID_GET_BIG_QUERY_LINK = 86;
-  private static final int METHODID_LIST_BIG_QUERY_LINKS = 87;
+  private static final int METHODID_CREATE_ACCESS_BINDING = 84;
+  private static final int METHODID_GET_ACCESS_BINDING = 85;
+  private static final int METHODID_UPDATE_ACCESS_BINDING = 86;
+  private static final int METHODID_DELETE_ACCESS_BINDING = 87;
+  private static final int METHODID_LIST_ACCESS_BINDINGS = 88;
+  private static final int METHODID_BATCH_CREATE_ACCESS_BINDINGS = 89;
+  private static final int METHODID_BATCH_GET_ACCESS_BINDINGS = 90;
+  private static final int METHODID_BATCH_UPDATE_ACCESS_BINDINGS = 91;
+  private static final int METHODID_BATCH_DELETE_ACCESS_BINDINGS = 92;
+  private static final int METHODID_GET_EXPANDED_DATA_SET = 93;
+  private static final int METHODID_LIST_EXPANDED_DATA_SETS = 94;
+  private static final int METHODID_CREATE_EXPANDED_DATA_SET = 95;
+  private static final int METHODID_UPDATE_EXPANDED_DATA_SET = 96;
+  private static final int METHODID_DELETE_EXPANDED_DATA_SET = 97;
+  private static final int METHODID_SET_AUTOMATED_GA4CONFIGURATION_OPT_OUT = 98;
+  private static final int METHODID_FETCH_AUTOMATED_GA4CONFIGURATION_OPT_OUT = 99;
+  private static final int METHODID_GET_BIG_QUERY_LINK = 100;
+  private static final int METHODID_LIST_BIG_QUERY_LINKS = 101;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -11418,6 +13090,92 @@ public final class AnalyticsAdminServiceGrpc {
                       com.google.analytics.admin.v1alpha.RunAccessReportResponse>)
                   responseObserver);
           break;
+        case METHODID_CREATE_ACCESS_BINDING:
+          serviceImpl.createAccessBinding(
+              (com.google.analytics.admin.v1alpha.CreateAccessBindingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AccessBinding>)
+                  responseObserver);
+          break;
+        case METHODID_GET_ACCESS_BINDING:
+          serviceImpl.getAccessBinding(
+              (com.google.analytics.admin.v1alpha.GetAccessBindingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AccessBinding>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_ACCESS_BINDING:
+          serviceImpl.updateAccessBinding(
+              (com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AccessBinding>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_ACCESS_BINDING:
+          serviceImpl.deleteAccessBinding(
+              (com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_LIST_ACCESS_BINDINGS:
+          serviceImpl.listAccessBindings(
+              (com.google.analytics.admin.v1alpha.ListAccessBindingsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ListAccessBindingsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_BATCH_CREATE_ACCESS_BINDINGS:
+          serviceImpl.batchCreateAccessBindings(
+              (com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_BATCH_GET_ACCESS_BINDINGS:
+          serviceImpl.batchGetAccessBindings(
+              (com.google.analytics.admin.v1alpha.BatchGetAccessBindingsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.BatchGetAccessBindingsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_BATCH_UPDATE_ACCESS_BINDINGS:
+          serviceImpl.batchUpdateAccessBindings(
+              (com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_BATCH_DELETE_ACCESS_BINDINGS:
+          serviceImpl.batchDeleteAccessBindings(
+              (com.google.analytics.admin.v1alpha.BatchDeleteAccessBindingsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_GET_EXPANDED_DATA_SET:
+          serviceImpl.getExpandedDataSet(
+              (com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ExpandedDataSet>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_EXPANDED_DATA_SETS:
+          serviceImpl.listExpandedDataSets(
+              (com.google.analytics.admin.v1alpha.ListExpandedDataSetsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ListExpandedDataSetsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_EXPANDED_DATA_SET:
+          serviceImpl.createExpandedDataSet(
+              (com.google.analytics.admin.v1alpha.CreateExpandedDataSetRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ExpandedDataSet>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_EXPANDED_DATA_SET:
+          serviceImpl.updateExpandedDataSet(
+              (com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ExpandedDataSet>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_EXPANDED_DATA_SET:
+          serviceImpl.deleteExpandedDataSet(
+              (com.google.analytics.admin.v1alpha.DeleteExpandedDataSetRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
         case METHODID_SET_AUTOMATED_GA4CONFIGURATION_OPT_OUT:
           serviceImpl.setAutomatedGa4ConfigurationOptOut(
               (com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest)
@@ -11597,6 +13355,20 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getGetAttributionSettingsMethod())
                       .addMethod(getUpdateAttributionSettingsMethod())
                       .addMethod(getRunAccessReportMethod())
+                      .addMethod(getCreateAccessBindingMethod())
+                      .addMethod(getGetAccessBindingMethod())
+                      .addMethod(getUpdateAccessBindingMethod())
+                      .addMethod(getDeleteAccessBindingMethod())
+                      .addMethod(getListAccessBindingsMethod())
+                      .addMethod(getBatchCreateAccessBindingsMethod())
+                      .addMethod(getBatchGetAccessBindingsMethod())
+                      .addMethod(getBatchUpdateAccessBindingsMethod())
+                      .addMethod(getBatchDeleteAccessBindingsMethod())
+                      .addMethod(getGetExpandedDataSetMethod())
+                      .addMethod(getListExpandedDataSetsMethod())
+                      .addMethod(getCreateExpandedDataSetMethod())
+                      .addMethod(getUpdateExpandedDataSetMethod())
+                      .addMethod(getDeleteExpandedDataSetMethod())
                       .addMethod(getSetAutomatedGa4ConfigurationOptOutMethod())
                       .addMethod(getFetchAutomatedGa4ConfigurationOptOutMethod())
                       .addMethod(getGetBigQueryLinkMethod())

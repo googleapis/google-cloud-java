@@ -1851,6 +1851,305 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
   }
 
   @Override
+  public void createAccessBinding(
+      CreateAccessBindingRequest request, StreamObserver<AccessBinding> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AccessBinding) {
+      requests.add(request);
+      responseObserver.onNext(((AccessBinding) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateAccessBinding, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AccessBinding.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAccessBinding(
+      GetAccessBindingRequest request, StreamObserver<AccessBinding> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AccessBinding) {
+      requests.add(request);
+      responseObserver.onNext(((AccessBinding) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAccessBinding, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AccessBinding.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateAccessBinding(
+      UpdateAccessBindingRequest request, StreamObserver<AccessBinding> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AccessBinding) {
+      requests.add(request);
+      responseObserver.onNext(((AccessBinding) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateAccessBinding, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AccessBinding.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteAccessBinding(
+      DeleteAccessBindingRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteAccessBinding, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listAccessBindings(
+      ListAccessBindingsRequest request,
+      StreamObserver<ListAccessBindingsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListAccessBindingsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListAccessBindingsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAccessBindings, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListAccessBindingsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void batchCreateAccessBindings(
+      BatchCreateAccessBindingsRequest request,
+      StreamObserver<BatchCreateAccessBindingsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof BatchCreateAccessBindingsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((BatchCreateAccessBindingsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchCreateAccessBindings, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  BatchCreateAccessBindingsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void batchGetAccessBindings(
+      BatchGetAccessBindingsRequest request,
+      StreamObserver<BatchGetAccessBindingsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof BatchGetAccessBindingsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((BatchGetAccessBindingsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchGetAccessBindings, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  BatchGetAccessBindingsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void batchUpdateAccessBindings(
+      BatchUpdateAccessBindingsRequest request,
+      StreamObserver<BatchUpdateAccessBindingsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof BatchUpdateAccessBindingsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((BatchUpdateAccessBindingsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchUpdateAccessBindings, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  BatchUpdateAccessBindingsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void batchDeleteAccessBindings(
+      BatchDeleteAccessBindingsRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchDeleteAccessBindings, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getExpandedDataSet(
+      GetExpandedDataSetRequest request, StreamObserver<ExpandedDataSet> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ExpandedDataSet) {
+      requests.add(request);
+      responseObserver.onNext(((ExpandedDataSet) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetExpandedDataSet, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ExpandedDataSet.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listExpandedDataSets(
+      ListExpandedDataSetsRequest request,
+      StreamObserver<ListExpandedDataSetsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListExpandedDataSetsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListExpandedDataSetsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListExpandedDataSets, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListExpandedDataSetsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createExpandedDataSet(
+      CreateExpandedDataSetRequest request, StreamObserver<ExpandedDataSet> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ExpandedDataSet) {
+      requests.add(request);
+      responseObserver.onNext(((ExpandedDataSet) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateExpandedDataSet, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ExpandedDataSet.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateExpandedDataSet(
+      UpdateExpandedDataSetRequest request, StreamObserver<ExpandedDataSet> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ExpandedDataSet) {
+      requests.add(request);
+      responseObserver.onNext(((ExpandedDataSet) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateExpandedDataSet, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ExpandedDataSet.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteExpandedDataSet(
+      DeleteExpandedDataSetRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteExpandedDataSet, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void setAutomatedGa4ConfigurationOptOut(
       SetAutomatedGa4ConfigurationOptOutRequest request,
       StreamObserver<SetAutomatedGa4ConfigurationOptOutResponse> responseObserver) {

@@ -580,7 +580,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * @param account Required. The account to update. The account's `name` field is used to identify
    *     the account.
    * @param updateMask Required. The list of fields to be updated. Field names must be in snake case
-   *     (e.g., "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     (for example, "field_to_update"). Omitted fields will not be updated. To replace the entire
    *     entity, use one path with the string "&#42;" to match all fields.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -4320,8 +4320,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Acknowledges the terms of user data collection for the specified property.
    *
-   * <p>This acknowledgement must be completed (either in the Google Analytics UI or via this API)
-   * before MeasurementProtocolSecret resources may be created.
+   * <p>This acknowledgement must be completed (either in the Google Analytics UI or through this
+   * API) before MeasurementProtocolSecret resources may be created.
    *
    * <p>Sample code:
    *
@@ -4355,8 +4355,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Acknowledges the terms of user data collection for the specified property.
    *
-   * <p>This acknowledgement must be completed (either in the Google Analytics UI or via this API)
-   * before MeasurementProtocolSecret resources may be created.
+   * <p>This acknowledgement must be completed (either in the Google Analytics UI or through this
+   * API) before MeasurementProtocolSecret resources may be created.
    *
    * <p>Sample code:
    *
@@ -10401,6 +10401,1605 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Creates an access binding on an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   AccountName parent = AccountName.of("[ACCOUNT]");
+   *   AccessBinding accessBinding = AccessBinding.newBuilder().build();
+   *   AccessBinding response =
+   *       analyticsAdminServiceClient.createAccessBinding(parent, accessBinding);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Formats: - accounts/{account} - properties/{property}
+   * @param accessBinding Required. The access binding to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AccessBinding createAccessBinding(AccountName parent, AccessBinding accessBinding) {
+    CreateAccessBindingRequest request =
+        CreateAccessBindingRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setAccessBinding(accessBinding)
+            .build();
+    return createAccessBinding(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an access binding on an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   AccessBinding accessBinding = AccessBinding.newBuilder().build();
+   *   AccessBinding response =
+   *       analyticsAdminServiceClient.createAccessBinding(parent, accessBinding);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Formats: - accounts/{account} - properties/{property}
+   * @param accessBinding Required. The access binding to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AccessBinding createAccessBinding(PropertyName parent, AccessBinding accessBinding) {
+    CreateAccessBindingRequest request =
+        CreateAccessBindingRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setAccessBinding(accessBinding)
+            .build();
+    return createAccessBinding(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an access binding on an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = AccountName.of("[ACCOUNT]").toString();
+   *   AccessBinding accessBinding = AccessBinding.newBuilder().build();
+   *   AccessBinding response =
+   *       analyticsAdminServiceClient.createAccessBinding(parent, accessBinding);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Formats: - accounts/{account} - properties/{property}
+   * @param accessBinding Required. The access binding to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AccessBinding createAccessBinding(String parent, AccessBinding accessBinding) {
+    CreateAccessBindingRequest request =
+        CreateAccessBindingRequest.newBuilder()
+            .setParent(parent)
+            .setAccessBinding(accessBinding)
+            .build();
+    return createAccessBinding(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an access binding on an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateAccessBindingRequest request =
+   *       CreateAccessBindingRequest.newBuilder()
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
+   *           .setAccessBinding(AccessBinding.newBuilder().build())
+   *           .build();
+   *   AccessBinding response = analyticsAdminServiceClient.createAccessBinding(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AccessBinding createAccessBinding(CreateAccessBindingRequest request) {
+    return createAccessBindingCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an access binding on an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateAccessBindingRequest request =
+   *       CreateAccessBindingRequest.newBuilder()
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
+   *           .setAccessBinding(AccessBinding.newBuilder().build())
+   *           .build();
+   *   ApiFuture<AccessBinding> future =
+   *       analyticsAdminServiceClient.createAccessBindingCallable().futureCall(request);
+   *   // Do something.
+   *   AccessBinding response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateAccessBindingRequest, AccessBinding>
+      createAccessBindingCallable() {
+    return stub.createAccessBindingCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about an access binding.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   AccessBindingName name =
+   *       AccessBindingName.ofAccountAccessBindingName("[ACCOUNT]", "[ACCESS_BINDING]");
+   *   AccessBinding response = analyticsAdminServiceClient.getAccessBinding(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the access binding to retrieve. Formats: -
+   *     accounts/{account}/accessBindings/{accessBinding} -
+   *     properties/{property}/accessBindings/{accessBinding}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AccessBinding getAccessBinding(AccessBindingName name) {
+    GetAccessBindingRequest request =
+        GetAccessBindingRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getAccessBinding(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about an access binding.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name =
+   *       AccessBindingName.ofAccountAccessBindingName("[ACCOUNT]", "[ACCESS_BINDING]").toString();
+   *   AccessBinding response = analyticsAdminServiceClient.getAccessBinding(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the access binding to retrieve. Formats: -
+   *     accounts/{account}/accessBindings/{accessBinding} -
+   *     properties/{property}/accessBindings/{accessBinding}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AccessBinding getAccessBinding(String name) {
+    GetAccessBindingRequest request = GetAccessBindingRequest.newBuilder().setName(name).build();
+    return getAccessBinding(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about an access binding.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetAccessBindingRequest request =
+   *       GetAccessBindingRequest.newBuilder()
+   *           .setName(
+   *               AccessBindingName.ofAccountAccessBindingName("[ACCOUNT]", "[ACCESS_BINDING]")
+   *                   .toString())
+   *           .build();
+   *   AccessBinding response = analyticsAdminServiceClient.getAccessBinding(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AccessBinding getAccessBinding(GetAccessBindingRequest request) {
+    return getAccessBindingCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about an access binding.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetAccessBindingRequest request =
+   *       GetAccessBindingRequest.newBuilder()
+   *           .setName(
+   *               AccessBindingName.ofAccountAccessBindingName("[ACCOUNT]", "[ACCESS_BINDING]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<AccessBinding> future =
+   *       analyticsAdminServiceClient.getAccessBindingCallable().futureCall(request);
+   *   // Do something.
+   *   AccessBinding response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAccessBindingRequest, AccessBinding> getAccessBindingCallable() {
+    return stub.getAccessBindingCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an access binding on an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   AccessBinding accessBinding = AccessBinding.newBuilder().build();
+   *   AccessBinding response = analyticsAdminServiceClient.updateAccessBinding(accessBinding);
+   * }
+   * }</pre>
+   *
+   * @param accessBinding Required. The access binding to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AccessBinding updateAccessBinding(AccessBinding accessBinding) {
+    UpdateAccessBindingRequest request =
+        UpdateAccessBindingRequest.newBuilder().setAccessBinding(accessBinding).build();
+    return updateAccessBinding(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an access binding on an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateAccessBindingRequest request =
+   *       UpdateAccessBindingRequest.newBuilder()
+   *           .setAccessBinding(AccessBinding.newBuilder().build())
+   *           .build();
+   *   AccessBinding response = analyticsAdminServiceClient.updateAccessBinding(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AccessBinding updateAccessBinding(UpdateAccessBindingRequest request) {
+    return updateAccessBindingCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an access binding on an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateAccessBindingRequest request =
+   *       UpdateAccessBindingRequest.newBuilder()
+   *           .setAccessBinding(AccessBinding.newBuilder().build())
+   *           .build();
+   *   ApiFuture<AccessBinding> future =
+   *       analyticsAdminServiceClient.updateAccessBindingCallable().futureCall(request);
+   *   // Do something.
+   *   AccessBinding response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateAccessBindingRequest, AccessBinding>
+      updateAccessBindingCallable() {
+    return stub.updateAccessBindingCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an access binding on an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   AccessBindingName name =
+   *       AccessBindingName.ofAccountAccessBindingName("[ACCOUNT]", "[ACCESS_BINDING]");
+   *   analyticsAdminServiceClient.deleteAccessBinding(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Formats: - accounts/{account}/accessBindings/{accessBinding} -
+   *     properties/{property}/accessBindings/{accessBinding}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAccessBinding(AccessBindingName name) {
+    DeleteAccessBindingRequest request =
+        DeleteAccessBindingRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteAccessBinding(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an access binding on an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name =
+   *       AccessBindingName.ofAccountAccessBindingName("[ACCOUNT]", "[ACCESS_BINDING]").toString();
+   *   analyticsAdminServiceClient.deleteAccessBinding(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Formats: - accounts/{account}/accessBindings/{accessBinding} -
+   *     properties/{property}/accessBindings/{accessBinding}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAccessBinding(String name) {
+    DeleteAccessBindingRequest request =
+        DeleteAccessBindingRequest.newBuilder().setName(name).build();
+    deleteAccessBinding(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an access binding on an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteAccessBindingRequest request =
+   *       DeleteAccessBindingRequest.newBuilder()
+   *           .setName(
+   *               AccessBindingName.ofAccountAccessBindingName("[ACCOUNT]", "[ACCESS_BINDING]")
+   *                   .toString())
+   *           .build();
+   *   analyticsAdminServiceClient.deleteAccessBinding(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAccessBinding(DeleteAccessBindingRequest request) {
+    deleteAccessBindingCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an access binding on an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteAccessBindingRequest request =
+   *       DeleteAccessBindingRequest.newBuilder()
+   *           .setName(
+   *               AccessBindingName.ofAccountAccessBindingName("[ACCOUNT]", "[ACCESS_BINDING]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.deleteAccessBindingCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteAccessBindingRequest, Empty> deleteAccessBindingCallable() {
+    return stub.deleteAccessBindingCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all access bindings on an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   AccountName parent = AccountName.of("[ACCOUNT]");
+   *   for (AccessBinding element :
+   *       analyticsAdminServiceClient.listAccessBindings(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Formats: - accounts/{account} - properties/{property}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAccessBindingsPagedResponse listAccessBindings(AccountName parent) {
+    ListAccessBindingsRequest request =
+        ListAccessBindingsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAccessBindings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all access bindings on an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (AccessBinding element :
+   *       analyticsAdminServiceClient.listAccessBindings(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Formats: - accounts/{account} - properties/{property}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAccessBindingsPagedResponse listAccessBindings(PropertyName parent) {
+    ListAccessBindingsRequest request =
+        ListAccessBindingsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAccessBindings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all access bindings on an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = AccountName.of("[ACCOUNT]").toString();
+   *   for (AccessBinding element :
+   *       analyticsAdminServiceClient.listAccessBindings(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Formats: - accounts/{account} - properties/{property}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAccessBindingsPagedResponse listAccessBindings(String parent) {
+    ListAccessBindingsRequest request =
+        ListAccessBindingsRequest.newBuilder().setParent(parent).build();
+    return listAccessBindings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all access bindings on an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListAccessBindingsRequest request =
+   *       ListAccessBindingsRequest.newBuilder()
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (AccessBinding element :
+   *       analyticsAdminServiceClient.listAccessBindings(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAccessBindingsPagedResponse listAccessBindings(
+      ListAccessBindingsRequest request) {
+    return listAccessBindingsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all access bindings on an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListAccessBindingsRequest request =
+   *       ListAccessBindingsRequest.newBuilder()
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<AccessBinding> future =
+   *       analyticsAdminServiceClient.listAccessBindingsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (AccessBinding element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAccessBindingsRequest, ListAccessBindingsPagedResponse>
+      listAccessBindingsPagedCallable() {
+    return stub.listAccessBindingsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all access bindings on an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListAccessBindingsRequest request =
+   *       ListAccessBindingsRequest.newBuilder()
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListAccessBindingsResponse response =
+   *         analyticsAdminServiceClient.listAccessBindingsCallable().call(request);
+   *     for (AccessBinding element : response.getAccessBindingsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAccessBindingsRequest, ListAccessBindingsResponse>
+      listAccessBindingsCallable() {
+    return stub.listAccessBindingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates information about multiple access bindings to an account or property.
+   *
+   * <p>This method is transactional. If any AccessBinding cannot be created, none of the
+   * AccessBindings will be created.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   BatchCreateAccessBindingsRequest request =
+   *       BatchCreateAccessBindingsRequest.newBuilder()
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
+   *           .addAllRequests(new ArrayList<CreateAccessBindingRequest>())
+   *           .build();
+   *   BatchCreateAccessBindingsResponse response =
+   *       analyticsAdminServiceClient.batchCreateAccessBindings(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCreateAccessBindingsResponse batchCreateAccessBindings(
+      BatchCreateAccessBindingsRequest request) {
+    return batchCreateAccessBindingsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates information about multiple access bindings to an account or property.
+   *
+   * <p>This method is transactional. If any AccessBinding cannot be created, none of the
+   * AccessBindings will be created.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   BatchCreateAccessBindingsRequest request =
+   *       BatchCreateAccessBindingsRequest.newBuilder()
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
+   *           .addAllRequests(new ArrayList<CreateAccessBindingRequest>())
+   *           .build();
+   *   ApiFuture<BatchCreateAccessBindingsResponse> future =
+   *       analyticsAdminServiceClient.batchCreateAccessBindingsCallable().futureCall(request);
+   *   // Do something.
+   *   BatchCreateAccessBindingsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchCreateAccessBindingsRequest, BatchCreateAccessBindingsResponse>
+      batchCreateAccessBindingsCallable() {
+    return stub.batchCreateAccessBindingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about multiple access bindings to an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   BatchGetAccessBindingsRequest request =
+   *       BatchGetAccessBindingsRequest.newBuilder()
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   BatchGetAccessBindingsResponse response =
+   *       analyticsAdminServiceClient.batchGetAccessBindings(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchGetAccessBindingsResponse batchGetAccessBindings(
+      BatchGetAccessBindingsRequest request) {
+    return batchGetAccessBindingsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about multiple access bindings to an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   BatchGetAccessBindingsRequest request =
+   *       BatchGetAccessBindingsRequest.newBuilder()
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<BatchGetAccessBindingsResponse> future =
+   *       analyticsAdminServiceClient.batchGetAccessBindingsCallable().futureCall(request);
+   *   // Do something.
+   *   BatchGetAccessBindingsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchGetAccessBindingsRequest, BatchGetAccessBindingsResponse>
+      batchGetAccessBindingsCallable() {
+    return stub.batchGetAccessBindingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates information about multiple access bindings to an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   BatchUpdateAccessBindingsRequest request =
+   *       BatchUpdateAccessBindingsRequest.newBuilder()
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
+   *           .addAllRequests(new ArrayList<UpdateAccessBindingRequest>())
+   *           .build();
+   *   BatchUpdateAccessBindingsResponse response =
+   *       analyticsAdminServiceClient.batchUpdateAccessBindings(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchUpdateAccessBindingsResponse batchUpdateAccessBindings(
+      BatchUpdateAccessBindingsRequest request) {
+    return batchUpdateAccessBindingsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates information about multiple access bindings to an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   BatchUpdateAccessBindingsRequest request =
+   *       BatchUpdateAccessBindingsRequest.newBuilder()
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
+   *           .addAllRequests(new ArrayList<UpdateAccessBindingRequest>())
+   *           .build();
+   *   ApiFuture<BatchUpdateAccessBindingsResponse> future =
+   *       analyticsAdminServiceClient.batchUpdateAccessBindingsCallable().futureCall(request);
+   *   // Do something.
+   *   BatchUpdateAccessBindingsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchUpdateAccessBindingsRequest, BatchUpdateAccessBindingsResponse>
+      batchUpdateAccessBindingsCallable() {
+    return stub.batchUpdateAccessBindingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes information about multiple users' links to an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   BatchDeleteAccessBindingsRequest request =
+   *       BatchDeleteAccessBindingsRequest.newBuilder()
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
+   *           .addAllRequests(new ArrayList<DeleteAccessBindingRequest>())
+   *           .build();
+   *   analyticsAdminServiceClient.batchDeleteAccessBindings(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void batchDeleteAccessBindings(BatchDeleteAccessBindingsRequest request) {
+    batchDeleteAccessBindingsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes information about multiple users' links to an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   BatchDeleteAccessBindingsRequest request =
+   *       BatchDeleteAccessBindingsRequest.newBuilder()
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
+   *           .addAllRequests(new ArrayList<DeleteAccessBindingRequest>())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.batchDeleteAccessBindingsCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchDeleteAccessBindingsRequest, Empty>
+      batchDeleteAccessBindingsCallable() {
+    return stub.batchDeleteAccessBindingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single ExpandedDataSet.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ExpandedDataSetName name = ExpandedDataSetName.of("[PROPERTY]", "[EXPANDED_DATA_SET]");
+   *   ExpandedDataSet response = analyticsAdminServiceClient.getExpandedDataSet(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Audience to get. Example format:
+   *     properties/1234/expandedDataSets/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExpandedDataSet getExpandedDataSet(ExpandedDataSetName name) {
+    GetExpandedDataSetRequest request =
+        GetExpandedDataSetRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getExpandedDataSet(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single ExpandedDataSet.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = ExpandedDataSetName.of("[PROPERTY]", "[EXPANDED_DATA_SET]").toString();
+   *   ExpandedDataSet response = analyticsAdminServiceClient.getExpandedDataSet(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Audience to get. Example format:
+   *     properties/1234/expandedDataSets/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExpandedDataSet getExpandedDataSet(String name) {
+    GetExpandedDataSetRequest request =
+        GetExpandedDataSetRequest.newBuilder().setName(name).build();
+    return getExpandedDataSet(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single ExpandedDataSet.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetExpandedDataSetRequest request =
+   *       GetExpandedDataSetRequest.newBuilder()
+   *           .setName(ExpandedDataSetName.of("[PROPERTY]", "[EXPANDED_DATA_SET]").toString())
+   *           .build();
+   *   ExpandedDataSet response = analyticsAdminServiceClient.getExpandedDataSet(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExpandedDataSet getExpandedDataSet(GetExpandedDataSetRequest request) {
+    return getExpandedDataSetCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single ExpandedDataSet.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetExpandedDataSetRequest request =
+   *       GetExpandedDataSetRequest.newBuilder()
+   *           .setName(ExpandedDataSetName.of("[PROPERTY]", "[EXPANDED_DATA_SET]").toString())
+   *           .build();
+   *   ApiFuture<ExpandedDataSet> future =
+   *       analyticsAdminServiceClient.getExpandedDataSetCallable().futureCall(request);
+   *   // Do something.
+   *   ExpandedDataSet response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetExpandedDataSetRequest, ExpandedDataSet>
+      getExpandedDataSetCallable() {
+    return stub.getExpandedDataSetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ExpandedDataSets on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (ExpandedDataSet element :
+   *       analyticsAdminServiceClient.listExpandedDataSets(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListExpandedDataSetsPagedResponse listExpandedDataSets(PropertyName parent) {
+    ListExpandedDataSetsRequest request =
+        ListExpandedDataSetsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listExpandedDataSets(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ExpandedDataSets on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   for (ExpandedDataSet element :
+   *       analyticsAdminServiceClient.listExpandedDataSets(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListExpandedDataSetsPagedResponse listExpandedDataSets(String parent) {
+    ListExpandedDataSetsRequest request =
+        ListExpandedDataSetsRequest.newBuilder().setParent(parent).build();
+    return listExpandedDataSets(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ExpandedDataSets on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListExpandedDataSetsRequest request =
+   *       ListExpandedDataSetsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (ExpandedDataSet element :
+   *       analyticsAdminServiceClient.listExpandedDataSets(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListExpandedDataSetsPagedResponse listExpandedDataSets(
+      ListExpandedDataSetsRequest request) {
+    return listExpandedDataSetsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ExpandedDataSets on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListExpandedDataSetsRequest request =
+   *       ListExpandedDataSetsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<ExpandedDataSet> future =
+   *       analyticsAdminServiceClient.listExpandedDataSetsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ExpandedDataSet element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListExpandedDataSetsRequest, ListExpandedDataSetsPagedResponse>
+      listExpandedDataSetsPagedCallable() {
+    return stub.listExpandedDataSetsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ExpandedDataSets on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListExpandedDataSetsRequest request =
+   *       ListExpandedDataSetsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListExpandedDataSetsResponse response =
+   *         analyticsAdminServiceClient.listExpandedDataSetsCallable().call(request);
+   *     for (ExpandedDataSet element : response.getExpandedDataSetsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListExpandedDataSetsRequest, ListExpandedDataSetsResponse>
+      listExpandedDataSetsCallable() {
+    return stub.listExpandedDataSetsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a ExpandedDataSet.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   ExpandedDataSet expandedDataSet = ExpandedDataSet.newBuilder().build();
+   *   ExpandedDataSet response =
+   *       analyticsAdminServiceClient.createExpandedDataSet(parent, expandedDataSet);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @param expandedDataSet Required. The ExpandedDataSet to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExpandedDataSet createExpandedDataSet(
+      PropertyName parent, ExpandedDataSet expandedDataSet) {
+    CreateExpandedDataSetRequest request =
+        CreateExpandedDataSetRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setExpandedDataSet(expandedDataSet)
+            .build();
+    return createExpandedDataSet(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a ExpandedDataSet.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   ExpandedDataSet expandedDataSet = ExpandedDataSet.newBuilder().build();
+   *   ExpandedDataSet response =
+   *       analyticsAdminServiceClient.createExpandedDataSet(parent, expandedDataSet);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @param expandedDataSet Required. The ExpandedDataSet to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExpandedDataSet createExpandedDataSet(
+      String parent, ExpandedDataSet expandedDataSet) {
+    CreateExpandedDataSetRequest request =
+        CreateExpandedDataSetRequest.newBuilder()
+            .setParent(parent)
+            .setExpandedDataSet(expandedDataSet)
+            .build();
+    return createExpandedDataSet(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a ExpandedDataSet.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateExpandedDataSetRequest request =
+   *       CreateExpandedDataSetRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setExpandedDataSet(ExpandedDataSet.newBuilder().build())
+   *           .build();
+   *   ExpandedDataSet response = analyticsAdminServiceClient.createExpandedDataSet(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExpandedDataSet createExpandedDataSet(CreateExpandedDataSetRequest request) {
+    return createExpandedDataSetCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a ExpandedDataSet.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateExpandedDataSetRequest request =
+   *       CreateExpandedDataSetRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setExpandedDataSet(ExpandedDataSet.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ExpandedDataSet> future =
+   *       analyticsAdminServiceClient.createExpandedDataSetCallable().futureCall(request);
+   *   // Do something.
+   *   ExpandedDataSet response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateExpandedDataSetRequest, ExpandedDataSet>
+      createExpandedDataSetCallable() {
+    return stub.createExpandedDataSetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a ExpandedDataSet on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ExpandedDataSet expandedDataSet = ExpandedDataSet.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   ExpandedDataSet response =
+   *       analyticsAdminServiceClient.updateExpandedDataSet(expandedDataSet, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param expandedDataSet Required. The ExpandedDataSet to update. The resource's `name` field is
+   *     used to identify the ExpandedDataSet to be updated.
+   * @param updateMask Required. The list of fields to be updated. Field names must be in snake case
+   *     (e.g., "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     entity, use one path with the string "&#42;" to match all fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExpandedDataSet updateExpandedDataSet(
+      ExpandedDataSet expandedDataSet, FieldMask updateMask) {
+    UpdateExpandedDataSetRequest request =
+        UpdateExpandedDataSetRequest.newBuilder()
+            .setExpandedDataSet(expandedDataSet)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateExpandedDataSet(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a ExpandedDataSet on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateExpandedDataSetRequest request =
+   *       UpdateExpandedDataSetRequest.newBuilder()
+   *           .setExpandedDataSet(ExpandedDataSet.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ExpandedDataSet response = analyticsAdminServiceClient.updateExpandedDataSet(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExpandedDataSet updateExpandedDataSet(UpdateExpandedDataSetRequest request) {
+    return updateExpandedDataSetCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a ExpandedDataSet on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateExpandedDataSetRequest request =
+   *       UpdateExpandedDataSetRequest.newBuilder()
+   *           .setExpandedDataSet(ExpandedDataSet.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ExpandedDataSet> future =
+   *       analyticsAdminServiceClient.updateExpandedDataSetCallable().futureCall(request);
+   *   // Do something.
+   *   ExpandedDataSet response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateExpandedDataSetRequest, ExpandedDataSet>
+      updateExpandedDataSetCallable() {
+    return stub.updateExpandedDataSetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a ExpandedDataSet on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ExpandedDataSetName name = ExpandedDataSetName.of("[PROPERTY]", "[EXPANDED_DATA_SET]");
+   *   analyticsAdminServiceClient.deleteExpandedDataSet(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Example format: properties/1234/expandedDataSets/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteExpandedDataSet(ExpandedDataSetName name) {
+    DeleteExpandedDataSetRequest request =
+        DeleteExpandedDataSetRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteExpandedDataSet(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a ExpandedDataSet on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = ExpandedDataSetName.of("[PROPERTY]", "[EXPANDED_DATA_SET]").toString();
+   *   analyticsAdminServiceClient.deleteExpandedDataSet(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Example format: properties/1234/expandedDataSets/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteExpandedDataSet(String name) {
+    DeleteExpandedDataSetRequest request =
+        DeleteExpandedDataSetRequest.newBuilder().setName(name).build();
+    deleteExpandedDataSet(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a ExpandedDataSet on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteExpandedDataSetRequest request =
+   *       DeleteExpandedDataSetRequest.newBuilder()
+   *           .setName(ExpandedDataSetName.of("[PROPERTY]", "[EXPANDED_DATA_SET]").toString())
+   *           .build();
+   *   analyticsAdminServiceClient.deleteExpandedDataSet(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteExpandedDataSet(DeleteExpandedDataSetRequest request) {
+    deleteExpandedDataSetCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a ExpandedDataSet on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteExpandedDataSetRequest request =
+   *       DeleteExpandedDataSetRequest.newBuilder()
+   *           .setName(ExpandedDataSetName.of("[PROPERTY]", "[EXPANDED_DATA_SET]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.deleteExpandedDataSetCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteExpandedDataSetRequest, Empty> deleteExpandedDataSetCallable() {
+    return stub.deleteExpandedDataSetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Sets the opt out status for the automated GA4 setup process for a UA property. Note: this has
    * no effect on GA4 property.
    *
@@ -12277,6 +13876,170 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     protected ListSearchAds360LinksFixedSizeCollection createCollection(
         List<ListSearchAds360LinksPage> pages, int collectionSize) {
       return new ListSearchAds360LinksFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAccessBindingsPagedResponse
+      extends AbstractPagedListResponse<
+          ListAccessBindingsRequest,
+          ListAccessBindingsResponse,
+          AccessBinding,
+          ListAccessBindingsPage,
+          ListAccessBindingsFixedSizeCollection> {
+
+    public static ApiFuture<ListAccessBindingsPagedResponse> createAsync(
+        PageContext<ListAccessBindingsRequest, ListAccessBindingsResponse, AccessBinding> context,
+        ApiFuture<ListAccessBindingsResponse> futureResponse) {
+      ApiFuture<ListAccessBindingsPage> futurePage =
+          ListAccessBindingsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListAccessBindingsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAccessBindingsPagedResponse(ListAccessBindingsPage page) {
+      super(page, ListAccessBindingsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAccessBindingsPage
+      extends AbstractPage<
+          ListAccessBindingsRequest,
+          ListAccessBindingsResponse,
+          AccessBinding,
+          ListAccessBindingsPage> {
+
+    private ListAccessBindingsPage(
+        PageContext<ListAccessBindingsRequest, ListAccessBindingsResponse, AccessBinding> context,
+        ListAccessBindingsResponse response) {
+      super(context, response);
+    }
+
+    private static ListAccessBindingsPage createEmptyPage() {
+      return new ListAccessBindingsPage(null, null);
+    }
+
+    @Override
+    protected ListAccessBindingsPage createPage(
+        PageContext<ListAccessBindingsRequest, ListAccessBindingsResponse, AccessBinding> context,
+        ListAccessBindingsResponse response) {
+      return new ListAccessBindingsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAccessBindingsPage> createPageAsync(
+        PageContext<ListAccessBindingsRequest, ListAccessBindingsResponse, AccessBinding> context,
+        ApiFuture<ListAccessBindingsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAccessBindingsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAccessBindingsRequest,
+          ListAccessBindingsResponse,
+          AccessBinding,
+          ListAccessBindingsPage,
+          ListAccessBindingsFixedSizeCollection> {
+
+    private ListAccessBindingsFixedSizeCollection(
+        List<ListAccessBindingsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAccessBindingsFixedSizeCollection createEmptyCollection() {
+      return new ListAccessBindingsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAccessBindingsFixedSizeCollection createCollection(
+        List<ListAccessBindingsPage> pages, int collectionSize) {
+      return new ListAccessBindingsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListExpandedDataSetsPagedResponse
+      extends AbstractPagedListResponse<
+          ListExpandedDataSetsRequest,
+          ListExpandedDataSetsResponse,
+          ExpandedDataSet,
+          ListExpandedDataSetsPage,
+          ListExpandedDataSetsFixedSizeCollection> {
+
+    public static ApiFuture<ListExpandedDataSetsPagedResponse> createAsync(
+        PageContext<ListExpandedDataSetsRequest, ListExpandedDataSetsResponse, ExpandedDataSet>
+            context,
+        ApiFuture<ListExpandedDataSetsResponse> futureResponse) {
+      ApiFuture<ListExpandedDataSetsPage> futurePage =
+          ListExpandedDataSetsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListExpandedDataSetsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListExpandedDataSetsPagedResponse(ListExpandedDataSetsPage page) {
+      super(page, ListExpandedDataSetsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListExpandedDataSetsPage
+      extends AbstractPage<
+          ListExpandedDataSetsRequest,
+          ListExpandedDataSetsResponse,
+          ExpandedDataSet,
+          ListExpandedDataSetsPage> {
+
+    private ListExpandedDataSetsPage(
+        PageContext<ListExpandedDataSetsRequest, ListExpandedDataSetsResponse, ExpandedDataSet>
+            context,
+        ListExpandedDataSetsResponse response) {
+      super(context, response);
+    }
+
+    private static ListExpandedDataSetsPage createEmptyPage() {
+      return new ListExpandedDataSetsPage(null, null);
+    }
+
+    @Override
+    protected ListExpandedDataSetsPage createPage(
+        PageContext<ListExpandedDataSetsRequest, ListExpandedDataSetsResponse, ExpandedDataSet>
+            context,
+        ListExpandedDataSetsResponse response) {
+      return new ListExpandedDataSetsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListExpandedDataSetsPage> createPageAsync(
+        PageContext<ListExpandedDataSetsRequest, ListExpandedDataSetsResponse, ExpandedDataSet>
+            context,
+        ApiFuture<ListExpandedDataSetsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListExpandedDataSetsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListExpandedDataSetsRequest,
+          ListExpandedDataSetsResponse,
+          ExpandedDataSet,
+          ListExpandedDataSetsPage,
+          ListExpandedDataSetsFixedSizeCollection> {
+
+    private ListExpandedDataSetsFixedSizeCollection(
+        List<ListExpandedDataSetsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListExpandedDataSetsFixedSizeCollection createEmptyCollection() {
+      return new ListExpandedDataSetsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListExpandedDataSetsFixedSizeCollection createCollection(
+        List<ListExpandedDataSetsPage> pages, int collectionSize) {
+      return new ListExpandedDataSetsFixedSizeCollection(pages, collectionSize);
     }
   }
 

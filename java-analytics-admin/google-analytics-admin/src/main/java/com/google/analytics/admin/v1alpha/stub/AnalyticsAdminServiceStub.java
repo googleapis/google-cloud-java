@@ -17,6 +17,7 @@
 package com.google.analytics.admin.v1alpha.stub;
 
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.AuditUserLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccessBindingsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
@@ -27,6 +28,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinkProposalsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListExpandedDataSetsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
@@ -35,6 +37,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
+import com.google.analytics.admin.v1alpha.AccessBinding;
 import com.google.analytics.admin.v1alpha.Account;
 import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest;
 import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse;
@@ -47,16 +50,24 @@ import com.google.analytics.admin.v1alpha.AttributionSettings;
 import com.google.analytics.admin.v1alpha.Audience;
 import com.google.analytics.admin.v1alpha.AuditUserLinksRequest;
 import com.google.analytics.admin.v1alpha.AuditUserLinksResponse;
+import com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsRequest;
+import com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsResponse;
 import com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse;
+import com.google.analytics.admin.v1alpha.BatchDeleteAccessBindingsRequest;
 import com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest;
+import com.google.analytics.admin.v1alpha.BatchGetAccessBindingsRequest;
+import com.google.analytics.admin.v1alpha.BatchGetAccessBindingsResponse;
 import com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse;
+import com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsRequest;
+import com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsResponse;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BigQueryLink;
 import com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ConversionEvent;
+import com.google.analytics.admin.v1alpha.CreateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.CreateAudienceRequest;
 import com.google.analytics.admin.v1alpha.CreateConversionEventRequest;
 import com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest;
@@ -64,6 +75,7 @@ import com.google.analytics.admin.v1alpha.CreateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.CreateDataStreamRequest;
 import com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest;
+import com.google.analytics.admin.v1alpha.CreateExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest;
@@ -75,11 +87,13 @@ import com.google.analytics.admin.v1alpha.CustomMetric;
 import com.google.analytics.admin.v1alpha.DataRetentionSettings;
 import com.google.analytics.admin.v1alpha.DataSharingSettings;
 import com.google.analytics.admin.v1alpha.DataStream;
+import com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
 import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
 import com.google.analytics.admin.v1alpha.DeleteDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest;
+import com.google.analytics.admin.v1alpha.DeleteExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest;
@@ -88,9 +102,11 @@ import com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal;
+import com.google.analytics.admin.v1alpha.ExpandedDataSet;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse;
 import com.google.analytics.admin.v1alpha.FirebaseLink;
+import com.google.analytics.admin.v1alpha.GetAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.GetAccountRequest;
 import com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetAudienceRequest;
@@ -103,6 +119,7 @@ import com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetDataStreamRequest;
 import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest;
+import com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
 import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest;
@@ -112,6 +129,8 @@ import com.google.analytics.admin.v1alpha.GetUserLinkRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
 import com.google.analytics.admin.v1alpha.GoogleSignalsSettings;
+import com.google.analytics.admin.v1alpha.ListAccessBindingsRequest;
+import com.google.analytics.admin.v1alpha.ListAccessBindingsResponse;
 import com.google.analytics.admin.v1alpha.ListAccountSummariesRequest;
 import com.google.analytics.admin.v1alpha.ListAccountSummariesResponse;
 import com.google.analytics.admin.v1alpha.ListAccountsRequest;
@@ -132,6 +151,8 @@ import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkPropo
 import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsResponse;
 import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequest;
 import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksResponse;
+import com.google.analytics.admin.v1alpha.ListExpandedDataSetsRequest;
+import com.google.analytics.admin.v1alpha.ListExpandedDataSetsResponse;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse;
 import com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest;
@@ -155,6 +176,7 @@ import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest;
 import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse;
+import com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateAudienceRequest;
@@ -163,6 +185,7 @@ import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest;
+import com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest;
@@ -683,6 +706,80 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
 
   public UnaryCallable<RunAccessReportRequest, RunAccessReportResponse> runAccessReportCallable() {
     throw new UnsupportedOperationException("Not implemented: runAccessReportCallable()");
+  }
+
+  public UnaryCallable<CreateAccessBindingRequest, AccessBinding> createAccessBindingCallable() {
+    throw new UnsupportedOperationException("Not implemented: createAccessBindingCallable()");
+  }
+
+  public UnaryCallable<GetAccessBindingRequest, AccessBinding> getAccessBindingCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAccessBindingCallable()");
+  }
+
+  public UnaryCallable<UpdateAccessBindingRequest, AccessBinding> updateAccessBindingCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateAccessBindingCallable()");
+  }
+
+  public UnaryCallable<DeleteAccessBindingRequest, Empty> deleteAccessBindingCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteAccessBindingCallable()");
+  }
+
+  public UnaryCallable<ListAccessBindingsRequest, ListAccessBindingsPagedResponse>
+      listAccessBindingsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAccessBindingsPagedCallable()");
+  }
+
+  public UnaryCallable<ListAccessBindingsRequest, ListAccessBindingsResponse>
+      listAccessBindingsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAccessBindingsCallable()");
+  }
+
+  public UnaryCallable<BatchCreateAccessBindingsRequest, BatchCreateAccessBindingsResponse>
+      batchCreateAccessBindingsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchCreateAccessBindingsCallable()");
+  }
+
+  public UnaryCallable<BatchGetAccessBindingsRequest, BatchGetAccessBindingsResponse>
+      batchGetAccessBindingsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchGetAccessBindingsCallable()");
+  }
+
+  public UnaryCallable<BatchUpdateAccessBindingsRequest, BatchUpdateAccessBindingsResponse>
+      batchUpdateAccessBindingsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchUpdateAccessBindingsCallable()");
+  }
+
+  public UnaryCallable<BatchDeleteAccessBindingsRequest, Empty>
+      batchDeleteAccessBindingsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchDeleteAccessBindingsCallable()");
+  }
+
+  public UnaryCallable<GetExpandedDataSetRequest, ExpandedDataSet> getExpandedDataSetCallable() {
+    throw new UnsupportedOperationException("Not implemented: getExpandedDataSetCallable()");
+  }
+
+  public UnaryCallable<ListExpandedDataSetsRequest, ListExpandedDataSetsPagedResponse>
+      listExpandedDataSetsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listExpandedDataSetsPagedCallable()");
+  }
+
+  public UnaryCallable<ListExpandedDataSetsRequest, ListExpandedDataSetsResponse>
+      listExpandedDataSetsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listExpandedDataSetsCallable()");
+  }
+
+  public UnaryCallable<CreateExpandedDataSetRequest, ExpandedDataSet>
+      createExpandedDataSetCallable() {
+    throw new UnsupportedOperationException("Not implemented: createExpandedDataSetCallable()");
+  }
+
+  public UnaryCallable<UpdateExpandedDataSetRequest, ExpandedDataSet>
+      updateExpandedDataSetCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateExpandedDataSetCallable()");
+  }
+
+  public UnaryCallable<DeleteExpandedDataSetRequest, Empty> deleteExpandedDataSetCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteExpandedDataSetCallable()");
   }
 
   public UnaryCallable<

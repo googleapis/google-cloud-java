@@ -28,20 +28,35 @@
             "AuditUserLinks": {
               "methods": ["auditUserLinks", "auditUserLinksPagedCallable", "auditUserLinksCallable"]
             },
+            "BatchCreateAccessBindings": {
+              "methods": ["batchCreateAccessBindings", "batchCreateAccessBindingsCallable"]
+            },
             "BatchCreateUserLinks": {
               "methods": ["batchCreateUserLinks", "batchCreateUserLinksCallable"]
+            },
+            "BatchDeleteAccessBindings": {
+              "methods": ["batchDeleteAccessBindings", "batchDeleteAccessBindingsCallable"]
             },
             "BatchDeleteUserLinks": {
               "methods": ["batchDeleteUserLinks", "batchDeleteUserLinksCallable"]
             },
+            "BatchGetAccessBindings": {
+              "methods": ["batchGetAccessBindings", "batchGetAccessBindingsCallable"]
+            },
             "BatchGetUserLinks": {
               "methods": ["batchGetUserLinks", "batchGetUserLinksCallable"]
+            },
+            "BatchUpdateAccessBindings": {
+              "methods": ["batchUpdateAccessBindings", "batchUpdateAccessBindingsCallable"]
             },
             "BatchUpdateUserLinks": {
               "methods": ["batchUpdateUserLinks", "batchUpdateUserLinksCallable"]
             },
             "CancelDisplayVideo360AdvertiserLinkProposal": {
               "methods": ["cancelDisplayVideo360AdvertiserLinkProposal", "cancelDisplayVideo360AdvertiserLinkProposalCallable"]
+            },
+            "CreateAccessBinding": {
+              "methods": ["createAccessBinding", "createAccessBinding", "createAccessBinding", "createAccessBinding", "createAccessBindingCallable"]
             },
             "CreateAudience": {
               "methods": ["createAudience", "createAudience", "createAudience", "createAudienceCallable"]
@@ -64,6 +79,9 @@
             "CreateDisplayVideo360AdvertiserLinkProposal": {
               "methods": ["createDisplayVideo360AdvertiserLinkProposal", "createDisplayVideo360AdvertiserLinkProposal", "createDisplayVideo360AdvertiserLinkProposal", "createDisplayVideo360AdvertiserLinkProposalCallable"]
             },
+            "CreateExpandedDataSet": {
+              "methods": ["createExpandedDataSet", "createExpandedDataSet", "createExpandedDataSet", "createExpandedDataSetCallable"]
+            },
             "CreateFirebaseLink": {
               "methods": ["createFirebaseLink", "createFirebaseLink", "createFirebaseLink", "createFirebaseLinkCallable"]
             },
@@ -82,6 +100,9 @@
             "CreateUserLink": {
               "methods": ["createUserLink", "createUserLink", "createUserLink", "createUserLink", "createUserLinkCallable"]
             },
+            "DeleteAccessBinding": {
+              "methods": ["deleteAccessBinding", "deleteAccessBinding", "deleteAccessBinding", "deleteAccessBindingCallable"]
+            },
             "DeleteAccount": {
               "methods": ["deleteAccount", "deleteAccount", "deleteAccount", "deleteAccountCallable"]
             },
@@ -96,6 +117,9 @@
             },
             "DeleteDisplayVideo360AdvertiserLinkProposal": {
               "methods": ["deleteDisplayVideo360AdvertiserLinkProposal", "deleteDisplayVideo360AdvertiserLinkProposal", "deleteDisplayVideo360AdvertiserLinkProposal", "deleteDisplayVideo360AdvertiserLinkProposalCallable"]
+            },
+            "DeleteExpandedDataSet": {
+              "methods": ["deleteExpandedDataSet", "deleteExpandedDataSet", "deleteExpandedDataSet", "deleteExpandedDataSetCallable"]
             },
             "DeleteFirebaseLink": {
               "methods": ["deleteFirebaseLink", "deleteFirebaseLink", "deleteFirebaseLink", "deleteFirebaseLinkCallable"]
@@ -117,6 +141,9 @@
             },
             "FetchAutomatedGa4ConfigurationOptOut": {
               "methods": ["fetchAutomatedGa4ConfigurationOptOut", "fetchAutomatedGa4ConfigurationOptOutCallable"]
+            },
+            "GetAccessBinding": {
+              "methods": ["getAccessBinding", "getAccessBinding", "getAccessBinding", "getAccessBindingCallable"]
             },
             "GetAccount": {
               "methods": ["getAccount", "getAccount", "getAccount", "getAccountCallable"]
@@ -154,6 +181,9 @@
             "GetDisplayVideo360AdvertiserLinkProposal": {
               "methods": ["getDisplayVideo360AdvertiserLinkProposal", "getDisplayVideo360AdvertiserLinkProposal", "getDisplayVideo360AdvertiserLinkProposal", "getDisplayVideo360AdvertiserLinkProposalCallable"]
             },
+            "GetExpandedDataSet": {
+              "methods": ["getExpandedDataSet", "getExpandedDataSet", "getExpandedDataSet", "getExpandedDataSetCallable"]
+            },
             "GetGlobalSiteTag": {
               "methods": ["getGlobalSiteTag", "getGlobalSiteTag", "getGlobalSiteTag", "getGlobalSiteTagCallable"]
             },
@@ -171,6 +201,9 @@
             },
             "GetUserLink": {
               "methods": ["getUserLink", "getUserLink", "getUserLink", "getUserLinkCallable"]
+            },
+            "ListAccessBindings": {
+              "methods": ["listAccessBindings", "listAccessBindings", "listAccessBindings", "listAccessBindings", "listAccessBindingsPagedCallable", "listAccessBindingsCallable"]
             },
             "ListAccountSummaries": {
               "methods": ["listAccountSummaries", "listAccountSummariesPagedCallable", "listAccountSummariesCallable"]
@@ -202,6 +235,9 @@
             "ListDisplayVideo360AdvertiserLinks": {
               "methods": ["listDisplayVideo360AdvertiserLinks", "listDisplayVideo360AdvertiserLinks", "listDisplayVideo360AdvertiserLinks", "listDisplayVideo360AdvertiserLinksPagedCallable", "listDisplayVideo360AdvertiserLinksCallable"]
             },
+            "ListExpandedDataSets": {
+              "methods": ["listExpandedDataSets", "listExpandedDataSets", "listExpandedDataSets", "listExpandedDataSetsPagedCallable", "listExpandedDataSetsCallable"]
+            },
             "ListFirebaseLinks": {
               "methods": ["listFirebaseLinks", "listFirebaseLinks", "listFirebaseLinks", "listFirebaseLinksPagedCallable", "listFirebaseLinksCallable"]
             },
@@ -232,6 +268,9 @@
             "SetAutomatedGa4ConfigurationOptOut": {
               "methods": ["setAutomatedGa4ConfigurationOptOut", "setAutomatedGa4ConfigurationOptOutCallable"]
             },
+            "UpdateAccessBinding": {
+              "methods": ["updateAccessBinding", "updateAccessBinding", "updateAccessBindingCallable"]
+            },
             "UpdateAccount": {
               "methods": ["updateAccount", "updateAccount", "updateAccountCallable"]
             },
@@ -255,6 +294,9 @@
             },
             "UpdateDisplayVideo360AdvertiserLink": {
               "methods": ["updateDisplayVideo360AdvertiserLink", "updateDisplayVideo360AdvertiserLink", "updateDisplayVideo360AdvertiserLinkCallable"]
+            },
+            "UpdateExpandedDataSet": {
+              "methods": ["updateExpandedDataSet", "updateExpandedDataSet", "updateExpandedDataSetCallable"]
             },
             "UpdateGoogleAdsLink": {
               "methods": ["updateGoogleAdsLink", "updateGoogleAdsLink", "updateGoogleAdsLinkCallable"]
