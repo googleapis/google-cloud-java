@@ -154,7 +154,7 @@ public interface AzurePropertiesOrBuilder
    *
    *
    * <pre>
-   * The client id of the user's Azure Active Directory Application used for a
+   * The client ID of the user's Azure Active Directory Application used for a
    * federated connection.
    * </pre>
    *
@@ -167,7 +167,7 @@ public interface AzurePropertiesOrBuilder
    *
    *
    * <pre>
-   * The client id of the user's Azure Active Directory Application used for a
+   * The client ID of the user's Azure Active Directory Application used for a
    * federated connection.
    * </pre>
    *
@@ -181,9 +181,9 @@ public interface AzurePropertiesOrBuilder
    *
    *
    * <pre>
-   * Output only. A unique Google-owned and Google-generated identity for the Connection.
-   * This identity will be used to access the user's Azure Active Directory
-   * Application.
+   * Output only. A unique Google-owned and Google-generated identity for the
+   * Connection. This identity will be used to access the user's Azure Active
+   * Directory Application.
    * </pre>
    *
    * <code>string identity = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -195,9 +195,9 @@ public interface AzurePropertiesOrBuilder
    *
    *
    * <pre>
-   * Output only. A unique Google-owned and Google-generated identity for the Connection.
-   * This identity will be used to access the user's Azure Active Directory
-   * Application.
+   * Output only. A unique Google-owned and Google-generated identity for the
+   * Connection. This identity will be used to access the user's Azure Active
+   * Directory Application.
    * </pre>
    *
    * <code>string identity = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

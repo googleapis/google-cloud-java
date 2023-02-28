@@ -37,7 +37,7 @@ public interface AwsPropertiesOrBuilder
    * </code>
    *
    * @deprecated google.cloud.bigquery.connection.v1.AwsProperties.cross_account_role is deprecated.
-   *     See google/cloud/bigquery/connection/v1/connection.proto;l=314
+   *     See google/cloud/bigquery/connection/v1/connection.proto;l=345
    * @return Whether the crossAccountRole field is set.
    */
   @java.lang.Deprecated
@@ -56,7 +56,7 @@ public interface AwsPropertiesOrBuilder
    * </code>
    *
    * @deprecated google.cloud.bigquery.connection.v1.AwsProperties.cross_account_role is deprecated.
-   *     See google/cloud/bigquery/connection/v1/connection.proto;l=314
+   *     See google/cloud/bigquery/connection/v1/connection.proto;l=345
    * @return The crossAccountRole.
    */
   @java.lang.Deprecated

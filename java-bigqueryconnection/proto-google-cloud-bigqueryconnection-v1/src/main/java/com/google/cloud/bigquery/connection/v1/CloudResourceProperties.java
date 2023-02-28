@@ -76,7 +76,8 @@ public final class CloudResourceProperties extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. The account ID of the service created for the purpose of this connection.
+   * Output only. The account ID of the service created for the purpose of this
+   * connection.
    * The service account does not have any permissions associated with it
    * when it is created. After creation, customers delegate permissions
    * to the service account. When the connection is used in the context of an
@@ -106,7 +107,8 @@ public final class CloudResourceProperties extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. The account ID of the service created for the purpose of this connection.
+   * Output only. The account ID of the service created for the purpose of this
+   * connection.
    * The service account does not have any permissions associated with it
    * when it is created. After creation, customers delegate permissions
    * to the service account. When the connection is used in the context of an
@@ -486,7 +488,8 @@ public final class CloudResourceProperties extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The account ID of the service created for the purpose of this connection.
+     * Output only. The account ID of the service created for the purpose of this
+     * connection.
      * The service account does not have any permissions associated with it
      * when it is created. After creation, customers delegate permissions
      * to the service account. When the connection is used in the context of an
@@ -515,7 +518,8 @@ public final class CloudResourceProperties extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The account ID of the service created for the purpose of this connection.
+     * Output only. The account ID of the service created for the purpose of this
+     * connection.
      * The service account does not have any permissions associated with it
      * when it is created. After creation, customers delegate permissions
      * to the service account. When the connection is used in the context of an
@@ -544,7 +548,8 @@ public final class CloudResourceProperties extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The account ID of the service created for the purpose of this connection.
+     * Output only. The account ID of the service created for the purpose of this
+     * connection.
      * The service account does not have any permissions associated with it
      * when it is created. After creation, customers delegate permissions
      * to the service account. When the connection is used in the context of an
@@ -572,7 +577,8 @@ public final class CloudResourceProperties extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The account ID of the service created for the purpose of this connection.
+     * Output only. The account ID of the service created for the purpose of this
+     * connection.
      * The service account does not have any permissions associated with it
      * when it is created. After creation, customers delegate permissions
      * to the service account. When the connection is used in the context of an
@@ -596,7 +602,8 @@ public final class CloudResourceProperties extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The account ID of the service created for the purpose of this connection.
+     * Output only. The account ID of the service created for the purpose of this
+     * connection.
      * The service account does not have any permissions associated with it
      * when it is created. After creation, customers delegate permissions
      * to the service account. When the connection is used in the context of an

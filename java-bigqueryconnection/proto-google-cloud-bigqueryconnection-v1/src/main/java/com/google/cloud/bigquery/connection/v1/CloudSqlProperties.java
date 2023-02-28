@@ -433,9 +433,10 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. The account ID of the service used for the purpose of this connection.
+   * Output only. The account ID of the service used for the purpose of this
+   * connection.
    * When the connection is used in the context of an operation in
-   * BigQuery, this service account will serve as identity being used for
+   * BigQuery, this service account will serve as the identity being used for
    * connecting to the CloudSQL instance specified in this connection.
    * </pre>
    *
@@ -459,9 +460,10 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. The account ID of the service used for the purpose of this connection.
+   * Output only. The account ID of the service used for the purpose of this
+   * connection.
    * When the connection is used in the context of an operation in
-   * BigQuery, this service account will serve as identity being used for
+   * BigQuery, this service account will serve as the identity being used for
    * connecting to the CloudSQL instance specified in this connection.
    * </pre>
    *
@@ -1449,9 +1451,10 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The account ID of the service used for the purpose of this connection.
+     * Output only. The account ID of the service used for the purpose of this
+     * connection.
      * When the connection is used in the context of an operation in
-     * BigQuery, this service account will serve as identity being used for
+     * BigQuery, this service account will serve as the identity being used for
      * connecting to the CloudSQL instance specified in this connection.
      * </pre>
      *
@@ -1474,9 +1477,10 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The account ID of the service used for the purpose of this connection.
+     * Output only. The account ID of the service used for the purpose of this
+     * connection.
      * When the connection is used in the context of an operation in
-     * BigQuery, this service account will serve as identity being used for
+     * BigQuery, this service account will serve as the identity being used for
      * connecting to the CloudSQL instance specified in this connection.
      * </pre>
      *
@@ -1499,9 +1503,10 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The account ID of the service used for the purpose of this connection.
+     * Output only. The account ID of the service used for the purpose of this
+     * connection.
      * When the connection is used in the context of an operation in
-     * BigQuery, this service account will serve as identity being used for
+     * BigQuery, this service account will serve as the identity being used for
      * connecting to the CloudSQL instance specified in this connection.
      * </pre>
      *
@@ -1523,9 +1528,10 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The account ID of the service used for the purpose of this connection.
+     * Output only. The account ID of the service used for the purpose of this
+     * connection.
      * When the connection is used in the context of an operation in
-     * BigQuery, this service account will serve as identity being used for
+     * BigQuery, this service account will serve as the identity being used for
      * connecting to the CloudSQL instance specified in this connection.
      * </pre>
      *
@@ -1543,9 +1549,10 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The account ID of the service used for the purpose of this connection.
+     * Output only. The account ID of the service used for the purpose of this
+     * connection.
      * When the connection is used in the context of an operation in
-     * BigQuery, this service account will serve as identity being used for
+     * BigQuery, this service account will serve as the identity being used for
      * connecting to the CloudSQL instance specified in this connection.
      * </pre>
      *

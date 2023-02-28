@@ -39,6 +39,7 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
 
   private CloudSpannerProperties() {
     database_ = "";
+    databaseRole_ = "";
   }
 
   @java.lang.Override
@@ -136,6 +137,95 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
     return useParallelism_;
   }
 
+  public static final int USE_SERVERLESS_ANALYTICS_FIELD_NUMBER = 3;
+  private boolean useServerlessAnalytics_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * If the serverless analytics service should be used to read data from Cloud
+   * Spanner.
+   * Note: `use_parallelism` must be set when using serverless analytics.
+   * </pre>
+   *
+   * <code>bool use_serverless_analytics = 3;</code>
+   *
+   * @return The useServerlessAnalytics.
+   */
+  @java.lang.Override
+  public boolean getUseServerlessAnalytics() {
+    return useServerlessAnalytics_;
+  }
+
+  public static final int DATABASE_ROLE_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object databaseRole_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cloud Spanner database role for fine-grained access control.
+   * A database role is a collection of fine-grained access privileges. Example:
+   * Admin predefines roles that provides user a set of permissions (SELECT,
+   * INSERT, ..). The user can then specify a predefined role on a connection to
+   * execute their Cloud Spanner query. The role is passthrough here. If the
+   * user is not authorized to use the specified role, they get an error. This
+   * validation happens on Cloud Spanner.
+   * See https://cloud.google.com/spanner/docs/fgac-about for more details.
+   * REQUIRES: database role name must start with uppercase/lowercase letter
+   * and only contain uppercase/lowercase letters, numbers, and underscores.
+   * </pre>
+   *
+   * <code>string database_role = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The databaseRole.
+   */
+  @java.lang.Override
+  public java.lang.String getDatabaseRole() {
+    java.lang.Object ref = databaseRole_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      databaseRole_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cloud Spanner database role for fine-grained access control.
+   * A database role is a collection of fine-grained access privileges. Example:
+   * Admin predefines roles that provides user a set of permissions (SELECT,
+   * INSERT, ..). The user can then specify a predefined role on a connection to
+   * execute their Cloud Spanner query. The role is passthrough here. If the
+   * user is not authorized to use the specified role, they get an error. This
+   * validation happens on Cloud Spanner.
+   * See https://cloud.google.com/spanner/docs/fgac-about for more details.
+   * REQUIRES: database role name must start with uppercase/lowercase letter
+   * and only contain uppercase/lowercase letters, numbers, and underscores.
+   * </pre>
+   *
+   * <code>string database_role = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for databaseRole.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDatabaseRoleBytes() {
+    java.lang.Object ref = databaseRole_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      databaseRole_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -156,6 +246,12 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
     if (useParallelism_ != false) {
       output.writeBool(2, useParallelism_);
     }
+    if (useServerlessAnalytics_ != false) {
+      output.writeBool(3, useServerlessAnalytics_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseRole_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, databaseRole_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -170,6 +266,12 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
     }
     if (useParallelism_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, useParallelism_);
+    }
+    if (useServerlessAnalytics_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, useServerlessAnalytics_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseRole_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, databaseRole_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -189,6 +291,8 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
 
     if (!getDatabase().equals(other.getDatabase())) return false;
     if (getUseParallelism() != other.getUseParallelism()) return false;
+    if (getUseServerlessAnalytics() != other.getUseServerlessAnalytics()) return false;
+    if (!getDatabaseRole().equals(other.getDatabaseRole())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -204,6 +308,10 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
     hash = (53 * hash) + getDatabase().hashCode();
     hash = (37 * hash) + USE_PARALLELISM_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseParallelism());
+    hash = (37 * hash) + USE_SERVERLESS_ANALYTICS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseServerlessAnalytics());
+    hash = (37 * hash) + DATABASE_ROLE_FIELD_NUMBER;
+    hash = (53 * hash) + getDatabaseRole().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -346,6 +454,8 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
       bitField0_ = 0;
       database_ = "";
       useParallelism_ = false;
+      useServerlessAnalytics_ = false;
+      databaseRole_ = "";
       return this;
     }
 
@@ -389,6 +499,12 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.useParallelism_ = useParallelism_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.useServerlessAnalytics_ = useServerlessAnalytics_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.databaseRole_ = databaseRole_;
       }
     }
 
@@ -447,6 +563,14 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
       if (other.getUseParallelism() != false) {
         setUseParallelism(other.getUseParallelism());
       }
+      if (other.getUseServerlessAnalytics() != false) {
+        setUseServerlessAnalytics(other.getUseServerlessAnalytics());
+      }
+      if (!other.getDatabaseRole().isEmpty()) {
+        databaseRole_ = other.databaseRole_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -485,6 +609,18 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 24:
+              {
+                useServerlessAnalytics_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+            case 34:
+              {
+                databaseRole_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -659,6 +795,216 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
     public Builder clearUseParallelism() {
       bitField0_ = (bitField0_ & ~0x00000002);
       useParallelism_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean useServerlessAnalytics_;
+    /**
+     *
+     *
+     * <pre>
+     * If the serverless analytics service should be used to read data from Cloud
+     * Spanner.
+     * Note: `use_parallelism` must be set when using serverless analytics.
+     * </pre>
+     *
+     * <code>bool use_serverless_analytics = 3;</code>
+     *
+     * @return The useServerlessAnalytics.
+     */
+    @java.lang.Override
+    public boolean getUseServerlessAnalytics() {
+      return useServerlessAnalytics_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If the serverless analytics service should be used to read data from Cloud
+     * Spanner.
+     * Note: `use_parallelism` must be set when using serverless analytics.
+     * </pre>
+     *
+     * <code>bool use_serverless_analytics = 3;</code>
+     *
+     * @param value The useServerlessAnalytics to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUseServerlessAnalytics(boolean value) {
+
+      useServerlessAnalytics_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If the serverless analytics service should be used to read data from Cloud
+     * Spanner.
+     * Note: `use_parallelism` must be set when using serverless analytics.
+     * </pre>
+     *
+     * <code>bool use_serverless_analytics = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUseServerlessAnalytics() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      useServerlessAnalytics_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object databaseRole_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cloud Spanner database role for fine-grained access control.
+     * A database role is a collection of fine-grained access privileges. Example:
+     * Admin predefines roles that provides user a set of permissions (SELECT,
+     * INSERT, ..). The user can then specify a predefined role on a connection to
+     * execute their Cloud Spanner query. The role is passthrough here. If the
+     * user is not authorized to use the specified role, they get an error. This
+     * validation happens on Cloud Spanner.
+     * See https://cloud.google.com/spanner/docs/fgac-about for more details.
+     * REQUIRES: database role name must start with uppercase/lowercase letter
+     * and only contain uppercase/lowercase letters, numbers, and underscores.
+     * </pre>
+     *
+     * <code>string database_role = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The databaseRole.
+     */
+    public java.lang.String getDatabaseRole() {
+      java.lang.Object ref = databaseRole_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        databaseRole_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cloud Spanner database role for fine-grained access control.
+     * A database role is a collection of fine-grained access privileges. Example:
+     * Admin predefines roles that provides user a set of permissions (SELECT,
+     * INSERT, ..). The user can then specify a predefined role on a connection to
+     * execute their Cloud Spanner query. The role is passthrough here. If the
+     * user is not authorized to use the specified role, they get an error. This
+     * validation happens on Cloud Spanner.
+     * See https://cloud.google.com/spanner/docs/fgac-about for more details.
+     * REQUIRES: database role name must start with uppercase/lowercase letter
+     * and only contain uppercase/lowercase letters, numbers, and underscores.
+     * </pre>
+     *
+     * <code>string database_role = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for databaseRole.
+     */
+    public com.google.protobuf.ByteString getDatabaseRoleBytes() {
+      java.lang.Object ref = databaseRole_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        databaseRole_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cloud Spanner database role for fine-grained access control.
+     * A database role is a collection of fine-grained access privileges. Example:
+     * Admin predefines roles that provides user a set of permissions (SELECT,
+     * INSERT, ..). The user can then specify a predefined role on a connection to
+     * execute their Cloud Spanner query. The role is passthrough here. If the
+     * user is not authorized to use the specified role, they get an error. This
+     * validation happens on Cloud Spanner.
+     * See https://cloud.google.com/spanner/docs/fgac-about for more details.
+     * REQUIRES: database role name must start with uppercase/lowercase letter
+     * and only contain uppercase/lowercase letters, numbers, and underscores.
+     * </pre>
+     *
+     * <code>string database_role = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The databaseRole to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDatabaseRole(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      databaseRole_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cloud Spanner database role for fine-grained access control.
+     * A database role is a collection of fine-grained access privileges. Example:
+     * Admin predefines roles that provides user a set of permissions (SELECT,
+     * INSERT, ..). The user can then specify a predefined role on a connection to
+     * execute their Cloud Spanner query. The role is passthrough here. If the
+     * user is not authorized to use the specified role, they get an error. This
+     * validation happens on Cloud Spanner.
+     * See https://cloud.google.com/spanner/docs/fgac-about for more details.
+     * REQUIRES: database role name must start with uppercase/lowercase letter
+     * and only contain uppercase/lowercase letters, numbers, and underscores.
+     * </pre>
+     *
+     * <code>string database_role = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDatabaseRole() {
+      databaseRole_ = getDefaultInstance().getDatabaseRole();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cloud Spanner database role for fine-grained access control.
+     * A database role is a collection of fine-grained access privileges. Example:
+     * Admin predefines roles that provides user a set of permissions (SELECT,
+     * INSERT, ..). The user can then specify a predefined role on a connection to
+     * execute their Cloud Spanner query. The role is passthrough here. If the
+     * user is not authorized to use the specified role, they get an error. This
+     * validation happens on Cloud Spanner.
+     * See https://cloud.google.com/spanner/docs/fgac-about for more details.
+     * REQUIRES: database role name must start with uppercase/lowercase letter
+     * and only contain uppercase/lowercase letters, numbers, and underscores.
+     * </pre>
+     *
+     * <code>string database_role = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for databaseRole to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDatabaseRoleBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      databaseRole_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

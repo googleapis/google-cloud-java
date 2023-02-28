@@ -22,7 +22,8 @@ package com.google.cloud.bigquery.connection.v1;
  *
  *
  * <pre>
- * The response for [ConnectionService.ListConnections][google.cloud.bigquery.connection.v1.ConnectionService.ListConnections].
+ * The response for
+ * [ConnectionService.ListConnections][google.cloud.bigquery.connection.v1.ConnectionService.ListConnections].
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.connection.v1.ListConnectionsResponse}
@@ -366,7 +367,8 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The response for [ConnectionService.ListConnections][google.cloud.bigquery.connection.v1.ConnectionService.ListConnections].
+   * The response for
+   * [ConnectionService.ListConnections][google.cloud.bigquery.connection.v1.ConnectionService.ListConnections].
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.connection.v1.ListConnectionsResponse}

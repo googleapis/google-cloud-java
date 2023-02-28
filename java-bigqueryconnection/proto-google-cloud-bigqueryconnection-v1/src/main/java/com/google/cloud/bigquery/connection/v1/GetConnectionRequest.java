@@ -22,7 +22,8 @@ package com.google.cloud.bigquery.connection.v1;
  *
  *
  * <pre>
- * The request for [ConnectionService.GetConnection][google.cloud.bigquery.connection.v1.ConnectionService.GetConnection].
+ * The request for
+ * [ConnectionService.GetConnection][google.cloud.bigquery.connection.v1.ConnectionService.GetConnection].
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.connection.v1.GetConnectionRequest}
@@ -288,7 +289,8 @@ public final class GetConnectionRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The request for [ConnectionService.GetConnection][google.cloud.bigquery.connection.v1.ConnectionService.GetConnection].
+   * The request for
+   * [ConnectionService.GetConnection][google.cloud.bigquery.connection.v1.ConnectionService.GetConnection].
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.connection.v1.GetConnectionRequest}

@@ -22,7 +22,8 @@ package com.google.cloud.bigquery.connection.v1;
  *
  *
  * <pre>
- * The request for [ConnectionService.UpdateConnection][google.cloud.bigquery.connection.v1.ConnectionService.UpdateConnection].
+ * The request for
+ * [ConnectionService.UpdateConnection][google.cloud.bigquery.connection.v1.ConnectionService.UpdateConnection].
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.connection.v1.UpdateConnectionRequest}
@@ -421,7 +422,8 @@ public final class UpdateConnectionRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The request for [ConnectionService.UpdateConnection][google.cloud.bigquery.connection.v1.ConnectionService.UpdateConnection].
+   * The request for
+   * [ConnectionService.UpdateConnection][google.cloud.bigquery.connection.v1.ConnectionService.UpdateConnection].
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.connection.v1.UpdateConnectionRequest}

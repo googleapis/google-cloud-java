@@ -22,7 +22,8 @@ package com.google.cloud.bigquery.connection.v1;
  *
  *
  * <pre>
- * The request for [ConnectionService.CreateConnection][google.cloud.bigquery.connection.v1.ConnectionService.CreateConnection].
+ * The request for
+ * [ConnectionService.CreateConnection][google.cloud.bigquery.connection.v1.ConnectionService.CreateConnection].
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.connection.v1.CreateConnectionRequest}
@@ -419,7 +420,8 @@ public final class CreateConnectionRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The request for [ConnectionService.CreateConnection][google.cloud.bigquery.connection.v1.ConnectionService.CreateConnection].
+   * The request for
+   * [ConnectionService.CreateConnection][google.cloud.bigquery.connection.v1.ConnectionService.CreateConnection].
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.connection.v1.CreateConnectionRequest}
