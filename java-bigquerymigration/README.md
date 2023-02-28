@@ -17,28 +17,26 @@ Java idiomatic client for [BigQuery Migration][product-docs].
 
 If you are using Maven, add this to your pom.xml file:
 
-<!--- {x-version-update-start:google-cloud-bigquerymigration:released} -->
 
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquerymigration</artifactId>
-  <version>0.12.0</version>
+  <version>0.14.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-bigquerymigration:0.12.0'
+implementation 'com.google.cloud:google-cloud-bigquerymigration:0.14.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigquerymigration" % "0.12.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigquerymigration" % "0.14.0"
 ```
-<!--- {x-version-update-end} -->
 
 ## Authentication
 
