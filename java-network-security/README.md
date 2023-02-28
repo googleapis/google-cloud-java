@@ -17,6 +17,7 @@ Java idiomatic client for [Network Security API][product-docs].
 
 If you are using Maven, add this to your pom.xml file:
 
+<!--- {x-version-update-start:google-cloud-network-security:released} -->
 
 ```xml
 <dependency>
@@ -37,6 +38,7 @@ If you are using SBT, add this to your dependencies:
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-network-security" % "0.12.0"
 ```
+<!--- {x-version-update-end} -->
 
 ## Authentication
 

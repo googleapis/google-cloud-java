@@ -14,6 +14,7 @@ Java idiomatic client for [Monitoring Dashboards][product-docs].
 
 If you are using Maven, add this to your pom.xml file:
 
+<!--- {x-version-update-start:google-cloud-monitoring-dashboard:released} -->
 
 ```xml
 <dependency>
@@ -34,6 +35,7 @@ If you are using SBT, add this to your dependencies:
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-monitoring-dashboard" % "2.10.0"
 ```
+<!--- {x-version-update-end} -->
 
 ## Authentication
 

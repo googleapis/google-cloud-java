@@ -14,6 +14,7 @@ Java idiomatic client for [Managed Service for Microsoft Active Directory][produ
 
 If you are using Maven, add this to your pom.xml file:
 
+<!--- {x-version-update-start:google-cloud-managed-identities:released} -->
 
 ```xml
 <dependency>
@@ -34,6 +35,7 @@ If you are using SBT, add this to your dependencies:
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-managed-identities" % "1.7.0"
 ```
+<!--- {x-version-update-end} -->
 
 ## Authentication
 

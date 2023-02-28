@@ -14,6 +14,7 @@ Java idiomatic client for [Grafeas][product-docs].
 
 If you are using Maven, add this to your pom.xml file:
 
+<!--- {x-version-update-start:grafeas:released} -->
 
 ```xml
 <dependency>
@@ -34,6 +35,7 @@ If you are using SBT, add this to your dependencies:
 ```Scala
 libraryDependencies += "io.grafeas" % "grafeas" % "2.9.0"
 ```
+<!--- {x-version-update-end} -->
 
 ## Authentication
 
