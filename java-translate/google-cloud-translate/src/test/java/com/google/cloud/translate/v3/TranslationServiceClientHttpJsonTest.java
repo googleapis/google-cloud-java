@@ -512,6 +512,9 @@ public class TranslationServiceClientHttpJsonTest {
             .setModel("model104069929")
             .setGlossaryConfig(TranslateTextGlossaryConfig.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setCustomizedAttribution("customizedAttribution557650238")
+            .setIsTranslateNativePdfOnly(true)
+            .setEnableShadowRemovalNativePdf(true)
             .build();
 
     TranslateDocumentResponse actualResponse = client.translateDocument(request);
@@ -550,6 +553,9 @@ public class TranslationServiceClientHttpJsonTest {
               .setModel("model104069929")
               .setGlossaryConfig(TranslateTextGlossaryConfig.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())
+              .setCustomizedAttribution("customizedAttribution557650238")
+              .setIsTranslateNativePdfOnly(true)
+              .setEnableShadowRemovalNativePdf(true)
               .build();
       client.translateDocument(request);
       Assert.fail("No exception raised");
@@ -786,6 +792,7 @@ public class TranslationServiceClientHttpJsonTest {
             .setEntryCount(-811131134)
             .setSubmitTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -841,6 +848,7 @@ public class TranslationServiceClientHttpJsonTest {
             .setEntryCount(-811131134)
             .setSubmitTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -996,6 +1004,7 @@ public class TranslationServiceClientHttpJsonTest {
             .setEntryCount(-811131134)
             .setSubmitTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1044,6 +1053,7 @@ public class TranslationServiceClientHttpJsonTest {
             .setEntryCount(-811131134)
             .setSubmitTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
             .build();
     mockService.addResponse(expectedResponse);
 

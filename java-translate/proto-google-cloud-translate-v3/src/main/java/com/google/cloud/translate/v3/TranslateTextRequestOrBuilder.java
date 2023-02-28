@@ -28,9 +28,8 @@ public interface TranslateTextRequestOrBuilder
    *
    * <pre>
    * Required. The content of the input in string format.
-   * We recommend the total content be less than 30k codepoints. The max length
-   * of this field is 1024.
-   * Use BatchTranslateText for larger text.
+   * We recommend the total content be less than 30,000 codepoints. The max
+   * length of this field is 1024. Use BatchTranslateText for larger text.
    * </pre>
    *
    * <code>repeated string contents = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -43,9 +42,8 @@ public interface TranslateTextRequestOrBuilder
    *
    * <pre>
    * Required. The content of the input in string format.
-   * We recommend the total content be less than 30k codepoints. The max length
-   * of this field is 1024.
-   * Use BatchTranslateText for larger text.
+   * We recommend the total content be less than 30,000 codepoints. The max
+   * length of this field is 1024. Use BatchTranslateText for larger text.
    * </pre>
    *
    * <code>repeated string contents = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -58,9 +56,8 @@ public interface TranslateTextRequestOrBuilder
    *
    * <pre>
    * Required. The content of the input in string format.
-   * We recommend the total content be less than 30k codepoints. The max length
-   * of this field is 1024.
-   * Use BatchTranslateText for larger text.
+   * We recommend the total content be less than 30,000 codepoints. The max
+   * length of this field is 1024. Use BatchTranslateText for larger text.
    * </pre>
    *
    * <code>repeated string contents = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -74,9 +71,8 @@ public interface TranslateTextRequestOrBuilder
    *
    * <pre>
    * Required. The content of the input in string format.
-   * We recommend the total content be less than 30k codepoints. The max length
-   * of this field is 1024.
-   * Use BatchTranslateText for larger text.
+   * We recommend the total content be less than 30,000 codepoints. The max
+   * length of this field is 1024. Use BatchTranslateText for larger text.
    * </pre>
    *
    * <code>repeated string contents = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -117,7 +113,7 @@ public interface TranslateTextRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The BCP-47 language code of the input text if
+   * Optional. The ISO-639 language code of the input text if
    * known, for example, "en-US" or "sr-Latn". Supported language codes are
    * listed in Language Support. If the source language isn't specified, the API
    * attempts to identify the source language automatically and returns the
@@ -133,7 +129,7 @@ public interface TranslateTextRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The BCP-47 language code of the input text if
+   * Optional. The ISO-639 language code of the input text if
    * known, for example, "en-US" or "sr-Latn". Supported language codes are
    * listed in Language Support. If the source language isn't specified, the API
    * attempts to identify the source language automatically and returns the
@@ -150,7 +146,7 @@ public interface TranslateTextRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The BCP-47 language code to use for translation of the input
+   * Required. The ISO-639 language code to use for translation of the input
    * text, set to one of the language codes listed in Language Support.
    * </pre>
    *
@@ -163,7 +159,7 @@ public interface TranslateTextRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The BCP-47 language code to use for translation of the input
+   * Required. The ISO-639 language code to use for translation of the input
    * text, set to one of the language codes listed in Language Support.
    * </pre>
    *

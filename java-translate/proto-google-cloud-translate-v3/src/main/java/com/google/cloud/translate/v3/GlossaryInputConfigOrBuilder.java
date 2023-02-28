@@ -33,10 +33,10 @@ public interface GlossaryInputConfigOrBuilder
    * formats. Wildcards are not allowed. This must be a single file in one of
    * the following formats:
    * For unidirectional glossaries:
-   * - TSV/CSV (`.tsv`/`.csv`): 2 column file, tab- or comma-separated.
+   * - TSV/CSV (`.tsv`/`.csv`): Two column file, tab- or comma-separated.
    *   The first column is source text. The second column is target text.
-   *   The file must not contain headers. That is, the first row is data, not
-   *   column names.
+   *   No headers in this file. The first row contains data and not column
+   *   names.
    * - TMX (`.tmx`): TMX file with parallel data defining source/target term
    * pairs.
    * For equivalent term sets glossaries:
@@ -60,10 +60,10 @@ public interface GlossaryInputConfigOrBuilder
    * formats. Wildcards are not allowed. This must be a single file in one of
    * the following formats:
    * For unidirectional glossaries:
-   * - TSV/CSV (`.tsv`/`.csv`): 2 column file, tab- or comma-separated.
+   * - TSV/CSV (`.tsv`/`.csv`): Two column file, tab- or comma-separated.
    *   The first column is source text. The second column is target text.
-   *   The file must not contain headers. That is, the first row is data, not
-   *   column names.
+   *   No headers in this file. The first row contains data and not column
+   *   names.
    * - TMX (`.tmx`): TMX file with parallel data defining source/target term
    * pairs.
    * For equivalent term sets glossaries:
@@ -87,10 +87,10 @@ public interface GlossaryInputConfigOrBuilder
    * formats. Wildcards are not allowed. This must be a single file in one of
    * the following formats:
    * For unidirectional glossaries:
-   * - TSV/CSV (`.tsv`/`.csv`): 2 column file, tab- or comma-separated.
+   * - TSV/CSV (`.tsv`/`.csv`): Two column file, tab- or comma-separated.
    *   The first column is source text. The second column is target text.
-   *   The file must not contain headers. That is, the first row is data, not
-   *   column names.
+   *   No headers in this file. The first row contains data and not column
+   *   names.
    * - TMX (`.tmx`): TMX file with parallel data defining source/target term
    * pairs.
    * For equivalent term sets glossaries:

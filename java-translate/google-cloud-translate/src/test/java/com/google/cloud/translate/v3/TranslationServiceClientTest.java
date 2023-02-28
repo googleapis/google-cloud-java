@@ -494,6 +494,9 @@ public class TranslationServiceClientTest {
             .setModel("model104069929")
             .setGlossaryConfig(TranslateTextGlossaryConfig.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setCustomizedAttribution("customizedAttribution557650238")
+            .setIsTranslateNativePdfOnly(true)
+            .setEnableShadowRemovalNativePdf(true)
             .build();
 
     TranslateDocumentResponse actualResponse = client.translateDocument(request);
@@ -511,6 +514,12 @@ public class TranslationServiceClientTest {
     Assert.assertEquals(request.getModel(), actualRequest.getModel());
     Assert.assertEquals(request.getGlossaryConfig(), actualRequest.getGlossaryConfig());
     Assert.assertEquals(request.getLabelsMap(), actualRequest.getLabelsMap());
+    Assert.assertEquals(
+        request.getCustomizedAttribution(), actualRequest.getCustomizedAttribution());
+    Assert.assertEquals(
+        request.getIsTranslateNativePdfOnly(), actualRequest.getIsTranslateNativePdfOnly());
+    Assert.assertEquals(
+        request.getEnableShadowRemovalNativePdf(), actualRequest.getEnableShadowRemovalNativePdf());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -533,6 +542,9 @@ public class TranslationServiceClientTest {
               .setModel("model104069929")
               .setGlossaryConfig(TranslateTextGlossaryConfig.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())
+              .setCustomizedAttribution("customizedAttribution557650238")
+              .setIsTranslateNativePdfOnly(true)
+              .setEnableShadowRemovalNativePdf(true)
               .build();
       client.translateDocument(request);
       Assert.fail("No exception raised");
@@ -778,6 +790,7 @@ public class TranslationServiceClientTest {
             .setEntryCount(-811131134)
             .setSubmitTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -831,6 +844,7 @@ public class TranslationServiceClientTest {
             .setEntryCount(-811131134)
             .setSubmitTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -972,6 +986,7 @@ public class TranslationServiceClientTest {
             .setEntryCount(-811131134)
             .setSubmitTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
             .build();
     mockTranslationService.addResponse(expectedResponse);
 
@@ -1014,6 +1029,7 @@ public class TranslationServiceClientTest {
             .setEntryCount(-811131134)
             .setSubmitTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
             .build();
     mockTranslationService.addResponse(expectedResponse);
 

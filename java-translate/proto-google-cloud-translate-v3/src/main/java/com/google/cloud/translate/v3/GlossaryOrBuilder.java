@@ -247,5 +247,30 @@ public interface GlossaryOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The display name of the glossary.
+   * </pre>
+   *
+   * <code>string display_name = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The displayName.
+   */
+  java.lang.String getDisplayName();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The display name of the glossary.
+   * </pre>
+   *
+   * <code>string display_name = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for displayName.
+   */
+  com.google.protobuf.ByteString getDisplayNameBytes();
+
   public com.google.cloud.translate.v3.Glossary.LanguagesCase getLanguagesCase();
 }

@@ -51,6 +51,7 @@ public class AsyncBatchTranslateDocument {
               .putAllModels(new HashMap<String, String>())
               .putAllGlossaries(new HashMap<String, TranslateTextGlossaryConfig>())
               .putAllFormatConversions(new HashMap<String, String>())
+              .setCustomizedAttribution("customizedAttribution557650238")
               .build();
       ApiFuture<Operation> future =
           translationServiceClient.batchTranslateDocumentCallable().futureCall(request);

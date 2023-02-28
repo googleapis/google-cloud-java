@@ -77,8 +77,8 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The `glossary` to be applied for this translation.
-   * The format depends on glossary:
-   * - User provided custom glossary:
+   * The format depends on the glossary:
+   * - User-provided custom glossary:
    *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
    * </pre>
    *
@@ -103,8 +103,8 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The `glossary` to be applied for this translation.
-   * The format depends on glossary:
-   * - User provided custom glossary:
+   * The format depends on the glossary:
+   * - User-provided custom glossary:
    *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
    * </pre>
    *
@@ -131,8 +131,8 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. Indicates match is case-insensitive.
-   * Default value is false if missing.
+   * Optional. Indicates match is case insensitive. The default value is `false`
+   * if missing.
    * </pre>
    *
    * <code>bool ignore_case = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -516,8 +516,8 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The `glossary` to be applied for this translation.
-     * The format depends on glossary:
-     * - User provided custom glossary:
+     * The format depends on the glossary:
+     * - User-provided custom glossary:
      *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
      * </pre>
      *
@@ -541,8 +541,8 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The `glossary` to be applied for this translation.
-     * The format depends on glossary:
-     * - User provided custom glossary:
+     * The format depends on the glossary:
+     * - User-provided custom glossary:
      *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
      * </pre>
      *
@@ -566,8 +566,8 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The `glossary` to be applied for this translation.
-     * The format depends on glossary:
-     * - User provided custom glossary:
+     * The format depends on the glossary:
+     * - User-provided custom glossary:
      *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
      * </pre>
      *
@@ -590,8 +590,8 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The `glossary` to be applied for this translation.
-     * The format depends on glossary:
-     * - User provided custom glossary:
+     * The format depends on the glossary:
+     * - User-provided custom glossary:
      *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
      * </pre>
      *
@@ -610,8 +610,8 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The `glossary` to be applied for this translation.
-     * The format depends on glossary:
-     * - User provided custom glossary:
+     * The format depends on the glossary:
+     * - User-provided custom glossary:
      *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
      * </pre>
      *
@@ -636,8 +636,8 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. Indicates match is case-insensitive.
-     * Default value is false if missing.
+     * Optional. Indicates match is case insensitive. The default value is `false`
+     * if missing.
      * </pre>
      *
      * <code>bool ignore_case = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -652,8 +652,8 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. Indicates match is case-insensitive.
-     * Default value is false if missing.
+     * Optional. Indicates match is case insensitive. The default value is `false`
+     * if missing.
      * </pre>
      *
      * <code>bool ignore_case = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -672,8 +672,8 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. Indicates match is case-insensitive.
-     * Default value is false if missing.
+     * Optional. Indicates match is case insensitive. The default value is `false`
+     * if missing.
      * </pre>
      *
      * <code>bool ignore_case = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

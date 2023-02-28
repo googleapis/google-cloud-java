@@ -75,7 +75,7 @@ public final class DetectedLanguage extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The BCP-47 language code of source content in the request, detected
+   * The ISO-639 language code of the source content in the request, detected
    * automatically.
    * </pre>
    *
@@ -99,7 +99,7 @@ public final class DetectedLanguage extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The BCP-47 language code of source content in the request, detected
+   * The ISO-639 language code of the source content in the request, detected
    * automatically.
    * </pre>
    *
@@ -507,7 +507,7 @@ public final class DetectedLanguage extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The BCP-47 language code of source content in the request, detected
+     * The ISO-639 language code of the source content in the request, detected
      * automatically.
      * </pre>
      *
@@ -530,7 +530,7 @@ public final class DetectedLanguage extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The BCP-47 language code of source content in the request, detected
+     * The ISO-639 language code of the source content in the request, detected
      * automatically.
      * </pre>
      *
@@ -553,7 +553,7 @@ public final class DetectedLanguage extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The BCP-47 language code of source content in the request, detected
+     * The ISO-639 language code of the source content in the request, detected
      * automatically.
      * </pre>
      *
@@ -575,7 +575,7 @@ public final class DetectedLanguage extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The BCP-47 language code of source content in the request, detected
+     * The ISO-639 language code of the source content in the request, detected
      * automatically.
      * </pre>
      *
@@ -593,7 +593,7 @@ public final class DetectedLanguage extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The BCP-47 language code of source content in the request, detected
+     * The ISO-639 language code of the source content in the request, detected
      * automatically.
      * </pre>
      *

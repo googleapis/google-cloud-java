@@ -49,6 +49,9 @@ public class AsyncTranslateDocument {
               .setModel("model104069929")
               .setGlossaryConfig(TranslateTextGlossaryConfig.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())
+              .setCustomizedAttribution("customizedAttribution557650238")
+              .setIsTranslateNativePdfOnly(true)
+              .setEnableShadowRemovalNativePdf(true)
               .build();
       ApiFuture<TranslateDocumentResponse> future =
           translationServiceClient.translateDocumentCallable().futureCall(request);

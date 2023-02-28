@@ -237,10 +237,10 @@ public class TranslationServiceClient implements BackgroundResource {
    *     <p>Non-global location is required for requests using AutoML models or custom glossaries.
    *     <p>Models and glossaries must be within the same region (have same location-id), otherwise
    *     an INVALID_ARGUMENT (400) error is returned.
-   * @param targetLanguageCode Required. The BCP-47 language code to use for translation of the
+   * @param targetLanguageCode Required. The ISO-639 language code to use for translation of the
    *     input text, set to one of the language codes listed in Language Support.
    * @param contents Required. The content of the input in string format. We recommend the total
-   *     content be less than 30k codepoints. The max length of this field is 1024. Use
+   *     content be less than 30,000 codepoints. The max length of this field is 1024. Use
    *     BatchTranslateText for larger text.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -284,10 +284,10 @@ public class TranslationServiceClient implements BackgroundResource {
    *     <p>Non-global location is required for requests using AutoML models or custom glossaries.
    *     <p>Models and glossaries must be within the same region (have same location-id), otherwise
    *     an INVALID_ARGUMENT (400) error is returned.
-   * @param targetLanguageCode Required. The BCP-47 language code to use for translation of the
+   * @param targetLanguageCode Required. The ISO-639 language code to use for translation of the
    *     input text, set to one of the language codes listed in Language Support.
    * @param contents Required. The content of the input in string format. We recommend the total
-   *     content be less than 30k codepoints. The max length of this field is 1024. Use
+   *     content be less than 30,000 codepoints. The max length of this field is 1024. Use
    *     BatchTranslateText for larger text.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -346,14 +346,14 @@ public class TranslationServiceClient implements BackgroundResource {
    *     <p>If not provided, the default Google model (NMT) will be used.
    * @param mimeType Optional. The format of the source text, for example, "text/html",
    *     "text/plain". If left blank, the MIME type defaults to "text/html".
-   * @param sourceLanguageCode Optional. The BCP-47 language code of the input text if known, for
+   * @param sourceLanguageCode Optional. The ISO-639 language code of the input text if known, for
    *     example, "en-US" or "sr-Latn". Supported language codes are listed in Language Support. If
    *     the source language isn't specified, the API attempts to identify the source language
    *     automatically and returns the source language within the response.
-   * @param targetLanguageCode Required. The BCP-47 language code to use for translation of the
+   * @param targetLanguageCode Required. The ISO-639 language code to use for translation of the
    *     input text, set to one of the language codes listed in Language Support.
    * @param contents Required. The content of the input in string format. We recommend the total
-   *     content be less than 30k codepoints. The max length of this field is 1024. Use
+   *     content be less than 30,000 codepoints. The max length of this field is 1024. Use
    *     BatchTranslateText for larger text.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -420,14 +420,14 @@ public class TranslationServiceClient implements BackgroundResource {
    *     <p>If not provided, the default Google model (NMT) will be used.
    * @param mimeType Optional. The format of the source text, for example, "text/html",
    *     "text/plain". If left blank, the MIME type defaults to "text/html".
-   * @param sourceLanguageCode Optional. The BCP-47 language code of the input text if known, for
+   * @param sourceLanguageCode Optional. The ISO-639 language code of the input text if known, for
    *     example, "en-US" or "sr-Latn". Supported language codes are listed in Language Support. If
    *     the source language isn't specified, the API attempts to identify the source language
    *     automatically and returns the source language within the response.
-   * @param targetLanguageCode Required. The BCP-47 language code to use for translation of the
+   * @param targetLanguageCode Required. The ISO-639 language code to use for translation of the
    *     input text, set to one of the language codes listed in Language Support.
    * @param contents Required. The content of the input in string format. We recommend the total
-   *     content be less than 30k codepoints. The max length of this field is 1024. Use
+   *     content be less than 30,000 codepoints. The max length of this field is 1024. Use
    *     BatchTranslateText for larger text.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -877,6 +877,9 @@ public class TranslationServiceClient implements BackgroundResource {
    *           .setModel("model104069929")
    *           .setGlossaryConfig(TranslateTextGlossaryConfig.newBuilder().build())
    *           .putAllLabels(new HashMap<String, String>())
+   *           .setCustomizedAttribution("customizedAttribution557650238")
+   *           .setIsTranslateNativePdfOnly(true)
+   *           .setEnableShadowRemovalNativePdf(true)
    *           .build();
    *   TranslateDocumentResponse response = translationServiceClient.translateDocument(request);
    * }
@@ -912,6 +915,9 @@ public class TranslationServiceClient implements BackgroundResource {
    *           .setModel("model104069929")
    *           .setGlossaryConfig(TranslateTextGlossaryConfig.newBuilder().build())
    *           .putAllLabels(new HashMap<String, String>())
+   *           .setCustomizedAttribution("customizedAttribution557650238")
+   *           .setIsTranslateNativePdfOnly(true)
+   *           .setEnableShadowRemovalNativePdf(true)
    *           .build();
    *   ApiFuture<TranslateDocumentResponse> future =
    *       translationServiceClient.translateDocumentCallable().futureCall(request);
@@ -1086,10 +1092,10 @@ public class TranslationServiceClient implements BackgroundResource {
    *     <p>The `global` location is not supported for batch translation.
    *     <p>Only AutoML Translation models or glossaries within the same region (have the same
    *     location-id) can be used, otherwise an INVALID_ARGUMENT (400) error is returned.
-   * @param sourceLanguageCode Required. The BCP-47 language code of the input document if known,
-   *     for example, "en-US" or "sr-Latn". Supported language codes are listed in Language Support
-   *     (https://cloud.google.com/translate/docs/languages).
-   * @param targetLanguageCodes Required. The BCP-47 language code to use for translation of the
+   * @param sourceLanguageCode Required. The ISO-639 language code of the input document if known,
+   *     for example, "en-US" or "sr-Latn". Supported language codes are listed in [Language
+   *     Support](https://cloud.google.com/translate/docs/languages).
+   * @param targetLanguageCodes Required. The ISO-639 language code to use for translation of the
    *     input document. Specify up to 10 language codes here.
    * @param inputConfigs Required. Input configurations. The total number of files matched should be
    *     &lt;= 100. The total content size to translate should be &lt;= 100M Unicode codepoints. The
@@ -1153,10 +1159,10 @@ public class TranslationServiceClient implements BackgroundResource {
    *     <p>The `global` location is not supported for batch translation.
    *     <p>Only AutoML Translation models or glossaries within the same region (have the same
    *     location-id) can be used, otherwise an INVALID_ARGUMENT (400) error is returned.
-   * @param sourceLanguageCode Required. The BCP-47 language code of the input document if known,
-   *     for example, "en-US" or "sr-Latn". Supported language codes are listed in Language Support
-   *     (https://cloud.google.com/translate/docs/languages).
-   * @param targetLanguageCodes Required. The BCP-47 language code to use for translation of the
+   * @param sourceLanguageCode Required. The ISO-639 language code of the input document if known,
+   *     for example, "en-US" or "sr-Latn". Supported language codes are listed in [Language
+   *     Support](https://cloud.google.com/translate/docs/languages).
+   * @param targetLanguageCodes Required. The ISO-639 language code to use for translation of the
    *     input document. Specify up to 10 language codes here.
    * @param inputConfigs Required. Input configurations. The total number of files matched should be
    *     &lt;= 100. The total content size to translate should be &lt;= 100M Unicode codepoints. The
@@ -1212,6 +1218,7 @@ public class TranslationServiceClient implements BackgroundResource {
    *           .putAllModels(new HashMap<String, String>())
    *           .putAllGlossaries(new HashMap<String, TranslateTextGlossaryConfig>())
    *           .putAllFormatConversions(new HashMap<String, String>())
+   *           .setCustomizedAttribution("customizedAttribution557650238")
    *           .build();
    *   BatchTranslateDocumentResponse response =
    *       translationServiceClient.batchTranslateDocumentAsync(request).get();
@@ -1255,6 +1262,7 @@ public class TranslationServiceClient implements BackgroundResource {
    *           .putAllModels(new HashMap<String, String>())
    *           .putAllGlossaries(new HashMap<String, TranslateTextGlossaryConfig>())
    *           .putAllFormatConversions(new HashMap<String, String>())
+   *           .setCustomizedAttribution("customizedAttribution557650238")
    *           .build();
    *   OperationFuture<BatchTranslateDocumentResponse, BatchTranslateDocumentMetadata> future =
    *       translationServiceClient.batchTranslateDocumentOperationCallable().futureCall(request);
@@ -1300,6 +1308,7 @@ public class TranslationServiceClient implements BackgroundResource {
    *           .putAllModels(new HashMap<String, String>())
    *           .putAllGlossaries(new HashMap<String, TranslateTextGlossaryConfig>())
    *           .putAllFormatConversions(new HashMap<String, String>())
+   *           .setCustomizedAttribution("customizedAttribution557650238")
    *           .build();
    *   ApiFuture<Operation> future =
    *       translationServiceClient.batchTranslateDocumentCallable().futureCall(request);

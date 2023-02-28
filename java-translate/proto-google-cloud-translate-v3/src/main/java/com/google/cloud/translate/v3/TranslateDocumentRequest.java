@@ -42,6 +42,7 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
     sourceLanguageCode_ = "";
     targetLanguageCode_ = "";
     model_ = "";
+    customizedAttribution_ = "";
   }
 
   @java.lang.Override
@@ -154,7 +155,7 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. The BCP-47 language code of the input document if known, for
+   * Optional. The ISO-639 language code of the input document if known, for
    * example, "en-US" or "sr-Latn". Supported language codes are listed in
    * Language Support. If the source language isn't specified, the API attempts
    * to identify the source language automatically and returns the source
@@ -182,7 +183,7 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. The BCP-47 language code of the input document if known, for
+   * Optional. The ISO-639 language code of the input document if known, for
    * example, "en-US" or "sr-Latn". Supported language codes are listed in
    * Language Support. If the source language isn't specified, the API attempts
    * to identify the source language automatically and returns the source
@@ -215,7 +216,7 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The BCP-47 language code to use for translation of the input
+   * Required. The ISO-639 language code to use for translation of the input
    * document, set to one of the language codes listed in Language Support.
    * </pre>
    *
@@ -239,7 +240,7 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The BCP-47 language code to use for translation of the input
+   * Required. The ISO-639 language code to use for translation of the input
    * document, set to one of the language codes listed in Language Support.
    * </pre>
    *
@@ -640,6 +641,104 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
     return map.get(key);
   }
 
+  public static final int CUSTOMIZED_ATTRIBUTION_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object customizedAttribution_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This flag is to support user customized attribution.
+   * If not provided, the default is `Machine Translated by Google`.
+   * Customized attribution should follow rules in
+   * https://cloud.google.com/translate/attribution#attribution_and_logos
+   * </pre>
+   *
+   * <code>string customized_attribution = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The customizedAttribution.
+   */
+  @java.lang.Override
+  public java.lang.String getCustomizedAttribution() {
+    java.lang.Object ref = customizedAttribution_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      customizedAttribution_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This flag is to support user customized attribution.
+   * If not provided, the default is `Machine Translated by Google`.
+   * Customized attribution should follow rules in
+   * https://cloud.google.com/translate/attribution#attribution_and_logos
+   * </pre>
+   *
+   * <code>string customized_attribution = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for customizedAttribution.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCustomizedAttributionBytes() {
+    java.lang.Object ref = customizedAttribution_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      customizedAttribution_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int IS_TRANSLATE_NATIVE_PDF_ONLY_FIELD_NUMBER = 11;
+  private boolean isTranslateNativePdfOnly_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, the page limit of online native pdf translation is 300
+   * and only native pdf pages will be translated.
+   * </pre>
+   *
+   * <code>bool is_translate_native_pdf_only = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The isTranslateNativePdfOnly.
+   */
+  @java.lang.Override
+  public boolean getIsTranslateNativePdfOnly() {
+    return isTranslateNativePdfOnly_;
+  }
+
+  public static final int ENABLE_SHADOW_REMOVAL_NATIVE_PDF_FIELD_NUMBER = 12;
+  private boolean enableShadowRemovalNativePdf_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, use the text removal to remove the shadow text on
+   * background image for native pdf translation.
+   * Shadow removal feature can only be enabled when
+   * is_translate_native_pdf_only is false
+   * </pre>
+   *
+   * <code>bool enable_shadow_removal_native_pdf = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enableShadowRemovalNativePdf.
+   */
+  @java.lang.Override
+  public boolean getEnableShadowRemovalNativePdf() {
+    return enableShadowRemovalNativePdf_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -677,6 +776,15 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 8);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customizedAttribution_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, customizedAttribution_);
+    }
+    if (isTranslateNativePdfOnly_ != false) {
+      output.writeBool(11, isTranslateNativePdfOnly_);
+    }
+    if (enableShadowRemovalNativePdf_ != false) {
+      output.writeBool(12, enableShadowRemovalNativePdf_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -718,6 +826,16 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, labels__);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customizedAttribution_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, customizedAttribution_);
+    }
+    if (isTranslateNativePdfOnly_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, isTranslateNativePdfOnly_);
+    }
+    if (enableShadowRemovalNativePdf_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(12, enableShadowRemovalNativePdf_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -751,6 +869,9 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
       if (!getGlossaryConfig().equals(other.getGlossaryConfig())) return false;
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (!getCustomizedAttribution().equals(other.getCustomizedAttribution())) return false;
+    if (getIsTranslateNativePdfOnly() != other.getIsTranslateNativePdfOnly()) return false;
+    if (getEnableShadowRemovalNativePdf() != other.getEnableShadowRemovalNativePdf()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -786,6 +907,13 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
     }
+    hash = (37 * hash) + CUSTOMIZED_ATTRIBUTION_FIELD_NUMBER;
+    hash = (53 * hash) + getCustomizedAttribution().hashCode();
+    hash = (37 * hash) + IS_TRANSLATE_NATIVE_PDF_ONLY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsTranslateNativePdfOnly());
+    hash = (37 * hash) + ENABLE_SHADOW_REMOVAL_NATIVE_PDF_FIELD_NUMBER;
+    hash =
+        (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableShadowRemovalNativePdf());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -966,6 +1094,9 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
         glossaryConfigBuilder_ = null;
       }
       internalGetMutableLabels().clear();
+      customizedAttribution_ = "";
+      isTranslateNativePdfOnly_ = false;
+      enableShadowRemovalNativePdf_ = false;
       return this;
     }
 
@@ -1033,6 +1164,15 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.customizedAttribution_ = customizedAttribution_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.isTranslateNativePdfOnly_ = isTranslateNativePdfOnly_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.enableShadowRemovalNativePdf_ = enableShadowRemovalNativePdf_;
       }
     }
 
@@ -1113,6 +1253,17 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       bitField0_ |= 0x00000080;
+      if (!other.getCustomizedAttribution().isEmpty()) {
+        customizedAttribution_ = other.customizedAttribution_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      if (other.getIsTranslateNativePdfOnly() != false) {
+        setIsTranslateNativePdfOnly(other.getIsTranslateNativePdfOnly());
+      }
+      if (other.getEnableShadowRemovalNativePdf() != false) {
+        setEnableShadowRemovalNativePdf(other.getEnableShadowRemovalNativePdf());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1195,6 +1346,24 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000080;
                 break;
               } // case 66
+            case 82:
+              {
+                customizedAttribution_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 82
+            case 88:
+              {
+                isTranslateNativePdfOnly_ = input.readBool();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 88
+            case 96:
+              {
+                enableShadowRemovalNativePdf_ = input.readBool();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 96
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1360,7 +1529,7 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The BCP-47 language code of the input document if known, for
+     * Optional. The ISO-639 language code of the input document if known, for
      * example, "en-US" or "sr-Latn". Supported language codes are listed in
      * Language Support. If the source language isn't specified, the API attempts
      * to identify the source language automatically and returns the source
@@ -1387,7 +1556,7 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The BCP-47 language code of the input document if known, for
+     * Optional. The ISO-639 language code of the input document if known, for
      * example, "en-US" or "sr-Latn". Supported language codes are listed in
      * Language Support. If the source language isn't specified, the API attempts
      * to identify the source language automatically and returns the source
@@ -1414,7 +1583,7 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The BCP-47 language code of the input document if known, for
+     * Optional. The ISO-639 language code of the input document if known, for
      * example, "en-US" or "sr-Latn". Supported language codes are listed in
      * Language Support. If the source language isn't specified, the API attempts
      * to identify the source language automatically and returns the source
@@ -1440,7 +1609,7 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The BCP-47 language code of the input document if known, for
+     * Optional. The ISO-639 language code of the input document if known, for
      * example, "en-US" or "sr-Latn". Supported language codes are listed in
      * Language Support. If the source language isn't specified, the API attempts
      * to identify the source language automatically and returns the source
@@ -1462,7 +1631,7 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The BCP-47 language code of the input document if known, for
+     * Optional. The ISO-639 language code of the input document if known, for
      * example, "en-US" or "sr-Latn". Supported language codes are listed in
      * Language Support. If the source language isn't specified, the API attempts
      * to identify the source language automatically and returns the source
@@ -1491,7 +1660,7 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The BCP-47 language code to use for translation of the input
+     * Required. The ISO-639 language code to use for translation of the input
      * document, set to one of the language codes listed in Language Support.
      * </pre>
      *
@@ -1514,7 +1683,7 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The BCP-47 language code to use for translation of the input
+     * Required. The ISO-639 language code to use for translation of the input
      * document, set to one of the language codes listed in Language Support.
      * </pre>
      *
@@ -1537,7 +1706,7 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The BCP-47 language code to use for translation of the input
+     * Required. The ISO-639 language code to use for translation of the input
      * document, set to one of the language codes listed in Language Support.
      * </pre>
      *
@@ -1559,7 +1728,7 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The BCP-47 language code to use for translation of the input
+     * Required. The ISO-639 language code to use for translation of the input
      * document, set to one of the language codes listed in Language Support.
      * </pre>
      *
@@ -1577,7 +1746,7 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The BCP-47 language code to use for translation of the input
+     * Required. The ISO-639 language code to use for translation of the input
      * document, set to one of the language codes listed in Language Support.
      * </pre>
      *
@@ -2614,6 +2783,251 @@ public final class TranslateDocumentRequest extends com.google.protobuf.Generate
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
       bitField0_ |= 0x00000080;
+      return this;
+    }
+
+    private java.lang.Object customizedAttribution_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This flag is to support user customized attribution.
+     * If not provided, the default is `Machine Translated by Google`.
+     * Customized attribution should follow rules in
+     * https://cloud.google.com/translate/attribution#attribution_and_logos
+     * </pre>
+     *
+     * <code>string customized_attribution = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The customizedAttribution.
+     */
+    public java.lang.String getCustomizedAttribution() {
+      java.lang.Object ref = customizedAttribution_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        customizedAttribution_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This flag is to support user customized attribution.
+     * If not provided, the default is `Machine Translated by Google`.
+     * Customized attribution should follow rules in
+     * https://cloud.google.com/translate/attribution#attribution_and_logos
+     * </pre>
+     *
+     * <code>string customized_attribution = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for customizedAttribution.
+     */
+    public com.google.protobuf.ByteString getCustomizedAttributionBytes() {
+      java.lang.Object ref = customizedAttribution_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        customizedAttribution_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This flag is to support user customized attribution.
+     * If not provided, the default is `Machine Translated by Google`.
+     * Customized attribution should follow rules in
+     * https://cloud.google.com/translate/attribution#attribution_and_logos
+     * </pre>
+     *
+     * <code>string customized_attribution = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The customizedAttribution to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCustomizedAttribution(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      customizedAttribution_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This flag is to support user customized attribution.
+     * If not provided, the default is `Machine Translated by Google`.
+     * Customized attribution should follow rules in
+     * https://cloud.google.com/translate/attribution#attribution_and_logos
+     * </pre>
+     *
+     * <code>string customized_attribution = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCustomizedAttribution() {
+      customizedAttribution_ = getDefaultInstance().getCustomizedAttribution();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This flag is to support user customized attribution.
+     * If not provided, the default is `Machine Translated by Google`.
+     * Customized attribution should follow rules in
+     * https://cloud.google.com/translate/attribution#attribution_and_logos
+     * </pre>
+     *
+     * <code>string customized_attribution = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for customizedAttribution to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCustomizedAttributionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      customizedAttribution_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private boolean isTranslateNativePdfOnly_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the page limit of online native pdf translation is 300
+     * and only native pdf pages will be translated.
+     * </pre>
+     *
+     * <code>bool is_translate_native_pdf_only = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The isTranslateNativePdfOnly.
+     */
+    @java.lang.Override
+    public boolean getIsTranslateNativePdfOnly() {
+      return isTranslateNativePdfOnly_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the page limit of online native pdf translation is 300
+     * and only native pdf pages will be translated.
+     * </pre>
+     *
+     * <code>bool is_translate_native_pdf_only = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The isTranslateNativePdfOnly to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsTranslateNativePdfOnly(boolean value) {
+
+      isTranslateNativePdfOnly_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the page limit of online native pdf translation is 300
+     * and only native pdf pages will be translated.
+     * </pre>
+     *
+     * <code>bool is_translate_native_pdf_only = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIsTranslateNativePdfOnly() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      isTranslateNativePdfOnly_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableShadowRemovalNativePdf_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, use the text removal to remove the shadow text on
+     * background image for native pdf translation.
+     * Shadow removal feature can only be enabled when
+     * is_translate_native_pdf_only is false
+     * </pre>
+     *
+     * <code>bool enable_shadow_removal_native_pdf = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enableShadowRemovalNativePdf.
+     */
+    @java.lang.Override
+    public boolean getEnableShadowRemovalNativePdf() {
+      return enableShadowRemovalNativePdf_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, use the text removal to remove the shadow text on
+     * background image for native pdf translation.
+     * Shadow removal feature can only be enabled when
+     * is_translate_native_pdf_only is false
+     * </pre>
+     *
+     * <code>bool enable_shadow_removal_native_pdf = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enableShadowRemovalNativePdf to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableShadowRemovalNativePdf(boolean value) {
+
+      enableShadowRemovalNativePdf_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, use the text removal to remove the shadow text on
+     * background image for native pdf translation.
+     * Shadow removal feature can only be enabled when
+     * is_translate_native_pdf_only is false
+     * </pre>
+     *
+     * <code>bool enable_shadow_removal_native_pdf = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableShadowRemovalNativePdf() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      enableShadowRemovalNativePdf_ = false;
+      onChanged();
       return this;
     }
 

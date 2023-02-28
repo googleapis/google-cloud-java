@@ -22,7 +22,7 @@ package com.google.cloud.translate.v3;
  *
  *
  * <pre>
- * Represents a glossary built from user provided data.
+ * Represents a glossary built from user-provided data.
  * </pre>
  *
  * Protobuf type {@code google.cloud.translation.v3.Glossary}
@@ -39,6 +39,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
 
   private Glossary() {
     name_ = "";
+    displayName_ = "";
   }
 
   @java.lang.Override
@@ -76,7 +77,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The BCP-47 language code of the input text, for example,
+     * Required. The ISO-639 language code of the input text, for example,
      * "en-US". Expected to be an exact match for GlossaryTerm.language_code.
      * </pre>
      *
@@ -89,7 +90,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The BCP-47 language code of the input text, for example,
+     * Required. The ISO-639 language code of the input text, for example,
      * "en-US". Expected to be an exact match for GlossaryTerm.language_code.
      * </pre>
      *
@@ -103,7 +104,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The BCP-47 language code for translation output, for example,
+     * Required. The ISO-639 language code for translation output, for example,
      * "zh-CN". Expected to be an exact match for GlossaryTerm.language_code.
      * </pre>
      *
@@ -116,7 +117,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The BCP-47 language code for translation output, for example,
+     * Required. The ISO-639 language code for translation output, for example,
      * "zh-CN". Expected to be an exact match for GlossaryTerm.language_code.
      * </pre>
      *
@@ -184,7 +185,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The BCP-47 language code of the input text, for example,
+     * Required. The ISO-639 language code of the input text, for example,
      * "en-US". Expected to be an exact match for GlossaryTerm.language_code.
      * </pre>
      *
@@ -208,7 +209,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The BCP-47 language code of the input text, for example,
+     * Required. The ISO-639 language code of the input text, for example,
      * "en-US". Expected to be an exact match for GlossaryTerm.language_code.
      * </pre>
      *
@@ -237,7 +238,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The BCP-47 language code for translation output, for example,
+     * Required. The ISO-639 language code for translation output, for example,
      * "zh-CN". Expected to be an exact match for GlossaryTerm.language_code.
      * </pre>
      *
@@ -261,7 +262,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The BCP-47 language code for translation output, for example,
+     * Required. The ISO-639 language code for translation output, for example,
      * "zh-CN". Expected to be an exact match for GlossaryTerm.language_code.
      * </pre>
      *
@@ -658,7 +659,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The BCP-47 language code of the input text, for example,
+       * Required. The ISO-639 language code of the input text, for example,
        * "en-US". Expected to be an exact match for GlossaryTerm.language_code.
        * </pre>
        *
@@ -681,7 +682,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The BCP-47 language code of the input text, for example,
+       * Required. The ISO-639 language code of the input text, for example,
        * "en-US". Expected to be an exact match for GlossaryTerm.language_code.
        * </pre>
        *
@@ -704,7 +705,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The BCP-47 language code of the input text, for example,
+       * Required. The ISO-639 language code of the input text, for example,
        * "en-US". Expected to be an exact match for GlossaryTerm.language_code.
        * </pre>
        *
@@ -726,7 +727,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The BCP-47 language code of the input text, for example,
+       * Required. The ISO-639 language code of the input text, for example,
        * "en-US". Expected to be an exact match for GlossaryTerm.language_code.
        * </pre>
        *
@@ -744,7 +745,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The BCP-47 language code of the input text, for example,
+       * Required. The ISO-639 language code of the input text, for example,
        * "en-US". Expected to be an exact match for GlossaryTerm.language_code.
        * </pre>
        *
@@ -769,7 +770,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The BCP-47 language code for translation output, for example,
+       * Required. The ISO-639 language code for translation output, for example,
        * "zh-CN". Expected to be an exact match for GlossaryTerm.language_code.
        * </pre>
        *
@@ -792,7 +793,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The BCP-47 language code for translation output, for example,
+       * Required. The ISO-639 language code for translation output, for example,
        * "zh-CN". Expected to be an exact match for GlossaryTerm.language_code.
        * </pre>
        *
@@ -815,7 +816,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The BCP-47 language code for translation output, for example,
+       * Required. The ISO-639 language code for translation output, for example,
        * "zh-CN". Expected to be an exact match for GlossaryTerm.language_code.
        * </pre>
        *
@@ -837,7 +838,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The BCP-47 language code for translation output, for example,
+       * Required. The ISO-639 language code for translation output, for example,
        * "zh-CN". Expected to be an exact match for GlossaryTerm.language_code.
        * </pre>
        *
@@ -855,7 +856,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The BCP-47 language code for translation output, for example,
+       * Required. The ISO-639 language code for translation output, for example,
        * "zh-CN". Expected to be an exact match for GlossaryTerm.language_code.
        * </pre>
        *
@@ -948,7 +949,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The BCP-47 language code(s) for terms defined in the glossary.
+     * The ISO-639 language code(s) for terms defined in the glossary.
      * All entries are unique. The list contains at least two entries.
      * Expected to be an exact match for GlossaryTerm.language_code.
      * </pre>
@@ -962,7 +963,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The BCP-47 language code(s) for terms defined in the glossary.
+     * The ISO-639 language code(s) for terms defined in the glossary.
      * All entries are unique. The list contains at least two entries.
      * Expected to be an exact match for GlossaryTerm.language_code.
      * </pre>
@@ -976,7 +977,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The BCP-47 language code(s) for terms defined in the glossary.
+     * The ISO-639 language code(s) for terms defined in the glossary.
      * All entries are unique. The list contains at least two entries.
      * Expected to be an exact match for GlossaryTerm.language_code.
      * </pre>
@@ -991,7 +992,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The BCP-47 language code(s) for terms defined in the glossary.
+     * The ISO-639 language code(s) for terms defined in the glossary.
      * All entries are unique. The list contains at least two entries.
      * Expected to be an exact match for GlossaryTerm.language_code.
      * </pre>
@@ -1060,7 +1061,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The BCP-47 language code(s) for terms defined in the glossary.
+     * The ISO-639 language code(s) for terms defined in the glossary.
      * All entries are unique. The list contains at least two entries.
      * Expected to be an exact match for GlossaryTerm.language_code.
      * </pre>
@@ -1076,7 +1077,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The BCP-47 language code(s) for terms defined in the glossary.
+     * The ISO-639 language code(s) for terms defined in the glossary.
      * All entries are unique. The list contains at least two entries.
      * Expected to be an exact match for GlossaryTerm.language_code.
      * </pre>
@@ -1092,7 +1093,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The BCP-47 language code(s) for terms defined in the glossary.
+     * The ISO-639 language code(s) for terms defined in the glossary.
      * All entries are unique. The list contains at least two entries.
      * Expected to be an exact match for GlossaryTerm.language_code.
      * </pre>
@@ -1109,7 +1110,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The BCP-47 language code(s) for terms defined in the glossary.
+     * The ISO-639 language code(s) for terms defined in the glossary.
      * All entries are unique. The list contains at least two entries.
      * Expected to be an exact match for GlossaryTerm.language_code.
      * </pre>
@@ -1504,7 +1505,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The BCP-47 language code(s) for terms defined in the glossary.
+       * The ISO-639 language code(s) for terms defined in the glossary.
        * All entries are unique. The list contains at least two entries.
        * Expected to be an exact match for GlossaryTerm.language_code.
        * </pre>
@@ -1520,7 +1521,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The BCP-47 language code(s) for terms defined in the glossary.
+       * The ISO-639 language code(s) for terms defined in the glossary.
        * All entries are unique. The list contains at least two entries.
        * Expected to be an exact match for GlossaryTerm.language_code.
        * </pre>
@@ -1536,7 +1537,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The BCP-47 language code(s) for terms defined in the glossary.
+       * The ISO-639 language code(s) for terms defined in the glossary.
        * All entries are unique. The list contains at least two entries.
        * Expected to be an exact match for GlossaryTerm.language_code.
        * </pre>
@@ -1553,7 +1554,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The BCP-47 language code(s) for terms defined in the glossary.
+       * The ISO-639 language code(s) for terms defined in the glossary.
        * All entries are unique. The list contains at least two entries.
        * Expected to be an exact match for GlossaryTerm.language_code.
        * </pre>
@@ -1570,7 +1571,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The BCP-47 language code(s) for terms defined in the glossary.
+       * The ISO-639 language code(s) for terms defined in the glossary.
        * All entries are unique. The list contains at least two entries.
        * Expected to be an exact match for GlossaryTerm.language_code.
        * </pre>
@@ -1594,7 +1595,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The BCP-47 language code(s) for terms defined in the glossary.
+       * The ISO-639 language code(s) for terms defined in the glossary.
        * All entries are unique. The list contains at least two entries.
        * Expected to be an exact match for GlossaryTerm.language_code.
        * </pre>
@@ -1617,7 +1618,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The BCP-47 language code(s) for terms defined in the glossary.
+       * The ISO-639 language code(s) for terms defined in the glossary.
        * All entries are unique. The list contains at least two entries.
        * Expected to be an exact match for GlossaryTerm.language_code.
        * </pre>
@@ -1637,7 +1638,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The BCP-47 language code(s) for terms defined in the glossary.
+       * The ISO-639 language code(s) for terms defined in the glossary.
        * All entries are unique. The list contains at least two entries.
        * Expected to be an exact match for GlossaryTerm.language_code.
        * </pre>
@@ -1656,7 +1657,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The BCP-47 language code(s) for terms defined in the glossary.
+       * The ISO-639 language code(s) for terms defined in the glossary.
        * All entries are unique. The list contains at least two entries.
        * Expected to be an exact match for GlossaryTerm.language_code.
        * </pre>
@@ -2114,6 +2115,57 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
+  public static final int DISPLAY_NAME_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The display name of the glossary.
+   * </pre>
+   *
+   * <code>string display_name = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The displayName.
+   */
+  @java.lang.Override
+  public java.lang.String getDisplayName() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      displayName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The display name of the glossary.
+   * </pre>
+   *
+   * <code>string display_name = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for displayName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      displayName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2149,6 +2201,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     if (endTime_ != null) {
       output.writeMessage(8, getEndTime());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, displayName_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2183,6 +2238,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     if (endTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getEndTime());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, displayName_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2212,6 +2270,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     if (hasEndTime()) {
       if (!getEndTime().equals(other.getEndTime())) return false;
     }
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!getLanguagesCase().equals(other.getLanguagesCase())) return false;
     switch (languagesCase_) {
       case 3:
@@ -2250,6 +2309,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getEndTime().hashCode();
     }
+    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getDisplayName().hashCode();
     switch (languagesCase_) {
       case 3:
         hash = (37 * hash) + LANGUAGE_PAIR_FIELD_NUMBER;
@@ -2366,7 +2427,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a glossary built from user provided data.
+   * Represents a glossary built from user-provided data.
    * </pre>
    *
    * Protobuf type {@code google.cloud.translation.v3.Glossary}
@@ -2424,6 +2485,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
+      displayName_ = "";
       languagesCase_ = 0;
       languages_ = null;
       return this;
@@ -2478,6 +2540,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.displayName_ = displayName_;
       }
     }
 
@@ -2553,6 +2618,11 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasEndTime()) {
         mergeEndTime(other.getEndTime());
+      }
+      if (!other.getDisplayName().isEmpty()) {
+        displayName_ = other.displayName_;
+        bitField0_ |= 0x00000080;
+        onChanged();
       }
       switch (other.getLanguagesCase()) {
         case LANGUAGE_PAIR:
@@ -2639,6 +2709,12 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case 66
+            case 74:
+              {
+                displayName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3844,6 +3920,112 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         endTime_ = null;
       }
       return endTimeBuilder_;
+    }
+
+    private java.lang.Object displayName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The display name of the glossary.
+     * </pre>
+     *
+     * <code>string display_name = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The displayName.
+     */
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The display name of the glossary.
+     * </pre>
+     *
+     * <code>string display_name = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for displayName.
+     */
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The display name of the glossary.
+     * </pre>
+     *
+     * <code>string display_name = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      displayName_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The display name of the glossary.
+     * </pre>
+     *
+     * <code>string display_name = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisplayName() {
+      displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The display name of the glossary.
+     * </pre>
+     *
+     * <code>string display_name = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      displayName_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

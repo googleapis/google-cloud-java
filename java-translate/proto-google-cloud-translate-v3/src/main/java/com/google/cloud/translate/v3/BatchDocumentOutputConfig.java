@@ -140,7 +140,7 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
    * Since index.csv will be keeping updated during the process, please make
    * sure there is no custom retention policy applied on the output bucket
    * that may avoid file updating.
-   * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
+   * (https://cloud.google.com/storage/docs/bucket-lock#retention-policy)
    * The naming format of translation output files follows (for target
    * language code [trg]): `translation_output`:
    * gs://translation_output/a_b_c_[trg]_translation.[extension]
@@ -192,7 +192,7 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
    * Since index.csv will be keeping updated during the process, please make
    * sure there is no custom retention policy applied on the output bucket
    * that may avoid file updating.
-   * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
+   * (https://cloud.google.com/storage/docs/bucket-lock#retention-policy)
    * The naming format of translation output files follows (for target
    * language code [trg]): `translation_output`:
    * gs://translation_output/a_b_c_[trg]_translation.[extension]
@@ -247,7 +247,7 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
    * Since index.csv will be keeping updated during the process, please make
    * sure there is no custom retention policy applied on the output bucket
    * that may avoid file updating.
-   * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
+   * (https://cloud.google.com/storage/docs/bucket-lock#retention-policy)
    * The naming format of translation output files follows (for target
    * language code [trg]): `translation_output`:
    * gs://translation_output/a_b_c_[trg]_translation.[extension]
@@ -695,7 +695,7 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
      * Since index.csv will be keeping updated during the process, please make
      * sure there is no custom retention policy applied on the output bucket
      * that may avoid file updating.
-     * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
+     * (https://cloud.google.com/storage/docs/bucket-lock#retention-policy)
      * The naming format of translation output files follows (for target
      * language code [trg]): `translation_output`:
      * gs://translation_output/a_b_c_[trg]_translation.[extension]
@@ -747,7 +747,7 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
      * Since index.csv will be keeping updated during the process, please make
      * sure there is no custom retention policy applied on the output bucket
      * that may avoid file updating.
-     * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
+     * (https://cloud.google.com/storage/docs/bucket-lock#retention-policy)
      * The naming format of translation output files follows (for target
      * language code [trg]): `translation_output`:
      * gs://translation_output/a_b_c_[trg]_translation.[extension]
@@ -809,7 +809,7 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
      * Since index.csv will be keeping updated during the process, please make
      * sure there is no custom retention policy applied on the output bucket
      * that may avoid file updating.
-     * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
+     * (https://cloud.google.com/storage/docs/bucket-lock#retention-policy)
      * The naming format of translation output files follows (for target
      * language code [trg]): `translation_output`:
      * gs://translation_output/a_b_c_[trg]_translation.[extension]
@@ -868,7 +868,7 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
      * Since index.csv will be keeping updated during the process, please make
      * sure there is no custom retention policy applied on the output bucket
      * that may avoid file updating.
-     * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
+     * (https://cloud.google.com/storage/docs/bucket-lock#retention-policy)
      * The naming format of translation output files follows (for target
      * language code [trg]): `translation_output`:
      * gs://translation_output/a_b_c_[trg]_translation.[extension]
@@ -925,7 +925,7 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
      * Since index.csv will be keeping updated during the process, please make
      * sure there is no custom retention policy applied on the output bucket
      * that may avoid file updating.
-     * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
+     * (https://cloud.google.com/storage/docs/bucket-lock#retention-policy)
      * The naming format of translation output files follows (for target
      * language code [trg]): `translation_output`:
      * gs://translation_output/a_b_c_[trg]_translation.[extension]
@@ -994,7 +994,7 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
      * Since index.csv will be keeping updated during the process, please make
      * sure there is no custom retention policy applied on the output bucket
      * that may avoid file updating.
-     * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
+     * (https://cloud.google.com/storage/docs/bucket-lock#retention-policy)
      * The naming format of translation output files follows (for target
      * language code [trg]): `translation_output`:
      * gs://translation_output/a_b_c_[trg]_translation.[extension]
@@ -1056,7 +1056,7 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
      * Since index.csv will be keeping updated during the process, please make
      * sure there is no custom retention policy applied on the output bucket
      * that may avoid file updating.
-     * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
+     * (https://cloud.google.com/storage/docs/bucket-lock#retention-policy)
      * The naming format of translation output files follows (for target
      * language code [trg]): `translation_output`:
      * gs://translation_output/a_b_c_[trg]_translation.[extension]
@@ -1105,7 +1105,7 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
      * Since index.csv will be keeping updated during the process, please make
      * sure there is no custom retention policy applied on the output bucket
      * that may avoid file updating.
-     * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
+     * (https://cloud.google.com/storage/docs/bucket-lock#retention-policy)
      * The naming format of translation output files follows (for target
      * language code [trg]): `translation_output`:
      * gs://translation_output/a_b_c_[trg]_translation.[extension]
@@ -1162,7 +1162,7 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
      * Since index.csv will be keeping updated during the process, please make
      * sure there is no custom retention policy applied on the output bucket
      * that may avoid file updating.
-     * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
+     * (https://cloud.google.com/storage/docs/bucket-lock#retention-policy)
      * The naming format of translation output files follows (for target
      * language code [trg]): `translation_output`:
      * gs://translation_output/a_b_c_[trg]_translation.[extension]

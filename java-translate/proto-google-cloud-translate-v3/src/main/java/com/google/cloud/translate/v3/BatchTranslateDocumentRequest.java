@@ -42,6 +42,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     sourceLanguageCode_ = "";
     targetLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     inputConfigs_ = java.util.Collections.emptyList();
+    customizedAttribution_ = "";
   }
 
   @java.lang.Override
@@ -158,9 +159,9 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The BCP-47 language code of the input document if known, for
+   * Required. The ISO-639 language code of the input document if known, for
    * example, "en-US" or "sr-Latn". Supported language codes are listed in
-   * Language Support (https://cloud.google.com/translate/docs/languages).
+   * [Language Support](https://cloud.google.com/translate/docs/languages).
    * </pre>
    *
    * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -183,9 +184,9 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The BCP-47 language code of the input document if known, for
+   * Required. The ISO-639 language code of the input document if known, for
    * example, "en-US" or "sr-Latn". Supported language codes are listed in
-   * Language Support (https://cloud.google.com/translate/docs/languages).
+   * [Language Support](https://cloud.google.com/translate/docs/languages).
    * </pre>
    *
    * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -213,7 +214,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The BCP-47 language code to use for translation of the input
+   * Required. The ISO-639 language code to use for translation of the input
    * document. Specify up to 10 language codes here.
    * </pre>
    *
@@ -229,7 +230,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The BCP-47 language code to use for translation of the input
+   * Required. The ISO-639 language code to use for translation of the input
    * document. Specify up to 10 language codes here.
    * </pre>
    *
@@ -245,7 +246,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The BCP-47 language code to use for translation of the input
+   * Required. The ISO-639 language code to use for translation of the input
    * document. Specify up to 10 language codes here.
    * </pre>
    *
@@ -262,7 +263,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The BCP-47 language code to use for translation of the input
+   * Required. The ISO-639 language code to use for translation of the input
    * document. Specify up to 10 language codes here.
    * </pre>
    *
@@ -840,6 +841,63 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     return map.get(key);
   }
 
+  public static final int CUSTOMIZED_ATTRIBUTION_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object customizedAttribution_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This flag is to support user customized attribution.
+   * If not provided, the default is `Machine Translated by Google`.
+   * Customized attribution should follow rules in
+   * https://cloud.google.com/translate/attribution#attribution_and_logos
+   * </pre>
+   *
+   * <code>string customized_attribution = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The customizedAttribution.
+   */
+  @java.lang.Override
+  public java.lang.String getCustomizedAttribution() {
+    java.lang.Object ref = customizedAttribution_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      customizedAttribution_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This flag is to support user customized attribution.
+   * If not provided, the default is `Machine Translated by Google`.
+   * Customized attribution should follow rules in
+   * https://cloud.google.com/translate/attribution#attribution_and_logos
+   * </pre>
+   *
+   * <code>string customized_attribution = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for customizedAttribution.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCustomizedAttributionBytes() {
+    java.lang.Object ref = customizedAttribution_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      customizedAttribution_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -878,6 +936,9 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
         internalGetFormatConversions(),
         FormatConversionsDefaultEntryHolder.defaultEntry,
         8);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customizedAttribution_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, customizedAttribution_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -940,6 +1001,9 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, formatConversions__);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customizedAttribution_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, customizedAttribution_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -967,6 +1031,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     if (!internalGetModels().equals(other.internalGetModels())) return false;
     if (!internalGetGlossaries().equals(other.internalGetGlossaries())) return false;
     if (!internalGetFormatConversions().equals(other.internalGetFormatConversions())) return false;
+    if (!getCustomizedAttribution().equals(other.getCustomizedAttribution())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1006,6 +1071,8 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       hash = (37 * hash) + FORMAT_CONVERSIONS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetFormatConversions().hashCode();
     }
+    hash = (37 * hash) + CUSTOMIZED_ATTRIBUTION_FIELD_NUMBER;
+    hash = (53 * hash) + getCustomizedAttribution().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1193,6 +1260,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       internalGetMutableModels().clear();
       internalGetMutableGlossaries().clear();
       internalGetMutableFormatConversions().clear();
+      customizedAttribution_ = "";
       return this;
     }
 
@@ -1269,6 +1337,9 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.formatConversions_ = internalGetFormatConversions();
         result.formatConversions_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.customizedAttribution_ = customizedAttribution_;
       }
     }
 
@@ -1374,6 +1445,11 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       bitField0_ |= 0x00000040;
       internalGetMutableFormatConversions().mergeFrom(other.internalGetFormatConversions());
       bitField0_ |= 0x00000080;
+      if (!other.getCustomizedAttribution().isEmpty()) {
+        customizedAttribution_ = other.customizedAttribution_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1478,6 +1554,12 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
                 bitField0_ |= 0x00000080;
                 break;
               } // case 66
+            case 82:
+              {
+                customizedAttribution_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1643,9 +1725,9 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The BCP-47 language code of the input document if known, for
+     * Required. The ISO-639 language code of the input document if known, for
      * example, "en-US" or "sr-Latn". Supported language codes are listed in
-     * Language Support (https://cloud.google.com/translate/docs/languages).
+     * [Language Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1667,9 +1749,9 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The BCP-47 language code of the input document if known, for
+     * Required. The ISO-639 language code of the input document if known, for
      * example, "en-US" or "sr-Latn". Supported language codes are listed in
-     * Language Support (https://cloud.google.com/translate/docs/languages).
+     * [Language Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1691,9 +1773,9 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The BCP-47 language code of the input document if known, for
+     * Required. The ISO-639 language code of the input document if known, for
      * example, "en-US" or "sr-Latn". Supported language codes are listed in
-     * Language Support (https://cloud.google.com/translate/docs/languages).
+     * [Language Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1714,9 +1796,9 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The BCP-47 language code of the input document if known, for
+     * Required. The ISO-639 language code of the input document if known, for
      * example, "en-US" or "sr-Latn". Supported language codes are listed in
-     * Language Support (https://cloud.google.com/translate/docs/languages).
+     * [Language Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1733,9 +1815,9 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The BCP-47 language code of the input document if known, for
+     * Required. The ISO-639 language code of the input document if known, for
      * example, "en-US" or "sr-Latn". Supported language codes are listed in
-     * Language Support (https://cloud.google.com/translate/docs/languages).
+     * [Language Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1767,7 +1849,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The BCP-47 language code to use for translation of the input
+     * Required. The ISO-639 language code to use for translation of the input
      * document. Specify up to 10 language codes here.
      * </pre>
      *
@@ -1783,7 +1865,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The BCP-47 language code to use for translation of the input
+     * Required. The ISO-639 language code to use for translation of the input
      * document. Specify up to 10 language codes here.
      * </pre>
      *
@@ -1799,7 +1881,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The BCP-47 language code to use for translation of the input
+     * Required. The ISO-639 language code to use for translation of the input
      * document. Specify up to 10 language codes here.
      * </pre>
      *
@@ -1816,7 +1898,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The BCP-47 language code to use for translation of the input
+     * Required. The ISO-639 language code to use for translation of the input
      * document. Specify up to 10 language codes here.
      * </pre>
      *
@@ -1833,7 +1915,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The BCP-47 language code to use for translation of the input
+     * Required. The ISO-639 language code to use for translation of the input
      * document. Specify up to 10 language codes here.
      * </pre>
      *
@@ -1857,7 +1939,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The BCP-47 language code to use for translation of the input
+     * Required. The ISO-639 language code to use for translation of the input
      * document. Specify up to 10 language codes here.
      * </pre>
      *
@@ -1880,7 +1962,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The BCP-47 language code to use for translation of the input
+     * Required. The ISO-639 language code to use for translation of the input
      * document. Specify up to 10 language codes here.
      * </pre>
      *
@@ -1900,7 +1982,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The BCP-47 language code to use for translation of the input
+     * Required. The ISO-639 language code to use for translation of the input
      * document. Specify up to 10 language codes here.
      * </pre>
      *
@@ -1919,7 +2001,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The BCP-47 language code to use for translation of the input
+     * Required. The ISO-639 language code to use for translation of the input
      * document. Specify up to 10 language codes here.
      * </pre>
      *
@@ -3267,6 +3349,127 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableFormatConversions().getMutableMap().putAll(values);
       bitField0_ |= 0x00000080;
+      return this;
+    }
+
+    private java.lang.Object customizedAttribution_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This flag is to support user customized attribution.
+     * If not provided, the default is `Machine Translated by Google`.
+     * Customized attribution should follow rules in
+     * https://cloud.google.com/translate/attribution#attribution_and_logos
+     * </pre>
+     *
+     * <code>string customized_attribution = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The customizedAttribution.
+     */
+    public java.lang.String getCustomizedAttribution() {
+      java.lang.Object ref = customizedAttribution_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        customizedAttribution_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This flag is to support user customized attribution.
+     * If not provided, the default is `Machine Translated by Google`.
+     * Customized attribution should follow rules in
+     * https://cloud.google.com/translate/attribution#attribution_and_logos
+     * </pre>
+     *
+     * <code>string customized_attribution = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for customizedAttribution.
+     */
+    public com.google.protobuf.ByteString getCustomizedAttributionBytes() {
+      java.lang.Object ref = customizedAttribution_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        customizedAttribution_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This flag is to support user customized attribution.
+     * If not provided, the default is `Machine Translated by Google`.
+     * Customized attribution should follow rules in
+     * https://cloud.google.com/translate/attribution#attribution_and_logos
+     * </pre>
+     *
+     * <code>string customized_attribution = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The customizedAttribution to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCustomizedAttribution(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      customizedAttribution_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This flag is to support user customized attribution.
+     * If not provided, the default is `Machine Translated by Google`.
+     * Customized attribution should follow rules in
+     * https://cloud.google.com/translate/attribution#attribution_and_logos
+     * </pre>
+     *
+     * <code>string customized_attribution = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCustomizedAttribution() {
+      customizedAttribution_ = getDefaultInstance().getCustomizedAttribution();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This flag is to support user customized attribution.
+     * If not provided, the default is `Machine Translated by Google`.
+     * Customized attribution should follow rules in
+     * https://cloud.google.com/translate/attribution#attribution_and_logos
+     * </pre>
+     *
+     * <code>string customized_attribution = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for customizedAttribution to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCustomizedAttributionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      customizedAttribution_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
 

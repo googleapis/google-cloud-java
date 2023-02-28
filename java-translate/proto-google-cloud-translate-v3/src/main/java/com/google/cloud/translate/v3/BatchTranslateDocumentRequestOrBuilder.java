@@ -66,9 +66,9 @@ public interface BatchTranslateDocumentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The BCP-47 language code of the input document if known, for
+   * Required. The ISO-639 language code of the input document if known, for
    * example, "en-US" or "sr-Latn". Supported language codes are listed in
-   * Language Support (https://cloud.google.com/translate/docs/languages).
+   * [Language Support](https://cloud.google.com/translate/docs/languages).
    * </pre>
    *
    * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -80,9 +80,9 @@ public interface BatchTranslateDocumentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The BCP-47 language code of the input document if known, for
+   * Required. The ISO-639 language code of the input document if known, for
    * example, "en-US" or "sr-Latn". Supported language codes are listed in
-   * Language Support (https://cloud.google.com/translate/docs/languages).
+   * [Language Support](https://cloud.google.com/translate/docs/languages).
    * </pre>
    *
    * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -95,7 +95,7 @@ public interface BatchTranslateDocumentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The BCP-47 language code to use for translation of the input
+   * Required. The ISO-639 language code to use for translation of the input
    * document. Specify up to 10 language codes here.
    * </pre>
    *
@@ -109,7 +109,7 @@ public interface BatchTranslateDocumentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The BCP-47 language code to use for translation of the input
+   * Required. The ISO-639 language code to use for translation of the input
    * document. Specify up to 10 language codes here.
    * </pre>
    *
@@ -123,7 +123,7 @@ public interface BatchTranslateDocumentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The BCP-47 language code to use for translation of the input
+   * Required. The ISO-639 language code to use for translation of the input
    * document. Specify up to 10 language codes here.
    * </pre>
    *
@@ -138,7 +138,7 @@ public interface BatchTranslateDocumentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The BCP-47 language code to use for translation of the input
+   * Required. The ISO-639 language code to use for translation of the input
    * document. Specify up to 10 language codes here.
    * </pre>
    *
@@ -551,4 +551,35 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * </code>
    */
   java.lang.String getFormatConversionsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This flag is to support user customized attribution.
+   * If not provided, the default is `Machine Translated by Google`.
+   * Customized attribution should follow rules in
+   * https://cloud.google.com/translate/attribution#attribution_and_logos
+   * </pre>
+   *
+   * <code>string customized_attribution = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The customizedAttribution.
+   */
+  java.lang.String getCustomizedAttribution();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This flag is to support user customized attribution.
+   * If not provided, the default is `Machine Translated by Google`.
+   * Customized attribution should follow rules in
+   * https://cloud.google.com/translate/attribution#attribution_and_logos
+   * </pre>
+   *
+   * <code>string customized_attribution = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for customizedAttribution.
+   */
+  com.google.protobuf.ByteString getCustomizedAttributionBytes();
 }
