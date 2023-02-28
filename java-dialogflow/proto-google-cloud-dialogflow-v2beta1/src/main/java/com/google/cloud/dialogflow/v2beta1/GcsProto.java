@@ -56,7 +56,7 @@ public final class GcsProto {
           + "\240\001\n#com.google.cloud.dialogflow.v2beta1B"
           + "\010GcsProtoP\001ZCcloud.google.com/go/dialogf"
           + "low/apiv2beta1/dialogflowpb;dialogflowpb"
-          + "\370\001\001\242\002\002DF\252\002\037Google.Cloud.Dialogflow.V2bet"
+          + "\370\001\001\242\002\002DF\252\002\037Google.Cloud.Dialogflow.V2Bet"
           + "a1b\006proto3"
     };
     descriptor =

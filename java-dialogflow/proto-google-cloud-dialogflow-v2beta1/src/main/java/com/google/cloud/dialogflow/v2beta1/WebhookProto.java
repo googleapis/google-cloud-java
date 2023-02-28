@@ -81,7 +81,7 @@ public final class WebhookProto {
           + "loud.dialogflow.v2beta1B\014WebhookProtoP\001Z"
           + "Ccloud.google.com/go/dialogflow/apiv2bet"
           + "a1/dialogflowpb;dialogflowpb\370\001\001\242\002\002DF\252\002\037G"
-          + "oogle.Cloud.Dialogflow.V2beta1b\006proto3"
+          + "oogle.Cloud.Dialogflow.V2Beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

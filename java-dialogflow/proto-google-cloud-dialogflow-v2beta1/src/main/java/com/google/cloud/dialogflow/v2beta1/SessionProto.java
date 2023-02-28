@@ -255,7 +255,7 @@ public final class SessionProto {
           + "d.dialogflow.v2beta1B\014SessionProtoP\001ZCcl"
           + "oud.google.com/go/dialogflow/apiv2beta1/"
           + "dialogflowpb;dialogflowpb\370\001\001\242\002\002DF\252\002\037Goog"
-          + "le.Cloud.Dialogflow.V2beta1\352A\321\002\n!dialogf"
+          + "le.Cloud.Dialogflow.V2Beta1\352A\321\002\n!dialogf"
           + "low.googleapis.com/Session\022+projects/{pr"
           + "oject}/agent/sessions/{session}\022Sproject"
           + "s/{project}/agent/environments/{environm"

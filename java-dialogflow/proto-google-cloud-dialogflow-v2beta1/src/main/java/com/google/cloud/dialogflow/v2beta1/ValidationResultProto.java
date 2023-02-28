@@ -58,7 +58,7 @@ public final class ValidationResultProto {
           + "ow.v2beta1B\025ValidationResultProtoP\001ZCclo"
           + "ud.google.com/go/dialogflow/apiv2beta1/d"
           + "ialogflowpb;dialogflowpb\370\001\001\242\002\002DF\252\002\037Googl"
-          + "e.Cloud.Dialogflow.V2beta1b\006proto3"
+          + "e.Cloud.Dialogflow.V2Beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

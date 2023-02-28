@@ -395,7 +395,7 @@ public final class ConversationProfileProto {
           + "alogflow.v2beta1B\030ConversationProfilePro"
           + "toP\001ZCcloud.google.com/go/dialogflow/api"
           + "v2beta1/dialogflowpb;dialogflowpb\370\001\001\242\002\002D"
-          + "F\252\002\037Google.Cloud.Dialogflow.V2beta1\352A|\n,"
+          + "F\252\002\037Google.Cloud.Dialogflow.V2Beta1\352A|\n,"
           + "dialogflow.googleapis.com/CXSecuritySett"
           + "ings\022Lprojects/{project}/locations/{loca"
           + "tion}/securitySettings/{security_setting"

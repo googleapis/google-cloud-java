@@ -113,7 +113,7 @@ public final class FulfillmentProto {
           + "alogflow.v2beta1B\020FulfillmentProtoP\001ZCcl"
           + "oud.google.com/go/dialogflow/apiv2beta1/"
           + "dialogflowpb;dialogflowpb\370\001\001\242\002\002DF\252\002\037Goog"
-          + "le.Cloud.Dialogflow.V2beta1b\006proto3"
+          + "le.Cloud.Dialogflow.V2Beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

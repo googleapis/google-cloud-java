@@ -238,7 +238,7 @@ public final class ConversationProto {
           + "gflow.v2beta1B\021ConversationProtoP\001ZCclou"
           + "d.google.com/go/dialogflow/apiv2beta1/di"
           + "alogflowpb;dialogflowpb\370\001\001\242\002\002DF\252\002\037Google"
-          + ".Cloud.Dialogflow.V2beta1b\006proto3"
+          + ".Cloud.Dialogflow.V2Beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

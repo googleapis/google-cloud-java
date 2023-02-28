@@ -212,7 +212,7 @@ public final class AgentProto {
           + "e.cloud.dialogflow.v2beta1B\nAgentProtoP\001"
           + "ZCcloud.google.com/go/dialogflow/apiv2be"
           + "ta1/dialogflowpb;dialogflowpb\370\001\001\242\002\002DF\252\002\037"
-          + "Google.Cloud.Dialogflow.V2beta1b\006proto3"
+          + "Google.Cloud.Dialogflow.V2Beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

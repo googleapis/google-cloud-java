@@ -182,7 +182,7 @@ public final class ContextProto {
           + "ialogflow.v2beta1B\014ContextProtoP\001ZCcloud"
           + ".google.com/go/dialogflow/apiv2beta1/dia"
           + "logflowpb;dialogflowpb\370\001\001\242\002\002DF\252\002\037Google."
-          + "Cloud.Dialogflow.V2beta1b\006proto3"
+          + "Cloud.Dialogflow.V2Beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

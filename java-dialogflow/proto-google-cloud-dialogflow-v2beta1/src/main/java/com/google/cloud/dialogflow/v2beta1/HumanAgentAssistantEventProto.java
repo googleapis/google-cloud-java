@@ -52,7 +52,7 @@ public final class HumanAgentAssistantEventProto {
           + "antEventProtoP\001ZCcloud.google.com/go/dia"
           + "logflow/apiv2beta1/dialogflowpb;dialogfl"
           + "owpb\370\001\001\242\002\002DF\252\002\037Google.Cloud.Dialogflow.V"
-          + "2beta1b\006proto3"
+          + "2Beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

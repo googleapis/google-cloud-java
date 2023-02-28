@@ -598,7 +598,7 @@ public final class ParticipantProto {
           + "2beta1B\020ParticipantProtoP\001ZCcloud.google"
           + ".com/go/dialogflow/apiv2beta1/dialogflow"
           + "pb;dialogflowpb\370\001\001\242\002\002DF\252\002\037Google.Cloud.D"
-          + "ialogflow.V2beta1b\006proto3"
+          + "ialogflow.V2Beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

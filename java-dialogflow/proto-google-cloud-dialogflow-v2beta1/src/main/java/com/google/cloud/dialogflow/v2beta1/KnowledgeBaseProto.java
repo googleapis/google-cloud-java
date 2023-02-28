@@ -148,7 +148,7 @@ public final class KnowledgeBaseProto {
           + "dgeBaseProtoP\001ZCcloud.google.com/go/dial"
           + "ogflow/apiv2beta1/dialogflowpb;dialogflo"
           + "wpb\370\001\001\242\002\002DF\252\002\037Google.Cloud.Dialogflow.V2"
-          + "beta1b\006proto3"
+          + "Beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

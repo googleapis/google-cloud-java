@@ -265,7 +265,7 @@ public final class EntityTypeProto {
           + "B\017EntityTypeProtoP\001ZCcloud.google.com/go"
           + "/dialogflow/apiv2beta1/dialogflowpb;dial"
           + "ogflowpb\370\001\001\242\002\002DF\252\002\037Google.Cloud.Dialogfl"
-          + "ow.V2beta1b\006proto3"
+          + "ow.V2Beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
