@@ -182,7 +182,7 @@ public final class ReadChangeStreamQuery implements Serializable, Cloneable {
   }
 
   /** Sets the heartbeat duration for the change stream. */
-  public ReadChangeStreamQuery heartbeatDuration(java.time.Duration duration) {
+  public ReadChangeStreamQuery heartbeatDuration(org.threeten.bp.Duration duration) {
     builder.setHeartbeatDuration(
         Duration.newBuilder()
             .setSeconds(duration.getSeconds())

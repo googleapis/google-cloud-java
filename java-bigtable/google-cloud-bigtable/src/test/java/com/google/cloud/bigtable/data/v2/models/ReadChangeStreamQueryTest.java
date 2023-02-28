@@ -152,11 +152,11 @@ public class ReadChangeStreamQueryTest {
   @Test
   public void heartbeatDurationTest() {
     ReadChangeStreamQuery query =
-        ReadChangeStreamQuery.create(TABLE_ID).heartbeatDuration(java.time.Duration.ofSeconds(5));
+        ReadChangeStreamQuery.create(TABLE_ID)
+            .heartbeatDuration(org.threeten.bp.Duration.ofSeconds(5));
 
     Builder expectedProto =
-        expectedProtoBuilder()
-            .setHeartbeatDuration(com.google.protobuf.Duration.newBuilder().setSeconds(5).build());
+        expectedProtoBuilder().setHeartbeatDuration(Duration.newBuilder().setSeconds(5).build());
 
     ReadChangeStreamRequest actualProto = query.toProto(requestContext);
     assertThat(actualProto).isEqualTo(expectedProto.build());
@@ -232,7 +232,7 @@ public class ReadChangeStreamQueryTest {
             .streamPartition("simple-begin", "simple-end")
             .continuationTokens(Collections.singletonList(token))
             .endTime(FAKE_END_TIME)
-            .heartbeatDuration(java.time.Duration.ofSeconds(5));
+            .heartbeatDuration(org.threeten.bp.Duration.ofSeconds(5));
 
     ByteArrayOutputStream bos = new ByteArrayOutputStream();
     ObjectOutputStream oos = new ObjectOutputStream(bos);
@@ -302,7 +302,7 @@ public class ReadChangeStreamQueryTest {
             .streamPartition("simple-begin", "simple-end")
             .startTime(FAKE_START_TIME)
             .endTime(FAKE_END_TIME)
-            .heartbeatDuration(java.time.Duration.ofSeconds(5));
+            .heartbeatDuration(org.threeten.bp.Duration.ofSeconds(5));
 
     // ReadChangeStreamQuery#toProto should not change the ReadChangeStreamQuery instance state
     request.toProto(requestContext);
@@ -312,7 +312,7 @@ public class ReadChangeStreamQueryTest {
                 .streamPartition("simple-begin", "simple-end")
                 .startTime(FAKE_START_TIME)
                 .endTime(FAKE_END_TIME)
-                .heartbeatDuration(java.time.Duration.ofSeconds(5)));
+                .heartbeatDuration(org.threeten.bp.Duration.ofSeconds(5)));
 
     assertThat(ReadChangeStreamQuery.create(TABLE_ID).streamPartition("begin-1", "end-1"))
         .isNotEqualTo(ReadChangeStreamQuery.create(TABLE_ID).streamPartition("begin-2", "end-1"));
@@ -324,10 +324,10 @@ public class ReadChangeStreamQueryTest {
             ReadChangeStreamQuery.create(TABLE_ID).endTime(Instant.ofEpochSecond(1L, 1001L)));
     assertThat(
             ReadChangeStreamQuery.create(TABLE_ID)
-                .heartbeatDuration(java.time.Duration.ofSeconds(5)))
+                .heartbeatDuration(org.threeten.bp.Duration.ofSeconds(5)))
         .isNotEqualTo(
             ReadChangeStreamQuery.create(TABLE_ID)
-                .heartbeatDuration(java.time.Duration.ofSeconds(6)));
+                .heartbeatDuration(org.threeten.bp.Duration.ofSeconds(6)));
   }
 
   @Test
@@ -350,7 +350,7 @@ public class ReadChangeStreamQueryTest {
             .streamPartition("begin", "end")
             .continuationTokens(Collections.singletonList(token))
             .endTime(FAKE_END_TIME)
-            .heartbeatDuration(java.time.Duration.ofSeconds(5));
+            .heartbeatDuration(org.threeten.bp.Duration.ofSeconds(5));
     ReadChangeStreamRequest request =
         ReadChangeStreamRequest.newBuilder()
             .setTableName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
