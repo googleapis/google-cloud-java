@@ -27,6 +27,57 @@ public interface AdvancedSettingsOrBuilder
    *
    *
    * <pre>
+   * If present, incoming audio is exported by Dialogflow to the configured
+   * Google Cloud Storage destination.
+   * Exposed at the following levels:
+   * - Agent level
+   * - Flow level
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.GcsDestination audio_export_gcs_destination = 2;
+   * </code>
+   *
+   * @return Whether the audioExportGcsDestination field is set.
+   */
+  boolean hasAudioExportGcsDestination();
+  /**
+   *
+   *
+   * <pre>
+   * If present, incoming audio is exported by Dialogflow to the configured
+   * Google Cloud Storage destination.
+   * Exposed at the following levels:
+   * - Agent level
+   * - Flow level
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.GcsDestination audio_export_gcs_destination = 2;
+   * </code>
+   *
+   * @return The audioExportGcsDestination.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.GcsDestination getAudioExportGcsDestination();
+  /**
+   *
+   *
+   * <pre>
+   * If present, incoming audio is exported by Dialogflow to the configured
+   * Google Cloud Storage destination.
+   * Exposed at the following levels:
+   * - Agent level
+   * - Flow level
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.GcsDestination audio_export_gcs_destination = 2;
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.GcsDestinationOrBuilder
+      getAudioExportGcsDestinationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Settings for logging.
    * Settings for Dialogflow History, Contact Center messages, StackDriver logs,
    * and speech logging.

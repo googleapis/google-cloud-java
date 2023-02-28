@@ -202,6 +202,7 @@ public class AgentsClientTest {
             .setEnableSpellCorrection(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+            .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -255,6 +256,7 @@ public class AgentsClientTest {
             .setEnableSpellCorrection(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+            .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -308,6 +310,7 @@ public class AgentsClientTest {
             .setEnableSpellCorrection(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+            .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -364,6 +367,7 @@ public class AgentsClientTest {
             .setEnableSpellCorrection(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+            .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -420,6 +424,7 @@ public class AgentsClientTest {
             .setEnableSpellCorrection(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+            .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 

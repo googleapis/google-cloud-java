@@ -47,23 +47,28 @@ public final class AdvancedSettingsProto {
       "\n:google/cloud/dialogflow/cx/v3beta1/adv"
           + "anced_settings.proto\022\"google.cloud.dialo"
           + "gflow.cx.v3beta1\032\037google/api/field_behav"
-          + "ior.proto\"\315\001\n\020AdvancedSettings\022^\n\020loggin"
-          + "g_settings\030\006 \001(\0132D.google.cloud.dialogfl"
-          + "ow.cx.v3beta1.AdvancedSettings.LoggingSe"
-          + "ttings\032Y\n\017LoggingSettings\022\"\n\032enable_stac"
-          + "kdriver_logging\030\002 \001(\010\022\"\n\032enable_interact"
-          + "ion_logging\030\003 \001(\010B\317\001\n&com.google.cloud.d"
-          + "ialogflow.cx.v3beta1B\025AdvancedSettingsPr"
-          + "otoP\001Z6cloud.google.com/go/dialogflow/cx"
-          + "/apiv3beta1/cxpb;cxpb\370\001\001\242\002\002DF\252\002\"Google.C"
-          + "loud.Dialogflow.Cx.V3Beta1\352\002&Google::Clo"
-          + "ud::Dialogflow::CX::V3beta1b\006proto3"
+          + "ior.proto\032,google/cloud/dialogflow/cx/v3"
+          + "beta1/gcs.proto\"\247\002\n\020AdvancedSettings\022X\n\034"
+          + "audio_export_gcs_destination\030\002 \001(\01322.goo"
+          + "gle.cloud.dialogflow.cx.v3beta1.GcsDesti"
+          + "nation\022^\n\020logging_settings\030\006 \001(\0132D.googl"
+          + "e.cloud.dialogflow.cx.v3beta1.AdvancedSe"
+          + "ttings.LoggingSettings\032Y\n\017LoggingSetting"
+          + "s\022\"\n\032enable_stackdriver_logging\030\002 \001(\010\022\"\n"
+          + "\032enable_interaction_logging\030\003 \001(\010B\317\001\n&co"
+          + "m.google.cloud.dialogflow.cx.v3beta1B\025Ad"
+          + "vancedSettingsProtoP\001Z6cloud.google.com/"
+          + "go/dialogflow/cx/apiv3beta1/cxpb;cxpb\370\001\001"
+          + "\242\002\002DF\252\002\"Google.Cloud.Dialogflow.Cx.V3Bet"
+          + "a1\352\002&Google::Cloud::Dialogflow::CX::V3be"
+          + "ta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.cloud.dialogflow.cx.v3beta1.GcsProto.getDescriptor(),
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_AdvancedSettings_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -71,7 +76,7 @@ public final class AdvancedSettingsProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_AdvancedSettings_descriptor,
             new java.lang.String[] {
-              "LoggingSettings",
+              "AudioExportGcsDestination", "LoggingSettings",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_AdvancedSettings_LoggingSettings_descriptor =
         internal_static_google_cloud_dialogflow_cx_v3beta1_AdvancedSettings_descriptor
@@ -84,6 +89,7 @@ public final class AdvancedSettingsProto {
               "EnableStackdriverLogging", "EnableInteractionLogging",
             });
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.cloud.dialogflow.cx.v3beta1.GcsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

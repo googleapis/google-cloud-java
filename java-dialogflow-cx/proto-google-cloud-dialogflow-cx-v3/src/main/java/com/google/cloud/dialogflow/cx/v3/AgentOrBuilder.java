@@ -383,7 +383,7 @@ public interface AgentOrBuilder
    * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/agent.proto;l=255
+   *     google/cloud/dialogflow/cx/v3/agent.proto;l=257
    * @return The enableStackdriverLogging.
    */
   @java.lang.Deprecated
@@ -454,4 +454,43 @@ public interface AgentOrBuilder
    * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 22;</code>
    */
   com.google.cloud.dialogflow.cx.v3.AdvancedSettingsOrBuilder getAdvancedSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Settings on instructing the speech synthesizer on how to generate the
+   * output audio content.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.TextToSpeechSettings text_to_speech_settings = 31;</code>
+   *
+   * @return Whether the textToSpeechSettings field is set.
+   */
+  boolean hasTextToSpeechSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Settings on instructing the speech synthesizer on how to generate the
+   * output audio content.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.TextToSpeechSettings text_to_speech_settings = 31;</code>
+   *
+   * @return The textToSpeechSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3.TextToSpeechSettings getTextToSpeechSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Settings on instructing the speech synthesizer on how to generate the
+   * output audio content.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.TextToSpeechSettings text_to_speech_settings = 31;</code>
+   */
+  com.google.cloud.dialogflow.cx.v3.TextToSpeechSettingsOrBuilder
+      getTextToSpeechSettingsOrBuilder();
 }

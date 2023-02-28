@@ -3079,14 +3079,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. A list of configurations for flow versions. You should include
-   * version configs for all flows that are reachable from [`Start
+   * A list of configurations for flow versions. You should include version
+   * configs for all flows that are reachable from [`Start
    * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
    * returned.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6 [(.google.api.field_behavior) = REQUIRED];
+   * <code>repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6;
    * </code>
    */
   @java.lang.Override
@@ -3098,14 +3097,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. A list of configurations for flow versions. You should include
-   * version configs for all flows that are reachable from [`Start
+   * A list of configurations for flow versions. You should include version
+   * configs for all flows that are reachable from [`Start
    * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
    * returned.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6 [(.google.api.field_behavior) = REQUIRED];
+   * <code>repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6;
    * </code>
    */
   @java.lang.Override
@@ -3118,14 +3116,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. A list of configurations for flow versions. You should include
-   * version configs for all flows that are reachable from [`Start
+   * A list of configurations for flow versions. You should include version
+   * configs for all flows that are reachable from [`Start
    * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
    * returned.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6 [(.google.api.field_behavior) = REQUIRED];
+   * <code>repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6;
    * </code>
    */
   @java.lang.Override
@@ -3136,14 +3133,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. A list of configurations for flow versions. You should include
-   * version configs for all flows that are reachable from [`Start
+   * A list of configurations for flow versions. You should include version
+   * configs for all flows that are reachable from [`Start
    * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
    * returned.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6 [(.google.api.field_behavior) = REQUIRED];
+   * <code>repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6;
    * </code>
    */
   @java.lang.Override
@@ -3154,14 +3150,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. A list of configurations for flow versions. You should include
-   * version configs for all flows that are reachable from [`Start
+   * A list of configurations for flow versions. You should include version
+   * configs for all flows that are reachable from [`Start
    * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
    * returned.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6 [(.google.api.field_behavior) = REQUIRED];
+   * <code>repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6;
    * </code>
    */
   @java.lang.Override
@@ -4244,14 +4239,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include
-     * version configs for all flows that are reachable from [`Start
+     * A list of configurations for flow versions. You should include version
+     * configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6;
      * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.cx.v3.Environment.VersionConfig>
@@ -4266,14 +4260,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include
-     * version configs for all flows that are reachable from [`Start
+     * A list of configurations for flow versions. You should include version
+     * configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6;
      * </code>
      */
     public int getVersionConfigsCount() {
@@ -4287,14 +4280,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include
-     * version configs for all flows that are reachable from [`Start
+     * A list of configurations for flow versions. You should include version
+     * configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6;
      * </code>
      */
     public com.google.cloud.dialogflow.cx.v3.Environment.VersionConfig getVersionConfigs(
@@ -4309,14 +4301,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include
-     * version configs for all flows that are reachable from [`Start
+     * A list of configurations for flow versions. You should include version
+     * configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6;
      * </code>
      */
     public Builder setVersionConfigs(
@@ -4337,14 +4328,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include
-     * version configs for all flows that are reachable from [`Start
+     * A list of configurations for flow versions. You should include version
+     * configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6;
      * </code>
      */
     public Builder setVersionConfigs(
@@ -4363,14 +4353,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include
-     * version configs for all flows that are reachable from [`Start
+     * A list of configurations for flow versions. You should include version
+     * configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6;
      * </code>
      */
     public Builder addVersionConfigs(
@@ -4391,14 +4380,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include
-     * version configs for all flows that are reachable from [`Start
+     * A list of configurations for flow versions. You should include version
+     * configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6;
      * </code>
      */
     public Builder addVersionConfigs(
@@ -4419,14 +4407,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include
-     * version configs for all flows that are reachable from [`Start
+     * A list of configurations for flow versions. You should include version
+     * configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6;
      * </code>
      */
     public Builder addVersionConfigs(
@@ -4444,14 +4431,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include
-     * version configs for all flows that are reachable from [`Start
+     * A list of configurations for flow versions. You should include version
+     * configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6;
      * </code>
      */
     public Builder addVersionConfigs(
@@ -4470,14 +4456,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include
-     * version configs for all flows that are reachable from [`Start
+     * A list of configurations for flow versions. You should include version
+     * configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6;
      * </code>
      */
     public Builder addAllVersionConfigs(
@@ -4496,14 +4481,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include
-     * version configs for all flows that are reachable from [`Start
+     * A list of configurations for flow versions. You should include version
+     * configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6;
      * </code>
      */
     public Builder clearVersionConfigs() {
@@ -4520,14 +4504,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include
-     * version configs for all flows that are reachable from [`Start
+     * A list of configurations for flow versions. You should include version
+     * configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6;
      * </code>
      */
     public Builder removeVersionConfigs(int index) {
@@ -4544,14 +4527,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include
-     * version configs for all flows that are reachable from [`Start
+     * A list of configurations for flow versions. You should include version
+     * configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6;
      * </code>
      */
     public com.google.cloud.dialogflow.cx.v3.Environment.VersionConfig.Builder
@@ -4562,14 +4544,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include
-     * version configs for all flows that are reachable from [`Start
+     * A list of configurations for flow versions. You should include version
+     * configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6;
      * </code>
      */
     public com.google.cloud.dialogflow.cx.v3.Environment.VersionConfigOrBuilder
@@ -4584,14 +4565,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include
-     * version configs for all flows that are reachable from [`Start
+     * A list of configurations for flow versions. You should include version
+     * configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6;
      * </code>
      */
     public java.util.List<
@@ -4607,14 +4587,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include
-     * version configs for all flows that are reachable from [`Start
+     * A list of configurations for flow versions. You should include version
+     * configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6;
      * </code>
      */
     public com.google.cloud.dialogflow.cx.v3.Environment.VersionConfig.Builder
@@ -4627,14 +4606,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include
-     * version configs for all flows that are reachable from [`Start
+     * A list of configurations for flow versions. You should include version
+     * configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6;
      * </code>
      */
     public com.google.cloud.dialogflow.cx.v3.Environment.VersionConfig.Builder
@@ -4648,14 +4626,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A list of configurations for flow versions. You should include
-     * version configs for all flows that are reachable from [`Start
+     * A list of configurations for flow versions. You should include version
+     * configs for all flows that are reachable from [`Start
      * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
      * returned.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6 [(.google.api.field_behavior) = REQUIRED];
+     * <code>repeated .google.cloud.dialogflow.cx.v3.Environment.VersionConfig version_configs = 6;
      * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.cx.v3.Environment.VersionConfig.Builder>

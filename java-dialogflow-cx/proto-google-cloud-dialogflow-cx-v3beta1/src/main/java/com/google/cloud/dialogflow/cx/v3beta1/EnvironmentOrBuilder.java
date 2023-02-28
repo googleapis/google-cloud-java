@@ -110,14 +110,14 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Required. A list of configurations for flow versions. You should include
-   * version configs for all flows that are reachable from [`Start
+   * A list of configurations for flow versions. You should include version
+   * configs for all flows that are reachable from [`Start
    * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
    * returned.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dialogflow.cx.v3beta1.Environment.VersionConfig version_configs = 6 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.dialogflow.cx.v3beta1.Environment.VersionConfig version_configs = 6;
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Environment.VersionConfig>
@@ -126,14 +126,14 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Required. A list of configurations for flow versions. You should include
-   * version configs for all flows that are reachable from [`Start
+   * A list of configurations for flow versions. You should include version
+   * configs for all flows that are reachable from [`Start
    * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
    * returned.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dialogflow.cx.v3beta1.Environment.VersionConfig version_configs = 6 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.dialogflow.cx.v3beta1.Environment.VersionConfig version_configs = 6;
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.Environment.VersionConfig getVersionConfigs(int index);
@@ -141,14 +141,14 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Required. A list of configurations for flow versions. You should include
-   * version configs for all flows that are reachable from [`Start
+   * A list of configurations for flow versions. You should include version
+   * configs for all flows that are reachable from [`Start
    * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
    * returned.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dialogflow.cx.v3beta1.Environment.VersionConfig version_configs = 6 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.dialogflow.cx.v3beta1.Environment.VersionConfig version_configs = 6;
    * </code>
    */
   int getVersionConfigsCount();
@@ -156,14 +156,14 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Required. A list of configurations for flow versions. You should include
-   * version configs for all flows that are reachable from [`Start
+   * A list of configurations for flow versions. You should include version
+   * configs for all flows that are reachable from [`Start
    * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
    * returned.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dialogflow.cx.v3beta1.Environment.VersionConfig version_configs = 6 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.dialogflow.cx.v3beta1.Environment.VersionConfig version_configs = 6;
    * </code>
    */
   java.util.List<
@@ -173,14 +173,14 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Required. A list of configurations for flow versions. You should include
-   * version configs for all flows that are reachable from [`Start
+   * A list of configurations for flow versions. You should include version
+   * configs for all flows that are reachable from [`Start
    * Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
    * returned.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dialogflow.cx.v3beta1.Environment.VersionConfig version_configs = 6 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.dialogflow.cx.v3beta1.Environment.VersionConfig version_configs = 6;
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.Environment.VersionConfigOrBuilder

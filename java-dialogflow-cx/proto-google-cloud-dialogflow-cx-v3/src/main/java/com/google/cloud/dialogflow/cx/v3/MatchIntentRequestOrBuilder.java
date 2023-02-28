@@ -147,4 +147,17 @@ public interface MatchIntentRequestOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3.QueryInputOrBuilder getQueryInputOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Persist session parameter changes from `query_params`.
+   * </pre>
+   *
+   * <code>bool persist_parameter_changes = 5;</code>
+   *
+   * @return The persistParameterChanges.
+   */
+  boolean getPersistParameterChanges();
 }

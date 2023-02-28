@@ -682,7 +682,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/agent.proto;l=255
+   *     google/cloud/dialogflow/cx/v3/agent.proto;l=257
    * @return The enableStackdriverLogging.
    */
   @java.lang.Override
@@ -783,6 +783,60 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         : advancedSettings_;
   }
 
+  public static final int TEXT_TO_SPEECH_SETTINGS_FIELD_NUMBER = 31;
+  private com.google.cloud.dialogflow.cx.v3.TextToSpeechSettings textToSpeechSettings_;
+  /**
+   *
+   *
+   * <pre>
+   * Settings on instructing the speech synthesizer on how to generate the
+   * output audio content.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.TextToSpeechSettings text_to_speech_settings = 31;</code>
+   *
+   * @return Whether the textToSpeechSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasTextToSpeechSettings() {
+    return textToSpeechSettings_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Settings on instructing the speech synthesizer on how to generate the
+   * output audio content.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.TextToSpeechSettings text_to_speech_settings = 31;</code>
+   *
+   * @return The textToSpeechSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.TextToSpeechSettings getTextToSpeechSettings() {
+    return textToSpeechSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3.TextToSpeechSettings.getDefaultInstance()
+        : textToSpeechSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Settings on instructing the speech synthesizer on how to generate the
+   * output audio content.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.TextToSpeechSettings text_to_speech_settings = 31;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.TextToSpeechSettingsOrBuilder
+      getTextToSpeechSettingsOrBuilder() {
+    return textToSpeechSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3.TextToSpeechSettings.getDefaultInstance()
+        : textToSpeechSettings_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -839,6 +893,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     }
     if (locked_ != false) {
       output.writeBool(27, locked_);
+    }
+    if (textToSpeechSettings_ != null) {
+      output.writeMessage(31, getTextToSpeechSettings());
     }
     getUnknownFields().writeTo(output);
   }
@@ -897,6 +954,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (locked_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(27, locked_);
     }
+    if (textToSpeechSettings_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(31, getTextToSpeechSettings());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -932,6 +993,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (hasAdvancedSettings() != other.hasAdvancedSettings()) return false;
     if (hasAdvancedSettings()) {
       if (!getAdvancedSettings().equals(other.getAdvancedSettings())) return false;
+    }
+    if (hasTextToSpeechSettings() != other.hasTextToSpeechSettings()) return false;
+    if (hasTextToSpeechSettings()) {
+      if (!getTextToSpeechSettings().equals(other.getTextToSpeechSettings())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -977,6 +1042,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (hasAdvancedSettings()) {
       hash = (37 * hash) + ADVANCED_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getAdvancedSettings().hashCode();
+    }
+    if (hasTextToSpeechSettings()) {
+      hash = (37 * hash) + TEXT_TO_SPEECH_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getTextToSpeechSettings().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1150,6 +1219,11 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         advancedSettingsBuilder_.dispose();
         advancedSettingsBuilder_ = null;
       }
+      textToSpeechSettings_ = null;
+      if (textToSpeechSettingsBuilder_ != null) {
+        textToSpeechSettingsBuilder_.dispose();
+        textToSpeechSettingsBuilder_ = null;
+      }
       return this;
     }
 
@@ -1237,6 +1311,12 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00002000) != 0)) {
         result.advancedSettings_ =
             advancedSettingsBuilder_ == null ? advancedSettings_ : advancedSettingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.textToSpeechSettings_ =
+            textToSpeechSettingsBuilder_ == null
+                ? textToSpeechSettings_
+                : textToSpeechSettingsBuilder_.build();
       }
     }
 
@@ -1349,6 +1429,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasAdvancedSettings()) {
         mergeAdvancedSettings(other.getAdvancedSettings());
+      }
+      if (other.hasTextToSpeechSettings()) {
+        mergeTextToSpeechSettings(other.getTextToSpeechSettings());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1463,6 +1546,13 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00001000;
                 break;
               } // case 216
+            case 250:
+              {
+                input.readMessage(
+                    getTextToSpeechSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 250
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2860,7 +2950,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/agent.proto;l=255
+     *     google/cloud/dialogflow/cx/v3/agent.proto;l=257
      * @return The enableStackdriverLogging.
      */
     @java.lang.Override
@@ -2881,7 +2971,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/agent.proto;l=255
+     *     google/cloud/dialogflow/cx/v3/agent.proto;l=257
      * @param value The enableStackdriverLogging to set.
      * @return This builder for chaining.
      */
@@ -2906,7 +2996,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/agent.proto;l=255
+     *     google/cloud/dialogflow/cx/v3/agent.proto;l=257
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3222,6 +3312,213 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         advancedSettings_ = null;
       }
       return advancedSettingsBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3.TextToSpeechSettings textToSpeechSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.TextToSpeechSettings,
+            com.google.cloud.dialogflow.cx.v3.TextToSpeechSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3.TextToSpeechSettingsOrBuilder>
+        textToSpeechSettingsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Settings on instructing the speech synthesizer on how to generate the
+     * output audio content.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.TextToSpeechSettings text_to_speech_settings = 31;
+     * </code>
+     *
+     * @return Whether the textToSpeechSettings field is set.
+     */
+    public boolean hasTextToSpeechSettings() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings on instructing the speech synthesizer on how to generate the
+     * output audio content.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.TextToSpeechSettings text_to_speech_settings = 31;
+     * </code>
+     *
+     * @return The textToSpeechSettings.
+     */
+    public com.google.cloud.dialogflow.cx.v3.TextToSpeechSettings getTextToSpeechSettings() {
+      if (textToSpeechSettingsBuilder_ == null) {
+        return textToSpeechSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3.TextToSpeechSettings.getDefaultInstance()
+            : textToSpeechSettings_;
+      } else {
+        return textToSpeechSettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings on instructing the speech synthesizer on how to generate the
+     * output audio content.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.TextToSpeechSettings text_to_speech_settings = 31;
+     * </code>
+     */
+    public Builder setTextToSpeechSettings(
+        com.google.cloud.dialogflow.cx.v3.TextToSpeechSettings value) {
+      if (textToSpeechSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        textToSpeechSettings_ = value;
+      } else {
+        textToSpeechSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings on instructing the speech synthesizer on how to generate the
+     * output audio content.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.TextToSpeechSettings text_to_speech_settings = 31;
+     * </code>
+     */
+    public Builder setTextToSpeechSettings(
+        com.google.cloud.dialogflow.cx.v3.TextToSpeechSettings.Builder builderForValue) {
+      if (textToSpeechSettingsBuilder_ == null) {
+        textToSpeechSettings_ = builderForValue.build();
+      } else {
+        textToSpeechSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings on instructing the speech synthesizer on how to generate the
+     * output audio content.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.TextToSpeechSettings text_to_speech_settings = 31;
+     * </code>
+     */
+    public Builder mergeTextToSpeechSettings(
+        com.google.cloud.dialogflow.cx.v3.TextToSpeechSettings value) {
+      if (textToSpeechSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)
+            && textToSpeechSettings_ != null
+            && textToSpeechSettings_
+                != com.google.cloud.dialogflow.cx.v3.TextToSpeechSettings.getDefaultInstance()) {
+          getTextToSpeechSettingsBuilder().mergeFrom(value);
+        } else {
+          textToSpeechSettings_ = value;
+        }
+      } else {
+        textToSpeechSettingsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings on instructing the speech synthesizer on how to generate the
+     * output audio content.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.TextToSpeechSettings text_to_speech_settings = 31;
+     * </code>
+     */
+    public Builder clearTextToSpeechSettings() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      textToSpeechSettings_ = null;
+      if (textToSpeechSettingsBuilder_ != null) {
+        textToSpeechSettingsBuilder_.dispose();
+        textToSpeechSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings on instructing the speech synthesizer on how to generate the
+     * output audio content.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.TextToSpeechSettings text_to_speech_settings = 31;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.TextToSpeechSettings.Builder
+        getTextToSpeechSettingsBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return getTextToSpeechSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings on instructing the speech synthesizer on how to generate the
+     * output audio content.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.TextToSpeechSettings text_to_speech_settings = 31;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.TextToSpeechSettingsOrBuilder
+        getTextToSpeechSettingsOrBuilder() {
+      if (textToSpeechSettingsBuilder_ != null) {
+        return textToSpeechSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return textToSpeechSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3.TextToSpeechSettings.getDefaultInstance()
+            : textToSpeechSettings_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings on instructing the speech synthesizer on how to generate the
+     * output audio content.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.TextToSpeechSettings text_to_speech_settings = 31;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.TextToSpeechSettings,
+            com.google.cloud.dialogflow.cx.v3.TextToSpeechSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3.TextToSpeechSettingsOrBuilder>
+        getTextToSpeechSettingsFieldBuilder() {
+      if (textToSpeechSettingsBuilder_ == null) {
+        textToSpeechSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3.TextToSpeechSettings,
+                com.google.cloud.dialogflow.cx.v3.TextToSpeechSettings.Builder,
+                com.google.cloud.dialogflow.cx.v3.TextToSpeechSettingsOrBuilder>(
+                getTextToSpeechSettings(), getParentForChildren(), isClean());
+        textToSpeechSettings_ = null;
+      }
+      return textToSpeechSettingsBuilder_;
     }
 
     @java.lang.Override

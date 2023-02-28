@@ -742,6 +742,72 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int AUDIO_EXPORT_GCS_DESTINATION_FIELD_NUMBER = 2;
+  private com.google.cloud.dialogflow.cx.v3beta1.GcsDestination audioExportGcsDestination_;
+  /**
+   *
+   *
+   * <pre>
+   * If present, incoming audio is exported by Dialogflow to the configured
+   * Google Cloud Storage destination.
+   * Exposed at the following levels:
+   * - Agent level
+   * - Flow level
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.GcsDestination audio_export_gcs_destination = 2;
+   * </code>
+   *
+   * @return Whether the audioExportGcsDestination field is set.
+   */
+  @java.lang.Override
+  public boolean hasAudioExportGcsDestination() {
+    return audioExportGcsDestination_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If present, incoming audio is exported by Dialogflow to the configured
+   * Google Cloud Storage destination.
+   * Exposed at the following levels:
+   * - Agent level
+   * - Flow level
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.GcsDestination audio_export_gcs_destination = 2;
+   * </code>
+   *
+   * @return The audioExportGcsDestination.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.GcsDestination getAudioExportGcsDestination() {
+    return audioExportGcsDestination_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.GcsDestination.getDefaultInstance()
+        : audioExportGcsDestination_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If present, incoming audio is exported by Dialogflow to the configured
+   * Google Cloud Storage destination.
+   * Exposed at the following levels:
+   * - Agent level
+   * - Flow level
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.GcsDestination audio_export_gcs_destination = 2;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.GcsDestinationOrBuilder
+      getAudioExportGcsDestinationOrBuilder() {
+    return audioExportGcsDestination_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.GcsDestination.getDefaultInstance()
+        : audioExportGcsDestination_;
+  }
+
   public static final int LOGGING_SETTINGS_FIELD_NUMBER = 6;
   private com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.LoggingSettings loggingSettings_;
   /**
@@ -828,6 +894,9 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (audioExportGcsDestination_ != null) {
+      output.writeMessage(2, getAudioExportGcsDestination());
+    }
     if (loggingSettings_ != null) {
       output.writeMessage(6, getLoggingSettings());
     }
@@ -840,6 +909,11 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
+    if (audioExportGcsDestination_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, getAudioExportGcsDestination());
+    }
     if (loggingSettings_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getLoggingSettings());
     }
@@ -859,6 +933,11 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
     com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings other =
         (com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings) obj;
 
+    if (hasAudioExportGcsDestination() != other.hasAudioExportGcsDestination()) return false;
+    if (hasAudioExportGcsDestination()) {
+      if (!getAudioExportGcsDestination().equals(other.getAudioExportGcsDestination()))
+        return false;
+    }
     if (hasLoggingSettings() != other.hasLoggingSettings()) return false;
     if (hasLoggingSettings()) {
       if (!getLoggingSettings().equals(other.getLoggingSettings())) return false;
@@ -874,6 +953,10 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasAudioExportGcsDestination()) {
+      hash = (37 * hash) + AUDIO_EXPORT_GCS_DESTINATION_FIELD_NUMBER;
+      hash = (53 * hash) + getAudioExportGcsDestination().hashCode();
+    }
     if (hasLoggingSettings()) {
       hash = (37 * hash) + LOGGING_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getLoggingSettings().hashCode();
@@ -1026,6 +1109,11 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      audioExportGcsDestination_ = null;
+      if (audioExportGcsDestinationBuilder_ != null) {
+        audioExportGcsDestinationBuilder_.dispose();
+        audioExportGcsDestinationBuilder_ = null;
+      }
       loggingSettings_ = null;
       if (loggingSettingsBuilder_ != null) {
         loggingSettingsBuilder_.dispose();
@@ -1068,6 +1156,12 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
     private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.audioExportGcsDestination_ =
+            audioExportGcsDestinationBuilder_ == null
+                ? audioExportGcsDestination_
+                : audioExportGcsDestinationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.loggingSettings_ =
             loggingSettingsBuilder_ == null ? loggingSettings_ : loggingSettingsBuilder_.build();
       }
@@ -1119,6 +1213,9 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
     public Builder mergeFrom(com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings other) {
       if (other == com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.getDefaultInstance())
         return this;
+      if (other.hasAudioExportGcsDestination()) {
+        mergeAudioExportGcsDestination(other.getAudioExportGcsDestination());
+      }
       if (other.hasLoggingSettings()) {
         mergeLoggingSettings(other.getLoggingSettings());
       }
@@ -1148,10 +1245,17 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
             case 0:
               done = true;
               break;
+            case 18:
+              {
+                input.readMessage(
+                    getAudioExportGcsDestinationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 18
             case 50:
               {
                 input.readMessage(getLoggingSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 50
             default:
@@ -1172,6 +1276,240 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
     }
 
     private int bitField0_;
+
+    private com.google.cloud.dialogflow.cx.v3beta1.GcsDestination audioExportGcsDestination_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.GcsDestination,
+            com.google.cloud.dialogflow.cx.v3beta1.GcsDestination.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.GcsDestinationOrBuilder>
+        audioExportGcsDestinationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * If present, incoming audio is exported by Dialogflow to the configured
+     * Google Cloud Storage destination.
+     * Exposed at the following levels:
+     * - Agent level
+     * - Flow level
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.GcsDestination audio_export_gcs_destination = 2;
+     * </code>
+     *
+     * @return Whether the audioExportGcsDestination field is set.
+     */
+    public boolean hasAudioExportGcsDestination() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If present, incoming audio is exported by Dialogflow to the configured
+     * Google Cloud Storage destination.
+     * Exposed at the following levels:
+     * - Agent level
+     * - Flow level
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.GcsDestination audio_export_gcs_destination = 2;
+     * </code>
+     *
+     * @return The audioExportGcsDestination.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.GcsDestination getAudioExportGcsDestination() {
+      if (audioExportGcsDestinationBuilder_ == null) {
+        return audioExportGcsDestination_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.GcsDestination.getDefaultInstance()
+            : audioExportGcsDestination_;
+      } else {
+        return audioExportGcsDestinationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If present, incoming audio is exported by Dialogflow to the configured
+     * Google Cloud Storage destination.
+     * Exposed at the following levels:
+     * - Agent level
+     * - Flow level
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.GcsDestination audio_export_gcs_destination = 2;
+     * </code>
+     */
+    public Builder setAudioExportGcsDestination(
+        com.google.cloud.dialogflow.cx.v3beta1.GcsDestination value) {
+      if (audioExportGcsDestinationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        audioExportGcsDestination_ = value;
+      } else {
+        audioExportGcsDestinationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If present, incoming audio is exported by Dialogflow to the configured
+     * Google Cloud Storage destination.
+     * Exposed at the following levels:
+     * - Agent level
+     * - Flow level
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.GcsDestination audio_export_gcs_destination = 2;
+     * </code>
+     */
+    public Builder setAudioExportGcsDestination(
+        com.google.cloud.dialogflow.cx.v3beta1.GcsDestination.Builder builderForValue) {
+      if (audioExportGcsDestinationBuilder_ == null) {
+        audioExportGcsDestination_ = builderForValue.build();
+      } else {
+        audioExportGcsDestinationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If present, incoming audio is exported by Dialogflow to the configured
+     * Google Cloud Storage destination.
+     * Exposed at the following levels:
+     * - Agent level
+     * - Flow level
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.GcsDestination audio_export_gcs_destination = 2;
+     * </code>
+     */
+    public Builder mergeAudioExportGcsDestination(
+        com.google.cloud.dialogflow.cx.v3beta1.GcsDestination value) {
+      if (audioExportGcsDestinationBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && audioExportGcsDestination_ != null
+            && audioExportGcsDestination_
+                != com.google.cloud.dialogflow.cx.v3beta1.GcsDestination.getDefaultInstance()) {
+          getAudioExportGcsDestinationBuilder().mergeFrom(value);
+        } else {
+          audioExportGcsDestination_ = value;
+        }
+      } else {
+        audioExportGcsDestinationBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If present, incoming audio is exported by Dialogflow to the configured
+     * Google Cloud Storage destination.
+     * Exposed at the following levels:
+     * - Agent level
+     * - Flow level
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.GcsDestination audio_export_gcs_destination = 2;
+     * </code>
+     */
+    public Builder clearAudioExportGcsDestination() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      audioExportGcsDestination_ = null;
+      if (audioExportGcsDestinationBuilder_ != null) {
+        audioExportGcsDestinationBuilder_.dispose();
+        audioExportGcsDestinationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If present, incoming audio is exported by Dialogflow to the configured
+     * Google Cloud Storage destination.
+     * Exposed at the following levels:
+     * - Agent level
+     * - Flow level
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.GcsDestination audio_export_gcs_destination = 2;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.GcsDestination.Builder
+        getAudioExportGcsDestinationBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return getAudioExportGcsDestinationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If present, incoming audio is exported by Dialogflow to the configured
+     * Google Cloud Storage destination.
+     * Exposed at the following levels:
+     * - Agent level
+     * - Flow level
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.GcsDestination audio_export_gcs_destination = 2;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.GcsDestinationOrBuilder
+        getAudioExportGcsDestinationOrBuilder() {
+      if (audioExportGcsDestinationBuilder_ != null) {
+        return audioExportGcsDestinationBuilder_.getMessageOrBuilder();
+      } else {
+        return audioExportGcsDestination_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.GcsDestination.getDefaultInstance()
+            : audioExportGcsDestination_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If present, incoming audio is exported by Dialogflow to the configured
+     * Google Cloud Storage destination.
+     * Exposed at the following levels:
+     * - Agent level
+     * - Flow level
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.GcsDestination audio_export_gcs_destination = 2;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.GcsDestination,
+            com.google.cloud.dialogflow.cx.v3beta1.GcsDestination.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.GcsDestinationOrBuilder>
+        getAudioExportGcsDestinationFieldBuilder() {
+      if (audioExportGcsDestinationBuilder_ == null) {
+        audioExportGcsDestinationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.GcsDestination,
+                com.google.cloud.dialogflow.cx.v3beta1.GcsDestination.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.GcsDestinationOrBuilder>(
+                getAudioExportGcsDestination(), getParentForChildren(), isClean());
+        audioExportGcsDestination_ = null;
+      }
+      return audioExportGcsDestinationBuilder_;
+    }
 
     private com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.LoggingSettings
         loggingSettings_;
@@ -1198,7 +1536,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
      * @return Whether the loggingSettings field is set.
      */
     public boolean hasLoggingSettings() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1253,7 +1591,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       } else {
         loggingSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1280,7 +1618,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       } else {
         loggingSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1302,7 +1640,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
     public Builder mergeLoggingSettings(
         com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.LoggingSettings value) {
       if (loggingSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)
+        if (((bitField0_ & 0x00000002) != 0)
             && loggingSettings_ != null
             && loggingSettings_
                 != com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.LoggingSettings
@@ -1314,7 +1652,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       } else {
         loggingSettingsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1334,7 +1672,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearLoggingSettings() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       loggingSettings_ = null;
       if (loggingSettingsBuilder_ != null) {
         loggingSettingsBuilder_.dispose();
@@ -1360,7 +1698,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.LoggingSettings.Builder
         getLoggingSettingsBuilder() {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return getLoggingSettingsFieldBuilder().getBuilder();
     }

@@ -206,6 +206,7 @@ public class AgentsClientHttpJsonTest {
             .setEnableSpellCorrection(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+            .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -265,6 +266,7 @@ public class AgentsClientHttpJsonTest {
             .setEnableSpellCorrection(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+            .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -324,6 +326,7 @@ public class AgentsClientHttpJsonTest {
             .setEnableSpellCorrection(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+            .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -385,6 +388,7 @@ public class AgentsClientHttpJsonTest {
             .setEnableSpellCorrection(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+            .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -446,6 +450,7 @@ public class AgentsClientHttpJsonTest {
             .setEnableSpellCorrection(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+            .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -467,6 +472,7 @@ public class AgentsClientHttpJsonTest {
             .setEnableSpellCorrection(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+            .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -514,6 +520,7 @@ public class AgentsClientHttpJsonTest {
               .setEnableSpellCorrection(true)
               .setLocked(true)
               .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+              .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateAgent(agent, updateMask);

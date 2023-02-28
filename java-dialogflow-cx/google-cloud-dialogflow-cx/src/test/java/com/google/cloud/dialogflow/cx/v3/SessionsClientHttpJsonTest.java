@@ -171,6 +171,7 @@ public class SessionsClientHttpJsonTest {
                     .toString())
             .setQueryParams(QueryParameters.newBuilder().build())
             .setQueryInput(QueryInput.newBuilder().build())
+            .setPersistParameterChanges(true)
             .build();
 
     MatchIntentResponse actualResponse = client.matchIntent(request);
@@ -207,6 +208,7 @@ public class SessionsClientHttpJsonTest {
                       .toString())
               .setQueryParams(QueryParameters.newBuilder().build())
               .setQueryInput(QueryInput.newBuilder().build())
+              .setPersistParameterChanges(true)
               .build();
       client.matchIntent(request);
       Assert.fail("No exception raised");
@@ -236,6 +238,7 @@ public class SessionsClientHttpJsonTest {
                             .toString())
                     .setQueryParams(QueryParameters.newBuilder().build())
                     .setQueryInput(QueryInput.newBuilder().build())
+                    .setPersistParameterChanges(true)
                     .build())
             .setMatch(Match.newBuilder().build())
             .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
@@ -277,6 +280,7 @@ public class SessionsClientHttpJsonTest {
                               .toString())
                       .setQueryParams(QueryParameters.newBuilder().build())
                       .setQueryInput(QueryInput.newBuilder().build())
+                      .setPersistParameterChanges(true)
                       .build())
               .setMatch(Match.newBuilder().build())
               .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())

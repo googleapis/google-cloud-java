@@ -248,6 +248,24 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
         : queryInput_;
   }
 
+  public static final int PERSIST_PARAMETER_CHANGES_FIELD_NUMBER = 5;
+  private boolean persistParameterChanges_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Persist session parameter changes from `query_params`.
+   * </pre>
+   *
+   * <code>bool persist_parameter_changes = 5;</code>
+   *
+   * @return The persistParameterChanges.
+   */
+  @java.lang.Override
+  public boolean getPersistParameterChanges() {
+    return persistParameterChanges_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -271,6 +289,9 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
     if (queryInput_ != null) {
       output.writeMessage(3, getQueryInput());
     }
+    if (persistParameterChanges_ != false) {
+      output.writeBool(5, persistParameterChanges_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -288,6 +309,9 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
     }
     if (queryInput_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getQueryInput());
+    }
+    if (persistParameterChanges_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, persistParameterChanges_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -314,6 +338,7 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
     if (hasQueryInput()) {
       if (!getQueryInput().equals(other.getQueryInput())) return false;
     }
+    if (getPersistParameterChanges() != other.getPersistParameterChanges()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -335,6 +360,8 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + QUERY_INPUT_FIELD_NUMBER;
       hash = (53 * hash) + getQueryInput().hashCode();
     }
+    hash = (37 * hash) + PERSIST_PARAMETER_CHANGES_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPersistParameterChanges());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -485,6 +512,7 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
         queryInputBuilder_.dispose();
         queryInputBuilder_ = null;
       }
+      persistParameterChanges_ = false;
       return this;
     }
 
@@ -530,6 +558,9 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.queryInput_ = queryInputBuilder_ == null ? queryInput_ : queryInputBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.persistParameterChanges_ = persistParameterChanges_;
       }
     }
 
@@ -590,6 +621,9 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
       if (other.hasQueryInput()) {
         mergeQueryInput(other.getQueryInput());
       }
+      if (other.getPersistParameterChanges() != false) {
+        setPersistParameterChanges(other.getPersistParameterChanges());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -634,6 +668,12 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 40:
+              {
+                persistParameterChanges_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1204,6 +1244,59 @@ public final class MatchIntentRequest extends com.google.protobuf.GeneratedMessa
         queryInput_ = null;
       }
       return queryInputBuilder_;
+    }
+
+    private boolean persistParameterChanges_;
+    /**
+     *
+     *
+     * <pre>
+     * Persist session parameter changes from `query_params`.
+     * </pre>
+     *
+     * <code>bool persist_parameter_changes = 5;</code>
+     *
+     * @return The persistParameterChanges.
+     */
+    @java.lang.Override
+    public boolean getPersistParameterChanges() {
+      return persistParameterChanges_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Persist session parameter changes from `query_params`.
+     * </pre>
+     *
+     * <code>bool persist_parameter_changes = 5;</code>
+     *
+     * @param value The persistParameterChanges to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPersistParameterChanges(boolean value) {
+
+      persistParameterChanges_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Persist session parameter changes from `query_params`.
+     * </pre>
+     *
+     * <code>bool persist_parameter_changes = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPersistParameterChanges() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      persistParameterChanges_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override
