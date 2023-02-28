@@ -108,7 +108,7 @@ public class SpeechTranslationServiceSettings
     return SpeechTranslationServiceStubSettings.defaultCredentialsProviderBuilder();
   }
 
-  /** Returns a builder for the default gRPC ChannelProvider for this service. */
+  /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
     return SpeechTranslationServiceStubSettings.defaultGrpcTransportProviderBuilder();
   }
@@ -122,7 +122,7 @@ public class SpeechTranslationServiceSettings
     return SpeechTranslationServiceStubSettings.defaultApiClientHeaderProviderBuilder();
   }
 
-  /** Returns a new gRPC builder for this class. */
+  /** Returns a new builder for this class. */
   public static Builder newBuilder() {
     return Builder.createDefault();
   }
