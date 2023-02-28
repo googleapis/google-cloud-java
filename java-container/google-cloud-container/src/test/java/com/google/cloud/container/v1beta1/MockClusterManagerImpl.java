@@ -460,27 +460,6 @@ public class MockClusterManagerImpl extends ClusterManagerImplBase {
   }
 
   @Override
-  public void listNodePools(
-      ListNodePoolsRequest request, StreamObserver<ListNodePoolsResponse> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof ListNodePoolsResponse) {
-      requests.add(request);
-      responseObserver.onNext(((ListNodePoolsResponse) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method ListNodePools, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  ListNodePoolsResponse.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
   public void getJSONWebKeys(
       GetJSONWebKeysRequest request, StreamObserver<GetJSONWebKeysResponse> responseObserver) {
     Object response = responses.poll();
@@ -497,6 +476,27 @@ public class MockClusterManagerImpl extends ClusterManagerImplBase {
                   "Unrecognized response type %s for method GetJSONWebKeys, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GetJSONWebKeysResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listNodePools(
+      ListNodePoolsRequest request, StreamObserver<ListNodePoolsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListNodePoolsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListNodePoolsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListNodePools, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListNodePoolsResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

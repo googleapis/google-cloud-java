@@ -211,14 +211,14 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
     return ((ClusterManagerStubSettings) getStubSettings()).getServerConfigSettings();
   }
 
-  /** Returns the object with the settings used for calls to listNodePools. */
-  public UnaryCallSettings<ListNodePoolsRequest, ListNodePoolsResponse> listNodePoolsSettings() {
-    return ((ClusterManagerStubSettings) getStubSettings()).listNodePoolsSettings();
-  }
-
   /** Returns the object with the settings used for calls to getJSONWebKeys. */
   public UnaryCallSettings<GetJSONWebKeysRequest, GetJSONWebKeysResponse> getJSONWebKeysSettings() {
     return ((ClusterManagerStubSettings) getStubSettings()).getJSONWebKeysSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listNodePools. */
+  public UnaryCallSettings<ListNodePoolsRequest, ListNodePoolsResponse> listNodePoolsSettings() {
+    return ((ClusterManagerStubSettings) getStubSettings()).listNodePoolsSettings();
   }
 
   /** Returns the object with the settings used for calls to getNodePool. */
@@ -496,16 +496,16 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
       return getStubSettingsBuilder().getServerConfigSettings();
     }
 
-    /** Returns the builder for the settings used for calls to listNodePools. */
-    public UnaryCallSettings.Builder<ListNodePoolsRequest, ListNodePoolsResponse>
-        listNodePoolsSettings() {
-      return getStubSettingsBuilder().listNodePoolsSettings();
-    }
-
     /** Returns the builder for the settings used for calls to getJSONWebKeys. */
     public UnaryCallSettings.Builder<GetJSONWebKeysRequest, GetJSONWebKeysResponse>
         getJSONWebKeysSettings() {
       return getStubSettingsBuilder().getJSONWebKeysSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listNodePools. */
+    public UnaryCallSettings.Builder<ListNodePoolsRequest, ListNodePoolsResponse>
+        listNodePoolsSettings() {
+      return getStubSettingsBuilder().listNodePoolsSettings();
     }
 
     /** Returns the builder for the settings used for calls to getNodePool. */

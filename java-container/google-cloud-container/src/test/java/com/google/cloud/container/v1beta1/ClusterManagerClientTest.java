@@ -1263,6 +1263,44 @@ public class ClusterManagerClientTest {
   }
 
   @Test
+  public void getJSONWebKeysTest() throws Exception {
+    GetJSONWebKeysResponse expectedResponse =
+        GetJSONWebKeysResponse.newBuilder().addAllKeys(new ArrayList<Jwk>()).build();
+    mockClusterManager.addResponse(expectedResponse);
+
+    GetJSONWebKeysRequest request =
+        GetJSONWebKeysRequest.newBuilder().setParent("parent-995424086").build();
+
+    GetJSONWebKeysResponse actualResponse = client.getJSONWebKeys(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetJSONWebKeysRequest actualRequest = ((GetJSONWebKeysRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getJSONWebKeysExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockClusterManager.addException(exception);
+
+    try {
+      GetJSONWebKeysRequest request =
+          GetJSONWebKeysRequest.newBuilder().setParent("parent-995424086").build();
+      client.getJSONWebKeys(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listNodePoolsTest() throws Exception {
     ListNodePoolsResponse expectedResponse =
         ListNodePoolsResponse.newBuilder().addAllNodePools(new ArrayList<NodePool>()).build();
@@ -1298,44 +1336,6 @@ public class ClusterManagerClientTest {
       String zone = "zone3744684";
       String clusterId = "clusterId561939637";
       client.listNodePools(projectId, zone, clusterId);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void getJSONWebKeysTest() throws Exception {
-    GetJSONWebKeysResponse expectedResponse =
-        GetJSONWebKeysResponse.newBuilder().addAllKeys(new ArrayList<Jwk>()).build();
-    mockClusterManager.addResponse(expectedResponse);
-
-    GetJSONWebKeysRequest request =
-        GetJSONWebKeysRequest.newBuilder().setParent("parent-995424086").build();
-
-    GetJSONWebKeysResponse actualResponse = client.getJSONWebKeys(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    GetJSONWebKeysRequest actualRequest = ((GetJSONWebKeysRequest) actualRequests.get(0));
-
-    Assert.assertEquals(request.getParent(), actualRequest.getParent());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void getJSONWebKeysExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockClusterManager.addException(exception);
-
-    try {
-      GetJSONWebKeysRequest request =
-          GetJSONWebKeysRequest.newBuilder().setParent("parent-995424086").build();
-      client.getJSONWebKeys(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

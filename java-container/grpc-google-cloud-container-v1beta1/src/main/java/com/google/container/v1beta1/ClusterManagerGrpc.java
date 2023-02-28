@@ -804,53 +804,6 @@ public final class ClusterManagerGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.container.v1beta1.ListNodePoolsRequest,
-          com.google.container.v1beta1.ListNodePoolsResponse>
-      getListNodePoolsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListNodePools",
-      requestType = com.google.container.v1beta1.ListNodePoolsRequest.class,
-      responseType = com.google.container.v1beta1.ListNodePoolsResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.container.v1beta1.ListNodePoolsRequest,
-          com.google.container.v1beta1.ListNodePoolsResponse>
-      getListNodePoolsMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.container.v1beta1.ListNodePoolsRequest,
-            com.google.container.v1beta1.ListNodePoolsResponse>
-        getListNodePoolsMethod;
-    if ((getListNodePoolsMethod = ClusterManagerGrpc.getListNodePoolsMethod) == null) {
-      synchronized (ClusterManagerGrpc.class) {
-        if ((getListNodePoolsMethod = ClusterManagerGrpc.getListNodePoolsMethod) == null) {
-          ClusterManagerGrpc.getListNodePoolsMethod =
-              getListNodePoolsMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.container.v1beta1.ListNodePoolsRequest,
-                          com.google.container.v1beta1.ListNodePoolsResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListNodePools"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.container.v1beta1.ListNodePoolsRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.container.v1beta1.ListNodePoolsResponse
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new ClusterManagerMethodDescriptorSupplier("ListNodePools"))
-                      .build();
-        }
-      }
-    }
-    return getListNodePoolsMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
           com.google.container.v1beta1.GetJSONWebKeysRequest,
           com.google.container.v1beta1.GetJSONWebKeysResponse>
       getGetJSONWebKeysMethod;
@@ -895,6 +848,53 @@ public final class ClusterManagerGrpc {
       }
     }
     return getGetJSONWebKeysMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.container.v1beta1.ListNodePoolsRequest,
+          com.google.container.v1beta1.ListNodePoolsResponse>
+      getListNodePoolsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListNodePools",
+      requestType = com.google.container.v1beta1.ListNodePoolsRequest.class,
+      responseType = com.google.container.v1beta1.ListNodePoolsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.container.v1beta1.ListNodePoolsRequest,
+          com.google.container.v1beta1.ListNodePoolsResponse>
+      getListNodePoolsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.container.v1beta1.ListNodePoolsRequest,
+            com.google.container.v1beta1.ListNodePoolsResponse>
+        getListNodePoolsMethod;
+    if ((getListNodePoolsMethod = ClusterManagerGrpc.getListNodePoolsMethod) == null) {
+      synchronized (ClusterManagerGrpc.class) {
+        if ((getListNodePoolsMethod = ClusterManagerGrpc.getListNodePoolsMethod) == null) {
+          ClusterManagerGrpc.getListNodePoolsMethod =
+              getListNodePoolsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.container.v1beta1.ListNodePoolsRequest,
+                          com.google.container.v1beta1.ListNodePoolsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListNodePools"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.container.v1beta1.ListNodePoolsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.container.v1beta1.ListNodePoolsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ClusterManagerMethodDescriptorSupplier("ListNodePools"))
+                      .build();
+        }
+      }
+    }
+    return getListNodePoolsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1907,21 +1907,6 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Lists the node pools for a cluster.
-     * </pre>
-     */
-    public void listNodePools(
-        com.google.container.v1beta1.ListNodePoolsRequest request,
-        io.grpc.stub.StreamObserver<com.google.container.v1beta1.ListNodePoolsResponse>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getListNodePoolsMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Gets the public component of the cluster signing keys in
      * JSON Web Key format.
      * This API is not yet intended for general use, and is not available for all
@@ -1934,6 +1919,21 @@ public final class ClusterManagerGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetJSONWebKeysMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the node pools for a cluster.
+     * </pre>
+     */
+    public void listNodePools(
+        com.google.container.v1beta1.ListNodePoolsRequest request,
+        io.grpc.stub.StreamObserver<com.google.container.v1beta1.ListNodePoolsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListNodePoolsMethod(), responseObserver);
     }
 
     /**
@@ -2261,19 +2261,19 @@ public final class ClusterManagerGrpc {
                       com.google.container.v1beta1.GetServerConfigRequest,
                       com.google.container.v1beta1.ServerConfig>(this, METHODID_GET_SERVER_CONFIG)))
           .addMethod(
-              getListNodePoolsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1beta1.ListNodePoolsRequest,
-                      com.google.container.v1beta1.ListNodePoolsResponse>(
-                      this, METHODID_LIST_NODE_POOLS)))
-          .addMethod(
               getGetJSONWebKeysMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1beta1.GetJSONWebKeysRequest,
                       com.google.container.v1beta1.GetJSONWebKeysResponse>(
                       this, METHODID_GET_JSONWEB_KEYS)))
+          .addMethod(
+              getListNodePoolsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.container.v1beta1.ListNodePoolsRequest,
+                      com.google.container.v1beta1.ListNodePoolsResponse>(
+                      this, METHODID_LIST_NODE_POOLS)))
           .addMethod(
               getGetNodePoolMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2690,23 +2690,6 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Lists the node pools for a cluster.
-     * </pre>
-     */
-    public void listNodePools(
-        com.google.container.v1beta1.ListNodePoolsRequest request,
-        io.grpc.stub.StreamObserver<com.google.container.v1beta1.ListNodePoolsResponse>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListNodePoolsMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Gets the public component of the cluster signing keys in
      * JSON Web Key format.
      * This API is not yet intended for general use, and is not available for all
@@ -2719,6 +2702,23 @@ public final class ClusterManagerGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetJSONWebKeysMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the node pools for a cluster.
+     * </pre>
+     */
+    public void listNodePools(
+        com.google.container.v1beta1.ListNodePoolsRequest request,
+        io.grpc.stub.StreamObserver<com.google.container.v1beta1.ListNodePoolsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListNodePoolsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -3235,19 +3235,6 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Lists the node pools for a cluster.
-     * </pre>
-     */
-    public com.google.container.v1beta1.ListNodePoolsResponse listNodePools(
-        com.google.container.v1beta1.ListNodePoolsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListNodePoolsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Gets the public component of the cluster signing keys in
      * JSON Web Key format.
      * This API is not yet intended for general use, and is not available for all
@@ -3258,6 +3245,19 @@ public final class ClusterManagerGrpc {
         com.google.container.v1beta1.GetJSONWebKeysRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetJSONWebKeysMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the node pools for a cluster.
+     * </pre>
+     */
+    public com.google.container.v1beta1.ListNodePoolsResponse listNodePools(
+        com.google.container.v1beta1.ListNodePoolsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListNodePoolsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3742,20 +3742,6 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Lists the node pools for a cluster.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.container.v1beta1.ListNodePoolsResponse>
-        listNodePools(com.google.container.v1beta1.ListNodePoolsRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListNodePoolsMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Gets the public component of the cluster signing keys in
      * JSON Web Key format.
      * This API is not yet intended for general use, and is not available for all
@@ -3767,6 +3753,20 @@ public final class ClusterManagerGrpc {
         getJSONWebKeys(com.google.container.v1beta1.GetJSONWebKeysRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetJSONWebKeysMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the node pools for a cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.container.v1beta1.ListNodePoolsResponse>
+        listNodePools(com.google.container.v1beta1.ListNodePoolsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListNodePoolsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -4001,8 +4001,8 @@ public final class ClusterManagerGrpc {
   private static final int METHODID_GET_OPERATION = 14;
   private static final int METHODID_CANCEL_OPERATION = 15;
   private static final int METHODID_GET_SERVER_CONFIG = 16;
-  private static final int METHODID_LIST_NODE_POOLS = 17;
-  private static final int METHODID_GET_JSONWEB_KEYS = 18;
+  private static final int METHODID_GET_JSONWEB_KEYS = 17;
+  private static final int METHODID_LIST_NODE_POOLS = 18;
   private static final int METHODID_GET_NODE_POOL = 19;
   private static final int METHODID_CREATE_NODE_POOL = 20;
   private static final int METHODID_DELETE_NODE_POOL = 21;
@@ -4136,16 +4136,16 @@ public final class ClusterManagerGrpc {
               (io.grpc.stub.StreamObserver<com.google.container.v1beta1.ServerConfig>)
                   responseObserver);
           break;
-        case METHODID_LIST_NODE_POOLS:
-          serviceImpl.listNodePools(
-              (com.google.container.v1beta1.ListNodePoolsRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.container.v1beta1.ListNodePoolsResponse>)
-                  responseObserver);
-          break;
         case METHODID_GET_JSONWEB_KEYS:
           serviceImpl.getJSONWebKeys(
               (com.google.container.v1beta1.GetJSONWebKeysRequest) request,
               (io.grpc.stub.StreamObserver<com.google.container.v1beta1.GetJSONWebKeysResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_NODE_POOLS:
+          serviceImpl.listNodePools(
+              (com.google.container.v1beta1.ListNodePoolsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.container.v1beta1.ListNodePoolsResponse>)
                   responseObserver);
           break;
         case METHODID_GET_NODE_POOL:
@@ -4319,8 +4319,8 @@ public final class ClusterManagerGrpc {
                       .addMethod(getGetOperationMethod())
                       .addMethod(getCancelOperationMethod())
                       .addMethod(getGetServerConfigMethod())
-                      .addMethod(getListNodePoolsMethod())
                       .addMethod(getGetJSONWebKeysMethod())
+                      .addMethod(getListNodePoolsMethod())
                       .addMethod(getGetNodePoolMethod())
                       .addMethod(getCreateNodePoolMethod())
                       .addMethod(getDeleteNodePoolMethod())

@@ -147,12 +147,12 @@ public abstract class ClusterManagerStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getServerConfigCallable()");
   }
 
-  public UnaryCallable<ListNodePoolsRequest, ListNodePoolsResponse> listNodePoolsCallable() {
-    throw new UnsupportedOperationException("Not implemented: listNodePoolsCallable()");
-  }
-
   public UnaryCallable<GetJSONWebKeysRequest, GetJSONWebKeysResponse> getJSONWebKeysCallable() {
     throw new UnsupportedOperationException("Not implemented: getJSONWebKeysCallable()");
+  }
+
+  public UnaryCallable<ListNodePoolsRequest, ListNodePoolsResponse> listNodePoolsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listNodePoolsCallable()");
   }
 
   public UnaryCallable<GetNodePoolRequest, NodePool> getNodePoolCallable() {

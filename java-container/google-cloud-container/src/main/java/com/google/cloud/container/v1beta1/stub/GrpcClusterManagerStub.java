@@ -253,17 +253,6 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
               .setResponseMarshaller(ProtoUtils.marshaller(ServerConfig.getDefaultInstance()))
               .build();
 
-  private static final MethodDescriptor<ListNodePoolsRequest, ListNodePoolsResponse>
-      listNodePoolsMethodDescriptor =
-          MethodDescriptor.<ListNodePoolsRequest, ListNodePoolsResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.container.v1beta1.ClusterManager/ListNodePools")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ListNodePoolsRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(ListNodePoolsResponse.getDefaultInstance()))
-              .build();
-
   private static final MethodDescriptor<GetJSONWebKeysRequest, GetJSONWebKeysResponse>
       getJSONWebKeysMethodDescriptor =
           MethodDescriptor.<GetJSONWebKeysRequest, GetJSONWebKeysResponse>newBuilder()
@@ -273,6 +262,17 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
                   ProtoUtils.marshaller(GetJSONWebKeysRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GetJSONWebKeysResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListNodePoolsRequest, ListNodePoolsResponse>
+      listNodePoolsMethodDescriptor =
+          MethodDescriptor.<ListNodePoolsRequest, ListNodePoolsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.container.v1beta1.ClusterManager/ListNodePools")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListNodePoolsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListNodePoolsResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<GetNodePoolRequest, NodePool> getNodePoolMethodDescriptor =
@@ -441,8 +441,8 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
   private final UnaryCallable<GetOperationRequest, Operation> getOperationCallable;
   private final UnaryCallable<CancelOperationRequest, Empty> cancelOperationCallable;
   private final UnaryCallable<GetServerConfigRequest, ServerConfig> getServerConfigCallable;
-  private final UnaryCallable<ListNodePoolsRequest, ListNodePoolsResponse> listNodePoolsCallable;
   private final UnaryCallable<GetJSONWebKeysRequest, GetJSONWebKeysResponse> getJSONWebKeysCallable;
+  private final UnaryCallable<ListNodePoolsRequest, ListNodePoolsResponse> listNodePoolsCallable;
   private final UnaryCallable<GetNodePoolRequest, NodePool> getNodePoolCallable;
   private final UnaryCallable<CreateNodePoolRequest, Operation> createNodePoolCallable;
   private final UnaryCallable<DeleteNodePoolRequest, Operation> deleteNodePoolCallable;
@@ -730,6 +730,17 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<GetJSONWebKeysRequest, GetJSONWebKeysResponse>
+        getJSONWebKeysTransportSettings =
+            GrpcCallSettings.<GetJSONWebKeysRequest, GetJSONWebKeysResponse>newBuilder()
+                .setMethodDescriptor(getJSONWebKeysMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<ListNodePoolsRequest, ListNodePoolsResponse> listNodePoolsTransportSettings =
         GrpcCallSettings.<ListNodePoolsRequest, ListNodePoolsResponse>newBuilder()
             .setMethodDescriptor(listNodePoolsMethodDescriptor)
@@ -743,17 +754,6 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
                   return params.build();
                 })
             .build();
-    GrpcCallSettings<GetJSONWebKeysRequest, GetJSONWebKeysResponse>
-        getJSONWebKeysTransportSettings =
-            GrpcCallSettings.<GetJSONWebKeysRequest, GetJSONWebKeysResponse>newBuilder()
-                .setMethodDescriptor(getJSONWebKeysMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
-                    })
-                .build();
     GrpcCallSettings<GetNodePoolRequest, NodePool> getNodePoolTransportSettings =
         GrpcCallSettings.<GetNodePoolRequest, NodePool>newBuilder()
             .setMethodDescriptor(getNodePoolMethodDescriptor)
@@ -1008,12 +1008,12 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
     this.getServerConfigCallable =
         callableFactory.createUnaryCallable(
             getServerConfigTransportSettings, settings.getServerConfigSettings(), clientContext);
-    this.listNodePoolsCallable =
-        callableFactory.createUnaryCallable(
-            listNodePoolsTransportSettings, settings.listNodePoolsSettings(), clientContext);
     this.getJSONWebKeysCallable =
         callableFactory.createUnaryCallable(
             getJSONWebKeysTransportSettings, settings.getJSONWebKeysSettings(), clientContext);
+    this.listNodePoolsCallable =
+        callableFactory.createUnaryCallable(
+            listNodePoolsTransportSettings, settings.listNodePoolsSettings(), clientContext);
     this.getNodePoolCallable =
         callableFactory.createUnaryCallable(
             getNodePoolTransportSettings, settings.getNodePoolSettings(), clientContext);
@@ -1171,13 +1171,13 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
   }
 
   @Override
-  public UnaryCallable<ListNodePoolsRequest, ListNodePoolsResponse> listNodePoolsCallable() {
-    return listNodePoolsCallable;
+  public UnaryCallable<GetJSONWebKeysRequest, GetJSONWebKeysResponse> getJSONWebKeysCallable() {
+    return getJSONWebKeysCallable;
   }
 
   @Override
-  public UnaryCallable<GetJSONWebKeysRequest, GetJSONWebKeysResponse> getJSONWebKeysCallable() {
-    return getJSONWebKeysCallable;
+  public UnaryCallable<ListNodePoolsRequest, ListNodePoolsResponse> listNodePoolsCallable() {
+    return listNodePoolsCallable;
   }
 
   @Override

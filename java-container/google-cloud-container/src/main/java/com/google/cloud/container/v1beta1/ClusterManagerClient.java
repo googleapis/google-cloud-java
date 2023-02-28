@@ -1983,6 +1983,61 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Gets the public component of the cluster signing keys in JSON Web Key format. This API is not
+   * yet intended for general use, and is not available for all clusters.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   GetJSONWebKeysRequest request =
+   *       GetJSONWebKeysRequest.newBuilder().setParent("parent-995424086").build();
+   *   GetJSONWebKeysResponse response = clusterManagerClient.getJSONWebKeys(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GetJSONWebKeysResponse getJSONWebKeys(GetJSONWebKeysRequest request) {
+    return getJSONWebKeysCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the public component of the cluster signing keys in JSON Web Key format. This API is not
+   * yet intended for general use, and is not available for all clusters.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   GetJSONWebKeysRequest request =
+   *       GetJSONWebKeysRequest.newBuilder().setParent("parent-995424086").build();
+   *   ApiFuture<GetJSONWebKeysResponse> future =
+   *       clusterManagerClient.getJSONWebKeysCallable().futureCall(request);
+   *   // Do something.
+   *   GetJSONWebKeysResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetJSONWebKeysRequest, GetJSONWebKeysResponse>
+      getJSONWebKeysCallable() {
+    return stub.getJSONWebKeysCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists the node pools for a cluster.
    *
    * <p>Sample code:
@@ -2083,61 +2138,6 @@ public class ClusterManagerClient implements BackgroundResource {
    */
   public final UnaryCallable<ListNodePoolsRequest, ListNodePoolsResponse> listNodePoolsCallable() {
     return stub.listNodePoolsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Gets the public component of the cluster signing keys in JSON Web Key format. This API is not
-   * yet intended for general use, and is not available for all clusters.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
-   *   GetJSONWebKeysRequest request =
-   *       GetJSONWebKeysRequest.newBuilder().setParent("parent-995424086").build();
-   *   GetJSONWebKeysResponse response = clusterManagerClient.getJSONWebKeys(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final GetJSONWebKeysResponse getJSONWebKeys(GetJSONWebKeysRequest request) {
-    return getJSONWebKeysCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Gets the public component of the cluster signing keys in JSON Web Key format. This API is not
-   * yet intended for general use, and is not available for all clusters.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
-   *   GetJSONWebKeysRequest request =
-   *       GetJSONWebKeysRequest.newBuilder().setParent("parent-995424086").build();
-   *   ApiFuture<GetJSONWebKeysResponse> future =
-   *       clusterManagerClient.getJSONWebKeysCallable().futureCall(request);
-   *   // Do something.
-   *   GetJSONWebKeysResponse response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<GetJSONWebKeysRequest, GetJSONWebKeysResponse>
-      getJSONWebKeysCallable() {
-    return stub.getJSONWebKeysCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
