@@ -6100,8 +6100,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If non-empty, contains the information needed to start reading the new
-     * partition(s) that contain segments of this partition's row range.
+     * If non-empty, contains the information needed to resume reading their
+     * associated partitions.
      * </pre>
      *
      * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
@@ -6111,8 +6111,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If non-empty, contains the information needed to start reading the new
-     * partition(s) that contain segments of this partition's row range.
+     * If non-empty, contains the information needed to resume reading their
+     * associated partitions.
      * </pre>
      *
      * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
@@ -6122,8 +6122,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If non-empty, contains the information needed to start reading the new
-     * partition(s) that contain segments of this partition's row range.
+     * If non-empty, contains the information needed to resume reading their
+     * associated partitions.
      * </pre>
      *
      * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
@@ -6133,8 +6133,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If non-empty, contains the information needed to start reading the new
-     * partition(s) that contain segments of this partition's row range.
+     * If non-empty, contains the information needed to resume reading their
+     * associated partitions.
      * </pre>
      *
      * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
@@ -6145,24 +6145,101 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If non-empty, contains the information needed to start reading the new
-     * partition(s) that contain segments of this partition's row range.
+     * If non-empty, contains the information needed to resume reading their
+     * associated partitions.
      * </pre>
      *
      * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
      */
     com.google.bigtable.v2.StreamContinuationTokenOrBuilder getContinuationTokensOrBuilder(
         int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * If non-empty, contains the new partitions to start reading from, which
+     * are related to but not necessarily identical to the partitions for the
+     * above `continuation_tokens`.
+     * </pre>
+     *
+     * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
+     */
+    java.util.List<com.google.bigtable.v2.StreamPartition> getNewPartitionsList();
+    /**
+     *
+     *
+     * <pre>
+     * If non-empty, contains the new partitions to start reading from, which
+     * are related to but not necessarily identical to the partitions for the
+     * above `continuation_tokens`.
+     * </pre>
+     *
+     * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
+     */
+    com.google.bigtable.v2.StreamPartition getNewPartitions(int index);
+    /**
+     *
+     *
+     * <pre>
+     * If non-empty, contains the new partitions to start reading from, which
+     * are related to but not necessarily identical to the partitions for the
+     * above `continuation_tokens`.
+     * </pre>
+     *
+     * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
+     */
+    int getNewPartitionsCount();
+    /**
+     *
+     *
+     * <pre>
+     * If non-empty, contains the new partitions to start reading from, which
+     * are related to but not necessarily identical to the partitions for the
+     * above `continuation_tokens`.
+     * </pre>
+     *
+     * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
+     */
+    java.util.List<? extends com.google.bigtable.v2.StreamPartitionOrBuilder>
+        getNewPartitionsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * If non-empty, contains the new partitions to start reading from, which
+     * are related to but not necessarily identical to the partitions for the
+     * above `continuation_tokens`.
+     * </pre>
+     *
+     * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
+     */
+    com.google.bigtable.v2.StreamPartitionOrBuilder getNewPartitionsOrBuilder(int index);
   }
   /**
    *
    *
    * <pre>
    * A message indicating that the client should stop reading from the stream.
-   * If status is OK and `continuation_tokens` is empty, the stream has finished
-   * (for example if there was an `end_time` specified).
-   * If `continuation_tokens` is present, then a change in partitioning requires
-   * the client to open a new stream for each token to resume reading.
+   * If status is OK and `continuation_tokens` &amp; `new_partitions` are empty, the
+   * stream has finished (for example if there was an `end_time` specified).
+   * If `continuation_tokens` &amp; `new_partitions` are present, then a change in
+   * partitioning requires the client to open a new stream for each token to
+   * resume reading. Example:
+   *                                  [B,      D) ends
+   *                                       |
+   *                                       v
+   *               new_partitions:  [A,  C) [C,  E)
+   * continuation_tokens.partitions:  [B,C) [C,D)
+   *                                  ^---^ ^---^
+   *                                  ^     ^
+   *                                  |     |
+   *                                  |     StreamContinuationToken 2
+   *                                  |
+   *                                  StreamContinuationToken 1
+   * To read the new partition [A,C), supply the continuation tokens whose
+   * ranges cover the new partition, for example ContinuationToken[A,B) &amp;
+   * ContinuationToken[B,C).
    * </pre>
    *
    * Protobuf type {@code google.bigtable.v2.ReadChangeStreamResponse.CloseStream}
@@ -6179,6 +6256,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
 
     private CloseStream() {
       continuationTokens_ = java.util.Collections.emptyList();
+      newPartitions_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -6261,8 +6339,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If non-empty, contains the information needed to start reading the new
-     * partition(s) that contain segments of this partition's row range.
+     * If non-empty, contains the information needed to resume reading their
+     * associated partitions.
      * </pre>
      *
      * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
@@ -6276,8 +6354,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If non-empty, contains the information needed to start reading the new
-     * partition(s) that contain segments of this partition's row range.
+     * If non-empty, contains the information needed to resume reading their
+     * associated partitions.
      * </pre>
      *
      * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
@@ -6291,8 +6369,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If non-empty, contains the information needed to start reading the new
-     * partition(s) that contain segments of this partition's row range.
+     * If non-empty, contains the information needed to resume reading their
+     * associated partitions.
      * </pre>
      *
      * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
@@ -6305,8 +6383,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If non-empty, contains the information needed to start reading the new
-     * partition(s) that contain segments of this partition's row range.
+     * If non-empty, contains the information needed to resume reading their
+     * associated partitions.
      * </pre>
      *
      * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
@@ -6319,8 +6397,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If non-empty, contains the information needed to start reading the new
-     * partition(s) that contain segments of this partition's row range.
+     * If non-empty, contains the information needed to resume reading their
+     * associated partitions.
      * </pre>
      *
      * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
@@ -6329,6 +6407,87 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     public com.google.bigtable.v2.StreamContinuationTokenOrBuilder getContinuationTokensOrBuilder(
         int index) {
       return continuationTokens_.get(index);
+    }
+
+    public static final int NEW_PARTITIONS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.bigtable.v2.StreamPartition> newPartitions_;
+    /**
+     *
+     *
+     * <pre>
+     * If non-empty, contains the new partitions to start reading from, which
+     * are related to but not necessarily identical to the partitions for the
+     * above `continuation_tokens`.
+     * </pre>
+     *
+     * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.bigtable.v2.StreamPartition> getNewPartitionsList() {
+      return newPartitions_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If non-empty, contains the new partitions to start reading from, which
+     * are related to but not necessarily identical to the partitions for the
+     * above `continuation_tokens`.
+     * </pre>
+     *
+     * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.bigtable.v2.StreamPartitionOrBuilder>
+        getNewPartitionsOrBuilderList() {
+      return newPartitions_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If non-empty, contains the new partitions to start reading from, which
+     * are related to but not necessarily identical to the partitions for the
+     * above `continuation_tokens`.
+     * </pre>
+     *
+     * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
+     */
+    @java.lang.Override
+    public int getNewPartitionsCount() {
+      return newPartitions_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If non-empty, contains the new partitions to start reading from, which
+     * are related to but not necessarily identical to the partitions for the
+     * above `continuation_tokens`.
+     * </pre>
+     *
+     * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.v2.StreamPartition getNewPartitions(int index) {
+      return newPartitions_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If non-empty, contains the new partitions to start reading from, which
+     * are related to but not necessarily identical to the partitions for the
+     * above `continuation_tokens`.
+     * </pre>
+     *
+     * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.v2.StreamPartitionOrBuilder getNewPartitionsOrBuilder(int index) {
+      return newPartitions_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -6351,6 +6510,9 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       for (int i = 0; i < continuationTokens_.size(); i++) {
         output.writeMessage(2, continuationTokens_.get(i));
       }
+      for (int i = 0; i < newPartitions_.size(); i++) {
+        output.writeMessage(3, newPartitions_.get(i));
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -6366,6 +6528,9 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       for (int i = 0; i < continuationTokens_.size(); i++) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(2, continuationTokens_.get(i));
+      }
+      for (int i = 0; i < newPartitions_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, newPartitions_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -6388,6 +6553,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         if (!getStatus().equals(other.getStatus())) return false;
       }
       if (!getContinuationTokensList().equals(other.getContinuationTokensList())) return false;
+      if (!getNewPartitionsList().equals(other.getNewPartitionsList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -6406,6 +6572,10 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       if (getContinuationTokensCount() > 0) {
         hash = (37 * hash) + CONTINUATION_TOKENS_FIELD_NUMBER;
         hash = (53 * hash) + getContinuationTokensList().hashCode();
+      }
+      if (getNewPartitionsCount() > 0) {
+        hash = (37 * hash) + NEW_PARTITIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getNewPartitionsList().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -6514,10 +6684,25 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      *
      * <pre>
      * A message indicating that the client should stop reading from the stream.
-     * If status is OK and `continuation_tokens` is empty, the stream has finished
-     * (for example if there was an `end_time` specified).
-     * If `continuation_tokens` is present, then a change in partitioning requires
-     * the client to open a new stream for each token to resume reading.
+     * If status is OK and `continuation_tokens` &amp; `new_partitions` are empty, the
+     * stream has finished (for example if there was an `end_time` specified).
+     * If `continuation_tokens` &amp; `new_partitions` are present, then a change in
+     * partitioning requires the client to open a new stream for each token to
+     * resume reading. Example:
+     *                                  [B,      D) ends
+     *                                       |
+     *                                       v
+     *               new_partitions:  [A,  C) [C,  E)
+     * continuation_tokens.partitions:  [B,C) [C,D)
+     *                                  ^---^ ^---^
+     *                                  ^     ^
+     *                                  |     |
+     *                                  |     StreamContinuationToken 2
+     *                                  |
+     *                                  StreamContinuationToken 1
+     * To read the new partition [A,C), supply the continuation tokens whose
+     * ranges cover the new partition, for example ContinuationToken[A,B) &amp;
+     * ContinuationToken[B,C).
      * </pre>
      *
      * Protobuf type {@code google.bigtable.v2.ReadChangeStreamResponse.CloseStream}
@@ -6565,6 +6750,13 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           continuationTokensBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000002);
+        if (newPartitionsBuilder_ == null) {
+          newPartitions_ = java.util.Collections.emptyList();
+        } else {
+          newPartitions_ = null;
+          newPartitionsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -6611,6 +6803,15 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           result.continuationTokens_ = continuationTokens_;
         } else {
           result.continuationTokens_ = continuationTokensBuilder_.build();
+        }
+        if (newPartitionsBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            newPartitions_ = java.util.Collections.unmodifiableList(newPartitions_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.newPartitions_ = newPartitions_;
+        } else {
+          result.newPartitions_ = newPartitionsBuilder_.build();
         }
       }
 
@@ -6701,6 +6902,33 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
             }
           }
         }
+        if (newPartitionsBuilder_ == null) {
+          if (!other.newPartitions_.isEmpty()) {
+            if (newPartitions_.isEmpty()) {
+              newPartitions_ = other.newPartitions_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureNewPartitionsIsMutable();
+              newPartitions_.addAll(other.newPartitions_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.newPartitions_.isEmpty()) {
+            if (newPartitionsBuilder_.isEmpty()) {
+              newPartitionsBuilder_.dispose();
+              newPartitionsBuilder_ = null;
+              newPartitions_ = other.newPartitions_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              newPartitionsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getNewPartitionsFieldBuilder()
+                      : null;
+            } else {
+              newPartitionsBuilder_.addAllMessages(other.newPartitions_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -6747,6 +6975,19 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
                   }
                   break;
                 } // case 18
+              case 26:
+                {
+                  com.google.bigtable.v2.StreamPartition m =
+                      input.readMessage(
+                          com.google.bigtable.v2.StreamPartition.parser(), extensionRegistry);
+                  if (newPartitionsBuilder_ == null) {
+                    ensureNewPartitionsIsMutable();
+                    newPartitions_.add(m);
+                  } else {
+                    newPartitionsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6962,8 +7203,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * If non-empty, contains the information needed to start reading the new
-       * partition(s) that contain segments of this partition's row range.
+       * If non-empty, contains the information needed to resume reading their
+       * associated partitions.
        * </pre>
        *
        * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
@@ -6980,8 +7221,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * If non-empty, contains the information needed to start reading the new
-       * partition(s) that contain segments of this partition's row range.
+       * If non-empty, contains the information needed to resume reading their
+       * associated partitions.
        * </pre>
        *
        * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
@@ -6997,8 +7238,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * If non-empty, contains the information needed to start reading the new
-       * partition(s) that contain segments of this partition's row range.
+       * If non-empty, contains the information needed to resume reading their
+       * associated partitions.
        * </pre>
        *
        * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
@@ -7014,8 +7255,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * If non-empty, contains the information needed to start reading the new
-       * partition(s) that contain segments of this partition's row range.
+       * If non-empty, contains the information needed to resume reading their
+       * associated partitions.
        * </pre>
        *
        * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
@@ -7038,8 +7279,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * If non-empty, contains the information needed to start reading the new
-       * partition(s) that contain segments of this partition's row range.
+       * If non-empty, contains the information needed to resume reading their
+       * associated partitions.
        * </pre>
        *
        * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
@@ -7059,8 +7300,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * If non-empty, contains the information needed to start reading the new
-       * partition(s) that contain segments of this partition's row range.
+       * If non-empty, contains the information needed to resume reading their
+       * associated partitions.
        * </pre>
        *
        * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
@@ -7082,8 +7323,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * If non-empty, contains the information needed to start reading the new
-       * partition(s) that contain segments of this partition's row range.
+       * If non-empty, contains the information needed to resume reading their
+       * associated partitions.
        * </pre>
        *
        * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
@@ -7106,8 +7347,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * If non-empty, contains the information needed to start reading the new
-       * partition(s) that contain segments of this partition's row range.
+       * If non-empty, contains the information needed to resume reading their
+       * associated partitions.
        * </pre>
        *
        * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
@@ -7127,8 +7368,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * If non-empty, contains the information needed to start reading the new
-       * partition(s) that contain segments of this partition's row range.
+       * If non-empty, contains the information needed to resume reading their
+       * associated partitions.
        * </pre>
        *
        * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
@@ -7148,8 +7389,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * If non-empty, contains the information needed to start reading the new
-       * partition(s) that contain segments of this partition's row range.
+       * If non-empty, contains the information needed to resume reading their
+       * associated partitions.
        * </pre>
        *
        * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
@@ -7169,8 +7410,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * If non-empty, contains the information needed to start reading the new
-       * partition(s) that contain segments of this partition's row range.
+       * If non-empty, contains the information needed to resume reading their
+       * associated partitions.
        * </pre>
        *
        * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
@@ -7189,8 +7430,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * If non-empty, contains the information needed to start reading the new
-       * partition(s) that contain segments of this partition's row range.
+       * If non-empty, contains the information needed to resume reading their
+       * associated partitions.
        * </pre>
        *
        * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
@@ -7209,8 +7450,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * If non-empty, contains the information needed to start reading the new
-       * partition(s) that contain segments of this partition's row range.
+       * If non-empty, contains the information needed to resume reading their
+       * associated partitions.
        * </pre>
        *
        * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
@@ -7223,8 +7464,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * If non-empty, contains the information needed to start reading the new
-       * partition(s) that contain segments of this partition's row range.
+       * If non-empty, contains the information needed to resume reading their
+       * associated partitions.
        * </pre>
        *
        * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
@@ -7241,8 +7482,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * If non-empty, contains the information needed to start reading the new
-       * partition(s) that contain segments of this partition's row range.
+       * If non-empty, contains the information needed to resume reading their
+       * associated partitions.
        * </pre>
        *
        * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
@@ -7259,8 +7500,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * If non-empty, contains the information needed to start reading the new
-       * partition(s) that contain segments of this partition's row range.
+       * If non-empty, contains the information needed to resume reading their
+       * associated partitions.
        * </pre>
        *
        * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
@@ -7273,8 +7514,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * If non-empty, contains the information needed to start reading the new
-       * partition(s) that contain segments of this partition's row range.
+       * If non-empty, contains the information needed to resume reading their
+       * associated partitions.
        * </pre>
        *
        * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
@@ -7288,8 +7529,8 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * If non-empty, contains the information needed to start reading the new
-       * partition(s) that contain segments of this partition's row range.
+       * If non-empty, contains the information needed to resume reading their
+       * associated partitions.
        * </pre>
        *
        * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
@@ -7317,6 +7558,396 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           continuationTokens_ = null;
         }
         return continuationTokensBuilder_;
+      }
+
+      private java.util.List<com.google.bigtable.v2.StreamPartition> newPartitions_ =
+          java.util.Collections.emptyList();
+
+      private void ensureNewPartitionsIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          newPartitions_ =
+              new java.util.ArrayList<com.google.bigtable.v2.StreamPartition>(newPartitions_);
+          bitField0_ |= 0x00000004;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.bigtable.v2.StreamPartition,
+              com.google.bigtable.v2.StreamPartition.Builder,
+              com.google.bigtable.v2.StreamPartitionOrBuilder>
+          newPartitionsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * If non-empty, contains the new partitions to start reading from, which
+       * are related to but not necessarily identical to the partitions for the
+       * above `continuation_tokens`.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
+       */
+      public java.util.List<com.google.bigtable.v2.StreamPartition> getNewPartitionsList() {
+        if (newPartitionsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(newPartitions_);
+        } else {
+          return newPartitionsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If non-empty, contains the new partitions to start reading from, which
+       * are related to but not necessarily identical to the partitions for the
+       * above `continuation_tokens`.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
+       */
+      public int getNewPartitionsCount() {
+        if (newPartitionsBuilder_ == null) {
+          return newPartitions_.size();
+        } else {
+          return newPartitionsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If non-empty, contains the new partitions to start reading from, which
+       * are related to but not necessarily identical to the partitions for the
+       * above `continuation_tokens`.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
+       */
+      public com.google.bigtable.v2.StreamPartition getNewPartitions(int index) {
+        if (newPartitionsBuilder_ == null) {
+          return newPartitions_.get(index);
+        } else {
+          return newPartitionsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If non-empty, contains the new partitions to start reading from, which
+       * are related to but not necessarily identical to the partitions for the
+       * above `continuation_tokens`.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
+       */
+      public Builder setNewPartitions(int index, com.google.bigtable.v2.StreamPartition value) {
+        if (newPartitionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureNewPartitionsIsMutable();
+          newPartitions_.set(index, value);
+          onChanged();
+        } else {
+          newPartitionsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If non-empty, contains the new partitions to start reading from, which
+       * are related to but not necessarily identical to the partitions for the
+       * above `continuation_tokens`.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
+       */
+      public Builder setNewPartitions(
+          int index, com.google.bigtable.v2.StreamPartition.Builder builderForValue) {
+        if (newPartitionsBuilder_ == null) {
+          ensureNewPartitionsIsMutable();
+          newPartitions_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          newPartitionsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If non-empty, contains the new partitions to start reading from, which
+       * are related to but not necessarily identical to the partitions for the
+       * above `continuation_tokens`.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
+       */
+      public Builder addNewPartitions(com.google.bigtable.v2.StreamPartition value) {
+        if (newPartitionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureNewPartitionsIsMutable();
+          newPartitions_.add(value);
+          onChanged();
+        } else {
+          newPartitionsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If non-empty, contains the new partitions to start reading from, which
+       * are related to but not necessarily identical to the partitions for the
+       * above `continuation_tokens`.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
+       */
+      public Builder addNewPartitions(int index, com.google.bigtable.v2.StreamPartition value) {
+        if (newPartitionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureNewPartitionsIsMutable();
+          newPartitions_.add(index, value);
+          onChanged();
+        } else {
+          newPartitionsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If non-empty, contains the new partitions to start reading from, which
+       * are related to but not necessarily identical to the partitions for the
+       * above `continuation_tokens`.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
+       */
+      public Builder addNewPartitions(
+          com.google.bigtable.v2.StreamPartition.Builder builderForValue) {
+        if (newPartitionsBuilder_ == null) {
+          ensureNewPartitionsIsMutable();
+          newPartitions_.add(builderForValue.build());
+          onChanged();
+        } else {
+          newPartitionsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If non-empty, contains the new partitions to start reading from, which
+       * are related to but not necessarily identical to the partitions for the
+       * above `continuation_tokens`.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
+       */
+      public Builder addNewPartitions(
+          int index, com.google.bigtable.v2.StreamPartition.Builder builderForValue) {
+        if (newPartitionsBuilder_ == null) {
+          ensureNewPartitionsIsMutable();
+          newPartitions_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          newPartitionsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If non-empty, contains the new partitions to start reading from, which
+       * are related to but not necessarily identical to the partitions for the
+       * above `continuation_tokens`.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
+       */
+      public Builder addAllNewPartitions(
+          java.lang.Iterable<? extends com.google.bigtable.v2.StreamPartition> values) {
+        if (newPartitionsBuilder_ == null) {
+          ensureNewPartitionsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, newPartitions_);
+          onChanged();
+        } else {
+          newPartitionsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If non-empty, contains the new partitions to start reading from, which
+       * are related to but not necessarily identical to the partitions for the
+       * above `continuation_tokens`.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
+       */
+      public Builder clearNewPartitions() {
+        if (newPartitionsBuilder_ == null) {
+          newPartitions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          newPartitionsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If non-empty, contains the new partitions to start reading from, which
+       * are related to but not necessarily identical to the partitions for the
+       * above `continuation_tokens`.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
+       */
+      public Builder removeNewPartitions(int index) {
+        if (newPartitionsBuilder_ == null) {
+          ensureNewPartitionsIsMutable();
+          newPartitions_.remove(index);
+          onChanged();
+        } else {
+          newPartitionsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If non-empty, contains the new partitions to start reading from, which
+       * are related to but not necessarily identical to the partitions for the
+       * above `continuation_tokens`.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
+       */
+      public com.google.bigtable.v2.StreamPartition.Builder getNewPartitionsBuilder(int index) {
+        return getNewPartitionsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If non-empty, contains the new partitions to start reading from, which
+       * are related to but not necessarily identical to the partitions for the
+       * above `continuation_tokens`.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
+       */
+      public com.google.bigtable.v2.StreamPartitionOrBuilder getNewPartitionsOrBuilder(int index) {
+        if (newPartitionsBuilder_ == null) {
+          return newPartitions_.get(index);
+        } else {
+          return newPartitionsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If non-empty, contains the new partitions to start reading from, which
+       * are related to but not necessarily identical to the partitions for the
+       * above `continuation_tokens`.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
+       */
+      public java.util.List<? extends com.google.bigtable.v2.StreamPartitionOrBuilder>
+          getNewPartitionsOrBuilderList() {
+        if (newPartitionsBuilder_ != null) {
+          return newPartitionsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(newPartitions_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If non-empty, contains the new partitions to start reading from, which
+       * are related to but not necessarily identical to the partitions for the
+       * above `continuation_tokens`.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
+       */
+      public com.google.bigtable.v2.StreamPartition.Builder addNewPartitionsBuilder() {
+        return getNewPartitionsFieldBuilder()
+            .addBuilder(com.google.bigtable.v2.StreamPartition.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If non-empty, contains the new partitions to start reading from, which
+       * are related to but not necessarily identical to the partitions for the
+       * above `continuation_tokens`.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
+       */
+      public com.google.bigtable.v2.StreamPartition.Builder addNewPartitionsBuilder(int index) {
+        return getNewPartitionsFieldBuilder()
+            .addBuilder(index, com.google.bigtable.v2.StreamPartition.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If non-empty, contains the new partitions to start reading from, which
+       * are related to but not necessarily identical to the partitions for the
+       * above `continuation_tokens`.
+       * </pre>
+       *
+       * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
+       */
+      public java.util.List<com.google.bigtable.v2.StreamPartition.Builder>
+          getNewPartitionsBuilderList() {
+        return getNewPartitionsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.bigtable.v2.StreamPartition,
+              com.google.bigtable.v2.StreamPartition.Builder,
+              com.google.bigtable.v2.StreamPartitionOrBuilder>
+          getNewPartitionsFieldBuilder() {
+        if (newPartitionsBuilder_ == null) {
+          newPartitionsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.bigtable.v2.StreamPartition,
+                  com.google.bigtable.v2.StreamPartition.Builder,
+                  com.google.bigtable.v2.StreamPartitionOrBuilder>(
+                  newPartitions_,
+                  ((bitField0_ & 0x00000004) != 0),
+                  getParentForChildren(),
+                  isClean());
+          newPartitions_ = null;
+        }
+        return newPartitionsBuilder_;
       }
 
       @java.lang.Override
