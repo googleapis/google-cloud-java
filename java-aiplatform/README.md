@@ -20,20 +20,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-aiplatform</artifactId>
-  <version>3.12.0</version>
+  <version>3.13.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-aiplatform:3.12.0'
+implementation 'com.google.cloud:google-cloud-aiplatform:3.13.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-aiplatform" % "3.12.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-aiplatform" % "3.13.0"
 ```
 <!--- {x-version-update-end} -->
 

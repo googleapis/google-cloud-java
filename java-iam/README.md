@@ -21,20 +21,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-iam-policy</artifactId>
-  <version>1.8.9</version>
+  <version>1.10.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-iam-policy:1.8.9'
+implementation 'com.google.cloud:google-iam-policy:1.10.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-iam-policy" % "1.8.9"
+libraryDependencies += "com.google.cloud" % "google-iam-policy" % "1.10.0"
 ```
 <!--- {x-version-update-end} -->
 

@@ -1,5 +1,40 @@
 # Changelog
 
+## [1.6.0](https://github.com/googleapis/google-cloud-java/compare/v1.5.0...v1.6.0) (2023-03-01)
+
+
+### Features
+
+* [advisorynotifications] new module for advisorynotifications ([#9141](https://github.com/googleapis/google-cloud-java/issues/9141)) ([c84532c](https://github.com/googleapis/google-cloud-java/commit/c84532cb73633b1723c8adc5ba1cacfdc296b557))
+* [aiplatform] add match service in aiplatform v1beta1 match_service.proto ([#9138](https://github.com/googleapis/google-cloud-java/issues/9138)) ([e20803d](https://github.com/googleapis/google-cloud-java/commit/e20803d4a47fb0dad3f7d85af27927e333f243a6))
+* [alloydb] new module for alloydb ([#9170](https://github.com/googleapis/google-cloud-java/issues/9170)) ([7b6d3db](https://github.com/googleapis/google-cloud-java/commit/7b6d3db3a86e93bca2788e916de813eb0e023673))
+* [analyticsadmin] add `CreateAccessBinding`, `GetAccessBinding`, `UpdateAccessBinding`, `DeleteAccessBinding`, `ListAccessBindings`, `BatchCreateAccessBindings`, `BatchGetAccessBindings`, `BatchUpdateAccessBindings`, `BatchDeleteAccessBindings` me... ([#9137](https://github.com/googleapis/google-cloud-java/issues/9137)) ([222829a](https://github.com/googleapis/google-cloud-java/commit/222829a721d680987f96fddb9b7dd0fa899ecc11))
+* [bigquerymigration] Add SQL translation service to Bazel generation ([#9165](https://github.com/googleapis/google-cloud-java/issues/9165)) ([af85ace](https://github.com/googleapis/google-cloud-java/commit/af85ace90e0f3b69ab0d486dfc729bf7b804cafb))
+* [dataproc] add support for new Dataproc features ([#9127](https://github.com/googleapis/google-cloud-java/issues/9127)) ([841366b](https://github.com/googleapis/google-cloud-java/commit/841366b8c25ed896de1c4c995ad85ae656d6b2ee))
+* [dialogflow-cx] Added persist_parameter_changes field from `query_params` to MatchIntentRequest ([#9130](https://github.com/googleapis/google-cloud-java/issues/9130)) ([7fcde13](https://github.com/googleapis/google-cloud-java/commit/7fcde136372774152813b772d95269c0e135898f))
+* [dialogflow-cx] Added persist_parameter_changes field from `query_params` to MatchIntentRequest ([#9168](https://github.com/googleapis/google-cloud-java/issues/9168)) ([c6d7b9a](https://github.com/googleapis/google-cloud-java/commit/c6d7b9a1eb0dcde3d3dac950c1c91659e64a1e14))
+* [documentai] Added Training and Evaluation functions, request, responses and metadata to document_processor_service.proto ([#9145](https://github.com/googleapis/google-cloud-java/issues/9145)) ([79ee60b](https://github.com/googleapis/google-cloud-java/commit/79ee60b31f538d790a6aa0c3f8797921a50c7b42))
+* [kmsinventory] new module for kmsinventory ([#9162](https://github.com/googleapis/google-cloud-java/issues/9162)) ([0fd61a4](https://github.com/googleapis/google-cloud-java/commit/0fd61a47f23a24e56f9516a444a524c877be16ed))
+* [maps-mapsplatformdatasets] new module for maps-mapsplatformdatasets ([#9159](https://github.com/googleapis/google-cloud-java/issues/9159)) ([c8e3fc0](https://github.com/googleapis/google-cloud-java/commit/c8e3fc06ff043161db00900db1eab63ddf625e62))
+* [speech] Voice Activity Detection: adding speech event time and speech event type ([#9154](https://github.com/googleapis/google-cloud-java/issues/9154)) ([bbc7ce4](https://github.com/googleapis/google-cloud-java/commit/bbc7ce43f3e03ac5ecef99b88054c0762c865f32))
+* [transcoder] Specifying language code and display name for text and audio streams is now supported ([#9169](https://github.com/googleapis/google-cloud-java/issues/9169)) ([c998ac3](https://github.com/googleapis/google-cloud-java/commit/c998ac303fea009fdf4b1f8bde59128a728a6165))
+* [translate] Add supported fields in document translation request and refresh translation v3 GA service proto documentation ([#9144](https://github.com/googleapis/google-cloud-java/issues/9144)) ([d6c639e](https://github.com/googleapis/google-cloud-java/commit/d6c639e1fe6d5765a3c890741716ea48fa17fd0d))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.123.4 ([#9151](https://github.com/googleapis/google-cloud-java/issues/9151)) ([637e244](https://github.com/googleapis/google-cloud-java/commit/637e244b6dc924dd9344f814584ab043ff528f3d))
+* **deps:** update dependency com.google.cloud:google-cloud-storage to v2.19.0 ([#9143](https://github.com/googleapis/google-cloud-java/issues/9143)) ([3ad0e70](https://github.com/googleapis/google-cloud-java/commit/3ad0e70bee0f70c8e8eb4bd935c34bf6735a1ac5))
+* **deps:** update dependency com.google.http-client:google-http-client-bom to v1.43.0 ([#9157](https://github.com/googleapis/google-cloud-java/issues/9157)) ([f8f6ccf](https://github.com/googleapis/google-cloud-java/commit/f8f6ccffa55162529b8d6d67f17bc27648bad38d))
+* **deps:** update dependency org.checkerframework:checker-qual to v3.31.0 ([#9136](https://github.com/googleapis/google-cloud-java/issues/9136)) ([82756bc](https://github.com/googleapis/google-cloud-java/commit/82756bc26d37c7aba371c5484fa44feb587e1ffa))
+
+
+### Documentation
+
+* [bigquerydatatransfer] minor comment update ([#9163](https://github.com/googleapis/google-cloud-java/issues/9163)) ([3015f71](https://github.com/googleapis/google-cloud-java/commit/3015f712b8de51a627bce50bbea712f31b6c7aae))
+* [certificatemanager] corrected information about the limit of certificates that can be attached to a Certificate Map Entry ([#9167](https://github.com/googleapis/google-cloud-java/issues/9167)) ([74c459c](https://github.com/googleapis/google-cloud-java/commit/74c459cbfc31748ee461bffd6fc09d381c85c66d))
+* [container] minor grammar improvements ([#9140](https://github.com/googleapis/google-cloud-java/issues/9140)) ([c4f8231](https://github.com/googleapis/google-cloud-java/commit/c4f8231aee5cb874190d396134decb3e88fb1f8c))
+
 ## [1.5.0](https://github.com/googleapis/google-cloud-java/compare/v1.4.0...v1.5.0) (2023-02-16)
 
 

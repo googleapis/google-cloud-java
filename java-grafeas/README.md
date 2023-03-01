@@ -20,20 +20,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>io.grafeas</groupId>
   <artifactId>grafeas</artifactId>
-  <version>2.9.0</version>
+  <version>2.13.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'io.grafeas:grafeas:2.9.0'
+implementation 'io.grafeas:grafeas:2.13.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "io.grafeas" % "grafeas" % "2.9.0"
+libraryDependencies += "io.grafeas" % "grafeas" % "2.13.0"
 ```
 <!--- {x-version-update-end} -->
 
