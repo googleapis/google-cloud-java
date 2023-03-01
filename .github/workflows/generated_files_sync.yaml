@@ -150,7 +150,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Ensure no new invalid package name in Java files
-      shell: bash
+      shell: bash +e
       run: |
         echo "Finding files matching '*main/java/google/*.java'"
         # In past, we published Java classes with wrong package names (google.)
