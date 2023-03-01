@@ -50,7 +50,7 @@ mvn clean deploy -B \
   -Dgpg.homedir=${GPG_HOMEDIR} \
   --projects "${IncludedNonCloudModules}" \
   -P release \
-  -DserverId=nexus \
+  -DserverId=ossrh \
   -DnexusUrl=https://oss.sonatype.org/
 
 
