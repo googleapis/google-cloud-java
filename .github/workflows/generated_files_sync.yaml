@@ -152,7 +152,7 @@ jobs:
     - name: Ensure no new invalid package name in Java files
       shell: bash
       run: |
-        echo "Finding files matching '*main/java/google/*.java'
+        echo "Finding files matching '*main/java/google/*.java'"
         # In past, we published Java classes with wrong package names (google.)
         # due to improper java_package field in proto files (https://protobuf.dev/programming-guides/proto3/#options).
         # This check excludes these existing files.
