@@ -74,4 +74,5 @@
     <module>proto-google-cloud-alloydb-v1alpha</module>
     <module>google-cloud-alloydb-bom</module>
   </modules>
-</project>
+
+  </project>
