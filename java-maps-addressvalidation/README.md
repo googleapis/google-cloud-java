@@ -23,20 +23,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.maps</groupId>
   <artifactId>google-maps-addressvalidation</artifactId>
-  <version>0.1.0</version>
+  <version>0.6.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.maps:google-maps-addressvalidation:0.1.0'
+implementation 'com.google.maps:google-maps-addressvalidation:0.6.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.maps" % "google-maps-addressvalidation" % "0.1.0"
+libraryDependencies += "com.google.maps" % "google-maps-addressvalidation" % "0.6.0"
 ```
 <!--- {x-version-update-end} -->
 

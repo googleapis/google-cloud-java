@@ -4,6 +4,318 @@
     {
       "changes": [
         {
+          "type": "feat",
+          "sha": "bbc7ce43f3e03ac5ecef99b88054c0762c865f32",
+          "message": "[speech] Voice Activity Detection: adding speech event time and speech event type",
+          "issues": [
+            "9154"
+          ]
+        }
+      ],
+      "version": "1.6.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-speech",
+      "id": "f50e009c-336e-44d7-8bd0-5489a6a4fc92",
+      "createTime": "2023-03-01T18:30:24.953Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "3015f712b8de51a627bce50bbea712f31b6c7aae",
+          "message": "[bigquerydatatransfer] minor comment update",
+          "issues": [
+            "9163"
+          ]
+        }
+      ],
+      "version": "1.6.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigquerydatatransfer",
+      "id": "bdf8048a-3c85-47cc-af4d-329ec2a7d6e3",
+      "createTime": "2023-03-01T18:30:24.953Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d6c639e1fe6d5765a3c890741716ea48fa17fd0d",
+          "message": "[translate] Add supported fields in document translation request and refresh translation v3 GA service proto documentation",
+          "issues": [
+            "9144"
+          ]
+        }
+      ],
+      "version": "1.6.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-translate",
+      "id": "a0af00b5-d610-44ec-be9d-bb0d2594c488",
+      "createTime": "2023-03-01T18:30:24.952Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c4f8231aee5cb874190d396134decb3e88fb1f8c",
+          "message": "[container] minor grammar improvements",
+          "issues": [
+            "9140"
+          ]
+        }
+      ],
+      "version": "1.6.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-container",
+      "id": "af15f359-1552-45c0-9859-9ce4deb4bf97",
+      "createTime": "2023-03-01T18:30:24.952Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "0fd61a47f23a24e56f9516a444a524c877be16ed",
+          "message": "[kmsinventory] new module for kmsinventory",
+          "issues": [
+            "9162"
+          ]
+        }
+      ],
+      "version": "1.6.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-kmsinventory",
+      "id": "48f27acb-3966-4642-8e17-c18476d3494b",
+      "createTime": "2023-03-01T18:30:24.952Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "841366b8c25ed896de1c4c995ad85ae656d6b2ee",
+          "message": "[dataproc] add support for new Dataproc features",
+          "issues": [
+            "9127"
+          ]
+        }
+      ],
+      "version": "1.6.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataproc",
+      "id": "b5a565cc-df99-492b-b45c-a2e7e4737a00",
+      "createTime": "2023-03-01T18:30:24.952Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "79ee60b31f538d790a6aa0c3f8797921a50c7b42",
+          "message": "[documentai] Added Training and Evaluation functions, request, responses and metadata to document_processor_service.proto",
+          "issues": [
+            "9145"
+          ]
+        }
+      ],
+      "version": "1.6.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-document-ai",
+      "id": "3a6510c5-f06d-4c43-acdc-5e10e4cf51f5",
+      "createTime": "2023-03-01T18:30:24.952Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "222829a721d680987f96fddb9b7dd0fa899ecc11",
+          "message": "[analyticsadmin] add `CreateAccessBinding`, `GetAccessBinding`, `UpdateAccessBinding`, `DeleteAccessBinding`, `ListAccessBindings`, `BatchCreateAccessBindings`, `BatchGetAccessBindings`, `BatchUpdateAccessBindings`, `BatchDeleteAccessBindings` me...",
+          "issues": [
+            "9137"
+          ]
+        }
+      ],
+      "version": "1.6.0",
+      "language": "JAVA",
+      "artifactName": "com.google.analytics:google-analytics-admin",
+      "id": "4121ac30-598e-4480-b6a6-38afcfa98cc7",
+      "createTime": "2023-03-01T18:30:24.951Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "e20803d4a47fb0dad3f7d85af27927e333f243a6",
+          "message": "[aiplatform] add match service in aiplatform v1beta1 match_service.proto",
+          "issues": [
+            "9138"
+          ]
+        }
+      ],
+      "version": "1.6.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-aiplatform",
+      "id": "d97436ff-15c8-4622-9afd-76de38b1f534",
+      "createTime": "2023-03-01T18:30:24.951Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "c6d7b9a1eb0dcde3d3dac950c1c91659e64a1e14",
+          "message": "[dialogflow-cx] Added persist_parameter_changes field from `query_params` to MatchIntentRequest",
+          "issues": [
+            "9168"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "7fcde136372774152813b772d95269c0e135898f",
+          "message": "[dialogflow-cx] Added persist_parameter_changes field from `query_params` to MatchIntentRequest",
+          "issues": [
+            "9130"
+          ]
+        }
+      ],
+      "version": "1.6.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dialogflow-cx",
+      "id": "9a168080-eaab-43cf-8f00-841a56eec044",
+      "createTime": "2023-03-01T18:30:24.951Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "c998ac303fea009fdf4b1f8bde59128a728a6165",
+          "message": "[transcoder] Specifying language code and display name for text and audio streams is now supported",
+          "issues": [
+            "9169"
+          ]
+        }
+      ],
+      "version": "1.6.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-video-transcoder",
+      "id": "247aa473-37bd-4cf4-864e-e8dcae287de6",
+      "createTime": "2023-03-01T18:30:24.951Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "7b6d3db3a86e93bca2788e916de813eb0e023673",
+          "message": "[alloydb] new module for alloydb",
+          "issues": [
+            "9170"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "c8e3fc06ff043161db00900db1eab63ddf625e62",
+          "message": "[maps-mapsplatformdatasets] new module for maps-mapsplatformdatasets",
+          "issues": [
+            "9159"
+          ]
+        }
+      ],
+      "version": "1.6.0",
+      "language": "JAVA",
+      "artifactName": "com.google.maps:google-maps-mapsplatformdatasets",
+      "id": "60321e70-fbd9-4dd9-929b-9ce536bfb2ca",
+      "createTime": "2023-03-01T18:30:24.951Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "7b6d3db3a86e93bca2788e916de813eb0e023673",
+          "message": "[alloydb] new module for alloydb",
+          "issues": [
+            "9170"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "74c459cbfc31748ee461bffd6fc09d381c85c66d",
+          "message": "[certificatemanager] corrected information about the limit of certificates that can be attached to a Certificate Map Entry",
+          "issues": [
+            "9167"
+          ]
+        }
+      ],
+      "version": "1.6.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-certificate-manager",
+      "id": "868109af-b0e1-4a01-b738-17c51e4c2d02",
+      "createTime": "2023-03-01T18:30:24.950Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "7b6d3db3a86e93bca2788e916de813eb0e023673",
+          "message": "[alloydb] new module for alloydb",
+          "issues": [
+            "9170"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "af85ace90e0f3b69ab0d486dfc729bf7b804cafb",
+          "message": "[bigquerymigration] Add SQL translation service to Bazel generation",
+          "issues": [
+            "9165"
+          ]
+        }
+      ],
+      "version": "1.6.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigquerymigration",
+      "id": "0da86b50-08ac-4af1-8346-8d678ab8467b",
+      "createTime": "2023-03-01T18:30:24.950Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "7b6d3db3a86e93bca2788e916de813eb0e023673",
+          "message": "[alloydb] new module for alloydb",
+          "issues": [
+            "9170"
+          ]
+        }
+      ],
+      "version": "1.6.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-alloydb",
+      "id": "a1acb4f7-11ec-4a89-b8de-7bd748f12413",
+      "createTime": "2023-03-01T18:30:24.950Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "7b6d3db3a86e93bca2788e916de813eb0e023673",
+          "message": "[alloydb] new module for alloydb",
+          "issues": [
+            "9170"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "c84532cb73633b1723c8adc5ba1cacfdc296b557",
+          "message": "[advisorynotifications] new module for advisorynotifications",
+          "issues": [
+            "9141"
+          ]
+        }
+      ],
+      "version": "1.6.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-advisorynotifications",
+      "id": "2d44d50f-e5a5-4fb2-83f0-eea04bec8bea",
+      "createTime": "2023-03-01T18:30:24.949Z"
+    },
+    {
+      "changes": [
+        {
           "type": "fix",
           "sha": "0b7209ac1f38aa4005d619249a6f93f44aef7ca7",
           "message": "enable java-bigqueryconnect ITSystemTest",
@@ -447,5 +759,5 @@
       "createTime": "2023-02-03T16:27:23.198Z"
     }
   ],
-  "updateTime": "2023-02-16T17:57:51.656Z"
+  "updateTime": "2023-03-01T18:30:24.953Z"
 }
