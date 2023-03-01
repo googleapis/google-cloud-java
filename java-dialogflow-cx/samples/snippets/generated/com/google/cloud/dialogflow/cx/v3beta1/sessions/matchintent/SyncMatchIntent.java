@@ -45,6 +45,7 @@ public class SyncMatchIntent {
                       .toString())
               .setQueryParams(QueryParameters.newBuilder().build())
               .setQueryInput(QueryInput.newBuilder().build())
+              .setPersistParameterChanges(true)
               .build();
       MatchIntentResponse response = sessionsClient.matchIntent(request);
     }

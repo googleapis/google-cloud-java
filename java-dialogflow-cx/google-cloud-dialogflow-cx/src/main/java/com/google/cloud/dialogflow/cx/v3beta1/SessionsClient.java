@@ -328,6 +328,7 @@ public class SessionsClient implements BackgroundResource {
    *                   .toString())
    *           .setQueryParams(QueryParameters.newBuilder().build())
    *           .setQueryInput(QueryInput.newBuilder().build())
+   *           .setPersistParameterChanges(true)
    *           .build();
    *   MatchIntentResponse response = sessionsClient.matchIntent(request);
    * }
@@ -361,6 +362,7 @@ public class SessionsClient implements BackgroundResource {
    *                   .toString())
    *           .setQueryParams(QueryParameters.newBuilder().build())
    *           .setQueryInput(QueryInput.newBuilder().build())
+   *           .setPersistParameterChanges(true)
    *           .build();
    *   ApiFuture<MatchIntentResponse> future =
    *       sessionsClient.matchIntentCallable().futureCall(request);

@@ -46,6 +46,7 @@ public class AsyncMatchIntent {
                       .toString())
               .setQueryParams(QueryParameters.newBuilder().build())
               .setQueryInput(QueryInput.newBuilder().build())
+              .setPersistParameterChanges(true)
               .build();
       ApiFuture<MatchIntentResponse> future =
           sessionsClient.matchIntentCallable().futureCall(request);

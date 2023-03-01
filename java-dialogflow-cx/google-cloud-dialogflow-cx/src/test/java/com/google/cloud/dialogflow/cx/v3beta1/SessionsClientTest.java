@@ -241,6 +241,7 @@ public class SessionsClientTest {
                     .toString())
             .setQueryParams(QueryParameters.newBuilder().build())
             .setQueryInput(QueryInput.newBuilder().build())
+            .setPersistParameterChanges(true)
             .build();
 
     MatchIntentResponse actualResponse = client.matchIntent(request);
@@ -253,6 +254,8 @@ public class SessionsClientTest {
     Assert.assertEquals(request.getSession(), actualRequest.getSession());
     Assert.assertEquals(request.getQueryParams(), actualRequest.getQueryParams());
     Assert.assertEquals(request.getQueryInput(), actualRequest.getQueryInput());
+    Assert.assertEquals(
+        request.getPersistParameterChanges(), actualRequest.getPersistParameterChanges());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -273,6 +276,7 @@ public class SessionsClientTest {
                       .toString())
               .setQueryParams(QueryParameters.newBuilder().build())
               .setQueryInput(QueryInput.newBuilder().build())
+              .setPersistParameterChanges(true)
               .build();
       client.matchIntent(request);
       Assert.fail("No exception raised");
