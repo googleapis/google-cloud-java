@@ -19,6 +19,8 @@ import com.google.api.core.InternalApi;
 import com.google.auto.value.AutoValue;
 import com.google.bigtable.v2.ReadChangeStreamResponse;
 import com.google.cloud.bigtable.common.Status;
+import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import java.io.Serializable;
 import java.util.List;
@@ -35,8 +37,22 @@ public abstract class CloseStream implements ChangeStreamRecord, Serializable {
 
   private static CloseStream create(
       com.google.rpc.Status status,
-      List<ChangeStreamContinuationToken> changeStreamContinuationTokens) {
-    return new AutoValue_CloseStream(Status.fromProto(status), changeStreamContinuationTokens);
+      List<ChangeStreamContinuationToken> changeStreamContinuationTokens,
+      List<ByteStringRange> newPartitions) {
+    if (status.getCode() == 0) {
+      Preconditions.checkState(
+          changeStreamContinuationTokens.isEmpty(),
+          "An OK CloseStream should not have continuation tokens.");
+    } else {
+      Preconditions.checkState(
+          !changeStreamContinuationTokens.isEmpty(),
+          "A non-OK CloseStream should have continuation token(s).");
+      Preconditions.checkState(
+          changeStreamContinuationTokens.size() == newPartitions.size(),
+          "Number of continuation tokens does not match number of new partitions.");
+    }
+    return new AutoValue_CloseStream(
+        Status.fromProto(status), changeStreamContinuationTokens, newPartitions);
   }
 
   /** Wraps the protobuf {@link ReadChangeStreamResponse.CloseStream}. */
@@ -46,6 +62,13 @@ public abstract class CloseStream implements ChangeStreamRecord, Serializable {
         closeStream.getStatus(),
         closeStream.getContinuationTokensList().stream()
             .map(ChangeStreamContinuationToken::fromProto)
+            .collect(ImmutableList.toImmutableList()),
+        closeStream.getNewPartitionsList().stream()
+            .map(
+                newPartition ->
+                    ByteStringRange.create(
+                        newPartition.getRowRange().getStartKeyClosed(),
+                        newPartition.getRowRange().getEndKeyOpen()))
             .collect(ImmutableList.toImmutableList()));
   }
 
@@ -56,4 +79,8 @@ public abstract class CloseStream implements ChangeStreamRecord, Serializable {
   @InternalApi("Intended for use by the BigtableIO in apache/beam only.")
   @Nonnull
   public abstract List<ChangeStreamContinuationToken> getChangeStreamContinuationTokens();
+
+  @InternalApi("Intended for use by the BigtableIO in apache/beam only.")
+  @Nonnull
+  public abstract List<ByteStringRange> getNewPartitions();
 }

@@ -150,8 +150,6 @@ public class DefaultChangeStreamRecordAdapterTest {
   public void closeStreamTest() {
     ReadChangeStreamResponse.CloseStream expectedCloseStream =
         ReadChangeStreamResponse.CloseStream.newBuilder()
-            .addContinuationTokens(
-                StreamContinuationToken.newBuilder().setToken("random-token").build())
             .setStatus(Status.newBuilder().setCode(0).build())
             .build();
     assertThat(changeStreamRecordBuilder.onCloseStream(expectedCloseStream))

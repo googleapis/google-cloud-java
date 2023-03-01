@@ -122,6 +122,15 @@ public class ReadChangeStreamRetryTest {
         .build();
   }
 
+  private StreamPartition createNewPartitionForCloseStream() {
+    return StreamPartition.newBuilder()
+        .setRowRange(
+            RowRange.newBuilder()
+                .setStartKeyClosed(ByteString.copyFromUtf8(START_KEY_CLOSED))
+                .setEndKeyOpen(ByteString.copyFromUtf8(END_KEY_OPEN)))
+        .build();
+  }
+
   private ReadChangeStreamResponse.Heartbeat createHeartbeat(
       StreamContinuationToken streamContinuationToken) {
     return ReadChangeStreamResponse.Heartbeat.newBuilder()
@@ -130,11 +139,18 @@ public class ReadChangeStreamRetryTest {
         .build();
   }
 
-  private ReadChangeStreamResponse.CloseStream createCloseStream() {
-    return ReadChangeStreamResponse.CloseStream.newBuilder()
-        .addContinuationTokens(createStreamContinuationToken(CLOSE_STREAM_TOKEN))
-        .setStatus(com.google.rpc.Status.newBuilder().setCode(0).build())
-        .build();
+  private ReadChangeStreamResponse.CloseStream createCloseStream(boolean isOk) {
+    ReadChangeStreamResponse.CloseStream.Builder builder =
+        ReadChangeStreamResponse.CloseStream.newBuilder();
+    if (isOk) {
+      builder.setStatus(com.google.rpc.Status.newBuilder().setCode(0));
+    } else {
+      builder
+          .setStatus(com.google.rpc.Status.newBuilder().setCode(11))
+          .addContinuationTokens(createStreamContinuationToken(CLOSE_STREAM_TOKEN))
+          .addNewPartitions(createNewPartitionForCloseStream());
+    }
+    return builder.build();
   }
 
   private ReadChangeStreamResponse.DataChange createDataChange(boolean done) {
@@ -178,7 +194,7 @@ public class ReadChangeStreamRetryTest {
   @Test
   public void happyPathCloseStreamTest() {
     ReadChangeStreamResponse closeStreamResponse =
-        ReadChangeStreamResponse.newBuilder().setCloseStream(createCloseStream()).build();
+        ReadChangeStreamResponse.newBuilder().setCloseStream(createCloseStream(true)).build();
     service.expectations.add(
         RpcExpectation.create().expectInitialRequest().respondWith(closeStreamResponse));
     List<ChangeStreamRecord> actualResults = getResults();
@@ -221,7 +237,7 @@ public class ReadChangeStreamRetryTest {
   public void singleCloseStreamImmediateRetryTest() {
     // CloseStream.
     ReadChangeStreamResponse closeStreamResponse =
-        ReadChangeStreamResponse.newBuilder().setCloseStream(createCloseStream()).build();
+        ReadChangeStreamResponse.newBuilder().setCloseStream(createCloseStream(false)).build();
     service.expectations.add(
         RpcExpectation.create().expectInitialRequest().respondWithStatus(Code.UNAVAILABLE));
     // Resume with the exact same request.

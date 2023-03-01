@@ -61,10 +61,24 @@
                 "partition": {
                   "row_range": {
                     "start_key_closed": "0000000000000001",
-                    "end_key_open": "0000000000000002"
+                    "end_key_open": "0000000000000003"
                   }
                 },
                 "token": "close-stream-token-2"
+              }
+            ],
+            "new_partitions": [
+              {
+                "row_range": {
+                  "start_key_closed": "",
+                  "end_key_open": "0000000000000002"
+                }
+              },
+              {
+                "row_range": {
+                  "start_key_closed": "0000000000000002",
+                  "end_key_open": "0000000000000003"
+                }
               }
             ]
           }
@@ -92,10 +106,24 @@
                   "partition": {
                     "row_range": {
                       "start_key_closed": "0000000000000001",
-                      "end_key_open": "0000000000000002"
+                      "end_key_open": "0000000000000003"
                     }
                   },
                   "token": "close-stream-token-2"
+                }
+              ],
+              "new_partitions": [
+                {
+                  "row_range": {
+                    "start_key_closed": "",
+                    "end_key_open": "0000000000000002"
+                  }
+                },
+                {
+                  "row_range": {
+                    "start_key_closed": "0000000000000002",
+                    "end_key_open": "0000000000000003"
+                  }
                 }
               ]
             }
@@ -137,6 +165,14 @@
                 },
                 "token": "close-stream-token-1"
               }
+            ],
+            "new_partitions": [
+              {
+                "row_range": {
+                  "start_key_closed": "",
+                  "end_key_open": "0000000000000002"
+                }
+              }
             ]
           }
         }
@@ -175,6 +211,14 @@
                     }
                   },
                   "token": "close-stream-token-1"
+                }
+              ],
+              "new_partitions": [
+                {
+                  "row_range": {
+                    "start_key_closed": "",
+                    "end_key_open": "0000000000000002"
+                  }
                 }
               ]
             }
@@ -1280,10 +1324,24 @@
                 "partition": {
                   "row_range": {
                     "start_key_closed": "0000000000000001",
-                    "end_key_open": "0000000000000002"
+                    "end_key_open": "0000000000000003"
                   }
                 },
                 "token": "close-stream-token-2"
+              }
+            ],
+            "new_partitions": [
+              {
+                "row_range": {
+                  "start_key_closed": "",
+                  "end_key_open": "0000000000000002"
+                }
+              },
+              {
+                "row_range": {
+                  "start_key_closed": "0000000000000002",
+                  "end_key_open": "0000000000000003"
+                }
               }
             ]
           }
@@ -1363,10 +1421,24 @@
                   "partition": {
                     "row_range": {
                       "start_key_closed": "0000000000000001",
-                      "end_key_open": "0000000000000002"
+                      "end_key_open": "0000000000000003"
                     }
                   },
                   "token": "close-stream-token-2"
+                }
+              ],
+              "new_partitions": [
+                {
+                  "row_range": {
+                    "start_key_closed": "",
+                    "end_key_open": "0000000000000002"
+                  }
+                },
+                {
+                  "row_range": {
+                    "start_key_closed": "0000000000000002",
+                    "end_key_open": "0000000000000003"
+                  }
                 }
               ]
             }

@@ -102,7 +102,8 @@ public class ChangeStreamRecordMergingCallableTest {
     ReadChangeStreamResponse.CloseStream closeStreamProto =
         ReadChangeStreamResponse.CloseStream.newBuilder()
             .addContinuationTokens(streamContinuationToken)
-            .setStatus(Status.newBuilder().setCode(0).build())
+            .addNewPartitions(StreamPartition.newBuilder().setRowRange(rowRange))
+            .setStatus(Status.newBuilder().setCode(11))
             .build();
     ReadChangeStreamResponse response =
         ReadChangeStreamResponse.newBuilder().setCloseStream(closeStreamProto).build();
@@ -127,5 +128,8 @@ public class ChangeStreamRecordMergingCallableTest {
         .isEqualTo(ByteStringRange.create(rowRange.getStartKeyClosed(), rowRange.getEndKeyOpen()));
     assertThat(changeStreamContinuationToken.getToken())
         .isEqualTo(streamContinuationToken.getToken());
+    assertThat(closeStream.getNewPartitions().size()).isEqualTo(1);
+    assertThat(closeStream.getNewPartitions().get(0))
+        .isEqualTo(ByteStringRange.create(rowRange.getStartKeyClosed(), rowRange.getEndKeyOpen()));
   }
 }

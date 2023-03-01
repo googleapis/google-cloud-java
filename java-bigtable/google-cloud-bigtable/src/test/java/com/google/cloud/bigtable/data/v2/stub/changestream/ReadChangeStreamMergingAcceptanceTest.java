@@ -38,6 +38,7 @@ import com.google.cloud.bigtable.data.v2.models.DeleteCells;
 import com.google.cloud.bigtable.data.v2.models.DeleteFamily;
 import com.google.cloud.bigtable.data.v2.models.Entry;
 import com.google.cloud.bigtable.data.v2.models.Heartbeat;
+import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
 import com.google.cloud.bigtable.data.v2.models.SetCell;
 import com.google.cloud.bigtable.gaxx.testing.FakeStreamingApi;
 import com.google.cloud.conformance.bigtable.v2.ChangeStreamTestDefinition.ChangeStreamTestFile;
@@ -172,6 +173,14 @@ public class ReadChangeStreamMergingAcceptanceTest {
                                     .build()))
                     .setToken(token.getToken())
                     .build());
+          }
+          for (ByteStringRange newPartition : closeStream.getNewPartitions()) {
+            builder.addNewPartitions(
+                StreamPartition.newBuilder()
+                    .setRowRange(
+                        RowRange.newBuilder()
+                            .setStartKeyClosed(newPartition.getStart())
+                            .setEndKeyOpen(newPartition.getEnd())));
           }
           ReadChangeStreamResponse.CloseStream closeStreamProto = builder.build();
           actualResults.add(

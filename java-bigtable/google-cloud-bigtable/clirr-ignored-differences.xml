@@ -100,6 +100,12 @@
         <method>*getStatus*</method>
         <to>com.google.cloud.bigtable.common.Status</to>
     </difference>
+    <!-- add new method is ok because CloseStream is InternalApi -->
+    <difference>
+        <differenceType>7013</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/CloseStream</className>
+        <method>*getNewPartitions*</method>
+    </difference>
     <!-- change method return type is ok because ChangeStreamMutation is InternalApi -->
     <difference>
         <differenceType>7006</differenceType>
