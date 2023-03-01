@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.33.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.32.1...v2.33.0) (2023-03-01)
+
+
+### Features
+
+* Add header back to the client ([#2016](https://github.com/googleapis/java-bigquerystorage/issues/2016)) ([de00447](https://github.com/googleapis/java-bigquerystorage/commit/de00447958e5939d7be9d0f7da02323aabbfed8c))
+
+
+### Bug Fixes
+
+* Add client shutdown if request waiting in request queue for too long. ([#2017](https://github.com/googleapis/java-bigquerystorage/issues/2017)) ([91da88b](https://github.com/googleapis/java-bigquerystorage/commit/91da88b0ed914bf55111dd9cef2a3fc4b27c3443))
+* Allow StreamWriter settings to override passed in BQ client setting ([#2001](https://github.com/googleapis/java-bigquerystorage/issues/2001)) ([66db8fe](https://github.com/googleapis/java-bigquerystorage/commit/66db8fed26474076fb5aaca5044d39e11f6ef28d))
+* Catch uncaught exception from append loop and add expoential retry to reconnection ([#2015](https://github.com/googleapis/java-bigquerystorage/issues/2015)) ([35db0fb](https://github.com/googleapis/java-bigquerystorage/commit/35db0fb38a929a8f3e4db30ee173ce5a4af43d64))
+* Remove write_location header pending discussion ([#2021](https://github.com/googleapis/java-bigquerystorage/issues/2021)) ([0941d43](https://github.com/googleapis/java-bigquerystorage/commit/0941d4363daf782e0be81c11fdf6a2fe0ff4d7ac))
+
 ## [2.32.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.32.0...v2.32.1) (2023-02-22)
 
 
