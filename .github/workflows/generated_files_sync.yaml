@@ -150,8 +150,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Ensure no new invalid package name in Java files
-      shell: bash +e
+      shell: bash
       run: |
+        # grep returns "1" (error) when no output
+        set +e
         echo "Finding files matching '*main/java/google/*.java'"
         # In past, we published Java classes with wrong package names (google.)
         # due to improper java_package field in proto files (https://protobuf.dev/programming-guides/proto3/#options).
