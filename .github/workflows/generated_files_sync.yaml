@@ -144,3 +144,23 @@ jobs:
           echo "Passed ${POM}"
         done
         echo "All group IDs start with com.google.maps. Good."
+
+  package_name_check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Ensure no new invalid package name in Java files
+      run: |
+        # In past, we published Java classes with wrong package names due to
+        # improper java_package field in proto files (https://protobuf.dev/programming-guides/proto3/#options).
+        # This check excludes these existing files.
+        invalid_files=$(find . -wholename '*main/java/google/*.java' \
+            |grep --invert-match 'cloud-build.*v2' \
+            |grep --invert-match 'google/monitoring/v3/DroppedLabelsOuterClass.java' \
+            |grep --invert-match 'google/cloud/policytroubleshooter/v1/Explanations.java')
+        if [ -n "${invalid_files}" ]; then
+          echo "New invalid package name found. Check the files: ${invalid_files}"
+          exit 1
+        fi
+        echo "No new invalid package names in Java files"
+
