@@ -61,6 +61,7 @@ public class ConnectionWorkerTest {
   public void setUp() throws Exception {
     testBigQueryWrite = new FakeBigQueryWrite();
     ConnectionWorker.setMaxInflightQueueWaitTime(300000);
+    ConnectionWorker.setMaxInflightRequestWaitTime(Duration.ofMinutes(10));
     serviceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(testBigQueryWrite));
@@ -606,5 +607,107 @@ public class ConnectionWorkerTest {
 
     Load load2 = ConnectionWorker.Load.create(1, 1, 100, 100, 100);
     assertThat(load2.isOverwhelmed()).isFalse();
+  }
+
+  @Test
+  public void testThrowExceptionWhileWithinAppendLoop_MaxWaitTimeExceed() throws Exception {
+    ProtoSchema schema1 = createProtoSchema("foo");
+    ConnectionWorker.setMaxInflightRequestWaitTime(Duration.ofSeconds(1));
+    StreamWriter sw1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client).setWriterSchema(schema1).build();
+    ConnectionWorker connectionWorker =
+        new ConnectionWorker(
+            TEST_STREAM_1,
+            null,
+            createProtoSchema("foo"),
+            100000,
+            100000,
+            Duration.ofSeconds(100),
+            FlowController.LimitExceededBehavior.Block,
+            TEST_TRACE_ID,
+            client.getSettings());
+    testBigQueryWrite.setResponseSleep(org.threeten.bp.Duration.ofSeconds(3));
+
+    long appendCount = 10;
+    for (int i = 0; i < appendCount; i++) {
+      testBigQueryWrite.addResponse(createAppendResponse(i));
+    }
+
+    // In total insert 5 requests,
+    List<ApiFuture<AppendRowsResponse>> futures = new ArrayList<>();
+    for (int i = 0; i < appendCount; i++) {
+      futures.add(
+          sendTestMessage(
+              connectionWorker, sw1, createFooProtoRows(new String[] {String.valueOf(i)}), i));
+      assertEquals(connectionWorker.getLoad().inFlightRequestsCount(), i + 1);
+    }
+
+    for (int i = 0; i < appendCount; i++) {
+      int finalI = i;
+      ExecutionException ex =
+          assertThrows(
+              ExecutionException.class,
+              () -> futures.get(finalI).get().getAppendResult().getOffset().getValue());
+      assertThat(ex.getCause()).hasMessageThat().contains("Request has waited in inflight queue");
+    }
+
+    // The future append will directly fail.
+    ExecutionException ex =
+        assertThrows(
+            ExecutionException.class,
+            () ->
+                sendTestMessage(
+                        connectionWorker,
+                        sw1,
+                        createFooProtoRows(new String[] {String.valueOf(100)}),
+                        100)
+                    .get());
+    assertThat(ex.getCause()).hasMessageThat().contains("Request has waited in inflight queue");
+  }
+
+  @Test
+  public void testLongTimeIdleWontFail() throws Exception {
+    ProtoSchema schema1 = createProtoSchema("foo");
+    ConnectionWorker.setMaxInflightRequestWaitTime(Duration.ofSeconds(1));
+    StreamWriter sw1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client).setWriterSchema(schema1).build();
+    ConnectionWorker connectionWorker =
+        new ConnectionWorker(
+            TEST_STREAM_1,
+            null,
+            createProtoSchema("foo"),
+            100000,
+            100000,
+            Duration.ofSeconds(100),
+            FlowController.LimitExceededBehavior.Block,
+            TEST_TRACE_ID,
+            client.getSettings());
+
+    long appendCount = 10;
+    for (int i = 0; i < appendCount * 2; i++) {
+      testBigQueryWrite.addResponse(createAppendResponse(i));
+    }
+
+    // In total insert 5 requests,
+    List<ApiFuture<AppendRowsResponse>> futures = new ArrayList<>();
+    for (int i = 0; i < appendCount; i++) {
+      futures.add(
+          sendTestMessage(
+              connectionWorker, sw1, createFooProtoRows(new String[] {String.valueOf(i)}), i));
+    }
+    // Sleep 2 seconds to make sure request queue is empty.
+    Thread.sleep(2000);
+    assertEquals(connectionWorker.getLoad().inFlightRequestsCount(), 0);
+    for (int i = 0; i < appendCount; i++) {
+      futures.add(
+          sendTestMessage(
+              connectionWorker,
+              sw1,
+              createFooProtoRows(new String[] {String.valueOf(i)}),
+              i + appendCount));
+    }
+    for (int i = 0; i < appendCount * 2; i++) {
+      assertEquals(i, futures.get(i).get().getAppendResult().getOffset().getValue());
+    }
   }
 }

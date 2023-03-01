@@ -33,6 +33,7 @@ import io.grpc.Status.Code;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.time.Duration;
+import java.time.Instant;
 import java.util.Comparator;
 import java.util.Deque;
 import java.util.HashMap;
@@ -65,6 +66,14 @@ class ConnectionWorker implements AutoCloseable {
 
   // Maximum wait time on inflight quota before error out.
   private static long INFLIGHT_QUOTA_MAX_WAIT_TIME_MILLI = 300000;
+
+  /*
+   * Maximum time waiting for request callback before shutting down the connection.
+   *
+   * We will constantly checking how much time we have been waiting for the next request callback
+   * if we wait too much time we will start shutting down the connections and clean up the queues.
+   */
+  private static Duration MAXIMUM_REQUEST_CALLBACK_WAIT_TIME = Duration.ofMinutes(15);
 
   private Lock lock;
   private Condition hasMessageInWaitingQueue;
@@ -273,7 +282,6 @@ class ConnectionWorker implements AutoCloseable {
           log.warning(
               "Exception thrown from append loop, thus stream writer is shutdown due to exception: "
                   + e.toString());
-          e.printStackTrace();
           lock.lock();
           try {
             connectionFinalStatus = e;
@@ -507,7 +515,7 @@ class ConnectionWorker implements AutoCloseable {
     } finally {
       this.lock.unlock();
     }
-    log.fine("Waiting for append thread to finish. Stream: " + streamName + " id: " + writerId);
+    log.info("Waiting for append thread to finish. Stream: " + streamName + " id: " + writerId);
     try {
       appendThread.join();
     } catch (InterruptedException e) {
@@ -525,6 +533,7 @@ class ConnectionWorker implements AutoCloseable {
       // Backend request has a 2 minute timeout, so wait a little longer than that.
       this.client.awaitTermination(150, TimeUnit.SECONDS);
     } catch (InterruptedException ignored) {
+      log.warning("Client await termination timeout in writer id " + writerId);
     }
 
     try {
@@ -569,6 +578,11 @@ class ConnectionWorker implements AutoCloseable {
       this.lock.lock();
       try {
         hasMessageInWaitingQueue.await(100, TimeUnit.MILLISECONDS);
+        // Check whether we should error out the current append loop.
+        if (inflightRequestQueue.size() > 0) {
+          throwIfWaitCallbackTooLong(inflightRequestQueue.getFirst().requestCreationTimeStamp);
+        }
+
         // Copy the streamConnectionIsConnected guarded by lock to a local variable.
         // In addition, only reconnect if there is a retriable error.
         streamNeedsConnecting = !streamConnectionIsConnected && connectionFinalStatus == null;
@@ -583,6 +597,7 @@ class ConnectionWorker implements AutoCloseable {
         }
         while (!this.waitingRequestQueue.isEmpty()) {
           AppendRequestAndResponse requestWrapper = this.waitingRequestQueue.pollFirst();
+          requestWrapper.trySetRequestInsertQueueTime();
           this.inflightRequestQueue.addLast(requestWrapper);
           localQueue.addLast(requestWrapper);
         }
@@ -703,6 +718,17 @@ class ConnectionWorker implements AutoCloseable {
     log.info("Append thread is done. Stream: " + streamName + " id: " + writerId);
   }
 
+  private void throwIfWaitCallbackTooLong(Instant timeToCheck) {
+    Duration milliSinceLastCallback = Duration.between(timeToCheck, Instant.now());
+    if (milliSinceLastCallback.compareTo(MAXIMUM_REQUEST_CALLBACK_WAIT_TIME) > 0) {
+      throw new RuntimeException(
+          String.format(
+              "Request has waited in inflight queue for %sms for writer %s, "
+                  + "which is over maximum wait time %s",
+              milliSinceLastCallback, writerId, MAXIMUM_REQUEST_CALLBACK_WAIT_TIME.toString()));
+    }
+  }
+
   /*
    * Returns true if waiting queue is drain, a.k.a. no more requests in the waiting queue.
    *
@@ -740,6 +766,7 @@ class ConnectionWorker implements AutoCloseable {
     }
     this.lock.lock();
     try {
+      log.warning("Donecallback is not triggered within timeout frame for writer " + writerId);
       if (connectionFinalStatus == null) {
         connectionFinalStatus =
             new StatusRuntimeException(
@@ -883,7 +910,7 @@ class ConnectionWorker implements AutoCloseable {
   }
 
   private void doneCallback(Throwable finalStatus) {
-    log.fine(
+    log.info(
         "Received done callback. Stream: "
             + streamName
             + " worker id: "
@@ -923,7 +950,9 @@ class ConnectionWorker implements AutoCloseable {
               "Connection finished with error "
                   + finalStatus.toString()
                   + " for stream "
-                  + streamName);
+                  + streamName
+                  + " with write id: "
+                  + writerId);
         }
       }
     } finally {
@@ -955,11 +984,20 @@ class ConnectionWorker implements AutoCloseable {
     // The writer that issues the call of the request.
     final StreamWriter streamWriter;
 
+    Instant requestCreationTimeStamp;
+
     AppendRequestAndResponse(AppendRowsRequest message, StreamWriter streamWriter) {
       this.appendResult = SettableApiFuture.create();
       this.message = message;
       this.messageSize = message.getProtoRows().getSerializedSize();
       this.streamWriter = streamWriter;
+    }
+
+    void trySetRequestInsertQueueTime() {
+      // Only set the first time the caller tries to set the timestamp.
+      if (requestCreationTimeStamp == null) {
+        requestCreationTimeStamp = Instant.now();
+      }
     }
   }
 
@@ -1049,6 +1087,11 @@ class ConnectionWorker implements AutoCloseable {
   @VisibleForTesting
   static void setMaxInflightQueueWaitTime(long waitTime) {
     INFLIGHT_QUOTA_MAX_WAIT_TIME_MILLI = waitTime;
+  }
+
+  @VisibleForTesting
+  static void setMaxInflightRequestWaitTime(Duration waitTime) {
+    MAXIMUM_REQUEST_CALLBACK_WAIT_TIME = waitTime;
   }
 
   @AutoValue
