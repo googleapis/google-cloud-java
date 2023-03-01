@@ -50,9 +50,9 @@ mvn clean deploy -B \
   -Dgpg.homedir=${GPG_HOMEDIR} \
   --projects "${IncludedNonCloudModules}" \
   -P release \
-  -DserverId=nexus \
+  -DserverId=ossrh \
   -DnexusUrl=https://oss.sonatype.org/
-
+ 
 
 # The job triggered by Release Please (release-trigger) has this AUTORELEASE_PR
 # environment variable. Fusion also lets us to specify this variable.
