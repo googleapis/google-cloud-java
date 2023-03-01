@@ -112,10 +112,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The target video frame rate in frames per second (FPS). Must be less than
-     * or equal to 120. Will default to the input frame rate if larger than the
-     * input frame rate. The API will generate an output FPS that is divisible
-     * by the input FPS, and smaller or equal to the target FPS. See
+     * Required. The target video frame rate in frames per second (FPS). Must be
+     * less than or equal to 120. Will default to the input frame rate if larger
+     * than the input frame rate. The API will generate an output FPS that is
+     * divisible by the input FPS, and smaller or equal to the target FPS. See
      * [Calculating frame
      * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
      * more information.
@@ -131,8 +131,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The video bitrate in bits per second. The minimum value is 1,000.
-     * The maximum value is 800,000,000.
+     * Required. The video bitrate in bits per second. The minimum value is
+     * 1,000. The maximum value is 800,000,000.
      * </pre>
      *
      * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -706,10 +706,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The target video frame rate in frames per second (FPS). Must be less than
-     * or equal to 120. Will default to the input frame rate if larger than the
-     * input frame rate. The API will generate an output FPS that is divisible
-     * by the input FPS, and smaller or equal to the target FPS. See
+     * Required. The target video frame rate in frames per second (FPS). Must be
+     * less than or equal to 120. Will default to the input frame rate if larger
+     * than the input frame rate. The API will generate an output FPS that is
+     * divisible by the input FPS, and smaller or equal to the target FPS. See
      * [Calculating frame
      * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
      * more information.
@@ -730,8 +730,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The video bitrate in bits per second. The minimum value is 1,000.
-     * The maximum value is 800,000,000.
+     * Required. The video bitrate in bits per second. The minimum value is
+     * 1,000. The maximum value is 800,000,000.
      * </pre>
      *
      * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2362,10 +2362,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The target video frame rate in frames per second (FPS). Must be less than
-       * or equal to 120. Will default to the input frame rate if larger than the
-       * input frame rate. The API will generate an output FPS that is divisible
-       * by the input FPS, and smaller or equal to the target FPS. See
+       * Required. The target video frame rate in frames per second (FPS). Must be
+       * less than or equal to 120. Will default to the input frame rate if larger
+       * than the input frame rate. The API will generate an output FPS that is
+       * divisible by the input FPS, and smaller or equal to the target FPS. See
        * [Calculating frame
        * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
        * more information.
@@ -2383,10 +2383,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The target video frame rate in frames per second (FPS). Must be less than
-       * or equal to 120. Will default to the input frame rate if larger than the
-       * input frame rate. The API will generate an output FPS that is divisible
-       * by the input FPS, and smaller or equal to the target FPS. See
+       * Required. The target video frame rate in frames per second (FPS). Must be
+       * less than or equal to 120. Will default to the input frame rate if larger
+       * than the input frame rate. The API will generate an output FPS that is
+       * divisible by the input FPS, and smaller or equal to the target FPS. See
        * [Calculating frame
        * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
        * more information.
@@ -2408,10 +2408,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The target video frame rate in frames per second (FPS). Must be less than
-       * or equal to 120. Will default to the input frame rate if larger than the
-       * input frame rate. The API will generate an output FPS that is divisible
-       * by the input FPS, and smaller or equal to the target FPS. See
+       * Required. The target video frame rate in frames per second (FPS). Must be
+       * less than or equal to 120. Will default to the input frame rate if larger
+       * than the input frame rate. The API will generate an output FPS that is
+       * divisible by the input FPS, and smaller or equal to the target FPS. See
        * [Calculating frame
        * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
        * more information.
@@ -2433,8 +2433,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The video bitrate in bits per second. The minimum value is 1,000.
-       * The maximum value is 800,000,000.
+       * Required. The video bitrate in bits per second. The minimum value is
+       * 1,000. The maximum value is 800,000,000.
        * </pre>
        *
        * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2449,8 +2449,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The video bitrate in bits per second. The minimum value is 1,000.
-       * The maximum value is 800,000,000.
+       * Required. The video bitrate in bits per second. The minimum value is
+       * 1,000. The maximum value is 800,000,000.
        * </pre>
        *
        * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2469,8 +2469,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The video bitrate in bits per second. The minimum value is 1,000.
-       * The maximum value is 800,000,000.
+       * Required. The video bitrate in bits per second. The minimum value is
+       * 1,000. The maximum value is 800,000,000.
        * </pre>
        *
        * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4175,10 +4175,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The target video frame rate in frames per second (FPS). Must be less than
-     * or equal to 120. Will default to the input frame rate if larger than the
-     * input frame rate. The API will generate an output FPS that is divisible
-     * by the input FPS, and smaller or equal to the target FPS. See
+     * Required. The target video frame rate in frames per second (FPS). Must be
+     * less than or equal to 120. Will default to the input frame rate if larger
+     * than the input frame rate. The API will generate an output FPS that is
+     * divisible by the input FPS, and smaller or equal to the target FPS. See
      * [Calculating frame
      * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
      * more information.
@@ -4194,8 +4194,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The video bitrate in bits per second. The minimum value is 1,000.
-     * The maximum value is 800,000,000.
+     * Required. The video bitrate in bits per second. The minimum value is
+     * 1,000. The maximum value is 800,000,000.
      * </pre>
      *
      * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4767,10 +4767,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The target video frame rate in frames per second (FPS). Must be less than
-     * or equal to 120. Will default to the input frame rate if larger than the
-     * input frame rate. The API will generate an output FPS that is divisible
-     * by the input FPS, and smaller or equal to the target FPS. See
+     * Required. The target video frame rate in frames per second (FPS). Must be
+     * less than or equal to 120. Will default to the input frame rate if larger
+     * than the input frame rate. The API will generate an output FPS that is
+     * divisible by the input FPS, and smaller or equal to the target FPS. See
      * [Calculating frame
      * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
      * more information.
@@ -4791,8 +4791,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The video bitrate in bits per second. The minimum value is 1,000.
-     * The maximum value is 800,000,000.
+     * Required. The video bitrate in bits per second. The minimum value is
+     * 1,000. The maximum value is 800,000,000.
      * </pre>
      *
      * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -6372,10 +6372,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The target video frame rate in frames per second (FPS). Must be less than
-       * or equal to 120. Will default to the input frame rate if larger than the
-       * input frame rate. The API will generate an output FPS that is divisible
-       * by the input FPS, and smaller or equal to the target FPS. See
+       * Required. The target video frame rate in frames per second (FPS). Must be
+       * less than or equal to 120. Will default to the input frame rate if larger
+       * than the input frame rate. The API will generate an output FPS that is
+       * divisible by the input FPS, and smaller or equal to the target FPS. See
        * [Calculating frame
        * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
        * more information.
@@ -6393,10 +6393,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The target video frame rate in frames per second (FPS). Must be less than
-       * or equal to 120. Will default to the input frame rate if larger than the
-       * input frame rate. The API will generate an output FPS that is divisible
-       * by the input FPS, and smaller or equal to the target FPS. See
+       * Required. The target video frame rate in frames per second (FPS). Must be
+       * less than or equal to 120. Will default to the input frame rate if larger
+       * than the input frame rate. The API will generate an output FPS that is
+       * divisible by the input FPS, and smaller or equal to the target FPS. See
        * [Calculating frame
        * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
        * more information.
@@ -6418,10 +6418,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The target video frame rate in frames per second (FPS). Must be less than
-       * or equal to 120. Will default to the input frame rate if larger than the
-       * input frame rate. The API will generate an output FPS that is divisible
-       * by the input FPS, and smaller or equal to the target FPS. See
+       * Required. The target video frame rate in frames per second (FPS). Must be
+       * less than or equal to 120. Will default to the input frame rate if larger
+       * than the input frame rate. The API will generate an output FPS that is
+       * divisible by the input FPS, and smaller or equal to the target FPS. See
        * [Calculating frame
        * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
        * more information.
@@ -6443,8 +6443,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The video bitrate in bits per second. The minimum value is 1,000.
-       * The maximum value is 800,000,000.
+       * Required. The video bitrate in bits per second. The minimum value is
+       * 1,000. The maximum value is 800,000,000.
        * </pre>
        *
        * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -6459,8 +6459,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The video bitrate in bits per second. The minimum value is 1,000.
-       * The maximum value is 800,000,000.
+       * Required. The video bitrate in bits per second. The minimum value is
+       * 1,000. The maximum value is 800,000,000.
        * </pre>
        *
        * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -6479,8 +6479,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The video bitrate in bits per second. The minimum value is 1,000.
-       * The maximum value is 800,000,000.
+       * Required. The video bitrate in bits per second. The minimum value is
+       * 1,000. The maximum value is 800,000,000.
        * </pre>
        *
        * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -8139,10 +8139,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The target video frame rate in frames per second (FPS). Must be less than
-     * or equal to 120. Will default to the input frame rate if larger than the
-     * input frame rate. The API will generate an output FPS that is divisible
-     * by the input FPS, and smaller or equal to the target FPS. See
+     * Required. The target video frame rate in frames per second (FPS). Must be
+     * less than or equal to 120. Will default to the input frame rate if larger
+     * than the input frame rate. The API will generate an output FPS that is
+     * divisible by the input FPS, and smaller or equal to the target FPS. See
      * [Calculating frame
      * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
      * more information.
@@ -8158,8 +8158,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The video bitrate in bits per second. The minimum value is 1,000.
-     * The maximum value is 480,000,000.
+     * Required. The video bitrate in bits per second. The minimum value is
+     * 1,000. The maximum value is 480,000,000.
      * </pre>
      *
      * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -8531,10 +8531,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The target video frame rate in frames per second (FPS). Must be less than
-     * or equal to 120. Will default to the input frame rate if larger than the
-     * input frame rate. The API will generate an output FPS that is divisible
-     * by the input FPS, and smaller or equal to the target FPS. See
+     * Required. The target video frame rate in frames per second (FPS). Must be
+     * less than or equal to 120. Will default to the input frame rate if larger
+     * than the input frame rate. The API will generate an output FPS that is
+     * divisible by the input FPS, and smaller or equal to the target FPS. See
      * [Calculating frame
      * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
      * more information.
@@ -8555,8 +8555,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The video bitrate in bits per second. The minimum value is 1,000.
-     * The maximum value is 480,000,000.
+     * Required. The video bitrate in bits per second. The minimum value is
+     * 1,000. The maximum value is 480,000,000.
      * </pre>
      *
      * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -9645,10 +9645,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The target video frame rate in frames per second (FPS). Must be less than
-       * or equal to 120. Will default to the input frame rate if larger than the
-       * input frame rate. The API will generate an output FPS that is divisible
-       * by the input FPS, and smaller or equal to the target FPS. See
+       * Required. The target video frame rate in frames per second (FPS). Must be
+       * less than or equal to 120. Will default to the input frame rate if larger
+       * than the input frame rate. The API will generate an output FPS that is
+       * divisible by the input FPS, and smaller or equal to the target FPS. See
        * [Calculating frame
        * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
        * more information.
@@ -9666,10 +9666,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The target video frame rate in frames per second (FPS). Must be less than
-       * or equal to 120. Will default to the input frame rate if larger than the
-       * input frame rate. The API will generate an output FPS that is divisible
-       * by the input FPS, and smaller or equal to the target FPS. See
+       * Required. The target video frame rate in frames per second (FPS). Must be
+       * less than or equal to 120. Will default to the input frame rate if larger
+       * than the input frame rate. The API will generate an output FPS that is
+       * divisible by the input FPS, and smaller or equal to the target FPS. See
        * [Calculating frame
        * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
        * more information.
@@ -9691,10 +9691,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The target video frame rate in frames per second (FPS). Must be less than
-       * or equal to 120. Will default to the input frame rate if larger than the
-       * input frame rate. The API will generate an output FPS that is divisible
-       * by the input FPS, and smaller or equal to the target FPS. See
+       * Required. The target video frame rate in frames per second (FPS). Must be
+       * less than or equal to 120. Will default to the input frame rate if larger
+       * than the input frame rate. The API will generate an output FPS that is
+       * divisible by the input FPS, and smaller or equal to the target FPS. See
        * [Calculating frame
        * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
        * more information.
@@ -9716,8 +9716,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The video bitrate in bits per second. The minimum value is 1,000.
-       * The maximum value is 480,000,000.
+       * Required. The video bitrate in bits per second. The minimum value is
+       * 1,000. The maximum value is 480,000,000.
        * </pre>
        *
        * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -9732,8 +9732,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The video bitrate in bits per second. The minimum value is 1,000.
-       * The maximum value is 480,000,000.
+       * Required. The video bitrate in bits per second. The minimum value is
+       * 1,000. The maximum value is 480,000,000.
        * </pre>
        *
        * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -9752,8 +9752,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The video bitrate in bits per second. The minimum value is 1,000.
-       * The maximum value is 480,000,000.
+       * Required. The video bitrate in bits per second. The minimum value is
+       * 1,000. The maximum value is 480,000,000.
        * </pre>
        *
        * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>

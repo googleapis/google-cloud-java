@@ -385,27 +385,29 @@ public final class ResourcesProto {
           + "\n\017gop_frame_count\030\010 \001(\005H\000\0221\n\014gop_duratio"
           + "n\030\t \001(\0132\031.google.protobuf.DurationH\000\022\017\n\007"
           + "profile\030\n \001(\tB\n\n\010gop_modeB\020\n\016codec_setti"
-          + "ngs\"\361\002\n\013AudioStream\022\r\n\005codec\030\001 \001(\t\022\030\n\013bi"
+          + "ngs\"\236\003\n\013AudioStream\022\r\n\005codec\030\001 \001(\t\022\030\n\013bi"
           + "trate_bps\030\002 \001(\005B\003\340A\002\022\025\n\rchannel_count\030\003 "
           + "\001(\005\022\026\n\016channel_layout\030\004 \003(\t\022K\n\007mapping\030\005"
           + " \003(\0132:.google.cloud.video.transcoder.v1."
           + "AudioStream.AudioMapping\022\031\n\021sample_rate_"
-          + "hertz\030\006 \001(\005\032\241\001\n\014AudioMapping\022\025\n\010atom_key"
-          + "\030\001 \001(\tB\003\340A\002\022\026\n\tinput_key\030\002 \001(\tB\003\340A\002\022\030\n\013i"
-          + "nput_track\030\003 \001(\005B\003\340A\002\022\032\n\rinput_channel\030\004"
-          + " \001(\005B\003\340A\002\022\033\n\016output_channel\030\005 \001(\005B\003\340A\002\022\017"
-          + "\n\007gain_db\030\006 \001(\001\"\276\001\n\nTextStream\022\r\n\005codec\030"
-          + "\001 \001(\t\022I\n\007mapping\030\003 \003(\01328.google.cloud.vi"
-          + "deo.transcoder.v1.TextStream.TextMapping"
-          + "\032V\n\013TextMapping\022\025\n\010atom_key\030\001 \001(\tB\003\340A\002\022\026"
-          + "\n\tinput_key\030\002 \001(\tB\003\340A\002\022\030\n\013input_track\030\003 "
-          + "\001(\005B\003\340A\002\"h\n\017SegmentSettings\0223\n\020segment_d"
-          + "uration\030\001 \001(\0132\031.google.protobuf.Duration"
-          + "\022 \n\023individual_segments\030\003 \001(\010B\003\340A\002B~\n$co"
-          + "m.google.cloud.video.transcoder.v1B\016Reso"
-          + "urcesProtoP\001ZDcloud.google.com/go/video/"
-          + "transcoder/apiv1/transcoderpb;transcoder"
-          + "pbb\006proto3"
+          + "hertz\030\006 \001(\005\022\025\n\rlanguage_code\030\007 \001(\t\022\024\n\014di"
+          + "splay_name\030\010 \001(\t\032\241\001\n\014AudioMapping\022\025\n\010ato"
+          + "m_key\030\001 \001(\tB\003\340A\002\022\026\n\tinput_key\030\002 \001(\tB\003\340A\002"
+          + "\022\030\n\013input_track\030\003 \001(\005B\003\340A\002\022\032\n\rinput_chan"
+          + "nel\030\004 \001(\005B\003\340A\002\022\033\n\016output_channel\030\005 \001(\005B\003"
+          + "\340A\002\022\017\n\007gain_db\030\006 \001(\001\"\353\001\n\nTextStream\022\r\n\005c"
+          + "odec\030\001 \001(\t\022\025\n\rlanguage_code\030\002 \001(\t\022I\n\007map"
+          + "ping\030\003 \003(\01328.google.cloud.video.transcod"
+          + "er.v1.TextStream.TextMapping\022\024\n\014display_"
+          + "name\030\004 \001(\t\032V\n\013TextMapping\022\025\n\010atom_key\030\001 "
+          + "\001(\tB\003\340A\002\022\026\n\tinput_key\030\002 \001(\tB\003\340A\002\022\030\n\013inpu"
+          + "t_track\030\003 \001(\005B\003\340A\002\"h\n\017SegmentSettings\0223\n"
+          + "\020segment_duration\030\001 \001(\0132\031.google.protobu"
+          + "f.Duration\022 \n\023individual_segments\030\003 \001(\010B"
+          + "\003\340A\002B~\n$com.google.cloud.video.transcode"
+          + "r.v1B\016ResourcesProtoP\001ZDcloud.google.com"
+          + "/go/video/transcoder/apiv1/transcoderpb;"
+          + "transcoderpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -810,7 +812,14 @@ public final class ResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_transcoder_v1_AudioStream_descriptor,
             new java.lang.String[] {
-              "Codec", "BitrateBps", "ChannelCount", "ChannelLayout", "Mapping", "SampleRateHertz",
+              "Codec",
+              "BitrateBps",
+              "ChannelCount",
+              "ChannelLayout",
+              "Mapping",
+              "SampleRateHertz",
+              "LanguageCode",
+              "DisplayName",
             });
     internal_static_google_cloud_video_transcoder_v1_AudioStream_AudioMapping_descriptor =
         internal_static_google_cloud_video_transcoder_v1_AudioStream_descriptor
@@ -828,7 +837,7 @@ public final class ResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_transcoder_v1_TextStream_descriptor,
             new java.lang.String[] {
-              "Codec", "Mapping",
+              "Codec", "LanguageCode", "Mapping", "DisplayName",
             });
     internal_static_google_cloud_video_transcoder_v1_TextStream_TextMapping_descriptor =
         internal_static_google_cloud_video_transcoder_v1_TextStream_descriptor

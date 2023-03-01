@@ -66,7 +66,8 @@ public interface AudioStreamOrBuilder
    *
    *
    * <pre>
-   * Required. Audio bitrate in bits per second. Must be between 1 and 10,000,000.
+   * Required. Audio bitrate in bits per second. Must be between 1 and
+   * 10,000,000.
    * </pre>
    *
    * <code>int32 bitrate_bps = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -240,4 +241,60 @@ public interface AudioStreamOrBuilder
    * @return The sampleRateHertz.
    */
   int getSampleRateHertz();
+
+  /**
+   *
+   *
+   * <pre>
+   * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
+   * information, see
+   * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+   * </pre>
+   *
+   * <code>string language_code = 7;</code>
+   *
+   * @return The languageCode.
+   */
+  java.lang.String getLanguageCode();
+  /**
+   *
+   *
+   * <pre>
+   * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
+   * information, see
+   * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+   * </pre>
+   *
+   * <code>string language_code = 7;</code>
+   *
+   * @return The bytes for languageCode.
+   */
+  com.google.protobuf.ByteString getLanguageCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The name for this particular audio stream that
+   * will be added to the HLS/DASH manifest.
+   * </pre>
+   *
+   * <code>string display_name = 8;</code>
+   *
+   * @return The displayName.
+   */
+  java.lang.String getDisplayName();
+  /**
+   *
+   *
+   * <pre>
+   * The name for this particular audio stream that
+   * will be added to the HLS/DASH manifest.
+   * </pre>
+   *
+   * <code>string display_name = 8;</code>
+   *
+   * @return The bytes for displayName.
+   */
+  com.google.protobuf.ByteString getDisplayNameBytes();
 }

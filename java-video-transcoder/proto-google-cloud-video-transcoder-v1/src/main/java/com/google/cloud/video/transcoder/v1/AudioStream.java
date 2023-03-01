@@ -41,6 +41,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
     codec_ = "";
     channelLayout_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     mapping_ = java.util.Collections.emptyList();
+    languageCode_ = "";
+    displayName_ = "";
   }
 
   @java.lang.Override
@@ -78,8 +80,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The `EditAtom.key` that references the atom with audio inputs in the
-     * `Job.edit_list`.
+     * Required. The `EditAtom.key` that references the atom with audio inputs
+     * in the `Job.edit_list`.
      * </pre>
      *
      * <code>string atom_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -91,8 +93,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The `EditAtom.key` that references the atom with audio inputs in the
-     * `Job.edit_list`.
+     * Required. The `EditAtom.key` that references the atom with audio inputs
+     * in the `Job.edit_list`.
      * </pre>
      *
      * <code>string atom_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -237,8 +239,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The `EditAtom.key` that references the atom with audio inputs in the
-     * `Job.edit_list`.
+     * Required. The `EditAtom.key` that references the atom with audio inputs
+     * in the `Job.edit_list`.
      * </pre>
      *
      * <code>string atom_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -261,8 +263,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The `EditAtom.key` that references the atom with audio inputs in the
-     * `Job.edit_list`.
+     * Required. The `EditAtom.key` that references the atom with audio inputs
+     * in the `Job.edit_list`.
      * </pre>
      *
      * <code>string atom_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -878,8 +880,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The `EditAtom.key` that references the atom with audio inputs in the
-       * `Job.edit_list`.
+       * Required. The `EditAtom.key` that references the atom with audio inputs
+       * in the `Job.edit_list`.
        * </pre>
        *
        * <code>string atom_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -901,8 +903,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The `EditAtom.key` that references the atom with audio inputs in the
-       * `Job.edit_list`.
+       * Required. The `EditAtom.key` that references the atom with audio inputs
+       * in the `Job.edit_list`.
        * </pre>
        *
        * <code>string atom_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -924,8 +926,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The `EditAtom.key` that references the atom with audio inputs in the
-       * `Job.edit_list`.
+       * Required. The `EditAtom.key` that references the atom with audio inputs
+       * in the `Job.edit_list`.
        * </pre>
        *
        * <code>string atom_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -946,8 +948,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The `EditAtom.key` that references the atom with audio inputs in the
-       * `Job.edit_list`.
+       * Required. The `EditAtom.key` that references the atom with audio inputs
+       * in the `Job.edit_list`.
        * </pre>
        *
        * <code>string atom_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -964,8 +966,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The `EditAtom.key` that references the atom with audio inputs in the
-       * `Job.edit_list`.
+       * Required. The `EditAtom.key` that references the atom with audio inputs
+       * in the `Job.edit_list`.
        * </pre>
        *
        * <code>string atom_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1443,7 +1445,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Audio bitrate in bits per second. Must be between 1 and 10,000,000.
+   * Required. Audio bitrate in bits per second. Must be between 1 and
+   * 10,000,000.
    * </pre>
    *
    * <code>int32 bitrate_bps = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1664,6 +1667,114 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
     return sampleRateHertz_;
   }
 
+  public static final int LANGUAGE_CODE_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
+   * information, see
+   * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+   * </pre>
+   *
+   * <code>string language_code = 7;</code>
+   *
+   * @return The languageCode.
+   */
+  @java.lang.Override
+  public java.lang.String getLanguageCode() {
+    java.lang.Object ref = languageCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      languageCode_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
+   * information, see
+   * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+   * </pre>
+   *
+   * <code>string language_code = 7;</code>
+   *
+   * @return The bytes for languageCode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLanguageCodeBytes() {
+    java.lang.Object ref = languageCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      languageCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DISPLAY_NAME_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The name for this particular audio stream that
+   * will be added to the HLS/DASH manifest.
+   * </pre>
+   *
+   * <code>string display_name = 8;</code>
+   *
+   * @return The displayName.
+   */
+  @java.lang.Override
+  public java.lang.String getDisplayName() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      displayName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The name for this particular audio stream that
+   * will be added to the HLS/DASH manifest.
+   * </pre>
+   *
+   * <code>string display_name = 8;</code>
+   *
+   * @return The bytes for displayName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      displayName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1695,6 +1806,12 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
     }
     if (sampleRateHertz_ != 0) {
       output.writeInt32(6, sampleRateHertz_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, languageCode_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, displayName_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1728,6 +1845,12 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
     if (sampleRateHertz_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(6, sampleRateHertz_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, languageCode_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, displayName_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1750,6 +1873,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
     if (!getChannelLayoutList().equals(other.getChannelLayoutList())) return false;
     if (!getMappingList().equals(other.getMappingList())) return false;
     if (getSampleRateHertz() != other.getSampleRateHertz()) return false;
+    if (!getLanguageCode().equals(other.getLanguageCode())) return false;
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1777,6 +1902,10 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + SAMPLE_RATE_HERTZ_FIELD_NUMBER;
     hash = (53 * hash) + getSampleRateHertz();
+    hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getLanguageCode().hashCode();
+    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getDisplayName().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1929,6 +2058,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000010);
       sampleRateHertz_ = 0;
+      languageCode_ = "";
+      displayName_ = "";
       return this;
     }
 
@@ -1995,6 +2126,12 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.sampleRateHertz_ = sampleRateHertz_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.displayName_ = displayName_;
       }
     }
 
@@ -2095,6 +2232,16 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       if (other.getSampleRateHertz() != 0) {
         setSampleRateHertz(other.getSampleRateHertz());
       }
+      if (!other.getLanguageCode().isEmpty()) {
+        languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      if (!other.getDisplayName().isEmpty()) {
+        displayName_ = other.displayName_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2166,6 +2313,18 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 48
+            case 58:
+              {
+                languageCode_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
+            case 66:
+              {
+                displayName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2331,7 +2490,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Audio bitrate in bits per second. Must be between 1 and 10,000,000.
+     * Required. Audio bitrate in bits per second. Must be between 1 and
+     * 10,000,000.
      * </pre>
      *
      * <code>int32 bitrate_bps = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2346,7 +2506,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Audio bitrate in bits per second. Must be between 1 and 10,000,000.
+     * Required. Audio bitrate in bits per second. Must be between 1 and
+     * 10,000,000.
      * </pre>
      *
      * <code>int32 bitrate_bps = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2365,7 +2526,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Audio bitrate in bits per second. Must be between 1 and 10,000,000.
+     * Required. Audio bitrate in bits per second. Must be between 1 and
+     * 10,000,000.
      * </pre>
      *
      * <code>int32 bitrate_bps = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3096,6 +3258,233 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSampleRateHertz() {
       bitField0_ = (bitField0_ & ~0x00000020);
       sampleRateHertz_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object languageCode_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
+     * information, see
+     * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+     * </pre>
+     *
+     * <code>string language_code = 7;</code>
+     *
+     * @return The languageCode.
+     */
+    public java.lang.String getLanguageCode() {
+      java.lang.Object ref = languageCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        languageCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
+     * information, see
+     * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+     * </pre>
+     *
+     * <code>string language_code = 7;</code>
+     *
+     * @return The bytes for languageCode.
+     */
+    public com.google.protobuf.ByteString getLanguageCodeBytes() {
+      java.lang.Object ref = languageCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        languageCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
+     * information, see
+     * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+     * </pre>
+     *
+     * <code>string language_code = 7;</code>
+     *
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageCode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      languageCode_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
+     * information, see
+     * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+     * </pre>
+     *
+     * <code>string language_code = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLanguageCode() {
+      languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
+     * information, see
+     * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+     * </pre>
+     *
+     * <code>string language_code = 7;</code>
+     *
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      languageCode_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object displayName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name for this particular audio stream that
+     * will be added to the HLS/DASH manifest.
+     * </pre>
+     *
+     * <code>string display_name = 8;</code>
+     *
+     * @return The displayName.
+     */
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name for this particular audio stream that
+     * will be added to the HLS/DASH manifest.
+     * </pre>
+     *
+     * <code>string display_name = 8;</code>
+     *
+     * @return The bytes for displayName.
+     */
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name for this particular audio stream that
+     * will be added to the HLS/DASH manifest.
+     * </pre>
+     *
+     * <code>string display_name = 8;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      displayName_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name for this particular audio stream that
+     * will be added to the HLS/DASH manifest.
+     * </pre>
+     *
+     * <code>string display_name = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisplayName() {
+      displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name for this particular audio stream that
+     * will be added to the HLS/DASH manifest.
+     * </pre>
+     *
+     * <code>string display_name = 8;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      displayName_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

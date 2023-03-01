@@ -328,7 +328,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. List of user given `MuxStream.key`s that should appear in this manifest.
+   * Required. List of user given `MuxStream.key`s that should appear in this
+   * manifest.
    * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
    * and `.m3u8` extension is generated for each element of the
    * `Manifest.mux_streams`.
@@ -345,7 +346,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. List of user given `MuxStream.key`s that should appear in this manifest.
+   * Required. List of user given `MuxStream.key`s that should appear in this
+   * manifest.
    * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
    * and `.m3u8` extension is generated for each element of the
    * `Manifest.mux_streams`.
@@ -362,7 +364,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. List of user given `MuxStream.key`s that should appear in this manifest.
+   * Required. List of user given `MuxStream.key`s that should appear in this
+   * manifest.
    * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
    * and `.m3u8` extension is generated for each element of the
    * `Manifest.mux_streams`.
@@ -380,7 +383,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. List of user given `MuxStream.key`s that should appear in this manifest.
+   * Required. List of user given `MuxStream.key`s that should appear in this
+   * manifest.
    * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
    * and `.m3u8` extension is generated for each element of the
    * `Manifest.mux_streams`.
@@ -1032,7 +1036,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of user given `MuxStream.key`s that should appear in this manifest.
+     * Required. List of user given `MuxStream.key`s that should appear in this
+     * manifest.
      * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
      * and `.m3u8` extension is generated for each element of the
      * `Manifest.mux_streams`.
@@ -1049,7 +1054,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of user given `MuxStream.key`s that should appear in this manifest.
+     * Required. List of user given `MuxStream.key`s that should appear in this
+     * manifest.
      * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
      * and `.m3u8` extension is generated for each element of the
      * `Manifest.mux_streams`.
@@ -1066,7 +1072,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of user given `MuxStream.key`s that should appear in this manifest.
+     * Required. List of user given `MuxStream.key`s that should appear in this
+     * manifest.
      * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
      * and `.m3u8` extension is generated for each element of the
      * `Manifest.mux_streams`.
@@ -1084,7 +1091,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of user given `MuxStream.key`s that should appear in this manifest.
+     * Required. List of user given `MuxStream.key`s that should appear in this
+     * manifest.
      * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
      * and `.m3u8` extension is generated for each element of the
      * `Manifest.mux_streams`.
@@ -1102,7 +1110,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of user given `MuxStream.key`s that should appear in this manifest.
+     * Required. List of user given `MuxStream.key`s that should appear in this
+     * manifest.
      * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
      * and `.m3u8` extension is generated for each element of the
      * `Manifest.mux_streams`.
@@ -1127,7 +1136,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of user given `MuxStream.key`s that should appear in this manifest.
+     * Required. List of user given `MuxStream.key`s that should appear in this
+     * manifest.
      * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
      * and `.m3u8` extension is generated for each element of the
      * `Manifest.mux_streams`.
@@ -1151,7 +1161,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of user given `MuxStream.key`s that should appear in this manifest.
+     * Required. List of user given `MuxStream.key`s that should appear in this
+     * manifest.
      * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
      * and `.m3u8` extension is generated for each element of the
      * `Manifest.mux_streams`.
@@ -1172,7 +1183,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of user given `MuxStream.key`s that should appear in this manifest.
+     * Required. List of user given `MuxStream.key`s that should appear in this
+     * manifest.
      * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
      * and `.m3u8` extension is generated for each element of the
      * `Manifest.mux_streams`.
@@ -1192,7 +1204,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of user given `MuxStream.key`s that should appear in this manifest.
+     * Required. List of user given `MuxStream.key`s that should appear in this
+     * manifest.
      * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
      * and `.m3u8` extension is generated for each element of the
      * `Manifest.mux_streams`.

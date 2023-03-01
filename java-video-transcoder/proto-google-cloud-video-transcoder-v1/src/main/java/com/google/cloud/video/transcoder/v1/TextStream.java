@@ -39,7 +39,9 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
 
   private TextStream() {
     codec_ = "";
+    languageCode_ = "";
     mapping_ = java.util.Collections.emptyList();
+    displayName_ = "";
   }
 
   @java.lang.Override
@@ -1104,6 +1106,61 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int LANGUAGE_CODE_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
+   * information, see
+   * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+   * </pre>
+   *
+   * <code>string language_code = 2;</code>
+   *
+   * @return The languageCode.
+   */
+  @java.lang.Override
+  public java.lang.String getLanguageCode() {
+    java.lang.Object ref = languageCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      languageCode_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
+   * information, see
+   * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+   * </pre>
+   *
+   * <code>string language_code = 2;</code>
+   *
+   * @return The bytes for languageCode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLanguageCodeBytes() {
+    java.lang.Object ref = languageCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      languageCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int MAPPING_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
@@ -1178,6 +1235,59 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
     return mapping_.get(index);
   }
 
+  public static final int DISPLAY_NAME_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The name for this particular text stream that
+   * will be added to the HLS/DASH manifest.
+   * </pre>
+   *
+   * <code>string display_name = 4;</code>
+   *
+   * @return The displayName.
+   */
+  @java.lang.Override
+  public java.lang.String getDisplayName() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      displayName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The name for this particular text stream that
+   * will be added to the HLS/DASH manifest.
+   * </pre>
+   *
+   * <code>string display_name = 4;</code>
+   *
+   * @return The bytes for displayName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      displayName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1195,8 +1305,14 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(codec_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, codec_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, languageCode_);
+    }
     for (int i = 0; i < mapping_.size(); i++) {
       output.writeMessage(3, mapping_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, displayName_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1210,8 +1326,14 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(codec_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, codec_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, languageCode_);
+    }
     for (int i = 0; i < mapping_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, mapping_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, displayName_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1230,7 +1352,9 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.video.transcoder.v1.TextStream) obj;
 
     if (!getCodec().equals(other.getCodec())) return false;
+    if (!getLanguageCode().equals(other.getLanguageCode())) return false;
     if (!getMappingList().equals(other.getMappingList())) return false;
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1244,10 +1368,14 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + CODEC_FIELD_NUMBER;
     hash = (53 * hash) + getCodec().hashCode();
+    hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getLanguageCode().hashCode();
     if (getMappingCount() > 0) {
       hash = (37 * hash) + MAPPING_FIELD_NUMBER;
       hash = (53 * hash) + getMappingList().hashCode();
     }
+    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getDisplayName().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1388,13 +1516,15 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       codec_ = "";
+      languageCode_ = "";
       if (mappingBuilder_ == null) {
         mapping_ = java.util.Collections.emptyList();
       } else {
         mapping_ = null;
         mappingBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
+      displayName_ = "";
       return this;
     }
 
@@ -1433,9 +1563,9 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
     private void buildPartialRepeatedFields(
         com.google.cloud.video.transcoder.v1.TextStream result) {
       if (mappingBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           mapping_ = java.util.Collections.unmodifiableList(mapping_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.mapping_ = mapping_;
       } else {
@@ -1447,6 +1577,12 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.codec_ = codec_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.displayName_ = displayName_;
       }
     }
 
@@ -1501,11 +1637,16 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getLanguageCode().isEmpty()) {
+        languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       if (mappingBuilder_ == null) {
         if (!other.mapping_.isEmpty()) {
           if (mapping_.isEmpty()) {
             mapping_ = other.mapping_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureMappingIsMutable();
             mapping_.addAll(other.mapping_);
@@ -1518,7 +1659,7 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
             mappingBuilder_.dispose();
             mappingBuilder_ = null;
             mapping_ = other.mapping_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             mappingBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMappingFieldBuilder()
@@ -1527,6 +1668,11 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
             mappingBuilder_.addAllMessages(other.mapping_);
           }
         }
+      }
+      if (!other.getDisplayName().isEmpty()) {
+        displayName_ = other.displayName_;
+        bitField0_ |= 0x00000008;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1560,6 +1706,12 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                languageCode_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             case 26:
               {
                 com.google.cloud.video.transcoder.v1.TextStream.TextMapping m =
@@ -1574,6 +1726,12 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 26
+            case 34:
+              {
+                displayName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1729,15 +1887,131 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object languageCode_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
+     * information, see
+     * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+     * </pre>
+     *
+     * <code>string language_code = 2;</code>
+     *
+     * @return The languageCode.
+     */
+    public java.lang.String getLanguageCode() {
+      java.lang.Object ref = languageCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        languageCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
+     * information, see
+     * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+     * </pre>
+     *
+     * <code>string language_code = 2;</code>
+     *
+     * @return The bytes for languageCode.
+     */
+    public com.google.protobuf.ByteString getLanguageCodeBytes() {
+      java.lang.Object ref = languageCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        languageCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
+     * information, see
+     * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+     * </pre>
+     *
+     * <code>string language_code = 2;</code>
+     *
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageCode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      languageCode_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
+     * information, see
+     * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+     * </pre>
+     *
+     * <code>string language_code = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLanguageCode() {
+      languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
+     * information, see
+     * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+     * </pre>
+     *
+     * <code>string language_code = 2;</code>
+     *
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      languageCode_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.cloud.video.transcoder.v1.TextStream.TextMapping> mapping_ =
         java.util.Collections.emptyList();
 
     private void ensureMappingIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         mapping_ =
             new java.util.ArrayList<com.google.cloud.video.transcoder.v1.TextStream.TextMapping>(
                 mapping_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1959,7 +2233,7 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
     public Builder clearMapping() {
       if (mappingBuilder_ == null) {
         mapping_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         mappingBuilder_.clear();
@@ -2088,10 +2362,121 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.video.transcoder.v1.TextStream.TextMapping,
                 com.google.cloud.video.transcoder.v1.TextStream.TextMapping.Builder,
                 com.google.cloud.video.transcoder.v1.TextStream.TextMappingOrBuilder>(
-                mapping_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                mapping_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         mapping_ = null;
       }
       return mappingBuilder_;
+    }
+
+    private java.lang.Object displayName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name for this particular text stream that
+     * will be added to the HLS/DASH manifest.
+     * </pre>
+     *
+     * <code>string display_name = 4;</code>
+     *
+     * @return The displayName.
+     */
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name for this particular text stream that
+     * will be added to the HLS/DASH manifest.
+     * </pre>
+     *
+     * <code>string display_name = 4;</code>
+     *
+     * @return The bytes for displayName.
+     */
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name for this particular text stream that
+     * will be added to the HLS/DASH manifest.
+     * </pre>
+     *
+     * <code>string display_name = 4;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      displayName_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name for this particular text stream that
+     * will be added to the HLS/DASH manifest.
+     * </pre>
+     *
+     * <code>string display_name = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisplayName() {
+      displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name for this particular text stream that
+     * will be added to the HLS/DASH manifest.
+     * </pre>
+     *
+     * <code>string display_name = 4;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      displayName_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

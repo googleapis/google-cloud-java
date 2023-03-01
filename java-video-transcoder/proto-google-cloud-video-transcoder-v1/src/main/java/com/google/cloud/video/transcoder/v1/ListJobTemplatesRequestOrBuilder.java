@@ -27,8 +27,8 @@ public interface ListJobTemplatesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent location from which to retrieve the collection of job templates.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The parent location from which to retrieve the collection of job
+   * templates. Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface ListJobTemplatesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent location from which to retrieve the collection of job templates.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The parent location from which to retrieve the collection of job
+   * templates. Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>

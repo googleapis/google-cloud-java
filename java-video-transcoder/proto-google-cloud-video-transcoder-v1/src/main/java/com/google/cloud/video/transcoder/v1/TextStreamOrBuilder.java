@@ -64,6 +64,35 @@ public interface TextStreamOrBuilder
    *
    *
    * <pre>
+   * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
+   * information, see
+   * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+   * </pre>
+   *
+   * <code>string language_code = 2;</code>
+   *
+   * @return The languageCode.
+   */
+  java.lang.String getLanguageCode();
+  /**
+   *
+   *
+   * <pre>
+   * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
+   * information, see
+   * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+   * </pre>
+   *
+   * <code>string language_code = 2;</code>
+   *
+   * @return The bytes for languageCode.
+   */
+  com.google.protobuf.ByteString getLanguageCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
    * </pre>
    *
@@ -112,4 +141,31 @@ public interface TextStreamOrBuilder
    */
   com.google.cloud.video.transcoder.v1.TextStream.TextMappingOrBuilder getMappingOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The name for this particular text stream that
+   * will be added to the HLS/DASH manifest.
+   * </pre>
+   *
+   * <code>string display_name = 4;</code>
+   *
+   * @return The displayName.
+   */
+  java.lang.String getDisplayName();
+  /**
+   *
+   *
+   * <pre>
+   * The name for this particular text stream that
+   * will be added to the HLS/DASH manifest.
+   * </pre>
+   *
+   * <code>string display_name = 4;</code>
+   *
+   * @return The bytes for displayName.
+   */
+  com.google.protobuf.ByteString getDisplayNameBytes();
 }

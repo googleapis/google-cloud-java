@@ -78,8 +78,8 @@ public final class ListJobTemplatesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The parent location from which to retrieve the collection of job templates.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The parent location from which to retrieve the collection of job
+   * templates. Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -104,8 +104,8 @@ public final class ListJobTemplatesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The parent location from which to retrieve the collection of job templates.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The parent location from which to retrieve the collection of job
+   * templates. Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -749,8 +749,8 @@ public final class ListJobTemplatesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The parent location from which to retrieve the collection of job templates.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The parent location from which to retrieve the collection of job
+     * templates. Format: `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -774,8 +774,8 @@ public final class ListJobTemplatesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The parent location from which to retrieve the collection of job templates.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The parent location from which to retrieve the collection of job
+     * templates. Format: `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -799,8 +799,8 @@ public final class ListJobTemplatesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The parent location from which to retrieve the collection of job templates.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The parent location from which to retrieve the collection of job
+     * templates. Format: `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -823,8 +823,8 @@ public final class ListJobTemplatesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The parent location from which to retrieve the collection of job templates.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The parent location from which to retrieve the collection of job
+     * templates. Format: `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -843,8 +843,8 @@ public final class ListJobTemplatesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The parent location from which to retrieve the collection of job templates.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The parent location from which to retrieve the collection of job
+     * templates. Format: `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
