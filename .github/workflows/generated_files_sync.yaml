@@ -158,7 +158,17 @@ jobs:
         # In past, we published Java classes with wrong package names (google.)
         # due to improper java_package field in proto files (https://protobuf.dev/programming-guides/proto3/#options).
         # This check excludes these existing files.
-        invalid_files=$(find . -wholename '*main/java/google/*.java' \
+        
+        # java/com/google : This is the standard package
+        # samples         : Samples are not shipped as a library
+        # grafeas         : java-grafeas is known to have special package name
+        # cloud-build v2  : java_package was not configured when we published
+        #                   the Cloud Build V2 client library
+        # the rest        : the same as above
+        invalid_files=$(find . -wholename '*.java' \
+            |grep --invert-match 'java/com/google' \
+            |grep --invert-match samples \
+            |grep --invert-match grafeas \
             |grep --invert-match 'cloud-build.*v2' \
             |grep --invert-match 'google/monitoring/v3/DroppedLabelsOuterClass.java' \
             |grep --invert-match 'google/cloud/policytroubleshooter/v1/Explanations.java')
@@ -167,4 +177,5 @@ jobs:
           exit 1
         fi
         echo "No new invalid package names in Java files"
+        
 
