@@ -30,7 +30,6 @@ public class CreateDatasetAws {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "MY_PROJECT_ID";
     String datasetName = "MY_DATASET_NAME";
-    // Note: As of now location only supports aws-us-east-1
     String location = "aws-us-east-1";
     createDatasetAws(projectId, datasetName, location);
   }
