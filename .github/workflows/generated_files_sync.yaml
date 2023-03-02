@@ -165,7 +165,7 @@ jobs:
         # cloud-build v2  : java_package was not configured when we published
         #                   the Cloud Build V2 client library
         # the rest        : the same as above
-        invalid_files=$(find . -wholename '*.java' \
+        invalid_files=$(find . -name '*.java' \
             |grep --invert-match 'java/com/google' \
             |grep --invert-match samples \
             |grep --invert-match grafeas \
