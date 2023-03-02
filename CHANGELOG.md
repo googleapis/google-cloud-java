@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.33.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.33.0...v2.33.1) (2023-03-02)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.23.0 ([#2012](https://github.com/googleapis/java-bigquerystorage/issues/2012)) ([0651aa6](https://github.com/googleapis/java-bigquerystorage/commit/0651aa6f3e83da73da77ae2e9376f6203cd36338))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.4.0 ([#2024](https://github.com/googleapis/java-bigquerystorage/issues/2024)) ([9135769](https://github.com/googleapis/java-bigquerystorage/commit/91357697f61d3026ae3fb14605e9e3ee94b351d1))
+* Update dependency com.google.http-client:google-http-client to v1.43.0 ([#2018](https://github.com/googleapis/java-bigquerystorage/issues/2018)) ([6bccd9d](https://github.com/googleapis/java-bigquerystorage/commit/6bccd9d21698fa94645bfdda2e7d4e70af612d6b))
+* Update dependency org.json:json to v20230227 ([#2020](https://github.com/googleapis/java-bigquerystorage/issues/2020)) ([6d6bb76](https://github.com/googleapis/java-bigquerystorage/commit/6d6bb76188d4be6beec88c54946d6f9515962c55))
+
 ## [2.33.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.32.1...v2.33.0) (2023-03-01)
 
 
