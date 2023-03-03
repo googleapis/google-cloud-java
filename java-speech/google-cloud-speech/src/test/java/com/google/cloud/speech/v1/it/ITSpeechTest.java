@@ -53,7 +53,7 @@ public class ITSpeechTest {
                     .setMaxAttempts(5)
                     .setMaxRetryDelay(Duration.ofSeconds(5))
                     .build());
-    speechClient = SpeechClient.create();
+    speechClient = SpeechClient.create(settingsBuilder.build());
   }
 
   @AfterClass
