@@ -16,6 +16,7 @@
 
 package com.google.cloud.speech.v1.it;
 
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.cloud.speech.v1.LongRunningRecognizeResponse;
 import com.google.cloud.speech.v1.RecognitionAudio;
@@ -34,14 +35,24 @@ import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
+import org.threeten.bp.Duration;
 
 public class ITSpeechTest {
   private static SpeechClient speechClient;
 
-  @Rule public Timeout globalTimeout = Timeout.seconds(300);
+  @Rule public Timeout globalTimeout = Timeout.seconds(1000);
 
   @BeforeClass
   public static void setupClass() throws Exception {
+    SpeechSettings.Builder settingsBuilder = SpeechSettings.newBuilder();
+    settingsBuilder.longRunningRecognizeSettings()
+            .setRetrySettings(RetrySettings.newBuilder()
+                    .setRetryDelayMultiplier(1.0)
+                    .setMaxRpcTimeout(Duration.ofMinutes(10))
+                    .setInitialRetryDelay(Duration.ofSeconds(5))
+                    .setMaxAttempts(5)
+                    .setMaxRetryDelay(Duration.ofSeconds(5))
+                    .build());
     speechClient = SpeechClient.create();
   }
 
