@@ -43,7 +43,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-pubsub</artifactId>
-  <version>1.123.3</version>
+  <version>1.123.4</version>
 </dependency>
 
 ```
