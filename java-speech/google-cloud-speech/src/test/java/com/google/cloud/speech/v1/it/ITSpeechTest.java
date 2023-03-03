@@ -45,14 +45,16 @@ public class ITSpeechTest {
   @BeforeClass
   public static void setupClass() throws Exception {
     SpeechSettings.Builder settingsBuilder = SpeechSettings.newBuilder();
-    settingsBuilder.longRunningRecognizeSettings()
-            .setRetrySettings(RetrySettings.newBuilder()
-                    .setRetryDelayMultiplier(1.0)
-                    .setMaxRpcTimeout(Duration.ofMinutes(10))
-                    .setInitialRetryDelay(Duration.ofSeconds(5))
-                    .setMaxAttempts(5)
-                    .setMaxRetryDelay(Duration.ofSeconds(5))
-                    .build());
+    settingsBuilder
+        .longRunningRecognizeSettings()
+        .setRetrySettings(
+            RetrySettings.newBuilder()
+                .setRetryDelayMultiplier(1.0)
+                .setMaxRpcTimeout(Duration.ofMinutes(10))
+                .setInitialRetryDelay(Duration.ofSeconds(5))
+                .setMaxAttempts(5)
+                .setMaxRetryDelay(Duration.ofSeconds(5))
+                .build());
     speechClient = SpeechClient.create();
   }
 
