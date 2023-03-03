@@ -16,27 +16,29 @@ Java idiomatic client for [AlloyDB][product-docs].
 
 
 If you are using Maven, add this to your pom.xml file:
-
+<!--- {x-version-update-start:google-cloud-alloydb:released} -->
 
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-alloydb</artifactId>
-  <version>0.0.0</version>
+  <version>0.1.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-alloydb:0.0.0'
+implementation 'com.google.cloud:google-cloud-alloydb:0.1.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-alloydb" % "0.0.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-alloydb" % "0.1.0"
 ```
+<!--- {x-version-update-end} -->
+
 
 ## Authentication
 
