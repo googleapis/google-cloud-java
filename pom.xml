@@ -67,6 +67,7 @@
     <module>java-dataplex</module>
     <module>java-dataproc-metastore</module>
     <module>java-dataproc</module>
+    <module>java-datastore</module>
     <module>java-datastream</module>
     <module>java-debugger-client</module>
     <module>java-deploy</module>

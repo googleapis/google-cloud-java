@@ -387,6 +387,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-datastore-bom</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastore:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-datastream-bom</artifactId>
         <version>1.11.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastream:current} -->
         <type>pom</type>
@@ -1019,6 +1026,13 @@
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-workflows-bom</artifactId>
         <version>2.12.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-workflows:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-gapic-bom</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-gapic-bom:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
