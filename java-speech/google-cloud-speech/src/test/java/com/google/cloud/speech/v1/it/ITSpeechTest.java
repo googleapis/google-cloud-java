@@ -56,7 +56,7 @@ public class ITSpeechTest {
                 .setInitialRpcTimeout(Duration.ZERO)
                 .setRpcTimeoutMultiplier(1.0)
                 .setMaxRpcTimeout(Duration.ZERO)
-                .setTotalTimeout(Duration.ofHours(1))
+                .setTotalTimeout(Duration.ofMinutes(10))
                 .build());
     SpeechSettings.Builder settingsBuilder = SpeechSettings.newBuilder();
     settingsBuilder
