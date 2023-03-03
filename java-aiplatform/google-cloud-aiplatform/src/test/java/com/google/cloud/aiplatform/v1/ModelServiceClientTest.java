@@ -1391,6 +1391,96 @@ public class ModelServiceClientTest {
   }
 
   @Test
+  public void batchImportEvaluatedAnnotationsTest() throws Exception {
+    BatchImportEvaluatedAnnotationsResponse expectedResponse =
+        BatchImportEvaluatedAnnotationsResponse.newBuilder()
+            .setImportedEvaluatedAnnotationsCount(-765638363)
+            .build();
+    mockModelService.addResponse(expectedResponse);
+
+    ModelEvaluationSliceName parent =
+        ModelEvaluationSliceName.of(
+            "[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]", "[SLICE]");
+    List<EvaluatedAnnotation> evaluatedAnnotations = new ArrayList<>();
+
+    BatchImportEvaluatedAnnotationsResponse actualResponse =
+        client.batchImportEvaluatedAnnotations(parent, evaluatedAnnotations);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchImportEvaluatedAnnotationsRequest actualRequest =
+        ((BatchImportEvaluatedAnnotationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(evaluatedAnnotations, actualRequest.getEvaluatedAnnotationsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchImportEvaluatedAnnotationsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      ModelEvaluationSliceName parent =
+          ModelEvaluationSliceName.of(
+              "[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]", "[SLICE]");
+      List<EvaluatedAnnotation> evaluatedAnnotations = new ArrayList<>();
+      client.batchImportEvaluatedAnnotations(parent, evaluatedAnnotations);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchImportEvaluatedAnnotationsTest2() throws Exception {
+    BatchImportEvaluatedAnnotationsResponse expectedResponse =
+        BatchImportEvaluatedAnnotationsResponse.newBuilder()
+            .setImportedEvaluatedAnnotationsCount(-765638363)
+            .build();
+    mockModelService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    List<EvaluatedAnnotation> evaluatedAnnotations = new ArrayList<>();
+
+    BatchImportEvaluatedAnnotationsResponse actualResponse =
+        client.batchImportEvaluatedAnnotations(parent, evaluatedAnnotations);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchImportEvaluatedAnnotationsRequest actualRequest =
+        ((BatchImportEvaluatedAnnotationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(evaluatedAnnotations, actualRequest.getEvaluatedAnnotationsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchImportEvaluatedAnnotationsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      List<EvaluatedAnnotation> evaluatedAnnotations = new ArrayList<>();
+      client.batchImportEvaluatedAnnotations(parent, evaluatedAnnotations);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getModelEvaluationTest() throws Exception {
     ModelEvaluation expectedResponse =
         ModelEvaluation.newBuilder()
@@ -1594,6 +1684,7 @@ public class ModelServiceClientTest {
             .setMetricsSchemaUri("metricsSchemaUri-182209912")
             .setMetrics(Value.newBuilder().setBoolValue(true).build())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setModelExplanation(ModelExplanation.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -1644,6 +1735,7 @@ public class ModelServiceClientTest {
             .setMetricsSchemaUri("metricsSchemaUri-182209912")
             .setMetrics(Value.newBuilder().setBoolValue(true).build())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setModelExplanation(ModelExplanation.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
