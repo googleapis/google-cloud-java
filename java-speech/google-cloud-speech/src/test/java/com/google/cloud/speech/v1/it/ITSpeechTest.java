@@ -16,7 +16,9 @@
 
 package com.google.cloud.speech.v1.it;
 
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.retrying.TimedRetryAlgorithm;
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.cloud.speech.v1.LongRunningRecognizeResponse;
 import com.google.cloud.speech.v1.RecognitionAudio;
@@ -44,17 +46,22 @@ public class ITSpeechTest {
 
   @BeforeClass
   public static void setupClass() throws Exception {
+    TimedRetryAlgorithm timedRetryAlgorithm =
+        OperationTimedPollAlgorithm.create(
+            // These values are copied from com.google.cloud.speech.v1.stub.SpeechStubSettings...
+            RetrySettings.newBuilder()
+                .setInitialRetryDelay(Duration.ofMillis(500L))
+                .setRetryDelayMultiplier(1.5)
+                .setMaxRetryDelay(Duration.ofMillis(5000L))
+                .setInitialRpcTimeout(Duration.ZERO)
+                .setRpcTimeoutMultiplier(1.0)
+                .setMaxRpcTimeout(Duration.ZERO)
+                .setTotalTimeout(Duration.ofDays(1))
+                .build());
     SpeechSettings.Builder settingsBuilder = SpeechSettings.newBuilder();
     settingsBuilder
-        .longRunningRecognizeSettings()
-        .setRetrySettings(
-            RetrySettings.newBuilder()
-                .setRetryDelayMultiplier(1.0)
-                .setMaxRpcTimeout(Duration.ofMinutes(10))
-                .setInitialRetryDelay(Duration.ofSeconds(5))
-                .setMaxAttempts(5)
-                .setMaxRetryDelay(Duration.ofSeconds(5))
-                .build());
+        .longRunningRecognizeOperationSettings()
+        .setPollingAlgorithm(timedRetryAlgorithm);
     speechClient = SpeechClient.create(settingsBuilder.build());
   }
 
