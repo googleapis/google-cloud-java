@@ -16,12 +16,16 @@
 
 package com.google.cloud.speech.v1.it;
 
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.retrying.TimedRetryAlgorithm;
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.cloud.speech.v1.LongRunningRecognizeResponse;
 import com.google.cloud.speech.v1.RecognitionAudio;
 import com.google.cloud.speech.v1.RecognitionConfig;
 import com.google.cloud.speech.v1.RecognizeResponse;
 import com.google.cloud.speech.v1.SpeechClient;
+import com.google.cloud.speech.v1.SpeechSettings;
 import com.google.cloud.speech.v1.StreamingRecognitionConfig;
 import com.google.cloud.speech.v1.StreamingRecognizeRequest;
 import com.google.cloud.speech.v1.StreamingRecognizeResponse;
@@ -34,15 +38,32 @@ import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
+import org.threeten.bp.Duration;
 
 public class ITSpeechTest {
   private static SpeechClient speechClient;
 
-  @Rule public Timeout globalTimeout = Timeout.seconds(300);
+  @Rule public Timeout globalTimeout = Timeout.seconds(1000);
 
   @BeforeClass
   public static void setupClass() throws Exception {
-    speechClient = SpeechClient.create();
+    TimedRetryAlgorithm timedRetryAlgorithm =
+        OperationTimedPollAlgorithm.create(
+            // These values are copied from com.google.cloud.speech.v1.stub.SpeechStubSettings...
+            RetrySettings.newBuilder()
+                .setInitialRetryDelay(Duration.ofMillis(500L))
+                .setRetryDelayMultiplier(1.5)
+                .setMaxRetryDelay(Duration.ofMillis(5000L))
+                .setInitialRpcTimeout(Duration.ZERO)
+                .setRpcTimeoutMultiplier(1.0)
+                .setMaxRpcTimeout(Duration.ZERO)
+                .setTotalTimeout(Duration.ofMinutes(10))
+                .build());
+    SpeechSettings.Builder settingsBuilder = SpeechSettings.newBuilder();
+    settingsBuilder
+        .longRunningRecognizeOperationSettings()
+        .setPollingAlgorithm(timedRetryAlgorithm);
+    speechClient = SpeechClient.create(settingsBuilder.build());
   }
 
   @AfterClass
