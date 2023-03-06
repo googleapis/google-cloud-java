@@ -40,6 +40,7 @@ mvn clean deploy -B \
   -DskipTests=true \
   -Dclirr.skip=true \
   --settings ${MAVEN_SETTINGS_FILE} \
+  -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
   -Dgpg.executable=gpg \
   -Dgpg.passphrase=${GPG_PASSPHRASE} \
   -Dgpg.homedir=${GPG_HOMEDIR} \
@@ -52,6 +53,7 @@ if [[ -n "${AUTORELEASE_PR}" ]]
 then
   echo "Releasing the staging repositories"
   mvn nexus-staging:release -B \
+    -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
     -DperformRelease=true \
     --settings=${MAVEN_SETTINGS_FILE}
 else

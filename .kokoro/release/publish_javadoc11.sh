@@ -42,6 +42,7 @@ fi
 mvn -B -ntp \
   -DtrimStackTrace=false \
   -Dclirr.skip=true \
+  -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
   -Denforcer.skip=true \
   -Dcheckstyle.skip=true \
   -Dflatten.skip=true \
@@ -83,6 +84,7 @@ for module in "${modules[@]}"; do
         -P docFX \
         -Dclirr.skip=true \
         -Denforcer.skip=true \
+        -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
         -Dcheckstyle.skip=true \
         -Dflatten.skip=true \
         -Danimal.sniffer.skip=true \
@@ -93,6 +95,7 @@ for module in "${modules[@]}"; do
         -DdocletPath=${KOKORO_GFILE_DIR}/${doclet_name} \
         -Dclirr.skip=true \
         -Denforcer.skip=true \
+        -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
         -Dcheckstyle.skip=true \
         -Dflatten.skip=true \
         -Danimal.sniffer.skip=true \
