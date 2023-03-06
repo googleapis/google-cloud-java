@@ -2,6 +2,13 @@
   "extends": [
     "config:base"
   ],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["major"],
+      "matchPackagePatterns": ["*"],
+      "enabled": false
+    }
+  ],
   "includePaths": [
     "pom.xml",
     "google-cloud-pom-parent/pom.xml",
