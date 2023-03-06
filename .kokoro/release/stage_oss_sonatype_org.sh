@@ -50,8 +50,7 @@ mvn clean deploy -B \
   -Dgpg.homedir=${GPG_HOMEDIR} \
   --projects "${IncludedNonCloudModules}" \
   -P release \
-  -DserverId=ossrh \
-  -DnexusUrl=https://oss.sonatype.org/
+  -P release-non-google-oss-sonatype
  
 
 # The job triggered by Release Please (release-trigger) has this AUTORELEASE_PR
@@ -62,8 +61,8 @@ then
   mvn nexus-staging:release -B \
     -DperformRelease=true \
     --settings=${MAVEN_SETTINGS_FILE} \
-    -DserverId=nexus \
-    -DnexusUrl=https://oss.sonatype.org/
+    --projects "${IncludedNonCloudModules}" \
+    -P release-non-google-oss-sonatype
 else
   echo "AUTORELEASE_PR is not set. Not releasing."
 fi
