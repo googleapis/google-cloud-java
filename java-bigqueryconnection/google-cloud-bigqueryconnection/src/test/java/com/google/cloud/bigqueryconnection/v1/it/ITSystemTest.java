@@ -48,7 +48,6 @@ import org.junit.Test;
 
 @Ignore(
     "Excluding this test until the problem is resolved. https://github.com/googleapis/google-cloud-java/issues/9040")
-
 public class ITSystemTest {
 
   private static final String ID = UUID.randomUUID().toString().substring(0, 8);
