@@ -135,6 +135,7 @@ function run_integration_tests() {
     -DtrimStackTrace=false \
     -Dclirr.skip=true \
     -Denforcer.skip=true \
+    -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
     -Dcheckstyle.skip=true \
     -Dflatten.skip=true \
     -Danimal.sniffer.skip=true \
@@ -159,6 +160,7 @@ function run_graalvm_tests() {
     -DtrimStackTrace=false \
     -Dclirr.skip=true \
     -Denforcer.skip=true \
+    -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
     -Dcheckstyle.skip=true \
     -Dflatten.skip=true \
     -Danimal.sniffer.skip=true \
@@ -212,6 +214,7 @@ function install_modules() {
     -DtrimStackTrace=false \
     -Dclirr.skip=true \
     -Denforcer.skip=true \
+    -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
     -Dcheckstyle.skip=true \
     -Dflatten.skip=true \
     -Danimal.sniffer.skip=true \
