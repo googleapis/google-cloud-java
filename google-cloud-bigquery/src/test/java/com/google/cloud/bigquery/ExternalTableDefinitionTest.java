@@ -52,6 +52,7 @@ public class ExternalTableDefinitionTest {
   private static final Boolean AUTODETECT = true;
   private static final AvroOptions AVRO_OPTIONS = AvroOptions.newBuilder().build();
   private static final CsvOptions CSV_OPTIONS = CsvOptions.newBuilder().build();
+  private static final ParquetOptions PARQUET_OPTIONS = ParquetOptions.newBuilder().build();
   private static final HivePartitioningOptions HIVE_PARTITIONING_OPTIONS =
       HivePartitioningOptions.newBuilder()
           .setMode("AUTO")
@@ -70,6 +71,9 @@ public class ExternalTableDefinitionTest {
 
   private static final ExternalTableDefinition EXTERNAL_TABLE_DEFINITION_AVRO =
       ExternalTableDefinition.newBuilder(SOURCE_URIS, TABLE_SCHEMA, AVRO_OPTIONS).build();
+
+  private static final ExternalTableDefinition EXTERNAL_TABLE_DEFINITION_PARQUET =
+      ExternalTableDefinition.newBuilder(SOURCE_URIS, TABLE_SCHEMA, PARQUET_OPTIONS).build();
 
   @Test
   public void testToBuilder() {
@@ -132,6 +136,17 @@ public class ExternalTableDefinitionTest {
         ExternalTableDefinition.fromPb(EXTERNAL_TABLE_DEFINITION.toPb()));
     ExternalTableDefinition externalTableDefinition =
         ExternalTableDefinition.newBuilder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS).build();
+    compareExternalTableDefinition(
+        externalTableDefinition, ExternalTableDefinition.fromPb(externalTableDefinition.toPb()));
+  }
+
+  @Test
+  public void testToAndFromPbParquet() {
+    compareExternalTableDefinition(
+        EXTERNAL_TABLE_DEFINITION_PARQUET,
+        ExternalTableDefinition.fromPb(EXTERNAL_TABLE_DEFINITION_PARQUET.toPb()));
+    ExternalTableDefinition externalTableDefinition =
+        ExternalTableDefinition.newBuilder(SOURCE_URIS, TABLE_SCHEMA, PARQUET_OPTIONS).build();
     compareExternalTableDefinition(
         externalTableDefinition, ExternalTableDefinition.fromPb(externalTableDefinition.toPb()));
   }
