@@ -355,7 +355,7 @@ public class JsonToProtoMessage {
             } else if (val instanceof BigDecimal) {
               protoMsg.setField(
                   fieldDescriptor,
-                  BigDecimalByteStringEncoder.encodeToNumericByteString((BigDecimal) val));
+                  BigDecimalByteStringEncoder.encodeToBigNumericByteString((BigDecimal) val));
               return;
             }
           }
@@ -603,7 +603,7 @@ public class JsonToProtoMessage {
             } else if (val instanceof BigDecimal) {
               protoMsg.addRepeatedField(
                   fieldDescriptor,
-                  BigDecimalByteStringEncoder.encodeToNumericByteString((BigDecimal) val));
+                  BigDecimalByteStringEncoder.encodeToBigNumericByteString((BigDecimal) val));
               added = true;
             }
           }

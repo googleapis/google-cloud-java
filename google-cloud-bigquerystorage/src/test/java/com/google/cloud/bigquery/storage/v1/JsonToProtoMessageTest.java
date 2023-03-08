@@ -984,7 +984,7 @@ public class JsonToProtoMessageTest {
                 BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal(5D)))
             .setTestBignumeric(
                 BigDecimalByteStringEncoder.encodeToBigNumericByteString(
-                    new BigDecimal("578960446186580977117854925043439539266.3")))
+                    new BigDecimal("578960446186580977117854925043439539266.3222222222")))
             .addTestBignumericStr(
                 BigDecimalByteStringEncoder.encodeToBigNumericByteString(new BigDecimal("1.23")))
             .setTestBignumericShort(
@@ -1047,9 +1047,7 @@ public class JsonToProtoMessageTest {
     json.put("test_numeric_float", 4f);
     json.put("test_numeric_double", 5D);
     json.put(
-        "test_bignumeric",
-        BigDecimalByteStringEncoder.encodeToBigNumericByteString(
-            new BigDecimal("578960446186580977117854925043439539266.3")));
+        "test_bignumeric", new BigDecimal("578960446186580977117854925043439539266.3222222222"));
     json.put("test_bignumeric_str", new JSONArray(new String[] {"1.23"}));
     json.put("test_bignumeric_short", 1);
     json.put("test_bignumeric_int", 2);
@@ -1412,6 +1410,31 @@ public class JsonToProtoMessageTest {
     assertEquals(expectedProto, protoMsg);
     json.put("numeric", new Float(24.678));
     protoMsg = JsonToProtoMessage.convertJsonToProtoMessage(TestNumeric.getDescriptor(), ts, json);
+    assertEquals(expectedProto, protoMsg);
+  }
+
+  @Test
+  public void testBigDecimalToBigNumericConversion() {
+    TableSchema ts =
+        TableSchema.newBuilder()
+            .addFields(
+                0,
+                TableFieldSchema.newBuilder()
+                    .setName("bignumeric")
+                    .setType(TableFieldSchema.Type.BIGNUMERIC)
+                    .setMode(TableFieldSchema.Mode.REPEATED)
+                    .build())
+            .build();
+    TestBignumeric expectedProto =
+        TestBignumeric.newBuilder()
+            .addBignumeric(
+                BigDecimalByteStringEncoder.encodeToBigNumericByteString(
+                    new BigDecimal("24.6789012345")))
+            .build();
+    JSONObject json = new JSONObject();
+    json.put("bignumeric", Collections.singletonList(new BigDecimal("24.6789012345")));
+    DynamicMessage protoMsg =
+        JsonToProtoMessage.convertJsonToProtoMessage(TestBignumeric.getDescriptor(), ts, json);
     assertEquals(expectedProto, protoMsg);
   }
 
