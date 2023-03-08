@@ -34,6 +34,7 @@ import com.google.cloud.datastore.FullEntity;
 import com.google.cloud.datastore.IncompleteKey;
 import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.KeyFactory;
+import com.google.cloud.datastore.KeyQuery;
 import com.google.cloud.datastore.ListValue;
 import com.google.cloud.datastore.PathElement;
 import com.google.cloud.datastore.ProjectionEntity;
@@ -65,7 +66,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.TimeZone;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -127,6 +130,13 @@ public class ConceptsTest {
     includedDate = Timestamp.of(calendar.getTime());
     // Create a client for tests that require a real backend
     datastoreRealBackend = DatastoreOptions.getDefaultInstance().getService();
+  }
+
+  @After
+  public void tearDown() throws Exception {
+    KeyQuery taskQuery = Query.newKeyQueryBuilder().setKind("Task").build();
+    Key[] taskKeysToDelete = Iterators.toArray(datastoreRealBackend.run(taskQuery), Key.class);
+    datastoreRealBackend.delete(taskKeysToDelete);
   }
 
   /**
@@ -1147,8 +1157,10 @@ public class ConceptsTest {
   }
 
   @Test
-  public void testStaleReads() {
+  public void testStaleReads() throws InterruptedException {
     setUpQueryTestsRealBackend();
+    // waiting for 6 seconds, so that we can query with read time of 5 seconds ago
+    TimeUnit.SECONDS.sleep(6);
     Datastore datastoreClient = datastoreRealBackend;
     // [START datastore_stale_read]
     Key taskKey =
@@ -1158,10 +1170,10 @@ public class ConceptsTest {
             .addAncestors(PathElement.of("TaskList", "default"))
             .newKey("someTask");
 
-    Timestamp fifteenSecondsAgo =
-        Timestamp.ofTimeSecondsAndNanos(Timestamp.now().getSeconds() - 15L, 0);
-    // Create a readOption with read time fifteenSecondsAgo
-    ReadOption readOption = ReadOption.readTime(fifteenSecondsAgo);
+    Timestamp fiveSecondsAgo =
+        Timestamp.ofTimeSecondsAndNanos(Timestamp.now().getSeconds() - 5L, 0);
+    // Create a readOption with read time fiveSecondsAgo
+    ReadOption readOption = ReadOption.readTime(fiveSecondsAgo);
     // Use the readOption to Fetch entity
     Entity entity = datastoreClient.get(taskKey, readOption);
 
