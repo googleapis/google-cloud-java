@@ -81,7 +81,7 @@ custom_content: |
   #### Updating data
   Another thing you'll probably want to do is update your data. The following snippet shows how to update a Datastore entity if it exists.
 
-  ``` java
+  ```java
   KeyFactory keyFactory = datastore.newKeyFactory().setKind("keyKind");
   Key key = keyFactory.newKey("keyName");
   Entity entity = datastore.get(key);
@@ -95,12 +95,12 @@ custom_content: |
   ```
 
   The complete source code can be found at
-  [UpdateEntity.java](../../google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/UpdateEntity.java).
+  [UpdateEntity.java](https://github.com/googleapis/google-cloud-java/blob/2c1850d4f82f3fbd7b4a50582384c008085aa1a8/google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/UpdateEntity.java).
 
   #### Complete source code
 
   In
-  [AddEntitiesAndRunQuery.java](../../google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/AddEntitiesAndRunQuery.java)
+  [AddEntitiesAndRunQuery.java](https://github.com/googleapis/google-cloud-java/blob/2c1850d4f82f3fbd7b4a50582384c008085aa1a8/google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/AddEntitiesAndRunQuery.java)
   we put together all the code to store data and run queries into one program. The program assumes that you are
   running on Compute Engine or from your own desktop. To run the example on App Engine, simply move
   the code from the main method to your application's servlet class and change the print statements to
@@ -110,8 +110,34 @@ custom_content: |
   -------
 
   This library has tools to help write tests for code that uses the Datastore.
+  
+  #### On your machine
 
-  See [TESTING.md](https://github.com/googleapis/google-cloud-java/blob/main/TESTING.md#testing-code-that-uses-datastore) to read more about testing.
+  You can test against a temporary local Datastore by following these steps:
+
+  1. [Install Cloud SDK and start the emulator](https://cloud.google.com/datastore/docs/tools/datastore-emulator)
+
+  To determine which host/port the emulator is running on:
+  
+  ```
+  $ gcloud beta emulators datastore env-init
+  
+  # Sample output:
+  #   export DATASTORE_EMULATOR_HOST=localhost:8759
+  ```
+  
+  3. Point your client to the emulator
+  
+  ```java
+  DatastoreOptions options = DatastoreOptions.newBuilder()
+  .setProjectId(DatastoreOptions.getDefaultProjectId())
+  .setHost(System.getenv("DATASTORE_EMULATOR_HOST"))
+  .setCredentials(NoCredentials.getInstance())
+  .setRetrySettings(ServiceOptions.getNoRetrySettings())
+  .build();
+  Datastore datastore = options.getService();
+  ```
+  4. Run your tests
 
   Example Applications
   --------------------
