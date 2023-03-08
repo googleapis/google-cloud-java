@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.14.0](https://github.com/googleapis/java-datastore/compare/v2.13.6...v2.14.0) (2023-03-08)
+
+
+### Features
+
+* OR query support ([#993](https://github.com/googleapis/java-datastore/issues/993)) ([99b7843](https://github.com/googleapis/java-datastore/commit/99b784332919ccc813a94ba17beaaa11b02b1c8e))
+
 ## [2.13.6](https://github.com/googleapis/java-datastore/compare/v2.13.5...v2.13.6) (2023-03-02)
 
 
