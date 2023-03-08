@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.23.2](https://github.com/googleapis/java-bigquery/compare/v2.23.1...v2.23.2) (2023-03-07)
+
+
+### Bug Fixes
+
+* External table definition parquet format options ([#2535](https://github.com/googleapis/java-bigquery/issues/2535)) ([eb45973](https://github.com/googleapis/java-bigquery/commit/eb4597314fad72bbdb666a832f0f15f732f40817))
+
+
+### Documentation
+
+* Remove stale snippet comment ([#2555](https://github.com/googleapis/java-bigquery/issues/2555)) ([a71b1b2](https://github.com/googleapis/java-bigquery/commit/a71b1b2abb568bd1ed088f7bd4b77f93a68ec95e))
+
 ## [2.23.1](https://github.com/googleapis/java-bigquery/compare/v2.23.0...v2.23.1) (2023-03-02)
 
 
