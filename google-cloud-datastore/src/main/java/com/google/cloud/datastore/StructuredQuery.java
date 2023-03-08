@@ -26,6 +26,7 @@ import static com.google.cloud.datastore.TimestampValue.of;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.core.ApiFunction;
+import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.cloud.StringEnumType;
 import com.google.cloud.StringEnumValue;
@@ -151,6 +152,8 @@ public abstract class StructuredQuery<V> extends Query<V> implements RecordQuery
 
       static final Operator AND = type.createAndRegister("AND");
 
+      static final Operator OR = type.createAndRegister("OR");
+
       com.google.datastore.v1.CompositeFilter.Operator toPb() {
         return com.google.datastore.v1.CompositeFilter.Operator.valueOf(name());
       }
@@ -229,6 +232,11 @@ public abstract class StructuredQuery<V> extends Query<V> implements RecordQuery
 
     public static CompositeFilter and(Filter first, Filter... other) {
       return new CompositeFilter(Operator.AND, first, other);
+    }
+
+    @BetaApi
+    public static CompositeFilter or(Filter first, Filter... other) {
+      return new CompositeFilter(Operator.OR, first, other);
     }
 
     @Override

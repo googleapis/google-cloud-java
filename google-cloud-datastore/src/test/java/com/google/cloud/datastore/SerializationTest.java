@@ -69,6 +69,19 @@ public class SerializationTest extends BaseSerializationTest {
           .addDistinctOn("p")
           .addOrderBy(OrderBy.asc("p"))
           .build();
+  private static final Query<ProjectionEntity> QUERY4 =
+      Query.newProjectionEntityQueryBuilder()
+          .setKind("k")
+          .setNamespace("ns1")
+          .addProjection("p")
+          .setLimit(100)
+          .setOffset(5)
+          .setStartCursor(CURSOR1)
+          .setEndCursor(CURSOR2)
+          .setFilter(CompositeFilter.or(PropertyFilter.gt("p1", 10), PropertyFilter.eq("a", "v")))
+          .addDistinctOn("p")
+          .addOrderBy(OrderBy.asc("p"))
+          .build();
   private static final KeyValue KEY_VALUE = KeyValue.of(KEY1);
   private static final NullValue NULL_VALUE =
       NullValue.newBuilder().setExcludeFromIndexes(true).build();
@@ -136,6 +149,7 @@ public class SerializationTest extends BaseSerializationTest {
       QUERY1,
       QUERY2,
       QUERY3,
+      QUERY4,
       NULL_VALUE,
       KEY_VALUE,
       STRING_VALUE,

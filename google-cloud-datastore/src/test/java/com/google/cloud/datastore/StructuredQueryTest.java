@@ -37,8 +37,10 @@ public class StructuredQueryTest {
   private static final Cursor END_CURSOR = Cursor.copyFrom(new byte[] {10});
   private static final int OFFSET = 42;
   private static final Integer LIMIT = 43;
-  private static final Filter FILTER =
+  private static final Filter AND_FILTER =
       CompositeFilter.and(PropertyFilter.gt("p1", 10), PropertyFilter.eq("a", "v"));
+  private static final Filter OR_FILTER =
+      CompositeFilter.or(PropertyFilter.gt("p1", 10), PropertyFilter.eq("a", "v"));
   private static final OrderBy ORDER_BY_1 = OrderBy.asc("p2");
   private static final OrderBy ORDER_BY_2 = OrderBy.desc("p3");
   private static final List<OrderBy> ORDER_BY = ImmutableList.of(ORDER_BY_1, ORDER_BY_2);
@@ -56,7 +58,7 @@ public class StructuredQueryTest {
           .setEndCursor(END_CURSOR)
           .setOffset(OFFSET)
           .setLimit(LIMIT)
-          .setFilter(FILTER)
+          .setFilter(AND_FILTER)
           .setOrderBy(ORDER_BY_1, ORDER_BY_2)
           .build();
   private static final KeyQuery KEY_QUERY =
@@ -67,7 +69,7 @@ public class StructuredQueryTest {
           .setEndCursor(END_CURSOR)
           .setOffset(OFFSET)
           .setLimit(LIMIT)
-          .setFilter(FILTER)
+          .setFilter(OR_FILTER)
           .setOrderBy(ORDER_BY_1, ORDER_BY_2)
           .build();
   private static final ProjectionEntityQuery PROJECTION_QUERY =
@@ -78,7 +80,7 @@ public class StructuredQueryTest {
           .setEndCursor(END_CURSOR)
           .setOffset(OFFSET)
           .setLimit(LIMIT)
-          .setFilter(FILTER)
+          .setFilter(AND_FILTER)
           .setOrderBy(ORDER_BY_1, ORDER_BY_2)
           .setProjection(PROJECTION1, PROJECTION2)
           .setDistinctOn(DISTINCT_ON1, DISTINCT_ON2)
@@ -93,7 +95,14 @@ public class StructuredQueryTest {
 
   @Test
   public void testKeyQueryBuilder() {
-    compareBaseBuilderFields(KEY_QUERY);
+    assertEquals(NAMESPACE, KEY_QUERY.getNamespace());
+    assertEquals(KIND, KEY_QUERY.getKind());
+    assertEquals(START_CURSOR, KEY_QUERY.getStartCursor());
+    assertEquals(END_CURSOR, KEY_QUERY.getEndCursor());
+    assertEquals(OFFSET, KEY_QUERY.getOffset());
+    assertEquals(LIMIT, KEY_QUERY.getLimit());
+    assertEquals(OR_FILTER, KEY_QUERY.getFilter());
+    assertEquals(ORDER_BY, KEY_QUERY.getOrderBy());
     assertEquals(ImmutableList.of(StructuredQuery.KEY_PROPERTY_NAME), KEY_QUERY.getProjection());
     assertTrue(KEY_QUERY.getDistinctOn().isEmpty());
   }
@@ -112,7 +121,7 @@ public class StructuredQueryTest {
     assertEquals(END_CURSOR, query.getEndCursor());
     assertEquals(OFFSET, query.getOffset());
     assertEquals(LIMIT, query.getLimit());
-    assertEquals(FILTER, query.getFilter());
+    assertEquals(AND_FILTER, query.getFilter());
     assertEquals(ORDER_BY, query.getOrderBy());
   }
 
