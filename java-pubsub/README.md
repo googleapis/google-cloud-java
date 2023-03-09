@@ -51,20 +51,20 @@ If you are using Maven without BOM, add this to your dependencies:
 If you are using Gradle 5.x or later, add this to your dependencies:
 
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:26.9.0')
+implementation platform('com.google.cloud:libraries-bom:26.10.0')
 
 implementation 'com.google.cloud:google-cloud-pubsub'
 ```
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-pubsub:1.123.4'
+implementation 'com.google.cloud:google-cloud-pubsub:1.123.5'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "1.123.4"
+libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "1.123.5"
 ```
 
 ## Authentication
