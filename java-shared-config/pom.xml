@@ -64,7 +64,7 @@
     <report.jxr.inherited>false</report.jxr.inherited>
     <skipITs>true</skipITs>
     <auto-value-annotation.version>1.10.1</auto-value-annotation.version>
-    <surefire.version>3.0.0-M8</surefire.version>
+    <surefire.version>3.0.0-M9</surefire.version>
     <docRoot>/java/docs/reference/</docRoot>
   </properties>
 
