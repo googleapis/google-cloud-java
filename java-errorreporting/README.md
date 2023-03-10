@@ -17,7 +17,6 @@ Java idiomatic client for [Error Reporting][product-docs].
 
 If you are using Maven, add this to your pom.xml file:
 
-<!--- {x-version-update-start:google-cloud-errorreporting:released} -->
 
 ```xml
 <dependency>
@@ -38,7 +37,6 @@ If you are using SBT, add this to your dependencies:
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-errorreporting" % "0.133.0-beta"
 ```
-<!--- {x-version-update-end} -->
 
 ## Authentication
 
