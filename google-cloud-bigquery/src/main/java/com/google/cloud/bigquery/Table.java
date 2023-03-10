@@ -163,6 +163,12 @@ public class Table extends TableInfo {
     }
 
     @Override
+    public TableInfo.Builder setCloneDefinition(CloneDefinition cloneDefinition) {
+      infoBuilder.setCloneDefinition(cloneDefinition);
+      return this;
+    }
+
+    @Override
     public Table build() {
       return new Table(bigquery, infoBuilder);
     }

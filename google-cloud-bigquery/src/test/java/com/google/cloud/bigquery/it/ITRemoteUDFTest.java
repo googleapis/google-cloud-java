@@ -47,7 +47,7 @@ public class ITRemoteUDFTest {
 
   private static final String ID = UUID.randomUUID().toString().substring(0, 8);
   private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
-  private static final String CONNECTION_ID = "test-connectin-id-" + ID;
+  private static final String CONNECTION_ID = "test-connection-id-" + ID;
   private static final String LOCATION = "US";
   private static final String PARENT = LocationName.of(PROJECT_ID, LOCATION).toString();
   private static final String REMOTE_ENDPOINT = "https://aaabbbccc-uc.a.run.app";

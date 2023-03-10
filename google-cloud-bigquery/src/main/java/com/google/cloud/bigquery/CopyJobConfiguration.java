@@ -128,8 +128,8 @@ public final class CopyJobConfiguration extends JobConfiguration {
     }
 
     /**
-     * Sets the supported operation types (COPY, SNAPSHOT or RESTORE) in table copy job. More info:
-     * https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#operationtype
+     * Sets the supported operation types (COPY, CLONE, SNAPSHOT or RESTORE) in table copy job. More
+     * info: https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#operationtype
      */
     public Builder setOperationType(String operationType) {
       this.operationType = operationType;

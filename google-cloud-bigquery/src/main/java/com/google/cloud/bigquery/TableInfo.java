@@ -74,6 +74,8 @@ public class TableInfo implements Serializable {
   private final Boolean requirePartitionFilter;
   private final String defaultCollation;
 
+  private final CloneDefinition cloneDefinition;
+
   /** A builder for {@code TableInfo} objects. */
   public abstract static class Builder {
 
@@ -138,6 +140,8 @@ public class TableInfo implements Serializable {
     }
 
     public abstract Builder setDefaultCollation(String defaultCollation);
+
+    public abstract Builder setCloneDefinition(CloneDefinition cloneDefinition);
   }
 
   static class BuilderImpl extends Builder {
@@ -159,6 +163,7 @@ public class TableInfo implements Serializable {
     private Labels labels = Labels.ZERO;
     private Boolean requirePartitionFilter;
     private String defaultCollation;
+    private CloneDefinition cloneDefinition;
 
     BuilderImpl() {}
 
@@ -180,6 +185,7 @@ public class TableInfo implements Serializable {
       this.labels = tableInfo.labels;
       this.requirePartitionFilter = tableInfo.requirePartitionFilter;
       this.defaultCollation = tableInfo.defaultCollation;
+      this.cloneDefinition = tableInfo.cloneDefinition;
     }
 
     BuilderImpl(Table tablePb) {
@@ -205,6 +211,9 @@ public class TableInfo implements Serializable {
       this.labels = Labels.fromPb(tablePb.getLabels());
       this.requirePartitionFilter = tablePb.getRequirePartitionFilter();
       this.defaultCollation = tablePb.getDefaultCollation();
+      if (tablePb.getCloneDefinition() != null) {
+        this.cloneDefinition = CloneDefinition.fromPb(tablePb.getCloneDefinition());
+      }
     }
 
     @Override
@@ -309,6 +318,11 @@ public class TableInfo implements Serializable {
       return this;
     }
 
+    public Builder setCloneDefinition(CloneDefinition cloneDefinition) {
+      this.cloneDefinition = cloneDefinition;
+      return this;
+    }
+
     @Override
     public TableInfo build() {
       return new TableInfo(this);
@@ -333,6 +347,7 @@ public class TableInfo implements Serializable {
     this.labels = builder.labels;
     this.requirePartitionFilter = builder.requirePartitionFilter;
     this.defaultCollation = builder.defaultCollation;
+    this.cloneDefinition = builder.cloneDefinition;
   }
 
   /** Returns the hash of the table resource. */
@@ -439,6 +454,10 @@ public class TableInfo implements Serializable {
     return defaultCollation;
   }
 
+  public CloneDefinition getCloneDefinition() {
+    return cloneDefinition;
+  }
+
   /** Returns a builder for the table object. */
   public Builder toBuilder() {
     return new BuilderImpl(this);
@@ -464,6 +483,7 @@ public class TableInfo implements Serializable {
         .add("labels", labels)
         .add("requirePartitionFilter", requirePartitionFilter)
         .add("defaultCollation", defaultCollation)
+        .add("cloneDefinition", cloneDefinition)
         .toString();
   }
 
@@ -527,6 +547,9 @@ public class TableInfo implements Serializable {
     tablePb.setRequirePartitionFilter(requirePartitionFilter);
     if (defaultCollation != null) {
       tablePb.setDefaultCollation(defaultCollation);
+    }
+    if (cloneDefinition != null) {
+      tablePb.setCloneDefinition(cloneDefinition.toPb());
     }
     return tablePb;
   }
