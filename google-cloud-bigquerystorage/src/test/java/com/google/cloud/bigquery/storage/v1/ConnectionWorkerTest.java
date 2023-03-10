@@ -710,4 +710,10 @@ public class ConnectionWorkerTest {
       assertEquals(i, futures.get(i).get().getAppendResult().getOffset().getValue());
     }
   }
+
+  @Test
+  public void testLocationName() throws Exception {
+    assertEquals(
+        "projects/p1/locations/us", ConnectionWorker.getRoutingHeader(TEST_STREAM_1, "us"));
+  }
 }

@@ -51,6 +51,8 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.annotation.concurrent.GuardedBy;
 
 /**
@@ -219,9 +221,27 @@ class ConnectionWorker implements AutoCloseable {
   private RuntimeException testOnlyRunTimeExceptionInAppendLoop = null;
   private long testOnlyAppendLoopSleepTime = 0;
 
+  private static String projectMatching = "projects/[^/]+/";
+  private static Pattern streamPatternProject = Pattern.compile(projectMatching);
+
   /** The maximum size of one request. Defined by the API. */
   public static long getApiMaxRequestBytes() {
     return 10L * 1000L * 1000L; // 10 megabytes (https://en.wikipedia.org/wiki/Megabyte)
+  }
+
+  static String extractProjectName(String streamName) {
+    Matcher streamMatcher = streamPatternProject.matcher(streamName);
+    if (streamMatcher.find()) {
+      return streamMatcher.group();
+    } else {
+      throw new IllegalStateException(
+          String.format("The passed in stream name does not match standard format %s", streamName));
+    }
+  }
+
+  static String getRoutingHeader(String streamName, String location) {
+    String project = extractProjectName(streamName);
+    return project + "locations/" + location;
   }
 
   public ConnectionWorker(
@@ -259,6 +279,10 @@ class ConnectionWorker implements AutoCloseable {
     newHeaders.putAll(clientSettings.toBuilder().getHeaderProvider().getHeaders());
     if (this.location == null) {
       newHeaders.put("x-goog-request-params", "write_stream=" + this.streamName);
+    } else {
+      newHeaders.put(
+          "x-goog-request-params",
+          "write_location=" + getRoutingHeader(this.streamName, this.location));
     }
     BigQueryWriteSettings stubSettings =
         clientSettings
