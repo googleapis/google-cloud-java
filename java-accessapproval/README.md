@@ -13,7 +13,7 @@ Java idiomatic client for [Access Approval][product-docs].
 
 
 If you are using Maven, add this to your pom.xml file:
-<!--- {x-version-update-start:google-cloud-accessapproval:released} -->
+
 
 ```xml
 <dependency>
@@ -34,8 +34,6 @@ If you are using SBT, add this to your dependencies:
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-accessapproval" % "2.13.0"
 ```
-<!--- {x-version-update-end} -->
-
 
 ## Authentication
 
