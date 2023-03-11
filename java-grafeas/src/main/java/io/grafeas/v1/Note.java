@@ -87,6 +87,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     UPGRADE(17),
     COMPLIANCE(18),
     DSSE_ATTESTATION(19),
+    VULNERABILITY_ASSESSMENT(20),
     TYPE_NOT_SET(0);
     private final int value;
 
@@ -125,6 +126,8 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
           return COMPLIANCE;
         case 19:
           return DSSE_ATTESTATION;
+        case 20:
+          return VULNERABILITY_ASSESSMENT;
         case 0:
           return TYPE_NOT_SET;
         default:
@@ -1123,6 +1126,57 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     return io.grafeas.v1.DSSEAttestationNote.getDefaultInstance();
   }
 
+  public static final int VULNERABILITY_ASSESSMENT_FIELD_NUMBER = 20;
+  /**
+   *
+   *
+   * <pre>
+   * A note describing a vulnerability assessment.
+   * </pre>
+   *
+   * <code>.grafeas.v1.VulnerabilityAssessmentNote vulnerability_assessment = 20;</code>
+   *
+   * @return Whether the vulnerabilityAssessment field is set.
+   */
+  @java.lang.Override
+  public boolean hasVulnerabilityAssessment() {
+    return typeCase_ == 20;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A note describing a vulnerability assessment.
+   * </pre>
+   *
+   * <code>.grafeas.v1.VulnerabilityAssessmentNote vulnerability_assessment = 20;</code>
+   *
+   * @return The vulnerabilityAssessment.
+   */
+  @java.lang.Override
+  public io.grafeas.v1.VulnerabilityAssessmentNote getVulnerabilityAssessment() {
+    if (typeCase_ == 20) {
+      return (io.grafeas.v1.VulnerabilityAssessmentNote) type_;
+    }
+    return io.grafeas.v1.VulnerabilityAssessmentNote.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A note describing a vulnerability assessment.
+   * </pre>
+   *
+   * <code>.grafeas.v1.VulnerabilityAssessmentNote vulnerability_assessment = 20;</code>
+   */
+  @java.lang.Override
+  public io.grafeas.v1.VulnerabilityAssessmentNoteOrBuilder getVulnerabilityAssessmentOrBuilder() {
+    if (typeCase_ == 20) {
+      return (io.grafeas.v1.VulnerabilityAssessmentNote) type_;
+    }
+    return io.grafeas.v1.VulnerabilityAssessmentNote.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1193,6 +1247,9 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     }
     if (typeCase_ == 19) {
       output.writeMessage(19, (io.grafeas.v1.DSSEAttestationNote) type_);
+    }
+    if (typeCase_ == 20) {
+      output.writeMessage(20, (io.grafeas.v1.VulnerabilityAssessmentNote) type_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1285,6 +1342,11 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               19, (io.grafeas.v1.DSSEAttestationNote) type_);
     }
+    if (typeCase_ == 20) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              20, (io.grafeas.v1.VulnerabilityAssessmentNote) type_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1349,6 +1411,9 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         break;
       case 19:
         if (!getDsseAttestation().equals(other.getDsseAttestation())) return false;
+        break;
+      case 20:
+        if (!getVulnerabilityAssessment().equals(other.getVulnerabilityAssessment())) return false;
         break;
       case 0:
       default:
@@ -1432,6 +1497,10 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       case 19:
         hash = (37 * hash) + DSSE_ATTESTATION_FIELD_NUMBER;
         hash = (53 * hash) + getDsseAttestation().hashCode();
+        break;
+      case 20:
+        hash = (37 * hash) + VULNERABILITY_ASSESSMENT_FIELD_NUMBER;
+        hash = (53 * hash) + getVulnerabilityAssessment().hashCode();
         break;
       case 0:
       default:
@@ -1628,6 +1697,9 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       if (dsseAttestationBuilder_ != null) {
         dsseAttestationBuilder_.clear();
       }
+      if (vulnerabilityAssessmentBuilder_ != null) {
+        vulnerabilityAssessmentBuilder_.clear();
+      }
       typeCase_ = 0;
       type_ = null;
       return this;
@@ -1739,6 +1811,9 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
       if (typeCase_ == 19 && dsseAttestationBuilder_ != null) {
         result.type_ = dsseAttestationBuilder_.build();
+      }
+      if (typeCase_ == 20 && vulnerabilityAssessmentBuilder_ != null) {
+        result.type_ = vulnerabilityAssessmentBuilder_.build();
       }
     }
 
@@ -1902,6 +1977,11 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
             mergeDsseAttestation(other.getDsseAttestation());
             break;
           }
+        case VULNERABILITY_ASSESSMENT:
+          {
+            mergeVulnerabilityAssessment(other.getVulnerabilityAssessment());
+            break;
+          }
         case TYPE_NOT_SET:
           {
             break;
@@ -2054,6 +2134,13 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
                 typeCase_ = 19;
                 break;
               } // case 154
+            case 162:
+              {
+                input.readMessage(
+                    getVulnerabilityAssessmentFieldBuilder().getBuilder(), extensionRegistry);
+                typeCase_ = 20;
+                break;
+              } // case 162
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5622,6 +5709,216 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 19;
       onChanged();
       return dsseAttestationBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.VulnerabilityAssessmentNote,
+            io.grafeas.v1.VulnerabilityAssessmentNote.Builder,
+            io.grafeas.v1.VulnerabilityAssessmentNoteOrBuilder>
+        vulnerabilityAssessmentBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a vulnerability assessment.
+     * </pre>
+     *
+     * <code>.grafeas.v1.VulnerabilityAssessmentNote vulnerability_assessment = 20;</code>
+     *
+     * @return Whether the vulnerabilityAssessment field is set.
+     */
+    @java.lang.Override
+    public boolean hasVulnerabilityAssessment() {
+      return typeCase_ == 20;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a vulnerability assessment.
+     * </pre>
+     *
+     * <code>.grafeas.v1.VulnerabilityAssessmentNote vulnerability_assessment = 20;</code>
+     *
+     * @return The vulnerabilityAssessment.
+     */
+    @java.lang.Override
+    public io.grafeas.v1.VulnerabilityAssessmentNote getVulnerabilityAssessment() {
+      if (vulnerabilityAssessmentBuilder_ == null) {
+        if (typeCase_ == 20) {
+          return (io.grafeas.v1.VulnerabilityAssessmentNote) type_;
+        }
+        return io.grafeas.v1.VulnerabilityAssessmentNote.getDefaultInstance();
+      } else {
+        if (typeCase_ == 20) {
+          return vulnerabilityAssessmentBuilder_.getMessage();
+        }
+        return io.grafeas.v1.VulnerabilityAssessmentNote.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a vulnerability assessment.
+     * </pre>
+     *
+     * <code>.grafeas.v1.VulnerabilityAssessmentNote vulnerability_assessment = 20;</code>
+     */
+    public Builder setVulnerabilityAssessment(io.grafeas.v1.VulnerabilityAssessmentNote value) {
+      if (vulnerabilityAssessmentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        type_ = value;
+        onChanged();
+      } else {
+        vulnerabilityAssessmentBuilder_.setMessage(value);
+      }
+      typeCase_ = 20;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a vulnerability assessment.
+     * </pre>
+     *
+     * <code>.grafeas.v1.VulnerabilityAssessmentNote vulnerability_assessment = 20;</code>
+     */
+    public Builder setVulnerabilityAssessment(
+        io.grafeas.v1.VulnerabilityAssessmentNote.Builder builderForValue) {
+      if (vulnerabilityAssessmentBuilder_ == null) {
+        type_ = builderForValue.build();
+        onChanged();
+      } else {
+        vulnerabilityAssessmentBuilder_.setMessage(builderForValue.build());
+      }
+      typeCase_ = 20;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a vulnerability assessment.
+     * </pre>
+     *
+     * <code>.grafeas.v1.VulnerabilityAssessmentNote vulnerability_assessment = 20;</code>
+     */
+    public Builder mergeVulnerabilityAssessment(io.grafeas.v1.VulnerabilityAssessmentNote value) {
+      if (vulnerabilityAssessmentBuilder_ == null) {
+        if (typeCase_ == 20
+            && type_ != io.grafeas.v1.VulnerabilityAssessmentNote.getDefaultInstance()) {
+          type_ =
+              io.grafeas.v1.VulnerabilityAssessmentNote.newBuilder(
+                      (io.grafeas.v1.VulnerabilityAssessmentNote) type_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          type_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeCase_ == 20) {
+          vulnerabilityAssessmentBuilder_.mergeFrom(value);
+        } else {
+          vulnerabilityAssessmentBuilder_.setMessage(value);
+        }
+      }
+      typeCase_ = 20;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a vulnerability assessment.
+     * </pre>
+     *
+     * <code>.grafeas.v1.VulnerabilityAssessmentNote vulnerability_assessment = 20;</code>
+     */
+    public Builder clearVulnerabilityAssessment() {
+      if (vulnerabilityAssessmentBuilder_ == null) {
+        if (typeCase_ == 20) {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeCase_ == 20) {
+          typeCase_ = 0;
+          type_ = null;
+        }
+        vulnerabilityAssessmentBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a vulnerability assessment.
+     * </pre>
+     *
+     * <code>.grafeas.v1.VulnerabilityAssessmentNote vulnerability_assessment = 20;</code>
+     */
+    public io.grafeas.v1.VulnerabilityAssessmentNote.Builder getVulnerabilityAssessmentBuilder() {
+      return getVulnerabilityAssessmentFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a vulnerability assessment.
+     * </pre>
+     *
+     * <code>.grafeas.v1.VulnerabilityAssessmentNote vulnerability_assessment = 20;</code>
+     */
+    @java.lang.Override
+    public io.grafeas.v1.VulnerabilityAssessmentNoteOrBuilder
+        getVulnerabilityAssessmentOrBuilder() {
+      if ((typeCase_ == 20) && (vulnerabilityAssessmentBuilder_ != null)) {
+        return vulnerabilityAssessmentBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeCase_ == 20) {
+          return (io.grafeas.v1.VulnerabilityAssessmentNote) type_;
+        }
+        return io.grafeas.v1.VulnerabilityAssessmentNote.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a vulnerability assessment.
+     * </pre>
+     *
+     * <code>.grafeas.v1.VulnerabilityAssessmentNote vulnerability_assessment = 20;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.VulnerabilityAssessmentNote,
+            io.grafeas.v1.VulnerabilityAssessmentNote.Builder,
+            io.grafeas.v1.VulnerabilityAssessmentNoteOrBuilder>
+        getVulnerabilityAssessmentFieldBuilder() {
+      if (vulnerabilityAssessmentBuilder_ == null) {
+        if (!(typeCase_ == 20)) {
+          type_ = io.grafeas.v1.VulnerabilityAssessmentNote.getDefaultInstance();
+        }
+        vulnerabilityAssessmentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.VulnerabilityAssessmentNote,
+                io.grafeas.v1.VulnerabilityAssessmentNote.Builder,
+                io.grafeas.v1.VulnerabilityAssessmentNoteOrBuilder>(
+                (io.grafeas.v1.VulnerabilityAssessmentNote) type_,
+                getParentForChildren(),
+                isClean());
+        type_ = null;
+      }
+      typeCase_ = 20;
+      onChanged();
+      return vulnerabilityAssessmentBuilder_;
     }
 
     @java.lang.Override
