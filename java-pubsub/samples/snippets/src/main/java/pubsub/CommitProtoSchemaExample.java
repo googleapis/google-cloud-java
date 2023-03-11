@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 
 package pubsub;
 
-// [START pubsub_create_avro_schema]
+// [START pubsub_commit_proto_schema]
 
 import com.google.api.gax.rpc.AlreadyExistsException;
 import com.google.cloud.pubsub.v1.SchemaServiceClient;
@@ -27,39 +27,38 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class CreateAvroSchemaExample {
+public class CommitProtoSchemaExample {
 
   public static void main(String... args) throws Exception {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String schemaId = "your-schema-id";
-    String avscFile = "path/to/an/avro/schema/file/(.avsc)/formatted/in/json";
+    String protoFile = "path/to/a/proto/file/(.proto)/formatted/in/protocol/buffers";
 
-    createAvroSchemaExample(projectId, schemaId, avscFile);
+    commitProtoSchemaExample(projectId, schemaId, protoFile);
   }
 
-  public static Schema createAvroSchemaExample(String projectId, String schemaId, String avscFile)
+  public static Schema commitProtoSchemaExample(String projectId, String schemaId, String protoFile)
       throws IOException {
 
     ProjectName projectName = ProjectName.of(projectId);
     SchemaName schemaName = SchemaName.of(projectId, schemaId);
 
-    // Read an Avro schema file formatted in JSON as a string.
-    String avscSource = new String(Files.readAllBytes(Paths.get(avscFile)));
+    // Read a proto file as a string.
+    String protoSource = new String(Files.readAllBytes(Paths.get(protoFile)));
 
     try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
 
       Schema schema =
-          schemaServiceClient.createSchema(
-              projectName,
+          schemaServiceClient.commitSchema(
+              schemaName.toString(),
               Schema.newBuilder()
                   .setName(schemaName.toString())
-                  .setType(Schema.Type.AVRO)
-                  .setDefinition(avscSource)
-                  .build(),
-              schemaId);
+                  .setType(Schema.Type.PROTOCOL_BUFFER)
+                  .setDefinition(protoSource)
+                  .build());
 
-      System.out.println("Created a schema using an Avro schema:\n" + schema);
+      System.out.println("Committed a schema using a protobuf schema:\n" + schema);
       return schema;
     } catch (AlreadyExistsException e) {
       System.out.println(schemaName + "already exists.");
@@ -67,4 +66,4 @@ public class CreateAvroSchemaExample {
     }
   }
 }
-// [END pubsub_create_avro_schema]
+// [END pubsub_commit_proto_schema]

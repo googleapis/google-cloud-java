@@ -38,7 +38,7 @@ public class CreateProtoSchemaExample {
     createProtoSchemaExample(projectId, schemaId, protoFile);
   }
 
-  public static void createProtoSchemaExample(String projectId, String schemaId, String protoFile)
+  public static Schema createProtoSchemaExample(String projectId, String schemaId, String protoFile)
       throws IOException {
 
     ProjectName projectName = ProjectName.of(projectId);
@@ -60,8 +60,10 @@ public class CreateProtoSchemaExample {
               schemaId);
 
       System.out.println("Created a schema using a protobuf schema:\n" + schema);
+      return schema;
     } catch (AlreadyExistsException e) {
       System.out.println(schemaName + "already exists.");
+      return null;
     }
   }
 }
