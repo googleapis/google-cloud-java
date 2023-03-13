@@ -15,7 +15,9 @@
  */
 
 /**
- * The interfaces provided are listed below, along with usage samples.
+ * A client to Network Connectivity API
+ *
+ * <p>The interfaces provided are listed below, along with usage samples.
  *
  * <p>======================= HubServiceClient =======================
  *
