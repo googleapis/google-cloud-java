@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.34.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.33.1...v2.34.0) (2023-03-10)
+
+
+### Features
+
+* Add routing header for multiplexed connection ([#2035](https://github.com/googleapis/java-bigquerystorage/issues/2035)) ([1f2752f](https://github.com/googleapis/java-bigquerystorage/commit/1f2752f3988ac87dca50813d69d0d519a2356a30))
+
+
+### Bug Fixes
+
+* **bigdecimal:** Convert BigDecimal to BigNumeric instead of Numeric ([#2031](https://github.com/googleapis/java-bigquerystorage/issues/2031)) ([e0f7e34](https://github.com/googleapis/java-bigquerystorage/commit/e0f7e34ca7f7c60279985afec46f780e0acc9a9e)), closes [#2013](https://github.com/googleapis/java-bigquerystorage/issues/2013)
+
 ## [2.33.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.33.0...v2.33.1) (2023-03-02)
 
 
