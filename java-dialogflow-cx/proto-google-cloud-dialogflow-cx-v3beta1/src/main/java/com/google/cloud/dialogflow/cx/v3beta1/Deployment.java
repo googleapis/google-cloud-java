@@ -22,7 +22,7 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * Represents an deployment in an environment. A deployment happens when a flow
+ * Represents a deployment in an environment. A deployment happens when a flow
  * version configured to be active in the environment. You can configure running
  * pre-deployment steps, e.g. running validation test cases, experiment
  * auto-rollout, etc.
@@ -1823,7 +1823,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents an deployment in an environment. A deployment happens when a flow
+   * Represents a deployment in an environment. A deployment happens when a flow
    * version configured to be active in the environment. You can configure running
    * pre-deployment steps, e.g. running validation test cases, experiment
    * auto-rollout, etc.

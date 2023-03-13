@@ -130,7 +130,7 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The natural language speech audio to be processed.
-   * A single request can contain up to 1 minute of speech audio data.
+   * A single request can contain up to 2 minutes of speech audio data.
    * The [transcribed
    * text][google.cloud.dialogflow.cx.v3beta1.QueryResult.transcript] cannot
    * contain more than 256 bytes.
@@ -729,7 +729,7 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The natural language speech audio to be processed.
-     * A single request can contain up to 1 minute of speech audio data.
+     * A single request can contain up to 2 minutes of speech audio data.
      * The [transcribed
      * text][google.cloud.dialogflow.cx.v3beta1.QueryResult.transcript] cannot
      * contain more than 256 bytes.
@@ -752,7 +752,7 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The natural language speech audio to be processed.
-     * A single request can contain up to 1 minute of speech audio data.
+     * A single request can contain up to 2 minutes of speech audio data.
      * The [transcribed
      * text][google.cloud.dialogflow.cx.v3beta1.QueryResult.transcript] cannot
      * contain more than 256 bytes.
@@ -781,7 +781,7 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The natural language speech audio to be processed.
-     * A single request can contain up to 1 minute of speech audio data.
+     * A single request can contain up to 2 minutes of speech audio data.
      * The [transcribed
      * text][google.cloud.dialogflow.cx.v3beta1.QueryResult.transcript] cannot
      * contain more than 256 bytes.
