@@ -691,5 +691,40 @@ public interface NoteOrBuilder
    */
   io.grafeas.v1.DSSEAttestationNoteOrBuilder getDsseAttestationOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * A note describing a vulnerability assessment.
+   * </pre>
+   *
+   * <code>.grafeas.v1.VulnerabilityAssessmentNote vulnerability_assessment = 20;</code>
+   *
+   * @return Whether the vulnerabilityAssessment field is set.
+   */
+  boolean hasVulnerabilityAssessment();
+  /**
+   *
+   *
+   * <pre>
+   * A note describing a vulnerability assessment.
+   * </pre>
+   *
+   * <code>.grafeas.v1.VulnerabilityAssessmentNote vulnerability_assessment = 20;</code>
+   *
+   * @return The vulnerabilityAssessment.
+   */
+  io.grafeas.v1.VulnerabilityAssessmentNote getVulnerabilityAssessment();
+  /**
+   *
+   *
+   * <pre>
+   * A note describing a vulnerability assessment.
+   * </pre>
+   *
+   * <code>.grafeas.v1.VulnerabilityAssessmentNote vulnerability_assessment = 20;</code>
+   */
+  io.grafeas.v1.VulnerabilityAssessmentNoteOrBuilder getVulnerabilityAssessmentOrBuilder();
+
   public io.grafeas.v1.Note.TypeCase getTypeCase();
 }

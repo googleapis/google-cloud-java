@@ -139,6 +139,16 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DSSE_ATTESTATION = 10;</code>
    */
   DSSE_ATTESTATION(10),
+  /**
+   *
+   *
+   * <pre>
+   * This represents a Vulnerability Assessment.
+   * </pre>
+   *
+   * <code>VULNERABILITY_ASSESSMENT = 11;</code>
+   */
+  VULNERABILITY_ASSESSMENT(11),
   UNRECOGNIZED(-1),
   ;
 
@@ -252,6 +262,16 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DSSE_ATTESTATION = 10;</code>
    */
   public static final int DSSE_ATTESTATION_VALUE = 10;
+  /**
+   *
+   *
+   * <pre>
+   * This represents a Vulnerability Assessment.
+   * </pre>
+   *
+   * <code>VULNERABILITY_ASSESSMENT = 11;</code>
+   */
+  public static final int VULNERABILITY_ASSESSMENT_VALUE = 11;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -299,6 +319,8 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
         return COMPLIANCE;
       case 10:
         return DSSE_ATTESTATION;
+      case 11:
+        return VULNERABILITY_ASSESSMENT;
       default:
         return null;
     }
