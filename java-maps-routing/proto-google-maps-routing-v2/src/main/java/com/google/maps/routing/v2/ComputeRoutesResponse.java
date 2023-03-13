@@ -217,6 +217,56 @@ public final class ComputeRoutesResponse extends com.google.protobuf.GeneratedMe
         : fallbackInfo_;
   }
 
+  public static final int GEOCODING_RESULTS_FIELD_NUMBER = 3;
+  private com.google.maps.routing.v2.GeocodingResults geocodingResults_;
+  /**
+   *
+   *
+   * <pre>
+   * Contains geocoding response info for waypoints specified as addresses.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.GeocodingResults geocoding_results = 3;</code>
+   *
+   * @return Whether the geocodingResults field is set.
+   */
+  @java.lang.Override
+  public boolean hasGeocodingResults() {
+    return geocodingResults_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Contains geocoding response info for waypoints specified as addresses.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.GeocodingResults geocoding_results = 3;</code>
+   *
+   * @return The geocodingResults.
+   */
+  @java.lang.Override
+  public com.google.maps.routing.v2.GeocodingResults getGeocodingResults() {
+    return geocodingResults_ == null
+        ? com.google.maps.routing.v2.GeocodingResults.getDefaultInstance()
+        : geocodingResults_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Contains geocoding response info for waypoints specified as addresses.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.GeocodingResults geocoding_results = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.maps.routing.v2.GeocodingResultsOrBuilder getGeocodingResultsOrBuilder() {
+    return geocodingResults_ == null
+        ? com.google.maps.routing.v2.GeocodingResults.getDefaultInstance()
+        : geocodingResults_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -237,6 +287,9 @@ public final class ComputeRoutesResponse extends com.google.protobuf.GeneratedMe
     if (fallbackInfo_ != null) {
       output.writeMessage(2, getFallbackInfo());
     }
+    if (geocodingResults_ != null) {
+      output.writeMessage(3, getGeocodingResults());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -251,6 +304,9 @@ public final class ComputeRoutesResponse extends com.google.protobuf.GeneratedMe
     }
     if (fallbackInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getFallbackInfo());
+    }
+    if (geocodingResults_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getGeocodingResults());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -273,6 +329,10 @@ public final class ComputeRoutesResponse extends com.google.protobuf.GeneratedMe
     if (hasFallbackInfo()) {
       if (!getFallbackInfo().equals(other.getFallbackInfo())) return false;
     }
+    if (hasGeocodingResults() != other.hasGeocodingResults()) return false;
+    if (hasGeocodingResults()) {
+      if (!getGeocodingResults().equals(other.getGeocodingResults())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -291,6 +351,10 @@ public final class ComputeRoutesResponse extends com.google.protobuf.GeneratedMe
     if (hasFallbackInfo()) {
       hash = (37 * hash) + FALLBACK_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getFallbackInfo().hashCode();
+    }
+    if (hasGeocodingResults()) {
+      hash = (37 * hash) + GEOCODING_RESULTS_FIELD_NUMBER;
+      hash = (53 * hash) + getGeocodingResults().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -443,6 +507,11 @@ public final class ComputeRoutesResponse extends com.google.protobuf.GeneratedMe
         fallbackInfoBuilder_.dispose();
         fallbackInfoBuilder_ = null;
       }
+      geocodingResults_ = null;
+      if (geocodingResultsBuilder_ != null) {
+        geocodingResultsBuilder_.dispose();
+        geocodingResultsBuilder_ = null;
+      }
       return this;
     }
 
@@ -496,6 +565,10 @@ public final class ComputeRoutesResponse extends com.google.protobuf.GeneratedMe
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.fallbackInfo_ =
             fallbackInfoBuilder_ == null ? fallbackInfo_ : fallbackInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.geocodingResults_ =
+            geocodingResultsBuilder_ == null ? geocodingResults_ : geocodingResultsBuilder_.build();
       }
     }
 
@@ -575,6 +648,9 @@ public final class ComputeRoutesResponse extends com.google.protobuf.GeneratedMe
       if (other.hasFallbackInfo()) {
         mergeFallbackInfo(other.getFallbackInfo());
       }
+      if (other.hasGeocodingResults()) {
+        mergeGeocodingResults(other.getGeocodingResults());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -619,6 +695,13 @@ public final class ComputeRoutesResponse extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getGeocodingResultsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1265,6 +1348,191 @@ public final class ComputeRoutesResponse extends com.google.protobuf.GeneratedMe
         fallbackInfo_ = null;
       }
       return fallbackInfoBuilder_;
+    }
+
+    private com.google.maps.routing.v2.GeocodingResults geocodingResults_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.routing.v2.GeocodingResults,
+            com.google.maps.routing.v2.GeocodingResults.Builder,
+            com.google.maps.routing.v2.GeocodingResultsOrBuilder>
+        geocodingResultsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Contains geocoding response info for waypoints specified as addresses.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.GeocodingResults geocoding_results = 3;</code>
+     *
+     * @return Whether the geocodingResults field is set.
+     */
+    public boolean hasGeocodingResults() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains geocoding response info for waypoints specified as addresses.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.GeocodingResults geocoding_results = 3;</code>
+     *
+     * @return The geocodingResults.
+     */
+    public com.google.maps.routing.v2.GeocodingResults getGeocodingResults() {
+      if (geocodingResultsBuilder_ == null) {
+        return geocodingResults_ == null
+            ? com.google.maps.routing.v2.GeocodingResults.getDefaultInstance()
+            : geocodingResults_;
+      } else {
+        return geocodingResultsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains geocoding response info for waypoints specified as addresses.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.GeocodingResults geocoding_results = 3;</code>
+     */
+    public Builder setGeocodingResults(com.google.maps.routing.v2.GeocodingResults value) {
+      if (geocodingResultsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        geocodingResults_ = value;
+      } else {
+        geocodingResultsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains geocoding response info for waypoints specified as addresses.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.GeocodingResults geocoding_results = 3;</code>
+     */
+    public Builder setGeocodingResults(
+        com.google.maps.routing.v2.GeocodingResults.Builder builderForValue) {
+      if (geocodingResultsBuilder_ == null) {
+        geocodingResults_ = builderForValue.build();
+      } else {
+        geocodingResultsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains geocoding response info for waypoints specified as addresses.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.GeocodingResults geocoding_results = 3;</code>
+     */
+    public Builder mergeGeocodingResults(com.google.maps.routing.v2.GeocodingResults value) {
+      if (geocodingResultsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && geocodingResults_ != null
+            && geocodingResults_
+                != com.google.maps.routing.v2.GeocodingResults.getDefaultInstance()) {
+          getGeocodingResultsBuilder().mergeFrom(value);
+        } else {
+          geocodingResults_ = value;
+        }
+      } else {
+        geocodingResultsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains geocoding response info for waypoints specified as addresses.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.GeocodingResults geocoding_results = 3;</code>
+     */
+    public Builder clearGeocodingResults() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      geocodingResults_ = null;
+      if (geocodingResultsBuilder_ != null) {
+        geocodingResultsBuilder_.dispose();
+        geocodingResultsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains geocoding response info for waypoints specified as addresses.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.GeocodingResults geocoding_results = 3;</code>
+     */
+    public com.google.maps.routing.v2.GeocodingResults.Builder getGeocodingResultsBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getGeocodingResultsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains geocoding response info for waypoints specified as addresses.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.GeocodingResults geocoding_results = 3;</code>
+     */
+    public com.google.maps.routing.v2.GeocodingResultsOrBuilder getGeocodingResultsOrBuilder() {
+      if (geocodingResultsBuilder_ != null) {
+        return geocodingResultsBuilder_.getMessageOrBuilder();
+      } else {
+        return geocodingResults_ == null
+            ? com.google.maps.routing.v2.GeocodingResults.getDefaultInstance()
+            : geocodingResults_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains geocoding response info for waypoints specified as addresses.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.GeocodingResults geocoding_results = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.routing.v2.GeocodingResults,
+            com.google.maps.routing.v2.GeocodingResults.Builder,
+            com.google.maps.routing.v2.GeocodingResultsOrBuilder>
+        getGeocodingResultsFieldBuilder() {
+      if (geocodingResultsBuilder_ == null) {
+        geocodingResultsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.maps.routing.v2.GeocodingResults,
+                com.google.maps.routing.v2.GeocodingResults.Builder,
+                com.google.maps.routing.v2.GeocodingResultsOrBuilder>(
+                getGeocodingResults(), getParentForChildren(), isClean());
+        geocodingResults_ = null;
+      }
+      return geocodingResultsBuilder_;
     }
 
     @java.lang.Override

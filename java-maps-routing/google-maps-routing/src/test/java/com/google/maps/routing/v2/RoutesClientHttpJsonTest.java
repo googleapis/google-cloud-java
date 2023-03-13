@@ -78,6 +78,7 @@ public class RoutesClientHttpJsonTest {
         ComputeRoutesResponse.newBuilder()
             .addAllRoutes(new ArrayList<Route>())
             .setFallbackInfo(FallbackInfo.newBuilder().build())
+            .setGeocodingResults(GeocodingResults.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

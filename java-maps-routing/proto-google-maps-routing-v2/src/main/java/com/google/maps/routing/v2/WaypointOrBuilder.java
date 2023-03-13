@@ -102,6 +102,46 @@ public interface WaypointOrBuilder
    *
    *
    * <pre>
+   * Human readable address or a plus code.
+   * See https://plus.codes for details.
+   * </pre>
+   *
+   * <code>string address = 7;</code>
+   *
+   * @return Whether the address field is set.
+   */
+  boolean hasAddress();
+  /**
+   *
+   *
+   * <pre>
+   * Human readable address or a plus code.
+   * See https://plus.codes for details.
+   * </pre>
+   *
+   * <code>string address = 7;</code>
+   *
+   * @return The address.
+   */
+  java.lang.String getAddress();
+  /**
+   *
+   *
+   * <pre>
+   * Human readable address or a plus code.
+   * See https://plus.codes for details.
+   * </pre>
+   *
+   * <code>string address = 7;</code>
+   *
+   * @return The bytes for address.
+   */
+  com.google.protobuf.ByteString getAddressBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Marks this waypoint as a milestone rather a stopping point. For
    * each non-via waypoint in the request, the response appends an entry to the
    * `legs` array to provide the details for stopovers on that leg of the

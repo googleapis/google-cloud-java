@@ -819,7 +819,8 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. Specifies whether to calculate alternate routes in addition to
-   * the route.
+   * the route. No alternative routes are returned for requests that have
+   * intermediate waypoints.
    * </pre>
    *
    * <code>bool compute_alternative_routes = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3524,7 +3525,8 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Specifies whether to calculate alternate routes in addition to
-     * the route.
+     * the route. No alternative routes are returned for requests that have
+     * intermediate waypoints.
      * </pre>
      *
      * <code>bool compute_alternative_routes = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3540,7 +3542,8 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Specifies whether to calculate alternate routes in addition to
-     * the route.
+     * the route. No alternative routes are returned for requests that have
+     * intermediate waypoints.
      * </pre>
      *
      * <code>bool compute_alternative_routes = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3560,7 +3563,8 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Specifies whether to calculate alternate routes in addition to
-     * the route.
+     * the route. No alternative routes are returned for requests that have
+     * intermediate waypoints.
      * </pre>
      *
      * <code>bool compute_alternative_routes = 8 [(.google.api.field_behavior) = OPTIONAL];</code>

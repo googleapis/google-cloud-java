@@ -89,6 +89,7 @@ public class RoutesClientTest {
         ComputeRoutesResponse.newBuilder()
             .addAllRoutes(new ArrayList<Route>())
             .setFallbackInfo(FallbackInfo.newBuilder().build())
+            .setGeocodingResults(GeocodingResults.newBuilder().build())
             .build();
     mockRoutes.addResponse(expectedResponse);
 

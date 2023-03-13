@@ -137,4 +137,39 @@ public interface ComputeRoutesResponseOrBuilder
    * <code>.google.maps.routing.v2.FallbackInfo fallback_info = 2;</code>
    */
   com.google.maps.routing.v2.FallbackInfoOrBuilder getFallbackInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Contains geocoding response info for waypoints specified as addresses.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.GeocodingResults geocoding_results = 3;</code>
+   *
+   * @return Whether the geocodingResults field is set.
+   */
+  boolean hasGeocodingResults();
+  /**
+   *
+   *
+   * <pre>
+   * Contains geocoding response info for waypoints specified as addresses.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.GeocodingResults geocoding_results = 3;</code>
+   *
+   * @return The geocodingResults.
+   */
+  com.google.maps.routing.v2.GeocodingResults getGeocodingResults();
+  /**
+   *
+   *
+   * <pre>
+   * Contains geocoding response info for waypoints specified as addresses.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.GeocodingResults geocoding_results = 3;</code>
+   */
+  com.google.maps.routing.v2.GeocodingResultsOrBuilder getGeocodingResultsOrBuilder();
 }
