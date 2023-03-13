@@ -15,7 +15,9 @@
  */
 
 /**
- * The interfaces provided are listed below, along with usage samples.
+ * A client to Secret Manager API
+ *
+ * <p>The interfaces provided are listed below, along with usage samples.
  *
  * <p>======================= SecretManagerServiceClient =======================
  *
