@@ -212,7 +212,7 @@
           "libraryClient": "ConversationProfilesClient",
           "rpcs": {
             "ClearSuggestionFeatureConfig": {
-              "methods": ["clearSuggestionFeatureConfigAsync", "clearSuggestionFeatureConfigAsync", "clearSuggestionFeatureConfigOperationCallable", "clearSuggestionFeatureConfigCallable"]
+              "methods": ["clearSuggestionFeatureConfigAsync", "clearSuggestionFeatureConfigAsync", "clearSuggestionFeatureConfigAsync", "clearSuggestionFeatureConfigOperationCallable", "clearSuggestionFeatureConfigCallable"]
             },
             "CreateConversationProfile": {
               "methods": ["createConversationProfile", "createConversationProfile", "createConversationProfile", "createConversationProfile", "createConversationProfileCallable"]
@@ -233,7 +233,7 @@
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "SetSuggestionFeatureConfig": {
-              "methods": ["setSuggestionFeatureConfigAsync", "setSuggestionFeatureConfigAsync", "setSuggestionFeatureConfigOperationCallable", "setSuggestionFeatureConfigCallable"]
+              "methods": ["setSuggestionFeatureConfigAsync", "setSuggestionFeatureConfigAsync", "setSuggestionFeatureConfigAsync", "setSuggestionFeatureConfigOperationCallable", "setSuggestionFeatureConfigCallable"]
             },
             "UpdateConversationProfile": {
               "methods": ["updateConversationProfile", "updateConversationProfile", "updateConversationProfileCallable"]

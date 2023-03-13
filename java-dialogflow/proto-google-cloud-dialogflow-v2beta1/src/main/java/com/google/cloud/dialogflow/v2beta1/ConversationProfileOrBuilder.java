@@ -519,4 +519,45 @@ public interface ConversationProfileOrBuilder
    * @return The bytes for securitySettings.
    */
   com.google.protobuf.ByteString getSecuritySettingsBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Text-to-Speech synthesization.
+   * Used by Phone Gateway to specify synthesization options. If agent defines
+   * synthesization options as well, agent settings overrides the option here.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig tts_config = 18;</code>
+   *
+   * @return Whether the ttsConfig field is set.
+   */
+  boolean hasTtsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Text-to-Speech synthesization.
+   * Used by Phone Gateway to specify synthesization options. If agent defines
+   * synthesization options as well, agent settings overrides the option here.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig tts_config = 18;</code>
+   *
+   * @return The ttsConfig.
+   */
+  com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig getTtsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Text-to-Speech synthesization.
+   * Used by Phone Gateway to specify synthesization options. If agent defines
+   * synthesization options as well, agent settings overrides the option here.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig tts_config = 18;</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfigOrBuilder getTtsConfigOrBuilder();
 }

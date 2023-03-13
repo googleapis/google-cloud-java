@@ -1276,6 +1276,7 @@ public class ConversationsClient implements BackgroundResource {
    *                       "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
    *                   .toString())
    *           .setContextSize(1116903569)
+   *           .setAssistQueryParams(AssistQueryParameters.newBuilder().build())
    *           .build();
    *   SuggestConversationSummaryResponse response =
    *       conversationsClient.suggestConversationSummary(request);
@@ -1314,6 +1315,7 @@ public class ConversationsClient implements BackgroundResource {
    *                       "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
    *                   .toString())
    *           .setContextSize(1116903569)
+   *           .setAssistQueryParams(AssistQueryParameters.newBuilder().build())
    *           .build();
    *   ApiFuture<SuggestConversationSummaryResponse> future =
    *       conversationsClient.suggestConversationSummaryCallable().futureCall(request);
