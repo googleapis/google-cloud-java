@@ -133,7 +133,7 @@ public interface InputAudioConfigOrBuilder
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=223
+   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=256
    * @return A list containing the phraseHints.
    */
   @java.lang.Deprecated
@@ -155,7 +155,7 @@ public interface InputAudioConfigOrBuilder
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=223
+   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=256
    * @return The count of phraseHints.
    */
   @java.lang.Deprecated
@@ -177,7 +177,7 @@ public interface InputAudioConfigOrBuilder
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=223
+   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=256
    * @param index The index of the element to return.
    * @return The phraseHints at the given index.
    */
@@ -200,7 +200,7 @@ public interface InputAudioConfigOrBuilder
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=223
+   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=256
    * @param index The index of the value to return.
    * @return The bytes of the phraseHints at the given index.
    */
@@ -385,4 +385,39 @@ public interface InputAudioConfigOrBuilder
    * @return The disableNoSpeechRecognizedEvent.
    */
   boolean getDisableNoSpeechRecognizedEvent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of barge-in behavior during the streaming of input audio.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.BargeInConfig barge_in_config = 15;</code>
+   *
+   * @return Whether the bargeInConfig field is set.
+   */
+  boolean hasBargeInConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of barge-in behavior during the streaming of input audio.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.BargeInConfig barge_in_config = 15;</code>
+   *
+   * @return The bargeInConfig.
+   */
+  com.google.cloud.dialogflow.v2beta1.BargeInConfig getBargeInConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of barge-in behavior during the streaming of input audio.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.BargeInConfig barge_in_config = 15;</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.BargeInConfigOrBuilder getBargeInConfigOrBuilder();
 }

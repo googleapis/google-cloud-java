@@ -1075,6 +1075,69 @@ public class ConversationProfilesClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ConversationProfilesClient conversationProfilesClient =
    *     ConversationProfilesClient.create()) {
+   *   String conversationProfile = "conversationProfile1691597734";
+   *   Participant.Role participantRole = Participant.Role.forNumber(0);
+   *   HumanAgentAssistantConfig.SuggestionFeatureConfig suggestionFeatureConfig =
+   *       HumanAgentAssistantConfig.SuggestionFeatureConfig.newBuilder().build();
+   *   ConversationProfile response =
+   *       conversationProfilesClient
+   *           .setSuggestionFeatureConfigAsync(
+   *               conversationProfile, participantRole, suggestionFeatureConfig)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param conversationProfile Required. The Conversation Profile to add or update the suggestion
+   *     feature config. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/conversationProfiles/&lt;Conversation Profile ID&gt;`.
+   * @param participantRole Required. The participant role to add or update the suggestion feature
+   *     config. Only HUMAN_AGENT or END_USER can be used.
+   * @param suggestionFeatureConfig Required. The suggestion feature config to add or update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ConversationProfile, SetSuggestionFeatureConfigOperationMetadata>
+      setSuggestionFeatureConfigAsync(
+          String conversationProfile,
+          Participant.Role participantRole,
+          HumanAgentAssistantConfig.SuggestionFeatureConfig suggestionFeatureConfig) {
+    SetSuggestionFeatureConfigRequest request =
+        SetSuggestionFeatureConfigRequest.newBuilder()
+            .setConversationProfile(conversationProfile)
+            .setParticipantRole(participantRole)
+            .setSuggestionFeatureConfig(suggestionFeatureConfig)
+            .build();
+    return setSuggestionFeatureConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds or updates a suggestion feature in a conversation profile. If the conversation profile
+   * contains the type of suggestion feature for the participant role, it will update it. Otherwise
+   * it will insert the suggestion feature.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [SetSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2beta1.SetSuggestionFeatureConfigOperationMetadata]
+   * - `response`: [ConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfile]
+   *
+   * <p>If a long running operation to add or update suggestion feature config for the same
+   * conversation profile, participant role and suggestion feature type exists, please cancel the
+   * existing long running operation before sending such request, otherwise the request will be
+   * rejected.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationProfilesClient conversationProfilesClient =
+   *     ConversationProfilesClient.create()) {
    *   SetSuggestionFeatureConfigRequest request =
    *       SetSuggestionFeatureConfigRequest.newBuilder()
    *           .setConversationProfile("conversationProfile1691597734")
@@ -1231,6 +1294,61 @@ public class ConversationProfilesClient implements BackgroundResource {
     ClearSuggestionFeatureConfigRequest request =
         ClearSuggestionFeatureConfigRequest.newBuilder()
             .setConversationProfile(conversationProfile)
+            .build();
+    return clearSuggestionFeatureConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Clears a suggestion feature from a conversation profile for the given participant role.
+   *
+   * <p>This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations). The
+   * returned `Operation` type has the following method-specific fields:
+   *
+   * <p>- `metadata`:
+   * [ClearSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2beta1.ClearSuggestionFeatureConfigOperationMetadata]
+   * - `response`: [ConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfile]
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationProfilesClient conversationProfilesClient =
+   *     ConversationProfilesClient.create()) {
+   *   String conversationProfile = "conversationProfile1691597734";
+   *   Participant.Role participantRole = Participant.Role.forNumber(0);
+   *   SuggestionFeature.Type suggestionFeatureType = SuggestionFeature.Type.forNumber(0);
+   *   ConversationProfile response =
+   *       conversationProfilesClient
+   *           .clearSuggestionFeatureConfigAsync(
+   *               conversationProfile, participantRole, suggestionFeatureType)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param conversationProfile Required. The Conversation Profile to add or update the suggestion
+   *     feature config. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/conversationProfiles/&lt;Conversation Profile ID&gt;`.
+   * @param participantRole Required. The participant role to remove the suggestion feature config.
+   *     Only HUMAN_AGENT or END_USER can be used.
+   * @param suggestionFeatureType Required. The type of the suggestion feature to remove.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ConversationProfile, ClearSuggestionFeatureConfigOperationMetadata>
+      clearSuggestionFeatureConfigAsync(
+          String conversationProfile,
+          Participant.Role participantRole,
+          SuggestionFeature.Type suggestionFeatureType) {
+    ClearSuggestionFeatureConfigRequest request =
+        ClearSuggestionFeatureConfigRequest.newBuilder()
+            .setConversationProfile(conversationProfile)
+            .setParticipantRole(participantRole)
+            .setSuggestionFeatureType(suggestionFeatureType)
             .build();
     return clearSuggestionFeatureConfigAsync(request);
   }

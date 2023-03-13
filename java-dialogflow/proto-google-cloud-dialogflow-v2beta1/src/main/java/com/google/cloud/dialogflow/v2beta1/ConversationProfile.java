@@ -828,6 +828,63 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int TTS_CONFIG_FIELD_NUMBER = 18;
+  private com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig ttsConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Text-to-Speech synthesization.
+   * Used by Phone Gateway to specify synthesization options. If agent defines
+   * synthesization options as well, agent settings overrides the option here.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig tts_config = 18;</code>
+   *
+   * @return Whether the ttsConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasTtsConfig() {
+    return ttsConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Text-to-Speech synthesization.
+   * Used by Phone Gateway to specify synthesization options. If agent defines
+   * synthesization options as well, agent settings overrides the option here.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig tts_config = 18;</code>
+   *
+   * @return The ttsConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig getTtsConfig() {
+    return ttsConfig_ == null
+        ? com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.getDefaultInstance()
+        : ttsConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Text-to-Speech synthesization.
+   * Used by Phone Gateway to specify synthesization options. If agent defines
+   * synthesization options as well, agent settings overrides the option here.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig tts_config = 18;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfigOrBuilder
+      getTtsConfigOrBuilder() {
+    return ttsConfig_ == null
+        ? com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.getDefaultInstance()
+        : ttsConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -883,6 +940,9 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeZone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, timeZone_);
+    }
+    if (ttsConfig_ != null) {
+      output.writeMessage(18, getTtsConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -940,6 +1000,9 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeZone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, timeZone_);
+    }
+    if (ttsConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getTtsConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1001,6 +1064,10 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
     if (!getLanguageCode().equals(other.getLanguageCode())) return false;
     if (!getTimeZone().equals(other.getTimeZone())) return false;
     if (!getSecuritySettings().equals(other.getSecuritySettings())) return false;
+    if (hasTtsConfig() != other.hasTtsConfig()) return false;
+    if (hasTtsConfig()) {
+      if (!getTtsConfig().equals(other.getTtsConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1058,6 +1125,10 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
     hash = (53 * hash) + getTimeZone().hashCode();
     hash = (37 * hash) + SECURITY_SETTINGS_FIELD_NUMBER;
     hash = (53 * hash) + getSecuritySettings().hashCode();
+    if (hasTtsConfig()) {
+      hash = (37 * hash) + TTS_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getTtsConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1248,6 +1319,11 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
       languageCode_ = "";
       timeZone_ = "";
       securitySettings_ = "";
+      ttsConfig_ = null;
+      if (ttsConfigBuilder_ != null) {
+        ttsConfigBuilder_.dispose();
+        ttsConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -1341,6 +1417,9 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
         result.securitySettings_ = securitySettings_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.ttsConfig_ = ttsConfigBuilder_ == null ? ttsConfig_ : ttsConfigBuilder_.build();
       }
     }
 
@@ -1441,6 +1520,9 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
         securitySettings_ = other.securitySettings_;
         bitField0_ |= 0x00002000;
         onChanged();
+      }
+      if (other.hasTtsConfig()) {
+        mergeTtsConfig(other.getTtsConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1558,6 +1640,12 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00001000;
                 break;
               } // case 114
+            case 146:
+              {
+                input.readMessage(getTtsConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 146
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3978,6 +4066,213 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00002000;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig ttsConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig,
+            com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.Builder,
+            com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfigOrBuilder>
+        ttsConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Text-to-Speech synthesization.
+     * Used by Phone Gateway to specify synthesization options. If agent defines
+     * synthesization options as well, agent settings overrides the option here.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig tts_config = 18;</code>
+     *
+     * @return Whether the ttsConfig field is set.
+     */
+    public boolean hasTtsConfig() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Text-to-Speech synthesization.
+     * Used by Phone Gateway to specify synthesization options. If agent defines
+     * synthesization options as well, agent settings overrides the option here.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig tts_config = 18;</code>
+     *
+     * @return The ttsConfig.
+     */
+    public com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig getTtsConfig() {
+      if (ttsConfigBuilder_ == null) {
+        return ttsConfig_ == null
+            ? com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.getDefaultInstance()
+            : ttsConfig_;
+      } else {
+        return ttsConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Text-to-Speech synthesization.
+     * Used by Phone Gateway to specify synthesization options. If agent defines
+     * synthesization options as well, agent settings overrides the option here.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig tts_config = 18;</code>
+     */
+    public Builder setTtsConfig(com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig value) {
+      if (ttsConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ttsConfig_ = value;
+      } else {
+        ttsConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Text-to-Speech synthesization.
+     * Used by Phone Gateway to specify synthesization options. If agent defines
+     * synthesization options as well, agent settings overrides the option here.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig tts_config = 18;</code>
+     */
+    public Builder setTtsConfig(
+        com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.Builder builderForValue) {
+      if (ttsConfigBuilder_ == null) {
+        ttsConfig_ = builderForValue.build();
+      } else {
+        ttsConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Text-to-Speech synthesization.
+     * Used by Phone Gateway to specify synthesization options. If agent defines
+     * synthesization options as well, agent settings overrides the option here.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig tts_config = 18;</code>
+     */
+    public Builder mergeTtsConfig(
+        com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig value) {
+      if (ttsConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)
+            && ttsConfig_ != null
+            && ttsConfig_
+                != com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig
+                    .getDefaultInstance()) {
+          getTtsConfigBuilder().mergeFrom(value);
+        } else {
+          ttsConfig_ = value;
+        }
+      } else {
+        ttsConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Text-to-Speech synthesization.
+     * Used by Phone Gateway to specify synthesization options. If agent defines
+     * synthesization options as well, agent settings overrides the option here.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig tts_config = 18;</code>
+     */
+    public Builder clearTtsConfig() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      ttsConfig_ = null;
+      if (ttsConfigBuilder_ != null) {
+        ttsConfigBuilder_.dispose();
+        ttsConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Text-to-Speech synthesization.
+     * Used by Phone Gateway to specify synthesization options. If agent defines
+     * synthesization options as well, agent settings overrides the option here.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig tts_config = 18;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.Builder
+        getTtsConfigBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return getTtsConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Text-to-Speech synthesization.
+     * Used by Phone Gateway to specify synthesization options. If agent defines
+     * synthesization options as well, agent settings overrides the option here.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig tts_config = 18;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfigOrBuilder
+        getTtsConfigOrBuilder() {
+      if (ttsConfigBuilder_ != null) {
+        return ttsConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return ttsConfig_ == null
+            ? com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.getDefaultInstance()
+            : ttsConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Text-to-Speech synthesization.
+     * Used by Phone Gateway to specify synthesization options. If agent defines
+     * synthesization options as well, agent settings overrides the option here.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig tts_config = 18;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig,
+            com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.Builder,
+            com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfigOrBuilder>
+        getTtsConfigFieldBuilder() {
+      if (ttsConfigBuilder_ == null) {
+        ttsConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig,
+                com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.Builder,
+                com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfigOrBuilder>(
+                getTtsConfig(), getParentForChildren(), isClean());
+        ttsConfig_ = null;
+      }
+      return ttsConfigBuilder_;
     }
 
     @java.lang.Override

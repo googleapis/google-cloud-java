@@ -816,6 +816,87 @@ public class ConversationProfilesClientHttpJsonTest {
   }
 
   @Test
+  public void setSuggestionFeatureConfigTest2() throws Exception {
+    ConversationProfile expectedResponse =
+        ConversationProfile.newBuilder()
+            .setName(
+                ConversationProfileName.ofProjectConversationProfileName(
+                        "[PROJECT]", "[CONVERSATION_PROFILE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setAutomatedAgentConfig(AutomatedAgentConfig.newBuilder().build())
+            .setHumanAgentAssistantConfig(HumanAgentAssistantConfig.newBuilder().build())
+            .setHumanAgentHandoffConfig(HumanAgentHandoffConfig.newBuilder().build())
+            .setNotificationConfig(NotificationConfig.newBuilder().build())
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .setNewMessageEventNotificationConfig(NotificationConfig.newBuilder().build())
+            .setSttConfig(SpeechToTextConfig.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
+            .setTimeZone("timeZone-2077180903")
+            .setSecuritySettings("securitySettings-1062971517")
+            .setTtsConfig(SynthesizeSpeechConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("setSuggestionFeatureConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String conversationProfile =
+        "projects/project-4204/conversationProfiles/conversationProfile-4204";
+    Participant.Role participantRole = Participant.Role.forNumber(0);
+    HumanAgentAssistantConfig.SuggestionFeatureConfig suggestionFeatureConfig =
+        HumanAgentAssistantConfig.SuggestionFeatureConfig.newBuilder().build();
+
+    ConversationProfile actualResponse =
+        client
+            .setSuggestionFeatureConfigAsync(
+                conversationProfile, participantRole, suggestionFeatureConfig)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void setSuggestionFeatureConfigExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String conversationProfile =
+          "projects/project-4204/conversationProfiles/conversationProfile-4204";
+      Participant.Role participantRole = Participant.Role.forNumber(0);
+      HumanAgentAssistantConfig.SuggestionFeatureConfig suggestionFeatureConfig =
+          HumanAgentAssistantConfig.SuggestionFeatureConfig.newBuilder().build();
+      client
+          .setSuggestionFeatureConfigAsync(
+              conversationProfile, participantRole, suggestionFeatureConfig)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void clearSuggestionFeatureConfigTest() throws Exception {
     ConversationProfile expectedResponse =
         ConversationProfile.newBuilder()
@@ -879,6 +960,85 @@ public class ConversationProfilesClientHttpJsonTest {
       String conversationProfile =
           "projects/project-4204/conversationProfiles/conversationProfile-4204";
       client.clearSuggestionFeatureConfigAsync(conversationProfile).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void clearSuggestionFeatureConfigTest2() throws Exception {
+    ConversationProfile expectedResponse =
+        ConversationProfile.newBuilder()
+            .setName(
+                ConversationProfileName.ofProjectConversationProfileName(
+                        "[PROJECT]", "[CONVERSATION_PROFILE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setAutomatedAgentConfig(AutomatedAgentConfig.newBuilder().build())
+            .setHumanAgentAssistantConfig(HumanAgentAssistantConfig.newBuilder().build())
+            .setHumanAgentHandoffConfig(HumanAgentHandoffConfig.newBuilder().build())
+            .setNotificationConfig(NotificationConfig.newBuilder().build())
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .setNewMessageEventNotificationConfig(NotificationConfig.newBuilder().build())
+            .setSttConfig(SpeechToTextConfig.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
+            .setTimeZone("timeZone-2077180903")
+            .setSecuritySettings("securitySettings-1062971517")
+            .setTtsConfig(SynthesizeSpeechConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("clearSuggestionFeatureConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String conversationProfile =
+        "projects/project-4204/conversationProfiles/conversationProfile-4204";
+    Participant.Role participantRole = Participant.Role.forNumber(0);
+    SuggestionFeature.Type suggestionFeatureType = SuggestionFeature.Type.forNumber(0);
+
+    ConversationProfile actualResponse =
+        client
+            .clearSuggestionFeatureConfigAsync(
+                conversationProfile, participantRole, suggestionFeatureType)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void clearSuggestionFeatureConfigExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String conversationProfile =
+          "projects/project-4204/conversationProfiles/conversationProfile-4204";
+      Participant.Role participantRole = Participant.Role.forNumber(0);
+      SuggestionFeature.Type suggestionFeatureType = SuggestionFeature.Type.forNumber(0);
+      client
+          .clearSuggestionFeatureConfigAsync(
+              conversationProfile, participantRole, suggestionFeatureType)
+          .get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }

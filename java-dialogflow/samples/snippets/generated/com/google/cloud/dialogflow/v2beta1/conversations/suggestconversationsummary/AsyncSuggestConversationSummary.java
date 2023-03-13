@@ -18,6 +18,7 @@ package com.google.cloud.dialogflow.v2beta1.samples;
 
 // [START dialogflow_v2beta1_generated_Conversations_SuggestConversationSummary_async]
 import com.google.api.core.ApiFuture;
+import com.google.cloud.dialogflow.v2beta1.AssistQueryParameters;
 import com.google.cloud.dialogflow.v2beta1.ConversationName;
 import com.google.cloud.dialogflow.v2beta1.ConversationsClient;
 import com.google.cloud.dialogflow.v2beta1.MessageName;
@@ -47,6 +48,7 @@ public class AsyncSuggestConversationSummary {
                           "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
                       .toString())
               .setContextSize(1116903569)
+              .setAssistQueryParams(AssistQueryParameters.newBuilder().build())
               .build();
       ApiFuture<SuggestConversationSummaryResponse> future =
           conversationsClient.suggestConversationSummaryCallable().futureCall(request);

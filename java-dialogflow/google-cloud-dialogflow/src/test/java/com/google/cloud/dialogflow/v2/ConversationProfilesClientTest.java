@@ -728,6 +728,85 @@ public class ConversationProfilesClientTest {
   }
 
   @Test
+  public void setSuggestionFeatureConfigTest2() throws Exception {
+    ConversationProfile expectedResponse =
+        ConversationProfile.newBuilder()
+            .setName(
+                ConversationProfileName.ofProjectConversationProfileName(
+                        "[PROJECT]", "[CONVERSATION_PROFILE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setAutomatedAgentConfig(AutomatedAgentConfig.newBuilder().build())
+            .setHumanAgentAssistantConfig(HumanAgentAssistantConfig.newBuilder().build())
+            .setHumanAgentHandoffConfig(HumanAgentHandoffConfig.newBuilder().build())
+            .setNotificationConfig(NotificationConfig.newBuilder().build())
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .setNewMessageEventNotificationConfig(NotificationConfig.newBuilder().build())
+            .setSttConfig(SpeechToTextConfig.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
+            .setTimeZone("timeZone-2077180903")
+            .setSecuritySettings("securitySettings-1062971517")
+            .setTtsConfig(SynthesizeSpeechConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("setSuggestionFeatureConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockConversationProfiles.addResponse(resultOperation);
+
+    String conversationProfile = "conversationProfile1691597734";
+    Participant.Role participantRole = Participant.Role.forNumber(0);
+    HumanAgentAssistantConfig.SuggestionFeatureConfig suggestionFeatureConfig =
+        HumanAgentAssistantConfig.SuggestionFeatureConfig.newBuilder().build();
+
+    ConversationProfile actualResponse =
+        client
+            .setSuggestionFeatureConfigAsync(
+                conversationProfile, participantRole, suggestionFeatureConfig)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConversationProfiles.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SetSuggestionFeatureConfigRequest actualRequest =
+        ((SetSuggestionFeatureConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(conversationProfile, actualRequest.getConversationProfile());
+    Assert.assertEquals(participantRole, actualRequest.getParticipantRole());
+    Assert.assertEquals(suggestionFeatureConfig, actualRequest.getSuggestionFeatureConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void setSuggestionFeatureConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConversationProfiles.addException(exception);
+
+    try {
+      String conversationProfile = "conversationProfile1691597734";
+      Participant.Role participantRole = Participant.Role.forNumber(0);
+      HumanAgentAssistantConfig.SuggestionFeatureConfig suggestionFeatureConfig =
+          HumanAgentAssistantConfig.SuggestionFeatureConfig.newBuilder().build();
+      client
+          .setSuggestionFeatureConfigAsync(
+              conversationProfile, participantRole, suggestionFeatureConfig)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void clearSuggestionFeatureConfigTest() throws Exception {
     ConversationProfile expectedResponse =
         ConversationProfile.newBuilder()
@@ -784,6 +863,83 @@ public class ConversationProfilesClientTest {
     try {
       String conversationProfile = "conversationProfile1691597734";
       client.clearSuggestionFeatureConfigAsync(conversationProfile).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void clearSuggestionFeatureConfigTest2() throws Exception {
+    ConversationProfile expectedResponse =
+        ConversationProfile.newBuilder()
+            .setName(
+                ConversationProfileName.ofProjectConversationProfileName(
+                        "[PROJECT]", "[CONVERSATION_PROFILE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setAutomatedAgentConfig(AutomatedAgentConfig.newBuilder().build())
+            .setHumanAgentAssistantConfig(HumanAgentAssistantConfig.newBuilder().build())
+            .setHumanAgentHandoffConfig(HumanAgentHandoffConfig.newBuilder().build())
+            .setNotificationConfig(NotificationConfig.newBuilder().build())
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .setNewMessageEventNotificationConfig(NotificationConfig.newBuilder().build())
+            .setSttConfig(SpeechToTextConfig.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
+            .setTimeZone("timeZone-2077180903")
+            .setSecuritySettings("securitySettings-1062971517")
+            .setTtsConfig(SynthesizeSpeechConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("clearSuggestionFeatureConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockConversationProfiles.addResponse(resultOperation);
+
+    String conversationProfile = "conversationProfile1691597734";
+    Participant.Role participantRole = Participant.Role.forNumber(0);
+    SuggestionFeature.Type suggestionFeatureType = SuggestionFeature.Type.forNumber(0);
+
+    ConversationProfile actualResponse =
+        client
+            .clearSuggestionFeatureConfigAsync(
+                conversationProfile, participantRole, suggestionFeatureType)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConversationProfiles.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ClearSuggestionFeatureConfigRequest actualRequest =
+        ((ClearSuggestionFeatureConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(conversationProfile, actualRequest.getConversationProfile());
+    Assert.assertEquals(participantRole, actualRequest.getParticipantRole());
+    Assert.assertEquals(suggestionFeatureType, actualRequest.getSuggestionFeatureType());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void clearSuggestionFeatureConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConversationProfiles.addException(exception);
+
+    try {
+      String conversationProfile = "conversationProfile1691597734";
+      Participant.Role participantRole = Participant.Role.forNumber(0);
+      SuggestionFeature.Type suggestionFeatureType = SuggestionFeature.Type.forNumber(0);
+      client
+          .clearSuggestionFeatureConfigAsync(
+              conversationProfile, participantRole, suggestionFeatureType)
+          .get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
