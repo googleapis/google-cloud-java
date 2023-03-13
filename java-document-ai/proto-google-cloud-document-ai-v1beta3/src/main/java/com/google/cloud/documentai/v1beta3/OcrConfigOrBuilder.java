@@ -27,6 +27,41 @@ public interface OcrConfigOrBuilder
    *
    *
    * <pre>
+   * Hints for the OCR model.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.OcrConfig.Hints hints = 2;</code>
+   *
+   * @return Whether the hints field is set.
+   */
+  boolean hasHints();
+  /**
+   *
+   *
+   * <pre>
+   * Hints for the OCR model.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.OcrConfig.Hints hints = 2;</code>
+   *
+   * @return The hints.
+   */
+  com.google.cloud.documentai.v1beta3.OcrConfig.Hints getHints();
+  /**
+   *
+   *
+   * <pre>
+   * Hints for the OCR model.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.OcrConfig.Hints hints = 2;</code>
+   */
+  com.google.cloud.documentai.v1beta3.OcrConfig.HintsOrBuilder getHintsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Enables special handling for PDFs with existing text information. Results
    * in better text extraction quality in such PDF inputs.
    * </pre>
@@ -36,6 +71,21 @@ public interface OcrConfigOrBuilder
    * @return The enableNativePdfParsing.
    */
   boolean getEnableNativePdfParsing();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enables intelligent document quality scores after OCR. Can help with
+   * diagnosing why OCR responses are of poor quality for a given input.
+   * Adds additional latency comparable to regular OCR to the process call.
+   * </pre>
+   *
+   * <code>bool enable_image_quality_scores = 4;</code>
+   *
+   * @return The enableImageQualityScores.
+   */
+  boolean getEnableImageQualityScores();
 
   /**
    *
@@ -87,4 +137,17 @@ public interface OcrConfigOrBuilder
    * @return The bytes of the advancedOcrOptions at the given index.
    */
   com.google.protobuf.ByteString getAdvancedOcrOptionsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Includes symbol level OCR information if set to true.
+   * </pre>
+   *
+   * <code>bool enable_symbol = 6;</code>
+   *
+   * @return The enableSymbol.
+   */
+  boolean getEnableSymbol();
 }
