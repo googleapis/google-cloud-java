@@ -15,7 +15,9 @@
  */
 
 /**
- * The interfaces provided are listed below, along with usage samples.
+ * A client to Binary Authorization API
+ *
+ * <p>The interfaces provided are listed below, along with usage samples.
  *
  * <p>======================= BinauthzManagementServiceV1Beta1Client =======================
  *
