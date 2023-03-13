@@ -23,7 +23,8 @@ package com.google.cloud.scheduler.v1;
  *
  * <pre>
  * Http target. The job will be pushed to the job handler by means of
- * an HTTP request via an [http_method][google.cloud.scheduler.v1.HttpTarget.http_method] such as HTTP
+ * an HTTP request via an
+ * [http_method][google.cloud.scheduler.v1.HttpTarget.http_method] such as HTTP
  * POST, HTTP GET, etc. The job is acknowledged by means of an HTTP
  * response code in the range [200 - 299]. A failure to receive a response
  * constitutes a failed execution. For a redirected request, the response
@@ -271,6 +272,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    * * `User-Agent`: This will be set to `"Google-Cloud-Scheduler"`.
    * * `X-Google-*`: Google internal use only.
    * * `X-AppEngine-*`: Google internal use only.
+   * * `X-CloudScheduler`: This header will be set to true.
+   * * `X-CloudScheduler-JobName`: This header will contain the job name.
+   * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
+   * the unix-cron format, this header will contain the job schedule time in
+   * RFC3339 UTC "Zulu" format.
    * The total size of headers must be less than 80KB.
    * </pre>
    *
@@ -306,6 +312,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    * * `User-Agent`: This will be set to `"Google-Cloud-Scheduler"`.
    * * `X-Google-*`: Google internal use only.
    * * `X-AppEngine-*`: Google internal use only.
+   * * `X-CloudScheduler`: This header will be set to true.
+   * * `X-CloudScheduler-JobName`: This header will contain the job name.
+   * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
+   * the unix-cron format, this header will contain the job schedule time in
+   * RFC3339 UTC "Zulu" format.
    * The total size of headers must be less than 80KB.
    * </pre>
    *
@@ -332,6 +343,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    * * `User-Agent`: This will be set to `"Google-Cloud-Scheduler"`.
    * * `X-Google-*`: Google internal use only.
    * * `X-AppEngine-*`: Google internal use only.
+   * * `X-CloudScheduler`: This header will be set to true.
+   * * `X-CloudScheduler-JobName`: This header will contain the job name.
+   * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
+   * the unix-cron format, this header will contain the job schedule time in
+   * RFC3339 UTC "Zulu" format.
    * The total size of headers must be less than 80KB.
    * </pre>
    *
@@ -365,6 +381,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    * * `User-Agent`: This will be set to `"Google-Cloud-Scheduler"`.
    * * `X-Google-*`: Google internal use only.
    * * `X-AppEngine-*`: Google internal use only.
+   * * `X-CloudScheduler`: This header will be set to true.
+   * * `X-CloudScheduler-JobName`: This header will contain the job name.
+   * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
+   * the unix-cron format, this header will contain the job schedule time in
+   * RFC3339 UTC "Zulu" format.
    * The total size of headers must be less than 80KB.
    * </pre>
    *
@@ -776,7 +797,8 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Http target. The job will be pushed to the job handler by means of
-   * an HTTP request via an [http_method][google.cloud.scheduler.v1.HttpTarget.http_method] such as HTTP
+   * an HTTP request via an
+   * [http_method][google.cloud.scheduler.v1.HttpTarget.http_method] such as HTTP
    * POST, HTTP GET, etc. The job is acknowledged by means of an HTTP
    * response code in the range [200 - 299]. A failure to receive a response
    * constitutes a failed execution. For a redirected request, the response
@@ -1348,6 +1370,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * * `User-Agent`: This will be set to `"Google-Cloud-Scheduler"`.
      * * `X-Google-*`: Google internal use only.
      * * `X-AppEngine-*`: Google internal use only.
+     * * `X-CloudScheduler`: This header will be set to true.
+     * * `X-CloudScheduler-JobName`: This header will contain the job name.
+     * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
+     * the unix-cron format, this header will contain the job schedule time in
+     * RFC3339 UTC "Zulu" format.
      * The total size of headers must be less than 80KB.
      * </pre>
      *
@@ -1383,6 +1410,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * * `User-Agent`: This will be set to `"Google-Cloud-Scheduler"`.
      * * `X-Google-*`: Google internal use only.
      * * `X-AppEngine-*`: Google internal use only.
+     * * `X-CloudScheduler`: This header will be set to true.
+     * * `X-CloudScheduler-JobName`: This header will contain the job name.
+     * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
+     * the unix-cron format, this header will contain the job schedule time in
+     * RFC3339 UTC "Zulu" format.
      * The total size of headers must be less than 80KB.
      * </pre>
      *
@@ -1409,6 +1441,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * * `User-Agent`: This will be set to `"Google-Cloud-Scheduler"`.
      * * `X-Google-*`: Google internal use only.
      * * `X-AppEngine-*`: Google internal use only.
+     * * `X-CloudScheduler`: This header will be set to true.
+     * * `X-CloudScheduler-JobName`: This header will contain the job name.
+     * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
+     * the unix-cron format, this header will contain the job schedule time in
+     * RFC3339 UTC "Zulu" format.
      * The total size of headers must be less than 80KB.
      * </pre>
      *
@@ -1442,6 +1479,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * * `User-Agent`: This will be set to `"Google-Cloud-Scheduler"`.
      * * `X-Google-*`: Google internal use only.
      * * `X-AppEngine-*`: Google internal use only.
+     * * `X-CloudScheduler`: This header will be set to true.
+     * * `X-CloudScheduler-JobName`: This header will contain the job name.
+     * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
+     * the unix-cron format, this header will contain the job schedule time in
+     * RFC3339 UTC "Zulu" format.
      * The total size of headers must be less than 80KB.
      * </pre>
      *
@@ -1481,6 +1523,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * * `User-Agent`: This will be set to `"Google-Cloud-Scheduler"`.
      * * `X-Google-*`: Google internal use only.
      * * `X-AppEngine-*`: Google internal use only.
+     * * `X-CloudScheduler`: This header will be set to true.
+     * * `X-CloudScheduler-JobName`: This header will contain the job name.
+     * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
+     * the unix-cron format, this header will contain the job schedule time in
+     * RFC3339 UTC "Zulu" format.
      * The total size of headers must be less than 80KB.
      * </pre>
      *
@@ -1516,6 +1563,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * * `User-Agent`: This will be set to `"Google-Cloud-Scheduler"`.
      * * `X-Google-*`: Google internal use only.
      * * `X-AppEngine-*`: Google internal use only.
+     * * `X-CloudScheduler`: This header will be set to true.
+     * * `X-CloudScheduler-JobName`: This header will contain the job name.
+     * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
+     * the unix-cron format, this header will contain the job schedule time in
+     * RFC3339 UTC "Zulu" format.
      * The total size of headers must be less than 80KB.
      * </pre>
      *
@@ -1549,6 +1601,11 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * * `User-Agent`: This will be set to `"Google-Cloud-Scheduler"`.
      * * `X-Google-*`: Google internal use only.
      * * `X-AppEngine-*`: Google internal use only.
+     * * `X-CloudScheduler`: This header will be set to true.
+     * * `X-CloudScheduler-JobName`: This header will contain the job name.
+     * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
+     * the unix-cron format, this header will contain the job schedule time in
+     * RFC3339 UTC "Zulu" format.
      * The total size of headers must be less than 80KB.
      * </pre>
      *

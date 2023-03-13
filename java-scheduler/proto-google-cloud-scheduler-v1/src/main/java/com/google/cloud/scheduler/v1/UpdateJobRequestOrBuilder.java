@@ -27,7 +27,8 @@ public interface UpdateJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
+   * Required. The new job properties.
+   * [name][google.cloud.scheduler.v1.Job.name] must be specified.
    * Output only fields cannot be modified using UpdateJob.
    * Any value specified for an output only field will be ignored.
    * </pre>
@@ -41,7 +42,8 @@ public interface UpdateJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
+   * Required. The new job properties.
+   * [name][google.cloud.scheduler.v1.Job.name] must be specified.
    * Output only fields cannot be modified using UpdateJob.
    * Any value specified for an output only field will be ignored.
    * </pre>
@@ -55,7 +57,8 @@ public interface UpdateJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
+   * Required. The new job properties.
+   * [name][google.cloud.scheduler.v1.Job.name] must be specified.
    * Output only fields cannot be modified using UpdateJob.
    * Any value specified for an output only field will be ignored.
    * </pre>
@@ -71,8 +74,7 @@ public interface UpdateJobRequestOrBuilder
    * A  mask used to specify which fields of the job are being updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -84,8 +86,7 @@ public interface UpdateJobRequestOrBuilder
    * A  mask used to specify which fields of the job are being updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    *
    * @return The updateMask.
    */
@@ -97,8 +98,7 @@ public interface UpdateJobRequestOrBuilder
    * A  mask used to specify which fields of the job are being updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

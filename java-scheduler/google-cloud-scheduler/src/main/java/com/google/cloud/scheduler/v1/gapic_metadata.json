@@ -19,8 +19,14 @@
             "GetJob": {
               "methods": ["getJob", "getJob", "getJob", "getJobCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "ListJobs": {
               "methods": ["listJobs", "listJobs", "listJobs", "listJobsPagedCallable", "listJobsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "PauseJob": {
               "methods": ["pauseJob", "pauseJob", "pauseJob", "pauseJobCallable"]

@@ -22,7 +22,8 @@ package com.google.cloud.scheduler.v1;
  *
  *
  * <pre>
- * Request message for [UpdateJob][google.cloud.scheduler.v1.CloudScheduler.UpdateJob].
+ * Request message for
+ * [UpdateJob][google.cloud.scheduler.v1.CloudScheduler.UpdateJob].
  * </pre>
  *
  * Protobuf type {@code google.cloud.scheduler.v1.UpdateJobRequest}
@@ -71,7 +72,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
+   * Required. The new job properties.
+   * [name][google.cloud.scheduler.v1.Job.name] must be specified.
    * Output only fields cannot be modified using UpdateJob.
    * Any value specified for an output only field will be ignored.
    * </pre>
@@ -88,7 +90,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
+   * Required. The new job properties.
+   * [name][google.cloud.scheduler.v1.Job.name] must be specified.
    * Output only fields cannot be modified using UpdateJob.
    * Any value specified for an output only field will be ignored.
    * </pre>
@@ -105,7 +108,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
+   * Required. The new job properties.
+   * [name][google.cloud.scheduler.v1.Job.name] must be specified.
    * Output only fields cannot be modified using UpdateJob.
    * Any value specified for an output only field will be ignored.
    * </pre>
@@ -126,8 +130,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    * A  mask used to specify which fields of the job are being updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -142,8 +145,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    * A  mask used to specify which fields of the job are being updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    *
    * @return The updateMask.
    */
@@ -158,8 +160,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    * A  mask used to specify which fields of the job are being updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
@@ -348,7 +349,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Request message for [UpdateJob][google.cloud.scheduler.v1.CloudScheduler.UpdateJob].
+   * Request message for
+   * [UpdateJob][google.cloud.scheduler.v1.CloudScheduler.UpdateJob].
    * </pre>
    *
    * Protobuf type {@code google.cloud.scheduler.v1.UpdateJobRequest}
@@ -555,7 +557,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
+     * Required. The new job properties.
+     * [name][google.cloud.scheduler.v1.Job.name] must be specified.
      * Output only fields cannot be modified using UpdateJob.
      * Any value specified for an output only field will be ignored.
      * </pre>
@@ -572,7 +575,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
+     * Required. The new job properties.
+     * [name][google.cloud.scheduler.v1.Job.name] must be specified.
      * Output only fields cannot be modified using UpdateJob.
      * Any value specified for an output only field will be ignored.
      * </pre>
@@ -593,7 +597,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
+     * Required. The new job properties.
+     * [name][google.cloud.scheduler.v1.Job.name] must be specified.
      * Output only fields cannot be modified using UpdateJob.
      * Any value specified for an output only field will be ignored.
      * </pre>
@@ -618,7 +623,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
+     * Required. The new job properties.
+     * [name][google.cloud.scheduler.v1.Job.name] must be specified.
      * Output only fields cannot be modified using UpdateJob.
      * Any value specified for an output only field will be ignored.
      * </pre>
@@ -640,7 +646,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
+     * Required. The new job properties.
+     * [name][google.cloud.scheduler.v1.Job.name] must be specified.
      * Output only fields cannot be modified using UpdateJob.
      * Any value specified for an output only field will be ignored.
      * </pre>
@@ -668,7 +675,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
+     * Required. The new job properties.
+     * [name][google.cloud.scheduler.v1.Job.name] must be specified.
      * Output only fields cannot be modified using UpdateJob.
      * Any value specified for an output only field will be ignored.
      * </pre>
@@ -690,7 +698,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
+     * Required. The new job properties.
+     * [name][google.cloud.scheduler.v1.Job.name] must be specified.
      * Output only fields cannot be modified using UpdateJob.
      * Any value specified for an output only field will be ignored.
      * </pre>
@@ -707,7 +716,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
+     * Required. The new job properties.
+     * [name][google.cloud.scheduler.v1.Job.name] must be specified.
      * Output only fields cannot be modified using UpdateJob.
      * Any value specified for an output only field will be ignored.
      * </pre>
@@ -726,7 +736,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
+     * Required. The new job properties.
+     * [name][google.cloud.scheduler.v1.Job.name] must be specified.
      * Output only fields cannot be modified using UpdateJob.
      * Any value specified for an output only field will be ignored.
      * </pre>
@@ -764,8 +775,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * A  mask used to specify which fields of the job are being updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      *
      * @return Whether the updateMask field is set.
      */
@@ -779,8 +789,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * A  mask used to specify which fields of the job are being updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      *
      * @return The updateMask.
      */
@@ -800,8 +809,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * A  mask used to specify which fields of the job are being updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -823,8 +831,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * A  mask used to specify which fields of the job are being updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -843,8 +850,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * A  mask used to specify which fields of the job are being updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -869,8 +875,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * A  mask used to specify which fields of the job are being updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -889,8 +894,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * A  mask used to specify which fields of the job are being updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
       bitField0_ |= 0x00000002;
@@ -904,8 +908,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * A  mask used to specify which fields of the job are being updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -923,8 +926,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * A  mask used to specify which fields of the job are being updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

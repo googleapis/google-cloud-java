@@ -202,7 +202,7 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    * the job is attempted.
    * Requests can only be sent to a specific instance if
    * [manual scaling is used in App Engine
-   * Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
+   * Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?#scaling_types_and_instance_classes).
    * App Engine Flex does not support instances. For more information, see
    * [App Engine Standard request
    * routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed)
@@ -235,7 +235,7 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    * the job is attempted.
    * Requests can only be sent to a specific instance if
    * [manual scaling is used in App Engine
-   * Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
+   * Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?#scaling_types_and_instance_classes).
    * App Engine Flex does not support instances. For more information, see
    * [App Engine Standard request
    * routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed)
@@ -288,7 +288,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    * * `version_dot_service =`
    *   [version][google.cloud.scheduler.v1.AppEngineRouting.version] `+ '.' +`
    *   [service][google.cloud.scheduler.v1.AppEngineRouting.service]
-   * * `instance =` [instance][google.cloud.scheduler.v1.AppEngineRouting.instance]
+   * * `instance =`
+   * [instance][google.cloud.scheduler.v1.AppEngineRouting.instance]
    * * `instance_dot_service =`
    *   [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] `+ '.' +`
    *   [service][google.cloud.scheduler.v1.AppEngineRouting.service]
@@ -299,16 +300,20 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    *   [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] `+ '.' +`
    *   [version][google.cloud.scheduler.v1.AppEngineRouting.version] `+ '.' +`
    *   [service][google.cloud.scheduler.v1.AppEngineRouting.service]
-   * If [service][google.cloud.scheduler.v1.AppEngineRouting.service] is empty, then the job will be sent
-   * to the service which is the default service when the job is attempted.
-   * If [version][google.cloud.scheduler.v1.AppEngineRouting.version] is empty, then the job will be sent
-   * to the version which is the default version when the job is attempted.
-   * If [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] is empty, then the job will be
-   * sent to an instance which is available when the job is attempted.
+   * If [service][google.cloud.scheduler.v1.AppEngineRouting.service] is empty,
+   * then the job will be sent to the service which is the default service when
+   * the job is attempted.
+   * If [version][google.cloud.scheduler.v1.AppEngineRouting.version] is empty,
+   * then the job will be sent to the version which is the default version when
+   * the job is attempted.
+   * If [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] is
+   * empty, then the job will be sent to an instance which is available when the
+   * job is attempted.
    * If [service][google.cloud.scheduler.v1.AppEngineRouting.service],
    * [version][google.cloud.scheduler.v1.AppEngineRouting.version], or
-   * [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] is invalid, then the job will be sent
-   * to the default version of the default service when the job is attempted.
+   * [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] is invalid,
+   * then the job will be sent to the default version of the default service
+   * when the job is attempted.
    * </pre>
    *
    * <code>string host = 4;</code>
@@ -351,7 +356,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    * * `version_dot_service =`
    *   [version][google.cloud.scheduler.v1.AppEngineRouting.version] `+ '.' +`
    *   [service][google.cloud.scheduler.v1.AppEngineRouting.service]
-   * * `instance =` [instance][google.cloud.scheduler.v1.AppEngineRouting.instance]
+   * * `instance =`
+   * [instance][google.cloud.scheduler.v1.AppEngineRouting.instance]
    * * `instance_dot_service =`
    *   [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] `+ '.' +`
    *   [service][google.cloud.scheduler.v1.AppEngineRouting.service]
@@ -362,16 +368,20 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    *   [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] `+ '.' +`
    *   [version][google.cloud.scheduler.v1.AppEngineRouting.version] `+ '.' +`
    *   [service][google.cloud.scheduler.v1.AppEngineRouting.service]
-   * If [service][google.cloud.scheduler.v1.AppEngineRouting.service] is empty, then the job will be sent
-   * to the service which is the default service when the job is attempted.
-   * If [version][google.cloud.scheduler.v1.AppEngineRouting.version] is empty, then the job will be sent
-   * to the version which is the default version when the job is attempted.
-   * If [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] is empty, then the job will be
-   * sent to an instance which is available when the job is attempted.
+   * If [service][google.cloud.scheduler.v1.AppEngineRouting.service] is empty,
+   * then the job will be sent to the service which is the default service when
+   * the job is attempted.
+   * If [version][google.cloud.scheduler.v1.AppEngineRouting.version] is empty,
+   * then the job will be sent to the version which is the default version when
+   * the job is attempted.
+   * If [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] is
+   * empty, then the job will be sent to an instance which is available when the
+   * job is attempted.
    * If [service][google.cloud.scheduler.v1.AppEngineRouting.service],
    * [version][google.cloud.scheduler.v1.AppEngineRouting.version], or
-   * [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] is invalid, then the job will be sent
-   * to the default version of the default service when the job is attempted.
+   * [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] is invalid,
+   * then the job will be sent to the default version of the default service
+   * when the job is attempted.
    * </pre>
    *
    * <code>string host = 4;</code>
@@ -1055,7 +1065,7 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * the job is attempted.
      * Requests can only be sent to a specific instance if
      * [manual scaling is used in App Engine
-     * Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
+     * Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?#scaling_types_and_instance_classes).
      * App Engine Flex does not support instances. For more information, see
      * [App Engine Standard request
      * routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed)
@@ -1087,7 +1097,7 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * the job is attempted.
      * Requests can only be sent to a specific instance if
      * [manual scaling is used in App Engine
-     * Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
+     * Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?#scaling_types_and_instance_classes).
      * App Engine Flex does not support instances. For more information, see
      * [App Engine Standard request
      * routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed)
@@ -1119,7 +1129,7 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * the job is attempted.
      * Requests can only be sent to a specific instance if
      * [manual scaling is used in App Engine
-     * Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
+     * Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?#scaling_types_and_instance_classes).
      * App Engine Flex does not support instances. For more information, see
      * [App Engine Standard request
      * routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed)
@@ -1150,7 +1160,7 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * the job is attempted.
      * Requests can only be sent to a specific instance if
      * [manual scaling is used in App Engine
-     * Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
+     * Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?#scaling_types_and_instance_classes).
      * App Engine Flex does not support instances. For more information, see
      * [App Engine Standard request
      * routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed)
@@ -1177,7 +1187,7 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * the job is attempted.
      * Requests can only be sent to a specific instance if
      * [manual scaling is used in App Engine
-     * Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?hl=en_US#scaling_types_and_instance_classes).
+     * Standard](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine?#scaling_types_and_instance_classes).
      * App Engine Flex does not support instances. For more information, see
      * [App Engine Standard request
      * routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed)
@@ -1226,7 +1236,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * * `version_dot_service =`
      *   [version][google.cloud.scheduler.v1.AppEngineRouting.version] `+ '.' +`
      *   [service][google.cloud.scheduler.v1.AppEngineRouting.service]
-     * * `instance =` [instance][google.cloud.scheduler.v1.AppEngineRouting.instance]
+     * * `instance =`
+     * [instance][google.cloud.scheduler.v1.AppEngineRouting.instance]
      * * `instance_dot_service =`
      *   [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] `+ '.' +`
      *   [service][google.cloud.scheduler.v1.AppEngineRouting.service]
@@ -1237,16 +1248,20 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      *   [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] `+ '.' +`
      *   [version][google.cloud.scheduler.v1.AppEngineRouting.version] `+ '.' +`
      *   [service][google.cloud.scheduler.v1.AppEngineRouting.service]
-     * If [service][google.cloud.scheduler.v1.AppEngineRouting.service] is empty, then the job will be sent
-     * to the service which is the default service when the job is attempted.
-     * If [version][google.cloud.scheduler.v1.AppEngineRouting.version] is empty, then the job will be sent
-     * to the version which is the default version when the job is attempted.
-     * If [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] is empty, then the job will be
-     * sent to an instance which is available when the job is attempted.
+     * If [service][google.cloud.scheduler.v1.AppEngineRouting.service] is empty,
+     * then the job will be sent to the service which is the default service when
+     * the job is attempted.
+     * If [version][google.cloud.scheduler.v1.AppEngineRouting.version] is empty,
+     * then the job will be sent to the version which is the default version when
+     * the job is attempted.
+     * If [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] is
+     * empty, then the job will be sent to an instance which is available when the
+     * job is attempted.
      * If [service][google.cloud.scheduler.v1.AppEngineRouting.service],
      * [version][google.cloud.scheduler.v1.AppEngineRouting.version], or
-     * [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] is invalid, then the job will be sent
-     * to the default version of the default service when the job is attempted.
+     * [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] is invalid,
+     * then the job will be sent to the default version of the default service
+     * when the job is attempted.
      * </pre>
      *
      * <code>string host = 4;</code>
@@ -1288,7 +1303,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * * `version_dot_service =`
      *   [version][google.cloud.scheduler.v1.AppEngineRouting.version] `+ '.' +`
      *   [service][google.cloud.scheduler.v1.AppEngineRouting.service]
-     * * `instance =` [instance][google.cloud.scheduler.v1.AppEngineRouting.instance]
+     * * `instance =`
+     * [instance][google.cloud.scheduler.v1.AppEngineRouting.instance]
      * * `instance_dot_service =`
      *   [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] `+ '.' +`
      *   [service][google.cloud.scheduler.v1.AppEngineRouting.service]
@@ -1299,16 +1315,20 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      *   [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] `+ '.' +`
      *   [version][google.cloud.scheduler.v1.AppEngineRouting.version] `+ '.' +`
      *   [service][google.cloud.scheduler.v1.AppEngineRouting.service]
-     * If [service][google.cloud.scheduler.v1.AppEngineRouting.service] is empty, then the job will be sent
-     * to the service which is the default service when the job is attempted.
-     * If [version][google.cloud.scheduler.v1.AppEngineRouting.version] is empty, then the job will be sent
-     * to the version which is the default version when the job is attempted.
-     * If [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] is empty, then the job will be
-     * sent to an instance which is available when the job is attempted.
+     * If [service][google.cloud.scheduler.v1.AppEngineRouting.service] is empty,
+     * then the job will be sent to the service which is the default service when
+     * the job is attempted.
+     * If [version][google.cloud.scheduler.v1.AppEngineRouting.version] is empty,
+     * then the job will be sent to the version which is the default version when
+     * the job is attempted.
+     * If [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] is
+     * empty, then the job will be sent to an instance which is available when the
+     * job is attempted.
      * If [service][google.cloud.scheduler.v1.AppEngineRouting.service],
      * [version][google.cloud.scheduler.v1.AppEngineRouting.version], or
-     * [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] is invalid, then the job will be sent
-     * to the default version of the default service when the job is attempted.
+     * [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] is invalid,
+     * then the job will be sent to the default version of the default service
+     * when the job is attempted.
      * </pre>
      *
      * <code>string host = 4;</code>
@@ -1350,7 +1370,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * * `version_dot_service =`
      *   [version][google.cloud.scheduler.v1.AppEngineRouting.version] `+ '.' +`
      *   [service][google.cloud.scheduler.v1.AppEngineRouting.service]
-     * * `instance =` [instance][google.cloud.scheduler.v1.AppEngineRouting.instance]
+     * * `instance =`
+     * [instance][google.cloud.scheduler.v1.AppEngineRouting.instance]
      * * `instance_dot_service =`
      *   [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] `+ '.' +`
      *   [service][google.cloud.scheduler.v1.AppEngineRouting.service]
@@ -1361,16 +1382,20 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      *   [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] `+ '.' +`
      *   [version][google.cloud.scheduler.v1.AppEngineRouting.version] `+ '.' +`
      *   [service][google.cloud.scheduler.v1.AppEngineRouting.service]
-     * If [service][google.cloud.scheduler.v1.AppEngineRouting.service] is empty, then the job will be sent
-     * to the service which is the default service when the job is attempted.
-     * If [version][google.cloud.scheduler.v1.AppEngineRouting.version] is empty, then the job will be sent
-     * to the version which is the default version when the job is attempted.
-     * If [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] is empty, then the job will be
-     * sent to an instance which is available when the job is attempted.
+     * If [service][google.cloud.scheduler.v1.AppEngineRouting.service] is empty,
+     * then the job will be sent to the service which is the default service when
+     * the job is attempted.
+     * If [version][google.cloud.scheduler.v1.AppEngineRouting.version] is empty,
+     * then the job will be sent to the version which is the default version when
+     * the job is attempted.
+     * If [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] is
+     * empty, then the job will be sent to an instance which is available when the
+     * job is attempted.
      * If [service][google.cloud.scheduler.v1.AppEngineRouting.service],
      * [version][google.cloud.scheduler.v1.AppEngineRouting.version], or
-     * [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] is invalid, then the job will be sent
-     * to the default version of the default service when the job is attempted.
+     * [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] is invalid,
+     * then the job will be sent to the default version of the default service
+     * when the job is attempted.
      * </pre>
      *
      * <code>string host = 4;</code>
@@ -1411,7 +1436,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * * `version_dot_service =`
      *   [version][google.cloud.scheduler.v1.AppEngineRouting.version] `+ '.' +`
      *   [service][google.cloud.scheduler.v1.AppEngineRouting.service]
-     * * `instance =` [instance][google.cloud.scheduler.v1.AppEngineRouting.instance]
+     * * `instance =`
+     * [instance][google.cloud.scheduler.v1.AppEngineRouting.instance]
      * * `instance_dot_service =`
      *   [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] `+ '.' +`
      *   [service][google.cloud.scheduler.v1.AppEngineRouting.service]
@@ -1422,16 +1448,20 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      *   [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] `+ '.' +`
      *   [version][google.cloud.scheduler.v1.AppEngineRouting.version] `+ '.' +`
      *   [service][google.cloud.scheduler.v1.AppEngineRouting.service]
-     * If [service][google.cloud.scheduler.v1.AppEngineRouting.service] is empty, then the job will be sent
-     * to the service which is the default service when the job is attempted.
-     * If [version][google.cloud.scheduler.v1.AppEngineRouting.version] is empty, then the job will be sent
-     * to the version which is the default version when the job is attempted.
-     * If [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] is empty, then the job will be
-     * sent to an instance which is available when the job is attempted.
+     * If [service][google.cloud.scheduler.v1.AppEngineRouting.service] is empty,
+     * then the job will be sent to the service which is the default service when
+     * the job is attempted.
+     * If [version][google.cloud.scheduler.v1.AppEngineRouting.version] is empty,
+     * then the job will be sent to the version which is the default version when
+     * the job is attempted.
+     * If [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] is
+     * empty, then the job will be sent to an instance which is available when the
+     * job is attempted.
      * If [service][google.cloud.scheduler.v1.AppEngineRouting.service],
      * [version][google.cloud.scheduler.v1.AppEngineRouting.version], or
-     * [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] is invalid, then the job will be sent
-     * to the default version of the default service when the job is attempted.
+     * [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] is invalid,
+     * then the job will be sent to the default version of the default service
+     * when the job is attempted.
      * </pre>
      *
      * <code>string host = 4;</code>
@@ -1468,7 +1498,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      * * `version_dot_service =`
      *   [version][google.cloud.scheduler.v1.AppEngineRouting.version] `+ '.' +`
      *   [service][google.cloud.scheduler.v1.AppEngineRouting.service]
-     * * `instance =` [instance][google.cloud.scheduler.v1.AppEngineRouting.instance]
+     * * `instance =`
+     * [instance][google.cloud.scheduler.v1.AppEngineRouting.instance]
      * * `instance_dot_service =`
      *   [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] `+ '.' +`
      *   [service][google.cloud.scheduler.v1.AppEngineRouting.service]
@@ -1479,16 +1510,20 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
      *   [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] `+ '.' +`
      *   [version][google.cloud.scheduler.v1.AppEngineRouting.version] `+ '.' +`
      *   [service][google.cloud.scheduler.v1.AppEngineRouting.service]
-     * If [service][google.cloud.scheduler.v1.AppEngineRouting.service] is empty, then the job will be sent
-     * to the service which is the default service when the job is attempted.
-     * If [version][google.cloud.scheduler.v1.AppEngineRouting.version] is empty, then the job will be sent
-     * to the version which is the default version when the job is attempted.
-     * If [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] is empty, then the job will be
-     * sent to an instance which is available when the job is attempted.
+     * If [service][google.cloud.scheduler.v1.AppEngineRouting.service] is empty,
+     * then the job will be sent to the service which is the default service when
+     * the job is attempted.
+     * If [version][google.cloud.scheduler.v1.AppEngineRouting.version] is empty,
+     * then the job will be sent to the version which is the default version when
+     * the job is attempted.
+     * If [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] is
+     * empty, then the job will be sent to an instance which is available when the
+     * job is attempted.
      * If [service][google.cloud.scheduler.v1.AppEngineRouting.service],
      * [version][google.cloud.scheduler.v1.AppEngineRouting.version], or
-     * [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] is invalid, then the job will be sent
-     * to the default version of the default service when the job is attempted.
+     * [instance][google.cloud.scheduler.v1.AppEngineRouting.instance] is invalid,
+     * then the job will be sent to the default version of the default service
+     * when the job is attempted.
      * </pre>
      *
      * <code>string host = 4;</code>
