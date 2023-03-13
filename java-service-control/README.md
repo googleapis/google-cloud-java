@@ -14,7 +14,6 @@ Java idiomatic client for [Service Control API][product-docs].
 
 If you are using Maven, add this to your pom.xml file:
 
-<!--- {x-version-update-start:google-cloud-service-control:released} -->
 
 ```xml
 <dependency>
@@ -35,7 +34,6 @@ If you are using SBT, add this to your dependencies:
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-service-control" % "1.12.0"
 ```
-<!--- {x-version-update-end} -->
 
 ## Authentication
 
