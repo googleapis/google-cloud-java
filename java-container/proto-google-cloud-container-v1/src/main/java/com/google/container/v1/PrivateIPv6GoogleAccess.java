@@ -63,7 +63,7 @@ public enum PrivateIPv6GoogleAccess implements com.google.protobuf.ProtocolMessa
    *
    *
    * <pre>
-   * Enables priate IPv6 access to and from Google Services
+   * Enables private IPv6 access to and from Google Services
    * </pre>
    *
    * <code>PRIVATE_IPV6_GOOGLE_ACCESS_BIDIRECTIONAL = 3;</code>
@@ -106,7 +106,7 @@ public enum PrivateIPv6GoogleAccess implements com.google.protobuf.ProtocolMessa
    *
    *
    * <pre>
-   * Enables priate IPv6 access to and from Google Services
+   * Enables private IPv6 access to and from Google Services
    * </pre>
    *
    * <code>PRIVATE_IPV6_GOOGLE_ACCESS_BIDIRECTIONAL = 3;</code>
