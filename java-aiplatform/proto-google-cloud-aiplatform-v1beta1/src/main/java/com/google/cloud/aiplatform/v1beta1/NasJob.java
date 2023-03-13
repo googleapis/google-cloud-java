@@ -772,12 +772,16 @@ public final class NasJob extends com.google.protobuf.GeneratedMessageV3
    * and restricted image training for tenant project.
    * </pre>
    *
-   * <code>bool enable_restricted_image_training = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * bool enable_restricted_image_training = 14 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.NasJob.enable_restricted_image_training is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/nas_job.proto;l=97
    * @return The enableRestrictedImageTraining.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getEnableRestrictedImageTraining() {
     return enableRestrictedImageTraining_;
   }
@@ -3610,12 +3614,16 @@ public final class NasJob extends com.google.protobuf.GeneratedMessageV3
      * and restricted image training for tenant project.
      * </pre>
      *
-     * <code>bool enable_restricted_image_training = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * bool enable_restricted_image_training = 14 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.NasJob.enable_restricted_image_training is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/nas_job.proto;l=97
      * @return The enableRestrictedImageTraining.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getEnableRestrictedImageTraining() {
       return enableRestrictedImageTraining_;
     }
@@ -3627,12 +3635,16 @@ public final class NasJob extends com.google.protobuf.GeneratedMessageV3
      * and restricted image training for tenant project.
      * </pre>
      *
-     * <code>bool enable_restricted_image_training = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * bool enable_restricted_image_training = 14 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.NasJob.enable_restricted_image_training is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/nas_job.proto;l=97
      * @param value The enableRestrictedImageTraining to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setEnableRestrictedImageTraining(boolean value) {
 
       enableRestrictedImageTraining_ = value;
@@ -3648,11 +3660,15 @@ public final class NasJob extends com.google.protobuf.GeneratedMessageV3
      * and restricted image training for tenant project.
      * </pre>
      *
-     * <code>bool enable_restricted_image_training = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * bool enable_restricted_image_training = 14 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.NasJob.enable_restricted_image_training is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/nas_job.proto;l=97
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearEnableRestrictedImageTraining() {
       bitField0_ = (bitField0_ & ~0x00001000);
       enableRestrictedImageTraining_ = false;

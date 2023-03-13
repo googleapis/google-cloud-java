@@ -57,7 +57,7 @@ public final class FeaturestoreProto {
           + "gle/api/field_behavior.proto\032\031google/api"
           + "/resource.proto\0320google/cloud/aiplatform"
           + "/v1/encryption_spec.proto\032\037google/protob"
-          + "uf/timestamp.proto\"\200\007\n\014Featurestore\022\021\n\004n"
+          + "uf/timestamp.proto\"\245\007\n\014Featurestore\022\021\n\004n"
           + "ame\030\001 \001(\tB\003\340A\003\0224\n\013create_time\030\003 \001(\0132\032.go"
           + "ogle.protobuf.TimestampB\003\340A\003\0224\n\013update_t"
           + "ime\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340"
@@ -69,23 +69,24 @@ public final class FeaturestoreProto {
           + "ate\030\010 \001(\0162..google.cloud.aiplatform.v1.F"
           + "eaturestore.StateB\003\340A\003\022H\n\017encryption_spe"
           + "c\030\n \001(\0132*.google.cloud.aiplatform.v1.Enc"
-          + "ryptionSpecB\003\340A\001\032\306\001\n\023OnlineServingConfig"
+          + "ryptionSpecB\003\340A\001\032\353\001\n\023OnlineServingConfig"
           + "\022\030\n\020fixed_node_count\030\002 \001(\005\022U\n\007scaling\030\004 "
           + "\001(\0132D.google.cloud.aiplatform.v1.Feature"
-          + "store.OnlineServingConfig.Scaling\032>\n\007Sca"
+          + "store.OnlineServingConfig.Scaling\032c\n\007Sca"
           + "ling\022\033\n\016min_node_count\030\001 \001(\005B\003\340A\002\022\026\n\016max"
-          + "_node_count\030\002 \001(\005\032-\n\013LabelsEntry\022\013\n\003key\030"
-          + "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"8\n\005State\022\025\n\021STA"
-          + "TE_UNSPECIFIED\020\000\022\n\n\006STABLE\020\001\022\014\n\010UPDATING"
-          + "\020\002:q\352An\n&aiplatform.googleapis.com/Featu"
-          + "restore\022Dprojects/{project}/locations/{l"
-          + "ocation}/featurestores/{featurestore}B\317\001"
-          + "\n\036com.google.cloud.aiplatform.v1B\021Featur"
-          + "estoreProtoP\001Z>cloud.google.com/go/aipla"
-          + "tform/apiv1/aiplatformpb;aiplatformpb\252\002\032"
-          + "Google.Cloud.AIPlatform.V1\312\002\032Google\\Clou"
-          + "d\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatf"
-          + "orm::V1b\006proto3"
+          + "_node_count\030\002 \001(\005\022#\n\026cpu_utilization_tar"
+          + "get\030\003 \001(\005B\003\340A\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001"
+          + "(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"8\n\005State\022\025\n\021STATE_"
+          + "UNSPECIFIED\020\000\022\n\n\006STABLE\020\001\022\014\n\010UPDATING\020\002:"
+          + "q\352An\n&aiplatform.googleapis.com/Features"
+          + "tore\022Dprojects/{project}/locations/{loca"
+          + "tion}/featurestores/{featurestore}B\317\001\n\036c"
+          + "om.google.cloud.aiplatform.v1B\021Featurest"
+          + "oreProtoP\001Z>cloud.google.com/go/aiplatfo"
+          + "rm/apiv1/aiplatformpb;aiplatformpb\252\002\032Goo"
+          + "gle.Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\A"
+          + "IPlatform\\V1\352\002\035Google::Cloud::AIPlatform"
+          + "::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -127,7 +128,7 @@ public final class FeaturestoreProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_Featurestore_OnlineServingConfig_Scaling_descriptor,
             new java.lang.String[] {
-              "MinNodeCount", "MaxNodeCount",
+              "MinNodeCount", "MaxNodeCount", "CpuUtilizationTarget",
             });
     internal_static_google_cloud_aiplatform_v1_Featurestore_LabelsEntry_descriptor =
         internal_static_google_cloud_aiplatform_v1_Featurestore_descriptor.getNestedTypes().get(1);

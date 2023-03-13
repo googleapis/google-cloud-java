@@ -1232,8 +1232,9 @@ public class ModelServiceClient implements BackgroundResource {
   /**
    * Deletes a Model version.
    *
-   * <p>Model version can only be deleted if there are no [DeployedModels][] created from it.
-   * Deleting the only version in the Model is not allowed. Use
+   * <p>Model version can only be deleted if there are no
+   * [DeployedModels][google.cloud.aiplatform.v1beta1.DeployedModel] created from it. Deleting the
+   * only version in the Model is not allowed. Use
    * [DeleteModel][google.cloud.aiplatform.v1beta1.ModelService.DeleteModel] for deleting the Model
    * instead.
    *
@@ -1269,8 +1270,9 @@ public class ModelServiceClient implements BackgroundResource {
   /**
    * Deletes a Model version.
    *
-   * <p>Model version can only be deleted if there are no [DeployedModels][] created from it.
-   * Deleting the only version in the Model is not allowed. Use
+   * <p>Model version can only be deleted if there are no
+   * [DeployedModels][google.cloud.aiplatform.v1beta1.DeployedModel] created from it. Deleting the
+   * only version in the Model is not allowed. Use
    * [DeleteModel][google.cloud.aiplatform.v1beta1.ModelService.DeleteModel] for deleting the Model
    * instead.
    *
@@ -1304,8 +1306,9 @@ public class ModelServiceClient implements BackgroundResource {
   /**
    * Deletes a Model version.
    *
-   * <p>Model version can only be deleted if there are no [DeployedModels][] created from it.
-   * Deleting the only version in the Model is not allowed. Use
+   * <p>Model version can only be deleted if there are no
+   * [DeployedModels][google.cloud.aiplatform.v1beta1.DeployedModel] created from it. Deleting the
+   * only version in the Model is not allowed. Use
    * [DeleteModel][google.cloud.aiplatform.v1beta1.ModelService.DeleteModel] for deleting the Model
    * instead.
    *
@@ -1338,8 +1341,9 @@ public class ModelServiceClient implements BackgroundResource {
   /**
    * Deletes a Model version.
    *
-   * <p>Model version can only be deleted if there are no [DeployedModels][] created from it.
-   * Deleting the only version in the Model is not allowed. Use
+   * <p>Model version can only be deleted if there are no
+   * [DeployedModels][google.cloud.aiplatform.v1beta1.DeployedModel] created from it. Deleting the
+   * only version in the Model is not allowed. Use
    * [DeleteModel][google.cloud.aiplatform.v1beta1.ModelService.DeleteModel] for deleting the Model
    * instead.
    *
@@ -1372,8 +1376,9 @@ public class ModelServiceClient implements BackgroundResource {
   /**
    * Deletes a Model version.
    *
-   * <p>Model version can only be deleted if there are no [DeployedModels][] created from it.
-   * Deleting the only version in the Model is not allowed. Use
+   * <p>Model version can only be deleted if there are no
+   * [DeployedModels][google.cloud.aiplatform.v1beta1.DeployedModel] created from it. Deleting the
+   * only version in the Model is not allowed. Use
    * [DeleteModel][google.cloud.aiplatform.v1beta1.ModelService.DeleteModel] for deleting the Model
    * instead.
    *
@@ -2221,6 +2226,149 @@ public class ModelServiceClient implements BackgroundResource {
           BatchImportModelEvaluationSlicesRequest, BatchImportModelEvaluationSlicesResponse>
       batchImportModelEvaluationSlicesCallable() {
     return stub.batchImportModelEvaluationSlicesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports a list of externally generated EvaluatedAnnotations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ModelEvaluationSliceName parent =
+   *       ModelEvaluationSliceName.of(
+   *           "[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]", "[SLICE]");
+   *   List<EvaluatedAnnotation> evaluatedAnnotations = new ArrayList<>();
+   *   BatchImportEvaluatedAnnotationsResponse response =
+   *       modelServiceClient.batchImportEvaluatedAnnotations(parent, evaluatedAnnotations);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the parent ModelEvaluationSlice resource. Format:
+   *     `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}/slices/{slice}`
+   * @param evaluatedAnnotations Required. Evaluated annotations resource to be imported.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchImportEvaluatedAnnotationsResponse batchImportEvaluatedAnnotations(
+      ModelEvaluationSliceName parent, List<EvaluatedAnnotation> evaluatedAnnotations) {
+    BatchImportEvaluatedAnnotationsRequest request =
+        BatchImportEvaluatedAnnotationsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllEvaluatedAnnotations(evaluatedAnnotations)
+            .build();
+    return batchImportEvaluatedAnnotations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports a list of externally generated EvaluatedAnnotations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   String parent =
+   *       ModelEvaluationSliceName.of(
+   *               "[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]", "[SLICE]")
+   *           .toString();
+   *   List<EvaluatedAnnotation> evaluatedAnnotations = new ArrayList<>();
+   *   BatchImportEvaluatedAnnotationsResponse response =
+   *       modelServiceClient.batchImportEvaluatedAnnotations(parent, evaluatedAnnotations);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the parent ModelEvaluationSlice resource. Format:
+   *     `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}/slices/{slice}`
+   * @param evaluatedAnnotations Required. Evaluated annotations resource to be imported.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchImportEvaluatedAnnotationsResponse batchImportEvaluatedAnnotations(
+      String parent, List<EvaluatedAnnotation> evaluatedAnnotations) {
+    BatchImportEvaluatedAnnotationsRequest request =
+        BatchImportEvaluatedAnnotationsRequest.newBuilder()
+            .setParent(parent)
+            .addAllEvaluatedAnnotations(evaluatedAnnotations)
+            .build();
+    return batchImportEvaluatedAnnotations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports a list of externally generated EvaluatedAnnotations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   BatchImportEvaluatedAnnotationsRequest request =
+   *       BatchImportEvaluatedAnnotationsRequest.newBuilder()
+   *           .setParent(
+   *               ModelEvaluationSliceName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]", "[SLICE]")
+   *                   .toString())
+   *           .addAllEvaluatedAnnotations(new ArrayList<EvaluatedAnnotation>())
+   *           .build();
+   *   BatchImportEvaluatedAnnotationsResponse response =
+   *       modelServiceClient.batchImportEvaluatedAnnotations(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchImportEvaluatedAnnotationsResponse batchImportEvaluatedAnnotations(
+      BatchImportEvaluatedAnnotationsRequest request) {
+    return batchImportEvaluatedAnnotationsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports a list of externally generated EvaluatedAnnotations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   BatchImportEvaluatedAnnotationsRequest request =
+   *       BatchImportEvaluatedAnnotationsRequest.newBuilder()
+   *           .setParent(
+   *               ModelEvaluationSliceName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]", "[SLICE]")
+   *                   .toString())
+   *           .addAllEvaluatedAnnotations(new ArrayList<EvaluatedAnnotation>())
+   *           .build();
+   *   ApiFuture<BatchImportEvaluatedAnnotationsResponse> future =
+   *       modelServiceClient.batchImportEvaluatedAnnotationsCallable().futureCall(request);
+   *   // Do something.
+   *   BatchImportEvaluatedAnnotationsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          BatchImportEvaluatedAnnotationsRequest, BatchImportEvaluatedAnnotationsResponse>
+      batchImportEvaluatedAnnotationsCallable() {
+    return stub.batchImportEvaluatedAnnotationsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

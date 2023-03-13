@@ -35,6 +35,26 @@ public final class ModelEvaluationSliceProto {
       internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_SliceSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_SliceSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_SliceSpec_SliceConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_SliceSpec_SliceConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_SliceSpec_Range_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_SliceSpec_Range_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_SliceSpec_Value_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_SliceSpec_Value_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_SliceSpec_ConfigsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_SliceSpec_ConfigsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -47,27 +67,49 @@ public final class ModelEvaluationSliceProto {
       "\n<google/cloud/aiplatform/v1beta1/model_"
           + "evaluation_slice.proto\022\037google.cloud.aip"
           + "latform.v1beta1\032\037google/api/field_behavi"
-          + "or.proto\032\031google/api/resource.proto\032\034goo"
-          + "gle/protobuf/struct.proto\032\037google/protob"
-          + "uf/timestamp.proto\"\313\003\n\024ModelEvaluationSl"
-          + "ice\022\021\n\004name\030\001 \001(\tB\003\340A\003\022O\n\005slice\030\002 \001(\0132;."
-          + "google.cloud.aiplatform.v1beta1.ModelEva"
-          + "luationSlice.SliceB\003\340A\003\022\037\n\022metrics_schem"
-          + "a_uri\030\003 \001(\tB\003\340A\003\022,\n\007metrics\030\004 \001(\0132\026.goog"
-          + "le.protobuf.ValueB\003\340A\003\0224\n\013create_time\030\005 "
-          + "\001(\0132\032.google.protobuf.TimestampB\003\340A\003\0323\n\005"
-          + "Slice\022\026\n\tdimension\030\001 \001(\tB\003\340A\003\022\022\n\005value\030\002"
-          + " \001(\tB\003\340A\003:\224\001\352A\220\001\n.aiplatform.googleapis."
-          + "com/ModelEvaluationSlice\022^projects/{proj"
-          + "ect}/locations/{location}/models/{model}"
-          + "/evaluations/{evaluation}/slices/{slice}"
-          + "B\360\001\n#com.google.cloud.aiplatform.v1beta1"
-          + "B\031ModelEvaluationSliceProtoP\001ZCcloud.goo"
-          + "gle.com/go/aiplatform/apiv1beta1/aiplatf"
-          + "ormpb;aiplatformpb\252\002\037Google.Cloud.AIPlat"
-          + "form.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V"
-          + "1beta1\352\002\"Google::Cloud::AIPlatform::V1be"
-          + "ta1b\006proto3"
+          + "or.proto\032\031google/api/resource.proto\0321goo"
+          + "gle/cloud/aiplatform/v1beta1/explanation"
+          + ".proto\032\034google/protobuf/struct.proto\032\037go"
+          + "ogle/protobuf/timestamp.proto\032\036google/pr"
+          + "otobuf/wrappers.proto\"\340\t\n\024ModelEvaluatio"
+          + "nSlice\022\021\n\004name\030\001 \001(\tB\003\340A\003\022O\n\005slice\030\002 \001(\013"
+          + "2;.google.cloud.aiplatform.v1beta1.Model"
+          + "EvaluationSlice.SliceB\003\340A\003\022\037\n\022metrics_sc"
+          + "hema_uri\030\003 \001(\tB\003\340A\003\022,\n\007metrics\030\004 \001(\0132\026.g"
+          + "oogle.protobuf.ValueB\003\340A\003\0224\n\013create_time"
+          + "\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022"
+          + "Q\n\021model_explanation\030\006 \001(\01321.google.clou"
+          + "d.aiplatform.v1beta1.ModelExplanationB\003\340"
+          + "A\003\032\364\005\n\005Slice\022\026\n\tdimension\030\001 \001(\tB\003\340A\003\022\022\n\005"
+          + "value\030\002 \001(\tB\003\340A\003\022^\n\nslice_spec\030\003 \001(\0132E.g"
+          + "oogle.cloud.aiplatform.v1beta1.ModelEval"
+          + "uationSlice.Slice.SliceSpecB\003\340A\003\032\336\004\n\tSli"
+          + "ceSpec\022c\n\007configs\030\001 \003(\0132R.google.cloud.a"
+          + "iplatform.v1beta1.ModelEvaluationSlice.S"
+          + "lice.SliceSpec.ConfigsEntry\032\203\002\n\013SliceCon"
+          + "fig\022\\\n\005value\030\001 \001(\0132K.google.cloud.aiplat"
+          + "form.v1beta1.ModelEvaluationSlice.Slice."
+          + "SliceSpec.ValueH\000\022\\\n\005range\030\002 \001(\0132K.googl"
+          + "e.cloud.aiplatform.v1beta1.ModelEvaluati"
+          + "onSlice.Slice.SliceSpec.RangeH\000\0220\n\nall_v"
+          + "alues\030\003 \001(\0132\032.google.protobuf.BoolValueH"
+          + "\000B\006\n\004kind\032\"\n\005Range\022\013\n\003low\030\001 \001(\002\022\014\n\004high\030"
+          + "\002 \001(\002\032>\n\005Value\022\026\n\014string_value\030\001 \001(\tH\000\022\025"
+          + "\n\013float_value\030\002 \001(\002H\000B\006\n\004kind\032\201\001\n\014Config"
+          + "sEntry\022\013\n\003key\030\001 \001(\t\022`\n\005value\030\002 \001(\0132Q.goo"
+          + "gle.cloud.aiplatform.v1beta1.ModelEvalua"
+          + "tionSlice.Slice.SliceSpec.SliceConfig:\0028"
+          + "\001:\224\001\352A\220\001\n.aiplatform.googleapis.com/Mode"
+          + "lEvaluationSlice\022^projects/{project}/loc"
+          + "ations/{location}/models/{model}/evaluat"
+          + "ions/{evaluation}/slices/{slice}B\360\001\n#com"
+          + ".google.cloud.aiplatform.v1beta1B\031ModelE"
+          + "valuationSliceProtoP\001ZCcloud.google.com/"
+          + "go/aiplatform/apiv1beta1/aiplatformpb;ai"
+          + "platformpb\252\002\037Google.Cloud.AIPlatform.V1B"
+          + "eta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002"
+          + "\"Google::Cloud::AIPlatform::V1beta1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -75,8 +117,10 @@ public final class ModelEvaluationSliceProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1beta1.ExplanationProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.protobuf.WrappersProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -84,7 +128,7 @@ public final class ModelEvaluationSliceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_descriptor,
             new java.lang.String[] {
-              "Name", "Slice", "MetricsSchemaUri", "Metrics", "CreateTime",
+              "Name", "Slice", "MetricsSchemaUri", "Metrics", "CreateTime", "ModelExplanation",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_descriptor
@@ -94,7 +138,57 @@ public final class ModelEvaluationSliceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_descriptor,
             new java.lang.String[] {
-              "Dimension", "Value",
+              "Dimension", "Value", "SliceSpec",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_SliceSpec_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_SliceSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_SliceSpec_descriptor,
+            new java.lang.String[] {
+              "Configs",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_SliceSpec_SliceConfig_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_SliceSpec_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_SliceSpec_SliceConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_SliceSpec_SliceConfig_descriptor,
+            new java.lang.String[] {
+              "Value", "Range", "AllValues", "Kind",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_SliceSpec_Range_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_SliceSpec_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_SliceSpec_Range_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_SliceSpec_Range_descriptor,
+            new java.lang.String[] {
+              "Low", "High",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_SliceSpec_Value_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_SliceSpec_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_SliceSpec_Value_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_SliceSpec_Value_descriptor,
+            new java.lang.String[] {
+              "StringValue", "FloatValue", "Kind",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_SliceSpec_ConfigsEntry_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_SliceSpec_descriptor
+            .getNestedTypes()
+            .get(3);
+    internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_SliceSpec_ConfigsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluationSlice_Slice_SliceSpec_ConfigsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -104,8 +198,10 @@ public final class ModelEvaluationSliceProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.aiplatform.v1beta1.ExplanationProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.protobuf.WrappersProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -575,6 +575,59 @@ public final class ModelServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.BatchImportEvaluatedAnnotationsRequest,
+          com.google.cloud.aiplatform.v1.BatchImportEvaluatedAnnotationsResponse>
+      getBatchImportEvaluatedAnnotationsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchImportEvaluatedAnnotations",
+      requestType = com.google.cloud.aiplatform.v1.BatchImportEvaluatedAnnotationsRequest.class,
+      responseType = com.google.cloud.aiplatform.v1.BatchImportEvaluatedAnnotationsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.BatchImportEvaluatedAnnotationsRequest,
+          com.google.cloud.aiplatform.v1.BatchImportEvaluatedAnnotationsResponse>
+      getBatchImportEvaluatedAnnotationsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.BatchImportEvaluatedAnnotationsRequest,
+            com.google.cloud.aiplatform.v1.BatchImportEvaluatedAnnotationsResponse>
+        getBatchImportEvaluatedAnnotationsMethod;
+    if ((getBatchImportEvaluatedAnnotationsMethod =
+            ModelServiceGrpc.getBatchImportEvaluatedAnnotationsMethod)
+        == null) {
+      synchronized (ModelServiceGrpc.class) {
+        if ((getBatchImportEvaluatedAnnotationsMethod =
+                ModelServiceGrpc.getBatchImportEvaluatedAnnotationsMethod)
+            == null) {
+          ModelServiceGrpc.getBatchImportEvaluatedAnnotationsMethod =
+              getBatchImportEvaluatedAnnotationsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.BatchImportEvaluatedAnnotationsRequest,
+                          com.google.cloud.aiplatform.v1.BatchImportEvaluatedAnnotationsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "BatchImportEvaluatedAnnotations"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.BatchImportEvaluatedAnnotationsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.BatchImportEvaluatedAnnotationsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ModelServiceMethodDescriptorSupplier(
+                              "BatchImportEvaluatedAnnotations"))
+                      .build();
+        }
+      }
+    }
+    return getBatchImportEvaluatedAnnotationsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1.GetModelEvaluationRequest,
           com.google.cloud.aiplatform.v1.ModelEvaluation>
       getGetModelEvaluationMethod;
@@ -915,8 +968,9 @@ public final class ModelServiceGrpc {
      *
      * <pre>
      * Deletes a Model version.
-     * Model version can only be deleted if there are no [DeployedModels][]
-     * created from it. Deleting the only version in the Model is not allowed. Use
+     * Model version can only be deleted if there are no
+     * [DeployedModels][google.cloud.aiplatform.v1.DeployedModel] created from it.
+     * Deleting the only version in the Model is not allowed. Use
      * [DeleteModel][google.cloud.aiplatform.v1.ModelService.DeleteModel] for
      * deleting the Model instead.
      * </pre>
@@ -1006,6 +1060,22 @@ public final class ModelServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getBatchImportModelEvaluationSlicesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports a list of externally generated EvaluatedAnnotations.
+     * </pre>
+     */
+    public void batchImportEvaluatedAnnotations(
+        com.google.cloud.aiplatform.v1.BatchImportEvaluatedAnnotationsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1.BatchImportEvaluatedAnnotationsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchImportEvaluatedAnnotationsMethod(), responseObserver);
     }
 
     /**
@@ -1148,6 +1218,13 @@ public final class ModelServiceGrpc {
                       com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesRequest,
                       com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesResponse>(
                       this, METHODID_BATCH_IMPORT_MODEL_EVALUATION_SLICES)))
+          .addMethod(
+              getBatchImportEvaluatedAnnotationsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1.BatchImportEvaluatedAnnotationsRequest,
+                      com.google.cloud.aiplatform.v1.BatchImportEvaluatedAnnotationsResponse>(
+                      this, METHODID_BATCH_IMPORT_EVALUATED_ANNOTATIONS)))
           .addMethod(
               getGetModelEvaluationMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1303,8 +1380,9 @@ public final class ModelServiceGrpc {
      *
      * <pre>
      * Deletes a Model version.
-     * Model version can only be deleted if there are no [DeployedModels][]
-     * created from it. Deleting the only version in the Model is not allowed. Use
+     * Model version can only be deleted if there are no
+     * [DeployedModels][google.cloud.aiplatform.v1.DeployedModel] created from it.
+     * Deleting the only version in the Model is not allowed. Use
      * [DeleteModel][google.cloud.aiplatform.v1.ModelService.DeleteModel] for
      * deleting the Model instead.
      * </pre>
@@ -1403,6 +1481,24 @@ public final class ModelServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getBatchImportModelEvaluationSlicesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports a list of externally generated EvaluatedAnnotations.
+     * </pre>
+     */
+    public void batchImportEvaluatedAnnotations(
+        com.google.cloud.aiplatform.v1.BatchImportEvaluatedAnnotationsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1.BatchImportEvaluatedAnnotationsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchImportEvaluatedAnnotationsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1585,8 +1681,9 @@ public final class ModelServiceGrpc {
      *
      * <pre>
      * Deletes a Model version.
-     * Model version can only be deleted if there are no [DeployedModels][]
-     * created from it. Deleting the only version in the Model is not allowed. Use
+     * Model version can only be deleted if there are no
+     * [DeployedModels][google.cloud.aiplatform.v1.DeployedModel] created from it.
+     * Deleting the only version in the Model is not allowed. Use
      * [DeleteModel][google.cloud.aiplatform.v1.ModelService.DeleteModel] for
      * deleting the Model instead.
      * </pre>
@@ -1669,6 +1766,20 @@ public final class ModelServiceGrpc {
             com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBatchImportModelEvaluationSlicesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports a list of externally generated EvaluatedAnnotations.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.BatchImportEvaluatedAnnotationsResponse
+        batchImportEvaluatedAnnotations(
+            com.google.cloud.aiplatform.v1.BatchImportEvaluatedAnnotationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchImportEvaluatedAnnotationsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1835,8 +1946,9 @@ public final class ModelServiceGrpc {
      *
      * <pre>
      * Deletes a Model version.
-     * Model version can only be deleted if there are no [DeployedModels][]
-     * created from it. Deleting the only version in the Model is not allowed. Use
+     * Model version can only be deleted if there are no
+     * [DeployedModels][google.cloud.aiplatform.v1.DeployedModel] created from it.
+     * Deleting the only version in the Model is not allowed. Use
      * [DeleteModel][google.cloud.aiplatform.v1.ModelService.DeleteModel] for
      * deleting the Model instead.
      * </pre>
@@ -1928,6 +2040,22 @@ public final class ModelServiceGrpc {
      *
      *
      * <pre>
+     * Imports a list of externally generated EvaluatedAnnotations.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1.BatchImportEvaluatedAnnotationsResponse>
+        batchImportEvaluatedAnnotations(
+            com.google.cloud.aiplatform.v1.BatchImportEvaluatedAnnotationsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchImportEvaluatedAnnotationsMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a ModelEvaluation.
      * </pre>
      */
@@ -1995,10 +2123,11 @@ public final class ModelServiceGrpc {
   private static final int METHODID_COPY_MODEL = 9;
   private static final int METHODID_IMPORT_MODEL_EVALUATION = 10;
   private static final int METHODID_BATCH_IMPORT_MODEL_EVALUATION_SLICES = 11;
-  private static final int METHODID_GET_MODEL_EVALUATION = 12;
-  private static final int METHODID_LIST_MODEL_EVALUATIONS = 13;
-  private static final int METHODID_GET_MODEL_EVALUATION_SLICE = 14;
-  private static final int METHODID_LIST_MODEL_EVALUATION_SLICES = 15;
+  private static final int METHODID_BATCH_IMPORT_EVALUATED_ANNOTATIONS = 12;
+  private static final int METHODID_GET_MODEL_EVALUATION = 13;
+  private static final int METHODID_LIST_MODEL_EVALUATIONS = 14;
+  private static final int METHODID_GET_MODEL_EVALUATION_SLICE = 15;
+  private static final int METHODID_LIST_MODEL_EVALUATION_SLICES = 16;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2081,6 +2210,13 @@ public final class ModelServiceGrpc {
               (com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_BATCH_IMPORT_EVALUATED_ANNOTATIONS:
+          serviceImpl.batchImportEvaluatedAnnotations(
+              (com.google.cloud.aiplatform.v1.BatchImportEvaluatedAnnotationsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1.BatchImportEvaluatedAnnotationsResponse>)
                   responseObserver);
           break;
         case METHODID_GET_MODEL_EVALUATION:
@@ -2185,6 +2321,7 @@ public final class ModelServiceGrpc {
                       .addMethod(getCopyModelMethod())
                       .addMethod(getImportModelEvaluationMethod())
                       .addMethod(getBatchImportModelEvaluationSlicesMethod())
+                      .addMethod(getBatchImportEvaluatedAnnotationsMethod())
                       .addMethod(getGetModelEvaluationMethod())
                       .addMethod(getListModelEvaluationsMethod())
                       .addMethod(getGetModelEvaluationSliceMethod())

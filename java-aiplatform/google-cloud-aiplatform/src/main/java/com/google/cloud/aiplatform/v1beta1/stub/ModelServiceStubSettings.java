@@ -48,6 +48,8 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.BatchImportEvaluatedAnnotationsRequest;
+import com.google.cloud.aiplatform.v1beta1.BatchImportEvaluatedAnnotationsResponse;
 import com.google.cloud.aiplatform.v1beta1.BatchImportModelEvaluationSlicesRequest;
 import com.google.cloud.aiplatform.v1beta1.BatchImportModelEvaluationSlicesResponse;
 import com.google.cloud.aiplatform.v1beta1.CopyModelOperationMetadata;
@@ -184,6 +186,9 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
   private final UnaryCallSettings<
           BatchImportModelEvaluationSlicesRequest, BatchImportModelEvaluationSlicesResponse>
       batchImportModelEvaluationSlicesSettings;
+  private final UnaryCallSettings<
+          BatchImportEvaluatedAnnotationsRequest, BatchImportEvaluatedAnnotationsResponse>
+      batchImportEvaluatedAnnotationsSettings;
   private final UnaryCallSettings<GetModelEvaluationRequest, ModelEvaluation>
       getModelEvaluationSettings;
   private final PagedCallSettings<
@@ -624,6 +629,13 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     return batchImportModelEvaluationSlicesSettings;
   }
 
+  /** Returns the object with the settings used for calls to batchImportEvaluatedAnnotations. */
+  public UnaryCallSettings<
+          BatchImportEvaluatedAnnotationsRequest, BatchImportEvaluatedAnnotationsResponse>
+      batchImportEvaluatedAnnotationsSettings() {
+    return batchImportEvaluatedAnnotationsSettings;
+  }
+
   /** Returns the object with the settings used for calls to getModelEvaluation. */
   public UnaryCallSettings<GetModelEvaluationRequest, ModelEvaluation>
       getModelEvaluationSettings() {
@@ -778,6 +790,8 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     importModelEvaluationSettings = settingsBuilder.importModelEvaluationSettings().build();
     batchImportModelEvaluationSlicesSettings =
         settingsBuilder.batchImportModelEvaluationSlicesSettings().build();
+    batchImportEvaluatedAnnotationsSettings =
+        settingsBuilder.batchImportEvaluatedAnnotationsSettings().build();
     getModelEvaluationSettings = settingsBuilder.getModelEvaluationSettings().build();
     listModelEvaluationsSettings = settingsBuilder.listModelEvaluationsSettings().build();
     getModelEvaluationSliceSettings = settingsBuilder.getModelEvaluationSliceSettings().build();
@@ -834,6 +848,9 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     private final UnaryCallSettings.Builder<
             BatchImportModelEvaluationSlicesRequest, BatchImportModelEvaluationSlicesResponse>
         batchImportModelEvaluationSlicesSettings;
+    private final UnaryCallSettings.Builder<
+            BatchImportEvaluatedAnnotationsRequest, BatchImportEvaluatedAnnotationsResponse>
+        batchImportEvaluatedAnnotationsSettings;
     private final UnaryCallSettings.Builder<GetModelEvaluationRequest, ModelEvaluation>
         getModelEvaluationSettings;
     private final PagedCallSettings.Builder<
@@ -912,6 +929,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
       copyModelOperationSettings = OperationCallSettings.newBuilder();
       importModelEvaluationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchImportModelEvaluationSlicesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchImportEvaluatedAnnotationsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getModelEvaluationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listModelEvaluationsSettings =
           PagedCallSettings.newBuilder(LIST_MODEL_EVALUATIONS_PAGE_STR_FACT);
@@ -939,6 +957,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
               copyModelSettings,
               importModelEvaluationSettings,
               batchImportModelEvaluationSlicesSettings,
+              batchImportEvaluatedAnnotationsSettings,
               getModelEvaluationSettings,
               listModelEvaluationsSettings,
               getModelEvaluationSliceSettings,
@@ -976,6 +995,8 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
       importModelEvaluationSettings = settings.importModelEvaluationSettings.toBuilder();
       batchImportModelEvaluationSlicesSettings =
           settings.batchImportModelEvaluationSlicesSettings.toBuilder();
+      batchImportEvaluatedAnnotationsSettings =
+          settings.batchImportEvaluatedAnnotationsSettings.toBuilder();
       getModelEvaluationSettings = settings.getModelEvaluationSettings.toBuilder();
       listModelEvaluationsSettings = settings.listModelEvaluationsSettings.toBuilder();
       getModelEvaluationSliceSettings = settings.getModelEvaluationSliceSettings.toBuilder();
@@ -1001,6 +1022,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
               copyModelSettings,
               importModelEvaluationSettings,
               batchImportModelEvaluationSlicesSettings,
+              batchImportEvaluatedAnnotationsSettings,
               getModelEvaluationSettings,
               listModelEvaluationsSettings,
               getModelEvaluationSliceSettings,
@@ -1088,6 +1110,11 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
 
       builder
           .batchImportModelEvaluationSlicesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchImportEvaluatedAnnotationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1425,6 +1452,13 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
             BatchImportModelEvaluationSlicesRequest, BatchImportModelEvaluationSlicesResponse>
         batchImportModelEvaluationSlicesSettings() {
       return batchImportModelEvaluationSlicesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchImportEvaluatedAnnotations. */
+    public UnaryCallSettings.Builder<
+            BatchImportEvaluatedAnnotationsRequest, BatchImportEvaluatedAnnotationsResponse>
+        batchImportEvaluatedAnnotationsSettings() {
+      return batchImportEvaluatedAnnotationsSettings;
     }
 
     /** Returns the builder for the settings used for calls to getModelEvaluation. */

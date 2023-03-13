@@ -30,6 +30,8 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.BatchImportEvaluatedAnnotationsRequest;
+import com.google.cloud.aiplatform.v1beta1.BatchImportEvaluatedAnnotationsResponse;
 import com.google.cloud.aiplatform.v1beta1.BatchImportModelEvaluationSlicesRequest;
 import com.google.cloud.aiplatform.v1beta1.BatchImportModelEvaluationSlicesResponse;
 import com.google.cloud.aiplatform.v1beta1.CopyModelOperationMetadata;
@@ -219,6 +221,23 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                       BatchImportModelEvaluationSlicesResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          BatchImportEvaluatedAnnotationsRequest, BatchImportEvaluatedAnnotationsResponse>
+      batchImportEvaluatedAnnotationsMethodDescriptor =
+          MethodDescriptor
+              .<BatchImportEvaluatedAnnotationsRequest, BatchImportEvaluatedAnnotationsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.ModelService/BatchImportEvaluatedAnnotations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      BatchImportEvaluatedAnnotationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      BatchImportEvaluatedAnnotationsResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<GetModelEvaluationRequest, ModelEvaluation>
       getModelEvaluationMethodDescriptor =
           MethodDescriptor.<GetModelEvaluationRequest, ModelEvaluation>newBuilder()
@@ -351,6 +370,9 @@ public class GrpcModelServiceStub extends ModelServiceStub {
   private final UnaryCallable<
           BatchImportModelEvaluationSlicesRequest, BatchImportModelEvaluationSlicesResponse>
       batchImportModelEvaluationSlicesCallable;
+  private final UnaryCallable<
+          BatchImportEvaluatedAnnotationsRequest, BatchImportEvaluatedAnnotationsResponse>
+      batchImportEvaluatedAnnotationsCallable;
   private final UnaryCallable<GetModelEvaluationRequest, ModelEvaluation>
       getModelEvaluationCallable;
   private final UnaryCallable<ListModelEvaluationsRequest, ListModelEvaluationsResponse>
@@ -552,6 +574,20 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<
+            BatchImportEvaluatedAnnotationsRequest, BatchImportEvaluatedAnnotationsResponse>
+        batchImportEvaluatedAnnotationsTransportSettings =
+            GrpcCallSettings
+                .<BatchImportEvaluatedAnnotationsRequest, BatchImportEvaluatedAnnotationsResponse>
+                    newBuilder()
+                .setMethodDescriptor(batchImportEvaluatedAnnotationsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<GetModelEvaluationRequest, ModelEvaluation>
         getModelEvaluationTransportSettings =
             GrpcCallSettings.<GetModelEvaluationRequest, ModelEvaluation>newBuilder()
@@ -744,6 +780,11 @@ public class GrpcModelServiceStub extends ModelServiceStub {
             batchImportModelEvaluationSlicesTransportSettings,
             settings.batchImportModelEvaluationSlicesSettings(),
             clientContext);
+    this.batchImportEvaluatedAnnotationsCallable =
+        callableFactory.createUnaryCallable(
+            batchImportEvaluatedAnnotationsTransportSettings,
+            settings.batchImportEvaluatedAnnotationsSettings(),
+            clientContext);
     this.getModelEvaluationCallable =
         callableFactory.createUnaryCallable(
             getModelEvaluationTransportSettings,
@@ -921,6 +962,13 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           BatchImportModelEvaluationSlicesRequest, BatchImportModelEvaluationSlicesResponse>
       batchImportModelEvaluationSlicesCallable() {
     return batchImportModelEvaluationSlicesCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          BatchImportEvaluatedAnnotationsRequest, BatchImportEvaluatedAnnotationsResponse>
+      batchImportEvaluatedAnnotationsCallable() {
+    return batchImportEvaluatedAnnotationsCallable;
   }
 
   @Override

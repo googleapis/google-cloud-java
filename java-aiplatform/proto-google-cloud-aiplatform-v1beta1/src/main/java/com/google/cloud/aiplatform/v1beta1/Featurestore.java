@@ -407,6 +407,25 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
        * @return The maxNodeCount.
        */
       int getMaxNodeCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The cpu utilization that the Autoscaler should be trying to
+       * achieve. This number is on a scale from 0 (no utilization) to 100
+       * (total utilization), and is limited between 10 and 80. When a cluster's
+       * CPU utilization exceeds the target that you have set, Bigtable
+       * immediately adds nodes to the cluster. When CPU utilization is
+       * substantially lower than the target, Bigtable removes nodes. If not set
+       * or set to 0, default to 50.
+       * </pre>
+       *
+       * <code>int32 cpu_utilization_target = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The cpuUtilizationTarget.
+       */
+      int getCpuUtilizationTarget();
     }
     /**
      *
@@ -497,6 +516,30 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
         return maxNodeCount_;
       }
 
+      public static final int CPU_UTILIZATION_TARGET_FIELD_NUMBER = 3;
+      private int cpuUtilizationTarget_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The cpu utilization that the Autoscaler should be trying to
+       * achieve. This number is on a scale from 0 (no utilization) to 100
+       * (total utilization), and is limited between 10 and 80. When a cluster's
+       * CPU utilization exceeds the target that you have set, Bigtable
+       * immediately adds nodes to the cluster. When CPU utilization is
+       * substantially lower than the target, Bigtable removes nodes. If not set
+       * or set to 0, default to 50.
+       * </pre>
+       *
+       * <code>int32 cpu_utilization_target = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The cpuUtilizationTarget.
+       */
+      @java.lang.Override
+      public int getCpuUtilizationTarget() {
+        return cpuUtilizationTarget_;
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -517,6 +560,9 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
         if (maxNodeCount_ != 0) {
           output.writeInt32(2, maxNodeCount_);
         }
+        if (cpuUtilizationTarget_ != 0) {
+          output.writeInt32(3, cpuUtilizationTarget_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -531,6 +577,9 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
         }
         if (maxNodeCount_ != 0) {
           size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, maxNodeCount_);
+        }
+        if (cpuUtilizationTarget_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, cpuUtilizationTarget_);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -552,6 +601,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
 
         if (getMinNodeCount() != other.getMinNodeCount()) return false;
         if (getMaxNodeCount() != other.getMaxNodeCount()) return false;
+        if (getCpuUtilizationTarget() != other.getCpuUtilizationTarget()) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -567,6 +617,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
         hash = (53 * hash) + getMinNodeCount();
         hash = (37 * hash) + MAX_NODE_COUNT_FIELD_NUMBER;
         hash = (53 * hash) + getMaxNodeCount();
+        hash = (37 * hash) + CPU_UTILIZATION_TARGET_FIELD_NUMBER;
+        hash = (53 * hash) + getCpuUtilizationTarget();
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -725,6 +777,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
           bitField0_ = 0;
           minNodeCount_ = 0;
           maxNodeCount_ = 0;
+          cpuUtilizationTarget_ = 0;
           return this;
         }
 
@@ -773,6 +826,9 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
           }
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.maxNodeCount_ = maxNodeCount_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.cpuUtilizationTarget_ = cpuUtilizationTarget_;
           }
         }
 
@@ -836,6 +892,9 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
           if (other.getMaxNodeCount() != 0) {
             setMaxNodeCount(other.getMaxNodeCount());
           }
+          if (other.getCpuUtilizationTarget() != 0) {
+            setCpuUtilizationTarget(other.getCpuUtilizationTarget());
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -874,6 +933,12 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
                     bitField0_ |= 0x00000002;
                     break;
                   } // case 16
+                case 24:
+                  {
+                    cpuUtilizationTarget_ = input.readInt32();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 24
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1001,6 +1066,77 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
         public Builder clearMaxNodeCount() {
           bitField0_ = (bitField0_ & ~0x00000002);
           maxNodeCount_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int cpuUtilizationTarget_;
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The cpu utilization that the Autoscaler should be trying to
+         * achieve. This number is on a scale from 0 (no utilization) to 100
+         * (total utilization), and is limited between 10 and 80. When a cluster's
+         * CPU utilization exceeds the target that you have set, Bigtable
+         * immediately adds nodes to the cluster. When CPU utilization is
+         * substantially lower than the target, Bigtable removes nodes. If not set
+         * or set to 0, default to 50.
+         * </pre>
+         *
+         * <code>int32 cpu_utilization_target = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The cpuUtilizationTarget.
+         */
+        @java.lang.Override
+        public int getCpuUtilizationTarget() {
+          return cpuUtilizationTarget_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The cpu utilization that the Autoscaler should be trying to
+         * achieve. This number is on a scale from 0 (no utilization) to 100
+         * (total utilization), and is limited between 10 and 80. When a cluster's
+         * CPU utilization exceeds the target that you have set, Bigtable
+         * immediately adds nodes to the cluster. When CPU utilization is
+         * substantially lower than the target, Bigtable removes nodes. If not set
+         * or set to 0, default to 50.
+         * </pre>
+         *
+         * <code>int32 cpu_utilization_target = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The cpuUtilizationTarget to set.
+         * @return This builder for chaining.
+         */
+        public Builder setCpuUtilizationTarget(int value) {
+
+          cpuUtilizationTarget_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The cpu utilization that the Autoscaler should be trying to
+         * achieve. This number is on a scale from 0 (no utilization) to 100
+         * (total utilization), and is limited between 10 and 80. When a cluster's
+         * CPU utilization exceeds the target that you have set, Bigtable
+         * immediately adds nodes to the cluster. When CPU utilization is
+         * substantially lower than the target, Bigtable removes nodes. If not set
+         * or set to 0, default to 50.
+         * </pre>
+         *
+         * <code>int32 cpu_utilization_target = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearCpuUtilizationTarget() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          cpuUtilizationTarget_ = 0;
           onChanged();
           return this;
         }

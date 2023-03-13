@@ -568,7 +568,7 @@ public interface ModelOrBuilder
    * deploying this Model. The specification is ingested upon
    * [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel],
    * and all binaries it contains are copied and stored internally by Vertex AI.
-   * Not present for AutoML Models.
+   * Not present for AutoML Models or Large Models.
    * </pre>
    *
    * <code>
@@ -586,7 +586,7 @@ public interface ModelOrBuilder
    * deploying this Model. The specification is ingested upon
    * [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel],
    * and all binaries it contains are copied and stored internally by Vertex AI.
-   * Not present for AutoML Models.
+   * Not present for AutoML Models or Large Models.
    * </pre>
    *
    * <code>
@@ -604,7 +604,7 @@ public interface ModelOrBuilder
    * deploying this Model. The specification is ingested upon
    * [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel],
    * and all binaries it contains are copied and stored internally by Vertex AI.
-   * Not present for AutoML Models.
+   * Not present for AutoML Models or Large Models.
    * </pre>
    *
    * <code>
@@ -618,7 +618,7 @@ public interface ModelOrBuilder
    *
    * <pre>
    * Immutable. The path to the directory containing the Model artifact and any
-   * of its supporting files. Not present for AutoML Models.
+   * of its supporting files. Not present for AutoML Models or Large Models.
    * </pre>
    *
    * <code>string artifact_uri = 26 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -631,7 +631,7 @@ public interface ModelOrBuilder
    *
    * <pre>
    * Immutable. The path to the directory containing the Model artifact and any
-   * of its supporting files. Not present for AutoML Models.
+   * of its supporting files. Not present for AutoML Models or Large Models.
    * </pre>
    *
    * <code>string artifact_uri = 26 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1331,11 +1331,13 @@ public interface ModelOrBuilder
    *
    * <pre>
    * The default explanation specification for this Model.
-   * The Model can be used for [requesting
-   * explanation][PredictionService.Explain] after being
-   * [deployed][google.cloud.aiplatform.v1.EndpointService.DeployModel] if it is
-   * populated. The Model can be used for [batch
-   * explanation][BatchPredictionJob.generate_explanation] if it is populated.
+   * The Model can be used for
+   * [requesting
+   * explanation][google.cloud.aiplatform.v1.PredictionService.Explain] after
+   * being [deployed][google.cloud.aiplatform.v1.EndpointService.DeployModel] if
+   * it is populated. The Model can be used for [batch
+   * explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation]
+   * if it is populated.
    * All fields of the explanation_spec can be overridden by
    * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
    * of
@@ -1344,13 +1346,16 @@ public interface ModelOrBuilder
    * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec]
    * of [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
    * If the default explanation specification is not set for this Model, this
-   * Model can still be used for [requesting
-   * explanation][PredictionService.Explain] by setting
+   * Model can still be used for
+   * [requesting
+   * explanation][google.cloud.aiplatform.v1.PredictionService.Explain] by
+   * setting
    * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
    * of
    * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1.DeployModelRequest.deployed_model]
-   * and for [batch explanation][BatchPredictionJob.generate_explanation] by
-   * setting
+   * and for [batch
+   * explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation]
+   * by setting
    * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec]
    * of [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
    * </pre>
@@ -1365,11 +1370,13 @@ public interface ModelOrBuilder
    *
    * <pre>
    * The default explanation specification for this Model.
-   * The Model can be used for [requesting
-   * explanation][PredictionService.Explain] after being
-   * [deployed][google.cloud.aiplatform.v1.EndpointService.DeployModel] if it is
-   * populated. The Model can be used for [batch
-   * explanation][BatchPredictionJob.generate_explanation] if it is populated.
+   * The Model can be used for
+   * [requesting
+   * explanation][google.cloud.aiplatform.v1.PredictionService.Explain] after
+   * being [deployed][google.cloud.aiplatform.v1.EndpointService.DeployModel] if
+   * it is populated. The Model can be used for [batch
+   * explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation]
+   * if it is populated.
    * All fields of the explanation_spec can be overridden by
    * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
    * of
@@ -1378,13 +1385,16 @@ public interface ModelOrBuilder
    * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec]
    * of [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
    * If the default explanation specification is not set for this Model, this
-   * Model can still be used for [requesting
-   * explanation][PredictionService.Explain] by setting
+   * Model can still be used for
+   * [requesting
+   * explanation][google.cloud.aiplatform.v1.PredictionService.Explain] by
+   * setting
    * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
    * of
    * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1.DeployModelRequest.deployed_model]
-   * and for [batch explanation][BatchPredictionJob.generate_explanation] by
-   * setting
+   * and for [batch
+   * explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation]
+   * by setting
    * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec]
    * of [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
    * </pre>
@@ -1399,11 +1409,13 @@ public interface ModelOrBuilder
    *
    * <pre>
    * The default explanation specification for this Model.
-   * The Model can be used for [requesting
-   * explanation][PredictionService.Explain] after being
-   * [deployed][google.cloud.aiplatform.v1.EndpointService.DeployModel] if it is
-   * populated. The Model can be used for [batch
-   * explanation][BatchPredictionJob.generate_explanation] if it is populated.
+   * The Model can be used for
+   * [requesting
+   * explanation][google.cloud.aiplatform.v1.PredictionService.Explain] after
+   * being [deployed][google.cloud.aiplatform.v1.EndpointService.DeployModel] if
+   * it is populated. The Model can be used for [batch
+   * explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation]
+   * if it is populated.
    * All fields of the explanation_spec can be overridden by
    * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
    * of
@@ -1412,13 +1424,16 @@ public interface ModelOrBuilder
    * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec]
    * of [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
    * If the default explanation specification is not set for this Model, this
-   * Model can still be used for [requesting
-   * explanation][PredictionService.Explain] by setting
+   * Model can still be used for
+   * [requesting
+   * explanation][google.cloud.aiplatform.v1.PredictionService.Explain] by
+   * setting
    * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
    * of
    * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1.DeployModelRequest.deployed_model]
-   * and for [batch explanation][BatchPredictionJob.generate_explanation] by
-   * setting
+   * and for [batch
+   * explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation]
+   * by setting
    * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec]
    * of [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
    * </pre>

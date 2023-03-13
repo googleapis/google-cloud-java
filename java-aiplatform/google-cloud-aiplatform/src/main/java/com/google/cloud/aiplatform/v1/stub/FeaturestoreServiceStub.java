@@ -39,6 +39,9 @@ import com.google.cloud.aiplatform.v1.CreateFeaturestoreOperationMetadata;
 import com.google.cloud.aiplatform.v1.CreateFeaturestoreRequest;
 import com.google.cloud.aiplatform.v1.DeleteEntityTypeRequest;
 import com.google.cloud.aiplatform.v1.DeleteFeatureRequest;
+import com.google.cloud.aiplatform.v1.DeleteFeatureValuesOperationMetadata;
+import com.google.cloud.aiplatform.v1.DeleteFeatureValuesRequest;
+import com.google.cloud.aiplatform.v1.DeleteFeatureValuesResponse;
 import com.google.cloud.aiplatform.v1.DeleteFeaturestoreRequest;
 import com.google.cloud.aiplatform.v1.DeleteOperationMetadata;
 import com.google.cloud.aiplatform.v1.EntityType;
@@ -257,6 +260,19 @@ public abstract class FeaturestoreServiceStub implements BackgroundResource {
 
   public UnaryCallable<ExportFeatureValuesRequest, Operation> exportFeatureValuesCallable() {
     throw new UnsupportedOperationException("Not implemented: exportFeatureValuesCallable()");
+  }
+
+  public OperationCallable<
+          DeleteFeatureValuesRequest,
+          DeleteFeatureValuesResponse,
+          DeleteFeatureValuesOperationMetadata>
+      deleteFeatureValuesOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteFeatureValuesOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteFeatureValuesRequest, Operation> deleteFeatureValuesCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteFeatureValuesCallable()");
   }
 
   public UnaryCallable<SearchFeaturesRequest, SearchFeaturesPagedResponse>

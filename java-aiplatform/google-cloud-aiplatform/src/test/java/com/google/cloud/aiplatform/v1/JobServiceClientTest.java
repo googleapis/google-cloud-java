@@ -2191,6 +2191,7 @@ public class JobServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setDisableContainerLogging(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -2260,6 +2261,7 @@ public class JobServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setDisableContainerLogging(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -2329,6 +2331,7 @@ public class JobServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setDisableContainerLogging(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -2397,6 +2400,7 @@ public class JobServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setDisableContainerLogging(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 

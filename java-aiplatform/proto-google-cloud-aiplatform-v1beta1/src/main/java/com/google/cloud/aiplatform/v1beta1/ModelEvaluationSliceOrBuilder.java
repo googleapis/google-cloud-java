@@ -202,4 +202,54 @@ public interface ModelEvaluationSliceOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Aggregated explanation metrics for the Model's prediction
+   * output over the data this ModelEvaluation uses. This field is populated
+   * only if the Model is evaluated with explanations, and only for tabular
+   * Models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the modelExplanation field is set.
+   */
+  boolean hasModelExplanation();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Aggregated explanation metrics for the Model's prediction
+   * output over the data this ModelEvaluation uses. This field is populated
+   * only if the Model is evaluated with explanations, and only for tabular
+   * Models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The modelExplanation.
+   */
+  com.google.cloud.aiplatform.v1beta1.ModelExplanation getModelExplanation();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Aggregated explanation metrics for the Model's prediction
+   * output over the data this ModelEvaluation uses. This field is populated
+   * only if the Model is evaluated with explanations, and only for tabular
+   * Models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ModelExplanation model_explanation = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.ModelExplanationOrBuilder getModelExplanationOrBuilder();
 }

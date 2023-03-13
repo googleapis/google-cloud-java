@@ -329,6 +329,28 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
   }
 
   @Override
+  public void batchImportEvaluatedAnnotations(
+      BatchImportEvaluatedAnnotationsRequest request,
+      StreamObserver<BatchImportEvaluatedAnnotationsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof BatchImportEvaluatedAnnotationsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((BatchImportEvaluatedAnnotationsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchImportEvaluatedAnnotations, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  BatchImportEvaluatedAnnotationsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getModelEvaluation(
       GetModelEvaluationRequest request, StreamObserver<ModelEvaluation> responseObserver) {
     Object response = responses.poll();

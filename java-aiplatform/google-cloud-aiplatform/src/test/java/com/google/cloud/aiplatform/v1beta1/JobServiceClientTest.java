@@ -2194,6 +2194,7 @@ public class JobServiceClientTest {
             .setModelMonitoringConfig(ModelMonitoringConfig.newBuilder().build())
             .addAllModelMonitoringStatsAnomalies(new ArrayList<ModelMonitoringStatsAnomalies>())
             .setModelMonitoringStatus(Status.newBuilder().build())
+            .setDisableContainerLogging(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -2266,6 +2267,7 @@ public class JobServiceClientTest {
             .setModelMonitoringConfig(ModelMonitoringConfig.newBuilder().build())
             .addAllModelMonitoringStatsAnomalies(new ArrayList<ModelMonitoringStatsAnomalies>())
             .setModelMonitoringStatus(Status.newBuilder().build())
+            .setDisableContainerLogging(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -2338,6 +2340,7 @@ public class JobServiceClientTest {
             .setModelMonitoringConfig(ModelMonitoringConfig.newBuilder().build())
             .addAllModelMonitoringStatsAnomalies(new ArrayList<ModelMonitoringStatsAnomalies>())
             .setModelMonitoringStatus(Status.newBuilder().build())
+            .setDisableContainerLogging(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -2409,6 +2412,7 @@ public class JobServiceClientTest {
             .setModelMonitoringConfig(ModelMonitoringConfig.newBuilder().build())
             .addAllModelMonitoringStatsAnomalies(new ArrayList<ModelMonitoringStatsAnomalies>())
             .setModelMonitoringStatus(Status.newBuilder().build())
+            .setDisableContainerLogging(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 

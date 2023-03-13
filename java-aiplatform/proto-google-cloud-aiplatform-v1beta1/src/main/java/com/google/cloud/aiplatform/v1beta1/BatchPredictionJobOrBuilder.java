@@ -83,7 +83,11 @@ public interface BatchPredictionJobOrBuilder
    * and their resources.
    * Exactly one of model and unmanaged_container_model must be set.
    * The model resource name may contain version id or version alias to specify
-   * the version, if no version is specified, the default version will be used.
+   * the version.
+   *  Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
+   *              or
+   *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
+   * if no version is specified, the default version will be deployed.
    * </pre>
    *
    * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -101,7 +105,11 @@ public interface BatchPredictionJobOrBuilder
    * and their resources.
    * Exactly one of model and unmanaged_container_model must be set.
    * The model resource name may contain version id or version alias to specify
-   * the version, if no version is specified, the default version will be used.
+   * the version.
+   *  Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
+   *              or
+   *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
+   * if no version is specified, the default version will be deployed.
    * </pre>
    *
    * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -1333,4 +1341,22 @@ public interface BatchPredictionJobOrBuilder
    * </code>
    */
   com.google.rpc.StatusOrBuilder getModelMonitoringStatusOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * For custom-trained Models and AutoML Tabular Models, the container of the
+   * DeployedModel instances will send `stderr` and `stdout` streams to
+   * Stackdriver Logging by default. Please note that the logs incur cost,
+   * which are subject to [Cloud Logging
+   * pricing](https://cloud.google.com/stackdriver/pricing).
+   * User can disable container logging by setting this flag to true.
+   * </pre>
+   *
+   * <code>bool disable_container_logging = 34;</code>
+   *
+   * @return The disableContainerLogging.
+   */
+  boolean getDisableContainerLogging();
 }

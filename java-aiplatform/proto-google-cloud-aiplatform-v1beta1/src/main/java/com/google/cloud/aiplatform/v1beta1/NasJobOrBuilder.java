@@ -511,10 +511,14 @@ public interface NasJobOrBuilder
    * and restricted image training for tenant project.
    * </pre>
    *
-   * <code>bool enable_restricted_image_training = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * bool enable_restricted_image_training = 14 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.NasJob.enable_restricted_image_training is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/nas_job.proto;l=97
    * @return The enableRestrictedImageTraining.
    */
+  @java.lang.Deprecated
   boolean getEnableRestrictedImageTraining();
 }
