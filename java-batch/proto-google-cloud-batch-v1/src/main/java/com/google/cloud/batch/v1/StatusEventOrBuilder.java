@@ -142,4 +142,29 @@ public interface StatusEventOrBuilder
    * <code>.google.cloud.batch.v1.TaskExecution task_execution = 4;</code>
    */
   com.google.cloud.batch.v1.TaskExecutionOrBuilder getTaskExecutionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Task State
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.TaskStatus.State task_state = 5;</code>
+   *
+   * @return The enum numeric value on the wire for taskState.
+   */
+  int getTaskStateValue();
+  /**
+   *
+   *
+   * <pre>
+   * Task State
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.TaskStatus.State task_state = 5;</code>
+   *
+   * @return The taskState.
+   */
+  com.google.cloud.batch.v1.TaskStatus.State getTaskState();
 }

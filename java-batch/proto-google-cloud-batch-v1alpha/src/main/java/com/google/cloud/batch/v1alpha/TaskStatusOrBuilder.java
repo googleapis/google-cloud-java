@@ -99,4 +99,39 @@ public interface TaskStatusOrBuilder
    * <code>repeated .google.cloud.batch.v1alpha.StatusEvent status_events = 2;</code>
    */
   com.google.cloud.batch.v1alpha.StatusEventOrBuilder getStatusEventsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The resource usage of the task.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1alpha.TaskResourceUsage resource_usage = 3;</code>
+   *
+   * @return Whether the resourceUsage field is set.
+   */
+  boolean hasResourceUsage();
+  /**
+   *
+   *
+   * <pre>
+   * The resource usage of the task.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1alpha.TaskResourceUsage resource_usage = 3;</code>
+   *
+   * @return The resourceUsage.
+   */
+  com.google.cloud.batch.v1alpha.TaskResourceUsage getResourceUsage();
+  /**
+   *
+   *
+   * <pre>
+   * The resource usage of the task.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1alpha.TaskResourceUsage resource_usage = 3;</code>
+   */
+  com.google.cloud.batch.v1alpha.TaskResourceUsageOrBuilder getResourceUsageOrBuilder();
 }

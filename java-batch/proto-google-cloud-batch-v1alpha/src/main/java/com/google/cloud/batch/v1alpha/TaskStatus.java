@@ -397,6 +397,56 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
     return statusEvents_.get(index);
   }
 
+  public static final int RESOURCE_USAGE_FIELD_NUMBER = 3;
+  private com.google.cloud.batch.v1alpha.TaskResourceUsage resourceUsage_;
+  /**
+   *
+   *
+   * <pre>
+   * The resource usage of the task.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1alpha.TaskResourceUsage resource_usage = 3;</code>
+   *
+   * @return Whether the resourceUsage field is set.
+   */
+  @java.lang.Override
+  public boolean hasResourceUsage() {
+    return resourceUsage_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The resource usage of the task.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1alpha.TaskResourceUsage resource_usage = 3;</code>
+   *
+   * @return The resourceUsage.
+   */
+  @java.lang.Override
+  public com.google.cloud.batch.v1alpha.TaskResourceUsage getResourceUsage() {
+    return resourceUsage_ == null
+        ? com.google.cloud.batch.v1alpha.TaskResourceUsage.getDefaultInstance()
+        : resourceUsage_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The resource usage of the task.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1alpha.TaskResourceUsage resource_usage = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.batch.v1alpha.TaskResourceUsageOrBuilder getResourceUsageOrBuilder() {
+    return resourceUsage_ == null
+        ? com.google.cloud.batch.v1alpha.TaskResourceUsage.getDefaultInstance()
+        : resourceUsage_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -417,6 +467,9 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < statusEvents_.size(); i++) {
       output.writeMessage(2, statusEvents_.get(i));
     }
+    if (resourceUsage_ != null) {
+      output.writeMessage(3, getResourceUsage());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -431,6 +484,9 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < statusEvents_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, statusEvents_.get(i));
+    }
+    if (resourceUsage_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getResourceUsage());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -450,6 +506,10 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
 
     if (state_ != other.state_) return false;
     if (!getStatusEventsList().equals(other.getStatusEventsList())) return false;
+    if (hasResourceUsage() != other.hasResourceUsage()) return false;
+    if (hasResourceUsage()) {
+      if (!getResourceUsage().equals(other.getResourceUsage())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -466,6 +526,10 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
     if (getStatusEventsCount() > 0) {
       hash = (37 * hash) + STATUS_EVENTS_FIELD_NUMBER;
       hash = (53 * hash) + getStatusEventsList().hashCode();
+    }
+    if (hasResourceUsage()) {
+      hash = (37 * hash) + RESOURCE_USAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getResourceUsage().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -614,6 +678,11 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
         statusEventsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
+      resourceUsage_ = null;
+      if (resourceUsageBuilder_ != null) {
+        resourceUsageBuilder_.dispose();
+        resourceUsageBuilder_ = null;
+      }
       return this;
     }
 
@@ -665,6 +734,10 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.resourceUsage_ =
+            resourceUsageBuilder_ == null ? resourceUsage_ : resourceUsageBuilder_.build();
       }
     }
 
@@ -743,6 +816,9 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.hasResourceUsage()) {
+        mergeResourceUsage(other.getResourceUsage());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -788,6 +864,12 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(getResourceUsageFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1246,6 +1328,191 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
         statusEvents_ = null;
       }
       return statusEventsBuilder_;
+    }
+
+    private com.google.cloud.batch.v1alpha.TaskResourceUsage resourceUsage_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.batch.v1alpha.TaskResourceUsage,
+            com.google.cloud.batch.v1alpha.TaskResourceUsage.Builder,
+            com.google.cloud.batch.v1alpha.TaskResourceUsageOrBuilder>
+        resourceUsageBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The resource usage of the task.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1alpha.TaskResourceUsage resource_usage = 3;</code>
+     *
+     * @return Whether the resourceUsage field is set.
+     */
+    public boolean hasResourceUsage() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource usage of the task.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1alpha.TaskResourceUsage resource_usage = 3;</code>
+     *
+     * @return The resourceUsage.
+     */
+    public com.google.cloud.batch.v1alpha.TaskResourceUsage getResourceUsage() {
+      if (resourceUsageBuilder_ == null) {
+        return resourceUsage_ == null
+            ? com.google.cloud.batch.v1alpha.TaskResourceUsage.getDefaultInstance()
+            : resourceUsage_;
+      } else {
+        return resourceUsageBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource usage of the task.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1alpha.TaskResourceUsage resource_usage = 3;</code>
+     */
+    public Builder setResourceUsage(com.google.cloud.batch.v1alpha.TaskResourceUsage value) {
+      if (resourceUsageBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        resourceUsage_ = value;
+      } else {
+        resourceUsageBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource usage of the task.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1alpha.TaskResourceUsage resource_usage = 3;</code>
+     */
+    public Builder setResourceUsage(
+        com.google.cloud.batch.v1alpha.TaskResourceUsage.Builder builderForValue) {
+      if (resourceUsageBuilder_ == null) {
+        resourceUsage_ = builderForValue.build();
+      } else {
+        resourceUsageBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource usage of the task.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1alpha.TaskResourceUsage resource_usage = 3;</code>
+     */
+    public Builder mergeResourceUsage(com.google.cloud.batch.v1alpha.TaskResourceUsage value) {
+      if (resourceUsageBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && resourceUsage_ != null
+            && resourceUsage_
+                != com.google.cloud.batch.v1alpha.TaskResourceUsage.getDefaultInstance()) {
+          getResourceUsageBuilder().mergeFrom(value);
+        } else {
+          resourceUsage_ = value;
+        }
+      } else {
+        resourceUsageBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource usage of the task.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1alpha.TaskResourceUsage resource_usage = 3;</code>
+     */
+    public Builder clearResourceUsage() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      resourceUsage_ = null;
+      if (resourceUsageBuilder_ != null) {
+        resourceUsageBuilder_.dispose();
+        resourceUsageBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource usage of the task.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1alpha.TaskResourceUsage resource_usage = 3;</code>
+     */
+    public com.google.cloud.batch.v1alpha.TaskResourceUsage.Builder getResourceUsageBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getResourceUsageFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource usage of the task.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1alpha.TaskResourceUsage resource_usage = 3;</code>
+     */
+    public com.google.cloud.batch.v1alpha.TaskResourceUsageOrBuilder getResourceUsageOrBuilder() {
+      if (resourceUsageBuilder_ != null) {
+        return resourceUsageBuilder_.getMessageOrBuilder();
+      } else {
+        return resourceUsage_ == null
+            ? com.google.cloud.batch.v1alpha.TaskResourceUsage.getDefaultInstance()
+            : resourceUsage_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource usage of the task.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1alpha.TaskResourceUsage resource_usage = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.batch.v1alpha.TaskResourceUsage,
+            com.google.cloud.batch.v1alpha.TaskResourceUsage.Builder,
+            com.google.cloud.batch.v1alpha.TaskResourceUsageOrBuilder>
+        getResourceUsageFieldBuilder() {
+      if (resourceUsageBuilder_ == null) {
+        resourceUsageBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.batch.v1alpha.TaskResourceUsage,
+                com.google.cloud.batch.v1alpha.TaskResourceUsage.Builder,
+                com.google.cloud.batch.v1alpha.TaskResourceUsageOrBuilder>(
+                getResourceUsage(), getParentForChildren(), isClean());
+        resourceUsage_ = null;
+      }
+      return resourceUsageBuilder_;
     }
 
     @java.lang.Override

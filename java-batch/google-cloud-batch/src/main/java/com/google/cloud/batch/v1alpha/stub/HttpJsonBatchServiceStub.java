@@ -50,11 +50,6 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
-import com.google.iam.v1.GetIamPolicyRequest;
-import com.google.iam.v1.Policy;
-import com.google.iam.v1.SetIamPolicyRequest;
-import com.google.iam.v1.TestIamPermissionsRequest;
-import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
@@ -363,114 +358,6 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                       .build())
               .build();
 
-  private static final ApiMethodDescriptor<SetIamPolicyRequest, Policy>
-      setIamPolicyMethodDescriptor =
-          ApiMethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
-              .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
-              .setHttpMethod("POST")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<SetIamPolicyRequest>newBuilder()
-                      .setPath(
-                          "/v1alpha/{resource=projects/*/locations/*/jobs/*}:setIamPolicy",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<SetIamPolicyRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "resource", request.getResource());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<SetIamPolicyRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), true))
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<Policy>newBuilder()
-                      .setDefaultInstance(Policy.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
-  private static final ApiMethodDescriptor<GetIamPolicyRequest, Policy>
-      getIamPolicyMethodDescriptor =
-          ApiMethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
-              .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
-              .setHttpMethod("GET")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<GetIamPolicyRequest>newBuilder()
-                      .setPath(
-                          "/v1alpha/{resource=projects/*/locations/*/jobs/*}:getIamPolicy",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<GetIamPolicyRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "resource", request.getResource());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<GetIamPolicyRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(request -> null)
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<Policy>newBuilder()
-                      .setDefaultInstance(Policy.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
-  private static final ApiMethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsMethodDescriptor =
-          ApiMethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
-              .setFullMethodName("google.iam.v1.IAMPolicy/TestIamPermissions")
-              .setHttpMethod("POST")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<TestIamPermissionsRequest>newBuilder()
-                      .setPath(
-                          "/v1alpha/{resource=projects/*/locations/*/jobs/*}:testIamPermissions",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<TestIamPermissionsRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "resource", request.getResource());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<TestIamPermissionsRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), true))
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()
-                      .setDefaultInstance(TestIamPermissionsResponse.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
   private final UnaryCallable<CreateJobRequest, Job> createJobCallable;
   private final UnaryCallable<GetJobRequest, Job> getJobCallable;
   private final UnaryCallable<DeleteJobRequest, Operation> deleteJobCallable;
@@ -485,10 +372,6 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
   private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
-  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
-  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
-  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -576,22 +459,6 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
-    HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
-        HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
-            .setMethodDescriptor(setIamPolicyMethodDescriptor)
-            .setTypeRegistry(typeRegistry)
-            .build();
-    HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
-        HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
-            .setMethodDescriptor(getIamPolicyMethodDescriptor)
-            .setTypeRegistry(typeRegistry)
-            .build();
-    HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsTransportSettings =
-            HttpJsonCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
-                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .build();
 
     this.createJobCallable =
         callableFactory.createUnaryCallable(
@@ -632,17 +499,6 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
     this.getLocationCallable =
         callableFactory.createUnaryCallable(
             getLocationTransportSettings, settings.getLocationSettings(), clientContext);
-    this.setIamPolicyCallable =
-        callableFactory.createUnaryCallable(
-            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
-    this.getIamPolicyCallable =
-        callableFactory.createUnaryCallable(
-            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
-    this.testIamPermissionsCallable =
-        callableFactory.createUnaryCallable(
-            testIamPermissionsTransportSettings,
-            settings.testIamPermissionsSettings(),
-            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -659,9 +515,6 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
     methodDescriptors.add(listTasksMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
-    methodDescriptors.add(setIamPolicyMethodDescriptor);
-    methodDescriptors.add(getIamPolicyMethodDescriptor);
-    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -729,22 +582,6 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
   @Override
   public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
     return getLocationCallable;
-  }
-
-  @Override
-  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
-    return setIamPolicyCallable;
-  }
-
-  @Override
-  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
-    return getIamPolicyCallable;
-  }
-
-  @Override
-  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable() {
-    return testIamPermissionsCallable;
   }
 
   @Override

@@ -40,6 +40,7 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
   private StatusEvent() {
     type_ = "";
     description_ = "";
+    taskState_ = 0;
   }
 
   @java.lang.Override
@@ -266,6 +267,41 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
         : taskExecution_;
   }
 
+  public static final int TASK_STATE_FIELD_NUMBER = 5;
+  private int taskState_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Task State
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1alpha.TaskStatus.State task_state = 5;</code>
+   *
+   * @return The enum numeric value on the wire for taskState.
+   */
+  @java.lang.Override
+  public int getTaskStateValue() {
+    return taskState_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Task State
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1alpha.TaskStatus.State task_state = 5;</code>
+   *
+   * @return The taskState.
+   */
+  @java.lang.Override
+  public com.google.cloud.batch.v1alpha.TaskStatus.State getTaskState() {
+    com.google.cloud.batch.v1alpha.TaskStatus.State result =
+        com.google.cloud.batch.v1alpha.TaskStatus.State.forNumber(taskState_);
+    return result == null ? com.google.cloud.batch.v1alpha.TaskStatus.State.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -292,6 +328,10 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
     if (taskExecution_ != null) {
       output.writeMessage(4, getTaskExecution());
     }
+    if (taskState_
+        != com.google.cloud.batch.v1alpha.TaskStatus.State.STATE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(5, taskState_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -312,6 +352,10 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
     }
     if (taskExecution_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getTaskExecution());
+    }
+    if (taskState_
+        != com.google.cloud.batch.v1alpha.TaskStatus.State.STATE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, taskState_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -339,6 +383,7 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
     if (hasTaskExecution()) {
       if (!getTaskExecution().equals(other.getTaskExecution())) return false;
     }
+    if (taskState_ != other.taskState_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -362,6 +407,8 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + TASK_EXECUTION_FIELD_NUMBER;
       hash = (53 * hash) + getTaskExecution().hashCode();
     }
+    hash = (37 * hash) + TASK_STATE_FIELD_NUMBER;
+    hash = (53 * hash) + taskState_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -513,6 +560,7 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
         taskExecutionBuilder_.dispose();
         taskExecutionBuilder_ = null;
       }
+      taskState_ = 0;
       return this;
     }
 
@@ -561,6 +609,9 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.taskExecution_ =
             taskExecutionBuilder_ == null ? taskExecution_ : taskExecutionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.taskState_ = taskState_;
       }
     }
 
@@ -625,6 +676,9 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
       if (other.hasTaskExecution()) {
         mergeTaskExecution(other.getTaskExecution());
       }
+      if (other.taskState_ != 0) {
+        setTaskStateValue(other.getTaskStateValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -675,6 +729,12 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 40:
+              {
+                taskState_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1268,6 +1328,96 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
         taskExecution_ = null;
       }
       return taskExecutionBuilder_;
+    }
+
+    private int taskState_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Task State
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1alpha.TaskStatus.State task_state = 5;</code>
+     *
+     * @return The enum numeric value on the wire for taskState.
+     */
+    @java.lang.Override
+    public int getTaskStateValue() {
+      return taskState_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Task State
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1alpha.TaskStatus.State task_state = 5;</code>
+     *
+     * @param value The enum numeric value on the wire for taskState to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskStateValue(int value) {
+      taskState_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Task State
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1alpha.TaskStatus.State task_state = 5;</code>
+     *
+     * @return The taskState.
+     */
+    @java.lang.Override
+    public com.google.cloud.batch.v1alpha.TaskStatus.State getTaskState() {
+      com.google.cloud.batch.v1alpha.TaskStatus.State result =
+          com.google.cloud.batch.v1alpha.TaskStatus.State.forNumber(taskState_);
+      return result == null ? com.google.cloud.batch.v1alpha.TaskStatus.State.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Task State
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1alpha.TaskStatus.State task_state = 5;</code>
+     *
+     * @param value The taskState to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskState(com.google.cloud.batch.v1alpha.TaskStatus.State value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      taskState_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Task State
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1alpha.TaskStatus.State task_state = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTaskState() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      taskState_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

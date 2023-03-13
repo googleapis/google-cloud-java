@@ -80,7 +80,8 @@ public interface JobOrBuilder
    *
    * <pre>
    * Priority of the Job.
-   * The valid value range is [0, 100).
+   * The valid value range is [0, 100). Default value is 0.
+   * Higher value indicates higher priority.
    * A job with higher priority value is more likely to run earlier if all other
    * requirements are satisfied.
    * </pre>

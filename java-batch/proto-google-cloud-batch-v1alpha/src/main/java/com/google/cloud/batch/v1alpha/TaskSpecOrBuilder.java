@@ -208,13 +208,12 @@ public interface TaskSpecOrBuilder
    *
    * <pre>
    * Lifecycle management schema when any task in a task group is failed.
-   * The valid size of lifecycle policies are [0, 10].
-   * For each lifecycle policy, when the condition is met,
-   * the action in that policy will execute.
-   * If there are multiple policies that the task execution result matches,
-   * we use the action from the first matched policy. If task execution result
-   * does not meet with any of the defined lifecycle policy, we consider it as
-   * the default policy. Default policy means if the exit code is 0, exit task.
+   * Currently we only support one lifecycle policy.
+   * When the lifecycle policy condition is met,
+   * the action in the policy will execute.
+   * If task execution result does not meet with the defined lifecycle
+   * policy, we consider it as the default policy.
+   * Default policy means if the exit code is 0, exit task.
    * If task ends with non-zero exit code, retry the task with max_retry_count.
    * </pre>
    *
@@ -226,13 +225,12 @@ public interface TaskSpecOrBuilder
    *
    * <pre>
    * Lifecycle management schema when any task in a task group is failed.
-   * The valid size of lifecycle policies are [0, 10].
-   * For each lifecycle policy, when the condition is met,
-   * the action in that policy will execute.
-   * If there are multiple policies that the task execution result matches,
-   * we use the action from the first matched policy. If task execution result
-   * does not meet with any of the defined lifecycle policy, we consider it as
-   * the default policy. Default policy means if the exit code is 0, exit task.
+   * Currently we only support one lifecycle policy.
+   * When the lifecycle policy condition is met,
+   * the action in the policy will execute.
+   * If task execution result does not meet with the defined lifecycle
+   * policy, we consider it as the default policy.
+   * Default policy means if the exit code is 0, exit task.
    * If task ends with non-zero exit code, retry the task with max_retry_count.
    * </pre>
    *
@@ -244,13 +242,12 @@ public interface TaskSpecOrBuilder
    *
    * <pre>
    * Lifecycle management schema when any task in a task group is failed.
-   * The valid size of lifecycle policies are [0, 10].
-   * For each lifecycle policy, when the condition is met,
-   * the action in that policy will execute.
-   * If there are multiple policies that the task execution result matches,
-   * we use the action from the first matched policy. If task execution result
-   * does not meet with any of the defined lifecycle policy, we consider it as
-   * the default policy. Default policy means if the exit code is 0, exit task.
+   * Currently we only support one lifecycle policy.
+   * When the lifecycle policy condition is met,
+   * the action in the policy will execute.
+   * If task execution result does not meet with the defined lifecycle
+   * policy, we consider it as the default policy.
+   * Default policy means if the exit code is 0, exit task.
    * If task ends with non-zero exit code, retry the task with max_retry_count.
    * </pre>
    *
@@ -262,13 +259,12 @@ public interface TaskSpecOrBuilder
    *
    * <pre>
    * Lifecycle management schema when any task in a task group is failed.
-   * The valid size of lifecycle policies are [0, 10].
-   * For each lifecycle policy, when the condition is met,
-   * the action in that policy will execute.
-   * If there are multiple policies that the task execution result matches,
-   * we use the action from the first matched policy. If task execution result
-   * does not meet with any of the defined lifecycle policy, we consider it as
-   * the default policy. Default policy means if the exit code is 0, exit task.
+   * Currently we only support one lifecycle policy.
+   * When the lifecycle policy condition is met,
+   * the action in the policy will execute.
+   * If task execution result does not meet with the defined lifecycle
+   * policy, we consider it as the default policy.
+   * Default policy means if the exit code is 0, exit task.
    * If task ends with non-zero exit code, retry the task with max_retry_count.
    * </pre>
    *
@@ -281,13 +277,12 @@ public interface TaskSpecOrBuilder
    *
    * <pre>
    * Lifecycle management schema when any task in a task group is failed.
-   * The valid size of lifecycle policies are [0, 10].
-   * For each lifecycle policy, when the condition is met,
-   * the action in that policy will execute.
-   * If there are multiple policies that the task execution result matches,
-   * we use the action from the first matched policy. If task execution result
-   * does not meet with any of the defined lifecycle policy, we consider it as
-   * the default policy. Default policy means if the exit code is 0, exit task.
+   * Currently we only support one lifecycle policy.
+   * When the lifecycle policy condition is met,
+   * the action in the policy will execute.
+   * If task execution result does not meet with the defined lifecycle
+   * policy, we consider it as the default policy.
+   * Default policy means if the exit code is 0, exit task.
    * If task ends with non-zero exit code, retry the task with max_retry_count.
    * </pre>
    *
