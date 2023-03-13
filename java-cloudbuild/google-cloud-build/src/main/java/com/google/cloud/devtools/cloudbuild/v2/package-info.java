@@ -19,17 +19,11 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>======================= CloudBuildClient =======================
+ * <p>======================= RepositoryManagerClient =======================
  *
- * <p>Service Description: Creates and manages builds on Google Cloud Platform.
+ * <p>Service Description: Manages connections to source code repostiories.
  *
- * <p>The main concept used by this API is a `Build`, which describes the location of the source to
- * build, how to build the source, and where to store the built artifacts, if any.
- *
- * <p>A user can list previously-requested builds or get builds by their ID to determine the status
- * of the build.
- *
- * <p>Sample for CloudBuildClient:
+ * <p>Sample for RepositoryManagerClient:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -37,14 +31,13 @@
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
- *   String projectId = "projectId-894832108";
- *   String id = "id3355";
- *   Build response = cloudBuildClient.getBuild(projectId, id);
+ * try (RepositoryManagerClient repositoryManagerClient = RepositoryManagerClient.create()) {
+ *   ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+ *   Connection response = repositoryManagerClient.getConnection(name);
  * }
  * }</pre>
  */
 @Generated("by gapic-generator-java")
-package com.google.cloud.devtools.cloudbuild.v1;
+package com.google.cloud.devtools.cloudbuild.v2;
 
 import javax.annotation.Generated;

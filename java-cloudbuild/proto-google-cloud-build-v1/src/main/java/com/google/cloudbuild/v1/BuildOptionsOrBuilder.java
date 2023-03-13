@@ -244,7 +244,7 @@ public interface BuildOptionsOrBuilder
    * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1881
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1892
    * @return The workerPool.
    */
   @java.lang.Deprecated
@@ -259,7 +259,7 @@ public interface BuildOptionsOrBuilder
    * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1881
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1892
    * @return The bytes for workerPool.
    */
   @java.lang.Deprecated
@@ -552,4 +552,33 @@ public interface BuildOptionsOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.Volume volumes = 14;</code>
    */
   com.google.cloudbuild.v1.VolumeOrBuilder getVolumesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Option to specify how default logs buckets are setup.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.BuildOptions.DefaultLogsBucketBehavior default_logs_bucket_behavior = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for defaultLogsBucketBehavior.
+   */
+  int getDefaultLogsBucketBehaviorValue();
+  /**
+   *
+   *
+   * <pre>
+   * Option to specify how default logs buckets are setup.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.BuildOptions.DefaultLogsBucketBehavior default_logs_bucket_behavior = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The defaultLogsBucketBehavior.
+   */
+  com.google.cloudbuild.v1.BuildOptions.DefaultLogsBucketBehavior getDefaultLogsBucketBehavior();
 }

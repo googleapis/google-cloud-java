@@ -48,6 +48,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     env_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     secretEnv_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     volumes_ = java.util.Collections.emptyList();
+    defaultLogsBucketBehavior_ = 0;
   }
 
   @java.lang.Override
@@ -944,6 +945,148 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.devtools.cloudbuild.v1.BuildOptions.LoggingMode)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Default GCS log bucket behavior options.
+   * </pre>
+   *
+   * Protobuf enum {@code google.devtools.cloudbuild.v1.BuildOptions.DefaultLogsBucketBehavior}
+   */
+  public enum DefaultLogsBucketBehavior implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified.
+     * </pre>
+     *
+     * <code>DEFAULT_LOGS_BUCKET_BEHAVIOR_UNSPECIFIED = 0;</code>
+     */
+    DEFAULT_LOGS_BUCKET_BEHAVIOR_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Bucket is located in user-owned project in the same region as the
+     * build. The builder service account must have access to create and write
+     * to GCS buckets in the build project.
+     * </pre>
+     *
+     * <code>REGIONAL_USER_OWNED_BUCKET = 1;</code>
+     */
+    REGIONAL_USER_OWNED_BUCKET(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified.
+     * </pre>
+     *
+     * <code>DEFAULT_LOGS_BUCKET_BEHAVIOR_UNSPECIFIED = 0;</code>
+     */
+    public static final int DEFAULT_LOGS_BUCKET_BEHAVIOR_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Bucket is located in user-owned project in the same region as the
+     * build. The builder service account must have access to create and write
+     * to GCS buckets in the build project.
+     * </pre>
+     *
+     * <code>REGIONAL_USER_OWNED_BUCKET = 1;</code>
+     */
+    public static final int REGIONAL_USER_OWNED_BUCKET_VALUE = 1;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static DefaultLogsBucketBehavior valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static DefaultLogsBucketBehavior forNumber(int value) {
+      switch (value) {
+        case 0:
+          return DEFAULT_LOGS_BUCKET_BEHAVIOR_UNSPECIFIED;
+        case 1:
+          return REGIONAL_USER_OWNED_BUCKET;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<DefaultLogsBucketBehavior>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<DefaultLogsBucketBehavior>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<DefaultLogsBucketBehavior>() {
+              public DefaultLogsBucketBehavior findValueByNumber(int number) {
+                return DefaultLogsBucketBehavior.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloudbuild.v1.BuildOptions.getDescriptor().getEnumTypes().get(5);
+    }
+
+    private static final DefaultLogsBucketBehavior[] VALUES = values();
+
+    public static DefaultLogsBucketBehavior valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private DefaultLogsBucketBehavior(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.devtools.cloudbuild.v1.BuildOptions.DefaultLogsBucketBehavior)
   }
 
   public interface PoolOptionOrBuilder
@@ -1941,7 +2084,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1881
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1892
    * @return The workerPool.
    */
   @java.lang.Override
@@ -1967,7 +2110,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1881
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1892
    * @return The bytes for workerPool.
    */
   @java.lang.Override
@@ -2341,6 +2484,49 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     return volumes_.get(index);
   }
 
+  public static final int DEFAULT_LOGS_BUCKET_BEHAVIOR_FIELD_NUMBER = 21;
+  private int defaultLogsBucketBehavior_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Option to specify how default logs buckets are setup.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.BuildOptions.DefaultLogsBucketBehavior default_logs_bucket_behavior = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for defaultLogsBucketBehavior.
+   */
+  @java.lang.Override
+  public int getDefaultLogsBucketBehaviorValue() {
+    return defaultLogsBucketBehavior_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Option to specify how default logs buckets are setup.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.BuildOptions.DefaultLogsBucketBehavior default_logs_bucket_behavior = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The defaultLogsBucketBehavior.
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.BuildOptions.DefaultLogsBucketBehavior
+      getDefaultLogsBucketBehavior() {
+    com.google.cloudbuild.v1.BuildOptions.DefaultLogsBucketBehavior result =
+        com.google.cloudbuild.v1.BuildOptions.DefaultLogsBucketBehavior.forNumber(
+            defaultLogsBucketBehavior_);
+    return result == null
+        ? com.google.cloudbuild.v1.BuildOptions.DefaultLogsBucketBehavior.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2402,6 +2588,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     }
     if (pool_ != null) {
       output.writeMessage(19, getPool());
+    }
+    if (defaultLogsBucketBehavior_
+        != com.google.cloudbuild.v1.BuildOptions.DefaultLogsBucketBehavior
+            .DEFAULT_LOGS_BUCKET_BEHAVIOR_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(21, defaultLogsBucketBehavior_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2476,6 +2668,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     if (pool_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getPool());
     }
+    if (defaultLogsBucketBehavior_
+        != com.google.cloudbuild.v1.BuildOptions.DefaultLogsBucketBehavior
+            .DEFAULT_LOGS_BUCKET_BEHAVIOR_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(21, defaultLogsBucketBehavior_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2507,6 +2705,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     if (!getEnvList().equals(other.getEnvList())) return false;
     if (!getSecretEnvList().equals(other.getSecretEnvList())) return false;
     if (!getVolumesList().equals(other.getVolumesList())) return false;
+    if (defaultLogsBucketBehavior_ != other.defaultLogsBucketBehavior_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2554,6 +2753,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + VOLUMES_FIELD_NUMBER;
       hash = (53 * hash) + getVolumesList().hashCode();
     }
+    hash = (37 * hash) + DEFAULT_LOGS_BUCKET_BEHAVIOR_FIELD_NUMBER;
+    hash = (53 * hash) + defaultLogsBucketBehavior_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2718,6 +2919,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
         volumesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00001000);
+      defaultLogsBucketBehavior_ = 0;
       return this;
     }
 
@@ -2808,6 +3010,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.logging_ = logging_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.defaultLogsBucketBehavior_ = defaultLogsBucketBehavior_;
       }
     }
 
@@ -2942,6 +3147,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.defaultLogsBucketBehavior_ != 0) {
+        setDefaultLogsBucketBehaviorValue(other.getDefaultLogsBucketBehaviorValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -3067,6 +3275,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000100;
                 break;
               } // case 154
+            case 168:
+              {
+                defaultLogsBucketBehavior_ = input.readEnum();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 168
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3873,7 +4087,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1881
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1892
      * @return The workerPool.
      */
     @java.lang.Deprecated
@@ -3898,7 +4112,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1881
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1892
      * @return The bytes for workerPool.
      */
     @java.lang.Deprecated
@@ -3923,7 +4137,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1881
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1892
      * @param value The workerPool to set.
      * @return This builder for chaining.
      */
@@ -3947,7 +4161,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1881
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1892
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3967,7 +4181,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1881
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1892
      * @param value The bytes for workerPool to set.
      * @return This builder for chaining.
      */
@@ -5159,6 +5373,111 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
         volumes_ = null;
       }
       return volumesBuilder_;
+    }
+
+    private int defaultLogsBucketBehavior_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Option to specify how default logs buckets are setup.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildOptions.DefaultLogsBucketBehavior default_logs_bucket_behavior = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for defaultLogsBucketBehavior.
+     */
+    @java.lang.Override
+    public int getDefaultLogsBucketBehaviorValue() {
+      return defaultLogsBucketBehavior_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Option to specify how default logs buckets are setup.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildOptions.DefaultLogsBucketBehavior default_logs_bucket_behavior = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for defaultLogsBucketBehavior to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDefaultLogsBucketBehaviorValue(int value) {
+      defaultLogsBucketBehavior_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Option to specify how default logs buckets are setup.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildOptions.DefaultLogsBucketBehavior default_logs_bucket_behavior = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The defaultLogsBucketBehavior.
+     */
+    @java.lang.Override
+    public com.google.cloudbuild.v1.BuildOptions.DefaultLogsBucketBehavior
+        getDefaultLogsBucketBehavior() {
+      com.google.cloudbuild.v1.BuildOptions.DefaultLogsBucketBehavior result =
+          com.google.cloudbuild.v1.BuildOptions.DefaultLogsBucketBehavior.forNumber(
+              defaultLogsBucketBehavior_);
+      return result == null
+          ? com.google.cloudbuild.v1.BuildOptions.DefaultLogsBucketBehavior.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Option to specify how default logs buckets are setup.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildOptions.DefaultLogsBucketBehavior default_logs_bucket_behavior = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The defaultLogsBucketBehavior to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDefaultLogsBucketBehavior(
+        com.google.cloudbuild.v1.BuildOptions.DefaultLogsBucketBehavior value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00002000;
+      defaultLogsBucketBehavior_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Option to specify how default logs buckets are setup.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildOptions.DefaultLogsBucketBehavior default_logs_bucket_behavior = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDefaultLogsBucketBehavior() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      defaultLogsBucketBehavior_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override
