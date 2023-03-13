@@ -102,6 +102,20 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Percentage of conversations created using the UploadConversation endpoint
+     * to analyze automatically, between [0, 100].
+     * </pre>
+     *
+     * <code>double upload_conversation_analysis_percentage = 6;</code>
+     *
+     * @return The uploadConversationAnalysisPercentage.
+     */
+    double getUploadConversationAnalysisPercentage();
+
+    /**
+     *
+     *
+     * <pre>
      * To select the annotators to run and the phrase matchers to use
      * (if any). If not specified, all annotators will be run.
      * </pre>
@@ -203,6 +217,25 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       return runtimeIntegrationAnalysisPercentage_;
     }
 
+    public static final int UPLOAD_CONVERSATION_ANALYSIS_PERCENTAGE_FIELD_NUMBER = 6;
+    private double uploadConversationAnalysisPercentage_ = 0D;
+    /**
+     *
+     *
+     * <pre>
+     * Percentage of conversations created using the UploadConversation endpoint
+     * to analyze automatically, between [0, 100].
+     * </pre>
+     *
+     * <code>double upload_conversation_analysis_percentage = 6;</code>
+     *
+     * @return The uploadConversationAnalysisPercentage.
+     */
+    @java.lang.Override
+    public double getUploadConversationAnalysisPercentage() {
+      return uploadConversationAnalysisPercentage_;
+    }
+
     public static final int ANNOTATOR_SELECTOR_FIELD_NUMBER = 5;
     private com.google.cloud.contactcenterinsights.v1.AnnotatorSelector annotatorSelector_;
     /**
@@ -277,6 +310,9 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       if (annotatorSelector_ != null) {
         output.writeMessage(5, getAnnotatorSelector());
       }
+      if (java.lang.Double.doubleToRawLongBits(uploadConversationAnalysisPercentage_) != 0) {
+        output.writeDouble(6, uploadConversationAnalysisPercentage_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -293,6 +329,11 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       }
       if (annotatorSelector_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getAnnotatorSelector());
+      }
+      if (java.lang.Double.doubleToRawLongBits(uploadConversationAnalysisPercentage_) != 0) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeDoubleSize(
+                6, uploadConversationAnalysisPercentage_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -312,6 +353,9 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
 
       if (java.lang.Double.doubleToLongBits(getRuntimeIntegrationAnalysisPercentage())
           != java.lang.Double.doubleToLongBits(other.getRuntimeIntegrationAnalysisPercentage()))
+        return false;
+      if (java.lang.Double.doubleToLongBits(getUploadConversationAnalysisPercentage())
+          != java.lang.Double.doubleToLongBits(other.getUploadConversationAnalysisPercentage()))
         return false;
       if (hasAnnotatorSelector() != other.hasAnnotatorSelector()) return false;
       if (hasAnnotatorSelector()) {
@@ -333,6 +377,11 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
           (53 * hash)
               + com.google.protobuf.Internal.hashLong(
                   java.lang.Double.doubleToLongBits(getRuntimeIntegrationAnalysisPercentage()));
+      hash = (37 * hash) + UPLOAD_CONVERSATION_ANALYSIS_PERCENTAGE_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getUploadConversationAnalysisPercentage()));
       if (hasAnnotatorSelector()) {
         hash = (37 * hash) + ANNOTATOR_SELECTOR_FIELD_NUMBER;
         hash = (53 * hash) + getAnnotatorSelector().hashCode();
@@ -482,6 +531,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         bitField0_ = 0;
         runtimeIntegrationAnalysisPercentage_ = 0D;
+        uploadConversationAnalysisPercentage_ = 0D;
         annotatorSelector_ = null;
         if (annotatorSelectorBuilder_ != null) {
           annotatorSelectorBuilder_.dispose();
@@ -530,6 +580,9 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
           result.runtimeIntegrationAnalysisPercentage_ = runtimeIntegrationAnalysisPercentage_;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.uploadConversationAnalysisPercentage_ = uploadConversationAnalysisPercentage_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           result.annotatorSelector_ =
               annotatorSelectorBuilder_ == null
                   ? annotatorSelector_
@@ -591,6 +644,9 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         if (other.getRuntimeIntegrationAnalysisPercentage() != 0D) {
           setRuntimeIntegrationAnalysisPercentage(other.getRuntimeIntegrationAnalysisPercentage());
         }
+        if (other.getUploadConversationAnalysisPercentage() != 0D) {
+          setUploadConversationAnalysisPercentage(other.getUploadConversationAnalysisPercentage());
+        }
         if (other.hasAnnotatorSelector()) {
           mergeAnnotatorSelector(other.getAnnotatorSelector());
         }
@@ -630,9 +686,15 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
                 {
                   input.readMessage(
                       getAnnotatorSelectorFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000002;
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 42
+              case 49:
+                {
+                  uploadConversationAnalysisPercentage_ = input.readDouble();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 49
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -708,6 +770,62 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private double uploadConversationAnalysisPercentage_;
+      /**
+       *
+       *
+       * <pre>
+       * Percentage of conversations created using the UploadConversation endpoint
+       * to analyze automatically, between [0, 100].
+       * </pre>
+       *
+       * <code>double upload_conversation_analysis_percentage = 6;</code>
+       *
+       * @return The uploadConversationAnalysisPercentage.
+       */
+      @java.lang.Override
+      public double getUploadConversationAnalysisPercentage() {
+        return uploadConversationAnalysisPercentage_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Percentage of conversations created using the UploadConversation endpoint
+       * to analyze automatically, between [0, 100].
+       * </pre>
+       *
+       * <code>double upload_conversation_analysis_percentage = 6;</code>
+       *
+       * @param value The uploadConversationAnalysisPercentage to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUploadConversationAnalysisPercentage(double value) {
+
+        uploadConversationAnalysisPercentage_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Percentage of conversations created using the UploadConversation endpoint
+       * to analyze automatically, between [0, 100].
+       * </pre>
+       *
+       * <code>double upload_conversation_analysis_percentage = 6;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUploadConversationAnalysisPercentage() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        uploadConversationAnalysisPercentage_ = 0D;
+        onChanged();
+        return this;
+      }
+
       private com.google.cloud.contactcenterinsights.v1.AnnotatorSelector annotatorSelector_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.contactcenterinsights.v1.AnnotatorSelector,
@@ -728,7 +846,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the annotatorSelector field is set.
        */
       public boolean hasAnnotatorSelector() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -773,7 +891,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         } else {
           annotatorSelectorBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -795,7 +913,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         } else {
           annotatorSelectorBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -813,7 +931,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeAnnotatorSelector(
           com.google.cloud.contactcenterinsights.v1.AnnotatorSelector value) {
         if (annotatorSelectorBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)
+          if (((bitField0_ & 0x00000004) != 0)
               && annotatorSelector_ != null
               && annotatorSelector_
                   != com.google.cloud.contactcenterinsights.v1.AnnotatorSelector
@@ -825,7 +943,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         } else {
           annotatorSelectorBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -841,7 +959,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearAnnotatorSelector() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         annotatorSelector_ = null;
         if (annotatorSelectorBuilder_ != null) {
           annotatorSelectorBuilder_.dispose();
@@ -863,7 +981,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.Builder
           getAnnotatorSelectorBuilder() {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return getAnnotatorSelectorFieldBuilder().getBuilder();
       }
