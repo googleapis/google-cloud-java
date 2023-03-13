@@ -14,7 +14,6 @@ Java idiomatic client for [Cloud Profiler][product-docs].
 
 If you are using Maven, add this to your pom.xml file:
 
-<!--- {x-version-update-start:google-cloud-profiler:released} -->
 
 ```xml
 <dependency>
@@ -35,7 +34,6 @@ If you are using SBT, add this to your dependencies:
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-profiler" % "2.12.0"
 ```
-<!--- {x-version-update-end} -->
 
 ## Authentication
 
