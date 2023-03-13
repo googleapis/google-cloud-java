@@ -86,6 +86,41 @@ public interface ExportDataConfigOrBuilder
    *
    *
    * <pre>
+   * Split based on fractions defining the size of each set.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ExportFractionSplit fraction_split = 5;</code>
+   *
+   * @return Whether the fractionSplit field is set.
+   */
+  boolean hasFractionSplit();
+  /**
+   *
+   *
+   * <pre>
+   * Split based on fractions defining the size of each set.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ExportFractionSplit fraction_split = 5;</code>
+   *
+   * @return The fractionSplit.
+   */
+  com.google.cloud.aiplatform.v1beta1.ExportFractionSplit getFractionSplit();
+  /**
+   *
+   *
+   * <pre>
+   * Split based on fractions defining the size of each set.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ExportFractionSplit fraction_split = 5;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.ExportFractionSplitOrBuilder getFractionSplitOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * A filter on Annotations of the Dataset. Only Annotations on to-be-exported
    * DataItems(specified by [data_items_filter][]) that match this filter will
    * be exported. The filter syntax is the same as in
@@ -114,4 +149,6 @@ public interface ExportDataConfigOrBuilder
   com.google.protobuf.ByteString getAnnotationsFilterBytes();
 
   public com.google.cloud.aiplatform.v1beta1.ExportDataConfig.DestinationCase getDestinationCase();
+
+  public com.google.cloud.aiplatform.v1beta1.ExportDataConfig.SplitCase getSplitCase();
 }

@@ -23,6 +23,7 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  * <pre>
  * Represents a hardware accelerator type.
+ * NEXT ID: 11.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.aiplatform.v1beta1.AcceleratorType}
@@ -128,6 +129,16 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TPU_V3 = 7;</code>
    */
   TPU_V3(7),
+  /**
+   *
+   *
+   * <pre>
+   * TPU v4.
+   * </pre>
+   *
+   * <code>TPU_V4_POD = 10;</code>
+   */
+  TPU_V4_POD(10),
   UNRECOGNIZED(-1),
   ;
 
@@ -231,6 +242,16 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TPU_V3 = 7;</code>
    */
   public static final int TPU_V3_VALUE = 7;
+  /**
+   *
+   *
+   * <pre>
+   * TPU v4.
+   * </pre>
+   *
+   * <code>TPU_V4_POD = 10;</code>
+   */
+  public static final int TPU_V4_POD_VALUE = 10;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -276,6 +297,8 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
         return TPU_V2;
       case 7:
         return TPU_V3;
+      case 10:
+        return TPU_V4_POD;
       default:
         return null;
     }

@@ -112,6 +112,50 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
     return DestinationCase.forNumber(destinationCase_);
   }
 
+  private int splitCase_ = 0;
+  private java.lang.Object split_;
+
+  public enum SplitCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    FRACTION_SPLIT(5),
+    SPLIT_NOT_SET(0);
+    private final int value;
+
+    private SplitCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SplitCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static SplitCase forNumber(int value) {
+      switch (value) {
+        case 5:
+          return FRACTION_SPLIT;
+        case 0:
+          return SPLIT_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public SplitCase getSplitCase() {
+    return SplitCase.forNumber(splitCase_);
+  }
+
   public static final int GCS_DESTINATION_FIELD_NUMBER = 1;
   /**
    *
@@ -185,6 +229,58 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
       return (com.google.cloud.aiplatform.v1beta1.GcsDestination) destination_;
     }
     return com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance();
+  }
+
+  public static final int FRACTION_SPLIT_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * Split based on fractions defining the size of each set.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ExportFractionSplit fraction_split = 5;</code>
+   *
+   * @return Whether the fractionSplit field is set.
+   */
+  @java.lang.Override
+  public boolean hasFractionSplit() {
+    return splitCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Split based on fractions defining the size of each set.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ExportFractionSplit fraction_split = 5;</code>
+   *
+   * @return The fractionSplit.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ExportFractionSplit getFractionSplit() {
+    if (splitCase_ == 5) {
+      return (com.google.cloud.aiplatform.v1beta1.ExportFractionSplit) split_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.ExportFractionSplit.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Split based on fractions defining the size of each set.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ExportFractionSplit fraction_split = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ExportFractionSplitOrBuilder
+      getFractionSplitOrBuilder() {
+    if (splitCase_ == 5) {
+      return (com.google.cloud.aiplatform.v1beta1.ExportFractionSplit) split_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.ExportFractionSplit.getDefaultInstance();
   }
 
   public static final int ANNOTATIONS_FILTER_FIELD_NUMBER = 2;
@@ -264,6 +360,9 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotationsFilter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, annotationsFilter_);
     }
+    if (splitCase_ == 5) {
+      output.writeMessage(5, (com.google.cloud.aiplatform.v1beta1.ExportFractionSplit) split_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -280,6 +379,11 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotationsFilter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, annotationsFilter_);
+    }
+    if (splitCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.cloud.aiplatform.v1beta1.ExportFractionSplit) split_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -306,6 +410,14 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
       case 0:
       default:
     }
+    if (!getSplitCase().equals(other.getSplitCase())) return false;
+    switch (splitCase_) {
+      case 5:
+        if (!getFractionSplit().equals(other.getFractionSplit())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -323,6 +435,14 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
       case 1:
         hash = (37 * hash) + GCS_DESTINATION_FIELD_NUMBER;
         hash = (53 * hash) + getGcsDestination().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (splitCase_) {
+      case 5:
+        hash = (37 * hash) + FRACTION_SPLIT_FIELD_NUMBER;
+        hash = (53 * hash) + getFractionSplit().hashCode();
         break;
       case 0:
       default:
@@ -470,9 +590,14 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
       if (gcsDestinationBuilder_ != null) {
         gcsDestinationBuilder_.clear();
       }
+      if (fractionSplitBuilder_ != null) {
+        fractionSplitBuilder_.clear();
+      }
       annotationsFilter_ = "";
       destinationCase_ = 0;
       destination_ = null;
+      splitCase_ = 0;
+      split_ = null;
       return this;
     }
 
@@ -510,7 +635,7 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.ExportDataConfig result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.annotationsFilter_ = annotationsFilter_;
       }
     }
@@ -520,6 +645,11 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
       result.destination_ = this.destination_;
       if (destinationCase_ == 1 && gcsDestinationBuilder_ != null) {
         result.destination_ = gcsDestinationBuilder_.build();
+      }
+      result.splitCase_ = splitCase_;
+      result.split_ = this.split_;
+      if (splitCase_ == 5 && fractionSplitBuilder_ != null) {
+        result.split_ = fractionSplitBuilder_.build();
       }
     }
 
@@ -571,7 +701,7 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getAnnotationsFilter().isEmpty()) {
         annotationsFilter_ = other.annotationsFilter_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       switch (other.getDestinationCase()) {
@@ -581,6 +711,17 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
             break;
           }
         case DESTINATION_NOT_SET:
+          {
+            break;
+          }
+      }
+      switch (other.getSplitCase()) {
+        case FRACTION_SPLIT:
+          {
+            mergeFractionSplit(other.getFractionSplit());
+            break;
+          }
+        case SPLIT_NOT_SET:
           {
             break;
           }
@@ -620,9 +761,15 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
             case 18:
               {
                 annotationsFilter_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
+            case 42:
+              {
+                input.readMessage(getFractionSplitFieldBuilder().getBuilder(), extensionRegistry);
+                splitCase_ = 5;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -650,6 +797,20 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
     public Builder clearDestination() {
       destinationCase_ = 0;
       destination_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int splitCase_ = 0;
+    private java.lang.Object split_;
+
+    public SplitCase getSplitCase() {
+      return SplitCase.forNumber(splitCase_);
+    }
+
+    public Builder clearSplit() {
+      splitCase_ = 0;
+      split_ = null;
       onChanged();
       return this;
     }
@@ -939,6 +1100,219 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
       return gcsDestinationBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ExportFractionSplit,
+            com.google.cloud.aiplatform.v1beta1.ExportFractionSplit.Builder,
+            com.google.cloud.aiplatform.v1beta1.ExportFractionSplitOrBuilder>
+        fractionSplitBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Split based on fractions defining the size of each set.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExportFractionSplit fraction_split = 5;</code>
+     *
+     * @return Whether the fractionSplit field is set.
+     */
+    @java.lang.Override
+    public boolean hasFractionSplit() {
+      return splitCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Split based on fractions defining the size of each set.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExportFractionSplit fraction_split = 5;</code>
+     *
+     * @return The fractionSplit.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ExportFractionSplit getFractionSplit() {
+      if (fractionSplitBuilder_ == null) {
+        if (splitCase_ == 5) {
+          return (com.google.cloud.aiplatform.v1beta1.ExportFractionSplit) split_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.ExportFractionSplit.getDefaultInstance();
+      } else {
+        if (splitCase_ == 5) {
+          return fractionSplitBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.ExportFractionSplit.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Split based on fractions defining the size of each set.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExportFractionSplit fraction_split = 5;</code>
+     */
+    public Builder setFractionSplit(com.google.cloud.aiplatform.v1beta1.ExportFractionSplit value) {
+      if (fractionSplitBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        split_ = value;
+        onChanged();
+      } else {
+        fractionSplitBuilder_.setMessage(value);
+      }
+      splitCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Split based on fractions defining the size of each set.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExportFractionSplit fraction_split = 5;</code>
+     */
+    public Builder setFractionSplit(
+        com.google.cloud.aiplatform.v1beta1.ExportFractionSplit.Builder builderForValue) {
+      if (fractionSplitBuilder_ == null) {
+        split_ = builderForValue.build();
+        onChanged();
+      } else {
+        fractionSplitBuilder_.setMessage(builderForValue.build());
+      }
+      splitCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Split based on fractions defining the size of each set.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExportFractionSplit fraction_split = 5;</code>
+     */
+    public Builder mergeFractionSplit(
+        com.google.cloud.aiplatform.v1beta1.ExportFractionSplit value) {
+      if (fractionSplitBuilder_ == null) {
+        if (splitCase_ == 5
+            && split_
+                != com.google.cloud.aiplatform.v1beta1.ExportFractionSplit.getDefaultInstance()) {
+          split_ =
+              com.google.cloud.aiplatform.v1beta1.ExportFractionSplit.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.ExportFractionSplit) split_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          split_ = value;
+        }
+        onChanged();
+      } else {
+        if (splitCase_ == 5) {
+          fractionSplitBuilder_.mergeFrom(value);
+        } else {
+          fractionSplitBuilder_.setMessage(value);
+        }
+      }
+      splitCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Split based on fractions defining the size of each set.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExportFractionSplit fraction_split = 5;</code>
+     */
+    public Builder clearFractionSplit() {
+      if (fractionSplitBuilder_ == null) {
+        if (splitCase_ == 5) {
+          splitCase_ = 0;
+          split_ = null;
+          onChanged();
+        }
+      } else {
+        if (splitCase_ == 5) {
+          splitCase_ = 0;
+          split_ = null;
+        }
+        fractionSplitBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Split based on fractions defining the size of each set.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExportFractionSplit fraction_split = 5;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ExportFractionSplit.Builder
+        getFractionSplitBuilder() {
+      return getFractionSplitFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Split based on fractions defining the size of each set.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExportFractionSplit fraction_split = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ExportFractionSplitOrBuilder
+        getFractionSplitOrBuilder() {
+      if ((splitCase_ == 5) && (fractionSplitBuilder_ != null)) {
+        return fractionSplitBuilder_.getMessageOrBuilder();
+      } else {
+        if (splitCase_ == 5) {
+          return (com.google.cloud.aiplatform.v1beta1.ExportFractionSplit) split_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.ExportFractionSplit.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Split based on fractions defining the size of each set.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExportFractionSplit fraction_split = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ExportFractionSplit,
+            com.google.cloud.aiplatform.v1beta1.ExportFractionSplit.Builder,
+            com.google.cloud.aiplatform.v1beta1.ExportFractionSplitOrBuilder>
+        getFractionSplitFieldBuilder() {
+      if (fractionSplitBuilder_ == null) {
+        if (!(splitCase_ == 5)) {
+          split_ = com.google.cloud.aiplatform.v1beta1.ExportFractionSplit.getDefaultInstance();
+        }
+        fractionSplitBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.ExportFractionSplit,
+                com.google.cloud.aiplatform.v1beta1.ExportFractionSplit.Builder,
+                com.google.cloud.aiplatform.v1beta1.ExportFractionSplitOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.ExportFractionSplit) split_,
+                getParentForChildren(),
+                isClean());
+        split_ = null;
+      }
+      splitCase_ = 5;
+      onChanged();
+      return fractionSplitBuilder_;
+    }
+
     private java.lang.Object annotationsFilter_ = "";
     /**
      *
@@ -1010,7 +1384,7 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       annotationsFilter_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1030,7 +1404,7 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearAnnotationsFilter() {
       annotationsFilter_ = getDefaultInstance().getAnnotationsFilter();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1055,7 +1429,7 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       annotationsFilter_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -676,6 +676,9 @@
         "grpc": {
           "libraryClient": "ModelServiceClient",
           "rpcs": {
+            "BatchImportEvaluatedAnnotations": {
+              "methods": ["batchImportEvaluatedAnnotations", "batchImportEvaluatedAnnotations", "batchImportEvaluatedAnnotations", "batchImportEvaluatedAnnotationsCallable"]
+            },
             "BatchImportModelEvaluationSlices": {
               "methods": ["batchImportModelEvaluationSlices", "batchImportModelEvaluationSlices", "batchImportModelEvaluationSlices", "batchImportModelEvaluationSlicesCallable"]
             },

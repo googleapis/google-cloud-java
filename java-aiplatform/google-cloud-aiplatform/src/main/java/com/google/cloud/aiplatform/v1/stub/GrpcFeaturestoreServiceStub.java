@@ -43,6 +43,9 @@ import com.google.cloud.aiplatform.v1.CreateFeaturestoreOperationMetadata;
 import com.google.cloud.aiplatform.v1.CreateFeaturestoreRequest;
 import com.google.cloud.aiplatform.v1.DeleteEntityTypeRequest;
 import com.google.cloud.aiplatform.v1.DeleteFeatureRequest;
+import com.google.cloud.aiplatform.v1.DeleteFeatureValuesOperationMetadata;
+import com.google.cloud.aiplatform.v1.DeleteFeatureValuesRequest;
+import com.google.cloud.aiplatform.v1.DeleteFeatureValuesResponse;
 import com.google.cloud.aiplatform.v1.DeleteFeaturestoreRequest;
 import com.google.cloud.aiplatform.v1.DeleteOperationMetadata;
 import com.google.cloud.aiplatform.v1.EntityType;
@@ -293,6 +296,17 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<DeleteFeatureValuesRequest, Operation>
+      deleteFeatureValuesMethodDescriptor =
+          MethodDescriptor.<DeleteFeatureValuesRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1.FeaturestoreService/DeleteFeatureValues")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteFeatureValuesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<SearchFeaturesRequest, SearchFeaturesResponse>
       searchFeaturesMethodDescriptor =
           MethodDescriptor.<SearchFeaturesRequest, SearchFeaturesResponse>newBuilder()
@@ -415,6 +429,12 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
           ExportFeatureValuesResponse,
           ExportFeatureValuesOperationMetadata>
       exportFeatureValuesOperationCallable;
+  private final UnaryCallable<DeleteFeatureValuesRequest, Operation> deleteFeatureValuesCallable;
+  private final OperationCallable<
+          DeleteFeatureValuesRequest,
+          DeleteFeatureValuesResponse,
+          DeleteFeatureValuesOperationMetadata>
+      deleteFeatureValuesOperationCallable;
   private final UnaryCallable<SearchFeaturesRequest, SearchFeaturesResponse> searchFeaturesCallable;
   private final UnaryCallable<SearchFeaturesRequest, SearchFeaturesPagedResponse>
       searchFeaturesPagedCallable;
@@ -665,6 +685,16 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<DeleteFeatureValuesRequest, Operation> deleteFeatureValuesTransportSettings =
+        GrpcCallSettings.<DeleteFeatureValuesRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteFeatureValuesMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("entity_type", String.valueOf(request.getEntityType()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<SearchFeaturesRequest, SearchFeaturesResponse>
         searchFeaturesTransportSettings =
             GrpcCallSettings.<SearchFeaturesRequest, SearchFeaturesResponse>newBuilder()
@@ -876,6 +906,17 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
         callableFactory.createOperationCallable(
             exportFeatureValuesTransportSettings,
             settings.exportFeatureValuesOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteFeatureValuesCallable =
+        callableFactory.createUnaryCallable(
+            deleteFeatureValuesTransportSettings,
+            settings.deleteFeatureValuesSettings(),
+            clientContext);
+    this.deleteFeatureValuesOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteFeatureValuesTransportSettings,
+            settings.deleteFeatureValuesOperationSettings(),
             clientContext,
             operationsStub);
     this.searchFeaturesCallable =
@@ -1104,6 +1145,20 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
           ExportFeatureValuesOperationMetadata>
       exportFeatureValuesOperationCallable() {
     return exportFeatureValuesOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteFeatureValuesRequest, Operation> deleteFeatureValuesCallable() {
+    return deleteFeatureValuesCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          DeleteFeatureValuesRequest,
+          DeleteFeatureValuesResponse,
+          DeleteFeatureValuesOperationMetadata>
+      deleteFeatureValuesOperationCallable() {
+    return deleteFeatureValuesOperationCallable;
   }
 
   @Override

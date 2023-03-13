@@ -99,13 +99,19 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * <pre>
      * Configuration of the snapshot analysis based monitoring pipeline running
      * interval. The value is rolled up to full day.
+     * If both
+     * [monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+     * and the deprecated `monitoring_interval` field
+     * are set when creating/updating EntityTypes/Features,
+     * [monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+     * will be used.
      * </pre>
      *
      * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval
-     *     is deprecated. See google/cloud/aiplatform/v1beta1/featurestore_monitoring.proto;l=50
+     *     is deprecated. See google/cloud/aiplatform/v1beta1/featurestore_monitoring.proto;l=56
      * @return Whether the monitoringInterval field is set.
      */
     @java.lang.Deprecated
@@ -116,13 +122,19 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * <pre>
      * Configuration of the snapshot analysis based monitoring pipeline running
      * interval. The value is rolled up to full day.
+     * If both
+     * [monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+     * and the deprecated `monitoring_interval` field
+     * are set when creating/updating EntityTypes/Features,
+     * [monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+     * will be used.
      * </pre>
      *
      * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval
-     *     is deprecated. See google/cloud/aiplatform/v1beta1/featurestore_monitoring.proto;l=50
+     *     is deprecated. See google/cloud/aiplatform/v1beta1/featurestore_monitoring.proto;l=56
      * @return The monitoringInterval.
      */
     @java.lang.Deprecated
@@ -133,6 +145,12 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * <pre>
      * Configuration of the snapshot analysis based monitoring pipeline running
      * interval. The value is rolled up to full day.
+     * If both
+     * [monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+     * and the deprecated `monitoring_interval` field
+     * are set when creating/updating EntityTypes/Features,
+     * [monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+     * will be used.
      * </pre>
      *
      * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
@@ -146,13 +164,6 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * <pre>
      * Configuration of the snapshot analysis based monitoring pipeline
      * running interval. The value indicates number of days.
-     * If both
-     * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
-     * and
-     * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval]
-     * are set when creating/updating EntityTypes/Features,
-     * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
-     * will be used.
      * </pre>
      *
      * <code>int32 monitoring_interval_days = 3;</code>
@@ -265,13 +276,19 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * <pre>
      * Configuration of the snapshot analysis based monitoring pipeline running
      * interval. The value is rolled up to full day.
+     * If both
+     * [monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+     * and the deprecated `monitoring_interval` field
+     * are set when creating/updating EntityTypes/Features,
+     * [monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+     * will be used.
      * </pre>
      *
      * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval
-     *     is deprecated. See google/cloud/aiplatform/v1beta1/featurestore_monitoring.proto;l=50
+     *     is deprecated. See google/cloud/aiplatform/v1beta1/featurestore_monitoring.proto;l=56
      * @return Whether the monitoringInterval field is set.
      */
     @java.lang.Override
@@ -285,13 +302,19 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * <pre>
      * Configuration of the snapshot analysis based monitoring pipeline running
      * interval. The value is rolled up to full day.
+     * If both
+     * [monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+     * and the deprecated `monitoring_interval` field
+     * are set when creating/updating EntityTypes/Features,
+     * [monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+     * will be used.
      * </pre>
      *
      * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval
-     *     is deprecated. See google/cloud/aiplatform/v1beta1/featurestore_monitoring.proto;l=50
+     *     is deprecated. See google/cloud/aiplatform/v1beta1/featurestore_monitoring.proto;l=56
      * @return The monitoringInterval.
      */
     @java.lang.Override
@@ -307,6 +330,12 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * <pre>
      * Configuration of the snapshot analysis based monitoring pipeline running
      * interval. The value is rolled up to full day.
+     * If both
+     * [monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+     * and the deprecated `monitoring_interval` field
+     * are set when creating/updating EntityTypes/Features,
+     * [monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+     * will be used.
      * </pre>
      *
      * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
@@ -327,13 +356,6 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * <pre>
      * Configuration of the snapshot analysis based monitoring pipeline
      * running interval. The value indicates number of days.
-     * If both
-     * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
-     * and
-     * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval]
-     * are set when creating/updating EntityTypes/Features,
-     * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
-     * will be used.
      * </pre>
      *
      * <code>int32 monitoring_interval_days = 3;</code>
@@ -915,13 +937,19 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        * <pre>
        * Configuration of the snapshot analysis based monitoring pipeline running
        * interval. The value is rolled up to full day.
+       * If both
+       * [monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+       * and the deprecated `monitoring_interval` field
+       * are set when creating/updating EntityTypes/Features,
+       * [monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+       * will be used.
        * </pre>
        *
        * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
        *
        * @deprecated
        *     google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval
-       *     is deprecated. See google/cloud/aiplatform/v1beta1/featurestore_monitoring.proto;l=50
+       *     is deprecated. See google/cloud/aiplatform/v1beta1/featurestore_monitoring.proto;l=56
        * @return Whether the monitoringInterval field is set.
        */
       @java.lang.Deprecated
@@ -934,13 +962,19 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        * <pre>
        * Configuration of the snapshot analysis based monitoring pipeline running
        * interval. The value is rolled up to full day.
+       * If both
+       * [monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+       * and the deprecated `monitoring_interval` field
+       * are set when creating/updating EntityTypes/Features,
+       * [monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+       * will be used.
        * </pre>
        *
        * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
        *
        * @deprecated
        *     google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval
-       *     is deprecated. See google/cloud/aiplatform/v1beta1/featurestore_monitoring.proto;l=50
+       *     is deprecated. See google/cloud/aiplatform/v1beta1/featurestore_monitoring.proto;l=56
        * @return The monitoringInterval.
        */
       @java.lang.Deprecated
@@ -959,6 +993,12 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        * <pre>
        * Configuration of the snapshot analysis based monitoring pipeline running
        * interval. The value is rolled up to full day.
+       * If both
+       * [monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+       * and the deprecated `monitoring_interval` field
+       * are set when creating/updating EntityTypes/Features,
+       * [monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+       * will be used.
        * </pre>
        *
        * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
@@ -983,6 +1023,12 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        * <pre>
        * Configuration of the snapshot analysis based monitoring pipeline running
        * interval. The value is rolled up to full day.
+       * If both
+       * [monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+       * and the deprecated `monitoring_interval` field
+       * are set when creating/updating EntityTypes/Features,
+       * [monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+       * will be used.
        * </pre>
        *
        * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
@@ -1004,6 +1050,12 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        * <pre>
        * Configuration of the snapshot analysis based monitoring pipeline running
        * interval. The value is rolled up to full day.
+       * If both
+       * [monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+       * and the deprecated `monitoring_interval` field
+       * are set when creating/updating EntityTypes/Features,
+       * [monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+       * will be used.
        * </pre>
        *
        * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
@@ -1031,6 +1083,12 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        * <pre>
        * Configuration of the snapshot analysis based monitoring pipeline running
        * interval. The value is rolled up to full day.
+       * If both
+       * [monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+       * and the deprecated `monitoring_interval` field
+       * are set when creating/updating EntityTypes/Features,
+       * [monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+       * will be used.
        * </pre>
        *
        * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
@@ -1052,6 +1110,12 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        * <pre>
        * Configuration of the snapshot analysis based monitoring pipeline running
        * interval. The value is rolled up to full day.
+       * If both
+       * [monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+       * and the deprecated `monitoring_interval` field
+       * are set when creating/updating EntityTypes/Features,
+       * [monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+       * will be used.
        * </pre>
        *
        * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
@@ -1068,6 +1132,12 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        * <pre>
        * Configuration of the snapshot analysis based monitoring pipeline running
        * interval. The value is rolled up to full day.
+       * If both
+       * [monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+       * and the deprecated `monitoring_interval` field
+       * are set when creating/updating EntityTypes/Features,
+       * [monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+       * will be used.
        * </pre>
        *
        * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
@@ -1088,6 +1158,12 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        * <pre>
        * Configuration of the snapshot analysis based monitoring pipeline running
        * interval. The value is rolled up to full day.
+       * If both
+       * [monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+       * and the deprecated `monitoring_interval` field
+       * are set when creating/updating EntityTypes/Features,
+       * [monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+       * will be used.
        * </pre>
        *
        * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
@@ -1116,13 +1192,6 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        * <pre>
        * Configuration of the snapshot analysis based monitoring pipeline
        * running interval. The value indicates number of days.
-       * If both
-       * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
-       * and
-       * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval]
-       * are set when creating/updating EntityTypes/Features,
-       * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
-       * will be used.
        * </pre>
        *
        * <code>int32 monitoring_interval_days = 3;</code>
@@ -1139,13 +1208,6 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        * <pre>
        * Configuration of the snapshot analysis based monitoring pipeline
        * running interval. The value indicates number of days.
-       * If both
-       * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
-       * and
-       * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval]
-       * are set when creating/updating EntityTypes/Features,
-       * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
-       * will be used.
        * </pre>
        *
        * <code>int32 monitoring_interval_days = 3;</code>
@@ -1166,13 +1228,6 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        * <pre>
        * Configuration of the snapshot analysis based monitoring pipeline
        * running interval. The value indicates number of days.
-       * If both
-       * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
-       * and
-       * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval]
-       * are set when creating/updating EntityTypes/Features,
-       * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
-       * will be used.
        * </pre>
        *
        * <code>int32 monitoring_interval_days = 3;</code>
@@ -1389,7 +1444,9 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
    * <pre>
    * Configuration of the Featurestore's ImportFeature Analysis Based
    * Monitoring. This type of analysis generates statistics for values of each
-   * Feature imported by every [ImportFeatureValues][] operation.
+   * Feature imported by every
+   * [ImportFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreService.ImportFeatureValues]
+   * operation.
    * </pre>
    *
    * Protobuf type {@code
@@ -1644,7 +1701,9 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      *
      * <pre>
      * Defines the baseline to do anomaly detection for feature values imported
-     * by each [ImportFeatureValues][] operation.
+     * by each
+     * [ImportFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreService.ImportFeatureValues]
+     * operation.
      * </pre>
      *
      * Protobuf enum {@code
@@ -2141,7 +2200,9 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * <pre>
      * Configuration of the Featurestore's ImportFeature Analysis Based
      * Monitoring. This type of analysis generates statistics for values of each
-     * Feature imported by every [ImportFeatureValues][] operation.
+     * Feature imported by every
+     * [ImportFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreService.ImportFeatureValues]
+     * operation.
      * </pre>
      *
      * Protobuf type {@code

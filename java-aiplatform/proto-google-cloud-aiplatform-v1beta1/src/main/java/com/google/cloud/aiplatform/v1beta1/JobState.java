@@ -133,11 +133,8 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The job is being updated. The job is only able to be updated at RUNNING
-   * state; if the update operation succeeds, job goes back to RUNNING state; if
-   * the update operation fails, the job goes back to RUNNING state with error
-   * messages written to [ModelDeploymentMonitoringJob.partial_errors][] field
-   * if it is a ModelDeploymentMonitoringJob.
+   * The job is being updated. Only jobs in the `RUNNING` state can be updated.
+   * After updating, the job goes back to the `RUNNING` state.
    * </pre>
    *
    * <code>JOB_STATE_UPDATING = 10;</code>
@@ -251,11 +248,8 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The job is being updated. The job is only able to be updated at RUNNING
-   * state; if the update operation succeeds, job goes back to RUNNING state; if
-   * the update operation fails, the job goes back to RUNNING state with error
-   * messages written to [ModelDeploymentMonitoringJob.partial_errors][] field
-   * if it is a ModelDeploymentMonitoringJob.
+   * The job is being updated. Only jobs in the `RUNNING` state can be updated.
+   * After updating, the job goes back to the `RUNNING` state.
    * </pre>
    *
    * <code>JOB_STATE_UPDATING = 10;</code>

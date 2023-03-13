@@ -956,7 +956,7 @@ public final class VizierServiceGrpc {
      * Checks  whether a Trial should stop or not. Returns a
      * long-running operation. When the operation is successful,
      * it will contain a
-     * [CheckTrialEarlyStoppingStateResponse][google.cloud.ml.v1.CheckTrialEarlyStoppingStateResponse].
+     * [CheckTrialEarlyStoppingStateResponse][google.cloud.aiplatform.v1beta1.CheckTrialEarlyStoppingStateResponse].
      * </pre>
      */
     public void checkTrialEarlyStoppingState(
@@ -1322,7 +1322,7 @@ public final class VizierServiceGrpc {
      * Checks  whether a Trial should stop or not. Returns a
      * long-running operation. When the operation is successful,
      * it will contain a
-     * [CheckTrialEarlyStoppingStateResponse][google.cloud.ml.v1.CheckTrialEarlyStoppingStateResponse].
+     * [CheckTrialEarlyStoppingStateResponse][google.cloud.aiplatform.v1beta1.CheckTrialEarlyStoppingStateResponse].
      * </pre>
      */
     public void checkTrialEarlyStoppingState(
@@ -1561,7 +1561,7 @@ public final class VizierServiceGrpc {
      * Checks  whether a Trial should stop or not. Returns a
      * long-running operation. When the operation is successful,
      * it will contain a
-     * [CheckTrialEarlyStoppingStateResponse][google.cloud.ml.v1.CheckTrialEarlyStoppingStateResponse].
+     * [CheckTrialEarlyStoppingStateResponse][google.cloud.aiplatform.v1beta1.CheckTrialEarlyStoppingStateResponse].
      * </pre>
      */
     public com.google.longrunning.Operation checkTrialEarlyStoppingState(
@@ -1802,7 +1802,7 @@ public final class VizierServiceGrpc {
      * Checks  whether a Trial should stop or not. Returns a
      * long-running operation. When the operation is successful,
      * it will contain a
-     * [CheckTrialEarlyStoppingStateResponse][google.cloud.ml.v1.CheckTrialEarlyStoppingStateResponse].
+     * [CheckTrialEarlyStoppingStateResponse][google.cloud.aiplatform.v1beta1.CheckTrialEarlyStoppingStateResponse].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

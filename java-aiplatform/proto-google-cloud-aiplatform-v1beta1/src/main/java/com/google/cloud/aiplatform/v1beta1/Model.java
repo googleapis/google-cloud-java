@@ -2446,6 +2446,669 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface LargeModelReferenceOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.Model.LargeModelReference)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The unique name of the large Foundation or pre-built model.
+     * Like "chat-panda", "text-panda".
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The unique name of the large Foundation or pre-built model.
+     * Like "chat-panda", "text-panda".
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString getNameBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Contains information about the Large Model.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.Model.LargeModelReference}
+   */
+  public static final class LargeModelReference extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.Model.LargeModelReference)
+      LargeModelReferenceOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use LargeModelReference.newBuilder() to construct.
+    private LargeModelReference(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private LargeModelReference() {
+      name_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new LargeModelReference();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.ModelProto
+          .internal_static_google_cloud_aiplatform_v1beta1_Model_LargeModelReference_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.ModelProto
+          .internal_static_google_cloud_aiplatform_v1beta1_Model_LargeModelReference_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference.class,
+              com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference.Builder.class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. The unique name of the large Foundation or pre-built model.
+     * Like "chat-panda", "text-panda".
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The unique name of the large Foundation or pre-built model.
+     * Like "chat-panda", "text-panda".
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference other =
+          (com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference) obj;
+
+      if (!getName().equals(other.getName())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information about the Large Model.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.Model.LargeModelReference}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.Model.LargeModelReference)
+        com.google.cloud.aiplatform.v1beta1.Model.LargeModelReferenceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.ModelProto
+            .internal_static_google_cloud_aiplatform_v1beta1_Model_LargeModelReference_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.ModelProto
+            .internal_static_google_cloud_aiplatform_v1beta1_Model_LargeModelReference_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference.class,
+                com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference.Builder.class);
+      }
+
+      // Construct using com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        name_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.ModelProto
+            .internal_static_google_cloud_aiplatform_v1beta1_Model_LargeModelReference_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference build() {
+        com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference result =
+            new com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference) {
+          return mergeFrom((com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference.getDefaultInstance())
+          return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  name_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object name_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The unique name of the large Foundation or pre-built model.
+       * Like "chat-panda", "text-panda".
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The unique name of the large Foundation or pre-built model.
+       * Like "chat-panda", "text-panda".
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The unique name of the large Foundation or pre-built model.
+       * Like "chat-panda", "text-panda".
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The unique name of the large Foundation or pre-built model.
+       * Like "chat-panda", "text-panda".
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The unique name of the large Foundation or pre-built model.
+       * Like "chat-panda", "text-panda".
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.Model.LargeModelReference)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.Model.LargeModelReference)
+    private static final com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LargeModelReference> PARSER =
+        new com.google.protobuf.AbstractParser<LargeModelReference>() {
+          @java.lang.Override
+          public LargeModelReference parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<LargeModelReference> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LargeModelReference> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -3266,7 +3929,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * deploying this Model. The specification is ingested upon
    * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel],
    * and all binaries it contains are copied and stored internally by Vertex AI.
-   * Not present for AutoML Models.
+   * Not present for AutoML Models or Large Models.
    * </pre>
    *
    * <code>
@@ -3287,7 +3950,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * deploying this Model. The specification is ingested upon
    * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel],
    * and all binaries it contains are copied and stored internally by Vertex AI.
-   * Not present for AutoML Models.
+   * Not present for AutoML Models or Large Models.
    * </pre>
    *
    * <code>
@@ -3310,7 +3973,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * deploying this Model. The specification is ingested upon
    * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel],
    * and all binaries it contains are copied and stored internally by Vertex AI.
-   * Not present for AutoML Models.
+   * Not present for AutoML Models or Large Models.
    * </pre>
    *
    * <code>
@@ -3334,7 +3997,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Immutable. The path to the directory containing the Model artifact and any
-   * of its supporting files. Not present for AutoML Models.
+   * of its supporting files. Not present for AutoML Models or Large Models.
    * </pre>
    *
    * <code>string artifact_uri = 26 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -3358,7 +4021,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Immutable. The path to the directory containing the Model artifact and any
-   * of its supporting files. Not present for AutoML Models.
+   * of its supporting files. Not present for AutoML Models or Large Models.
    * </pre>
    *
    * <code>string artifact_uri = 26 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -4178,11 +4841,14 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The default explanation specification for this Model.
-   * The Model can be used for [requesting
-   * explanation][PredictionService.Explain] after being
+   * The Model can be used for
+   * [requesting
+   * explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
+   * after being
    * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] if
    * it is populated. The Model can be used for [batch
-   * explanation][BatchPredictionJob.generate_explanation] if it is populated.
+   * explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
+   * if it is populated.
    * All fields of the explanation_spec can be overridden by
    * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
    * of
@@ -4192,13 +4858,16 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * of
    * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
    * If the default explanation specification is not set for this Model, this
-   * Model can still be used for [requesting
-   * explanation][PredictionService.Explain] by setting
+   * Model can still be used for
+   * [requesting
+   * explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain] by
+   * setting
    * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
    * of
    * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model]
-   * and for [batch explanation][BatchPredictionJob.generate_explanation] by
-   * setting
+   * and for [batch
+   * explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
+   * by setting
    * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec]
    * of
    * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
@@ -4217,11 +4886,14 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The default explanation specification for this Model.
-   * The Model can be used for [requesting
-   * explanation][PredictionService.Explain] after being
+   * The Model can be used for
+   * [requesting
+   * explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
+   * after being
    * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] if
    * it is populated. The Model can be used for [batch
-   * explanation][BatchPredictionJob.generate_explanation] if it is populated.
+   * explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
+   * if it is populated.
    * All fields of the explanation_spec can be overridden by
    * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
    * of
@@ -4231,13 +4903,16 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * of
    * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
    * If the default explanation specification is not set for this Model, this
-   * Model can still be used for [requesting
-   * explanation][PredictionService.Explain] by setting
+   * Model can still be used for
+   * [requesting
+   * explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain] by
+   * setting
    * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
    * of
    * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model]
-   * and for [batch explanation][BatchPredictionJob.generate_explanation] by
-   * setting
+   * and for [batch
+   * explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
+   * by setting
    * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec]
    * of
    * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
@@ -4258,11 +4933,14 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The default explanation specification for this Model.
-   * The Model can be used for [requesting
-   * explanation][PredictionService.Explain] after being
+   * The Model can be used for
+   * [requesting
+   * explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
+   * after being
    * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] if
    * it is populated. The Model can be used for [batch
-   * explanation][BatchPredictionJob.generate_explanation] if it is populated.
+   * explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
+   * if it is populated.
    * All fields of the explanation_spec can be overridden by
    * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
    * of
@@ -4272,13 +4950,16 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * of
    * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
    * If the default explanation specification is not set for this Model, this
-   * Model can still be used for [requesting
-   * explanation][PredictionService.Explain] by setting
+   * Model can still be used for
+   * [requesting
+   * explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain] by
+   * setting
    * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
    * of
    * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model]
-   * and for [batch explanation][BatchPredictionJob.generate_explanation] by
-   * setting
+   * and for [batch
+   * explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
+   * by setting
    * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec]
    * of
    * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
@@ -4695,6 +5376,66 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int LARGE_MODEL_REFERENCE_FIELD_NUMBER = 45;
+  private com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference largeModelReference_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to specify the large model reference.
+   * Only present for Large Models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Model.LargeModelReference large_model_reference = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the largeModelReference field is set.
+   */
+  @java.lang.Override
+  public boolean hasLargeModelReference() {
+    return largeModelReference_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to specify the large model reference.
+   * Only present for Large Models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Model.LargeModelReference large_model_reference = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The largeModelReference.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference getLargeModelReference() {
+    return largeModelReference_ == null
+        ? com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference.getDefaultInstance()
+        : largeModelReference_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to specify the large model reference.
+   * Only present for Large Models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Model.LargeModelReference large_model_reference = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Model.LargeModelReferenceOrBuilder
+      getLargeModelReferenceOrBuilder() {
+    return largeModelReference_ == null
+        ? com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference.getDefaultInstance()
+        : largeModelReference_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4798,6 +5539,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataArtifact_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 44, metadataArtifact_);
+    }
+    if (largeModelReference_ != null) {
+      output.writeMessage(45, getLargeModelReference());
     }
     getUnknownFields().writeTo(output);
   }
@@ -4927,6 +5671,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataArtifact_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(44, metadataArtifact_);
     }
+    if (largeModelReference_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(45, getLargeModelReference());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5008,6 +5756,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       if (!getOriginalModelInfo().equals(other.getOriginalModelInfo())) return false;
     }
     if (!getMetadataArtifact().equals(other.getMetadataArtifact())) return false;
+    if (hasLargeModelReference() != other.hasLargeModelReference()) return false;
+    if (hasLargeModelReference()) {
+      if (!getLargeModelReference().equals(other.getLargeModelReference())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -5111,6 +5863,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + METADATA_ARTIFACT_FIELD_NUMBER;
     hash = (53 * hash) + getMetadataArtifact().hashCode();
+    if (hasLargeModelReference()) {
+      hash = (37 * hash) + LARGE_MODEL_REFERENCE_FIELD_NUMBER;
+      hash = (53 * hash) + getLargeModelReference().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -5358,6 +6114,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         originalModelInfoBuilder_ = null;
       }
       metadataArtifact_ = "";
+      largeModelReference_ = null;
+      if (largeModelReferenceBuilder_ != null) {
+        largeModelReferenceBuilder_.dispose();
+        largeModelReferenceBuilder_ = null;
+      }
       return this;
     }
 
@@ -5517,6 +6278,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x08000000) != 0)) {
         result.metadataArtifact_ = metadataArtifact_;
+      }
+      if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.largeModelReference_ =
+            largeModelReferenceBuilder_ == null
+                ? largeModelReference_
+                : largeModelReferenceBuilder_.build();
       }
     }
 
@@ -5743,6 +6510,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         metadataArtifact_ = other.metadataArtifact_;
         bitField0_ |= 0x08000000;
         onChanged();
+      }
+      if (other.hasLargeModelReference()) {
+        mergeLargeModelReference(other.getLargeModelReference());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -5979,6 +6749,13 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x08000000;
                 break;
               } // case 354
+            case 362:
+              {
+                input.readMessage(
+                    getLargeModelReferenceFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x10000000;
+                break;
+              } // case 362
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8339,7 +9116,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * deploying this Model. The specification is ingested upon
      * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel],
      * and all binaries it contains are copied and stored internally by Vertex AI.
-     * Not present for AutoML Models.
+     * Not present for AutoML Models or Large Models.
      * </pre>
      *
      * <code>
@@ -8359,7 +9136,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * deploying this Model. The specification is ingested upon
      * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel],
      * and all binaries it contains are copied and stored internally by Vertex AI.
-     * Not present for AutoML Models.
+     * Not present for AutoML Models or Large Models.
      * </pre>
      *
      * <code>
@@ -8385,7 +9162,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * deploying this Model. The specification is ingested upon
      * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel],
      * and all binaries it contains are copied and stored internally by Vertex AI.
-     * Not present for AutoML Models.
+     * Not present for AutoML Models or Large Models.
      * </pre>
      *
      * <code>
@@ -8413,7 +9190,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * deploying this Model. The specification is ingested upon
      * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel],
      * and all binaries it contains are copied and stored internally by Vertex AI.
-     * Not present for AutoML Models.
+     * Not present for AutoML Models or Large Models.
      * </pre>
      *
      * <code>
@@ -8439,7 +9216,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * deploying this Model. The specification is ingested upon
      * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel],
      * and all binaries it contains are copied and stored internally by Vertex AI.
-     * Not present for AutoML Models.
+     * Not present for AutoML Models or Large Models.
      * </pre>
      *
      * <code>
@@ -8472,7 +9249,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * deploying this Model. The specification is ingested upon
      * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel],
      * and all binaries it contains are copied and stored internally by Vertex AI.
-     * Not present for AutoML Models.
+     * Not present for AutoML Models or Large Models.
      * </pre>
      *
      * <code>
@@ -8497,7 +9274,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * deploying this Model. The specification is ingested upon
      * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel],
      * and all binaries it contains are copied and stored internally by Vertex AI.
-     * Not present for AutoML Models.
+     * Not present for AutoML Models or Large Models.
      * </pre>
      *
      * <code>
@@ -8518,7 +9295,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * deploying this Model. The specification is ingested upon
      * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel],
      * and all binaries it contains are copied and stored internally by Vertex AI.
-     * Not present for AutoML Models.
+     * Not present for AutoML Models or Large Models.
      * </pre>
      *
      * <code>
@@ -8543,7 +9320,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * deploying this Model. The specification is ingested upon
      * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel],
      * and all binaries it contains are copied and stored internally by Vertex AI.
-     * Not present for AutoML Models.
+     * Not present for AutoML Models or Large Models.
      * </pre>
      *
      * <code>
@@ -8573,7 +9350,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The path to the directory containing the Model artifact and any
-     * of its supporting files. Not present for AutoML Models.
+     * of its supporting files. Not present for AutoML Models or Large Models.
      * </pre>
      *
      * <code>string artifact_uri = 26 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -8596,7 +9373,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The path to the directory containing the Model artifact and any
-     * of its supporting files. Not present for AutoML Models.
+     * of its supporting files. Not present for AutoML Models or Large Models.
      * </pre>
      *
      * <code>string artifact_uri = 26 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -8619,7 +9396,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The path to the directory containing the Model artifact and any
-     * of its supporting files. Not present for AutoML Models.
+     * of its supporting files. Not present for AutoML Models or Large Models.
      * </pre>
      *
      * <code>string artifact_uri = 26 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -8641,7 +9418,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The path to the directory containing the Model artifact and any
-     * of its supporting files. Not present for AutoML Models.
+     * of its supporting files. Not present for AutoML Models or Large Models.
      * </pre>
      *
      * <code>string artifact_uri = 26 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -8659,7 +9436,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The path to the directory containing the Model artifact and any
-     * of its supporting files. Not present for AutoML Models.
+     * of its supporting files. Not present for AutoML Models or Large Models.
      * </pre>
      *
      * <code>string artifact_uri = 26 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -10936,11 +11713,14 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The default explanation specification for this Model.
-     * The Model can be used for [requesting
-     * explanation][PredictionService.Explain] after being
+     * The Model can be used for
+     * [requesting
+     * explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
+     * after being
      * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] if
      * it is populated. The Model can be used for [batch
-     * explanation][BatchPredictionJob.generate_explanation] if it is populated.
+     * explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
+     * if it is populated.
      * All fields of the explanation_spec can be overridden by
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
      * of
@@ -10950,13 +11730,16 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * of
      * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
      * If the default explanation specification is not set for this Model, this
-     * Model can still be used for [requesting
-     * explanation][PredictionService.Explain] by setting
+     * Model can still be used for
+     * [requesting
+     * explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain] by
+     * setting
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
      * of
      * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model]
-     * and for [batch explanation][BatchPredictionJob.generate_explanation] by
-     * setting
+     * and for [batch
+     * explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
+     * by setting
      * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec]
      * of
      * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
@@ -10974,11 +11757,14 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The default explanation specification for this Model.
-     * The Model can be used for [requesting
-     * explanation][PredictionService.Explain] after being
+     * The Model can be used for
+     * [requesting
+     * explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
+     * after being
      * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] if
      * it is populated. The Model can be used for [batch
-     * explanation][BatchPredictionJob.generate_explanation] if it is populated.
+     * explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
+     * if it is populated.
      * All fields of the explanation_spec can be overridden by
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
      * of
@@ -10988,13 +11774,16 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * of
      * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
      * If the default explanation specification is not set for this Model, this
-     * Model can still be used for [requesting
-     * explanation][PredictionService.Explain] by setting
+     * Model can still be used for
+     * [requesting
+     * explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain] by
+     * setting
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
      * of
      * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model]
-     * and for [batch explanation][BatchPredictionJob.generate_explanation] by
-     * setting
+     * and for [batch
+     * explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
+     * by setting
      * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec]
      * of
      * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
@@ -11018,11 +11807,14 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The default explanation specification for this Model.
-     * The Model can be used for [requesting
-     * explanation][PredictionService.Explain] after being
+     * The Model can be used for
+     * [requesting
+     * explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
+     * after being
      * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] if
      * it is populated. The Model can be used for [batch
-     * explanation][BatchPredictionJob.generate_explanation] if it is populated.
+     * explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
+     * if it is populated.
      * All fields of the explanation_spec can be overridden by
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
      * of
@@ -11032,13 +11824,16 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * of
      * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
      * If the default explanation specification is not set for this Model, this
-     * Model can still be used for [requesting
-     * explanation][PredictionService.Explain] by setting
+     * Model can still be used for
+     * [requesting
+     * explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain] by
+     * setting
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
      * of
      * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model]
-     * and for [batch explanation][BatchPredictionJob.generate_explanation] by
-     * setting
+     * and for [batch
+     * explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
+     * by setting
      * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec]
      * of
      * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
@@ -11064,11 +11859,14 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The default explanation specification for this Model.
-     * The Model can be used for [requesting
-     * explanation][PredictionService.Explain] after being
+     * The Model can be used for
+     * [requesting
+     * explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
+     * after being
      * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] if
      * it is populated. The Model can be used for [batch
-     * explanation][BatchPredictionJob.generate_explanation] if it is populated.
+     * explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
+     * if it is populated.
      * All fields of the explanation_spec can be overridden by
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
      * of
@@ -11078,13 +11876,16 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * of
      * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
      * If the default explanation specification is not set for this Model, this
-     * Model can still be used for [requesting
-     * explanation][PredictionService.Explain] by setting
+     * Model can still be used for
+     * [requesting
+     * explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain] by
+     * setting
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
      * of
      * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model]
-     * and for [batch explanation][BatchPredictionJob.generate_explanation] by
-     * setting
+     * and for [batch
+     * explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
+     * by setting
      * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec]
      * of
      * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
@@ -11108,11 +11909,14 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The default explanation specification for this Model.
-     * The Model can be used for [requesting
-     * explanation][PredictionService.Explain] after being
+     * The Model can be used for
+     * [requesting
+     * explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
+     * after being
      * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] if
      * it is populated. The Model can be used for [batch
-     * explanation][BatchPredictionJob.generate_explanation] if it is populated.
+     * explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
+     * if it is populated.
      * All fields of the explanation_spec can be overridden by
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
      * of
@@ -11122,13 +11926,16 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * of
      * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
      * If the default explanation specification is not set for this Model, this
-     * Model can still be used for [requesting
-     * explanation][PredictionService.Explain] by setting
+     * Model can still be used for
+     * [requesting
+     * explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain] by
+     * setting
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
      * of
      * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model]
-     * and for [batch explanation][BatchPredictionJob.generate_explanation] by
-     * setting
+     * and for [batch
+     * explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
+     * by setting
      * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec]
      * of
      * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
@@ -11158,11 +11965,14 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The default explanation specification for this Model.
-     * The Model can be used for [requesting
-     * explanation][PredictionService.Explain] after being
+     * The Model can be used for
+     * [requesting
+     * explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
+     * after being
      * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] if
      * it is populated. The Model can be used for [batch
-     * explanation][BatchPredictionJob.generate_explanation] if it is populated.
+     * explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
+     * if it is populated.
      * All fields of the explanation_spec can be overridden by
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
      * of
@@ -11172,13 +11982,16 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * of
      * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
      * If the default explanation specification is not set for this Model, this
-     * Model can still be used for [requesting
-     * explanation][PredictionService.Explain] by setting
+     * Model can still be used for
+     * [requesting
+     * explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain] by
+     * setting
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
      * of
      * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model]
-     * and for [batch explanation][BatchPredictionJob.generate_explanation] by
-     * setting
+     * and for [batch
+     * explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
+     * by setting
      * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec]
      * of
      * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
@@ -11201,11 +12014,14 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The default explanation specification for this Model.
-     * The Model can be used for [requesting
-     * explanation][PredictionService.Explain] after being
+     * The Model can be used for
+     * [requesting
+     * explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
+     * after being
      * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] if
      * it is populated. The Model can be used for [batch
-     * explanation][BatchPredictionJob.generate_explanation] if it is populated.
+     * explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
+     * if it is populated.
      * All fields of the explanation_spec can be overridden by
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
      * of
@@ -11215,13 +12031,16 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * of
      * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
      * If the default explanation specification is not set for this Model, this
-     * Model can still be used for [requesting
-     * explanation][PredictionService.Explain] by setting
+     * Model can still be used for
+     * [requesting
+     * explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain] by
+     * setting
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
      * of
      * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model]
-     * and for [batch explanation][BatchPredictionJob.generate_explanation] by
-     * setting
+     * and for [batch
+     * explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
+     * by setting
      * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec]
      * of
      * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
@@ -11239,11 +12058,14 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The default explanation specification for this Model.
-     * The Model can be used for [requesting
-     * explanation][PredictionService.Explain] after being
+     * The Model can be used for
+     * [requesting
+     * explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
+     * after being
      * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] if
      * it is populated. The Model can be used for [batch
-     * explanation][BatchPredictionJob.generate_explanation] if it is populated.
+     * explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
+     * if it is populated.
      * All fields of the explanation_spec can be overridden by
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
      * of
@@ -11253,13 +12075,16 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * of
      * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
      * If the default explanation specification is not set for this Model, this
-     * Model can still be used for [requesting
-     * explanation][PredictionService.Explain] by setting
+     * Model can still be used for
+     * [requesting
+     * explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain] by
+     * setting
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
      * of
      * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model]
-     * and for [batch explanation][BatchPredictionJob.generate_explanation] by
-     * setting
+     * and for [batch
+     * explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
+     * by setting
      * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec]
      * of
      * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
@@ -11282,11 +12107,14 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The default explanation specification for this Model.
-     * The Model can be used for [requesting
-     * explanation][PredictionService.Explain] after being
+     * The Model can be used for
+     * [requesting
+     * explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain]
+     * after being
      * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] if
      * it is populated. The Model can be used for [batch
-     * explanation][BatchPredictionJob.generate_explanation] if it is populated.
+     * explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
+     * if it is populated.
      * All fields of the explanation_spec can be overridden by
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
      * of
@@ -11296,13 +12124,16 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * of
      * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
      * If the default explanation specification is not set for this Model, this
-     * Model can still be used for [requesting
-     * explanation][PredictionService.Explain] by setting
+     * Model can still be used for
+     * [requesting
+     * explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain] by
+     * setting
      * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
      * of
      * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model]
-     * and for [batch explanation][BatchPredictionJob.generate_explanation] by
-     * setting
+     * and for [batch
+     * explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
+     * by setting
      * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec]
      * of
      * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
@@ -12373,6 +13204,223 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x08000000;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference largeModelReference_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference,
+            com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference.Builder,
+            com.google.cloud.aiplatform.v1beta1.Model.LargeModelReferenceOrBuilder>
+        largeModelReferenceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to specify the large model reference.
+     * Only present for Large Models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Model.LargeModelReference large_model_reference = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the largeModelReference field is set.
+     */
+    public boolean hasLargeModelReference() {
+      return ((bitField0_ & 0x10000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to specify the large model reference.
+     * Only present for Large Models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Model.LargeModelReference large_model_reference = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The largeModelReference.
+     */
+    public com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference getLargeModelReference() {
+      if (largeModelReferenceBuilder_ == null) {
+        return largeModelReference_ == null
+            ? com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference.getDefaultInstance()
+            : largeModelReference_;
+      } else {
+        return largeModelReferenceBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to specify the large model reference.
+     * Only present for Large Models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Model.LargeModelReference large_model_reference = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLargeModelReference(
+        com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference value) {
+      if (largeModelReferenceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        largeModelReference_ = value;
+      } else {
+        largeModelReferenceBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to specify the large model reference.
+     * Only present for Large Models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Model.LargeModelReference large_model_reference = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLargeModelReference(
+        com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference.Builder builderForValue) {
+      if (largeModelReferenceBuilder_ == null) {
+        largeModelReference_ = builderForValue.build();
+      } else {
+        largeModelReferenceBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to specify the large model reference.
+     * Only present for Large Models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Model.LargeModelReference large_model_reference = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeLargeModelReference(
+        com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference value) {
+      if (largeModelReferenceBuilder_ == null) {
+        if (((bitField0_ & 0x10000000) != 0)
+            && largeModelReference_ != null
+            && largeModelReference_
+                != com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference
+                    .getDefaultInstance()) {
+          getLargeModelReferenceBuilder().mergeFrom(value);
+        } else {
+          largeModelReference_ = value;
+        }
+      } else {
+        largeModelReferenceBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to specify the large model reference.
+     * Only present for Large Models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Model.LargeModelReference large_model_reference = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearLargeModelReference() {
+      bitField0_ = (bitField0_ & ~0x10000000);
+      largeModelReference_ = null;
+      if (largeModelReferenceBuilder_ != null) {
+        largeModelReferenceBuilder_.dispose();
+        largeModelReferenceBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to specify the large model reference.
+     * Only present for Large Models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Model.LargeModelReference large_model_reference = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference.Builder
+        getLargeModelReferenceBuilder() {
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return getLargeModelReferenceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to specify the large model reference.
+     * Only present for Large Models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Model.LargeModelReference large_model_reference = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Model.LargeModelReferenceOrBuilder
+        getLargeModelReferenceOrBuilder() {
+      if (largeModelReferenceBuilder_ != null) {
+        return largeModelReferenceBuilder_.getMessageOrBuilder();
+      } else {
+        return largeModelReference_ == null
+            ? com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference.getDefaultInstance()
+            : largeModelReference_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to specify the large model reference.
+     * Only present for Large Models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Model.LargeModelReference large_model_reference = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference,
+            com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference.Builder,
+            com.google.cloud.aiplatform.v1beta1.Model.LargeModelReferenceOrBuilder>
+        getLargeModelReferenceFieldBuilder() {
+      if (largeModelReferenceBuilder_ == null) {
+        largeModelReferenceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference,
+                com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference.Builder,
+                com.google.cloud.aiplatform.v1beta1.Model.LargeModelReferenceOrBuilder>(
+                getLargeModelReference(), getParentForChildren(), isClean());
+        largeModelReference_ = null;
+      }
+      return largeModelReferenceBuilder_;
     }
 
     @java.lang.Override

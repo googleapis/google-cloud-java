@@ -7350,7 +7350,11 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
    * and their resources.
    * Exactly one of model and unmanaged_container_model must be set.
    * The model resource name may contain version id or version alias to specify
-   * the version, if no version is specified, the default version will be used.
+   * the version.
+   *  Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
+   *              or
+   *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
+   * if no version is specified, the default version will be deployed.
    * </pre>
    *
    * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -7379,7 +7383,11 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
    * and their resources.
    * Exactly one of model and unmanaged_container_model must be set.
    * The model resource name may contain version id or version alias to specify
-   * the version, if no version is specified, the default version will be used.
+   * the version.
+   *  Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
+   *              or
+   *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
+   * if no version is specified, the default version will be deployed.
    * </pre>
    *
    * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -8834,6 +8842,29 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         : encryptionSpec_;
   }
 
+  public static final int DISABLE_CONTAINER_LOGGING_FIELD_NUMBER = 34;
+  private boolean disableContainerLogging_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * For custom-trained Models and AutoML Tabular Models, the container of the
+   * DeployedModel instances will send `stderr` and `stdout` streams to
+   * Stackdriver Logging by default. Please note that the logs incur cost,
+   * which are subject to [Cloud Logging
+   * pricing](https://cloud.google.com/stackdriver/pricing).
+   * User can disable container logging by setting this flag to true.
+   * </pre>
+   *
+   * <code>bool disable_container_logging = 34;</code>
+   *
+   * @return The disableContainerLogging.
+   */
+  @java.lang.Override
+  public boolean getDisableContainerLogging() {
+    return disableContainerLogging_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -8924,6 +8955,9 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersionId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30, modelVersionId_);
+    }
+    if (disableContainerLogging_ != false) {
+      output.writeBool(34, disableContainerLogging_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -9023,6 +9057,9 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersionId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(30, modelVersionId_);
     }
+    if (disableContainerLogging_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(34, disableContainerLogging_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -9117,6 +9154,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     if (hasEncryptionSpec()) {
       if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
     }
+    if (getDisableContainerLogging() != other.getDisableContainerLogging()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -9218,6 +9256,8 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getEncryptionSpec().hashCode();
     }
+    hash = (37 * hash) + DISABLE_CONTAINER_LOGGING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableContainerLogging());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -9482,6 +9522,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         encryptionSpecBuilder_.dispose();
         encryptionSpecBuilder_ = null;
       }
+      disableContainerLogging_ = false;
       return this;
     }
 
@@ -9626,6 +9667,9 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x02000000) != 0)) {
         result.encryptionSpec_ =
             encryptionSpecBuilder_ == null ? encryptionSpec_ : encryptionSpecBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.disableContainerLogging_ = disableContainerLogging_;
       }
     }
 
@@ -9785,6 +9829,9 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x01000000;
       if (other.hasEncryptionSpec()) {
         mergeEncryptionSpec(other.getEncryptionSpec());
+      }
+      if (other.getDisableContainerLogging() != false) {
+        setDisableContainerLogging(other.getDisableContainerLogging());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -9984,6 +10031,12 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000008;
                 break;
               } // case 242
+            case 272:
+              {
+                disableContainerLogging_ = input.readBool();
+                bitField0_ |= 0x04000000;
+                break;
+              } // case 272
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10226,7 +10279,11 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * and their resources.
      * Exactly one of model and unmanaged_container_model must be set.
      * The model resource name may contain version id or version alias to specify
-     * the version, if no version is specified, the default version will be used.
+     * the version.
+     *  Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
+     *              or
+     *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
+     * if no version is specified, the default version will be deployed.
      * </pre>
      *
      * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -10254,7 +10311,11 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * and their resources.
      * Exactly one of model and unmanaged_container_model must be set.
      * The model resource name may contain version id or version alias to specify
-     * the version, if no version is specified, the default version will be used.
+     * the version.
+     *  Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
+     *              or
+     *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
+     * if no version is specified, the default version will be deployed.
      * </pre>
      *
      * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -10282,7 +10343,11 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * and their resources.
      * Exactly one of model and unmanaged_container_model must be set.
      * The model resource name may contain version id or version alias to specify
-     * the version, if no version is specified, the default version will be used.
+     * the version.
+     *  Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
+     *              or
+     *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
+     * if no version is specified, the default version will be deployed.
      * </pre>
      *
      * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -10309,7 +10374,11 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * and their resources.
      * Exactly one of model and unmanaged_container_model must be set.
      * The model resource name may contain version id or version alias to specify
-     * the version, if no version is specified, the default version will be used.
+     * the version.
+     *  Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
+     *              or
+     *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
+     * if no version is specified, the default version will be deployed.
      * </pre>
      *
      * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -10332,7 +10401,11 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * and their resources.
      * Exactly one of model and unmanaged_container_model must be set.
      * The model resource name may contain version id or version alias to specify
-     * the version, if no version is specified, the default version will be used.
+     * the version.
+     *  Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
+     *              or
+     *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
+     * if no version is specified, the default version will be deployed.
      * </pre>
      *
      * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -15184,6 +15257,74 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         encryptionSpec_ = null;
       }
       return encryptionSpecBuilder_;
+    }
+
+    private boolean disableContainerLogging_;
+    /**
+     *
+     *
+     * <pre>
+     * For custom-trained Models and AutoML Tabular Models, the container of the
+     * DeployedModel instances will send `stderr` and `stdout` streams to
+     * Stackdriver Logging by default. Please note that the logs incur cost,
+     * which are subject to [Cloud Logging
+     * pricing](https://cloud.google.com/stackdriver/pricing).
+     * User can disable container logging by setting this flag to true.
+     * </pre>
+     *
+     * <code>bool disable_container_logging = 34;</code>
+     *
+     * @return The disableContainerLogging.
+     */
+    @java.lang.Override
+    public boolean getDisableContainerLogging() {
+      return disableContainerLogging_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For custom-trained Models and AutoML Tabular Models, the container of the
+     * DeployedModel instances will send `stderr` and `stdout` streams to
+     * Stackdriver Logging by default. Please note that the logs incur cost,
+     * which are subject to [Cloud Logging
+     * pricing](https://cloud.google.com/stackdriver/pricing).
+     * User can disable container logging by setting this flag to true.
+     * </pre>
+     *
+     * <code>bool disable_container_logging = 34;</code>
+     *
+     * @param value The disableContainerLogging to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisableContainerLogging(boolean value) {
+
+      disableContainerLogging_ = value;
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For custom-trained Models and AutoML Tabular Models, the container of the
+     * DeployedModel instances will send `stderr` and `stdout` streams to
+     * Stackdriver Logging by default. Please note that the logs incur cost,
+     * which are subject to [Cloud Logging
+     * pricing](https://cloud.google.com/stackdriver/pricing).
+     * User can disable container logging by setting this flag to true.
+     * </pre>
+     *
+     * <code>bool disable_container_logging = 34;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisableContainerLogging() {
+      bitField0_ = (bitField0_ & ~0x04000000);
+      disableContainerLogging_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

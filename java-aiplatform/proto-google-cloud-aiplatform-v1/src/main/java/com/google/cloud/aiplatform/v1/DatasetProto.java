@@ -51,6 +51,10 @@ public final class DatasetProto {
       internal_static_google_cloud_aiplatform_v1_ExportDataConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_ExportDataConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_ExportFractionSplit_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_ExportFractionSplit_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -95,15 +99,20 @@ public final class DatasetProto {
           + "B\003\340A\002\0325\n\023DataItemLabelsEntry\022\013\n\003key\030\001 \001("
           + "\t\022\r\n\005value\030\002 \001(\t:\0028\001\0327\n\025AnnotationLabels"
           + "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\010\n"
-          + "\006source\"\204\001\n\020ExportDataConfig\022E\n\017gcs_dest"
+          + "\006source\"\330\001\n\020ExportDataConfig\022E\n\017gcs_dest"
           + "ination\030\001 \001(\0132*.google.cloud.aiplatform."
-          + "v1.GcsDestinationH\000\022\032\n\022annotations_filte"
-          + "r\030\002 \001(\tB\r\n\013destinationB\312\001\n\036com.google.cl"
-          + "oud.aiplatform.v1B\014DatasetProtoP\001Z>cloud"
-          + ".google.com/go/aiplatform/apiv1/aiplatfo"
-          + "rmpb;aiplatformpb\252\002\032Google.Cloud.AIPlatf"
-          + "orm.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Go"
-          + "ogle::Cloud::AIPlatform::V1b\006proto3"
+          + "v1.GcsDestinationH\000\022I\n\016fraction_split\030\005 "
+          + "\001(\0132/.google.cloud.aiplatform.v1.ExportF"
+          + "ractionSplitH\001\022\032\n\022annotations_filter\030\002 \001"
+          + "(\tB\r\n\013destinationB\007\n\005split\"d\n\023ExportFrac"
+          + "tionSplit\022\031\n\021training_fraction\030\001 \001(\001\022\033\n\023"
+          + "validation_fraction\030\002 \001(\001\022\025\n\rtest_fracti"
+          + "on\030\003 \001(\001B\312\001\n\036com.google.cloud.aiplatform"
+          + ".v1B\014DatasetProtoP\001Z>cloud.google.com/go"
+          + "/aiplatform/apiv1/aiplatformpb;aiplatfor"
+          + "mpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Googl"
+          + "e\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::A"
+          + "IPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -178,7 +187,15 @@ public final class DatasetProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_ExportDataConfig_descriptor,
             new java.lang.String[] {
-              "GcsDestination", "AnnotationsFilter", "Destination",
+              "GcsDestination", "FractionSplit", "AnnotationsFilter", "Destination", "Split",
+            });
+    internal_static_google_cloud_aiplatform_v1_ExportFractionSplit_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_aiplatform_v1_ExportFractionSplit_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_ExportFractionSplit_descriptor,
+            new java.lang.String[] {
+              "TrainingFraction", "ValidationFraction", "TestFraction",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

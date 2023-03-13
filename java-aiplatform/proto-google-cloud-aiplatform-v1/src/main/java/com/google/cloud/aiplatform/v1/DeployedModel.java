@@ -295,7 +295,11 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    * Note that the Model may be in a different location than the DeployedModel's
    * Endpoint.
    * The resource name may contain version id or version alias to specify the
-   * version, if no version is specified, the default version will be deployed.
+   * version.
+   *  Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
+   *              or
+   *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
+   * if no version is specified, the default version will be deployed.
    * </pre>
    *
    * <code>
@@ -324,7 +328,11 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    * Note that the Model may be in a different location than the DeployedModel's
    * Endpoint.
    * The resource name may contain version id or version alias to specify the
-   * version, if no version is specified, the default version will be deployed.
+   * version.
+   *  Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
+   *              or
+   *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
+   * if no version is specified, the default version will be deployed.
    * </pre>
    *
    * <code>
@@ -2020,7 +2028,11 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * Note that the Model may be in a different location than the DeployedModel's
      * Endpoint.
      * The resource name may contain version id or version alias to specify the
-     * version, if no version is specified, the default version will be deployed.
+     * version.
+     *  Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
+     *              or
+     *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
+     * if no version is specified, the default version will be deployed.
      * </pre>
      *
      * <code>
@@ -2048,7 +2060,11 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * Note that the Model may be in a different location than the DeployedModel's
      * Endpoint.
      * The resource name may contain version id or version alias to specify the
-     * version, if no version is specified, the default version will be deployed.
+     * version.
+     *  Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
+     *              or
+     *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
+     * if no version is specified, the default version will be deployed.
      * </pre>
      *
      * <code>
@@ -2076,7 +2092,11 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * Note that the Model may be in a different location than the DeployedModel's
      * Endpoint.
      * The resource name may contain version id or version alias to specify the
-     * version, if no version is specified, the default version will be deployed.
+     * version.
+     *  Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
+     *              or
+     *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
+     * if no version is specified, the default version will be deployed.
      * </pre>
      *
      * <code>
@@ -2103,7 +2123,11 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * Note that the Model may be in a different location than the DeployedModel's
      * Endpoint.
      * The resource name may contain version id or version alias to specify the
-     * version, if no version is specified, the default version will be deployed.
+     * version.
+     *  Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
+     *              or
+     *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
+     * if no version is specified, the default version will be deployed.
      * </pre>
      *
      * <code>
@@ -2126,7 +2150,11 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * Note that the Model may be in a different location than the DeployedModel's
      * Endpoint.
      * The resource name may contain version id or version alias to specify the
-     * version, if no version is specified, the default version will be deployed.
+     * version.
+     *  Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
+     *              or
+     *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
+     * if no version is specified, the default version will be deployed.
      * </pre>
      *
      * <code>
