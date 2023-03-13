@@ -205,4 +205,39 @@ public interface JobStatusOrBuilder
    * <code>.google.protobuf.Duration run_duration = 5;</code>
    */
   com.google.protobuf.DurationOrBuilder getRunDurationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The resource usage of the job.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1alpha.ResourceUsage resource_usage = 6;</code>
+   *
+   * @return Whether the resourceUsage field is set.
+   */
+  boolean hasResourceUsage();
+  /**
+   *
+   *
+   * <pre>
+   * The resource usage of the job.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1alpha.ResourceUsage resource_usage = 6;</code>
+   *
+   * @return The resourceUsage.
+   */
+  com.google.cloud.batch.v1alpha.ResourceUsage getResourceUsage();
+  /**
+   *
+   *
+   * <pre>
+   * The resource usage of the job.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1alpha.ResourceUsage resource_usage = 6;</code>
+   */
+  com.google.cloud.batch.v1alpha.ResourceUsageOrBuilder getResourceUsageOrBuilder();
 }

@@ -28,6 +28,10 @@ public interface LifecyclePolicyOrBuilder
    *
    * <pre>
    * Action to execute when ActionCondition is true.
+   * When RETRY_TASK is specified, we will retry failed tasks
+   * if we notice any exit code match and fail tasks if no match is found.
+   * Likewise, when FAIL_TASK is specified, we will fail tasks
+   * if we notice any exit code match and retry tasks if no match is found.
    * </pre>
    *
    * <code>.google.cloud.batch.v1alpha.LifecyclePolicy.Action action = 1;</code>
@@ -40,6 +44,10 @@ public interface LifecyclePolicyOrBuilder
    *
    * <pre>
    * Action to execute when ActionCondition is true.
+   * When RETRY_TASK is specified, we will retry failed tasks
+   * if we notice any exit code match and fail tasks if no match is found.
+   * Likewise, when FAIL_TASK is specified, we will fail tasks
+   * if we notice any exit code match and retry tasks if no match is found.
    * </pre>
    *
    * <code>.google.cloud.batch.v1alpha.LifecyclePolicy.Action action = 1;</code>

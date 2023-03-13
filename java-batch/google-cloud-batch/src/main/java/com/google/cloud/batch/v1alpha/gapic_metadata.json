@@ -16,9 +16,6 @@
             "DeleteJob": {
               "methods": ["deleteJobAsync", "deleteJobAsync", "deleteJobOperationCallable", "deleteJobCallable"]
             },
-            "GetIamPolicy": {
-              "methods": ["getIamPolicy", "getIamPolicyCallable"]
-            },
             "GetJob": {
               "methods": ["getJob", "getJob", "getJob", "getJobCallable"]
             },
@@ -36,12 +33,6 @@
             },
             "ListTasks": {
               "methods": ["listTasks", "listTasks", "listTasks", "listTasksPagedCallable", "listTasksCallable"]
-            },
-            "SetIamPolicy": {
-              "methods": ["setIamPolicy", "setIamPolicyCallable"]
-            },
-            "TestIamPermissions": {
-              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }

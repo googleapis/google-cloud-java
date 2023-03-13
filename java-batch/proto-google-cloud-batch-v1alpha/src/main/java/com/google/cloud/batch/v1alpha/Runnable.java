@@ -2441,6 +2441,13 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Script file path on the host VM.
+     * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
+     * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
+     * first line of the file.(For example, to execute the script using bash,
+     * `#!/bin/bash` should be the first line of the file. To execute the
+     * script using`Python3`, `#!/usr/bin/env python3` should be the first
+     * line of the file.) Otherwise, the file will by default be excuted by
+     * `/bin/sh`.
      * </pre>
      *
      * <code>string path = 1;</code>
@@ -2453,6 +2460,13 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Script file path on the host VM.
+     * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
+     * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
+     * first line of the file.(For example, to execute the script using bash,
+     * `#!/bin/bash` should be the first line of the file. To execute the
+     * script using`Python3`, `#!/usr/bin/env python3` should be the first
+     * line of the file.) Otherwise, the file will by default be excuted by
+     * `/bin/sh`.
      * </pre>
      *
      * <code>string path = 1;</code>
@@ -2465,6 +2479,13 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Script file path on the host VM.
+     * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
+     * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
+     * first line of the file.(For example, to execute the script using bash,
+     * `#!/bin/bash` should be the first line of the file. To execute the
+     * script using`Python3`, `#!/usr/bin/env python3` should be the first
+     * line of the file.) Otherwise, the file will by default be excuted by
+     * `/bin/sh`.
      * </pre>
      *
      * <code>string path = 1;</code>
@@ -2478,6 +2499,11 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Shell script text.
+     * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
+     * beginning of the text.(For example, to execute the script using bash,
+     * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
+     * `#!/usr/bin/env python3&#92;n` should be added.) Otherwise, the script will
+     * by default be excuted by `/bin/sh`.
      * </pre>
      *
      * <code>string text = 2;</code>
@@ -2490,6 +2516,11 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Shell script text.
+     * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
+     * beginning of the text.(For example, to execute the script using bash,
+     * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
+     * `#!/usr/bin/env python3&#92;n` should be added.) Otherwise, the script will
+     * by default be excuted by `/bin/sh`.
      * </pre>
      *
      * <code>string text = 2;</code>
@@ -2502,6 +2533,11 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Shell script text.
+     * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
+     * beginning of the text.(For example, to execute the script using bash,
+     * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
+     * `#!/usr/bin/env python3&#92;n` should be added.) Otherwise, the script will
+     * by default be excuted by `/bin/sh`.
      * </pre>
      *
      * <code>string text = 2;</code>
@@ -2612,6 +2648,13 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Script file path on the host VM.
+     * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
+     * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
+     * first line of the file.(For example, to execute the script using bash,
+     * `#!/bin/bash` should be the first line of the file. To execute the
+     * script using`Python3`, `#!/usr/bin/env python3` should be the first
+     * line of the file.) Otherwise, the file will by default be excuted by
+     * `/bin/sh`.
      * </pre>
      *
      * <code>string path = 1;</code>
@@ -2626,6 +2669,13 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Script file path on the host VM.
+     * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
+     * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
+     * first line of the file.(For example, to execute the script using bash,
+     * `#!/bin/bash` should be the first line of the file. To execute the
+     * script using`Python3`, `#!/usr/bin/env python3` should be the first
+     * line of the file.) Otherwise, the file will by default be excuted by
+     * `/bin/sh`.
      * </pre>
      *
      * <code>string path = 1;</code>
@@ -2653,6 +2703,13 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Script file path on the host VM.
+     * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
+     * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
+     * first line of the file.(For example, to execute the script using bash,
+     * `#!/bin/bash` should be the first line of the file. To execute the
+     * script using`Python3`, `#!/usr/bin/env python3` should be the first
+     * line of the file.) Otherwise, the file will by default be excuted by
+     * `/bin/sh`.
      * </pre>
      *
      * <code>string path = 1;</code>
@@ -2682,6 +2739,11 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Shell script text.
+     * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
+     * beginning of the text.(For example, to execute the script using bash,
+     * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
+     * `#!/usr/bin/env python3&#92;n` should be added.) Otherwise, the script will
+     * by default be excuted by `/bin/sh`.
      * </pre>
      *
      * <code>string text = 2;</code>
@@ -2696,6 +2758,11 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Shell script text.
+     * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
+     * beginning of the text.(For example, to execute the script using bash,
+     * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
+     * `#!/usr/bin/env python3&#92;n` should be added.) Otherwise, the script will
+     * by default be excuted by `/bin/sh`.
      * </pre>
      *
      * <code>string text = 2;</code>
@@ -2723,6 +2790,11 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Shell script text.
+     * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
+     * beginning of the text.(For example, to execute the script using bash,
+     * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
+     * `#!/usr/bin/env python3&#92;n` should be added.) Otherwise, the script will
+     * by default be excuted by `/bin/sh`.
      * </pre>
      *
      * <code>string text = 2;</code>
@@ -3164,6 +3236,13 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Script file path on the host VM.
+       * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
+       * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
+       * first line of the file.(For example, to execute the script using bash,
+       * `#!/bin/bash` should be the first line of the file. To execute the
+       * script using`Python3`, `#!/usr/bin/env python3` should be the first
+       * line of the file.) Otherwise, the file will by default be excuted by
+       * `/bin/sh`.
        * </pre>
        *
        * <code>string path = 1;</code>
@@ -3179,6 +3258,13 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Script file path on the host VM.
+       * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
+       * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
+       * first line of the file.(For example, to execute the script using bash,
+       * `#!/bin/bash` should be the first line of the file. To execute the
+       * script using`Python3`, `#!/usr/bin/env python3` should be the first
+       * line of the file.) Otherwise, the file will by default be excuted by
+       * `/bin/sh`.
        * </pre>
        *
        * <code>string path = 1;</code>
@@ -3207,6 +3293,13 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Script file path on the host VM.
+       * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
+       * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
+       * first line of the file.(For example, to execute the script using bash,
+       * `#!/bin/bash` should be the first line of the file. To execute the
+       * script using`Python3`, `#!/usr/bin/env python3` should be the first
+       * line of the file.) Otherwise, the file will by default be excuted by
+       * `/bin/sh`.
        * </pre>
        *
        * <code>string path = 1;</code>
@@ -3235,6 +3328,13 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Script file path on the host VM.
+       * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
+       * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
+       * first line of the file.(For example, to execute the script using bash,
+       * `#!/bin/bash` should be the first line of the file. To execute the
+       * script using`Python3`, `#!/usr/bin/env python3` should be the first
+       * line of the file.) Otherwise, the file will by default be excuted by
+       * `/bin/sh`.
        * </pre>
        *
        * <code>string path = 1;</code>
@@ -3256,6 +3356,13 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Script file path on the host VM.
+       * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
+       * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
+       * first line of the file.(For example, to execute the script using bash,
+       * `#!/bin/bash` should be the first line of the file. To execute the
+       * script using`Python3`, `#!/usr/bin/env python3` should be the first
+       * line of the file.) Otherwise, the file will by default be excuted by
+       * `/bin/sh`.
        * </pre>
        *
        * <code>string path = 1;</code>
@@ -3275,6 +3382,13 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Script file path on the host VM.
+       * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
+       * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
+       * first line of the file.(For example, to execute the script using bash,
+       * `#!/bin/bash` should be the first line of the file. To execute the
+       * script using`Python3`, `#!/usr/bin/env python3` should be the first
+       * line of the file.) Otherwise, the file will by default be excuted by
+       * `/bin/sh`.
        * </pre>
        *
        * <code>string path = 1;</code>
@@ -3298,6 +3412,11 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Shell script text.
+       * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
+       * beginning of the text.(For example, to execute the script using bash,
+       * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
+       * `#!/usr/bin/env python3&#92;n` should be added.) Otherwise, the script will
+       * by default be excuted by `/bin/sh`.
        * </pre>
        *
        * <code>string text = 2;</code>
@@ -3313,6 +3432,11 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Shell script text.
+       * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
+       * beginning of the text.(For example, to execute the script using bash,
+       * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
+       * `#!/usr/bin/env python3&#92;n` should be added.) Otherwise, the script will
+       * by default be excuted by `/bin/sh`.
        * </pre>
        *
        * <code>string text = 2;</code>
@@ -3341,6 +3465,11 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Shell script text.
+       * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
+       * beginning of the text.(For example, to execute the script using bash,
+       * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
+       * `#!/usr/bin/env python3&#92;n` should be added.) Otherwise, the script will
+       * by default be excuted by `/bin/sh`.
        * </pre>
        *
        * <code>string text = 2;</code>
@@ -3369,6 +3498,11 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Shell script text.
+       * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
+       * beginning of the text.(For example, to execute the script using bash,
+       * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
+       * `#!/usr/bin/env python3&#92;n` should be added.) Otherwise, the script will
+       * by default be excuted by `/bin/sh`.
        * </pre>
        *
        * <code>string text = 2;</code>
@@ -3390,6 +3524,11 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Shell script text.
+       * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
+       * beginning of the text.(For example, to execute the script using bash,
+       * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
+       * `#!/usr/bin/env python3&#92;n` should be added.) Otherwise, the script will
+       * by default be excuted by `/bin/sh`.
        * </pre>
        *
        * <code>string text = 2;</code>
@@ -3409,6 +3548,11 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Shell script text.
+       * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
+       * beginning of the text.(For example, to execute the script using bash,
+       * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
+       * `#!/usr/bin/env python3&#92;n` should be added.) Otherwise, the script will
+       * by default be excuted by `/bin/sh`.
        * </pre>
        *
        * <code>string text = 2;</code>
