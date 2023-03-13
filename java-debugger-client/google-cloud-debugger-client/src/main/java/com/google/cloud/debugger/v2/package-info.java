@@ -15,7 +15,9 @@
  */
 
 /**
- * The interfaces provided are listed below, along with usage samples.
+ * A client to Stackdriver Debugger API
+ *
+ * <p>The interfaces provided are listed below, along with usage samples.
  *
  * <p>======================= Controller2Client =======================
  *
