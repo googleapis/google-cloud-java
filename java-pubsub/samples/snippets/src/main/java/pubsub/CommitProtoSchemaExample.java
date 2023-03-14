@@ -18,7 +18,7 @@ package pubsub;
 
 // [START pubsub_commit_proto_schema]
 
-import com.google.api.gax.rpc.AlreadyExistsException;
+import com.google.api.gax.rpc.NotFoundException;
 import com.google.cloud.pubsub.v1.SchemaServiceClient;
 import com.google.pubsub.v1.ProjectName;
 import com.google.pubsub.v1.Schema;
@@ -60,8 +60,8 @@ public class CommitProtoSchemaExample {
 
       System.out.println("Committed a schema using a protobuf schema:\n" + schema);
       return schema;
-    } catch (AlreadyExistsException e) {
-      System.out.println(schemaName + "already exists.");
+    } catch (NotFoundException e) {
+      System.out.println(schemaName + "does not exist.");
       return null;
     }
   }
