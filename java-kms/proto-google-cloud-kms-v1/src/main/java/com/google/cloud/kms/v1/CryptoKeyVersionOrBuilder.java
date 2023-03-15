@@ -496,6 +496,72 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
+   * Output only. The root cause of the most recent generation failure. Only
+   * present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+   * [GENERATION_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.GENERATION_FAILED].
+   * </pre>
+   *
+   * <code>string generation_failure_reason = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The generationFailureReason.
+   */
+  java.lang.String getGenerationFailureReason();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The root cause of the most recent generation failure. Only
+   * present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+   * [GENERATION_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.GENERATION_FAILED].
+   * </pre>
+   *
+   * <code>string generation_failure_reason = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for generationFailureReason.
+   */
+  com.google.protobuf.ByteString getGenerationFailureReasonBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The root cause of the most recent external destruction
+   * failure. Only present if
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+   * [EXTERNAL_DESTRUCTION_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.EXTERNAL_DESTRUCTION_FAILED].
+   * </pre>
+   *
+   * <code>
+   * string external_destruction_failure_reason = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The externalDestructionFailureReason.
+   */
+  java.lang.String getExternalDestructionFailureReason();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The root cause of the most recent external destruction
+   * failure. Only present if
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+   * [EXTERNAL_DESTRUCTION_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.EXTERNAL_DESTRUCTION_FAILED].
+   * </pre>
+   *
+   * <code>
+   * string external_destruction_failure_reason = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for externalDestructionFailureReason.
+   */
+  com.google.protobuf.ByteString getExternalDestructionFailureReasonBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * ExternalProtectionLevelOptions stores a group of additional fields for
    * configuring a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that
    * are specific to the

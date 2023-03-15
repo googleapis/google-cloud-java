@@ -32,10 +32,13 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.kms.v1.CreateEkmConnectionRequest;
+import com.google.cloud.kms.v1.EkmConfig;
 import com.google.cloud.kms.v1.EkmConnection;
+import com.google.cloud.kms.v1.GetEkmConfigRequest;
 import com.google.cloud.kms.v1.GetEkmConnectionRequest;
 import com.google.cloud.kms.v1.ListEkmConnectionsRequest;
 import com.google.cloud.kms.v1.ListEkmConnectionsResponse;
+import com.google.cloud.kms.v1.UpdateEkmConfigRequest;
 import com.google.cloud.kms.v1.UpdateEkmConnectionRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -212,6 +215,79 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<EkmConnection>newBuilder()
                       .setDefaultInstance(EkmConnection.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetEkmConfigRequest, EkmConfig>
+      getEkmConfigMethodDescriptor =
+          ApiMethodDescriptor.<GetEkmConfigRequest, EkmConfig>newBuilder()
+              .setFullMethodName("google.cloud.kms.v1.EkmService/GetEkmConfig")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetEkmConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/ekmConfig}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetEkmConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetEkmConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<EkmConfig>newBuilder()
+                      .setDefaultInstance(EkmConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateEkmConfigRequest, EkmConfig>
+      updateEkmConfigMethodDescriptor =
+          ApiMethodDescriptor.<UpdateEkmConfigRequest, EkmConfig>newBuilder()
+              .setFullMethodName("google.cloud.kms.v1.EkmService/UpdateEkmConfig")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateEkmConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{ekmConfig.name=projects/*/locations/*/ekmConfig}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateEkmConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "ekmConfig.name", request.getEkmConfig().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateEkmConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("ekmConfig", request.getEkmConfig(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<EkmConfig>newBuilder()
+                      .setDefaultInstance(EkmConfig.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -416,6 +492,8 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
       createEkmConnectionCallable;
   private final UnaryCallable<UpdateEkmConnectionRequest, EkmConnection>
       updateEkmConnectionCallable;
+  private final UnaryCallable<GetEkmConfigRequest, EkmConfig> getEkmConfigCallable;
+  private final UnaryCallable<UpdateEkmConfigRequest, EkmConfig> updateEkmConfigCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -490,6 +568,16 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
                 .setMethodDescriptor(updateEkmConnectionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<GetEkmConfigRequest, EkmConfig> getEkmConfigTransportSettings =
+        HttpJsonCallSettings.<GetEkmConfigRequest, EkmConfig>newBuilder()
+            .setMethodDescriptor(getEkmConfigMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<UpdateEkmConfigRequest, EkmConfig> updateEkmConfigTransportSettings =
+        HttpJsonCallSettings.<UpdateEkmConfigRequest, EkmConfig>newBuilder()
+            .setMethodDescriptor(updateEkmConfigMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -541,6 +629,12 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
             updateEkmConnectionTransportSettings,
             settings.updateEkmConnectionSettings(),
             clientContext);
+    this.getEkmConfigCallable =
+        callableFactory.createUnaryCallable(
+            getEkmConfigTransportSettings, settings.getEkmConfigSettings(), clientContext);
+    this.updateEkmConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateEkmConfigTransportSettings, settings.updateEkmConfigSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -573,6 +667,8 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
     methodDescriptors.add(getEkmConnectionMethodDescriptor);
     methodDescriptors.add(createEkmConnectionMethodDescriptor);
     methodDescriptors.add(updateEkmConnectionMethodDescriptor);
+    methodDescriptors.add(getEkmConfigMethodDescriptor);
+    methodDescriptors.add(updateEkmConfigMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
@@ -606,6 +702,16 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
   @Override
   public UnaryCallable<UpdateEkmConnectionRequest, EkmConnection> updateEkmConnectionCallable() {
     return updateEkmConnectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetEkmConfigRequest, EkmConfig> getEkmConfigCallable() {
+    return getEkmConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateEkmConfigRequest, EkmConfig> updateEkmConfigCallable() {
+    return updateEkmConfigCallable;
   }
 
   @Override

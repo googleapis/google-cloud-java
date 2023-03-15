@@ -197,4 +197,70 @@ public interface EkmConnectionOrBuilder
    * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes who can perform control plane operations on the EKM. If
+   * unset, this defaults to
+   * [MANUAL][google.cloud.kms.v1.EkmConnection.KeyManagementMode.MANUAL].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.EkmConnection.KeyManagementMode key_management_mode = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for keyManagementMode.
+   */
+  int getKeyManagementModeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes who can perform control plane operations on the EKM. If
+   * unset, this defaults to
+   * [MANUAL][google.cloud.kms.v1.EkmConnection.KeyManagementMode.MANUAL].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.EkmConnection.KeyManagementMode key_management_mode = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The keyManagementMode.
+   */
+  com.google.cloud.kms.v1.EkmConnection.KeyManagementMode getKeyManagementMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Identifies the EKM Crypto Space that this
+   * [EkmConnection][google.cloud.kms.v1.EkmConnection] maps to. Note: This
+   * field is required if
+   * [KeyManagementMode][google.cloud.kms.v1.EkmConnection.KeyManagementMode] is
+   * [CLOUD_KMS][google.cloud.kms.v1.EkmConnection.KeyManagementMode.CLOUD_KMS].
+   * </pre>
+   *
+   * <code>string crypto_space_path = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The cryptoSpacePath.
+   */
+  java.lang.String getCryptoSpacePath();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Identifies the EKM Crypto Space that this
+   * [EkmConnection][google.cloud.kms.v1.EkmConnection] maps to. Note: This
+   * field is required if
+   * [KeyManagementMode][google.cloud.kms.v1.EkmConnection.KeyManagementMode] is
+   * [CLOUD_KMS][google.cloud.kms.v1.EkmConnection.KeyManagementMode.CLOUD_KMS].
+   * </pre>
+   *
+   * <code>string crypto_space_path = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for cryptoSpacePath.
+   */
+  com.google.protobuf.ByteString getCryptoSpacePathBytes();
 }

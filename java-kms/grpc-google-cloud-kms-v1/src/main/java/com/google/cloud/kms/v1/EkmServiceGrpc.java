@@ -217,6 +217,89 @@ public final class EkmServiceGrpc {
     return getUpdateEkmConnectionMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.GetEkmConfigRequest, com.google.cloud.kms.v1.EkmConfig>
+      getGetEkmConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetEkmConfig",
+      requestType = com.google.cloud.kms.v1.GetEkmConfigRequest.class,
+      responseType = com.google.cloud.kms.v1.EkmConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.GetEkmConfigRequest, com.google.cloud.kms.v1.EkmConfig>
+      getGetEkmConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.kms.v1.GetEkmConfigRequest, com.google.cloud.kms.v1.EkmConfig>
+        getGetEkmConfigMethod;
+    if ((getGetEkmConfigMethod = EkmServiceGrpc.getGetEkmConfigMethod) == null) {
+      synchronized (EkmServiceGrpc.class) {
+        if ((getGetEkmConfigMethod = EkmServiceGrpc.getGetEkmConfigMethod) == null) {
+          EkmServiceGrpc.getGetEkmConfigMethod =
+              getGetEkmConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.kms.v1.GetEkmConfigRequest,
+                          com.google.cloud.kms.v1.EkmConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetEkmConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.kms.v1.GetEkmConfigRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.kms.v1.EkmConfig.getDefaultInstance()))
+                      .setSchemaDescriptor(new EkmServiceMethodDescriptorSupplier("GetEkmConfig"))
+                      .build();
+        }
+      }
+    }
+    return getGetEkmConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.UpdateEkmConfigRequest, com.google.cloud.kms.v1.EkmConfig>
+      getUpdateEkmConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateEkmConfig",
+      requestType = com.google.cloud.kms.v1.UpdateEkmConfigRequest.class,
+      responseType = com.google.cloud.kms.v1.EkmConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.UpdateEkmConfigRequest, com.google.cloud.kms.v1.EkmConfig>
+      getUpdateEkmConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.kms.v1.UpdateEkmConfigRequest, com.google.cloud.kms.v1.EkmConfig>
+        getUpdateEkmConfigMethod;
+    if ((getUpdateEkmConfigMethod = EkmServiceGrpc.getUpdateEkmConfigMethod) == null) {
+      synchronized (EkmServiceGrpc.class) {
+        if ((getUpdateEkmConfigMethod = EkmServiceGrpc.getUpdateEkmConfigMethod) == null) {
+          EkmServiceGrpc.getUpdateEkmConfigMethod =
+              getUpdateEkmConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.kms.v1.UpdateEkmConfigRequest,
+                          com.google.cloud.kms.v1.EkmConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateEkmConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.kms.v1.UpdateEkmConfigRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.kms.v1.EkmConfig.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EkmServiceMethodDescriptorSupplier("UpdateEkmConfig"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateEkmConfigMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static EkmServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<EkmServiceStub> factory =
@@ -328,6 +411,36 @@ public final class EkmServiceGrpc {
           getUpdateEkmConnectionMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Returns the [EkmConfig][google.cloud.kms.v1.EkmConfig] singleton resource
+     * for a given project and location.
+     * </pre>
+     */
+    public void getEkmConfig(
+        com.google.cloud.kms.v1.GetEkmConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.EkmConfig> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetEkmConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the [EkmConfig][google.cloud.kms.v1.EkmConfig] singleton resource
+     * for a given project and location.
+     * </pre>
+     */
+    public void updateEkmConfig(
+        com.google.cloud.kms.v1.UpdateEkmConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.EkmConfig> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateEkmConfigMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -356,6 +469,18 @@ public final class EkmServiceGrpc {
                   new MethodHandlers<
                       com.google.cloud.kms.v1.UpdateEkmConnectionRequest,
                       com.google.cloud.kms.v1.EkmConnection>(this, METHODID_UPDATE_EKM_CONNECTION)))
+          .addMethod(
+              getGetEkmConfigMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.kms.v1.GetEkmConfigRequest,
+                      com.google.cloud.kms.v1.EkmConfig>(this, METHODID_GET_EKM_CONFIG)))
+          .addMethod(
+              getUpdateEkmConfigMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.kms.v1.UpdateEkmConfigRequest,
+                      com.google.cloud.kms.v1.EkmConfig>(this, METHODID_UPDATE_EKM_CONFIG)))
           .build();
     }
   }
@@ -446,6 +571,40 @@ public final class EkmServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the [EkmConfig][google.cloud.kms.v1.EkmConfig] singleton resource
+     * for a given project and location.
+     * </pre>
+     */
+    public void getEkmConfig(
+        com.google.cloud.kms.v1.GetEkmConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.EkmConfig> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetEkmConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the [EkmConfig][google.cloud.kms.v1.EkmConfig] singleton resource
+     * for a given project and location.
+     * </pre>
+     */
+    public void updateEkmConfig(
+        com.google.cloud.kms.v1.UpdateEkmConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.EkmConfig> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateEkmConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -522,6 +681,34 @@ public final class EkmServiceGrpc {
         com.google.cloud.kms.v1.UpdateEkmConnectionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateEkmConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the [EkmConfig][google.cloud.kms.v1.EkmConfig] singleton resource
+     * for a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.EkmConfig getEkmConfig(
+        com.google.cloud.kms.v1.GetEkmConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEkmConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the [EkmConfig][google.cloud.kms.v1.EkmConfig] singleton resource
+     * for a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.EkmConfig updateEkmConfig(
+        com.google.cloud.kms.v1.UpdateEkmConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEkmConfigMethod(), getCallOptions(), request);
     }
   }
 
@@ -600,12 +787,42 @@ public final class EkmServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateEkmConnectionMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the [EkmConfig][google.cloud.kms.v1.EkmConfig] singleton resource
+     * for a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.kms.v1.EkmConfig>
+        getEkmConfig(com.google.cloud.kms.v1.GetEkmConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetEkmConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the [EkmConfig][google.cloud.kms.v1.EkmConfig] singleton resource
+     * for a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.kms.v1.EkmConfig>
+        updateEkmConfig(com.google.cloud.kms.v1.UpdateEkmConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateEkmConfigMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_EKM_CONNECTIONS = 0;
   private static final int METHODID_GET_EKM_CONNECTION = 1;
   private static final int METHODID_CREATE_EKM_CONNECTION = 2;
   private static final int METHODID_UPDATE_EKM_CONNECTION = 3;
+  private static final int METHODID_GET_EKM_CONFIG = 4;
+  private static final int METHODID_UPDATE_EKM_CONFIG = 5;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -647,6 +864,16 @@ public final class EkmServiceGrpc {
               (com.google.cloud.kms.v1.UpdateEkmConnectionRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.EkmConnection>)
                   responseObserver);
+          break;
+        case METHODID_GET_EKM_CONFIG:
+          serviceImpl.getEkmConfig(
+              (com.google.cloud.kms.v1.GetEkmConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.EkmConfig>) responseObserver);
+          break;
+        case METHODID_UPDATE_EKM_CONFIG:
+          serviceImpl.updateEkmConfig(
+              (com.google.cloud.kms.v1.UpdateEkmConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.EkmConfig>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -716,6 +943,8 @@ public final class EkmServiceGrpc {
                       .addMethod(getGetEkmConnectionMethod())
                       .addMethod(getCreateEkmConnectionMethod())
                       .addMethod(getUpdateEkmConnectionMethod())
+                      .addMethod(getGetEkmConfigMethod())
+                      .addMethod(getUpdateEkmConfigMethod())
                       .build();
         }
       }

@@ -26,10 +26,13 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.kms.v1.CreateEkmConnectionRequest;
+import com.google.cloud.kms.v1.EkmConfig;
 import com.google.cloud.kms.v1.EkmConnection;
+import com.google.cloud.kms.v1.GetEkmConfigRequest;
 import com.google.cloud.kms.v1.GetEkmConnectionRequest;
 import com.google.cloud.kms.v1.ListEkmConnectionsRequest;
 import com.google.cloud.kms.v1.ListEkmConnectionsResponse;
+import com.google.cloud.kms.v1.UpdateEkmConfigRequest;
 import com.google.cloud.kms.v1.UpdateEkmConnectionRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -97,6 +100,25 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(EkmConnection.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetEkmConfigRequest, EkmConfig>
+      getEkmConfigMethodDescriptor =
+          MethodDescriptor.<GetEkmConfigRequest, EkmConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.kms.v1.EkmService/GetEkmConfig")
+              .setRequestMarshaller(ProtoUtils.marshaller(GetEkmConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(EkmConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateEkmConfigRequest, EkmConfig>
+      updateEkmConfigMethodDescriptor =
+          MethodDescriptor.<UpdateEkmConfigRequest, EkmConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.kms.v1.EkmService/UpdateEkmConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateEkmConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(EkmConfig.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -152,6 +174,8 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
       createEkmConnectionCallable;
   private final UnaryCallable<UpdateEkmConnectionRequest, EkmConnection>
       updateEkmConnectionCallable;
+  private final UnaryCallable<GetEkmConfigRequest, EkmConfig> getEkmConfigCallable;
+  private final UnaryCallable<UpdateEkmConfigRequest, EkmConfig> updateEkmConfigCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -248,6 +272,26 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<GetEkmConfigRequest, EkmConfig> getEkmConfigTransportSettings =
+        GrpcCallSettings.<GetEkmConfigRequest, EkmConfig>newBuilder()
+            .setMethodDescriptor(getEkmConfigMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateEkmConfigRequest, EkmConfig> updateEkmConfigTransportSettings =
+        GrpcCallSettings.<UpdateEkmConfigRequest, EkmConfig>newBuilder()
+            .setMethodDescriptor(updateEkmConfigMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("ekm_config.name", String.valueOf(request.getEkmConfig().getName()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -323,6 +367,12 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
             updateEkmConnectionTransportSettings,
             settings.updateEkmConnectionSettings(),
             clientContext);
+    this.getEkmConfigCallable =
+        callableFactory.createUnaryCallable(
+            getEkmConfigTransportSettings, settings.getEkmConfigSettings(), clientContext);
+    this.updateEkmConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateEkmConfigTransportSettings, settings.updateEkmConfigSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -377,6 +427,16 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
   @Override
   public UnaryCallable<UpdateEkmConnectionRequest, EkmConnection> updateEkmConnectionCallable() {
     return updateEkmConnectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetEkmConfigRequest, EkmConfig> getEkmConfigCallable() {
+    return getEkmConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateEkmConfigRequest, EkmConfig> updateEkmConfigCallable() {
+    return updateEkmConfigCallable;
   }
 
   @Override

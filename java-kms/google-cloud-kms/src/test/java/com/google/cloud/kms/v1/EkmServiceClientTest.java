@@ -198,6 +198,7 @@ public class EkmServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllServiceResolvers(new ArrayList<EkmConnection.ServiceResolver>())
             .setEtag("etag3123477")
+            .setCryptoSpacePath("cryptoSpacePath273829514")
             .build();
     mockEkmService.addResponse(expectedResponse);
 
@@ -239,6 +240,7 @@ public class EkmServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllServiceResolvers(new ArrayList<EkmConnection.ServiceResolver>())
             .setEtag("etag3123477")
+            .setCryptoSpacePath("cryptoSpacePath273829514")
             .build();
     mockEkmService.addResponse(expectedResponse);
 
@@ -280,6 +282,7 @@ public class EkmServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllServiceResolvers(new ArrayList<EkmConnection.ServiceResolver>())
             .setEtag("etag3123477")
+            .setCryptoSpacePath("cryptoSpacePath273829514")
             .build();
     mockEkmService.addResponse(expectedResponse);
 
@@ -328,6 +331,7 @@ public class EkmServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllServiceResolvers(new ArrayList<EkmConnection.ServiceResolver>())
             .setEtag("etag3123477")
+            .setCryptoSpacePath("cryptoSpacePath273829514")
             .build();
     mockEkmService.addResponse(expectedResponse);
 
@@ -376,6 +380,7 @@ public class EkmServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllServiceResolvers(new ArrayList<EkmConnection.ServiceResolver>())
             .setEtag("etag3123477")
+            .setCryptoSpacePath("cryptoSpacePath273829514")
             .build();
     mockEkmService.addResponse(expectedResponse);
 
@@ -406,6 +411,129 @@ public class EkmServiceClientTest {
       EkmConnection ekmConnection = EkmConnection.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateEkmConnection(ekmConnection, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEkmConfigTest() throws Exception {
+    EkmConfig expectedResponse =
+        EkmConfig.newBuilder()
+            .setName(EkmConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setDefaultEkmConnection(
+                EkmConnectionName.of("[PROJECT]", "[LOCATION]", "[EKM_CONNECTION]").toString())
+            .build();
+    mockEkmService.addResponse(expectedResponse);
+
+    EkmConfigName name = EkmConfigName.of("[PROJECT]", "[LOCATION]");
+
+    EkmConfig actualResponse = client.getEkmConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEkmService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetEkmConfigRequest actualRequest = ((GetEkmConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getEkmConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEkmService.addException(exception);
+
+    try {
+      EkmConfigName name = EkmConfigName.of("[PROJECT]", "[LOCATION]");
+      client.getEkmConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEkmConfigTest2() throws Exception {
+    EkmConfig expectedResponse =
+        EkmConfig.newBuilder()
+            .setName(EkmConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setDefaultEkmConnection(
+                EkmConnectionName.of("[PROJECT]", "[LOCATION]", "[EKM_CONNECTION]").toString())
+            .build();
+    mockEkmService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    EkmConfig actualResponse = client.getEkmConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEkmService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetEkmConfigRequest actualRequest = ((GetEkmConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getEkmConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEkmService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getEkmConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateEkmConfigTest() throws Exception {
+    EkmConfig expectedResponse =
+        EkmConfig.newBuilder()
+            .setName(EkmConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setDefaultEkmConnection(
+                EkmConnectionName.of("[PROJECT]", "[LOCATION]", "[EKM_CONNECTION]").toString())
+            .build();
+    mockEkmService.addResponse(expectedResponse);
+
+    EkmConfig ekmConfig = EkmConfig.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    EkmConfig actualResponse = client.updateEkmConfig(ekmConfig, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEkmService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateEkmConfigRequest actualRequest = ((UpdateEkmConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(ekmConfig, actualRequest.getEkmConfig());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateEkmConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEkmService.addException(exception);
+
+    try {
+      EkmConfig ekmConfig = EkmConfig.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateEkmConfig(ekmConfig, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

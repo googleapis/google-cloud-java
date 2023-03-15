@@ -52,6 +52,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     algorithm_ = 0;
     importJob_ = "";
     importFailureReason_ = "";
+    generationFailureReason_ = "";
+    externalDestructionFailureReason_ = "";
   }
 
   @java.lang.Override
@@ -963,6 +965,44 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>IMPORT_FAILED = 7;</code>
      */
     IMPORT_FAILED(7),
+    /**
+     *
+     *
+     * <pre>
+     * This version was not generated successfully. It may not be used, enabled,
+     * disabled, or destroyed. Additional details can be found in
+     * [CryptoKeyVersion.generation_failure_reason][google.cloud.kms.v1.CryptoKeyVersion.generation_failure_reason].
+     * </pre>
+     *
+     * <code>GENERATION_FAILED = 8;</code>
+     */
+    GENERATION_FAILED(8),
+    /**
+     *
+     *
+     * <pre>
+     * This version was destroyed, and it may not be used or enabled again.
+     * Cloud KMS is waiting for the corresponding key material residing in an
+     * external key manager to be destroyed.
+     * </pre>
+     *
+     * <code>PENDING_EXTERNAL_DESTRUCTION = 9;</code>
+     */
+    PENDING_EXTERNAL_DESTRUCTION(9),
+    /**
+     *
+     *
+     * <pre>
+     * This version was destroyed, and it may not be used or enabled again.
+     * However, Cloud KMS could not confirm that the corresponding key material
+     * residing in an external key manager was destroyed. Additional details can
+     * be found in
+     * [CryptoKeyVersion.external_destruction_failure_reason][google.cloud.kms.v1.CryptoKeyVersion.external_destruction_failure_reason].
+     * </pre>
+     *
+     * <code>EXTERNAL_DESTRUCTION_FAILED = 10;</code>
+     */
+    EXTERNAL_DESTRUCTION_FAILED(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -1071,6 +1111,44 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>IMPORT_FAILED = 7;</code>
      */
     public static final int IMPORT_FAILED_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * This version was not generated successfully. It may not be used, enabled,
+     * disabled, or destroyed. Additional details can be found in
+     * [CryptoKeyVersion.generation_failure_reason][google.cloud.kms.v1.CryptoKeyVersion.generation_failure_reason].
+     * </pre>
+     *
+     * <code>GENERATION_FAILED = 8;</code>
+     */
+    public static final int GENERATION_FAILED_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
+     * This version was destroyed, and it may not be used or enabled again.
+     * Cloud KMS is waiting for the corresponding key material residing in an
+     * external key manager to be destroyed.
+     * </pre>
+     *
+     * <code>PENDING_EXTERNAL_DESTRUCTION = 9;</code>
+     */
+    public static final int PENDING_EXTERNAL_DESTRUCTION_VALUE = 9;
+    /**
+     *
+     *
+     * <pre>
+     * This version was destroyed, and it may not be used or enabled again.
+     * However, Cloud KMS could not confirm that the corresponding key material
+     * residing in an external key manager was destroyed. Additional details can
+     * be found in
+     * [CryptoKeyVersion.external_destruction_failure_reason][google.cloud.kms.v1.CryptoKeyVersion.external_destruction_failure_reason].
+     * </pre>
+     *
+     * <code>EXTERNAL_DESTRUCTION_FAILED = 10;</code>
+     */
+    public static final int EXTERNAL_DESTRUCTION_FAILED_VALUE = 10;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1112,6 +1190,12 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
           return PENDING_IMPORT;
         case 7:
           return IMPORT_FAILED;
+        case 8:
+          return GENERATION_FAILED;
+        case 9:
+          return PENDING_EXTERNAL_DESTRUCTION;
+        case 10:
+          return EXTERNAL_DESTRUCTION_FAILED;
         default:
           return null;
       }
@@ -1980,6 +2064,124 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int GENERATION_FAILURE_REASON_FIELD_NUMBER = 19;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object generationFailureReason_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The root cause of the most recent generation failure. Only
+   * present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+   * [GENERATION_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.GENERATION_FAILED].
+   * </pre>
+   *
+   * <code>string generation_failure_reason = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The generationFailureReason.
+   */
+  @java.lang.Override
+  public java.lang.String getGenerationFailureReason() {
+    java.lang.Object ref = generationFailureReason_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      generationFailureReason_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The root cause of the most recent generation failure. Only
+   * present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+   * [GENERATION_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.GENERATION_FAILED].
+   * </pre>
+   *
+   * <code>string generation_failure_reason = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for generationFailureReason.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getGenerationFailureReasonBytes() {
+    java.lang.Object ref = generationFailureReason_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      generationFailureReason_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int EXTERNAL_DESTRUCTION_FAILURE_REASON_FIELD_NUMBER = 20;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object externalDestructionFailureReason_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The root cause of the most recent external destruction
+   * failure. Only present if
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+   * [EXTERNAL_DESTRUCTION_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.EXTERNAL_DESTRUCTION_FAILED].
+   * </pre>
+   *
+   * <code>
+   * string external_destruction_failure_reason = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The externalDestructionFailureReason.
+   */
+  @java.lang.Override
+  public java.lang.String getExternalDestructionFailureReason() {
+    java.lang.Object ref = externalDestructionFailureReason_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      externalDestructionFailureReason_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The root cause of the most recent external destruction
+   * failure. Only present if
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+   * [EXTERNAL_DESTRUCTION_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.EXTERNAL_DESTRUCTION_FAILED].
+   * </pre>
+   *
+   * <code>
+   * string external_destruction_failure_reason = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for externalDestructionFailureReason.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getExternalDestructionFailureReasonBytes() {
+    java.lang.Object ref = externalDestructionFailureReason_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      externalDestructionFailureReason_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int EXTERNAL_PROTECTION_LEVEL_OPTIONS_FIELD_NUMBER = 17;
   private com.google.cloud.kms.v1.ExternalProtectionLevelOptions externalProtectionLevelOptions_;
   /**
@@ -2136,6 +2338,13 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     if (reimportEligible_ != false) {
       output.writeBool(18, reimportEligible_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(generationFailureReason_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 19, generationFailureReason_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalDestructionFailureReason_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 20, externalDestructionFailureReason_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2196,6 +2405,15 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     if (reimportEligible_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(18, reimportEligible_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(generationFailureReason_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(19, generationFailureReason_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalDestructionFailureReason_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              20, externalDestructionFailureReason_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2241,6 +2459,9 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       if (!getImportTime().equals(other.getImportTime())) return false;
     }
     if (!getImportFailureReason().equals(other.getImportFailureReason())) return false;
+    if (!getGenerationFailureReason().equals(other.getGenerationFailureReason())) return false;
+    if (!getExternalDestructionFailureReason().equals(other.getExternalDestructionFailureReason()))
+      return false;
     if (hasExternalProtectionLevelOptions() != other.hasExternalProtectionLevelOptions())
       return false;
     if (hasExternalProtectionLevelOptions()) {
@@ -2295,6 +2516,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + IMPORT_FAILURE_REASON_FIELD_NUMBER;
     hash = (53 * hash) + getImportFailureReason().hashCode();
+    hash = (37 * hash) + GENERATION_FAILURE_REASON_FIELD_NUMBER;
+    hash = (53 * hash) + getGenerationFailureReason().hashCode();
+    hash = (37 * hash) + EXTERNAL_DESTRUCTION_FAILURE_REASON_FIELD_NUMBER;
+    hash = (53 * hash) + getExternalDestructionFailureReason().hashCode();
     if (hasExternalProtectionLevelOptions()) {
       hash = (37 * hash) + EXTERNAL_PROTECTION_LEVEL_OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getExternalProtectionLevelOptions().hashCode();
@@ -2484,6 +2709,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
         importTimeBuilder_ = null;
       }
       importFailureReason_ = "";
+      generationFailureReason_ = "";
+      externalDestructionFailureReason_ = "";
       externalProtectionLevelOptions_ = null;
       if (externalProtectionLevelOptionsBuilder_ != null) {
         externalProtectionLevelOptionsBuilder_.dispose();
@@ -2567,12 +2794,18 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
         result.importFailureReason_ = importFailureReason_;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.generationFailureReason_ = generationFailureReason_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.externalDestructionFailureReason_ = externalDestructionFailureReason_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.externalProtectionLevelOptions_ =
             externalProtectionLevelOptionsBuilder_ == null
                 ? externalProtectionLevelOptions_
                 : externalProtectionLevelOptionsBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.reimportEligible_ = reimportEligible_;
       }
     }
@@ -2662,6 +2895,16 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       if (!other.getImportFailureReason().isEmpty()) {
         importFailureReason_ = other.importFailureReason_;
         bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      if (!other.getGenerationFailureReason().isEmpty()) {
+        generationFailureReason_ = other.generationFailureReason_;
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      if (!other.getExternalDestructionFailureReason().isEmpty()) {
+        externalDestructionFailureReason_ = other.externalDestructionFailureReason_;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.hasExternalProtectionLevelOptions()) {
@@ -2774,15 +3017,27 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     getExternalProtectionLevelOptionsFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 138
             case 144:
               {
                 reimportEligible_ = input.readBool();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 144
+            case 154:
+              {
+                generationFailureReason_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 154
+            case 162:
+              {
+                externalDestructionFailureReason_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 162
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4832,6 +5087,259 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.lang.Object generationFailureReason_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The root cause of the most recent generation failure. Only
+     * present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * [GENERATION_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.GENERATION_FAILED].
+     * </pre>
+     *
+     * <code>string generation_failure_reason = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The generationFailureReason.
+     */
+    public java.lang.String getGenerationFailureReason() {
+      java.lang.Object ref = generationFailureReason_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        generationFailureReason_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The root cause of the most recent generation failure. Only
+     * present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * [GENERATION_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.GENERATION_FAILED].
+     * </pre>
+     *
+     * <code>string generation_failure_reason = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for generationFailureReason.
+     */
+    public com.google.protobuf.ByteString getGenerationFailureReasonBytes() {
+      java.lang.Object ref = generationFailureReason_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        generationFailureReason_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The root cause of the most recent generation failure. Only
+     * present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * [GENERATION_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.GENERATION_FAILED].
+     * </pre>
+     *
+     * <code>string generation_failure_reason = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The generationFailureReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGenerationFailureReason(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      generationFailureReason_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The root cause of the most recent generation failure. Only
+     * present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * [GENERATION_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.GENERATION_FAILED].
+     * </pre>
+     *
+     * <code>string generation_failure_reason = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearGenerationFailureReason() {
+      generationFailureReason_ = getDefaultInstance().getGenerationFailureReason();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The root cause of the most recent generation failure. Only
+     * present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * [GENERATION_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.GENERATION_FAILED].
+     * </pre>
+     *
+     * <code>string generation_failure_reason = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for generationFailureReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGenerationFailureReasonBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      generationFailureReason_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object externalDestructionFailureReason_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The root cause of the most recent external destruction
+     * failure. Only present if
+     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * [EXTERNAL_DESTRUCTION_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.EXTERNAL_DESTRUCTION_FAILED].
+     * </pre>
+     *
+     * <code>
+     * string external_destruction_failure_reason = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The externalDestructionFailureReason.
+     */
+    public java.lang.String getExternalDestructionFailureReason() {
+      java.lang.Object ref = externalDestructionFailureReason_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        externalDestructionFailureReason_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The root cause of the most recent external destruction
+     * failure. Only present if
+     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * [EXTERNAL_DESTRUCTION_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.EXTERNAL_DESTRUCTION_FAILED].
+     * </pre>
+     *
+     * <code>
+     * string external_destruction_failure_reason = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for externalDestructionFailureReason.
+     */
+    public com.google.protobuf.ByteString getExternalDestructionFailureReasonBytes() {
+      java.lang.Object ref = externalDestructionFailureReason_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        externalDestructionFailureReason_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The root cause of the most recent external destruction
+     * failure. Only present if
+     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * [EXTERNAL_DESTRUCTION_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.EXTERNAL_DESTRUCTION_FAILED].
+     * </pre>
+     *
+     * <code>
+     * string external_destruction_failure_reason = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The externalDestructionFailureReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExternalDestructionFailureReason(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      externalDestructionFailureReason_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The root cause of the most recent external destruction
+     * failure. Only present if
+     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * [EXTERNAL_DESTRUCTION_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.EXTERNAL_DESTRUCTION_FAILED].
+     * </pre>
+     *
+     * <code>
+     * string external_destruction_failure_reason = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExternalDestructionFailureReason() {
+      externalDestructionFailureReason_ =
+          getDefaultInstance().getExternalDestructionFailureReason();
+      bitField0_ = (bitField0_ & ~0x00002000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The root cause of the most recent external destruction
+     * failure. Only present if
+     * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+     * [EXTERNAL_DESTRUCTION_FAILED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.EXTERNAL_DESTRUCTION_FAILED].
+     * </pre>
+     *
+     * <code>
+     * string external_destruction_failure_reason = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for externalDestructionFailureReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExternalDestructionFailureReasonBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      externalDestructionFailureReason_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.kms.v1.ExternalProtectionLevelOptions externalProtectionLevelOptions_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.kms.v1.ExternalProtectionLevelOptions,
@@ -4857,7 +5365,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * @return Whether the externalProtectionLevelOptions field is set.
      */
     public boolean hasExternalProtectionLevelOptions() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -4913,7 +5421,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       } else {
         externalProtectionLevelOptionsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4940,7 +5448,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       } else {
         externalProtectionLevelOptionsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4963,7 +5471,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     public Builder mergeExternalProtectionLevelOptions(
         com.google.cloud.kms.v1.ExternalProtectionLevelOptions value) {
       if (externalProtectionLevelOptionsBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && externalProtectionLevelOptions_ != null
             && externalProtectionLevelOptions_
                 != com.google.cloud.kms.v1.ExternalProtectionLevelOptions.getDefaultInstance()) {
@@ -4974,7 +5482,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       } else {
         externalProtectionLevelOptionsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4995,7 +5503,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearExternalProtectionLevelOptions() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       externalProtectionLevelOptions_ = null;
       if (externalProtectionLevelOptionsBuilder_ != null) {
         externalProtectionLevelOptionsBuilder_.dispose();
@@ -5022,7 +5530,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.kms.v1.ExternalProtectionLevelOptions.Builder
         getExternalProtectionLevelOptionsBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getExternalProtectionLevelOptionsFieldBuilder().getBuilder();
     }
@@ -5120,7 +5628,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     public Builder setReimportEligible(boolean value) {
 
       reimportEligible_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5138,7 +5646,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearReimportEligible() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       reimportEligible_ = false;
       onChanged();
       return this;

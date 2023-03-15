@@ -48,6 +48,14 @@ public final class EkmServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_kms_v1_UpdateEkmConnectionRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_kms_v1_GetEkmConfigRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_kms_v1_GetEkmConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_kms_v1_UpdateEkmConfigRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_kms_v1_UpdateEkmConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_kms_v1_Certificate_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_kms_v1_Certificate_fieldAccessorTable;
@@ -59,6 +67,10 @@ public final class EkmServiceProto {
       internal_static_google_cloud_kms_v1_EkmConnection_ServiceResolver_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_kms_v1_EkmConnection_ServiceResolver_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_kms_v1_EkmConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_kms_v1_EkmConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -92,59 +104,83 @@ public final class EkmServiceProto {
           + "\032UpdateEkmConnectionRequest\022?\n\016ekm_conne"
           + "ction\030\001 \001(\0132\".google.cloud.kms.v1.EkmCon"
           + "nectionB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.goog"
-          + "le.protobuf.FieldMaskB\003\340A\002\"\277\002\n\013Certifica"
-          + "te\022\024\n\007raw_der\030\001 \001(\014B\003\340A\002\022\023\n\006parsed\030\002 \001(\010"
-          + "B\003\340A\003\022\023\n\006issuer\030\003 \001(\tB\003\340A\003\022\024\n\007subject\030\004 "
-          + "\001(\tB\003\340A\003\022*\n\035subject_alternative_dns_name"
-          + "s\030\005 \003(\tB\003\340A\003\0228\n\017not_before_time\030\006 \001(\0132\032."
-          + "google.protobuf.TimestampB\003\340A\003\0227\n\016not_af"
-          + "ter_time\030\007 \001(\0132\032.google.protobuf.Timesta"
-          + "mpB\003\340A\003\022\032\n\rserial_number\030\010 \001(\tB\003\340A\003\022\037\n\022s"
-          + "ha256_fingerprint\030\t \001(\tB\003\340A\003\"\220\004\n\rEkmConn"
-          + "ection\022\021\n\004name\030\001 \001(\tB\003\340A\003\0224\n\013create_time"
-          + "\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022"
-          + "M\n\021service_resolvers\030\003 \003(\01322.google.clou"
-          + "d.kms.v1.EkmConnection.ServiceResolver\022\021"
-          + "\n\004etag\030\005 \001(\tB\003\340A\001\032\336\001\n\017ServiceResolver\022R\n"
-          + "\031service_directory_service\030\001 \001(\tB/\340A\002\372A)"
-          + "\n\'servicedirectory.googleapis.com/Servic"
-          + "e\022\034\n\017endpoint_filter\030\002 \001(\tB\003\340A\001\022\025\n\010hostn"
-          + "ame\030\003 \001(\tB\003\340A\002\022B\n\023server_certificates\030\004 "
-          + "\003(\0132 .google.cloud.kms.v1.CertificateB\003\340"
-          + "A\002:s\352Ap\n%cloudkms.googleapis.com/EkmConn"
-          + "ection\022Gprojects/{project}/locations/{lo"
-          + "cation}/ekmConnections/{ekm_connection}2"
-          + "\261\007\n\nEkmService\022\272\001\n\022ListEkmConnections\022.."
-          + "google.cloud.kms.v1.ListEkmConnectionsRe"
-          + "quest\032/.google.cloud.kms.v1.ListEkmConne"
-          + "ctionsResponse\"C\202\323\344\223\0024\0222/v1/{parent=proj"
-          + "ects/*/locations/*}/ekmConnections\332A\006par"
-          + "ent\022\247\001\n\020GetEkmConnection\022,.google.cloud."
-          + "kms.v1.GetEkmConnectionRequest\032\".google."
-          + "cloud.kms.v1.EkmConnection\"A\202\323\344\223\0024\0222/v1/"
-          + "{name=projects/*/locations/*/ekmConnecti"
-          + "ons/*}\332A\004name\022\340\001\n\023CreateEkmConnection\022/."
-          + "google.cloud.kms.v1.CreateEkmConnectionR"
-          + "equest\032\".google.cloud.kms.v1.EkmConnecti"
-          + "on\"t\202\323\344\223\002D\"2/v1/{parent=projects/*/locat"
-          + "ions/*}/ekmConnections:\016ekm_connection\332A"
-          + "\'parent,ekm_connection_id,ekm_connection"
-          + "\022\342\001\n\023UpdateEkmConnection\022/.google.cloud."
-          + "kms.v1.UpdateEkmConnectionRequest\032\".goog"
-          + "le.cloud.kms.v1.EkmConnection\"v\202\323\344\223\002S2A/"
-          + "v1/{ekm_connection.name=projects/*/locat"
-          + "ions/*/ekmConnections/*}:\016ekm_connection"
-          + "\332A\032ekm_connection,update_mask\032t\312A\027cloudk"
-          + "ms.googleapis.com\322AWhttps://www.googleap"
-          + "is.com/auth/cloud-platform,https://www.g"
-          + "oogleapis.com/auth/cloudkmsB\205\002\n\027com.goog"
-          + "le.cloud.kms.v1B\017EkmServiceProtoP\001Z)clou"
-          + "d.google.com/go/kms/apiv1/kmspb;kmspb\370\001\001"
-          + "\252\002\023Google.Cloud.Kms.V1\312\002\023Google\\Cloud\\Km"
-          + "s\\V1\352A|\n\'servicedirectory.googleapis.com"
-          + "/Service\022Qprojects/{project}/locations/{"
-          + "location}/namespaces/{namespace}/service"
-          + "s/{service}b\006proto3"
+          + "le.protobuf.FieldMaskB\003\340A\002\"N\n\023GetEkmConf"
+          + "igRequest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!cloudkm"
+          + "s.googleapis.com/EkmConfig\"\207\001\n\026UpdateEkm"
+          + "ConfigRequest\0227\n\nekm_config\030\001 \001(\0132\036.goog"
+          + "le.cloud.kms.v1.EkmConfigB\003\340A\002\0224\n\013update"
+          + "_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB"
+          + "\003\340A\002\"\277\002\n\013Certificate\022\024\n\007raw_der\030\001 \001(\014B\003\340"
+          + "A\002\022\023\n\006parsed\030\002 \001(\010B\003\340A\003\022\023\n\006issuer\030\003 \001(\tB"
+          + "\003\340A\003\022\024\n\007subject\030\004 \001(\tB\003\340A\003\022*\n\035subject_al"
+          + "ternative_dns_names\030\005 \003(\tB\003\340A\003\0228\n\017not_be"
+          + "fore_time\030\006 \001(\0132\032.google.protobuf.Timest"
+          + "ampB\003\340A\003\0227\n\016not_after_time\030\007 \001(\0132\032.googl"
+          + "e.protobuf.TimestampB\003\340A\003\022\032\n\rserial_numb"
+          + "er\030\010 \001(\tB\003\340A\003\022\037\n\022sha256_fingerprint\030\t \001("
+          + "\tB\003\340A\003\"\335\005\n\rEkmConnection\022\021\n\004name\030\001 \001(\tB\003"
+          + "\340A\003\0224\n\013create_time\030\002 \001(\0132\032.google.protob"
+          + "uf.TimestampB\003\340A\003\022M\n\021service_resolvers\030\003"
+          + " \003(\01322.google.cloud.kms.v1.EkmConnection"
+          + ".ServiceResolver\022\021\n\004etag\030\005 \001(\tB\003\340A\001\022V\n\023k"
+          + "ey_management_mode\030\006 \001(\01624.google.cloud."
+          + "kms.v1.EkmConnection.KeyManagementModeB\003"
+          + "\340A\001\022\036\n\021crypto_space_path\030\007 \001(\tB\003\340A\001\032\336\001\n\017"
+          + "ServiceResolver\022R\n\031service_directory_ser"
+          + "vice\030\001 \001(\tB/\340A\002\372A)\n\'servicedirectory.goo"
+          + "gleapis.com/Service\022\034\n\017endpoint_filter\030\002"
+          + " \001(\tB\003\340A\001\022\025\n\010hostname\030\003 \001(\tB\003\340A\002\022B\n\023serv"
+          + "er_certificates\030\004 \003(\0132 .google.cloud.kms"
+          + ".v1.CertificateB\003\340A\002\"S\n\021KeyManagementMod"
+          + "e\022#\n\037KEY_MANAGEMENT_MODE_UNSPECIFIED\020\000\022\n"
+          + "\n\006MANUAL\020\001\022\r\n\tCLOUD_KMS\020\002:s\352Ap\n%cloudkms"
+          + ".googleapis.com/EkmConnection\022Gprojects/"
+          + "{project}/locations/{location}/ekmConnec"
+          + "tions/{ekm_connection}\"\310\001\n\tEkmConfig\022\021\n\004"
+          + "name\030\001 \001(\tB\003\340A\003\022M\n\026default_ekm_connectio"
+          + "n\030\002 \001(\tB-\340A\001\372A\'\n%cloudkms.googleapis.com"
+          + "/EkmConnection:Y\352AV\n!cloudkms.googleapis"
+          + ".com/EkmConfig\0221projects/{project}/locat"
+          + "ions/{location}/ekmConfig2\216\n\n\nEkmService"
+          + "\022\272\001\n\022ListEkmConnections\022..google.cloud.k"
+          + "ms.v1.ListEkmConnectionsRequest\032/.google"
+          + ".cloud.kms.v1.ListEkmConnectionsResponse"
+          + "\"C\202\323\344\223\0024\0222/v1/{parent=projects/*/locatio"
+          + "ns/*}/ekmConnections\332A\006parent\022\247\001\n\020GetEkm"
+          + "Connection\022,.google.cloud.kms.v1.GetEkmC"
+          + "onnectionRequest\032\".google.cloud.kms.v1.E"
+          + "kmConnection\"A\202\323\344\223\0024\0222/v1/{name=projects"
+          + "/*/locations/*/ekmConnections/*}\332A\004name\022"
+          + "\340\001\n\023CreateEkmConnection\022/.google.cloud.k"
+          + "ms.v1.CreateEkmConnectionRequest\032\".googl"
+          + "e.cloud.kms.v1.EkmConnection\"t\202\323\344\223\002D\"2/v"
+          + "1/{parent=projects/*/locations/*}/ekmCon"
+          + "nections:\016ekm_connection\332A\'parent,ekm_co"
+          + "nnection_id,ekm_connection\022\342\001\n\023UpdateEkm"
+          + "Connection\022/.google.cloud.kms.v1.UpdateE"
+          + "kmConnectionRequest\032\".google.cloud.kms.v"
+          + "1.EkmConnection\"v\202\323\344\223\002S2A/v1/{ekm_connec"
+          + "tion.name=projects/*/locations/*/ekmConn"
+          + "ections/*}:\016ekm_connection\332A\032ekm_connect"
+          + "ion,update_mask\022\224\001\n\014GetEkmConfig\022(.googl"
+          + "e.cloud.kms.v1.GetEkmConfigRequest\032\036.goo"
+          + "gle.cloud.kms.v1.EkmConfig\":\202\323\344\223\002-\022+/v1/"
+          + "{name=projects/*/locations/*/ekmConfig}\332"
+          + "A\004name\022\303\001\n\017UpdateEkmConfig\022+.google.clou"
+          + "d.kms.v1.UpdateEkmConfigRequest\032\036.google"
+          + ".cloud.kms.v1.EkmConfig\"c\202\323\344\223\002D26/v1/{ek"
+          + "m_config.name=projects/*/locations/*/ekm"
+          + "Config}:\nekm_config\332A\026ekm_config,update_"
+          + "mask\032t\312A\027cloudkms.googleapis.com\322AWhttps"
+          + "://www.googleapis.com/auth/cloud-platfor"
+          + "m,https://www.googleapis.com/auth/cloudk"
+          + "msB\205\002\n\027com.google.cloud.kms.v1B\017EkmServi"
+          + "ceProtoP\001Z)cloud.google.com/go/kms/apiv1"
+          + "/kmspb;kmspb\370\001\001\252\002\023Google.Cloud.Kms.V1\312\002\023"
+          + "Google\\Cloud\\Kms\\V1\352A|\n\'servicedirectory"
+          + ".googleapis.com/Service\022Qprojects/{proje"
+          + "ct}/locations/{location}/namespaces/{nam"
+          + "espace}/services/{service}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -197,8 +233,24 @@ public final class EkmServiceProto {
             new java.lang.String[] {
               "EkmConnection", "UpdateMask",
             });
-    internal_static_google_cloud_kms_v1_Certificate_descriptor =
+    internal_static_google_cloud_kms_v1_GetEkmConfigRequest_descriptor =
         getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_kms_v1_GetEkmConfigRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_kms_v1_GetEkmConfigRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_kms_v1_UpdateEkmConfigRequest_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_kms_v1_UpdateEkmConfigRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_kms_v1_UpdateEkmConfigRequest_descriptor,
+            new java.lang.String[] {
+              "EkmConfig", "UpdateMask",
+            });
+    internal_static_google_cloud_kms_v1_Certificate_descriptor =
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_kms_v1_Certificate_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_Certificate_descriptor,
@@ -214,12 +266,17 @@ public final class EkmServiceProto {
               "Sha256Fingerprint",
             });
     internal_static_google_cloud_kms_v1_EkmConnection_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_kms_v1_EkmConnection_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_EkmConnection_descriptor,
             new java.lang.String[] {
-              "Name", "CreateTime", "ServiceResolvers", "Etag",
+              "Name",
+              "CreateTime",
+              "ServiceResolvers",
+              "Etag",
+              "KeyManagementMode",
+              "CryptoSpacePath",
             });
     internal_static_google_cloud_kms_v1_EkmConnection_ServiceResolver_descriptor =
         internal_static_google_cloud_kms_v1_EkmConnection_descriptor.getNestedTypes().get(0);
@@ -228,6 +285,14 @@ public final class EkmServiceProto {
             internal_static_google_cloud_kms_v1_EkmConnection_ServiceResolver_descriptor,
             new java.lang.String[] {
               "ServiceDirectoryService", "EndpointFilter", "Hostname", "ServerCertificates",
+            });
+    internal_static_google_cloud_kms_v1_EkmConfig_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_kms_v1_EkmConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_kms_v1_EkmConfig_descriptor,
+            new java.lang.String[] {
+              "Name", "DefaultEkmConnection",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

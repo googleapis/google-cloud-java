@@ -716,6 +716,212 @@ public class EkmServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Returns the [EkmConfig][google.cloud.kms.v1.EkmConfig] singleton resource for a given project
+   * and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EkmServiceClient ekmServiceClient = EkmServiceClient.create()) {
+   *   EkmConfigName name = EkmConfigName.of("[PROJECT]", "[LOCATION]");
+   *   EkmConfig response = ekmServiceClient.getEkmConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The [name][google.cloud.kms.v1.EkmConfig.name] of the
+   *     [EkmConfig][google.cloud.kms.v1.EkmConfig] to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EkmConfig getEkmConfig(EkmConfigName name) {
+    GetEkmConfigRequest request =
+        GetEkmConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getEkmConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the [EkmConfig][google.cloud.kms.v1.EkmConfig] singleton resource for a given project
+   * and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EkmServiceClient ekmServiceClient = EkmServiceClient.create()) {
+   *   String name = EkmConfigName.of("[PROJECT]", "[LOCATION]").toString();
+   *   EkmConfig response = ekmServiceClient.getEkmConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The [name][google.cloud.kms.v1.EkmConfig.name] of the
+   *     [EkmConfig][google.cloud.kms.v1.EkmConfig] to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EkmConfig getEkmConfig(String name) {
+    GetEkmConfigRequest request = GetEkmConfigRequest.newBuilder().setName(name).build();
+    return getEkmConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the [EkmConfig][google.cloud.kms.v1.EkmConfig] singleton resource for a given project
+   * and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EkmServiceClient ekmServiceClient = EkmServiceClient.create()) {
+   *   GetEkmConfigRequest request =
+   *       GetEkmConfigRequest.newBuilder()
+   *           .setName(EkmConfigName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   EkmConfig response = ekmServiceClient.getEkmConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EkmConfig getEkmConfig(GetEkmConfigRequest request) {
+    return getEkmConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the [EkmConfig][google.cloud.kms.v1.EkmConfig] singleton resource for a given project
+   * and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EkmServiceClient ekmServiceClient = EkmServiceClient.create()) {
+   *   GetEkmConfigRequest request =
+   *       GetEkmConfigRequest.newBuilder()
+   *           .setName(EkmConfigName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   ApiFuture<EkmConfig> future = ekmServiceClient.getEkmConfigCallable().futureCall(request);
+   *   // Do something.
+   *   EkmConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetEkmConfigRequest, EkmConfig> getEkmConfigCallable() {
+    return stub.getEkmConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the [EkmConfig][google.cloud.kms.v1.EkmConfig] singleton resource for a given project
+   * and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EkmServiceClient ekmServiceClient = EkmServiceClient.create()) {
+   *   EkmConfig ekmConfig = EkmConfig.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   EkmConfig response = ekmServiceClient.updateEkmConfig(ekmConfig, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param ekmConfig Required. [EkmConfig][google.cloud.kms.v1.EkmConfig] with updated values.
+   * @param updateMask Required. List of fields to be updated in this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EkmConfig updateEkmConfig(EkmConfig ekmConfig, FieldMask updateMask) {
+    UpdateEkmConfigRequest request =
+        UpdateEkmConfigRequest.newBuilder()
+            .setEkmConfig(ekmConfig)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateEkmConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the [EkmConfig][google.cloud.kms.v1.EkmConfig] singleton resource for a given project
+   * and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EkmServiceClient ekmServiceClient = EkmServiceClient.create()) {
+   *   UpdateEkmConfigRequest request =
+   *       UpdateEkmConfigRequest.newBuilder()
+   *           .setEkmConfig(EkmConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   EkmConfig response = ekmServiceClient.updateEkmConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EkmConfig updateEkmConfig(UpdateEkmConfigRequest request) {
+    return updateEkmConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the [EkmConfig][google.cloud.kms.v1.EkmConfig] singleton resource for a given project
+   * and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EkmServiceClient ekmServiceClient = EkmServiceClient.create()) {
+   *   UpdateEkmConfigRequest request =
+   *       UpdateEkmConfigRequest.newBuilder()
+   *           .setEkmConfig(EkmConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<EkmConfig> future = ekmServiceClient.updateEkmConfigCallable().futureCall(request);
+   *   // Do something.
+   *   EkmConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateEkmConfigRequest, EkmConfig> updateEkmConfigCallable() {
+    return stub.updateEkmConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:

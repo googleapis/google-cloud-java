@@ -142,4 +142,46 @@ public class MockEkmServiceImpl extends EkmServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void getEkmConfig(
+      GetEkmConfigRequest request, StreamObserver<EkmConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof EkmConfig) {
+      requests.add(request);
+      responseObserver.onNext(((EkmConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetEkmConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  EkmConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateEkmConfig(
+      UpdateEkmConfigRequest request, StreamObserver<EkmConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof EkmConfig) {
+      requests.add(request);
+      responseObserver.onNext(((EkmConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateEkmConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  EkmConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

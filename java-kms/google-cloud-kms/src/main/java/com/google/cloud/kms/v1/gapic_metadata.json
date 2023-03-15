@@ -13,6 +13,9 @@
             "CreateEkmConnection": {
               "methods": ["createEkmConnection", "createEkmConnection", "createEkmConnection", "createEkmConnectionCallable"]
             },
+            "GetEkmConfig": {
+              "methods": ["getEkmConfig", "getEkmConfig", "getEkmConfig", "getEkmConfigCallable"]
+            },
             "GetEkmConnection": {
               "methods": ["getEkmConnection", "getEkmConnection", "getEkmConnection", "getEkmConnectionCallable"]
             },
@@ -33,6 +36,9 @@
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateEkmConfig": {
+              "methods": ["updateEkmConfig", "updateEkmConfig", "updateEkmConfigCallable"]
             },
             "UpdateEkmConnection": {
               "methods": ["updateEkmConnection", "updateEkmConnection", "updateEkmConnectionCallable"]

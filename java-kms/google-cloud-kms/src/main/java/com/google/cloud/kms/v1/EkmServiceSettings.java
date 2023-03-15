@@ -108,6 +108,16 @@ public class EkmServiceSettings extends ClientSettings<EkmServiceSettings> {
     return ((EkmServiceStubSettings) getStubSettings()).updateEkmConnectionSettings();
   }
 
+  /** Returns the object with the settings used for calls to getEkmConfig. */
+  public UnaryCallSettings<GetEkmConfigRequest, EkmConfig> getEkmConfigSettings() {
+    return ((EkmServiceStubSettings) getStubSettings()).getEkmConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateEkmConfig. */
+  public UnaryCallSettings<UpdateEkmConfigRequest, EkmConfig> updateEkmConfigSettings() {
+    return ((EkmServiceStubSettings) getStubSettings()).updateEkmConfigSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -272,6 +282,16 @@ public class EkmServiceSettings extends ClientSettings<EkmServiceSettings> {
     public UnaryCallSettings.Builder<UpdateEkmConnectionRequest, EkmConnection>
         updateEkmConnectionSettings() {
       return getStubSettingsBuilder().updateEkmConnectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getEkmConfig. */
+    public UnaryCallSettings.Builder<GetEkmConfigRequest, EkmConfig> getEkmConfigSettings() {
+      return getStubSettingsBuilder().getEkmConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateEkmConfig. */
+    public UnaryCallSettings.Builder<UpdateEkmConfigRequest, EkmConfig> updateEkmConfigSettings() {
+      return getStubSettingsBuilder().updateEkmConfigSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

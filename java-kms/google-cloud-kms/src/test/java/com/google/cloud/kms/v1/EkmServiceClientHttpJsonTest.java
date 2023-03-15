@@ -201,6 +201,7 @@ public class EkmServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllServiceResolvers(new ArrayList<EkmConnection.ServiceResolver>())
             .setEtag("etag3123477")
+            .setCryptoSpacePath("cryptoSpacePath273829514")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -248,6 +249,7 @@ public class EkmServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllServiceResolvers(new ArrayList<EkmConnection.ServiceResolver>())
             .setEtag("etag3123477")
+            .setCryptoSpacePath("cryptoSpacePath273829514")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -296,6 +298,7 @@ public class EkmServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllServiceResolvers(new ArrayList<EkmConnection.ServiceResolver>())
             .setEtag("etag3123477")
+            .setCryptoSpacePath("cryptoSpacePath273829514")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -348,6 +351,7 @@ public class EkmServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllServiceResolvers(new ArrayList<EkmConnection.ServiceResolver>())
             .setEtag("etag3123477")
+            .setCryptoSpacePath("cryptoSpacePath273829514")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -400,6 +404,7 @@ public class EkmServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllServiceResolvers(new ArrayList<EkmConnection.ServiceResolver>())
             .setEtag("etag3123477")
+            .setCryptoSpacePath("cryptoSpacePath273829514")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -409,6 +414,7 @@ public class EkmServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllServiceResolvers(new ArrayList<EkmConnection.ServiceResolver>())
             .setEtag("etag3123477")
+            .setCryptoSpacePath("cryptoSpacePath273829514")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -445,9 +451,160 @@ public class EkmServiceClientHttpJsonTest {
               .setCreateTime(Timestamp.newBuilder().build())
               .addAllServiceResolvers(new ArrayList<EkmConnection.ServiceResolver>())
               .setEtag("etag3123477")
+              .setCryptoSpacePath("cryptoSpacePath273829514")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateEkmConnection(ekmConnection, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEkmConfigTest() throws Exception {
+    EkmConfig expectedResponse =
+        EkmConfig.newBuilder()
+            .setName(EkmConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setDefaultEkmConnection(
+                EkmConnectionName.of("[PROJECT]", "[LOCATION]", "[EKM_CONNECTION]").toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    EkmConfigName name = EkmConfigName.of("[PROJECT]", "[LOCATION]");
+
+    EkmConfig actualResponse = client.getEkmConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getEkmConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EkmConfigName name = EkmConfigName.of("[PROJECT]", "[LOCATION]");
+      client.getEkmConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEkmConfigTest2() throws Exception {
+    EkmConfig expectedResponse =
+        EkmConfig.newBuilder()
+            .setName(EkmConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setDefaultEkmConnection(
+                EkmConnectionName.of("[PROJECT]", "[LOCATION]", "[EKM_CONNECTION]").toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-4516/locations/location-4516/ekmConfig";
+
+    EkmConfig actualResponse = client.getEkmConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getEkmConfigExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-4516/locations/location-4516/ekmConfig";
+      client.getEkmConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateEkmConfigTest() throws Exception {
+    EkmConfig expectedResponse =
+        EkmConfig.newBuilder()
+            .setName(EkmConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setDefaultEkmConnection(
+                EkmConnectionName.of("[PROJECT]", "[LOCATION]", "[EKM_CONNECTION]").toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    EkmConfig ekmConfig =
+        EkmConfig.newBuilder()
+            .setName(EkmConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setDefaultEkmConnection(
+                EkmConnectionName.of("[PROJECT]", "[LOCATION]", "[EKM_CONNECTION]").toString())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    EkmConfig actualResponse = client.updateEkmConfig(ekmConfig, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateEkmConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EkmConfig ekmConfig =
+          EkmConfig.newBuilder()
+              .setName(EkmConfigName.of("[PROJECT]", "[LOCATION]").toString())
+              .setDefaultEkmConnection(
+                  EkmConnectionName.of("[PROJECT]", "[LOCATION]", "[EKM_CONNECTION]").toString())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateEkmConfig(ekmConfig, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

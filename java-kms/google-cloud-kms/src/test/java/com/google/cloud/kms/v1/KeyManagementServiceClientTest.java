@@ -664,6 +664,8 @@ public class KeyManagementServiceClientTest {
             .setImportJob("importJob-208547368")
             .setImportTime(Timestamp.newBuilder().build())
             .setImportFailureReason("importFailureReason985493705")
+            .setGenerationFailureReason("generationFailureReason-1733956042")
+            .setExternalDestructionFailureReason("externalDestructionFailureReason-914693177")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
             .setReimportEligible(true)
             .build();
@@ -724,6 +726,8 @@ public class KeyManagementServiceClientTest {
             .setImportJob("importJob-208547368")
             .setImportTime(Timestamp.newBuilder().build())
             .setImportFailureReason("importFailureReason985493705")
+            .setGenerationFailureReason("generationFailureReason-1733956042")
+            .setExternalDestructionFailureReason("externalDestructionFailureReason-914693177")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
             .setReimportEligible(true)
             .build();
@@ -1159,6 +1163,8 @@ public class KeyManagementServiceClientTest {
             .setImportJob("importJob-208547368")
             .setImportTime(Timestamp.newBuilder().build())
             .setImportFailureReason("importFailureReason985493705")
+            .setGenerationFailureReason("generationFailureReason-1733956042")
+            .setExternalDestructionFailureReason("externalDestructionFailureReason-914693177")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
             .setReimportEligible(true)
             .build();
@@ -1221,6 +1227,8 @@ public class KeyManagementServiceClientTest {
             .setImportJob("importJob-208547368")
             .setImportTime(Timestamp.newBuilder().build())
             .setImportFailureReason("importFailureReason985493705")
+            .setGenerationFailureReason("generationFailureReason-1733956042")
+            .setExternalDestructionFailureReason("externalDestructionFailureReason-914693177")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
             .setReimportEligible(true)
             .build();
@@ -1281,6 +1289,8 @@ public class KeyManagementServiceClientTest {
             .setImportJob("importJob-208547368")
             .setImportTime(Timestamp.newBuilder().build())
             .setImportFailureReason("importFailureReason985493705")
+            .setGenerationFailureReason("generationFailureReason-1733956042")
+            .setExternalDestructionFailureReason("externalDestructionFailureReason-914693177")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
             .setReimportEligible(true)
             .build();
@@ -1532,6 +1542,8 @@ public class KeyManagementServiceClientTest {
             .setImportJob("importJob-208547368")
             .setImportTime(Timestamp.newBuilder().build())
             .setImportFailureReason("importFailureReason985493705")
+            .setGenerationFailureReason("generationFailureReason-1733956042")
+            .setExternalDestructionFailureReason("externalDestructionFailureReason-914693177")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
             .setReimportEligible(true)
             .build();
@@ -1701,6 +1713,8 @@ public class KeyManagementServiceClientTest {
             .setImportJob("importJob-208547368")
             .setImportTime(Timestamp.newBuilder().build())
             .setImportFailureReason("importFailureReason985493705")
+            .setGenerationFailureReason("generationFailureReason-1733956042")
+            .setExternalDestructionFailureReason("externalDestructionFailureReason-914693177")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
             .setReimportEligible(true)
             .build();
@@ -1762,6 +1776,8 @@ public class KeyManagementServiceClientTest {
             .setImportJob("importJob-208547368")
             .setImportTime(Timestamp.newBuilder().build())
             .setImportFailureReason("importFailureReason985493705")
+            .setGenerationFailureReason("generationFailureReason-1733956042")
+            .setExternalDestructionFailureReason("externalDestructionFailureReason-914693177")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
             .setReimportEligible(true)
             .build();
@@ -1819,6 +1835,8 @@ public class KeyManagementServiceClientTest {
             .setImportJob("importJob-208547368")
             .setImportTime(Timestamp.newBuilder().build())
             .setImportFailureReason("importFailureReason985493705")
+            .setGenerationFailureReason("generationFailureReason-1733956042")
+            .setExternalDestructionFailureReason("externalDestructionFailureReason-914693177")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
             .setReimportEligible(true)
             .build();
@@ -1880,6 +1898,8 @@ public class KeyManagementServiceClientTest {
             .setImportJob("importJob-208547368")
             .setImportTime(Timestamp.newBuilder().build())
             .setImportFailureReason("importFailureReason985493705")
+            .setGenerationFailureReason("generationFailureReason-1733956042")
+            .setExternalDestructionFailureReason("externalDestructionFailureReason-914693177")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
             .setReimportEligible(true)
             .build();

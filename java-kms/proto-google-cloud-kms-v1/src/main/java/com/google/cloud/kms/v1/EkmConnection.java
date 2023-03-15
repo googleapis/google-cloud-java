@@ -48,6 +48,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     serviceResolvers_ = java.util.Collections.emptyList();
     etag_ = "";
+    keyManagementMode_ = 0;
+    cryptoSpacePath_ = "";
   }
 
   @java.lang.Override
@@ -74,6 +76,216 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.kms.v1.EkmConnection.class,
             com.google.cloud.kms.v1.EkmConnection.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * [KeyManagementMode][google.cloud.kms.v1.EkmConnection.KeyManagementMode]
+   * describes who can perform control plane cryptographic operations using this
+   * [EkmConnection][google.cloud.kms.v1.EkmConnection].
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.kms.v1.EkmConnection.KeyManagementMode}
+   */
+  public enum KeyManagementMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Not specified.
+     * </pre>
+     *
+     * <code>KEY_MANAGEMENT_MODE_UNSPECIFIED = 0;</code>
+     */
+    KEY_MANAGEMENT_MODE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * EKM-side key management operations on
+     * [CryptoKeys][google.cloud.kms.v1.CryptoKey] created with this
+     * [EkmConnection][google.cloud.kms.v1.EkmConnection] must be initiated from
+     * the EKM directly and cannot be performed from Cloud KMS. This means that:
+     * * When creating a
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] associated with
+     * this
+     *   [EkmConnection][google.cloud.kms.v1.EkmConnection], the caller must
+     *   supply the key path of pre-existing external key material that will be
+     *   linked to the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+     * * Destruction of external key material cannot be requested via the
+     *   Cloud KMS API and must be performed directly in the EKM.
+     * * Automatic rotation of key material is not supported.
+     * </pre>
+     *
+     * <code>MANUAL = 1;</code>
+     */
+    MANUAL(1),
+    /**
+     *
+     *
+     * <pre>
+     * All [CryptoKeys][google.cloud.kms.v1.CryptoKey] created with this
+     * [EkmConnection][google.cloud.kms.v1.EkmConnection] use EKM-side key
+     * management operations initiated from Cloud KMS. This means that:
+     * * When a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+     * associated with this [EkmConnection][google.cloud.kms.v1.EkmConnection]
+     * is
+     *   created, the EKM automatically generates new key material and a new
+     *   key path. The caller cannot supply the key path of pre-existing
+     *   external key material.
+     * * Destruction of external key material associated with this
+     *   [EkmConnection][google.cloud.kms.v1.EkmConnection] can be requested by
+     *   calling [DestroyCryptoKeyVersion][EkmService.DestroyCryptoKeyVersion].
+     * * Automatic rotation of key material is supported.
+     * </pre>
+     *
+     * <code>CLOUD_KMS = 2;</code>
+     */
+    CLOUD_KMS(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Not specified.
+     * </pre>
+     *
+     * <code>KEY_MANAGEMENT_MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int KEY_MANAGEMENT_MODE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * EKM-side key management operations on
+     * [CryptoKeys][google.cloud.kms.v1.CryptoKey] created with this
+     * [EkmConnection][google.cloud.kms.v1.EkmConnection] must be initiated from
+     * the EKM directly and cannot be performed from Cloud KMS. This means that:
+     * * When creating a
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] associated with
+     * this
+     *   [EkmConnection][google.cloud.kms.v1.EkmConnection], the caller must
+     *   supply the key path of pre-existing external key material that will be
+     *   linked to the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+     * * Destruction of external key material cannot be requested via the
+     *   Cloud KMS API and must be performed directly in the EKM.
+     * * Automatic rotation of key material is not supported.
+     * </pre>
+     *
+     * <code>MANUAL = 1;</code>
+     */
+    public static final int MANUAL_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * All [CryptoKeys][google.cloud.kms.v1.CryptoKey] created with this
+     * [EkmConnection][google.cloud.kms.v1.EkmConnection] use EKM-side key
+     * management operations initiated from Cloud KMS. This means that:
+     * * When a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+     * associated with this [EkmConnection][google.cloud.kms.v1.EkmConnection]
+     * is
+     *   created, the EKM automatically generates new key material and a new
+     *   key path. The caller cannot supply the key path of pre-existing
+     *   external key material.
+     * * Destruction of external key material associated with this
+     *   [EkmConnection][google.cloud.kms.v1.EkmConnection] can be requested by
+     *   calling [DestroyCryptoKeyVersion][EkmService.DestroyCryptoKeyVersion].
+     * * Automatic rotation of key material is supported.
+     * </pre>
+     *
+     * <code>CLOUD_KMS = 2;</code>
+     */
+    public static final int CLOUD_KMS_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static KeyManagementMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static KeyManagementMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return KEY_MANAGEMENT_MODE_UNSPECIFIED;
+        case 1:
+          return MANUAL;
+        case 2:
+          return CLOUD_KMS;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<KeyManagementMode>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<KeyManagementMode>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<KeyManagementMode>() {
+              public KeyManagementMode findValueByNumber(int number) {
+                return KeyManagementMode.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.kms.v1.EkmConnection.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final KeyManagementMode[] VALUES = values();
+
+    public static KeyManagementMode valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private KeyManagementMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.kms.v1.EkmConnection.KeyManagementMode)
   }
 
   public interface ServiceResolverOrBuilder
@@ -2136,6 +2348,110 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int KEY_MANAGEMENT_MODE_FIELD_NUMBER = 6;
+  private int keyManagementMode_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes who can perform control plane operations on the EKM. If
+   * unset, this defaults to
+   * [MANUAL][google.cloud.kms.v1.EkmConnection.KeyManagementMode.MANUAL].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.EkmConnection.KeyManagementMode key_management_mode = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for keyManagementMode.
+   */
+  @java.lang.Override
+  public int getKeyManagementModeValue() {
+    return keyManagementMode_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes who can perform control plane operations on the EKM. If
+   * unset, this defaults to
+   * [MANUAL][google.cloud.kms.v1.EkmConnection.KeyManagementMode.MANUAL].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.EkmConnection.KeyManagementMode key_management_mode = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The keyManagementMode.
+   */
+  @java.lang.Override
+  public com.google.cloud.kms.v1.EkmConnection.KeyManagementMode getKeyManagementMode() {
+    com.google.cloud.kms.v1.EkmConnection.KeyManagementMode result =
+        com.google.cloud.kms.v1.EkmConnection.KeyManagementMode.forNumber(keyManagementMode_);
+    return result == null
+        ? com.google.cloud.kms.v1.EkmConnection.KeyManagementMode.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int CRYPTO_SPACE_PATH_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cryptoSpacePath_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Identifies the EKM Crypto Space that this
+   * [EkmConnection][google.cloud.kms.v1.EkmConnection] maps to. Note: This
+   * field is required if
+   * [KeyManagementMode][google.cloud.kms.v1.EkmConnection.KeyManagementMode] is
+   * [CLOUD_KMS][google.cloud.kms.v1.EkmConnection.KeyManagementMode.CLOUD_KMS].
+   * </pre>
+   *
+   * <code>string crypto_space_path = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The cryptoSpacePath.
+   */
+  @java.lang.Override
+  public java.lang.String getCryptoSpacePath() {
+    java.lang.Object ref = cryptoSpacePath_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      cryptoSpacePath_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Identifies the EKM Crypto Space that this
+   * [EkmConnection][google.cloud.kms.v1.EkmConnection] maps to. Note: This
+   * field is required if
+   * [KeyManagementMode][google.cloud.kms.v1.EkmConnection.KeyManagementMode] is
+   * [CLOUD_KMS][google.cloud.kms.v1.EkmConnection.KeyManagementMode.CLOUD_KMS].
+   * </pre>
+   *
+   * <code>string crypto_space_path = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for cryptoSpacePath.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCryptoSpacePathBytes() {
+    java.lang.Object ref = cryptoSpacePath_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      cryptoSpacePath_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2162,6 +2478,14 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, etag_);
     }
+    if (keyManagementMode_
+        != com.google.cloud.kms.v1.EkmConnection.KeyManagementMode.KEY_MANAGEMENT_MODE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(6, keyManagementMode_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cryptoSpacePath_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, cryptoSpacePath_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2182,6 +2506,14 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, etag_);
+    }
+    if (keyManagementMode_
+        != com.google.cloud.kms.v1.EkmConnection.KeyManagementMode.KEY_MANAGEMENT_MODE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, keyManagementMode_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cryptoSpacePath_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, cryptoSpacePath_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2205,6 +2537,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getServiceResolversList().equals(other.getServiceResolversList())) return false;
     if (!getEtag().equals(other.getEtag())) return false;
+    if (keyManagementMode_ != other.keyManagementMode_) return false;
+    if (!getCryptoSpacePath().equals(other.getCryptoSpacePath())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2228,6 +2562,10 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
+    hash = (37 * hash) + KEY_MANAGEMENT_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + keyManagementMode_;
+    hash = (37 * hash) + CRYPTO_SPACE_PATH_FIELD_NUMBER;
+    hash = (53 * hash) + getCryptoSpacePath().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2387,6 +2725,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000004);
       etag_ = "";
+      keyManagementMode_ = 0;
+      cryptoSpacePath_ = "";
       return this;
     }
 
@@ -2444,6 +2784,12 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.keyManagementMode_ = keyManagementMode_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.cryptoSpacePath_ = cryptoSpacePath_;
       }
     }
 
@@ -2532,6 +2878,14 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (other.keyManagementMode_ != 0) {
+        setKeyManagementModeValue(other.getKeyManagementModeValue());
+      }
+      if (!other.getCryptoSpacePath().isEmpty()) {
+        cryptoSpacePath_ = other.cryptoSpacePath_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2590,6 +2944,18 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 42
+            case 48:
+              {
+                keyManagementMode_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 48
+            case 58:
+              {
+                cryptoSpacePath_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3515,6 +3881,245 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       etag_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private int keyManagementMode_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes who can perform control plane operations on the EKM. If
+     * unset, this defaults to
+     * [MANUAL][google.cloud.kms.v1.EkmConnection.KeyManagementMode.MANUAL].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.EkmConnection.KeyManagementMode key_management_mode = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for keyManagementMode.
+     */
+    @java.lang.Override
+    public int getKeyManagementModeValue() {
+      return keyManagementMode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes who can perform control plane operations on the EKM. If
+     * unset, this defaults to
+     * [MANUAL][google.cloud.kms.v1.EkmConnection.KeyManagementMode.MANUAL].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.EkmConnection.KeyManagementMode key_management_mode = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for keyManagementMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeyManagementModeValue(int value) {
+      keyManagementMode_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes who can perform control plane operations on the EKM. If
+     * unset, this defaults to
+     * [MANUAL][google.cloud.kms.v1.EkmConnection.KeyManagementMode.MANUAL].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.EkmConnection.KeyManagementMode key_management_mode = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The keyManagementMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.kms.v1.EkmConnection.KeyManagementMode getKeyManagementMode() {
+      com.google.cloud.kms.v1.EkmConnection.KeyManagementMode result =
+          com.google.cloud.kms.v1.EkmConnection.KeyManagementMode.forNumber(keyManagementMode_);
+      return result == null
+          ? com.google.cloud.kms.v1.EkmConnection.KeyManagementMode.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes who can perform control plane operations on the EKM. If
+     * unset, this defaults to
+     * [MANUAL][google.cloud.kms.v1.EkmConnection.KeyManagementMode.MANUAL].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.EkmConnection.KeyManagementMode key_management_mode = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The keyManagementMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeyManagementMode(
+        com.google.cloud.kms.v1.EkmConnection.KeyManagementMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      keyManagementMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes who can perform control plane operations on the EKM. If
+     * unset, this defaults to
+     * [MANUAL][google.cloud.kms.v1.EkmConnection.KeyManagementMode.MANUAL].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.EkmConnection.KeyManagementMode key_management_mode = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKeyManagementMode() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      keyManagementMode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object cryptoSpacePath_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Identifies the EKM Crypto Space that this
+     * [EkmConnection][google.cloud.kms.v1.EkmConnection] maps to. Note: This
+     * field is required if
+     * [KeyManagementMode][google.cloud.kms.v1.EkmConnection.KeyManagementMode] is
+     * [CLOUD_KMS][google.cloud.kms.v1.EkmConnection.KeyManagementMode.CLOUD_KMS].
+     * </pre>
+     *
+     * <code>string crypto_space_path = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The cryptoSpacePath.
+     */
+    public java.lang.String getCryptoSpacePath() {
+      java.lang.Object ref = cryptoSpacePath_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cryptoSpacePath_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Identifies the EKM Crypto Space that this
+     * [EkmConnection][google.cloud.kms.v1.EkmConnection] maps to. Note: This
+     * field is required if
+     * [KeyManagementMode][google.cloud.kms.v1.EkmConnection.KeyManagementMode] is
+     * [CLOUD_KMS][google.cloud.kms.v1.EkmConnection.KeyManagementMode.CLOUD_KMS].
+     * </pre>
+     *
+     * <code>string crypto_space_path = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for cryptoSpacePath.
+     */
+    public com.google.protobuf.ByteString getCryptoSpacePathBytes() {
+      java.lang.Object ref = cryptoSpacePath_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        cryptoSpacePath_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Identifies the EKM Crypto Space that this
+     * [EkmConnection][google.cloud.kms.v1.EkmConnection] maps to. Note: This
+     * field is required if
+     * [KeyManagementMode][google.cloud.kms.v1.EkmConnection.KeyManagementMode] is
+     * [CLOUD_KMS][google.cloud.kms.v1.EkmConnection.KeyManagementMode.CLOUD_KMS].
+     * </pre>
+     *
+     * <code>string crypto_space_path = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The cryptoSpacePath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCryptoSpacePath(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      cryptoSpacePath_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Identifies the EKM Crypto Space that this
+     * [EkmConnection][google.cloud.kms.v1.EkmConnection] maps to. Note: This
+     * field is required if
+     * [KeyManagementMode][google.cloud.kms.v1.EkmConnection.KeyManagementMode] is
+     * [CLOUD_KMS][google.cloud.kms.v1.EkmConnection.KeyManagementMode.CLOUD_KMS].
+     * </pre>
+     *
+     * <code>string crypto_space_path = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCryptoSpacePath() {
+      cryptoSpacePath_ = getDefaultInstance().getCryptoSpacePath();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Identifies the EKM Crypto Space that this
+     * [EkmConnection][google.cloud.kms.v1.EkmConnection] maps to. Note: This
+     * field is required if
+     * [KeyManagementMode][google.cloud.kms.v1.EkmConnection.KeyManagementMode] is
+     * [CLOUD_KMS][google.cloud.kms.v1.EkmConnection.KeyManagementMode.CLOUD_KMS].
+     * </pre>
+     *
+     * <code>string crypto_space_path = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for cryptoSpacePath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCryptoSpacePathBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      cryptoSpacePath_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
