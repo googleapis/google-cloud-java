@@ -2230,6 +2230,57 @@ public final class CloudChannelServiceGrpc {
     return getListSubscribersMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.ListEntitlementChangesRequest,
+          com.google.cloud.channel.v1.ListEntitlementChangesResponse>
+      getListEntitlementChangesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListEntitlementChanges",
+      requestType = com.google.cloud.channel.v1.ListEntitlementChangesRequest.class,
+      responseType = com.google.cloud.channel.v1.ListEntitlementChangesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.ListEntitlementChangesRequest,
+          com.google.cloud.channel.v1.ListEntitlementChangesResponse>
+      getListEntitlementChangesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.channel.v1.ListEntitlementChangesRequest,
+            com.google.cloud.channel.v1.ListEntitlementChangesResponse>
+        getListEntitlementChangesMethod;
+    if ((getListEntitlementChangesMethod = CloudChannelServiceGrpc.getListEntitlementChangesMethod)
+        == null) {
+      synchronized (CloudChannelServiceGrpc.class) {
+        if ((getListEntitlementChangesMethod =
+                CloudChannelServiceGrpc.getListEntitlementChangesMethod)
+            == null) {
+          CloudChannelServiceGrpc.getListEntitlementChangesMethod =
+              getListEntitlementChangesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.channel.v1.ListEntitlementChangesRequest,
+                          com.google.cloud.channel.v1.ListEntitlementChangesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListEntitlementChanges"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.channel.v1.ListEntitlementChangesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.channel.v1.ListEntitlementChangesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudChannelServiceMethodDescriptorSupplier("ListEntitlementChanges"))
+                      .build();
+        }
+      }
+    }
+    return getListEntitlementChangesMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static CloudChannelServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<CloudChannelServiceStub> factory =
@@ -3612,6 +3663,33 @@ public final class CloudChannelServiceGrpc {
           getListSubscribersMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * List entitlement history.
+     * Possible error codes:
+     * * PERMISSION_DENIED: The reseller account making the request and the
+     * provided reseller account are different.
+     * * INVALID_ARGUMENT: Missing or invalid required fields in the request.
+     * * NOT_FOUND: The parent resource doesn't exist. Usually the result of an
+     * invalid name parameter.
+     * * INTERNAL: Any non-user error related to a technical issue in the backend.
+     * In this case, contact CloudChannel support.
+     * * UNKNOWN: Any non-user error related to a technical issue in the backend.
+     * In this case, contact Cloud Channel support.
+     * Return value:
+     * List of [EntitlementChange][google.cloud.channel.v1.EntitlementChange]s.
+     * </pre>
+     */
+    public void listEntitlementChanges(
+        com.google.cloud.channel.v1.ListEntitlementChangesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListEntitlementChangesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListEntitlementChangesMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -3910,6 +3988,13 @@ public final class CloudChannelServiceGrpc {
                       com.google.cloud.channel.v1.ListSubscribersRequest,
                       com.google.cloud.channel.v1.ListSubscribersResponse>(
                       this, METHODID_LIST_SUBSCRIBERS)))
+          .addMethod(
+              getListEntitlementChangesMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.channel.v1.ListEntitlementChangesRequest,
+                      com.google.cloud.channel.v1.ListEntitlementChangesResponse>(
+                      this, METHODID_LIST_ENTITLEMENT_CHANGES)))
           .build();
     }
   }
@@ -5352,6 +5437,35 @@ public final class CloudChannelServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * List entitlement history.
+     * Possible error codes:
+     * * PERMISSION_DENIED: The reseller account making the request and the
+     * provided reseller account are different.
+     * * INVALID_ARGUMENT: Missing or invalid required fields in the request.
+     * * NOT_FOUND: The parent resource doesn't exist. Usually the result of an
+     * invalid name parameter.
+     * * INTERNAL: Any non-user error related to a technical issue in the backend.
+     * In this case, contact CloudChannel support.
+     * * UNKNOWN: Any non-user error related to a technical issue in the backend.
+     * In this case, contact Cloud Channel support.
+     * Return value:
+     * List of [EntitlementChange][google.cloud.channel.v1.EntitlementChange]s.
+     * </pre>
+     */
+    public void listEntitlementChanges(
+        com.google.cloud.channel.v1.ListEntitlementChangesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListEntitlementChangesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListEntitlementChangesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -6639,6 +6753,31 @@ public final class CloudChannelServiceGrpc {
         com.google.cloud.channel.v1.ListSubscribersRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListSubscribersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List entitlement history.
+     * Possible error codes:
+     * * PERMISSION_DENIED: The reseller account making the request and the
+     * provided reseller account are different.
+     * * INVALID_ARGUMENT: Missing or invalid required fields in the request.
+     * * NOT_FOUND: The parent resource doesn't exist. Usually the result of an
+     * invalid name parameter.
+     * * INTERNAL: Any non-user error related to a technical issue in the backend.
+     * In this case, contact CloudChannel support.
+     * * UNKNOWN: Any non-user error related to a technical issue in the backend.
+     * In this case, contact Cloud Channel support.
+     * Return value:
+     * List of [EntitlementChange][google.cloud.channel.v1.EntitlementChange]s.
+     * </pre>
+     */
+    public com.google.cloud.channel.v1.ListEntitlementChangesResponse listEntitlementChanges(
+        com.google.cloud.channel.v1.ListEntitlementChangesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEntitlementChangesMethod(), getCallOptions(), request);
     }
   }
 
@@ -7972,6 +8111,32 @@ public final class CloudChannelServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListSubscribersMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * List entitlement history.
+     * Possible error codes:
+     * * PERMISSION_DENIED: The reseller account making the request and the
+     * provided reseller account are different.
+     * * INVALID_ARGUMENT: Missing or invalid required fields in the request.
+     * * NOT_FOUND: The parent resource doesn't exist. Usually the result of an
+     * invalid name parameter.
+     * * INTERNAL: Any non-user error related to a technical issue in the backend.
+     * In this case, contact CloudChannel support.
+     * * UNKNOWN: Any non-user error related to a technical issue in the backend.
+     * In this case, contact Cloud Channel support.
+     * Return value:
+     * List of [EntitlementChange][google.cloud.channel.v1.EntitlementChange]s.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.channel.v1.ListEntitlementChangesResponse>
+        listEntitlementChanges(com.google.cloud.channel.v1.ListEntitlementChangesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListEntitlementChangesMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CUSTOMERS = 0;
@@ -8019,6 +8184,7 @@ public final class CloudChannelServiceGrpc {
   private static final int METHODID_REGISTER_SUBSCRIBER = 42;
   private static final int METHODID_UNREGISTER_SUBSCRIBER = 43;
   private static final int METHODID_LIST_SUBSCRIBERS = 44;
+  private static final int METHODID_LIST_ENTITLEMENT_CHANGES = 45;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -8299,6 +8465,13 @@ public final class CloudChannelServiceGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListSubscribersResponse>)
                   responseObserver);
           break;
+        case METHODID_LIST_ENTITLEMENT_CHANGES:
+          serviceImpl.listEntitlementChanges(
+              (com.google.cloud.channel.v1.ListEntitlementChangesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.channel.v1.ListEntitlementChangesResponse>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -8408,6 +8581,7 @@ public final class CloudChannelServiceGrpc {
                       .addMethod(getRegisterSubscriberMethod())
                       .addMethod(getUnregisterSubscriberMethod())
                       .addMethod(getListSubscribersMethod())
+                      .addMethod(getListEntitlementChangesMethod())
                       .build();
         }
       }

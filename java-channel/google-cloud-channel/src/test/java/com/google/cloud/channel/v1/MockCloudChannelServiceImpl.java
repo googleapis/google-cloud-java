@@ -1018,4 +1018,26 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void listEntitlementChanges(
+      ListEntitlementChangesRequest request,
+      StreamObserver<ListEntitlementChangesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListEntitlementChangesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListEntitlementChangesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListEntitlementChanges, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListEntitlementChangesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

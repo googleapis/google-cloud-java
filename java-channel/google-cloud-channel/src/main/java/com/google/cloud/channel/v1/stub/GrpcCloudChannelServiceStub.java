@@ -20,6 +20,7 @@ import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListChannelP
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListChannelPartnerRepricingConfigsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListCustomerRepricingConfigsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListCustomersPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListEntitlementChangesPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListEntitlementsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListOffersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListProductsPagedResponse;
@@ -71,6 +72,8 @@ import com.google.cloud.channel.v1.ListCustomerRepricingConfigsRequest;
 import com.google.cloud.channel.v1.ListCustomerRepricingConfigsResponse;
 import com.google.cloud.channel.v1.ListCustomersRequest;
 import com.google.cloud.channel.v1.ListCustomersResponse;
+import com.google.cloud.channel.v1.ListEntitlementChangesRequest;
+import com.google.cloud.channel.v1.ListEntitlementChangesResponse;
 import com.google.cloud.channel.v1.ListEntitlementsRequest;
 import com.google.cloud.channel.v1.ListEntitlementsResponse;
 import com.google.cloud.channel.v1.ListOffersRequest;
@@ -639,6 +642,20 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   ProtoUtils.marshaller(ListSubscribersResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          ListEntitlementChangesRequest, ListEntitlementChangesResponse>
+      listEntitlementChangesMethodDescriptor =
+          MethodDescriptor
+              .<ListEntitlementChangesRequest, ListEntitlementChangesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.channel.v1.CloudChannelService/ListEntitlementChanges")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListEntitlementChangesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListEntitlementChangesResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListCustomersRequest, ListCustomersResponse> listCustomersCallable;
   private final UnaryCallable<ListCustomersRequest, ListCustomersPagedResponse>
       listCustomersPagedCallable;
@@ -766,6 +783,10 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
       listSubscribersCallable;
   private final UnaryCallable<ListSubscribersRequest, ListSubscribersPagedResponse>
       listSubscribersPagedCallable;
+  private final UnaryCallable<ListEntitlementChangesRequest, ListEntitlementChangesResponse>
+      listEntitlementChangesCallable;
+  private final UnaryCallable<ListEntitlementChangesRequest, ListEntitlementChangesPagedResponse>
+      listEntitlementChangesPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -1306,6 +1327,18 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<ListEntitlementChangesRequest, ListEntitlementChangesResponse>
+        listEntitlementChangesTransportSettings =
+            GrpcCallSettings
+                .<ListEntitlementChangesRequest, ListEntitlementChangesResponse>newBuilder()
+                .setMethodDescriptor(listEntitlementChangesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
 
     this.listCustomersCallable =
         callableFactory.createUnaryCallable(
@@ -1619,6 +1652,16 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
     this.listSubscribersPagedCallable =
         callableFactory.createPagedCallable(
             listSubscribersTransportSettings, settings.listSubscribersSettings(), clientContext);
+    this.listEntitlementChangesCallable =
+        callableFactory.createUnaryCallable(
+            listEntitlementChangesTransportSettings,
+            settings.listEntitlementChangesSettings(),
+            clientContext);
+    this.listEntitlementChangesPagedCallable =
+        callableFactory.createPagedCallable(
+            listEntitlementChangesTransportSettings,
+            settings.listEntitlementChangesSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -2021,6 +2064,18 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
   public UnaryCallable<ListSubscribersRequest, ListSubscribersPagedResponse>
       listSubscribersPagedCallable() {
     return listSubscribersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListEntitlementChangesRequest, ListEntitlementChangesResponse>
+      listEntitlementChangesCallable() {
+    return listEntitlementChangesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListEntitlementChangesRequest, ListEntitlementChangesPagedResponse>
+      listEntitlementChangesPagedCallable() {
+    return listEntitlementChangesPagedCallable;
   }
 
   @Override

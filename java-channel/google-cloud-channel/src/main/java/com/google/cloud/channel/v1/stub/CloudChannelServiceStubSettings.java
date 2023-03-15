@@ -20,6 +20,7 @@ import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListChannelP
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListChannelPartnerRepricingConfigsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListCustomerRepricingConfigsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListCustomersPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListEntitlementChangesPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListEntitlementsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListOffersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListProductsPagedResponse;
@@ -79,6 +80,7 @@ import com.google.cloud.channel.v1.DeleteChannelPartnerRepricingConfigRequest;
 import com.google.cloud.channel.v1.DeleteCustomerRepricingConfigRequest;
 import com.google.cloud.channel.v1.DeleteCustomerRequest;
 import com.google.cloud.channel.v1.Entitlement;
+import com.google.cloud.channel.v1.EntitlementChange;
 import com.google.cloud.channel.v1.GetChannelPartnerLinkRequest;
 import com.google.cloud.channel.v1.GetChannelPartnerRepricingConfigRequest;
 import com.google.cloud.channel.v1.GetCustomerRepricingConfigRequest;
@@ -93,6 +95,8 @@ import com.google.cloud.channel.v1.ListCustomerRepricingConfigsRequest;
 import com.google.cloud.channel.v1.ListCustomerRepricingConfigsResponse;
 import com.google.cloud.channel.v1.ListCustomersRequest;
 import com.google.cloud.channel.v1.ListCustomersResponse;
+import com.google.cloud.channel.v1.ListEntitlementChangesRequest;
+import com.google.cloud.channel.v1.ListEntitlementChangesResponse;
 import com.google.cloud.channel.v1.ListEntitlementsRequest;
 import com.google.cloud.channel.v1.ListEntitlementsResponse;
 import com.google.cloud.channel.v1.ListOffersRequest;
@@ -316,6 +320,11 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
   private final PagedCallSettings<
           ListSubscribersRequest, ListSubscribersResponse, ListSubscribersPagedResponse>
       listSubscribersSettings;
+  private final PagedCallSettings<
+          ListEntitlementChangesRequest,
+          ListEntitlementChangesResponse,
+          ListEntitlementChangesPagedResponse>
+      listEntitlementChangesSettings;
 
   private static final PagedListDescriptor<ListCustomersRequest, ListCustomersResponse, Customer>
       LIST_CUSTOMERS_PAGE_STR_DESC =
@@ -847,6 +856,49 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
             }
           };
 
+  private static final PagedListDescriptor<
+          ListEntitlementChangesRequest, ListEntitlementChangesResponse, EntitlementChange>
+      LIST_ENTITLEMENT_CHANGES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListEntitlementChangesRequest, ListEntitlementChangesResponse, EntitlementChange>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListEntitlementChangesRequest injectToken(
+                ListEntitlementChangesRequest payload, String token) {
+              return ListEntitlementChangesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListEntitlementChangesRequest injectPageSize(
+                ListEntitlementChangesRequest payload, int pageSize) {
+              return ListEntitlementChangesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListEntitlementChangesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListEntitlementChangesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<EntitlementChange> extractResources(
+                ListEntitlementChangesResponse payload) {
+              return payload.getEntitlementChangesList() == null
+                  ? ImmutableList.<EntitlementChange>of()
+                  : payload.getEntitlementChangesList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListCustomersRequest, ListCustomersResponse, ListCustomersPagedResponse>
       LIST_CUSTOMERS_PAGE_STR_FACT =
@@ -1136,6 +1188,33 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
               PageContext<ListSubscribersRequest, ListSubscribersResponse, String> pageContext =
                   PageContext.create(callable, LIST_SUBSCRIBERS_PAGE_STR_DESC, request, context);
               return ListSubscribersPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListEntitlementChangesRequest,
+          ListEntitlementChangesResponse,
+          ListEntitlementChangesPagedResponse>
+      LIST_ENTITLEMENT_CHANGES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListEntitlementChangesRequest,
+              ListEntitlementChangesResponse,
+              ListEntitlementChangesPagedResponse>() {
+            @Override
+            public ApiFuture<ListEntitlementChangesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListEntitlementChangesRequest, ListEntitlementChangesResponse>
+                    callable,
+                ListEntitlementChangesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListEntitlementChangesResponse> futureResponse) {
+              PageContext<
+                      ListEntitlementChangesRequest,
+                      ListEntitlementChangesResponse,
+                      EntitlementChange>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_ENTITLEMENT_CHANGES_PAGE_STR_DESC, request, context);
+              return ListEntitlementChangesPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -1485,6 +1564,15 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     return listSubscribersSettings;
   }
 
+  /** Returns the object with the settings used for calls to listEntitlementChanges. */
+  public PagedCallSettings<
+          ListEntitlementChangesRequest,
+          ListEntitlementChangesResponse,
+          ListEntitlementChangesPagedResponse>
+      listEntitlementChangesSettings() {
+    return listEntitlementChangesSettings;
+  }
+
   public CloudChannelServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -1667,6 +1755,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     registerSubscriberSettings = settingsBuilder.registerSubscriberSettings().build();
     unregisterSubscriberSettings = settingsBuilder.unregisterSubscriberSettings().build();
     listSubscribersSettings = settingsBuilder.listSubscribersSettings().build();
+    listEntitlementChangesSettings = settingsBuilder.listEntitlementChangesSettings().build();
   }
 
   /** Builder for CloudChannelServiceStubSettings. */
@@ -1822,6 +1911,11 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     private final PagedCallSettings.Builder<
             ListSubscribersRequest, ListSubscribersResponse, ListSubscribersPagedResponse>
         listSubscribersSettings;
+    private final PagedCallSettings.Builder<
+            ListEntitlementChangesRequest,
+            ListEntitlementChangesResponse,
+            ListEntitlementChangesPagedResponse>
+        listEntitlementChangesSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -1933,6 +2027,8 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
       registerSubscriberSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       unregisterSubscriberSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listSubscribersSettings = PagedCallSettings.newBuilder(LIST_SUBSCRIBERS_PAGE_STR_FACT);
+      listEntitlementChangesSettings =
+          PagedCallSettings.newBuilder(LIST_ENTITLEMENT_CHANGES_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1980,7 +2076,8 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
               listPurchasableOffersSettings,
               registerSubscriberSettings,
               unregisterSubscriberSettings,
-              listSubscribersSettings);
+              listSubscribersSettings,
+              listEntitlementChangesSettings);
       initDefaults(this);
     }
 
@@ -2060,6 +2157,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
       registerSubscriberSettings = settings.registerSubscriberSettings.toBuilder();
       unregisterSubscriberSettings = settings.unregisterSubscriberSettings.toBuilder();
       listSubscribersSettings = settings.listSubscribersSettings.toBuilder();
+      listEntitlementChangesSettings = settings.listEntitlementChangesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -2107,7 +2205,8 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
               listPurchasableOffersSettings,
               registerSubscriberSettings,
               unregisterSubscriberSettings,
-              listSubscribersSettings);
+              listSubscribersSettings,
+              listEntitlementChangesSettings);
     }
 
     private static Builder createDefault() {
@@ -2359,6 +2458,11 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
       builder
           .listSubscribersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listEntitlementChangesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -3033,6 +3137,15 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
             ListSubscribersRequest, ListSubscribersResponse, ListSubscribersPagedResponse>
         listSubscribersSettings() {
       return listSubscribersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listEntitlementChanges. */
+    public PagedCallSettings.Builder<
+            ListEntitlementChangesRequest,
+            ListEntitlementChangesResponse,
+            ListEntitlementChangesPagedResponse>
+        listEntitlementChangesSettings() {
+      return listEntitlementChangesSettings;
     }
 
     @Override

@@ -422,4 +422,31 @@ public interface CustomerOrBuilder
    * @return The bytes for channelPartnerId.
    */
   com.google.protobuf.ByteString getChannelPartnerIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. External CRM ID for the customer.
+   * Populated only if a CRM ID exists for this customer.
+   * </pre>
+   *
+   * <code>string correlation_id = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The correlationId.
+   */
+  java.lang.String getCorrelationId();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. External CRM ID for the customer.
+   * Populated only if a CRM ID exists for this customer.
+   * </pre>
+   *
+   * <code>string correlation_id = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for correlationId.
+   */
+  com.google.protobuf.ByteString getCorrelationIdBytes();
 }

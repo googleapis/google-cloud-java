@@ -20,6 +20,7 @@ import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListChannelP
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListChannelPartnerRepricingConfigsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListCustomerRepricingConfigsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListCustomersPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListEntitlementChangesPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListEntitlementsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListOffersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListProductsPagedResponse;
@@ -67,6 +68,8 @@ import com.google.cloud.channel.v1.ListCustomerRepricingConfigsRequest;
 import com.google.cloud.channel.v1.ListCustomerRepricingConfigsResponse;
 import com.google.cloud.channel.v1.ListCustomersRequest;
 import com.google.cloud.channel.v1.ListCustomersResponse;
+import com.google.cloud.channel.v1.ListEntitlementChangesRequest;
+import com.google.cloud.channel.v1.ListEntitlementChangesResponse;
 import com.google.cloud.channel.v1.ListEntitlementsRequest;
 import com.google.cloud.channel.v1.ListEntitlementsResponse;
 import com.google.cloud.channel.v1.ListOffersRequest;
@@ -473,6 +476,17 @@ public abstract class CloudChannelServiceStub implements BackgroundResource {
 
   public UnaryCallable<ListSubscribersRequest, ListSubscribersResponse> listSubscribersCallable() {
     throw new UnsupportedOperationException("Not implemented: listSubscribersCallable()");
+  }
+
+  public UnaryCallable<ListEntitlementChangesRequest, ListEntitlementChangesPagedResponse>
+      listEntitlementChangesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listEntitlementChangesPagedCallable()");
+  }
+
+  public UnaryCallable<ListEntitlementChangesRequest, ListEntitlementChangesResponse>
+      listEntitlementChangesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listEntitlementChangesCallable()");
   }
 
   @Override

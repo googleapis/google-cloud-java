@@ -43,6 +43,7 @@ public class AsyncListOffersPaged {
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")
               .setLanguageCode("languageCode-2092349083")
+              .setShowFutureOffers(true)
               .build();
       while (true) {
         ListOffersResponse response = cloudChannelServiceClient.listOffersCallable().call(request);

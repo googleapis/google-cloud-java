@@ -151,4 +151,20 @@ public interface ListOffersRequestOrBuilder
    * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A boolean flag that determines if a response returns future
+   * offers 30 days from now. If the show_future_offers is true, the response
+   * will only contain offers that are scheduled to be available 30 days from
+   * now.
+   * </pre>
+   *
+   * <code>bool show_future_offers = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The showFutureOffers.
+   */
+  boolean getShowFutureOffers();
 }

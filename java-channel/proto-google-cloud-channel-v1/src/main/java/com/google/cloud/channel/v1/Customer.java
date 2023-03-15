@@ -45,6 +45,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
     cloudIdentityId_ = "";
     languageCode_ = "";
     channelPartnerId_ = "";
+    correlationId_ = "";
   }
 
   @java.lang.Override
@@ -722,6 +723,59 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int CORRELATION_ID_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object correlationId_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. External CRM ID for the customer.
+   * Populated only if a CRM ID exists for this customer.
+   * </pre>
+   *
+   * <code>string correlation_id = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The correlationId.
+   */
+  @java.lang.Override
+  public java.lang.String getCorrelationId() {
+    java.lang.Object ref = correlationId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      correlationId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. External CRM ID for the customer.
+   * Populated only if a CRM ID exists for this customer.
+   * </pre>
+   *
+   * <code>string correlation_id = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for correlationId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCorrelationIdBytes() {
+    java.lang.Object ref = correlationId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      correlationId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -772,6 +826,9 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(channelPartnerId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, channelPartnerId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(correlationId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, correlationId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -817,6 +874,9 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(channelPartnerId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, channelPartnerId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(correlationId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, correlationId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -859,6 +919,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
       if (!getCloudIdentityInfo().equals(other.getCloudIdentityInfo())) return false;
     }
     if (!getChannelPartnerId().equals(other.getChannelPartnerId())) return false;
+    if (!getCorrelationId().equals(other.getCorrelationId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -904,6 +965,8 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + CHANNEL_PARTNER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getChannelPartnerId().hashCode();
+    hash = (37 * hash) + CORRELATION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getCorrelationId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1074,6 +1137,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
         cloudIdentityInfoBuilder_ = null;
       }
       channelPartnerId_ = "";
+      correlationId_ = "";
       return this;
     }
 
@@ -1151,6 +1215,9 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.channelPartnerId_ = channelPartnerId_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.correlationId_ = correlationId_;
       }
     }
 
@@ -1247,6 +1314,11 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
       if (!other.getChannelPartnerId().isEmpty()) {
         channelPartnerId_ = other.channelPartnerId_;
         bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      if (!other.getCorrelationId().isEmpty()) {
+        correlationId_ = other.correlationId_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1350,6 +1422,12 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000800;
                 break;
               } // case 106
+            case 114:
+              {
+                correlationId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3184,6 +3262,117 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       channelPartnerId_ = value;
       bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object correlationId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. External CRM ID for the customer.
+     * Populated only if a CRM ID exists for this customer.
+     * </pre>
+     *
+     * <code>string correlation_id = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The correlationId.
+     */
+    public java.lang.String getCorrelationId() {
+      java.lang.Object ref = correlationId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        correlationId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. External CRM ID for the customer.
+     * Populated only if a CRM ID exists for this customer.
+     * </pre>
+     *
+     * <code>string correlation_id = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for correlationId.
+     */
+    public com.google.protobuf.ByteString getCorrelationIdBytes() {
+      java.lang.Object ref = correlationId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        correlationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. External CRM ID for the customer.
+     * Populated only if a CRM ID exists for this customer.
+     * </pre>
+     *
+     * <code>string correlation_id = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The correlationId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCorrelationId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      correlationId_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. External CRM ID for the customer.
+     * Populated only if a CRM ID exists for this customer.
+     * </pre>
+     *
+     * <code>string correlation_id = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCorrelationId() {
+      correlationId_ = getDefaultInstance().getCorrelationId();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. External CRM ID for the customer.
+     * Populated only if a CRM ID exists for this customer.
+     * </pre>
+     *
+     * <code>string correlation_id = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for correlationId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCorrelationIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      correlationId_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }

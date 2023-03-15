@@ -20,6 +20,7 @@ import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListChannelP
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListChannelPartnerRepricingConfigsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListCustomerRepricingConfigsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListCustomersPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListEntitlementChangesPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListEntitlementsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListOffersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListProductsPagedResponse;
@@ -174,6 +175,7 @@ public class CloudChannelServiceClientTest {
             .setLanguageCode("languageCode-2092349083")
             .setCloudIdentityInfo(CloudIdentityInfo.newBuilder().build())
             .setChannelPartnerId("channelPartnerId-170366400")
+            .setCorrelationId("correlationId-764983747")
             .build();
     mockCloudChannelService.addResponse(expectedResponse);
 
@@ -223,6 +225,7 @@ public class CloudChannelServiceClientTest {
             .setLanguageCode("languageCode-2092349083")
             .setCloudIdentityInfo(CloudIdentityInfo.newBuilder().build())
             .setChannelPartnerId("channelPartnerId-170366400")
+            .setCorrelationId("correlationId-764983747")
             .build();
     mockCloudChannelService.addResponse(expectedResponse);
 
@@ -321,6 +324,7 @@ public class CloudChannelServiceClientTest {
             .setLanguageCode("languageCode-2092349083")
             .setCloudIdentityInfo(CloudIdentityInfo.newBuilder().build())
             .setChannelPartnerId("channelPartnerId-170366400")
+            .setCorrelationId("correlationId-764983747")
             .build();
     mockCloudChannelService.addResponse(expectedResponse);
 
@@ -379,6 +383,7 @@ public class CloudChannelServiceClientTest {
             .setLanguageCode("languageCode-2092349083")
             .setCloudIdentityInfo(CloudIdentityInfo.newBuilder().build())
             .setChannelPartnerId("channelPartnerId-170366400")
+            .setCorrelationId("correlationId-764983747")
             .build();
     mockCloudChannelService.addResponse(expectedResponse);
 
@@ -505,6 +510,7 @@ public class CloudChannelServiceClientTest {
             .setLanguageCode("languageCode-2092349083")
             .setCloudIdentityInfo(CloudIdentityInfo.newBuilder().build())
             .setChannelPartnerId("channelPartnerId-170366400")
+            .setCorrelationId("correlationId-764983747")
             .build();
     mockCloudChannelService.addResponse(expectedResponse);
 
@@ -574,6 +580,7 @@ public class CloudChannelServiceClientTest {
             .setLanguageCode("languageCode-2092349083")
             .setCloudIdentityInfo(CloudIdentityInfo.newBuilder().build())
             .setChannelPartnerId("channelPartnerId-170366400")
+            .setCorrelationId("correlationId-764983747")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2756,6 +2763,7 @@ public class CloudChannelServiceClientTest {
             .setPageToken("pageToken873572522")
             .setFilter("filter-1274492040")
             .setLanguageCode("languageCode-2092349083")
+            .setShowFutureOffers(true)
             .build();
 
     ListOffersPagedResponse pagedListResponse = client.listOffers(request);
@@ -2774,6 +2782,7 @@ public class CloudChannelServiceClientTest {
     Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
     Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
     Assert.assertEquals(request.getLanguageCode(), actualRequest.getLanguageCode());
+    Assert.assertEquals(request.getShowFutureOffers(), actualRequest.getShowFutureOffers());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -2793,6 +2802,7 @@ public class CloudChannelServiceClientTest {
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")
               .setLanguageCode("languageCode-2092349083")
+              .setShowFutureOffers(true)
               .build();
       client.listOffers(request);
       Assert.fail("No exception raised");
@@ -3067,6 +3077,96 @@ public class CloudChannelServiceClientTest {
               .setPageToken("pageToken873572522")
               .build();
       client.listSubscribers(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listEntitlementChangesTest() throws Exception {
+    EntitlementChange responsesElement = EntitlementChange.newBuilder().build();
+    ListEntitlementChangesResponse expectedResponse =
+        ListEntitlementChangesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEntitlementChanges(Arrays.asList(responsesElement))
+            .build();
+    mockCloudChannelService.addResponse(expectedResponse);
+
+    EntitlementName parent = EntitlementName.of("[ACCOUNT]", "[CUSTOMER]", "[ENTITLEMENT]");
+
+    ListEntitlementChangesPagedResponse pagedListResponse = client.listEntitlementChanges(parent);
+
+    List<EntitlementChange> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEntitlementChangesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCloudChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListEntitlementChangesRequest actualRequest =
+        ((ListEntitlementChangesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listEntitlementChangesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudChannelService.addException(exception);
+
+    try {
+      EntitlementName parent = EntitlementName.of("[ACCOUNT]", "[CUSTOMER]", "[ENTITLEMENT]");
+      client.listEntitlementChanges(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listEntitlementChangesTest2() throws Exception {
+    EntitlementChange responsesElement = EntitlementChange.newBuilder().build();
+    ListEntitlementChangesResponse expectedResponse =
+        ListEntitlementChangesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEntitlementChanges(Arrays.asList(responsesElement))
+            .build();
+    mockCloudChannelService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListEntitlementChangesPagedResponse pagedListResponse = client.listEntitlementChanges(parent);
+
+    List<EntitlementChange> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEntitlementChangesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCloudChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListEntitlementChangesRequest actualRequest =
+        ((ListEntitlementChangesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listEntitlementChangesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudChannelService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listEntitlementChanges(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

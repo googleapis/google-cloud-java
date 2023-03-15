@@ -16,41 +16,48 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START cloudchannel_v1_generated_CloudChannelService_ListOffers_async]
-import com.google.api.core.ApiFuture;
+// [START cloudchannel_v1_generated_CloudChannelService_ListEntitlementChanges_Paged_async]
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
-import com.google.cloud.channel.v1.ListOffersRequest;
-import com.google.cloud.channel.v1.Offer;
+import com.google.cloud.channel.v1.EntitlementChange;
+import com.google.cloud.channel.v1.EntitlementName;
+import com.google.cloud.channel.v1.ListEntitlementChangesRequest;
+import com.google.cloud.channel.v1.ListEntitlementChangesResponse;
+import com.google.common.base.Strings;
 
-public class AsyncListOffers {
+public class AsyncListEntitlementChangesPaged {
 
   public static void main(String[] args) throws Exception {
-    asyncListOffers();
+    asyncListEntitlementChangesPaged();
   }
 
-  public static void asyncListOffers() throws Exception {
+  public static void asyncListEntitlementChangesPaged() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
-      ListOffersRequest request =
-          ListOffersRequest.newBuilder()
-              .setParent("parent-995424086")
+      ListEntitlementChangesRequest request =
+          ListEntitlementChangesRequest.newBuilder()
+              .setParent(EntitlementName.of("[ACCOUNT]", "[CUSTOMER]", "[ENTITLEMENT]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")
-              .setLanguageCode("languageCode-2092349083")
-              .setShowFutureOffers(true)
               .build();
-      ApiFuture<Offer> future =
-          cloudChannelServiceClient.listOffersPagedCallable().futureCall(request);
-      // Do something.
-      for (Offer element : future.get().iterateAll()) {
-        // doThingsWith(element);
+      while (true) {
+        ListEntitlementChangesResponse response =
+            cloudChannelServiceClient.listEntitlementChangesCallable().call(request);
+        for (EntitlementChange element : response.getEntitlementChangesList()) {
+          // doThingsWith(element);
+        }
+        String nextPageToken = response.getNextPageToken();
+        if (!Strings.isNullOrEmpty(nextPageToken)) {
+          request = request.toBuilder().setPageToken(nextPageToken).build();
+        } else {
+          break;
+        }
       }
     }
   }
 }
-// [END cloudchannel_v1_generated_CloudChannelService_ListOffers_async]
+// [END cloudchannel_v1_generated_CloudChannelService_ListEntitlementChanges_Paged_async]

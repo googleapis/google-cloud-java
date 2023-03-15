@@ -22,32 +22,32 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Request message for ListOffers.
+ * Request message for
+ * [CloudChannelService.ListEntitlementChanges][google.cloud.channel.v1.CloudChannelService.ListEntitlementChanges]
  * </pre>
  *
- * Protobuf type {@code google.cloud.channel.v1.ListOffersRequest}
+ * Protobuf type {@code google.cloud.channel.v1.ListEntitlementChangesRequest}
  */
-public final class ListOffersRequest extends com.google.protobuf.GeneratedMessageV3
+public final class ListEntitlementChangesRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.ListOffersRequest)
-    ListOffersRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.ListEntitlementChangesRequest)
+    ListEntitlementChangesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use ListOffersRequest.newBuilder() to construct.
-  private ListOffersRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ListEntitlementChangesRequest.newBuilder() to construct.
+  private ListEntitlementChangesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private ListOffersRequest() {
+  private ListEntitlementChangesRequest() {
     parent_ = "";
     pageToken_ = "";
     filter_ = "";
-    languageCode_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new ListOffersRequest();
+    return new ListEntitlementChangesRequest();
   }
 
   @java.lang.Override
@@ -57,17 +57,17 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.channel.v1.ServiceProto
-        .internal_static_google_cloud_channel_v1_ListOffersRequest_descriptor;
+        .internal_static_google_cloud_channel_v1_ListEntitlementChangesRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.channel.v1.ServiceProto
-        .internal_static_google_cloud_channel_v1_ListOffersRequest_fieldAccessorTable
+        .internal_static_google_cloud_channel_v1_ListEntitlementChangesRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.channel.v1.ListOffersRequest.class,
-            com.google.cloud.channel.v1.ListOffersRequest.Builder.class);
+            com.google.cloud.channel.v1.ListEntitlementChangesRequest.class,
+            com.google.cloud.channel.v1.ListEntitlementChangesRequest.Builder.class);
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
@@ -78,11 +78,16 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The resource name of the reseller account from which to list
-   * Offers. Parent uses the format: accounts/{account_id}.
+   * Required. The resource name of the entitlement for which to list
+   * entitlement changes. The `-` wildcard may be used to match entitlements
+   * across a customer. Formats:
+   *   * accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}
+   *   * accounts/{account_id}/customers/{customer_id}/entitlements/-
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -102,11 +107,16 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The resource name of the reseller account from which to list
-   * Offers. Parent uses the format: accounts/{account_id}.
+   * Required. The resource name of the entitlement for which to list
+   * entitlement changes. The `-` wildcard may be used to match entitlements
+   * across a customer. Formats:
+   *   * accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}
+   *   * accounts/{account_id}/customers/{customer_id}/entitlements/-
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -129,9 +139,10 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. Requested page size. Server might return fewer results than
-   * requested. If unspecified, returns at most 500 Offers. The maximum value is
-   * 1000; the server will coerce values above 1000.
+   * Optional. The maximum number of entitlement changes to return. The service
+   * may return fewer than this value. If unspecified, returns at most 10
+   * entitlement changes. The maximum value is 50; the server will coerce values
+   * above 50.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -151,7 +162,12 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. A token for a page of results other than the first page.
+   * Optional. A page token, received from a previous
+   * [CloudChannelService.ListEntitlementChanges][google.cloud.channel.v1.CloudChannelService.ListEntitlementChanges]
+   * call. Provide this to retrieve the subsequent page.
+   * When paginating, all other parameters provided to
+   * [CloudChannelService.ListEntitlementChanges][google.cloud.channel.v1.CloudChannelService.ListEntitlementChanges]
+   * must match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -174,7 +190,12 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. A token for a page of results other than the first page.
+   * Optional. A page token, received from a previous
+   * [CloudChannelService.ListEntitlementChanges][google.cloud.channel.v1.CloudChannelService.ListEntitlementChanges]
+   * call. Provide this to retrieve the subsequent page.
+   * When paginating, all other parameters provided to
+   * [CloudChannelService.ListEntitlementChanges][google.cloud.channel.v1.CloudChannelService.ListEntitlementChanges]
+   * must match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -202,11 +223,7 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. The expression to filter results by name (name of
-   * the Offer), sku.name (name of the SKU), or sku.product.name (name of the
-   * Product).
-   * Example 1: sku.product.name=products/p1 AND sku.name!=products/p1/skus/s1
-   * Example 2: name=accounts/a1/offers/o1
+   * Optional. Filters applied to the list results.
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -229,11 +246,7 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. The expression to filter results by name (name of
-   * the Offer), sku.name (name of the SKU), or sku.product.name (name of the
-   * Product).
-   * Example 1: sku.product.name=products/p1 AND sku.name!=products/p1/skus/s1
-   * Example 2: name=accounts/a1/offers/o1
+   * Optional. Filters applied to the list results.
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -251,82 +264,6 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
-  }
-
-  public static final int LANGUAGE_CODE_FIELD_NUMBER = 5;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object languageCode_ = "";
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The BCP-47 language code. For example, "en-US". The
-   * response will localize in the corresponding language code, if specified.
-   * The default value is "en-US".
-   * </pre>
-   *
-   * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The languageCode.
-   */
-  @java.lang.Override
-  public java.lang.String getLanguageCode() {
-    java.lang.Object ref = languageCode_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      languageCode_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The BCP-47 language code. For example, "en-US". The
-   * response will localize in the corresponding language code, if specified.
-   * The default value is "en-US".
-   * </pre>
-   *
-   * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The bytes for languageCode.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getLanguageCodeBytes() {
-    java.lang.Object ref = languageCode_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      languageCode_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int SHOW_FUTURE_OFFERS_FIELD_NUMBER = 7;
-  private boolean showFutureOffers_ = false;
-  /**
-   *
-   *
-   * <pre>
-   * Optional. A boolean flag that determines if a response returns future
-   * offers 30 days from now. If the show_future_offers is true, the response
-   * will only contain offers that are scheduled to be available 30 days from
-   * now.
-   * </pre>
-   *
-   * <code>bool show_future_offers = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The showFutureOffers.
-   */
-  @java.lang.Override
-  public boolean getShowFutureOffers() {
-    return showFutureOffers_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -355,12 +292,6 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, filter_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, languageCode_);
-    }
-    if (showFutureOffers_ != false) {
-      output.writeBool(7, showFutureOffers_);
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -382,12 +313,6 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, filter_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, languageCode_);
-    }
-    if (showFutureOffers_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, showFutureOffers_);
-    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -398,18 +323,16 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.channel.v1.ListOffersRequest)) {
+    if (!(obj instanceof com.google.cloud.channel.v1.ListEntitlementChangesRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.channel.v1.ListOffersRequest other =
-        (com.google.cloud.channel.v1.ListOffersRequest) obj;
+    com.google.cloud.channel.v1.ListEntitlementChangesRequest other =
+        (com.google.cloud.channel.v1.ListEntitlementChangesRequest) obj;
 
     if (!getParent().equals(other.getParent())) return false;
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (!getFilter().equals(other.getFilter())) return false;
-    if (!getLanguageCode().equals(other.getLanguageCode())) return false;
-    if (getShowFutureOffers() != other.getShowFutureOffers()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -429,80 +352,76 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + getPageToken().hashCode();
     hash = (37 * hash) + FILTER_FIELD_NUMBER;
     hash = (53 * hash) + getFilter().hashCode();
-    hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
-    hash = (53 * hash) + getLanguageCode().hashCode();
-    hash = (37 * hash) + SHOW_FUTURE_OFFERS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getShowFutureOffers());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.channel.v1.ListOffersRequest parseFrom(java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.channel.v1.ListEntitlementChangesRequest parseFrom(
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.channel.v1.ListOffersRequest parseFrom(
+  public static com.google.cloud.channel.v1.ListEntitlementChangesRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.channel.v1.ListOffersRequest parseFrom(
+  public static com.google.cloud.channel.v1.ListEntitlementChangesRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.channel.v1.ListOffersRequest parseFrom(
+  public static com.google.cloud.channel.v1.ListEntitlementChangesRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.channel.v1.ListOffersRequest parseFrom(byte[] data)
+  public static com.google.cloud.channel.v1.ListEntitlementChangesRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.channel.v1.ListOffersRequest parseFrom(
+  public static com.google.cloud.channel.v1.ListEntitlementChangesRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.channel.v1.ListOffersRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
+  public static com.google.cloud.channel.v1.ListEntitlementChangesRequest parseFrom(
+      java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.channel.v1.ListOffersRequest parseFrom(
+  public static com.google.cloud.channel.v1.ListEntitlementChangesRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.channel.v1.ListOffersRequest parseDelimitedFrom(
+  public static com.google.cloud.channel.v1.ListEntitlementChangesRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.channel.v1.ListOffersRequest parseDelimitedFrom(
+  public static com.google.cloud.channel.v1.ListEntitlementChangesRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.channel.v1.ListOffersRequest parseFrom(
+  public static com.google.cloud.channel.v1.ListEntitlementChangesRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.channel.v1.ListOffersRequest parseFrom(
+  public static com.google.cloud.channel.v1.ListEntitlementChangesRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -519,7 +438,8 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.cloud.channel.v1.ListOffersRequest prototype) {
+  public static Builder newBuilder(
+      com.google.cloud.channel.v1.ListEntitlementChangesRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -537,31 +457,32 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Request message for ListOffers.
+   * Request message for
+   * [CloudChannelService.ListEntitlementChanges][google.cloud.channel.v1.CloudChannelService.ListEntitlementChanges]
    * </pre>
    *
-   * Protobuf type {@code google.cloud.channel.v1.ListOffersRequest}
+   * Protobuf type {@code google.cloud.channel.v1.ListEntitlementChangesRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.channel.v1.ListOffersRequest)
-      com.google.cloud.channel.v1.ListOffersRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.channel.v1.ListEntitlementChangesRequest)
+      com.google.cloud.channel.v1.ListEntitlementChangesRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.channel.v1.ServiceProto
-          .internal_static_google_cloud_channel_v1_ListOffersRequest_descriptor;
+          .internal_static_google_cloud_channel_v1_ListEntitlementChangesRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.channel.v1.ServiceProto
-          .internal_static_google_cloud_channel_v1_ListOffersRequest_fieldAccessorTable
+          .internal_static_google_cloud_channel_v1_ListEntitlementChangesRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.channel.v1.ListOffersRequest.class,
-              com.google.cloud.channel.v1.ListOffersRequest.Builder.class);
+              com.google.cloud.channel.v1.ListEntitlementChangesRequest.class,
+              com.google.cloud.channel.v1.ListEntitlementChangesRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.channel.v1.ListOffersRequest.newBuilder()
+    // Construct using com.google.cloud.channel.v1.ListEntitlementChangesRequest.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -576,25 +497,23 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
       pageSize_ = 0;
       pageToken_ = "";
       filter_ = "";
-      languageCode_ = "";
-      showFutureOffers_ = false;
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.channel.v1.ServiceProto
-          .internal_static_google_cloud_channel_v1_ListOffersRequest_descriptor;
+          .internal_static_google_cloud_channel_v1_ListEntitlementChangesRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.channel.v1.ListOffersRequest getDefaultInstanceForType() {
-      return com.google.cloud.channel.v1.ListOffersRequest.getDefaultInstance();
+    public com.google.cloud.channel.v1.ListEntitlementChangesRequest getDefaultInstanceForType() {
+      return com.google.cloud.channel.v1.ListEntitlementChangesRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.channel.v1.ListOffersRequest build() {
-      com.google.cloud.channel.v1.ListOffersRequest result = buildPartial();
+    public com.google.cloud.channel.v1.ListEntitlementChangesRequest build() {
+      com.google.cloud.channel.v1.ListEntitlementChangesRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -602,9 +521,9 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
     }
 
     @java.lang.Override
-    public com.google.cloud.channel.v1.ListOffersRequest buildPartial() {
-      com.google.cloud.channel.v1.ListOffersRequest result =
-          new com.google.cloud.channel.v1.ListOffersRequest(this);
+    public com.google.cloud.channel.v1.ListEntitlementChangesRequest buildPartial() {
+      com.google.cloud.channel.v1.ListEntitlementChangesRequest result =
+          new com.google.cloud.channel.v1.ListEntitlementChangesRequest(this);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -612,7 +531,7 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
       return result;
     }
 
-    private void buildPartial0(com.google.cloud.channel.v1.ListOffersRequest result) {
+    private void buildPartial0(com.google.cloud.channel.v1.ListEntitlementChangesRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.parent_ = parent_;
@@ -625,12 +544,6 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.filter_ = filter_;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.languageCode_ = languageCode_;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.showFutureOffers_ = showFutureOffers_;
       }
     }
 
@@ -669,16 +582,17 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.channel.v1.ListOffersRequest) {
-        return mergeFrom((com.google.cloud.channel.v1.ListOffersRequest) other);
+      if (other instanceof com.google.cloud.channel.v1.ListEntitlementChangesRequest) {
+        return mergeFrom((com.google.cloud.channel.v1.ListEntitlementChangesRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.channel.v1.ListOffersRequest other) {
-      if (other == com.google.cloud.channel.v1.ListOffersRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.cloud.channel.v1.ListEntitlementChangesRequest other) {
+      if (other == com.google.cloud.channel.v1.ListEntitlementChangesRequest.getDefaultInstance())
+        return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
         bitField0_ |= 0x00000001;
@@ -696,14 +610,6 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
         filter_ = other.filter_;
         bitField0_ |= 0x00000008;
         onChanged();
-      }
-      if (!other.getLanguageCode().isEmpty()) {
-        languageCode_ = other.languageCode_;
-        bitField0_ |= 0x00000010;
-        onChanged();
-      }
-      if (other.getShowFutureOffers() != false) {
-        setShowFutureOffers(other.getShowFutureOffers());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -755,18 +661,6 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
-            case 42:
-              {
-                languageCode_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 42
-            case 56:
-              {
-                showFutureOffers_ = input.readBool();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 56
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -791,11 +685,16 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The resource name of the reseller account from which to list
-     * Offers. Parent uses the format: accounts/{account_id}.
+     * Required. The resource name of the entitlement for which to list
+     * entitlement changes. The `-` wildcard may be used to match entitlements
+     * across a customer. Formats:
+     *   * accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}
+     *   * accounts/{account_id}/customers/{customer_id}/entitlements/-
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -814,11 +713,16 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The resource name of the reseller account from which to list
-     * Offers. Parent uses the format: accounts/{account_id}.
+     * Required. The resource name of the entitlement for which to list
+     * entitlement changes. The `-` wildcard may be used to match entitlements
+     * across a customer. Formats:
+     *   * accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}
+     *   * accounts/{account_id}/customers/{customer_id}/entitlements/-
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -837,11 +741,16 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The resource name of the reseller account from which to list
-     * Offers. Parent uses the format: accounts/{account_id}.
+     * Required. The resource name of the entitlement for which to list
+     * entitlement changes. The `-` wildcard may be used to match entitlements
+     * across a customer. Formats:
+     *   * accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}
+     *   * accounts/{account_id}/customers/{customer_id}/entitlements/-
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -859,11 +768,16 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The resource name of the reseller account from which to list
-     * Offers. Parent uses the format: accounts/{account_id}.
+     * Required. The resource name of the entitlement for which to list
+     * entitlement changes. The `-` wildcard may be used to match entitlements
+     * across a customer. Formats:
+     *   * accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}
+     *   * accounts/{account_id}/customers/{customer_id}/entitlements/-
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -877,11 +791,16 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The resource name of the reseller account from which to list
-     * Offers. Parent uses the format: accounts/{account_id}.
+     * Required. The resource name of the entitlement for which to list
+     * entitlement changes. The `-` wildcard may be used to match entitlements
+     * across a customer. Formats:
+     *   * accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}
+     *   * accounts/{account_id}/customers/{customer_id}/entitlements/-
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -902,9 +821,10 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Requested page size. Server might return fewer results than
-     * requested. If unspecified, returns at most 500 Offers. The maximum value is
-     * 1000; the server will coerce values above 1000.
+     * Optional. The maximum number of entitlement changes to return. The service
+     * may return fewer than this value. If unspecified, returns at most 10
+     * entitlement changes. The maximum value is 50; the server will coerce values
+     * above 50.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -919,9 +839,10 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Requested page size. Server might return fewer results than
-     * requested. If unspecified, returns at most 500 Offers. The maximum value is
-     * 1000; the server will coerce values above 1000.
+     * Optional. The maximum number of entitlement changes to return. The service
+     * may return fewer than this value. If unspecified, returns at most 10
+     * entitlement changes. The maximum value is 50; the server will coerce values
+     * above 50.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -940,9 +861,10 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Requested page size. Server might return fewer results than
-     * requested. If unspecified, returns at most 500 Offers. The maximum value is
-     * 1000; the server will coerce values above 1000.
+     * Optional. The maximum number of entitlement changes to return. The service
+     * may return fewer than this value. If unspecified, returns at most 10
+     * entitlement changes. The maximum value is 50; the server will coerce values
+     * above 50.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -961,7 +883,12 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. A token for a page of results other than the first page.
+     * Optional. A page token, received from a previous
+     * [CloudChannelService.ListEntitlementChanges][google.cloud.channel.v1.CloudChannelService.ListEntitlementChanges]
+     * call. Provide this to retrieve the subsequent page.
+     * When paginating, all other parameters provided to
+     * [CloudChannelService.ListEntitlementChanges][google.cloud.channel.v1.CloudChannelService.ListEntitlementChanges]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -983,7 +910,12 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. A token for a page of results other than the first page.
+     * Optional. A page token, received from a previous
+     * [CloudChannelService.ListEntitlementChanges][google.cloud.channel.v1.CloudChannelService.ListEntitlementChanges]
+     * call. Provide this to retrieve the subsequent page.
+     * When paginating, all other parameters provided to
+     * [CloudChannelService.ListEntitlementChanges][google.cloud.channel.v1.CloudChannelService.ListEntitlementChanges]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1005,7 +937,12 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. A token for a page of results other than the first page.
+     * Optional. A page token, received from a previous
+     * [CloudChannelService.ListEntitlementChanges][google.cloud.channel.v1.CloudChannelService.ListEntitlementChanges]
+     * call. Provide this to retrieve the subsequent page.
+     * When paginating, all other parameters provided to
+     * [CloudChannelService.ListEntitlementChanges][google.cloud.channel.v1.CloudChannelService.ListEntitlementChanges]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1026,7 +963,12 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. A token for a page of results other than the first page.
+     * Optional. A page token, received from a previous
+     * [CloudChannelService.ListEntitlementChanges][google.cloud.channel.v1.CloudChannelService.ListEntitlementChanges]
+     * call. Provide this to retrieve the subsequent page.
+     * When paginating, all other parameters provided to
+     * [CloudChannelService.ListEntitlementChanges][google.cloud.channel.v1.CloudChannelService.ListEntitlementChanges]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1043,7 +985,12 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. A token for a page of results other than the first page.
+     * Optional. A page token, received from a previous
+     * [CloudChannelService.ListEntitlementChanges][google.cloud.channel.v1.CloudChannelService.ListEntitlementChanges]
+     * call. Provide this to retrieve the subsequent page.
+     * When paginating, all other parameters provided to
+     * [CloudChannelService.ListEntitlementChanges][google.cloud.channel.v1.CloudChannelService.ListEntitlementChanges]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1067,11 +1014,7 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The expression to filter results by name (name of
-     * the Offer), sku.name (name of the SKU), or sku.product.name (name of the
-     * Product).
-     * Example 1: sku.product.name=products/p1 AND sku.name!=products/p1/skus/s1
-     * Example 2: name=accounts/a1/offers/o1
+     * Optional. Filters applied to the list results.
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1093,11 +1036,7 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The expression to filter results by name (name of
-     * the Offer), sku.name (name of the SKU), or sku.product.name (name of the
-     * Product).
-     * Example 1: sku.product.name=products/p1 AND sku.name!=products/p1/skus/s1
-     * Example 2: name=accounts/a1/offers/o1
+     * Optional. Filters applied to the list results.
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1119,11 +1058,7 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The expression to filter results by name (name of
-     * the Offer), sku.name (name of the SKU), or sku.product.name (name of the
-     * Product).
-     * Example 1: sku.product.name=products/p1 AND sku.name!=products/p1/skus/s1
-     * Example 2: name=accounts/a1/offers/o1
+     * Optional. Filters applied to the list results.
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1144,11 +1079,7 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The expression to filter results by name (name of
-     * the Offer), sku.name (name of the SKU), or sku.product.name (name of the
-     * Product).
-     * Example 1: sku.product.name=products/p1 AND sku.name!=products/p1/skus/s1
-     * Example 2: name=accounts/a1/offers/o1
+     * Optional. Filters applied to the list results.
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1165,11 +1096,7 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The expression to filter results by name (name of
-     * the Offer), sku.name (name of the SKU), or sku.product.name (name of the
-     * Product).
-     * Example 1: sku.product.name=products/p1 AND sku.name!=products/p1/skus/s1
-     * Example 2: name=accounts/a1/offers/o1
+     * Optional. Filters applied to the list results.
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1188,184 +1115,6 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private java.lang.Object languageCode_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The BCP-47 language code. For example, "en-US". The
-     * response will localize in the corresponding language code, if specified.
-     * The default value is "en-US".
-     * </pre>
-     *
-     * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The languageCode.
-     */
-    public java.lang.String getLanguageCode() {
-      java.lang.Object ref = languageCode_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        languageCode_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The BCP-47 language code. For example, "en-US". The
-     * response will localize in the corresponding language code, if specified.
-     * The default value is "en-US".
-     * </pre>
-     *
-     * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for languageCode.
-     */
-    public com.google.protobuf.ByteString getLanguageCodeBytes() {
-      java.lang.Object ref = languageCode_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        languageCode_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The BCP-47 language code. For example, "en-US". The
-     * response will localize in the corresponding language code, if specified.
-     * The default value is "en-US".
-     * </pre>
-     *
-     * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The languageCode to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLanguageCode(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      languageCode_ = value;
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The BCP-47 language code. For example, "en-US". The
-     * response will localize in the corresponding language code, if specified.
-     * The default value is "en-US".
-     * </pre>
-     *
-     * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearLanguageCode() {
-      languageCode_ = getDefaultInstance().getLanguageCode();
-      bitField0_ = (bitField0_ & ~0x00000010);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The BCP-47 language code. For example, "en-US". The
-     * response will localize in the corresponding language code, if specified.
-     * The default value is "en-US".
-     * </pre>
-     *
-     * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The bytes for languageCode to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      languageCode_ = value;
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-
-    private boolean showFutureOffers_;
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A boolean flag that determines if a response returns future
-     * offers 30 days from now. If the show_future_offers is true, the response
-     * will only contain offers that are scheduled to be available 30 days from
-     * now.
-     * </pre>
-     *
-     * <code>bool show_future_offers = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The showFutureOffers.
-     */
-    @java.lang.Override
-    public boolean getShowFutureOffers() {
-      return showFutureOffers_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A boolean flag that determines if a response returns future
-     * offers 30 days from now. If the show_future_offers is true, the response
-     * will only contain offers that are scheduled to be available 30 days from
-     * now.
-     * </pre>
-     *
-     * <code>bool show_future_offers = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The showFutureOffers to set.
-     * @return This builder for chaining.
-     */
-    public Builder setShowFutureOffers(boolean value) {
-
-      showFutureOffers_ = value;
-      bitField0_ |= 0x00000020;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A boolean flag that determines if a response returns future
-     * offers 30 days from now. If the show_future_offers is true, the response
-     * will only contain offers that are scheduled to be available 30 days from
-     * now.
-     * </pre>
-     *
-     * <code>bool show_future_offers = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearShowFutureOffers() {
-      bitField0_ = (bitField0_ & ~0x00000020);
-      showFutureOffers_ = false;
-      onChanged();
-      return this;
-    }
-
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
@@ -1377,24 +1126,24 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.channel.v1.ListOffersRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.channel.v1.ListEntitlementChangesRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.channel.v1.ListOffersRequest)
-  private static final com.google.cloud.channel.v1.ListOffersRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.channel.v1.ListEntitlementChangesRequest)
+  private static final com.google.cloud.channel.v1.ListEntitlementChangesRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.channel.v1.ListOffersRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.channel.v1.ListEntitlementChangesRequest();
   }
 
-  public static com.google.cloud.channel.v1.ListOffersRequest getDefaultInstance() {
+  public static com.google.cloud.channel.v1.ListEntitlementChangesRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListOffersRequest> PARSER =
-      new com.google.protobuf.AbstractParser<ListOffersRequest>() {
+  private static final com.google.protobuf.Parser<ListEntitlementChangesRequest> PARSER =
+      new com.google.protobuf.AbstractParser<ListEntitlementChangesRequest>() {
         @java.lang.Override
-        public ListOffersRequest parsePartialFrom(
+        public ListEntitlementChangesRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1413,17 +1162,17 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
         }
       };
 
-  public static com.google.protobuf.Parser<ListOffersRequest> parser() {
+  public static com.google.protobuf.Parser<ListEntitlementChangesRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ListOffersRequest> getParserForType() {
+  public com.google.protobuf.Parser<ListEntitlementChangesRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.channel.v1.ListOffersRequest getDefaultInstanceForType() {
+  public com.google.cloud.channel.v1.ListEntitlementChangesRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

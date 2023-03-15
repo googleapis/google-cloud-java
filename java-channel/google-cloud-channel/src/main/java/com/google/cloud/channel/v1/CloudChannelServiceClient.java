@@ -6516,6 +6516,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
    *           .setLanguageCode("languageCode-2092349083")
+   *           .setShowFutureOffers(true)
    *           .build();
    *   for (Offer element : cloudChannelServiceClient.listOffers(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -6556,6 +6557,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
    *           .setLanguageCode("languageCode-2092349083")
+   *           .setShowFutureOffers(true)
    *           .build();
    *   ApiFuture<Offer> future =
    *       cloudChannelServiceClient.listOffersPagedCallable().futureCall(request);
@@ -6596,6 +6598,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
    *           .setLanguageCode("languageCode-2092349083")
+   *           .setShowFutureOffers(true)
    *           .build();
    *   while (true) {
    *     ListOffersResponse response = cloudChannelServiceClient.listOffersCallable().call(request);
@@ -7247,6 +7250,264 @@ public class CloudChannelServiceClient implements BackgroundResource {
   public final UnaryCallable<ListSubscribersRequest, ListSubscribersResponse>
       listSubscribersCallable() {
     return stub.listSubscribersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List entitlement history.
+   *
+   * <p>Possible error codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: The reseller account making the request and the provided reseller
+   *       account are different.
+   *   <li>INVALID_ARGUMENT: Missing or invalid required fields in the request.
+   *   <li>NOT_FOUND: The parent resource doesn't exist. Usually the result of an invalid name
+   *       parameter.
+   *   <li>INTERNAL: Any non-user error related to a technical issue in the backend. In this case,
+   *       contact CloudChannel support.
+   *   <li>UNKNOWN: Any non-user error related to a technical issue in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return value: List of [EntitlementChange][google.cloud.channel.v1.EntitlementChange]s.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   EntitlementName parent = EntitlementName.of("[ACCOUNT]", "[CUSTOMER]", "[ENTITLEMENT]");
+   *   for (EntitlementChange element :
+   *       cloudChannelServiceClient.listEntitlementChanges(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the entitlement for which to list entitlement
+   *     changes. The `-` wildcard may be used to match entitlements across a customer. Formats:
+   *     <p>&#42; accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id} &#42;
+   *     accounts/{account_id}/customers/{customer_id}/entitlements/-
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEntitlementChangesPagedResponse listEntitlementChanges(EntitlementName parent) {
+    ListEntitlementChangesRequest request =
+        ListEntitlementChangesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listEntitlementChanges(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List entitlement history.
+   *
+   * <p>Possible error codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: The reseller account making the request and the provided reseller
+   *       account are different.
+   *   <li>INVALID_ARGUMENT: Missing or invalid required fields in the request.
+   *   <li>NOT_FOUND: The parent resource doesn't exist. Usually the result of an invalid name
+   *       parameter.
+   *   <li>INTERNAL: Any non-user error related to a technical issue in the backend. In this case,
+   *       contact CloudChannel support.
+   *   <li>UNKNOWN: Any non-user error related to a technical issue in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return value: List of [EntitlementChange][google.cloud.channel.v1.EntitlementChange]s.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   String parent = EntitlementName.of("[ACCOUNT]", "[CUSTOMER]", "[ENTITLEMENT]").toString();
+   *   for (EntitlementChange element :
+   *       cloudChannelServiceClient.listEntitlementChanges(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the entitlement for which to list entitlement
+   *     changes. The `-` wildcard may be used to match entitlements across a customer. Formats:
+   *     <p>&#42; accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id} &#42;
+   *     accounts/{account_id}/customers/{customer_id}/entitlements/-
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEntitlementChangesPagedResponse listEntitlementChanges(String parent) {
+    ListEntitlementChangesRequest request =
+        ListEntitlementChangesRequest.newBuilder().setParent(parent).build();
+    return listEntitlementChanges(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List entitlement history.
+   *
+   * <p>Possible error codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: The reseller account making the request and the provided reseller
+   *       account are different.
+   *   <li>INVALID_ARGUMENT: Missing or invalid required fields in the request.
+   *   <li>NOT_FOUND: The parent resource doesn't exist. Usually the result of an invalid name
+   *       parameter.
+   *   <li>INTERNAL: Any non-user error related to a technical issue in the backend. In this case,
+   *       contact CloudChannel support.
+   *   <li>UNKNOWN: Any non-user error related to a technical issue in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return value: List of [EntitlementChange][google.cloud.channel.v1.EntitlementChange]s.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListEntitlementChangesRequest request =
+   *       ListEntitlementChangesRequest.newBuilder()
+   *           .setParent(EntitlementName.of("[ACCOUNT]", "[CUSTOMER]", "[ENTITLEMENT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (EntitlementChange element :
+   *       cloudChannelServiceClient.listEntitlementChanges(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEntitlementChangesPagedResponse listEntitlementChanges(
+      ListEntitlementChangesRequest request) {
+    return listEntitlementChangesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List entitlement history.
+   *
+   * <p>Possible error codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: The reseller account making the request and the provided reseller
+   *       account are different.
+   *   <li>INVALID_ARGUMENT: Missing or invalid required fields in the request.
+   *   <li>NOT_FOUND: The parent resource doesn't exist. Usually the result of an invalid name
+   *       parameter.
+   *   <li>INTERNAL: Any non-user error related to a technical issue in the backend. In this case,
+   *       contact CloudChannel support.
+   *   <li>UNKNOWN: Any non-user error related to a technical issue in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return value: List of [EntitlementChange][google.cloud.channel.v1.EntitlementChange]s.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListEntitlementChangesRequest request =
+   *       ListEntitlementChangesRequest.newBuilder()
+   *           .setParent(EntitlementName.of("[ACCOUNT]", "[CUSTOMER]", "[ENTITLEMENT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<EntitlementChange> future =
+   *       cloudChannelServiceClient.listEntitlementChangesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (EntitlementChange element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListEntitlementChangesRequest, ListEntitlementChangesPagedResponse>
+      listEntitlementChangesPagedCallable() {
+    return stub.listEntitlementChangesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List entitlement history.
+   *
+   * <p>Possible error codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: The reseller account making the request and the provided reseller
+   *       account are different.
+   *   <li>INVALID_ARGUMENT: Missing or invalid required fields in the request.
+   *   <li>NOT_FOUND: The parent resource doesn't exist. Usually the result of an invalid name
+   *       parameter.
+   *   <li>INTERNAL: Any non-user error related to a technical issue in the backend. In this case,
+   *       contact CloudChannel support.
+   *   <li>UNKNOWN: Any non-user error related to a technical issue in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return value: List of [EntitlementChange][google.cloud.channel.v1.EntitlementChange]s.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListEntitlementChangesRequest request =
+   *       ListEntitlementChangesRequest.newBuilder()
+   *           .setParent(EntitlementName.of("[ACCOUNT]", "[CUSTOMER]", "[ENTITLEMENT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ListEntitlementChangesResponse response =
+   *         cloudChannelServiceClient.listEntitlementChangesCallable().call(request);
+   *     for (EntitlementChange element : response.getEntitlementChangesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListEntitlementChangesRequest, ListEntitlementChangesResponse>
+      listEntitlementChangesCallable() {
+    return stub.listEntitlementChangesCallable();
   }
 
   @Override
@@ -8340,6 +8601,94 @@ public class CloudChannelServiceClient implements BackgroundResource {
     protected ListSubscribersFixedSizeCollection createCollection(
         List<ListSubscribersPage> pages, int collectionSize) {
       return new ListSubscribersFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListEntitlementChangesPagedResponse
+      extends AbstractPagedListResponse<
+          ListEntitlementChangesRequest,
+          ListEntitlementChangesResponse,
+          EntitlementChange,
+          ListEntitlementChangesPage,
+          ListEntitlementChangesFixedSizeCollection> {
+
+    public static ApiFuture<ListEntitlementChangesPagedResponse> createAsync(
+        PageContext<
+                ListEntitlementChangesRequest, ListEntitlementChangesResponse, EntitlementChange>
+            context,
+        ApiFuture<ListEntitlementChangesResponse> futureResponse) {
+      ApiFuture<ListEntitlementChangesPage> futurePage =
+          ListEntitlementChangesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListEntitlementChangesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListEntitlementChangesPagedResponse(ListEntitlementChangesPage page) {
+      super(page, ListEntitlementChangesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListEntitlementChangesPage
+      extends AbstractPage<
+          ListEntitlementChangesRequest,
+          ListEntitlementChangesResponse,
+          EntitlementChange,
+          ListEntitlementChangesPage> {
+
+    private ListEntitlementChangesPage(
+        PageContext<
+                ListEntitlementChangesRequest, ListEntitlementChangesResponse, EntitlementChange>
+            context,
+        ListEntitlementChangesResponse response) {
+      super(context, response);
+    }
+
+    private static ListEntitlementChangesPage createEmptyPage() {
+      return new ListEntitlementChangesPage(null, null);
+    }
+
+    @Override
+    protected ListEntitlementChangesPage createPage(
+        PageContext<
+                ListEntitlementChangesRequest, ListEntitlementChangesResponse, EntitlementChange>
+            context,
+        ListEntitlementChangesResponse response) {
+      return new ListEntitlementChangesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListEntitlementChangesPage> createPageAsync(
+        PageContext<
+                ListEntitlementChangesRequest, ListEntitlementChangesResponse, EntitlementChange>
+            context,
+        ApiFuture<ListEntitlementChangesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListEntitlementChangesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListEntitlementChangesRequest,
+          ListEntitlementChangesResponse,
+          EntitlementChange,
+          ListEntitlementChangesPage,
+          ListEntitlementChangesFixedSizeCollection> {
+
+    private ListEntitlementChangesFixedSizeCollection(
+        List<ListEntitlementChangesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListEntitlementChangesFixedSizeCollection createEmptyCollection() {
+      return new ListEntitlementChangesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListEntitlementChangesFixedSizeCollection createCollection(
+        List<ListEntitlementChangesPage> pages, int collectionSize) {
+      return new ListEntitlementChangesFixedSizeCollection(pages, collectionSize);
     }
   }
 }

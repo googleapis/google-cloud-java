@@ -20,6 +20,7 @@ import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListChannelP
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListChannelPartnerRepricingConfigsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListCustomerRepricingConfigsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListCustomersPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListEntitlementChangesPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListEntitlementsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListOffersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListProductsPagedResponse;
@@ -457,6 +458,15 @@ public class CloudChannelServiceSettings extends ClientSettings<CloudChannelServ
           ListSubscribersRequest, ListSubscribersResponse, ListSubscribersPagedResponse>
       listSubscribersSettings() {
     return ((CloudChannelServiceStubSettings) getStubSettings()).listSubscribersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listEntitlementChanges. */
+  public PagedCallSettings<
+          ListEntitlementChangesRequest,
+          ListEntitlementChangesResponse,
+          ListEntitlementChangesPagedResponse>
+      listEntitlementChangesSettings() {
+    return ((CloudChannelServiceStubSettings) getStubSettings()).listEntitlementChangesSettings();
   }
 
   public static final CloudChannelServiceSettings create(CloudChannelServiceStubSettings stub)
@@ -940,6 +950,15 @@ public class CloudChannelServiceSettings extends ClientSettings<CloudChannelServ
             ListSubscribersRequest, ListSubscribersResponse, ListSubscribersPagedResponse>
         listSubscribersSettings() {
       return getStubSettingsBuilder().listSubscribersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listEntitlementChanges. */
+    public PagedCallSettings.Builder<
+            ListEntitlementChangesRequest,
+            ListEntitlementChangesResponse,
+            ListEntitlementChangesPagedResponse>
+        listEntitlementChangesSettings() {
+      return getStubSettingsBuilder().listEntitlementChangesSettings();
     }
 
     @Override

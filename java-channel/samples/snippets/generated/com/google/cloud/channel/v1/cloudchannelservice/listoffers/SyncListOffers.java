@@ -41,6 +41,7 @@ public class SyncListOffers {
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")
               .setLanguageCode("languageCode-2092349083")
+              .setShowFutureOffers(true)
               .build();
       for (Offer element : cloudChannelServiceClient.listOffers(request).iterateAll()) {
         // doThingsWith(element);

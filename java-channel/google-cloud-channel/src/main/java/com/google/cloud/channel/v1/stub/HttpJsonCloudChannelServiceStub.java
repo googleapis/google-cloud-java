@@ -20,6 +20,7 @@ import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListChannelP
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListChannelPartnerRepricingConfigsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListCustomerRepricingConfigsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListCustomersPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListEntitlementChangesPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListEntitlementsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListOffersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListProductsPagedResponse;
@@ -79,6 +80,8 @@ import com.google.cloud.channel.v1.ListCustomerRepricingConfigsRequest;
 import com.google.cloud.channel.v1.ListCustomerRepricingConfigsResponse;
 import com.google.cloud.channel.v1.ListCustomersRequest;
 import com.google.cloud.channel.v1.ListCustomersResponse;
+import com.google.cloud.channel.v1.ListEntitlementChangesRequest;
+import com.google.cloud.channel.v1.ListEntitlementChangesResponse;
 import com.google.cloud.channel.v1.ListEntitlementsRequest;
 import com.google.cloud.channel.v1.ListEntitlementsResponse;
 import com.google.cloud.channel.v1.ListOffersRequest;
@@ -1706,6 +1709,8 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                                 fields, "languageCode", request.getLanguageCode());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(
+                                fields, "showFutureOffers", request.getShowFutureOffers());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -1921,6 +1926,46 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          ListEntitlementChangesRequest, ListEntitlementChangesResponse>
+      listEntitlementChangesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListEntitlementChangesRequest, ListEntitlementChangesResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.channel.v1.CloudChannelService/ListEntitlementChanges")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListEntitlementChangesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=accounts/*/customers/*/entitlements/*}:listEntitlementChanges",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListEntitlementChangesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListEntitlementChangesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListEntitlementChangesResponse>newBuilder()
+                      .setDefaultInstance(ListEntitlementChangesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<ListCustomersRequest, ListCustomersResponse> listCustomersCallable;
   private final UnaryCallable<ListCustomersRequest, ListCustomersPagedResponse>
       listCustomersPagedCallable;
@@ -2048,6 +2093,10 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
       listSubscribersCallable;
   private final UnaryCallable<ListSubscribersRequest, ListSubscribersPagedResponse>
       listSubscribersPagedCallable;
+  private final UnaryCallable<ListEntitlementChangesRequest, ListEntitlementChangesResponse>
+      listEntitlementChangesCallable;
+  private final UnaryCallable<ListEntitlementChangesRequest, ListEntitlementChangesPagedResponse>
+      listEntitlementChangesPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -2374,6 +2423,13 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                 .setMethodDescriptor(listSubscribersMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<ListEntitlementChangesRequest, ListEntitlementChangesResponse>
+        listEntitlementChangesTransportSettings =
+            HttpJsonCallSettings
+                .<ListEntitlementChangesRequest, ListEntitlementChangesResponse>newBuilder()
+                .setMethodDescriptor(listEntitlementChangesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
 
     this.listCustomersCallable =
         callableFactory.createUnaryCallable(
@@ -2687,6 +2743,16 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
     this.listSubscribersPagedCallable =
         callableFactory.createPagedCallable(
             listSubscribersTransportSettings, settings.listSubscribersSettings(), clientContext);
+    this.listEntitlementChangesCallable =
+        callableFactory.createUnaryCallable(
+            listEntitlementChangesTransportSettings,
+            settings.listEntitlementChangesSettings(),
+            clientContext);
+    this.listEntitlementChangesPagedCallable =
+        callableFactory.createPagedCallable(
+            listEntitlementChangesTransportSettings,
+            settings.listEntitlementChangesSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -2740,6 +2806,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
     methodDescriptors.add(registerSubscriberMethodDescriptor);
     methodDescriptors.add(unregisterSubscriberMethodDescriptor);
     methodDescriptors.add(listSubscribersMethodDescriptor);
+    methodDescriptors.add(listEntitlementChangesMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -3140,6 +3207,18 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
   public UnaryCallable<ListSubscribersRequest, ListSubscribersPagedResponse>
       listSubscribersPagedCallable() {
     return listSubscribersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListEntitlementChangesRequest, ListEntitlementChangesResponse>
+      listEntitlementChangesCallable() {
+    return listEntitlementChangesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListEntitlementChangesRequest, ListEntitlementChangesPagedResponse>
+      listEntitlementChangesPagedCallable() {
+    return listEntitlementChangesPagedCallable;
   }
 
   @Override
