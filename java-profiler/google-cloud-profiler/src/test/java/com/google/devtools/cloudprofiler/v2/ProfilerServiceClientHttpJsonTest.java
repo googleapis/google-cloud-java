@@ -91,7 +91,7 @@ public class ProfilerServiceClientHttpJsonTest {
 
     CreateProfileRequest request =
         CreateProfileRequest.newBuilder()
-            .setParent("projects/project-2353")
+            .setParent(ProjectName.of("[PROJECT]").toString())
             .setDeployment(Deployment.newBuilder().build())
             .addAllProfileType(new ArrayList<ProfileType>())
             .build();
@@ -124,7 +124,7 @@ public class ProfilerServiceClientHttpJsonTest {
     try {
       CreateProfileRequest request =
           CreateProfileRequest.newBuilder()
-              .setParent("projects/project-2353")
+              .setParent(ProjectName.of("[PROJECT]").toString())
               .setDeployment(Deployment.newBuilder().build())
               .addAllProfileType(new ArrayList<ProfileType>())
               .build();
@@ -148,13 +148,10 @@ public class ProfilerServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    CreateOfflineProfileRequest request =
-        CreateOfflineProfileRequest.newBuilder()
-            .setParent("projects/project-2353")
-            .setProfile(Profile.newBuilder().build())
-            .build();
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    Profile profile = Profile.newBuilder().build();
 
-    Profile actualResponse = client.createOfflineProfile(request);
+    Profile actualResponse = client.createOfflineProfile(parent, profile);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -180,12 +177,60 @@ public class ProfilerServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      CreateOfflineProfileRequest request =
-          CreateOfflineProfileRequest.newBuilder()
-              .setParent("projects/project-2353")
-              .setProfile(Profile.newBuilder().build())
-              .build();
-      client.createOfflineProfile(request);
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      Profile profile = Profile.newBuilder().build();
+      client.createOfflineProfile(parent, profile);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createOfflineProfileTest2() throws Exception {
+    Profile expectedResponse =
+        Profile.newBuilder()
+            .setName("name3373707")
+            .setProfileType(ProfileType.forNumber(0))
+            .setDeployment(Deployment.newBuilder().build())
+            .setDuration(Duration.newBuilder().build())
+            .setProfileBytes(ByteString.EMPTY)
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-2353";
+    Profile profile = Profile.newBuilder().build();
+
+    Profile actualResponse = client.createOfflineProfile(parent, profile);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createOfflineProfileExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-2353";
+      Profile profile = Profile.newBuilder().build();
+      client.createOfflineProfile(parent, profile);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -205,21 +250,18 @@ public class ProfilerServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    UpdateProfileRequest request =
-        UpdateProfileRequest.newBuilder()
-            .setProfile(
-                Profile.newBuilder()
-                    .setName("projects/project-4284/profiles/profile-4284")
-                    .setProfileType(ProfileType.forNumber(0))
-                    .setDeployment(Deployment.newBuilder().build())
-                    .setDuration(Duration.newBuilder().build())
-                    .setProfileBytes(ByteString.EMPTY)
-                    .putAllLabels(new HashMap<String, String>())
-                    .build())
-            .setUpdateMask(FieldMask.newBuilder().build())
+    Profile profile =
+        Profile.newBuilder()
+            .setName("projects/project-4284/profiles/profile-4284")
+            .setProfileType(ProfileType.forNumber(0))
+            .setDeployment(Deployment.newBuilder().build())
+            .setDuration(Duration.newBuilder().build())
+            .setProfileBytes(ByteString.EMPTY)
+            .putAllLabels(new HashMap<String, String>())
             .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
 
-    Profile actualResponse = client.updateProfile(request);
+    Profile actualResponse = client.updateProfile(profile, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -245,20 +287,17 @@ public class ProfilerServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      UpdateProfileRequest request =
-          UpdateProfileRequest.newBuilder()
-              .setProfile(
-                  Profile.newBuilder()
-                      .setName("projects/project-4284/profiles/profile-4284")
-                      .setProfileType(ProfileType.forNumber(0))
-                      .setDeployment(Deployment.newBuilder().build())
-                      .setDuration(Duration.newBuilder().build())
-                      .setProfileBytes(ByteString.EMPTY)
-                      .putAllLabels(new HashMap<String, String>())
-                      .build())
-              .setUpdateMask(FieldMask.newBuilder().build())
+      Profile profile =
+          Profile.newBuilder()
+              .setName("projects/project-4284/profiles/profile-4284")
+              .setProfileType(ProfileType.forNumber(0))
+              .setDeployment(Deployment.newBuilder().build())
+              .setDuration(Duration.newBuilder().build())
+              .setProfileBytes(ByteString.EMPTY)
+              .putAllLabels(new HashMap<String, String>())
               .build();
-      client.updateProfile(request);
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateProfile(profile, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

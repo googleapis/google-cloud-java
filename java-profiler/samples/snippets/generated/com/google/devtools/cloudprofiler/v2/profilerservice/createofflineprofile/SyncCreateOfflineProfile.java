@@ -20,6 +20,7 @@ package com.google.devtools.cloudprofiler.v2.samples;
 import com.google.devtools.cloudprofiler.v2.CreateOfflineProfileRequest;
 import com.google.devtools.cloudprofiler.v2.Profile;
 import com.google.devtools.cloudprofiler.v2.ProfilerServiceClient;
+import com.google.devtools.cloudprofiler.v2.ProjectName;
 
 public class SyncCreateOfflineProfile {
 
@@ -36,7 +37,7 @@ public class SyncCreateOfflineProfile {
     try (ProfilerServiceClient profilerServiceClient = ProfilerServiceClient.create()) {
       CreateOfflineProfileRequest request =
           CreateOfflineProfileRequest.newBuilder()
-              .setParent("parent-995424086")
+              .setParent(ProjectName.of("[PROJECT]").toString())
               .setProfile(Profile.newBuilder().build())
               .build();
       Profile response = profilerServiceClient.createOfflineProfile(request);

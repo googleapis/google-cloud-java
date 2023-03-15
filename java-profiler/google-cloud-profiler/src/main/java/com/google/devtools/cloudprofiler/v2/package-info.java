@@ -15,7 +15,9 @@
  */
 
 /**
- * The interfaces provided are listed below, along with usage samples.
+ * A client to Cloud Profiler API
+ *
+ * <p>The interfaces provided are listed below, along with usage samples.
  *
  * <p>======================= ProfilerServiceClient =======================
  *
@@ -40,7 +42,7 @@
  * try (ProfilerServiceClient profilerServiceClient = ProfilerServiceClient.create()) {
  *   CreateProfileRequest request =
  *       CreateProfileRequest.newBuilder()
- *           .setParent("parent-995424086")
+ *           .setParent(ProjectName.of("[PROJECT]").toString())
  *           .setDeployment(Deployment.newBuilder().build())
  *           .addAllProfileType(new ArrayList<ProfileType>())
  *           .build();

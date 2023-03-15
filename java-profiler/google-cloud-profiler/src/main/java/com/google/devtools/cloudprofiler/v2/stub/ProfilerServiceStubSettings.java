@@ -252,10 +252,10 @@ public class ProfilerServiceStubSettings extends StubSettings<ProfilerServiceStu
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(3600000L))
+              .setInitialRpcTimeout(Duration.ofMillis(3610000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(3600000L))
-              .setTotalTimeout(Duration.ofMillis(3600000L))
+              .setMaxRpcTimeout(Duration.ofMillis(3610000L))
+              .setTotalTimeout(Duration.ofMillis(3610000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       settings =

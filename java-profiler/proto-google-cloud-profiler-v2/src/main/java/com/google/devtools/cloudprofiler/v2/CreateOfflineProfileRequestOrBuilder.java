@@ -30,7 +30,7 @@ public interface CreateOfflineProfileRequestOrBuilder
    * Parent project to create the profile in.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The parent.
    */
@@ -42,7 +42,7 @@ public interface CreateOfflineProfileRequestOrBuilder
    * Parent project to create the profile in.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for parent.
    */

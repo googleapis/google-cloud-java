@@ -91,7 +91,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * Output only. Opaque, server-assigned, unique ID for this profile.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The name.
    */
@@ -114,7 +114,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * Output only. Opaque, server-assigned, unique ID for this profile.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for name.
    */
@@ -291,7 +291,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * format is https://github.com/google/pprof/blob/master/proto/profile.proto.
    * </pre>
    *
-   * <code>bytes profile_bytes = 5;</code>
+   * <code>bytes profile_bytes = 5 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    *
    * @return The profileBytes.
    */
@@ -331,11 +331,11 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Input only. Labels associated to this specific profile. These labels will
-   * get merged with the deployment labels for the final data set.  See
+   * get merged with the deployment labels for the final data set. See
    * documentation on deployment labels for validation rules and limits.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
@@ -355,11 +355,11 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Input only. Labels associated to this specific profile. These labels will
-   * get merged with the deployment labels for the final data set.  See
+   * get merged with the deployment labels for the final data set. See
    * documentation on deployment labels for validation rules and limits.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -370,11 +370,11 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Input only. Labels associated to this specific profile. These labels will
-   * get merged with the deployment labels for the final data set.  See
+   * get merged with the deployment labels for the final data set. See
    * documentation on deployment labels for validation rules and limits.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -392,11 +392,11 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Input only. Labels associated to this specific profile. These labels will
-   * get merged with the deployment labels for the final data set.  See
+   * get merged with the deployment labels for the final data set. See
    * documentation on deployment labels for validation rules and limits.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -923,7 +923,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Output only. Opaque, server-assigned, unique ID for this profile.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The name.
      */
@@ -945,7 +945,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Output only. Opaque, server-assigned, unique ID for this profile.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for name.
      */
@@ -967,7 +967,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Output only. Opaque, server-assigned, unique ID for this profile.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -988,7 +988,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Output only. Opaque, server-assigned, unique ID for this profile.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1005,7 +1005,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * Output only. Opaque, server-assigned, unique ID for this profile.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1541,7 +1541,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * format is https://github.com/google/pprof/blob/master/proto/profile.proto.
      * </pre>
      *
-     * <code>bytes profile_bytes = 5;</code>
+     * <code>bytes profile_bytes = 5 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      *
      * @return The profileBytes.
      */
@@ -1557,7 +1557,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * format is https://github.com/google/pprof/blob/master/proto/profile.proto.
      * </pre>
      *
-     * <code>bytes profile_bytes = 5;</code>
+     * <code>bytes profile_bytes = 5 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      *
      * @param value The profileBytes to set.
      * @return This builder for chaining.
@@ -1579,7 +1579,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * format is https://github.com/google/pprof/blob/master/proto/profile.proto.
      * </pre>
      *
-     * <code>bytes profile_bytes = 5;</code>
+     * <code>bytes profile_bytes = 5 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1620,11 +1620,12 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. Labels associated to this specific profile. These labels will
-     * get merged with the deployment labels for the final data set.  See
+     * get merged with the deployment labels for the final data set. See
      * documentation on deployment labels for validation rules and limits.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 6;</code>
+     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
      */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
@@ -1644,11 +1645,12 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. Labels associated to this specific profile. These labels will
-     * get merged with the deployment labels for the final data set.  See
+     * get merged with the deployment labels for the final data set. See
      * documentation on deployment labels for validation rules and limits.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 6;</code>
+     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -1659,11 +1661,12 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. Labels associated to this specific profile. These labels will
-     * get merged with the deployment labels for the final data set.  See
+     * get merged with the deployment labels for the final data set. See
      * documentation on deployment labels for validation rules and limits.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 6;</code>
+     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -1681,11 +1684,12 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. Labels associated to this specific profile. These labels will
-     * get merged with the deployment labels for the final data set.  See
+     * get merged with the deployment labels for the final data set. See
      * documentation on deployment labels for validation rules and limits.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 6;</code>
+     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -1709,11 +1713,12 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. Labels associated to this specific profile. These labels will
-     * get merged with the deployment labels for the final data set.  See
+     * get merged with the deployment labels for the final data set. See
      * documentation on deployment labels for validation rules and limits.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 6;</code>
+     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -1733,11 +1738,12 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. Labels associated to this specific profile. These labels will
-     * get merged with the deployment labels for the final data set.  See
+     * get merged with the deployment labels for the final data set. See
      * documentation on deployment labels for validation rules and limits.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 6;</code>
+     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -1755,11 +1761,12 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. Labels associated to this specific profile. These labels will
-     * get merged with the deployment labels for the final data set.  See
+     * get merged with the deployment labels for the final data set. See
      * documentation on deployment labels for validation rules and limits.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 6;</code>
+     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);

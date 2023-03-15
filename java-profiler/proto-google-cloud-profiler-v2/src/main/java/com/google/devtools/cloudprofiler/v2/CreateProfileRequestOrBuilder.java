@@ -30,7 +30,7 @@ public interface CreateProfileRequestOrBuilder
    * Parent project to create the profile in.
    * </pre>
    *
-   * <code>string parent = 4;</code>
+   * <code>string parent = 4 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The parent.
    */
@@ -42,7 +42,7 @@ public interface CreateProfileRequestOrBuilder
    * Parent project to create the profile in.
    * </pre>
    *
-   * <code>string parent = 4;</code>
+   * <code>string parent = 4 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for parent.
    */

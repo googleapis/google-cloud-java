@@ -20,6 +20,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.devtools.cloudprofiler.v2.stub.ProfilerServiceStub;
 import com.google.devtools.cloudprofiler.v2.stub.ProfilerServiceStubSettings;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -48,7 +49,7 @@ import javax.annotation.Generated;
  * try (ProfilerServiceClient profilerServiceClient = ProfilerServiceClient.create()) {
  *   CreateProfileRequest request =
  *       CreateProfileRequest.newBuilder()
- *           .setParent("parent-995424086")
+ *           .setParent(ProjectName.of("[PROJECT]").toString())
  *           .setDeployment(Deployment.newBuilder().build())
  *           .addAllProfileType(new ArrayList<ProfileType>())
  *           .build();
@@ -204,7 +205,7 @@ public class ProfilerServiceClient implements BackgroundResource {
    * try (ProfilerServiceClient profilerServiceClient = ProfilerServiceClient.create()) {
    *   CreateProfileRequest request =
    *       CreateProfileRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setDeployment(Deployment.newBuilder().build())
    *           .addAllProfileType(new ArrayList<ProfileType>())
    *           .build();
@@ -243,7 +244,7 @@ public class ProfilerServiceClient implements BackgroundResource {
    * try (ProfilerServiceClient profilerServiceClient = ProfilerServiceClient.create()) {
    *   CreateProfileRequest request =
    *       CreateProfileRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setDeployment(Deployment.newBuilder().build())
    *           .addAllProfileType(new ArrayList<ProfileType>())
    *           .build();
@@ -271,9 +272,72 @@ public class ProfilerServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ProfilerServiceClient profilerServiceClient = ProfilerServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   Profile profile = Profile.newBuilder().build();
+   *   Profile response = profilerServiceClient.createOfflineProfile(parent, profile);
+   * }
+   * }</pre>
+   *
+   * @param parent Parent project to create the profile in.
+   * @param profile Contents of the profile to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Profile createOfflineProfile(ProjectName parent, Profile profile) {
+    CreateOfflineProfileRequest request =
+        CreateOfflineProfileRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setProfile(profile)
+            .build();
+    return createOfflineProfile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * CreateOfflineProfile creates a new profile resource in the offline mode. The client provides
+   * the profile to create along with the profile bytes, the server records it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProfilerServiceClient profilerServiceClient = ProfilerServiceClient.create()) {
+   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   Profile profile = Profile.newBuilder().build();
+   *   Profile response = profilerServiceClient.createOfflineProfile(parent, profile);
+   * }
+   * }</pre>
+   *
+   * @param parent Parent project to create the profile in.
+   * @param profile Contents of the profile to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Profile createOfflineProfile(String parent, Profile profile) {
+    CreateOfflineProfileRequest request =
+        CreateOfflineProfileRequest.newBuilder().setParent(parent).setProfile(profile).build();
+    return createOfflineProfile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * CreateOfflineProfile creates a new profile resource in the offline mode. The client provides
+   * the profile to create along with the profile bytes, the server records it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProfilerServiceClient profilerServiceClient = ProfilerServiceClient.create()) {
    *   CreateOfflineProfileRequest request =
    *       CreateOfflineProfileRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setProfile(Profile.newBuilder().build())
    *           .build();
    *   Profile response = profilerServiceClient.createOfflineProfile(request);
@@ -303,7 +367,7 @@ public class ProfilerServiceClient implements BackgroundResource {
    * try (ProfilerServiceClient profilerServiceClient = ProfilerServiceClient.create()) {
    *   CreateOfflineProfileRequest request =
    *       CreateOfflineProfileRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setProfile(Profile.newBuilder().build())
    *           .build();
    *   ApiFuture<Profile> future =
@@ -315,6 +379,39 @@ public class ProfilerServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateOfflineProfileRequest, Profile> createOfflineProfileCallable() {
     return stub.createOfflineProfileCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * UpdateProfile updates the profile bytes and labels on the profile resource created in the
+   * online mode. Updating the bytes for profiles created in the offline mode is currently not
+   * supported: the profile content must be provided at the time of the profile creation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProfilerServiceClient profilerServiceClient = ProfilerServiceClient.create()) {
+   *   Profile profile = Profile.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Profile response = profilerServiceClient.updateProfile(profile, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param profile Profile to update.
+   * @param updateMask Field mask used to specify the fields to be overwritten. Currently only
+   *     profile_bytes and labels fields are supported by UpdateProfile, so only those fields can be
+   *     specified in the mask. When no mask is provided, all fields are overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Profile updateProfile(Profile profile, FieldMask updateMask) {
+    UpdateProfileRequest request =
+        UpdateProfileRequest.newBuilder().setProfile(profile).setUpdateMask(updateMask).build();
+    return updateProfile(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

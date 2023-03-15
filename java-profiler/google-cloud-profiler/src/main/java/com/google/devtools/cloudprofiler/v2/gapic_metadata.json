@@ -11,13 +11,13 @@
           "libraryClient": "ProfilerServiceClient",
           "rpcs": {
             "CreateOfflineProfile": {
-              "methods": ["createOfflineProfile", "createOfflineProfileCallable"]
+              "methods": ["createOfflineProfile", "createOfflineProfile", "createOfflineProfile", "createOfflineProfileCallable"]
             },
             "CreateProfile": {
               "methods": ["createProfile", "createProfileCallable"]
             },
             "UpdateProfile": {
-              "methods": ["updateProfile", "updateProfileCallable"]
+              "methods": ["updateProfile", "updateProfile", "updateProfileCallable"]
             }
           }
         }

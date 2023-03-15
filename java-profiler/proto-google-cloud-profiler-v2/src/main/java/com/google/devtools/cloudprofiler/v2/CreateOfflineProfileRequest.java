@@ -23,7 +23,7 @@ package com.google.devtools.cloudprofiler.v2;
  *
  * <pre>
  * CreateOfflineProfileRequest describes a profile resource offline creation
- * request. Profile field must be set.
+ * request.
  * </pre>
  *
  * Protobuf type {@code google.devtools.cloudprofiler.v2.CreateOfflineProfileRequest}
@@ -79,7 +79,7 @@ public final class CreateOfflineProfileRequest extends com.google.protobuf.Gener
    * Parent project to create the profile in.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The parent.
    */
@@ -102,7 +102,7 @@ public final class CreateOfflineProfileRequest extends com.google.protobuf.Gener
    * Parent project to create the profile in.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for parent.
    */
@@ -348,7 +348,7 @@ public final class CreateOfflineProfileRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * CreateOfflineProfileRequest describes a profile resource offline creation
-   * request. Profile field must be set.
+   * request.
    * </pre>
    *
    * Protobuf type {@code google.devtools.cloudprofiler.v2.CreateOfflineProfileRequest}
@@ -556,7 +556,7 @@ public final class CreateOfflineProfileRequest extends com.google.protobuf.Gener
      * Parent project to create the profile in.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The parent.
      */
@@ -578,7 +578,7 @@ public final class CreateOfflineProfileRequest extends com.google.protobuf.Gener
      * Parent project to create the profile in.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for parent.
      */
@@ -600,7 +600,7 @@ public final class CreateOfflineProfileRequest extends com.google.protobuf.Gener
      * Parent project to create the profile in.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -621,7 +621,7 @@ public final class CreateOfflineProfileRequest extends com.google.protobuf.Gener
      * Parent project to create the profile in.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -638,7 +638,7 @@ public final class CreateOfflineProfileRequest extends com.google.protobuf.Gener
      * Parent project to create the profile in.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.

@@ -22,6 +22,7 @@ import com.google.devtools.cloudprofiler.v2.Deployment;
 import com.google.devtools.cloudprofiler.v2.Profile;
 import com.google.devtools.cloudprofiler.v2.ProfileType;
 import com.google.devtools.cloudprofiler.v2.ProfilerServiceClient;
+import com.google.devtools.cloudprofiler.v2.ProjectName;
 import java.util.ArrayList;
 
 public class SyncCreateProfile {
@@ -39,7 +40,7 @@ public class SyncCreateProfile {
     try (ProfilerServiceClient profilerServiceClient = ProfilerServiceClient.create()) {
       CreateProfileRequest request =
           CreateProfileRequest.newBuilder()
-              .setParent("parent-995424086")
+              .setParent(ProjectName.of("[PROJECT]").toString())
               .setDeployment(Deployment.newBuilder().build())
               .addAllProfileType(new ArrayList<ProfileType>())
               .build();

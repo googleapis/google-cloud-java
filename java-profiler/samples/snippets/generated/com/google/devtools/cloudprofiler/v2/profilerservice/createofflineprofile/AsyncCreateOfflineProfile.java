@@ -21,6 +21,7 @@ import com.google.api.core.ApiFuture;
 import com.google.devtools.cloudprofiler.v2.CreateOfflineProfileRequest;
 import com.google.devtools.cloudprofiler.v2.Profile;
 import com.google.devtools.cloudprofiler.v2.ProfilerServiceClient;
+import com.google.devtools.cloudprofiler.v2.ProjectName;
 
 public class AsyncCreateOfflineProfile {
 
@@ -37,7 +38,7 @@ public class AsyncCreateOfflineProfile {
     try (ProfilerServiceClient profilerServiceClient = ProfilerServiceClient.create()) {
       CreateOfflineProfileRequest request =
           CreateOfflineProfileRequest.newBuilder()
-              .setParent("parent-995424086")
+              .setParent(ProjectName.of("[PROJECT]").toString())
               .setProfile(Profile.newBuilder().build())
               .build();
       ApiFuture<Profile> future =

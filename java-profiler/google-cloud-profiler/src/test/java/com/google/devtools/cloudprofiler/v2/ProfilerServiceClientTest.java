@@ -95,7 +95,7 @@ public class ProfilerServiceClientTest {
 
     CreateProfileRequest request =
         CreateProfileRequest.newBuilder()
-            .setParent("parent-995424086")
+            .setParent(ProjectName.of("[PROJECT]").toString())
             .setDeployment(Deployment.newBuilder().build())
             .addAllProfileType(new ArrayList<ProfileType>())
             .build();
@@ -124,7 +124,7 @@ public class ProfilerServiceClientTest {
     try {
       CreateProfileRequest request =
           CreateProfileRequest.newBuilder()
-              .setParent("parent-995424086")
+              .setParent(ProjectName.of("[PROJECT]").toString())
               .setDeployment(Deployment.newBuilder().build())
               .addAllProfileType(new ArrayList<ProfileType>())
               .build();
@@ -148,13 +148,10 @@ public class ProfilerServiceClientTest {
             .build();
     mockProfilerService.addResponse(expectedResponse);
 
-    CreateOfflineProfileRequest request =
-        CreateOfflineProfileRequest.newBuilder()
-            .setParent("parent-995424086")
-            .setProfile(Profile.newBuilder().build())
-            .build();
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    Profile profile = Profile.newBuilder().build();
 
-    Profile actualResponse = client.createOfflineProfile(request);
+    Profile actualResponse = client.createOfflineProfile(parent, profile);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockProfilerService.getRequests();
@@ -162,8 +159,8 @@ public class ProfilerServiceClientTest {
     CreateOfflineProfileRequest actualRequest =
         ((CreateOfflineProfileRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getParent(), actualRequest.getParent());
-    Assert.assertEquals(request.getProfile(), actualRequest.getProfile());
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(profile, actualRequest.getProfile());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -176,12 +173,56 @@ public class ProfilerServiceClientTest {
     mockProfilerService.addException(exception);
 
     try {
-      CreateOfflineProfileRequest request =
-          CreateOfflineProfileRequest.newBuilder()
-              .setParent("parent-995424086")
-              .setProfile(Profile.newBuilder().build())
-              .build();
-      client.createOfflineProfile(request);
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      Profile profile = Profile.newBuilder().build();
+      client.createOfflineProfile(parent, profile);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createOfflineProfileTest2() throws Exception {
+    Profile expectedResponse =
+        Profile.newBuilder()
+            .setName("name3373707")
+            .setProfileType(ProfileType.forNumber(0))
+            .setDeployment(Deployment.newBuilder().build())
+            .setDuration(Duration.newBuilder().build())
+            .setProfileBytes(ByteString.EMPTY)
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    mockProfilerService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    Profile profile = Profile.newBuilder().build();
+
+    Profile actualResponse = client.createOfflineProfile(parent, profile);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockProfilerService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateOfflineProfileRequest actualRequest =
+        ((CreateOfflineProfileRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(profile, actualRequest.getProfile());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createOfflineProfileExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockProfilerService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Profile profile = Profile.newBuilder().build();
+      client.createOfflineProfile(parent, profile);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -201,21 +242,18 @@ public class ProfilerServiceClientTest {
             .build();
     mockProfilerService.addResponse(expectedResponse);
 
-    UpdateProfileRequest request =
-        UpdateProfileRequest.newBuilder()
-            .setProfile(Profile.newBuilder().build())
-            .setUpdateMask(FieldMask.newBuilder().build())
-            .build();
+    Profile profile = Profile.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
 
-    Profile actualResponse = client.updateProfile(request);
+    Profile actualResponse = client.updateProfile(profile, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockProfilerService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateProfileRequest actualRequest = ((UpdateProfileRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getProfile(), actualRequest.getProfile());
-    Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
+    Assert.assertEquals(profile, actualRequest.getProfile());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -228,12 +266,9 @@ public class ProfilerServiceClientTest {
     mockProfilerService.addException(exception);
 
     try {
-      UpdateProfileRequest request =
-          UpdateProfileRequest.newBuilder()
-              .setProfile(Profile.newBuilder().build())
-              .setUpdateMask(FieldMask.newBuilder().build())
-              .build();
-      client.updateProfile(request);
+      Profile profile = Profile.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateProfile(profile, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

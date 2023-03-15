@@ -16,39 +16,28 @@
 
 package com.google.devtools.cloudprofiler.v2.samples;
 
-// [START cloudprofiler_v2_generated_ProfilerService_CreateProfile_async]
-import com.google.api.core.ApiFuture;
-import com.google.devtools.cloudprofiler.v2.CreateProfileRequest;
-import com.google.devtools.cloudprofiler.v2.Deployment;
+// [START cloudprofiler_v2_generated_ProfilerService_UpdateProfile_ProfileFieldmask_sync]
 import com.google.devtools.cloudprofiler.v2.Profile;
-import com.google.devtools.cloudprofiler.v2.ProfileType;
 import com.google.devtools.cloudprofiler.v2.ProfilerServiceClient;
-import com.google.devtools.cloudprofiler.v2.ProjectName;
-import java.util.ArrayList;
+import com.google.protobuf.FieldMask;
 
-public class AsyncCreateProfile {
+public class SyncUpdateProfileProfileFieldmask {
 
   public static void main(String[] args) throws Exception {
-    asyncCreateProfile();
+    syncUpdateProfileProfileFieldmask();
   }
 
-  public static void asyncCreateProfile() throws Exception {
+  public static void syncUpdateProfileProfileFieldmask() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ProfilerServiceClient profilerServiceClient = ProfilerServiceClient.create()) {
-      CreateProfileRequest request =
-          CreateProfileRequest.newBuilder()
-              .setParent(ProjectName.of("[PROJECT]").toString())
-              .setDeployment(Deployment.newBuilder().build())
-              .addAllProfileType(new ArrayList<ProfileType>())
-              .build();
-      ApiFuture<Profile> future = profilerServiceClient.createProfileCallable().futureCall(request);
-      // Do something.
-      Profile response = future.get();
+      Profile profile = Profile.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      Profile response = profilerServiceClient.updateProfile(profile, updateMask);
     }
   }
 }
-// [END cloudprofiler_v2_generated_ProfilerService_CreateProfile_async]
+// [END cloudprofiler_v2_generated_ProfilerService_UpdateProfile_ProfileFieldmask_sync]

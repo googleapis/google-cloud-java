@@ -27,7 +27,7 @@ public interface UpdateProfileRequestOrBuilder
    *
    *
    * <pre>
-   * Profile to update
+   * Profile to update.
    * </pre>
    *
    * <code>.google.devtools.cloudprofiler.v2.Profile profile = 1;</code>
@@ -39,7 +39,7 @@ public interface UpdateProfileRequestOrBuilder
    *
    *
    * <pre>
-   * Profile to update
+   * Profile to update.
    * </pre>
    *
    * <code>.google.devtools.cloudprofiler.v2.Profile profile = 1;</code>
@@ -51,7 +51,7 @@ public interface UpdateProfileRequestOrBuilder
    *
    *
    * <pre>
-   * Profile to update
+   * Profile to update.
    * </pre>
    *
    * <code>.google.devtools.cloudprofiler.v2.Profile profile = 1;</code>

@@ -30,7 +30,7 @@ public interface ProfileOrBuilder
    * Output only. Opaque, server-assigned, unique ID for this profile.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The name.
    */
@@ -42,7 +42,7 @@ public interface ProfileOrBuilder
    * Output only. Opaque, server-assigned, unique ID for this profile.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for name.
    */
@@ -170,7 +170,7 @@ public interface ProfileOrBuilder
    * format is https://github.com/google/pprof/blob/master/proto/profile.proto.
    * </pre>
    *
-   * <code>bytes profile_bytes = 5;</code>
+   * <code>bytes profile_bytes = 5 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    *
    * @return The profileBytes.
    */
@@ -181,11 +181,11 @@ public interface ProfileOrBuilder
    *
    * <pre>
    * Input only. Labels associated to this specific profile. These labels will
-   * get merged with the deployment labels for the final data set.  See
+   * get merged with the deployment labels for the final data set. See
    * documentation on deployment labels for validation rules and limits.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
   int getLabelsCount();
   /**
@@ -193,11 +193,11 @@ public interface ProfileOrBuilder
    *
    * <pre>
    * Input only. Labels associated to this specific profile. These labels will
-   * get merged with the deployment labels for the final data set.  See
+   * get merged with the deployment labels for the final data set. See
    * documentation on deployment labels for validation rules and limits.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -208,11 +208,11 @@ public interface ProfileOrBuilder
    *
    * <pre>
    * Input only. Labels associated to this specific profile. These labels will
-   * get merged with the deployment labels for the final data set.  See
+   * get merged with the deployment labels for the final data set. See
    * documentation on deployment labels for validation rules and limits.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
@@ -220,11 +220,11 @@ public interface ProfileOrBuilder
    *
    * <pre>
    * Input only. Labels associated to this specific profile. These labels will
-   * get merged with the deployment labels for the final data set.  See
+   * get merged with the deployment labels for the final data set. See
    * documentation on deployment labels for validation rules and limits.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
   /* nullable */
   java.lang.String getLabelsOrDefault(
@@ -236,11 +236,11 @@ public interface ProfileOrBuilder
    *
    * <pre>
    * Input only. Labels associated to this specific profile. These labels will
-   * get merged with the deployment labels for the final data set.  See
+   * get merged with the deployment labels for the final data set. See
    * documentation on deployment labels for validation rules and limits.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 }

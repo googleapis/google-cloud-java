@@ -82,7 +82,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
    * Parent project to create the profile in.
    * </pre>
    *
-   * <code>string parent = 4;</code>
+   * <code>string parent = 4 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The parent.
    */
@@ -105,7 +105,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
    * Parent project to create the profile in.
    * </pre>
    *
-   * <code>string parent = 4;</code>
+   * <code>string parent = 4 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for parent.
    */
@@ -724,7 +724,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      * Parent project to create the profile in.
      * </pre>
      *
-     * <code>string parent = 4;</code>
+     * <code>string parent = 4 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The parent.
      */
@@ -746,7 +746,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      * Parent project to create the profile in.
      * </pre>
      *
-     * <code>string parent = 4;</code>
+     * <code>string parent = 4 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for parent.
      */
@@ -768,7 +768,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      * Parent project to create the profile in.
      * </pre>
      *
-     * <code>string parent = 4;</code>
+     * <code>string parent = 4 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -789,7 +789,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      * Parent project to create the profile in.
      * </pre>
      *
-     * <code>string parent = 4;</code>
+     * <code>string parent = 4 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -806,7 +806,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
      * Parent project to create the profile in.
      * </pre>
      *
-     * <code>string parent = 4;</code>
+     * <code>string parent = 4 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
