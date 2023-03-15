@@ -18,6 +18,7 @@ package com.google.cloud.translate.v3.stub;
 
 import static com.google.cloud.translate.v3.TranslationServiceClient.ListGlossariesPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -56,6 +57,7 @@ import com.google.cloud.translate.v3.TranslateDocumentRequest;
 import com.google.cloud.translate.v3.TranslateDocumentResponse;
 import com.google.cloud.translate.v3.TranslateTextRequest;
 import com.google.cloud.translate.v3.TranslateTextResponse;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -543,7 +545,37 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.CancelOperation",
+                    HttpRule.newBuilder()
+                        .setPost("/v3/{name=projects/*/locations/*/operations/*}:cancel")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.DeleteOperation",
+                    HttpRule.newBuilder()
+                        .setDelete("/v3/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet("/v3/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder()
+                        .setGet("/v3/{name=projects/*/locations/*}/operations")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.WaitOperation",
+                    HttpRule.newBuilder()
+                        .setPost("/v3/{name=projects/*/locations/*/operations/*}:wait")
+                        .build())
+                .build());
 
     HttpJsonCallSettings<TranslateTextRequest, TranslateTextResponse>
         translateTextTransportSettings =
