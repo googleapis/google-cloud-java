@@ -17,7 +17,6 @@ Java idiomatic client for [Google Cloud VMware Engine][product-docs].
 
 If you are using Maven, add this to your pom.xml file:
 
-<!--- {x-version-update-start:google-cloud-vmwareengine:released} -->
 
 ```xml
 <dependency>
@@ -38,7 +37,6 @@ If you are using SBT, add this to your dependencies:
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-vmwareengine" % "0.6.0"
 ```
-<!--- {x-version-update-end} -->
 
 ## Authentication
 
