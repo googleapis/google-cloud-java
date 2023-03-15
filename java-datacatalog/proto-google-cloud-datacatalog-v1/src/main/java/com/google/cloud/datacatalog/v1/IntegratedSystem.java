@@ -78,6 +78,26 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
    * <code>DATAPLEX = 4;</code>
    */
   DATAPLEX(4),
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Sql
+   * </pre>
+   *
+   * <code>CLOUD_SQL = 8;</code>
+   */
+  CLOUD_SQL(8),
+  /**
+   *
+   *
+   * <pre>
+   * Looker
+   * </pre>
+   *
+   * <code>LOOKER = 9;</code>
+   */
+  LOOKER(9),
   UNRECOGNIZED(-1),
   ;
 
@@ -131,6 +151,26 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
    * <code>DATAPLEX = 4;</code>
    */
   public static final int DATAPLEX_VALUE = 4;
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Sql
+   * </pre>
+   *
+   * <code>CLOUD_SQL = 8;</code>
+   */
+  public static final int CLOUD_SQL_VALUE = 8;
+  /**
+   *
+   *
+   * <pre>
+   * Looker
+   * </pre>
+   *
+   * <code>LOOKER = 9;</code>
+   */
+  public static final int LOOKER_VALUE = 9;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -166,6 +206,10 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
         return DATAPROC_METASTORE;
       case 4:
         return DATAPLEX;
+      case 8:
+        return CLOUD_SQL;
+      case 9:
+        return LOOKER;
       default:
         return null;
     }

@@ -40,6 +40,7 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class PolicyTagManagerSerializationClientTest {
+  private static MockIAMPolicy mockIAMPolicy;
   private static MockPolicyTagManagerSerialization mockPolicyTagManagerSerialization;
   private static MockServiceHelper mockServiceHelper;
   private LocalChannelProvider channelProvider;
@@ -48,10 +49,11 @@ public class PolicyTagManagerSerializationClientTest {
   @BeforeClass
   public static void startStaticServer() {
     mockPolicyTagManagerSerialization = new MockPolicyTagManagerSerialization();
+    mockIAMPolicy = new MockIAMPolicy();
     mockServiceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(mockPolicyTagManagerSerialization));
+            Arrays.<MockGrpcService>asList(mockPolicyTagManagerSerialization, mockIAMPolicy));
     mockServiceHelper.start();
   }
 
@@ -87,6 +89,7 @@ public class PolicyTagManagerSerializationClientTest {
             .setPolicyTagCount(1074340189)
             .setTaxonomyTimestamps(SystemTimestamps.newBuilder().build())
             .addAllActivatedPolicyTypes(new ArrayList<Taxonomy.PolicyType>())
+            .setService(Taxonomy.Service.newBuilder().build())
             .build();
     mockPolicyTagManagerSerialization.addResponse(expectedResponse);
 

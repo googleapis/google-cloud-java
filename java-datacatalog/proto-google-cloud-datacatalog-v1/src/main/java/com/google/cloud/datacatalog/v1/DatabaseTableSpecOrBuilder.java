@@ -91,4 +91,46 @@ public interface DatabaseTableSpecOrBuilder
    * </code>
    */
   com.google.cloud.datacatalog.v1.DataplexTableSpecOrBuilder getDataplexTableOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Spec what aplies to tables that are actually views.
+   * Not set for "real" tables.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec.DatabaseViewSpec database_view_spec = 3;
+   * </code>
+   *
+   * @return Whether the databaseViewSpec field is set.
+   */
+  boolean hasDatabaseViewSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Spec what aplies to tables that are actually views.
+   * Not set for "real" tables.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec.DatabaseViewSpec database_view_spec = 3;
+   * </code>
+   *
+   * @return The databaseViewSpec.
+   */
+  com.google.cloud.datacatalog.v1.DatabaseTableSpec.DatabaseViewSpec getDatabaseViewSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Spec what aplies to tables that are actually views.
+   * Not set for "real" tables.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec.DatabaseViewSpec database_view_spec = 3;
+   * </code>
+   */
+  com.google.cloud.datacatalog.v1.DatabaseTableSpec.DatabaseViewSpecOrBuilder
+      getDatabaseViewSpecOrBuilder();
 }

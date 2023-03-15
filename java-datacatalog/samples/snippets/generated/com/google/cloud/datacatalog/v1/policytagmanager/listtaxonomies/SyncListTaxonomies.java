@@ -40,6 +40,7 @@ public class SyncListTaxonomies {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setFilter("filter-1274492040")
               .build();
       for (Taxonomy element : policyTagManagerClient.listTaxonomies(request).iterateAll()) {
         // doThingsWith(element);

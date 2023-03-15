@@ -112,8 +112,8 @@ public interface ColumnSchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. A column's mode indicates whether values in this column are required,
-   * nullable, or repeated.
+   * Optional. A column's mode indicates whether values in this column are
+   * required, nullable, or repeated.
    * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
    * Default mode is `NULLABLE`.
    * </pre>
@@ -127,8 +127,8 @@ public interface ColumnSchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. A column's mode indicates whether values in this column are required,
-   * nullable, or repeated.
+   * Optional. A column's mode indicates whether values in this column are
+   * required, nullable, or repeated.
    * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
    * Default mode is `NULLABLE`.
    * </pre>
@@ -143,7 +143,75 @@ public interface ColumnSchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
+   * Optional. Default value for the column.
+   * </pre>
+   *
+   * <code>string default_value = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The defaultValue.
+   */
+  java.lang.String getDefaultValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default value for the column.
+   * </pre>
+   *
+   * <code>string default_value = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for defaultValue.
+   */
+  com.google.protobuf.ByteString getDefaultValueBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Ordinal position
+   * </pre>
+   *
+   * <code>int32 ordinal_position = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The ordinalPosition.
+   */
+  int getOrdinalPosition();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Most important inclusion of this column.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.ColumnSchema.IndexingType highest_indexing_type = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for highestIndexingType.
+   */
+  int getHighestIndexingTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Most important inclusion of this column.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.ColumnSchema.IndexingType highest_indexing_type = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The highestIndexingType.
+   */
+  com.google.cloud.datacatalog.v1.ColumnSchema.IndexingType getHighestIndexingType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Schema of sub-columns. A column can have zero or more
+   * sub-columns.
    * </pre>
    *
    * <code>
@@ -155,7 +223,8 @@ public interface ColumnSchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
+   * Optional. Schema of sub-columns. A column can have zero or more
+   * sub-columns.
    * </pre>
    *
    * <code>
@@ -167,7 +236,8 @@ public interface ColumnSchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
+   * Optional. Schema of sub-columns. A column can have zero or more
+   * sub-columns.
    * </pre>
    *
    * <code>
@@ -179,7 +249,8 @@ public interface ColumnSchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
+   * Optional. Schema of sub-columns. A column can have zero or more
+   * sub-columns.
    * </pre>
    *
    * <code>
@@ -192,7 +263,8 @@ public interface ColumnSchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
+   * Optional. Schema of sub-columns. A column can have zero or more
+   * sub-columns.
    * </pre>
    *
    * <code>
@@ -200,4 +272,72 @@ public interface ColumnSchemaOrBuilder
    * </code>
    */
   com.google.cloud.datacatalog.v1.ColumnSchemaOrBuilder getSubcolumnsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Looker specific column info of this column.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.ColumnSchema.LookerColumnSpec looker_column_spec = 18;
+   * </code>
+   *
+   * @return Whether the lookerColumnSpec field is set.
+   */
+  boolean hasLookerColumnSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Looker specific column info of this column.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.ColumnSchema.LookerColumnSpec looker_column_spec = 18;
+   * </code>
+   *
+   * @return The lookerColumnSpec.
+   */
+  com.google.cloud.datacatalog.v1.ColumnSchema.LookerColumnSpec getLookerColumnSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Looker specific column info of this column.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.ColumnSchema.LookerColumnSpec looker_column_spec = 18;
+   * </code>
+   */
+  com.google.cloud.datacatalog.v1.ColumnSchema.LookerColumnSpecOrBuilder
+      getLookerColumnSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Garbage collection policy for the column or column family.
+   * Applies to systems like Cloud Bigtable.
+   * </pre>
+   *
+   * <code>string gc_rule = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The gcRule.
+   */
+  java.lang.String getGcRule();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Garbage collection policy for the column or column family.
+   * Applies to systems like Cloud Bigtable.
+   * </pre>
+   *
+   * <code>string gc_rule = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for gcRule.
+   */
+  com.google.protobuf.ByteString getGcRuleBytes();
+
+  public com.google.cloud.datacatalog.v1.ColumnSchema.SystemSpecCase getSystemSpecCase();
 }

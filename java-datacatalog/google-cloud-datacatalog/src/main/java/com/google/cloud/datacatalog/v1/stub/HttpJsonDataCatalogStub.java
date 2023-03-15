@@ -27,11 +27,14 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
+import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.datacatalog.v1.Contacts;
 import com.google.cloud.datacatalog.v1.CreateEntryGroupRequest;
@@ -50,6 +53,9 @@ import com.google.cloud.datacatalog.v1.EntryOverview;
 import com.google.cloud.datacatalog.v1.GetEntryGroupRequest;
 import com.google.cloud.datacatalog.v1.GetEntryRequest;
 import com.google.cloud.datacatalog.v1.GetTagTemplateRequest;
+import com.google.cloud.datacatalog.v1.ImportEntriesMetadata;
+import com.google.cloud.datacatalog.v1.ImportEntriesRequest;
+import com.google.cloud.datacatalog.v1.ImportEntriesResponse;
 import com.google.cloud.datacatalog.v1.ListEntriesRequest;
 import com.google.cloud.datacatalog.v1.ListEntriesResponse;
 import com.google.cloud.datacatalog.v1.ListEntryGroupsRequest;
@@ -59,6 +65,9 @@ import com.google.cloud.datacatalog.v1.ListTagsResponse;
 import com.google.cloud.datacatalog.v1.LookupEntryRequest;
 import com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest;
 import com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest;
+import com.google.cloud.datacatalog.v1.ReconcileTagsMetadata;
+import com.google.cloud.datacatalog.v1.ReconcileTagsRequest;
+import com.google.cloud.datacatalog.v1.ReconcileTagsResponse;
 import com.google.cloud.datacatalog.v1.RenameTagTemplateFieldEnumValueRequest;
 import com.google.cloud.datacatalog.v1.RenameTagTemplateFieldRequest;
 import com.google.cloud.datacatalog.v1.SearchCatalogRequest;
@@ -80,6 +89,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -99,7 +109,13 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi
 public class HttpJsonDataCatalogStub extends DataCatalogStub {
-  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder()
+          .add(ImportEntriesMetadata.getDescriptor())
+          .add(ReconcileTagsResponse.getDescriptor())
+          .add(ReconcileTagsMetadata.getDescriptor())
+          .add(ImportEntriesResponse.getDescriptor())
+          .build();
 
   private static final ApiMethodDescriptor<SearchCatalogRequest, SearchCatalogResponse>
       searchCatalogMethodDescriptor =
@@ -1058,6 +1074,45 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<ReconcileTagsRequest, Operation>
+      reconcileTagsMethodDescriptor =
+          ApiMethodDescriptor.<ReconcileTagsRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.datacatalog.v1.DataCatalog/ReconcileTags")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ReconcileTagsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/entryGroups/*/entries/*}/tags:reconcile",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ReconcileTagsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ReconcileTagsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ReconcileTagsRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<StarEntryRequest, StarEntryResponse>
       starEntryMethodDescriptor =
           ApiMethodDescriptor.<StarEntryRequest, StarEntryResponse>newBuilder()
@@ -1246,6 +1301,45 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<ImportEntriesRequest, Operation>
+      importEntriesMethodDescriptor =
+          ApiMethodDescriptor.<ImportEntriesRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.datacatalog.v1.DataCatalog/ImportEntries")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ImportEntriesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/entryGroups/*}/entries:import",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ImportEntriesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ImportEntriesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ImportEntriesRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private final UnaryCallable<SearchCatalogRequest, SearchCatalogResponse> searchCatalogCallable;
   private final UnaryCallable<SearchCatalogRequest, SearchCatalogPagedResponse>
       searchCatalogPagedCallable;
@@ -1286,14 +1380,23 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
   private final UnaryCallable<DeleteTagRequest, Empty> deleteTagCallable;
   private final UnaryCallable<ListTagsRequest, ListTagsResponse> listTagsCallable;
   private final UnaryCallable<ListTagsRequest, ListTagsPagedResponse> listTagsPagedCallable;
+  private final UnaryCallable<ReconcileTagsRequest, Operation> reconcileTagsCallable;
+  private final OperationCallable<
+          ReconcileTagsRequest, ReconcileTagsResponse, ReconcileTagsMetadata>
+      reconcileTagsOperationCallable;
   private final UnaryCallable<StarEntryRequest, StarEntryResponse> starEntryCallable;
   private final UnaryCallable<UnstarEntryRequest, UnstarEntryResponse> unstarEntryCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
+  private final UnaryCallable<ImportEntriesRequest, Operation> importEntriesCallable;
+  private final OperationCallable<
+          ImportEntriesRequest, ImportEntriesResponse, ImportEntriesMetadata>
+      importEntriesOperationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonDataCatalogStub create(DataCatalogStubSettings settings)
@@ -1334,6 +1437,8 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
 
     HttpJsonCallSettings<SearchCatalogRequest, SearchCatalogResponse>
         searchCatalogTransportSettings =
@@ -1480,6 +1585,11 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
             .setMethodDescriptor(listTagsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<ReconcileTagsRequest, Operation> reconcileTagsTransportSettings =
+        HttpJsonCallSettings.<ReconcileTagsRequest, Operation>newBuilder()
+            .setMethodDescriptor(reconcileTagsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
     HttpJsonCallSettings<StarEntryRequest, StarEntryResponse> starEntryTransportSettings =
         HttpJsonCallSettings.<StarEntryRequest, StarEntryResponse>newBuilder()
             .setMethodDescriptor(starEntryMethodDescriptor)
@@ -1506,6 +1616,11 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<ImportEntriesRequest, Operation> importEntriesTransportSettings =
+        HttpJsonCallSettings.<ImportEntriesRequest, Operation>newBuilder()
+            .setMethodDescriptor(importEntriesMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
 
     this.searchCatalogCallable =
         callableFactory.createUnaryCallable(
@@ -1620,6 +1735,15 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
     this.listTagsPagedCallable =
         callableFactory.createPagedCallable(
             listTagsTransportSettings, settings.listTagsSettings(), clientContext);
+    this.reconcileTagsCallable =
+        callableFactory.createUnaryCallable(
+            reconcileTagsTransportSettings, settings.reconcileTagsSettings(), clientContext);
+    this.reconcileTagsOperationCallable =
+        callableFactory.createOperationCallable(
+            reconcileTagsTransportSettings,
+            settings.reconcileTagsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.starEntryCallable =
         callableFactory.createUnaryCallable(
             starEntryTransportSettings, settings.starEntrySettings(), clientContext);
@@ -1637,6 +1761,15 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
             clientContext);
+    this.importEntriesCallable =
+        callableFactory.createUnaryCallable(
+            importEntriesTransportSettings, settings.importEntriesSettings(), clientContext);
+    this.importEntriesOperationCallable =
+        callableFactory.createOperationCallable(
+            importEntriesTransportSettings,
+            settings.importEntriesOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1672,12 +1805,18 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
     methodDescriptors.add(updateTagMethodDescriptor);
     methodDescriptors.add(deleteTagMethodDescriptor);
     methodDescriptors.add(listTagsMethodDescriptor);
+    methodDescriptors.add(reconcileTagsMethodDescriptor);
     methodDescriptors.add(starEntryMethodDescriptor);
     methodDescriptors.add(unstarEntryMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
+    methodDescriptors.add(importEntriesMethodDescriptor);
     return methodDescriptors;
+  }
+
+  public HttpJsonOperationsStub getHttpJsonOperationsStub() {
+    return httpJsonOperationsStub;
   }
 
   @Override
@@ -1842,6 +1981,17 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
   }
 
   @Override
+  public UnaryCallable<ReconcileTagsRequest, Operation> reconcileTagsCallable() {
+    return reconcileTagsCallable;
+  }
+
+  @Override
+  public OperationCallable<ReconcileTagsRequest, ReconcileTagsResponse, ReconcileTagsMetadata>
+      reconcileTagsOperationCallable() {
+    return reconcileTagsOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<StarEntryRequest, StarEntryResponse> starEntryCallable() {
     return starEntryCallable;
   }
@@ -1865,6 +2015,17 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportEntriesRequest, Operation> importEntriesCallable() {
+    return importEntriesCallable;
+  }
+
+  @Override
+  public OperationCallable<ImportEntriesRequest, ImportEntriesResponse, ImportEntriesMetadata>
+      importEntriesOperationCallable() {
+    return importEntriesOperationCallable;
   }
 
   @Override

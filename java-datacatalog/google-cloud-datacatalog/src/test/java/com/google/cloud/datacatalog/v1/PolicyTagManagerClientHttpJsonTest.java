@@ -98,6 +98,7 @@ public class PolicyTagManagerClientHttpJsonTest {
             .setPolicyTagCount(1074340189)
             .setTaxonomyTimestamps(SystemTimestamps.newBuilder().build())
             .addAllActivatedPolicyTypes(new ArrayList<Taxonomy.PolicyType>())
+            .setService(Taxonomy.Service.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -149,6 +150,7 @@ public class PolicyTagManagerClientHttpJsonTest {
             .setPolicyTagCount(1074340189)
             .setTaxonomyTimestamps(SystemTimestamps.newBuilder().build())
             .addAllActivatedPolicyTypes(new ArrayList<Taxonomy.PolicyType>())
+            .setService(Taxonomy.Service.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -280,6 +282,7 @@ public class PolicyTagManagerClientHttpJsonTest {
             .setPolicyTagCount(1074340189)
             .setTaxonomyTimestamps(SystemTimestamps.newBuilder().build())
             .addAllActivatedPolicyTypes(new ArrayList<Taxonomy.PolicyType>())
+            .setService(Taxonomy.Service.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -291,6 +294,7 @@ public class PolicyTagManagerClientHttpJsonTest {
             .setPolicyTagCount(1074340189)
             .setTaxonomyTimestamps(SystemTimestamps.newBuilder().build())
             .addAllActivatedPolicyTypes(new ArrayList<Taxonomy.PolicyType>())
+            .setService(Taxonomy.Service.newBuilder().build())
             .build();
 
     Taxonomy actualResponse = client.updateTaxonomy(taxonomy);
@@ -327,6 +331,7 @@ public class PolicyTagManagerClientHttpJsonTest {
               .setPolicyTagCount(1074340189)
               .setTaxonomyTimestamps(SystemTimestamps.newBuilder().build())
               .addAllActivatedPolicyTypes(new ArrayList<Taxonomy.PolicyType>())
+              .setService(Taxonomy.Service.newBuilder().build())
               .build();
       client.updateTaxonomy(taxonomy);
       Assert.fail("No exception raised");
@@ -445,6 +450,7 @@ public class PolicyTagManagerClientHttpJsonTest {
             .setPolicyTagCount(1074340189)
             .setTaxonomyTimestamps(SystemTimestamps.newBuilder().build())
             .addAllActivatedPolicyTypes(new ArrayList<Taxonomy.PolicyType>())
+            .setService(Taxonomy.Service.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -494,6 +500,7 @@ public class PolicyTagManagerClientHttpJsonTest {
             .setPolicyTagCount(1074340189)
             .setTaxonomyTimestamps(SystemTimestamps.newBuilder().build())
             .addAllActivatedPolicyTypes(new ArrayList<Taxonomy.PolicyType>())
+            .setService(Taxonomy.Service.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

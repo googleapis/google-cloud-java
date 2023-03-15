@@ -80,8 +80,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. The Data Catalog resource name of the dataset entry the current table
-   * belongs to. For example:
+   * Output only. The Data Catalog resource name of the dataset entry the
+   * current table belongs to. For example:
    * `projects/{PROJECT_ID}/locations/{LOCATION}/entrygroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`.
    * </pre>
    *
@@ -107,8 +107,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. The Data Catalog resource name of the dataset entry the current table
-   * belongs to. For example:
+   * Output only. The Data Catalog resource name of the dataset entry the
+   * current table belongs to. For example:
    * `projects/{PROJECT_ID}/locations/{LOCATION}/entrygroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`.
    * </pre>
    *
@@ -678,8 +678,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The Data Catalog resource name of the dataset entry the current table
-     * belongs to. For example:
+     * Output only. The Data Catalog resource name of the dataset entry the
+     * current table belongs to. For example:
      * `projects/{PROJECT_ID}/locations/{LOCATION}/entrygroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`.
      * </pre>
      *
@@ -704,8 +704,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The Data Catalog resource name of the dataset entry the current table
-     * belongs to. For example:
+     * Output only. The Data Catalog resource name of the dataset entry the
+     * current table belongs to. For example:
      * `projects/{PROJECT_ID}/locations/{LOCATION}/entrygroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`.
      * </pre>
      *
@@ -730,8 +730,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The Data Catalog resource name of the dataset entry the current table
-     * belongs to. For example:
+     * Output only. The Data Catalog resource name of the dataset entry the
+     * current table belongs to. For example:
      * `projects/{PROJECT_ID}/locations/{LOCATION}/entrygroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`.
      * </pre>
      *
@@ -755,8 +755,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The Data Catalog resource name of the dataset entry the current table
-     * belongs to. For example:
+     * Output only. The Data Catalog resource name of the dataset entry the
+     * current table belongs to. For example:
      * `projects/{PROJECT_ID}/locations/{LOCATION}/entrygroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`.
      * </pre>
      *
@@ -776,8 +776,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The Data Catalog resource name of the dataset entry the current table
-     * belongs to. For example:
+     * Output only. The Data Catalog resource name of the dataset entry the
+     * current table belongs to. For example:
      * `projects/{PROJECT_ID}/locations/{LOCATION}/entrygroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`.
      * </pre>
      *

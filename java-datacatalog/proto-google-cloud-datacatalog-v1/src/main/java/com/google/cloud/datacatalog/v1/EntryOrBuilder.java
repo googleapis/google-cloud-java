@@ -363,6 +363,83 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
+   * Specification that applies to a relational database system. Only settable
+   * when `user_specified_system` is equal to `SQL_DATABASE`
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec sql_database_system_spec = 39;</code>
+   *
+   * @return Whether the sqlDatabaseSystemSpec field is set.
+   */
+  boolean hasSqlDatabaseSystemSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Specification that applies to a relational database system. Only settable
+   * when `user_specified_system` is equal to `SQL_DATABASE`
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec sql_database_system_spec = 39;</code>
+   *
+   * @return The sqlDatabaseSystemSpec.
+   */
+  com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec getSqlDatabaseSystemSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Specification that applies to a relational database system. Only settable
+   * when `user_specified_system` is equal to `SQL_DATABASE`
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec sql_database_system_spec = 39;</code>
+   */
+  com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpecOrBuilder
+      getSqlDatabaseSystemSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specification that applies to Looker sysstem. Only settable when
+   * `user_specified_system` is equal to `LOOKER`
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.LookerSystemSpec looker_system_spec = 40;</code>
+   *
+   * @return Whether the lookerSystemSpec field is set.
+   */
+  boolean hasLookerSystemSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Specification that applies to Looker sysstem. Only settable when
+   * `user_specified_system` is equal to `LOOKER`
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.LookerSystemSpec looker_system_spec = 40;</code>
+   *
+   * @return The lookerSystemSpec.
+   */
+  com.google.cloud.datacatalog.v1.LookerSystemSpec getLookerSystemSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Specification that applies to Looker sysstem. Only settable when
+   * `user_specified_system` is equal to `LOOKER`
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.LookerSystemSpec looker_system_spec = 40;</code>
+   */
+  com.google.cloud.datacatalog.v1.LookerSystemSpecOrBuilder getLookerSystemSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Specification that applies to a Cloud Storage fileset. Valid only
    * for entries with the `FILESET` type.
    * </pre>
@@ -497,7 +574,7 @@ public interface EntryOrBuilder
    *
    * <pre>
    * Specification that applies to a table resource. Valid only
-   * for entries with the `TABLE` type.
+   * for entries with the `TABLE` or `EXPLORE` type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
@@ -510,7 +587,7 @@ public interface EntryOrBuilder
    *
    * <pre>
    * Specification that applies to a table resource. Valid only
-   * for entries with the `TABLE` type.
+   * for entries with the `TABLE` or `EXPLORE` type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
@@ -523,7 +600,7 @@ public interface EntryOrBuilder
    *
    * <pre>
    * Specification that applies to a table resource. Valid only
-   * for entries with the `TABLE` type.
+   * for entries with the `TABLE` or `EXPLORE` type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
@@ -653,9 +730,7 @@ public interface EntryOrBuilder
    *
    * <pre>
    * Display name of an entry.
-   * The name must contain only Unicode letters, numbers (0-9), underscores (_),
-   * dashes (-), spaces ( ), and can't start or end with spaces.
-   * The maximum size is 200 bytes when encoded in UTF-8.
+   * The maximum size is 500 bytes when encoded in UTF-8.
    * Default value is an empty string.
    * </pre>
    *
@@ -669,9 +744,7 @@ public interface EntryOrBuilder
    *
    * <pre>
    * Display name of an entry.
-   * The name must contain only Unicode letters, numbers (0-9), underscores (_),
-   * dashes (-), spaces ( ), and can't start or end with spaces.
-   * The maximum size is 200 bytes when encoded in UTF-8.
+   * The maximum size is 500 bytes when encoded in UTF-8.
    * Default value is an empty string.
    * </pre>
    *
@@ -988,7 +1061,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. Additional information related to the entry. Private to the current user.
+   * Output only. Additional information related to the entry. Private to the
+   * current user.
    * </pre>
    *
    * <code>
@@ -1002,7 +1076,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. Additional information related to the entry. Private to the current user.
+   * Output only. Additional information related to the entry. Private to the
+   * current user.
    * </pre>
    *
    * <code>
@@ -1016,7 +1091,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. Additional information related to the entry. Private to the current user.
+   * Output only. Additional information related to the entry. Private to the
+   * current user.
    * </pre>
    *
    * <code>
@@ -1028,6 +1104,8 @@ public interface EntryOrBuilder
   public com.google.cloud.datacatalog.v1.Entry.EntryTypeCase getEntryTypeCase();
 
   public com.google.cloud.datacatalog.v1.Entry.SystemCase getSystemCase();
+
+  public com.google.cloud.datacatalog.v1.Entry.SystemSpecCase getSystemSpecCase();
 
   public com.google.cloud.datacatalog.v1.Entry.TypeSpecCase getTypeSpecCase();
 

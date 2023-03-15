@@ -201,7 +201,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If `true`, include Google Cloud Platform (GCP) public datasets in
+     * If `true`, include Google Cloud public datasets in
      * search results. By default, they are excluded.
      * See [Google Cloud Public Datasets](/public-datasets) for more
      * information.
@@ -217,8 +217,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The list of locations to search within. If empty, all locations are
-     * searched.
+     * Optional. The list of locations to search within. If empty, all locations
+     * are searched.
      * Returns an error if any location in the list isn't one of the [Supported
      * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
      * If a location is unreachable, its name is returned in the
@@ -237,8 +237,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The list of locations to search within. If empty, all locations are
-     * searched.
+     * Optional. The list of locations to search within. If empty, all locations
+     * are searched.
      * Returns an error if any location in the list isn't one of the [Supported
      * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
      * If a location is unreachable, its name is returned in the
@@ -257,8 +257,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The list of locations to search within. If empty, all locations are
-     * searched.
+     * Optional. The list of locations to search within. If empty, all locations
+     * are searched.
      * Returns an error if any location in the list isn't one of the [Supported
      * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
      * If a location is unreachable, its name is returned in the
@@ -278,8 +278,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The list of locations to search within. If empty, all locations are
-     * searched.
+     * Optional. The list of locations to search within. If empty, all locations
+     * are searched.
      * Returns an error if any location in the list isn't one of the [Supported
      * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
      * If a location is unreachable, its name is returned in the
@@ -314,8 +314,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. This field is deprecated. The search mechanism for public and private tag
-     * templates is the same.
+     * Optional. This field is deprecated. The search mechanism for public and
+     * private tag templates is the same.
      * </pre>
      *
      * <code>
@@ -324,7 +324,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * @deprecated
      *     google.cloud.datacatalog.v1.SearchCatalogRequest.Scope.include_public_tag_templates is
-     *     deprecated. See google/cloud/datacatalog/v1/datacatalog.proto;l=604
+     *     deprecated. See google/cloud/datacatalog/v1/datacatalog.proto;l=677
      * @return The includePublicTagTemplates.
      */
     @java.lang.Deprecated
@@ -533,7 +533,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If `true`, include Google Cloud Platform (GCP) public datasets in
+     * If `true`, include Google Cloud public datasets in
      * search results. By default, they are excluded.
      * See [Google Cloud Public Datasets](/public-datasets) for more
      * information.
@@ -556,8 +556,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The list of locations to search within. If empty, all locations are
-     * searched.
+     * Optional. The list of locations to search within. If empty, all locations
+     * are searched.
      * Returns an error if any location in the list isn't one of the [Supported
      * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
      * If a location is unreachable, its name is returned in the
@@ -578,8 +578,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The list of locations to search within. If empty, all locations are
-     * searched.
+     * Optional. The list of locations to search within. If empty, all locations
+     * are searched.
      * Returns an error if any location in the list isn't one of the [Supported
      * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
      * If a location is unreachable, its name is returned in the
@@ -600,8 +600,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The list of locations to search within. If empty, all locations are
-     * searched.
+     * Optional. The list of locations to search within. If empty, all locations
+     * are searched.
      * Returns an error if any location in the list isn't one of the [Supported
      * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
      * If a location is unreachable, its name is returned in the
@@ -623,8 +623,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The list of locations to search within. If empty, all locations are
-     * searched.
+     * Optional. The list of locations to search within. If empty, all locations
+     * are searched.
      * Returns an error if any location in the list isn't one of the [Supported
      * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
      * If a location is unreachable, its name is returned in the
@@ -668,8 +668,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. This field is deprecated. The search mechanism for public and private tag
-     * templates is the same.
+     * Optional. This field is deprecated. The search mechanism for public and
+     * private tag templates is the same.
      * </pre>
      *
      * <code>
@@ -678,7 +678,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * @deprecated
      *     google.cloud.datacatalog.v1.SearchCatalogRequest.Scope.include_public_tag_templates is
-     *     deprecated. See google/cloud/datacatalog/v1/datacatalog.proto;l=604
+     *     deprecated. See google/cloud/datacatalog/v1/datacatalog.proto;l=677
      * @return The includePublicTagTemplates.
      */
     @java.lang.Override
@@ -1592,7 +1592,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * If `true`, include Google Cloud Platform (GCP) public datasets in
+       * If `true`, include Google Cloud public datasets in
        * search results. By default, they are excluded.
        * See [Google Cloud Public Datasets](/public-datasets) for more
        * information.
@@ -1610,7 +1610,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * If `true`, include Google Cloud Platform (GCP) public datasets in
+       * If `true`, include Google Cloud public datasets in
        * search results. By default, they are excluded.
        * See [Google Cloud Public Datasets](/public-datasets) for more
        * information.
@@ -1632,7 +1632,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * If `true`, include Google Cloud Platform (GCP) public datasets in
+       * If `true`, include Google Cloud public datasets in
        * search results. By default, they are excluded.
        * See [Google Cloud Public Datasets](/public-datasets) for more
        * information.
@@ -1662,8 +1662,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. The list of locations to search within. If empty, all locations are
-       * searched.
+       * Optional. The list of locations to search within. If empty, all locations
+       * are searched.
        * Returns an error if any location in the list isn't one of the [Supported
        * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
        * If a location is unreachable, its name is returned in the
@@ -1684,8 +1684,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. The list of locations to search within. If empty, all locations are
-       * searched.
+       * Optional. The list of locations to search within. If empty, all locations
+       * are searched.
        * Returns an error if any location in the list isn't one of the [Supported
        * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
        * If a location is unreachable, its name is returned in the
@@ -1706,8 +1706,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. The list of locations to search within. If empty, all locations are
-       * searched.
+       * Optional. The list of locations to search within. If empty, all locations
+       * are searched.
        * Returns an error if any location in the list isn't one of the [Supported
        * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
        * If a location is unreachable, its name is returned in the
@@ -1729,8 +1729,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. The list of locations to search within. If empty, all locations are
-       * searched.
+       * Optional. The list of locations to search within. If empty, all locations
+       * are searched.
        * Returns an error if any location in the list isn't one of the [Supported
        * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
        * If a location is unreachable, its name is returned in the
@@ -1752,8 +1752,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. The list of locations to search within. If empty, all locations are
-       * searched.
+       * Optional. The list of locations to search within. If empty, all locations
+       * are searched.
        * Returns an error if any location in the list isn't one of the [Supported
        * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
        * If a location is unreachable, its name is returned in the
@@ -1782,8 +1782,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. The list of locations to search within. If empty, all locations are
-       * searched.
+       * Optional. The list of locations to search within. If empty, all locations
+       * are searched.
        * Returns an error if any location in the list isn't one of the [Supported
        * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
        * If a location is unreachable, its name is returned in the
@@ -1811,8 +1811,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. The list of locations to search within. If empty, all locations are
-       * searched.
+       * Optional. The list of locations to search within. If empty, all locations
+       * are searched.
        * Returns an error if any location in the list isn't one of the [Supported
        * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
        * If a location is unreachable, its name is returned in the
@@ -1837,8 +1837,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. The list of locations to search within. If empty, all locations are
-       * searched.
+       * Optional. The list of locations to search within. If empty, all locations
+       * are searched.
        * Returns an error if any location in the list isn't one of the [Supported
        * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
        * If a location is unreachable, its name is returned in the
@@ -1862,8 +1862,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. The list of locations to search within. If empty, all locations are
-       * searched.
+       * Optional. The list of locations to search within. If empty, all locations
+       * are searched.
        * Returns an error if any location in the list isn't one of the [Supported
        * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions).
        * If a location is unreachable, its name is returned in the
@@ -1950,8 +1950,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. This field is deprecated. The search mechanism for public and private tag
-       * templates is the same.
+       * Optional. This field is deprecated. The search mechanism for public and
+       * private tag templates is the same.
        * </pre>
        *
        * <code>
@@ -1960,7 +1960,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        * @deprecated
        *     google.cloud.datacatalog.v1.SearchCatalogRequest.Scope.include_public_tag_templates is
-       *     deprecated. See google/cloud/datacatalog/v1/datacatalog.proto;l=604
+       *     deprecated. See google/cloud/datacatalog/v1/datacatalog.proto;l=677
        * @return The includePublicTagTemplates.
        */
       @java.lang.Override
@@ -1972,8 +1972,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. This field is deprecated. The search mechanism for public and private tag
-       * templates is the same.
+       * Optional. This field is deprecated. The search mechanism for public and
+       * private tag templates is the same.
        * </pre>
        *
        * <code>
@@ -1982,7 +1982,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        * @deprecated
        *     google.cloud.datacatalog.v1.SearchCatalogRequest.Scope.include_public_tag_templates is
-       *     deprecated. See google/cloud/datacatalog/v1/datacatalog.proto;l=604
+       *     deprecated. See google/cloud/datacatalog/v1/datacatalog.proto;l=677
        * @param value The includePublicTagTemplates to set.
        * @return This builder for chaining.
        */
@@ -1998,8 +1998,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Optional. This field is deprecated. The search mechanism for public and private tag
-       * templates is the same.
+       * Optional. This field is deprecated. The search mechanism for public and
+       * private tag templates is the same.
        * </pre>
        *
        * <code>
@@ -2008,7 +2008,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        * @deprecated
        *     google.cloud.datacatalog.v1.SearchCatalogRequest.Scope.include_public_tag_templates is
-       *     deprecated. See google/cloud/datacatalog/v1/datacatalog.proto;l=604
+       *     deprecated. See google/cloud/datacatalog/v1/datacatalog.proto;l=677
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -2157,9 +2157,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The query string with a minimum of 3 characters and specific syntax.
-   * For more information, see
-   * [Data Catalog search
+   * Optional. The query string with a minimum of 3 characters and specific
+   * syntax. For more information, see [Data Catalog search
    * syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
    * An empty query string returns all data assets (in the specified scope)
    * that you have access to.
@@ -2189,9 +2188,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The query string with a minimum of 3 characters and specific syntax.
-   * For more information, see
-   * [Data Catalog search
+   * Optional. The query string with a minimum of 3 characters and specific
+   * syntax. For more information, see [Data Catalog search
    * syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
    * An empty query string returns all data assets (in the specified scope)
    * that you have access to.
@@ -2247,9 +2245,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Pagination token that, if specified, returns the next page of search
-   * results. If empty, returns the first page.
-   * This token is returned in the [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token]
+   * Optional. Pagination token that, if specified, returns the next page of
+   * search results. If empty, returns the first page.
+   * This token is returned in the
+   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token]
    * field of the response to a previous
    * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
    * call.
@@ -2275,9 +2274,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Pagination token that, if specified, returns the next page of search
-   * results. If empty, returns the first page.
-   * This token is returned in the [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token]
+   * Optional. Pagination token that, if specified, returns the next page of
+   * search results. If empty, returns the first page.
+   * This token is returned in the
+   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token]
    * field of the response to a previous
    * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
    * call.
@@ -3041,9 +3041,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The query string with a minimum of 3 characters and specific syntax.
-     * For more information, see
-     * [Data Catalog search
+     * Optional. The query string with a minimum of 3 characters and specific
+     * syntax. For more information, see [Data Catalog search
      * syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
      * An empty query string returns all data assets (in the specified scope)
      * that you have access to.
@@ -3072,9 +3071,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The query string with a minimum of 3 characters and specific syntax.
-     * For more information, see
-     * [Data Catalog search
+     * Optional. The query string with a minimum of 3 characters and specific
+     * syntax. For more information, see [Data Catalog search
      * syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
      * An empty query string returns all data assets (in the specified scope)
      * that you have access to.
@@ -3103,9 +3101,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The query string with a minimum of 3 characters and specific syntax.
-     * For more information, see
-     * [Data Catalog search
+     * Optional. The query string with a minimum of 3 characters and specific
+     * syntax. For more information, see [Data Catalog search
      * syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
      * An empty query string returns all data assets (in the specified scope)
      * that you have access to.
@@ -3133,9 +3130,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The query string with a minimum of 3 characters and specific syntax.
-     * For more information, see
-     * [Data Catalog search
+     * Optional. The query string with a minimum of 3 characters and specific
+     * syntax. For more information, see [Data Catalog search
      * syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
      * An empty query string returns all data assets (in the specified scope)
      * that you have access to.
@@ -3159,9 +3155,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The query string with a minimum of 3 characters and specific syntax.
-     * For more information, see
-     * [Data Catalog search
+     * Optional. The query string with a minimum of 3 characters and specific
+     * syntax. For more information, see [Data Catalog search
      * syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
      * An empty query string returns all data assets (in the specified scope)
      * that you have access to.
@@ -3254,9 +3249,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Pagination token that, if specified, returns the next page of search
-     * results. If empty, returns the first page.
-     * This token is returned in the [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token]
+     * Optional. Pagination token that, if specified, returns the next page of
+     * search results. If empty, returns the first page.
+     * This token is returned in the
+     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token]
      * field of the response to a previous
      * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
      * call.
@@ -3281,9 +3277,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Pagination token that, if specified, returns the next page of search
-     * results. If empty, returns the first page.
-     * This token is returned in the [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token]
+     * Optional. Pagination token that, if specified, returns the next page of
+     * search results. If empty, returns the first page.
+     * This token is returned in the
+     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token]
      * field of the response to a previous
      * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
      * call.
@@ -3308,9 +3305,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Pagination token that, if specified, returns the next page of search
-     * results. If empty, returns the first page.
-     * This token is returned in the [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token]
+     * Optional. Pagination token that, if specified, returns the next page of
+     * search results. If empty, returns the first page.
+     * This token is returned in the
+     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token]
      * field of the response to a previous
      * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
      * call.
@@ -3334,9 +3332,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Pagination token that, if specified, returns the next page of search
-     * results. If empty, returns the first page.
-     * This token is returned in the [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token]
+     * Optional. Pagination token that, if specified, returns the next page of
+     * search results. If empty, returns the first page.
+     * This token is returned in the
+     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token]
      * field of the response to a previous
      * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
      * call.
@@ -3356,9 +3355,10 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Pagination token that, if specified, returns the next page of search
-     * results. If empty, returns the first page.
-     * This token is returned in the [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token]
+     * Optional. Pagination token that, if specified, returns the next page of
+     * search results. If empty, returns the first page.
+     * This token is returned in the
+     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token]
      * field of the response to a previous
      * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
      * call.

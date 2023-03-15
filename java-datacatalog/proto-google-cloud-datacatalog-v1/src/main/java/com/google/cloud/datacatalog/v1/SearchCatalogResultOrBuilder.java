@@ -186,8 +186,8 @@ public interface SearchCatalogResultOrBuilder
    *
    *
    * <pre>
-   * Output only. The source system that Data Catalog automatically integrates  with, such
-   * as BigQuery, Cloud Pub/Sub, or Dataproc Metastore.
+   * Output only. The source system that Data Catalog automatically integrates
+   * with, such as BigQuery, Cloud Pub/Sub, or Dataproc Metastore.
    * </pre>
    *
    * <code>
@@ -201,8 +201,8 @@ public interface SearchCatalogResultOrBuilder
    *
    *
    * <pre>
-   * Output only. The source system that Data Catalog automatically integrates  with, such
-   * as BigQuery, Cloud Pub/Sub, or Dataproc Metastore.
+   * Output only. The source system that Data Catalog automatically integrates
+   * with, such as BigQuery, Cloud Pub/Sub, or Dataproc Metastore.
    * </pre>
    *
    * <code>
@@ -216,8 +216,8 @@ public interface SearchCatalogResultOrBuilder
    *
    *
    * <pre>
-   * Output only. The source system that Data Catalog automatically integrates  with, such
-   * as BigQuery, Cloud Pub/Sub, or Dataproc Metastore.
+   * Output only. The source system that Data Catalog automatically integrates
+   * with, such as BigQuery, Cloud Pub/Sub, or Dataproc Metastore.
    * </pre>
    *
    * <code>

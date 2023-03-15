@@ -30,13 +30,17 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.grpc.ProtoOperationTransformers;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -63,6 +67,9 @@ import com.google.cloud.datacatalog.v1.EntryOverview;
 import com.google.cloud.datacatalog.v1.GetEntryGroupRequest;
 import com.google.cloud.datacatalog.v1.GetEntryRequest;
 import com.google.cloud.datacatalog.v1.GetTagTemplateRequest;
+import com.google.cloud.datacatalog.v1.ImportEntriesMetadata;
+import com.google.cloud.datacatalog.v1.ImportEntriesRequest;
+import com.google.cloud.datacatalog.v1.ImportEntriesResponse;
 import com.google.cloud.datacatalog.v1.ListEntriesRequest;
 import com.google.cloud.datacatalog.v1.ListEntriesResponse;
 import com.google.cloud.datacatalog.v1.ListEntryGroupsRequest;
@@ -72,6 +79,9 @@ import com.google.cloud.datacatalog.v1.ListTagsResponse;
 import com.google.cloud.datacatalog.v1.LookupEntryRequest;
 import com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest;
 import com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest;
+import com.google.cloud.datacatalog.v1.ReconcileTagsMetadata;
+import com.google.cloud.datacatalog.v1.ReconcileTagsRequest;
+import com.google.cloud.datacatalog.v1.ReconcileTagsResponse;
 import com.google.cloud.datacatalog.v1.RenameTagTemplateFieldEnumValueRequest;
 import com.google.cloud.datacatalog.v1.RenameTagTemplateFieldRequest;
 import com.google.cloud.datacatalog.v1.SearchCatalogRequest;
@@ -98,6 +108,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -186,12 +197,20 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
   private final UnaryCallSettings<DeleteTagRequest, Empty> deleteTagSettings;
   private final PagedCallSettings<ListTagsRequest, ListTagsResponse, ListTagsPagedResponse>
       listTagsSettings;
+  private final UnaryCallSettings<ReconcileTagsRequest, Operation> reconcileTagsSettings;
+  private final OperationCallSettings<
+          ReconcileTagsRequest, ReconcileTagsResponse, ReconcileTagsMetadata>
+      reconcileTagsOperationSettings;
   private final UnaryCallSettings<StarEntryRequest, StarEntryResponse> starEntrySettings;
   private final UnaryCallSettings<UnstarEntryRequest, UnstarEntryResponse> unstarEntrySettings;
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
+  private final UnaryCallSettings<ImportEntriesRequest, Operation> importEntriesSettings;
+  private final OperationCallSettings<
+          ImportEntriesRequest, ImportEntriesResponse, ImportEntriesMetadata>
+      importEntriesOperationSettings;
 
   private static final PagedListDescriptor<
           SearchCatalogRequest, SearchCatalogResponse, SearchCatalogResult>
@@ -555,6 +574,17 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
     return listTagsSettings;
   }
 
+  /** Returns the object with the settings used for calls to reconcileTags. */
+  public UnaryCallSettings<ReconcileTagsRequest, Operation> reconcileTagsSettings() {
+    return reconcileTagsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to reconcileTags. */
+  public OperationCallSettings<ReconcileTagsRequest, ReconcileTagsResponse, ReconcileTagsMetadata>
+      reconcileTagsOperationSettings() {
+    return reconcileTagsOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to starEntry. */
   public UnaryCallSettings<StarEntryRequest, StarEntryResponse> starEntrySettings() {
     return starEntrySettings;
@@ -579,6 +609,17 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
   public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings() {
     return testIamPermissionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importEntries. */
+  public UnaryCallSettings<ImportEntriesRequest, Operation> importEntriesSettings() {
+    return importEntriesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importEntries. */
+  public OperationCallSettings<ImportEntriesRequest, ImportEntriesResponse, ImportEntriesMetadata>
+      importEntriesOperationSettings() {
+    return importEntriesOperationSettings;
   }
 
   public DataCatalogStub createStub() throws IOException {
@@ -715,11 +756,15 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
     updateTagSettings = settingsBuilder.updateTagSettings().build();
     deleteTagSettings = settingsBuilder.deleteTagSettings().build();
     listTagsSettings = settingsBuilder.listTagsSettings().build();
+    reconcileTagsSettings = settingsBuilder.reconcileTagsSettings().build();
+    reconcileTagsOperationSettings = settingsBuilder.reconcileTagsOperationSettings().build();
     starEntrySettings = settingsBuilder.starEntrySettings().build();
     unstarEntrySettings = settingsBuilder.unstarEntrySettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+    importEntriesSettings = settingsBuilder.importEntriesSettings().build();
+    importEntriesOperationSettings = settingsBuilder.importEntriesOperationSettings().build();
   }
 
   /** Builder for DataCatalogStubSettings. */
@@ -775,6 +820,10 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
     private final PagedCallSettings.Builder<
             ListTagsRequest, ListTagsResponse, ListTagsPagedResponse>
         listTagsSettings;
+    private final UnaryCallSettings.Builder<ReconcileTagsRequest, Operation> reconcileTagsSettings;
+    private final OperationCallSettings.Builder<
+            ReconcileTagsRequest, ReconcileTagsResponse, ReconcileTagsMetadata>
+        reconcileTagsOperationSettings;
     private final UnaryCallSettings.Builder<StarEntryRequest, StarEntryResponse> starEntrySettings;
     private final UnaryCallSettings.Builder<UnstarEntryRequest, UnstarEntryResponse>
         unstarEntrySettings;
@@ -782,6 +831,10 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
+    private final UnaryCallSettings.Builder<ImportEntriesRequest, Operation> importEntriesSettings;
+    private final OperationCallSettings.Builder<
+            ImportEntriesRequest, ImportEntriesResponse, ImportEntriesMetadata>
+        importEntriesOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -857,11 +910,15 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
       updateTagSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteTagSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listTagsSettings = PagedCallSettings.newBuilder(LIST_TAGS_PAGE_STR_FACT);
+      reconcileTagsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      reconcileTagsOperationSettings = OperationCallSettings.newBuilder();
       starEntrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       unstarEntrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      importEntriesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      importEntriesOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -892,11 +949,13 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
               updateTagSettings,
               deleteTagSettings,
               listTagsSettings,
+              reconcileTagsSettings,
               starEntrySettings,
               unstarEntrySettings,
               setIamPolicySettings,
               getIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              importEntriesSettings);
       initDefaults(this);
     }
 
@@ -931,11 +990,15 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
       updateTagSettings = settings.updateTagSettings.toBuilder();
       deleteTagSettings = settings.deleteTagSettings.toBuilder();
       listTagsSettings = settings.listTagsSettings.toBuilder();
+      reconcileTagsSettings = settings.reconcileTagsSettings.toBuilder();
+      reconcileTagsOperationSettings = settings.reconcileTagsOperationSettings.toBuilder();
       starEntrySettings = settings.starEntrySettings.toBuilder();
       unstarEntrySettings = settings.unstarEntrySettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+      importEntriesSettings = settings.importEntriesSettings.toBuilder();
+      importEntriesOperationSettings = settings.importEntriesOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -966,11 +1029,13 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
               updateTagSettings,
               deleteTagSettings,
               listTagsSettings,
+              reconcileTagsSettings,
               starEntrySettings,
               unstarEntrySettings,
               setIamPolicySettings,
               getIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              importEntriesSettings);
     }
 
     private static Builder createDefault() {
@@ -1136,6 +1201,11 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
 
       builder
+          .reconcileTagsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
           .starEntrySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
@@ -1159,6 +1229,59 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
           .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .importEntriesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
+
+      builder
+          .reconcileTagsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ReconcileTagsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ReconcileTagsResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(ReconcileTagsMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .importEntriesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ImportEntriesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ImportEntriesResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(ImportEntriesMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
 
       return builder;
     }
@@ -1331,6 +1454,20 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
       return listTagsSettings;
     }
 
+    /** Returns the builder for the settings used for calls to reconcileTags. */
+    public UnaryCallSettings.Builder<ReconcileTagsRequest, Operation> reconcileTagsSettings() {
+      return reconcileTagsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to reconcileTags. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            ReconcileTagsRequest, ReconcileTagsResponse, ReconcileTagsMetadata>
+        reconcileTagsOperationSettings() {
+      return reconcileTagsOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to starEntry. */
     public UnaryCallSettings.Builder<StarEntryRequest, StarEntryResponse> starEntrySettings() {
       return starEntrySettings;
@@ -1356,6 +1493,20 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importEntries. */
+    public UnaryCallSettings.Builder<ImportEntriesRequest, Operation> importEntriesSettings() {
+      return importEntriesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importEntries. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            ImportEntriesRequest, ImportEntriesResponse, ImportEntriesMetadata>
+        importEntriesOperationSettings() {
+      return importEntriesOperationSettings;
     }
 
     @Override

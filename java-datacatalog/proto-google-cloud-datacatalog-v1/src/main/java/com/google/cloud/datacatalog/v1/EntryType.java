@@ -154,6 +154,50 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SERVICE = 14;</code>
    */
   SERVICE(14),
+  /**
+   *
+   *
+   * <pre>
+   * Schema within a relational database.
+   * </pre>
+   *
+   * <code>DATABASE_SCHEMA = 15;</code>
+   */
+  DATABASE_SCHEMA(15),
+  /**
+   *
+   *
+   * <pre>
+   * A Dashboard, for example from Looker.
+   * </pre>
+   *
+   * <code>DASHBOARD = 16;</code>
+   */
+  DASHBOARD(16),
+  /**
+   *
+   *
+   * <pre>
+   * A Looker Explore.
+   * For more information, see [Looker Explore API]
+   * (https://developers.looker.com/api/explorer/4.0/methods/LookmlModel/lookml_model_explore).
+   * </pre>
+   *
+   * <code>EXPLORE = 17;</code>
+   */
+  EXPLORE(17),
+  /**
+   *
+   *
+   * <pre>
+   * A Looker Look.
+   * For more information, see [Looker Look API]
+   * (https://developers.looker.com/api/explorer/4.0/methods/Look).
+   * </pre>
+   *
+   * <code>LOOK = 18;</code>
+   */
+  LOOK(18),
   UNRECOGNIZED(-1),
   ;
 
@@ -282,6 +326,50 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SERVICE = 14;</code>
    */
   public static final int SERVICE_VALUE = 14;
+  /**
+   *
+   *
+   * <pre>
+   * Schema within a relational database.
+   * </pre>
+   *
+   * <code>DATABASE_SCHEMA = 15;</code>
+   */
+  public static final int DATABASE_SCHEMA_VALUE = 15;
+  /**
+   *
+   *
+   * <pre>
+   * A Dashboard, for example from Looker.
+   * </pre>
+   *
+   * <code>DASHBOARD = 16;</code>
+   */
+  public static final int DASHBOARD_VALUE = 16;
+  /**
+   *
+   *
+   * <pre>
+   * A Looker Explore.
+   * For more information, see [Looker Explore API]
+   * (https://developers.looker.com/api/explorer/4.0/methods/LookmlModel/lookml_model_explore).
+   * </pre>
+   *
+   * <code>EXPLORE = 17;</code>
+   */
+  public static final int EXPLORE_VALUE = 17;
+  /**
+   *
+   *
+   * <pre>
+   * A Looker Look.
+   * For more information, see [Looker Look API]
+   * (https://developers.looker.com/api/explorer/4.0/methods/Look).
+   * </pre>
+   *
+   * <code>LOOK = 18;</code>
+   */
+  public static final int LOOK_VALUE = 18;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -331,6 +419,14 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
         return ZONE;
       case 14:
         return SERVICE;
+      case 15:
+        return DATABASE_SCHEMA;
+      case 16:
+        return DASHBOARD;
+      case 17:
+        return EXPLORE;
+      case 18:
+        return LOOK;
       default:
         return null;
     }

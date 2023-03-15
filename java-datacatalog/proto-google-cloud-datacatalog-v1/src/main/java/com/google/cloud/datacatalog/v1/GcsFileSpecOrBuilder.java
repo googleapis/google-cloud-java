@@ -52,7 +52,8 @@ public interface GcsFileSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. Creation, modification, and expiration timestamps of a Cloud Storage file.
+   * Output only. Creation, modification, and expiration timestamps of a Cloud
+   * Storage file.
    * </pre>
    *
    * <code>
@@ -66,7 +67,8 @@ public interface GcsFileSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. Creation, modification, and expiration timestamps of a Cloud Storage file.
+   * Output only. Creation, modification, and expiration timestamps of a Cloud
+   * Storage file.
    * </pre>
    *
    * <code>
@@ -80,7 +82,8 @@ public interface GcsFileSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. Creation, modification, and expiration timestamps of a Cloud Storage file.
+   * Output only. Creation, modification, and expiration timestamps of a Cloud
+   * Storage file.
    * </pre>
    *
    * <code>

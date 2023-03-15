@@ -38,6 +38,8 @@ import com.google.iam.v1.Binding;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
+import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
@@ -46,6 +48,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -2951,6 +2954,73 @@ public class DataCatalogClientHttpJsonTest {
   }
 
   @Test
+  public void reconcileTagsTest() throws Exception {
+    ReconcileTagsResponse expectedResponse =
+        ReconcileTagsResponse.newBuilder()
+            .setCreatedTagsCount(-986601696)
+            .setUpdatedTagsCount(344847213)
+            .setDeletedTagsCount(59637071)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("reconcileTagsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ReconcileTagsRequest request =
+        ReconcileTagsRequest.newBuilder()
+            .setParent(
+                EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+            .setTagTemplate(
+                TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]").toString())
+            .setForceDeleteMissing(true)
+            .addAllTags(new ArrayList<Tag>())
+            .build();
+
+    ReconcileTagsResponse actualResponse = client.reconcileTagsAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void reconcileTagsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ReconcileTagsRequest request =
+          ReconcileTagsRequest.newBuilder()
+              .setParent(
+                  EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+              .setTagTemplate(
+                  TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]").toString())
+              .setForceDeleteMissing(true)
+              .addAllTags(new ArrayList<Tag>())
+              .build();
+      client.reconcileTagsAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void starEntryTest() throws Exception {
     StarEntryResponse expectedResponse = StarEntryResponse.newBuilder().build();
     mockService.addResponse(expectedResponse);
@@ -3361,6 +3431,62 @@ public class DataCatalogClientHttpJsonTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void importEntriesTest() throws Exception {
+    ImportEntriesResponse expectedResponse =
+        ImportEntriesResponse.newBuilder()
+            .setUpsertedEntriesCount(250168367)
+            .setDeletedEntriesCount(-167383302)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importEntriesTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ImportEntriesRequest request =
+        ImportEntriesRequest.newBuilder()
+            .setParent(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+            .build();
+
+    ImportEntriesResponse actualResponse = client.importEntriesAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void importEntriesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ImportEntriesRequest request =
+          ImportEntriesRequest.newBuilder()
+              .setParent(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+              .build();
+      client.importEntriesAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
     }
   }
 }

@@ -18,10 +18,14 @@ package com.google.cloud.datacatalog.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.resourcenames.ResourceName;
@@ -33,6 +37,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
@@ -135,6 +140,8 @@ import javax.annotation.Generated;
 public class DataCatalogClient implements BackgroundResource {
   private final DataCatalogSettings settings;
   private final DataCatalogStub stub;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of DataCatalogClient with default settings. */
   public static final DataCatalogClient create() throws IOException {
@@ -165,11 +172,17 @@ public class DataCatalogClient implements BackgroundResource {
   protected DataCatalogClient(DataCatalogSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((DataCatalogStubSettings) settings.getStubSettings()).createStub();
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   protected DataCatalogClient(DataCatalogStub stub) {
     this.settings = null;
     this.stub = stub;
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final DataCatalogSettings getSettings() {
@@ -178,6 +191,23 @@ public class DataCatalogClient implements BackgroundResource {
 
   public DataCatalogStub getStub() {
     return stub;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
+    return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  @BetaApi
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -4211,6 +4241,127 @@ public class DataCatalogClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * `ReconcileTags` creates or updates a list of tags on the entry. If the
+   * [ReconcileTagsRequest.force_delete_missing][google.cloud.datacatalog.v1.ReconcileTagsRequest.force_delete_missing]
+   * parameter is set, the operation deletes tags not included in the input tag list.
+   *
+   * <p>`ReconcileTags` returns a [long-running operation] [google.longrunning.Operation] resource
+   * that can be queried with [Operations.GetOperation][google.longrunning.Operations.GetOperation]
+   * to return [ReconcileTagsMetadata] [google.cloud.datacatalog.v1.ReconcileTagsMetadata] and a
+   * [ReconcileTagsResponse] [google.cloud.datacatalog.v1.ReconcileTagsResponse] message.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   ReconcileTagsRequest request =
+   *       ReconcileTagsRequest.newBuilder()
+   *           .setParent(
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+   *           .setTagTemplate(
+   *               TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]").toString())
+   *           .setForceDeleteMissing(true)
+   *           .addAllTags(new ArrayList<Tag>())
+   *           .build();
+   *   ReconcileTagsResponse response = dataCatalogClient.reconcileTagsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ReconcileTagsResponse, ReconcileTagsMetadata> reconcileTagsAsync(
+      ReconcileTagsRequest request) {
+    return reconcileTagsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * `ReconcileTags` creates or updates a list of tags on the entry. If the
+   * [ReconcileTagsRequest.force_delete_missing][google.cloud.datacatalog.v1.ReconcileTagsRequest.force_delete_missing]
+   * parameter is set, the operation deletes tags not included in the input tag list.
+   *
+   * <p>`ReconcileTags` returns a [long-running operation] [google.longrunning.Operation] resource
+   * that can be queried with [Operations.GetOperation][google.longrunning.Operations.GetOperation]
+   * to return [ReconcileTagsMetadata] [google.cloud.datacatalog.v1.ReconcileTagsMetadata] and a
+   * [ReconcileTagsResponse] [google.cloud.datacatalog.v1.ReconcileTagsResponse] message.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   ReconcileTagsRequest request =
+   *       ReconcileTagsRequest.newBuilder()
+   *           .setParent(
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+   *           .setTagTemplate(
+   *               TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]").toString())
+   *           .setForceDeleteMissing(true)
+   *           .addAllTags(new ArrayList<Tag>())
+   *           .build();
+   *   OperationFuture<ReconcileTagsResponse, ReconcileTagsMetadata> future =
+   *       dataCatalogClient.reconcileTagsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ReconcileTagsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ReconcileTagsRequest, ReconcileTagsResponse, ReconcileTagsMetadata>
+      reconcileTagsOperationCallable() {
+    return stub.reconcileTagsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * `ReconcileTags` creates or updates a list of tags on the entry. If the
+   * [ReconcileTagsRequest.force_delete_missing][google.cloud.datacatalog.v1.ReconcileTagsRequest.force_delete_missing]
+   * parameter is set, the operation deletes tags not included in the input tag list.
+   *
+   * <p>`ReconcileTags` returns a [long-running operation] [google.longrunning.Operation] resource
+   * that can be queried with [Operations.GetOperation][google.longrunning.Operations.GetOperation]
+   * to return [ReconcileTagsMetadata] [google.cloud.datacatalog.v1.ReconcileTagsMetadata] and a
+   * [ReconcileTagsResponse] [google.cloud.datacatalog.v1.ReconcileTagsResponse] message.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   ReconcileTagsRequest request =
+   *       ReconcileTagsRequest.newBuilder()
+   *           .setParent(
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+   *           .setTagTemplate(
+   *               TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]").toString())
+   *           .setForceDeleteMissing(true)
+   *           .addAllTags(new ArrayList<Tag>())
+   *           .build();
+   *   ApiFuture<Operation> future = dataCatalogClient.reconcileTagsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ReconcileTagsRequest, Operation> reconcileTagsCallable() {
+    return stub.reconcileTagsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Marks an [Entry][google.cloud.datacatalog.v1.Entry] as starred by the current user. Starring
    * information is private to each user.
    *
@@ -4898,6 +5049,124 @@ public class DataCatalogClient implements BackgroundResource {
   public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return stub.testIamPermissionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports entries from a source, such as data previously dumped into a Cloud Storage bucket, into
+   * Data Catalog. Import of entries is a sync operation that reconciles the state of the
+   * third-party system with the Data Catalog.
+   *
+   * <p>`ImportEntries` accepts source data snapshots of a third-party system. Snapshot should be
+   * delivered as a .wire or base65-encoded .txt file containing a sequence of Protocol Buffer
+   * messages of [DumpItem][google.cloud.datacatalog.v1.DumpItem] type.
+   *
+   * <p>`ImportEntries` returns a [long-running operation] [google.longrunning.Operation] resource
+   * that can be queried with [Operations.GetOperation][google.longrunning.Operations.GetOperation]
+   * to return [ImportEntriesMetadata][google.cloud.datacatalog.v1.ImportEntriesMetadata] and an
+   * [ImportEntriesResponse][google.cloud.datacatalog.v1.ImportEntriesResponse] message.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   ImportEntriesRequest request =
+   *       ImportEntriesRequest.newBuilder()
+   *           .setParent(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+   *           .build();
+   *   ImportEntriesResponse response = dataCatalogClient.importEntriesAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ImportEntriesResponse, ImportEntriesMetadata> importEntriesAsync(
+      ImportEntriesRequest request) {
+    return importEntriesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports entries from a source, such as data previously dumped into a Cloud Storage bucket, into
+   * Data Catalog. Import of entries is a sync operation that reconciles the state of the
+   * third-party system with the Data Catalog.
+   *
+   * <p>`ImportEntries` accepts source data snapshots of a third-party system. Snapshot should be
+   * delivered as a .wire or base65-encoded .txt file containing a sequence of Protocol Buffer
+   * messages of [DumpItem][google.cloud.datacatalog.v1.DumpItem] type.
+   *
+   * <p>`ImportEntries` returns a [long-running operation] [google.longrunning.Operation] resource
+   * that can be queried with [Operations.GetOperation][google.longrunning.Operations.GetOperation]
+   * to return [ImportEntriesMetadata][google.cloud.datacatalog.v1.ImportEntriesMetadata] and an
+   * [ImportEntriesResponse][google.cloud.datacatalog.v1.ImportEntriesResponse] message.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   ImportEntriesRequest request =
+   *       ImportEntriesRequest.newBuilder()
+   *           .setParent(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+   *           .build();
+   *   OperationFuture<ImportEntriesResponse, ImportEntriesMetadata> future =
+   *       dataCatalogClient.importEntriesOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ImportEntriesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ImportEntriesRequest, ImportEntriesResponse, ImportEntriesMetadata>
+      importEntriesOperationCallable() {
+    return stub.importEntriesOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports entries from a source, such as data previously dumped into a Cloud Storage bucket, into
+   * Data Catalog. Import of entries is a sync operation that reconciles the state of the
+   * third-party system with the Data Catalog.
+   *
+   * <p>`ImportEntries` accepts source data snapshots of a third-party system. Snapshot should be
+   * delivered as a .wire or base65-encoded .txt file containing a sequence of Protocol Buffer
+   * messages of [DumpItem][google.cloud.datacatalog.v1.DumpItem] type.
+   *
+   * <p>`ImportEntries` returns a [long-running operation] [google.longrunning.Operation] resource
+   * that can be queried with [Operations.GetOperation][google.longrunning.Operations.GetOperation]
+   * to return [ImportEntriesMetadata][google.cloud.datacatalog.v1.ImportEntriesMetadata] and an
+   * [ImportEntriesResponse][google.cloud.datacatalog.v1.ImportEntriesResponse] message.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   ImportEntriesRequest request =
+   *       ImportEntriesRequest.newBuilder()
+   *           .setParent(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future = dataCatalogClient.importEntriesCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ImportEntriesRequest, Operation> importEntriesCallable() {
+    return stub.importEntriesCallable();
   }
 
   @Override

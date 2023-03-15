@@ -22,6 +22,7 @@ import static com.google.cloud.datacatalog.v1.DataCatalogClient.ListTagsPagedRes
 import static com.google.cloud.datacatalog.v1.DataCatalogClient.SearchCatalogPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.datacatalog.v1.Contacts;
 import com.google.cloud.datacatalog.v1.CreateEntryGroupRequest;
@@ -40,6 +41,9 @@ import com.google.cloud.datacatalog.v1.EntryOverview;
 import com.google.cloud.datacatalog.v1.GetEntryGroupRequest;
 import com.google.cloud.datacatalog.v1.GetEntryRequest;
 import com.google.cloud.datacatalog.v1.GetTagTemplateRequest;
+import com.google.cloud.datacatalog.v1.ImportEntriesMetadata;
+import com.google.cloud.datacatalog.v1.ImportEntriesRequest;
+import com.google.cloud.datacatalog.v1.ImportEntriesResponse;
 import com.google.cloud.datacatalog.v1.ListEntriesRequest;
 import com.google.cloud.datacatalog.v1.ListEntriesResponse;
 import com.google.cloud.datacatalog.v1.ListEntryGroupsRequest;
@@ -49,6 +53,9 @@ import com.google.cloud.datacatalog.v1.ListTagsResponse;
 import com.google.cloud.datacatalog.v1.LookupEntryRequest;
 import com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest;
 import com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest;
+import com.google.cloud.datacatalog.v1.ReconcileTagsMetadata;
+import com.google.cloud.datacatalog.v1.ReconcileTagsRequest;
+import com.google.cloud.datacatalog.v1.ReconcileTagsResponse;
 import com.google.cloud.datacatalog.v1.RenameTagTemplateFieldEnumValueRequest;
 import com.google.cloud.datacatalog.v1.RenameTagTemplateFieldRequest;
 import com.google.cloud.datacatalog.v1.SearchCatalogRequest;
@@ -70,6 +77,8 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
+import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
@@ -81,6 +90,14 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public abstract class DataCatalogStub implements BackgroundResource {
+
+  public OperationsStub getOperationsStub() {
+    return null;
+  }
+
+  public com.google.api.gax.httpjson.longrunning.stub.OperationsStub getHttpJsonOperationsStub() {
+    return null;
+  }
 
   public UnaryCallable<SearchCatalogRequest, SearchCatalogPagedResponse>
       searchCatalogPagedCallable() {
@@ -213,6 +230,15 @@ public abstract class DataCatalogStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listTagsCallable()");
   }
 
+  public OperationCallable<ReconcileTagsRequest, ReconcileTagsResponse, ReconcileTagsMetadata>
+      reconcileTagsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: reconcileTagsOperationCallable()");
+  }
+
+  public UnaryCallable<ReconcileTagsRequest, Operation> reconcileTagsCallable() {
+    throw new UnsupportedOperationException("Not implemented: reconcileTagsCallable()");
+  }
+
   public UnaryCallable<StarEntryRequest, StarEntryResponse> starEntryCallable() {
     throw new UnsupportedOperationException("Not implemented: starEntryCallable()");
   }
@@ -232,6 +258,15 @@ public abstract class DataCatalogStub implements BackgroundResource {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
+  }
+
+  public OperationCallable<ImportEntriesRequest, ImportEntriesResponse, ImportEntriesMetadata>
+      importEntriesOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: importEntriesOperationCallable()");
+  }
+
+  public UnaryCallable<ImportEntriesRequest, Operation> importEntriesCallable() {
+    throw new UnsupportedOperationException("Not implemented: importEntriesCallable()");
   }
 
   @Override

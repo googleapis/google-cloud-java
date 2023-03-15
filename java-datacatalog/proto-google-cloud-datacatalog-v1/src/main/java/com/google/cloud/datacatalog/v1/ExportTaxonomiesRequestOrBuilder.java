@@ -27,7 +27,8 @@ public interface ExportTaxonomiesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the project that the exported taxonomies belong to.
+   * Required. Resource name of the project that the exported taxonomies belong
+   * to.
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface ExportTaxonomiesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the project that the exported taxonomies belong to.
+   * Required. Resource name of the project that the exported taxonomies belong
+   * to.
    * </pre>
    *
    * <code>

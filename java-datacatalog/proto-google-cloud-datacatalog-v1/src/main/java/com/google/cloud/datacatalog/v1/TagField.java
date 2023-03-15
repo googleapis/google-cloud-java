@@ -1157,8 +1157,9 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The order of this field with respect to other fields in this tag. Can be
-   * set by [Tag][google.cloud.datacatalog.v1.TagTemplateField.order].
+   * Output only. The order of this field with respect to other fields in this
+   * tag. Can be set by
+   * [Tag][google.cloud.datacatalog.v1.TagTemplateField.order].
    * For example, a higher value can indicate a more important field.
    * The value can be negative. Multiple fields can have the same order, and
    * field orders within a tag don't have to be sequential.
@@ -2712,8 +2713,9 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The order of this field with respect to other fields in this tag. Can be
-     * set by [Tag][google.cloud.datacatalog.v1.TagTemplateField.order].
+     * Output only. The order of this field with respect to other fields in this
+     * tag. Can be set by
+     * [Tag][google.cloud.datacatalog.v1.TagTemplateField.order].
      * For example, a higher value can indicate a more important field.
      * The value can be negative. Multiple fields can have the same order, and
      * field orders within a tag don't have to be sequential.
@@ -2731,8 +2733,9 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The order of this field with respect to other fields in this tag. Can be
-     * set by [Tag][google.cloud.datacatalog.v1.TagTemplateField.order].
+     * Output only. The order of this field with respect to other fields in this
+     * tag. Can be set by
+     * [Tag][google.cloud.datacatalog.v1.TagTemplateField.order].
      * For example, a higher value can indicate a more important field.
      * The value can be negative. Multiple fields can have the same order, and
      * field orders within a tag don't have to be sequential.
@@ -2754,8 +2757,9 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The order of this field with respect to other fields in this tag. Can be
-     * set by [Tag][google.cloud.datacatalog.v1.TagTemplateField.order].
+     * Output only. The order of this field with respect to other fields in this
+     * tag. Can be set by
+     * [Tag][google.cloud.datacatalog.v1.TagTemplateField.order].
      * For example, a higher value can indicate a more important field.
      * The value can be negative. Multiple fields can have the same order, and
      * field orders within a tag don't have to be sequential.

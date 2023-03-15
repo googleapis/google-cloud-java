@@ -97,8 +97,8 @@ public interface UpdateTagTemplateFieldRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Names of fields whose values to overwrite on an individual field of a tag
-   * template. The following fields are modifiable:
+   * Optional. Names of fields whose values to overwrite on an individual field
+   * of a tag template. The following fields are modifiable:
    * * `display_name`
    * * `type.enum_type`
    * * `is_required`
@@ -122,8 +122,8 @@ public interface UpdateTagTemplateFieldRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Names of fields whose values to overwrite on an individual field of a tag
-   * template. The following fields are modifiable:
+   * Optional. Names of fields whose values to overwrite on an individual field
+   * of a tag template. The following fields are modifiable:
    * * `display_name`
    * * `type.enum_type`
    * * `is_required`
@@ -147,8 +147,8 @@ public interface UpdateTagTemplateFieldRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Names of fields whose values to overwrite on an individual field of a tag
-   * template. The following fields are modifiable:
+   * Optional. Names of fields whose values to overwrite on an individual field
+   * of a tag template. The following fields are modifiable:
    * * `display_name`
    * * `type.enum_type`
    * * `is_required`

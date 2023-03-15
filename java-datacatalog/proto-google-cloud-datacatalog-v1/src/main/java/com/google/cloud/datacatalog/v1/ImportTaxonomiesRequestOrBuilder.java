@@ -27,7 +27,8 @@ public interface ImportTaxonomiesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of project that the imported taxonomies will belong to.
+   * Required. Resource name of project that the imported taxonomies will belong
+   * to.
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface ImportTaxonomiesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of project that the imported taxonomies will belong to.
+   * Required. Resource name of project that the imported taxonomies will belong
+   * to.
    * </pre>
    *
    * <code>

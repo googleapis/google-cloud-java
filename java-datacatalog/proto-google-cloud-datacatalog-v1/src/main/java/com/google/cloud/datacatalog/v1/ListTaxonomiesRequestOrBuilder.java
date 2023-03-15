@@ -94,4 +94,31 @@ public interface ListTaxonomiesRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Supported field for filter is 'service' and value is 'dataplex'.
+   * Eg: service=dataplex.
+   * </pre>
+   *
+   * <code>string filter = 4;</code>
+   *
+   * @return The filter.
+   */
+  java.lang.String getFilter();
+  /**
+   *
+   *
+   * <pre>
+   * Supported field for filter is 'service' and value is 'dataplex'.
+   * Eg: service=dataplex.
+   * </pre>
+   *
+   * <code>string filter = 4;</code>
+   *
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString getFilterBytes();
 }

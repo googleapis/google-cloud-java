@@ -200,6 +200,7 @@ public class HttpJsonPolicyTagManagerStub extends PolicyTagManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListTaxonomiesRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             return fields;

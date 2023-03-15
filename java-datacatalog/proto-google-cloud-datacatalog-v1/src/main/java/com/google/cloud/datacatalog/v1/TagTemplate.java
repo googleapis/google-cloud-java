@@ -23,8 +23,8 @@ package com.google.cloud.datacatalog.v1;
  *
  * <pre>
  * A tag template defines a tag that can have one or more typed fields.
- * The template is used to create tags that are attached to GCP resources.
- * [Tag template roles]
+ * The template is used to create tags that are attached to Google Cloud
+ *  resources. [Tag template roles]
  * (https://cloud.google.com/iam/docs/understanding-roles#data-catalog-roles)
  * provide permissions to create, edit, and use the template. For example,
  * see the [TagTemplate User]
@@ -575,8 +575,8 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A tag template defines a tag that can have one or more typed fields.
-   * The template is used to create tags that are attached to GCP resources.
-   * [Tag template roles]
+   * The template is used to create tags that are attached to Google Cloud
+   *  resources. [Tag template roles]
    * (https://cloud.google.com/iam/docs/understanding-roles#data-catalog-roles)
    * provide permissions to create, edit, and use the template. For example,
    * see the [TagTemplate User]

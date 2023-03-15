@@ -63,6 +63,8 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
     switch (number) {
       case 2:
         return internalGetUsageWithinTimeRange();
+      case 3:
+        return internalGetCommonUsageWithinTimeRange();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -78,6 +80,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datacatalog.v1.UsageSignal.Builder.class);
   }
 
+  private int bitField0_;
   public static final int UPDATE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp updateTime_;
   /**
@@ -160,7 +163,8 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. BigQuery usage statistics over each of the predefined time ranges.
+   * Output only. BigQuery usage statistics over each of the predefined time
+   * ranges.
    * Supported time ranges are `{"24H", "7D", "30D"}`.
    * </pre>
    *
@@ -186,7 +190,8 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. BigQuery usage statistics over each of the predefined time ranges.
+   * Output only. BigQuery usage statistics over each of the predefined time
+   * ranges.
    * Supported time ranges are `{"24H", "7D", "30D"}`.
    * </pre>
    *
@@ -203,7 +208,8 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. BigQuery usage statistics over each of the predefined time ranges.
+   * Output only. BigQuery usage statistics over each of the predefined time
+   * ranges.
    * Supported time ranges are `{"24H", "7D", "30D"}`.
    * </pre>
    *
@@ -227,7 +233,8 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. BigQuery usage statistics over each of the predefined time ranges.
+   * Output only. BigQuery usage statistics over each of the predefined time
+   * ranges.
    * Supported time ranges are `{"24H", "7D", "30D"}`.
    * </pre>
    *
@@ -247,6 +254,168 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
       throw new java.lang.IllegalArgumentException();
     }
     return map.get(key);
+  }
+
+  public static final int COMMON_USAGE_WITHIN_TIME_RANGE_FIELD_NUMBER = 3;
+
+  private static final class CommonUsageWithinTimeRangeDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.datacatalog.v1.CommonUsageStats>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.cloud.datacatalog.v1.CommonUsageStats>
+                    newDefaultInstance(
+                        com.google.cloud.datacatalog.v1.Usage
+                            .internal_static_google_cloud_datacatalog_v1_UsageSignal_CommonUsageWithinTimeRangeEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                        com.google.cloud.datacatalog.v1.CommonUsageStats.getDefaultInstance());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.datacatalog.v1.CommonUsageStats>
+      commonUsageWithinTimeRange_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.datacatalog.v1.CommonUsageStats>
+      internalGetCommonUsageWithinTimeRange() {
+    if (commonUsageWithinTimeRange_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          CommonUsageWithinTimeRangeDefaultEntryHolder.defaultEntry);
+    }
+    return commonUsageWithinTimeRange_;
+  }
+
+  public int getCommonUsageWithinTimeRangeCount() {
+    return internalGetCommonUsageWithinTimeRange().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Common usage statistics over each of the predefined time ranges.
+   * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.datacatalog.v1.CommonUsageStats&gt; common_usage_within_time_range = 3;
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsCommonUsageWithinTimeRange(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetCommonUsageWithinTimeRange().getMap().containsKey(key);
+  }
+  /** Use {@link #getCommonUsageWithinTimeRangeMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1.CommonUsageStats>
+      getCommonUsageWithinTimeRange() {
+    return getCommonUsageWithinTimeRangeMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Common usage statistics over each of the predefined time ranges.
+   * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.datacatalog.v1.CommonUsageStats&gt; common_usage_within_time_range = 3;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1.CommonUsageStats>
+      getCommonUsageWithinTimeRangeMap() {
+    return internalGetCommonUsageWithinTimeRange().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Common usage statistics over each of the predefined time ranges.
+   * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.datacatalog.v1.CommonUsageStats&gt; common_usage_within_time_range = 3;
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.cloud.datacatalog.v1.CommonUsageStats
+      getCommonUsageWithinTimeRangeOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.datacatalog.v1.CommonUsageStats defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1.CommonUsageStats> map =
+        internalGetCommonUsageWithinTimeRange().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Common usage statistics over each of the predefined time ranges.
+   * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.datacatalog.v1.CommonUsageStats&gt; common_usage_within_time_range = 3;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.CommonUsageStats getCommonUsageWithinTimeRangeOrThrow(
+      java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1.CommonUsageStats> map =
+        internalGetCommonUsageWithinTimeRange().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int FAVORITE_COUNT_FIELD_NUMBER = 4;
+  private long favoriteCount_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Favorite count in the source system.
+   * </pre>
+   *
+   * <code>optional int64 favorite_count = 4;</code>
+   *
+   * @return Whether the favoriteCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasFavoriteCount() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Favorite count in the source system.
+   * </pre>
+   *
+   * <code>optional int64 favorite_count = 4;</code>
+   *
+   * @return The favoriteCount.
+   */
+  @java.lang.Override
+  public long getFavoriteCount() {
+    return favoriteCount_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -271,6 +440,14 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
         internalGetUsageWithinTimeRange(),
         UsageWithinTimeRangeDefaultEntryHolder.defaultEntry,
         2);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output,
+        internalGetCommonUsageWithinTimeRange(),
+        CommonUsageWithinTimeRangeDefaultEntryHolder.defaultEntry,
+        3);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt64(4, favoriteCount_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -294,6 +471,22 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, usageWithinTimeRange__);
     }
+    for (java.util.Map.Entry<java.lang.String, com.google.cloud.datacatalog.v1.CommonUsageStats>
+        entry : internalGetCommonUsageWithinTimeRange().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.datacatalog.v1.CommonUsageStats>
+          commonUsageWithinTimeRange__ =
+              CommonUsageWithinTimeRangeDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(3, commonUsageWithinTimeRange__);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, favoriteCount_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -316,6 +509,12 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
     }
     if (!internalGetUsageWithinTimeRange().equals(other.internalGetUsageWithinTimeRange()))
       return false;
+    if (!internalGetCommonUsageWithinTimeRange()
+        .equals(other.internalGetCommonUsageWithinTimeRange())) return false;
+    if (hasFavoriteCount() != other.hasFavoriteCount()) return false;
+    if (hasFavoriteCount()) {
+      if (getFavoriteCount() != other.getFavoriteCount()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -334,6 +533,14 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetUsageWithinTimeRange().getMap().isEmpty()) {
       hash = (37 * hash) + USAGE_WITHIN_TIME_RANGE_FIELD_NUMBER;
       hash = (53 * hash) + internalGetUsageWithinTimeRange().hashCode();
+    }
+    if (!internalGetCommonUsageWithinTimeRange().getMap().isEmpty()) {
+      hash = (37 * hash) + COMMON_USAGE_WITHIN_TIME_RANGE_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetCommonUsageWithinTimeRange().hashCode();
+    }
+    if (hasFavoriteCount()) {
+      hash = (37 * hash) + FAVORITE_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getFavoriteCount());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -460,6 +667,8 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 2:
           return internalGetUsageWithinTimeRange();
+        case 3:
+          return internalGetCommonUsageWithinTimeRange();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -470,6 +679,8 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 2:
           return internalGetMutableUsageWithinTimeRange();
+        case 3:
+          return internalGetMutableCommonUsageWithinTimeRange();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -502,6 +713,8 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_ = null;
       }
       internalGetMutableUsageWithinTimeRange().clear();
+      internalGetMutableCommonUsageWithinTimeRange().clear();
+      favoriteCount_ = 0L;
       return this;
     }
 
@@ -545,6 +758,16 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
         result.usageWithinTimeRange_ = internalGetUsageWithinTimeRange();
         result.usageWithinTimeRange_.makeImmutable();
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.commonUsageWithinTimeRange_ = internalGetCommonUsageWithinTimeRange();
+        result.commonUsageWithinTimeRange_.makeImmutable();
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.favoriteCount_ = favoriteCount_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -597,6 +820,12 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableUsageWithinTimeRange().mergeFrom(other.internalGetUsageWithinTimeRange());
       bitField0_ |= 0x00000002;
+      internalGetMutableCommonUsageWithinTimeRange()
+          .mergeFrom(other.internalGetCommonUsageWithinTimeRange());
+      bitField0_ |= 0x00000004;
+      if (other.hasFavoriteCount()) {
+        setFavoriteCount(other.getFavoriteCount());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -643,6 +872,29 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String, com.google.cloud.datacatalog.v1.CommonUsageStats>
+                    commonUsageWithinTimeRange__ =
+                        input.readMessage(
+                            CommonUsageWithinTimeRangeDefaultEntryHolder.defaultEntry
+                                .getParserForType(),
+                            extensionRegistry);
+                internalGetMutableCommonUsageWithinTimeRange()
+                    .getMutableMap()
+                    .put(
+                        commonUsageWithinTimeRange__.getKey(),
+                        commonUsageWithinTimeRange__.getValue());
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+            case 32:
+              {
+                favoriteCount_ = input.readInt64();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -882,7 +1134,8 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. BigQuery usage statistics over each of the predefined time ranges.
+     * Output only. BigQuery usage statistics over each of the predefined time
+     * ranges.
      * Supported time ranges are `{"24H", "7D", "30D"}`.
      * </pre>
      *
@@ -908,7 +1161,8 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. BigQuery usage statistics over each of the predefined time ranges.
+     * Output only. BigQuery usage statistics over each of the predefined time
+     * ranges.
      * Supported time ranges are `{"24H", "7D", "30D"}`.
      * </pre>
      *
@@ -925,7 +1179,8 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. BigQuery usage statistics over each of the predefined time ranges.
+     * Output only. BigQuery usage statistics over each of the predefined time
+     * ranges.
      * Supported time ranges are `{"24H", "7D", "30D"}`.
      * </pre>
      *
@@ -950,7 +1205,8 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. BigQuery usage statistics over each of the predefined time ranges.
+     * Output only. BigQuery usage statistics over each of the predefined time
+     * ranges.
      * Supported time ranges are `{"24H", "7D", "30D"}`.
      * </pre>
      *
@@ -981,7 +1237,8 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. BigQuery usage statistics over each of the predefined time ranges.
+     * Output only. BigQuery usage statistics over each of the predefined time
+     * ranges.
      * Supported time ranges are `{"24H", "7D", "30D"}`.
      * </pre>
      *
@@ -1007,7 +1264,8 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. BigQuery usage statistics over each of the predefined time ranges.
+     * Output only. BigQuery usage statistics over each of the predefined time
+     * ranges.
      * Supported time ranges are `{"24H", "7D", "30D"}`.
      * </pre>
      *
@@ -1031,7 +1289,8 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. BigQuery usage statistics over each of the predefined time ranges.
+     * Output only. BigQuery usage statistics over each of the predefined time
+     * ranges.
      * Supported time ranges are `{"24H", "7D", "30D"}`.
      * </pre>
      *
@@ -1043,6 +1302,275 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1.UsageStats> values) {
       internalGetMutableUsageWithinTimeRange().getMutableMap().putAll(values);
       bitField0_ |= 0x00000002;
+      return this;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.datacatalog.v1.CommonUsageStats>
+        commonUsageWithinTimeRange_;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.datacatalog.v1.CommonUsageStats>
+        internalGetCommonUsageWithinTimeRange() {
+      if (commonUsageWithinTimeRange_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            CommonUsageWithinTimeRangeDefaultEntryHolder.defaultEntry);
+      }
+      return commonUsageWithinTimeRange_;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.datacatalog.v1.CommonUsageStats>
+        internalGetMutableCommonUsageWithinTimeRange() {
+      if (commonUsageWithinTimeRange_ == null) {
+        commonUsageWithinTimeRange_ =
+            com.google.protobuf.MapField.newMapField(
+                CommonUsageWithinTimeRangeDefaultEntryHolder.defaultEntry);
+      }
+      if (!commonUsageWithinTimeRange_.isMutable()) {
+        commonUsageWithinTimeRange_ = commonUsageWithinTimeRange_.copy();
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return commonUsageWithinTimeRange_;
+    }
+
+    public int getCommonUsageWithinTimeRangeCount() {
+      return internalGetCommonUsageWithinTimeRange().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Common usage statistics over each of the predefined time ranges.
+     * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.datacatalog.v1.CommonUsageStats&gt; common_usage_within_time_range = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsCommonUsageWithinTimeRange(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetCommonUsageWithinTimeRange().getMap().containsKey(key);
+    }
+    /** Use {@link #getCommonUsageWithinTimeRangeMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1.CommonUsageStats>
+        getCommonUsageWithinTimeRange() {
+      return getCommonUsageWithinTimeRangeMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Common usage statistics over each of the predefined time ranges.
+     * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.datacatalog.v1.CommonUsageStats&gt; common_usage_within_time_range = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1.CommonUsageStats>
+        getCommonUsageWithinTimeRangeMap() {
+      return internalGetCommonUsageWithinTimeRange().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Common usage statistics over each of the predefined time ranges.
+     * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.datacatalog.v1.CommonUsageStats&gt; common_usage_within_time_range = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.datacatalog.v1.CommonUsageStats
+        getCommonUsageWithinTimeRangeOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.datacatalog.v1.CommonUsageStats defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1.CommonUsageStats> map =
+          internalGetCommonUsageWithinTimeRange().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Common usage statistics over each of the predefined time ranges.
+     * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.datacatalog.v1.CommonUsageStats&gt; common_usage_within_time_range = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datacatalog.v1.CommonUsageStats getCommonUsageWithinTimeRangeOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1.CommonUsageStats> map =
+          internalGetCommonUsageWithinTimeRange().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearCommonUsageWithinTimeRange() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      internalGetMutableCommonUsageWithinTimeRange().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Common usage statistics over each of the predefined time ranges.
+     * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.datacatalog.v1.CommonUsageStats&gt; common_usage_within_time_range = 3;
+     * </code>
+     */
+    public Builder removeCommonUsageWithinTimeRange(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableCommonUsageWithinTimeRange().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1.CommonUsageStats>
+        getMutableCommonUsageWithinTimeRange() {
+      bitField0_ |= 0x00000004;
+      return internalGetMutableCommonUsageWithinTimeRange().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Common usage statistics over each of the predefined time ranges.
+     * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.datacatalog.v1.CommonUsageStats&gt; common_usage_within_time_range = 3;
+     * </code>
+     */
+    public Builder putCommonUsageWithinTimeRange(
+        java.lang.String key, com.google.cloud.datacatalog.v1.CommonUsageStats value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableCommonUsageWithinTimeRange().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Common usage statistics over each of the predefined time ranges.
+     * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.datacatalog.v1.CommonUsageStats&gt; common_usage_within_time_range = 3;
+     * </code>
+     */
+    public Builder putAllCommonUsageWithinTimeRange(
+        java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1.CommonUsageStats> values) {
+      internalGetMutableCommonUsageWithinTimeRange().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
+      return this;
+    }
+
+    private long favoriteCount_;
+    /**
+     *
+     *
+     * <pre>
+     * Favorite count in the source system.
+     * </pre>
+     *
+     * <code>optional int64 favorite_count = 4;</code>
+     *
+     * @return Whether the favoriteCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasFavoriteCount() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Favorite count in the source system.
+     * </pre>
+     *
+     * <code>optional int64 favorite_count = 4;</code>
+     *
+     * @return The favoriteCount.
+     */
+    @java.lang.Override
+    public long getFavoriteCount() {
+      return favoriteCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Favorite count in the source system.
+     * </pre>
+     *
+     * <code>optional int64 favorite_count = 4;</code>
+     *
+     * @param value The favoriteCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFavoriteCount(long value) {
+
+      favoriteCount_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Favorite count in the source system.
+     * </pre>
+     *
+     * <code>optional int64 favorite_count = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFavoriteCount() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      favoriteCount_ = 0L;
+      onChanged();
       return this;
     }
 

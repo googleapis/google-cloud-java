@@ -1263,6 +1263,48 @@ public final class DataCatalogGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.v1.ReconcileTagsRequest, com.google.longrunning.Operation>
+      getReconcileTagsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ReconcileTags",
+      requestType = com.google.cloud.datacatalog.v1.ReconcileTagsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.v1.ReconcileTagsRequest, com.google.longrunning.Operation>
+      getReconcileTagsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.datacatalog.v1.ReconcileTagsRequest, com.google.longrunning.Operation>
+        getReconcileTagsMethod;
+    if ((getReconcileTagsMethod = DataCatalogGrpc.getReconcileTagsMethod) == null) {
+      synchronized (DataCatalogGrpc.class) {
+        if ((getReconcileTagsMethod = DataCatalogGrpc.getReconcileTagsMethod) == null) {
+          DataCatalogGrpc.getReconcileTagsMethod =
+              getReconcileTagsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.datacatalog.v1.ReconcileTagsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ReconcileTags"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.datacatalog.v1.ReconcileTagsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new DataCatalogMethodDescriptorSupplier("ReconcileTags"))
+                      .build();
+        }
+      }
+    }
+    return getReconcileTagsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1.StarEntryRequest,
           com.google.cloud.datacatalog.v1.StarEntryResponse>
       getStarEntryMethod;
@@ -1471,6 +1513,48 @@ public final class DataCatalogGrpc {
       }
     }
     return getTestIamPermissionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.v1.ImportEntriesRequest, com.google.longrunning.Operation>
+      getImportEntriesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ImportEntries",
+      requestType = com.google.cloud.datacatalog.v1.ImportEntriesRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.v1.ImportEntriesRequest, com.google.longrunning.Operation>
+      getImportEntriesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.datacatalog.v1.ImportEntriesRequest, com.google.longrunning.Operation>
+        getImportEntriesMethod;
+    if ((getImportEntriesMethod = DataCatalogGrpc.getImportEntriesMethod) == null) {
+      synchronized (DataCatalogGrpc.class) {
+        if ((getImportEntriesMethod = DataCatalogGrpc.getImportEntriesMethod) == null) {
+          DataCatalogGrpc.getImportEntriesMethod =
+              getImportEntriesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.datacatalog.v1.ImportEntriesRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ImportEntries"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.datacatalog.v1.ImportEntriesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new DataCatalogMethodDescriptorSupplier("ImportEntries"))
+                      .build();
+        }
+      }
+    }
+    return getImportEntriesMethod;
   }
 
   /** Creates a new async stub that supports all call types for the service */
@@ -2015,6 +2099,31 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
+     * `ReconcileTags` creates or updates a list of tags on the entry.
+     * If the
+     * [ReconcileTagsRequest.force_delete_missing][google.cloud.datacatalog.v1.ReconcileTagsRequest.force_delete_missing]
+     * parameter is set, the operation deletes tags not included in the input tag
+     * list.
+     * `ReconcileTags` returns a [long-running operation]
+     * [google.longrunning.Operation] resource that can be queried with
+     * [Operations.GetOperation][google.longrunning.Operations.GetOperation]
+     * to return [ReconcileTagsMetadata]
+     * [google.cloud.datacatalog.v1.ReconcileTagsMetadata] and
+     * a [ReconcileTagsResponse]
+     * [google.cloud.datacatalog.v1.ReconcileTagsResponse] message.
+     * </pre>
+     */
+    public void reconcileTags(
+        com.google.cloud.datacatalog.v1.ReconcileTagsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getReconcileTagsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Marks an [Entry][google.cloud.datacatalog.v1.Entry] as starred by
      * the current user. Starring information is private to each user.
      * </pre>
@@ -2115,6 +2224,35 @@ public final class DataCatalogGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getTestIamPermissionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports entries from a source, such as data previously dumped into a
+     * Cloud Storage bucket, into Data Catalog. Import of entries
+     * is a sync operation that reconciles the state of the third-party system
+     * with the Data Catalog.
+     * `ImportEntries` accepts source data snapshots of a third-party system.
+     * Snapshot should be delivered as a .wire or base65-encoded .txt file
+     * containing a sequence of Protocol Buffer messages of
+     * [DumpItem][google.cloud.datacatalog.v1.DumpItem] type.
+     * `ImportEntries` returns a [long-running operation]
+     * [google.longrunning.Operation] resource that can be queried with
+     * [Operations.GetOperation][google.longrunning.Operations.GetOperation]
+     * to return
+     * [ImportEntriesMetadata][google.cloud.datacatalog.v1.ImportEntriesMetadata]
+     * and an
+     * [ImportEntriesResponse][google.cloud.datacatalog.v1.ImportEntriesResponse]
+     * message.
+     * </pre>
+     */
+    public void importEntries(
+        com.google.cloud.datacatalog.v1.ImportEntriesRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getImportEntriesMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -2297,6 +2435,12 @@ public final class DataCatalogGrpc {
                       com.google.cloud.datacatalog.v1.ListTagsRequest,
                       com.google.cloud.datacatalog.v1.ListTagsResponse>(this, METHODID_LIST_TAGS)))
           .addMethod(
+              getReconcileTagsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.datacatalog.v1.ReconcileTagsRequest,
+                      com.google.longrunning.Operation>(this, METHODID_RECONCILE_TAGS)))
+          .addMethod(
               getStarEntryMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
@@ -2329,6 +2473,12 @@ public final class DataCatalogGrpc {
                       com.google.iam.v1.TestIamPermissionsRequest,
                       com.google.iam.v1.TestIamPermissionsResponse>(
                       this, METHODID_TEST_IAM_PERMISSIONS)))
+          .addMethod(
+              getImportEntriesMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.datacatalog.v1.ImportEntriesRequest,
+                      com.google.longrunning.Operation>(this, METHODID_IMPORT_ENTRIES)))
           .build();
     }
   }
@@ -2893,6 +3043,33 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
+     * `ReconcileTags` creates or updates a list of tags on the entry.
+     * If the
+     * [ReconcileTagsRequest.force_delete_missing][google.cloud.datacatalog.v1.ReconcileTagsRequest.force_delete_missing]
+     * parameter is set, the operation deletes tags not included in the input tag
+     * list.
+     * `ReconcileTags` returns a [long-running operation]
+     * [google.longrunning.Operation] resource that can be queried with
+     * [Operations.GetOperation][google.longrunning.Operations.GetOperation]
+     * to return [ReconcileTagsMetadata]
+     * [google.cloud.datacatalog.v1.ReconcileTagsMetadata] and
+     * a [ReconcileTagsResponse]
+     * [google.cloud.datacatalog.v1.ReconcileTagsResponse] message.
+     * </pre>
+     */
+    public void reconcileTags(
+        com.google.cloud.datacatalog.v1.ReconcileTagsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getReconcileTagsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Marks an [Entry][google.cloud.datacatalog.v1.Entry] as starred by
      * the current user. Starring information is private to each user.
      * </pre>
@@ -3000,6 +3177,37 @@ public final class DataCatalogGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports entries from a source, such as data previously dumped into a
+     * Cloud Storage bucket, into Data Catalog. Import of entries
+     * is a sync operation that reconciles the state of the third-party system
+     * with the Data Catalog.
+     * `ImportEntries` accepts source data snapshots of a third-party system.
+     * Snapshot should be delivered as a .wire or base65-encoded .txt file
+     * containing a sequence of Protocol Buffer messages of
+     * [DumpItem][google.cloud.datacatalog.v1.DumpItem] type.
+     * `ImportEntries` returns a [long-running operation]
+     * [google.longrunning.Operation] resource that can be queried with
+     * [Operations.GetOperation][google.longrunning.Operations.GetOperation]
+     * to return
+     * [ImportEntriesMetadata][google.cloud.datacatalog.v1.ImportEntriesMetadata]
+     * and an
+     * [ImportEntriesResponse][google.cloud.datacatalog.v1.ImportEntriesResponse]
+     * message.
+     * </pre>
+     */
+    public void importEntries(
+        com.google.cloud.datacatalog.v1.ImportEntriesRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getImportEntriesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -3486,6 +3694,30 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
+     * `ReconcileTags` creates or updates a list of tags on the entry.
+     * If the
+     * [ReconcileTagsRequest.force_delete_missing][google.cloud.datacatalog.v1.ReconcileTagsRequest.force_delete_missing]
+     * parameter is set, the operation deletes tags not included in the input tag
+     * list.
+     * `ReconcileTags` returns a [long-running operation]
+     * [google.longrunning.Operation] resource that can be queried with
+     * [Operations.GetOperation][google.longrunning.Operations.GetOperation]
+     * to return [ReconcileTagsMetadata]
+     * [google.cloud.datacatalog.v1.ReconcileTagsMetadata] and
+     * a [ReconcileTagsResponse]
+     * [google.cloud.datacatalog.v1.ReconcileTagsResponse] message.
+     * </pre>
+     */
+    public com.google.longrunning.Operation reconcileTags(
+        com.google.cloud.datacatalog.v1.ReconcileTagsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReconcileTagsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Marks an [Entry][google.cloud.datacatalog.v1.Entry] as starred by
      * the current user. Starring information is private to each user.
      * </pre>
@@ -3577,6 +3809,34 @@ public final class DataCatalogGrpc {
         com.google.iam.v1.TestIamPermissionsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports entries from a source, such as data previously dumped into a
+     * Cloud Storage bucket, into Data Catalog. Import of entries
+     * is a sync operation that reconciles the state of the third-party system
+     * with the Data Catalog.
+     * `ImportEntries` accepts source data snapshots of a third-party system.
+     * Snapshot should be delivered as a .wire or base65-encoded .txt file
+     * containing a sequence of Protocol Buffer messages of
+     * [DumpItem][google.cloud.datacatalog.v1.DumpItem] type.
+     * `ImportEntries` returns a [long-running operation]
+     * [google.longrunning.Operation] resource that can be queried with
+     * [Operations.GetOperation][google.longrunning.Operations.GetOperation]
+     * to return
+     * [ImportEntriesMetadata][google.cloud.datacatalog.v1.ImportEntriesMetadata]
+     * and an
+     * [ImportEntriesResponse][google.cloud.datacatalog.v1.ImportEntriesResponse]
+     * message.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importEntries(
+        com.google.cloud.datacatalog.v1.ImportEntriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportEntriesMethod(), getCallOptions(), request);
     }
   }
 
@@ -4083,6 +4343,30 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
+     * `ReconcileTags` creates or updates a list of tags on the entry.
+     * If the
+     * [ReconcileTagsRequest.force_delete_missing][google.cloud.datacatalog.v1.ReconcileTagsRequest.force_delete_missing]
+     * parameter is set, the operation deletes tags not included in the input tag
+     * list.
+     * `ReconcileTags` returns a [long-running operation]
+     * [google.longrunning.Operation] resource that can be queried with
+     * [Operations.GetOperation][google.longrunning.Operations.GetOperation]
+     * to return [ReconcileTagsMetadata]
+     * [google.cloud.datacatalog.v1.ReconcileTagsMetadata] and
+     * a [ReconcileTagsResponse]
+     * [google.cloud.datacatalog.v1.ReconcileTagsResponse] message.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        reconcileTags(com.google.cloud.datacatalog.v1.ReconcileTagsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getReconcileTagsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Marks an [Entry][google.cloud.datacatalog.v1.Entry] as starred by
      * the current user. Starring information is private to each user.
      * </pre>
@@ -4180,6 +4464,34 @@ public final class DataCatalogGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports entries from a source, such as data previously dumped into a
+     * Cloud Storage bucket, into Data Catalog. Import of entries
+     * is a sync operation that reconciles the state of the third-party system
+     * with the Data Catalog.
+     * `ImportEntries` accepts source data snapshots of a third-party system.
+     * Snapshot should be delivered as a .wire or base65-encoded .txt file
+     * containing a sequence of Protocol Buffer messages of
+     * [DumpItem][google.cloud.datacatalog.v1.DumpItem] type.
+     * `ImportEntries` returns a [long-running operation]
+     * [google.longrunning.Operation] resource that can be queried with
+     * [Operations.GetOperation][google.longrunning.Operations.GetOperation]
+     * to return
+     * [ImportEntriesMetadata][google.cloud.datacatalog.v1.ImportEntriesMetadata]
+     * and an
+     * [ImportEntriesResponse][google.cloud.datacatalog.v1.ImportEntriesResponse]
+     * message.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        importEntries(com.google.cloud.datacatalog.v1.ImportEntriesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getImportEntriesMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_SEARCH_CATALOG = 0;
@@ -4209,11 +4521,13 @@ public final class DataCatalogGrpc {
   private static final int METHODID_UPDATE_TAG = 24;
   private static final int METHODID_DELETE_TAG = 25;
   private static final int METHODID_LIST_TAGS = 26;
-  private static final int METHODID_STAR_ENTRY = 27;
-  private static final int METHODID_UNSTAR_ENTRY = 28;
-  private static final int METHODID_SET_IAM_POLICY = 29;
-  private static final int METHODID_GET_IAM_POLICY = 30;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 31;
+  private static final int METHODID_RECONCILE_TAGS = 27;
+  private static final int METHODID_STAR_ENTRY = 28;
+  private static final int METHODID_UNSTAR_ENTRY = 29;
+  private static final int METHODID_SET_IAM_POLICY = 30;
+  private static final int METHODID_GET_IAM_POLICY = 31;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 32;
+  private static final int METHODID_IMPORT_ENTRIES = 33;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4387,6 +4701,11 @@ public final class DataCatalogGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.ListTagsResponse>)
                   responseObserver);
           break;
+        case METHODID_RECONCILE_TAGS:
+          serviceImpl.reconcileTags(
+              (com.google.cloud.datacatalog.v1.ReconcileTagsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_STAR_ENTRY:
           serviceImpl.starEntry(
               (com.google.cloud.datacatalog.v1.StarEntryRequest) request,
@@ -4414,6 +4733,11 @@ public final class DataCatalogGrpc {
               (com.google.iam.v1.TestIamPermissionsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>)
                   responseObserver);
+          break;
+        case METHODID_IMPORT_ENTRIES:
+          serviceImpl.importEntries(
+              (com.google.cloud.datacatalog.v1.ImportEntriesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -4506,11 +4830,13 @@ public final class DataCatalogGrpc {
                       .addMethod(getUpdateTagMethod())
                       .addMethod(getDeleteTagMethod())
                       .addMethod(getListTagsMethod())
+                      .addMethod(getReconcileTagsMethod())
                       .addMethod(getStarEntryMethod())
                       .addMethod(getUnstarEntryMethod())
                       .addMethod(getSetIamPolicyMethod())
                       .addMethod(getGetIamPolicyMethod())
                       .addMethod(getTestIamPermissionsMethod())
+                      .addMethod(getImportEntriesMethod())
                       .build();
         }
       }

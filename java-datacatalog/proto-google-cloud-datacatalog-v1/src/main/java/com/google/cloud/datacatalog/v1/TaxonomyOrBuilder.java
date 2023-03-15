@@ -172,8 +172,8 @@ public interface TaxonomyOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of policy types that are activated for this taxonomy. If not set,
-   * defaults to an empty list.
+   * Optional. A list of policy types that are activated for this taxonomy. If
+   * not set, defaults to an empty list.
    * </pre>
    *
    * <code>
@@ -187,8 +187,8 @@ public interface TaxonomyOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of policy types that are activated for this taxonomy. If not set,
-   * defaults to an empty list.
+   * Optional. A list of policy types that are activated for this taxonomy. If
+   * not set, defaults to an empty list.
    * </pre>
    *
    * <code>
@@ -202,8 +202,8 @@ public interface TaxonomyOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of policy types that are activated for this taxonomy. If not set,
-   * defaults to an empty list.
+   * Optional. A list of policy types that are activated for this taxonomy. If
+   * not set, defaults to an empty list.
    * </pre>
    *
    * <code>
@@ -218,8 +218,8 @@ public interface TaxonomyOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of policy types that are activated for this taxonomy. If not set,
-   * defaults to an empty list.
+   * Optional. A list of policy types that are activated for this taxonomy. If
+   * not set, defaults to an empty list.
    * </pre>
    *
    * <code>
@@ -233,8 +233,8 @@ public interface TaxonomyOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of policy types that are activated for this taxonomy. If not set,
-   * defaults to an empty list.
+   * Optional. A list of policy types that are activated for this taxonomy. If
+   * not set, defaults to an empty list.
    * </pre>
    *
    * <code>
@@ -245,4 +245,51 @@ public interface TaxonomyOrBuilder
    * @return The enum numeric value on the wire of activatedPolicyTypes at the given index.
    */
   int getActivatedPolicyTypesValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Identity of the service which owns the Taxonomy. This field is
+   * only populated when the taxonomy is created by a Google Cloud service.
+   * Currently only 'DATAPLEX' is supported.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.Taxonomy.Service service = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the service field is set.
+   */
+  boolean hasService();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Identity of the service which owns the Taxonomy. This field is
+   * only populated when the taxonomy is created by a Google Cloud service.
+   * Currently only 'DATAPLEX' is supported.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.Taxonomy.Service service = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The service.
+   */
+  com.google.cloud.datacatalog.v1.Taxonomy.Service getService();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Identity of the service which owns the Taxonomy. This field is
+   * only populated when the taxonomy is created by a Google Cloud service.
+   * Currently only 'DATAPLEX' is supported.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.Taxonomy.Service service = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.datacatalog.v1.Taxonomy.ServiceOrBuilder getServiceOrBuilder();
 }

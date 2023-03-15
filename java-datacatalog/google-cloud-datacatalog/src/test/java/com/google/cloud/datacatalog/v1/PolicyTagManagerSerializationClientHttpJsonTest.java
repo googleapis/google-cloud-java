@@ -82,6 +82,7 @@ public class PolicyTagManagerSerializationClientHttpJsonTest {
             .setPolicyTagCount(1074340189)
             .setTaxonomyTimestamps(SystemTimestamps.newBuilder().build())
             .addAllActivatedPolicyTypes(new ArrayList<Taxonomy.PolicyType>())
+            .setService(Taxonomy.Service.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

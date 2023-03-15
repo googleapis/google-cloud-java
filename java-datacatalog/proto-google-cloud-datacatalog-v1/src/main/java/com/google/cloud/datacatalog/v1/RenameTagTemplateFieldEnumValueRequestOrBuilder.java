@@ -56,7 +56,8 @@ public interface RenameTagTemplateFieldEnumValueRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The new display name of the enum value. For example, `my_new_enum_value`.
+   * Required. The new display name of the enum value. For example,
+   * `my_new_enum_value`.
    * </pre>
    *
    * <code>string new_enum_value_display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -68,7 +69,8 @@ public interface RenameTagTemplateFieldEnumValueRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The new display name of the enum value. For example, `my_new_enum_value`.
+   * Required. The new display name of the enum value. For example,
+   * `my_new_enum_value`.
    * </pre>
    *
    * <code>string new_enum_value_display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>

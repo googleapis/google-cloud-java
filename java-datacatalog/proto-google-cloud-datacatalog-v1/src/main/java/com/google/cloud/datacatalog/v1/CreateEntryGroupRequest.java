@@ -77,7 +77,8 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The names of the project and location that the new entry group belongs to.
+   * Required. The names of the project and location that the new entry group
+   * belongs to.
    * Note: The entry group itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
@@ -104,7 +105,8 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The names of the project and location that the new entry group belongs to.
+   * Required. The names of the project and location that the new entry group
+   * belongs to.
    * Note: The entry group itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
@@ -639,7 +641,8 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The names of the project and location that the new entry group belongs to.
+     * Required. The names of the project and location that the new entry group
+     * belongs to.
      * Note: The entry group itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
@@ -665,7 +668,8 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The names of the project and location that the new entry group belongs to.
+     * Required. The names of the project and location that the new entry group
+     * belongs to.
      * Note: The entry group itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
@@ -691,7 +695,8 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The names of the project and location that the new entry group belongs to.
+     * Required. The names of the project and location that the new entry group
+     * belongs to.
      * Note: The entry group itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
@@ -716,7 +721,8 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The names of the project and location that the new entry group belongs to.
+     * Required. The names of the project and location that the new entry group
+     * belongs to.
      * Note: The entry group itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
@@ -737,7 +743,8 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The names of the project and location that the new entry group belongs to.
+     * Required. The names of the project and location that the new entry group
+     * belongs to.
      * Note: The entry group itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>

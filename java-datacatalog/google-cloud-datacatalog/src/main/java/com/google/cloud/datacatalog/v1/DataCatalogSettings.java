@@ -30,6 +30,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -39,6 +40,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -228,6 +230,17 @@ public class DataCatalogSettings extends ClientSettings<DataCatalogSettings> {
     return ((DataCatalogStubSettings) getStubSettings()).listTagsSettings();
   }
 
+  /** Returns the object with the settings used for calls to reconcileTags. */
+  public UnaryCallSettings<ReconcileTagsRequest, Operation> reconcileTagsSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).reconcileTagsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to reconcileTags. */
+  public OperationCallSettings<ReconcileTagsRequest, ReconcileTagsResponse, ReconcileTagsMetadata>
+      reconcileTagsOperationSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).reconcileTagsOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to starEntry. */
   public UnaryCallSettings<StarEntryRequest, StarEntryResponse> starEntrySettings() {
     return ((DataCatalogStubSettings) getStubSettings()).starEntrySettings();
@@ -252,6 +265,17 @@ public class DataCatalogSettings extends ClientSettings<DataCatalogSettings> {
   public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings() {
     return ((DataCatalogStubSettings) getStubSettings()).testIamPermissionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importEntries. */
+  public UnaryCallSettings<ImportEntriesRequest, Operation> importEntriesSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).importEntriesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importEntries. */
+  public OperationCallSettings<ImportEntriesRequest, ImportEntriesResponse, ImportEntriesMetadata>
+      importEntriesOperationSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).importEntriesOperationSettings();
   }
 
   public static final DataCatalogSettings create(DataCatalogStubSettings stub) throws IOException {
@@ -521,6 +545,18 @@ public class DataCatalogSettings extends ClientSettings<DataCatalogSettings> {
       return getStubSettingsBuilder().listTagsSettings();
     }
 
+    /** Returns the builder for the settings used for calls to reconcileTags. */
+    public UnaryCallSettings.Builder<ReconcileTagsRequest, Operation> reconcileTagsSettings() {
+      return getStubSettingsBuilder().reconcileTagsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to reconcileTags. */
+    public OperationCallSettings.Builder<
+            ReconcileTagsRequest, ReconcileTagsResponse, ReconcileTagsMetadata>
+        reconcileTagsOperationSettings() {
+      return getStubSettingsBuilder().reconcileTagsOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to starEntry. */
     public UnaryCallSettings.Builder<StarEntryRequest, StarEntryResponse> starEntrySettings() {
       return getStubSettingsBuilder().starEntrySettings();
@@ -546,6 +582,18 @@ public class DataCatalogSettings extends ClientSettings<DataCatalogSettings> {
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return getStubSettingsBuilder().testIamPermissionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importEntries. */
+    public UnaryCallSettings.Builder<ImportEntriesRequest, Operation> importEntriesSettings() {
+      return getStubSettingsBuilder().importEntriesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importEntries. */
+    public OperationCallSettings.Builder<
+            ImportEntriesRequest, ImportEntriesResponse, ImportEntriesMetadata>
+        importEntriesOperationSettings() {
+      return getStubSettingsBuilder().importEntriesOperationSettings();
     }
 
     @Override

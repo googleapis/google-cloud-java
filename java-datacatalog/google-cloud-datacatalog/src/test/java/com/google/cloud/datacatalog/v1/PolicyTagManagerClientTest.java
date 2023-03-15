@@ -55,6 +55,7 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class PolicyTagManagerClientTest {
+  private static MockIAMPolicy mockIAMPolicy;
   private static MockPolicyTagManager mockPolicyTagManager;
   private static MockServiceHelper mockServiceHelper;
   private LocalChannelProvider channelProvider;
@@ -63,9 +64,11 @@ public class PolicyTagManagerClientTest {
   @BeforeClass
   public static void startStaticServer() {
     mockPolicyTagManager = new MockPolicyTagManager();
+    mockIAMPolicy = new MockIAMPolicy();
     mockServiceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockPolicyTagManager));
+            UUID.randomUUID().toString(),
+            Arrays.<MockGrpcService>asList(mockPolicyTagManager, mockIAMPolicy));
     mockServiceHelper.start();
   }
 
@@ -101,6 +104,7 @@ public class PolicyTagManagerClientTest {
             .setPolicyTagCount(1074340189)
             .setTaxonomyTimestamps(SystemTimestamps.newBuilder().build())
             .addAllActivatedPolicyTypes(new ArrayList<Taxonomy.PolicyType>())
+            .setService(Taxonomy.Service.newBuilder().build())
             .build();
     mockPolicyTagManager.addResponse(expectedResponse);
 
@@ -147,6 +151,7 @@ public class PolicyTagManagerClientTest {
             .setPolicyTagCount(1074340189)
             .setTaxonomyTimestamps(SystemTimestamps.newBuilder().build())
             .addAllActivatedPolicyTypes(new ArrayList<Taxonomy.PolicyType>())
+            .setService(Taxonomy.Service.newBuilder().build())
             .build();
     mockPolicyTagManager.addResponse(expectedResponse);
 
@@ -261,6 +266,7 @@ public class PolicyTagManagerClientTest {
             .setPolicyTagCount(1074340189)
             .setTaxonomyTimestamps(SystemTimestamps.newBuilder().build())
             .addAllActivatedPolicyTypes(new ArrayList<Taxonomy.PolicyType>())
+            .setService(Taxonomy.Service.newBuilder().build())
             .build();
     mockPolicyTagManager.addResponse(expectedResponse);
 
@@ -392,6 +398,7 @@ public class PolicyTagManagerClientTest {
             .setPolicyTagCount(1074340189)
             .setTaxonomyTimestamps(SystemTimestamps.newBuilder().build())
             .addAllActivatedPolicyTypes(new ArrayList<Taxonomy.PolicyType>())
+            .setService(Taxonomy.Service.newBuilder().build())
             .build();
     mockPolicyTagManager.addResponse(expectedResponse);
 
@@ -435,6 +442,7 @@ public class PolicyTagManagerClientTest {
             .setPolicyTagCount(1074340189)
             .setTaxonomyTimestamps(SystemTimestamps.newBuilder().build())
             .addAllActivatedPolicyTypes(new ArrayList<Taxonomy.PolicyType>())
+            .setService(Taxonomy.Service.newBuilder().build())
             .build();
     mockPolicyTagManager.addResponse(expectedResponse);
 

@@ -184,6 +184,53 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     return SystemCase.forNumber(systemCase_);
   }
 
+  private int systemSpecCase_ = 0;
+  private java.lang.Object systemSpec_;
+
+  public enum SystemSpecCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    SQL_DATABASE_SYSTEM_SPEC(39),
+    LOOKER_SYSTEM_SPEC(40),
+    SYSTEMSPEC_NOT_SET(0);
+    private final int value;
+
+    private SystemSpecCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SystemSpecCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static SystemSpecCase forNumber(int value) {
+      switch (value) {
+        case 39:
+          return SQL_DATABASE_SYSTEM_SPEC;
+        case 40:
+          return LOOKER_SYSTEM_SPEC;
+        case 0:
+          return SYSTEMSPEC_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public SystemSpecCase getSystemSpecCase() {
+    return SystemSpecCase.forNumber(systemSpecCase_);
+  }
+
   private int typeSpecCase_ = 0;
   private java.lang.Object typeSpec_;
 
@@ -799,6 +846,115 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SQL_DATABASE_SYSTEM_SPEC_FIELD_NUMBER = 39;
+  /**
+   *
+   *
+   * <pre>
+   * Specification that applies to a relational database system. Only settable
+   * when `user_specified_system` is equal to `SQL_DATABASE`
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec sql_database_system_spec = 39;</code>
+   *
+   * @return Whether the sqlDatabaseSystemSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasSqlDatabaseSystemSpec() {
+    return systemSpecCase_ == 39;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specification that applies to a relational database system. Only settable
+   * when `user_specified_system` is equal to `SQL_DATABASE`
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec sql_database_system_spec = 39;</code>
+   *
+   * @return The sqlDatabaseSystemSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec getSqlDatabaseSystemSpec() {
+    if (systemSpecCase_ == 39) {
+      return (com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec) systemSpec_;
+    }
+    return com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specification that applies to a relational database system. Only settable
+   * when `user_specified_system` is equal to `SQL_DATABASE`
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec sql_database_system_spec = 39;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpecOrBuilder
+      getSqlDatabaseSystemSpecOrBuilder() {
+    if (systemSpecCase_ == 39) {
+      return (com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec) systemSpec_;
+    }
+    return com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec.getDefaultInstance();
+  }
+
+  public static final int LOOKER_SYSTEM_SPEC_FIELD_NUMBER = 40;
+  /**
+   *
+   *
+   * <pre>
+   * Specification that applies to Looker sysstem. Only settable when
+   * `user_specified_system` is equal to `LOOKER`
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.LookerSystemSpec looker_system_spec = 40;</code>
+   *
+   * @return Whether the lookerSystemSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasLookerSystemSpec() {
+    return systemSpecCase_ == 40;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specification that applies to Looker sysstem. Only settable when
+   * `user_specified_system` is equal to `LOOKER`
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.LookerSystemSpec looker_system_spec = 40;</code>
+   *
+   * @return The lookerSystemSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.LookerSystemSpec getLookerSystemSpec() {
+    if (systemSpecCase_ == 40) {
+      return (com.google.cloud.datacatalog.v1.LookerSystemSpec) systemSpec_;
+    }
+    return com.google.cloud.datacatalog.v1.LookerSystemSpec.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specification that applies to Looker sysstem. Only settable when
+   * `user_specified_system` is equal to `LOOKER`
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.LookerSystemSpec looker_system_spec = 40;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.LookerSystemSpecOrBuilder getLookerSystemSpecOrBuilder() {
+    if (systemSpecCase_ == 40) {
+      return (com.google.cloud.datacatalog.v1.LookerSystemSpec) systemSpec_;
+    }
+    return com.google.cloud.datacatalog.v1.LookerSystemSpec.getDefaultInstance();
+  }
+
   public static final int GCS_FILESET_SPEC_FIELD_NUMBER = 6;
   /**
    *
@@ -987,7 +1143,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Specification that applies to a table resource. Valid only
-   * for entries with the `TABLE` type.
+   * for entries with the `TABLE` or `EXPLORE` type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
@@ -1003,7 +1159,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Specification that applies to a table resource. Valid only
-   * for entries with the `TABLE` type.
+   * for entries with the `TABLE` or `EXPLORE` type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
@@ -1022,7 +1178,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Specification that applies to a table resource. Valid only
-   * for entries with the `TABLE` type.
+   * for entries with the `TABLE` or `EXPLORE` type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
@@ -1211,9 +1367,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Display name of an entry.
-   * The name must contain only Unicode letters, numbers (0-9), underscores (_),
-   * dashes (-), spaces ( ), and can't start or end with spaces.
-   * The maximum size is 200 bytes when encoded in UTF-8.
+   * The maximum size is 500 bytes when encoded in UTF-8.
    * Default value is an empty string.
    * </pre>
    *
@@ -1238,9 +1392,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Display name of an entry.
-   * The name must contain only Unicode letters, numbers (0-9), underscores (_),
-   * dashes (-), spaces ( ), and can't start or end with spaces.
-   * The maximum size is 200 bytes when encoded in UTF-8.
+   * The maximum size is 500 bytes when encoded in UTF-8.
    * Default value is an empty string.
    * </pre>
    *
@@ -1709,7 +1861,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Additional information related to the entry. Private to the current user.
+   * Output only. Additional information related to the entry. Private to the
+   * current user.
    * </pre>
    *
    * <code>
@@ -1726,7 +1879,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Additional information related to the entry. Private to the current user.
+   * Output only. Additional information related to the entry. Private to the
+   * current user.
    * </pre>
    *
    * <code>
@@ -1745,7 +1899,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Additional information related to the entry. Private to the current user.
+   * Output only. Additional information related to the entry. Private to the
+   * current user.
    * </pre>
    *
    * <code>
@@ -1840,6 +1995,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     }
     if (businessContext_ != null) {
       output.writeMessage(37, getBusinessContext());
+    }
+    if (systemSpecCase_ == 39) {
+      output.writeMessage(39, (com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec) systemSpec_);
+    }
+    if (systemSpecCase_ == 40) {
+      output.writeMessage(40, (com.google.cloud.datacatalog.v1.LookerSystemSpec) systemSpec_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1944,6 +2105,16 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     if (businessContext_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(37, getBusinessContext());
     }
+    if (systemSpecCase_ == 39) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              39, (com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec) systemSpec_);
+    }
+    if (systemSpecCase_ == 40) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              40, (com.google.cloud.datacatalog.v1.LookerSystemSpec) systemSpec_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2007,6 +2178,17 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         break;
       case 18:
         if (!getUserSpecifiedSystem().equals(other.getUserSpecifiedSystem())) return false;
+        break;
+      case 0:
+      default:
+    }
+    if (!getSystemSpecCase().equals(other.getSystemSpecCase())) return false;
+    switch (systemSpecCase_) {
+      case 39:
+        if (!getSqlDatabaseSystemSpec().equals(other.getSqlDatabaseSystemSpec())) return false;
+        break;
+      case 40:
+        if (!getLookerSystemSpec().equals(other.getLookerSystemSpec())) return false;
         break;
       case 0:
       default:
@@ -2112,6 +2294,18 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       case 18:
         hash = (37 * hash) + USER_SPECIFIED_SYSTEM_FIELD_NUMBER;
         hash = (53 * hash) + getUserSpecifiedSystem().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (systemSpecCase_) {
+      case 39:
+        hash = (37 * hash) + SQL_DATABASE_SYSTEM_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getSqlDatabaseSystemSpec().hashCode();
+        break;
+      case 40:
+        hash = (37 * hash) + LOOKER_SYSTEM_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getLookerSystemSpec().hashCode();
         break;
       case 0:
       default:
@@ -2321,6 +2515,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       name_ = "";
       linkedResource_ = "";
       fullyQualifiedName_ = "";
+      if (sqlDatabaseSystemSpecBuilder_ != null) {
+        sqlDatabaseSystemSpecBuilder_.clear();
+      }
+      if (lookerSystemSpecBuilder_ != null) {
+        lookerSystemSpecBuilder_.clear();
+      }
       if (gcsFilesetSpecBuilder_ != null) {
         gcsFilesetSpecBuilder_.clear();
       }
@@ -2379,6 +2579,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       entryType_ = null;
       systemCase_ = 0;
       system_ = null;
+      systemSpecCase_ = 0;
+      systemSpec_ = null;
       typeSpecCase_ = 0;
       typeSpec_ = null;
       specCase_ = 0;
@@ -2429,37 +2631,37 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.fullyQualifiedName_ = fullyQualifiedName_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.displayName_ = displayName_;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.description_ = description_;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.businessContext_ =
             businessContextBuilder_ == null ? businessContext_ : businessContextBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.schema_ = schemaBuilder_ == null ? schema_ : schemaBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.sourceSystemTimestamps_ =
             sourceSystemTimestampsBuilder_ == null
                 ? sourceSystemTimestamps_
                 : sourceSystemTimestampsBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.usageSignal_ =
             usageSignalBuilder_ == null ? usageSignal_ : usageSignalBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00200000) != 0)) {
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         result.dataSource_ = dataSourceBuilder_ == null ? dataSource_ : dataSourceBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00400000) != 0)) {
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         result.personalDetails_ =
             personalDetailsBuilder_ == null ? personalDetails_ : personalDetailsBuilder_.build();
       }
@@ -2470,6 +2672,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       result.entryType_ = this.entryType_;
       result.systemCase_ = systemCase_;
       result.system_ = this.system_;
+      result.systemSpecCase_ = systemSpecCase_;
+      result.systemSpec_ = this.systemSpec_;
+      if (systemSpecCase_ == 39 && sqlDatabaseSystemSpecBuilder_ != null) {
+        result.systemSpec_ = sqlDatabaseSystemSpecBuilder_.build();
+      }
+      if (systemSpecCase_ == 40 && lookerSystemSpecBuilder_ != null) {
+        result.systemSpec_ = lookerSystemSpecBuilder_.build();
+      }
       result.typeSpecCase_ = typeSpecCase_;
       result.typeSpec_ = this.typeSpec_;
       if (typeSpecCase_ == 6 && gcsFilesetSpecBuilder_ != null) {
@@ -2559,12 +2769,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (other.hasBusinessContext()) {
@@ -2580,7 +2790,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         mergeUsageSignal(other.getUsageSignal());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00400000;
       if (other.hasDataSource()) {
         mergeDataSource(other.getDataSource());
       }
@@ -2619,6 +2829,22 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
             break;
           }
         case SYSTEM_NOT_SET:
+          {
+            break;
+          }
+      }
+      switch (other.getSystemSpecCase()) {
+        case SQL_DATABASE_SYSTEM_SPEC:
+          {
+            mergeSqlDatabaseSystemSpec(other.getSqlDatabaseSystemSpec());
+            break;
+          }
+        case LOOKER_SYSTEM_SPEC:
+          {
+            mergeLookerSystemSpec(other.getLookerSystemSpec());
+            break;
+          }
+        case SYSTEMSPEC_NOT_SET:
           {
             break;
           }
@@ -2712,19 +2938,19 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
             case 26:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 26
             case 34:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getSchemaFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 42
             case 50:
@@ -2737,7 +2963,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getSourceSystemTimestampsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 58
             case 74:
@@ -2756,7 +2982,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
             case 106:
               {
                 input.readMessage(getUsageSignalFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 106
             case 114:
@@ -2768,7 +2994,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 114
             case 122:
@@ -2802,7 +3028,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
             case 162:
               {
                 input.readMessage(getDataSourceFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 162
             case 194:
@@ -2815,7 +3041,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
             case 210:
               {
                 input.readMessage(getPersonalDetailsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 210
             case 218:
@@ -2846,9 +3072,23 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
             case 298:
               {
                 input.readMessage(getBusinessContextFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 298
+            case 314:
+              {
+                input.readMessage(
+                    getSqlDatabaseSystemSpecFieldBuilder().getBuilder(), extensionRegistry);
+                systemSpecCase_ = 39;
+                break;
+              } // case 314
+            case 322:
+              {
+                input.readMessage(
+                    getLookerSystemSpecFieldBuilder().getBuilder(), extensionRegistry);
+                systemSpecCase_ = 40;
+                break;
+              } // case 322
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2890,6 +3130,20 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSystem() {
       systemCase_ = 0;
       system_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int systemSpecCase_ = 0;
+    private java.lang.Object systemSpec_;
+
+    public SystemSpecCase getSystemSpecCase() {
+      return SystemSpecCase.forNumber(systemSpecCase_);
+    }
+
+    public Builder clearSystemSpec() {
+      systemSpecCase_ = 0;
+      systemSpec_ = null;
       onChanged();
       return this;
     }
@@ -3988,6 +4242,458 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec,
+            com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec.Builder,
+            com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpecOrBuilder>
+        sqlDatabaseSystemSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to a relational database system. Only settable
+     * when `user_specified_system` is equal to `SQL_DATABASE`
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec sql_database_system_spec = 39;
+     * </code>
+     *
+     * @return Whether the sqlDatabaseSystemSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasSqlDatabaseSystemSpec() {
+      return systemSpecCase_ == 39;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to a relational database system. Only settable
+     * when `user_specified_system` is equal to `SQL_DATABASE`
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec sql_database_system_spec = 39;
+     * </code>
+     *
+     * @return The sqlDatabaseSystemSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec getSqlDatabaseSystemSpec() {
+      if (sqlDatabaseSystemSpecBuilder_ == null) {
+        if (systemSpecCase_ == 39) {
+          return (com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec) systemSpec_;
+        }
+        return com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec.getDefaultInstance();
+      } else {
+        if (systemSpecCase_ == 39) {
+          return sqlDatabaseSystemSpecBuilder_.getMessage();
+        }
+        return com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to a relational database system. Only settable
+     * when `user_specified_system` is equal to `SQL_DATABASE`
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec sql_database_system_spec = 39;
+     * </code>
+     */
+    public Builder setSqlDatabaseSystemSpec(
+        com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec value) {
+      if (sqlDatabaseSystemSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        systemSpec_ = value;
+        onChanged();
+      } else {
+        sqlDatabaseSystemSpecBuilder_.setMessage(value);
+      }
+      systemSpecCase_ = 39;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to a relational database system. Only settable
+     * when `user_specified_system` is equal to `SQL_DATABASE`
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec sql_database_system_spec = 39;
+     * </code>
+     */
+    public Builder setSqlDatabaseSystemSpec(
+        com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec.Builder builderForValue) {
+      if (sqlDatabaseSystemSpecBuilder_ == null) {
+        systemSpec_ = builderForValue.build();
+        onChanged();
+      } else {
+        sqlDatabaseSystemSpecBuilder_.setMessage(builderForValue.build());
+      }
+      systemSpecCase_ = 39;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to a relational database system. Only settable
+     * when `user_specified_system` is equal to `SQL_DATABASE`
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec sql_database_system_spec = 39;
+     * </code>
+     */
+    public Builder mergeSqlDatabaseSystemSpec(
+        com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec value) {
+      if (sqlDatabaseSystemSpecBuilder_ == null) {
+        if (systemSpecCase_ == 39
+            && systemSpec_
+                != com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec.getDefaultInstance()) {
+          systemSpec_ =
+              com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec.newBuilder(
+                      (com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec) systemSpec_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          systemSpec_ = value;
+        }
+        onChanged();
+      } else {
+        if (systemSpecCase_ == 39) {
+          sqlDatabaseSystemSpecBuilder_.mergeFrom(value);
+        } else {
+          sqlDatabaseSystemSpecBuilder_.setMessage(value);
+        }
+      }
+      systemSpecCase_ = 39;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to a relational database system. Only settable
+     * when `user_specified_system` is equal to `SQL_DATABASE`
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec sql_database_system_spec = 39;
+     * </code>
+     */
+    public Builder clearSqlDatabaseSystemSpec() {
+      if (sqlDatabaseSystemSpecBuilder_ == null) {
+        if (systemSpecCase_ == 39) {
+          systemSpecCase_ = 0;
+          systemSpec_ = null;
+          onChanged();
+        }
+      } else {
+        if (systemSpecCase_ == 39) {
+          systemSpecCase_ = 0;
+          systemSpec_ = null;
+        }
+        sqlDatabaseSystemSpecBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to a relational database system. Only settable
+     * when `user_specified_system` is equal to `SQL_DATABASE`
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec sql_database_system_spec = 39;
+     * </code>
+     */
+    public com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec.Builder
+        getSqlDatabaseSystemSpecBuilder() {
+      return getSqlDatabaseSystemSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to a relational database system. Only settable
+     * when `user_specified_system` is equal to `SQL_DATABASE`
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec sql_database_system_spec = 39;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpecOrBuilder
+        getSqlDatabaseSystemSpecOrBuilder() {
+      if ((systemSpecCase_ == 39) && (sqlDatabaseSystemSpecBuilder_ != null)) {
+        return sqlDatabaseSystemSpecBuilder_.getMessageOrBuilder();
+      } else {
+        if (systemSpecCase_ == 39) {
+          return (com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec) systemSpec_;
+        }
+        return com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to a relational database system. Only settable
+     * when `user_specified_system` is equal to `SQL_DATABASE`
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec sql_database_system_spec = 39;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec,
+            com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec.Builder,
+            com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpecOrBuilder>
+        getSqlDatabaseSystemSpecFieldBuilder() {
+      if (sqlDatabaseSystemSpecBuilder_ == null) {
+        if (!(systemSpecCase_ == 39)) {
+          systemSpec_ = com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec.getDefaultInstance();
+        }
+        sqlDatabaseSystemSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec,
+                com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec.Builder,
+                com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpecOrBuilder>(
+                (com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec) systemSpec_,
+                getParentForChildren(),
+                isClean());
+        systemSpec_ = null;
+      }
+      systemSpecCase_ = 39;
+      onChanged();
+      return sqlDatabaseSystemSpecBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1.LookerSystemSpec,
+            com.google.cloud.datacatalog.v1.LookerSystemSpec.Builder,
+            com.google.cloud.datacatalog.v1.LookerSystemSpecOrBuilder>
+        lookerSystemSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to Looker sysstem. Only settable when
+     * `user_specified_system` is equal to `LOOKER`
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.LookerSystemSpec looker_system_spec = 40;</code>
+     *
+     * @return Whether the lookerSystemSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasLookerSystemSpec() {
+      return systemSpecCase_ == 40;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to Looker sysstem. Only settable when
+     * `user_specified_system` is equal to `LOOKER`
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.LookerSystemSpec looker_system_spec = 40;</code>
+     *
+     * @return The lookerSystemSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.datacatalog.v1.LookerSystemSpec getLookerSystemSpec() {
+      if (lookerSystemSpecBuilder_ == null) {
+        if (systemSpecCase_ == 40) {
+          return (com.google.cloud.datacatalog.v1.LookerSystemSpec) systemSpec_;
+        }
+        return com.google.cloud.datacatalog.v1.LookerSystemSpec.getDefaultInstance();
+      } else {
+        if (systemSpecCase_ == 40) {
+          return lookerSystemSpecBuilder_.getMessage();
+        }
+        return com.google.cloud.datacatalog.v1.LookerSystemSpec.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to Looker sysstem. Only settable when
+     * `user_specified_system` is equal to `LOOKER`
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.LookerSystemSpec looker_system_spec = 40;</code>
+     */
+    public Builder setLookerSystemSpec(com.google.cloud.datacatalog.v1.LookerSystemSpec value) {
+      if (lookerSystemSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        systemSpec_ = value;
+        onChanged();
+      } else {
+        lookerSystemSpecBuilder_.setMessage(value);
+      }
+      systemSpecCase_ = 40;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to Looker sysstem. Only settable when
+     * `user_specified_system` is equal to `LOOKER`
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.LookerSystemSpec looker_system_spec = 40;</code>
+     */
+    public Builder setLookerSystemSpec(
+        com.google.cloud.datacatalog.v1.LookerSystemSpec.Builder builderForValue) {
+      if (lookerSystemSpecBuilder_ == null) {
+        systemSpec_ = builderForValue.build();
+        onChanged();
+      } else {
+        lookerSystemSpecBuilder_.setMessage(builderForValue.build());
+      }
+      systemSpecCase_ = 40;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to Looker sysstem. Only settable when
+     * `user_specified_system` is equal to `LOOKER`
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.LookerSystemSpec looker_system_spec = 40;</code>
+     */
+    public Builder mergeLookerSystemSpec(com.google.cloud.datacatalog.v1.LookerSystemSpec value) {
+      if (lookerSystemSpecBuilder_ == null) {
+        if (systemSpecCase_ == 40
+            && systemSpec_
+                != com.google.cloud.datacatalog.v1.LookerSystemSpec.getDefaultInstance()) {
+          systemSpec_ =
+              com.google.cloud.datacatalog.v1.LookerSystemSpec.newBuilder(
+                      (com.google.cloud.datacatalog.v1.LookerSystemSpec) systemSpec_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          systemSpec_ = value;
+        }
+        onChanged();
+      } else {
+        if (systemSpecCase_ == 40) {
+          lookerSystemSpecBuilder_.mergeFrom(value);
+        } else {
+          lookerSystemSpecBuilder_.setMessage(value);
+        }
+      }
+      systemSpecCase_ = 40;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to Looker sysstem. Only settable when
+     * `user_specified_system` is equal to `LOOKER`
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.LookerSystemSpec looker_system_spec = 40;</code>
+     */
+    public Builder clearLookerSystemSpec() {
+      if (lookerSystemSpecBuilder_ == null) {
+        if (systemSpecCase_ == 40) {
+          systemSpecCase_ = 0;
+          systemSpec_ = null;
+          onChanged();
+        }
+      } else {
+        if (systemSpecCase_ == 40) {
+          systemSpecCase_ = 0;
+          systemSpec_ = null;
+        }
+        lookerSystemSpecBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to Looker sysstem. Only settable when
+     * `user_specified_system` is equal to `LOOKER`
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.LookerSystemSpec looker_system_spec = 40;</code>
+     */
+    public com.google.cloud.datacatalog.v1.LookerSystemSpec.Builder getLookerSystemSpecBuilder() {
+      return getLookerSystemSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to Looker sysstem. Only settable when
+     * `user_specified_system` is equal to `LOOKER`
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.LookerSystemSpec looker_system_spec = 40;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datacatalog.v1.LookerSystemSpecOrBuilder
+        getLookerSystemSpecOrBuilder() {
+      if ((systemSpecCase_ == 40) && (lookerSystemSpecBuilder_ != null)) {
+        return lookerSystemSpecBuilder_.getMessageOrBuilder();
+      } else {
+        if (systemSpecCase_ == 40) {
+          return (com.google.cloud.datacatalog.v1.LookerSystemSpec) systemSpec_;
+        }
+        return com.google.cloud.datacatalog.v1.LookerSystemSpec.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to Looker sysstem. Only settable when
+     * `user_specified_system` is equal to `LOOKER`
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.LookerSystemSpec looker_system_spec = 40;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1.LookerSystemSpec,
+            com.google.cloud.datacatalog.v1.LookerSystemSpec.Builder,
+            com.google.cloud.datacatalog.v1.LookerSystemSpecOrBuilder>
+        getLookerSystemSpecFieldBuilder() {
+      if (lookerSystemSpecBuilder_ == null) {
+        if (!(systemSpecCase_ == 40)) {
+          systemSpec_ = com.google.cloud.datacatalog.v1.LookerSystemSpec.getDefaultInstance();
+        }
+        lookerSystemSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datacatalog.v1.LookerSystemSpec,
+                com.google.cloud.datacatalog.v1.LookerSystemSpec.Builder,
+                com.google.cloud.datacatalog.v1.LookerSystemSpecOrBuilder>(
+                (com.google.cloud.datacatalog.v1.LookerSystemSpec) systemSpec_,
+                getParentForChildren(),
+                isClean());
+        systemSpec_ = null;
+      }
+      systemSpecCase_ = 40;
+      onChanged();
+      return lookerSystemSpecBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datacatalog.v1.GcsFilesetSpec,
             com.google.cloud.datacatalog.v1.GcsFilesetSpec.Builder,
             com.google.cloud.datacatalog.v1.GcsFilesetSpecOrBuilder>
@@ -4712,7 +5418,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specification that applies to a table resource. Valid only
-     * for entries with the `TABLE` type.
+     * for entries with the `TABLE` or `EXPLORE` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
@@ -4728,7 +5434,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specification that applies to a table resource. Valid only
-     * for entries with the `TABLE` type.
+     * for entries with the `TABLE` or `EXPLORE` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
@@ -4754,7 +5460,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specification that applies to a table resource. Valid only
-     * for entries with the `TABLE` type.
+     * for entries with the `TABLE` or `EXPLORE` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
@@ -4777,7 +5483,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specification that applies to a table resource. Valid only
-     * for entries with the `TABLE` type.
+     * for entries with the `TABLE` or `EXPLORE` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
@@ -4798,7 +5504,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specification that applies to a table resource. Valid only
-     * for entries with the `TABLE` type.
+     * for entries with the `TABLE` or `EXPLORE` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
@@ -4831,7 +5537,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specification that applies to a table resource. Valid only
-     * for entries with the `TABLE` type.
+     * for entries with the `TABLE` or `EXPLORE` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
@@ -4857,7 +5563,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specification that applies to a table resource. Valid only
-     * for entries with the `TABLE` type.
+     * for entries with the `TABLE` or `EXPLORE` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
@@ -4870,7 +5576,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specification that applies to a table resource. Valid only
-     * for entries with the `TABLE` type.
+     * for entries with the `TABLE` or `EXPLORE` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
@@ -4892,7 +5598,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specification that applies to a table resource. Valid only
-     * for entries with the `TABLE` type.
+     * for entries with the `TABLE` or `EXPLORE` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
@@ -5595,9 +6301,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Display name of an entry.
-     * The name must contain only Unicode letters, numbers (0-9), underscores (_),
-     * dashes (-), spaces ( ), and can't start or end with spaces.
-     * The maximum size is 200 bytes when encoded in UTF-8.
+     * The maximum size is 500 bytes when encoded in UTF-8.
      * Default value is an empty string.
      * </pre>
      *
@@ -5621,9 +6325,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Display name of an entry.
-     * The name must contain only Unicode letters, numbers (0-9), underscores (_),
-     * dashes (-), spaces ( ), and can't start or end with spaces.
-     * The maximum size is 200 bytes when encoded in UTF-8.
+     * The maximum size is 500 bytes when encoded in UTF-8.
      * Default value is an empty string.
      * </pre>
      *
@@ -5647,9 +6349,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Display name of an entry.
-     * The name must contain only Unicode letters, numbers (0-9), underscores (_),
-     * dashes (-), spaces ( ), and can't start or end with spaces.
-     * The maximum size is 200 bytes when encoded in UTF-8.
+     * The maximum size is 500 bytes when encoded in UTF-8.
      * Default value is an empty string.
      * </pre>
      *
@@ -5663,7 +6363,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5672,9 +6372,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Display name of an entry.
-     * The name must contain only Unicode letters, numbers (0-9), underscores (_),
-     * dashes (-), spaces ( ), and can't start or end with spaces.
-     * The maximum size is 200 bytes when encoded in UTF-8.
+     * The maximum size is 500 bytes when encoded in UTF-8.
      * Default value is an empty string.
      * </pre>
      *
@@ -5684,7 +6382,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -5693,9 +6391,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Display name of an entry.
-     * The name must contain only Unicode letters, numbers (0-9), underscores (_),
-     * dashes (-), spaces ( ), and can't start or end with spaces.
-     * The maximum size is 200 bytes when encoded in UTF-8.
+     * The maximum size is 500 bytes when encoded in UTF-8.
      * Default value is an empty string.
      * </pre>
      *
@@ -5710,7 +6406,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5795,7 +6491,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5818,7 +6514,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -5846,7 +6542,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5869,7 +6565,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the businessContext field is set.
      */
     public boolean hasBusinessContext() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      *
@@ -5909,7 +6605,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         businessContextBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5929,7 +6625,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         businessContextBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5944,7 +6640,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeBusinessContext(com.google.cloud.datacatalog.v1.BusinessContext value) {
       if (businessContextBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00040000) != 0)
             && businessContext_ != null
             && businessContext_
                 != com.google.cloud.datacatalog.v1.BusinessContext.getDefaultInstance()) {
@@ -5955,7 +6651,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         businessContextBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5969,7 +6665,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
      */
     public Builder clearBusinessContext() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       businessContext_ = null;
       if (businessContextBuilder_ != null) {
         businessContextBuilder_.dispose();
@@ -5988,7 +6684,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
      */
     public com.google.cloud.datacatalog.v1.BusinessContext.Builder getBusinessContextBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return getBusinessContextFieldBuilder().getBuilder();
     }
@@ -6054,7 +6750,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the schema field is set.
      */
     public boolean hasSchema() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
      *
@@ -6094,7 +6790,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         schemaBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6113,7 +6809,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         schemaBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6128,7 +6824,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSchema(com.google.cloud.datacatalog.v1.Schema value) {
       if (schemaBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && schema_ != null
             && schema_ != com.google.cloud.datacatalog.v1.Schema.getDefaultInstance()) {
           getSchemaBuilder().mergeFrom(value);
@@ -6138,7 +6834,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         schemaBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6152,7 +6848,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.datacatalog.v1.Schema schema = 5;</code>
      */
     public Builder clearSchema() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       schema_ = null;
       if (schemaBuilder_ != null) {
         schemaBuilder_.dispose();
@@ -6171,7 +6867,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.datacatalog.v1.Schema schema = 5;</code>
      */
     public com.google.cloud.datacatalog.v1.Schema.Builder getSchemaBuilder() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return getSchemaFieldBuilder().getBuilder();
     }
@@ -6241,7 +6937,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceSystemTimestamps field is set.
      */
     public boolean hasSourceSystemTimestamps() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
     /**
      *
@@ -6290,7 +6986,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         sourceSystemTimestampsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6314,7 +7010,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         sourceSystemTimestampsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6334,7 +7030,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSourceSystemTimestamps(
         com.google.cloud.datacatalog.v1.SystemTimestamps value) {
       if (sourceSystemTimestampsBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && sourceSystemTimestamps_ != null
             && sourceSystemTimestamps_
                 != com.google.cloud.datacatalog.v1.SystemTimestamps.getDefaultInstance()) {
@@ -6345,7 +7041,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         sourceSystemTimestampsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6363,7 +7059,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
      */
     public Builder clearSourceSystemTimestamps() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       sourceSystemTimestamps_ = null;
       if (sourceSystemTimestampsBuilder_ != null) {
         sourceSystemTimestampsBuilder_.dispose();
@@ -6387,7 +7083,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.datacatalog.v1.SystemTimestamps.Builder
         getSourceSystemTimestampsBuilder() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return getSourceSystemTimestampsFieldBuilder().getBuilder();
     }
@@ -6462,7 +7158,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the usageSignal field is set.
      */
     public boolean hasUsageSignal() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
     /**
      *
@@ -6502,7 +7198,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         usageSignalBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -6522,7 +7218,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         usageSignalBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -6537,7 +7233,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUsageSignal(com.google.cloud.datacatalog.v1.UsageSignal value) {
       if (usageSignalBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)
+        if (((bitField0_ & 0x00200000) != 0)
             && usageSignal_ != null
             && usageSignal_ != com.google.cloud.datacatalog.v1.UsageSignal.getDefaultInstance()) {
           getUsageSignalBuilder().mergeFrom(value);
@@ -6547,7 +7243,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         usageSignalBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -6561,7 +7257,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13;</code>
      */
     public Builder clearUsageSignal() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       usageSignal_ = null;
       if (usageSignalBuilder_ != null) {
         usageSignalBuilder_.dispose();
@@ -6580,7 +7276,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13;</code>
      */
     public com.google.cloud.datacatalog.v1.UsageSignal.Builder getUsageSignalBuilder() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return getUsageSignalFieldBuilder().getBuilder();
     }
@@ -6645,7 +7341,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return labels_;
     }
@@ -6742,7 +7438,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -6768,7 +7464,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00400000;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -6791,7 +7487,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00400000;
       return this;
     }
     /**
@@ -6808,7 +7504,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00400000;
       return this;
     }
 
@@ -6832,7 +7528,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the dataSource field is set.
      */
     public boolean hasDataSource() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
     /**
      *
@@ -6876,7 +7572,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         dataSourceBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -6898,7 +7594,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         dataSourceBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -6915,7 +7611,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDataSource(com.google.cloud.datacatalog.v1.DataSource value) {
       if (dataSourceBuilder_ == null) {
-        if (((bitField0_ & 0x00200000) != 0)
+        if (((bitField0_ & 0x00800000) != 0)
             && dataSource_ != null
             && dataSource_ != com.google.cloud.datacatalog.v1.DataSource.getDefaultInstance()) {
           getDataSourceBuilder().mergeFrom(value);
@@ -6925,7 +7621,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         dataSourceBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -6941,7 +7637,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDataSource() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       dataSource_ = null;
       if (dataSourceBuilder_ != null) {
         dataSourceBuilder_.dispose();
@@ -6962,7 +7658,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.datacatalog.v1.DataSource.Builder getDataSourceBuilder() {
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return getDataSourceFieldBuilder().getBuilder();
     }
@@ -7024,7 +7720,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Additional information related to the entry. Private to the current user.
+     * Output only. Additional information related to the entry. Private to the
+     * current user.
      * </pre>
      *
      * <code>
@@ -7034,13 +7731,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the personalDetails field is set.
      */
     public boolean hasPersonalDetails() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x01000000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Additional information related to the entry. Private to the current user.
+     * Output only. Additional information related to the entry. Private to the
+     * current user.
      * </pre>
      *
      * <code>
@@ -7062,7 +7760,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Additional information related to the entry. Private to the current user.
+     * Output only. Additional information related to the entry. Private to the
+     * current user.
      * </pre>
      *
      * <code>
@@ -7078,7 +7777,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         personalDetailsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7086,7 +7785,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Additional information related to the entry. Private to the current user.
+     * Output only. Additional information related to the entry. Private to the
+     * current user.
      * </pre>
      *
      * <code>
@@ -7100,7 +7800,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         personalDetailsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7108,7 +7808,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Additional information related to the entry. Private to the current user.
+     * Output only. Additional information related to the entry. Private to the
+     * current user.
      * </pre>
      *
      * <code>
@@ -7117,7 +7818,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePersonalDetails(com.google.cloud.datacatalog.v1.PersonalDetails value) {
       if (personalDetailsBuilder_ == null) {
-        if (((bitField0_ & 0x00400000) != 0)
+        if (((bitField0_ & 0x01000000) != 0)
             && personalDetails_ != null
             && personalDetails_
                 != com.google.cloud.datacatalog.v1.PersonalDetails.getDefaultInstance()) {
@@ -7128,7 +7829,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         personalDetailsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7136,7 +7837,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Additional information related to the entry. Private to the current user.
+     * Output only. Additional information related to the entry. Private to the
+     * current user.
      * </pre>
      *
      * <code>
@@ -7144,7 +7846,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPersonalDetails() {
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       personalDetails_ = null;
       if (personalDetailsBuilder_ != null) {
         personalDetailsBuilder_.dispose();
@@ -7157,7 +7859,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Additional information related to the entry. Private to the current user.
+     * Output only. Additional information related to the entry. Private to the
+     * current user.
      * </pre>
      *
      * <code>
@@ -7165,7 +7868,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.datacatalog.v1.PersonalDetails.Builder getPersonalDetailsBuilder() {
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return getPersonalDetailsFieldBuilder().getBuilder();
     }
@@ -7173,7 +7876,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Additional information related to the entry. Private to the current user.
+     * Output only. Additional information related to the entry. Private to the
+     * current user.
      * </pre>
      *
      * <code>
@@ -7193,7 +7897,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Additional information related to the entry. Private to the current user.
+     * Output only. Additional information related to the entry. Private to the
+     * current user.
      * </pre>
      *
      * <code>

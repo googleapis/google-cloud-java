@@ -384,8 +384,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The source system that Data Catalog automatically integrates  with, such
-   * as BigQuery, Cloud Pub/Sub, or Dataproc Metastore.
+   * Output only. The source system that Data Catalog automatically integrates
+   * with, such as BigQuery, Cloud Pub/Sub, or Dataproc Metastore.
    * </pre>
    *
    * <code>
@@ -401,8 +401,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The source system that Data Catalog automatically integrates  with, such
-   * as BigQuery, Cloud Pub/Sub, or Dataproc Metastore.
+   * Output only. The source system that Data Catalog automatically integrates
+   * with, such as BigQuery, Cloud Pub/Sub, or Dataproc Metastore.
    * </pre>
    *
    * <code>
@@ -421,8 +421,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The source system that Data Catalog automatically integrates  with, such
-   * as BigQuery, Cloud Pub/Sub, or Dataproc Metastore.
+   * Output only. The source system that Data Catalog automatically integrates
+   * with, such as BigQuery, Cloud Pub/Sub, or Dataproc Metastore.
    * </pre>
    *
    * <code>
@@ -1948,8 +1948,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The source system that Data Catalog automatically integrates  with, such
-     * as BigQuery, Cloud Pub/Sub, or Dataproc Metastore.
+     * Output only. The source system that Data Catalog automatically integrates
+     * with, such as BigQuery, Cloud Pub/Sub, or Dataproc Metastore.
      * </pre>
      *
      * <code>
@@ -1966,8 +1966,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The source system that Data Catalog automatically integrates  with, such
-     * as BigQuery, Cloud Pub/Sub, or Dataproc Metastore.
+     * Output only. The source system that Data Catalog automatically integrates
+     * with, such as BigQuery, Cloud Pub/Sub, or Dataproc Metastore.
      * </pre>
      *
      * <code>
@@ -1987,8 +1987,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The source system that Data Catalog automatically integrates  with, such
-     * as BigQuery, Cloud Pub/Sub, or Dataproc Metastore.
+     * Output only. The source system that Data Catalog automatically integrates
+     * with, such as BigQuery, Cloud Pub/Sub, or Dataproc Metastore.
      * </pre>
      *
      * <code>
@@ -2008,8 +2008,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The source system that Data Catalog automatically integrates  with, such
-     * as BigQuery, Cloud Pub/Sub, or Dataproc Metastore.
+     * Output only. The source system that Data Catalog automatically integrates
+     * with, such as BigQuery, Cloud Pub/Sub, or Dataproc Metastore.
      * </pre>
      *
      * <code>
@@ -2033,8 +2033,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The source system that Data Catalog automatically integrates  with, such
-     * as BigQuery, Cloud Pub/Sub, or Dataproc Metastore.
+     * Output only. The source system that Data Catalog automatically integrates
+     * with, such as BigQuery, Cloud Pub/Sub, or Dataproc Metastore.
      * </pre>
      *
      * <code>
@@ -2057,8 +2057,8 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The source system that Data Catalog automatically integrates  with, such
-     * as BigQuery, Cloud Pub/Sub, or Dataproc Metastore.
+     * Output only. The source system that Data Catalog automatically integrates
+     * with, such as BigQuery, Cloud Pub/Sub, or Dataproc Metastore.
      * </pre>
      *
      * <code>

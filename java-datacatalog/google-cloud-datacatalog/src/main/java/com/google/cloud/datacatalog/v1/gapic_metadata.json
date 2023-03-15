@@ -52,6 +52,9 @@
             "GetTagTemplate": {
               "methods": ["getTagTemplate", "getTagTemplate", "getTagTemplate", "getTagTemplateCallable"]
             },
+            "ImportEntries": {
+              "methods": ["importEntriesAsync", "importEntriesOperationCallable", "importEntriesCallable"]
+            },
             "ListEntries": {
               "methods": ["listEntries", "listEntries", "listEntries", "listEntriesPagedCallable", "listEntriesCallable"]
             },
@@ -69,6 +72,9 @@
             },
             "ModifyEntryOverview": {
               "methods": ["modifyEntryOverview", "modifyEntryOverviewCallable"]
+            },
+            "ReconcileTags": {
+              "methods": ["reconcileTagsAsync", "reconcileTagsOperationCallable", "reconcileTagsCallable"]
             },
             "RenameTagTemplateField": {
               "methods": ["renameTagTemplateField", "renameTagTemplateField", "renameTagTemplateField", "renameTagTemplateFieldCallable"]

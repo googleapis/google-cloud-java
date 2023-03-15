@@ -26,6 +26,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.datacatalog.v1.Contacts;
 import com.google.cloud.datacatalog.v1.CreateEntryGroupRequest;
@@ -44,6 +45,9 @@ import com.google.cloud.datacatalog.v1.EntryOverview;
 import com.google.cloud.datacatalog.v1.GetEntryGroupRequest;
 import com.google.cloud.datacatalog.v1.GetEntryRequest;
 import com.google.cloud.datacatalog.v1.GetTagTemplateRequest;
+import com.google.cloud.datacatalog.v1.ImportEntriesMetadata;
+import com.google.cloud.datacatalog.v1.ImportEntriesRequest;
+import com.google.cloud.datacatalog.v1.ImportEntriesResponse;
 import com.google.cloud.datacatalog.v1.ListEntriesRequest;
 import com.google.cloud.datacatalog.v1.ListEntriesResponse;
 import com.google.cloud.datacatalog.v1.ListEntryGroupsRequest;
@@ -53,6 +57,9 @@ import com.google.cloud.datacatalog.v1.ListTagsResponse;
 import com.google.cloud.datacatalog.v1.LookupEntryRequest;
 import com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest;
 import com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest;
+import com.google.cloud.datacatalog.v1.ReconcileTagsMetadata;
+import com.google.cloud.datacatalog.v1.ReconcileTagsRequest;
+import com.google.cloud.datacatalog.v1.ReconcileTagsResponse;
 import com.google.cloud.datacatalog.v1.RenameTagTemplateFieldEnumValueRequest;
 import com.google.cloud.datacatalog.v1.RenameTagTemplateFieldRequest;
 import com.google.cloud.datacatalog.v1.SearchCatalogRequest;
@@ -75,6 +82,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -348,6 +356,16 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setResponseMarshaller(ProtoUtils.marshaller(ListTagsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ReconcileTagsRequest, Operation>
+      reconcileTagsMethodDescriptor =
+          MethodDescriptor.<ReconcileTagsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.datacatalog.v1.DataCatalog/ReconcileTags")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ReconcileTagsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<StarEntryRequest, StarEntryResponse>
       starEntryMethodDescriptor =
           MethodDescriptor.<StarEntryRequest, StarEntryResponse>newBuilder()
@@ -394,6 +412,16 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ImportEntriesRequest, Operation>
+      importEntriesMethodDescriptor =
+          MethodDescriptor.<ImportEntriesRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.datacatalog.v1.DataCatalog/ImportEntries")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ImportEntriesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<SearchCatalogRequest, SearchCatalogResponse> searchCatalogCallable;
   private final UnaryCallable<SearchCatalogRequest, SearchCatalogPagedResponse>
       searchCatalogPagedCallable;
@@ -434,12 +462,20 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
   private final UnaryCallable<DeleteTagRequest, Empty> deleteTagCallable;
   private final UnaryCallable<ListTagsRequest, ListTagsResponse> listTagsCallable;
   private final UnaryCallable<ListTagsRequest, ListTagsPagedResponse> listTagsPagedCallable;
+  private final UnaryCallable<ReconcileTagsRequest, Operation> reconcileTagsCallable;
+  private final OperationCallable<
+          ReconcileTagsRequest, ReconcileTagsResponse, ReconcileTagsMetadata>
+      reconcileTagsOperationCallable;
   private final UnaryCallable<StarEntryRequest, StarEntryResponse> starEntryCallable;
   private final UnaryCallable<UnstarEntryRequest, UnstarEntryResponse> unstarEntryCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
+  private final UnaryCallable<ImportEntriesRequest, Operation> importEntriesCallable;
+  private final OperationCallable<
+          ImportEntriesRequest, ImportEntriesResponse, ImportEntriesMetadata>
+      importEntriesOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -748,6 +784,16 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<ReconcileTagsRequest, Operation> reconcileTagsTransportSettings =
+        GrpcCallSettings.<ReconcileTagsRequest, Operation>newBuilder()
+            .setMethodDescriptor(reconcileTagsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<StarEntryRequest, StarEntryResponse> starEntryTransportSettings =
         GrpcCallSettings.<StarEntryRequest, StarEntryResponse>newBuilder()
             .setMethodDescriptor(starEntryMethodDescriptor)
@@ -799,6 +845,16 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<ImportEntriesRequest, Operation> importEntriesTransportSettings =
+        GrpcCallSettings.<ImportEntriesRequest, Operation>newBuilder()
+            .setMethodDescriptor(importEntriesMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
 
     this.searchCatalogCallable =
         callableFactory.createUnaryCallable(
@@ -913,6 +969,15 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
     this.listTagsPagedCallable =
         callableFactory.createPagedCallable(
             listTagsTransportSettings, settings.listTagsSettings(), clientContext);
+    this.reconcileTagsCallable =
+        callableFactory.createUnaryCallable(
+            reconcileTagsTransportSettings, settings.reconcileTagsSettings(), clientContext);
+    this.reconcileTagsOperationCallable =
+        callableFactory.createOperationCallable(
+            reconcileTagsTransportSettings,
+            settings.reconcileTagsOperationSettings(),
+            clientContext,
+            operationsStub);
     this.starEntryCallable =
         callableFactory.createUnaryCallable(
             starEntryTransportSettings, settings.starEntrySettings(), clientContext);
@@ -930,6 +995,15 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
             clientContext);
+    this.importEntriesCallable =
+        callableFactory.createUnaryCallable(
+            importEntriesTransportSettings, settings.importEntriesSettings(), clientContext);
+    this.importEntriesOperationCallable =
+        callableFactory.createOperationCallable(
+            importEntriesTransportSettings,
+            settings.importEntriesOperationSettings(),
+            clientContext,
+            operationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1101,6 +1175,17 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
   }
 
   @Override
+  public UnaryCallable<ReconcileTagsRequest, Operation> reconcileTagsCallable() {
+    return reconcileTagsCallable;
+  }
+
+  @Override
+  public OperationCallable<ReconcileTagsRequest, ReconcileTagsResponse, ReconcileTagsMetadata>
+      reconcileTagsOperationCallable() {
+    return reconcileTagsOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<StarEntryRequest, StarEntryResponse> starEntryCallable() {
     return starEntryCallable;
   }
@@ -1124,6 +1209,17 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportEntriesRequest, Operation> importEntriesCallable() {
+    return importEntriesCallable;
+  }
+
+  @Override
+  public OperationCallable<ImportEntriesRequest, ImportEntriesResponse, ImportEntriesMetadata>
+      importEntriesOperationCallable() {
+    return importEntriesOperationCallable;
   }
 
   @Override

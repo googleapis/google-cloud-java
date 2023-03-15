@@ -62,7 +62,8 @@ public interface UsageSignalOrBuilder
    *
    *
    * <pre>
-   * Output only. BigQuery usage statistics over each of the predefined time ranges.
+   * Output only. BigQuery usage statistics over each of the predefined time
+   * ranges.
    * Supported time ranges are `{"24H", "7D", "30D"}`.
    * </pre>
    *
@@ -75,7 +76,8 @@ public interface UsageSignalOrBuilder
    *
    *
    * <pre>
-   * Output only. BigQuery usage statistics over each of the predefined time ranges.
+   * Output only. BigQuery usage statistics over each of the predefined time
+   * ranges.
    * Supported time ranges are `{"24H", "7D", "30D"}`.
    * </pre>
    *
@@ -92,7 +94,8 @@ public interface UsageSignalOrBuilder
    *
    *
    * <pre>
-   * Output only. BigQuery usage statistics over each of the predefined time ranges.
+   * Output only. BigQuery usage statistics over each of the predefined time
+   * ranges.
    * Supported time ranges are `{"24H", "7D", "30D"}`.
    * </pre>
    *
@@ -106,7 +109,8 @@ public interface UsageSignalOrBuilder
    *
    *
    * <pre>
-   * Output only. BigQuery usage statistics over each of the predefined time ranges.
+   * Output only. BigQuery usage statistics over each of the predefined time
+   * ranges.
    * Supported time ranges are `{"24H", "7D", "30D"}`.
    * </pre>
    *
@@ -123,7 +127,8 @@ public interface UsageSignalOrBuilder
    *
    *
    * <pre>
-   * Output only. BigQuery usage statistics over each of the predefined time ranges.
+   * Output only. BigQuery usage statistics over each of the predefined time
+   * ranges.
    * Supported time ranges are `{"24H", "7D", "30D"}`.
    * </pre>
    *
@@ -132,4 +137,105 @@ public interface UsageSignalOrBuilder
    * </code>
    */
   com.google.cloud.datacatalog.v1.UsageStats getUsageWithinTimeRangeOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Common usage statistics over each of the predefined time ranges.
+   * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.datacatalog.v1.CommonUsageStats&gt; common_usage_within_time_range = 3;
+   * </code>
+   */
+  int getCommonUsageWithinTimeRangeCount();
+  /**
+   *
+   *
+   * <pre>
+   * Common usage statistics over each of the predefined time ranges.
+   * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.datacatalog.v1.CommonUsageStats&gt; common_usage_within_time_range = 3;
+   * </code>
+   */
+  boolean containsCommonUsageWithinTimeRange(java.lang.String key);
+  /** Use {@link #getCommonUsageWithinTimeRangeMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1.CommonUsageStats>
+      getCommonUsageWithinTimeRange();
+  /**
+   *
+   *
+   * <pre>
+   * Common usage statistics over each of the predefined time ranges.
+   * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.datacatalog.v1.CommonUsageStats&gt; common_usage_within_time_range = 3;
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1.CommonUsageStats>
+      getCommonUsageWithinTimeRangeMap();
+  /**
+   *
+   *
+   * <pre>
+   * Common usage statistics over each of the predefined time ranges.
+   * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.datacatalog.v1.CommonUsageStats&gt; common_usage_within_time_range = 3;
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.datacatalog.v1.CommonUsageStats getCommonUsageWithinTimeRangeOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.datacatalog.v1.CommonUsageStats defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Common usage statistics over each of the predefined time ranges.
+   * Supported time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.datacatalog.v1.CommonUsageStats&gt; common_usage_within_time_range = 3;
+   * </code>
+   */
+  com.google.cloud.datacatalog.v1.CommonUsageStats getCommonUsageWithinTimeRangeOrThrow(
+      java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Favorite count in the source system.
+   * </pre>
+   *
+   * <code>optional int64 favorite_count = 4;</code>
+   *
+   * @return Whether the favoriteCount field is set.
+   */
+  boolean hasFavoriteCount();
+  /**
+   *
+   *
+   * <pre>
+   * Favorite count in the source system.
+   * </pre>
+   *
+   * <code>optional int64 favorite_count = 4;</code>
+   *
+   * @return The favoriteCount.
+   */
+  long getFavoriteCount();
 }
