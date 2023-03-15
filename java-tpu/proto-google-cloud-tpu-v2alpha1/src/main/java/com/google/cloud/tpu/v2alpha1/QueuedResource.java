@@ -6196,7 +6196,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. State of the QueuedResource request
+   * Output only. State of the QueuedResource request.
    * </pre>
    *
    * <code>
@@ -6213,7 +6213,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. State of the QueuedResource request
+   * Output only. State of the QueuedResource request.
    * </pre>
    *
    * <code>
@@ -6232,7 +6232,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. State of the QueuedResource request
+   * Output only. State of the QueuedResource request.
    * </pre>
    *
    * <code>
@@ -7764,7 +7764,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. State of the QueuedResource request
+     * Output only. State of the QueuedResource request.
      * </pre>
      *
      * <code>
@@ -7780,7 +7780,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. State of the QueuedResource request
+     * Output only. State of the QueuedResource request.
      * </pre>
      *
      * <code>
@@ -7802,7 +7802,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. State of the QueuedResource request
+     * Output only. State of the QueuedResource request.
      * </pre>
      *
      * <code>
@@ -7826,7 +7826,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. State of the QueuedResource request
+     * Output only. State of the QueuedResource request.
      * </pre>
      *
      * <code>
@@ -7848,7 +7848,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. State of the QueuedResource request
+     * Output only. State of the QueuedResource request.
      * </pre>
      *
      * <code>
@@ -7875,7 +7875,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. State of the QueuedResource request
+     * Output only. State of the QueuedResource request.
      * </pre>
      *
      * <code>
@@ -7896,7 +7896,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. State of the QueuedResource request
+     * Output only. State of the QueuedResource request.
      * </pre>
      *
      * <code>
@@ -7912,7 +7912,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. State of the QueuedResource request
+     * Output only. State of the QueuedResource request.
      * </pre>
      *
      * <code>
@@ -7932,7 +7932,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. State of the QueuedResource request
+     * Output only. State of the QueuedResource request.
      * </pre>
      *
      * <code>

@@ -206,6 +206,7 @@ public class TpuClientTest {
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
+            .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .build();
     mockTpu.addResponse(expectedResponse);
 
@@ -261,6 +262,7 @@ public class TpuClientTest {
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
+            .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .build();
     mockTpu.addResponse(expectedResponse);
 
@@ -316,6 +318,7 @@ public class TpuClientTest {
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
+            .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -385,6 +388,7 @@ public class TpuClientTest {
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
+            .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -538,6 +542,7 @@ public class TpuClientTest {
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
+            .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -607,6 +612,7 @@ public class TpuClientTest {
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
+            .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -676,6 +682,7 @@ public class TpuClientTest {
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
+            .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -862,6 +869,7 @@ public class TpuClientTest {
             .setName(
                 AcceleratorTypeName.of("[PROJECT]", "[LOCATION]", "[ACCELERATOR_TYPE]").toString())
             .setType("type3575610")
+            .addAllAcceleratorConfigs(new ArrayList<AcceleratorConfig>())
             .build();
     mockTpu.addResponse(expectedResponse);
 
@@ -904,6 +912,7 @@ public class TpuClientTest {
             .setName(
                 AcceleratorTypeName.of("[PROJECT]", "[LOCATION]", "[ACCELERATOR_TYPE]").toString())
             .setType("type3575610")
+            .addAllAcceleratorConfigs(new ArrayList<AcceleratorConfig>())
             .build();
     mockTpu.addResponse(expectedResponse);
 

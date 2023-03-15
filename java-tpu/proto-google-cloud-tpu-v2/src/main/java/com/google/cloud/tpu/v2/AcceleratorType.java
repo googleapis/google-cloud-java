@@ -40,6 +40,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
   private AcceleratorType() {
     name_ = "";
     type_ = "";
+    acceleratorConfigs_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -170,6 +171,78 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int ACCELERATOR_CONFIGS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.tpu.v2.AcceleratorConfig> acceleratorConfigs_;
+  /**
+   *
+   *
+   * <pre>
+   * The accelerator config.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.tpu.v2.AcceleratorConfig accelerator_configs = 3;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.tpu.v2.AcceleratorConfig> getAcceleratorConfigsList() {
+    return acceleratorConfigs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The accelerator config.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.tpu.v2.AcceleratorConfig accelerator_configs = 3;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.tpu.v2.AcceleratorConfigOrBuilder>
+      getAcceleratorConfigsOrBuilderList() {
+    return acceleratorConfigs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The accelerator config.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.tpu.v2.AcceleratorConfig accelerator_configs = 3;</code>
+   */
+  @java.lang.Override
+  public int getAcceleratorConfigsCount() {
+    return acceleratorConfigs_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The accelerator config.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.tpu.v2.AcceleratorConfig accelerator_configs = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.tpu.v2.AcceleratorConfig getAcceleratorConfigs(int index) {
+    return acceleratorConfigs_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The accelerator config.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.tpu.v2.AcceleratorConfig accelerator_configs = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.tpu.v2.AcceleratorConfigOrBuilder getAcceleratorConfigsOrBuilder(
+      int index) {
+    return acceleratorConfigs_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -190,6 +263,9 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, type_);
     }
+    for (int i = 0; i < acceleratorConfigs_.size(); i++) {
+      output.writeMessage(3, acceleratorConfigs_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -204,6 +280,10 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, type_);
+    }
+    for (int i = 0; i < acceleratorConfigs_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(3, acceleratorConfigs_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -222,6 +302,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
 
     if (!getName().equals(other.getName())) return false;
     if (!getType().equals(other.getType())) return false;
+    if (!getAcceleratorConfigsList().equals(other.getAcceleratorConfigsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -237,6 +318,10 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getType().hashCode();
+    if (getAcceleratorConfigsCount() > 0) {
+      hash = (37 * hash) + ACCELERATOR_CONFIGS_FIELD_NUMBER;
+      hash = (53 * hash) + getAcceleratorConfigsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -378,6 +463,13 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
       bitField0_ = 0;
       name_ = "";
       type_ = "";
+      if (acceleratorConfigsBuilder_ == null) {
+        acceleratorConfigs_ = java.util.Collections.emptyList();
+      } else {
+        acceleratorConfigs_ = null;
+        acceleratorConfigsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -405,11 +497,24 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.tpu.v2.AcceleratorType buildPartial() {
       com.google.cloud.tpu.v2.AcceleratorType result =
           new com.google.cloud.tpu.v2.AcceleratorType(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.tpu.v2.AcceleratorType result) {
+      if (acceleratorConfigsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          acceleratorConfigs_ = java.util.Collections.unmodifiableList(acceleratorConfigs_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.acceleratorConfigs_ = acceleratorConfigs_;
+      } else {
+        result.acceleratorConfigs_ = acceleratorConfigsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.tpu.v2.AcceleratorType result) {
@@ -477,6 +582,33 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (acceleratorConfigsBuilder_ == null) {
+        if (!other.acceleratorConfigs_.isEmpty()) {
+          if (acceleratorConfigs_.isEmpty()) {
+            acceleratorConfigs_ = other.acceleratorConfigs_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureAcceleratorConfigsIsMutable();
+            acceleratorConfigs_.addAll(other.acceleratorConfigs_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.acceleratorConfigs_.isEmpty()) {
+          if (acceleratorConfigsBuilder_.isEmpty()) {
+            acceleratorConfigsBuilder_.dispose();
+            acceleratorConfigsBuilder_ = null;
+            acceleratorConfigs_ = other.acceleratorConfigs_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            acceleratorConfigsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getAcceleratorConfigsFieldBuilder()
+                    : null;
+          } else {
+            acceleratorConfigsBuilder_.addAllMessages(other.acceleratorConfigs_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -515,6 +647,19 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                com.google.cloud.tpu.v2.AcceleratorConfig m =
+                    input.readMessage(
+                        com.google.cloud.tpu.v2.AcceleratorConfig.parser(), extensionRegistry);
+                if (acceleratorConfigsBuilder_ == null) {
+                  ensureAcceleratorConfigsIsMutable();
+                  acceleratorConfigs_.add(m);
+                } else {
+                  acceleratorConfigsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -744,6 +889,365 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.tpu.v2.AcceleratorConfig> acceleratorConfigs_ =
+        java.util.Collections.emptyList();
+
+    private void ensureAcceleratorConfigsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        acceleratorConfigs_ =
+            new java.util.ArrayList<com.google.cloud.tpu.v2.AcceleratorConfig>(acceleratorConfigs_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.tpu.v2.AcceleratorConfig,
+            com.google.cloud.tpu.v2.AcceleratorConfig.Builder,
+            com.google.cloud.tpu.v2.AcceleratorConfigOrBuilder>
+        acceleratorConfigsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The accelerator config.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.tpu.v2.AcceleratorConfig accelerator_configs = 3;</code>
+     */
+    public java.util.List<com.google.cloud.tpu.v2.AcceleratorConfig> getAcceleratorConfigsList() {
+      if (acceleratorConfigsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(acceleratorConfigs_);
+      } else {
+        return acceleratorConfigsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The accelerator config.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.tpu.v2.AcceleratorConfig accelerator_configs = 3;</code>
+     */
+    public int getAcceleratorConfigsCount() {
+      if (acceleratorConfigsBuilder_ == null) {
+        return acceleratorConfigs_.size();
+      } else {
+        return acceleratorConfigsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The accelerator config.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.tpu.v2.AcceleratorConfig accelerator_configs = 3;</code>
+     */
+    public com.google.cloud.tpu.v2.AcceleratorConfig getAcceleratorConfigs(int index) {
+      if (acceleratorConfigsBuilder_ == null) {
+        return acceleratorConfigs_.get(index);
+      } else {
+        return acceleratorConfigsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The accelerator config.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.tpu.v2.AcceleratorConfig accelerator_configs = 3;</code>
+     */
+    public Builder setAcceleratorConfigs(
+        int index, com.google.cloud.tpu.v2.AcceleratorConfig value) {
+      if (acceleratorConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAcceleratorConfigsIsMutable();
+        acceleratorConfigs_.set(index, value);
+        onChanged();
+      } else {
+        acceleratorConfigsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The accelerator config.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.tpu.v2.AcceleratorConfig accelerator_configs = 3;</code>
+     */
+    public Builder setAcceleratorConfigs(
+        int index, com.google.cloud.tpu.v2.AcceleratorConfig.Builder builderForValue) {
+      if (acceleratorConfigsBuilder_ == null) {
+        ensureAcceleratorConfigsIsMutable();
+        acceleratorConfigs_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        acceleratorConfigsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The accelerator config.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.tpu.v2.AcceleratorConfig accelerator_configs = 3;</code>
+     */
+    public Builder addAcceleratorConfigs(com.google.cloud.tpu.v2.AcceleratorConfig value) {
+      if (acceleratorConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAcceleratorConfigsIsMutable();
+        acceleratorConfigs_.add(value);
+        onChanged();
+      } else {
+        acceleratorConfigsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The accelerator config.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.tpu.v2.AcceleratorConfig accelerator_configs = 3;</code>
+     */
+    public Builder addAcceleratorConfigs(
+        int index, com.google.cloud.tpu.v2.AcceleratorConfig value) {
+      if (acceleratorConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAcceleratorConfigsIsMutable();
+        acceleratorConfigs_.add(index, value);
+        onChanged();
+      } else {
+        acceleratorConfigsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The accelerator config.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.tpu.v2.AcceleratorConfig accelerator_configs = 3;</code>
+     */
+    public Builder addAcceleratorConfigs(
+        com.google.cloud.tpu.v2.AcceleratorConfig.Builder builderForValue) {
+      if (acceleratorConfigsBuilder_ == null) {
+        ensureAcceleratorConfigsIsMutable();
+        acceleratorConfigs_.add(builderForValue.build());
+        onChanged();
+      } else {
+        acceleratorConfigsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The accelerator config.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.tpu.v2.AcceleratorConfig accelerator_configs = 3;</code>
+     */
+    public Builder addAcceleratorConfigs(
+        int index, com.google.cloud.tpu.v2.AcceleratorConfig.Builder builderForValue) {
+      if (acceleratorConfigsBuilder_ == null) {
+        ensureAcceleratorConfigsIsMutable();
+        acceleratorConfigs_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        acceleratorConfigsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The accelerator config.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.tpu.v2.AcceleratorConfig accelerator_configs = 3;</code>
+     */
+    public Builder addAllAcceleratorConfigs(
+        java.lang.Iterable<? extends com.google.cloud.tpu.v2.AcceleratorConfig> values) {
+      if (acceleratorConfigsBuilder_ == null) {
+        ensureAcceleratorConfigsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, acceleratorConfigs_);
+        onChanged();
+      } else {
+        acceleratorConfigsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The accelerator config.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.tpu.v2.AcceleratorConfig accelerator_configs = 3;</code>
+     */
+    public Builder clearAcceleratorConfigs() {
+      if (acceleratorConfigsBuilder_ == null) {
+        acceleratorConfigs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        acceleratorConfigsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The accelerator config.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.tpu.v2.AcceleratorConfig accelerator_configs = 3;</code>
+     */
+    public Builder removeAcceleratorConfigs(int index) {
+      if (acceleratorConfigsBuilder_ == null) {
+        ensureAcceleratorConfigsIsMutable();
+        acceleratorConfigs_.remove(index);
+        onChanged();
+      } else {
+        acceleratorConfigsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The accelerator config.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.tpu.v2.AcceleratorConfig accelerator_configs = 3;</code>
+     */
+    public com.google.cloud.tpu.v2.AcceleratorConfig.Builder getAcceleratorConfigsBuilder(
+        int index) {
+      return getAcceleratorConfigsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The accelerator config.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.tpu.v2.AcceleratorConfig accelerator_configs = 3;</code>
+     */
+    public com.google.cloud.tpu.v2.AcceleratorConfigOrBuilder getAcceleratorConfigsOrBuilder(
+        int index) {
+      if (acceleratorConfigsBuilder_ == null) {
+        return acceleratorConfigs_.get(index);
+      } else {
+        return acceleratorConfigsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The accelerator config.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.tpu.v2.AcceleratorConfig accelerator_configs = 3;</code>
+     */
+    public java.util.List<? extends com.google.cloud.tpu.v2.AcceleratorConfigOrBuilder>
+        getAcceleratorConfigsOrBuilderList() {
+      if (acceleratorConfigsBuilder_ != null) {
+        return acceleratorConfigsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(acceleratorConfigs_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The accelerator config.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.tpu.v2.AcceleratorConfig accelerator_configs = 3;</code>
+     */
+    public com.google.cloud.tpu.v2.AcceleratorConfig.Builder addAcceleratorConfigsBuilder() {
+      return getAcceleratorConfigsFieldBuilder()
+          .addBuilder(com.google.cloud.tpu.v2.AcceleratorConfig.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The accelerator config.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.tpu.v2.AcceleratorConfig accelerator_configs = 3;</code>
+     */
+    public com.google.cloud.tpu.v2.AcceleratorConfig.Builder addAcceleratorConfigsBuilder(
+        int index) {
+      return getAcceleratorConfigsFieldBuilder()
+          .addBuilder(index, com.google.cloud.tpu.v2.AcceleratorConfig.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The accelerator config.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.tpu.v2.AcceleratorConfig accelerator_configs = 3;</code>
+     */
+    public java.util.List<com.google.cloud.tpu.v2.AcceleratorConfig.Builder>
+        getAcceleratorConfigsBuilderList() {
+      return getAcceleratorConfigsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.tpu.v2.AcceleratorConfig,
+            com.google.cloud.tpu.v2.AcceleratorConfig.Builder,
+            com.google.cloud.tpu.v2.AcceleratorConfigOrBuilder>
+        getAcceleratorConfigsFieldBuilder() {
+      if (acceleratorConfigsBuilder_ == null) {
+        acceleratorConfigsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.tpu.v2.AcceleratorConfig,
+                com.google.cloud.tpu.v2.AcceleratorConfig.Builder,
+                com.google.cloud.tpu.v2.AcceleratorConfigOrBuilder>(
+                acceleratorConfigs_,
+                ((bitField0_ & 0x00000004) != 0),
+                getParentForChildren(),
+                isClean());
+        acceleratorConfigs_ = null;
+      }
+      return acceleratorConfigsBuilder_;
     }
 
     @java.lang.Override

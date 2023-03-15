@@ -211,6 +211,7 @@ public class TpuClientHttpJsonTest {
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
+            .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -272,6 +273,7 @@ public class TpuClientHttpJsonTest {
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
+            .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -333,6 +335,7 @@ public class TpuClientHttpJsonTest {
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
+            .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -403,6 +406,7 @@ public class TpuClientHttpJsonTest {
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
+            .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -563,6 +567,7 @@ public class TpuClientHttpJsonTest {
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
+            .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -635,6 +640,7 @@ public class TpuClientHttpJsonTest {
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
+            .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -707,6 +713,7 @@ public class TpuClientHttpJsonTest {
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
+            .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -736,6 +743,7 @@ public class TpuClientHttpJsonTest {
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
+            .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -785,6 +793,7 @@ public class TpuClientHttpJsonTest {
               .addAllDataDisks(new ArrayList<AttachedDisk>())
               .addAllSymptoms(new ArrayList<Symptom>())
               .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
+              .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateNodeAsync(node, updateMask).get();
@@ -950,6 +959,7 @@ public class TpuClientHttpJsonTest {
             .setName(
                 AcceleratorTypeName.of("[PROJECT]", "[LOCATION]", "[ACCELERATOR_TYPE]").toString())
             .setType("type3575610")
+            .addAllAcceleratorConfigs(new ArrayList<AcceleratorConfig>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -998,6 +1008,7 @@ public class TpuClientHttpJsonTest {
             .setName(
                 AcceleratorTypeName.of("[PROJECT]", "[LOCATION]", "[ACCELERATOR_TYPE]").toString())
             .setType("type3575610")
+            .addAllAcceleratorConfigs(new ArrayList<AcceleratorConfig>())
             .build();
     mockService.addResponse(expectedResponse);
 

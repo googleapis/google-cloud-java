@@ -196,7 +196,7 @@ public interface QueuedResourceOrBuilder
    *
    *
    * <pre>
-   * Output only. State of the QueuedResource request
+   * Output only. State of the QueuedResource request.
    * </pre>
    *
    * <code>
@@ -210,7 +210,7 @@ public interface QueuedResourceOrBuilder
    *
    *
    * <pre>
-   * Output only. State of the QueuedResource request
+   * Output only. State of the QueuedResource request.
    * </pre>
    *
    * <code>
@@ -224,7 +224,7 @@ public interface QueuedResourceOrBuilder
    *
    *
    * <pre>
-   * Output only. State of the QueuedResource request
+   * Output only. State of the QueuedResource request.
    * </pre>
    *
    * <code>

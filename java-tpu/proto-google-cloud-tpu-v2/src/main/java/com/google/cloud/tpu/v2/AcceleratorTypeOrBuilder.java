@@ -72,4 +72,56 @@ public interface AcceleratorTypeOrBuilder
    * @return The bytes for type.
    */
   com.google.protobuf.ByteString getTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The accelerator config.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.tpu.v2.AcceleratorConfig accelerator_configs = 3;</code>
+   */
+  java.util.List<com.google.cloud.tpu.v2.AcceleratorConfig> getAcceleratorConfigsList();
+  /**
+   *
+   *
+   * <pre>
+   * The accelerator config.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.tpu.v2.AcceleratorConfig accelerator_configs = 3;</code>
+   */
+  com.google.cloud.tpu.v2.AcceleratorConfig getAcceleratorConfigs(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The accelerator config.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.tpu.v2.AcceleratorConfig accelerator_configs = 3;</code>
+   */
+  int getAcceleratorConfigsCount();
+  /**
+   *
+   *
+   * <pre>
+   * The accelerator config.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.tpu.v2.AcceleratorConfig accelerator_configs = 3;</code>
+   */
+  java.util.List<? extends com.google.cloud.tpu.v2.AcceleratorConfigOrBuilder>
+      getAcceleratorConfigsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * The accelerator config.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.tpu.v2.AcceleratorConfig accelerator_configs = 3;</code>
+   */
+  com.google.cloud.tpu.v2.AcceleratorConfigOrBuilder getAcceleratorConfigsOrBuilder(int index);
 }

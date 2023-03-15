@@ -828,4 +828,39 @@ public interface NodeOrBuilder
    * <code>.google.cloud.tpu.v2.ShieldedInstanceConfig shielded_instance_config = 45;</code>
    */
   com.google.cloud.tpu.v2.ShieldedInstanceConfigOrBuilder getShieldedInstanceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The AccleratorConfig for the TPU Node.
+   * </pre>
+   *
+   * <code>.google.cloud.tpu.v2.AcceleratorConfig accelerator_config = 46;</code>
+   *
+   * @return Whether the acceleratorConfig field is set.
+   */
+  boolean hasAcceleratorConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The AccleratorConfig for the TPU Node.
+   * </pre>
+   *
+   * <code>.google.cloud.tpu.v2.AcceleratorConfig accelerator_config = 46;</code>
+   *
+   * @return The acceleratorConfig.
+   */
+  com.google.cloud.tpu.v2.AcceleratorConfig getAcceleratorConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The AccleratorConfig for the TPU Node.
+   * </pre>
+   *
+   * <code>.google.cloud.tpu.v2.AcceleratorConfig accelerator_config = 46;</code>
+   */
+  com.google.cloud.tpu.v2.AcceleratorConfigOrBuilder getAcceleratorConfigOrBuilder();
 }
