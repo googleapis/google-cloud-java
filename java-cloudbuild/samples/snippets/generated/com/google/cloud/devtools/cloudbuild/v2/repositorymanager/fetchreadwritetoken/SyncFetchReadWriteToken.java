@@ -18,9 +18,9 @@ package com.google.cloud.devtools.cloudbuild.v2.samples;
 
 // [START cloudbuild_v2_generated_RepositoryManager_FetchReadWriteToken_sync]
 import com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient;
-import google.devtools.cloudbuild.v2.FetchReadWriteTokenRequest;
-import google.devtools.cloudbuild.v2.FetchReadWriteTokenResponse;
-import google.devtools.cloudbuild.v2.RepositoryName;
+import com.google.cloudbuild.v2.FetchReadWriteTokenRequest;
+import com.google.cloudbuild.v2.FetchReadWriteTokenResponse;
+import com.google.cloudbuild.v2.RepositoryName;
 
 public class SyncFetchReadWriteToken {
 

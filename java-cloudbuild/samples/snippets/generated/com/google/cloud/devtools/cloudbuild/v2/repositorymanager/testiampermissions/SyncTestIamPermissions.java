@@ -18,9 +18,9 @@ package com.google.cloud.devtools.cloudbuild.v2.samples;
 
 // [START cloudbuild_v2_generated_RepositoryManager_TestIamPermissions_sync]
 import com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient;
+import com.google.cloudbuild.v2.ConnectionName;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
-import google.devtools.cloudbuild.v2.ConnectionName;
 import java.util.ArrayList;
 
 public class SyncTestIamPermissions {

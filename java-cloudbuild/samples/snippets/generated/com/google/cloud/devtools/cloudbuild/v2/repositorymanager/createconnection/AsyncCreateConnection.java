@@ -19,10 +19,10 @@ package com.google.cloud.devtools.cloudbuild.v2.samples;
 // [START cloudbuild_v2_generated_RepositoryManager_CreateConnection_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient;
+import com.google.cloudbuild.v2.Connection;
+import com.google.cloudbuild.v2.CreateConnectionRequest;
+import com.google.cloudbuild.v2.LocationName;
 import com.google.longrunning.Operation;
-import google.devtools.cloudbuild.v2.Connection;
-import google.devtools.cloudbuild.v2.CreateConnectionRequest;
-import google.devtools.cloudbuild.v2.LocationName;
 
 public class AsyncCreateConnection {
 

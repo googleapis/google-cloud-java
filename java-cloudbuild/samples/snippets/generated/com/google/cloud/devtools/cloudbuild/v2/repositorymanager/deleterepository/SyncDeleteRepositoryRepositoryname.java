@@ -18,8 +18,8 @@ package com.google.cloud.devtools.cloudbuild.v2.samples;
 
 // [START cloudbuild_v2_generated_RepositoryManager_DeleteRepository_Repositoryname_sync]
 import com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient;
+import com.google.cloudbuild.v2.RepositoryName;
 import com.google.protobuf.Empty;
-import google.devtools.cloudbuild.v2.RepositoryName;
 
 public class SyncDeleteRepositoryRepositoryname {
 

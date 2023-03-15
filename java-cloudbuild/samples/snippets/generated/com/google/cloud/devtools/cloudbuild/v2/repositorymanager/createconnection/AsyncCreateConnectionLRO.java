@@ -19,10 +19,10 @@ package com.google.cloud.devtools.cloudbuild.v2.samples;
 // [START cloudbuild_v2_generated_RepositoryManager_CreateConnection_LRO_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient;
-import google.devtools.cloudbuild.v2.Connection;
-import google.devtools.cloudbuild.v2.CreateConnectionRequest;
-import google.devtools.cloudbuild.v2.LocationName;
-import google.devtools.cloudbuild.v2.OperationMetadata;
+import com.google.cloudbuild.v2.Connection;
+import com.google.cloudbuild.v2.CreateConnectionRequest;
+import com.google.cloudbuild.v2.LocationName;
+import com.google.cloudbuild.v2.OperationMetadata;
 
 public class AsyncCreateConnectionLRO {
 

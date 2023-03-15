@@ -18,9 +18,9 @@ package com.google.cloud.devtools.cloudbuild.v2.samples;
 
 // [START cloudbuild_v2_generated_RepositoryManager_FetchLinkableRepositories_sync]
 import com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient;
-import google.devtools.cloudbuild.v2.ConnectionName;
-import google.devtools.cloudbuild.v2.FetchLinkableRepositoriesRequest;
-import google.devtools.cloudbuild.v2.Repository;
+import com.google.cloudbuild.v2.ConnectionName;
+import com.google.cloudbuild.v2.FetchLinkableRepositoriesRequest;
+import com.google.cloudbuild.v2.Repository;
 
 public class SyncFetchLinkableRepositories {
 

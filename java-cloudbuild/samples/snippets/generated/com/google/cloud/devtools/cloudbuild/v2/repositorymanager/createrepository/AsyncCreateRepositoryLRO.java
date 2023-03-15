@@ -19,10 +19,10 @@ package com.google.cloud.devtools.cloudbuild.v2.samples;
 // [START cloudbuild_v2_generated_RepositoryManager_CreateRepository_LRO_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient;
-import google.devtools.cloudbuild.v2.ConnectionName;
-import google.devtools.cloudbuild.v2.CreateRepositoryRequest;
-import google.devtools.cloudbuild.v2.OperationMetadata;
-import google.devtools.cloudbuild.v2.Repository;
+import com.google.cloudbuild.v2.ConnectionName;
+import com.google.cloudbuild.v2.CreateRepositoryRequest;
+import com.google.cloudbuild.v2.OperationMetadata;
+import com.google.cloudbuild.v2.Repository;
 
 public class AsyncCreateRepositoryLRO {
 

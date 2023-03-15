@@ -19,9 +19,9 @@ package com.google.cloud.devtools.cloudbuild.v2.samples;
 // [START cloudbuild_v2_generated_RepositoryManager_FetchReadToken_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient;
-import google.devtools.cloudbuild.v2.FetchReadTokenRequest;
-import google.devtools.cloudbuild.v2.FetchReadTokenResponse;
-import google.devtools.cloudbuild.v2.RepositoryName;
+import com.google.cloudbuild.v2.FetchReadTokenRequest;
+import com.google.cloudbuild.v2.FetchReadTokenResponse;
+import com.google.cloudbuild.v2.RepositoryName;
 
 public class AsyncFetchReadToken {
 

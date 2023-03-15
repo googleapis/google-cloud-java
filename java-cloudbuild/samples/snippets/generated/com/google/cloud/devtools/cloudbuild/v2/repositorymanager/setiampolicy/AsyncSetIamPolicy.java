@@ -19,10 +19,10 @@ package com.google.cloud.devtools.cloudbuild.v2.samples;
 // [START cloudbuild_v2_generated_RepositoryManager_SetIamPolicy_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient;
+import com.google.cloudbuild.v2.ConnectionName;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.protobuf.FieldMask;
-import google.devtools.cloudbuild.v2.ConnectionName;
 
 public class AsyncSetIamPolicy {
 

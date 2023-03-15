@@ -18,11 +18,11 @@ package com.google.cloud.devtools.cloudbuild.v2.samples;
 
 // [START cloudbuild_v2_generated_RepositoryManager_FetchLinkableRepositories_Paged_async]
 import com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient;
+import com.google.cloudbuild.v2.ConnectionName;
+import com.google.cloudbuild.v2.FetchLinkableRepositoriesRequest;
+import com.google.cloudbuild.v2.FetchLinkableRepositoriesResponse;
+import com.google.cloudbuild.v2.Repository;
 import com.google.common.base.Strings;
-import google.devtools.cloudbuild.v2.ConnectionName;
-import google.devtools.cloudbuild.v2.FetchLinkableRepositoriesRequest;
-import google.devtools.cloudbuild.v2.FetchLinkableRepositoriesResponse;
-import google.devtools.cloudbuild.v2.Repository;
 
 public class AsyncFetchLinkableRepositoriesPaged {
 

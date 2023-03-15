@@ -18,11 +18,11 @@ package com.google.cloud.devtools.cloudbuild.v2.samples;
 
 // [START cloudbuild_v2_generated_RepositoryManager_ListConnections_Paged_async]
 import com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient;
+import com.google.cloudbuild.v2.Connection;
+import com.google.cloudbuild.v2.ListConnectionsRequest;
+import com.google.cloudbuild.v2.ListConnectionsResponse;
+import com.google.cloudbuild.v2.LocationName;
 import com.google.common.base.Strings;
-import google.devtools.cloudbuild.v2.Connection;
-import google.devtools.cloudbuild.v2.ListConnectionsRequest;
-import google.devtools.cloudbuild.v2.ListConnectionsResponse;
-import google.devtools.cloudbuild.v2.LocationName;
 
 public class AsyncListConnectionsPaged {
 
