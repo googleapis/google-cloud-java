@@ -36,7 +36,7 @@
  *
  * <p>This second example shows how to get and update a Datastore entity if it exists. For the
  * complete source code see <a
- * href="https://github.com/googleapis/google-cloud-java/main/master/google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/UpdateEntity.java">
+ * href="https://github.com/googleapis/google-cloud-java/blob/4f9e98b21264028901878b8a11204868eca858ce/google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/UpdateEntity.java">
  * UpdateEntity.java</a>.
  *
  * <pre>{@code
