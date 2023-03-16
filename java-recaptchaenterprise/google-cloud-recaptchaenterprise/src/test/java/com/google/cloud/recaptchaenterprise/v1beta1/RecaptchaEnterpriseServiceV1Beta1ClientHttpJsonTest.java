@@ -32,6 +32,7 @@ import com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentResponse;
 import com.google.recaptchaenterprise.v1beta1.Assessment;
 import com.google.recaptchaenterprise.v1beta1.AssessmentName;
 import com.google.recaptchaenterprise.v1beta1.Event;
+import com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment;
 import com.google.recaptchaenterprise.v1beta1.PasswordLeakVerification;
 import com.google.recaptchaenterprise.v1beta1.ProjectName;
 import com.google.recaptchaenterprise.v1beta1.TokenProperties;
@@ -92,6 +93,7 @@ public class RecaptchaEnterpriseServiceV1Beta1ClientHttpJsonTest {
             .addAllReasons(new ArrayList<Assessment.ClassificationReason>())
             .setPasswordLeakVerification(PasswordLeakVerification.newBuilder().build())
             .setAccountDefenderAssessment(AccountDefenderAssessment.newBuilder().build())
+            .setFraudPreventionAssessment(FraudPreventionAssessment.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -144,6 +146,7 @@ public class RecaptchaEnterpriseServiceV1Beta1ClientHttpJsonTest {
             .addAllReasons(new ArrayList<Assessment.ClassificationReason>())
             .setPasswordLeakVerification(PasswordLeakVerification.newBuilder().build())
             .setAccountDefenderAssessment(AccountDefenderAssessment.newBuilder().build())
+            .setFraudPreventionAssessment(FraudPreventionAssessment.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

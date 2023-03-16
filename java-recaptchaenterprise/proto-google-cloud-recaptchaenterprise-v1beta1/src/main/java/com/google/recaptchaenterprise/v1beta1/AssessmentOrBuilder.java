@@ -270,7 +270,7 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
-   * Assessment returned by Account Defender when a hashed_account_id is
+   * Assessment returned by account defender when a hashed_account_id is
    * provided.
    * </pre>
    *
@@ -285,7 +285,7 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
-   * Assessment returned by Account Defender when a hashed_account_id is
+   * Assessment returned by account defender when a hashed_account_id is
    * provided.
    * </pre>
    *
@@ -300,7 +300,7 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
-   * Assessment returned by Account Defender when a hashed_account_id is
+   * Assessment returned by account defender when a hashed_account_id is
    * provided.
    * </pre>
    *
@@ -310,4 +310,46 @@ public interface AssessmentOrBuilder
    */
   com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessmentOrBuilder
       getAccountDefenderAssessmentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Assessment returned by Fraud Prevention when TransactionData is provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment fraud_prevention_assessment = 11;
+   * </code>
+   *
+   * @return Whether the fraudPreventionAssessment field is set.
+   */
+  boolean hasFraudPreventionAssessment();
+  /**
+   *
+   *
+   * <pre>
+   * Assessment returned by Fraud Prevention when TransactionData is provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment fraud_prevention_assessment = 11;
+   * </code>
+   *
+   * @return The fraudPreventionAssessment.
+   */
+  com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment getFraudPreventionAssessment();
+  /**
+   *
+   *
+   * <pre>
+   * Assessment returned by Fraud Prevention when TransactionData is provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment fraud_prevention_assessment = 11;
+   * </code>
+   */
+  com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessmentOrBuilder
+      getFraudPreventionAssessmentOrBuilder();
 }

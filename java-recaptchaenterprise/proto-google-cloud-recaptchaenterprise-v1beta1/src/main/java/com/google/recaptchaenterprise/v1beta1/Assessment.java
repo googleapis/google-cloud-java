@@ -22,7 +22,7 @@ package com.google.recaptchaenterprise.v1beta1;
  *
  *
  * <pre>
- * A recaptcha assessment resource.
+ * A reCAPTCHA Enterprise assessment resource.
  * </pre>
  *
  * Protobuf type {@code google.cloud.recaptchaenterprise.v1beta1.Assessment}
@@ -140,6 +140,26 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * <code>LOW_CONFIDENCE_SCORE = 5;</code>
      */
     LOW_CONFIDENCE_SCORE(5),
+    /**
+     *
+     *
+     * <pre>
+     * The request matches behavioral characteristics of a carding attack.
+     * </pre>
+     *
+     * <code>SUSPECTED_CARDING = 6;</code>
+     */
+    SUSPECTED_CARDING(6),
+    /**
+     *
+     *
+     * <pre>
+     * The request matches behavioral characteristics of chargebacks for fraud.
+     * </pre>
+     *
+     * <code>SUSPECTED_CHARGEBACK = 7;</code>
+     */
+    SUSPECTED_CHARGEBACK(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -205,6 +225,26 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * <code>LOW_CONFIDENCE_SCORE = 5;</code>
      */
     public static final int LOW_CONFIDENCE_SCORE_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * The request matches behavioral characteristics of a carding attack.
+     * </pre>
+     *
+     * <code>SUSPECTED_CARDING = 6;</code>
+     */
+    public static final int SUSPECTED_CARDING_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * The request matches behavioral characteristics of chargebacks for fraud.
+     * </pre>
+     *
+     * <code>SUSPECTED_CHARGEBACK = 7;</code>
+     */
+    public static final int SUSPECTED_CHARGEBACK_VALUE = 7;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -242,6 +282,10 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
           return UNEXPECTED_USAGE_PATTERNS;
         case 5:
           return LOW_CONFIDENCE_SCORE;
+        case 6:
+          return SUSPECTED_CARDING;
+        case 7:
+          return SUSPECTED_CHARGEBACK;
         default:
           return null;
       }
@@ -670,7 +714,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Assessment returned by Account Defender when a hashed_account_id is
+   * Assessment returned by account defender when a hashed_account_id is
    * provided.
    * </pre>
    *
@@ -688,7 +732,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Assessment returned by Account Defender when a hashed_account_id is
+   * Assessment returned by account defender when a hashed_account_id is
    * provided.
    * </pre>
    *
@@ -709,7 +753,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Assessment returned by Account Defender when a hashed_account_id is
+   * Assessment returned by account defender when a hashed_account_id is
    * provided.
    * </pre>
    *
@@ -723,6 +767,65 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     return accountDefenderAssessment_ == null
         ? com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment.getDefaultInstance()
         : accountDefenderAssessment_;
+  }
+
+  public static final int FRAUD_PREVENTION_ASSESSMENT_FIELD_NUMBER = 11;
+  private com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+      fraudPreventionAssessment_;
+  /**
+   *
+   *
+   * <pre>
+   * Assessment returned by Fraud Prevention when TransactionData is provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment fraud_prevention_assessment = 11;
+   * </code>
+   *
+   * @return Whether the fraudPreventionAssessment field is set.
+   */
+  @java.lang.Override
+  public boolean hasFraudPreventionAssessment() {
+    return fraudPreventionAssessment_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Assessment returned by Fraud Prevention when TransactionData is provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment fraud_prevention_assessment = 11;
+   * </code>
+   *
+   * @return The fraudPreventionAssessment.
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+      getFraudPreventionAssessment() {
+    return fraudPreventionAssessment_ == null
+        ? com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.getDefaultInstance()
+        : fraudPreventionAssessment_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Assessment returned by Fraud Prevention when TransactionData is provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment fraud_prevention_assessment = 11;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessmentOrBuilder
+      getFraudPreventionAssessmentOrBuilder() {
+    return fraudPreventionAssessment_ == null
+        ? com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.getDefaultInstance()
+        : fraudPreventionAssessment_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -764,6 +867,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     }
     if (accountDefenderAssessment_ != null) {
       output.writeMessage(8, getAccountDefenderAssessment());
+    }
+    if (fraudPreventionAssessment_ != null) {
+      output.writeMessage(11, getFraudPreventionAssessment());
     }
     getUnknownFields().writeTo(output);
   }
@@ -808,6 +914,11 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               8, getAccountDefenderAssessment());
     }
+    if (fraudPreventionAssessment_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              11, getFraudPreventionAssessment());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -845,6 +956,11 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       if (!getAccountDefenderAssessment().equals(other.getAccountDefenderAssessment()))
         return false;
     }
+    if (hasFraudPreventionAssessment() != other.hasFraudPreventionAssessment()) return false;
+    if (hasFraudPreventionAssessment()) {
+      if (!getFraudPreventionAssessment().equals(other.getFraudPreventionAssessment()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -879,6 +995,10 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     if (hasAccountDefenderAssessment()) {
       hash = (37 * hash) + ACCOUNT_DEFENDER_ASSESSMENT_FIELD_NUMBER;
       hash = (53 * hash) + getAccountDefenderAssessment().hashCode();
+    }
+    if (hasFraudPreventionAssessment()) {
+      hash = (37 * hash) + FRAUD_PREVENTION_ASSESSMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getFraudPreventionAssessment().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -984,7 +1104,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A recaptcha assessment resource.
+   * A reCAPTCHA Enterprise assessment resource.
    * </pre>
    *
    * Protobuf type {@code google.cloud.recaptchaenterprise.v1beta1.Assessment}
@@ -1042,6 +1162,11 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       if (accountDefenderAssessmentBuilder_ != null) {
         accountDefenderAssessmentBuilder_.dispose();
         accountDefenderAssessmentBuilder_ = null;
+      }
+      fraudPreventionAssessment_ = null;
+      if (fraudPreventionAssessmentBuilder_ != null) {
+        fraudPreventionAssessmentBuilder_.dispose();
+        fraudPreventionAssessmentBuilder_ = null;
       }
       return this;
     }
@@ -1113,6 +1238,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
             accountDefenderAssessmentBuilder_ == null
                 ? accountDefenderAssessment_
                 : accountDefenderAssessmentBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.fraudPreventionAssessment_ =
+            fraudPreventionAssessmentBuilder_ == null
+                ? fraudPreventionAssessment_
+                : fraudPreventionAssessmentBuilder_.build();
       }
     }
 
@@ -1191,6 +1322,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasAccountDefenderAssessment()) {
         mergeAccountDefenderAssessment(other.getAccountDefenderAssessment());
+      }
+      if (other.hasFraudPreventionAssessment()) {
+        mergeFraudPreventionAssessment(other.getFraudPreventionAssessment());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1275,6 +1409,13 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case 66
+            case 90:
+              {
+                input.readMessage(
+                    getFraudPreventionAssessmentFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2354,7 +2495,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Account Defender when a hashed_account_id is
+     * Assessment returned by account defender when a hashed_account_id is
      * provided.
      * </pre>
      *
@@ -2371,7 +2512,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Account Defender when a hashed_account_id is
+     * Assessment returned by account defender when a hashed_account_id is
      * provided.
      * </pre>
      *
@@ -2395,7 +2536,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Account Defender when a hashed_account_id is
+     * Assessment returned by account defender when a hashed_account_id is
      * provided.
      * </pre>
      *
@@ -2421,7 +2562,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Account Defender when a hashed_account_id is
+     * Assessment returned by account defender when a hashed_account_id is
      * provided.
      * </pre>
      *
@@ -2444,7 +2585,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Account Defender when a hashed_account_id is
+     * Assessment returned by account defender when a hashed_account_id is
      * provided.
      * </pre>
      *
@@ -2475,7 +2616,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Account Defender when a hashed_account_id is
+     * Assessment returned by account defender when a hashed_account_id is
      * provided.
      * </pre>
      *
@@ -2497,7 +2638,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Account Defender when a hashed_account_id is
+     * Assessment returned by account defender when a hashed_account_id is
      * provided.
      * </pre>
      *
@@ -2515,7 +2656,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Account Defender when a hashed_account_id is
+     * Assessment returned by account defender when a hashed_account_id is
      * provided.
      * </pre>
      *
@@ -2537,7 +2678,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Account Defender when a hashed_account_id is
+     * Assessment returned by account defender when a hashed_account_id is
      * provided.
      * </pre>
      *
@@ -2560,6 +2701,216 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         accountDefenderAssessment_ = null;
       }
       return accountDefenderAssessmentBuilder_;
+    }
+
+    private com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+        fraudPreventionAssessment_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment,
+            com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.Builder,
+            com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessmentOrBuilder>
+        fraudPreventionAssessmentBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned by Fraud Prevention when TransactionData is provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment fraud_prevention_assessment = 11;
+     * </code>
+     *
+     * @return Whether the fraudPreventionAssessment field is set.
+     */
+    public boolean hasFraudPreventionAssessment() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned by Fraud Prevention when TransactionData is provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment fraud_prevention_assessment = 11;
+     * </code>
+     *
+     * @return The fraudPreventionAssessment.
+     */
+    public com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+        getFraudPreventionAssessment() {
+      if (fraudPreventionAssessmentBuilder_ == null) {
+        return fraudPreventionAssessment_ == null
+            ? com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.getDefaultInstance()
+            : fraudPreventionAssessment_;
+      } else {
+        return fraudPreventionAssessmentBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned by Fraud Prevention when TransactionData is provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment fraud_prevention_assessment = 11;
+     * </code>
+     */
+    public Builder setFraudPreventionAssessment(
+        com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment value) {
+      if (fraudPreventionAssessmentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        fraudPreventionAssessment_ = value;
+      } else {
+        fraudPreventionAssessmentBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned by Fraud Prevention when TransactionData is provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment fraud_prevention_assessment = 11;
+     * </code>
+     */
+    public Builder setFraudPreventionAssessment(
+        com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.Builder builderForValue) {
+      if (fraudPreventionAssessmentBuilder_ == null) {
+        fraudPreventionAssessment_ = builderForValue.build();
+      } else {
+        fraudPreventionAssessmentBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned by Fraud Prevention when TransactionData is provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment fraud_prevention_assessment = 11;
+     * </code>
+     */
+    public Builder mergeFraudPreventionAssessment(
+        com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment value) {
+      if (fraudPreventionAssessmentBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && fraudPreventionAssessment_ != null
+            && fraudPreventionAssessment_
+                != com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+                    .getDefaultInstance()) {
+          getFraudPreventionAssessmentBuilder().mergeFrom(value);
+        } else {
+          fraudPreventionAssessment_ = value;
+        }
+      } else {
+        fraudPreventionAssessmentBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned by Fraud Prevention when TransactionData is provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment fraud_prevention_assessment = 11;
+     * </code>
+     */
+    public Builder clearFraudPreventionAssessment() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      fraudPreventionAssessment_ = null;
+      if (fraudPreventionAssessmentBuilder_ != null) {
+        fraudPreventionAssessmentBuilder_.dispose();
+        fraudPreventionAssessmentBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned by Fraud Prevention when TransactionData is provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment fraud_prevention_assessment = 11;
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.Builder
+        getFraudPreventionAssessmentBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getFraudPreventionAssessmentFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned by Fraud Prevention when TransactionData is provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment fraud_prevention_assessment = 11;
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessmentOrBuilder
+        getFraudPreventionAssessmentOrBuilder() {
+      if (fraudPreventionAssessmentBuilder_ != null) {
+        return fraudPreventionAssessmentBuilder_.getMessageOrBuilder();
+      } else {
+        return fraudPreventionAssessment_ == null
+            ? com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.getDefaultInstance()
+            : fraudPreventionAssessment_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned by Fraud Prevention when TransactionData is provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment fraud_prevention_assessment = 11;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment,
+            com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.Builder,
+            com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessmentOrBuilder>
+        getFraudPreventionAssessmentFieldBuilder() {
+      if (fraudPreventionAssessmentBuilder_ == null) {
+        fraudPreventionAssessmentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment,
+                com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.Builder,
+                com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessmentOrBuilder>(
+                getFraudPreventionAssessment(), getParentForChildren(), isClean());
+        fraudPreventionAssessment_ = null;
+      }
+      return fraudPreventionAssessmentBuilder_;
     }
 
     @java.lang.Override

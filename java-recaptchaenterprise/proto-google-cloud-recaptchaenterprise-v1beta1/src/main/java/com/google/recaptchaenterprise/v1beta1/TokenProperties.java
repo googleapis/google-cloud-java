@@ -126,7 +126,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The user verification token did not match the provided site key.
-     * This may be a configuration error (e.g. development keys used in
+     * This may be a configuration error (for example, development keys used in
      * production) or end users trying to use verification tokens from other
      * sites.
      * </pre>
@@ -214,7 +214,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The user verification token did not match the provided site key.
-     * This may be a configuration error (e.g. development keys used in
+     * This may be a configuration error (for example, development keys used in
      * production) or end users trying to use verification tokens from other
      * sites.
      * </pre>

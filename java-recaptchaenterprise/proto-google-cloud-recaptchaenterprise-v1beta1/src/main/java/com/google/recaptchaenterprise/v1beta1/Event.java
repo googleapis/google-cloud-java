@@ -72,8 +72,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The user response token provided by the reCAPTCHA client-side integration
-   * on your site.
+   * Optional. The user response token provided by the reCAPTCHA Enterprise
+   * client-side integration on your site.
    * </pre>
    *
    * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -96,8 +96,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The user response token provided by the reCAPTCHA client-side integration
-   * on your site.
+   * Optional. The user response token provided by the reCAPTCHA Enterprise
+   * client-side integration on your site.
    * </pre>
    *
    * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -125,8 +125,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The site key that was used to invoke reCAPTCHA on your site and generate
-   * the token.
+   * Optional. The site key that was used to invoke reCAPTCHA Enterprise on your
+   * site and generate the token.
    * </pre>
    *
    * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -149,8 +149,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The site key that was used to invoke reCAPTCHA on your site and generate
-   * the token.
+   * Optional. The site key that was used to invoke reCAPTCHA Enterprise on your
+   * site and generate the token.
    * </pre>
    *
    * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -178,8 +178,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The user agent present in the request from the user's device related to
-   * this event.
+   * Optional. The user agent present in the request from the user's device
+   * related to this event.
    * </pre>
    *
    * <code>string user_agent = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -202,8 +202,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The user agent present in the request from the user's device related to
-   * this event.
+   * Optional. The user agent present in the request from the user's device
+   * related to this event.
    * </pre>
    *
    * <code>string user_agent = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -231,7 +231,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The IP address in the request from the user's device related to this event.
+   * Optional. The IP address in the request from the user's device related to
+   * this event.
    * </pre>
    *
    * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -254,7 +255,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The IP address in the request from the user's device related to this event.
+   * Optional. The IP address in the request from the user's device related to
+   * this event.
    * </pre>
    *
    * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -282,9 +284,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The expected action for this type of event. This should be the same action
-   * provided at token generation time on client-side platforms already
-   * integrated with recaptcha enterprise.
+   * Optional. The expected action for this type of event. This should be the
+   * same action provided at token generation time on client-side platforms
+   * already integrated with recaptcha enterprise.
    * </pre>
    *
    * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -307,9 +309,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The expected action for this type of event. This should be the same action
-   * provided at token generation time on client-side platforms already
-   * integrated with recaptcha enterprise.
+   * Optional. The expected action for this type of event. This should be the
+   * same action provided at token generation time on client-side platforms
+   * already integrated with recaptcha enterprise.
    * </pre>
    *
    * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -335,8 +337,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Optional unique stable hashed user identifier for the request. The
-   * identifier should ideally be hashed using sha256 with stable secret.
+   * Optional. Unique stable hashed user identifier for the request. The
+   * identifier must be hashed using hmac-sha256 with stable secret.
    * </pre>
    *
    * <code>bytes hashed_account_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -346,6 +348,69 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.protobuf.ByteString getHashedAccountId() {
     return hashedAccountId_;
+  }
+
+  public static final int TRANSACTION_DATA_FIELD_NUMBER = 13;
+  private com.google.recaptchaenterprise.v1beta1.TransactionData transactionData_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data describing a payment transaction to be assessed. Sending
+   * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+   * FraudPreventionAssessment component in the response.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.TransactionData transaction_data = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the transactionData field is set.
+   */
+  @java.lang.Override
+  public boolean hasTransactionData() {
+    return transactionData_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data describing a payment transaction to be assessed. Sending
+   * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+   * FraudPreventionAssessment component in the response.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.TransactionData transaction_data = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The transactionData.
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1beta1.TransactionData getTransactionData() {
+    return transactionData_ == null
+        ? com.google.recaptchaenterprise.v1beta1.TransactionData.getDefaultInstance()
+        : transactionData_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data describing a payment transaction to be assessed. Sending
+   * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+   * FraudPreventionAssessment component in the response.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.TransactionData transaction_data = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1beta1.TransactionDataOrBuilder
+      getTransactionDataOrBuilder() {
+    return transactionData_ == null
+        ? com.google.recaptchaenterprise.v1beta1.TransactionData.getDefaultInstance()
+        : transactionData_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -380,6 +445,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     if (!hashedAccountId_.isEmpty()) {
       output.writeBytes(6, hashedAccountId_);
     }
+    if (transactionData_ != null) {
+      output.writeMessage(13, getTransactionData());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -407,6 +475,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     if (!hashedAccountId_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream.computeBytesSize(6, hashedAccountId_);
     }
+    if (transactionData_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getTransactionData());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -429,6 +500,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     if (!getUserIpAddress().equals(other.getUserIpAddress())) return false;
     if (!getExpectedAction().equals(other.getExpectedAction())) return false;
     if (!getHashedAccountId().equals(other.getHashedAccountId())) return false;
+    if (hasTransactionData() != other.hasTransactionData()) return false;
+    if (hasTransactionData()) {
+      if (!getTransactionData().equals(other.getTransactionData())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -452,6 +527,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getExpectedAction().hashCode();
     hash = (37 * hash) + HASHED_ACCOUNT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getHashedAccountId().hashCode();
+    if (hasTransactionData()) {
+      hash = (37 * hash) + TRANSACTION_DATA_FIELD_NUMBER;
+      hash = (53 * hash) + getTransactionData().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -589,6 +668,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       userIpAddress_ = "";
       expectedAction_ = "";
       hashedAccountId_ = com.google.protobuf.ByteString.EMPTY;
+      transactionData_ = null;
+      if (transactionDataBuilder_ != null) {
+        transactionDataBuilder_.dispose();
+        transactionDataBuilder_ = null;
+      }
       return this;
     }
 
@@ -642,6 +726,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.hashedAccountId_ = hashedAccountId_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.transactionData_ =
+            transactionDataBuilder_ == null ? transactionData_ : transactionDataBuilder_.build();
       }
     }
 
@@ -718,6 +806,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       if (other.getHashedAccountId() != com.google.protobuf.ByteString.EMPTY) {
         setHashedAccountId(other.getHashedAccountId());
       }
+      if (other.hasTransactionData()) {
+        mergeTransactionData(other.getTransactionData());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -780,6 +871,12 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 106:
+              {
+                input.readMessage(getTransactionDataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -804,8 +901,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The user response token provided by the reCAPTCHA client-side integration
-     * on your site.
+     * Optional. The user response token provided by the reCAPTCHA Enterprise
+     * client-side integration on your site.
      * </pre>
      *
      * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -827,8 +924,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The user response token provided by the reCAPTCHA client-side integration
-     * on your site.
+     * Optional. The user response token provided by the reCAPTCHA Enterprise
+     * client-side integration on your site.
      * </pre>
      *
      * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -850,8 +947,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The user response token provided by the reCAPTCHA client-side integration
-     * on your site.
+     * Optional. The user response token provided by the reCAPTCHA Enterprise
+     * client-side integration on your site.
      * </pre>
      *
      * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -872,8 +969,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The user response token provided by the reCAPTCHA client-side integration
-     * on your site.
+     * Optional. The user response token provided by the reCAPTCHA Enterprise
+     * client-side integration on your site.
      * </pre>
      *
      * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -890,8 +987,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The user response token provided by the reCAPTCHA client-side integration
-     * on your site.
+     * Optional. The user response token provided by the reCAPTCHA Enterprise
+     * client-side integration on your site.
      * </pre>
      *
      * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -915,8 +1012,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The site key that was used to invoke reCAPTCHA on your site and generate
-     * the token.
+     * Optional. The site key that was used to invoke reCAPTCHA Enterprise on your
+     * site and generate the token.
      * </pre>
      *
      * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -938,8 +1035,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The site key that was used to invoke reCAPTCHA on your site and generate
-     * the token.
+     * Optional. The site key that was used to invoke reCAPTCHA Enterprise on your
+     * site and generate the token.
      * </pre>
      *
      * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -961,8 +1058,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The site key that was used to invoke reCAPTCHA on your site and generate
-     * the token.
+     * Optional. The site key that was used to invoke reCAPTCHA Enterprise on your
+     * site and generate the token.
      * </pre>
      *
      * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -983,8 +1080,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The site key that was used to invoke reCAPTCHA on your site and generate
-     * the token.
+     * Optional. The site key that was used to invoke reCAPTCHA Enterprise on your
+     * site and generate the token.
      * </pre>
      *
      * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1001,8 +1098,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The site key that was used to invoke reCAPTCHA on your site and generate
-     * the token.
+     * Optional. The site key that was used to invoke reCAPTCHA Enterprise on your
+     * site and generate the token.
      * </pre>
      *
      * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1026,8 +1123,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The user agent present in the request from the user's device related to
-     * this event.
+     * Optional. The user agent present in the request from the user's device
+     * related to this event.
      * </pre>
      *
      * <code>string user_agent = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1049,8 +1146,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The user agent present in the request from the user's device related to
-     * this event.
+     * Optional. The user agent present in the request from the user's device
+     * related to this event.
      * </pre>
      *
      * <code>string user_agent = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1072,8 +1169,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The user agent present in the request from the user's device related to
-     * this event.
+     * Optional. The user agent present in the request from the user's device
+     * related to this event.
      * </pre>
      *
      * <code>string user_agent = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1094,8 +1191,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The user agent present in the request from the user's device related to
-     * this event.
+     * Optional. The user agent present in the request from the user's device
+     * related to this event.
      * </pre>
      *
      * <code>string user_agent = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1112,8 +1209,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The user agent present in the request from the user's device related to
-     * this event.
+     * Optional. The user agent present in the request from the user's device
+     * related to this event.
      * </pre>
      *
      * <code>string user_agent = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1137,7 +1234,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The IP address in the request from the user's device related to this event.
+     * Optional. The IP address in the request from the user's device related to
+     * this event.
      * </pre>
      *
      * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1159,7 +1257,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The IP address in the request from the user's device related to this event.
+     * Optional. The IP address in the request from the user's device related to
+     * this event.
      * </pre>
      *
      * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1181,7 +1280,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The IP address in the request from the user's device related to this event.
+     * Optional. The IP address in the request from the user's device related to
+     * this event.
      * </pre>
      *
      * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1202,7 +1302,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The IP address in the request from the user's device related to this event.
+     * Optional. The IP address in the request from the user's device related to
+     * this event.
      * </pre>
      *
      * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1219,7 +1320,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The IP address in the request from the user's device related to this event.
+     * Optional. The IP address in the request from the user's device related to
+     * this event.
      * </pre>
      *
      * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1243,9 +1345,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The expected action for this type of event. This should be the same action
-     * provided at token generation time on client-side platforms already
-     * integrated with recaptcha enterprise.
+     * Optional. The expected action for this type of event. This should be the
+     * same action provided at token generation time on client-side platforms
+     * already integrated with recaptcha enterprise.
      * </pre>
      *
      * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1267,9 +1369,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The expected action for this type of event. This should be the same action
-     * provided at token generation time on client-side platforms already
-     * integrated with recaptcha enterprise.
+     * Optional. The expected action for this type of event. This should be the
+     * same action provided at token generation time on client-side platforms
+     * already integrated with recaptcha enterprise.
      * </pre>
      *
      * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1291,9 +1393,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The expected action for this type of event. This should be the same action
-     * provided at token generation time on client-side platforms already
-     * integrated with recaptcha enterprise.
+     * Optional. The expected action for this type of event. This should be the
+     * same action provided at token generation time on client-side platforms
+     * already integrated with recaptcha enterprise.
      * </pre>
      *
      * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1314,9 +1416,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The expected action for this type of event. This should be the same action
-     * provided at token generation time on client-side platforms already
-     * integrated with recaptcha enterprise.
+     * Optional. The expected action for this type of event. This should be the
+     * same action provided at token generation time on client-side platforms
+     * already integrated with recaptcha enterprise.
      * </pre>
      *
      * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1333,9 +1435,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The expected action for this type of event. This should be the same action
-     * provided at token generation time on client-side platforms already
-     * integrated with recaptcha enterprise.
+     * Optional. The expected action for this type of event. This should be the
+     * same action provided at token generation time on client-side platforms
+     * already integrated with recaptcha enterprise.
      * </pre>
      *
      * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1359,8 +1461,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Optional unique stable hashed user identifier for the request. The
-     * identifier should ideally be hashed using sha256 with stable secret.
+     * Optional. Unique stable hashed user identifier for the request. The
+     * identifier must be hashed using hmac-sha256 with stable secret.
      * </pre>
      *
      * <code>bytes hashed_account_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1375,8 +1477,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Optional unique stable hashed user identifier for the request. The
-     * identifier should ideally be hashed using sha256 with stable secret.
+     * Optional. Unique stable hashed user identifier for the request. The
+     * identifier must be hashed using hmac-sha256 with stable secret.
      * </pre>
      *
      * <code>bytes hashed_account_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1397,8 +1499,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Optional unique stable hashed user identifier for the request. The
-     * identifier should ideally be hashed using sha256 with stable secret.
+     * Optional. Unique stable hashed user identifier for the request. The
+     * identifier must be hashed using hmac-sha256 with stable secret.
      * </pre>
      *
      * <code>bytes hashed_account_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1410,6 +1512,231 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       hashedAccountId_ = getDefaultInstance().getHashedAccountId();
       onChanged();
       return this;
+    }
+
+    private com.google.recaptchaenterprise.v1beta1.TransactionData transactionData_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1beta1.TransactionData,
+            com.google.recaptchaenterprise.v1beta1.TransactionData.Builder,
+            com.google.recaptchaenterprise.v1beta1.TransactionDataOrBuilder>
+        transactionDataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data describing a payment transaction to be assessed. Sending
+     * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+     * FraudPreventionAssessment component in the response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.TransactionData transaction_data = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the transactionData field is set.
+     */
+    public boolean hasTransactionData() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data describing a payment transaction to be assessed. Sending
+     * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+     * FraudPreventionAssessment component in the response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.TransactionData transaction_data = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The transactionData.
+     */
+    public com.google.recaptchaenterprise.v1beta1.TransactionData getTransactionData() {
+      if (transactionDataBuilder_ == null) {
+        return transactionData_ == null
+            ? com.google.recaptchaenterprise.v1beta1.TransactionData.getDefaultInstance()
+            : transactionData_;
+      } else {
+        return transactionDataBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data describing a payment transaction to be assessed. Sending
+     * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+     * FraudPreventionAssessment component in the response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.TransactionData transaction_data = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTransactionData(
+        com.google.recaptchaenterprise.v1beta1.TransactionData value) {
+      if (transactionDataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        transactionData_ = value;
+      } else {
+        transactionDataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data describing a payment transaction to be assessed. Sending
+     * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+     * FraudPreventionAssessment component in the response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.TransactionData transaction_data = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTransactionData(
+        com.google.recaptchaenterprise.v1beta1.TransactionData.Builder builderForValue) {
+      if (transactionDataBuilder_ == null) {
+        transactionData_ = builderForValue.build();
+      } else {
+        transactionDataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data describing a payment transaction to be assessed. Sending
+     * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+     * FraudPreventionAssessment component in the response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.TransactionData transaction_data = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeTransactionData(
+        com.google.recaptchaenterprise.v1beta1.TransactionData value) {
+      if (transactionDataBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && transactionData_ != null
+            && transactionData_
+                != com.google.recaptchaenterprise.v1beta1.TransactionData.getDefaultInstance()) {
+          getTransactionDataBuilder().mergeFrom(value);
+        } else {
+          transactionData_ = value;
+        }
+      } else {
+        transactionDataBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data describing a payment transaction to be assessed. Sending
+     * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+     * FraudPreventionAssessment component in the response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.TransactionData transaction_data = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearTransactionData() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      transactionData_ = null;
+      if (transactionDataBuilder_ != null) {
+        transactionDataBuilder_.dispose();
+        transactionDataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data describing a payment transaction to be assessed. Sending
+     * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+     * FraudPreventionAssessment component in the response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.TransactionData transaction_data = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1beta1.TransactionData.Builder
+        getTransactionDataBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getTransactionDataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data describing a payment transaction to be assessed. Sending
+     * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+     * FraudPreventionAssessment component in the response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.TransactionData transaction_data = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1beta1.TransactionDataOrBuilder
+        getTransactionDataOrBuilder() {
+      if (transactionDataBuilder_ != null) {
+        return transactionDataBuilder_.getMessageOrBuilder();
+      } else {
+        return transactionData_ == null
+            ? com.google.recaptchaenterprise.v1beta1.TransactionData.getDefaultInstance()
+            : transactionData_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data describing a payment transaction to be assessed. Sending
+     * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+     * FraudPreventionAssessment component in the response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.TransactionData transaction_data = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1beta1.TransactionData,
+            com.google.recaptchaenterprise.v1beta1.TransactionData.Builder,
+            com.google.recaptchaenterprise.v1beta1.TransactionDataOrBuilder>
+        getTransactionDataFieldBuilder() {
+      if (transactionDataBuilder_ == null) {
+        transactionDataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.recaptchaenterprise.v1beta1.TransactionData,
+                com.google.recaptchaenterprise.v1beta1.TransactionData.Builder,
+                com.google.recaptchaenterprise.v1beta1.TransactionDataOrBuilder>(
+                getTransactionData(), getParentForChildren(), isClean());
+        transactionData_ = null;
+      }
+      return transactionDataBuilder_;
     }
 
     @java.lang.Override

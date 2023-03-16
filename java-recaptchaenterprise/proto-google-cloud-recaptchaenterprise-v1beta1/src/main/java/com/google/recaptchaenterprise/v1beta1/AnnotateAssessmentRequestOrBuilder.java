@@ -58,9 +58,9 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The annotation that will be assigned to the Event. This field can be left
-   * empty to provide reasons that apply to an event without concluding whether
-   * the event is legitimate or fraudulent.
+   * Optional. The annotation that will be assigned to the Event. This field can
+   * be left empty to provide reasons that apply to an event without concluding
+   * whether the event is legitimate or fraudulent.
    * </pre>
    *
    * <code>
@@ -74,9 +74,9 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The annotation that will be assigned to the Event. This field can be left
-   * empty to provide reasons that apply to an event without concluding whether
-   * the event is legitimate or fraudulent.
+   * Optional. The annotation that will be assigned to the Event. This field can
+   * be left empty to provide reasons that apply to an event without concluding
+   * whether the event is legitimate or fraudulent.
    * </pre>
    *
    * <code>
@@ -91,7 +91,8 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the Event.
+   * Optional. Optional reasons for the annotation that will be assigned to the
+   * Event.
    * </pre>
    *
    * <code>
@@ -106,7 +107,8 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the Event.
+   * Optional. Optional reasons for the annotation that will be assigned to the
+   * Event.
    * </pre>
    *
    * <code>
@@ -120,7 +122,8 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the Event.
+   * Optional. Optional reasons for the annotation that will be assigned to the
+   * Event.
    * </pre>
    *
    * <code>
@@ -135,7 +138,8 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the Event.
+   * Optional. Optional reasons for the annotation that will be assigned to the
+   * Event.
    * </pre>
    *
    * <code>
@@ -149,7 +153,8 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the Event.
+   * Optional. Optional reasons for the annotation that will be assigned to the
+   * Event.
    * </pre>
    *
    * <code>
@@ -165,8 +170,8 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional unique stable hashed user identifier to apply to the assessment.
-   * This is an alternative to setting the hashed_account_id in
+   * Optional. Optional unique stable hashed user identifier to apply to the
+   * assessment. This is an alternative to setting the hashed_account_id in
    * CreateAssessment, for example when the account identifier is not yet known
    * in the initial request. It is recommended that the identifier is hashed
    * using hmac-sha256 with stable secret.
@@ -177,4 +182,48 @@ public interface AnnotateAssessmentRequestOrBuilder
    * @return The hashedAccountId.
    */
   com.google.protobuf.ByteString getHashedAccountId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If the assessment is part of a payment transaction, provide
+   * details on payment lifecycle events that occur in the transaction.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.TransactionEvent transaction_event = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the transactionEvent field is set.
+   */
+  boolean hasTransactionEvent();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If the assessment is part of a payment transaction, provide
+   * details on payment lifecycle events that occur in the transaction.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.TransactionEvent transaction_event = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The transactionEvent.
+   */
+  com.google.recaptchaenterprise.v1beta1.TransactionEvent getTransactionEvent();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If the assessment is part of a payment transaction, provide
+   * details on payment lifecycle events that occur in the transaction.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.TransactionEvent transaction_event = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.recaptchaenterprise.v1beta1.TransactionEventOrBuilder getTransactionEventOrBuilder();
 }

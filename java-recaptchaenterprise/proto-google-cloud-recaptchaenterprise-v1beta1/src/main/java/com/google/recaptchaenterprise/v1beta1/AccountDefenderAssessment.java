@@ -22,7 +22,7 @@ package com.google.recaptchaenterprise.v1beta1;
  *
  *
  * <pre>
- * Account Defender risk assessment.
+ * Account defender risk assessment.
  * </pre>
  *
  * Protobuf type {@code google.cloud.recaptchaenterprise.v1beta1.AccountDefenderAssessment}
@@ -71,7 +71,7 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Labels returned by Account Defender for this request.
+   * Labels returned by account defender for this request.
    * </pre>
    *
    * Protobuf enum {@code
@@ -584,7 +584,7 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Account Defender risk assessment.
+   * Account defender risk assessment.
    * </pre>
    *
    * Protobuf type {@code google.cloud.recaptchaenterprise.v1beta1.AccountDefenderAssessment}

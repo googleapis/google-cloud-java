@@ -407,6 +407,7 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    *           .setName(AssessmentName.of("[PROJECT]", "[ASSESSMENT]").toString())
    *           .addAllReasons(new ArrayList<AnnotateAssessmentRequest.Reason>())
    *           .setHashedAccountId(ByteString.EMPTY)
+   *           .setTransactionEvent(TransactionEvent.newBuilder().build())
    *           .build();
    *   AnnotateAssessmentResponse response =
    *       recaptchaEnterpriseServiceV1Beta1Client.annotateAssessment(request);
@@ -440,6 +441,7 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    *           .setName(AssessmentName.of("[PROJECT]", "[ASSESSMENT]").toString())
    *           .addAllReasons(new ArrayList<AnnotateAssessmentRequest.Reason>())
    *           .setHashedAccountId(ByteString.EMPTY)
+   *           .setTransactionEvent(TransactionEvent.newBuilder().build())
    *           .build();
    *   ApiFuture<AnnotateAssessmentResponse> future =
    *       recaptchaEnterpriseServiceV1Beta1Client.annotateAssessmentCallable().futureCall(request);

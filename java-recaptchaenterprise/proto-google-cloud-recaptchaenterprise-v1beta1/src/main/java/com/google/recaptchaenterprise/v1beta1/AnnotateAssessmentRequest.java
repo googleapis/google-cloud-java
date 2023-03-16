@@ -308,8 +308,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Indicates a chargeback issued for the transaction with no other details.
-     * When possible, specify the type by using CHARGEBACK_FRAUD or
+     * Indicates that the transaction had a chargeback issued with no other
+     * details. When possible, specify the type by using CHARGEBACK_FRAUD or
      * CHARGEBACK_DISPUTE instead.
      * </pre>
      *
@@ -320,9 +320,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Indicates a chargeback related to an alleged unauthorized transaction
-     * from the cardholder's perspective (for example, the card number was
-     * stolen).
+     * Indicates that the transaction had a chargeback issued related to an
+     * alleged unauthorized transaction from the cardholder's perspective (for
+     * example, the card number was stolen).
      * </pre>
      *
      * <code>CHARGEBACK_FRAUD = 8;</code>
@@ -332,14 +332,59 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Indicates a chargeback related to the cardholder having provided their
-     * card details but allegedly not being satisfied with the purchase
-     * (for example, misrepresentation, attempted cancellation).
+     * Indicates that the transaction had a chargeback issued related to the
+     * cardholder having provided their card details but allegedly not being
+     * satisfied with the purchase (for example, misrepresentation, attempted
+     * cancellation).
      * </pre>
      *
      * <code>CHARGEBACK_DISPUTE = 9;</code>
      */
     CHARGEBACK_DISPUTE(9),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the completed payment transaction was refunded by the
+     * seller.
+     * </pre>
+     *
+     * <code>REFUND = 10;</code>
+     */
+    REFUND(10),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the completed payment transaction was determined to be
+     * fraudulent by the seller, and was cancelled and refunded as a result.
+     * </pre>
+     *
+     * <code>REFUND_FRAUD = 11;</code>
+     */
+    REFUND_FRAUD(11),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the payment transaction was accepted, and the user was
+     * charged.
+     * </pre>
+     *
+     * <code>TRANSACTION_ACCEPTED = 12;</code>
+     */
+    TRANSACTION_ACCEPTED(12),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the payment transaction was declined, for example due to
+     * invalid card details.
+     * </pre>
+     *
+     * <code>TRANSACTION_DECLINED = 13;</code>
+     */
+    TRANSACTION_DECLINED(13),
     /**
      *
      *
@@ -405,6 +450,17 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * <code>INCORRECT_PASSWORD = 6;</code>
      */
     INCORRECT_PASSWORD(6),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the user sent unwanted and abusive messages to other users
+     * of the platform, such as spam, scams, phishing, or social engineering.
+     * </pre>
+     *
+     * <code>SOCIAL_SPAM = 14;</code>
+     */
+    SOCIAL_SPAM(14),
     UNRECOGNIZED(-1),
     ;
 
@@ -422,8 +478,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Indicates a chargeback issued for the transaction with no other details.
-     * When possible, specify the type by using CHARGEBACK_FRAUD or
+     * Indicates that the transaction had a chargeback issued with no other
+     * details. When possible, specify the type by using CHARGEBACK_FRAUD or
      * CHARGEBACK_DISPUTE instead.
      * </pre>
      *
@@ -434,9 +490,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Indicates a chargeback related to an alleged unauthorized transaction
-     * from the cardholder's perspective (for example, the card number was
-     * stolen).
+     * Indicates that the transaction had a chargeback issued related to an
+     * alleged unauthorized transaction from the cardholder's perspective (for
+     * example, the card number was stolen).
      * </pre>
      *
      * <code>CHARGEBACK_FRAUD = 8;</code>
@@ -446,14 +502,59 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Indicates a chargeback related to the cardholder having provided their
-     * card details but allegedly not being satisfied with the purchase
-     * (for example, misrepresentation, attempted cancellation).
+     * Indicates that the transaction had a chargeback issued related to the
+     * cardholder having provided their card details but allegedly not being
+     * satisfied with the purchase (for example, misrepresentation, attempted
+     * cancellation).
      * </pre>
      *
      * <code>CHARGEBACK_DISPUTE = 9;</code>
      */
     public static final int CHARGEBACK_DISPUTE_VALUE = 9;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the completed payment transaction was refunded by the
+     * seller.
+     * </pre>
+     *
+     * <code>REFUND = 10;</code>
+     */
+    public static final int REFUND_VALUE = 10;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the completed payment transaction was determined to be
+     * fraudulent by the seller, and was cancelled and refunded as a result.
+     * </pre>
+     *
+     * <code>REFUND_FRAUD = 11;</code>
+     */
+    public static final int REFUND_FRAUD_VALUE = 11;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the payment transaction was accepted, and the user was
+     * charged.
+     * </pre>
+     *
+     * <code>TRANSACTION_ACCEPTED = 12;</code>
+     */
+    public static final int TRANSACTION_ACCEPTED_VALUE = 12;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the payment transaction was declined, for example due to
+     * invalid card details.
+     * </pre>
+     *
+     * <code>TRANSACTION_DECLINED = 13;</code>
+     */
+    public static final int TRANSACTION_DECLINED_VALUE = 13;
     /**
      *
      *
@@ -519,6 +620,17 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * <code>INCORRECT_PASSWORD = 6;</code>
      */
     public static final int INCORRECT_PASSWORD_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the user sent unwanted and abusive messages to other users
+     * of the platform, such as spam, scams, phishing, or social engineering.
+     * </pre>
+     *
+     * <code>SOCIAL_SPAM = 14;</code>
+     */
+    public static final int SOCIAL_SPAM_VALUE = 14;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -552,6 +664,14 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
           return CHARGEBACK_FRAUD;
         case 9:
           return CHARGEBACK_DISPUTE;
+        case 10:
+          return REFUND;
+        case 11:
+          return REFUND_FRAUD;
+        case 12:
+          return TRANSACTION_ACCEPTED;
+        case 13:
+          return TRANSACTION_DECLINED;
         case 2:
           return PAYMENT_HEURISTICS;
         case 7:
@@ -564,6 +684,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
           return CORRECT_PASSWORD;
         case 6:
           return INCORRECT_PASSWORD;
+        case 14:
+          return SOCIAL_SPAM;
         default:
           return null;
       }
@@ -682,9 +804,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. The annotation that will be assigned to the Event. This field can be left
-   * empty to provide reasons that apply to an event without concluding whether
-   * the event is legitimate or fraudulent.
+   * Optional. The annotation that will be assigned to the Event. This field can
+   * be left empty to provide reasons that apply to an event without concluding
+   * whether the event is legitimate or fraudulent.
    * </pre>
    *
    * <code>
@@ -701,9 +823,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. The annotation that will be assigned to the Event. This field can be left
-   * empty to provide reasons that apply to an event without concluding whether
-   * the event is legitimate or fraudulent.
+   * Optional. The annotation that will be assigned to the Event. This field can
+   * be left empty to provide reasons that apply to an event without concluding
+   * whether the event is legitimate or fraudulent.
    * </pre>
    *
    * <code>
@@ -750,7 +872,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the Event.
+   * Optional. Optional reasons for the annotation that will be assigned to the
+   * Event.
    * </pre>
    *
    * <code>
@@ -770,7 +893,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the Event.
+   * Optional. Optional reasons for the annotation that will be assigned to the
+   * Event.
    * </pre>
    *
    * <code>
@@ -787,7 +911,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the Event.
+   * Optional. Optional reasons for the annotation that will be assigned to the
+   * Event.
    * </pre>
    *
    * <code>
@@ -806,7 +931,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the Event.
+   * Optional. Optional reasons for the annotation that will be assigned to the
+   * Event.
    * </pre>
    *
    * <code>
@@ -823,7 +949,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the Event.
+   * Optional. Optional reasons for the annotation that will be assigned to the
+   * Event.
    * </pre>
    *
    * <code>
@@ -846,8 +973,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. Optional unique stable hashed user identifier to apply to the assessment.
-   * This is an alternative to setting the hashed_account_id in
+   * Optional. Optional unique stable hashed user identifier to apply to the
+   * assessment. This is an alternative to setting the hashed_account_id in
    * CreateAssessment, for example when the account identifier is not yet known
    * in the initial request. It is recommended that the identifier is hashed
    * using hmac-sha256 with stable secret.
@@ -860,6 +987,66 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
   @java.lang.Override
   public com.google.protobuf.ByteString getHashedAccountId() {
     return hashedAccountId_;
+  }
+
+  public static final int TRANSACTION_EVENT_FIELD_NUMBER = 5;
+  private com.google.recaptchaenterprise.v1beta1.TransactionEvent transactionEvent_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If the assessment is part of a payment transaction, provide
+   * details on payment lifecycle events that occur in the transaction.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.TransactionEvent transaction_event = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the transactionEvent field is set.
+   */
+  @java.lang.Override
+  public boolean hasTransactionEvent() {
+    return transactionEvent_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If the assessment is part of a payment transaction, provide
+   * details on payment lifecycle events that occur in the transaction.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.TransactionEvent transaction_event = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The transactionEvent.
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1beta1.TransactionEvent getTransactionEvent() {
+    return transactionEvent_ == null
+        ? com.google.recaptchaenterprise.v1beta1.TransactionEvent.getDefaultInstance()
+        : transactionEvent_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If the assessment is part of a payment transaction, provide
+   * details on payment lifecycle events that occur in the transaction.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.TransactionEvent transaction_event = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1beta1.TransactionEventOrBuilder
+      getTransactionEventOrBuilder() {
+    return transactionEvent_ == null
+        ? com.google.recaptchaenterprise.v1beta1.TransactionEvent.getDefaultInstance()
+        : transactionEvent_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -896,6 +1083,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     if (!hashedAccountId_.isEmpty()) {
       output.writeBytes(4, hashedAccountId_);
     }
+    if (transactionEvent_ != null) {
+      output.writeMessage(5, getTransactionEvent());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -929,6 +1119,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     if (!hashedAccountId_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream.computeBytesSize(4, hashedAccountId_);
     }
+    if (transactionEvent_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getTransactionEvent());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -949,6 +1142,10 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     if (annotation_ != other.annotation_) return false;
     if (!reasons_.equals(other.reasons_)) return false;
     if (!getHashedAccountId().equals(other.getHashedAccountId())) return false;
+    if (hasTransactionEvent() != other.hasTransactionEvent()) return false;
+    if (hasTransactionEvent()) {
+      if (!getTransactionEvent().equals(other.getTransactionEvent())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -970,6 +1167,10 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     }
     hash = (37 * hash) + HASHED_ACCOUNT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getHashedAccountId().hashCode();
+    if (hasTransactionEvent()) {
+      hash = (37 * hash) + TRANSACTION_EVENT_FIELD_NUMBER;
+      hash = (53 * hash) + getTransactionEvent().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1115,6 +1316,11 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       reasons_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
       hashedAccountId_ = com.google.protobuf.ByteString.EMPTY;
+      transactionEvent_ = null;
+      if (transactionEventBuilder_ != null) {
+        transactionEventBuilder_.dispose();
+        transactionEventBuilder_ = null;
+      }
       return this;
     }
 
@@ -1171,6 +1377,10 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.hashedAccountId_ = hashedAccountId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.transactionEvent_ =
+            transactionEventBuilder_ == null ? transactionEvent_ : transactionEventBuilder_.build();
       }
     }
 
@@ -1243,6 +1453,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       if (other.getHashedAccountId() != com.google.protobuf.ByteString.EMPTY) {
         setHashedAccountId(other.getHashedAccountId());
       }
+      if (other.hasTransactionEvent()) {
+        mergeTransactionEvent(other.getTransactionEvent());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1306,6 +1519,13 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getTransactionEventFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1451,9 +1671,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The annotation that will be assigned to the Event. This field can be left
-     * empty to provide reasons that apply to an event without concluding whether
-     * the event is legitimate or fraudulent.
+     * Optional. The annotation that will be assigned to the Event. This field can
+     * be left empty to provide reasons that apply to an event without concluding
+     * whether the event is legitimate or fraudulent.
      * </pre>
      *
      * <code>
@@ -1470,9 +1690,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The annotation that will be assigned to the Event. This field can be left
-     * empty to provide reasons that apply to an event without concluding whether
-     * the event is legitimate or fraudulent.
+     * Optional. The annotation that will be assigned to the Event. This field can
+     * be left empty to provide reasons that apply to an event without concluding
+     * whether the event is legitimate or fraudulent.
      * </pre>
      *
      * <code>
@@ -1492,9 +1712,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The annotation that will be assigned to the Event. This field can be left
-     * empty to provide reasons that apply to an event without concluding whether
-     * the event is legitimate or fraudulent.
+     * Optional. The annotation that will be assigned to the Event. This field can
+     * be left empty to provide reasons that apply to an event without concluding
+     * whether the event is legitimate or fraudulent.
      * </pre>
      *
      * <code>
@@ -1517,9 +1737,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The annotation that will be assigned to the Event. This field can be left
-     * empty to provide reasons that apply to an event without concluding whether
-     * the event is legitimate or fraudulent.
+     * Optional. The annotation that will be assigned to the Event. This field can
+     * be left empty to provide reasons that apply to an event without concluding
+     * whether the event is legitimate or fraudulent.
      * </pre>
      *
      * <code>
@@ -1543,9 +1763,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The annotation that will be assigned to the Event. This field can be left
-     * empty to provide reasons that apply to an event without concluding whether
-     * the event is legitimate or fraudulent.
+     * Optional. The annotation that will be assigned to the Event. This field can
+     * be left empty to provide reasons that apply to an event without concluding
+     * whether the event is legitimate or fraudulent.
      * </pre>
      *
      * <code>
@@ -1573,7 +1793,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the Event.
+     * Optional. Optional reasons for the annotation that will be assigned to the
+     * Event.
      * </pre>
      *
      * <code>
@@ -1593,7 +1814,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the Event.
+     * Optional. Optional reasons for the annotation that will be assigned to the
+     * Event.
      * </pre>
      *
      * <code>
@@ -1609,7 +1831,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the Event.
+     * Optional. Optional reasons for the annotation that will be assigned to the
+     * Event.
      * </pre>
      *
      * <code>
@@ -1627,7 +1850,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the Event.
+     * Optional. Optional reasons for the annotation that will be assigned to the
+     * Event.
      * </pre>
      *
      * <code>
@@ -1652,7 +1876,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the Event.
+     * Optional. Optional reasons for the annotation that will be assigned to the
+     * Event.
      * </pre>
      *
      * <code>
@@ -1676,7 +1901,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the Event.
+     * Optional. Optional reasons for the annotation that will be assigned to the
+     * Event.
      * </pre>
      *
      * <code>
@@ -1701,7 +1927,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the Event.
+     * Optional. Optional reasons for the annotation that will be assigned to the
+     * Event.
      * </pre>
      *
      * <code>
@@ -1720,7 +1947,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the Event.
+     * Optional. Optional reasons for the annotation that will be assigned to the
+     * Event.
      * </pre>
      *
      * <code>
@@ -1736,7 +1964,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the Event.
+     * Optional. Optional reasons for the annotation that will be assigned to the
+     * Event.
      * </pre>
      *
      * <code>
@@ -1753,7 +1982,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the Event.
+     * Optional. Optional reasons for the annotation that will be assigned to the
+     * Event.
      * </pre>
      *
      * <code>
@@ -1774,7 +2004,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the Event.
+     * Optional. Optional reasons for the annotation that will be assigned to the
+     * Event.
      * </pre>
      *
      * <code>
@@ -1794,7 +2025,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the Event.
+     * Optional. Optional reasons for the annotation that will be assigned to the
+     * Event.
      * </pre>
      *
      * <code>
@@ -1818,8 +2050,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional unique stable hashed user identifier to apply to the assessment.
-     * This is an alternative to setting the hashed_account_id in
+     * Optional. Optional unique stable hashed user identifier to apply to the
+     * assessment. This is an alternative to setting the hashed_account_id in
      * CreateAssessment, for example when the account identifier is not yet known
      * in the initial request. It is recommended that the identifier is hashed
      * using hmac-sha256 with stable secret.
@@ -1837,8 +2069,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional unique stable hashed user identifier to apply to the assessment.
-     * This is an alternative to setting the hashed_account_id in
+     * Optional. Optional unique stable hashed user identifier to apply to the
+     * assessment. This is an alternative to setting the hashed_account_id in
      * CreateAssessment, for example when the account identifier is not yet known
      * in the initial request. It is recommended that the identifier is hashed
      * using hmac-sha256 with stable secret.
@@ -1862,8 +2094,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional unique stable hashed user identifier to apply to the assessment.
-     * This is an alternative to setting the hashed_account_id in
+     * Optional. Optional unique stable hashed user identifier to apply to the
+     * assessment. This is an alternative to setting the hashed_account_id in
      * CreateAssessment, for example when the account identifier is not yet known
      * in the initial request. It is recommended that the identifier is hashed
      * using hmac-sha256 with stable secret.
@@ -1878,6 +2110,222 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       hashedAccountId_ = getDefaultInstance().getHashedAccountId();
       onChanged();
       return this;
+    }
+
+    private com.google.recaptchaenterprise.v1beta1.TransactionEvent transactionEvent_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1beta1.TransactionEvent,
+            com.google.recaptchaenterprise.v1beta1.TransactionEvent.Builder,
+            com.google.recaptchaenterprise.v1beta1.TransactionEventOrBuilder>
+        transactionEventBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If the assessment is part of a payment transaction, provide
+     * details on payment lifecycle events that occur in the transaction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.TransactionEvent transaction_event = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the transactionEvent field is set.
+     */
+    public boolean hasTransactionEvent() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If the assessment is part of a payment transaction, provide
+     * details on payment lifecycle events that occur in the transaction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.TransactionEvent transaction_event = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The transactionEvent.
+     */
+    public com.google.recaptchaenterprise.v1beta1.TransactionEvent getTransactionEvent() {
+      if (transactionEventBuilder_ == null) {
+        return transactionEvent_ == null
+            ? com.google.recaptchaenterprise.v1beta1.TransactionEvent.getDefaultInstance()
+            : transactionEvent_;
+      } else {
+        return transactionEventBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If the assessment is part of a payment transaction, provide
+     * details on payment lifecycle events that occur in the transaction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.TransactionEvent transaction_event = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTransactionEvent(
+        com.google.recaptchaenterprise.v1beta1.TransactionEvent value) {
+      if (transactionEventBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        transactionEvent_ = value;
+      } else {
+        transactionEventBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If the assessment is part of a payment transaction, provide
+     * details on payment lifecycle events that occur in the transaction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.TransactionEvent transaction_event = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTransactionEvent(
+        com.google.recaptchaenterprise.v1beta1.TransactionEvent.Builder builderForValue) {
+      if (transactionEventBuilder_ == null) {
+        transactionEvent_ = builderForValue.build();
+      } else {
+        transactionEventBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If the assessment is part of a payment transaction, provide
+     * details on payment lifecycle events that occur in the transaction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.TransactionEvent transaction_event = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeTransactionEvent(
+        com.google.recaptchaenterprise.v1beta1.TransactionEvent value) {
+      if (transactionEventBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && transactionEvent_ != null
+            && transactionEvent_
+                != com.google.recaptchaenterprise.v1beta1.TransactionEvent.getDefaultInstance()) {
+          getTransactionEventBuilder().mergeFrom(value);
+        } else {
+          transactionEvent_ = value;
+        }
+      } else {
+        transactionEventBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If the assessment is part of a payment transaction, provide
+     * details on payment lifecycle events that occur in the transaction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.TransactionEvent transaction_event = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearTransactionEvent() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      transactionEvent_ = null;
+      if (transactionEventBuilder_ != null) {
+        transactionEventBuilder_.dispose();
+        transactionEventBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If the assessment is part of a payment transaction, provide
+     * details on payment lifecycle events that occur in the transaction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.TransactionEvent transaction_event = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1beta1.TransactionEvent.Builder
+        getTransactionEventBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getTransactionEventFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If the assessment is part of a payment transaction, provide
+     * details on payment lifecycle events that occur in the transaction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.TransactionEvent transaction_event = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1beta1.TransactionEventOrBuilder
+        getTransactionEventOrBuilder() {
+      if (transactionEventBuilder_ != null) {
+        return transactionEventBuilder_.getMessageOrBuilder();
+      } else {
+        return transactionEvent_ == null
+            ? com.google.recaptchaenterprise.v1beta1.TransactionEvent.getDefaultInstance()
+            : transactionEvent_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If the assessment is part of a payment transaction, provide
+     * details on payment lifecycle events that occur in the transaction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.TransactionEvent transaction_event = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1beta1.TransactionEvent,
+            com.google.recaptchaenterprise.v1beta1.TransactionEvent.Builder,
+            com.google.recaptchaenterprise.v1beta1.TransactionEventOrBuilder>
+        getTransactionEventFieldBuilder() {
+      if (transactionEventBuilder_ == null) {
+        transactionEventBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.recaptchaenterprise.v1beta1.TransactionEvent,
+                com.google.recaptchaenterprise.v1beta1.TransactionEvent.Builder,
+                com.google.recaptchaenterprise.v1beta1.TransactionEventOrBuilder>(
+                getTransactionEvent(), getParentForChildren(), isClean());
+        transactionEvent_ = null;
+      }
+      return transactionEventBuilder_;
     }
 
     @java.lang.Override
