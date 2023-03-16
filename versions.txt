@@ -624,3 +624,6 @@ proto-google-cloud-alloydb-v1alpha:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-alloydb-v1beta:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-alloydb-v1:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-alloydb-v1alpha:0.1.0:0.2.0-SNAPSHOT
+google-cloud-biglake:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-biglake-v1alpha1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-biglake-v1alpha1:0.0.0:0.0.1-SNAPSHOT
