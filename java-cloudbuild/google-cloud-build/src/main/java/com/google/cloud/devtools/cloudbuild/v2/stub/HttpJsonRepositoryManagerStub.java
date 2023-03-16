@@ -20,6 +20,7 @@ import static com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient.Fe
 import static com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient.ListConnectionsPagedResponse;
 import static com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient.ListRepositoriesPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -57,6 +58,7 @@ import com.google.cloudbuild.v2.ListRepositoriesResponse;
 import com.google.cloudbuild.v2.OperationMetadata;
 import com.google.cloudbuild.v2.Repository;
 import com.google.cloudbuild.v2.UpdateConnectionRequest;
+import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -790,7 +792,22 @@ public class HttpJsonRepositoryManagerStub extends RepositoryManagerStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.CancelOperation",
+                    HttpRule.newBuilder()
+                        .setPost("/v2/{name=projects/*/locations/*/operations/*}:cancel")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet("/v2/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .build());
 
     HttpJsonCallSettings<CreateConnectionRequest, Operation> createConnectionTransportSettings =
         HttpJsonCallSettings.<CreateConnectionRequest, Operation>newBuilder()

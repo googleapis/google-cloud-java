@@ -23,6 +23,7 @@ import static com.google.devtools.artifactregistry.v1beta2.ArtifactRegistryClien
 import static com.google.devtools.artifactregistry.v1beta2.ArtifactRegistryClient.ListTagsPagedResponse;
 import static com.google.devtools.artifactregistry.v1beta2.ArtifactRegistryClient.ListVersionsPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -42,6 +43,7 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.common.collect.ImmutableMap;
 import com.google.devtools.artifactregistry.v1beta2.CreateRepositoryRequest;
 import com.google.devtools.artifactregistry.v1beta2.CreateTagRequest;
 import com.google.devtools.artifactregistry.v1beta2.DeletePackageRequest;
@@ -1212,7 +1214,17 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet("/v1beta2/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .build());
 
     HttpJsonCallSettings<ImportAptArtifactsRequest, Operation> importAptArtifactsTransportSettings =
         HttpJsonCallSettings.<ImportAptArtifactsRequest, Operation>newBuilder()

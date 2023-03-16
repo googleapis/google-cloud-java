@@ -18,6 +18,7 @@ package com.google.appengine.v1.stub;
 
 import static com.google.appengine.v1.DomainMappingsClient.ListDomainMappingsPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -41,6 +42,7 @@ import com.google.appengine.v1.ListDomainMappingsRequest;
 import com.google.appengine.v1.ListDomainMappingsResponse;
 import com.google.appengine.v1.OperationMetadataV1;
 import com.google.appengine.v1.UpdateDomainMappingRequest;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
@@ -316,7 +318,18 @@ public class HttpJsonDomainMappingsStub extends DomainMappingsStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder().setGet("/v1/{name=apps/*/operations/*}").build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder().setGet("/v1/{name=apps/*}/operations").build())
+                .build());
 
     HttpJsonCallSettings<ListDomainMappingsRequest, ListDomainMappingsResponse>
         listDomainMappingsTransportSettings =

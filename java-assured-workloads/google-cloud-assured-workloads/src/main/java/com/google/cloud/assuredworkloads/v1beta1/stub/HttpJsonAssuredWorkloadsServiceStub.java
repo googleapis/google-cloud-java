@@ -16,6 +16,7 @@
 
 package com.google.cloud.assuredworkloads.v1beta1.stub;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -43,6 +44,7 @@ import com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesRequest
 import com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesResponse;
 import com.google.cloud.assuredworkloads.v1beta1.UpdateWorkloadRequest;
 import com.google.cloud.assuredworkloads.v1beta1.Workload;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
@@ -240,7 +242,22 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet("/v1beta1/{name=organizations/*/locations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder()
+                        .setGet("/v1beta1/{name=organizations/*/locations/*}/operations")
+                        .build())
+                .build());
 
     HttpJsonCallSettings<CreateWorkloadRequest, Operation> createWorkloadTransportSettings =
         HttpJsonCallSettings.<CreateWorkloadRequest, Operation>newBuilder()

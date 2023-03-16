@@ -24,6 +24,7 @@ import static com.google.cloud.asset.v1.AssetServiceClient.ListSavedQueriesPaged
 import static com.google.cloud.asset.v1.AssetServiceClient.SearchAllIamPoliciesPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.SearchAllResourcesPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -80,6 +81,7 @@ import com.google.cloud.asset.v1.SearchAllResourcesRequest;
 import com.google.cloud.asset.v1.SearchAllResourcesResponse;
 import com.google.cloud.asset.v1.UpdateFeedRequest;
 import com.google.cloud.asset.v1.UpdateSavedQueryRequest;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
@@ -1107,7 +1109,15 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder().setGet("/v1/{name=*/*/operations/*/**}").build())
+                .build());
 
     HttpJsonCallSettings<ExportAssetsRequest, Operation> exportAssetsTransportSettings =
         HttpJsonCallSettings.<ExportAssetsRequest, Operation>newBuilder()

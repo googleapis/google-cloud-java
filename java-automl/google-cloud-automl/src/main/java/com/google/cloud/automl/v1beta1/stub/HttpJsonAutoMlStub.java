@@ -22,6 +22,7 @@ import static com.google.cloud.automl.v1beta1.AutoMlClient.ListModelEvaluationsP
 import static com.google.cloud.automl.v1beta1.AutoMlClient.ListModelsPagedResponse;
 import static com.google.cloud.automl.v1beta1.AutoMlClient.ListTableSpecsPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -73,6 +74,7 @@ import com.google.cloud.automl.v1beta1.UndeployModelRequest;
 import com.google.cloud.automl.v1beta1.UpdateColumnSpecRequest;
 import com.google.cloud.automl.v1beta1.UpdateDatasetRequest;
 import com.google.cloud.automl.v1beta1.UpdateTableSpecRequest;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
@@ -1097,7 +1099,37 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.CancelOperation",
+                    HttpRule.newBuilder()
+                        .setPost("/v1beta1/{name=projects/*/locations/*/operations/*}:cancel")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.DeleteOperation",
+                    HttpRule.newBuilder()
+                        .setDelete("/v1beta1/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet("/v1beta1/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder()
+                        .setGet("/v1beta1/{name=projects/*/locations/*}/operations")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.WaitOperation",
+                    HttpRule.newBuilder()
+                        .setPost("/v1beta1/{name=projects/*/locations/*/operations/*}:wait")
+                        .build())
+                .build());
 
     HttpJsonCallSettings<CreateDatasetRequest, Dataset> createDatasetTransportSettings =
         HttpJsonCallSettings.<CreateDatasetRequest, Dataset>newBuilder()

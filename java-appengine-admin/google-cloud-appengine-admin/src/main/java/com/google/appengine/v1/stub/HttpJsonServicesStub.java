@@ -18,6 +18,7 @@ package com.google.appengine.v1.stub;
 
 import static com.google.appengine.v1.ServicesClient.ListServicesPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -40,6 +41,7 @@ import com.google.appengine.v1.ListServicesResponse;
 import com.google.appengine.v1.OperationMetadataV1;
 import com.google.appengine.v1.Service;
 import com.google.appengine.v1.UpdateServiceRequest;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
@@ -269,7 +271,18 @@ public class HttpJsonServicesStub extends ServicesStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder().setGet("/v1/{name=apps/*/operations/*}").build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder().setGet("/v1/{name=apps/*}/operations").build())
+                .build());
 
     HttpJsonCallSettings<ListServicesRequest, ListServicesResponse> listServicesTransportSettings =
         HttpJsonCallSettings.<ListServicesRequest, ListServicesResponse>newBuilder()

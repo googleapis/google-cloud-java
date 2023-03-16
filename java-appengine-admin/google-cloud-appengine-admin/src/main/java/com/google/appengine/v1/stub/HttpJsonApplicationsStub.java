@@ -16,6 +16,7 @@
 
 package com.google.appengine.v1.stub;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -37,6 +38,7 @@ import com.google.appengine.v1.GetApplicationRequest;
 import com.google.appengine.v1.OperationMetadataV1;
 import com.google.appengine.v1.RepairApplicationRequest;
 import com.google.appengine.v1.UpdateApplicationRequest;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -270,7 +272,18 @@ public class HttpJsonApplicationsStub extends ApplicationsStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder().setGet("/v1/{name=apps/*/operations/*}").build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder().setGet("/v1/{name=apps/*}/operations").build())
+                .build());
 
     HttpJsonCallSettings<GetApplicationRequest, Application> getApplicationTransportSettings =
         HttpJsonCallSettings.<GetApplicationRequest, Application>newBuilder()

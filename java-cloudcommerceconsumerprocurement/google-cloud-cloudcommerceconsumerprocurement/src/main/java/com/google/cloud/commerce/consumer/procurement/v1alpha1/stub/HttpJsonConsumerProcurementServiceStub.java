@@ -18,6 +18,7 @@ package com.google.cloud.commerce.consumer.procurement.v1alpha1.stub;
 
 import static com.google.cloud.commerce.consumer.procurement.v1alpha1.ConsumerProcurementServiceClient.ListOrdersPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -39,6 +40,7 @@ import com.google.cloud.commerce.consumer.procurement.v1alpha1.ListOrdersRespons
 import com.google.cloud.commerce.consumer.procurement.v1alpha1.Order;
 import com.google.cloud.commerce.consumer.procurement.v1alpha1.PlaceOrderMetadata;
 import com.google.cloud.commerce.consumer.procurement.v1alpha1.PlaceOrderRequest;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -230,7 +232,17 @@ public class HttpJsonConsumerProcurementServiceStub extends ConsumerProcurementS
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet("/v1alpha1/{name=billingAccounts/*/orders/*/operations/*}")
+                        .build())
+                .build());
 
     HttpJsonCallSettings<PlaceOrderRequest, Operation> placeOrderTransportSettings =
         HttpJsonCallSettings.<PlaceOrderRequest, Operation>newBuilder()

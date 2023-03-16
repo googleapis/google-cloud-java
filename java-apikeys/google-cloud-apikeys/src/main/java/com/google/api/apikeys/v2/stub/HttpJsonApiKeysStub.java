@@ -18,6 +18,7 @@ package com.google.api.apikeys.v2.stub;
 
 import static com.google.api.apikeys.v2.ApiKeysClient.ListKeysPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.apikeys.v2.CreateKeyRequest;
 import com.google.api.apikeys.v2.DeleteKeyRequest;
 import com.google.api.apikeys.v2.GetKeyRequest;
@@ -45,6 +46,7 @@ import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
@@ -414,7 +416,15 @@ public class HttpJsonApiKeysStub extends ApiKeysStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder().setGet("/v2/{name=operations/*}").build())
+                .build());
 
     HttpJsonCallSettings<CreateKeyRequest, Operation> createKeyTransportSettings =
         HttpJsonCallSettings.<CreateKeyRequest, Operation>newBuilder()
