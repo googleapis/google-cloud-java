@@ -14,6 +14,7 @@ Java idiomatic client for [Service Usage][product-docs].
 
 If you are using Maven, add this to your pom.xml file:
 
+<!-- {x-version-update-start:google-cloud-service-usage:released} -->
 
 ```xml
 <dependency>
@@ -34,6 +35,7 @@ If you are using SBT, add this to your dependencies:
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-service-usage" % "2.12.0"
 ```
+<!-- {x-version-update-end} -->
 
 ## Authentication
 
