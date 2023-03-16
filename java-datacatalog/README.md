@@ -8,12 +8,16 @@ Java idiomatic client for [Data Catalog][product-docs].
 - [Product Documentation][product-docs]
 - [Client Library Documentation][javadocs]
 
+> Note: This client is a work-in-progress, and may occasionally
+> make backwards-incompatible changes.
+
 
 ## Quickstart
 
 
 If you are using Maven, add this to your pom.xml file:
 
+<!-- {x-version-update-start:google-cloud-datacatalog:released} -->
 
 ```xml
 <dependency>
@@ -34,6 +38,7 @@ If you are using SBT, add this to your dependencies:
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-datacatalog" % "1.18.0"
 ```
+<!-- {x-version-update-end} -->
 
 ## Authentication
 
@@ -50,7 +55,7 @@ The client application making API calls must be granted [authorization scopes][a
 You will need a [Google Cloud Platform Console][developer-console] project with the Data Catalog [API enabled][enable-api].
 You will need to [enable billing][enable-billing] to use Google Data Catalog.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
-[installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
+[installing the Google Cloud Command Line Interface][cloud-cli] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
 
 ### Installation and setup
@@ -61,7 +66,7 @@ to add `google-cloud-datacatalog` as a dependency in your code.
 ## About Data Catalog
 
 
-[Data Catalog][product-docs] is a fully managed and highly scalable data discovery and metadata management service.
+[Data Catalog][product-docs] DataCatalog is a centralized and unified data catalog service for all your Cloud resources, where users and systems can discover data, explore and curate its semantics, understand how to act on it, and help govern its usage.
 
 See the [Data Catalog client library docs][javadocs] to learn how to
 use this Data Catalog Client Library.
@@ -129,6 +134,9 @@ and on [google-cloud-java][g-c-j].
 This library follows [Semantic Versioning](http://semver.org/).
 
 
+It is currently in major version zero (``0.y.z``), which means that anything may change at any time
+and the public API should not be considered stable.
+
 
 ## Contributing
 
@@ -159,30 +167,30 @@ Java is a registered trademark of Oracle and/or its affiliates.
 
 [product-docs]: https://cloud.google.com/data-catalog
 [javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-datacatalog/latest/overview
-[kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java7.svg
-[kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java7.html
-[kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8.svg
-[kokoro-badge-link-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8.html
-[kokoro-badge-image-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8-osx.svg
-[kokoro-badge-link-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8-osx.html
-[kokoro-badge-image-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8-win.svg
-[kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8-win.html
-[kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.svg
-[kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.html
-[stability-image]: https://img.shields.io/badge/stability-stable-green
+[kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-datacatalog/java7.svg
+[kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-datacatalog/java7.html
+[kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-datacatalog/java8.svg
+[kokoro-badge-link-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-datacatalog/java8.html
+[kokoro-badge-image-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-datacatalog/java8-osx.svg
+[kokoro-badge-link-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-datacatalog/java8-osx.html
+[kokoro-badge-image-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-datacatalog/java8-win.svg
+[kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-datacatalog/java8-win.html
+[kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-datacatalog/java11.svg
+[kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-datacatalog/java11.html
+[stability-image]: https://img.shields.io/badge/stability-preview-yellow
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-datacatalog.svg
-[maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-datacatalog&core=gav
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-datacatalog/1.18.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles
 [iam-policy]: https://cloud.google.com/iam/docs/overview#cloud-iam-policy
 [developer-console]: https://console.developers.google.com/
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
-[cloud-sdk]: https://cloud.google.com/sdk/
+[cloud-cli]: https://cloud.google.com/cli
 [troubleshooting]: https://github.com/googleapis/google-cloud-common/blob/main/troubleshooting/readme.md#troubleshooting
-[contributing]: https://github.com/googleapis/google-cloud-java/blob/main/CONTRIBUTING.md
-[code-of-conduct]: https://github.com/googleapis/google-cloud-java/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[license]: https://github.com/googleapis/google-cloud-java/blob/main/LICENSE
+[contributing]: https://github.com/googleapis/java-datacatalog/blob/main/CONTRIBUTING.md
+[code-of-conduct]: https://github.com/googleapis/java-datacatalog/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[license]: https://github.com/googleapis/java-datacatalog/blob/main/LICENSE
 [enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
 [enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=datacatalog.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM

@@ -5,7 +5,7 @@
   <artifactId>google-cloud-datacatalog-parent</artifactId>
   <packaging>pom</packaging>
   <version>1.19.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
-  <name>Google Cloud Data Catalog Parent</name>
+  <name>Google Data Catalog Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>
@@ -27,14 +27,9 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-datacatalog-v1</artifactId>
-        <version>1.19.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datacatalog-v1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-datacatalog-v1beta1</artifactId>
-        <version>0.56.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datacatalog-v1beta1:current} -->
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-datacatalog</artifactId>
+        <version>1.19.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -47,9 +42,14 @@
         <version>0.56.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-datacatalog-v1beta1:current} -->
       </dependency>
       <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-datacatalog</artifactId>
-        <version>1.19.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-datacatalog-v1</artifactId>
+        <version>1.19.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datacatalog-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-datacatalog-v1beta1</artifactId>
+        <version>0.56.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datacatalog-v1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -62,5 +62,4 @@
     <module>proto-google-cloud-datacatalog-v1beta1</module>
     <module>google-cloud-datacatalog-bom</module>
   </modules>
-
-  </project>
+</project>

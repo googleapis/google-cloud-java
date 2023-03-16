@@ -6,7 +6,7 @@
   <artifactId>proto-google-cloud-datacatalog-v1</artifactId>
   <version>1.19.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datacatalog-v1:current} -->
   <name>proto-google-cloud-datacatalog-v1</name>
-  <description>PROTO library for proto-google-cloud-datacatalog-v1</description>
+  <description>Proto library for google-cloud-datacatalog</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-datacatalog-parent</artifactId>
